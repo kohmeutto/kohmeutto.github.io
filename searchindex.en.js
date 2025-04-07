@@ -8,6 +8,14 @@ var relearn_searchindex = [
     "uri": "/categories/index.html"
   },
   {
+    "breadcrumb": "My New Hugo Site",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "LinearAlgebra",
+    "uri": "/linearalgebra/index.html"
+  },
+  {
     "breadcrumb": "",
     "content": "",
     "description": "",
