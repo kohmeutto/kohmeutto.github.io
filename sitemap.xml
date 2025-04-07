@@ -4,10 +4,10 @@
     <loc>http://localhost:1313/categories/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linearalgebra/index.html</loc>
+    <loc>http://localhost:1313/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/index.html</loc>
+    <loc>http://localhost:1313/ode--pde/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/index.html</loc>

@@ -8,20 +8,20 @@ var relearn_searchindex = [
     "uri": "/categories/index.html"
   },
   {
-    "breadcrumb": "My New Hugo Site",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "LinearAlgebra",
-    "uri": "/linearalgebra/index.html"
-  },
-  {
     "breadcrumb": "",
     "content": "",
     "description": "",
     "tags": [],
     "title": "My New Hugo Site",
     "uri": "/index.html"
+  },
+  {
+    "breadcrumb": "My New Hugo Site",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "ODE \u0026 PDEs",
+    "uri": "/ode--pde/index.html"
   },
   {
     "breadcrumb": "My New Hugo Site",
