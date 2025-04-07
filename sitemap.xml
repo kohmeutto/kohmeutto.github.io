@@ -4,6 +4,9 @@
     <loc>http://localhost:1313/categories/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linearalgebra/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/index.html</loc>
   </url>
   <url>
