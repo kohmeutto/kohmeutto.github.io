@@ -7,9 +7,6 @@
     <loc>http://localhost:1313/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode--pde/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/tags/index.html</loc>
   </url>
 </urlset>
