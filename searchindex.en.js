@@ -20,14 +20,6 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "ODE \u0026 PDEs",
-    "uri": "/ode--pde/index.html"
-  },
-  {
-    "breadcrumb": "My New Hugo Site",
-    "content": "",
-    "description": "",
-    "tags": [],
     "title": "Tags",
     "uri": "/tags/index.html"
   }
