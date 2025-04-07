@@ -24,12 +24,12 @@ var relearn_searchindex = [
     "uri": "/ode--pde/homogeneous/index.html"
   },
   {
-    "breadcrumb": "My New Hugo Site \u003e \rLog \u003e ",
+    "breadcrumb": "My New Hugo Site \u003e \rLog",
     "content": "This is a new chapter.",
     "description": "This is a new chapter.",
     "tags": [],
     "title": "Log",
-    "uri": "/ode--pde/inhomogeneous/_index-copy/index.html"
+    "uri": "/ode--pde/inhomogeneous/index.html"
   },
   {
     "breadcrumb": "My New Hugo Site",
