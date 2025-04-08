@@ -13,6 +13,9 @@
     <loc>http://localhost:1313/ode--pde/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode--pde/homogeneous/b-ode/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode--pde/inhomogeneous/index.html</loc>
   </url>
   <url>
