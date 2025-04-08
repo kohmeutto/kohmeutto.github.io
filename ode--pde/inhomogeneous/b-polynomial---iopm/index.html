@@ -7,40 +7,40 @@
     <meta name="generator" content="Relearn 7.6.1">
     <meta name="description" content="미분방정식의 해는 일반해&#43;특수해 이다.
 아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.
-1. $$\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0$$example1)
-$$y&#39;&#39;&#43;y&#39;-2y=e^{3x}$$sol$$\begin{aligned}&amp;\left(D&#43;2\right)\left(D-1\right)y_{p}=e^{3x} \\\\&amp;y_{p}=\frac{1}{\left(D&#43;2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}\end{aligned}$$example2)
-$$y&#39;&#39;-y&#39;-6y=e^{-x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D&#43;2\right)y_{p}=e^{-x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D&#43;2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}\end{aligned}$$example3)
-$$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}\end{aligned}$$example4)">
+1. $$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$example1)
+$$y&#39;&#39;&#43;y=x^2$$sol$$\begin{aligned}&amp;\left(D^2&#43;1\right)y_{p}=x^2 \\\\&amp;y_{p}=\operatorname{}\frac{1}{1&#43;D^2}x^2=\left(1-D^2\right)x^2=x^2-2\end{aligned}$$example2)
+$$y&#39;&#39;&#43;y&#39;-6y=6x^3-3x^2&#43;12$$sol$$\begin{aligned}&amp;\left(D^2&#43;D-6\right)y_{p}=6x^3-3x^2&#43;12x \\\\&amp;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2&#43;12\right\rbrack \\&amp;=-\frac16\cdot\left(1&#43;\frac16D&#43;\frac{7}{36}D^2&#43;\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2&#43;12x\right\rbrack \\&amp;=-x^3-3x-\frac12&amp;\end{aligned}$$example3)
+$$\frac{1}{4} y&#39;&#39;&#43;y&#39;&#43;y=x^2-2x$$sol매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의 연산자는 소거된다.$$\begin{aligned}&amp;\frac{1}{1-x}=1&#43;x&#43;x^2&#43;x^3\cdots \\\\&amp;y_{p}=\frac{1}{1&#43;D&#43;\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\&amp;=\left(1-D&#43;\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\&amp;=x^2-4x&#43;\frac{7}{2}\end{aligned}$$example4)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) exponential - IOPM :: My New Hugo Site">
+    <meta name="twitter:title" content="(b) polynomial - IOPM :: My New Hugo Site">
     <meta name="twitter:description" content="미분방정식의 해는 일반해&#43;특수해 이다.
 아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.
-1. $$\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0$$example1)
-$$y&#39;&#39;&#43;y&#39;-2y=e^{3x}$$sol$$\begin{aligned}&amp;\left(D&#43;2\right)\left(D-1\right)y_{p}=e^{3x} \\\\&amp;y_{p}=\frac{1}{\left(D&#43;2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}\end{aligned}$$example2)
-$$y&#39;&#39;-y&#39;-6y=e^{-x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D&#43;2\right)y_{p}=e^{-x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D&#43;2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}\end{aligned}$$example3)
-$$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}\end{aligned}$$example4)">
-    <meta property="og:url" content="http://localhost:1313/ode--pde/inhomogeneous/b-exponential---iopm/index.html">
+1. $$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$example1)
+$$y&#39;&#39;&#43;y=x^2$$sol$$\begin{aligned}&amp;\left(D^2&#43;1\right)y_{p}=x^2 \\\\&amp;y_{p}=\operatorname{}\frac{1}{1&#43;D^2}x^2=\left(1-D^2\right)x^2=x^2-2\end{aligned}$$example2)
+$$y&#39;&#39;&#43;y&#39;-6y=6x^3-3x^2&#43;12$$sol$$\begin{aligned}&amp;\left(D^2&#43;D-6\right)y_{p}=6x^3-3x^2&#43;12x \\\\&amp;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2&#43;12\right\rbrack \\&amp;=-\frac16\cdot\left(1&#43;\frac16D&#43;\frac{7}{36}D^2&#43;\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2&#43;12x\right\rbrack \\&amp;=-x^3-3x-\frac12&amp;\end{aligned}$$example3)
+$$\frac{1}{4} y&#39;&#39;&#43;y&#39;&#43;y=x^2-2x$$sol매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의 연산자는 소거된다.$$\begin{aligned}&amp;\frac{1}{1-x}=1&#43;x&#43;x^2&#43;x^3\cdots \\\\&amp;y_{p}=\frac{1}{1&#43;D&#43;\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\&amp;=\left(1-D&#43;\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\&amp;=x^2-4x&#43;\frac{7}{2}\end{aligned}$$example4)">
+    <meta property="og:url" content="http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm/index.html">
     <meta property="og:site_name" content="My New Hugo Site">
-    <meta property="og:title" content="(b) exponential - IOPM :: My New Hugo Site">
+    <meta property="og:title" content="(b) polynomial - IOPM :: My New Hugo Site">
     <meta property="og:description" content="미분방정식의 해는 일반해&#43;특수해 이다.
 아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.
-1. $$\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0$$example1)
-$$y&#39;&#39;&#43;y&#39;-2y=e^{3x}$$sol$$\begin{aligned}&amp;\left(D&#43;2\right)\left(D-1\right)y_{p}=e^{3x} \\\\&amp;y_{p}=\frac{1}{\left(D&#43;2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}\end{aligned}$$example2)
-$$y&#39;&#39;-y&#39;-6y=e^{-x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D&#43;2\right)y_{p}=e^{-x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D&#43;2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}\end{aligned}$$example3)
-$$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}\end{aligned}$$example4)">
+1. $$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$example1)
+$$y&#39;&#39;&#43;y=x^2$$sol$$\begin{aligned}&amp;\left(D^2&#43;1\right)y_{p}=x^2 \\\\&amp;y_{p}=\operatorname{}\frac{1}{1&#43;D^2}x^2=\left(1-D^2\right)x^2=x^2-2\end{aligned}$$example2)
+$$y&#39;&#39;&#43;y&#39;-6y=6x^3-3x^2&#43;12$$sol$$\begin{aligned}&amp;\left(D^2&#43;D-6\right)y_{p}=6x^3-3x^2&#43;12x \\\\&amp;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2&#43;12\right\rbrack \\&amp;=-\frac16\cdot\left(1&#43;\frac16D&#43;\frac{7}{36}D^2&#43;\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2&#43;12x\right\rbrack \\&amp;=-x^3-3x-\frac12&amp;\end{aligned}$$example3)
+$$\frac{1}{4} y&#39;&#39;&#43;y&#39;&#43;y=x^2-2x$$sol매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의 연산자는 소거된다.$$\begin{aligned}&amp;\frac{1}{1-x}=1&#43;x&#43;x^2&#43;x^3\cdots \\\\&amp;y_{p}=\frac{1}{1&#43;D&#43;\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\&amp;=\left(1-D&#43;\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\&amp;=x^2-4x&#43;\frac{7}{2}\end{aligned}$$example4)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
-    <meta itemprop="name" content="(b) exponential - IOPM :: My New Hugo Site">
+    <meta itemprop="name" content="(b) polynomial - IOPM :: My New Hugo Site">
     <meta itemprop="description" content="미분방정식의 해는 일반해&#43;특수해 이다.
 아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.
-1. $$\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0$$example1)
-$$y&#39;&#39;&#43;y&#39;-2y=e^{3x}$$sol$$\begin{aligned}&amp;\left(D&#43;2\right)\left(D-1\right)y_{p}=e^{3x} \\\\&amp;y_{p}=\frac{1}{\left(D&#43;2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}\end{aligned}$$example2)
-$$y&#39;&#39;-y&#39;-6y=e^{-x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D&#43;2\right)y_{p}=e^{-x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D&#43;2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}\end{aligned}$$example3)
-$$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x} \\\\&amp;y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}\end{aligned}$$example4)">
-    <meta itemprop="wordCount" content="169">
-    <title>(b) exponential - IOPM :: My New Hugo Site</title>
+1. $$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$example1)
+$$y&#39;&#39;&#43;y=x^2$$sol$$\begin{aligned}&amp;\left(D^2&#43;1\right)y_{p}=x^2 \\\\&amp;y_{p}=\operatorname{}\frac{1}{1&#43;D^2}x^2=\left(1-D^2\right)x^2=x^2-2\end{aligned}$$example2)
+$$y&#39;&#39;&#43;y&#39;-6y=6x^3-3x^2&#43;12$$sol$$\begin{aligned}&amp;\left(D^2&#43;D-6\right)y_{p}=6x^3-3x^2&#43;12x \\\\&amp;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2&#43;12\right\rbrack \\&amp;=-\frac16\cdot\left(1&#43;\frac16D&#43;\frac{7}{36}D^2&#43;\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2&#43;12x\right\rbrack \\&amp;=-x^3-3x-\frac12&amp;\end{aligned}$$example3)
+$$\frac{1}{4} y&#39;&#39;&#43;y&#39;&#43;y=x^2-2x$$sol매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의 연산자는 소거된다.$$\begin{aligned}&amp;\frac{1}{1-x}=1&#43;x&#43;x^2&#43;x^3\cdots \\\\&amp;y_{p}=\frac{1}{1&#43;D&#43;\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\&amp;=\left(1-D&#43;\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\&amp;=x^2-4x&#43;\frac{7}{2}\end{aligned}$$example4)">
+    <meta itemprop="wordCount" content="125">
+    <title>(b) polynomial - IOPM :: My New Hugo Site</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744119687" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744119687" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744119687" rel="stylesheet">
     <link href="/css/theme.css?1744119687" rel="stylesheet">
@@ -56,7 +56,7 @@ $$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/ode--pde\/inhomogeneous\/b-exponential---iopm\/index.html';
+      window.relearn.path='\/ode--pde\/inhomogeneous\/b-polynomial---iopm\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -108,7 +108,7 @@ $$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/ode--pde/inhomogeneous/b-exponential---iopm/index.html">
+  <body class="mobile-support html" data-url="/ode--pde/inhomogeneous/b-polynomial---iopm/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -126,7 +126,6 @@ $$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D
       <ul>
         <li><a href="#1">1.</a></li>
         <li><a href="#2">2.</a></li>
-        <li><a href="#3">3.</a></li>
       </ul>
     </li>
   </ul>
@@ -139,12 +138,12 @@ $$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">My New Hugo Site</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode--pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode--pde/inhomogeneous/index.html"><span itemprop="name">Inhomogeneous</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) exponential - IOPM</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) polynomial - IOPM</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/inhomogeneous/index.html" title="Inhomogeneous (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html" title="(b) trigonometric - IOPM (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html" title="(b) trigonometric - IOPM (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -164,14 +163,14 @@ $$y&#39;&#39;-4y^{\prime}&#43;3y=10e^{-2x}$$sol$$\begin{aligned}&amp;\left(D
   <header class="headline">
   </header>
 
-<h1 id="b-exponential---iopm">(b) exponential - IOPM</h1>
+<h1 id="b-polynomial---iopm">(b) polynomial - IOPM</h1>
 
 <p><strong>미분방정식의 해는 일반해+특수해 이다.</strong></p>
 <p>아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.</p>
 <hr>
 <h3 id="1">1.</h3>
-$$\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0$$<p>example1)</p>
-$$y''+y'-2y=e^{3x}$$
+$$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$<p>example1)</p>
+$$y''+y=x^2$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -181,15 +180,15 @@ $$y''+y'-2y=e^{3x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D+2\right)\left(D-1\right)y_{p}=e^{3x} \\
+&\left(D^2+1\right)y_{p}=x^2 \\
 \\
-&y_{p}=\frac{1}{\left(D+2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}
+&y_{p}=\operatorname{}\frac{1}{1+D^2}x^2=\left(1-D^2\right)x^2=x^2-2
 \end{aligned}
 $$
   </div>
 </details>
 <p>example2)</p>
-$$y''-y'-6y=e^{-x}$$
+$$y''+y'-6y=6x^3-3x^2+12$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -199,15 +198,18 @@ $$y''-y'-6y=e^{-x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D-3\right)\left(D+2\right)y_{p}=e^{-x} \\
+&\left(D^2+D-6\right)y_{p}=6x^3-3x^2+12x \\
 \\
-&y_{p}=\frac{1}{\left(D-3\right)\left(D+2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}
+&y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2+12\right\rbrack \\
+&=-\frac16\cdot\left(1+\frac16D+\frac{7}{36}D^2+\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2+12x\right\rbrack \\
+&=-x^3-3x-\frac12
+&
 \end{aligned}
 $$
   </div>
 </details>
 <p>example3)</p>
-$$y''-4y^{\prime}+3y=10e^{-2x}$$
+$$\frac{1}{4} y''+y'+y=x^2-2x$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -215,17 +217,22 @@ $$y''-4y^{\prime}+3y=10e^{-2x}$$
   </summary>
   <div class="box-content">
 <p>
+매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의  연산자는 소거된다.
+<br><br>
+
 $$
 \begin{aligned}
-&\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x} \\
+&\frac{1}{1-x}=1+x+x^2+x^3\cdots \\
 \\
-&y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}
+&y_{p}=\frac{1}{1+D+\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\
+&=\left(1-D+\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\
+&=x^2-4x+\frac{7}{2}
 \end{aligned}
 $$
   </div>
 </details>
 <p>example4)</p>
-$$y''+4y^{\prime}+3y=-5e^{5x}$$
+$$x^2y''+3xy'+3y=2x^2-2$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -235,53 +242,19 @@ $$y''+4y^{\prime}+3y=-5e^{5x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D+1\right)\left(D+3\right)y_{p}=-5e^{5x} \\
+&\frac{1}{3+2D+D^2}y_{p}=x^2-2x \\
 \\
-&y_{p}=\frac{1}{\left(D+1\right)\left(D+3\right)\left|_{D=5}\right.}-5e^{5x}=-\frac{5}{48}e^{5x}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example5)</p>
-$$x^2y''-4xy'+6y=2e^{4x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D-3\right)\left(D-2\right)y_{p}=2e^{4x} \\
-\\
-& y_{p}=\frac{1}{\left(D-3\right)\left(D-2\right)\left|_{D=4}\right.}2e^{4x}=e^{4x}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example6)</p>
-$$x^2y''-xy'-8y=9e^{-7x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D-4\right)\left(D+2\right)y_{p}=9e^{-7x} \\
-\\
-&y_{p}=\frac{1}{\left(D-4\right)\left(D+2\right)\left|_{D=-7}\right.}9e^{-7x}=-\frac{9}{55}e^{-7x}
+&y_{p}=\frac13\cdot\frac{1}{1+\frac{2}{3}D+\frac{1}{3}D^2}\left\lbrack2x^2-2\right\rbrack \\
+&=\left(1-\frac23D+\frac{1}{9}D^2\right)\left\lbrack2x^2-x\right\rbrack \\
+&=\frac23x^2-\frac{8}{3}x
 \end{aligned}
 $$
   </div>
 </details>
 <hr>
 <h3 id="2">2.</h3>
-$$\frac{1}{\left(D-\alpha\right)^{n}}e^{\alpha x}=\frac{x^{n}}{n!}e^{\alpha x}$$<p>example1)</p>
-$$y''+2y'+y=e^{-x}$$
+$$\frac{1}{Df\left(D\right)}\left\lbrack R\left(x\right)\right\rbrack=\int_{x=x'}dx'\left\lbrack\frac{1}{f\left(D\right)}\left\lbrack R\left(x'\right)\right\rbrack\right\rbrack$$<p>example1)</p>
+$$y''+y'=2x$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -291,15 +264,15 @@ $$y''+2y'+y=e^{-x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D+1\right)^2y_{p}=e^{-x} \\
+&D\left(D+1\right)y_{p}=2x \\
 \\
-&y_{p}=\frac{1}{\left(D+1\right)^2}e^{-x}=\frac{x^2}{2}e^{-x}
+&y_{p}=\operatorname{}\frac{1}{D\left(1+D\right)}2x=\int_{x=x'}dx'\left\lbrack\left(1-D\right)2x'\right\rbrack=\int_{x=x'}dx'\left\lbrack2x'-2\right\rbrack=x^2-2x
 \end{aligned}
 $$
   </div>
 </details>
 <p>example2)</p>
-$$y''-6y'+9y=-e^{3x}$$
+$$y''-2y'=x$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -309,15 +282,16 @@ $$y''-6y'+9y=-e^{3x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D-3\right)^2y_{p}=-e^{3x} \\
+&D\left(D-2\right)y_{p}=x \\
 \\
-&y_{p}=-\frac{1}{\left(D-3\right)^2}e^{3x}=-\frac{x^2}{2}e^{3x}
+&y_{p}=\operatorname{}\frac{1}{D\left(D-2\right)}x=\int_{x=x'}dx'\left\lbrack-\frac12\left(1+\frac12D\right)x'\right\rbrack=\int_{x=x'}dx'\left\lbrack-\frac12x'-\frac14\right\rbrack \\
+&=-x^2-\frac14x
 \end{aligned}
 $$
   </div>
 </details>
 <p>example3)</p>
-$$y''+4y'+4y=3e^{-2x}$$
+$$x^2y''-2xy'=3x$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -327,83 +301,10 @@ $$y''+4y'+4y=3e^{-2x}$$
 <p>
 $$
 \begin{aligned}
-&\left(D+2\right)^2y_{p}=3e^{-2x} \\
+&D\left(D-3\right)y_{p}=3x \\
 \\
-&y_{p}=\frac{1}{\left(D+2\right)^2}3e^{-2x}=\frac{3x^2}{2}e^{-2x}
-\end{aligned}
-$$
-  </div>
-</details>
-<hr>
-<h3 id="3">3.</h3>
-$$\frac{1}{f\left(D\right)\left(D-\alpha\right)^{n}}e^{\alpha x}=\frac{x^{n}}{f\left(\alpha\right)n!}e^{\alpha x}$$<p>example1)</p>
-$$y''+y'-2y=e^{x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D+2\right)\left(D-1\right)y_{p}=e^{x} \\
-\\
-&y_{p}=\frac{1}{\left.\left(D+2\right)\right|_{D=1}\left(D-1\right)^{}}e^{x}=\frac13\cdot xe^{-x}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example2)</p>
-$$y''-4y'+3y=-2e^{3x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D-1\right)\left(D-3\right)y_{p}=-2e^{3x} \\
-\\
-&y_{p}=\frac{1}{\left.\left(D-1\right)\right|_{D=3}\left(D-3\right)}-2e^{3x}=\frac12\cdot x\cdot-2e^{3x}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example3)</p>
-$$x^2y''-4xy'+6y=2e^{3x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D-3\right)\left(D-2\right)y_{p}=2e^{3x} \\
-\\
-&y_{p}=\frac{1}{\left(D-2\right)\left|_{D=3}^{}\right.\left(D-3\right)^{}}2e^{3x}=2xe^{3x}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example4)</p>
-$$x^2y''-4xy'-14y=3e^{-2x}$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D+2\right)\left(D-7\right)y_{p}=3e^{-2x} \\
-\\
-&y_{p}=\frac{1}{\left(D-7\right)\left|_{D=-2}\right.\left(D+2\right)}3e^{-2x}=-\frac{x}{3}e^{-2x}
+&y_{p}=\operatorname{}\frac{1}{D\left(D-3\right)}x=\int_{x=x'}dx'\left\lbrack-\frac13\left(1+\frac13D\right)x'\right\rbrack=\int_{x=x'}dx'\left\lbrack-\frac13x'-\frac19\right\rbrack \\
+&=-\frac16x^2-\frac19x
 \end{aligned}
 $$
   </div>
@@ -459,9 +360,9 @@ $$
             <li class="parent " data-nav-id="/ode--pde/index.html"><a class="padding" href="/ode--pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-e32b83ba473637e6217fbec645584f6a" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/ode--pde/homogeneous/index.html"><a class="padding" href="/ode--pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-ec16f83ce16498f969c1057e3b9fc1bb" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/ode--pde/inhomogeneous/index.html"><a class="padding" href="/ode--pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-f93638d4c328da18b1f08243a13149da" class="collapsible-menu">
-            <li class="active " data-nav-id="/ode--pde/inhomogeneous/b-exponential---iopm/index.html"><a class="padding" href="/ode--pde/inhomogeneous/b-exponential---iopm/index.html">(b) exponential - IOPM</a></li>
+            <li class="" data-nav-id="/ode--pde/inhomogeneous/b-exponential---iopm/index.html"><a class="padding" href="/ode--pde/inhomogeneous/b-exponential---iopm/index.html">(b) exponential - IOPM</a></li>
             <li class="" data-nav-id="/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html"><a class="padding" href="/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html">(b) trigonometric - IOPM</a></li>
-            <li class="" data-nav-id="/ode--pde/inhomogeneous/b-polynomial---iopm/index.html"><a class="padding" href="/ode--pde/inhomogeneous/b-polynomial---iopm/index.html">(b) polynomial - IOPM</a></li></ul></li></ul></li>
+            <li class="active " data-nav-id="/ode--pde/inhomogeneous/b-polynomial---iopm/index.html"><a class="padding" href="/ode--pde/inhomogeneous/b-polynomial---iopm/index.html">(b) polynomial - IOPM</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">

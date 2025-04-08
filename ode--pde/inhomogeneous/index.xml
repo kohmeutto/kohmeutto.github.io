@@ -23,9 +23,9 @@
     </item>
     <item>
       <title>(b) polynomial - IOPM</title>
-      <link>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm-copy/index.html</link>
+      <link>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm-copy/index.html</guid>
+      <guid>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm/index.html</guid>
       <description>미분방정식의 해는 일반해+특수해 이다.&#xA;아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.&#xA;1. $$\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace$$example1)&#xA;$$y&#39;&#39;+y=x^2$$&#xD;sol&#xD;$$&#xD;\begin{aligned}&#xD;&amp;\left(D^2+1\right)y_{p}=x^2 \\&#xD;\\&#xD;&amp;y_{p}=\operatorname{}\frac{1}{1+D^2}x^2=\left(1-D^2\right)x^2=x^2-2&#xD;\end{aligned}&#xD;$$&#xD;example2)&#xA;$$y&#39;&#39;+y&#39;-6y=6x^3-3x^2+12$$&#xD;sol&#xD;$$&#xD;\begin{aligned}&#xD;&amp;\left(D^2+D-6\right)y_{p}=6x^3-3x^2+12x \\&#xD;\\&#xD;&amp;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2+12\right\rbrack \\&#xD;&amp;=-\frac16\cdot\left(1+\frac16D+\frac{7}{36}D^2+\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2+12x\right\rbrack \\&#xD;&amp;=-x^3-3x-\frac12&#xD;&amp;&#xD;\end{aligned}&#xD;$$&#xD;example3)&#xA;$$\frac{1}{4} y&#39;&#39;+y&#39;+y=x^2-2x$$&#xD;sol&#xD;매크로니 급수의 전개를 미분연산자에 사용한다. 특수해의 차수보다 높은 차수의 연산자는 소거된다.&#xD;$$&#xD;\begin{aligned}&#xD;&amp;\frac{1}{1-x}=1+x+x^2+x^3\cdots \\&#xD;\\&#xD;&amp;y_{p}=\frac{1}{1+D+\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack \\&#xD;&amp;=\left(1-D+\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack \\&#xD;&amp;=x^2-4x+\frac{7}{2}&#xD;\end{aligned}&#xD;$$&#xD;example4)</description>
     </item>
   </channel>
