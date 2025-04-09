@@ -3,7 +3,7 @@
   <channel>
     <title>Homogeneous :: My New Hugo Site</title>
     <link>http://localhost:1313/ode--pde/homogeneous/index.html</link>
-    <description></description>
+    <description>(b) ODE - Homogenous&#xD;(b) CEE - Homogenous</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode--pde/homogeneous/index.xml" rel="self" type="application/rss+xml" />

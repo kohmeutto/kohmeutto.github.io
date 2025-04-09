@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ode--pde/homogeneous/b-cee/index.html</loc>
+    <loc>http://localhost:1313/ode--pde/inhomogeneous/b-exponential---iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/homogeneous/b-ode/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/homogeneous/index.html</loc>
@@ -13,10 +16,16 @@
     <loc>http://localhost:1313/ode--pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode--pde/homogeneous/b-ode/index.html</loc>
+    <loc>http://localhost:1313/ode--pde/homogeneous/b-cee/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/inhomogeneous/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

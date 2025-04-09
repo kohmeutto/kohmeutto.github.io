@@ -3,7 +3,7 @@
   <channel>
     <title>ODE &amp; PDE :: My New Hugo Site</title>
     <link>http://localhost:1313/ode--pde/index.html</link>
-    <description>This is a new chapter.</description>
+    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode--pde/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +12,35 @@
       <link>http://localhost:1313/ode--pde/homogeneous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode--pde/homogeneous/index.html</guid>
-      <description></description>
+      <description>(b) ODE - Homogenous&#xD;(b) CEE - Homogenous</description>
     </item>
     <item>
       <title>Inhomogeneous</title>
       <link>http://localhost:1313/ode--pde/inhomogeneous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode--pde/inhomogeneous/index.html</guid>
-      <description></description>
+      <description>(b) exponential - IOPM&#xD;(b) trigonometric - IOPM&#xD;(b) polynomial - IOPM&#xD;(a) displacement - IOPM&#xD;(a) Wronskian method</description>
+    </item>
+    <item>
+      <title>(p) circuit examples for ODEs</title>
+      <link>http://localhost:1313/ode--pde/p-circuit-examples-for-odes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode--pde/p-circuit-examples-for-odes/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>Special ODEs</title>
+      <link>http://localhost:1313/ode--pde/special-odes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode--pde/special-odes/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>Strum-Lioville</title>
+      <link>http://localhost:1313/ode--pde/sturmliouville/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode--pde/sturmliouville/index.html</guid>
+      <description>(b) Strum-Liouville operator&#xD;(b) Weight function</description>
     </item>
   </channel>
 </rss>

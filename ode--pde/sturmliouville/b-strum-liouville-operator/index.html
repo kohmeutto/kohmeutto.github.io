@@ -5,30 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1">
-    <meta name="description" content="1. 코시-오일러 제차미분방정식 형태1 $$\begin{aligned}&amp;x^2y&#39;&#39;&#43;axy&#39;&#43;by=0 \\\\&amp;D^2&#43;\left(a-1\right)D&#43;b=0\end{aligned}$$ 형태2 $$\begin{aligned}&amp;xy^{\prime}&#43;ay=0 \\\\&amp;D&#43;a=0\end{aligned}$$ 2. 서로 다른, 실수 해 $$\begin{aligned}&amp;D=\alpha,\beta \\\\&amp;y=c_1x^{\alpha}&#43;c_2x^{\beta}\end{aligned}$$ example1)
-$$x^2y&#39;&#39;-4xy&#39;&#43;6y=0$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\\\&amp;y=c_1x^3&#43;c_2x^2\end{aligned}$$example2)
-$$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow D=1\pm\sqrt{2} \\\\&amp;y=c_1x^{1&#43;\sqrt{2}}&#43;c_2x^{1-\sqrt{2}}\end{aligned}$$example3)">
+    <meta name="description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p^{\prime}_0\left(x\right)=p_1\left(x\right)$ 경우
+$$\begin{aligned}&amp;L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) \\\\&amp;L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)\end{aligned}$$(2) $p_0^{\prime}\left(x\right)\ne p_1\left(x\right)$ 경우
+위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) CEE - Homogenous :: My New Hugo Site">
-    <meta name="twitter:description" content="1. 코시-오일러 제차미분방정식 형태1 $$\begin{aligned}&amp;x^2y&#39;&#39;&#43;axy&#39;&#43;by=0 \\\\&amp;D^2&#43;\left(a-1\right)D&#43;b=0\end{aligned}$$ 형태2 $$\begin{aligned}&amp;xy^{\prime}&#43;ay=0 \\\\&amp;D&#43;a=0\end{aligned}$$ 2. 서로 다른, 실수 해 $$\begin{aligned}&amp;D=\alpha,\beta \\\\&amp;y=c_1x^{\alpha}&#43;c_2x^{\beta}\end{aligned}$$ example1)
-$$x^2y&#39;&#39;-4xy&#39;&#43;6y=0$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\\\&amp;y=c_1x^3&#43;c_2x^2\end{aligned}$$example2)
-$$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow D=1\pm\sqrt{2} \\\\&amp;y=c_1x^{1&#43;\sqrt{2}}&#43;c_2x^{1-\sqrt{2}}\end{aligned}$$example3)">
-    <meta property="og:url" content="http://localhost:1313/ode--pde/homogeneous/b-cee/index.html">
+    <meta name="twitter:title" content="(b) Strum-Liouville operator :: My New Hugo Site">
+    <meta name="twitter:description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p^{\prime}_0\left(x\right)=p_1\left(x\right)$ 경우
+$$\begin{aligned}&amp;L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) \\\\&amp;L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)\end{aligned}$$(2) $p_0^{\prime}\left(x\right)\ne p_1\left(x\right)$ 경우
+위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta property="og:url" content="http://localhost:1313/ode--pde/sturmliouville/b-strum-liouville-operator/index.html">
     <meta property="og:site_name" content="My New Hugo Site">
-    <meta property="og:title" content="(b) CEE - Homogenous :: My New Hugo Site">
-    <meta property="og:description" content="1. 코시-오일러 제차미분방정식 형태1 $$\begin{aligned}&amp;x^2y&#39;&#39;&#43;axy&#39;&#43;by=0 \\\\&amp;D^2&#43;\left(a-1\right)D&#43;b=0\end{aligned}$$ 형태2 $$\begin{aligned}&amp;xy^{\prime}&#43;ay=0 \\\\&amp;D&#43;a=0\end{aligned}$$ 2. 서로 다른, 실수 해 $$\begin{aligned}&amp;D=\alpha,\beta \\\\&amp;y=c_1x^{\alpha}&#43;c_2x^{\beta}\end{aligned}$$ example1)
-$$x^2y&#39;&#39;-4xy&#39;&#43;6y=0$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\\\&amp;y=c_1x^3&#43;c_2x^2\end{aligned}$$example2)
-$$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow D=1\pm\sqrt{2} \\\\&amp;y=c_1x^{1&#43;\sqrt{2}}&#43;c_2x^{1-\sqrt{2}}\end{aligned}$$example3)">
+    <meta property="og:title" content="(b) Strum-Liouville operator :: My New Hugo Site">
+    <meta property="og:description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p^{\prime}_0\left(x\right)=p_1\left(x\right)$ 경우
+$$\begin{aligned}&amp;L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) \\\\&amp;L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)\end{aligned}$$(2) $p_0^{\prime}\left(x\right)\ne p_1\left(x\right)$ 경우
+위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
-    <meta itemprop="name" content="(b) CEE - Homogenous :: My New Hugo Site">
-    <meta itemprop="description" content="1. 코시-오일러 제차미분방정식 형태1 $$\begin{aligned}&amp;x^2y&#39;&#39;&#43;axy&#39;&#43;by=0 \\\\&amp;D^2&#43;\left(a-1\right)D&#43;b=0\end{aligned}$$ 형태2 $$\begin{aligned}&amp;xy^{\prime}&#43;ay=0 \\\\&amp;D&#43;a=0\end{aligned}$$ 2. 서로 다른, 실수 해 $$\begin{aligned}&amp;D=\alpha,\beta \\\\&amp;y=c_1x^{\alpha}&#43;c_2x^{\beta}\end{aligned}$$ example1)
-$$x^2y&#39;&#39;-4xy&#39;&#43;6y=0$$sol$$\begin{aligned}&amp;\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\\\&amp;y=c_1x^3&#43;c_2x^2\end{aligned}$$example2)
-$$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow D=1\pm\sqrt{2} \\\\&amp;y=c_1x^{1&#43;\sqrt{2}}&#43;c_2x^{1-\sqrt{2}}\end{aligned}$$example3)">
-    <meta itemprop="wordCount" content="169">
-    <title>(b) CEE - Homogenous :: My New Hugo Site</title>
+    <meta itemprop="name" content="(b) Strum-Liouville operator :: My New Hugo Site">
+    <meta itemprop="description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p^{\prime}_0\left(x\right)=p_1\left(x\right)$ 경우
+$$\begin{aligned}&amp;L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) \\\\&amp;L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)\end{aligned}$$(2) $p_0^{\prime}\left(x\right)\ne p_1\left(x\right)$ 경우
+위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta itemprop="wordCount" content="225">
+    <title>(b) Strum-Liouville operator :: My New Hugo Site</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744205952" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744205952" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744205952" rel="stylesheet">
     <link href="/css/theme.css?1744205952" rel="stylesheet">
@@ -44,7 +56,7 @@ $$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/ode--pde\/homogeneous\/b-cee\/index.html';
+      window.relearn.path='\/ode--pde\/sturmliouville\/b-strum-liouville-operator\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -96,7 +108,7 @@ $$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/ode--pde/homogeneous/b-cee/index.html">
+  <body class="mobile-support html" data-url="/ode--pde/sturmliouville/b-strum-liouville-operator/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -112,10 +124,8 @@ $$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow
   <ul>
     <li>
       <ul>
-        <li><a href="#1-코시-오일러-제차미분방정식">1. 코시-오일러 제차미분방정식</a></li>
-        <li><a href="#2-서로-다른-실수-해">2. 서로 다른, 실수 해</a></li>
-        <li><a href="#2-중근">2. 중근</a></li>
-        <li><a href="#3-서로-다른-복소수-해">3. 서로 다른, 복소수 해</a></li>
+        <li><a href="#1-스텀-리우빌-선형-연산자">1. 스텀-리우빌 선형 연산자</a></li>
+        <li><a href="#2-integrating-factor">2. Integrating factor</a></li>
       </ul>
     </li>
   </ul>
@@ -127,13 +137,13 @@ $$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">My New Hugo Site</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode--pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode--pde/homogeneous/index.html"><span itemprop="name">Homogeneous</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) CEE - Homogenous</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode--pde/sturmliouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Strum-Liouville operator</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/homogeneous/b-ode/index.html" title="(b) ODE - Homogenous (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/sturmliouville/index.html" title="Strum-Lioville (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/inhomogeneous/index.html" title="Inhomogeneous (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode--pde/sturmliouville/b-weight-function/index.html" title="(b) Weight function (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -153,166 +163,56 @@ $$x^2y&#39;&#39;-xy&#39;-y=0$$sol$$\begin{aligned}&amp;D^2-2D-1=0\rightarrow
   <header class="headline">
   </header>
 
-<h1 id="b-cee---homogenous">(b) CEE - Homogenous</h1>
+<h1 id="b-strum-liouville-operator">(b) Strum-Liouville operator</h1>
 
-<h3 id="1-코시-오일러-제차미분방정식">1. 코시-오일러 제차미분방정식</h3>
-<ul>
-<li>형태1</li>
-</ul>
-$$
-\begin{aligned}
-&x^2y''+axy'+by=0 \\
-\\
-&D^2+\left(a-1\right)D+b=0
-\end{aligned}
-$$<ul>
-<li>형태2</li>
-</ul>
-$$
-\begin{aligned}
-&xy^{\prime}+ay=0 \\
-\\
-&D+a=0
-\end{aligned}
-$$<hr>
-<h3 id="2-서로-다른-실수-해">2. 서로 다른, 실수 해</h3>
-$$
-\begin{aligned}
-&D=\alpha,\beta \\
-\\
-&y=c_1x^{\alpha}+c_2x^{\beta}
-\end{aligned}
-$$<hr>
-<p>example1)</p>
-$$x^2y''-4xy'+6y=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\
-\\
-&y=c_1x^3+c_2x^2
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example2)</p>
-$$x^2y''-xy'-y=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&D^2-2D-1=0\rightarrow D=1\pm\sqrt{2} \\
-\\
-&y=c_1x^{1+\sqrt{2}}+c_2x^{1-\sqrt{2}}
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example3)</p>
-$$xy''-y'=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&D\left(D-2\right)=0\rightarrow D=2,0 \\
-\\
-&y=c_1x^2+c_2
-\end{aligned}
-$$
-  </div>
-</details>
-<p>example4)</p>
-$$x^3y''+2x^2y'-6xy=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\begin{aligned}
-&\left(D+3\right)\left(D-2\right)=0 \rightarrow D=-3,2 \\
-\\
-&y=c_1e^{-3x}+c_2e^{2x}
-\end{aligned}
-$$
-  </div>
-</details>
 <hr>
-<h3 id="2-중근">2. 중근</h3>
+<h3 id="1-스텀-리우빌-선형-연산자">1. 스텀-리우빌 선형 연산자</h3>
+<p>스텀-리우빌 형태는 아래와 같다.</p>
 $$
-\begin{aligned}
-&D=\alpha \\
-\\
-&y=\left(c_1+c_2\ln x\right)x^{\alpha}
-\end{aligned}
+L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right), p\left(x\right)>0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}
 $$<hr>
-<p>example1)</p>
-$$xy''+y'=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
+<h3 id="2-integrating-factor">2. Integrating factor</h3>
+<p>&lsquo;임의의 2차 상미분방정식&rsquo;을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.</p>
+<p><strong>(1) $p^{\prime}_0\left(x\right)=p_1\left(x\right)$ 경우</strong></p>
 $$
 \begin{aligned}
-&D^2=0 \rightarrow D=0 \\
+&L=p_0\left(x\right)\frac{d^2}{dx^2}+p_1\left(x\right)\frac{d}{dx}+p_2\left(x\right) \\
 \\
-&y=c_1+c_2\ln x
+&L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)+p_2\left(x\right)
 \end{aligned}
+$$<p><strong>(2) $p_0^{\prime}\left(x\right)\ne p_1\left(x\right)$ 경우</strong></p>
+<p>위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.</p>
 $$
-  </div>
-</details>
-<p>example2)</p>
-$$x^2y''-xy'+y=0$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
+L=p_0\left(x\right)\frac{d^2}{dx^2}+p_1\left(x\right)\frac{d}{dx}+p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)
+$$<p>스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,</p>
 $$
 \begin{aligned}
-&\left(D-1\right)^2=0 \\
+&r\left(x\right)L=r\left(x\right)p_0\left(x\right)\frac{d^2}{dx^2}+r\left(x\right)p_1\left(x\right)\frac{d}{dx}+r\left(x\right)p_2\left(x\right) \\
 \\
-&y=\left(c_1+c_2\ln x\right)x
+&L_{p}=r\left(x\right)L=\left\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\right\rbrack,\quad r\left(x\right)p_0\left(x\right)=p\left(x\right)
 \end{aligned}
+$$<p>$\left\lbrack r\left(x\right)p_0^{}\left(x\right)\right\rbrack^{\prime}=r\left(x\right)p_1\left(x\right)$를 만족시키는 r(x)를 구하면, 스트룸-리우빌 형태로 만들 수 있다.</p>
 $$
-  </div>
-</details>
+\begin{aligned}
+&\left\lbrack r\left(x\right)p_0^{}\left(x\right)\right\rbrack^{\prime}=r\left(x\right)p_1\left(x\right) \\
+\\
+&r^{\prime}\left(x\right)p_0^{}\left(x\right)+r\left(x\right)p_0^{\prime}\left(x\right)=r\left(x\right)p_1\left(x\right) \\
+\\
+&\frac{r^{\prime}\left(x\right)}{r\left(x\right)}=\frac{p_1\left(x\right)-p_0^{\prime}\left(x\right)}{p_0^{}\left(x\right)}
+\end{aligned}
+$$<p>위의 미분방정식을 풀면,</p>
+$$
+\begin{aligned}
+&\int dx\left\lbrack\frac{r^{\prime}\left(x\right)}{r\left(x\right)}\right\rbrack=\int dx\left\lbrack\frac{p_1\left(x\right)-p_0^{\prime}\left(x\right)}{p_0^{}\left(x\right)}\right\rbrack \\
+\\
+&\ln\left\lbrack r\left(x\right)\right\rbrack=-\ln\left\lbrack p_0\left(x\right)\right\rbrack+\int dx\left\lbrack\frac{p_1\left(x\right)}{p_0^{}\left(x\right)}\right\rbrack \\
+\\
+&r\left(x\right)=\frac{1}{p_0\left(x\right)}\exp\left(\int dx\left\lbrack\frac{p_1\left(x\right)}{p_0^{}\left(x\right)}\right\rbrack\right)
+\end{aligned}
+$$<p>위 식은, 스트룸-리우빌 형로 만들기 위한 함수이다.</p>
 <hr>
-<h3 id="3-서로-다른-복소수-해">3. 서로 다른, 복소수 해</h3>
-$$
-\begin{aligned}
-&D=\alpha\pm i\beta \\
-\\
-&y=x^{\alpha}\left(c_1\cos\beta\ln x+c_2\sin\beta\ln x\right) \\
-\\
-&y=c_1x^{\alpha+i\beta}+c_2x^{\alpha-i\beta}
-\end{aligned}
-$$<hr>
-<p>example1)</p>
-$$x^2y''+xy'+y=0$$
+<p>example1) Hermitle&rsquo;s ODE</p>
+$$y''-2xy'+2ny=0$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -322,15 +222,21 @@ $$x^2y''+xy'+y=0$$
 <p>
 $$
 \begin{aligned}
-&D^2+1=0\rightarrow D=\pm i \\
+&y''-2xy^{\prime}=-2ny \\
 \\
-&y=c_1\cos\left(\ln x\right)+c_2\sin\left(\ln x\right)
+&r\left(x\right)=\exp\left(\int dx\left\lbrack-2x\right\rbrack\right)=e^{-x^2} \\
+\\
+&e^{-x^2}\left(D^2-2xD\right)u_{n}=-2ne^{-x^2}u_{n} \\
+\\
+&D\left\lbrack e^{-x^2}D\right\rbrack u_{n}=-2ne^{-x^2}u_{n} \\
+\\
+&\lambda_{n}=2n,\quad w\left(x\right)=e^{-x^2}
 \end{aligned}
 $$
   </div>
 </details>
-<p>example2)</p>
-$$x^2y''+3xy'+3y=0$$
+<p>example2) Laguerre’s ODE (라게르 미분방정식)</p>
+$$xy''+\left(1-x\right)y^{\prime}+ay=0$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
@@ -340,9 +246,57 @@ $$x^2y''+3xy'+3y=0$$
 <p>
 $$
 \begin{aligned}
-&D^2+2D+3=0\rightarrow D=-1\pm i\sqrt{2} \\
+&\left(D^2+\frac{1-x}{x}D\right)u_{n}=-a\frac{1}{x}u_{n} \\
 \\
-&y=x^{-1}\left(c_1\cos\sqrt{2}\ln x+c_2\sin\sqrt{2}\ln x\right)
+&r\left(x\right)=\exp\left(\int dx\left\lbrack\frac{1-x}{x}\right\rbrack\right)=\exp\left(-x+\ln x\right)=xe^{-x} \\
+\\
+&\frac{d}{dx}\left(xe^{-x}\frac{d}{dx}\right)u_{n}=-ae^{-x}u_{n} \\
+\\
+&\lambda_{n}=a,\quad w\left(x\right)=e^{-x}
+\end{aligned}
+$$
+  </div>
+</details>
+<p>example3) Legendre’s ODE</p>
+$$\left(1-x^2\right)y''-2xy^{\prime}+l\left(l+1\right)y=0$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\begin{aligned}
+&\left\lbrack D^2-\frac{2x}{1-x^2}D\right\rbrack u_{n}=-\frac{l\left(l+1\right)}{1-x^2}u_{n} \\
+\\
+&r\left(x\right)=\exp\left(\int dx\left\lbrack-\frac{2x}{1-x^2}\right\rbrack\right)=1-x^2 \\
+\\
+&D\left\lbrack\left(1-x^2\right)D\right\rbrack u_{n}=-l\left(l+1\right)u_{n} \\
+\\
+&\lambda_{n}=l\left(l+1\right),\quad w\left(x\right)=1
+\end{aligned}
+$$
+  </div>
+</details>
+<p>example4) Chebyshev’s ODE</p>
+$$\left(1-x^2\right)y''-xy^{\prime}+n^2y=0$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\begin{aligned}
+&y''-\frac{x}{1-x^2}y^{\prime}=-\frac{n^2}{1-x^2}y \\
+\\
+&r\left(x\right)=\exp\left(\int dx\left\lbrack-\frac{x}{1-x^2}\right\rbrack\right)=\exp\left(\frac12\ln\left(1-x^2\right)\right)=\sqrt{1-x^2} \\
+\\
+&\frac{d}{dx}\left(\sqrt{1-x^2}\frac{d}{dx}\right)u_{n}=-\frac{n^2}{\sqrt{1-x^2}}u_{n} \\
+\\
+&\lambda_{n}=n^2,\quad w\left(x\right)=\frac{1}{\sqrt{1-x^2}}
 \end{aligned}
 $$
   </div>
@@ -395,13 +349,13 @@ $$
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-id="/ode--pde/index.html"><a class="padding" href="/ode--pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-e32b83ba473637e6217fbec645584f6a" class="collapsible-menu">
-            <li class="parent alwaysopen " data-nav-id="/ode--pde/homogeneous/index.html"><a class="padding" href="/ode--pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-ec16f83ce16498f969c1057e3b9fc1bb" class="collapsible-menu">
-            <li class="" data-nav-id="/ode--pde/homogeneous/b-ode/index.html"><a class="padding" href="/ode--pde/homogeneous/b-ode/index.html">(b) ODE - Homogenous</a></li>
-            <li class="active " data-nav-id="/ode--pde/homogeneous/b-cee/index.html"><a class="padding" href="/ode--pde/homogeneous/b-cee/index.html">(b) CEE - Homogenous</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode--pde/homogeneous/index.html"><a class="padding" href="/ode--pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-ec16f83ce16498f969c1057e3b9fc1bb" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/ode--pde/inhomogeneous/index.html"><a class="padding" href="/ode--pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-f93638d4c328da18b1f08243a13149da" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/ode--pde/p-circuit-examples-for-odes/index.html"><a class="padding" href="/ode--pde/p-circuit-examples-for-odes/index.html">(p) circuit examples for ODEs</a></li>
             <li class="" data-nav-id="/ode--pde/special-odes/index.html"><a class="padding" href="/ode--pde/special-odes/index.html">Special ODEs</a></li>
-            <li class="alwaysopen " data-nav-id="/ode--pde/sturmliouville/index.html"><a class="padding" href="/ode--pde/sturmliouville/index.html">Strum-Lioville</a><ul id="R-subsections-521d78db9c83265f81c8b802e0022982" class="collapsible-menu"></ul></li></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/ode--pde/sturmliouville/index.html"><a class="padding" href="/ode--pde/sturmliouville/index.html">Strum-Lioville</a><ul id="R-subsections-521d78db9c83265f81c8b802e0022982" class="collapsible-menu">
+            <li class="active " data-nav-id="/ode--pde/sturmliouville/b-strum-liouville-operator/index.html"><a class="padding" href="/ode--pde/sturmliouville/b-strum-liouville-operator/index.html">(b) Strum-Liouville operator</a></li>
+            <li class="" data-nav-id="/ode--pde/sturmliouville/b-weight-function/index.html"><a class="padding" href="/ode--pde/sturmliouville/b-weight-function/index.html">(b) Weight function</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
