@@ -7,13 +7,10 @@
     <loc>http://localhost:1313/ode--pde/homogeneous/b-ode/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode--pde/sturmliouville/b-strum-liouville-operator/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode--pde/homogeneous/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/log/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/ode--pde/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/homogeneous/b-cee/index.html</loc>
@@ -22,10 +19,31 @@
     <loc>http://localhost:1313/ode--pde/inhomogeneous/b-trigonometric---iopm/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode--pde/sturmliouville/b-weight-function/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode--pde/inhomogeneous/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/inhomogeneous/b-polynomial---iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/p-circuit-examples-for-odes/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/inhomogeneous/a-displacement---iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/special-odes/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/inhomogeneous/a-wronskian-method/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/sturmliouville/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
