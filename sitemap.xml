@@ -37,10 +37,16 @@
     <loc>http://localhost:1313/ode--pde/inhomogeneous/a-displacement---iopm/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode--pde/sturmliouville/r-singular-sturm-liouville/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode--pde/special-odes/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/inhomogeneous/a-wronskian-method/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode--pde/sturmliouville/p-ode-solution-using-sl/p-ode-solution-using-sl/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode--pde/index.html</loc>
