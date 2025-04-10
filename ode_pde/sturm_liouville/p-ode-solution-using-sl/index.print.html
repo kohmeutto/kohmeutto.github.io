@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="How to extend the topbar">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(p) ODE solution using SL :: My New Hugo Site">
+    <meta name="twitter:description" content="How to extend the topbar">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/sturm_liouville/p-ode-solution-using-sl/">
+    <meta property="og:site_name" content="My New Hugo Site">
+    <meta property="og:title" content="(p) ODE solution using SL :: My New Hugo Site">
+    <meta property="og:description" content="How to extend the topbar">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ODE & PDE">
+    <meta itemprop="name" content="(p) ODE solution using SL :: My New Hugo Site">
+    <meta itemprop="description" content="How to extend the topbar">
+    <meta itemprop="wordCount" content="697">
+    <meta itemprop="keywords" content="Explanation,Reference">
+    <title>(p) ODE solution using SL :: My New Hugo Site</title>
+    <link href="http://localhost:1313/ode_pde/sturm_liouville/p-ode-solution-using-sl/" rel="canonical" type="text/html" title="(p) ODE solution using SL :: My New Hugo Site">
+    <link href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.xml" rel="alternate" type="application/rss+xml" title="(p) ODE solution using SL :: My New Hugo Site">
+    <link href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.md" rel="alternate" type="text/markdown" title="(p) ODE solution using SL :: My New Hugo Site">
+    <link href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.source.md" rel="alternate" type="text/markdown" title="(p) ODE solution using SL :: My New Hugo Site">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744295803" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744295803" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744295803" rel="stylesheet">
+    <link href="/css/theme.css?1744295803" rel="stylesheet">
+    <link href="/css/format-print.css?1744295803" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744295803" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744295803" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744295803" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744295803" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744295803" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1744295803" defer></script>
+    <script src="/js/search.js?1744295803" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/ode_pde\/sturm_liouville\/p-ode-solution-using-sl\/';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1744295803";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/ode_pde/sturm_liouville/p-ode-solution-using-sl/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/"><span itemprop="name">My New Hugo Site</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(p) ODE solution using SL</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-source" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.source.md" title="Show source code"><i class="fa-fw fas fa-code"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-markdown" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.md" title="Show Markdown"><i class="fa-fw fab fa-markdown"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/p-ode-solution-using-sl/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/" title="(r) Singular Sturm-Liouville (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable ode_pde" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="p-ode-solution-using-sl">(p) ODE solution using SL</h1>
+
+<hr>
+<p>example1) Determine the normalized eigenfunctions of the problem</p>
+$$y''+\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol1
+  </summary>
+  <div class="box-content">
+<p>
+$φ_{n}$ 을 eigenfunction 이라고 하자.
+
+$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
+
+w(x)=1로 놓으면,
+
+$$\left(D^2+\lambda_{n}\right)\varphi_{n}=0$$
+
+(1) $λ_{n}>0$
+
+$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x+b_{n}\cos\sqrt{\lambda_{n}}x$$
+
+(2) $λ_{n}<0$
+
+$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}+b_{n}e^{+\sqrt{-\lambda_{n}}x}$$
+
+(3) $λ_{0}=0$
+
+$$\varphi_0=a_0'+b_0'x$$
+
+<hr>
+
+(1) $λ_{n}>0$
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}_{}x+b_{n}\cos\sqrt{\lambda_{n}}x \\
+\\
+&\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}},\quad\sqrt{\lambda_{n}}=n\pi,\,\,n=1,2,\cdots
+\end{aligned}
+$$
+
+고유함수가 orthonormal 함을 사용하여, 계수 $a_{n}$을 구하면,
+
+$$
+\begin{aligned}
+&\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 \\
+\\
+&\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 \\
+\\
+&\left|a_{n}\right|=\sqrt2 \\
+\\
+&\varphi_{n}=\sqrt{2}\sin n\pi x
+\end{aligned}
+$$
+
+<hr>
+
+(2) $λ_{n}<0$
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}+b_{n}e^{+\sqrt{-\lambda_{n}}x} \\
+\\
+&\varphi_{n}\left(0\right)=0=a_{n}+b_{n} \\
+\\
+&\varphi_{n}\left(1\right)=0=a_{n}e^{-\sqrt{-\lambda_{n}}}+b_{n}e^{+\sqrt{-\lambda_{n}}} \\
+\\
+&a_{n}\left(e^{-\sqrt{-\lambda_{n}}}-e^{+\sqrt{-\lambda_{n}}}\right)=0 \\
+\\
+&a_{n}=0\text{ or }\lambda_{n}=0 \\
+\\
+&\varphi_{n}=0\text{ or 존재할 수 없음}
+\end{aligned}
+$$
+
+<hr>
+
+(3) $λ_{0}=0$
+
+$$
+\begin{aligned}
+&\varphi_0=a_0'+b_0'x \\
+\\
+&\varphi_0\left(0\right)=0=a'_0,\quad a'_0=0 \\
+\\
+&\varphi_0\left(1\right)=0=b_0',\quad b_0'=0 \\
+\\
+&\varphi_0=0
+\end{aligned}
+$$
+
+<hr>
+
+eigen-expansion을 수행한다.
+
+$$
+\begin{aligned}
+&y''+\lambda y=0 \\
+\\
+&\sum\lambda_{n}c_{n}\varphi_{n}+\sum\lambda c_{n}\varphi_{n}=0\implies\sum\left(\lambda-\lambda_{n}\right)c_{n}\varphi_{n}=0
+\end{aligned}
+$$
+
+orthogonality를 이용한다.
+
+$$
+\begin{aligned}
+&\left(\lambda-\lambda_{n}\right)c_{n}=0,\quad c_{n}=\frac{\lambda}{\lambda_{n}} \\
+\\
+&y=\sum_{n=1}^{N}\frac{\lambda}{\lambda_{n}}\sqrt{2}\sin n\pi x
+\end{aligned}
+$$
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol2
+  </summary>
+  <div class="box-content">
+<p>
+$φ_{n}$ 을 eigenfunction 이라고 하자.
+
+$$
+\left(D^2+\lambda\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}
+$$
+
+w(x)=1로 놓으면,
+
+$$
+\left(D^2+\lambda+\lambda_{n}\right)\varphi_{n}=0
+$$
+
+(1) $λ+λ_{n}≠0$
+
+$$
+\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}+\lambda}x+b_{n}\cos\sqrt{\lambda_{n}+\lambda}x
+$$
+
+(2) $λ+λ_{n}$=0
+
+$$\varphi_{n}=a_{n}+b_{n}x$$
+
+<hr>
+
+(1) $λ+λ_{n}$≠0
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}+\lambda}x+b_{n}\cos\sqrt{\lambda_{n}+\lambda}x \\
+\\
+&\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}+\lambda},\quad\sqrt{\lambda_{n}+\lambda}=n\pi,\,\,n=1,2,\cdots
+\end{aligned}
+$$
+
+계수 $a_{n}$을 구하면,
+
+$$
+\begin{aligned}
+&\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 \\
+\\
+&\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 \\
+\\
+&\left|a_{n}\right|=\sqrt2 \\
+\\
+&\varphi_{n}=\sqrt{2}\sin n\pi x
+\end{aligned}
+$$
+
+<hr>
+
+(2) $λ+λ_{n}$=0
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}+b_{n}x \\
+\\
+&\varphi_{n}\left(0\right)=0=a_{n},\quad a_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}=0
+\end{aligned}
+$$
+
+<hr>
+
+eigen-expansion을을 수행한다.
+
+$$
+\begin{aligned}
+&y''+\lambda y=0 \\
+\\
+&\sum\lambda_{n}c_{n}\varphi_{n}=0
+\end{aligned}
+$$
+
+c$_{n}$φ$_{n}$를 은 0이 아니므로,
+
+$$\lambda_{n}=0$$
+
+따라서,
+
+$$y=\sum c_{n}\sqrt{2}\sin n\pi x$$
+  </div>
+</details>
+<hr>
+<p>example2) Determine the normalized eigenfunctions of the problem</p>
+$$
+y''+2y=-x,\quad y\left(0\right)=0,\quad y\left(1\right)+y'\left(1\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol1
+  </summary>
+  <div class="box-content">
+<p>
+$φ_{n}$ 을 eigenfunction 이라고 하자.
+
+$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
+
+w(x)=1로 놓으면,
+
+$$\left(D^2+\lambda_{n}\right)\varphi_{n}=0$$
+
+(1) $λ_{n}$≠0
+
+$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x+b_{n}\cos\sqrt{\lambda_{n}}x$$
+
+(2) λ$_{n}$=0
+
+$$\varphi_{n}=a_{n}+b_{n}x$$
+
+$c_{n}$ 은 0이 아니어야 한다.
+
+<hr>
+
+(1) $λ_{n}$≠0
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x+b_{n}\cos\sqrt{\lambda_{n}}x \\
+\\
+&\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)+\varphi_{n}'\left(1\right)=0=a_{n}\left(\sin\sqrt{\lambda_{n}}+\sqrt{\lambda_{n}}\cos\sqrt{\lambda_{n}}\right) \\
+\\
+&0=\sin\sqrt{\lambda_{n}}+\sqrt{\lambda_{n}}\cos\sqrt{\lambda_{n}} \\
+\\
+&0=\tan\sqrt{\lambda_{n}}+\sqrt{\lambda_{n}}
+\end{aligned}
+$$
+
+계수 $λ_{n}$을 구하면,
+
+![image1](image1.png)
+
+$$
+\lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
+$$
+
+<hr>
+
+(2) $λ_{n}=0$
+
+$$
+\begin{aligned}
+&\varphi_{n}=a_{n}+b_{n}x \\
+\\
+&\varphi_{n}\left(0\right)=0=a_{n},\quad a_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)+\varphi_{n}'\left(1\right)=2b_{n}=0,\quad b_{n}=0
+\end{aligned}
+$$
+
+따라서, λ$_{n}$=0 은 고유값이 될 수 없다.
+
+<hr>
+
+고유함수의 계수를 구해보자.
+
+$$
+\begin{aligned}
+&\int_0^1dx\left\lbrack a_{n}\sin\sqrt{\lambda_n}x\right\rbrack^2=1 \\
+\\
+&\left|a_{n}\right|^2\int_0^1dx\left\lbrack\sin^2\sqrt{\lambda_n}x\right\rbrack=\frac{\left|a_{n}\right|^2}{2}\int_0^1dx\left\lbrack1-\cos2\sqrt{\lambda_n}x\right\rbrack \\
+\\
+&1=\frac{\left|a_{n}\right|^2}{2}\left(1-\left.\frac{1}{2\sqrt{\lambda_n}}\sin2\sqrt{\lambda_n}x\right|_0^1\right)=\frac{\left|a_{n}\right|^2}{2}\left(1-\frac{1}{2\sqrt{\lambda_n}}\sin2\sqrt{\lambda_n}\right) \\
+\\
+&\left|a_{n}\right|^2=\frac{2}{1-\frac{1}{2\sqrt{\lambda_n}}\sin2\sqrt{\lambda_n}}
+\end{aligned}
+$$
+
+since, $0=\sin\sqrt{\lambda_{n}}+\sqrt{\lambda_{n}}\cos\sqrt{\lambda_{n}}$
+
+$$
+\begin{aligned}
+&\left|a_{n}\right|^2=\frac{2}{1+\cos^2\sqrt{\lambda_n}} \\
+\\
+&\varphi_{n}=\frac{\sqrt{2}\sin\sqrt{\lambda_{n}}x}{\left(1+\cos^2\sqrt{\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
+
+<hr>
+
+eigen-expansion 을 수행한다.
+
+$$
+\begin{aligned}
+&y''=-2y-x \\
+\\
+&\sum\lambda_{n}c_{n}\varphi_{n}=-2\sum c_{n}\varphi_{n}-x \\
+\\
+&\sum\left(\lambda_{n}-2\right)c_{n}\varphi_{n}=x
+\end{aligned}
+$$
+
+orthogonality 를 이용한다.
+
+$$
+\begin{aligned}
+&\left(\lambda_{n}-2\right)c_{n}=\langle x\left|\right.\varphi_{n}\rangle \\
+\\
+&c_{n}=\frac{1}{\lambda_{n}-2}\langle x\left|\right.\varphi_{n}\rangle \\
+\\
+&\langle x|\varphi_{n}\rangle=\frac{\sqrt{2}}{\left(1+\cos^2\sqrt{\lambda_{n}}\right)^{1/2}}\int_0^1dx\left\lbrack x\sin\sqrt{\lambda_{n}}x\right\rbrack=\frac{2\sqrt2\sin\sqrt{\lambda_{n}}}{\lambda_{n}\left(1+\cos^2\sqrt{\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
+
+따라서,
+
+$$
+y=\sum_{n=1}^{N}\frac{2\sqrt2\sin\sqrt{\lambda_{n}}\sin\sqrt{\lambda_{n}}x}{\lambda_{n}\left(\lambda_{n}-2\right)\left(1+\cos^2\sqrt{\lambda_{n}}\right)^{1/2}}
+$$
+
+![image2](image2.mp4)
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol2
+  </summary>
+  <div class="box-content">
+<p>
+$$y''+2y=-x$$
+
+$φ_{n}$ 을 eigenfunction 이라고 하자. 따라서, 위 미분 방정식의 해는
+
+$$y=\sum c_{n}\varphi_{n}$$
+
+eigenfunction 구하면,
+
+$$\left(D^2+2\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
+
+w(x)=1로 놓으면,
+
+$$\varphi_{n}=a_{n}\sin\sqrt{2+\lambda_{n}}x+b_{n}\cos\sqrt{2+\lambda_{n}}x$$
+
+boundary condition을 적용한다. 따라서,
+
+$$
+\begin{aligned}
+&\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)+\varphi_{n}'\left(1\right)=0=a_{n}\left(\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}\right) \\
+\\
+&0=\tan\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}
+\end{aligned}
+$$
+
+$+λ_{n}$을 구하면,
+
+$$2+\lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots$$
+
+따라서,
+
+$$\lambda_{n}=0.0288,2.9132,5.9787,9.086,12.207,\cdots,\quad n=1,2,3,\cdots$$
+
+<hr>
+
+고유함수의 계수를 구해보자.
+
+$$
+\begin{aligned}
+&\int_0^1dx\left\lbrack a_{n}\sin\sqrt{2+\lambda_{n}}x\right\rbrack^2=1 \\
+\\
+&\left|a_{n}\right|^2\int_0^1dx\left\lbrack\sin^2\sqrt{2+\lambda_{n}}x\right\rbrack=\frac{\left|a_{n}\right|^2}{2}\int_0^1dx\left\lbrack1-\cos2\sqrt{2+\lambda_{n}}x\right\rbrack \\
+\\
+&1=\frac{\left|a_{n}\right|^2}{2}\left(1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}\right) \\
+\\
+&\left|a_{n}\right|^2=\frac{2}{1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}}=\frac{2}{1-\frac{\sin\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}}{\sqrt{2+\lambda_{n}}}}
+\end{aligned}
+$$
+
+since, $0=\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}$
+
+$$
+\begin{aligned}
+&\left|a_{n}\right|^2=\frac{2}{1+\cos^2\sqrt{2+\lambda_{n}}} \\
+\\
+&\varphi_{n}=\frac{\sqrt{2}\sin\sqrt{2+\lambda_{n}}x}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
+
+<hr>
+
+$$
+\begin{aligned}
+&y=-\sum_{n=1}^{N}\frac{\langle-x|\varphi_{n}\rangle}{\lambda_{n}}\varphi_{n}=\sum_{n=1}^{N}\frac{\langle x |\varphi_{n} \rangle}{\lambda_{n}}\varphi_{n} \\
+\\
+&\langle x | \varphi_{n}\rangle=\frac{\sqrt{2}}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}\int_0^1dx\left\lbrack x\sin\sqrt{2+\lambda_{n}}x\right\rbrack \\
+&=\frac{2\sqrt2\sin\sqrt{1+\lambda_{n}}}{\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{1+\lambda_{n}}\right)^{1/2}} \\
+\\
+&y=\sum_{n=1}^{N}\frac{2\sqrt2\sin\sqrt{2+\lambda_{n}}\sin\sqrt{2+\lambda_{n}}x}{\lambda_{n}\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
+  </div>
+</details>
+<hr>
+<p>example3) Determine the normalized eigenfunctions of the problem (필수)</p>
+$$
+\left(xy'\right)'+\frac{y}{x}=\frac{1}{x},\quad y\left(1\right)=y\left(e\right)=0
+$$<ul>
+<li>
+<p>sol1</p>
+$$
+  D\left(xD\right)\varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}
+  $$<p>w=1/x 로 놓는다. 그렇다면, 위 문제의 미분 방정식을 아래와 같이 변형된다.</p>
+<ul>
+<li>x\left(xy&rsquo;\right)&rsquo;-y=-1</li>
+</ul>
+<p>eigen-value 와 eigen-function 을 구한다.</p>
+$$
+  x^2\varphi_{n}''+x\varphi_{n}'+k_{n}^2\varphi_n=0
+  $$$$
+  D^2+k_{n}^2=0
+  $$<p>(1) k$_{n}$≠0</p>
+$$
+  \varphi_{n}=a_{n}\sin\left(k_{n}\ln x\right)+b_{n}\cos\left(k_{n}\ln x\right)
+  $$<p>(2) k$_{n}$=0</p>
+$$
+  \varphi_{n}=a_{n}+b_{n}\ln x
+  $$<hr>
+<p>(1) k$_{n}$≠0</p>
+<p>Applying B.C</p>
+$$
+  \varphi_{n}\left(1\right)=0=b_{n}
+  $$$$
+  \varphi_{n}\left(e\right)=0=a_{n}\sin k_{n}
+  $$$$
+  k_{n}=n\pi,\quad n=1,2,3,\cdots
+  $$$$
+  \varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
+  $$<p>계수 a$_{n}$을 구하기 위해서는,</p>
+$$
+  \left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1
+  $$$$
+  \int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack
+  $$$$
+  =\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12
+  $$$$
+  \left|a_{n}\right|=\sqrt{2}
+  $$$$
+  \varphi_{n}=\sqrt2\sin\left(n\pi\ln x\right)
+  $$<p>(2) k$_{n}$=0</p>
+$$
+  \varphi_{n}\left(1\right)=0=a_{n}
+  $$$$
+  \varphi_{n}\left(e\right)=0=b_{n}
+  $$$$
+  \varphi_{n}=0
+  $$<hr>
+<ul>
+<li>x\left(xy&rsquo;\right)&rsquo;-y=-1</li>
+</ul>
+$$
+  \sum_{n}c_{n}n^2\pi^2\varphi_{n}-\sum c_{n}\varphi_{n}=-1
+  $$$$
+  \sum c_{n}\varphi_{n}\left(1-n^2\pi^2\right)=1
+  $$<p>orthogonality 를 이용한다.</p>
+$$
+  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle1\left|\varphi_{n}\right.\rangle_{w}
+  $$$$
+  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=c_{n}\left(1-n^2\pi^2\right)
+  $$$$
+  \langle1\left|\varphi_{n}\right.\rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sqrt{2}\sin\left(n\pi\ln x\right)}{x}\right\rbrack=-\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack1-\cos\left(n\pi\right)\right.]
+  $$$$
+  c_{n}=\frac{\sqrt{2}}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}
+  $$<hr>
+$$
+  y=\sum\frac{2}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+  $$</li>
+<li>
+<p>sol2</p>
+$$
+  D\left(xD\right)\varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}
+  $$<p>w=1/x 로 놓는다. 그렇다면, 위 문제의 미분 방정식을 아래와 같이 변형된다.</p>
+<ul>
+<li>x\left(xy&rsquo;\right)&rsquo;-y=-1</li>
+</ul>
+<p>eigen-expansion 으로 표현된 해는 다음과 같다.</p>
+$$
+  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
+  $$<hr>
+<p>w=1/x 로 놓고, eigenfunction 을 구한다.</p>
+$$
+  x^2\varphi_{n}''+x\varphi_{n}'+\left(1+k_{n}^2\right)\varphi_{n}=0
+  $$$$
+  D^2+\left(1+k_{n}^2\right)=0
+  $$$$
+  \varphi_{n}=a_{n}\sin\left(\sqrt{1+k_{n}^2}\ln x\right)+b_{n}\cos\left(\sqrt{1+k_{n}^2}\ln x\right)
+  $$<hr>
+<p>Applying B.C</p>
+$$
+  \varphi_{n}\left(1\right)=0=b_{n}
+  $$$$
+  \varphi_{n}\left(e\right)=0=a_{n}\sin\sqrt{1+k_{n}^2}
+  $$$$
+  \sqrt{1+k_{n}^2}=n\pi,\quad n=1,2,3,\cdots
+  $$<p>여기에서, k$_{n}$2 는 다음과 같다.</p>
+$$
+  k_{n}^2=n^2\pi^2-1,\quad n=1,2,3,\cdots
+  $$$$
+  \varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
+  $$<p>계수 an을 구하기 위해서는,</p>
+$$
+  \left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1
+  $$$$
+  \int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack
+  $$$$
+  =\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12
+  $$$$
+  \left|a_{n}\right|=\sqrt{2}
+  $$$$
+  \varphi_{n}=\sqrt2\sin\left(n\pi\ln x\right)
+  $$<hr>
+$$
+  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
+  $$$$
+  \langle\varphi_{n}|-1\rangle_{w}=-\int_1^{e}dx\left\lbrack\frac{\sqrt2\sin\left(n\pi\ln x\right)}{x}\right\rbrack=\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack\cos\left(n\pi\right)-1\right.]
+  $$$$
+  y=\sum\frac{2}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+  $$</li>
+</ul>
+<hr>
+<p><a href="https://angeloyeo.github.io/2021/06/06/Sturm_Liouville.html" rel="external" target="_blank">스트룸-리우빌 이론 - 공돌이의 수학정리노트 (Angelo&rsquo;s Math Notes)</a></p>
+
+  <footer class="footline">
+<div class="R-taxonomy taxonomy-categories cstyle" title="Categories" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <i class="fa-fw fas fa-layer-group"></i>
+  <ul>
+    <li><a class="term-link" href="/categories/explanation/">Explanation</a></li>
+    <li><a class="term-link" href="/categories/reference/">Reference</a></li>
+  </ul>
+</div>
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js?1744295803" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744295803" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1744295803"></script>
+    <script src="/js/theme.js?1744295803" defer></script>
+  </body>
+</html>

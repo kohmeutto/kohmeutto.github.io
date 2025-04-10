@@ -1,66 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/homogeneous/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/homogeneous/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/homogeneous/b_cee/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/homogeneous/b_cee/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/b_weight_function/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/b_weight_function/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/i_self_adjoint_for_sl/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/special_odes/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/p-ode-solution-using-sl/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/sturm_liouville/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/categories/index.html</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/index.html</loc>
+    <loc>http://localhost:1313/categories/explanation/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
+    <loc>http://localhost:1313/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/reference/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

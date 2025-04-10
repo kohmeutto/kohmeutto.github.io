@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reference :: Category :: My New Hugo Site</title>
-    <link>http://localhost:1313/categories/reference/</link>
+    <title>Explanation :: Category :: My New Hugo Site</title>
+    <link>http://localhost:1313/categories/explanation/</link>
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/categories/reference/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/explanation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(p) ODE solution using SL</title>
       <link>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/</link>

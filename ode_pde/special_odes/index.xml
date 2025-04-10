@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Special ODEs :: My New Hugo Site</title>
-    <link>http://localhost:1313/ode_pde/special_odes/index.html</link>
+    <link>http://localhost:1313/ode_pde/special_odes/</link>
     <description>공사중</description>
     <generator>Hugo</generator>
     <language>en-us</language>
