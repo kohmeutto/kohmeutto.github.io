@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ODE &amp; PDE :: My New Hugo Site</title>
-    <link>http://localhost:1313/ode_pde/</link>
+    <link>http://localhost:1313/ode_pde/index.html</link>
     <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Homogeneous</title>
-      <link>http://localhost:1313/ode_pde/homogeneous/</link>
+      <link>http://localhost:1313/ode_pde/homogeneous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/homogeneous/</guid>
+      <guid>http://localhost:1313/ode_pde/homogeneous/index.html</guid>
       <description>(b) ODE - Homogenous&#xD;(b) CEE - Homogenous</description>
     </item>
     <item>
       <title>Inhomogeneous</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/</link>
+      <link>http://localhost:1313/ode_pde/inhomogeneous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/</guid>
+      <guid>http://localhost:1313/ode_pde/inhomogeneous/index.html</guid>
       <description>(b) exponential - IOPM&#xD;(b) trigonometric - IOPM&#xD;(b) polynomial - IOPM&#xD;(a) displacement - IOPM&#xD;(a) Wronskian method</description>
     </item>
     <item>
       <title>(p) circuit examples for ODEs</title>
-      <link>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/</link>
+      <link>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/</guid>
+      <guid>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/index.html</guid>
       <description>공사중</description>
     </item>
     <item>
       <title>Special ODEs</title>
-      <link>http://localhost:1313/ode_pde/special_odes/</link>
+      <link>http://localhost:1313/ode_pde/special_odes/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/special_odes/</guid>
+      <guid>http://localhost:1313/ode_pde/special_odes/index.html</guid>
       <description>공사중</description>
     </item>
     <item>
       <title>Strum-Lioville</title>
-      <link>http://localhost:1313/ode_pde/sturm_liouville/</link>
+      <link>http://localhost:1313/ode_pde/sturm_liouville/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/sturm_liouville/</guid>
+      <guid>http://localhost:1313/ode_pde/sturm_liouville/index.html</guid>
       <description>(b) Strum-Liouville operator&#xD;(b) Weight function&#xD;(i) Self-adjoint for SL&#xD;(r) Singular Sturm-Liouville&#xD;(p) ODE solution using SL</description>
     </item>
   </channel>
