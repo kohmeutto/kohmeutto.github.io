@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="1. self-adjoint 를 만족하는 스텀-리우빌 연산자 아래와 같은 연산자와 미분 방정식이 있다.
+$$\begin{aligned}&amp;L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)&#43;q\left(x\right)\right\rbrack \\\\&amp;Lu=f\end{aligned}$$위 선형 미분연산자의 해는 아래와 같다.
+$$u=\sum_{n}c_{n}\varphi_{n}$$다음과 같은 boundary condition을 만족하면, 위 미분 연산자는 self-adjoint 하다.
+$$\begin{aligned}&amp;a_1u\left(x_1\right)&#43;a_2u&#39;\left(x_1\right)=0,\quad a_1^2&#43;a_2^2\ne0 \\\\&amp;b_1u\left(x_2\right)&#43;b_2u&#39;\left(x_2\right)=0,\quad b_1^2&#43;b_2^2\ne0\end{aligned}$$또는, 주기적 경계조건 일 경우, self-adjoint 하다.
+$$\begin{aligned}&amp;u\left(x_1\right)=u\left(x_2\right) \\\\&amp;u&#39;\left(x_1\right)=_{}u&#39;\left(x_2\right)\end{aligned}$$ℹ️ 여기서 주의해야 할 사항은,
+스텀-리우빌 경계 조건은 특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건이다. 하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다. 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 충분 조건이지만, 필요 조건은 아니다. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 [(b) Weight function](\content\ODE &amp; PDE\Sturm–Liouville(b) Weight function.md) 를 참조한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(i) Self-adjoint for SL :: My New Hugo Site">
+    <meta name="twitter:description" content="1. self-adjoint 를 만족하는 스텀-리우빌 연산자 아래와 같은 연산자와 미분 방정식이 있다.
+$$\begin{aligned}&amp;L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)&#43;q\left(x\right)\right\rbrack \\\\&amp;Lu=f\end{aligned}$$위 선형 미분연산자의 해는 아래와 같다.
+$$u=\sum_{n}c_{n}\varphi_{n}$$다음과 같은 boundary condition을 만족하면, 위 미분 연산자는 self-adjoint 하다.
+$$\begin{aligned}&amp;a_1u\left(x_1\right)&#43;a_2u&#39;\left(x_1\right)=0,\quad a_1^2&#43;a_2^2\ne0 \\\\&amp;b_1u\left(x_2\right)&#43;b_2u&#39;\left(x_2\right)=0,\quad b_1^2&#43;b_2^2\ne0\end{aligned}$$또는, 주기적 경계조건 일 경우, self-adjoint 하다.
+$$\begin{aligned}&amp;u\left(x_1\right)=u\left(x_2\right) \\\\&amp;u&#39;\left(x_1\right)=_{}u&#39;\left(x_2\right)\end{aligned}$$ℹ️ 여기서 주의해야 할 사항은,
+스텀-리우빌 경계 조건은 특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건이다. 하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다. 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 충분 조건이지만, 필요 조건은 아니다. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 [(b) Weight function](\content\ODE &amp; PDE\Sturm–Liouville(b) Weight function.md) 를 참조한다.">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">
+    <meta property="og:site_name" content="My New Hugo Site">
+    <meta property="og:title" content="(i) Self-adjoint for SL :: My New Hugo Site">
+    <meta property="og:description" content="1. self-adjoint 를 만족하는 스텀-리우빌 연산자 아래와 같은 연산자와 미분 방정식이 있다.
+$$\begin{aligned}&amp;L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)&#43;q\left(x\right)\right\rbrack \\\\&amp;Lu=f\end{aligned}$$위 선형 미분연산자의 해는 아래와 같다.
+$$u=\sum_{n}c_{n}\varphi_{n}$$다음과 같은 boundary condition을 만족하면, 위 미분 연산자는 self-adjoint 하다.
+$$\begin{aligned}&amp;a_1u\left(x_1\right)&#43;a_2u&#39;\left(x_1\right)=0,\quad a_1^2&#43;a_2^2\ne0 \\\\&amp;b_1u\left(x_2\right)&#43;b_2u&#39;\left(x_2\right)=0,\quad b_1^2&#43;b_2^2\ne0\end{aligned}$$또는, 주기적 경계조건 일 경우, self-adjoint 하다.
+$$\begin{aligned}&amp;u\left(x_1\right)=u\left(x_2\right) \\\\&amp;u&#39;\left(x_1\right)=_{}u&#39;\left(x_2\right)\end{aligned}$$ℹ️ 여기서 주의해야 할 사항은,
+스텀-리우빌 경계 조건은 특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건이다. 하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다. 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 충분 조건이지만, 필요 조건은 아니다. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 [(b) Weight function](\content\ODE &amp; PDE\Sturm–Liouville(b) Weight function.md) 를 참조한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ODE & PDE">
+    <meta itemprop="name" content="(i) Self-adjoint for SL :: My New Hugo Site">
+    <meta itemprop="description" content="1. self-adjoint 를 만족하는 스텀-리우빌 연산자 아래와 같은 연산자와 미분 방정식이 있다.
+$$\begin{aligned}&amp;L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)&#43;q\left(x\right)\right\rbrack \\\\&amp;Lu=f\end{aligned}$$위 선형 미분연산자의 해는 아래와 같다.
+$$u=\sum_{n}c_{n}\varphi_{n}$$다음과 같은 boundary condition을 만족하면, 위 미분 연산자는 self-adjoint 하다.
+$$\begin{aligned}&amp;a_1u\left(x_1\right)&#43;a_2u&#39;\left(x_1\right)=0,\quad a_1^2&#43;a_2^2\ne0 \\\\&amp;b_1u\left(x_2\right)&#43;b_2u&#39;\left(x_2\right)=0,\quad b_1^2&#43;b_2^2\ne0\end{aligned}$$또는, 주기적 경계조건 일 경우, self-adjoint 하다.
+$$\begin{aligned}&amp;u\left(x_1\right)=u\left(x_2\right) \\\\&amp;u&#39;\left(x_1\right)=_{}u&#39;\left(x_2\right)\end{aligned}$$ℹ️ 여기서 주의해야 할 사항은,
+스텀-리우빌 경계 조건은 특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건이다. 하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다. 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 충분 조건이지만, 필요 조건은 아니다. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 [(b) Weight function](\content\ODE &amp; PDE\Sturm–Liouville(b) Weight function.md) 를 참조한다.">
+    <meta itemprop="wordCount" content="339">
+    <title>(i) Self-adjoint for SL :: My New Hugo Site</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744293982" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744293982" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744293982" rel="stylesheet">
+    <link href="/css/theme.css?1744293982" rel="stylesheet">
+    <link href="/css/format-html.css?1744293982" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744293982" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744293982" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744293982" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744293982" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744293982" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1744293982" defer></script>
+    <script src="/js/search.js?1744293982" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/ode_pde\/sturm_liouville\/i_self_adjoint_for_sl\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1744293982";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-self-adjoint-를-만족하는-스텀-리우빌-연산자">1. self-adjoint 를 만족하는 스텀-리우빌 연산자</a></li>
+        <li><a href="#2-증명-과정">2. 증명 과정</a></li>
+        <li><a href="#2-boundary-condition-적용">2. boundary condition 적용</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">My New Hugo Site</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) Self-adjoint for SL</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/b_weight_function/index.html" title="(b) Weight function (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html" title="(r) Singular Sturm-Liouville (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable ode_pde" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="i-self-adjoint-for-sl">(i) Self-adjoint for SL</h1>
+
+<hr>
+<h3 id="1-self-adjoint-를-만족하는-스텀-리우빌-연산자">1. self-adjoint 를 만족하는 스텀-리우빌 연산자</h3>
+<p>아래와 같은 연산자와 미분 방정식이 있다.</p>
+$$
+\begin{aligned}
+&L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)+q\left(x\right)\right\rbrack \\
+\\
+&Lu=f
+\end{aligned}
+$$<p>위 선형 미분연산자의 해는 아래와 같다.</p>
+$$u=\sum_{n}c_{n}\varphi_{n}$$<p><strong>다음과 같은 boundary condition을 만족하면,</strong> <strong>위 미분 연산자는 self-adjoint 하다.</strong></p>
+$$
+\begin{aligned}
+&a_1u\left(x_1\right)+a_2u'\left(x_1\right)=0,\quad a_1^2+a_2^2\ne0 \\
+\\
+&b_1u\left(x_2\right)+b_2u'\left(x_2\right)=0,\quad b_1^2+b_2^2\ne0
+\end{aligned}
+$$<p>또는, 주기적 경계조건 일 경우, self-adjoint 하다.</p>
+$$
+\begin{aligned}
+&u\left(x_1\right)=u\left(x_2\right) \\
+\\
+&u'\left(x_1\right)=_{}u'\left(x_2\right)
+\end{aligned}
+$$<p>ℹ️ 여기서 주의해야 할 사항은,</p>
+<p>스텀-리우빌 경계 조건은 <strong>특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건</strong>이다. <strong>하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다.</strong> 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 <strong>충분 조건이지만, 필요 조건은 아니다</strong>. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은
+[(b) Weight function](\content\ODE &amp; PDE\Sturm–Liouville(b) Weight function.md)
+를 참조한다.</p>
+<hr>
+<h3 id="2-증명-과정">2. 증명 과정</h3>
+<p>아래와 같이 만족시키면, self-adjoint 하다.</p>
+$$
+\langle\varphi_{m}|L\varphi_{n}\rangle_{w}=\langle L\varphi_{m}|\varphi_{n}\rangle_{w}
+$$<p>both 항에 대한 차이는 아래와 같이 쓸 수 있다.</p>
+$$
+\langle\varphi_{m},L\varphi_{n}\rangle_{w}-\langle L\varphi_{m},\varphi_{n}\rangle_{w}=\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+<p>
+(1)
+$$
+\begin{aligned}
+&\langle\varphi_{m}|L\varphi_{n}\rangle _{w}=\int_{x_1}^{x_2}dx\left\lbrack\varphi_{m}^{\ast}\cdot\left\lbrack D\left(p\left(x\right)D\right)+q \left(x\right) \right\rbrack \varphi_{n} \right\rbrack \\
+&=\int_{x_1}^{x_2}dx \left\lbrack\varphi_{m}^{\ast} \cdot \left \lbrack D \left(p\left(x\right)D\right) \right\rbrack \varphi_{n}\right\rbrack + \int_{x_1}^{x_2}dx \left\lbrack q\left(x\right)\varphi_{m}^{\ast} \varphi_{n} \right\rbrack
+\end{aligned}
+$$
+
+(2)
+$$
+\begin{aligned}
+&\langle L\varphi_{m}|\varphi_{n}\rangle _{w}=\int_{x_1}^{x_2}dx\left\lbrack\varphi_{n}\cdot\left\lbrack D\left(p\left(x\right)D\right)+q\left(x\right)\right\rbrack\varphi_{m}^{\ast}\right\rbrack \\
+&=\int_{x_1}^{x_2}dx\left\lbrack\varphi_{n}\cdot\left\lbrack D\left(p\left(x\right)D\right)\right\rbrack\varphi_{m}^{\ast}\right\rbrack+\int_{x_1}^{x_2}dx\left\lbrack q\left(x\right)\varphi_{m}^{\ast}\varphi_{n}\right\rbrack
+\end{aligned}
+$$
+
+따라서, 아래를 보이면 된다.
+
+$$
+\int_{x_1}^{x_2}dx\left\lbrack\varphi_{m}^{\ast}\cdot\left\lbrack D\left(p\left(x\right)D\right)\right\rbrack\varphi_{n}\right\rbrack=\int_{x_1}^{x_2}dx\left\lbrack\varphi_{n}\cdot\left\lbrack D\left(p\left(x\right)D\right)\right\rbrack\varphi_{m}^{\ast}\right\rbrack
+$$
+
+위 식의 오른쪽 항과 왼쪽 항은 각각 다음과 같다.
+
+$$
+\begin{aligned}
+&\int_{x_1}^{x_2}dx\left\lbrack\varphi_{m}^{\ast}\cdot\left\lbrack D\left(p\left(x\right)D\right)\right\rbrack\varphi_{n}\right\rbrack=\left\lbrack p\left(x\right)\varphi_{m}^{\ast}\varphi_{n}'\right\rbrack_{x_1}^{x_2}-\int_{x_1}^{x_2}dx\left\lbrack p\left(x\right)\varphi_{m}'^{\ast}\varphi_{n}'\right\rbrack \\
+\\
+&=\int_{x_1}^{x_2}dx\left\lbrack\varphi_{m}^{\ast}\cdot\left\lbrack D\left(p\left(x\right)D\right)\right\rbrack\varphi_{n}\right\rbrack+\int_{x_1}^{x_2}dx\left\lbrack q\left(x\right)\varphi_{m}^{\ast}\varphi_{n}\right\rbrack
+\end{aligned}
+$$
+
+따라서, 아래를 보이면 된다.
+
+$$
+\left\lbrack p\left(x\right)\varphi_{m}^{\ast}\varphi_{n}'\right\rbrack_{x_1}^{x_2}=\left\lbrack p\left(x\right)\varphi_{n}\varphi_{m}^{\ast\prime}\right\rbrack_{x_1}^{x_2}
+$$
+  </div>
+</details>
+<hr>
+<h3 id="2-boundary-condition-적용">2. boundary condition 적용</h3>
+$$
+\begin{aligned}
+&a_1u\left(x_1\right)+a_2u'\left(x_1\right)=0,\quad a_1^2+a_2^2\ne0 \\
+\\
+&b_1u\left(x_2\right)+b_2u'\left(x_2\right)=0,\quad b_1^2+b_2^2\ne0
+\end{aligned}
+$$<p>또한, 해는 eigen-decomposition으로 표현할 수 있다. 적합한 해를 표현하기 위해서는, summation 의 계수는 모두 0이 될 수 없다.</p>
+<h6 id="1-dirichlet-bc">(1) Dirichlet BC</h6>
+<p>eigenfunction 은 선형 독립이므로,</p>
+$$
+a_2=b_2=0\implies u\left(x_1\right)=u^{}\left(x_2\right)=0\implies\varphi_{n,m}\left(x_1\right)=\varphi_{n,m}\left(x_2\right)=0
+$$<p>계수 c$_{n}$은 0이 아니어야 하므로,</p>
+$$
+\varphi_{n}\left(x_1\right)=\varphi_{n}\left(x_2\right)=0
+$$<p>따라서, 아래식은 성립한다.</p>
+$$
+\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}=0
+$$<h6 id="2-neumann-bc">(2) Neumann BC</h6>
+<p>eigenfunction 은 선형 독립이므로,</p>
+$$
+a_1=b_1=0\implies u'\left(x_1\right)=u'\left(x_2\right)=0\implies\varphi_{n,m}'\left(x_1\right)=\varphi_{n,m}'\left(x_2\right)=0
+$$<p>따라서, 아래식은 성립한다.</p>
+$$
+\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}=0
+$$<h6 id="3-periodic-bc">(3) Periodic BC</h6>
+<p>eigenfunction 은 선형 독립이므로,</p>
+$$
+\begin{aligned}
+&u\left(x_1\right)=u\left(x_2\right)\implies\varphi_{n,m}\left(x_1\right)=\varphi_{n,m}\left(x_2\right) \\
+\\
+&u'\left(x_1\right)=_{}u'\left(x_2\right)\implies\varphi_{n,m}'\left(x_1\right)=\varphi_{n,m}'\left(x_2\right)
+\end{aligned}
+$$<p>따라서, 아래식은 성립한다.</p>
+$$
+\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}=0
+$$<hr>
+<p><a href="https://math.stackexchange.com/questions/2605619/why-boundary-conditions-in-sturm-liouville-problem-are-homogeneous" rel="external" target="_blank">ordinary differential equations - Why boundary conditions in Sturm-Liouville problem are homogeneous? - Mathematics Stack Exchange</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">My New Hugo Site</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/ode_pde/homogeneous/index.html"><a class="padding" href="/ode_pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-9cf59d00783ac0253b0183f2bd2f94f7" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/inhomogeneous/index.html"><a class="padding" href="/ode_pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-a58d165d753d3969b937897fa286929c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/p_circuit_examples_for_odes/index.html"><a class="padding" href="/ode_pde/p_circuit_examples_for_odes/index.html">(p) circuit examples for ODEs</a></li>
+            <li class="" data-nav-id="/ode_pde/special_odes/index.html"><a class="padding" href="/ode_pde/special_odes/index.html">Special ODEs</a></li>
+            <li class="parent alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu">
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html">(b) Strum-Liouville operator</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/b_weight_function/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_weight_function/index.html">(b) Weight function</a></li>
+            <li class="active " data-nav-id="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">(i) Self-adjoint for SL</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html">(r) Singular Sturm-Liouville</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/p_ode_solution_using_sl/p-ode-solution-using-sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/p_ode_solution_using_sl/p-ode-solution-using-sl/index.html">(p) ODE solution using SL</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1744293982" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744293982" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1744293982"></script>
+    <script src="/js/theme.js?1744293982" defer></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <channel>
     <title>ODE &amp; PDE :: My New Hugo Site</title>
     <link>http://localhost:1313/ode--pde/index.html</link>
-    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville</description>
+    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Strum-Lioville</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode--pde/index.xml" rel="self" type="application/rss+xml" />
@@ -29,18 +29,11 @@
       <description>공사중</description>
     </item>
     <item>
-      <title>Special ODEs</title>
-      <link>http://localhost:1313/ode--pde/special-odes/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode--pde/special-odes/index.html</guid>
-      <description>공사중</description>
-    </item>
-    <item>
       <title>Strum-Lioville</title>
       <link>http://localhost:1313/ode--pde/sturmliouville/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode--pde/sturmliouville/index.html</guid>
-      <description>(b) Strum-Liouville operator&#xD;(b) Weight function&#xD;(i) Self-adjoint for SL&#xD;(r) Singular Sturm-Liouville&#xD;(p) ODE solution using SL</description>
+      <description>(b) Strum-Liouville operator&#xD;(b) Weight function&#xD;(i) Self-adjoint for SL&#xD;(r) Singular Sturm-Liouville</description>
     </item>
   </channel>
 </rss>
