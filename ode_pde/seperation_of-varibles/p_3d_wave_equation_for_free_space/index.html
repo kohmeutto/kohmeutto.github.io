@@ -5,42 +5,34 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$\begin{aligned}&amp;L:=\frac{\partial^2}{\partial x^2}\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)\\\\&amp;\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0\end{aligned}$$(1) k≠0
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) k=0
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
+    <meta name="description" content="$$\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)$$자유 공간에서,
+파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ proof) 파수 공간에서의 해, 일반적인 변수 분리법, 전자기학에서 많이 사용 (이전 챕터의 엄밀한 방법은 매우 귀찮음)
+라플라시안 연산자에 대한, 변수 분리 방법을 수행한다.
+$$\begin{aligned}&amp;\left(\frac{\partial^2}{\partial x^2}&#43;\frac{\partial^2}{\partial y^2}&#43;\frac{\partial^2}{\partial z^2}\right)X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)=-k^2X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)\\\\&amp;\frac{1}{X\left(x\right)}\frac{\partial^2}{\partial x^2}X\left(x\right)&#43;\frac{1}{Y\left(y\right)}\frac{\partial^2}{\partial y^2}Y\left(y\right)&#43;\frac{1}{Z\left(y\right)}\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k^2\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}&#43;a_2e^{&#43;ik_{x}x}\\\\&amp;k^2=k_{x}^2&#43;k_{y}^2&#43;k_{z}^2\\\\&amp;\frac{\partial^2}{\partial y^2}Y\left(y\right)=-k_{y}^2Y\left(y\right),\quad Y\left(y;k_{y}\right)=b_1e^{-ik_{y}y}&#43;b_2e^{&#43;ik_{y}y}\\\\&amp;\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k_{z}^2Z\left(z\right),\quad Z\left(z;k_{z}\right)=c_1e^{-ik_{z}z}&#43;c_2e^{&#43;ik_{z}z}\end{aligned}$$시간에 대해서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(p) 1D Wave equation for free-space :: My New Hugo Site">
-    <meta name="twitter:description" content="$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$\begin{aligned}&amp;L:=\frac{\partial^2}{\partial x^2}\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)\\\\&amp;\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0\end{aligned}$$(1) k≠0
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) k=0
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
-    <meta property="og:url" content="http://localhost:1313/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html">
+    <meta name="twitter:title" content="(p) 3D Wave equation for free-space :: My New Hugo Site">
+    <meta name="twitter:description" content="$$\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)$$자유 공간에서,
+파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ proof) 파수 공간에서의 해, 일반적인 변수 분리법, 전자기학에서 많이 사용 (이전 챕터의 엄밀한 방법은 매우 귀찮음)
+라플라시안 연산자에 대한, 변수 분리 방법을 수행한다.
+$$\begin{aligned}&amp;\left(\frac{\partial^2}{\partial x^2}&#43;\frac{\partial^2}{\partial y^2}&#43;\frac{\partial^2}{\partial z^2}\right)X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)=-k^2X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)\\\\&amp;\frac{1}{X\left(x\right)}\frac{\partial^2}{\partial x^2}X\left(x\right)&#43;\frac{1}{Y\left(y\right)}\frac{\partial^2}{\partial y^2}Y\left(y\right)&#43;\frac{1}{Z\left(y\right)}\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k^2\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}&#43;a_2e^{&#43;ik_{x}x}\\\\&amp;k^2=k_{x}^2&#43;k_{y}^2&#43;k_{z}^2\\\\&amp;\frac{\partial^2}{\partial y^2}Y\left(y\right)=-k_{y}^2Y\left(y\right),\quad Y\left(y;k_{y}\right)=b_1e^{-ik_{y}y}&#43;b_2e^{&#43;ik_{y}y}\\\\&amp;\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k_{z}^2Z\left(z\right),\quad Z\left(z;k_{z}\right)=c_1e^{-ik_{z}z}&#43;c_2e^{&#43;ik_{z}z}\end{aligned}$$시간에 대해서,">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html">
     <meta property="og:site_name" content="My New Hugo Site">
-    <meta property="og:title" content="(p) 1D Wave equation for free-space :: My New Hugo Site">
-    <meta property="og:description" content="$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$\begin{aligned}&amp;L:=\frac{\partial^2}{\partial x^2}\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)\\\\&amp;\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0\end{aligned}$$(1) k≠0
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) k=0
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
+    <meta property="og:title" content="(p) 3D Wave equation for free-space :: My New Hugo Site">
+    <meta property="og:description" content="$$\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)$$자유 공간에서,
+파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ proof) 파수 공간에서의 해, 일반적인 변수 분리법, 전자기학에서 많이 사용 (이전 챕터의 엄밀한 방법은 매우 귀찮음)
+라플라시안 연산자에 대한, 변수 분리 방법을 수행한다.
+$$\begin{aligned}&amp;\left(\frac{\partial^2}{\partial x^2}&#43;\frac{\partial^2}{\partial y^2}&#43;\frac{\partial^2}{\partial z^2}\right)X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)=-k^2X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)\\\\&amp;\frac{1}{X\left(x\right)}\frac{\partial^2}{\partial x^2}X\left(x\right)&#43;\frac{1}{Y\left(y\right)}\frac{\partial^2}{\partial y^2}Y\left(y\right)&#43;\frac{1}{Z\left(y\right)}\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k^2\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}&#43;a_2e^{&#43;ik_{x}x}\\\\&amp;k^2=k_{x}^2&#43;k_{y}^2&#43;k_{z}^2\\\\&amp;\frac{\partial^2}{\partial y^2}Y\left(y\right)=-k_{y}^2Y\left(y\right),\quad Y\left(y;k_{y}\right)=b_1e^{-ik_{y}y}&#43;b_2e^{&#43;ik_{y}y}\\\\&amp;\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k_{z}^2Z\left(z\right),\quad Z\left(z;k_{z}\right)=c_1e^{-ik_{z}z}&#43;c_2e^{&#43;ik_{z}z}\end{aligned}$$시간에 대해서,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
-    <meta itemprop="name" content="(p) 1D Wave equation for free-space :: My New Hugo Site">
-    <meta itemprop="description" content="$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$\begin{aligned}&amp;L:=\frac{\partial^2}{\partial x^2}\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)\\\\&amp;\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0\end{aligned}$$(1) k≠0
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) k=0
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
-    <meta itemprop="wordCount" content="225">
-    <title>(p) 1D Wave equation for free-space :: My New Hugo Site</title>
+    <meta itemprop="name" content="(p) 3D Wave equation for free-space :: My New Hugo Site">
+    <meta itemprop="description" content="$$\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)$$자유 공간에서,
+파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack$$ proof) 파수 공간에서의 해, 일반적인 변수 분리법, 전자기학에서 많이 사용 (이전 챕터의 엄밀한 방법은 매우 귀찮음)
+라플라시안 연산자에 대한, 변수 분리 방법을 수행한다.
+$$\begin{aligned}&amp;\left(\frac{\partial^2}{\partial x^2}&#43;\frac{\partial^2}{\partial y^2}&#43;\frac{\partial^2}{\partial z^2}\right)X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)=-k^2X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)\\\\&amp;\frac{1}{X\left(x\right)}\frac{\partial^2}{\partial x^2}X\left(x\right)&#43;\frac{1}{Y\left(y\right)}\frac{\partial^2}{\partial y^2}Y\left(y\right)&#43;\frac{1}{Z\left(y\right)}\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k^2\\\\&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}&#43;a_2e^{&#43;ik_{x}x}\\\\&amp;k^2=k_{x}^2&#43;k_{y}^2&#43;k_{z}^2\\\\&amp;\frac{\partial^2}{\partial y^2}Y\left(y\right)=-k_{y}^2Y\left(y\right),\quad Y\left(y;k_{y}\right)=b_1e^{-ik_{y}y}&#43;b_2e^{&#43;ik_{y}y}\\\\&amp;\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k_{z}^2Z\left(z\right),\quad Z\left(z;k_{z}\right)=c_1e^{-ik_{z}z}&#43;c_2e^{&#43;ik_{z}z}\end{aligned}$$시간에 대해서,">
+    <meta itemprop="wordCount" content="116">
+    <title>(p) 3D Wave equation for free-space :: My New Hugo Site</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744380076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744380076" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744380076" rel="stylesheet">
     <link href="/css/theme.css?1744380076" rel="stylesheet">
@@ -56,7 +48,7 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/ode_pde\/seperation_of-varibles\/p_1d_wave_equation_for_free_space\/index.html';
+      window.relearn.path='\/ode_pde\/seperation_of-varibles\/p_3d_wave_equation_for_free_space\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -108,7 +100,7 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html">
+  <body class="mobile-support html" data-url="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -128,12 +120,12 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">My New Hugo Site</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/seperation_of-varibles/index.html"><span itemprop="name">Seperation of variables</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(p) 1D Wave equation for free-space</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(p) 3D Wave equation for free-space</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/seperation_of-varibles/b_wave_equation_for_free_space/index.html" title="(b) Wave equation for free-space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html" title="(p) 1D Wave equation for free-space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html" title="(p) 3D Wave equation for free-space (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/seperation_of-varibles/p_diffusion_equation_for_free_space/index.html" title="(p) Diffusion equation for free-space (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -153,91 +145,65 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
   <header class="headline">
   </header>
 
-<h1 id="p-1d-wave-equation-for-free-space">(p) 1D Wave equation for free-space</h1>
+<h1 id="p-3d-wave-equation-for-free-space">(p) 3D Wave equation for free-space</h1>
 
 <hr>
 $$
-\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
+\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)
 $$<p>자유 공간에서,</p>
 <ul>
 <li>파수 중첩의 해</li>
 </ul>
 $$
-u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}+c_2\left(k\right)e^{i\left(kx+\omega t\right)}\right\rbrack
+u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 $$<ul>
 <li>주파수 중첩의 해</li>
 </ul>
 $$
-u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{i\left(kx+\omega t\right)}\right\rbrack
+u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 $$<hr>
-<p>proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이</p>
-$$
-\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
-$$<p>자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.</p>
+<p>proof) 파수 공간에서의 해, 일반적인 변수 분리법, 전자기학에서 많이 사용 (이전 챕터의 엄밀한 방법은 매우 귀찮음)</p>
+<p>라플라시안 연산자에 대한, 변수 분리 방법을 수행한다.</p>
 $$
 \begin{aligned}
-&L:=\frac{\partial^2}{\partial x^2}
+&\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right)X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)=-k^2X\left(x\right)Y\left(y\right)Z\left(z\right)T\left(t\right)
 \\
 \\
-&\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)
+&\frac{1}{X\left(x\right)}\frac{\partial^2}{\partial x^2}X\left(x\right)+\frac{1}{Y\left(y\right)}\frac{\partial^2}{\partial y^2}Y\left(y\right)+\frac{1}{Z\left(y\right)}\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k^2
 \\
 \\
-&\left(\frac{\partial^2}{\partial x^2}+k^2\right)X\left(x\right)=0
+&\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}+a_2e^{+ik_{x}x}
+\\
+\\
+&k^2=k_{x}^2+k_{y}^2+k_{z}^2
+\\
+\\
+&\frac{\partial^2}{\partial y^2}Y\left(y\right)=-k_{y}^2Y\left(y\right),\quad Y\left(y;k_{y}\right)=b_1e^{-ik_{y}y}+b_2e^{+ik_{y}y}
+\\
+\\
+&\frac{\partial^2}{\partial z^2}Z\left(z\right)=-k_{z}^2Z\left(z\right),\quad Z\left(z;k_{z}\right)=c_1e^{-ik_{z}z}+c_2e^{+ik_{z}z}
 \end{aligned}
-$$<p>(1) k≠0</p>
-$$
-X\left(x\right)=a_1e^{-ikx}+a_2e^{ikx}
-$$<p>(2) k=0</p>
-$$
-X\left(x\right)=0
-$$<p>eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.</p>
-$$
-u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c\left(k\right)e^{ikx}T\left(t\right)\right\rbrack
-$$<p>위는 파동 방정식의 해 이므로, 파동 방정식에 대입하면, T(t)를 구할 수 있다.</p>
+$$<p>시간에 대해서,</p>
 $$
 \begin{aligned}
-&k^2T\left(t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}T\left(t\right)
+&k^2\varphi\left(x,y,z,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}\varphi\left(x,y,z,t\right)
 \\
 \\
 &\left(\frac{\partial^2}{\partial t^2}+\omega^2\right)T\left(t\right)=0,\quad\omega^2=k^2v^2
 \\
 \\
-&T\left(x\right)=b_1e^{-i\omega t}+b_2e^{i\omega t}
+&T\left(x;\omega\right)=d_1e^{-i\omega t}+d_2e^{+i\omega t}
 \end{aligned}
-$$<p>따라서, 최종적으로 파동방정식의 해는 다음과 같다.</p>
-$$
-u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}+c_2\left(k\right)e^{i\left(kx+\omega t\right)}\right\rbrack
-$$<p>주파수 공간에서는 k를 ω로 바꾸기만 하면 된다.</p>
-$$
-u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{i\left(kx+\omega t\right)}\right\rbrack
-$$<p>푸리에 (역)변환과 동일한 형태이다. 잘 생각해보면, 파동의 중첩을 만족하기 때문에, 위의 결과는 당연하다.</p>
-<hr>
-<p>proof2) 페이저 변환과 중첩을 사용한 쉬운 풀이, 고전역학 &amp; 전자기학 에서 많이 사용</p>
-<p>$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.</p>
+$$<p>연속적인 k가 존재한다면, 중첩형태로 표현할 수 있다.</p>
 $$
 \begin{aligned}
-&\nabla^2\tilde u\left(x\right)=-\frac{\omega^2}{v^2}\tilde u\left(x\right)
+&u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}dk_{x}dk_{y}dk_{z}\left\lbrack X\left(x;k_{x}\right)Y\left(y;k_{y}\right)Z\left(z;k_{z}\right)T\left(t;\omega\right)\right\rbrack
 \\
+&=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}dk_{x}dk_{y}dk_{z}\left\lbrack c\left(k_{x},k_{y},k_{z}\right)e_{}^{i\left(k_{x}x+k_{y}y+k_{z}z\right)}\left(d_1e^{_{}-i\omega t}+d_2e^{_{}+i\omega t}\right)\right\rbrack
 \\
-&\left(\nabla^2+\frac{\omega^2}{v^2}\right)\tilde u\left(x\right)=0
+&=\int_{-\infty}^{\infty}d^3\vec{k}\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 \end{aligned}
-$$<p>$\displaystyle k=\frac{\omega}{v}$이면,</p>
 $$
-\left(\nabla^2+k^2\right)\tilde u\left(x\right)=0
-$$<p>따라서,</p>
-$$
-u\left(x,t\right)=\operatorname{Re}\left\lbrack\tilde u\left(x\right)e^{-i\omega t}\right\rbrack
-$$<p>1차원의 x방향 &amp; 주파수가 중첩이 되어 있다고 하면,</p>
-$$
-u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{-i\left(kx+\omega t\right)}\right\rbrack\right\rbrack
-$$<hr>
-<p>proof3) 푸리에 변환을 사용한 풀이</p>
-<p><a href="https://www.notion.so/a-Fourier-transform-for-PDE-1cc8bc3f1406812983a0c53d45e0e677?pvs=21" rel="external" target="_blank">https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/185434137/a+Fourier+transform+for+PDE#example2)-Fourier-solution-of-the-wave-equation%2C-%EC%A4%91%EC%9A%94</a> 를 참조한다.</p>
-<hr>
-<h6 id="q-왜-증명-2와-3은-엄밀하지-않은가">Q) 왜 증명 2와 3은 엄밀하지 않은가.</h6>
-<hr>
-<p><a href="https://www.ibiblio.org/e-notes/webgl/gpu/boundary.htm" rel="external" target="_blank">ABC for waves</a></p>
-
   <footer class="footline">
   </footer>
 </article>
@@ -292,8 +258,8 @@ $$<hr>
             <li class="alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/ode_pde/seperation_of-varibles/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/index.html">Seperation of variables</a><ul id="R-subsections-d805b0b3c9f6eaf2abd60b8015a8a555" class="collapsible-menu">
             <li class="" data-nav-id="/ode_pde/seperation_of-varibles/b_wave_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/b_wave_equation_for_free_space/index.html">(b) Wave equation for free-space</a></li>
-            <li class="active " data-nav-id="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html">(p) 1D Wave equation for free-space</a></li>
-            <li class="" data-nav-id="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html">(p) 3D Wave equation for free-space</a></li>
+            <li class="" data-nav-id="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html">(p) 1D Wave equation for free-space</a></li>
+            <li class="active " data-nav-id="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_3d_wave_equation_for_free_space/index.html">(p) 3D Wave equation for free-space</a></li>
             <li class="" data-nav-id="/ode_pde/seperation_of-varibles/p_diffusion_equation_for_free_space/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_diffusion_equation_for_free_space/index.html">(p) Diffusion equation for free-space</a></li>
             <li class="" data-nav-id="/ode_pde/seperation_of-varibles/p_diffusion_equation_for_periodic_boundary_condition/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_diffusion_equation_for_periodic_boundary_condition/index.html">(p) Diffusion equation for periodic boundary condition</a></li>
             <li class="" data-nav-id="/ode_pde/seperation_of-varibles/p_separation_of_variables_sl/index.html"><a class="padding" href="/ode_pde/seperation_of-varibles/p_separation_of_variables_sl/index.html">(p) Separation of variables &#43; S.L</a></li></ul></li></ul></li>

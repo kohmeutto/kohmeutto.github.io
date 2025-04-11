@@ -44,10 +44,10 @@
     </item>
     <item>
       <title>Seperation of variables</title>
-      <link>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</link>
+      <link>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</guid>
-      <description>(b) Wave equation for free-space&#xD;(p) 1D Wave equation for free-space</description>
+      <guid>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</guid>
+      <description>(b) Wave equation for free-space&#xD;(p) 1D Wave equation for free-space&#xD;(p) 3D Wave equation for free-space&#xD;(p) Diffusion equation for free-space&#xD;(p) Diffusion equation for periodic boundary condition&#xD;(p) Separation of variables + S.L</description>
     </item>
   </channel>
 </rss>

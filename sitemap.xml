@@ -10,7 +10,7 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/seperation_of-varibles/b_wave-equation_for_free_space/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/homogeneous/index.html</loc>
@@ -25,6 +25,9 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_weight_function/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_1d_wave_equation_for_free_space/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
   </url>
   <url>
@@ -34,10 +37,16 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_3d_wave_equation_for_free_space/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/p_circuit_examples_for_odes/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_diffusion_equation_for_free_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
@@ -49,6 +58,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_diffusion_equation_for_periodic_boundary_condition/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html</loc>
   </url>
   <url>
@@ -58,7 +70,10 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_separation_of_variables_sl/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
