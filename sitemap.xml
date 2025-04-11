@@ -10,6 +10,9 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of-varibles/b_wave-equation_for_free_space/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/homogeneous/index.html</loc>
   </url>
   <url>
@@ -53,6 +56,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

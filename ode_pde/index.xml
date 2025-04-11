@@ -3,7 +3,7 @@
   <channel>
     <title>ODE &amp; PDE :: My New Hugo Site</title>
     <link>http://localhost:1313/ode_pde/index.html</link>
-    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville</description>
+    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville&#xD;Seperation of variables</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/index.xml" rel="self" type="application/rss+xml" />
@@ -41,6 +41,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/sturm_liouville/index.html</guid>
       <description>(b) Strum-Liouville operator&#xD;(b) Weight function&#xD;(i) Self-adjoint for SL&#xD;(r) Singular Sturm-Liouville&#xD;(p) ODE solution using SL</description>
+    </item>
+    <item>
+      <title>Seperation of variables</title>
+      <link>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</guid>
+      <description>(b) Wave equation for free-space&#xD;(p) 1D Wave equation for free-space</description>
     </item>
   </channel>
 </rss>

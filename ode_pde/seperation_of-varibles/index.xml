@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seperation of variables :: My New Hugo Site</title>
+    <link>http://localhost:1313/ode_pde/seperation_of-varibles/index.html</link>
+    <description>(b) Wave equation for free-space&#xD;(p) 1D Wave equation for free-space</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/ode_pde/seperation_of-varibles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Wave equation for free-space</title>
+      <link>http://localhost:1313/ode_pde/seperation_of-varibles/b_wave_equation_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/seperation_of-varibles/b_wave_equation_for_free_space/index.html</guid>
+      <description>1. free-space 의 수학적 기술 자유 공간은 수학적으로 다음과 같이 모델링할 수 있다.&#xA;무한 공간: 3차원 유클리드 공간 전체를 자유 공간으로 간주한다. 경계 조건: 경계면이 없으므로 경계 조건은 필요하지 않다. 무한 부피: 자유 공간 전체의 부피는 무한대이다. (물리학에 적용) 에너지 보존 법칙: 에너지는 유한하다. 가상의 무한대 경계면에서 값은 0 이다. 2. 자유공간에서, wave equation 은 self-adjoint 하다. $$&#xD;\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)&#xD;$$proof1)&#xA;$$L:=\nabla^2-\frac{1}{v^2}\frac{\partial^2}{\partial t^2}$$임의의 함수 f와 g에 대하여, 아래임을 보이면 된다.</description>
+    </item>
+    <item>
+      <title>(p) 1D Wave equation for free-space</title>
+      <link>http://localhost:1313/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/seperation_of-varibles/p_1d_wave_equation_for_free_space/index.html</guid>
+      <description>$$&#xD;\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)&#xD;$$자유 공간에서,&#xA;파수 중첩의 해 $$&#xD;u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}+c_2\left(k\right)e^{i\left(kx+\omega t\right)}\right\rbrack&#xD;$$ 주파수 중첩의 해 $$&#xD;u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{i\left(kx+\omega t\right)}\right\rbrack&#xD;$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이&#xA;$$&#xD;\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)&#xD;$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.&#xA;$$&#xD;\begin{aligned}&#xD;&amp;L:=\frac{\partial^2}{\partial x^2}&#xD;\\&#xD;\\&#xD;&amp;\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)&#xD;\\&#xD;\\&#xD;&amp;\left(\frac{\partial^2}{\partial x^2}+k^2\right)X\left(x\right)=0&#xD;\end{aligned}&#xD;$$(1) k≠0&#xA;$$&#xD;X\left(x\right)=a_1e^{-ikx}+a_2e^{ikx}&#xD;$$(2) k=0&#xA;$$&#xD;X\left(x\right)=0&#xD;$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.</description>
+    </item>
+  </channel>
+</rss>
