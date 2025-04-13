@@ -3,15 +3,15 @@
   <channel>
     <title>Green function :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/green_function/index.html</link>
-    <description>Prepace&#xD;(b) First-order ODE</description>
+    <description>Preface&#xD;(b) First-order ODE</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/green_function/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Prepace</title>
-      <link>http://localhost:1313/ode_pde/green_function/prepace/index.html</link>
+      <title>Preface</title>
+      <link>http://localhost:1313/ode_pde/green_function/preface/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/green_function/prepace/index.html</guid>
+      <guid>http://localhost:1313/ode_pde/green_function/preface/index.html</guid>
       <description>1. Green function &amp; 미분 아래 회로의 전달함수를 구해보자.&#xA;회로에 대한 미분방정식은 다음과 같다.&#xA;$$ i_{s}=v+i_{o},\quad v=Di_{o} $$입력에 디렉 델타 함수를 넣으면, 전달함수를 구할 수 있다.&#xA;$$ \delta\left(t\right)=\left(D+1\right)h\left(t\right) $$위의 미분방정식을 풀어야 한다. source 항이 디렉 델타로 표현되었을 때, 이 식을 만족하는 미분방정식의 해를 그린함수라고 하며, 이 그린함수를 구하는 것이 목적이다.&#xA;(1) $t\ne0$&#xA;일반적인 제차 미분방정식의 풀이이다.&#xA;$$ h\left(t\right)=Ae^{-t} $$(2) $t=0$&#xA;미분방정식의 양변을 적분한다.&#xA;$$ \int_0^{0&lt;}dt\left\lbrack\delta\left(t\right)\right\rbrack=\int_0^{0&lt;}dt\left\lbrack\left(D+1\right)h\left(t\right)\right\rbrack $$$$ 1=\int_0^{0&lt;}dt\left\lbrack Dh\left(t\right)\right\rbrack+\int_0^{0&lt;}dt\left\lbrack h\left(t\right)\right\rbrack $$$$ 1=h\left(0&lt;\right)+h\left(0\right),\quad\int_0^{0&lt;}dt\left\lbrack h\left(t\right)\right\rbrack=0 $$$$ 1=h\left(0&lt;\right) \implies A=1 $$따라서, 최종해는 다음과 같다.</description>
     </item>
     <item>
