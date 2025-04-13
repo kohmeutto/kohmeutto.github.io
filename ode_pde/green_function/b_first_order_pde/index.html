@@ -5,30 +5,34 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
-    <meta name="description" content="스텀-리우빌 이론은 일반적으로 구간의 양 끝점에서의 경계 조건을 필요로 하지만, 특수한 경우에는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다. 이러한 경우를 ‘특이 스텀-리우빌 문제(singular Sturm-Liouville problem)‘라고 한다.
-특이 스텀-리우빌 문제의 특징:
-특이점: 구간의 끝점에서 (p(x)) 또는 (w(x))가 0이 되거나 무한대가 되는 경우 구간이 무한대까지 확장되는 경우 경계 조건: 일반적인 스텀-리우빌 문제와 달리, 양 끝점에서의 명확한 경계 조건이 주어지지 않을 수 있다. 대신, 특이점에서의 함수의 행동(예: 유한성, 특정 값으로의 수렴)이 경계 조건을 대신할 수 있다. 특이 스텀-리우빌 문제의 예시:">
+    <meta name="description" content="1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)&#43;q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.
+$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.
+$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.
+ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(r) Singular Sturm-Liouville :: 수리전자물리학">
-    <meta name="twitter:description" content="스텀-리우빌 이론은 일반적으로 구간의 양 끝점에서의 경계 조건을 필요로 하지만, 특수한 경우에는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다. 이러한 경우를 ‘특이 스텀-리우빌 문제(singular Sturm-Liouville problem)‘라고 한다.
-특이 스텀-리우빌 문제의 특징:
-특이점: 구간의 끝점에서 (p(x)) 또는 (w(x))가 0이 되거나 무한대가 되는 경우 구간이 무한대까지 확장되는 경우 경계 조건: 일반적인 스텀-리우빌 문제와 달리, 양 끝점에서의 명확한 경계 조건이 주어지지 않을 수 있다. 대신, 특이점에서의 함수의 행동(예: 유한성, 특정 값으로의 수렴)이 경계 조건을 대신할 수 있다. 특이 스텀-리우빌 문제의 예시:">
-    <meta property="og:url" content="http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html">
+    <meta name="twitter:title" content="(b) First-order PDE :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)&#43;q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.
+$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.
+$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.
+ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(r) Singular Sturm-Liouville :: 수리전자물리학">
-    <meta property="og:description" content="스텀-리우빌 이론은 일반적으로 구간의 양 끝점에서의 경계 조건을 필요로 하지만, 특수한 경우에는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다. 이러한 경우를 ‘특이 스텀-리우빌 문제(singular Sturm-Liouville problem)‘라고 한다.
-특이 스텀-리우빌 문제의 특징:
-특이점: 구간의 끝점에서 (p(x)) 또는 (w(x))가 0이 되거나 무한대가 되는 경우 구간이 무한대까지 확장되는 경우 경계 조건: 일반적인 스텀-리우빌 문제와 달리, 양 끝점에서의 명확한 경계 조건이 주어지지 않을 수 있다. 대신, 특이점에서의 함수의 행동(예: 유한성, 특정 값으로의 수렴)이 경계 조건을 대신할 수 있다. 특이 스텀-리우빌 문제의 예시:">
+    <meta property="og:title" content="(b) First-order PDE :: 수리전자물리학">
+    <meta property="og:description" content="1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)&#43;q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.
+$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.
+$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.
+ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
-    <meta itemprop="name" content="(r) Singular Sturm-Liouville :: 수리전자물리학">
-    <meta itemprop="description" content="스텀-리우빌 이론은 일반적으로 구간의 양 끝점에서의 경계 조건을 필요로 하지만, 특수한 경우에는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다. 이러한 경우를 ‘특이 스텀-리우빌 문제(singular Sturm-Liouville problem)‘라고 한다.
-특이 스텀-리우빌 문제의 특징:
-특이점: 구간의 끝점에서 (p(x)) 또는 (w(x))가 0이 되거나 무한대가 되는 경우 구간이 무한대까지 확장되는 경우 경계 조건: 일반적인 스텀-리우빌 문제와 달리, 양 끝점에서의 명확한 경계 조건이 주어지지 않을 수 있다. 대신, 특이점에서의 함수의 행동(예: 유한성, 특정 값으로의 수렴)이 경계 조건을 대신할 수 있다. 특이 스텀-리우빌 문제의 예시:">
-    <meta itemprop="wordCount" content="209">
-    <title>(r) Singular Sturm-Liouville :: 수리전자물리학</title>
+    <meta itemprop="name" content="(b) First-order PDE :: 수리전자물리학">
+    <meta itemprop="description" content="1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)&#43;q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.
+$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.
+$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.
+ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.">
+    <meta itemprop="wordCount" content="203">
+    <title>(b) First-order PDE :: 수리전자물리학</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744557394" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744557394" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744557394" rel="stylesheet">
     <link href="/css/theme.css?1744557394" rel="stylesheet">
@@ -44,7 +48,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/ode_pde\/sturm_liouville\/r_singular_sturm_liouville\/index.html';
+      window.relearn.path='\/ode_pde\/green_function\/b_first_order_pde\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -96,7 +100,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html">
+  <body class="mobile-support html" data-url="/ode_pde/green_function/b_first_order_pde/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -107,7 +111,17 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-jump-condition">1. Jump condition</a></li>
+        <li><a href="#2-solution-method">2. Solution method</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -115,13 +129,13 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(r) Singular Sturm-Liouville</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/green_function/index.html"><span itemprop="name">Green function</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) First-order PDE</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html" title="(i) Self-adjoint for SL (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/green_function/preface/index.html" title="Preface (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html" title="(p) ODE solution using SL (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/green_function/i_second_order_pde/index.html" title="(i) Second-order PDE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -141,51 +155,99 @@
   <header class="headline">
   </header>
 
-<h1 id="r-singular-sturm-liouville">(r) Singular Sturm-Liouville</h1>
+<h1 id="b-first-order-pde">(b) First-order PDE</h1>
 
 <hr>
-<p>스텀-리우빌 이론은 일반적으로 구간의 양 끝점에서의 경계 조건을 필요로 하지만, 특수한 경우에는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다. 이러한 경우를 &lsquo;특이 스텀-리우빌 문제(singular Sturm-Liouville problem)&lsquo;라고 한다.</p>
-<p><strong>특이 스텀-리우빌 문제의 특징:</strong></p>
-<ul>
-<li><strong>특이점:</strong>
-<ul>
-<li>구간의 끝점에서 (p(x)) 또는 (w(x))가 0이 되거나 무한대가 되는 경우</li>
-<li>구간이 무한대까지 확장되는 경우</li>
-</ul>
-</li>
-<li><strong>경계 조건:</strong>
-<ul>
-<li>일반적인 스텀-리우빌 문제와 달리, 양 끝점에서의 명확한 경계 조건이 주어지지 않을 수 있다.</li>
-<li>대신, 특이점에서의 함수의 행동(예: 유한성, 특정 값으로의 수렴)이 경계 조건을 대신할 수 있다.</li>
-</ul>
-</li>
-</ul>
-<p><strong>특이 스텀-리우빌 문제의 예시:</strong></p>
-<ul>
-<li><strong>베셀 방정식:</strong>
-<ul>
-<li>구간 ([0, b])에서 (p(x) = x), (w(x) = x)인 경우, (x = 0)에서 (p(x))와 (w(x))가 0이 된다.</li>
-<li>이 경우, (x = 0)에서 함수의 유한성이 경계 조건을 대신한다.</li>
-</ul>
-</li>
-<li><strong>르장드르 방정식:</strong>
-<ul>
-<li>구간 ([-1, 1])에서 (p(x) = 1 - x^2)인 경우, (x = \pm 1)에서 (p(x))가 0이 된다.</li>
-<li>이 경우, x = ±1 에서 함수의 유한성이 경계 조건을 대신한다.</li>
-</ul>
-</li>
-<li><strong>에르미트 방정식:</strong>
-<ul>
-<li>구간 ((-\infty, \infty))에서 (w(x) = e^{-x^2})인 경우, 구간이 무한대로 확장된다.</li>
-<li>이 경우, (x \to \pm \infty)에서 함수가 0으로 수렴하는 조건이 경계 조건을 대신한한다.</li>
-</ul>
-</li>
-</ul>
-<p><strong>결론:</strong></p>
-<ul>
-<li>스텀-리우빌 이론은 일반적으로 양 끝점에서의 경계 조건을 필요로 하지만, 특이 스텀-리우빌 문제에서는 하나의 끝점에서의 경계 조건 또는 경계 조건이 없는 경우에도 적용될 수 있다.</li>
-<li>특이 스텀-리우빌 문제에서는 특이점에서의 함수의 행동이 경계 조건을 대신하며, 이는 고유함수의 직교성과 완비성을 보장하는 데 필요한 조건을 제공한다.</li>
-</ul>
+<h3 id="1-jump-condition">1. Jump condition</h3>
+$$
+\frac{\partial}{\partial x}G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)=\delta\left(x-x'\right), \quad q\left(x\right):\text{ continuous}
+$$<p>위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x&rsquo;\right)$또는 $G\left(x,x&rsquo;\right)$가 디렉 델타가 되어야 한다. $G\left(x,x&rsquo;\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x&rsquo;\right)$는 디렉 델타가 되어야 한다.</p>
+$$
+\frac{\partial}{\partial x}G\left(x,x'\right)=\delta\left(x-x'\right)
+$$<p>위로부터, $x&rsquo;$과 <strong>인접한 부분</strong>에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.</p>
+$$
+G\left(x,x'\right)=u\left(x-x'\right)
+$$<p>위 그린함수의 형태를 그려보면 다음과 같다.</p>
+<img src="image1.png" width="35%" height="auto">
+<p>ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x&rsquo;\right)$는 $x=x&rsquo;$에서 불연속이다.</p>
+<hr>
+<h3 id="2-solution-method">2. Solution method</h3>
+$$
+L=\frac{d}{dx}+q\left(x\right)
+$$<p>(1) $x\ne x'$</p>
+$$
+LG\left(x,x'\right)=0
+$$$$
+G\left(x,x'\right)=
+\begin{cases}
+  c_1\left(x'\right)u_1\left(x\right), & x < x'
+  \\
+  c_2\left(x'\right)u_2\left(x\right), & x > x'
+\end{cases}
+$$<p>(2) $x=x'$</p>
+$$
+LG\left(x,x')=\delta(x-x'\right) 
+$$$$
+\int_{x_{>}'}^{x_{<}'}LG\left(x,x'\right)dx=\int_{x_{>}'}^{x_{<}'}\delta\left(x-x'\right)dx=1
+$$$$
+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\frac{\partial}{\partial x}G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)\right\rbrack=1
+$$$$
+G\left(x_{<}',x'\right)-G\left(x_{>}',x'\right)+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack q\left(x\right)G\left(x,x'\right)\right\rbrack=1
+$$<p>q(x) continuous 하다. 또한,</p>
+$$
+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack q\left(x\right)G\left(x,x'\right)\right\rbrack=0
+$$<p>따라서, jump condtition을 아래와 같이 구할 수 있다.</p>
+$$
+G\left(x_{<}',x'\right)-G\left(x_{>}',x'\right)=1
+$$<hr>
+<p><strong>example1)</strong></p>
+<p>해석범위는 $x\in\left\lbrack a,\infty\right)$이고, 초기값 $G\left(a,x&rsquo;\right)=0$이다.  $G\left(x,x&rsquo;\right)$을 구하여라.</p>
+$$
+\frac{d}{dx}G\left(x,x'\right)=\delta\left(x-x'\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+(1) $x\ne x'$
+
+boundary condition 적용하면,
+
+$$
+G\left(x,x'\right)=
+\begin{cases}
+  0 & x < x'
+  \\ 
+  c_2 & x > x'
+\end{cases}
+$$
+
+(2) $x=x'$
+
+Jump condition 의해서,
+
+$$
+c_2-0=1
+$$
+
+따라서,
+
+$$
+G\left(x,x'\right)=
+\begin{cases}
+  0 & x < x'
+  \\
+  1 & x > x'
+\end{cases}
+$$
+  </div>
+</details>
+<hr>
+<p><a href="https://math.libretexts.org/Bookshelves/Differential_Equations/Introduction_to_Partial_Differential_Equations_(Herman)/07%3A_Green's_Functions/7.02%3A_Boundary_Value_Greens_Functions" rel="external" target="_blank">7.2: Boundary Value Green’s Functions - Mathematics LibreTexts</a></p>
+<p><a href="https://blog.naver.com/qio910/222068013070?trackingCode=rss" rel="external" target="_blank">그린 함수(Green&rsquo;s Functions) : 네이버 블로그</a></p>
 
   <footer class="footline">
   </footer>
@@ -238,14 +300,13 @@
             <li class="alwaysopen " data-nav-id="/ode_pde/inhomogeneous/index.html"><a class="padding" href="/ode_pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-a58d165d753d3969b937897fa286929c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/ode_pde/p_circuit_examples_for_odes/index.html"><a class="padding" href="/ode_pde/p_circuit_examples_for_odes/index.html">(p) Circuit examples for ODEs</a></li>
             <li class="" data-nav-id="/ode_pde/special_odes/index.html"><a class="padding" href="/ode_pde/special_odes/index.html">Special ODEs</a></li>
-            <li class="parent alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu">
-            <li class="" data-nav-id="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html">(b) Strum-Liouville operator</a></li>
-            <li class="" data-nav-id="/ode_pde/sturm_liouville/b_weight_function/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_weight_function/index.html">(b) Weight function</a></li>
-            <li class="" data-nav-id="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">(i) Self-adjoint for SL</a></li>
-            <li class="active " data-nav-id="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html">(r) Singular Sturm-Liouville</a></li>
-            <li class="" data-nav-id="/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html">(p) ODE solution using SL</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/ode_pde/seperation_of_varibles/index.html"><a class="padding" href="/ode_pde/seperation_of_varibles/index.html">Seperation of variables</a><ul id="R-subsections-c2886adf774e7c77743179e8bf11b8b3" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/ode_pde/green_function/index.html"><a class="padding" href="/ode_pde/green_function/index.html">Green function</a><ul id="R-subsections-d28624b797e893776f3654043b1dccd0" class="collapsible-menu"></ul></li></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/ode_pde/green_function/index.html"><a class="padding" href="/ode_pde/green_function/index.html">Green function</a><ul id="R-subsections-d28624b797e893776f3654043b1dccd0" class="collapsible-menu">
+            <li class="" data-nav-id="/ode_pde/green_function/preface/index.html"><a class="padding" href="/ode_pde/green_function/preface/index.html">Preface</a></li>
+            <li class="active " data-nav-id="/ode_pde/green_function/b_first_order_pde/index.html"><a class="padding" href="/ode_pde/green_function/b_first_order_pde/index.html">(b) First-order PDE</a></li>
+            <li class="" data-nav-id="/ode_pde/green_function/i_second_order_pde/index.html"><a class="padding" href="/ode_pde/green_function/i_second_order_pde/index.html">(i) Second-order PDE</a></li>
+            <li class="" data-nav-id="/ode_pde/green_function/p_gf_examples/index.html"><a class="padding" href="/ode_pde/green_function/p_gf_examples/index.html">(p) Green function examples</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">

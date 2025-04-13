@@ -3,7 +3,7 @@
   <channel>
     <title>Green function :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/green_function/index.html</link>
-    <description>Preface&#xD;(b) First-order ODE</description>
+    <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/green_function/index.xml" rel="self" type="application/rss+xml" />
@@ -15,11 +15,25 @@
       <description>1. Green function &amp; 미분 아래 회로의 전달함수를 구해보자.&#xA;회로에 대한 미분방정식은 다음과 같다.&#xA;$$ i_{s}=v+i_{o},\quad v=Di_{o} $$입력에 디렉 델타 함수를 넣으면, 전달함수를 구할 수 있다.&#xA;$$ \delta\left(t\right)=\left(D+1\right)h\left(t\right) $$위의 미분방정식을 풀어야 한다. source 항이 디렉 델타로 표현되었을 때, 이 식을 만족하는 미분방정식의 해를 그린함수라고 하며, 이 그린함수를 구하는 것이 목적이다.&#xA;(1) $t\ne0$&#xA;일반적인 제차 미분방정식의 풀이이다.&#xA;$$ h\left(t\right)=Ae^{-t} $$(2) $t=0$&#xA;미분방정식의 양변을 적분한다.&#xA;$$ \int_0^{0&lt;}dt\left\lbrack\delta\left(t\right)\right\rbrack=\int_0^{0&lt;}dt\left\lbrack\left(D+1\right)h\left(t\right)\right\rbrack $$$$ 1=\int_0^{0&lt;}dt\left\lbrack Dh\left(t\right)\right\rbrack+\int_0^{0&lt;}dt\left\lbrack h\left(t\right)\right\rbrack $$$$ 1=h\left(0&lt;\right)+h\left(0\right),\quad\int_0^{0&lt;}dt\left\lbrack h\left(t\right)\right\rbrack=0 $$$$ 1=h\left(0&lt;\right) \implies A=1 $$따라서, 최종해는 다음과 같다.</description>
     </item>
     <item>
-      <title>(b) First-order ODE</title>
-      <link>http://localhost:1313/ode_pde/green_function/b_first_order_ode/index.html</link>
+      <title>(b) First-order PDE</title>
+      <link>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/green_function/b_first_order_ode/index.html</guid>
+      <guid>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</guid>
       <description>1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)+q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.&#xA;$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.&#xA;$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.&#xA;ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.</description>
+    </item>
+    <item>
+      <title>(i) Second-order PDE</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_second_order_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_second_order_pde/index.html</guid>
+      <description>1. Jump condition &amp; Continuous $$ \left\lbrack\frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)+q\left(x\right)\right\rbrack G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$$$ p\left(x\right),q\left(x\right):\text{ continous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x’\right)$ 또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, $G\left(x,x’\right)$이 디렉 델타가 될 수 없다. 따라서, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x’\right)$ 이 디렉 델타가 되어야 한다.&#xA;$$ \frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, $\partial_{x}{\displaystyle G\left(x,x’\right)}$는 불연속 함수인 “단위 계단 함수” 임을 알 수 있다. *Characteristics of Dirac delta</description>
+    </item>
+    <item>
+      <title>(p) Green function examples</title>
+      <link>http://localhost:1313/ode_pde/green_function/p_gf_examples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/p_gf_examples/index.html</guid>
+      <description>Find the general solution of the given differential equations. Don’t evaluate the integral that defines $ y_{p}(x)$.&#xA;example1-1)&#xA;$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$&#xD;IOPM-D&#xD;$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D+4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D+2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D+\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$&#xD;GF&#xD;(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W= \left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}+\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}+\frac{1}{36}e^{-2x}+\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$&#xD;example1-2)</description>
     </item>
   </channel>
 </rss>
