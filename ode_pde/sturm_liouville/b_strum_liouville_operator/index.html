@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p’_0\left(x\right)=p_1\left(x\right)$ 경우 $$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) $$$$L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)$$(2) $p_0’\left(x\right)\ne p_1\left(x\right)$ 경우 위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Strum-Liouville operator :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p’_0\left(x\right)=p_1\left(x\right)$ 경우 $$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) $$$$L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)$$(2) $p_0’\left(x\right)\ne p_1\left(x\right)$ 경우 위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Strum-Liouville operator :: 수리전자물리학">
+    <meta property="og:description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p’_0\left(x\right)=p_1\left(x\right)$ 경우 $$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) $$$$L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)$$(2) $p_0’\left(x\right)\ne p_1\left(x\right)$ 경우 위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ODE & PDE">
+    <meta itemprop="name" content="(b) Strum-Liouville operator :: 수리전자물리학">
+    <meta itemprop="description" content="1. 스텀-리우빌 선형 연산자 스텀-리우빌 형태는 아래와 같다.
+$$L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right), p\left(x\right)&gt;0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}$$ 2. Integrating factor ‘임의의 2차 상미분방정식’을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
+(1) $p’_0\left(x\right)=p_1\left(x\right)$ 경우 $$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right) $$$$L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)&#43;p_2\left(x\right)$$(2) $p_0’\left(x\right)\ne p_1\left(x\right)$ 경우 위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
+$$L=p_0\left(x\right)\frac{d^2}{dx^2}&#43;p_1\left(x\right)\frac{d}{dx}&#43;p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)&#43;q\left(x\right)$$스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,">
+    <meta itemprop="wordCount" content="211">
+    <title>(b) Strum-Liouville operator :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744519561" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744519561" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744519561" rel="stylesheet">
+    <link href="/css/theme.css?1744519561" rel="stylesheet">
+    <link href="/css/format-html.css?1744519561" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1744519561" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1744519561" defer></script>
+    <script src="/js/lunr/lunr.min.js?1744519561" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1744519561" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1744519561" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1744519561" defer></script>
+    <script src="/js/search.js?1744519561" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/ode_pde\/sturm_liouville\/b_strum_liouville_operator\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1744519561";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-스텀-리우빌-선형-연산자">1. 스텀-리우빌 선형 연산자</a></li>
+        <li><a href="#2-integrating-factor">2. Integrating factor</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Strum-Liouville operator</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/index.html" title="Strum-Lioville (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/b_weight_function/index.html" title="(b) Weight function (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable ode_pde" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-strum-liouville-operator">(b) Strum-Liouville operator</h1>
+
+<hr>
+<h3 id="1-스텀-리우빌-선형-연산자">1. 스텀-리우빌 선형 연산자</h3>
+<p>스텀-리우빌 형태는 아래와 같다.</p>
+$$
+L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right), p\left(x\right)>0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}
+$$<hr>
+<h3 id="2-integrating-factor">2. Integrating factor</h3>
+<p>&lsquo;임의의 2차 상미분방정식&rsquo;을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.</p>
+<h6 id="1-p_0leftxrightp_1leftxright-경우">(1) $p&rsquo;_0\left(x\right)=p_1\left(x\right)$ 경우</h6>
+$$
+L=p_0\left(x\right)\frac{d^2}{dx^2}+p_1\left(x\right)\frac{d}{dx}+p_2\left(x\right) 
+$$$$
+L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)+p_2\left(x\right)
+$$<h6 id="2-p_0leftxrightne-p_1leftxright-경우">(2) $p_0&rsquo;\left(x\right)\ne p_1\left(x\right)$ 경우</h6>
+<p>위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.</p>
+$$
+L=p_0\left(x\right)\frac{d^2}{dx^2}+p_1\left(x\right)\frac{d}{dx}+p_2\left(x\right)\implies L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)
+$$<p>스트룸-리우빌 형태로 만들기 위해, 적절한 함수를 곱한다. 따라서,</p>
+$$
+r\left(x\right)L=r\left(x\right)p_0\left(x\right)\frac{d^2}{dx^2}+r\left(x\right)p_1\left(x\right)\frac{d}{dx}+r\left(x\right)p_2\left(x\right) 
+$$$$
+L_{p}=r\left(x\right)L=\left\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\right\rbrack,\quad r\left(x\right)p_0\left(x\right)=p\left(x\right)
+$$<p>$\left\lbrack r\left(x\right)p_0^{}\left(x\right)\right\rbrack&rsquo;=r\left(x\right)p_1\left(x\right)$를 만족시키는 r(x)를 구하면, 스트룸-리우빌 형태로 만들 수 있다.</p>
+$$
+\left\lbrack r\left(x\right)p_0\left(x\right)\right\rbrack'=r\left(x\right)p_1\left(x\right)
+$$$$
+r'\left(x\right)p_0\left(x\right)+r\left(x\right)p_0'\left(x\right)=r\left(x\right)p_1\left(x\right) 
+$$$$
+\frac{r'\left(x\right)}{r\left(x\right)}=\frac{p_1\left(x\right)-p_0'\left(x\right)}{p_0^{}\left(x\right)}
+$$<p>위의 미분방정식을 풀면,</p>
+$$
+\int dx\left\lbrack\frac{r'\left(x\right)}{r\left(x\right)}\right\rbrack=\int dx\left\lbrack\frac{p_1\left(x\right)-p_0'\left(x\right)}{p_0\left(x\right)}\right\rbrack 
+$$$$
+\ln\left\lbrack r\left(x\right)\right\rbrack=-\ln\left\lbrack p_0\left(x\right)\right\rbrack+\int dx\left\lbrack\frac{p_1\left(x\right)}{p_0\left(x\right)}\right\rbrack 
+$$$$
+r\left(x\right)=\frac{1}{p_0\left(x\right)}\exp\left(\int dx\left\lbrack\frac{p_1\left(x\right)}{p_0^{}\left(x\right)}\right\rbrack\right)
+$$<p>위 식은, 스트룸-리우빌 형로 만들기 위한 함수이다.</p>
+<hr>
+<p>example1) Hermitle&rsquo;s ODE</p>
+$$
+y''-2xy'+2ny=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+y''-2xy'=-2ny $$
+$$
+r\left(x\right)=\exp\left(\int dx\left\lbrack-2x\right\rbrack\right)=e^{-x^2} 
+$$
+
+$$
+e^{-x^2}\left(D^2-2xD\right)u_{n}=-2ne^{-x^2}u_{n} 
+$$
+
+$$
+D\left\lbrack e^{-x^2}D\right\rbrack u_{n}=-2ne^{-x^2}u_{n} 
+$$
+
+$$
+\lambda_{n}=2n,\quad w\left(x\right)=e^{-x^2}
+$$
+  </div>
+</details>
+<p>example2) Laguerre’s ODE (라게르 미분방정식)</p>
+$$
+xy''+\left(1-x\right)y'+ay=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\left(D^2+\frac{1-x}{x}D\right)u_{n}=-a\frac{1}{x}u_{n} 
+$$
+
+$$
+r\left(x\right)=\exp\left(\int dx\left\lbrack\frac{1-x}{x}\right\rbrack\right)=\exp\left(-x+\ln x\right)=xe^{-x} 
+$$
+
+$$
+\frac{d}{dx}\left(xe^{-x}\frac{d}{dx}\right)u_{n}=-ae^{-x}u_{n} 
+$$
+
+$$
+\lambda_{n}=a,\quad w\left(x\right)=e^{-x}
+$$
+  </div>
+</details>
+<p>example3) Legendre’s ODE</p>
+$$
+\left(1-x^2\right)y''-2xy'+l\left(l+1\right)y=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\left\lbrack D^2-\frac{2x}{1-x^2}D\right\rbrack u_{n}=-\frac{l\left(l+1\right)}{1-x^2}u_{n} 
+$$
+
+$$
+r\left(x\right)=\exp\left(\int dx\left\lbrack-\frac{2x}{1-x^2}\right\rbrack\right)=1-x^2 
+$$
+
+$$
+D\left\lbrack\left(1-x^2\right)D\right\rbrack u_{n}=-l\left(l+1\right)u_{n} 
+$$
+
+$$
+\lambda_{n}=l\left(l+1\right),\quad w\left(x\right)=1
+$$
+  </div>
+</details>
+<p>example4) Chebyshev’s ODE</p>
+$$
+\left(1-x^2\right)y''-xy'+n^2y=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+y''-\frac{x}{1-x^2}y'=-\frac{n^2}{1-x^2}y 
+$$
+
+$$
+r\left(x\right)=\exp\left(\int dx\left\lbrack-\frac{x}{1-x^2}\right\rbrack\right)=\exp\left(\frac12\ln\left(1-x^2\right)\right)=\sqrt{1-x^2} 
+$$
+
+$$
+\frac{d}{dx}\left(\sqrt{1-x^2}\frac{d}{dx}\right)u_{n}=-\frac{n^2}{\sqrt{1-x^2}}u_{n} 
+$$
+
+$$
+\lambda_{n}=n^2,\quad w\left(x\right)=\frac{1}{\sqrt{1-x^2}}
+$$
+  </div>
+</details>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/ode_pde/homogeneous/index.html"><a class="padding" href="/ode_pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-9cf59d00783ac0253b0183f2bd2f94f7" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/inhomogeneous/index.html"><a class="padding" href="/ode_pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-a58d165d753d3969b937897fa286929c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/p_circuit_examples_for_odes/index.html"><a class="padding" href="/ode_pde/p_circuit_examples_for_odes/index.html">(p) Circuit examples for ODEs</a></li>
+            <li class="" data-nav-id="/ode_pde/special_odes/index.html"><a class="padding" href="/ode_pde/special_odes/index.html">Special ODEs</a></li>
+            <li class="parent alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu">
+            <li class="active " data-nav-id="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html">(b) Strum-Liouville operator</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/b_weight_function/index.html"><a class="padding" href="/ode_pde/sturm_liouville/b_weight_function/index.html">(b) Weight function</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">(i) Self-adjoint for SL</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html">(r) Singular Sturm-Liouville</a></li>
+            <li class="" data-nav-id="/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html"><a class="padding" href="/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html">(p) ODE solution using SL</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/seperation_of_varibles/index.html"><a class="padding" href="/ode_pde/seperation_of_varibles/index.html">Seperation of variables</a><ul id="R-subsections-c2886adf774e7c77743179e8bf11b8b3" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/green_function/index.html"><a class="padding" href="/ode_pde/green_function/index.html">Green function</a><ul id="R-subsections-d28624b797e893776f3654043b1dccd0" class="collapsible-menu"></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1744519561" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744519561" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.7em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1744519561"></script>
+    <script src="/js/theme.js?1744519561" defer></script>
+  </body>
+</html>
