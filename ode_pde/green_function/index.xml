@@ -3,7 +3,7 @@
   <channel>
     <title>Green function :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/green_function/index.html</link>
-    <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples&#xD;(i) Divergence for free-space</description>
+    <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples&#xD;(i) Divergence for free-space&#xD;(i) Laplacian for free-space&#xD;(i) Helmholtz operator for free-space&#xD;(i) GF from SL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/green_function/index.xml" rel="self" type="application/rss+xml" />
@@ -41,6 +41,27 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</guid>
       <description>0. 정리 그린 함수는 항상 소스점 r’을 기준으로 정의된다.&#xA;3D 좌표계 $$ \nabla\cdot\hat{R}G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}-\vec{r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{4\pi\left|\vec{R}\right|^2}=\frac{1}{4\pi\left|\vec{r}-\vec{r}&#39;\right|^2},\quad\vec{R}=\vec{r}-\vec{r}&#39; $$ 2D 좌표계 $$ \nabla\cdot\hat{\rho}G\left(\vec{r},\vec{r}&#39;\right)=\delta^2\left(\vec{r}-\vec{r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{2\pi\left|\vec{\rho}\right|}=\frac{1}{2\pi\left|\vec{r}-\vec{r}&#39;\right|^2},\quad\vec{\rho}=\vec{r}-\vec{r}&#39; $$ 1. 3D Divergence &amp; Green function $$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{4\pi\left|\vec{R}\right|^2}=\frac{1}{4\pi\left|\vec{r}-\vec{r}&#39;\right|^2},\quad\vec{R}=\vec{r}-\vec{r}&#39; $$proof)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, gradient 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \nabla\cdot\hat{R}G\left(R\right)=\delta^3\left(R\right) $$$$ \nabla\cdot\hat{R}G\left(R\right)=\frac{1}{R^2}\frac{\partial}{\partial R}R^2\cdot G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$$$ R^2G\left(R\right)=\frac{1}{4\pi}u\left(R\right) $$$$ G\left(R\right)=\frac{1}{4\pi R^2},\quad R&gt;0 $$일반화하면, 다음과 같다.</description>
+    </item>
+    <item>
+      <title>(i) Laplacian for free-space</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</guid>
+      <description>0. 정리 그린 함수는 항상 소스점 r’을 기준으로 정의된다.&#xA;3D (결과 암기) $$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{1}{4\pi\left|\vec{R}\right|}=-\frac{1}{4\pi\left|\vec{r-\vec{r}&#39;}\right|},\quad\vec{R}=\vec{r-\vec{r}&#39;} $$ 2D (결과 암기) $$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{\ln\left|\vec{\rho}\right|}{2\pi}=\frac{\ln\left|\vec{r-\vec{r}&#39;}\right|}{2\pi},\quad\vec{\rho}=\vec{r-\vec{r}&#39;} $$ 1. 3D, 라플라스 연산에 대한 그린함수 $$ \nabla^2G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}\vec{-r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{1}{4\pi\left|\vec{r-\vec{r}&#39;}\right|}=-\frac{1}{4\pi\left|\vec{R}\right|},\quad\vec{R}=\vec{r-\vec{r}&#39;} $$proof1)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, Laplacian 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \frac{1}{R^2}\frac{d}{dR}\left(R^2\frac{d}{dR}\right)G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$$$ \frac{d}{dR}\left(R^2\frac{d}{dR}\right)G\left(R\right)=\frac{\delta\left(R\right)}{4\pi} $$$$ R^2\frac{d}{dR}G\left(R\right)=\frac{1}{4\pi}u\left(R\right) $$$$ \frac{d}{dR}G\left(R\right)=\frac{1}{4\pi R^2} $$$$ G\left(R\right)=-\frac{1}{4\pi R}+C $$proof2)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.</description>
+    </item>
+    <item>
+      <title>(i) Helmholtz operator for free-space</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</guid>
+      <description>1. 구 대칭, free-space (결과 암기) $$ \left(\nabla^2+k^2\right)G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}-\vec{r}&#39;\right) $$그린함수는 다음과 같다.&#xA;(1) 방사방향이 e$^{+ikR}$&#xA;$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{e^{+ik\left|\vec{r}-\vec{r}&#39;\right|}}{4\pi\left|\vec{r}-\vec{r}&#39;\right|}=-\frac{e^{+ikR}}{4\pi R} $$(2) 방사방향이 e$^{-ikR}$&#xA;$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{e^{-ik\left|\vec{r}-\vec{r}&#39;\right|}}{4\pi\left|\vec{r}-\vec{r}&#39;\right|}=-\frac{e^{-ikR}}{4\pi R} $$ proof)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, Helmholtz 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다. 또한 상수 곱셈의 경우, 위치가 이동하여도, 곱해지는 값은 동일하다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \nabla^2:=\frac{1}{R^2}\frac{\partial}{\partial R}\left(R^2\frac{\partial}{\partial R}\right) $$$$ \left\lbrack\frac{1}{R^2}\frac{\partial}{\partial R}\left(R^2\frac{\partial}{\partial R}\right)+k^2\right\rbrack G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$위 미분 방정식은 구면 베셀 방정식 형태이다. 변수 치환을 사용하여 간단하게 만들 수 있다.</description>
+    </item>
+    <item>
+      <title>(i) GF from SL</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</guid>
+      <description>미분방정식이 아래와 같이 표현되었을 때,&#xA;$$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.&#xA;$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n},f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,&#xA;$$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.&#xA;만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.&#xA;실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. 이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해 이다.</description>
     </item>
   </channel>
 </rss>

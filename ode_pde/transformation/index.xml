@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transformation :: 수리전자물리학</title>
+    <link>http://localhost:1313/ode_pde/transformation/index.html</link>
+    <description>(b) Phasor transform for ODE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/ode_pde/transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Phasor transform for ODE</title>
+      <link>http://localhost:1313/ode_pde/transformation/b_phasor_transformation_for_ode/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/transformation/b_phasor_transformation_for_ode/index.html</guid>
+      <description>페이저 변환을 수행할 수 있는 조건&#xA;입력과 출력이 단일 주기와 단일 파장을 가진다. 경계조건이 필요 없는 경우여야 한다. 즉, 특수해를 구할 때 쓸 수 있다. (특수해는 경계조건에 상관없기 때문) boundary condition 한쪽 또는 양쪽이 unbounded 되어 있을 때, 쓸 수 있다. 1. Phasor 변환 $$&#xD;A\cos\left(\omega t+\phi\right) \to Ae^{i\phi}&#xD;$$$$&#xD;A\sin\left(\omega t+\phi\right)\to-iAe^{i\phi}&#xD;$$$$&#xD;A\cos\left(\omega t+\phi\right) \to Ae^{i\phi}&#xD;$$$$&#xD;A\sin\left(\omega t+\phi\right)\to-iAe^{i\phi}&#xD;$$$$&#xD;A\cos\left(\omega t-kx+\phi\right)\to Ae^{i\left(-kx+\phi\right)}&#xD;$$$$&#xD;A\sin\left(\omega t-kx+\phi\right)\to-iAe^{i\left(-kx+\phi\right)}&#xD;$$$$&#xD;Ae^{ikx}e^{-i\omega t}\to Ae^{ikx}&#xD;$$$e^{-i\omega t}$를 기준으로,</description>
+    </item>
+  </channel>
+</rss>

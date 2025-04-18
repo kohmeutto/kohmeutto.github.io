@@ -7,6 +7,9 @@
     <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transformation_for_ode/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
   </url>
   <url>
@@ -85,13 +88,25 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_non_free_space/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/transformation/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
