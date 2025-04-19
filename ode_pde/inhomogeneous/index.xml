@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Inhomogeneous :: 수리전자물리학</title>
-    <link>http://localhost:1313/ode_pde/inhomogeneous/index.html</link>
+    <link>http://localhost:63711/ode_pde/inhomogeneous/index.html</link>
     <description>(b) Exponential - IOPM&#xD;(b) Trigonometric - IOPM&#xD;(b) Polynomial - IOPM&#xD;(a) Displacement - IOPM&#xD;(a) Wronskian method</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/ode_pde/inhomogeneous/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:63711/ode_pde/inhomogeneous/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(b) Exponential - IOPM</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</link>
+      <link>http://localhost:63711/ode_pde/inhomogeneous/b_exponential_iopm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</guid>
+      <guid>http://localhost:63711/ode_pde/inhomogeneous/b_exponential_iopm/index.html</guid>
       <description>미분방정식의 해는 일반해+특수해 이다.&#xA;아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.&#xA;1. 유형1 $$&#xD;\frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0&#xD;$$&#xD;example1)&#xA;$$&#xD;y&#39;&#39;+y&#39;-2y=e^{3x}&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D+2\right)\left(D-1\right)y_{p}=e^{3x}&#xD;$$&#xD;$$&#xD;y_{p}=\frac{1}{\left(D+2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}&#xD;$$&#xD;example2)&#xA;$$&#xD;y&#39;&#39;-y&#39;-6y=e^{-x}&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-3\right)\left(D+2\right)y_{p}=e^{-x}&#xD;$$&#xD;$$&#xD;y_{p}=\frac{1}{\left(D-3\right)\left(D+2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}&#xD;$$&#xD;example3)&#xA;$$&#xD;y&#39;&#39;-4y&#39;+3y=10e^{-2x}&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-3\right)\left(D-1\right)y_{p}=10e^{-2x}&#xD;$$&#xD;$$&#xD;y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}&#xD;$$&#xD;example4)</description>
     </item>
     <item>
       <title>(b) Trigonometric - IOPM</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</link>
+      <link>http://localhost:63711/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</guid>
+      <guid>http://localhost:63711/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</guid>
       <description>미분방정식의 해는 일반해+특수해 이다.&#xA;아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.&#xA;1. 유형1 $$&#xD;\frac{1}{f\left(D\right)}\cos\alpha x=\operatorname{Re}\left\lbrack\frac{1}{f\left(D\right)}e^{i\alpha x}\right\rbrack&#xD;$$$$&#xD;\frac{1}{f\left(D\right)}\sin\alpha x=\operatorname{\operatorname{Im}}\left\lbrack\frac{1}{f\left(D\right)}e^{i\alpha x}\right\rbrack&#xD;$$&#xD;example1)&#xA;$$&#xD;y&#39;&#39;-y&#39;-2y=\cos x&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D^2-D-2\right)y_{p}=\operatorname{Re}\left\lbrack e^{ix}\right\rbrack&#xD;$$&#xD;$$&#xD;y_{p}=\operatorname{Re}\left\lbrack\frac{1}{\left(D^2-D-2\right)\left|_{D=i}\right.}e^{ix}\right\rbrack=\operatorname{Re}\left\lbrack\frac{1}{-3-i}e^{ix}\right\rbrack $$&#xD;$$&#xD;=\operatorname{Re}\left\lbrack\frac{-3+i}{10}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{3}{10}\cos x-\frac{1}{10}\sin x&#xD;$$&#xD;example2)&#xA;$$&#xD;y&#39;&#39;-3y&#39;-4y=\sin 2x&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D^2-3D-4\right)y_{p}=\operatorname{Im}\left\lbrack e^{i2x}\right\rbrack $$&#xD;$$&#xD;y_{p}=\operatorname{\operatorname{Im}}\left\lbrack\frac{1}{\left(D^2-3D-4\right)\left|_{D=2i}^{}\right.}e^{i2x}\right\rbrack=\operatorname{\operatorname{Im}}\left\lbrack\frac{1}{-8-6i}e^{i2x}\right\rbrack&#xD;$$&#xD;$$&#xD;=\operatorname{\operatorname{Im}}\left\lbrack\frac{-8+6i}{100}\left(\cos2x+i\sin2x\right)\right\rbrack=-\frac{2}{25}\sin2x+\frac{3}{50}\cos2x&#xD;$$&#xD;example3)</description>
     </item>
     <item>
       <title>(b) Polynomial - IOPM</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</link>
+      <link>http://localhost:63711/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</guid>
+      <guid>http://localhost:63711/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</guid>
       <description>미분방정식의 해는 일반해+특수해 이다.&#xA;아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.&#xA;1. 유형1 $$&#xD;\frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace&#xD;$$&#xD;example1)&#xA;$$&#xD;y&#39;&#39;+y=x^2&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D^2+1\right)y_{p}=x^2&#xD;$$&#xD;$$&#xD;y_{p}=\operatorname{}\frac{1}{1+D^2}x^2=\left(1-D^2\right)x^2=x^2-2&#xD;$$&#xD;example2)&#xA;$$&#xD;y&#39;&#39;+y&#39;-6y=6x^3-3x^2+12&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D^2+D-6\right)y_{p}=6x^3-3x^2+12x&#xD;$$&#xD;$$&#xD;y_{p}=-\frac16\cdot\frac{1}{1-\frac16D-\frac16D^2}\left\lbrack6x^3-3x^2+12\right\rbrack&#xD;$$&#xD;$$&#xD;=-\frac16\cdot\left(1+\frac16D+\frac{7}{36}D^2+\frac{13}{216}D^3\right)\left\lbrack6x^3-3x^2+12x\right\rbrack&#xD;$$&#xD;$$&#xD;=-x^3-3x-\frac12&#xD;$$&#xD;example3)&#xA;$$&#xD;\frac{1}{4} y&#39;&#39;+y&#39;+y=x^2-2x&#xD;$$&#xD;sol&#xD;$$&#xD;\frac{1}{1-x}=1+x+x^2+x^3\cdots&#xD;$$&#xD;$$&#xD;y_{p}=\frac{1}{1+D+\frac14D^2}_{}\left\lbrack x^2-2x\right\rbrack&#xD;$$&#xD;$$&#xD;=\left(1-D+\frac34D^2\right)\left\lbrack x^2-2x\right\rbrack&#xD;$$&#xD;$$&#xD;=x^2-4x+\frac{7}{2}&#xD;$$&#xD;example4)</description>
     </item>
     <item>
       <title>(a) Displacement - IOPM</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</link>
+      <link>http://localhost:63711/ode_pde/inhomogeneous/a_displacement_iopm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</guid>
+      <guid>http://localhost:63711/ode_pde/inhomogeneous/a_displacement_iopm/index.html</guid>
       <description>미분방정식의 해는 일반해+특수해 이다.&#xA;아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.&#xA;1. 유형1 $$&#xD;\frac{1}{f\left(D\right)}\left\lbrack e^{\alpha x}R\left(x\right)\right\rbrack=e^{\alpha x}\frac{1}{f\left(D+\alpha\right)}\left\lbrack R\left(x\right)\right\rbrack&#xD;$$&#xD;example1)&#xA;$$&#xD;y&#39;&#39;-3y&#39;-4y=xe^{-2x}&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-4\right)\left(D+1\right)y_{p}=xe^{-2x}&#xD;$$&#xD;$$&#xD;y_{p}=\frac{1}{\left(D-4\right)\left(D+1\right)}\left\lbrack xe^{-2x}\right\rbrack=e^{-2x}\frac{1}{\left(D-6\right)\left(D-1\right)}\left\lbrack x\right\rbrack&#xD;$$&#xD;$$&#xD;=\frac{e^{-2x}}{6}\left(1+\frac76D\right)\left\lbrack x\right\rbrack=\frac{e^{-2x}}{6}\left(x+\frac76\right)&#xD;$$&#xD;example2)&#xA;$$&#xD;y&#39;&#39;-y&#39;-2y=e^{3x}\sin x&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-2\right)\left(D+1\right)y_{p}=e^{3x}\sin x&#xD;$$&#xD;$$&#xD;y_{p}=e^{3x}\frac{1}{\left(D+1\right)\left(D+4\right)}\sin x&#xD;$$&#xD;$$=e^{3x}\operatorname{Im}\left\lbrack\frac{1}{\left(D+1\right)\left(D+4\right)\left|_{D=i}\right.}e^{ix}\right\rbrack=e^{3x}\operatorname{Im}\left\lbrack\frac{1}{5i+3}e^{ix}\right\rbrack&#xD;$$&#xD;$$&#xD;=e^{3x}\operatorname{Im}\left\lbrack\frac{1}{5i+3}e^{ix}\right\rbrack=e^{3x}\left(\frac{5}{34}\cos x-\frac{3}{34}\sin x\right)&#xD;$$&#xD;example3)</description>
     </item>
     <item>
       <title>(a) Wronskian method</title>
-      <link>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</link>
+      <link>http://localhost:63711/ode_pde/inhomogeneous/a_wronskian_method/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</guid>
+      <guid>http://localhost:63711/ode_pde/inhomogeneous/a_wronskian_method/index.html</guid>
       <description>지금은 안해도 됨. 궁극적으로 그린함수에서 통합 됨&#xA;론스키안 해법과 그린 함수 해법은 밀접한 관련이 있지만, 완전히 동일하다고 보기는 어렵습니다. 두 방법 모두 비제차 선형 미분방정식의 특수해를 구하는 데 사용되지만, 접근 방식과 표현 방식에서 차이가 있습니다.&#xA;론스키안 해법 (Variation of Parameters)&#xA;접근 방식: 동차 방정식의 기본해를 알고 있을 때, 이 기본해들을 변형시켜 비제차 방정식의 해를 구합니다. 기본해에 미정 함수를 곱한 형태의 해를 가정하고, 이 미정 함수를 구하기 위해 론스키안 행렬식을 활용합니다. 표현 방식: 특수해는 기본해와 적분의 형태로 표현됩니다. 앞서 설명드린 것처럼 다음과 같은 형태입니다. yₚ(x) = -y₁(x) ∫ [g(x)y₂(x) / W(x)] dx + y₂(x) ∫ [g(x)y₁(x) / W(x)] dx&#xD;그린 함수 해법</description>
     </item>
   </channel>

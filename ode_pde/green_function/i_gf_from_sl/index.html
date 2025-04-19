@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63711&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
     <meta name="description" content="미분방정식이 아래와 같이 표현되었을 때,
 $$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.
-$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n},f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
+$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n}|f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ =\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
 $$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.
 만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.
-실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. 이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해 이다.">
+실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(i) GF from SL :: 수리전자물리학">
     <meta name="twitter:description" content="미분방정식이 아래와 같이 표현되었을 때,
 $$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.
-$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n},f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
+$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n}|f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ =\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
 $$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.
 만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.
-실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. 이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해 이다.">
-    <meta property="og:url" content="http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html">
+실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는">
+    <meta property="og:url" content="http://localhost:63711/ode_pde/green_function/i_gf_from_sl/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(i) GF from SL :: 수리전자물리학">
     <meta property="og:description" content="미분방정식이 아래와 같이 표현되었을 때,
 $$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.
-$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n},f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
+$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n}|f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ =\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
 $$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.
 만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.
-실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. 이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해 이다.">
+실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
     <meta itemprop="name" content="(i) GF from SL :: 수리전자물리학">
     <meta itemprop="description" content="미분방정식이 아래와 같이 표현되었을 때,
 $$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.
-$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n},f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
+$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n}|f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ =\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,
 $$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.
 만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.
-실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. 이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해 이다.">
-    <meta itemprop="wordCount" content="104">
+실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는">
+    <meta itemprop="wordCount" content="100">
     <title>(i) GF from SL :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744989426" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1744989426" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1744989426" rel="stylesheet">
-    <link href="/css/theme.css?1744989426" rel="stylesheet">
-    <link href="/css/format-html.css?1744989426" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1744989426" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1744989426" defer></script>
-    <script src="/js/lunr/lunr.min.js?1744989426" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1744989426" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1744989426" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1744989426" defer></script>
-    <script src="/js/search.js?1744989426" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745081787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745081787" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1745081787" rel="stylesheet">
+    <link href="/css/theme.css?1745081787" rel="stylesheet">
+    <link href="/css/format-html.css?1745081787" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1745081787" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1745081787" defer></script>
+    <script src="/js/lunr/lunr.min.js?1745081787" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1745081787" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1745081787" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1745081787" defer></script>
+    <script src="/js/search.js?1745081787" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -59,9 +59,9 @@ $$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{
       window.relearn.path='\/ode_pde\/green_function\/i_gf_from_sl\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.absBaseUri='http:\/\/localhost:63711';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1744989426";
+      window.relearn.index_js_url="/searchindex.en.js?1745081787";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -161,9 +161,9 @@ $$
 Ly=f
 $$<p>미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.</p>
 $$
-y=\sum_{n=1}^{\infty}\frac{\left<\varphi_{n},f\right>_{w}}{\lambda_{n}}\varphi_{n}
+y=\sum_{n=1}^{\infty}\frac{\left<\varphi_{n}|f\right>_{w}}{\lambda_{n}}\varphi_{n}
 $$$$
-y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx'\left\lbrack\frac{w\left(x'\right)f\left(x'\right)\varphi_{n}^{\ast}\left(x'\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right)
+=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx'\left\lbrack\frac{w\left(x'\right)f\left(x'\right)\varphi_{n}^{\ast}\left(x'\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right)
 $$$$
 =\int_{x_1}^{x_2}dx'\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x'\right)\varphi_{n}^{\ast}\left(x'\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x'\right)\right\rbrack
 $$$$
@@ -174,7 +174,12 @@ G\left(x,x'\right)=\sum_{n=1}^{\infty}\frac{w\left(x'\right)\varphi_{n}^{\ast}\l
 $$<p>ℹ️ <strong>미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.</strong></p>
 <p>만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.</p>
 <hr>
-<p>실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. <strong>이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해</strong> 이다.</p>
+<p>실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는</p>
+<ul>
+<li>변수 분리가 가능</li>
+<li>교환법칙이 가능</li>
+<li>self -adjoint인 경우, 그린함수 풀이법이 전체 해</li>
+</ul>
 $$
 G\left(x,x'\right)=g_1\left(x\right)g_2\left(x'\right)
 $$$$
@@ -264,8 +269,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1744989426" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1744989426" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1745081787" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1745081787" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -277,7 +282,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1744989426"></script>
-    <script src="/js/theme.js?1744989426" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1745081787"></script>
+    <script src="/js/theme.js?1745081787" defer></script>
   </body>
 </html>
