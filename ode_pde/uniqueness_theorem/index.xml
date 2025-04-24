@@ -3,7 +3,7 @@
   <channel>
     <title>Uniqueness theorem :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/uniqueness_theorem/index.html</link>
-    <description>(r) Weak solution&#xD;(r) Uniqueness of Poisson&#39;s equation</description>
+    <description>(r) Weak solution&#xD;(r) Uniqueness of Poisson&#39;s equation&#xD;(r) Uniqueness of Helmholtz equation&#xD;(i) Ideal metal</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/uniqueness_theorem/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +19,21 @@
       <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</guid>
-      <description>1. Poisson’s equation 포아송 방정식은 아래와 같이 표현할 수 있다. 라플라스 방정식은 f=0 일 때를 의미한다.&#xA;$$ \nabla^2\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 2. Weak solution for Poisson’s equation 포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송송 방정식에 대입하면, 다음과 같다.&#xA;$$ \nabla^2\psi\left(\vec{r}\right)=0 $$$\psi$가 0임을 보인다면, 해는 유일하다. 위 미분방정식의 해인 $\psi$가 strong solution 이고, weak solution 또한 strong solution 이라고 가정하면,&#xA;$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=0 $$$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=\int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left\lbrack \nabla\psi^\ast\cdot\nabla\psi\right\rbrack $$$$ \int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left|\nabla\psi\right|^2=0 $$ 3. Dirichlet boundary condition 경계면에서, 값은 이미 정해져 있으므로,</description>
+      <description>1. Poisson’s equation 포아송 방정식은 아래와 같이 표현할 수 있다. 라플라스 방정식은 f=0 일 때를 의미한다.&#xA;$$ \nabla^2\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 2. Weak solution for Poisson’s equation 포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송 방정식에 대입하면, 다음과 같다.&#xA;$$ \nabla^2\psi\left(\vec{r}\right)=0 $$$\psi$가 0임을 보인다면, 해는 유일하다. 위 미분방정식의 해인 $\psi$가 strong solution 이고, weak solution 또한 strong solution 이라고 가정하면,&#xA;$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=0 $$$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=\int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left\lbrack \nabla\psi^\ast\cdot\nabla\psi\right\rbrack $$$$ \int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left|\nabla\psi\right|^2=0 $$ 3. Dirichlet boundary condition 경계면에서, 값은 이미 정해져 있으므로,</description>
+    </item>
+    <item>
+      <title>(r) Uniqueness of Helmholtz equation</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</guid>
+      <description>1. Helmholtz equation 헬름홀쯔 방정식은 아래와 같이 표현할 수 있다.&#xA;$$ \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 포아송 방정식은 $k^2=0$ 일 때를 의미한다. 라플라스 방정식은 $k^2=0$ &amp; $f=0$ 일 때를 의미한다. 2. Weak solution for Poisson’s equation 헬름홀츠 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 헬름홀츠 방정식에 대입하면, 다음과 같다.&#xA;$$ \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=0 $$$\psi$가 0임을 보인다면, 해는 유일하다. 위 미분방정식의 해인 $\psi$가 strong solution 이고, weak solution 또한 strong solution 이라고 가정하면,</description>
+    </item>
+    <item>
+      <title>(i) Ideal metal</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
