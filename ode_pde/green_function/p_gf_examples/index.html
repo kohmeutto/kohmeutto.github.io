@@ -29,17 +29,17 @@ example1-1)
 $$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W= \left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example1-2)">
     <meta itemprop="wordCount" content="619">
     <title>(p) Green function examples :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745331340" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745331340" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1745331340" rel="stylesheet">
-    <link href="/css/theme.css?1745331340" rel="stylesheet">
-    <link href="/css/format-html.css?1745331340" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1745331340" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1745331340" defer></script>
-    <script src="/js/lunr/lunr.min.js?1745331340" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1745331340" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1745331340" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1745331340" defer></script>
-    <script src="/js/search.js?1745331340" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745470877" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1745470877" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1745470877" rel="stylesheet">
+    <link href="/css/theme.css?1745470877" rel="stylesheet">
+    <link href="/css/format-html.css?1745470877" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1745470877" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1745470877" defer></script>
+    <script src="/js/lunr/lunr.min.js?1745470877" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1745470877" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1745470877" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1745470877" defer></script>
+    <script src="/js/search.js?1745470877" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ $$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1745331340";
+      window.relearn.index_js_url="/searchindex.en.js?1745470877";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -811,8 +811,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1745331340" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1745331340" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1745470877" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1745470877" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -824,7 +824,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1745331340"></script>
-    <script src="/js/theme.js?1745331340" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1745470877"></script>
+    <script src="/js/theme.js?1745470877" defer></script>
   </body>
 </html>
