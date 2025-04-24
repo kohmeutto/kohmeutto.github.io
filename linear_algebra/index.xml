@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Algebra :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/index.html</link>
+    <description>Vector</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector</title>
+      <link>http://localhost:1313/linear_algebra/vector/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/index.html</guid>
+      <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits</description>
+    </item>
+  </channel>
+</rss>
