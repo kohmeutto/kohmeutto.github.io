@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homogeneous :: 수리전자물리학</title>
-    <link>http://localhost:63711/ode_pde/homogeneous/index.html</link>
+    <link>http://localhost:1313/ode_pde/homogeneous/index.html</link>
     <description>(b) ODE - Homogenous&#xD;(b) CEE - Homogenous</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:63711/ode_pde/homogeneous/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ode_pde/homogeneous/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(b) ODE - Homogenous</title>
-      <link>http://localhost:63711/ode_pde/homogeneous/b_ode/index.html</link>
+      <link>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:63711/ode_pde/homogeneous/b_ode/index.html</guid>
+      <guid>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</guid>
       <description>1. 상미분제차차방정식 $$&#xD;y&#39;&#39;+ay&#39;+by=0&#xD;$$$$&#xD;D^2+aD+b=0&#xD;$$ 2. 서로 다른, 실수 해 $$&#xD;D=\alpha,\beta&#xD;$$$$&#xD;y=c_1e^{\alpha x}+c_2e^{\beta x}&#xD;$$ example1)&#xA;$$&#xD;y&#39;&#39;-y&#39;-2y&#39;=0&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-2\right)\left(D+1\right)=0\rightarrow D=-1,2 $$&#xD;$$&#xD;y=c_1e^{-1x}+c_2e^{2x}&#xD;$$&#xD;example2)&#xA;$$&#xD;y&#39;&#39;-4y&#39;=0&#xD;$$&#xD;sol&#xD;$$&#xD;D\left(D-4\right)=0\rightarrow D=0,4&#xD;$$&#xD;$$&#xD;y=c_1+c_2e^{4x}&#xD;$$&#xD;2. 중근 $$&#xD;D=\alpha&#xD;$$$$&#xD;y=\left(c_1+c_2x\right)e^{\alpha x}&#xD;$$ example1)&#xA;$$&#xD;y&#39;&#39;+6y&#39;+9y=0&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D+3\right)^2=0 \rightarrow D=-3&#xD;$$&#xD;$$&#xD;y=\left(c_1+c_2x\right)e^{-3x}&#xD;$$&#xD;3. 서로 다른, 복소수 해 $$&#xD;D=\alpha\pm i\beta&#xD;$$$$&#xD;y=e^{\alpha x}\left(c_1\cos\beta x+c_2\sin\beta x\right)&#xD;$$$$&#xD;y=e^{\alpha x}\left(c_1e^{+i\beta x}+c_2e^{-i\beta x}\right)&#xD;$$ example1)</description>
     </item>
     <item>
       <title>(b) CEE - Homogenous</title>
-      <link>http://localhost:63711/ode_pde/homogeneous/b_cee/index.html</link>
+      <link>http://localhost:1313/ode_pde/homogeneous/b_cee/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:63711/ode_pde/homogeneous/b_cee/index.html</guid>
+      <guid>http://localhost:1313/ode_pde/homogeneous/b_cee/index.html</guid>
       <description>1. 코시-오일러 제차미분방정식 형태1 $$&#xD;x^2y&#39;&#39;+axy&#39;+by=0&#xD;$$$$&#xD;D^2+\left(a-1\right)D+b=0&#xD;$$ 형태2 $$&#xD;xy^{\prime}+ay=0&#xD;$$$$&#xD;D+a=0&#xD;$$ 2. 서로 다른, 실수 해 $$&#xD;D=\alpha,\beta&#xD;$$$$&#xD;y=c_1x^{\alpha}+c_2x^{\beta}&#xD;$$ example1)&#xA;$$&#xD;x^2y&#39;&#39;-4xy&#39;+6y=0&#xD;$$&#xD;sol&#xD;$$&#xD;\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2&#xD;$$&#xD;$$&#xD;y=c_1x^3+c_2x^2&#xD;$$&#xD;example2)&#xA;$$&#xD;x^2y&#39;&#39;-xy&#39;-y=0&#xD;$$&#xD;sol&#xD;$$&#xD;D^2-2D-1=0\rightarrow D=1\pm\sqrt{2}&#xD;$$&#xD;$$&#xD;y=c_1x^{1+\sqrt{2}}+c_2x^{1-\sqrt{2}}&#xD;$$&#xD;example3)&#xA;$$&#xD;xy&#39;&#39;-y&#39;=0&#xD;$$&#xD;sol&#xD;$$&#xD;D\left(D-2\right)=0\rightarrow D=2,0&#xD;$$&#xD;$$&#xD;y=c_1x^2+c_2&#xD;$$&#xD;example4)</description>
     </item>
   </channel>
