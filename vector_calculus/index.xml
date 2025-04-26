@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vector calculus :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_calculus/index.html</link>
+    <description>Transformation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_calculus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transformation</title>
+      <link>http://localhost:1313/vector_calculus/transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/transformation/index.html</guid>
+      <description>Preface&#xD;(b) Space &amp; Coordinate &amp; Vector &amp; Tensor&#xD;(b) Parameter space transformation I - Position&#xD;(b) Parameter space transformation II - Scale factor&#xD;(a) Parameter space transformation III - Jacobian</description>
+    </item>
+  </channel>
+</rss>

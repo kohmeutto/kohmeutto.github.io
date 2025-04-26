@@ -31,6 +31,12 @@
     <loc>http://localhost:1313/ode_pde/green_function/preface/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/preface/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
@@ -44,6 +50,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</loc>
@@ -62,6 +71,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform_for_pde/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
@@ -91,6 +103,9 @@
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform_for_pde/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</loc>
   </url>
   <url>
@@ -107,6 +122,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_iii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
@@ -131,6 +149,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_non_free_space/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>

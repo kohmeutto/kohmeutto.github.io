@@ -32,7 +32,7 @@ var relearn_searchindex = [
     "uri": "/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rLinear Algebra \u003e \rVector",
+    "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
     "content": "1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.\n이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.\n이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.\n2. 수학적 벡터 벡터에 대해 생각해볼 수 있는 정의는 순서를 맞춰 숫자를 나열한 리스트라는 관점이다. 이 관점은 벡터는 하나의 데이터 포인트라는 관점에서 매우 유용하다. 또한, 이런 방식으로 벡터를 생각하게 되면 차원을 무한히 늘리는데에 큰 부담이 없다. 그저 숫자만 더 나열하면 더 고차원의 벡터가 되기 때문이다.\n그리고 벡터 성분이 좌표계의 변환에 대해 가변적(not invariant)이라는 점을 잘 표현해주고 있다. 가변적이라는 말을 좀 더 잘 이해하기 위해 그림을 다시 보자. 벡터를 두 가지 좌표계로 표현하고 있는데, 벡터는 가만히 있더라도 벡터를 보는 좌표계가 바뀌게 되면 벡터를 표현하는 좌표가 바뀌는것을 볼 수 있다.\n3. 추상화 (물리학적 벡터와 수학적 벡터를 하나로 통일) 추상화된 벡터는 대수(代數)로 표현한 것이다.\n물리학적 벡터를 다룰 떄, 아무렇게나 좌표축을 잡을 수 있음. 즉, 벡터는 좌표축과 무관한 개념이다. 벡터의 방향이란, 우주에 절대 좌표가 있지 않은 한, 방향을 정의하기가 불가능하다.\n그러나, 두 벡터의 방향이 같다는 것은 한 벡터의 길이를 적당히 늘려 다른 벡터와 일치하게 만들 수 있다고 정의할 수 있다. 이러한 관찰로부터 벡터를 추상화에 다음과 같은 두가지 연산이 가장 중요하다는 결론을 내릴 수 있다.\n두 벡터의 합 벡터의 실수 배 공돌이의 수학정리노트 (Angelo’s Math Notes)\n8일 간의 선형대수학, 경문사, 박부성 지음",
     "description": "1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.\n이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.\n이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.",
     "tags": [],
@@ -68,7 +68,7 @@ var relearn_searchindex = [
     "content": "Vector",
     "description": "Vector",
     "tags": [],
-    "title": "Linear Algebra",
+    "title": "Linear algebra",
     "uri": "/linear_algebra/index.html"
   },
   {
@@ -80,7 +80,23 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/preface/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rLinear Algebra",
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "content": "혹시 물리나 전자기학 공부하며 좌표 변환 때문에 답답했던 경험 있는가. 복잡한 공식만 잔뜩 나오고, 왜 그렇게 되는지 알기 어려워서 결국 외워버리거나 포기하고 싶었던 순간 말이다. 많은 학생들이 여기서 힘들어한다.\n왜 좌표 변환이 우리에게 이토록 어렵게 느껴질까. 어쩌면 좌표계가 바뀔 때 물리적인 양들, 특히 벡터의 성분들이 ‘왜’, 그리고 ‘어떻게’ 변해야 하는지에 대한 근본 원리를 제대로 알려주지 않았기 때문일지도 모른다. 딱딱한 공식 뒤에 숨겨진 아름다운 원리를 발견하는 기쁨을 온전히 느끼기 어려웠던 것이다.\n사실, 좌표 변환의 핵심 원리는 아주 간단한 두 가지 세상 이야기와 그 규칙에 대한 것이다. 바로 좌표 값들이 사는 ‘매개변수 공간’이라는 세상과 물리 현상이 일어나는 ‘실제 공간’이라는 세상이다. 좌표 변환은 이 두 세상 사이를 자연스럽게 오가는 ‘변환’ 과정이다.\n그리고 이 변환을 할 때, 물리적인 양들(벡터 포함)의 성분들은 그냥 제멋대로 바뀌는 게 아니다. 여기에는 명확한 ‘기준’이 있다. 이 규칙을 이해하는 가장 기본적인 열쇠가 바로 텐서(Tensor) 이다. 텐서라는 이름에 주눅 들 필요 없다. 텐서는 좌표계가 바뀌어도 본질적인 성질은 유지되는 것이라고 생각하면 된다. 복잡한 이론 전체를 다룰 필요 없이, 딱 필요한 만큼만 쉽게 알아볼 것이다.\n이 챕터는 바로 그 ‘매개변수 공간’ ↔ ‘실제 공간’ 변환의 원리와 그 바탕이 되는 텐서의 아주 기본적인 성질을 쉽고 명확하게 안내한다. 외우는 대신 ‘아하!’ 하고 이해하며, 좌표 변환을 넘어 물리 세계를 더 깊이 탐험하는 즐거움을 느끼게 되길 희망한다.",
+    "description": "혹시 물리나 전자기학 공부하며 좌표 변환 때문에 답답했던 경험 있는가. 복잡한 공식만 잔뜩 나오고, 왜 그렇게 되는지 알기 어려워서 결국 외워버리거나 포기하고 싶었던 순간 말이다. 많은 학생들이 여기서 힘들어한다.\n왜 좌표 변환이 우리에게 이토록 어렵게 느껴질까. 어쩌면 좌표계가 바뀔 때 물리적인 양들, 특히 벡터의 성분들이 ‘왜’, 그리고 ‘어떻게’ 변해야 하는지에 대한 근본 원리를 제대로 알려주지 않았기 때문일지도 모른다. 딱딱한 공식 뒤에 숨겨진 아름다운 원리를 발견하는 기쁨을 온전히 느끼기 어려웠던 것이다.",
+    "tags": [],
+    "title": "Preface",
+    "uri": "/vector_calculus/transformation/preface/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "Preface\r(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor\r(b) Parameter space transformation I - Position\r(b) Parameter space transformation II - Scale factor\r(a) Parameter space transformation III - Jacobian",
+    "description": "Preface\r(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor\r(b) Parameter space transformation I - Position\r(b) Parameter space transformation II - Scale factor\r(a) Parameter space transformation III - Jacobian",
+    "tags": [],
+    "title": "Transformation",
+    "uri": "/vector_calculus/transformation/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rLinear algebra",
     "content": "(b) Vector\r(b) Basic vector operations\r(i) Linearity\r(q) Linearity for circuits",
     "description": "(b) Vector\r(b) Basic vector operations\r(i) Linearity\r(q) Linearity for circuits",
     "tags": [],
@@ -88,7 +104,7 @@ var relearn_searchindex = [
     "uri": "/linear_algebra/vector/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rLinear Algebra \u003e \rVector",
+    "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
     "content": "1. 덧셈 \u0026 뺄셈 벡터의 궤적을 따라 움직이는 것이다.\n$\\vec{v}+\\vec{w}$는 벡터 $\\vec{v}$의 궤적으로 움직인 다음, 벡터 $\\vec{w}$의 궤적으로 움직이는 것이다.\n이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.\n$$ \\vec{v}+\\vec{w} =\\left[\\begin{matrix} v_1 \\\\ v_2 \\end{matrix}\\right]+ \\left[\\begin{matrix} w_1 \\\\ w_2 \\end{matrix}\\right] =\\left[\\begin{matrix} v_1+w_1 \\\\ v_2+w_2 \\end{matrix}\\right] $$ 2. Scaling 이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.\n$$ a\\vec{v} =a\\left[\\begin{matrix} v_1 \\\\ v_2 \\end{matrix}\\right] =\\left[\\begin{matrix} av_1 \\\\ av_2 \\end{matrix}\\right] $$ Vectors, what even are they?",
     "description": "1. 덧셈 \u0026 뺄셈 벡터의 궤적을 따라 움직이는 것이다.\n$\\vec{v}+\\vec{w}$는 벡터 $\\vec{v}$의 궤적으로 움직인 다음, 벡터 $\\vec{w}$의 궤적으로 움직이는 것이다.\n이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.\n$$ \\vec{v}+\\vec{w} =\\left[\\begin{matrix} v_1 \\\\ v_2 \\end{matrix}\\right]+ \\left[\\begin{matrix} w_1 \\\\ w_2 \\end{matrix}\\right] =\\left[\\begin{matrix} v_1+w_1 \\\\ v_2+w_2 \\end{matrix}\\right] $$ 2. Scaling 이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.\n$$ a\\vec{v} =a\\left[\\begin{matrix} v_1 \\\\ v_2 \\end{matrix}\\right] =\\left[\\begin{matrix} av_1 \\\\ av_2 \\end{matrix}\\right] $$ Vectors, what even are they?",
     "tags": [],
@@ -118,6 +134,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Phasor transform for PDE",
     "uri": "/ode_pde/transformation/b_phasor_transform_for_pde/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "content": "1. Space \u0026 Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.\n좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다.\n매개 변수공간(Parameter space) 은 실제 물리 공간이 아닌, 실제 공간의 점을 나타내기 위해 사용되는 좌표 값(매개변수)들이 모여 이루는 개념적인 공간이다. 매개변수 공간 자체는 그 축이 각 매개변수의 값을 나타내므로, 그 자체가 일종의 ‘좌표계’와 같은 구조를 가진다. 하지만 이 공간에서의 거리나 기하학적 관계는 실제 공간에서의 물리적 거리나 기하학과 직접적으로 일치하지 않는다. scale factor나 Jacobian 등이 이 둘을 연결해 준다. 우리가 Jacobian이나 척도 인자를 논의할 때, 매개변수 공간은 변환의 ‘출발점’ 또는 좌표 값들이 존재하는 ‘영역’을 개념적으로 이해하는 데 도움이 된다.\n2. Vector 원천벡터 (source vector r′): 전하나 전류가 있는 곳. 즉, 전자기장을 만드는 근원지의 좌표를 나타내는 벡터. 위치벡터 (position vector r): 전기장 E나 자기장 B 등을 측정하는 곳의 좌표를 나타내는 벡터. 변위벡터 (displacement vector η): 위치벡터와 원천벡터(근원벡터)의 차., η=r-r’’ 국소벡터 (local vector η): 한 점, 국소 위치에서 물리적 값 전기장 E나 자기장 B 등 을 나타내는 벡터 3. Tensor (1) 텐서의 핵심: 좌표계 독립성\n어떠한 물리량을 표현할 때, 좌표계를 바꾸더라고 그 본질적인 성질을 유지해야 한다. 이는 마치 어떤 사건을 서로 다른 언어로 설명하더라도 그 사건 자체는 변하지 않는 것과 같다. 그런데 여기서 중요한 점은, 텐서인 벡터의 경우, 좌표계에 따라 성분 값이 변할 수 있다. 텐서란 본질적인 성질을 유지한다는 것이지, 벡터 표현 방법이 달라지면 안 된다는 것이 아니다. 이 점 때문에 텐서가 아니라고 생각할 수 있지만, 텐서의 핵심적인 특징은 변환 규칙에 있다.\n텐서는 좌표계에 상관없이 본질성을 유지한다. 즉 추상적인 단어이다. 텐서 성분은 좌표계에 따라, 변할 수 있다. 단, 변환 규칙 이 있어야 한다. (2) 텐서가 아닌 벡터\n위치 벡터: 텐서는 좌표 변환에 따라 특정한 규칙을 따라야 한다. 하지만, 위치 벡터는 좌표계의 원점이 어떻게 설정되느냐에 따라 값이 달라지므로, 수학적으로 정의된 변환 규칙을 따르지 않는다. 2차원 평면에서 한 점의 위치 벡터는 (x, y)로 표현될 수 있다. 다른 좌표계 (x’, y’)에서 같은 점의 위치 벡터는 (x’, y’)로 표현될 수 있다. 하지만, (x, y)와 (x’, y’)는 수학적으로 정의된 변환 규칙이 없다. (3) 텐서인 벡터\n텐서인 벡터는 벡터의 불변성을 만족한다. 변위 벡터: 두 점 사이의 변위 벡터는 좌표계에 무관하므로 텐서이다. 국소 벡터: 전기장 E나 자기장 B 등을 나타내는 벡터는 좌표에 무관하므로, 텐서이다. 다변수 함수의 미분: 변위 벡터에 대한 미분이므로, 텐서이다. 속도 벡터: 국소 벡터이므로, 텐서이다. 응력 텐서: 국소 벡터이므로, 텐서이다. (4) 스칼라는 0차 텐서이다.\n0차 텐서에 해당 좌표계 변환에 따라 값이 변하지 않음 (텐서인 벡터는 좌표계 변환에 따라 성분이 달라질 수 있다.) 덧셈, 뺄셈, 곱셈, 나눗셈 등 기본적인 연산 가능",
+    "description": "1. Space \u0026 Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.\n좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다.",
+    "tags": [],
+    "title": "(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor",
+    "uri": "/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rInhomogeneous",
@@ -168,6 +192,14 @@ var relearn_searchindex = [
     "uri": "/ode_pde/transformation/a_laplace_transform_for_pde/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "content": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 점(위치) 변환을 다룬다.\n1. [원통 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 원통 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 원통 좌표계를 데카르트 좌표계와 유사하게 표현한 것이다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환해야 한다.\n2. [구 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 구 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 구 좌표계를 데카르트 좌표계와 유사하게 표현한 것이다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환해야 한다.",
+    "description": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 점(위치) 변환을 다룬다.\n1. [원통 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 원통 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 원통 좌표계를 데카르트 좌표계와 유사하게 표현한 것이다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환해야 한다.\n2. [구 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 구 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 구 좌표계를 데카르트 좌표계와 유사하게 표현한 것이다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환해야 한다.",
+    "tags": [],
+    "title": "(b) Parameter space transformation I - Position",
+    "uri": "/vector_calculus/transformation/b_ps_transformation_i/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rInhomogeneous",
     "content": "미분방정식의 해는 일반해+특수해 이다.\n아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.\n1. 유형1 $$\r\\frac{1}{f\\left(D\\right)}\\left\\lbrace \\text{polynomial}\\right\\rbrace\r$$\rexample1)\n$$\ry''+y=x^2\r$$\rsol\r$$\r\\left(D^2+1\\right)y_{p}=x^2\r$$\r$$\ry_{p}=\\operatorname{}\\frac{1}{1+D^2}x^2=\\left(1-D^2\\right)x^2=x^2-2\r$$\rexample2)\n$$\ry''+y'-6y=6x^3-3x^2+12\r$$\rsol\r$$\r\\left(D^2+D-6\\right)y_{p}=6x^3-3x^2+12x\r$$\r$$\ry_{p}=-\\frac16\\cdot\\frac{1}{1-\\frac16D-\\frac16D^2}\\left\\lbrack6x^3-3x^2+12\\right\\rbrack\r$$\r$$\r=-\\frac16\\cdot\\left(1+\\frac16D+\\frac{7}{36}D^2+\\frac{13}{216}D^3\\right)\\left\\lbrack6x^3-3x^2+12x\\right\\rbrack\r$$\r$$\r=-x^3-3x-\\frac12\r$$\rexample3)\n$$\r\\frac{1}{4} y''+y'+y=x^2-2x\r$$\rsol\r$$\r\\frac{1}{1-x}=1+x+x^2+x^3\\cdots\r$$\r$$\ry_{p}=\\frac{1}{1+D+\\frac14D^2}_{}\\left\\lbrack x^2-2x\\right\\rbrack\r$$\r$$\r=\\left(1-D+\\frac34D^2\\right)\\left\\lbrack x^2-2x\\right\\rbrack\r$$\r$$\r=x^2-4x+\\frac{7}{2}\r$$\rexample4)\n$$\rx^2y''+3xy'+3y=2x^2-2\r$$\rsol\r$$\r\\left(D^2+2D+3\\right)y_{p}=x^2-2x\r$$\r$$\ry_{p}=\\frac13\\cdot\\frac{1}{1+\\frac{2}{3}D+\\frac{1}{3}D^2}\\left\\lbrack2x^2-2\\right\\rbrack $$\r$$=\\left(1-\\frac23D+\\frac{1}{9}D^2\\right)\\left\\lbrack2x^2-x\\right\\rbrack\r$$\r$$\r=\\frac23x^2-\\frac{8}{3}x\r$$\r2. 유형2 $$\r\\frac{1}{Df\\left(D\\right)}\\left\\lbrack R\\left(x\\right)\\right\\rbrack=\\int_{x=x'}dx'\\left\\lbrack\\frac{1}{f\\left(D\\right)}\\left\\lbrack R\\left(x'\\right)\\right\\rbrack\\right\\rbrack\r$$\rexample1)\n$$\ry''+y'=2x\r$$\rsol\r$$\rD\\left(D+1\\right)y_{p}=2x $$\r$$\ry_{p}=\\frac{1}{D\\left(1+D\\right)}2x=\\int_{x=x'}dx'\\left\\lbrack\\left(1-D\\right)2x'\\right\\rbrack=\\int_{x=x'}dx'\\left\\lbrack2x'-2\\right\\rbrack=x^2-2x\r$$\rexample2)\n$$\ry''-2y'=x\r$$\rsol\r$$\rD\\left(D-2\\right)y_{p}=x $$\r$$\ry_{p}=\\operatorname{}\\frac{1}{D\\left(D-2\\right)}x=\\int_{x=x'}dx'\\left\\lbrack-\\frac12\\left(1+\\frac12D\\right)x'\\right\\rbrack=\\int_{x=x'}dx'\\left\\lbrack-\\frac12x'-\\frac14\\right\\rbrack\r$$\r$$\r=-x^2-\\frac14x\r$$\rexample3)\n$$\rx^2y''-2xy'=3x\r$$\rsol\r$$\rD\\left(D-3\\right)y_{p}=3x\r$$\r$$\ry_{p}=\\frac{1}{D\\left(D-3\\right)}x=\\int_{x=x'}dx'\\left\\lbrack-\\frac13\\left(1+\\frac13D\\right)x'\\right\\rbrack=\\int_{x=x'}dx'\\left\\lbrack-\\frac13x'-\\frac19\\right\\rbrack\r$$\r$$\r=-\\frac16x^2-\\frac19x\r$$",
     "description": "미분방정식의 해는 일반해+특수해 이다.\n아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.\n1. 유형1 $$\r\\frac{1}{f\\left(D\\right)}\\left\\lbrace \\text{polynomial}\\right\\rbrace\r$$\rexample1)\n$$\ry''+y=x^2\r$$\rsol\r$$\r\\left(D^2+1\\right)y_{p}=x^2\r$$\r$$\ry_{p}=\\operatorname{}\\frac{1}{1+D^2}x^2=\\left(1-D^2\\right)x^2=x^2-2\r$$\rexample2)\n$$\ry''+y'-6y=6x^3-3x^2+12\r$$\rsol\r$$\r\\left(D^2+D-6\\right)y_{p}=6x^3-3x^2+12x\r$$\r$$\ry_{p}=-\\frac16\\cdot\\frac{1}{1-\\frac16D-\\frac16D^2}\\left\\lbrack6x^3-3x^2+12\\right\\rbrack\r$$\r$$\r=-\\frac16\\cdot\\left(1+\\frac16D+\\frac{7}{36}D^2+\\frac{13}{216}D^3\\right)\\left\\lbrack6x^3-3x^2+12x\\right\\rbrack\r$$\r$$\r=-x^3-3x-\\frac12\r$$\rexample3)\n$$\r\\frac{1}{4} y''+y'+y=x^2-2x\r$$\rsol\r$$\r\\frac{1}{1-x}=1+x+x^2+x^3\\cdots\r$$\r$$\ry_{p}=\\frac{1}{1+D+\\frac14D^2}_{}\\left\\lbrack x^2-2x\\right\\rbrack\r$$\r$$\r=\\left(1-D+\\frac34D^2\\right)\\left\\lbrack x^2-2x\\right\\rbrack\r$$\r$$\r=x^2-4x+\\frac{7}{2}\r$$\rexample4)",
@@ -176,7 +208,7 @@ var relearn_searchindex = [
     "uri": "/ode_pde/inhomogeneous/b_polynomial_iopm/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rLinear Algebra \u003e \rVector",
+    "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
     "content": "0. 정리 선형성 (Linearity)는 공학/수학에서 가장 핵심적으로 중요한 개념이다.\n$$\rf\\left(au_1+bu_2\\right)=af\\left(u_1\\right)+bf\\left(u_2\\right)\r$$위 식을 만족하는 시스템은 선형적(선형변환)이라고 할 수 있다.\nLinear Algebra(선형대수학) 학문은 선형시스템을 다루기 위한 “도구” 이다.\n다음 챕터에서 행렬이 왜 선형변환이고, 선형대수학에서 배우는지 알 수 있다.\n1. 성질 - 가산성 (additivity) 위 식의 오른쪽 항에서 “+”로 표현되는 것을 가산성이라고 한다.\n해석하려는 시스템 $f\\left(u\\right)$는 선형적이다.\n입력값이 $u_1+u_2$일 때, $u_1$에 대한 결과와 $u_2$에 대한 결과를 각각 따로 얻은다음 더하기한 하면 된다.\n2. 성질 - 동차성 (Homogenity) 위 식의 오른쪽 항에서 상수와의 곱, 즉, $af\\left(u\\right)$를 동차성(or scaling)이라고 한다.\n해석하려는 시스템 $f\\left(u\\right)$는 선형적이다.\n입력값이 $au_1$일 때, $u_1$에 대한 결과에 단순히 $a$만 곱하면 된다.\n3. Superposition (중첩) = additivity + Homogenity 4. 원점을 지나지 않는 직선은 선형적이지 않다. $$\rf\\left(x\\right)=ax+b\r$$위 직선에 대한 식은 선형적이지 않다.\n$$\r\\left\\lbrack f\\left(x_1+x_2\\right)=a\\left(x_1+x_2\\right)+b\\right\\rbrack\\neq\\left\\lbrack ax_1+b+ax_2+b\\right\\rbrack\r$$ Nonlinear system - Wikipedia",
     "description": "0. 정리 선형성 (Linearity)는 공학/수학에서 가장 핵심적으로 중요한 개념이다.\n$$\rf\\left(au_1+bu_2\\right)=af\\left(u_1\\right)+bf\\left(u_2\\right)\r$$위 식을 만족하는 시스템은 선형적(선형변환)이라고 할 수 있다.\nLinear Algebra(선형대수학) 학문은 선형시스템을 다루기 위한 “도구” 이다.\n다음 챕터에서 행렬이 왜 선형변환이고, 선형대수학에서 배우는지 알 수 있다.\n1. 성질 - 가산성 (additivity) 위 식의 오른쪽 항에서 “+”로 표현되는 것을 가산성이라고 한다.\n해석하려는 시스템 $f\\left(u\\right)$는 선형적이다.\n입력값이 $u_1+u_2$일 때, $u_1$에 대한 결과와 $u_2$에 대한 결과를 각각 따로 얻은다음 더하기한 하면 된다.",
     "tags": [],
@@ -240,6 +272,14 @@ var relearn_searchindex = [
     "uri": "/ode_pde/transformation/a_fourier_transform_for_pde/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "content": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 길이 변환을 다룬다.\n1. Scale factor 우리에게 의미있는 “길이, 넓이, 부피”는 실 공간(Real space) 에서 정의된 값이다. 실 공간에서의 물리량 계산을 위해, 매개변수 공간의 영역을 이용하여 계산하는 것이 편리한 경우가 많다. 매개변수 공간의 미소 변화량을 실 공간에서의 물리적 미소 길이, 넓이, 부피 요소로 변환하기 위해 scale factor가 사용된다. 매개변수 공간에서 미소 변화량은 scale factor 와의 단순 곱으로, 실 공간에서 물리적 미소 길이로 변환된다. 2. 원통좌표계, Scale factor 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다. 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 물리적 의미를 가지는 미소변위벡터로 변환 한다. $$ \\left[\\begin{matrix} d\\rho\\\\ d\\varphi\\\\ dz \\end{matrix}\\right] \\rightarrow \\left[\\begin{matrix} d\\rho \\\\ \\rho d\\varphi \\\\ dz \\end{matrix}\\right],\\quad \\hat{\\rho}d\\rho+\\hat{\\varphi}d\\varphi+\\hat{z}z \\rightarrow \\hat{\\rho}d\\rho+\\hat{\\varphi}\\rho d\\varphi+\\hat{z}z $$보정 계수를 $h_1, h_2, h_3$ 라고 하면,\n$$ h_1=1,\\quad h_2=\\rho,\\quad h_3=1 $$ 3. 구좌표계, Scale factor 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다. 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 물리적 의미를 가지는 미소변위벡터로 변환 한다. $$ \\left[\\begin{matrix} dR \\\\ d\\theta \\\\ d\\varphi \\end{matrix}\\right] \\rightarrow \\left[\\begin{matrix} dR \\\\ Rd\\theta \\\\ R\\sin\\theta d\\varphi \\end{matrix}\\right], \\quad \\hat{R}dR+\\hat{\\theta}Rd\\theta+\\hat{\\varphi}d\\varphi \\rightarrow \\hat{\\rho}d\\rho+\\hat{\\theta}Rd\\theta+\\hat{\\varphi}R\\sin\\theta d\\varphi $$보정 계수를 $h_1, h_2, h_3$ 라고 하면,\n$$ h_1=1,\\quad h_2=R,\\quad h_3=R\\sin\\theta $$",
+    "description": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 길이 변환을 다룬다.\n1. Scale factor 우리에게 의미있는 “길이, 넓이, 부피”는 실 공간(Real space) 에서 정의된 값이다. 실 공간에서의 물리량 계산을 위해, 매개변수 공간의 영역을 이용하여 계산하는 것이 편리한 경우가 많다. 매개변수 공간의 미소 변화량을 실 공간에서의 물리적 미소 길이, 넓이, 부피 요소로 변환하기 위해 scale factor가 사용된다. 매개변수 공간에서 미소 변화량은 scale factor 와의 단순 곱으로, 실 공간에서 물리적 미소 길이로 변환된다. 2. 원통좌표계, Scale factor 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다. 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 물리적 의미를 가지는 미소변위벡터로 변환 한다. $$ \\left[\\begin{matrix} d\\rho\\\\ d\\varphi\\\\ dz \\end{matrix}\\right] \\rightarrow \\left[\\begin{matrix} d\\rho \\\\ \\rho d\\varphi \\\\ dz \\end{matrix}\\right],\\quad \\hat{\\rho}d\\rho+\\hat{\\varphi}d\\varphi+\\hat{z}z \\rightarrow \\hat{\\rho}d\\rho+\\hat{\\varphi}\\rho d\\varphi+\\hat{z}z $$보정 계수를 $h_1, h_2, h_3$ 라고 하면,",
+    "tags": [],
+    "title": "(b) Parameter space transformation II - Scale factor",
+    "uri": "/vector_calculus/transformation/b_ps_transformation_ii/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rUniqueness theorem",
     "content": "공사중",
     "description": "공사중",
@@ -264,7 +304,7 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/p_gf_examples/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rLinear Algebra \u003e \rVector",
+    "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
     "content": "Q1) 1V의 이상적인 전압원이 있다. 이상적이므로 내부 임피던스는 0이다. 그렇다면, 옴의 법칙을 적용하였을 때, 이 전압원에 흐르는 전류는 무한대여야 한다. 무엇이 잘못되어 있는지 설명하라.\n옴의 법칙을 따르는 소자를 선형 회로 소자라 하고 그런 소자들로 이루어진 회로를 선형 회로라고 한다. 이는 선형 회로여야 옴의 법칙이 적용 된다는 뜻이다. 선형적 조건을 만족하기 위해서는 중첩의 원리를 만족하고 함수로 표현하였을 때, 원점을 지나는 직선이어야 한다. 이상적 전압원의 v-i그래프를 그려보면 시간에 관계없이 v는 일정하고 i는 무한대로 가는 것을 확인 할 수 있다. 따라서 이상적 전압원은 비선형적이라고 볼 수 있다. 즉, 옴의 법칙을 따르지 않는다는 뜻이다. Q2) 임의의 회로를 전달함수로 표현할 때, 선형 소자들을 묶어 선형 전달함수로 표현한다. 이상적인 전압원과 전류원이 선형 전달함수에 포함되지 못하는 이유를 설명하라.\n선형 소자에는 저항, 캐패시터 등을 들 수 있는데, 이들은 선형성을 만족하는 소자들이다. 이상적인 전압원과 전류원은 비선형적 소자들로 볼 수 있다. 이상적 전압원과 전류원에 대한 v-i그래프를 그려보면 전압원의 경우 v가 일정하고 i는 무한대로 향하고, 전류원의 경우 v가 무한대로 향하고 i가 일정한 것을 볼 수 있다. 원점을 통과하지 않는 그래프 이기 때문에 선형성을 만족할 수 없다. Q3) 이상적인 독립전압원의 경우, 내부 임피던스가 0이다. 따라서, 테브난 등가저항을 구할 때 short 시킨다.그러나, 이상적인 종속전압원의 경우, 내부 임피던스가 0임에도 불구하고, 테브난 등가저항을 구할 때, 이 종속전원을 short 시키지 않는 이유는 무엇인가. short 시키지 않는다는 것은 내부 임피던스가 0이 아니라는 것인데, 이상적인 종속전압원의 경우 내부 임피던스는 무조건 0이다 (반드시 참). 모순이 되지 않는가. 무엇이 잘못되어 있는지 설명하라.\n이상적인 전압원과 전류원 그래프를 그러보면, 이상적인 전압원의 전압-전류 기울기는 “항상” 0이다. 이상적인 전류원의 전압-전류 기울기는 “항상” 무한대 이다. 따라서, 이상적인 전압원의 저항/임피던스는 “항상” 0이므로, short로 간주한다. 이상적인 전류원의 저항/임피던스는 “항상” 무한대 이므로, open으로 간주한다. 그러나, 종속 전원(전압원, 전류원)의 전압-전류 기울기가 “항상” 0또는 무한대로 간주할 수 있는가이다. 외부의 조건에 따라, 종속전원에 걸리는 전압과 전류가 달라진다. 즉, 전압-전류의 기울기가 “0 또는 무한대”가 아닐 수 있으므로, 테브난 저항을 구할 때, 제거하여, short 또는 open으로 고정해서는 안된다. 마지막으로, 내부 저항/임피던스는, 소자에 붙어있는 “실제저항소자”로 간주한다.",
     "description": "Q1) 1V의 이상적인 전압원이 있다. 이상적이므로 내부 임피던스는 0이다. 그렇다면, 옴의 법칙을 적용하였을 때, 이 전압원에 흐르는 전류는 무한대여야 한다. 무엇이 잘못되어 있는지 설명하라.\n옴의 법칙을 따르는 소자를 선형 회로 소자라 하고 그런 소자들로 이루어진 회로를 선형 회로라고 한다. 이는 선형 회로여야 옴의 법칙이 적용 된다는 뜻이다. 선형적 조건을 만족하기 위해서는 중첩의 원리를 만족하고 함수로 표현하였을 때, 원점을 지나는 직선이어야 한다. 이상적 전압원의 v-i그래프를 그려보면 시간에 관계없이 v는 일정하고 i는 무한대로 가는 것을 확인 할 수 있다. 따라서 이상적 전압원은 비선형적이라고 볼 수 있다. 즉, 옴의 법칙을 따르지 않는다는 뜻이다. Q2) 임의의 회로를 전달함수로 표현할 때, 선형 소자들을 묶어 선형 전달함수로 표현한다. 이상적인 전압원과 전류원이 선형 전달함수에 포함되지 못하는 이유를 설명하라.",
     "tags": [],
@@ -286,6 +326,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Special ODEs",
     "uri": "/ode_pde/special_odes/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "content": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터변환을 다룬다.\n1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환하는 연산자이다.\nu 매개변수 공간 $$ d\\vec{u}=\\left[\\begin{matrix} du_1 \\\\ du_2 \\\\ du_3 \\end{matrix}\\right] =\\hat{u}_1du_1+\\hat{u}_2du_2+\\hat{u}_3du_3 $$ v 실 공간 $$ d\\vec{v}=\\left[\\begin{matrix} dv_1 \\\\ dv_2 \\\\ dv_3 \\end{matrix}\\right] =\\hat{v}_1dv_1+\\hat{v}_2dv_2+\\hat{v}_3dv_3 $$ 변환 연산자 작용, [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\\vec{v}=d\\vec{u}\\cdot\\nabla_{u}\\vec{v} $$$$ =du_1\\frac{\\partial\\vec{v}}{\\partial u_1}+du_2\\frac{\\partial\\vec{v}}{\\partial u_2}+du_3\\frac{\\partial\\vec{v}}{\\partial u_3} $$수학적 벡터로 표현하면,\n$$ \\left[\\begin{matrix} dv_1 \\\\ dv_2 \\\\ dv_3 \\end{matrix}\\right] =du_1\\left[\\begin{matrix} \\cfrac{\\partial v_1}{\\partial u_1} \\\\ \\cfrac{\\partial v_2}{\\partial u_1} \\\\ \\cfrac{\\partial v_3}{\\partial u_1} \\end{matrix}\\right]+du_2 \\left[\\begin{matrix} \\cfrac{\\partial v_1}{\\partial u_2} \\\\ \\cfrac{\\partial v_2}{\\partial u_2} \\\\ \\cfrac{\\partial v_3}{\\partial u_2} \\end{matrix}\\right]+du_3 \\left[\\begin{matrix} \\cfrac{\\partial v_1}{\\partial u_3} \\\\ \\cfrac{\\partial v_2}{\\partial u_3} \\\\ \\cfrac{\\partial v_3}{\\partial u_3} \\end{matrix}\\right] $$$$ =\\begin{bmatrix} \\cfrac{\\partial v_1}{\\partial u_1} \u0026 \\cfrac{\\partial v_1}{\\partial u_2} \u0026 \\cfrac{\\partial v_1}{\\partial u_3} \\\\ \\cfrac{\\partial v_2}{\\partial u_1} \u0026 \\cfrac{\\partial v_2}{\\partial u_2} \u0026 \\cfrac{\\partial v_2}{\\partial u_3} \\\\ \\cfrac{\\partial v_3}{\\partial u_1} \u0026 \\cfrac{\\partial v_3}{\\partial u_2} \u0026 \\cfrac{\\partial v_3}{\\partial u_3} \\end{bmatrix} \\begin{bmatrix} du_1 \\\\ du_2 \\\\ du_3 \\end{bmatrix} $$여기에서, 3x3 행렬을 Jacobian 이라고 한다. Jacobian의 각 열 벡터는 매개변수 공간의 각 축이 실 공간으로 변환될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 실 공간의 새로운 기준 방향들(기저)을 형성한다.\n2. Scale factor $$ d\\vec{v}=du_1\\frac{\\partial\\vec{v}}{\\partial u_1}+du_2\\frac{\\partial\\vec{v}}{\\partial u_2}+du_3\\frac{\\partial\\vec{v}}{\\partial u_3} $$Jacobian 의 각 열벡터는 실 공간에 유도된 새로운 기저 벡터 라고 하였다. 위의 기저를 normalize 하고, 실 공간의 미소길이벡터 $d\\vec{v}$ 를 표현해 보자.\n$$ d\\vec{v}=\\hat{e}_1h_1du_1+\\hat{e}_2h_2du_2+\\hat{e}_3h_3du_3 $$$$ \\vec{h}_{j}=\\frac{\\partial\\vec{v}}{\\partial u_{j}},\\quad h_{j}=\\left|\\vec{h}_{j}\\right|,\\quad \\hat{e}_{j}=\\frac{\\vec{h}_{j}}{h_{j}} $$이전 챕터에서 학습한 바, scale factor $h_j$ 를 매개변수 공간 $u_j$ 방향의 미소 변화량에 곱하면, 실 공간에서의 미소 길이가 된다.\nexample1) 원통좌표계 → 데카르트좌표계\n$$ \\vec{v}=\\hat{x}\\rho\\cos\\phi+\\hat{y}\\rho\\sin\\phi+\\hat{z}z $$$$ {{{{{{{{{{\\displaystyle h_{\\rho}=\\left|\\left|\\partial_{\\rho}v^{i}\\vec{}\\right|\\right|=\\left|\\left|\\left\\lbrack\\cos\\phi,\\sin\\phi,0\\right\\rbrack\\right|\\right|=1}}}}}}}}}} $$$$ {{{{{{{\\displaystyle h_{\\phi}=\\left|\\left|\\partial_{\\phi}v^{i}\\right|\\right|=\\left|\\left|[-\\rho\\sin\\phi,\\rho\\cos\\phi,0]\\right|\\right|=\\rho}}}}}}} $$$$ {{{{{{\\displaystyle h_{z}=\\left|\\left|\\partial_{z}v^{i}\\right|\\right|}}}}}}=1 $$따라서,\n$$ \\begin{aligned}d\\vec{v}=\\left[\\begin{matrix}\\cos\\phi\\\\ \\sin\\phi\\\\ 0\\end{matrix}\\right]\\end{aligned}d\\rho+\\left[\\begin{matrix}-\\sin\\phi\\\\ \\cos\\phi\\\\ 0\\end{matrix}\\right]\\rho d\\phi+\\left[\\begin{matrix}0\\\\ 0\\\\ 1\\end{matrix}\\right]dz $$$$ \\begin{aligned}d\\vec{v}=\\hat{x}\\left(\\cos\\phi d\\rho-\\rho\\sin\\phi d\\phi\\right)+\\hat{y}\\left(\\sin\\phi d\\rho+\\rho\\cos\\phi d\\phi\\right)+\\hat{z}dz\\end{aligned} $$여기에서, 회전 변환된 기저임을 알 수 있다.\n$$ \\begin{aligned}\\hat{e}_1=\\hat{\\rho}=\\left[\\begin{matrix}\\cos\\phi\\\\ \\sin\\phi\\\\ 0\\end{matrix}\\right]\\end{aligned},\\quad\\hat{e}_2=\\hat{\\phi}=\\left[\\begin{matrix}-\\sin\\phi\\\\ \\cos\\phi\\\\ 0\\end{matrix}\\right],\\quad\\hat{e}_3=\\hat{z}=\\left[\\begin{matrix}0\\\\ 0\\\\ 1\\end{matrix}\\right] $$$$ \\begin{aligned}d\\vec{v}=\\hat{\\rho}\\end{aligned}d\\rho+\\hat{\\phi}\\rho d\\phi+\\hat{z}dz $$정리하면,\n$$ \\begin{aligned}d\\vec{u}\\xrightarrow{\\text{Transformation: }\\cdot\\nabla_{u}}\\begin{aligned}d\\vec{v}\\end{aligned}\\end{aligned} $$$$ \\begin{aligned}d\\vec{v}=\\left[\\begin{matrix}\\cos\\phi\\\\ \\sin\\phi\\\\ 0\\end{matrix}\\right]\\end{aligned}d\\rho+\\left[\\begin{matrix}-\\sin\\phi\\\\ \\cos\\phi\\\\ 0\\end{matrix}\\right]\\rho d\\phi+\\left[\\begin{matrix}0\\\\ 0\\\\ 1\\end{matrix}\\right]dz $$$$ \\begin{aligned}=\\hat{x}\\left(\\cos\\phi d\\rho-\\rho\\sin\\phi d\\phi\\right)+\\hat{y}\\left(\\sin\\phi d\\rho+\\rho\\cos\\phi d\\phi\\right)+\\hat{z}dz\\end{aligned} $$$$ \\begin{aligned}=\\hat{\\rho}\\end{aligned}d\\rho+\\hat{\\phi}\\rho d\\phi+\\hat{z}dz $$ example2) 구좌표계-\u003e데카르트좌표계 @Seungmin Son\n3. 미소 면적 보정 값 (b) Determinant 에 의해서,\n-uriencoded–\\begin%7Baligned%7D미소넓이보정값=\\det\\left(\\left[\\begin%7Bmatrix%7D%7B%7B\\displaystyle\\frac%7B\\partial r_1%7D%7B\\partial u_1%7D%7D%7D \u0026 %7B%7B%7B\\displaystyle\\frac%7B\\partial r_1%7D%7B\\partial u_2%7D%7D%7D%7D\\ %7B%7B%7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_1%7D%7D%7D%7D \u0026 %7B%7B%7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_2%7D%7D%7D%7D\\end%7Bmatrix%7D\\right]\\right)=\\frac%7B\\partial r_1%7D%7B\\partial u_1%7D%7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_2%7D-\\frac%7B\\partial r_1%7D%7B\\partial u_2%7D\\frac%7B\\partial r_2%7D%7B\\partial u_1%7D%7D\\end%7Baligned%7D 또한, 미소넓이보정값을 scale factor로 표현할 수 있다.\n-uriencoded–\\begin%7Baligned%7D미소넓이보정값=h_1h_2 , 또는 h_1h_3 , 또는 , h_2h_3 \\end%7Baligned%7D 6. 미소 부피 보정 값 (b) Determinant 에 의해서,\n-uriencoded–\\begin%7Baligned%7D미소부피보정값=\\det\\left(\\begin%7Bbmatrix%7D%7B\\displaystyle\\frac%7B\\partial r_1%7D%7B\\partial u_1%7D%7D \u0026 %7B\\displaystyle\\frac%7B\\partial r_1%7D%7B\\partial u_2%7D%7D \u0026 %7B%7B\\displaystyle\\frac%7B\\partial r_1%7D%7B\\partial u_3%7D%7D%7D\\ %7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_1%7D%7D \u0026 %7B%7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_2%7D%7D%7D \u0026 %7B%7B\\displaystyle\\frac%7B\\partial r_2%7D%7B\\partial u_3%7D%7D%7D\\ %7B\\displaystyle\\frac%7B\\partial r_3%7D%7B\\partial u_1%7D%7D \u0026 %7B%7B\\displaystyle\\frac%7B\\partial r_3%7D%7B\\partial u_2%7D%7D%7D \u0026 %7B%7B\\displaystyle\\frac%7B\\partial r_3%7D%7B\\partial u_3%7D%7D%7D\\end%7Bbmatrix%7D\\right)\\end%7Baligned%7D 또한, 부피보정값을 scale factor로 표현할 수 있다.\n-uriencoded–\\begin%7Baligned%7D미소부피보정값=h_1h_2h_3\\end%7Baligned%7D",
+    "description": "중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터변환을 다룬다.\n1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환하는 연산자이다.\nu 매개변수 공간 $$ d\\vec{u}=\\left[\\begin{matrix} du_1 \\\\ du_2 \\\\ du_3 \\end{matrix}\\right] =\\hat{u}_1du_1+\\hat{u}_2du_2+\\hat{u}_3du_3 $$ v 실 공간 $$ d\\vec{v}=\\left[\\begin{matrix} dv_1 \\\\ dv_2 \\\\ dv_3 \\end{matrix}\\right] =\\hat{v}_1dv_1+\\hat{v}_2dv_2+\\hat{v}_3dv_3 $$ 변환 연산자 작용, [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\\vec{v}=d\\vec{u}\\cdot\\nabla_{u}\\vec{v} $$$$ =du_1\\frac{\\partial\\vec{v}}{\\partial u_1}+du_2\\frac{\\partial\\vec{v}}{\\partial u_2}+du_3\\frac{\\partial\\vec{v}}{\\partial u_3} $$수학적 벡터로 표현하면,",
+    "tags": [],
+    "title": "(a) Parameter space transformation III - Jacobian",
+    "uri": "/vector_calculus/transformation/b_ps_transformation_iii/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rInhomogeneous",
@@ -350,6 +398,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(p) Non free-space",
     "uri": "/ode_pde/seperation_of_varibles/p_non_free_space/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학",
+    "content": "Transformation",
+    "description": "Transformation",
+    "tags": [],
+    "title": "Vector calculus",
+    "uri": "/vector_calculus/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rGreen function",
