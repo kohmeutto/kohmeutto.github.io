@@ -73,7 +73,7 @@
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform_for_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_i/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
@@ -103,7 +103,7 @@
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform_for_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_ii/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</loc>
@@ -124,7 +124,7 @@
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/transformation/b_ps_transformation_iii/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_iii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
@@ -143,6 +143,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/transformation/a_basis_and_components_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>
