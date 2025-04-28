@@ -145,7 +145,7 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/transformation/a_basis_and_components_transformation/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>

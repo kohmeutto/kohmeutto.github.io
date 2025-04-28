@@ -3,7 +3,7 @@
   <channel>
     <title>Transformation :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_calculus/transformation/index.html</link>
-    <description>Preface&#xD;(b) Space &amp; Coordinate &amp; Vector &amp; Tensor&#xD;(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Tensor components transformation</description>
+    <description>Preface&#xD;(b) Space &amp; Coordinate &amp; Vector &amp; Tensor&#xD;(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Tensor components transformation I</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_calculus/transformation/index.xml" rel="self" type="application/rss+xml" />
@@ -43,11 +43,11 @@
       <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.&#xA;1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.&#xA;u 매개변수 공간 에서, 미소변위벡터 $$ d\vec{u}=\left[\begin{matrix} du_1 \\ du_2 \\ du_3 \end{matrix}\right] =\hat{u}_1du_1+\hat{u}_2du_2+\hat{u}_3du_3 $$ v 실 공간 에서, 매핑된 위치 에서의 미소변위벡터 $$ d\vec{v}=\left[\begin{matrix} dv_1 \\ dv_2 \\ dv_3 \end{matrix}\right] =\hat{v}_1dv_1+\hat{v}_2dv_2+\hat{v}_3dv_3 $$ 변환(mapping) 연산자 작용, [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v}=d\vec{u}\cdot\nabla_{u}\vec{v} $$$$ =du_1\frac{\partial\vec{v}}{\partial u_1}+du_2\frac{\partial\vec{v}}{\partial u_2}+du_3\frac{\partial\vec{v}}{\partial u_3} $$수학적 벡터로 표현하면,</description>
     </item>
     <item>
-      <title>(b) Tensor components transformation</title>
-      <link>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation/index.html</link>
+      <title>(b) Tensor components transformation I</title>
+      <link>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation/index.html</guid>
-      <description>1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\left[\begin{matrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{matrix}\right]&#xD;$$$$&#xD;|u_1\rangle=\left[\begin{matrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{matrix}\right], \quad&#xD;|u_2\rangle=\left[\begin{matrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{matrix}\right], \quad&#xD;|u_3\rangle=\left[\begin{matrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{matrix}\right]&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.&#xA;$$&#xD;\langle u_{i}|&#xD;=\left\lbrack u_{i}\left\lbrack1\right\rbrack \,\,\,&#xD;u_{i}\left\lbrack2\right\rbrack \,\,\,&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\right\rbrack&#xD;$$$$&#xD;\langle u_1|&#xD;=\left\lbrack&#xD;u_1\left\lbrack1\right\rbrack \,\,\,&#xD;u_1\left\lbrack2\right\rbrack \,\,\,&#xD;u_1\left\lbrack3\right\rbrack&#xD;\right\rbrack, \quad&#xD;\langle u_2|&#xD;=\left\lbrack&#xD;u_2\left\lbrack1\right\rbrack \,\,\, u_2\left\lbrack2\right\rbrack \,\,\,&#xD;u_2\left\lbrack3\right\rbrack&#xD;\right\rbrack, \quad&#xD;\langle u_3|&#xD;=\left\lbrack&#xD;u_3\left\lbrack1\right\rbrack \,\,\,&#xD;u_3\left\lbrack2\right\rbrack \,\,\,&#xD;u_3\left\lbrack3\right\rbrack&#xD;\right\rbrack&#xD;$$벡터의 내적은 다음과 같이 표현할 수 있다.</description>
+      <guid>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 텐서 성분 변환 을 다룬다. 여기서의 텐서는 벡터이며, 변위벡터, 국소벡터를 의미한다.&#xA;1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\left[\begin{matrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{matrix}\right]&#xD;$$$$&#xD;|u_1\rangle=\left[\begin{matrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{matrix}\right], \quad&#xD;|u_2\rangle=\left[\begin{matrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{matrix}\right], \quad&#xD;|u_3\rangle=\left[\begin{matrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{matrix}\right]&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
     </item>
   </channel>
 </rss>
