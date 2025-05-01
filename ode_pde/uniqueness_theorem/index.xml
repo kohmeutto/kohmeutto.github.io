@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uniqueness theorem :: 수리전자물리학</title>
+    <link>http://localhost:1313/ode_pde/uniqueness_theorem/index.html</link>
+    <description>(r) Weak solution&#xD;(r) Uniqueness of Poisson&#39;s equation&#xD;(r) Uniqueness of Helmholtz equation&#xD;(i) Ideal metal</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/ode_pde/uniqueness_theorem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(r) Weak solution</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_weak_solution/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_weak_solution/index.html</guid>
+      <description>0. 정리 $$&#xD;\int_{\Omega}d^3V\left\lbrack v\nabla^2u\right\rbrack=\int_{\Omega}d^2\vec{s}\cdot\left\lbrack v\nabla u\right\rbrack-\int_{\Omega}d^3V\left\lbrack\nabla v\cdot\nabla u\right\rbrack&#xD;$$ 1. Weak solution 약한해와 강한해의 이론은 미분 방정식과 편미분 방정식에서 중요한 개념이다. 약한해는 미분 방정식의 해가 반드시 미분 가능하지 않아도 되는 경우를 말한다. 약한해는 함수가 미분 가능하지 않더라도 적분 방정식을 만족하는 경우를 의미한다.&#xA;라플라스 방정식 $\nabla^2u=-f$을 고려해보자. 함수의 내적연산을 사용하여 적분 방정식을 만든다. v 테스트 함수이다.&#xA;$$&#xD;\int_{\Omega}d^3V\left\lbrack v\nabla^2u\right\rbrack=-\int_{\Omega}d^3V\left\lbrack vf\right\rbrack&#xD;$$$$&#xD;\nabla\cdot v\nabla u=\nabla v\cdot\nabla u+v\nabla^2u&#xD;$$$$&#xD;\int_{\Omega}d^3V\left\lbrack\nabla\cdot v\nabla u-\nabla v\cdot\nabla u\right\rbrack=\int_{\Omega}d^2\vec{s}\cdot\left\lbrack v\nabla u\right\rbrack-\int_{\Omega}d^3V\left\lbrack\nabla v\cdot\nabla u\right\rbrack&#xD;$$아래 식은 암기하라. ($\nabla^2$에 대한 일반적인 weak form 표현)</description>
+    </item>
+    <item>
+      <title>(r) Uniqueness of Poisson&#39;s equation</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</guid>
+      <description>1. Poisson’s equation 포아송 방정식은 아래와 같이 표현할 수 있다. 라플라스 방정식은 f=0 일 때를 의미한다.&#xA;$$ \nabla^2\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 2. Weak solution for Poisson’s equation 포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송 방정식에 대입하면, 다음과 같다.&#xA;$$ \nabla^2\psi\left(\vec{r}\right)=0 $$$\psi$가 0임을 보인다면, 해는 유일하다.$\psi$가 0임을 보인다면, 해는 유일하다. “약해가 유일하다면, 만약 그 문제에 강해가 존재한다면, 그 강해는 유일한 약해와 같아야 한다.&#xA;$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=0 $$$$ \int d^3V \left\lbrack\psi^\ast\nabla^2\psi\right\rbrack=\int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left\lbrack \nabla\psi^\ast\cdot\nabla\psi\right\rbrack $$$$ \int d^2\vec{s}\cdot\left\lbrack \psi^\ast\nabla\psi\right\rbrack-\int d^3V\left|\nabla\psi\right|^2=0 $$ 3. Dirichlet boundary condition 경계면에서, 값은 이미 정해져 있으므로,</description>
+    </item>
+    <item>
+      <title>(r) Uniqueness of Helmholtz equation</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</guid>
+      <description>1. Helmholtz equation 헬름홀쯔 방정식은 아래와 같이 표현할 수 있다.&#xA;$$ \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 포아송 방정식은 $k^2=0$ 일 때를 의미한다. 라플라스 방정식은 $k^2=0$ &amp; $f=0$ 일 때를 의미한다. 2. Weak solution for Poisson’s equation 헬름홀츠 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 헬름홀츠 방정식에 대입하면, 다음과 같다.&#xA;$$ \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=0 $$$\psi$가 0임을 보인다면, 해는 유일하다. “약해가 유일하다면, 만약 그 문제에 강해가 존재한다면, 그 강해는 유일한 약해와 같아야 한다.</description>
+    </item>
+    <item>
+      <title>(i) Ideal metal</title>
+      <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</guid>
+      <description>공사중</description>
+    </item>
+  </channel>
+</rss>
