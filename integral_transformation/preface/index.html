@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
     <meta name="description" content="아래 그림과 같이 적분 변환은 크게 2가지 관점으로 분류할 수 있다. 분류가 되었다고 해서, 2개는 서로 별개의 것이 아니라, 서로 연결되어 있음을 주의한다.
 $$ \left(Tf\right)\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ 1. Transformation Fourier transformation using math $$ F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-j\omega t}\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{j\omega t}\right\rbrack $$ Laplace transformation using math $$ L\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-st}\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma&#43;j\infty}ds\left\lbrack F\left(s\right)e^{st}\right\rbrack $$ 2. Superposition Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$ Fourier transformation using physic $$ \psi\left(x\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack\Psi\left(k\right)e^{&#43;ikx}\right\rbrack $$$$ \Psi\left(k\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dx\left\lbrack\psi\left(x\right)e^{-ikx}\right\rbrack $$">
     <meta name="author" content="">
@@ -25,17 +25,17 @@ $$ \left(Tf\right)\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right
 $$ \left(Tf\right)\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ 1. Transformation Fourier transformation using math $$ F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-j\omega t}\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{j\omega t}\right\rbrack $$ Laplace transformation using math $$ L\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-st}\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma&#43;j\infty}ds\left\lbrack F\left(s\right)e^{st}\right\rbrack $$ 2. Superposition Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$ Fourier transformation using physic $$ \psi\left(x\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack\Psi\left(k\right)e^{&#43;ikx}\right\rbrack $$$$ \Psi\left(k\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dx\left\lbrack\psi\left(x\right)e^{-ikx}\right\rbrack $$">
     <meta itemprop="wordCount" content="78">
     <title>Preface :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746105051" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746105051" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746105051" rel="stylesheet">
-    <link href="/css/theme.css?1746105051" rel="stylesheet">
-    <link href="/css/format-html.css?1746105051" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746105051" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746105051" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746105051" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746105051" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746105051" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746105051" defer></script>
-    <script src="/js/search.js?1746105051" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746122410" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746122410" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746122410" rel="stylesheet">
+    <link href="/css/theme.css?1746122410" rel="stylesheet">
+    <link href="/css/format-html.css?1746122410" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746122410" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746122410" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746122410" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746122410" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746122410" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746122410" defer></script>
+    <script src="/js/search.js?1746122410" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ $$ \left(Tf\right)\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746105051";
+      window.relearn.index_js_url="/searchindex.en.js?1746122410";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -260,8 +260,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746105051" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746105051" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746122410" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746122410" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -273,7 +273,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746105051"></script>
-    <script src="/js/theme.js?1746105051" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746122410"></script>
+    <script src="/js/theme.js?1746122410" defer></script>
   </body>
 </html>
