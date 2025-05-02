@@ -35,19 +35,19 @@ $$ \mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right
 $$ \mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right) $$sol$$ F(s)=\int_0^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_0^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2)
 $$ \mathcal{L}\left\lbrace\cos at\cdot u\left(t\right)\right\rbrace\left(s\right) $$sol$$ F(s)=\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrack\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrack $$ $$ =\operatorname{Re}\left\lbrack\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrack=\frac{s}{s^2&#43;a^2} $$ example3)
 $$ \mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right) $$sol$$ F(s)=\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrack $$ $$ =\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrack=\frac{a}{s^2&#43;a^2} $$ example4)">
-    <meta itemprop="wordCount" content="215">
+    <meta itemprop="wordCount" content="253">
     <title>(b) Laplace transform II :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746122410" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746122410" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746122410" rel="stylesheet">
-    <link href="/css/theme.css?1746122410" rel="stylesheet">
-    <link href="/css/format-html.css?1746122410" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746122410" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746122410" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746122410" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746122410" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746122410" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746122410" defer></script>
-    <script src="/js/search.js?1746122410" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746154281" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746154281" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746154281" rel="stylesheet">
+    <link href="/css/theme.css?1746154281" rel="stylesheet">
+    <link href="/css/format-html.css?1746154281" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746154281" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746154281" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746154281" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746154281" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746154281" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746154281" defer></script>
+    <script src="/js/search.js?1746154281" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,7 +57,7 @@ $$ \mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746122410";
+      window.relearn.index_js_url="/searchindex.en.js?1746154281";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -401,7 +401,7 @@ $$
 </details>
 <p><strong>5) differentiation</strong></p>
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dx^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -410,7 +410,29 @@ $$
   </summary>
   <div class="box-content">
 <p>
-공사중
+$$
+\int^{\infty}_{0}dt\left[e^{-st}\frac{d^{n}}{dt^{n}}f\left(t\right)\right]
+=\int^{\infty}_{0}dt\left[\frac{\partial}{\partial t}\left\lbrace e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right\rbrace-\left(-s\right)e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]
+$$
+
+$$
+=\left[ e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]^{\infty}_{0}
++s\int^{\infty}_{0}dt\left[e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]
+$$
+
+t가 무한대에서 수렴해야하므로, s의 실수값은 0보다 커야
+한다. 
+
+$$
+=-f^{\left(n-1\right)}\left(0\right)
++s\left\lbrace-f^{\left(n-2\right)}\left(0\right)+s\int^{\infty}_{0}dt \left[e^{-st}\frac{\partial^{n-2}}{\partial t^{n-2}} f\left(t\right)\right]\right\rbrace
+$$
+
+따라서, 반복하면,
+
+$$
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+$$
 
 <hr>
   </div>
@@ -523,8 +545,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746122410" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746122410" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746154281" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746154281" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -536,7 +558,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746122410"></script>
-    <script src="/js/theme.js?1746122410" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746154281"></script>
+    <script src="/js/theme.js?1746154281" defer></script>
   </body>
 </html>
