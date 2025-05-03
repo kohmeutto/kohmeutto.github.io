@@ -145,6 +145,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_i/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
   </url>
   <url>
@@ -164,6 +167,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html</loc>
