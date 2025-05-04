@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
+    <meta name="description" content="1. 행렬연산의 행벡터는 내적 연산의 집합이다. 행렬에서 행벡터는 $v_{i,:}$ 와 같이 표현한다. 행렬에서 열벡터는 $v_{:,j}$ 와 같이 표현한다. 일반적인 벡터는 열벡터 이며, $x_{j}$ 와 같이 표현한다. 행렬연산의 행벡터에 대한 $v_{i,:}\cdot$ 는 벡터 $x_{j}$ 대한 각각의 내적 연산자라고 볼 수 있다.
+$$ \begin{bmatrix} y_{1} \\ y_{2} \\ y_{3} \end{bmatrix} =\begin{bmatrix} v_{11} &amp; v_{12} &amp; v_{12} \\ v_{21} &amp; v_{22} &amp; v_{23} \\ v_{31} &amp; v_{32} &amp; v_{33} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} v_{1,:}\cdot x_{j} \\ v_{2,:}\cdot x_{j} \\ v_{3,:}\cdot x_{j} \end{bmatrix} $$ 2. 적분변환은 행렬연산에 대응된다. $$ \left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack $$위를 행렬 연산과 비교해 보면,">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Row vector of matrix :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 행렬연산의 행벡터는 내적 연산의 집합이다. 행렬에서 행벡터는 $v_{i,:}$ 와 같이 표현한다. 행렬에서 열벡터는 $v_{:,j}$ 와 같이 표현한다. 일반적인 벡터는 열벡터 이며, $x_{j}$ 와 같이 표현한다. 행렬연산의 행벡터에 대한 $v_{i,:}\cdot$ 는 벡터 $x_{j}$ 대한 각각의 내적 연산자라고 볼 수 있다.
+$$ \begin{bmatrix} y_{1} \\ y_{2} \\ y_{3} \end{bmatrix} =\begin{bmatrix} v_{11} &amp; v_{12} &amp; v_{12} \\ v_{21} &amp; v_{22} &amp; v_{23} \\ v_{31} &amp; v_{32} &amp; v_{33} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} v_{1,:}\cdot x_{j} \\ v_{2,:}\cdot x_{j} \\ v_{3,:}\cdot x_{j} \end{bmatrix} $$ 2. 적분변환은 행렬연산에 대응된다. $$ \left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack $$위를 행렬 연산과 비교해 보면,">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/vector/b_row_vector_of_matrix/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Row vector of matrix :: 수리전자물리학">
+    <meta property="og:description" content="1. 행렬연산의 행벡터는 내적 연산의 집합이다. 행렬에서 행벡터는 $v_{i,:}$ 와 같이 표현한다. 행렬에서 열벡터는 $v_{:,j}$ 와 같이 표현한다. 일반적인 벡터는 열벡터 이며, $x_{j}$ 와 같이 표현한다. 행렬연산의 행벡터에 대한 $v_{i,:}\cdot$ 는 벡터 $x_{j}$ 대한 각각의 내적 연산자라고 볼 수 있다.
+$$ \begin{bmatrix} y_{1} \\ y_{2} \\ y_{3} \end{bmatrix} =\begin{bmatrix} v_{11} &amp; v_{12} &amp; v_{12} \\ v_{21} &amp; v_{22} &amp; v_{23} \\ v_{31} &amp; v_{32} &amp; v_{33} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} v_{1,:}\cdot x_{j} \\ v_{2,:}\cdot x_{j} \\ v_{3,:}\cdot x_{j} \end{bmatrix} $$ 2. 적분변환은 행렬연산에 대응된다. $$ \left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack $$위를 행렬 연산과 비교해 보면,">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear algebra">
+    <meta itemprop="name" content="(b) Row vector of matrix :: 수리전자물리학">
+    <meta itemprop="description" content="1. 행렬연산의 행벡터는 내적 연산의 집합이다. 행렬에서 행벡터는 $v_{i,:}$ 와 같이 표현한다. 행렬에서 열벡터는 $v_{:,j}$ 와 같이 표현한다. 일반적인 벡터는 열벡터 이며, $x_{j}$ 와 같이 표현한다. 행렬연산의 행벡터에 대한 $v_{i,:}\cdot$ 는 벡터 $x_{j}$ 대한 각각의 내적 연산자라고 볼 수 있다.
+$$ \begin{bmatrix} y_{1} \\ y_{2} \\ y_{3} \end{bmatrix} =\begin{bmatrix} v_{11} &amp; v_{12} &amp; v_{12} \\ v_{21} &amp; v_{22} &amp; v_{23} \\ v_{31} &amp; v_{32} &amp; v_{33} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} v_{1,:}\cdot x_{j} \\ v_{2,:}\cdot x_{j} \\ v_{3,:}\cdot x_{j} \end{bmatrix} $$ 2. 적분변환은 행렬연산에 대응된다. $$ \left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack $$위를 행렬 연산과 비교해 보면,">
+    <meta itemprop="wordCount" content="224">
+    <title>(b) Row vector of matrix :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746331881" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746331881" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746331881" rel="stylesheet">
+    <link href="/css/theme.css?1746331881" rel="stylesheet">
+    <link href="/css/format-html.css?1746331881" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746331881" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746331881" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746331881" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746331881" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746331881" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746331881" defer></script>
+    <script src="/js/search.js?1746331881" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_algebra\/vector\/b_row_vector_of_matrix\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1746331881";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/linear_algebra/vector/b_row_vector_of_matrix/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-행렬연산의-행벡터는-내적-연산의-집합이다">1. 행렬연산의 행벡터는 내적 연산의 집합이다.</a></li>
+        <li><a href="#2-적분변환은-행렬연산에-대응된다">2. 적분변환은 행렬연산에 대응된다.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/vector/index.html"><span itemprop="name">Vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Row vector of matrix</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/vector/b_projection/index.html" title="(b) Projection (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/index.html" title="Integral transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-row-vector-of-matrix">(b) Row vector of matrix</h1>
+
+<hr>
+<h3 id="1-행렬연산의-행벡터는-내적-연산의-집합이다">1. 행렬연산의 행벡터는 내적 연산의 집합이다.</h3>
+<ul>
+<li>행렬에서 행벡터는 <strong>$v_{i,:}$</strong> 와 같이 표현한다.</li>
+<li>행렬에서 열벡터는 <strong>$v_{:,j}$</strong> 와 같이 표현한다.</li>
+<li>일반적인 벡터는 열벡터 이며, <strong>$x_{j}$</strong> 와 같이 표현한다.</li>
+</ul>
+<p>행렬연산의 행벡터에 대한 <strong>$v_{i,:}\cdot$</strong> 는 벡터 <strong>$x_{j}$</strong> 대한 각각의 <strong>내적 연산자</strong>라고 볼 수 있다.</p>
+$$
+\begin{bmatrix}
+    y_{1} \\ y_{2} \\ y_{3}
+\end{bmatrix}
+=\begin{bmatrix}
+    v_{11} & v_{12} & v_{12} \\
+    v_{21} & v_{22} & v_{23} \\
+    v_{31} & v_{32} & v_{33}
+\end{bmatrix}
+\begin{bmatrix}
+    x_{1} \\ x_{2} \\ x_{3}
+\end{bmatrix}=\begin{bmatrix}
+    v_{1,:}\cdot x_{j} \\
+    v_{2,:}\cdot x_{j} \\
+    v_{3,:}\cdot x_{j}
+\end{bmatrix}
+$$<hr>
+<h3 id="2-적분변환은-행렬연산에-대응된다">2. 적분변환은 행렬연산에 대응된다.</h3>
+$$
+\left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack
+$$<p>위를 행렬 연산과 비교해 보면,</p>
+<ul>
+<li><strong>커널함수 K는 행렬과 대응되며,</strong></li>
+<li><strong>함수 f는 벡터에 대응된다.</strong></li>
+</ul>
+<p>아래와 같이 라플라스 변환과 대응해 보면, 이해가 쉽다.</p>
+$$
+{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left[ e^{-st}\cdot f\left(t\right)\right]
+$$$$
+\begin{bmatrix}
+    s_1:A_{1,:}\cdot v_{j} \\
+    s_2:A_{2,:}\cdot v_{j} \\
+    s_3:A_{3,:}\cdot v_{j} \\
+    s_4:A_{4,:}\cdot v_{j} \\
+    s_5:A_{5,:}\cdot v_{j}
+\end{bmatrix}
+=\begin{bmatrix}
+    s_1: & A_{11} & A_{12} & A_{13} & A_{14} & A_{15} \\
+    s_2: & A_{21} & A_{22} & A_{23} & A_{24} & A_{25} \\
+    s_3: & A_{31} & A_{32} & A_{33} & A_{34} & A_{35} \\
+    s_4: & A_{41} & A_{42} & A_{43} & A_{44} & A_{45} \\
+    s_5: & A_{51} & A_{52} & A_{53} & A_{54} & A_{55}
+\end{bmatrix}
+\begin{bmatrix}
+    v_1 \\ v_2 \\ v_3 \\ v_4 \\ v_5
+\end{bmatrix}
+$$<hr>
+<p><a href="https://www.youtube.com/watch?v=Du9KGqOwaQM" rel="external" target="_blank">적분변환론(1부)</a></p>
+<p><a href="https://m.blog.naver.com/jjz0426/220864334042" rel="external" target="_blank">푸리에 변환과 라플라스 변환(Fourier Transform and Laplace Transform) 차이점 : 네이버 블로그</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Integral_transform" rel="external" target="_blank">Integral transform - Wikipedia</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/linear_algebra/vector/index.html"><a class="padding" href="/linear_algebra/vector/index.html">Vector</a><ul id="R-subsections-c7410d928abe64b74c391b458d4f1b43" class="collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/vector/b_vector/index.html"><a class="padding" href="/linear_algebra/vector/b_vector/index.html">(b) Vector</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_basic_vector_operations/index.html"><a class="padding" href="/linear_algebra/vector/b_basic_vector_operations/index.html">(b) Basic vector operations</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/i_linearity/index.html"><a class="padding" href="/linear_algebra/vector/i_linearity/index.html">(i) Linearity</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/q_linearity_for_circuits/index.html"><a class="padding" href="/linear_algebra/vector/q_linearity_for_circuits/index.html">(q) Linearity for circuits</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_matrix/index.html"><a class="padding" href="/linear_algebra/vector/b_matrix/index.html">(b) Matrix</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html"><a class="padding" href="/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html">(b) Column vector of matrix I - Basis</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html"><a class="padding" href="/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html">(b) Column vector of matrix II - Determinant</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_inner_product/index.html"><a class="padding" href="/linear_algebra/vector/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_projection/index.html"><a class="padding" href="/linear_algebra/vector/b_projection/index.html">(b) Projection</a></li>
+            <li class="active " data-nav-id="/linear_algebra/vector/b_row_vector_of_matrix/index.html"><a class="padding" href="/linear_algebra/vector/b_row_vector_of_matrix/index.html">(b) Row vector of matrix</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/integral_transformation/index.html"><a class="padding" href="/integral_transformation/index.html">Integral transformation</a><ul id="R-subsections-42ebb13836da0b1740c49019907bc5d6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1746331881" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746331881" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746331881"></script>
+    <script src="/js/theme.js?1746331881" defer></script>
+  </body>
+</html>
