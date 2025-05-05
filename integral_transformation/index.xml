@@ -3,7 +3,7 @@
   <channel>
     <title>Integral transformation :: 수리전자물리학</title>
     <link>http://localhost:1313/integral_transformation/index.html</link>
-    <description>Preface&#xD;(b) Convolution&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Fourier transform I&#xD;(b) Fourier transform II</description>
+    <description>Preface&#xD;(b) Convolution&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Fourier transform I&#xD;(b) Fourier transform II&#xD;(a) Fourier transform - Dirac notation</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/integral_transformation/index.xml" rel="self" type="application/rss+xml" />
@@ -47,7 +47,14 @@
       <link>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</guid>
-      <description>이 챕터에서는 비대칭성 기반의 정의 를 사용한다.&#xA;1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.&#xA;$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$&#xD;sol&#xD;$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.&#xA;$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$&#xD;sol&#xD;$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{j\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.&#xA;$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$&#xD;sol&#xD;$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-j\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)</description>
+      <description>이 챕터에서는 비대칭성 기반의 정의 를 사용한다.&#xA;1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.&#xA;$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$&#xD;sol&#xD;$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.&#xA;$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$&#xD;sol&#xD;$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.&#xA;$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$&#xD;sol&#xD;$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)</description>
+    </item>
+    <item>
+      <title>(a) Fourier transform - Dirac notation</title>
+      <link>http://localhost:1313/integral_transformation/a_fourier_transform_dirac_notation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transformation/a_fourier_transform_dirac_notation/index.html</guid>
+      <description>이 챕터에서는 대칭성 기반의 정의 를 사용한다.&#xA;1. 중요변환 1) Dirac delta function - time to frequency domain&#xA;$$ \langle \omega| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$&#xD;proof&#xD;$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain&#xA;$$ \langle t| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$&#xD;proof&#xD;$\langle t|\omega\rangle =\cfrac{1}{\sqrt{2\pi}}e^{+i\omega t}$ 라고 하자. $$ \langle t| \left(\int^{\infty}_{-\infty}d\omega|\omega\rangle\langle \omega|\right)|\delta \rangle =\int^{\infty}_{-\infty}d\omega\langle t|\omega\rangle\langle \omega|\delta\rangle =\int^{\infty}_{-\infty}d\omega\left[\frac{1}{\sqrt{2\pi}}e^{+i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 3) DC, Constant</description>
     </item>
   </channel>
 </rss>
