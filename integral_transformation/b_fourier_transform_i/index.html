@@ -25,17 +25,17 @@ cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \l
 cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-i\omega t}\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack F\left(\omega\right)e^{&#43;i\omega t}\right\rbrack $$ 5. 라플라스 변환과의 관계 라플라스 변환에서 $s=\sigma&#43;i\omega$ 이면, $\sigma=0$ 일 때, 푸리에 변환이라고 한다. 즉, 푸리에 변환은 라플라스 변환의 특수한 경우">
     <meta itemprop="wordCount" content="405">
     <title>(b) Fourier transform I :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746504961" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746504961" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746504961" rel="stylesheet">
-    <link href="/css/theme.css?1746504961" rel="stylesheet">
-    <link href="/css/format-html.css?1746504961" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746504961" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746504961" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746504961" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746504961" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746504961" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746504961" defer></script>
-    <script src="/js/search.js?1746504961" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746543530" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746543530" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746543530" rel="stylesheet">
+    <link href="/css/theme.css?1746543530" rel="stylesheet">
+    <link href="/css/format-html.css?1746543530" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746543530" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746543530" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746543530" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746543530" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746543530" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746543530" defer></script>
+    <script src="/js/search.js?1746543530" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \l
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746504961";
+      window.relearn.index_js_url="/searchindex.en.js?1746543530";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -130,7 +130,7 @@ cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \l
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/b_laplace_transform_ii/index.html" title="(b) Laplace transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/b_fourier_transform_ii/index.html" title="(ㅠ) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -338,7 +338,7 @@ $$<hr>
             <li class="" data-nav-id="/integral_transformation/b_laplace_transform_i/index.html"><a class="padding" href="/integral_transformation/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
             <li class="" data-nav-id="/integral_transformation/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
             <li class="active " data-nav-id="/integral_transformation/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="" data-nav-id="/integral_transformation/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_ii/index.html">(ㅠ) Fourier transform II</a></li></ul></li>
+            <li class="" data-nav-id="/integral_transformation/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li></ul></li>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
           </ul>
@@ -358,8 +358,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746504961" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746504961" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746543530" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746543530" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -371,7 +371,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746504961"></script>
-    <script src="/js/theme.js?1746504961" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746543530"></script>
+    <script src="/js/theme.js?1746543530" defer></script>
   </body>
 </html>
