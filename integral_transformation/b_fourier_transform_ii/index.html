@@ -5,49 +5,37 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
-    <meta name="description" content="이 챕터에서는 비대칭성 기반의 정의 를 사용한다.
-1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.
-$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.
-$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$sol$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.
-$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)">
+    <meta name="description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
+$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Fourier transform II :: 수리전자물리학">
-    <meta name="twitter:description" content="이 챕터에서는 비대칭성 기반의 정의 를 사용한다.
-1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.
-$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.
-$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$sol$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.
-$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)">
+    <meta name="twitter:description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
+$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
     <meta property="og:url" content="http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Fourier transform II :: 수리전자물리학">
-    <meta property="og:description" content="이 챕터에서는 비대칭성 기반의 정의 를 사용한다.
-1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.
-$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.
-$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$sol$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.
-$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)">
+    <meta property="og:description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
+$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Integral transformation">
     <meta itemprop="name" content="(b) Fourier transform II :: 수리전자물리학">
-    <meta itemprop="description" content="이 챕터에서는 비대칭성 기반의 정의 를 사용한다.
-1. 중요변환 example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.
-$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1 $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1 $$ example2) 주파수가 0인 신호는 DC 신호이다.
-$$ \mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi} $$sol$$ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi} $$ example4) DC 신호는 주파수가 0 인 신호이다.
-$$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right) $$sol$$ F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right) $$ example5)">
-    <meta itemprop="wordCount" content="902">
+    <meta itemprop="description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
+$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자. $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
+    <meta itemprop="wordCount" content="1078">
     <title>(b) Fourier transform II :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746454792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746454792" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746454792" rel="stylesheet">
-    <link href="/css/theme.css?1746454792" rel="stylesheet">
-    <link href="/css/format-html.css?1746454792" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746454792" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746454792" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746454792" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746454792" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746454792" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746454792" defer></script>
-    <script src="/js/search.js?1746454792" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746505984" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746505984" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746505984" rel="stylesheet">
+    <link href="/css/theme.css?1746505984" rel="stylesheet">
+    <link href="/css/format-html.css?1746505984" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746505984" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746505984" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746505984" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746505984" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746505984" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746505984" defer></script>
+    <script src="/js/search.js?1746505984" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,7 +45,7 @@ $$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\ome
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746454792";
+      window.relearn.index_js_url="/searchindex.en.js?1746505984";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -121,11 +109,11 @@ $$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\ome
     <li>
       <ul>
         <li><a href="#1-중요변환">1. 중요변환</a></li>
-        <li><a href="#2-properties-라플라스-변환과-동일">2. Properties, 라플라스 변환과 동일</a></li>
-        <li><a href="#3-properties-2">3. Properties 2</a></li>
-        <li><a href="#8-inverse-laplace--fourier-transform">8. Inverse Laplace &amp; Fourier transform</a></li>
-        <li><a href="#9-duality">9. Duality</a></li>
-        <li><a href="#10-practice">10. Practice</a></li>
+        <li><a href="#2-properties">2. Properties</a></li>
+        <li><a href="#3-inverse-laplace--fourier-transform">3. Inverse Laplace &amp; Fourier transform</a></li>
+        <li><a href="#4-duality">4. Duality</a></li>
+        <li><a href="#5-practice1---대칭성-기반-풀이">5. Practice1 - 대칭성 기반 풀이</a></li>
+        <li><a href="#6-practice2---비대칭성-기반-풀이">6. Practice2 - 비대칭성 기반 풀이</a></li>
       </ul>
     </li>
   </ul>
@@ -142,7 +130,7 @@ $$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\ome
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/b_fourier_transform_i/index.html" title="(b) Fourier transform I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transformation/a_fourier_transform_dirac_notation/index.html" title="(a) Fourier transform - Dirac notation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/index.html" title="ODE & PDE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -165,71 +153,144 @@ $$ \mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\ome
 <h1 id="b-fourier-transform-ii">(b) Fourier transform II</h1>
 
 <hr>
-<p>이 챕터에서는 <strong>비대칭성 기반의 정의</strong> 를 사용한다.</p>
-<hr>
 <h3 id="1-중요변환">1. 중요변환</h3>
-<p><strong>example1) 델타 신호를 만들기 위해서는 모든 주파수 신호가 합쳐져야 한다.</strong></p>
+<p><strong>1) Dirac delta function - time to frequency domain</strong></p>
 $$
-\mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)=1
+\mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)
+=\langle \omega| \delta \rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
+$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자.
+    
 $$
-F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-i\omega t}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1
+\langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle
+=\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle
+=\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right]
+=1
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>example2) 주파수가 0인 신호는 DC 신호이다.</strong></p>
-$$
-\mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)=\frac{1}{2\pi}
-$$
+
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    대칭성
   </summary>
   <div class="box-content">
 <p>
+$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자.
+    
 $$
-f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi}
+\langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle
+=\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle
+=\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right]
+=\frac{1}{\sqrt{2\pi}}
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>example4) DC 신호는 주파수가 0 인 신호이다.</strong></p>
+<p><strong>2) Dirac delta function - frequency to time domain</strong></p>
 $$
-\mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)=2\pi\delta\left(\omega\right)
+\mathcal{F}^{-1}\left\lbrace\delta\left(\omega\right)\right\rbrace\left(t\right)
+=\langle t| \delta \rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
+$\langle t|\omega\rangle
+=e^{+i\omega t}$ 라고 하자.
+    
 $$
-F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right)
+\langle t| \left(\int^{\infty}_{-\infty}d\omega|\omega\rangle\langle \omega|\right)|\delta \rangle
+=\int^{\infty}_{-\infty}d\omega\langle t|\omega\rangle\langle \omega|\delta\rangle
+=\int^{\infty}_{-\infty}d\omega\left[e^{+i\omega t}\delta\left(\omega\right)\right]
+=1
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>example5)</strong></p>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    대칭성
+  </summary>
+  <div class="box-content">
+<p>
+$\langle t|\omega\rangle
+=\cfrac{1}{\sqrt{2\pi}}e^{+i\omega t}$ 라고 하자.
+    
 $$
-\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{i\omega}+\pi\delta\left(\omega\right)
+\langle t| \left(\int^{\infty}_{-\infty}d\omega|\omega\rangle\langle \omega|\right)|\delta \rangle
+=\int^{\infty}_{-\infty}d\omega\langle t|\omega\rangle\langle \omega|\delta\rangle
+=\int^{\infty}_{-\infty}d\omega\left[\frac{1}{\sqrt{2\pi}}e^{+i\omega t}\delta\left(\omega\right)\right]
+=\frac{1}{\sqrt{2\pi}}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>3) DC, Constant</strong></p>
+$$
+\mathcal{F}\left\lbrace1\right\rbrace\left(\omega\right)
+=\langle\omega|1\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    비대칭성
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|1\rangle
+=\int^{\infty}_{-\infty}dt\left[e^{-i\omega t}\cdot 1\right]
+=2\pi\delta\left(\omega\right)
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    대칭성
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|1\rangle
+=\int^{\infty}_{-\infty}dt\left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\cdot 1\right]
+=\sqrt{2\pi}\delta\left(\omega\right)
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>4) Unit function</strong></p>
+$$
+\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)
+=\langle\omega|u\rangle
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
@@ -287,20 +348,38 @@ $$
 최종적으로,
 
 $$
-\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{i\omega}+\pi\delta\left(\omega\right)
+\langle\omega|u\rangle
+=\frac{1}{i\omega}+\pi\delta\left(\omega\right)
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>example6)</strong></p>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    대칭성
+  </summary>
+  <div class="box-content">
+<p>
 $$
-\mathcal{F}\left\lbrace\cos at\right\rbrace\left(\omega\right)=\pi\delta\left(\omega-a\right)+\pi\delta\left(\omega+a\right)
+\langle\omega|u\rangle
+=\frac{1}{\sqrt{2\pi}}\left\lbrace\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>5) cosine function</strong></p>
+$$
+\mathcal{F}\left\lbrace\cos at\right\rbrace\left(\omega\right)=
+\langle\omega|\cos at\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
@@ -319,14 +398,31 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>example7)</strong></p>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    대칭성
+  </summary>
+  <div class="box-content">
+<p>
 $$
-\mathcal{F}\left\lbrace\sin at\right\rbrace\left(\omega\right)=-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right)
+\langle\omega|\cos at\rangle
+=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta\left(\omega-a\right)+\pi\delta\left(\omega+a\right)\right\rbrace
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>6) sine function</strong></p>
+$$
+\mathcal{F}\left\lbrace\sin at\right\rbrace\left(\omega\right)
+=\langle\omega|\sin at\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
@@ -345,11 +441,28 @@ $$
 <hr>
   </div>
 </details>
-<hr>
-<h3 id="2-properties-라플라스-변환과-동일">2. Properties, 라플라스 변환과 동일</h3>
-<p><strong>1) time scaling</strong></p>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    대칭성
+  </summary>
+  <div class="box-content">
+<p>
 $$
-\mathcal{F}\left\lbrace f\left(at+b\right)\right\rbrace\left(\omega\right)=\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
+\langle\omega|\sin at\rangle
+=\frac{1}{\sqrt{2\pi}}\left\lbrace-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right)\right\rbrace
+$$
+  </div>
+</details>
+<hr>
+<h3 id="2-properties">2. Properties</h3>
+<p><strong>1) time scaling &amp; shifting</strong></p>
+$$
+\mathcal{F}\left\lbrace f\left(at+b\right)\right\rbrace\left(\omega\right)
+=\langle \omega|f\left(at+b\right)\rangle
+=e^{i\frac{b}{a}\omega}\left\langle\omega\middle|f(at)\right\rangle
+=\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\left\langle \frac{\omega}{a}\middle|f\right\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -361,13 +474,15 @@ $$
 (1) a>0
 
 $$
-\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=e^{i\frac{b}{a}\omega}\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
+\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)
+=e^{i\frac{b}{a}\omega}\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=\frac{1}{a}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 (2) a<0
 
 $$
-\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=e^{i\frac{b}{a}}\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
+\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)
+=e^{i\frac{b}{a}}\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{a}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 <br>
@@ -379,7 +494,9 @@ $$
 </details>
 <p><strong>2) time shifting</strong></p>
 $$
-\mathcal{F}\left\lbrace f\left(t-t'\right)\right\rbrace\left(\omega\right)=e^{-i\omega t'}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
+\mathcal{F}\left\lbrace f\left(t-t'\right)\right\rbrace\left(\omega\right)
+=\langle \omega|f\left(t-t'\right)\rangle
+=e^{-i\omega t'}\left\langle \omega\middle|f\right\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -401,7 +518,10 @@ $$
 </details>
 <p><strong>3) frequency shifting</strong></p>
 $$
-\mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)=\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega-a\right)
+\mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)
+=\langle \omega|e^{iat}f\rangle
+=\langle \omega+i\cdot ia|f\rangle
+=\langle \omega-a|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -418,19 +538,20 @@ $$
 
 <b>응용</b>
     
- <img src="image2.png" width="70%" height="auto">
+<img src="image2.png" width="70%" height="auto">
 
 <hr>
   </div>
 </details>
 <p><strong>4) convolution</strong></p>
 $$
-\mathcal{F}\left\lbrace h\left(t\right)\ast f\left(t\right)\right\rbrace\left(\omega\right)=H\left(\omega\right)F\left(\omega\right)
+\mathcal{F}\left\lbrace h\left(t\right)\ast f\left(t\right)\right\rbrace\left(\omega\right)
+=\langle\omega|h\ast f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    proof)
+    비대칭성
   </summary>
   <div class="box-content">
 <p>
@@ -457,68 +578,6 @@ $$
 $$
 =H\left(\omega\right)F\left(\omega\right)
 $$
-  </div>
-</details>
-<hr>
-<p><strong>example1)</strong></p>
-$$
-\mathcal{F}\left\lbrace u\left(t-t'\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-e^{-i\omega t'}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)
-=\frac{e^{-i\omega't}}{i\omega}+e^{-i\omega' t}\pi\delta\left(\omega\right)
-$$
-  </div>
-</details>
-<p><strong>example2)</strong></p>
-$$
-\mathcal{F}\left\lbrace\delta\left(t-t'\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-F(\omega)=\int_{-\infty}^{\infty}dt\left[\delta\left(t-t'\right)e^{-i\omega t}\right]=e^{-i\omega t'}\int_{-\infty}^{\infty}dt\left[\delta\left(t-t'\right)\right]
-=e^{-i\omega t'}
-$$
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2
-  </summary>
-  <div class="box-content">
-<p>
-공사중
-  </div>
-</details>
-<p><strong>example3)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{iat}\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{iat}\cdot e^{-i\omega t}\right\rbrack=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\left(\omega-a\right)t}\right\rbrack=2\pi\delta\left(\omega-a\right)
-$$
 
 <hr>
   </div>
@@ -527,314 +586,25 @@ $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2
+    대칭성
   </summary>
   <div class="box-content">
 <p>
 $$
-F(\omega)=2\pi\delta\left(\omega\right)|_{\omega-a}=2\pi\delta\left(\omega-a\right)
+\langle\omega|h\ast f\rangle
+=\sqrt{2\pi}\langle\omega|h\rangle\langle\omega|f\rangle
+=\frac{1}{\sqrt{2\pi}}H\left(\omega\right)F\left(\omega\right)
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>example4)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(\omega\right),\quad a<0
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-F\left(\omega\right)=\int^{\infty}_{0}dt\left[e^{\left(a-i\omega\right)t}\right]
-=\frac{1}{a-i\omega}\left.e^{\left(a-i\omega\right)t}\right|^{\infty}_{0}
-=\frac{1}{-a+i\omega}
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2, 중요
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{F}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(\omega\right)=\mathcal{F}\left\lbrace e^{i(-ia)t}u\left(t\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-F\left(\omega\right)=\left[\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right]_{\omega+ia}=\frac{1}{-a+i\omega}+\pi\delta\left(\omega+ia\right)
-$$
-
-여기에서, $\omega$ 는 실수이므로, $\delta\left(\omega+ia\right)=0$ 이다. 따라서,
-
-$$
-F\left(\omega\right)=\frac{1}{-a+i\omega}
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol3, 중요
-  </summary>
-  <div class="box-content">
-<p>
-라플라스 변환과 매우 유사하다.
-
-$$
-F_L\left(s\right)=\left.\frac{1}{s}\right|_{s-a}=\frac{1}{s-a}
-$$
-
-s에 $i\omega$ 를 대입하면,
-
-$$
-F\left(\omega\right)=F_L\left(i\omega\right)=\frac{1}{-a+i\omega}
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example5)</strong></p>
-$$
-\mathcal{F}\left\lbrace u\left(-t\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{F}\left\lbrace u\left(-t\right)\right\rbrace\left(\omega\right)
-=\frac{1}{|-1|}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(-\omega\right)
-$$
-
-$$
-=-\frac{1}{i\omega}+\pi\delta\left(-\omega\right)
-=-\frac{1}{i\omega}+\pi\delta\left(\omega\right)
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example6)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(\omega\right),\quad a>0
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-F\left(\omega\right)=\int^{0}_{-\infty}dt\left[e^{\left(a-i\omega\right)t}\right]
-=\frac{1}{a-i\omega}\left.e^{\left(a-i\omega\right)t}\right|^{0}_{-\infty}
-=\frac{1}{a-i\omega}
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2, 중요
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{F}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(\omega\right)
-=\mathcal{F}\left\lbrace e^{-a\cdot-t}u\left(-t\right)\right\rbrace\left(\omega\right)=\mathcal{F}\left\lbrace e^{-at}u\left(t\right)\right\rbrace\left(-\omega\right)
-$$
-
-라플라스 변환과 유사하게,
-
-$$
-F_L\left(s\right)=\left.\frac{1}{s}\right|_{-s+a}=\frac{1}{a-s}
-$$
-
-s에 $i\omega$ 를 대입하면,
-
-$$
-F\left(\omega\right)=F_L\left(i\omega\right)=\frac{1}{a-i\omega}
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example7)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{-t}u\left(t-1\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{F}\left\lbrace e^{-\left(t-1\right)-1}u\left(t-1\right)\right\rbrace\left(\omega\right)
-=e^{-s}\mathcal{L}\left\lbrace e^{-t-1}u\left(t\right)\right\rbrace\left(s\right)|_{s=i\omega}
-$$
-
-$$
-=e^{-s-1}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(s\right)|_{s=i\omega}
-=e^{-s-1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s+1\right)|_{s=i\omega}
-$$
-
-$$
-=\left.\frac{e^{-s-1}}{s+1}\right|_{s=i\omega}
-=\frac{e^{-i\omega-1}}{i\omega+1}
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{F}\left\lbrace e^{i\cdot i\left(t-1\right)-1}u\left(t-1\right)\right\rbrace\left(\omega\right)
-=e^{-i\omega-1}\mathcal{F}\left\lbrace e^{i\cdot it}u\left(t\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-=e^{-i\omega-1}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega-i\right)
-$$
-
-$$
-=e^{-i\omega-1}\left\lbrace \frac{1}{i\left(\omega-i\right)}+\pi\delta\left(\omega-i\right) \right\rbrace
-$$
-
-$$
-=\frac{e^{-i\omega-1}}{i\omega+1}
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example8)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{-2t}u\left(2t-1\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{L}\left\lbrace e^{-(2t-1)-1}u\left(2t-1\right)\right\rbrace\left(s\right)
-=e^{-1}\mathcal{L}\left\lbrace e^{-(2t-1)}u\left(2t-1\right)\right\rbrace\left(s\right)
-$$
-
-$$
-=e^{-\frac{s}{2}}\frac{e^{-1}}{2}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(\frac{s}{2}\right)
-=\frac{1}{2}e^{-\frac{s}{2}-1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(\frac{s}{2}+1\right)
-$$
-
-$$
-=\frac{1}{2}e^{-\frac{s}{2}-1}\cdot\frac{2}{s+2}
-$$
-
-$s=i\omega$ 를 대입하면,
-
-$$
-\frac{e^{-i\omega/2-1}}{i\omega+2}
-$$
-
-
-
-
-$$
-\mathcal{L}\left\lbrace e^{-(2t-1)-1}u\left(2t-1\right)\right\rbrace\left(s\right)
-=e^{-1}\mathcal{L}\left\lbrace e^{-(2t-1)}u\left(2t-1\right)\right\rbrace\left(s\right)
-$$
-
-$$
-=\left.\mathcal{L}\left\lbrace e^{-(t-\frac{1}{2})}u\left(t-\frac{1}{2}\right)\right\rbrace\left(s\right)\right|_{\frac{s}{2}}
-=e^{-\frac{s}{2}}\left[\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(s\right)\right]_{\frac{s}{2}}
-$$
-
-$$
-=e^{-\frac{s}{2}}\left[\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right)\right]_{\frac{s}{2}+1}
-$$
-
-$s=i\omega$ 를 대입하면,
-
-$$
-\frac{e^{-i\omega/2-1}}{i\omega+2}
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example9)</strong></p>
-$$
-\mathcal{F}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(\omega\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\mathcal{L}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(s\right)
-=\mathcal{L}\left\lbrace e^{-(1-t)+1}u\left(1-t\right)\right\rbrace\left(s\right)
-$$
-
-$$
-=e^1\mathcal{L}\left\lbrace e^{-(1-t)}u\left(1-t\right)\right\rbrace\left(s\right)
-=e^1e^{-s}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(-s\right)
-$$
-
-$$
-=e^{-s+1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(-s+1\right)
-$$
-
-$$
-=\frac{e^{1-s}}{1-s}
-$$
-
-$s=i\omega$ 를 대입하면,
-
-$$
-\frac{e^{1-i\omega}}{1-i\omega}
-$$
-  </div>
-</details>
-<hr>
-<h3 id="3-properties-2">3. Properties 2</h3>
-<p><strong>1) time differentiation, 중요</strong></p>
-$$
-\mathcal{F}\left\lbrace\frac{d}{dt}f\left(t\right)\right\rbrace\left(\omega\right)=\left(i\omega\right)F\left(\omega\right)
-$$$$
-\mathcal{F}\left\lbrace\frac{d^{n}}{d t^{n}}f\left(t\right)\right\rbrace\left(\omega\right)=\left(i\omega\right)^{n}F\left(\omega\right)
+<p><strong>5) time differentiation</strong></p>
+$$
+\mathcal{F}\left\lbrace\frac{d}{dt}f\left(t\right)\right\rbrace\left(\omega\right)
+=\left\langle\omega\middle|\frac{\partial^n}{\partial t^n}f\right\rangle 
+=\langle \omega|(\hat{D}_t)^n|f\rangle 
+=(i\omega)^n\langle\omega|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -870,11 +640,12 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>2) frequency differentiation</strong></p>
+<p><strong>6) frequency differentiation</strong></p>
 $$
-\mathcal{F}\left\lbrace tf\left(t\right)\right\rbrace\left(\omega\right)=i\frac{d}{d\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
-$$$$
-\mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)=i^n\frac{d^n}{d\omega^n}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
+\mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)
+=\langle\omega|t^n\cdot f\rangle
+=\langle \omega|(\hat{t})^n|f\rangle
+=i^n(\hat{D}_\omega)^n \langle \omega|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -900,16 +671,71 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>3) time integration</strong></p>
+<p><strong>7) time integration</strong></p>
+$$
+\left\langle\omega\middle|\int^{t}_{-\infty}dt'f\right\rangle
+=\langle\omega|(\hat{D}_t)^{-1}|f\rangle
+=\langle\omega|u\ast f\rangle
+= \frac{1}{i\omega} \langle \omega|f\rangle + \pi \langle 0|f\rangle \delta(\omega)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof)
+  </summary>
+  <div class="box-content">
+<p>
 $$
 \mathcal{F}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(\omega\right)
 =\mathcal{F}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(\omega\right)
-$$$$
-=\left(\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right)F\left(\omega\right)=\frac{F\left(\omega\right)}{i\omega}+\pi F\left(0\right)\delta\left(\omega\right)
-$$<hr>
-<p><strong>example1) 중요</strong></p>
 $$
-\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
+
+$$
+=\left(\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right)F\left(\omega\right)=\frac{F\left(\omega\right)}{i\omega}+\pi F\left(0\right)\delta\left(\omega\right)
+$$
+  </div>
+</details>
+<hr>
+<h3 id="3-inverse-laplace--fourier-transform">3. Inverse Laplace &amp; Fourier transform</h3>
+$$
+\mathcal{L}^{-1}\left\lbrace F_L\left(s\right)\right\rbrace\left(t\right)
+=\langle t|F_L\rangle
+=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F_L\left(s\right)\right\rbrack
+$$$$
+\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)
+=\langle t|F\rangle
+=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left[e^{i\omega t}F\left(\omega\right)\right]
+$$<p>$s=i\omega$를 라플라스 변환에 대입해 보자.</p>
+$$
+\mathcal{L}^{-1}\left\lbrace F_L\left(i\omega\right)\right\rbrace\left(t\right)=\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)
+\implies
+\langle t|F_L(i\omega)\rangle=\langle t|F\rangle
+$$<p>ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.</p>
+<hr>
+<h3 id="4-duality">4. Duality</h3>
+<p>푸리에 변환의 쌍대성은 시간 영역과 주파수 영역 사이의 대칭적인 관계를 나타낸다. 함수 $f(t)$의 푸리에 변환이 $F(\omega)$일 때, $F(\omega)$를 시간 함수 $F(t)$로 간주하고 그 푸리에 변환을 구하면 원래 함수 $f(t)$와 관련된 형태가 나온다.</p>
+<p>$F(\omega) = \mathcal{F}{f(t)}(\omega)$라고 할 때, $\mathcal{F}{F(t)}(\omega)$를 구해보자.</p>
+<ul>
+<li><strong>비대칭성 (Asymmetric Convention)</strong></li>
+</ul>
+$$
+\mathcal{F}\{F(t)\}(\omega)=2\pi f(-\omega)
+$$$$
+\langle\omega|F(t)\rangle_{asym}=2\pi\langle-\omega|f\rangle_{asym}
+$$$$
+F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+$$$$
+f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega') e^{i\omega' t} d\omega'
+$$$$\mathcal{F}\{F(t)\}(\omega) = \int_{-\infty}^{\infty} F(t) e^{-i\omega t} dt$$$$f(-\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(t) e^{-it \omega} dt$$<p>
+이 식의 양변에 $2\pi$를 곱하면 $\int_{-\infty}^{\infty} F(t) e^{-it \omega} dt = 2\pi f(-\omega)$ 이고, 이는 $\mathcal{F}{F(t)}(\omega)$</p>
+<ul>
+<li><strong>대칭성 (Symmetric Convention)</strong></li>
+</ul>
+$$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt$$$$f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(\omega') e^{i\omega' t} d\omega'$$$$\mathcal{F}\{F(t)\}(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(t) e^{-i\omega t} dt$$$$f(-\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(t) e^{-it \omega} dt$$$$\mathcal{F}\{F(t)\}(\omega) = \frac{1}{\sqrt{2\pi}} \left( \sqrt{2\pi} f(-\omega) \right) = f(-\omega)$$$$\mathcal{F}\{F(t)\}(\omega) = f(-\omega)$$$$\langle \omega | F(t) \rangle_{sym} = \langle -\omega | f \rangle_{sym}$$<hr>
+<h3 id="5-practice1---대칭성-기반-풀이">5. Practice1 - 대칭성 기반 풀이</h3>
+<p><strong>example1)</strong></p>
+$$
+\mathcal{F}\left\lbrace u\left(t-t'\right)\right\rbrace\left(\omega\right)
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -919,13 +745,9 @@ $$
   <div class="box-content">
 <p>
 $$
-\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
-=i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-=i\frac{d}{d\omega}\left\lbrace \frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
-=-\frac{1}{\omega^2}+i\pi\delta'\left(\omega\right)
+\langle\omega|u\left(t-t'\right)\rangle
+=e^{-i\omega t'}\langle\omega|u\rangle
+=\frac{e^{-i\omega t'}}{\sqrt{2\pi}}\left\lbrace\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
 $$
 
 <hr>
@@ -933,7 +755,7 @@ $$
 </details>
 <p><strong>example2)</strong></p>
 $$
-\mathcal{F}\left\lbrace tu\left(-t\right)\right\rbrace\left(\omega\right)
+\mathcal{F}\left\lbrace\delta\left(t-t'\right)\right\rbrace\left(\omega\right)
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -943,17 +765,9 @@ $$
   <div class="box-content">
 <p>
 $$
-\mathcal{F}\left\lbrace tu\left(-t\right)\right\rbrace\left(\omega\right)
-=\mathcal{F}\left\lbrace -tu\left(t\right)\right\rbrace\left(-\omega\right)
-$$
-
-$$
-=i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(-\omega\right)
-=i\frac{d}{d\omega}\left\lbrace -\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
-$$
-
-$$
-=\frac{1}{\omega^2}+i\pi\delta'\left(\omega\right)
+\langle\omega|\delta\left(t-t'\right)\rangle
+=e^{-i\omega t'}\langle\omega|\delta\rangle
+=\frac{e^{-i\omega t'}}{\sqrt{2\pi}}
 $$
 
 <hr>
@@ -961,7 +775,7 @@ $$
 </details>
 <p><strong>example3)</strong></p>
 $$
-\mathcal{F}\left\lbrace tu\left(2t+1\right)\right\rbrace\left(\omega\right)
+\mathcal{F}\left\lbrace e^{iat}\right\rbrace\left(\omega\right)
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -971,50 +785,225 @@ $$
   <div class="box-content">
 <p>
 $$
-\mathcal{F}\left\lbrace tu\left(2t+1\right)\right\rbrace\left(\omega\right)
-=\mathcal{F}\left\lbrace\frac{1}{2}\left(2t+1-1\right)u\left(2t+1\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-=\frac{1}{2}\mathcal{F}\left\lbrace\left(2t+1-1\right)u\left(2t+1\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-=\frac{1}{2}\mathcal{F}\left\lbrace\left(2t+1\right)u\left(2t+1\right)-u\left(2t+1\right)\right\rbrace\left(\omega\right)
-$$
-
-$$
-=\frac{1}{4}e^{+i\frac{1}{2}\omega}\mathcal{F}\left\lbrace tu\left(t\right)-u\left(t\right)\right\rbrace\left(\frac{\omega}{2}\right)
-$$
-
-$$
-=\frac{1}{4}e^{+i\frac{1}{2}\omega}\left[2i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace -\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\right]\left(\frac{\omega}{2}\right)
-$$
-
-$$
-=\frac{1}{4}e^{+i\frac{1}{2}\omega}\left[\frac{2}{\omega^2}+2i\pi\delta'\left(\omega\right) -\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\right]\left(\frac{\omega}{2}\right)
+\langle\omega|e^{iat}\rangle
+=\langle\omega+i\cdot ia|1\rangle
+=\sqrt{2\pi}\delta\left(\omega-a\right)
 $$
 
 <hr>
   </div>
 </details>
-<hr>
-<h3 id="8-inverse-laplace--fourier-transform">8. Inverse Laplace &amp; Fourier transform</h3>
+<p><strong>example4)</strong></p>
 $$
-\mathcal{L}^{-1}\left\lbrace F_L\left(s\right)\right\rbrace\left(t\right)=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F_L\left(s\right)\right\rbrack
-$$$$
-\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left[e^{i\omega t}F\left(\omega\right)\right]
-$$<p>$s=i\omega$를 라플라스 변환에 대입해 보자.</p>
+\mathcal{F}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(\omega\right),\quad a<0
 $$
-\mathcal{L}^{-1}\left\lbrace F_L\left(i\omega\right)\right\rbrace\left(t\right)=\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)
-$$<p>ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.</p>
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|e^{at}u\rangle
+=\langle\omega+ia|u\rangle
+=\frac{1}{\sqrt{2\pi}}\left\lbrace\frac{1}{i\left(\omega+ia\right)}+\pi\delta\left(\omega+ia\right) \right\rbrace
+$$
+
+$$
+=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{i\omega-a}
+$$
+
 <hr>
-<h3 id="9-duality">9. Duality</h3>
+  </div>
+</details>
+<p><strong>example5)</strong></p>
+$$
+\mathcal{F}\left\lbrace u\left(-t\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|u\left(-t\right)\rangle
+=\langle-\omega|u\rangle
+=\frac{1}{\sqrt{2\pi}}\left\lbrace -\frac{1}{i\omega}+\pi\delta\left(\omega\right) \right\rbrace
+$$
+
 <hr>
-<h3 id="10-practice">10. Practice</h3>
-<p><strong>필수, example1)</strong></p>
-<p><a href="#R-image-694facea04528f49fd371e74eee820cc" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image3-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-694facea04528f49fd371e74eee820cc"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image3-1.png"></a></p>
+  </div>
+</details>
+<p><strong>example6)</strong></p>
+$$
+\mathcal{F}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(\omega\right),\quad a>0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|e^{at}u\left(-t\right)\rangle
+=\langle\omega+ia|u\left(-t\right)\rangle
+=\langle-\omega-ia|u\left(t\right)\rangle
+$$
+
+$$
+=\frac{1}{\sqrt{2\pi}}\left\lbrace\frac{1}{i\left(-\omega-ia\right)}+\pi\delta\left(-\omega-ia\right) \right\rbrace
+$$
+
+$$
+=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{-i\omega+a}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example7)</strong></p>
+$$
+\mathcal{F}\left\lbrace e^{-t}u\left(t-1\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|e^{-t}u\left(t-1\right)\rangle
+=\langle\omega-i|u\left(t-1\right)\rangle
+=e^{-i(\omega-i)}\langle\omega-i|u\rangle
+$$
+
+$$
+=e^{-i\omega-1}\langle\omega-i|u\rangle
+=\frac{e^{-i\omega-1}}{\sqrt{2\pi}}\cdot\frac{1}{i\omega+1}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example8)</strong></p>
+$$
+\mathcal{F}\left\lbrace e^{-2t}u\left(2t-1\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle \omega| e^{-2t}u\left(2t-1\right)\rangle
+=\langle \omega-2i| u\left(2t-1\right)\rangle
+$$
+
+$$
+=e^{-\frac{i}{2}(\omega-2i)}\langle \omega-2i| u\left(2t\right)\rangle
+=\frac{1}{2}e^{-i\frac{\omega}{2}-1}\left\langle \frac{\omega}{2}-i\middle| u\right\rangle
+$$
+
+$$
+=\frac{1}{2\sqrt{2\pi}}e^{-i\frac{\omega}{2}-1}\left\lbrace\frac{1}{i\left(\omega/2-i\right)}\right\rbrace
+$$
+
+$$
+=\frac{1}{\sqrt{2\pi}}\frac{e^{-i\omega/2-1}}{i\omega+2}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example9)</strong></p>
+$$
+\mathcal{F}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle \omega| e^{t}u\left(1-t\right)\rangle
+=\langle \omega+i| u\left(1-t\right)\rangle
+=e^{-i\omega+1}\langle \omega+i| u\left(-t\right)\rangle
+$$
+
+$$
+=e^{-i\omega+1}\langle -\omega-i| u\rangle
+=\frac{1}{\sqrt{2\pi}}e^{-i\omega+1}\cdot\frac{1}{i(-\omega-i)}
+$$
+
+$$
+=\frac{1}{\sqrt{2\pi}}\frac{e^{1-i\omega}}{1-i\omega}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example10)</strong></p>
+$$
+\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|t\cdot u\rangle
+=\langle \omega|\hat{t}|u\rangle
+=i\hat{D}_\omega\langle\omega|u\rangle
+$$
+
+$$
+=\frac{i}{\sqrt{2\pi}}\hat{D}_\omega\left\lbrace\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
+=\frac{i}{\sqrt{2\pi}}\left\lbrace-\frac{1}{i\omega^2}+\pi\delta'\left(\omega\right)\right\rbrace
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example11)</strong></p>
+$$
+\mathcal{F}\left\lbrace tu\left(-t\right)\right\rbrace\left(\omega\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle\omega|t\cdot u(-t)\rangle
+=\langle \omega|\hat{t}|u(-t)\rangle
+=i\hat{D}_\omega\langle-\omega|u\rangle
+$$
+
+$$
+=\frac{i}{\sqrt{2\pi}}\hat{D}_\omega\left\lbrace -\frac{1}{i\omega}+\pi\delta\left(\omega\right) \right\rbrace
+=\frac{i}{\sqrt{2\pi}}\left\lbrace\frac{1}{i\omega^2}+\pi\delta'\left(\omega\right)\right\rbrace
+$$
+  </div>
+</details>
+<hr>
+<h3 id="6-practice2---비대칭성-기반-풀이">6. Practice2 - 비대칭성 기반 풀이</h3>
+<p><strong>example1) 필수</strong></p>
+<p><a href="#R-image-26470e8d5afac54b77dcc4c796c29be3" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image3-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-26470e8d5afac54b77dcc4c796c29be3"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image3-1.png"></a></p>
 <ul>
 <li>
 <p>sol</p>
@@ -1027,8 +1016,8 @@ $$
     $$</li>
 </ul>
 <p><strong>example2)</strong></p>
-<p><a href="#R-image-ca106e11e20e21b1f9d2ddf812b1aa27" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111525.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ca106e11e20e21b1f9d2ddf812b1aa27"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111525.png"></a></p>
+<p><a href="#R-image-219f07282a800d4b7bfd0ddf31862d63" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111525.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-219f07282a800d4b7bfd0ddf31862d63"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111525.png"></a></p>
 <ul>
 <li>
 <p>sol</p>
@@ -1041,20 +1030,20 @@ $$
     $$</li>
 </ul>
 <p><strong>example3)</strong></p>
-<p><a href="#R-image-aee33a5ad3c40dc0d9f67537b28ad4c3" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-125021.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-aee33a5ad3c40dc0d9f67537b28ad4c3"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-125021.png"></a></p>
+<p><a href="#R-image-2764e4d5185e3bc87791ef1e6ac7e5c1" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-125021.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2764e4d5185e3bc87791ef1e6ac7e5c1"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-125021.png"></a></p>
 <ul>
 <li>sol</li>
 </ul>
 <p><strong>example4) @Seungmin Son</strong></p>
-<p><a href="#R-image-d0eedf6bc26afe157943be96815c9706" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111728.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0eedf6bc26afe157943be96815c9706"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111728.png"></a></p>
+<p><a href="#R-image-500ed5729f343242c9677ffe1dafd80e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111728.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-500ed5729f343242c9677ffe1dafd80e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111728.png"></a></p>
 <ul>
 <li>sol</li>
 </ul>
 <p><strong>example6)</strong></p>
-<p><a href="#R-image-f0da71f02a01e0ad66effa5781714f4e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-042149.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f0da71f02a01e0ad66effa5781714f4e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-042149.png"></a></p>
+<p><a href="#R-image-39b7d3fd644fd968a5c0f8160961a6de" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-042149.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39b7d3fd644fd968a5c0f8160961a6de"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-042149.png"></a></p>
 <ul>
 <li>
 <p>sol (a)</p>
@@ -1115,35 +1104,35 @@ $$
     $$</li>
 </ul>
 <p><strong>example7) @Seungmin Son</strong></p>
-<p><a href="#R-image-1c74cafda010ef799eaddee7e4cc1880" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111834.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1c74cafda010ef799eaddee7e4cc1880"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111834.png"></a></p>
+<p><a href="#R-image-cf183dc2f63e15c7fe47913f807cc8a6" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111834.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf183dc2f63e15c7fe47913f807cc8a6"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-111834.png"></a></p>
 <ul>
 <li>sol (a)</li>
 <li>sol (b)</li>
 <li>sol (c)</li>
 </ul>
 <p><strong>example8)</strong></p>
-<p><a href="#R-image-48206b7658a95af188849e47d5e7f6ae" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112236.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-48206b7658a95af188849e47d5e7f6ae"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112236.png"></a></p>
+<p><a href="#R-image-57701dd5e888647408282070cda7bc7f" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112236.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-57701dd5e888647408282070cda7bc7f"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112236.png"></a></p>
 <ul>
 <li>sol</li>
 </ul>
 <p><strong>example9)</strong> @Seungmin Son</p>
-<p><a href="#R-image-7ea1fecda6c1746138e5d686a903269e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112330.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7ea1fecda6c1746138e5d686a903269e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112330.png"></a></p>
+<p><a href="#R-image-29d640dbdf0b4eee7d4a03c08792eafa" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112330.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-29d640dbdf0b4eee7d4a03c08792eafa"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112330.png"></a></p>
 <ul>
 <li>sol</li>
 </ul>
 <hr>
-<p><strong>example1)</strong></p>
-<p><a href="#R-image-f85ea7e4c2879dbc7a993e1835c58d15" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112425.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f85ea7e4c2879dbc7a993e1835c58d15"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112425.png"></a></p>
+<p><strong>example10)</strong></p>
+<p><a href="#R-image-9416b57dcfb32af7488aeaf7a7b37bec" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112425.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9416b57dcfb32af7488aeaf7a7b37bec"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112425.png"></a></p>
 <ul>
 <li>sol</li>
 </ul>
-<p><strong>example2) @Seungmin Son</strong></p>
-<p><a href="#R-image-eed7671db114f5b71a74cc561063e1a1" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112648.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-eed7671db114f5b71a74cc561063e1a1"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112648.png"></a></p>
+<p><strong>example11)</strong></p>
+<p><a href="#R-image-56b9e73a7fa2fae0d04ea6ae77d3768a" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112648.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56b9e73a7fa2fae0d04ea6ae77d3768a"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transformation/b_fourier_transform_ii/image-20240922-112648.png"></a></p>
 <ul>
 <li>
 <p>sol (a)</p>
@@ -1208,8 +1197,7 @@ $$
             <li class="" data-nav-id="/integral_transformation/b_laplace_transform_i/index.html"><a class="padding" href="/integral_transformation/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
             <li class="" data-nav-id="/integral_transformation/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
             <li class="" data-nav-id="/integral_transformation/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="active " data-nav-id="/integral_transformation/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
-            <li class="" data-nav-id="/integral_transformation/a_fourier_transform_dirac_notation/index.html"><a class="padding" href="/integral_transformation/a_fourier_transform_dirac_notation/index.html">(a) Fourier transform - Dirac notation</a></li></ul></li>
+            <li class="active " data-nav-id="/integral_transformation/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transformation/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li></ul></li>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
           </ul>
@@ -1229,8 +1217,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746454792" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746454792" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746505984" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746505984" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -1242,7 +1230,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746454792"></script>
-    <script src="/js/theme.js?1746454792" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746505984"></script>
+    <script src="/js/theme.js?1746505984" defer></script>
   </body>
 </html>

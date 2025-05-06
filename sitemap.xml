@@ -169,9 +169,6 @@
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html</loc>
   </url>
   <url>
@@ -184,9 +181,6 @@
     <loc>http://localhost:1313/vector_calculus/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/a_fourier_transform_dirac_notation/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</loc>
   </url>
   <url>
@@ -194,6 +188,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
