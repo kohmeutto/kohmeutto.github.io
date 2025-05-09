@@ -28,7 +28,7 @@
     <loc>http://localhost:1313/linear_algebra/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/preface/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/preface/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/preface/index.html</loc>
@@ -49,7 +49,7 @@
     <loc>http://localhost:1313/ode_pde/homogeneous/b_cee/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/b_convolution/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/b_convolution/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</loc>
@@ -79,7 +79,7 @@
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform_for_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/b_laplace_transform_i/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/b_laplace_transform_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_i/index.html</loc>
@@ -106,13 +106,16 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/laplace_transform/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform_for_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/b_laplace_transform_ii/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/b_laplace_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_ii/index.html</loc>
@@ -133,7 +136,7 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
@@ -145,7 +148,7 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_i/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/b_fourier_transform_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
@@ -169,6 +172,9 @@
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transform/b_fourier_transform_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html</loc>
   </url>
   <url>
@@ -188,9 +194,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/integral_transformation/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
@@ -221,6 +224,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
