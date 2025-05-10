@@ -23,19 +23,19 @@ cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \l
     <meta itemprop="name" content="(b) Fourier transform I :: 수리전자물리학">
     <meta itemprop="description" content="1. 푸리에 변환의 본질 함수는 여러 주파수 성분들이 중첩 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
 cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 표준 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{&#43;i\omega t}F\left(\omega\right)\right\rbrack $$ 5. 푸리에 변환의 확장: 분포 푸리에 변환 (1) 표준 푸리에 변환의 한계">
-    <meta itemprop="wordCount" content="667">
+    <meta itemprop="wordCount" content="631">
     <title>(b) Fourier transform I :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746874246" rel="stylesheet">
-    <link href="/css/theme.css?1746874246" rel="stylesheet">
-    <link href="/css/format-html.css?1746874246" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746874246" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746874246" defer></script>
-    <script src="/js/search.js?1746874246" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746891925" rel="stylesheet">
+    <link href="/css/theme.css?1746891925" rel="stylesheet">
+    <link href="/css/format-html.css?1746891925" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746891925" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746891925" defer></script>
+    <script src="/js/search.js?1746891925" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \l
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746874246";
+      window.relearn.index_js_url="/searchindex.en.js?1746891925";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -299,20 +299,26 @@ $$<p>위 식은 표준 푸리에 변환이 가능한 조건(절대 적분)이다
 <p><strong>(3) 주요 예시</strong></p>
 <ul>
 <li>
-<p><strong>디랙 델타 함수:</strong> $\mathcal{F}{\delta(t)} = 1$</p>
+<p><strong>디랙 델타 함수:</strong> $\mathcal{F}\lbrace\delta(t)\rbrace = 1$</p>
 </li>
 <li>
-<p><strong>단위 계단 함수:</strong> $\mathcal{F}{u(t)} = \pi\delta(\omega) + \frac{1}{i\omega}$</p>
+<p><strong>단위 계단 함수:</strong> $\mathcal{F}\lbrace u(t)\rbrace = \pi\delta(\omega) + \frac{1}{i\omega}$</p>
 </li>
 <li>
-<p><strong>상수 함수 ($A$):</strong> $\mathcal{F}{A} = 2\pi A\delta(\omega)$</p>
+<p><strong>상수 함수 ($A$):</strong> $\mathcal{F}\lbrace A\rbrace = 2\pi A\delta(\omega)$</p>
 </li>
 </ul>
 <hr>
 <h3 id="6-라플라스-변환과의-관계">6. 라플라스 변환과의 관계</h3>
-<p>라플라스 변환의 수렴 영역(ROC, Region of Convergence)이 $i\omega$ 축($\text{Re}{s}=0$)을 포함할 때, 라플라스 변환 $F(s)$에 $s=i\omega$를 대입한 결과 $F(i\omega)$가 표준 푸리에 변환과 같다. 즉, 이 경우 표준 푸리에 변환은 라플라스 변환의 특수한 경우로 볼 수 있다.</p>
-<p>하지만 라플라스 변환의 ROC가 $i\omega$ 축을 포함하지 않는 신호들도 있다. (예: 단위 계단 함수 $u(t)$, 상수 함수). 이러한 신호의 경우, 표준 푸리에 변환은 존재하지 않지만 <strong>분포의 푸리에 변환</strong>은 존재할 수 있으며, 이는 단순히 라플라스 변환에 $s=i\omega$를 대입하는 것만으로는 얻을 수 없다.</p>
-<p>따라서 라플라스 변환에 $s=i\omega$를 대입하여 푸리에 변환을 얻는 방법은 <strong>ROC가 $i\omega$ 축을 포함하는 신호에 대해서만 유효</strong>하다. 즉, 표준 푸리에 변환만 할 수 있다.</p>
+$$
+\langle s|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
+$$<p>위 식을 만족하려면,</p>
+<ul>
+<li>ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace&gt;0$ 또는 $\operatorname{Re}\lbrace s\rbrace&lt;0$ 시: 분포 푸리에 변환 존재</li>
+<li>단, ROC <strong>공집합</strong> 시: 표준 &amp; 분포 푸리에 변환이 존재 안 함</li>
+</ul>
 <hr>
 <h3 id="7-페이저-변환과의-관계">7. 페이저 변환과의 관계</h3>
 <p>페이저 변환과 수학적 뿌리는 동일하다. <strong>그러나 전혀 다른 변환으로 생각하자.</strong> 페이저 변환은 주파수가 1개 (2개 이상 안됨) 일 때, 적용할 수 있는 방법이다.</p>
@@ -392,8 +398,8 @@ $$<p>위 식은 표준 푸리에 변환이 가능한 조건(절대 적분)이다
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746874246" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746874246" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746891925" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746891925" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -405,7 +411,7 @@ $$<p>위 식은 표준 푸리에 변환이 가능한 조건(절대 적분)이다
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746874246"></script>
-    <script src="/js/theme.js?1746874246" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746891925"></script>
+    <script src="/js/theme.js?1746891925" defer></script>
   </body>
 </html>

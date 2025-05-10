@@ -8,21 +8,21 @@
     <meta name="description" content="양방향 라플라스 변환은 사용 빈도가 낮으나, 푸리에 변환과의 관계를 이해하고 표준 푸리에 역변환이 라플라스 변환의 틀 안에서 어떻게 설명되는지 파악하는 데 유용하다.
 1. 라플라스 변환 $$\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$$$\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\langle s|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.
 2. 중요변환 1-1) 디렉 델타 함수
-$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
+$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Laplace transform II :: 수리전자물리학">
     <meta name="twitter:description" content="양방향 라플라스 변환은 사용 빈도가 낮으나, 푸리에 변환과의 관계를 이해하고 표준 푸리에 역변환이 라플라스 변환의 틀 안에서 어떻게 설명되는지 파악하는 데 유용하다.
 1. 라플라스 변환 $$\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$$$\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\langle s|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.
 2. 중요변환 1-1) 디렉 델타 함수
-$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
+$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
     <meta property="og:url" content="http://localhost:1313/integral_transform/b_laplace_transform_ii/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Laplace transform II :: 수리전자물리학">
     <meta property="og:description" content="양방향 라플라스 변환은 사용 빈도가 낮으나, 푸리에 변환과의 관계를 이해하고 표준 푸리에 역변환이 라플라스 변환의 틀 안에서 어떻게 설명되는지 파악하는 데 유용하다.
 1. 라플라스 변환 $$\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$$$\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\langle s|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.
 2. 중요변환 1-1) 디렉 델타 함수
-$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
+$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Integral transform">
@@ -30,20 +30,20 @@ $$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\lang
     <meta itemprop="description" content="양방향 라플라스 변환은 사용 빈도가 낮으나, 푸리에 변환과의 관계를 이해하고 표준 푸리에 역변환이 라플라스 변환의 틀 안에서 어떻게 설명되는지 파악하는 데 유용하다.
 1. 라플라스 변환 $$\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$$$\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)=\langle s|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.
 2. 중요변환 1-1) 디렉 델타 함수
-$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
-    <meta itemprop="wordCount" content="1714">
+$$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\langle s|\delta\rangle$$sol$$F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수">
+    <meta itemprop="wordCount" content="1656">
     <title>(b) Laplace transform II :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746874246" rel="stylesheet">
-    <link href="/css/theme.css?1746874246" rel="stylesheet">
-    <link href="/css/format-html.css?1746874246" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746874246" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746874246" defer></script>
-    <script src="/js/search.js?1746874246" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746891925" rel="stylesheet">
+    <link href="/css/theme.css?1746891925" rel="stylesheet">
+    <link href="/css/format-html.css?1746891925" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746891925" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746891925" defer></script>
+    <script src="/js/search.js?1746891925" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -53,7 +53,7 @@ $$\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)=\lang
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746874246";
+      window.relearn.index_js_url="/searchindex.en.js?1746891925";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -187,7 +187,7 @@ $$
   <div class="box-content">
 <p>
 $$
-F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad
+F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad
 \text{ROC: 모든 } s
 $$
 
@@ -279,21 +279,15 @@ $$
 
 그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
 
-라플라스 변환 적분을 분포적인 의미로 평가할 때, 특히 복소 평면의 허수축($\operatorname{Re}\{s\}=0$) 위에서 이 적분은 수렴하며 그 결과는 $f(t)=1$의 푸리에 변환과 같다.
-
 $$
 \left. \int_{-\infty}^{\infty}dt\left[e^{-st}\right] \right|_{\operatorname{Re}\left\lbrace s\right\rbrace=0} = \int_{-\infty}^{\infty}dt\left[e^{-j\omega t}\right] = 2\pi\delta(\omega)
 $$
 
-이는 허수축 상에서 라플라스 변환이 $2\pi\delta(\omega)$ 라는 분포의 형태로 존재함을 의미한다.
-
 $$
 \langle s|1\rangle
 =2\pi\delta\left(s\right),\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
-
-이 분포 라플라스 변환은 $s$ 평면 전체에서 정의되는 분포이며, 특히 $s=0$에 집중되어 있다. 푸리에 변환($s=i\omega$ 대입)은 바로 이 분포의 $\operatorname{Re}\{s\}=0$에서의 특성을 보여주는 것이다.
 
 <hr>
 
@@ -388,7 +382,7 @@ $$
 
 $$
 =\pi\delta(s-ia)+\pi\delta(s+ia),\quad
-\text{ROC: }\operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
 
 <hr>
@@ -474,7 +468,7 @@ $$
 
 $$
 =-i\pi\delta(s-ia)+i\pi\delta(s+ia),\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
 
 <hr>
@@ -1180,8 +1174,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746874246" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746874246" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746891925" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746891925" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -1193,7 +1187,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746874246"></script>
-    <script src="/js/theme.js?1746874246" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746891925"></script>
+    <script src="/js/theme.js?1746891925" defer></script>
   </body>
 </html>

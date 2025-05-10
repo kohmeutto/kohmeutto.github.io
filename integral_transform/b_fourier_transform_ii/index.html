@@ -23,19 +23,19 @@ $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =
     <meta itemprop="name" content="(b) Fourier transform II :: 수리전자물리학">
     <meta itemprop="description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
 $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성, 중요비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다. $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle\omega|f\rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right] $$ 따라서, $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
-    <meta itemprop="wordCount" content="1223">
+    <meta itemprop="wordCount" content="1350">
     <title>(b) Fourier transform II :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746874246" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746874246" rel="stylesheet">
-    <link href="/css/theme.css?1746874246" rel="stylesheet">
-    <link href="/css/format-html.css?1746874246" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746874246" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746874246" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746874246" defer></script>
-    <script src="/js/search.js?1746874246" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746891925" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746891925" rel="stylesheet">
+    <link href="/css/theme.css?1746891925" rel="stylesheet">
+    <link href="/css/format-html.css?1746891925" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746891925" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746891925" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746891925" defer></script>
+    <script src="/js/search.js?1746891925" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746874246";
+      window.relearn.index_js_url="/searchindex.en.js?1746891925";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -718,7 +718,13 @@ $$
 \mathcal{L}^{-1}\left\lbrace F_L\left(i\omega\right)\right\rbrace\left(t\right)=\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)
 \implies
 \langle t|F_L(i\omega)\rangle=\langle t|F\rangle
-$$<p>ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.</p>
+$$<p>ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다. 단, 위의 역 라플라스 변환을 사용하여, 역 푸리에 수행하기 위해서는, 아래와 같이 푸리에 변환 자체가 존재해야 한다.</p>
+<ul>
+<li>ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace&gt;0$ 또는 $\operatorname{Re}\lbrace s\rbrace&lt;0$ 시: 분포 푸리에 변환 존재</li>
+<li>단, ROC <strong>공집합</strong> 시: 표준 &amp; 분포 푸리에 변환이 존재 안 함</li>
+</ul>
 <hr>
 <h3 id="4-duality">4. Duality</h3>
 <p>푸리에 변환의 쌍대성은 시간 영역과 주파수 영역 사이의 대칭적인 관계를 나타낸다. 함수 $f(t)$의 푸리에 변환이 $F(\omega)$일 때, $F(\omega)$를 시간 함수 $F(t)$로 간주하고 그 푸리에 변환을 구하면 원래 함수 $f(t)$와 관련된 형태가 나온다.</p>
@@ -1042,8 +1048,8 @@ $$
 <hr>
 <h3 id="6-practice2---비대칭성-기반-풀이">6. Practice2 - 비대칭성 기반 풀이</h3>
 <p><strong>example1) 문제 자체가 중요</strong></p>
-<p><a href="#R-image-d9e7eaa406e8be7acb22b3576b260de4" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d9e7eaa406e8be7acb22b3576b260de4"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-1.png"></a></p>
+<p><a href="#R-image-cf8479feeb55a810f44ef982769b7c86" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf8479feeb55a810f44ef982769b7c86"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-1.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1086,8 +1092,8 @@ $$
   </div>
 </details>
 <p><strong>example2)</strong></p>
-<p><a href="#R-image-610ae759ec8241478fc4cb782b030575" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-2.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-610ae759ec8241478fc4cb782b030575"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-2.png"></a></p>
+<p><a href="#R-image-d8782d058c20ce7c79b2a86079dd0390" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d8782d058c20ce7c79b2a86079dd0390"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-2.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1121,8 +1127,8 @@ $$
   </div>
 </details>
 <p><strong>example3)</strong></p>
-<p><a href="#R-image-1e4877833c67009da84fd23914ac899d" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1e4877833c67009da84fd23914ac899d"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-3.png"></a></p>
+<p><a href="#R-image-2a33908e9cd38160656c1cc0998a96c5" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2a33908e9cd38160656c1cc0998a96c5"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-3.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1145,8 +1151,8 @@ $$
   </div>
 </details>
 <p><strong>example4)</strong></p>
-<p><a href="#R-image-e6302cfe186ba56d74a5cddd8998fe91" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-4.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6302cfe186ba56d74a5cddd8998fe91"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-4.png"></a></p>
+<p><a href="#R-image-227e9b79da3b5851375f965c947b8e29" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-227e9b79da3b5851375f965c947b8e29"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-4.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1173,8 +1179,8 @@ $$
   </div>
 </details>
 <p><strong>example5)</strong></p>
-<p><a href="#R-image-c9cf21d998889acee5fcd493dd341f70" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-5.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c9cf21d998889acee5fcd493dd341f70"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-5.png"></a></p>
+<p><a href="#R-image-e3315882a94d73c106a6abd14835c405" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3315882a94d73c106a6abd14835c405"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-5.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1198,8 +1204,8 @@ $$
   </div>
 </details>
 <p><strong>example6)</strong></p>
-<p><a href="#R-image-12256f7f06c2dfe7a861207506dc466e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-6.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-12256f7f06c2dfe7a861207506dc466e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-6.png"></a></p>
+<p><a href="#R-image-92836ddd83524cfc85d6fe7f02376f5a" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-92836ddd83524cfc85d6fe7f02376f5a"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-6.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1267,8 +1273,8 @@ $$
   </div>
 </details>
 <p><strong>example7)</strong></p>
-<p><a href="#R-image-7800bde6c946658fa9103f452e73e0b6" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-7.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7800bde6c946658fa9103f452e73e0b6"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-7.png"></a></p>
+<p><a href="#R-image-655b83710ec3c2df1933e814a06468e8" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-7.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-655b83710ec3c2df1933e814a06468e8"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-7.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1317,8 +1323,8 @@ $$
   </div>
 </details>
 <p><strong>example8)</strong></p>
-<p><a href="#R-image-284dfe6c6e675acf9c2f6a17d3d2fe94" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-8.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-284dfe6c6e675acf9c2f6a17d3d2fe94"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-8.png"></a></p>
+<p><a href="#R-image-204e31939d53bba3579b49dfd35da57a" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-204e31939d53bba3579b49dfd35da57a"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-8.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1332,8 +1338,8 @@ $$
 </details>
 <hr>
 <p><strong>example9)</strong></p>
-<p><a href="#R-image-c30586801500201170dd04c435be6f13" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-9.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c30586801500201170dd04c435be6f13"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-9.png"></a></p>
+<p><a href="#R-image-1198b6ab997415b74c49654604331b3e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-9.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1198b6ab997415b74c49654604331b3e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-9.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1350,6 +1356,11 @@ $$
 
 $$
 =e^{-3t}\left\langle t\middle|\frac{10s-26}{s^2-1}\right\rangle
+$$
+
+ROC 가 $\operatorname{Re}\lbrace s\rbrace>-2$ 이어야 푸리에 변환이 존재한다. 따라서, 
+
+$$
 =e^{-3t}(10\cosh t-26\sinh t)u(t)
 $$
 
@@ -1366,21 +1377,32 @@ $$
 <p>
 $$
 \left\langle t\middle|F(s)\right\rangle
-=\left\langle t\middle|\frac{-s^2+21}{-s^2+9}\right\rangle
+=\left\langle t\middle|\frac{\left(\frac{s}{i}\right)^2+21}{\left(\frac{s}{i}\right)^2+9}\right\rangle
 =\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
-=\left\langle t\middle|1-\frac{4\cdot3}{s^2-3^2}\right\rangle
+=\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
 $$
 
 $$
-=\delta(t)-4\sinh 3t\cdot u(t)
+=\left\langle t\middle|1-\frac{12}{(s+3)(s-3)}\right\rangle
+=\left\langle t\middle|1+\frac{2}{s+3}-\frac{2}{s-3}\right\rangle
+$$
+
+ROC가 허수축을 포함하거나 허수축이 ROC의 경계가 되는 경우, 푸리에 변환이 존재한다.
+
+1: ROC=전체, 두번째 항: ROC>-3, 세번째 항: ROC<3
+
+따라서,
+
+$$
+=\delta(t)+2e^{-3t}u(t)+2e^{3t}u(-t)
 $$
 
 <hr>
   </div>
 </details>
 <p><strong>example10)</strong></p>
-<p><a href="#R-image-79e68d3ea1e8b9e38d7097145b3872f4" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-10.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-79e68d3ea1e8b9e38d7097145b3872f4"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-10.png"></a></p>
+<p><a href="#R-image-695aa9de2cb05bea22b59b767efe0ef8" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-10.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-695aa9de2cb05bea22b59b767efe0ef8"><img class="lazy lightbox lightbox-image" loading="lazy" src="/integral_transform/b_fourier_transform_ii/image3-10.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1393,6 +1415,8 @@ $$
 \left\langle t\middle|\frac{6(3+2s)}{(1+s)(4+s)(2+s)}\right\rangle
 =\left\langle t\middle|\frac{2}{1+s}-\frac{5}{4+s}+\frac{3}{2+s}\right\rangle
 $$
+
+ROC>-1 이다. 따라서,
 
 $$
 =(2e^{-t}+3e^{-2t}-5e^{-4t})u(t)
@@ -1411,19 +1435,23 @@ $$
 <p>
 $$
 \left\langle t\middle|\pi\delta(-is)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
-=\left\langle t\middle|\frac{1}{|-i|}\pi\delta(s)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
+=\left\langle t\middle|\pi\delta(s)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
 $$
 
-$s=i\omega$ 이다. $\delta(s)$ 는 $s\ne0$ 에서  $\delta(s)=0$ 이다.
-따라서,
+ROC가 허수축을 포함하거나 허수축이 ROC의 경계가 되는 경우, 푸리에 변환이 존재한다.
+
+첫쨰항 전체 s, 둘째항 Re[s]>0 or Re[s]<0, 세째항 Re[s]>-1 이다.
 
 $$
-\left\langle t\middle|\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
-=\left\langle t\middle|\frac{1}{s}\right\rangle+2e^{-t}\left\langle t\middle|\frac{s}{s^2+4^2}\right\rangle
+=\left\langle t\middle|\pi\delta(s)\right\rangle+\left\langle t\middle|\frac{1}{s}\right\rangle+2e^{-t}\left\langle t\middle|\frac{s}{s^2+4^2}\right\rangle
 $$
 
 $$
-=(1+2e^{-t}\cos4t)u(t)
+=\frac{1}{2}+\frac{1}{2}\operatorname{sgn}(t)+2e^{-t}\cos4t \cdot u(t)
+$$
+
+$$
+=u(t)+2e^{-t}\cos4t \cdot u(t)
 $$
 
 <hr>
@@ -1504,8 +1532,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746874246" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746874246" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1746891925" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746891925" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -1517,7 +1545,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746874246"></script>
-    <script src="/js/theme.js?1746874246" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746891925"></script>
+    <script src="/js/theme.js?1746891925" defer></script>
   </body>
 </html>
