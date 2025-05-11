@@ -361,8 +361,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II",
-    "description": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II",
+    "content": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(i) Algebra structure",
+    "description": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(i) Algebra structure",
     "tags": [],
     "title": "Integral transform",
     "uri": "/integral_transform/index.html"
@@ -510,6 +510,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Tensor components transformation II",
     "uri": "/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rIntegral transform",
+    "content": "공사중",
+    "description": "공사중",
+    "tags": [],
+    "title": "(i) Algebra structure",
+    "uri": "/integral_transform/i_algebra_structure/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rGreen function",
