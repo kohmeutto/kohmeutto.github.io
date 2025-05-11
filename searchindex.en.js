@@ -361,8 +361,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(i) Algebra structure",
-    "description": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(i) Algebra structure",
+    "content": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(a) Algebra structure",
+    "description": "Preface\r(b) Convolution\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Fourier transform I\r(b) Fourier transform II\r(a) Algebra structure",
     "tags": [],
     "title": "Integral transform",
     "uri": "/integral_transform/index.html"
@@ -496,6 +496,14 @@ var relearn_searchindex = [
     "uri": "/vector_calculus/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rIntegral transform",
+    "content": "푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.\n$$\r\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r=\\langle t-i\\cdot -ia| f\\rangle\r=\\langle t-a| f\\rangle\r$$연산자 형태로 바꿔보자.\n$$\r\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r=\\langle t|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\hat{T}(a)|f\\rangle\r$$\r연산자로의 변환 증명\r$$\r\\langle t|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\hat{I}e^{-ia\\hat{\\omega}}|f\\rangle\r$$\r$$\r=\\langle t|\\int d\\omega |\\omega\\rangle\\langle\\omega|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\int d\\omega |\\omega\\rangle e^{-ia\\omega}f(\\omega)\r$$\r$$\r=\\langle t|\\int d\\omega \\left[e^{-ia\\omega}f(\\omega)|\\omega\\rangle\\right] =\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r$$\r위 2개의 식을 비교하자. 병진 연산은 내적이\n$$\r\\hat{T}(a)=e^{-ia\\hat{\\omega}}\r$$$$\r\\langle t|\\hat{T}(a)\r=\\langle t|e^{-ia\\hat{\\omega}}\r=\\langle t-a|\r$$$$\r\\hat{T}^{\\dagger}(a)|t\\rangle\r=e^{ia\\hat{\\omega}^{\\dagger}}|t\\rangle\r=|t+a\\rangle\r$$주파수는 물리량 이므로, 주파수 연산자는 Hermitian 이다. 따라서,\n$$\r\\hat{T}(a)\\hat{T}^{\\dagger}(a)\r=e^{-ia\\hat{\\omega}}e^{ia\\hat{\\omega}^{\\dagger}}\r=\\hat{I}\r$$위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다.\n2. Shifting operator - Position 이 내용은 위와 동일하다. 위치와 파수의 대응관계를 명확하게 이해하고 위와 동일하게 적용해보자.\n위치 병진 이동 연산자\r$$\r\\langle x|e^{-iak}f(k)\\rangle\r=\\langle x-i\\cdot -ia| f\\rangle\r=\\langle x-a| f\\rangle\r$$\r연산자 형태로 바꿔보자.\r$$\r\\langle x|e^{-iak}f(k)\\rangle\r=\\langle x|e^{-ia\\hat{k}}|f\\rangle\r=\\langle x|\\hat{U}(a)|f\\rangle\r$$\r위 2개의 식을 비교하자. 병진 연산은 내적이 $$\r\\hat{U}(a)=e^{-ia\\hat{k}}\r$$\r$$\r\\langle x|\\hat{U}(a)\r=\\langle x|e^{-ia\\hat{k}}\r=\\langle x-a|\r$$\r$$\r\\hat{U}^{\\dagger}(a)|t\\rangle\r=e^{ia\\hat{k}^{\\dagger}}|x\\rangle\r=|x+a\\rangle\r$$\r주파수는 물리량 이므로, 파수 연산자는 Hermitian 이다. 따라서,\r$$\r\\hat{U}(a)\\hat{U}^{\\dagger}(a)\r=e^{-ia\\hat{k}}e^{ia\\hat{k}^{\\dagger}}\r=\\hat{I}\r$$\r위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다.",
+    "description": "푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.\n$$\r\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r=\\langle t-i\\cdot -ia| f\\rangle\r=\\langle t-a| f\\rangle\r$$연산자 형태로 바꿔보자.\n$$\r\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r=\\langle t|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\hat{T}(a)|f\\rangle\r$$\r연산자로의 변환 증명\r$$\r\\langle t|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\hat{I}e^{-ia\\hat{\\omega}}|f\\rangle\r$$\r$$\r=\\langle t|\\int d\\omega |\\omega\\rangle\\langle\\omega|e^{-ia\\hat{\\omega}}|f\\rangle\r=\\langle t|\\int d\\omega |\\omega\\rangle e^{-ia\\omega}f(\\omega)\r$$\r$$\r=\\langle t|\\int d\\omega \\left[e^{-ia\\omega}f(\\omega)|\\omega\\rangle\\right] =\\langle t|e^{-ia\\omega}f(\\omega)\\rangle\r$$\r위 2개의 식을 비교하자. 병진 연산은 내적이",
+    "tags": [],
+    "title": "(a) Algebra structure",
+    "uri": "/integral_transform/a_algebra_structure/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
     "content": "1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)\u003e0이면 도형의 방향(orientation)이 보존되고 det(A)\u003c0이면 도형의 방향이 보존 되지 않는다. $$ P'=AP $$$$ \\text{면적}\\left(P'\\right)=\\left|\\det\\left(A\\right)\\right|\\cdot\\text{면적}\\left(P\\right) $$$$ \\text{부피}\\left(P'\\right)=\\left|\\det\\left(A\\right)\\right|\\cdot\\text{부피}\\left(P\\right) $$ 2. 2D 변환 3. 2D 변환 \u0026 det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-\u003e1D or dot 4. 3D 변환 5. 3D 변환 \u0026 det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-\u003e2D or 1D or dot 6. 중요 특성 $$ \\left|AB\\right|=\\left|A\\right|\\left|B\\right| $$ 7. det(A)=0, 선형 독립 \u0026 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을\n같은 (선 또는 면)방향으로 재배치 하거나, 같은 동일한 점으로 재배치 한다. 같은 방향 또는 하나의 점으로 재배치 하므로, det(A)=0 은, 행렬 A의 각 열벡터가 종속 성분이 있음을 의미한다. 행렬 A의 각 열벡터를 $v_{1}, v_{2}, v_{3}, \\cdots$ 라고 하자.\n$$ c_1v_{1}+c_2v_{2}+c_3v_{3}+\\cdots=0 $$$$ A\\vec{c}=0 $$ 각 열벡터가 선형 독립 이라면, 각 열벡터에 곱한 계수가 모두 0이어야만 한다. 따라서, 계수는 0인 자명해만 존재해야한다. $$ \\text{det}(A)\\ne0 $$ 각 열벡터가 선형 종속 이라면, 각 열벡터에 곱한 계수가 모두 0이 아닌것이 존재해야 한다. 따라서, 0이외의 자명하지 않은 해도 존재해야한다. $$ \\text{det}(A)=0 $$ 다크 프로그래머 :: [선형대수학 #2] 역행렬과 행렬식(determinant)",
     "description": "1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)\u003e0이면 도형의 방향(orientation)이 보존되고 det(A)\u003c0이면 도형의 방향이 보존 되지 않는다. $$ P'=AP $$$$ \\text{면적}\\left(P'\\right)=\\left|\\det\\left(A\\right)\\right|\\cdot\\text{면적}\\left(P\\right) $$$$ \\text{부피}\\left(P'\\right)=\\left|\\det\\left(A\\right)\\right|\\cdot\\text{부피}\\left(P\\right) $$ 2. 2D 변환 3. 2D 변환 \u0026 det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-\u003e1D or dot 4. 3D 변환 5. 3D 변환 \u0026 det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-\u003e2D or 1D or dot 6. 중요 특성 $$ \\left|AB\\right|=\\left|A\\right|\\left|B\\right| $$ 7. det(A)=0, 선형 독립 \u0026 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을",
@@ -510,14 +518,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Tensor components transformation II",
     "uri": "/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e \rIntegral transform",
-    "content": "공사중",
-    "description": "공사중",
-    "tags": [],
-    "title": "(i) Algebra structure",
-    "uri": "/integral_transform/i_algebra_structure/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rGreen function",

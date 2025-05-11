@@ -187,13 +187,13 @@
     <loc>http://localhost:1313/vector_calculus/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transform/a_algebra_structure/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/integral_transform/i_algebra_structure/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>
