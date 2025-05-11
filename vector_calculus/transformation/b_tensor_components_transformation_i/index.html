@@ -1,381 +1,0 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
-    <meta name="description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
-1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.
-$$|u_{i}\rangle=\begin{bmatrix}u_{i}\left\lbrack1\right\rbrack \\u_{i}\left\lbrack2\right\rbrack \\u_{i}\left\lbrack3\right\rbrack\end{bmatrix}$$$$|u_1\rangle=\begin{bmatrix}u_1\left\lbrack1\right\rbrack \\u_1\left\lbrack2\right\rbrack \\u_1\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_2\rangle=\begin{bmatrix}u_2\left\lbrack1\right\rbrack \\u_2\left\lbrack2\right\rbrack \\u_2\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_3\rangle=\begin{bmatrix}u_3\left\lbrack1\right\rbrack \\u_3\left\lbrack2\right\rbrack \\u_3\left\lbrack3\right\rbrack\end{bmatrix}$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.">
-    <meta name="author" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) Tensor components transformation I :: 수리전자물리학">
-    <meta name="twitter:description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
-1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.
-$$|u_{i}\rangle=\begin{bmatrix}u_{i}\left\lbrack1\right\rbrack \\u_{i}\left\lbrack2\right\rbrack \\u_{i}\left\lbrack3\right\rbrack\end{bmatrix}$$$$|u_1\rangle=\begin{bmatrix}u_1\left\lbrack1\right\rbrack \\u_1\left\lbrack2\right\rbrack \\u_1\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_2\rangle=\begin{bmatrix}u_2\left\lbrack1\right\rbrack \\u_2\left\lbrack2\right\rbrack \\u_2\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_3\rangle=\begin{bmatrix}u_3\left\lbrack1\right\rbrack \\u_3\left\lbrack2\right\rbrack \\u_3\left\lbrack3\right\rbrack\end{bmatrix}$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.">
-    <meta property="og:url" content="http://localhost:1313/vector_calculus/transformation/b_tensor_components_transformation_i/index.html">
-    <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) Tensor components transformation I :: 수리전자물리학">
-    <meta property="og:description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
-1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.
-$$|u_{i}\rangle=\begin{bmatrix}u_{i}\left\lbrack1\right\rbrack \\u_{i}\left\lbrack2\right\rbrack \\u_{i}\left\lbrack3\right\rbrack\end{bmatrix}$$$$|u_1\rangle=\begin{bmatrix}u_1\left\lbrack1\right\rbrack \\u_1\left\lbrack2\right\rbrack \\u_1\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_2\rangle=\begin{bmatrix}u_2\left\lbrack1\right\rbrack \\u_2\left\lbrack2\right\rbrack \\u_2\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_3\rangle=\begin{bmatrix}u_3\left\lbrack1\right\rbrack \\u_3\left\lbrack2\right\rbrack \\u_3\left\lbrack3\right\rbrack\end{bmatrix}$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.">
-    <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="article">
-    <meta property="article:section" content="Vector calculus">
-    <meta itemprop="name" content="(b) Tensor components transformation I :: 수리전자물리학">
-    <meta itemprop="description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
-1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.
-$$|u_{i}\rangle=\begin{bmatrix}u_{i}\left\lbrack1\right\rbrack \\u_{i}\left\lbrack2\right\rbrack \\u_{i}\left\lbrack3\right\rbrack\end{bmatrix}$$$$|u_1\rangle=\begin{bmatrix}u_1\left\lbrack1\right\rbrack \\u_1\left\lbrack2\right\rbrack \\u_1\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_2\rangle=\begin{bmatrix}u_2\left\lbrack1\right\rbrack \\u_2\left\lbrack2\right\rbrack \\u_2\left\lbrack3\right\rbrack\end{bmatrix}, \quad|u_3\rangle=\begin{bmatrix}u_3\left\lbrack1\right\rbrack \\u_3\left\lbrack2\right\rbrack \\u_3\left\lbrack3\right\rbrack\end{bmatrix}$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.">
-    <meta itemprop="wordCount" content="360">
-    <title>(b) Tensor components transformation I :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746941978" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746941978" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746941978" rel="stylesheet">
-    <link href="/css/theme.css?1746941978" rel="stylesheet">
-    <link href="/css/format-html.css?1746941978" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746941978" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746941978" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746941978" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746941978" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746941978" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746941978" defer></script>
-    <script src="/js/search.js?1746941978" defer></script>
-    <script>
-      window.relearn = window.relearn || {};
-      // configuration
-      window.relearn.min = ``;
-      window.relearn.path='\/vector_calculus\/transformation\/b_tensor_components_transformation_i\/index.html';
-      window.relearn.relBasePath='..\/..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746941978";
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
-      window.relearn.disableInlineCopyToClipboard=false;
-      window.relearn.enableBlockCodeWrap=true;
-      // legal
-      window.relearn.getItem = (s,n) => {return s.getItem(n)};
-      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
-      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
-      // variant stuff
-      window.relearn.themevariants = [ 'relearn-light' ];
-      window.relearn.customvariantname = "my-custom-variant";
-      window.relearn.changeVariant = function(variant) {
-        var oldVariant = document.documentElement.dataset.rThemeVariant;
-        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        document.documentElement.dataset.rThemeVariant = variant;
-        if (oldVariant != variant) {
-          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
-          window.relearn.markVariant();
-        }
-      }
-      window.relearn.markVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
-        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
-      }
-      window.relearn.initVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
-          variant = window.relearn.themevariants[0];
-          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        }
-        document.documentElement.dataset.rThemeVariant = variant;
-      }
-      window.relearn.initVariant();
-      window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
-    </script>
-  </head>
-  <body class="mobile-support html" data-url="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html">
-    <div id="R-body" class="default-animation">
-      <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
-          <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
-            </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-<nav class="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-기저의-표현">1. 기저의 표현</a></li>
-        <li><a href="#2-항등-연산자">2. 항등 연산자</a></li>
-        <li><a href="#3-다른-기저로의-선형-변환">3. 다른 기저로의 선형 변환</a></li>
-        <li><a href="#4-성분-값-변환-행렬">4. 성분 값 변환 행렬</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_calculus/index.html"><span itemprop="name">Vector calculus</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_calculus/transformation/index.html"><span itemprop="name">Transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Tensor components transformation I</span><meta itemprop="position" content="4"></li>
-          </ol>
-          <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/transformation/b_mapping_iii/index.html" title="(a) Mapping III - Jacobian (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
-            </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html" title="(b) Tensor components transformation II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
-            </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-                  <div class="topbar-area topbar-area-more" data-area="more">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable vector_calculus" tabindex="-1">
-        <div class="flex-block-wrapper">
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="b-tensor-components-transformation-i">(b) Tensor components transformation I</h1>
-
-<hr>
-<p><strong>중요사항: 동일 [실 공간]</strong> 에 대한 것으로 <strong>기저를 다르게 표현하였을 때, 텐서의 성분 변환</strong> 을 다룬다.</p>
-<hr>
-<h3 id="1-기저의-표현">1. 기저의 표현</h3>
-<p>아래와 같이 u 좌표계의 <strong>orthnormal</strong> 한 기저 벡터를 아래와 같이 놓는다.</p>
-$$
-|u_{i}\rangle=\begin{bmatrix}
-    u_{i}\left\lbrack1\right\rbrack \\
-    u_{i}\left\lbrack2\right\rbrack \\
-    u_{i}\left\lbrack3\right\rbrack
-\end{bmatrix}
-$$$$
-|u_1\rangle=\begin{bmatrix}
-    u_1\left\lbrack1\right\rbrack \\
-    u_1\left\lbrack2\right\rbrack \\
-    u_1\left\lbrack3\right\rbrack
-\end{bmatrix}, \quad
-|u_2\rangle=\begin{bmatrix}
-    u_2\left\lbrack1\right\rbrack \\
-    u_2\left\lbrack2\right\rbrack \\
-    u_2\left\lbrack3\right\rbrack
-\end{bmatrix}, \quad
-|u_3\rangle=\begin{bmatrix}
-    u_3\left\lbrack1\right\rbrack \\
-    u_3\left\lbrack2\right\rbrack \\
-    u_3\left\lbrack3\right\rbrack
-\end{bmatrix}
-$$<p>기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</p>
-$$
-\langle u_{i}|
-=\left\lbrack 
-    u_{i}\left\lbrack1\right\rbrack \,\,\,
-    u_{i}\left\lbrack2\right\rbrack \,\,\,
-    u_{i}\left\lbrack3\right\rbrack
-\right\rbrack
-$$$$
-\langle u_1|
-=\left\lbrack
-    u_1\left\lbrack1\right\rbrack \,\,\,
-    u_1\left\lbrack2\right\rbrack \,\,\,
-    u_1\left\lbrack3\right\rbrack
-\right\rbrack, \quad
-\langle u_2|
-=\left\lbrack
-    u_2\left\lbrack1\right\rbrack \,\,\, 
-    u_2\left\lbrack2\right\rbrack \,\,\,
-    u_2\left\lbrack3\right\rbrack
-\right\rbrack, \quad
-\langle u_3|
-=\left\lbrack
-    u_3\left\lbrack1\right\rbrack \,\,\,
-    u_3\left\lbrack2\right\rbrack \,\,\,
-    u_3\left\lbrack3\right\rbrack
-\right\rbrack
-$$<p>벡터의 내적은 다음과 같이 표현할 수 있다.</p>
-$$
-\vec{a}\cdot\vec{b}=[a]^{T}[b]=\langle a|b\rangle
-$$<p>각 기저는 orthonormal 하다. 따라서,</p>
-$$
-\delta_{ij}=\langle u_{i}|u_{j}\rangle
-$$<hr>
-<h3 id="2-항등-연산자">2. 항등 연산자</h3>
-$$
-I=\sum_{i=1}^3|u_{i}\rangle\langle u_{i}|
-$$<p>proof)</p>
-<p>임의의 벡터 |Ψ⟩는 다음과 같이 표현될 수 있다.</p>
-$$
-|\Psi\rangle=\sum_{i=1}^3c_{i}|u_{i}\rangle
-$$$$
-\langle u_{i}|\Psi\rangle=\sum_{j=1}^3c_{j}\langle u_{i}|u_{j}\rangle=\sum_{j=1}^3c_{j}\delta_{ij}=c_{i}
-$$<p>위 식에 다시 대입하면,</p>
-$$
-|\Psi\rangle=\sum_{i=1}^3c_{i}|u_{i}\rangle=\sum_{i=1}^3\langle u_{i}|\Psi\rangle|u_{i}\rangle=\sum_{i=1}^3|u_{i}\rangle\langle u_{i}|\Psi\rangle=\left(\sum_{i=1}^3|u_{i}\rangle\langle u_{i}|\right)|\Psi\rangle
-$$<p>따라서,</p>
-$$
-I=\sum_{i=1}^3|u_{i}\rangle\langle u_{i}|
-$$<hr>
-<h3 id="3-다른-기저로의-선형-변환">3. 다른 기저로의 선형 변환</h3>
-<p>임의의 벡터 |Ψ⟩는 다음과 같이 표현될 수 있다.</p>
-$$
-|\Psi\rangle=\sum_{i=1}^3c_{i}|u_{i}\rangle
-$$<p>u 로 표현된 기저를 v 로 바꿔보자.</p>
-$$
-|\Psi\rangle=I|\Psi\rangle=\sum_{i=1}^3\left(\sum_{j=1}^3|v_{j}\rangle\langle v_{j}|\right)c_{i}|u_{i}\rangle=\sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle|v_{j}\rangle
-$$<p>여기에서, $\sum_{i=1}^3c_{i}\langle v_{j}|u_{i}\rangle$ 는 기저 $|v_{j}\rangle$ 의 <strong>성분 값</strong> 이다.</p>
-<hr>
-<h3 id="4-성분-값-변환-행렬">4. 성분 값 변환 행렬</h3>
-$$
-\sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle=\sum_{j=1}^3\langle v_{j}|\left(\sum_{i=1}^3c_{i}|u_{i}\rangle\right)
-$$$$
-=\begin{bmatrix}
-    v_1\left\lbrack1\right\rbrack & v_2\left\lbrack1\right\rbrack & v_3\left\lbrack1\right\rbrack \\ 
-    v_1\left\lbrack2\right\rbrack & v_2\left\lbrack2\right\rbrack & v_3\left\lbrack2\right\rbrack \\ 
-    v_1\left\lbrack3\right\rbrack & v_2\left\lbrack3\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{bmatrix}^{T}
-\begin{bmatrix}
-    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\
-    u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\
-    u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
-\end{bmatrix}
-\begin{bmatrix}
-    c_1 \\ c_2 \\ c_3
-\end{bmatrix} 
-$$$$
-=\begin{bmatrix}
-    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
-    v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ 
-    v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{bmatrix}
-\begin{bmatrix}
-    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\ 
-    u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\ 
-    u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
-\end{bmatrix}
-\begin{bmatrix}
-    c_1 \\ c_2 \\ c_3
-\end{bmatrix}
-$$<p>만약 u좌표계의 기저가 표준기저라고 하면,</p>
-$$
-\sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle]
-=\begin{bmatrix}
-    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
-    v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\
-    v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{bmatrix}
-\begin{bmatrix}
-    c_1 \\ c_2 \\ c_3
-\end{bmatrix}
-$$<p>위 내용을 정리하면, <strong>u좌표계의 기저가 표준기저라고 하면, u→v의 성분변환행렬은 u→v의 기저행렬(u 표준기저를 기준으로 새로운 v 기저 벡터들을 열로 나열하여 만든 행렬)의 전치행렬과 같다.</strong></p>
-<hr>
-
-  <footer class="footline">
-  </footer>
-</article>
-        </div>
-      </main>
-    </div>
-    <aside id="R-sidebar" class="default-animation">
-      <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-          <a id="R-logo" class="R-default" href="/index.html">
-            <div class="logo-title">수리전자물리학</div>
-          </a>
-        </div>
-        <search><form action="/search/index.html" method="get">
-          <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-            <label class="a11y-only" for="R-search-by">Search</label>
-            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-          </div>
-        </form></search>
-      </div>
-      <div id="R-homelinks" class="default-animation homelinks">
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
-          <ul class="space collapsible-menu">
-            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
-          <ul class="">
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-      </div>
-      <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-main">
-          <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu">
-            <li class="parent alwaysopen " data-nav-id="/vector_calculus/transformation/index.html"><a class="padding" href="/vector_calculus/transformation/index.html">Transformation</a><ul id="R-subsections-edb9cfa8ff2670ec33419f0a9086b19f" class="collapsible-menu">
-            <li class="" data-nav-id="/vector_calculus/transformation/preface/index.html"><a class="padding" href="/vector_calculus/transformation/preface/index.html">Preface</a></li>
-            <li class="" data-nav-id="/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html"><a class="padding" href="/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html">(b) Space &amp; Coordinate &amp; Vector &amp; Tensor</a></li>
-            <li class="" data-nav-id="/vector_calculus/transformation/b_mapping_i/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_i/index.html">(b) Mapping I - Position</a></li>
-            <li class="" data-nav-id="/vector_calculus/transformation/b_mapping_ii/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_ii/index.html">(b) Mapping II - Scale factor</a></li>
-            <li class="" data-nav-id="/vector_calculus/transformation/b_mapping_iii/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_iii/index.html">(a) Mapping III - Jacobian</a></li>
-            <li class="active " data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html">(b) Tensor components transformation I</a></li>
-            <li class="" data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html">(b) Tensor components transformation II</a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
-          </ul>
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
-          <ul class="space collapsible-menu">
-          </ul>
-        </div>
-        <div id="R-footer-margin"></div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
-          <ul class="">
-          </ul>
-        </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
-      </div>
-    </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746941978" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746941978" defer></script>
-    <script>
-      window.MathJax = Object.assign( window.MathJax || {}, {
-        tex: {
-          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
-          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
-        },
-        options: {
-          enableMenu: false 
-        }
-      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
-    </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746941978"></script>
-    <script src="/js/theme.js?1746941978" defer></script>
-  </body>
-</html>
