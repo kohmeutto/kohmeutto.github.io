@@ -1,0 +1,392 @@
++++
+title = "(a) Fourier transform - Dirac notation"
+weight = 8
++++
+
+---
+
+이 챕터에서는 **단방향 라플라스 변환(Unilateral Laplace Transform)** 을 다루며, 함수 $f(t)$ 에 대한 라플라스 변환은 **$\mathcal{L}\{f(t)u(t)\}(s)$** 로 정의합니다.
+
+이를 사용자 지정 표기법으로 다음과 같이 나타냅니다.
+
+$$
+\langle s | f u \rangle := \mathcal{L}\{f(t)u(t)\}(s) = \int_{0}^{\infty} f(t)u(t)e^{-st} dt = \int_{0}^{\infty} f(t)e^{-st} dt \quad (\text{for } t \ge 0)
+$$
+
+여기서 Ket 안의 'f'는 변환 대상 함수의 기호이며, 'u'는 단방향 변환을 나타내기 위해 추가한 기호입니다. 이는 표준적인 디랙 표기법이 아님을 **강조합니다.**
+
+---
+
+### 1. 중요변환
+
+**1) Dirac delta function**
+
+$$
+\langle s | \delta u \rangle = 1
+$$
+
+{{< details summary="proof" >}}
+
+정의에 의해:
+$$
+\langle s | \delta u \rangle = \mathcal{L}\left\lbrace \delta\left(t\right)u\left(t\right)\right\rbrace\left(s\right)
+$$
+$u(t)\delta(t) = \delta(t)$ 이므로:
+$$
+= \mathcal{L}\left\lbrace \delta\left(t\right)\right\rbrace\left(s\right) = \int_{0}^{\infty} \delta\left(t\right)e^{-st} dt = e^{-s\cdot 0} = 1
+$$
+
+---
+
+{{< /details >}}
+
+**2) Unit step function (DC, Constant)**
+
+$$
+\langle s | u u \rangle = \frac{1}{s} \quad (\text{for } \text{Re}\left\{s\right\}>0)
+$$
+
+{{< details summary="proof" >}}
+
+정의에 의해:
+$$
+\langle s | u u \rangle = \mathcal{L}\left\lbrace u\left(t\right)u\left(t\right)\right\rbrace\left(s\right)
+$$
+$u(t)u(t) = u(t)$ 이므로:
+$$
+= \mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right) = \int_{0}^{\infty} u\left(t\right)e^{-st} dt = \int_{0}^{\infty} e^{-st} dt = \left[-\frac{1}{s}e^{-st}\right]_{0}^{\infty} = \frac{1}{s}
+$$
+
+---
+
+{{< /details >}}
+
+**3) Exponential function**
+
+$$
+\langle s | e^{at} u \rangle = \frac{1}{s-a} \quad (\text{for } \text{Re}\left\{s\right\}>\text{Re}\left\{a\right\})
+$$
+
+{{< details summary="proof" >}}
+
+정의에 의해:
+$$
+\langle s | e^{at} u \rangle = \mathcal{L}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(s\right) = \int_{0}^{\infty} e^{at}e^{-st} dt = \int_{0}^{\infty} e^{\left(a-s\right)t} dt = \left[-\frac{1}{s-a}e^{-\left(s-a\right)t}\right]_{0}^{\infty} = \frac{1}{s-a}
+$$
+
+---
+
+{{< /details >}}
+
+**4) cosine function**
+
+$$
+\langle s | \cos\left(at\right) u \rangle = \frac{s}{s^2+a^2} \quad (\text{for } \text{Re}\left\{s\right\}>0)
+$$
+(변환하는 함수는 $\cos(at)u(t)$ 입니다.)
+
+**5) sine function**
+
+$$
+\langle s | \sin\left(at\right) u \rangle = \frac{a}{s^2+a^2} \quad (\text{for } \text{Re}\left\{s\right\}>0)
+$$
+(변환하는 함수는 $\sin(at)u(t)$ 입니다.)
+
+---
+
+### 2. Properties
+
+**1) Linearity**
+
+$$
+\langle s | \left(cf\left(t\right)+dg\left(t\right)\right) u \rangle = c\langle s | f u \rangle + d\langle s | g u \rangle = cF\left(s\right)+dG\left(s\right)
+$$
+(변환하는 함수는 $(cf(t)+dg(t))u(t) = cf(t)u(t) + dg(t)u(t)$ 입니다.)
+
+**2) Time Shifting ($t_0 > 0$)**
+
+$$
+\langle s | f\left(t-t_0\right)u\left(t-t_0\right) u \rangle = e^{-st_0}\langle s | f u \rangle
+$$
+(좌변은 $f(t-t_0)u(t-t_0)u(t)$ 의 변환인데, $t_0>0$ 이면 $u(t-t_0)u(t) = u(t-t_0)$ 이므로 $\mathcal{L}\{f(t-t_0)u(t-t_0)\}(s)$ 가 됩니다. 우변의 $\langle s | f u \rangle$ 는 $\mathcal{L}\{f(t)u(t)\}(s)$ 이므로, 성질 $\mathcal{L}\{f(t-t_0)u(t-t_0)\}(s)=e^{-st_0}\mathcal{L}\{f(t)u(t)\}(s)$ 와 같습니다.)
+
+**3) Frequency Shifting**
+
+$$
+\langle s | e^{at}f\left(t\right) u \rangle = \langle s-a | f u \rangle
+$$
+(변환하는 함수는 $e^{at}f(t)u(t)$ 입니다. $\mathcal{L}\{e^{at}g(t)\}(s)=G(s-a)$ 에서 $g(t)=f(t)u(t)$ 로 보면 $\mathcal{L}\{e^{at}f(t)u(t)\}(s) = \mathcal{L}\{f(t)u(t)\}(s-a)$ 가 됩니다.)
+
+**4) Time Differentiation**
+
+$$
+\mathcal{L}\left\lbrace f'\left(t\right)\right\rbrace\left(s\right)=sF\left(s\right)-f\left(0^-\right)
+$$
+($f(t)$ 는 $t \ge 0$ 에서 정의되는 함수입니다. 이 성질을 $\langle s | \cdot u \rangle$ 표기법으로 나타내려면 다소 복잡해지므로, 표준 라플라스 변환 성질 형태로 유지합니다. $F(s)=\langle s | f u \rangle$ 로 생각하면 $F(s)=\mathcal{L}\{f(t)u(t)\}(s)$ 이며, $f(0^-)$ 는 $f(t)$ 의 $t=0$ 에서의 좌극한 값입니다.)
+
+**5) Time Integration**
+
+$$
+\langle s | \left(\int_{0}^{t}f\left(\tau\right)d\tau\right) u \rangle = \frac{1}{s}\langle s | f u \rangle
+$$
+(좌변은 $(\int_{0}^{t}f(\tau)d\tau)u(t)$ 의 변환입니다. $\int_{0}^{t}f(\tau)d\tau$ 는 $t<0$ 에서 0이므로 $u(t)$ 곱셈은 불필요하며, 이 함수 자체가 $t \ge 0$ 에서만 의미 있습니다. 우변은 $\mathcal{L}\{f(t)u(t)\}(s)$ 입니다. 성질 $\mathcal{L}\{\int_{0}^{t}g(\tau)d\tau\}(s)=\frac{1}{s}G(s)$ 에 $g(t)=f(t)u(t)$ 를 대입한 것과 같습니다.)
+
+**6) Frequency Differentiation (Multiplication by t)**
+
+$$
+\langle s | t^n f\left(t\right) u \rangle = \left(-1\right)^n\frac{d^n}{ds^n}\langle s | f u \rangle
+$$
+(변환하는 함수는 $t^n f(t)u(t)$ 입니다. $\mathcal{L}\{t^n g(t)\}(s)=(-1)^n\frac{d^n}{ds^n}G(s)$ 에 $g(t)=f(t)u(t)$ 를 대입한 것과 같습니다.)
+
+**7) Convolution**
+
+$$
+\langle s | \left(f\ast g\right)\left(t\right) u \rangle = \langle s | f u \rangle \langle s | g u \rangle
+$$
+(여기서 사용되는 컨볼루션은 단방향 라플라스 변환에서의 컨볼루션 $\left(f\ast g\right)\left(t\right)=\int_{0}^{t}f\left(\tau\right)g\left(t-\tau\right)d\tau$ 이며, 변환하는 함수는 $(f*g)(t)u(t)$ 입니다. 만약 $f, g$ 가 $t<0$ 에서 0이면 $(f*g)(t)=0$ for $t<0$ 이므로 $u(t)$ 곱셈은 불필요하며, 이 함수 자체가 $t \ge 0$ 에서만 의미 있습니다. 성질 $\mathcal{L}\{(f\ast g)(t)\}(s)=F(s)G(s)$ 에 $F(s)=\mathcal{L}\{f(t)u(t)\}(s), G(s)=\mathcal{L}\{g(t)u(t)\}(s)$ 를 대입한 것과 같습니다.)
+
+---
+
+### 3. Examples
+
+**example1)** $\mathcal{L}\left\lbrace u\left(t-t'\right)\right\rbrace\left(s\right)$ (단, $t'>0$)
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $u(t-t')u(t)$ 입니다. $t'>0$ 이므로 $u(t-t')u(t) = u(t-t')$ for $t \ge 0$.
+시간 이동 성질 $\langle s | h\left(t-t_0\right)u\left(t-t_0\right) u \rangle = e^{-st_0}\langle s | h u \rangle$ 를 사용합니다.
+여기서 $h(t)=u(t)$, $t_0=t'$.
+$$
+\langle s | u\left(t-t'\right) u \rangle = \langle s | u\left(t-t'\right)u\left(t-t'\right) u \rangle = e^{-st'}\langle s | u u \rangle
+$$
+$\langle s | u u \rangle = \frac{1}{s}$ 이므로:
+$$
+= e^{-st'}\frac{1}{s}
+$$
+
+---
+
+{{< /details >}}
+
+**example2)** $\mathcal{L}\left\lbrace \delta\left(t-t'\right)\right\rbrace\left(s\right)$ (단, $t'>0$)
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $\delta(t-t')u(t)$ 입니다. $t'>0$ 이므로 $\delta(t-t')u(t) = \delta(t-t')$ for $t \ge 0$.
+시간 이동 성질 $\langle s | h\left(t-t_0\right)u\left(t-t_0\right) u \rangle = e^{-st_0}\langle s | h u \rangle$ 를 사용합니다.
+여기서 $h(t)=\delta(t)$, $t_0=t'$. $\langle s | \delta u \rangle = 1$.
+$$
+\langle s | \delta\left(t-t'\right) u \rangle = \langle s | \delta\left(t-t'\right)u\left(t-t'\right) u \rangle = e^{-st'}\langle s | \delta u \rangle
+$$
+$$
+= e^{-st'}\cdot 1 = e^{-st'}
+$$
+
+---
+
+{{< /details >}}
+
+**example3)** $\mathcal{L}\left\lbrace e^{iat}\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{iat}u(t)$ 입니다.
+지수 함수 변환 공식 $\langle s | e^{at} u \rangle = \frac{1}{s-a}$ 를 사용합니다.
+$$
+\langle s | e^{iat} u \rangle = \frac{1}{s-ia}
+$$
+
+---
+
+{{< details summary="다른 풀이 (정의 사용)" >}}
+
+변환할 함수는 $e^{iat}u(t)$ 입니다.
+$$
+\langle s | e^{iat} u \rangle = \int_{0}^{\infty} e^{iat}u\left(t\right)e^{-st} dt = \int_{0}^{\infty} e^{\left(ia-s\right)t} dt = \int_{0}^{\infty} e^{-\left(s-ia\right)t} dt
+$$
+적분 계산 (단, $\text{Re}\{s-ia\}>0$):
+$$
+= \left[-\frac{1}{s-ia}e^{-\left(s-ia\right)t}\right]_{0}^{\infty} = 0 - \left(-\frac{1}{s-ia}\right) = \frac{1}{s-ia}
+$$
+
+---
+
+{{< /details >}}
+
+**example4)** $\mathcal{L}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(s\right),\quad a<0$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{at}u(t)u(t) = e^{at}u(t)$ 입니다.
+지수 함수 변환 공식 $\langle s | e^{at} u \rangle = \frac{1}{s-a}$ 를 사용합니다.
+$$
+\langle s | e^{at}u\left(t\right) u \rangle = \langle s | e^{at} u \rangle = \frac{1}{s-a}
+$$
+($a<0$ 조건은 수렴 영역 $\text{Re}\{s\}>a$ 에 영향을 줍니다.)
+
+---
+
+{{< /details >}}
+
+**example5)** $\mathcal{L}\left\lbrace u\left(-t\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $u(-t)u(t)$ 입니다.
+$u(-t)u(t) = \delta(t)$ 로 간주합니다.
+$$
+\langle s | u\left(-t\right) u \rangle = \langle s | u\left(-t\right)u\left(t\right) u \rangle = \langle s | \delta\left(t\right) u \rangle = \langle s | \delta u \rangle
+$$
+$\langle s | \delta u \rangle = 1$ 입니다.
+$$
+= 1
+$$
+
+---
+
+{{< /details >}}
+
+**example6)** $\mathcal{L}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(s\right),\quad a>0$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{at}u(-t)u(t)$ 입니다.
+$u(-t)u(t) = \delta(t)$ 이므로, $e^{at}u(-t)u(t) = e^{at}\delta(t)$.
+델타 함수 성질 $h(t)\delta(t) = h(0)\delta(t)$ 에 의해 $e^{at}\delta(t) = e^{a\cdot 0}\delta(t) = \delta(t)$.
+$$
+\langle s | e^{at}u\left(-t\right) u \rangle = \langle s | e^{at}u\left(-t\right)u\left(t\right) u \rangle = \langle s | \delta\left(t\right) u \rangle = \langle s | \delta u \rangle
+$$
+$$
+= 1
+$$
+
+---
+
+{{< /details >}}
+
+**example7)** $\mathcal{L}\left\lbrace e^{-t}u\left(t-1\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{-t}u(t-1)u(t)$ 입니다. $u(t-1)=1$ for $t \ge 1$. $u(t)=1$ for $t \ge 0$. 둘 다 1인 구간은 $t \ge 1$. 따라서 $e^{-t}u(t-1)u(t) = e^{-t}u(t-1)$ for $t \ge 0$.
+시간 이동 성질 $\langle s | h\left(t-t_0\right)u\left(t-t_0\right) u \rangle = e^{-st_0}\langle s | h u \rangle$ 를 사용합니다.
+여기서 $h(t)=e^{-t}$, $t_0=1$. $\langle s | h u \rangle = \langle s | e^{-t} u \rangle = \frac{1}{s-(-1)} = \frac{1}{s+1}$.
+$$
+\langle s | e^{-t}u\left(t-1\right) u \rangle = \langle s | e^{-\left(t-1+1\right)}u\left(t-1\right) u \rangle = \langle s | e^{-1}e^{-\left(t-1\right)}u\left(t-1\right) u \rangle
+$$
+$$
+= e^{-1}\langle s | e^{-\left(t-1\right)}u\left(t-1\right) u \rangle
+$$
+시간 이동 성질 적용:
+$$
+= e^{-1}e^{-s\cdot 1}\langle s | e^{-t} u \rangle = e^{-1}e^{-s}\frac{1}{s+1} = \frac{e^{-s-1}}{s+1}
+$$
+
+---
+
+{{< details summary="다른 풀이 (정의 사용)" >}}
+
+변환할 함수는 $e^{-t}u(t-1)u(t)$ 입니다. 적분 구간 $[0, \infty)$ 내에서 $u(t-1)u(t)$ 는 $t \ge 1$ 일 때 1입니다.
+$$
+\langle s | e^{-t}u\left(t-1\right) u \rangle = \int_{0}^{\infty} e^{-t}u\left(t-1\right)u\left(t\right)e^{-st} dt = \int_{1}^{\infty} e^{-t}e^{-st} dt = \int_{1}^{\infty} e^{-\left(s+1\right)t} dt
+$$
+적분 계산 (단, $\text{Re}\{s+1\}>0$):
+$$
+= \left[-\frac{1}{s+1}e^{-\left(s+1\right)t}\right]_{1}^{\infty} = 0 - \left(-\frac{1}{s+1}e^{-\left(s+1\right)\cdot 1}\right) = \frac{e^{-s-1}}{s+1}
+$$
+동일한 결과가 나옵니다.
+
+---
+
+{{< /details >}}
+
+**example8)** $\mathcal{L}\left\lbrace e^{-2t}u\left(2t-1\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{-2t}u(2t-1)u(t)$ 입니다. $u(2t-1)=1$ for $t \ge 1/2$. $u(t)=1$ for $t \ge 0$. 둘 다 1인 구간은 $t \ge 1/2$. 따라서 $e^{-2t}u(2t-1)u(t) = e^{-2t}u(2t-1)$ for $t \ge 0$.
+정의에 의해:
+$$
+\langle s | e^{-2t}u\left(2t-1\right) u \rangle = \int_{0}^{\infty} e^{-2t}u\left(2t-1\right)u\left(t\right)e^{-st} dt = \int_{1/2}^{\infty} e^{-\left(s+2\right)t} dt
+$$
+적분 계산 (단, $\text{Re}\{s+2\}>0$):
+$$
+= \left[-\frac{1}{s+2}e^{-\left(s+2\right)t}\right]_{1/2}^{\infty} = 0 - \left(-\frac{1}{s+2}e^{-\left(s+2\right)/2}\right) = \frac{e^{-s/2-1}}{s+2}
+$$
+
+---
+
+{{< details summary="다른 풀이 (성질 사용 시도)" >}}
+
+변환할 함수는 $e^{-2t}u(2t-1)u(t)$ 입니다. 주파수 이동 성질 $\langle s | e^{at}h\left(t\right) u \rangle = \langle s-a | h u \rangle$ 를 사용합니다.
+여기서 $a=-2$, $h(t)=u(2t-1)$.
+$$
+\langle s | e^{-2t}u\left(2t-1\right) u \rangle = \langle s-(-2) | u\left(2t-1\right) u \rangle = \langle s+2 | u\left(2t-1\right) u \rangle
+$$
+이제 $\langle s+2 | u\left(2t-1\right) u \rangle$ 를 계산해야 합니다. 변환할 함수는 $u(2t-1)u(t) = u(2t-1)$ for $t \ge 0$.
+시간 스케일링 및 쉬프팅 성질을 라플라스 변환 형태로 사용해야 합니다. $\mathcal{L}\{f(at+b)u(t)\}(s)$. 이것은 일반적인 형태가 아닙니다.
+대신 $\mathcal{L}\{f(at+b)u(at+b)\}(s)$ 형태로 변형하고 시간 스케일링/쉬프팅 성질을 적용하는 것이 일반적입니다.
+$u(2t-1) = u(2(t-1/2))$. 시간 이동 성질 $\mathcal{L}\{h(t-t_0)u(t-t_0)\}(s) = e^{-st_0}\mathcal{L}\{h(t)u(t)\}(s)$ 에서 $h(t)=u(2t)$, $t_0=1/2$.
+$\mathcal{L}\{u(2(t-1/2))u(t-1/2)\}(s) = e^{-s/2}\mathcal{L}\{u(2t)u(t)\}(s)$.
+$\mathcal{L}\{u(2t)u(t)\}(s) = \mathcal{L}\{u(2t)\}(s)$ for $t \ge 0$. 시간 스케일링 성질 $\mathcal{L}\{h(at)\}(s) = \frac{1}{|a|}H(s/a)$ (단, $h(t)$는 $t \ge 0$ 에서 정의)에서 $h(t)=u(t), a=2$.
+$\mathcal{L}\{u(2t)\}(s) = \frac{1}{2}\mathcal{L}\{u(t)\}(s/2) = \frac{1}{2}\frac{1}{s/2} = \frac{1}{s}$.
+따라서 $\mathcal{L}\{u(2t-1)u(t-1/2)\}(s) = e^{-s/2}\frac{1}{s}$.
+
+우리가 구하는 것은 $\mathcal{L}\{u(2t-1)u(t)\}(s)$ 이므로 위의 성질 사용이 직접적이지 않습니다. 이 경우는 정의에 의한 적분이 더 간단합니다.
+
+<hr>
+
+{{< /details >}}
+
+**example9)** $\mathcal{L}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $e^{t}u(1-t)u(t)$ 입니다. $u(1-t)=1$ for $t \le 1$. $u(t)=1$ for $t \ge 0$. 둘 다 1인 구간은 $0 \le t \le 1$. 따라서 $e^{t}u(1-t)u(t) = e^{t}$ for $0 \le t \le 1$, 0 otherwise.
+정의에 의해:
+$$
+\langle s | e^{t}u\left(1-t\right) u \rangle = \int_{0}^{\infty} e^{t}u\left(1-t\right)u\left(t\right)e^{-st} dt = \int_{0}^{1} e^{t}e^{-st} dt = \int_{0}^{1} e^{\left(1-s\right)t} dt
+$$
+적분 계산:
+* $s=1$ 일 때: $\int_{0}^{1} 1 dt = 1$.
+* $s \ne 1$ 일 때: $\left[\frac{1}{1-s}e^{\left(1-s\right)t}\right]_{0}^{1} = \frac{e^{1-s}}{1-s} - \frac{1}{1-s} = \frac{e^{1-s}-1}{1-s}$.
+
+결과: $s=1$ 일 때 1, $s \ne 1$ 일 때 $\frac{e^{1-s}-1}{1-s}$.
+
+---
+
+{{< /details >}}
+
+**example10)** $\mathcal{L}\left\lbrace tu\left(t\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $tu(t)u(t) = tu(t)$ 입니다.
+주파수 미분 성질 $\langle s | t^n h\left(t\right) u \rangle = \left(-1\right)^n\frac{d^n}{ds^n}\langle s | h u \rangle$ 를 사용합니다.
+여기서 $n=1$, $h(t)=u(t)$. $\langle s | u u \rangle = \frac{1}{s}$.
+$$
+\langle s | tu\left(t\right) u \rangle = \langle s | t^1 u\left(t\right) u \rangle = \left(-1\right)^1\frac{d^1}{ds^1}\langle s | u u \rangle
+$$
+$$
+= -\frac{d}{ds}\left(\frac{1}{s}\right) = -\left(-s^{-2}\right) = \frac{1}{s^2}
+$$
+
+---
+
+{{< /details >}}
+
+**example11)** $\mathcal{L}\left\lbrace tu\left(-t\right)\right\rbrace\left(s\right)$
+
+{{< details summary="sol" >}}
+
+변환할 함수는 $tu(-t)u(t)$ 입니다.
+$u(-t)u(t) = \delta(t)$ 이므로, $tu(-t)u(t) = t\delta(t)$.
+델타 함수 성질 $h(t)\delta(t) = h(0)\delta(t)$ 에 의해 $t\delta(t) = 0\cdot\delta(t) = 0$.
+따라서 변환할 함수는 0 입니다.
+$$
+\langle s | tu\left(-t\right) u \rangle = \mathcal{L}\left\lbrace 0 \right\rbrace\left(s\right) = 0
+$$
+
+---
+
+{{< /details >}}

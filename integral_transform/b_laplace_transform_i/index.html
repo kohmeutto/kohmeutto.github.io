@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
+    <meta name="description" content="0. 정리 (1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다
+$$ e^{st},\quad s\in\mathbb{C} $$(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.
+$$ \lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right] $$ 1. Eigenfunction &amp; Eigenvalue 모든 합성곱에 대한 공통적인 eigenfunction이 존재한다. eigenfunction의 의미는 연산자를 통과하였을 때, ‘기본성질이 변하지않는 함수`를 의미한다.
+이 eigenfunction은
+$$ e^{st},\quad s\in\mathbb{C} $$이 eigenfunction에 대한 eigenvalue는
+$$ h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right] =\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st} =\lambda_{s}e^{st} $$$$ \lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right] $$ 2. Laplace transformation 위 eigenvalue를 라플라스 변환이라고 한다. 즉, 라플라스 변환은 연산자의 입력 $e^{st}$에 대한 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta name="twitter:description" content="0. 정리 (1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다
+$$ e^{st},\quad s\in\mathbb{C} $$(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.
+$$ \lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right] $$ 1. Eigenfunction &amp; Eigenvalue 모든 합성곱에 대한 공통적인 eigenfunction이 존재한다. eigenfunction의 의미는 연산자를 통과하였을 때, ‘기본성질이 변하지않는 함수`를 의미한다.
+이 eigenfunction은
+$$ e^{st},\quad s\in\mathbb{C} $$이 eigenfunction에 대한 eigenvalue는
+$$ h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right] =\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st} =\lambda_{s}e^{st} $$$$ \lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right] $$ 2. Laplace transformation 위 eigenvalue를 라플라스 변환이라고 한다. 즉, 라플라스 변환은 연산자의 입력 $e^{st}$에 대한 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta property="og:url" content="http://localhost:1313/integral_transform/b_laplace_transform_i/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta property="og:description" content="0. 정리 (1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다
+$$ e^{st},\quad s\in\mathbb{C} $$(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.
+$$ \lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right] $$ 1. Eigenfunction &amp; Eigenvalue 모든 합성곱에 대한 공통적인 eigenfunction이 존재한다. eigenfunction의 의미는 연산자를 통과하였을 때, ‘기본성질이 변하지않는 함수`를 의미한다.
+이 eigenfunction은
+$$ e^{st},\quad s\in\mathbb{C} $$이 eigenfunction에 대한 eigenvalue는
+$$ h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right] =\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st} =\lambda_{s}e^{st} $$$$ \lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right] $$ 2. Laplace transformation 위 eigenvalue를 라플라스 변환이라고 한다. 즉, 라플라스 변환은 연산자의 입력 $e^{st}$에 대한 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Integral transform">
+    <meta itemprop="name" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta itemprop="description" content="0. 정리 (1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다
+$$ e^{st},\quad s\in\mathbb{C} $$(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.
+$$ \lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right] $$ 1. Eigenfunction &amp; Eigenvalue 모든 합성곱에 대한 공통적인 eigenfunction이 존재한다. eigenfunction의 의미는 연산자를 통과하였을 때, ‘기본성질이 변하지않는 함수`를 의미한다.
+이 eigenfunction은
+$$ e^{st},\quad s\in\mathbb{C} $$이 eigenfunction에 대한 eigenvalue는
+$$ h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right] =\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st} =\lambda_{s}e^{st} $$$$ \lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right] $$ 2. Laplace transformation 위 eigenvalue를 라플라스 변환이라고 한다. 즉, 라플라스 변환은 연산자의 입력 $e^{st}$에 대한 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta itemprop="wordCount" content="157">
+    <title>(b) Laplace transform I :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746941978" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746941978" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746941978" rel="stylesheet">
+    <link href="/css/theme.css?1746941978" rel="stylesheet">
+    <link href="/css/format-html.css?1746941978" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1746941978" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1746941978" defer></script>
+    <script src="/js/lunr/lunr.min.js?1746941978" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1746941978" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1746941978" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1746941978" defer></script>
+    <script src="/js/search.js?1746941978" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/integral_transform\/b_laplace_transform_i\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1746941978";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/integral_transform/b_laplace_transform_i/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#0-정리">0. 정리</a></li>
+        <li><a href="#1-eigenfunction--eigenvalue">1. Eigenfunction &amp; Eigenvalue</a></li>
+        <li><a href="#2-laplace-transformation">2. Laplace transformation</a></li>
+        <li><a href="#3-대수방정식">3. 대수방정식</a></li>
+        <li><a href="#4-주의사항">4. 주의사항</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/integral_transform/index.html"><span itemprop="name">Integral transform</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Laplace transform I</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/b_convolution/index.html" title="(b) Convolution (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/b_laplace_transform_ii/index.html" title="(b) Laplace transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable integral_transform" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-laplace-transform-i">(b) Laplace transform I</h1>
+
+<hr>
+<h3 id="0-정리">0. 정리</h3>
+<p>(1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다</p>
+$$
+e^{st},\quad s\in\mathbb{C}
+$$<p>(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.</p>
+$$
+\lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right]
+$$<hr>
+<h3 id="1-eigenfunction--eigenvalue">1. Eigenfunction &amp; Eigenvalue</h3>
+<p><strong>모든 합성곱에 대한 공통적인 eigenfunction이 존재한다.</strong> <strong>eigenfunction</strong>의 의미는 연산자를 통과하였을 때, &lsquo;기본성질이 변하지않는 함수`를 의미한다.</p>
+<p>이 eigenfunction은</p>
+$$
+e^{st},\quad s\in\mathbb{C}
+$$<p>이 eigenfunction에 대한 eigenvalue는</p>
+$$
+h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right]
+=\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st}
+=\lambda_{s}e^{st}
+$$$$
+\lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<hr>
+<h3 id="2-laplace-transformation">2. Laplace transformation</h3>
+<p>위 eigenvalue를 라플라스 변환이라고 한다. 즉, <strong>라플라스 변환</strong>은 연산자의 입력 $e^{st}$에 대한 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
+$$
+\lambda_{s}=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<hr>
+<h3 id="3-대수방정식">3. 대수방정식</h3>
+<p>eigenfuction과 eigenvalue를 이용한다는 것은, 복잡한 식을 단순하게 바꿀 수 있는 편리한 도구를 사용한다는 말과 같다.
+convolution에 대한, eigenfuction, $e^{st}$ 은 모두 동일하므로, $e^{st}$은 나눠져서 사라지게 된다.</p>
+<p><strong>즉, eigenvalue에 대한 대수 방정식으로 바뀐다.</strong> 아래의 예를 보면, 쉽게 이해할 수 있다.</p>
+$$
+y''-7y'=7e^{t}
+$$$$
+\implies y''\ast e^{st}-7y'\ast e^{st}=7e^{t}\ast e^{st}
+$$$$
+\implies\lambda_1e^{st}+\lambda_2e^{st}=\lambda_3e^{st}
+$$$$
+\implies\lambda_1+\lambda_2=\lambda_3
+$$<hr>
+<h3 id="4-주의사항">4. 주의사항</h3>
+<p><strong>Laplace transform</strong>은 함수 $h\left(t\right)$ 이 <strong>선형/비선형 인지 상관없이</strong> 수학적으로 수행할 수 있다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu">
+            <li class="" data-nav-id="/integral_transform/preface/index.html"><a class="padding" href="/integral_transform/preface/index.html">Preface</a></li>
+            <li class="" data-nav-id="/integral_transform/b_convolution/index.html"><a class="padding" href="/integral_transform/b_convolution/index.html">(b) Convolution</a></li>
+            <li class="active " data-nav-id="/integral_transform/b_laplace_transform_i/index.html"><a class="padding" href="/integral_transform/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/integral_transform/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transform/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/integral_transform/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-id="/integral_transform/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/integral_transform/i_algebra_structure/index.html"><a class="padding" href="/integral_transform/i_algebra_structure/index.html">(i) Algebra structure</a></li></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1746941978" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746941978" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746941978"></script>
+    <script src="/js/theme.js?1746941978" defer></script>
+  </body>
+</html>
