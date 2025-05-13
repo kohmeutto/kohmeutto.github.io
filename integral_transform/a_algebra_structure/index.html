@@ -7,39 +7,39 @@
     <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
     <meta name="description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.
 $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t-i\cdot -ia| f\rangle=\langle t-a| f\rangle$$연산자 형태로 바꿔보자.
-$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자. 병진 연산은 내적이">
+$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명 1$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] $$ $$=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle$$연산자로의 변환 증명 2$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Algebra structure :: 수리전자물리학">
     <meta name="twitter:description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.
 $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t-i\cdot -ia| f\rangle=\langle t-a| f\rangle$$연산자 형태로 바꿔보자.
-$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자. 병진 연산은 내적이">
+$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명 1$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] $$ $$=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle$$연산자로의 변환 증명 2$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자.">
     <meta property="og:url" content="http://localhost:1313/integral_transform/a_algebra_structure/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Algebra structure :: 수리전자물리학">
     <meta property="og:description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.
 $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t-i\cdot -ia| f\rangle=\langle t-a| f\rangle$$연산자 형태로 바꿔보자.
-$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자. 병진 연산은 내적이">
+$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명 1$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] $$ $$=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle$$연산자로의 변환 증명 2$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Integral transform">
     <meta itemprop="name" content="(a) Algebra structure :: 수리전자물리학">
     <meta itemprop="description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.
 $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t-i\cdot -ia| f\rangle=\langle t-a| f\rangle$$연산자 형태로 바꿔보자.
-$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자. 병진 연산은 내적이">
-    <meta itemprop="wordCount" content="206">
+$$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{T}(a)|f\rangle$$연산자로의 변환 증명 1$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] $$ $$=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle=\langle t|e^{-ia\hat{\omega}}|f\rangle$$연산자로의 변환 증명 2$$\langle t|e^{-ia\hat{\omega}}|f\rangle=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle$$$$=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)$$$$=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle$$위 2개의 식을 비교하자.">
+    <meta itemprop="wordCount" content="344">
     <title>(a) Algebra structure :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746974906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1746974906" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1746974906" rel="stylesheet">
-    <link href="/css/theme.css?1746974906" rel="stylesheet">
-    <link href="/css/format-html.css?1746974906" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1746974906" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1746974906" defer></script>
-    <script src="/js/lunr/lunr.min.js?1746974906" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1746974906" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1746974906" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1746974906" defer></script>
-    <script src="/js/search.js?1746974906" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747062768" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747062768" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747062768" rel="stylesheet">
+    <link href="/css/theme.css?1747062768" rel="stylesheet">
+    <link href="/css/format-html.css?1747062768" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1747062768" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1747062768" defer></script>
+    <script src="/js/lunr/lunr.min.js?1747062768" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1747062768" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1747062768" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1747062768" defer></script>
+    <script src="/js/search.js?1747062768" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rang
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1746974906";
+      window.relearn.index_js_url="/searchindex.en.js?1747062768";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -114,6 +114,8 @@ $$\langle t|e^{-ia\omega}f(\omega)\rangle=\langle t|e^{-ia\hat{\omega}}|f\rang
       <ul>
         <li><a href="#1-shifting-operator---time">1. Shifting operator - Time</a></li>
         <li><a href="#2-shifting-operator---position">2. Shifting operator - Position</a></li>
+        <li><a href="#3-미분-연산자---position--wave-number">3. 미분 연산자 - Position &amp; wave number</a></li>
+        <li><a href="#4-미분-연산자---time--frequency">4. 미분 연산자 - Time &amp; frequency</a></li>
       </ul>
     </li>
   </ul>
@@ -174,7 +176,39 @@ $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    연산자로의 변환 증명
+    연산자로의 변환 증명 1
+  </summary>
+  <div class="box-content">
+<p>
+$$
+=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] 
+=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]
+=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] 
+$$ 
+
+$$
+=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]
+=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle
+$$
+
+
+$$
+=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle
+$$
+
+$$
+=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle
+=\langle t|e^{-ia\hat{\omega}}|f\rangle
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    연산자로의 변환 증명 2
   </summary>
   <div class="box-content">
 <p>
@@ -196,7 +230,7 @@ $$
 <hr>
   </div>
 </details>
-<p>위 2개의 식을 비교하자. 병진 연산은 내적이</p>
+<p>위 2개의 식을 비교하자.</p>
 $$
 \hat{T}(a)=e^{-ia\hat{\omega}}
 $$$$
@@ -206,6 +240,10 @@ $$$$
 $$$$
 \hat{T}^{\dagger}(a)|t\rangle
 =e^{ia\hat{\omega}^{\dagger}}|t\rangle
+=|t-a\rangle
+$$$$
+\hat{T}(a)|t\rangle
+=e^{-ia\hat{\omega}}|t\rangle
 =|t+a\rangle
 $$<p>주파수는 물리량 이므로, 주파수 연산자는 Hermitian 이다. 따라서,</p>
 $$
@@ -238,9 +276,7 @@ $$
 =\langle x|\hat{U}(a)|f\rangle
 $$
 
-
-
-위 2개의 식을 비교하자. 병진 연산은 내적이 
+위 2개의 식을 비교하자.
 
 $$
 \hat{U}(a)=e^{-ia\hat{k}}
@@ -269,11 +305,62 @@ $$
 <br>
 
 위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다.
-
-<hr>
   </div>
 </details>
+<hr>
+<h3 id="3-미분-연산자---position--wave-number">3. 미분 연산자 - Position &amp; wave number</h3>
+<ul>
+<li><strong>공간에 대한 푸리에 역변환과 미분</strong></li>
+</ul>
+$$
+\langle x|kf(k)\rangle
+=\langle x|\hat{k}|f\rangle
+=-i\frac{d}{dx}\langle x|f\rangle
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    연산자로의 변환 증명
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\langle x|kf(k)\rangle
+=\langle x|\int dk \left[kf(k)|k\rangle\right] 
+=\langle x|\int dk \left[k|k\rangle\langle k|f\rangle\right]
+=\langle x|\int dk \left[\hat{k}|k\rangle\langle k|f\rangle\right]
+$$ 
 
+$$
+=\langle x|\hat{k}|\int dk \left[|k\rangle\langle k\right]|f\rangle
+=\langle x|\hat{k}|f\rangle
+$$
+  </div>
+</details>
+<ul>
+<li><strong>파수에 대한 푸리에 변환과 미분</strong></li>
+</ul>
+$$
+\langle k|xf(k)\rangle
+=\langle k|\hat{x}|f\rangle
+=i\frac{d}{dk}\langle k|f\rangle
+$$<hr>
+<h3 id="4-미분-연산자---time--frequency">4. 미분 연산자 - Time &amp; frequency</h3>
+<ul>
+<li><strong>시간에 대한 푸리에 역변환과 미분</strong></li>
+</ul>
+$$
+\langle t|\omega f(\omega)\rangle
+=\langle t|\hat{\omega}|f\rangle
+=-i\frac{d}{dt}\langle t|f\rangle
+$$<ul>
+<li><strong>주파수에 대한 푸리에 변환과 미분</strong></li>
+</ul>
+$$
+\langle \omega|t f(\omega)\rangle
+=\langle \omega|\hat{t}|f\rangle
+=i\frac{d}{d\omega}\langle \omega|f\rangle
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -349,8 +436,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1746974906" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1746974906" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1747062768" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747062768" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -362,7 +449,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1746974906"></script>
-    <script src="/js/theme.js?1746974906" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747062768"></script>
+    <script src="/js/theme.js?1747062768" defer></script>
   </body>
 </html>
