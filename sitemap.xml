@@ -109,6 +109,10 @@
     <loc>http://localhost:1313/temp/laplace_transform/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transform/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
@@ -134,9 +138,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/integral_transform/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
@@ -202,6 +203,9 @@
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transform/a_operators_in_quantum_mechanics/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_inner_product/index.html</loc>
   </url>
   <url>
@@ -224,14 +228,53 @@
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/integral_transform/a_operator_generator/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/tags/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/temp/index.html</loc>
+    <loc>http://localhost:1313/categories/%EA%B3%BC%ED%95%99/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/%EB%AC%BC%EB%A6%AC/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%EB%AC%BC%EB%A6%AC/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%EC%83%9D%EC%84%B1%EC%9E%90/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%EC%96%91%EC%9E%90/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%EC%97%B0%EC%82%B0%EC%9E%90/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%ED%95%B4%EB%B0%80%ED%86%A0%EB%8B%88%EC%95%88/index.html</loc>
+    <lastmod>2025-05-16T13:44:00+09:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/index.html</loc>
   </url>
 </urlset>

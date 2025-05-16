@@ -5,33 +5,33 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
-    <meta name="description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-1)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-i)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{i\omega}\left\langle \omega\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.">
+    <meta name="description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-it)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Algebra structure :: 수리전자물리학">
-    <meta name="twitter:description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-1)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-i)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{i\omega}\left\langle \omega\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.">
+    <meta name="twitter:description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-it)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$">
     <meta property="og:url" content="http://localhost:1313/integral_transform/a_algebra_structure/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Algebra structure :: 수리전자물리학">
-    <meta property="og:description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-1)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-i)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{i\omega}\left\langle \omega\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.">
+    <meta property="og:description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-it)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Integral transform">
     <meta itemprop="name" content="(a) Algebra structure :: 수리전자물리학">
-    <meta itemprop="description" content="푸리에 변환의 대수 구조를 정리한다. 푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-1)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-i)^nt^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{i\omega}\left\langle \omega\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 1. Shifting operator - Time 아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.">
-    <meta itemprop="wordCount" content="626">
+    <meta itemprop="description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 이동 연산 1 $$\langle \omega|e^{at}f(t)\rangle=\langle \omega|e^{a\hat{t}}|f\rangle=\langle \omega&#43;ia|f\rangle$$$$\langle t|e^{a\omega}f(\omega)\rangle=\langle t|e^{a\hat{\omega}}|f\rangle=\langle t-ia|f\rangle$$ 이동 연산 2 $$\langle \omega|f(t&#43;a)\rangle=\langle \omega|e^{ia\hat{\omega}}|f\rangle=e^{ia\omega}\langle \omega|f\rangle$$$$\langle t|f(\omega&#43;a)\rangle=\langle t|e^{-ia\hat{t}}|f\rangle=e^{-iat}\langle t|f\rangle$$ scaling 1 $$\langle \omega|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ scaling 2 $$\langle \omega|f(at&#43;b)\rangle=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle$$$$\langle t|f(a\omega&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle$$ 미분 1 $$\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle=(i\omega)^n\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle=(-it)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle \omega\middle|t^nf(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle$$$$\left\langle t\middle|\omega^nf(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\langle\omega|u\ast f\rangle= \frac{1}{i\omega} \langle \omega|f\rangle &#43; \pi \langle 0|f\rangle \delta(\omega)$$$$\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle=\frac{1}{it}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle=i\int_{\omega}^{\infty}d\omega&#39;\left\langle \omega&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle=i\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$">
+    <meta itemprop="wordCount" content="290">
     <title>(a) Algebra structure :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747233209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747233209" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747233209" rel="stylesheet">
-    <link href="/css/theme.css?1747233209" rel="stylesheet">
-    <link href="/css/format-html.css?1747233209" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1747233209" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1747233209" defer></script>
-    <script src="/js/lunr/lunr.min.js?1747233209" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1747233209" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1747233209" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1747233209" defer></script>
-    <script src="/js/search.js?1747233209" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747388810" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747388810" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747388810" rel="stylesheet">
+    <link href="/css/theme.css?1747388810" rel="stylesheet">
+    <link href="/css/format-html.css?1747388810" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1747388810" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1747388810" defer></script>
+    <script src="/js/lunr/lunr.min.js?1747388810" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1747388810" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1747388810" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1747388810" defer></script>
+    <script src="/js/search.js?1747388810" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +41,7 @@
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1747233209";
+      window.relearn.index_js_url="/searchindex.en.js?1747388810";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -106,10 +106,6 @@
       <ul>
         <li><a href="#1-양방향-라플라스-변환의-대수-구조">1. 양방향 라플라스 변환의 대수 구조</a></li>
         <li><a href="#2-푸리에-변환의-대수-구조">2. 푸리에 변환의 대수 구조</a></li>
-        <li><a href="#1-shifting-operator---time">1. Shifting operator - Time</a></li>
-        <li><a href="#2-shifting-operator---position">2. Shifting operator - Position</a></li>
-        <li><a href="#3-미분-연산자---position--wave-number">3. 미분 연산자 - Position &amp; wave number</a></li>
-        <li><a href="#4-미분-연산자---time--frequency">4. 미분 연산자 - Time &amp; frequency</a></li>
       </ul>
     </li>
   </ul>
@@ -126,7 +122,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/index.html" title="ODE & PDE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/a_operator_generator/index.html" title="(a) Operator & Generator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -150,9 +146,8 @@
 
 <hr>
 <ul>
+<li>라플라스 변환의 대수 구조를 정리한다.</li>
 <li>푸리에 변환의 대수 구조를 정리한다.</li>
-<li>푸리에 변환을 사용한 연산자의 관계를 파악한다.</li>
-<li>양자역학 연산자의 본질을 파악한다.</li>
 </ul>
 <hr>
 <h3 id="1-양방향-라플라스-변환의-대수-구조">1. 양방향 라플라스 변환의 대수 구조</h3>
@@ -210,7 +205,7 @@ $$
 $$$$
 \left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle
 =\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle
-=(-1)^nt^n\left\langle t\middle|f\right\rangle
+=(-t)^n\left\langle t\middle|f\right\rangle
 $$<ul>
 <li>미분 2</li>
 </ul>
@@ -298,7 +293,7 @@ $$
 $$$$
 \left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle
 =\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle
-=(-i)^nt^n\left\langle t\middle|f\right\rangle
+=(-it)^n\left\langle t\middle|f\right\rangle
 $$<ul>
 <li>미분 2</li>
 </ul>
@@ -315,7 +310,6 @@ $$<ul>
 </ul>
 $$
 \left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
-=\frac{1}{i\omega}\left\langle \omega\middle|f\right\rangle
 =\langle\omega|u\ast f\rangle
 = \frac{1}{i\omega} \langle \omega|f\rangle + \pi \langle 0|f\rangle \delta(\omega)
 $$$$
@@ -333,206 +327,7 @@ $$$$
 =\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle
 =i\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
 $$<hr>
-<h3 id="1-shifting-operator---time">1. Shifting operator - Time</h3>
-<p>아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.</p>
-$$
-\langle t|e^{-ia\omega}f(\omega)\rangle
-=\langle t-i\cdot -ia| f\rangle
-=\langle t-a| f\rangle
-$$<p>연산자 형태로 바꿔보자.</p>
-$$
-\langle t|e^{-ia\omega}f(\omega)\rangle
-=\langle t|e^{-ia\hat{\omega}}|f\rangle
-=\langle t|\hat{T}(a)|f\rangle
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    연산자로의 변환 증명 1
-  </summary>
-  <div class="box-content">
-<p>
-$$
-=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] 
-=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]
-=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] 
-$$ 
 
-$$
-=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]
-=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle
-$$
-
-
-$$
-=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle
-$$
-
-$$
-=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle
-=\langle t|e^{-ia\hat{\omega}}|f\rangle
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    연산자로의 변환 증명 2
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\langle t|e^{-ia\hat{\omega}}|f\rangle
-=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle
-$$
-
-$$
-=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle
-=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)
-$$
-
-$$
-=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] 
-=\langle t|e^{-ia\omega}f(\omega)\rangle
-$$
-
-<hr>
-  </div>
-</details>
-<p>위 2개의 식을 비교하자.</p>
-$$
-\hat{T}(a)=e^{-ia\hat{\omega}}
-$$$$
-\langle t|\hat{T}(a)
-=\langle t|e^{-ia\hat{\omega}}
-=\langle t-a|
-$$$$
-\hat{T}^{\dagger}(a)|t\rangle
-=e^{ia\hat{\omega}^{\dagger}}|t\rangle
-=|t-a\rangle
-$$$$
-\hat{T}(a)|t\rangle
-=e^{-ia\hat{\omega}}|t\rangle
-=|t+a\rangle
-$$<p>주파수는 물리량 이므로, 주파수 연산자는 Hermitian 이다. 따라서,</p>
-$$
-\hat{T}(a)\hat{T}^{\dagger}(a)
-=e^{-ia\hat{\omega}}e^{ia\hat{\omega}^{\dagger}}
-=\hat{I}
-$$<p>위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다.</p>
-<hr>
-<h3 id="2-shifting-operator---position">2. Shifting operator - Position</h3>
-<p>이 내용은 위와 동일하다. 위치와 파수의 대응관계를 명확하게 이해하고 위와 동일하게 적용해보자.</p>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    위치 병진 이동 연산자
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\langle x|e^{-iak}f(k)\rangle
-=\langle x-i\cdot -ia| f\rangle
-=\langle x-a| f\rangle
-$$
-
-연산자 형태로 바꿔보자.
-
-$$
-\langle x|e^{-iak}f(k)\rangle
-=\langle x|e^{-ia\hat{k}}|f\rangle
-=\langle x|\hat{U}(a)|f\rangle
-$$
-
-위 2개의 식을 비교하자.
-
-$$
-\hat{U}(a)=e^{-ia\hat{k}}
-$$
-
-$$
-\langle x|\hat{U}(a)
-=\langle x|e^{-ia\hat{k}}
-=\langle x-a|
-$$
-
-$$
-\hat{U}^{\dagger}(a)|t\rangle
-=e^{ia\hat{k}^{\dagger}}|x\rangle
-=|x-a\rangle
-$$
-
-주파수는 물리량 이므로, 파수 연산자는 Hermitian 이다. 따라서,
-
-$$
-\hat{U}(a)\hat{U}^{\dagger}(a)
-=e^{-ia\hat{k}}e^{ia\hat{k}^{\dagger}}
-=\hat{I}
-$$
-
-<br>
-
-위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다.
-  </div>
-</details>
-<hr>
-<h3 id="3-미분-연산자---position--wave-number">3. 미분 연산자 - Position &amp; wave number</h3>
-<ul>
-<li><strong>공간에 대한 푸리에 역변환과 미분</strong></li>
-</ul>
-$$
-\langle x|kf(k)\rangle
-=\langle x|\hat{k}|f\rangle
-=-i\frac{d}{dx}\langle x|f\rangle
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    연산자로의 변환 증명
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\langle x|kf(k)\rangle
-=\langle x|\int dk \left[kf(k)|k\rangle\right] 
-=\langle x|\int dk \left[k|k\rangle\langle k|f\rangle\right]
-=\langle x|\int dk \left[\hat{k}|k\rangle\langle k|f\rangle\right]
-$$ 
-
-$$
-=\langle x|\hat{k}|\int dk \left[|k\rangle\langle k\right]|f\rangle
-=\langle x|\hat{k}|f\rangle
-$$
-  </div>
-</details>
-<ul>
-<li><strong>파수에 대한 푸리에 변환과 미분</strong></li>
-</ul>
-$$
-\langle k|xf(k)\rangle
-=\langle k|\hat{x}|f\rangle
-=i\frac{d}{dk}\langle k|f\rangle
-$$<hr>
-<h3 id="4-미분-연산자---time--frequency">4. 미분 연산자 - Time &amp; frequency</h3>
-<ul>
-<li><strong>시간에 대한 푸리에 역변환과 미분</strong></li>
-</ul>
-$$
-\langle t|\omega f(\omega)\rangle
-=\langle t|\hat{\omega}|f\rangle
-=-i\frac{d}{dt}\langle t|f\rangle
-$$<ul>
-<li><strong>주파수에 대한 푸리에 변환과 미분</strong></li>
-</ul>
-$$
-\langle \omega|t f(\omega)\rangle
-=\langle \omega|\hat{t}|f\rangle
-=i\frac{d}{d\omega}\langle \omega|f\rangle
-$$
   <footer class="footline">
   </footer>
 </article>
@@ -587,7 +382,9 @@ $$
             <li class="" data-nav-id="/integral_transform/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transform/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
             <li class="" data-nav-id="/integral_transform/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
             <li class="" data-nav-id="/integral_transform/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
-            <li class="active " data-nav-id="/integral_transform/a_algebra_structure/index.html"><a class="padding" href="/integral_transform/a_algebra_structure/index.html">(a) Algebra structure</a></li></ul></li>
+            <li class="active " data-nav-id="/integral_transform/a_algebra_structure/index.html"><a class="padding" href="/integral_transform/a_algebra_structure/index.html">(a) Algebra structure</a></li>
+            <li class="" data-nav-id="/integral_transform/a_operator_generator/index.html"><a class="padding" href="/integral_transform/a_operator_generator/index.html">(a) Operator &amp; Generator</a></li>
+            <li class="" data-nav-id="/integral_transform/a_operators_in_quantum_mechanics/index.html"><a class="padding" href="/integral_transform/a_operators_in_quantum_mechanics/index.html">(a) Operators in quantum mechanics</a></li></ul></li>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
@@ -608,8 +405,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1747233209" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747233209" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1747388810" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747388810" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -621,7 +418,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747233209"></script>
-    <script src="/js/theme.js?1747233209" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747388810"></script>
+    <script src="/js/theme.js?1747388810" defer></script>
   </body>
 </html>

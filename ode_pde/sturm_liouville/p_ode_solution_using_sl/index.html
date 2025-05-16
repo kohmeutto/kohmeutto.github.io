@@ -25,17 +25,17 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
 $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$φ_{n}$ 을 eigenfunction 이라고 하자.$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}_{}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}},\quad\sqrt{\lambda_{n}}=n\pi,\,\,n=1,2,\cdots$$고유함수가 orthonormal 함을 사용하여, 계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x} $$$$\varphi_{n}\left(0\right)=0=a_{n}&#43;b_{n} $$$$\varphi_{n}\left(1\right)=0=a_{n}e^{-\sqrt{-\lambda_{n}}}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}} $$$$a_{n}\left(e^{-\sqrt{-\lambda_{n}}}-e^{&#43;\sqrt{-\lambda_{n}}}\right)=0 $$$$a_{n}=0\text{ or }\lambda_{n}=0 $$$$\varphi_{n}=0\text{ or 존재할 수 없음}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$$$\varphi_0\left(0\right)=0=a_0,\quad a_0=0 $$$$\varphi_0\left(1\right)=0=b_0,\quad b_0=0 $$$$\varphi_0=0$$eigen-expansion을 수행한다.$$y&#39;&#39;&#43;\lambda y=0 $$$$\sum\lambda_{n}c_{n}\varphi_{n}&#43;\sum\lambda c_{n}\varphi_{n}=0\implies\sum\left(\lambda-\lambda_{n}\right)c_{n}\varphi_{n}=0$$orthogonality를 이용한다.$$\left(\lambda-\lambda_{n}\right)c_{n}=0,\quad c_{n}=\frac{\lambda}{\lambda_{n}} $$$$y=\sum_{n=1}^{N}\frac{\lambda}{\lambda_{n}}\sqrt{2}\sin n\pi x$$sol2$φ_{n}$ 을 eigenfunction 이라고 하자.$$\left(D^2&#43;\lambda\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x$$(2) $λ&#43;λ_{n}$=0$$\varphi_{n}=a_{n}&#43;b_{n}x$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda},\quad\sqrt{\lambda_{n}&#43;\lambda}=n\pi,\,\,n=1,2,\cdots$$계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ&#43;λ_{n}=0$$$\varphi_{n}=a_{n}&#43;b_{n}x $$$$\varphi_{n}\left(0\right)=0=a_{n},\quad a_{n}=0 $$$$\varphi_{n}\left(1\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}=0$$eigen-expansion을 수행한다. 따라서,$$y=\sum_{n}c_{n}\sqrt{2}\sin n\pi x$$example2) Determine the normalized eigenfunctions of the problem">
     <meta itemprop="wordCount" content="735">
     <title>(p) ODE solution using SL :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747222453" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747222453" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747222453" rel="stylesheet">
-    <link href="/css/theme.css?1747222453" rel="stylesheet">
-    <link href="/css/format-html.css?1747222453" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1747222453" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1747222453" defer></script>
-    <script src="/js/lunr/lunr.min.js?1747222453" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1747222453" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1747222453" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1747222453" defer></script>
-    <script src="/js/search.js?1747222453" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747370750" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747370750" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747370750" rel="stylesheet">
+    <link href="/css/theme.css?1747370750" rel="stylesheet">
+    <link href="/css/format-html.css?1747370750" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1747370750" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1747370750" defer></script>
+    <script src="/js/lunr/lunr.min.js?1747370750" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1747370750" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1747370750" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1747370750" defer></script>
+    <script src="/js/search.js?1747370750" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1747222453";
+      window.relearn.index_js_url="/searchindex.en.js?1747370750";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -979,8 +979,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1747222453" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747222453" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1747370750" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747370750" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -992,7 +992,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747222453"></script>
-    <script src="/js/theme.js?1747222453" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747370750"></script>
+    <script src="/js/theme.js?1747370750" defer></script>
   </body>
 </html>
