@@ -14,5 +14,12 @@
       <guid>http://localhost:1313/temp/laplace_transform/index.html</guid>
       <description></description>
     </item>
+    <item>
+      <title>(a) Operators in quantum mechanics</title>
+      <link>http://localhost:1313/temp/sdf/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/sdf/index.html</guid>
+      <description>푸리에 변환의 대수적 구조를 활용하여 연산자들 간의 관계를 깊이 있게 파악한다. 양자역학에서 연산자의 본질과 물리적 의미를 이해한다. 1. 시간 이동 연산자 (Time Translation Operator) 푸리에 변환의 시간 이동 속성을 통해 양자역학의 시간 이동 연산자를 유도하고 그 본질을 파악한다.&#xA;$$&#xD;\langle t|f(t-a)\rangle&#xD;=\langle t|e^{-ia\hat{\omega}}|f\rangle&#xD;$$이때, 시간 이동 연산자 $\hat{T}(a)$를 $e^{-ia\hat{\omega}}$로 정의할 수 있습니다.&#xA;$$&#xD;\hat{T}(a) = e^{-ia\hat{\omega}}&#xD;$$이 연산자는 함수 $|f\rangle$에 작용하여 시간적으로 $a$만큼 과거로 이동시킨 함수를 생성한다.&#xA;$$&#xD;\hat{T}(a)|f\rangle = |f(t-a)\rangle&#xD;$$이러한 관계를 이용하면, 위치 표현 $\langle t|$에 대한 연산자의 작용도 유도할 수 있다.</description>
+    </item>
   </channel>
 </rss>

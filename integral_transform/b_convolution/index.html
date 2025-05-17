@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+d7685ad3986c906cb10e62854fca7c730df4bf58">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
     <meta name="description" content="0. Convolution의 정의 이전 입력의 현재상태 &#43; 현재 입력의 현재상태
 $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 1. 그림으로 이해하는 컨볼루션 드럼을 친다고 생각하자. 관측 시작 후, 현시점을 기준으로 이전 드럼 입력의 현재 상태 &#43; 현재 드럼 입력의 현재 상태 나타날 것이다.
 위 그래프에 대한 이해를 명확하게 해야 한다.
@@ -33,17 +33,17 @@ $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\le
 τ=0은, 입력이 시스템과 반응하는 최초 시점을 의미한다. – 드럼을 치는 순간 τ=t은, 반응하기 시작한 이전 입력이 t초 만큼 시간이 흘럿다는 것을 의미한다. 빨간색 그래프는, 입력량을 의미한다. – 드럼을 치는 강도 파란색은, 입력에 대한 응답이다. – 드럼의 소리가 시간에 따라 어떻게 변할지를 결정하는 함수 검은색은, 입력과 그 응답에 대한 결과이다. – 이전 드럼 입력의 현재 상태 &#43; 현재 드럼 입력의 현재 상태 0.5초는 별 의미가 없고 보기 편하게 하기 위해 그냥 응답에 대한 결과를 저 시점부터 그린다는 것이다. 2. 숫자(리스트)로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.">
     <meta itemprop="wordCount" content="596">
     <title>(b) Convolution :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747388810" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747388810" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747388810" rel="stylesheet">
-    <link href="/css/theme.css?1747388810" rel="stylesheet">
-    <link href="/css/format-html.css?1747388810" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1747388810" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1747388810" defer></script>
-    <script src="/js/lunr/lunr.min.js?1747388810" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1747388810" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1747388810" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1747388810" defer></script>
-    <script src="/js/search.js?1747388810" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747498049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747498049" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747498049" rel="stylesheet">
+    <link href="/css/theme.css?1747498049" rel="stylesheet">
+    <link href="/css/format-html.css?1747498049" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1747498049" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1747498049" defer></script>
+    <script src="/js/lunr/lunr.min.js?1747498049" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1747498049" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1747498049" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1747498049" defer></script>
+    <script src="/js/search.js?1747498049" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -53,7 +53,7 @@ $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\le
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1747388810";
+      window.relearn.index_js_url="/searchindex.en.js?1747498049";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -136,7 +136,7 @@ $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\le
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/preface/index.html" title="Preface (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/b_laplace_transform_i/index.html" title="(b) Laplace transform I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -534,13 +534,9 @@ $$
             <li class="parent " data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu">
             <li class="" data-nav-id="/integral_transform/preface/index.html"><a class="padding" href="/integral_transform/preface/index.html">Preface</a></li>
             <li class="active " data-nav-id="/integral_transform/b_convolution/index.html"><a class="padding" href="/integral_transform/b_convolution/index.html">(b) Convolution</a></li>
-            <li class="" data-nav-id="/integral_transform/b_laplace_transform_i/index.html"><a class="padding" href="/integral_transform/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
-            <li class="" data-nav-id="/integral_transform/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transform/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
-            <li class="" data-nav-id="/integral_transform/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="" data-nav-id="/integral_transform/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transform/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
-            <li class="" data-nav-id="/integral_transform/a_algebra_structure/index.html"><a class="padding" href="/integral_transform/a_algebra_structure/index.html">(a) Algebra structure</a></li>
-            <li class="" data-nav-id="/integral_transform/a_operator_generator/index.html"><a class="padding" href="/integral_transform/a_operator_generator/index.html">(a) Operator &amp; Generator</a></li>
-            <li class="" data-nav-id="/integral_transform/a_operators_in_quantum_mechanics/index.html"><a class="padding" href="/integral_transform/a_operators_in_quantum_mechanics/index.html">(a) Operators in quantum mechanics</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/integral_transform/transformation/index.html"><a class="padding" href="/integral_transform/transformation/index.html">Transformation</a><ul id="R-subsections-08b90ac8c0f8ee1a1ba6195d19e2189d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/integral_transform/operators/index.html"><a class="padding" href="/integral_transform/operators/index.html">Operators</a><ul id="R-subsections-483761c2238cb8dfccf302ba9280c909" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/integral_transform/lti/index.html"><a class="padding" href="/integral_transform/lti/index.html">LTI</a><ul id="R-subsections-c3eadf42e99eb0fad45235c36d49cd26" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
@@ -561,8 +557,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1747388810" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747388810" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1747498049" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747498049" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -574,7 +570,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747388810"></script>
-    <script src="/js/theme.js?1747388810" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747498049"></script>
+    <script src="/js/theme.js?1747498049" defer></script>
   </body>
 </html>
