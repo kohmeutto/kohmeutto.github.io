@@ -3,7 +3,7 @@
   <channel>
     <title>LTI :: 수리전자물리학</title>
     <link>http://localhost:1313/integral_transform/lti/index.html</link>
-    <description>(i) LTI system&#xD;(b) Causality</description>
+    <description>(i) LTI system&#xD;(b) Causality&#xD;(b) LTI &amp; Circuit analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/integral_transform/lti/index.xml" rel="self" type="application/rss+xml" />
@@ -20,6 +20,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/integral_transform/lti/b_causality/index.html</guid>
       <description>Causality 의 의미에 대해 살펴본다 LTI system + Causality 특성을 살펴본다. 1. Causality(인과성) 인과성은 시스템의 또 다른 중요한 특성이다. 인과적인(causal) 시스템은 현재의 출력이 오직 현재 또는 과거의 입력에 의해서만 결정되는 시스템을 말한다. 미래의 입력이 현재 출력에 영향을 미치지 않는다.&#xA;대부분의 실제 물리 시스템은 인과적이다. 소리가 들리는 것은 소리가 발생한 이후에만 가능하며, 미리 소리를 들을 수는 없다.&#xA;물론 비인과적 시스템 또한 존재한다. 고급 노이즈 제거 알고리즘(필터)은 수학적으로 ‘현재 시점의 소리에서 노이즈를 완벽하게 제거하려면, 현재 시점 이후의 소리 패턴(미래 정보)까지 알아야 한다.’ 여기에서 중요한건 관측시점=현재시점 인 것이다.</description>
+    </item>
+    <item>
+      <title>(b) LTI &amp; Circuit analysis</title>
+      <link>http://localhost:1313/integral_transform/lti/b_lti_circuit_analysis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/lti/b_lti_circuit_analysis/index.html</guid>
+      <description>회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.&#xA;1. 미분 방정식을 사용한 풀이1 $$ -2e^{-2t}+5i+D(i-1)-6+v_c&#39;=0,\quad i=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i $$$$ -2e^{-2t}+5i+Di-6+4D^{-1}i=0\to 4e^{-2t}+5Di+D^2i+4i=0 $$정리하면 다음과 같다.&#xA;$$ D^2i+5Di+4i=-4e^{-2t} $$일반해와 특수해를 구한다.&#xA;$$ i_h=c_1e^{-t}+c_2e^{-4t} $$$$ i_p=\left.\frac{-4}{(D+1)(D+4)}\right|_{D=-2}e^{-2t}=2e^{-2t} $$초기조건을 사용하여 계수를 구하면,&#xA;$$ i(0) =1 =c_1+c_2+2 $$$$ Di(0) =3 =-c_1-4c_2-4 $$$$ c_1=1, c_2=-2 $$따라서,&#xA;$$ i=e^{-t}+2e^{-2t}-2e^{-4t} $$ 2. 라플라스 변환을 사용한 풀이 위 회로 시스템은, causality 하다. 따라서, 단방향 라플라스 변환을 수행한다.</description>
     </item>
   </channel>
 </rss>

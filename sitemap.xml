@@ -103,6 +103,9 @@
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_i/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/integral_transform/lti/b_lti_circuit_analysis/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_i/index.html</loc>
   </url>
   <url>
