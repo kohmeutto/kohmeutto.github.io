@@ -5,41 +5,37 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
-    <meta name="description" content="Find the general solution of the given differential equations. Don’t evaluate the integral that defines $ y_{p}(x)$.
-example1-1)
-$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example1-2)">
+    <meta name="description" content="example1) 특수해를 구하여라.
+$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example2) 특수해를 구하여라.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(p) Green function examples :: 수리전자물리학">
-    <meta name="twitter:description" content="Find the general solution of the given differential equations. Don’t evaluate the integral that defines $ y_{p}(x)$.
-example1-1)
-$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example1-2)">
+    <meta name="twitter:description" content="example1) 특수해를 구하여라.
+$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example2) 특수해를 구하여라.">
     <meta property="og:url" content="http://localhost:1313/ode_pde/green_function/p_gf_examples/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(p) Green function examples :: 수리전자물리학">
-    <meta property="og:description" content="Find the general solution of the given differential equations. Don’t evaluate the integral that defines $ y_{p}(x)$.
-example1-1)
-$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example1-2)">
+    <meta property="og:description" content="example1) 특수해를 구하여라.
+$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example2) 특수해를 구하여라.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
     <meta itemprop="name" content="(p) Green function examples :: 수리전자물리학">
-    <meta itemprop="description" content="Find the general solution of the given differential equations. Don’t evaluate the integral that defines $ y_{p}(x)$.
-example1-1)
-$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ 문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다. $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example1-2)">
-    <meta itemprop="wordCount" content="621">
+    <meta itemprop="description" content="example1) 특수해를 구하여라.
+$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D&#43;4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D&#43;2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D&#43;\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}&#43;\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}&#43;\frac{1}{36}e^{-2x}&#43;\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$example2) 특수해를 구하여라.">
+    <meta itemprop="wordCount" content="698">
     <title>(p) Green function examples :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747892809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747892809" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747892809" rel="stylesheet">
-    <link href="/css/theme.css?1747892809" rel="stylesheet">
-    <link href="/css/format-html.css?1747892809" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1747892809" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1747892809" defer></script>
-    <script src="/js/lunr/lunr.min.js?1747892809" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1747892809" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1747892809" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1747892809" defer></script>
-    <script src="/js/search.js?1747892809" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747936526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747936526" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747936526" rel="stylesheet">
+    <link href="/css/theme.css?1747936526" rel="stylesheet">
+    <link href="/css/format-html.css?1747936526" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1747936526" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1747936526" defer></script>
+    <script src="/js/lunr/lunr.min.js?1747936526" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1747936526" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1747936526" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1747936526" defer></script>
+    <script src="/js/search.js?1747936526" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +45,7 @@ $$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1747892809";
+      window.relearn.index_js_url="/searchindex.en.js?1747936526";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -144,8 +140,7 @@ $$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$IOPM-D$$ D^2-16=0 $$ $$ y_{p
 <h1 id="p-green-function-examples">(p) Green function examples</h1>
 
 <hr>
-<p>Find the general solution of the given differential equations. Don&rsquo;t evaluate the integral that defines $ y_{p}(x)$.</p>
-<p><strong>example1-1)</strong></p>
+<p><strong>example1) 특수해를 구하여라.</strong></p>
 $$y''-16y=xe^{-2x}, \quad x\in(-∞,∞)$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -188,8 +183,7 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    c_1\left(x'\right)e^{4x} & x < x'
-    \\
+    c_1\left(x'\right)e^{4x} & x < x' \\
     c_2\left(x'\right)e^{-4x} & x > x'
 \end{cases}
 $$
@@ -221,8 +215,6 @@ $$
 =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx'\left\lbrack x'e^{-6x'}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx'\left\lbrack x'e^{2x'}\right\rbrack
 $$
     
-문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다.
-    
 $$
 \int_{x}^{\infty}dx'\left\lbrack x'e^{-6x'}\right\rbrack=\left\lbrack-\frac16x'e^{-6x'}-\frac{1}{36}e^{-6x'}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}+\frac{1}{36}e^{-6x}
 $$
@@ -241,7 +233,7 @@ $$
   </div>
 </details>
 <hr>
-<p><strong>example1-2)</strong></p>
+<p><strong>example2) 특수해를 구하여라.</strong></p>
 $$y''+2y'+y=e^{-x}, x\in[0,∞)$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -311,8 +303,7 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    0 & x < x'
-    \\
+    0 & x < x' \\
     e^{x'}\left(-x'+x\right)e^{-x} & x > x'
 \end{cases}
 $$
@@ -331,7 +322,7 @@ $$
   </div>
 </details>
 <hr>
-<p><strong>example1-3)</strong></p>
+<p><strong>example3) 특수해를 구하여라. 단, 적분을 수행하지 않아도 된다.</strong></p>
 $$y''+9y=x+\sin x,\quad x\in[0,∞)$$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -351,6 +342,8 @@ $$
 $$
 y_{p2}=\frac{1}{D^2+9}\operatorname{Im}\left\lbrack e^{jx}\right\rbrack=\operatorname{Im}\left\lbrack\frac18e^{jx}\right\rbrack=\frac18\sin x
 $$
+
+<hr>
   </div>
 </details>
 
@@ -366,21 +359,55 @@ $$
 $$
 \left(D^2+9\right)G\left(x,x'\right)=0
 $$
-    
+
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x' \\
+    c(x')(a\cos 3x+b\sin 3x) & x > x'
+\end{cases}
+$$
+
 (2) $x=x'$
 
-qqq
+<br>
+
+Continuous
+
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x' \\
+    c(x')\sin 3(x-x') & x > x'
+\end{cases}
+$$
+
+Jump condition
+
+$$
+3c(x')=1\implies c(x')=\frac13
+$$
 
 (3) $y_{p}(x)$
 
-qqq
-
 <img src="image1-3.png" width="65%" height="auto">
+
+$$
+y_{p}=\int_0^{x}dx'\left\lbrack\frac13\sin3\left(x-x'\right)\cdot(x'+\sin x')\right\rbrack
+$$
+
+$$
+=\frac19x+\frac18\sin x-\frac{17}{216}\sin3x
+$$
+
+<br>
+
+위에서 구한 특수해와 다름을 확인히라. 바로 아래 문제를 풀면 그 이유에 대해 생각해 볼 수 있다.
   </div>
 </details>
 <hr>
-<p><strong>example2) 중요</strong></p>
-<p>Solve the initial-value problem</p>
+<p><strong>example4) 최종해를 구하여라.</strong></p>
+<p>Solve the initial-value problem, $x\in[0,∞)$</p>
 $$
 y''+4y=\sin2x,\quad y\left(0\right)=1,\quad y'\left(0\right)=-2
 $$
@@ -494,7 +521,7 @@ $$
 =-\frac{x}{4}\cos2x+\frac18\sin2x
 $$
     
-특수해
+일반해
 
 $$
 y_{h}=c_1\cos2x+c_2\sin2x
@@ -519,21 +546,22 @@ $$
 $$
 y=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
 $$
+
+<br>
+
+특수해가 다르더라도, 최종해는 동일함을 알 수 있다. 이는 그린함수를 사용하여 특수해를 구할 떄, 경계가 0이라는 특정한 조건을 사용하기 때문이다. 그러나 결국 최종해에 실제 boundary 값이 적용되기 때문에, 최종해의 결과는 동일하다.
   </div>
 </details>
 <hr>
-<p><strong>example3) 매우중요</strong></p>
-<p>Solve the initial-value problem</p>
+<p><strong>example5) 특수해를 구하여라.</strong></p>
+<p>Solve the initial-value problem,  $x\in[0,∞)$</p>
 $$
 y''+4y=f\left(x\right),\quad y\left(0\right)=1,\quad y'\left(0\right)=-2
 $$<p>where the forcing function f is piecewise defined:</p>
 $$
 f\left(x\right)
 =\begin{cases}
-    0 & x < 0
-    \\
-    \sin2x & 0 \le x \le 2\pi
-    \\
+    \sin2x & 0 \le x \le 2\pi \\
     0 & x > 2\pi
 \end{cases}
 $$
@@ -553,19 +581,9 @@ G\left(x,x'\right)
 \end{cases}
 $$
     
-(1) $x<0$
+<br>
     
-<img src="image3-1.png" width="65%" height="auto">
-
-$$
-y_{p}=\int_0^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack=0
-$$
-    
-적분범위를 유심히 살펴본다.
-
-<br><br>
-    
-(2) $0\le x\le2\pi$
+(1) $0\le x\le2\pi$
 
 <img src="image3-2.png" width="65%" height="auto">
     
@@ -577,7 +595,7 @@ $$
 =-\frac{x}{4}\cos2x+\frac18\sin2x
 $$
     
-(3) $2\pi < x$
+(2) $2\pi < x$
 
 <img src="image3-3.png" width="65%" height="auto">
     
@@ -595,7 +613,7 @@ $$
   </div>
 </details>
 <hr>    
-<p><strong>example4)</strong></p>
+<p><strong>example6) 특수해를 구하여라.</strong></p>
 <p>Solve the boundary-value problem</p>
 $$
 y''+4y=2,\quad y'\left(0\right)=0,\quad y\left(\frac{\pi}{2}\right)=0
@@ -649,10 +667,14 @@ $$
 $$
 =\sin2x\int_0^{x}dx'\left\lbrack\cos2x'\right\rbrack+\cos2x\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\right\rbrack
 $$
+
+$$
+=\frac12(1+\cos 2x)
+$$
   </div>
 </details>
 <hr>
-<p><strong>example5)</strong></p>
+<p><strong>example7) 특수해를 구하여라.</strong></p>
 <p>Solve the boundary-value problem</p>
 $$
 x^2y''-3xy'+3y=24x^5,\quad y\left(1\right)=0,\quad y\left(2\right)=0
@@ -825,8 +847,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1747892809" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747892809" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1747936526" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747936526" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -838,7 +860,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747892809"></script>
-    <script src="/js/theme.js?1747892809" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747936526"></script>
+    <script src="/js/theme.js?1747936526" defer></script>
   </body>
 </html>
