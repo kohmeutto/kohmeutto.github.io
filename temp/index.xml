@@ -6,6 +6,7 @@
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 23 May 2025 23:56:28 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/temp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Laplace transform</title>
@@ -20,6 +21,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/sdf/index.html</guid>
       <description>푸리에 변환의 대수적 구조를 활용하여 연산자들 간의 관계를 깊이 있게 파악한다. 양자역학에서 연산자의 본질과 물리적 의미를 이해한다. 1. 시간 이동 연산자 (Time Translation Operator) 푸리에 변환의 시간 이동 속성을 통해 양자역학의 시간 이동 연산자를 유도하고 그 본질을 파악한다.&#xA;$$&#xD;\langle t|f(t-a)\rangle&#xD;=\langle t|e^{-ia\hat{\omega}}|f\rangle&#xD;$$이때, 시간 이동 연산자 $\hat{T}(a)$를 $e^{-ia\hat{\omega}}$로 정의할 수 있습니다.&#xA;$$&#xD;\hat{T}(a) = e^{-ia\hat{\omega}}&#xD;$$이 연산자는 함수 $|f\rangle$에 작용하여 시간적으로 $a$만큼 과거로 이동시킨 함수를 생성한다.&#xA;$$&#xD;\hat{T}(a)|f\rangle = |f(t-a)\rangle&#xD;$$이러한 관계를 이용하면, 위치 표현 $\langle t|$에 대한 연산자의 작용도 유도할 수 있다.</description>
+    </item>
+    <item>
+      <title>디랙 표기법의 이해: 규칙, 주의사항 및 직관</title>
+      <link>http://localhost:1313/temp/test/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/temp/test/index.html</guid>
+      <description>디랙 표기법 (Dirac Notation) 이해하기 디랙 표기법, 또는 브라-켓(Bra-Ket) 표기법은 양자역학에서 상태 벡터와 연산자를 간결하고 추상적으로 다루는 데 사용되는 강력한 수학적 도구입니다. 처음에는 생소하고 추상적으로 느껴질 수 있지만, 몇 가지 핵심적인 규칙과 직관적인 해석을 통해 쉽게 접근할 수 있습니다.&#xA;디랙 표기법의 핵심 규칙 및 개념 켓 벡터 (Ket Vector): $|\psi\rangle$&#xA;정의: 힐베르트 공간에 존재하는 추상적인 상태 벡터를 나타냅니다. 시스템의 상태(예: 전자의 스핀 상태, 입자의 파동 함수)를 나타냅니다. 직관: ‘무언가’라는 상태/객체/함수 그 자체입니다. 어떤 특정 좌표계나 표현 방식에 얽매이지 않는 본질적인 실체입니다. 표기 관례: 켓 안에는 상태를 구분하는 물리량이나 인덱스(양자수)가 들어갑니다. 예: $|E_n\rangle$ (에너지 준위), $|x\rangle$ (위치), $|p\rangle$ (운동량), $|\uparrow\rangle$ (스핀 업). 주의: 함수 형태(예: f(t))를 직접 넣는 것은 표준적인 관례가 아닙니다. 그러나 변형된 함수 자체를 새로운 상태로 간주할 때는 $|f(t+a)\rangle$와 같이 표기할 수 있습니다. 브라 벡터 (Bra Vector): $\langle\phi|$</description>
     </item>
     <item>
       <title>(b) Convolutionㅍㅅ드드</title>

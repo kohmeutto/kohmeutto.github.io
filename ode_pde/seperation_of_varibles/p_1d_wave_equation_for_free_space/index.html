@@ -6,56 +6,48 @@
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
     <meta name="description" content="1차원 파동방정식의 해는 아래와 같다.
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
+$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,
+파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 스텀-리우빌 적용, 엄밀한 풀이
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) $k=0$
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
+$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(p) 1D Wave equation for free-space :: 수리전자물리학">
     <meta name="twitter:description" content="1차원 파동방정식의 해는 아래와 같다.
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
+$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,
+파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 스텀-리우빌 적용, 엄밀한 풀이
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) $k=0$
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
+$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$">
     <meta property="og:url" content="http://localhost:1313/ode_pde/seperation_of_varibles/p_1d_wave_equation_for_free_space/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(p) 1D Wave equation for free-space :: 수리전자물리학">
     <meta property="og:description" content="1차원 파동방정식의 해는 아래와 같다.
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
+$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,
+파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 스텀-리우빌 적용, 엄밀한 풀이
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) $k=0$
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
+$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
     <meta itemprop="name" content="(p) 1D Wave equation for free-space :: 수리전자물리학">
     <meta itemprop="description" content="1차원 파동방정식의 해는 아래와 같다.
-$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유 공간에서,
-파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
+$$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,
+파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 스텀-리우빌 적용, 엄밀한 풀이
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.
-$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$
-$$X\left(x\right)=a_1e^{-ikx}&#43;a_2e^{ikx}$$(2) $k=0$
-$$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.">
-    <meta itemprop="wordCount" content="223">
+$$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$">
+    <meta itemprop="wordCount" content="391">
     <title>(p) 1D Wave equation for free-space :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747973993" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1747973993" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1747973993" rel="stylesheet">
-    <link href="/css/theme.css?1747973993" rel="stylesheet">
-    <link href="/css/format-html.css?1747973993" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1747973993" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1747973993" defer></script>
-    <script src="/js/lunr/lunr.min.js?1747973993" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1747973993" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1747973993" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1747973993" defer></script>
-    <script src="/js/search.js?1747973993" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748107301" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748107301" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748107301" rel="stylesheet">
+    <link href="/css/theme.css?1748107301" rel="stylesheet">
+    <link href="/css/format-html.css?1748107301" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748107301" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748107301" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748107301" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748107301" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748107301" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748107301" defer></script>
+    <script src="/js/search.js?1748107301" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -65,7 +57,7 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1747973993";
+      window.relearn.index_js_url="/searchindex.en.js?1748107301";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -123,7 +115,16 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#q-왜-증명-2는-엄밀하지-않은가">Q) 왜 증명 2는 엄밀하지 않은가.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -163,7 +164,7 @@ $$X\left(x\right)=0$$eigen-expansion 을 수행한다. 미분연산자는 self
 <p>1차원 파동방정식의 해는 아래와 같다.</p>
 $$
 \frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
-$$<p>자유 공간에서,</p>
+$$<p>위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,</p>
 <ul>
 <li>파수 중첩의 해</li>
 </ul>
@@ -175,7 +176,7 @@ $$<ul>
 $$
 u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{i\left(kx+\omega t\right)}\right\rbrack
 $$<hr>
-<p><strong>proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이</strong></p>
+<p><strong>proof1) 스텀-리우빌 적용, 엄밀한 풀이</strong></p>
 $$
 \frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
 $$<p>자유공간에서 라플라시안 연산자에 대해, 고유값과 고유함수를 구한다. 고유값과 고유함수가 연속적임을 이해해야 한다.</p>
@@ -191,7 +192,7 @@ X\left(x\right)=a_1e^{-ikx}+a_2e^{ikx}
 $$<p>(2) $k=0$</p>
 $$
 X\left(x\right)=0
-$$<p>eigen-expansion 을 수행한다. 미분연산자는 self-adjoint 함을 알고 있기 때문에, 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.</p>
+$$<p>&ldquo;eigen-expansion 을 수행한다. &lsquo;무한대에서 0으로 수렴해야 하는 조건&rsquo;하에 미분연산자는 자기 수반(self-adjoint) 연산자이다. <strong>이때 &lsquo;무한대에서 0으로 수렴해야 하는 조건&rsquo;은 푸리에 변환이 잘 정의되고 역변환이 가능하기 위해 필요하다. 이는 파동이 국소화(wave packet)되어 계수 함수 c(k)가 잘 정의될 때 충족</strong>된다는 것을 의미한다. 또한 self-adjoint 함은 고유값은 실수이고, 이에 적분 범위는 실수축에서 수행됨을 알아야 한다. 해는 다음과 같다.&rdquo;</p>
 $$
 u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c\left(k\right)e^{ikx}T\left(t\right)\right\rbrack
 $$<p>위는 파동 방정식의 해 이므로, 파동 방정식에 대입하면, T(t)를 구할 수 있다.</p>
@@ -209,7 +210,7 @@ $$
 u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{i\left(kx+\omega t\right)}\right\rbrack
 $$<p>푸리에 (역)변환과 동일한 형태이다. 잘 생각해보면, 파동의 중첩을 만족하기 때문에, 위의 결과는 당연하다.</p>
 <hr>
-<p><strong>proof2) 페이저 변환과 중첩을 사용한 쉬운 풀이, 고전역학 &amp; 전자기학 에서 많이 사용</strong></p>
+<p><strong>proof2) 페이저 변환과 중첩을 사용한 쉬운 풀이</strong></p>
 <p>$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.</p>
 $$
 \nabla^2\underline u\left(x\right)=-\frac{\omega^2}{v^2}\underline u\left(x\right)
@@ -220,15 +221,29 @@ $$
 \left(\nabla^2+k^2\right)\underline u\left(x\right)=0
 $$<p>따라서,</p>
 $$
-u\left(x,t\right)=\operatorname{Re}\left\lbrack\underline u\left(x\right)e^{-i\omega t}\right\rbrack
+u\left(x,t\right)=\underline u\left(x\right)e^{-i\omega t}
 $$<p>1차원의 x방향 &amp; 주파수가 중첩이 되어 있다고 하면,</p>
 $$
-u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{-i\left(kx+\omega t\right)}\right\rbrack\right\rbrack
-$$<hr>
-<p><strong>proof3) 푸리에 변환을 사용한 풀이</strong></p>
-<p><a href="http://localhost:1313/ode_pde/transformation/a_fourier_transform_for_pde/" rel="external" target="_blank">(a) Fourier transform for PDE</a> 를 참조한다.</p>
+u\left(x,t\right)=\int d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{-i\left(kx+\omega t\right)}\right\rbrack
+$$<p>proof1) 과 해가 다르다. 그러나, 위 증명에서 계수 c_1과 c_2는 여기에서와는 서로 다른 값이다. 따라서, 표현의 차이일 뿐 동일한 해를 나타낸다.</p>
 <hr>
-<h6 id="q-왜-증명-2와-3은-엄밀하지-않은가">Q) 왜 증명 2와 3은 엄밀하지 않은가.</h6>
+<p><strong>proof3) 푸리에 변환을 사용한 풀이</strong></p>
+<p>경계조건이 무한대 이므로, 공간에 대해, 푸리에 변환을 수행한다. k는 실수이다.</p>
+$$    
+-k^2v^2\underline{u}\left(k,t\right)=\frac{\partial^2}{\partial t^2}\underline{u}\left(k,t\right), \quad -\infty < x < \infty, \quad t > 0
+$$$$
+\underline{u}\left(k,t\right)=a_1e^{-i\omega t}+a_2e^{+i\omega t},\quad\omega^2=k^2v^2
+$$<p>변수분리 형태를 적용하면,</p>
+$$
+\underline{u}\left(k,t\right)=\underline{f}\left(k\right)e^{-i\omega t}+\underline{g}\left(k\right)e^{+i\omega t},\quad\omega^2=k^2v^2,
+$$<p>해를 구하기 위해 역 푸리에 변환을 수행한다.</p>
+$$
+F^{-1}\left\lbrace\underline{u}\left(k,t\right)\right\rbrace\left(x,t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dk\left\lbrack\underline{f}\left(k\right)e^{-i\omega t}+\underline{g}\left(k\right)e^{+i\omega t}\right\rbrack e^{ikx}
+$$$$
+u\left(x,t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dk\left\lbrack\underline{f}\left(k\right)e^{-i\left(\omega t-kx\right)}+\underline{g}\left(k\right)e^{+i\left(\omega t+kx\right)}\right\rbrack
+$$<hr>
+<h3 id="q-왜-증명-2는-엄밀하지-않은가">Q) 왜 증명 2는 엄밀하지 않은가.</h3>
+<p>proof2)는 단일 주파수 해를 찾은 후, 이를 &lsquo;모든 주파수에 대해 중첩한다&rsquo;는 다음 단계로 넘어간다. 이는 선형 시스템에 대한 중첩 원리에 기반한 유효한 추론이지만, 푸리에 변환의 엄밀한 &lsquo;존재 정리&rsquo; 및 &lsquo;역변환 정리&rsquo;를 통해 일반해를 명시적으로 유도하는 proof1&amp;3) 만큼 수학적으로 &lsquo;완전히 유도된(deductive)&rsquo; 과정은 아니다. 다시 말해, proof2) 는 &lsquo;이러한 형태의 해가 존재한다면 일반해는 그 중첩일 것이다&rsquo;라는 직관적이고 구성적인 접근 방식에 가깝다.</p>
 <hr>
 <p><a href="https://www.ibiblio.org/e-notes/webgl/gpu/boundary.htm" rel="external" target="_blank">ABC for waves</a></p>
 
@@ -315,8 +330,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1747973993" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1747973993" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748107301" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748107301" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -328,7 +343,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1747973993"></script>
-    <script src="/js/theme.js?1747973993" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748107301"></script>
+    <script src="/js/theme.js?1748107301" defer></script>
   </body>
 </html>
