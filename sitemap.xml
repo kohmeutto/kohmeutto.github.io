@@ -4,6 +4,9 @@
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
@@ -52,6 +55,9 @@
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operator_generator/index.html</loc>
   </url>
   <url>
@@ -91,6 +97,9 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
   </url>
   <url>
@@ -110,6 +119,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/i_emf/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/i_linearity/index.html</loc>
@@ -229,10 +241,10 @@
     <loc>http://localhost:1313/linear_algebra/vector/b_inner_product/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/green_function/index.html</loc>
+    <loc>http://localhost:1313/electromagnetics/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/ode_pde/transformation/index.html</loc>
+    <loc>http://localhost:1313/ode_pde/green_function/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/sdf/index.html</loc>
@@ -242,6 +254,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ode_pde/transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/index.html</loc>

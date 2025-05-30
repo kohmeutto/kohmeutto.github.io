@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
+    <meta property="og:description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Electromagnetics">
+    <meta itemprop="name" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
+    <meta itemprop="description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta itemprop="wordCount" content="292">
+    <title>(a) Lagrangian and Eulerian specification :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748590527" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748590527" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748590527" rel="stylesheet">
+    <link href="/css/theme.css?1748590527" rel="stylesheet">
+    <link href="/css/format-html.css?1748590527" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748590527" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748590527" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748590527" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748590527" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748590527" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748590527" defer></script>
+    <script src="/js/search.js?1748590527" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/electromagnetics\/charges_forces\/a_lagrangian_eulerian_specification\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1748590527";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-lagrangian-coordinate">1. Lagrangian coordinate</a></li>
+        <li><a href="#2-라그랑지안-좌표계기술법의-사용-이유">2. 라그랑지안 좌표계(기술법)의 사용 이유</a></li>
+        <li><a href="#3-eulerian-coordinate">3. Eulerian coordinate</a></li>
+        <li><a href="#4-두-좌표계기술법-차이를-이해">4. 두 좌표계(기술법) 차이를 이해</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/index.html"><span itemprop="name">Electromagnetics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/charges_forces/index.html"><span itemprop="name">Charges and forces</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Lagrangian and Eulerian specification</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/index.html" title="Charges and forces (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_material_derivative/index.html" title="(a) Material derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable electromagnetics" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-lagrangian-and-eulerian-specification">(a) Lagrangian and Eulerian specification</h1>
+
+<hr>
+<img src="image1.png" width="60%" height="auto">
+<hr>
+<h3 id="1-lagrangian-coordinate">1. Lagrangian coordinate</h3>
+<ul>
+<li>라그랑지 좌표계는 <strong>물체를 따라가면서 기술하는 좌표계</strong>이다.</li>
+<li>중요한 것은 <strong>시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술</strong>한다는 점</li>
+<li>물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 <em>t</em>에서는 (1,5,<em>t</em>)인 것</li>
+<li>물론, 물체 A의 시간 <em>t</em>에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 <em>t</em>에서의 위치로 보내주는 아래와 <strong>맵핑(mapping)함수 <em>M</em> 가 필요</strong></li>
+</ul>
+$$
+\left(5,1\right)=M\left(1,5,t\right)
+$$<ul>
+<li><strong>물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다.</strong>
+물론 시간이 지난 후, 나중 위치를 함수 <em>r</em> 로 확인할 수 있지만, <strong>라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자.</strong></li>
+</ul>
+<hr>
+<h3 id="2-라그랑지안-좌표계기술법의-사용-이유">2. 라그랑지안 좌표계(기술법)의 사용 이유</h3>
+<p>&ldquo;그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.</p>
+<p>예를 들어, 무수히 많은 입자들의 변위(displacement, 위치의 변화)는 아래와 같이 구할 수 있다.</p>
+$$
+M\left(x_0,y_0,t\right)-\left(x_0,y_0\right)
+$$<p>$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 초기위치이다. 즉, 초기위치와 시간의 함수로써 구할 수 있다.</p>
+<hr>
+<h3 id="3-eulerian-coordinate">3. Eulerian coordinate</h3>
+<ul>
+<li>오일러 좌표계는 물체보다는 <strong>고정된 위치를 중요시하는 좌표계</strong></li>
+<li>이러한 좌표기술 방법은 물체 하나하나를 따라가는 것보다 <strong>특정 위치에서의 물성을 중요시하는 분야</strong>에서 주로 사용</li>
+</ul>
+<p>예를 들어, 위에서 위치 (5,1)에 초기에는 물체 B가 있고 시간 <em>t</em>에서는 물체 A가 있다고 하자. 속도의 관점에서 말하면,  초기에 위치 (5,1)의 속도는 물체 B의 속도이며, 시간 <em>t</em>에서의 속도는 물체 A의 속도이다. <strong>이게 바로 오일러 기술 방식이다.</strong></p>
+<hr>
+<h3 id="4-두-좌표계기술법-차이를-이해">4. 두 좌표계(기술법) 차이를 이해</h3>
+<ul>
+<li>
+<p>$v_L(x_0, y_0, t)$가 <strong>라그랑지안 관점</strong>에서 기술된 좌표계에 의한 것이라면, 이는 초기좌표가 $x_0$와 $y_0$였던 물질이 시간 $t$가 지난 후에 위치한 지점에서의 속도를 의미한다.</p>
+</li>
+<li>
+<p>$v_E(x, y, t)$가 <strong>오일리안 관점</strong>에서 기술된 좌표계에 의한 것이라면, 그냥 $x$와 $y$라는 위치에서 $t$라는 시간에 우연찮게 놓인 물질의 속도를 의미한다.</p>
+</li>
+</ul>
+<hr>
+<p><a href="https://sdolnote.tistory.com/entry/LagrangianEulerian" rel="external" target="_blank">오일러(Eulerian)와 라그랑지(Lagrangian)의 좌표계의 차이와 물질미분(material derivative) - 성돌의 전자노트</a></p>
+<p><a href="https://m.blog.naver.com/hodong32/222883981417" rel="external" target="_blank">라그랑지안 vs 오일러리안 해석 : 네이버 블로그</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/electromagnetics/charges_forces/index.html"><a class="padding" href="/electromagnetics/charges_forces/index.html">Charges and forces</a><ul id="R-subsections-be60c3e5f7aabede054d7dcd3ea0bd92" class="collapsible-menu">
+            <li class="active " data-nav-id="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_material_derivative/index.html">(a) Material derivative</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/i_emf/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_emf/index.html">(i) EMF</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/charges_forces/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1748590527" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748590527" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748590527"></script>
+    <script src="/js/theme.js?1748590527" defer></script>
+  </body>
+</html>

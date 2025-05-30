@@ -3,7 +3,7 @@
   <channel>
     <title>ODE &amp; PDE :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/index.html</link>
-    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) Circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville&#xD;Seperation of variables&#xD;Green function&#xD;Transform&#xD;Uniqueness theorem</description>
+    <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) Circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville&#xD;Seperation of variables&#xD;Green function&#xD;Transformation&#xD;Uniqueness theorem</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/index.xml" rel="self" type="application/rss+xml" />
@@ -57,7 +57,7 @@
       <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples&#xD;(i) Divergence for free-space&#xD;(i) Laplacian for free-space&#xD;(i) Helmholtz operator for free-space&#xD;(i) GF from SL</description>
     </item>
     <item>
-      <title>Transform</title>
+      <title>Transformation</title>
       <link>http://localhost:1313/ode_pde/transformation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/transformation/index.html</guid>

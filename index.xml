@@ -37,6 +37,13 @@
       <description>Transformation</description>
     </item>
     <item>
+      <title>Electromagnetics</title>
+      <link>http://localhost:1313/electromagnetics/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/index.html</guid>
+      <description>Charges and forces</description>
+    </item>
+    <item>
       <title>Temps</title>
       <link>http://localhost:1313/temp/index.html</link>
       <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>

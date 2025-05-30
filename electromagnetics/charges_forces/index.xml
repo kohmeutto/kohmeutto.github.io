@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charges and forces :: 수리전자물리학</title>
+    <link>http://localhost:1313/electromagnetics/charges_forces/index.html</link>
+    <description>(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) EMF&#xD;(r) EMF &amp; Voltage</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/electromagnetics/charges_forces/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Lagrangian and Eulerian specification</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</guid>
+      <description>1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.</description>
+    </item>
+    <item>
+      <title>(a) Material derivative</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(i) EMF</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/i_emf/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/i_emf/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(r) EMF &amp; Voltage</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
