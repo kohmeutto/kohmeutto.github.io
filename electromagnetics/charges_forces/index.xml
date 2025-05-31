@@ -19,7 +19,7 @@
       <link>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</guid>
-      <description></description>
+      <description>입자(물체)를 추적하면서 물리량을 구한다고 하자.입자를 추적하기에 오일러 좌표기술 방법은 적합하지 않다. 결국, 라그랑지안 기술법이 되어야 하는 것이다.&#xA;1. Material derivative 라그랑지안 좌표&#xA;라그랑지안 기술법에서, 입자의 위치는 초기위치를 기준으로, 시간에 따라 표현한다. 따라서, 입자의 위치는 시간에 “종속 변수”이다. 오일리안 좌표&#xA;좌표는 관측 고정점으로, 우연히 입자가 그 지점을 지나가는 것이다. 따라서, 좌표(입자의 위치가 아님, 그냥 관측 좌표 임)는 시간에 “독립 변수”이다. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석</description>
     </item>
     <item>
       <title>(i) EMF</title>
