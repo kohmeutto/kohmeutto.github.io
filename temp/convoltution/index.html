@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="generator" content="Relearn 7.6.1+c72515a5047be372be90277e569a86bc2e13ea21">
     <meta name="description" content="0. Convolution의 정의 Causal: 이전 입력의 현재상태 &#43; 현재 입력의 현재상태
 Non-causal: 이전 입력의 현재상태 &#43; 현재 입력의 현재상태 &#43; 미래 입력의 현재상태
 $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 1. 그림으로 이해하는 컨볼루션 드럼을 친다고 생각하자. 관측 시작 후, 현시점을 기준으로 이전 드럼 입력의 현재 상태 &#43; 현재 드럼 입력의 현재 상태 나타날 것이다.
@@ -37,17 +37,17 @@ $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\le
 τ=0은, 입력이 시스템과 반응하는 최초 시점을 의미한다. – 드럼을 치는 순간 t-τ은, 반응하기 시작한 이전 입력이 t초 만큼 시간이 흘럿다는 것을 의미한다. 빨간색 그래프는, 입력량을 의미한다. – 드럼을 치는 강도 파란색은, 입력에 대한 응답이다. – 드럼의 소리가 시간에 따라 어떻게 변할지를 결정하는 함수 검은색은, 입력과 그 응답에 대한 결과이다. – 이전 드럼 입력의 현재 상태 &#43; 현재 드럼 입력의 현재 상태 0.5초는 별 의미가 없고 보기 편하게 하기 위해 그냥 응답에 대한 결과를 저 시점부터 그린다는 것이다. 1. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.">
     <meta itemprop="wordCount" content="610">
     <title>(b) Convolutionㅍㅅ드드 :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747678" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747678" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748747678" rel="stylesheet">
-    <link href="/css/theme.css?1748747678" rel="stylesheet">
-    <link href="/css/format-html.css?1748747678" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748747678" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748747678" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748747678" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748747678" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748747678" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748747678" defer></script>
-    <script src="/js/search.js?1748747678" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748014" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748014" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748748014" rel="stylesheet">
+    <link href="/css/theme.css?1748748014" rel="stylesheet">
+    <link href="/css/format-html.css?1748748014" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748748014" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748748014" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748748014" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748748014" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748748014" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748748014" defer></script>
+    <script src="/js/search.js?1748748014" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,7 +57,7 @@ $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\le
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748747678";
+      window.relearn.index_js_url="/searchindex.en.js?1748748014";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -569,8 +569,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748747678" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748747678" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748748014" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748748014" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -582,7 +582,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748747678"></script>
-    <script src="/js/theme.js?1748747678" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748748014"></script>
+    <script src="/js/theme.js?1748748014" defer></script>
   </body>
 </html>
