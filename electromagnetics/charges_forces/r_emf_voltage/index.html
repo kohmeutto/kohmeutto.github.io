@@ -25,17 +25,17 @@ EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전�
 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 움직이는 도체 때문에 발생하는 기전력을 운동 기전력(Motional EMF) 이라 한다. 이 현상을 분석하려면, 이전 챕터에서 다룬 물질 미분 개념이 필요하다.">
     <meta itemprop="wordCount" content="547">
     <title>(r) EMF &amp; Voltage :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748748136" rel="stylesheet">
-    <link href="/css/theme.css?1748748136" rel="stylesheet">
-    <link href="/css/format-html.css?1748748136" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748748136" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748748136" defer></script>
-    <script src="/js/search.js?1748748136" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748758751" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748758751" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748758751" rel="stylesheet">
+    <link href="/css/theme.css?1748758751" rel="stylesheet">
+    <link href="/css/format-html.css?1748758751" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748758751" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748758751" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748758751" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748758751" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748758751" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748758751" defer></script>
+    <script src="/js/search.js?1748758751" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@ EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전�
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748748136";
+      window.relearn.index_js_url="/searchindex.en.js?1748758751";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -198,7 +198,7 @@ V_{emf}
 =\int_2^1 d\vec{l}\cdot\vec{E}_{coil}+\int_1^2 d\vec{l}\cdot\vec{E}_{ext}
 =\int_1^2 d\vec{l}\cdot\vec{E}_{ext}
 $$<p><strong>이제 EMF와 코일 양단에 걸리는 전압($V$)의 부호 차이를 살펴보자.</strong> 회로 이론에서 코일 양단에 걸리는 <strong>전압($V$)</strong> 은 수동부호규약에 의해, 다음과 같이 정의한다.</p>
-$$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되는 <strong>전압 &lsquo;강하&rsquo;(voltage drop)</strong>, 즉 전기 에너지가 소모되면서 전위가 높은 곳에서 낮은 곳으로 떨어지는 양을 의미합니다. 마치 물이 높은 곳에서 낮은 곳으로 흐르면서 에너지를 잃는 것과 비슷하다.</p>
+$$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되는 <strong>전압 &lsquo;강하&rsquo;(voltage drop)</strong>, 즉 전기 에너지가 소모되면서 전위가 높은 곳에서 낮은 곳으로 떨어지는 양을 의미한다. 마치 물이 높은 곳에서 낮은 곳으로 흐르면서 에너지를 잃는 것과 비슷하다.</p>
 <p>하지만 <strong>유도 기전력(emf)</strong> 은 <strong>렌츠의 법칙에 따라 &lsquo;자기 선속의 변화를 방해하는 방향&rsquo;</strong> 으로 유도된다. 예를 들어, 코일에 흐르는 전류가 증가하면 코일은 그 증가를 &lsquo;막기 위해&rsquo; 반대 방향으로 EMF를 만들어낸다.</p>
 <p>따라서, $V_{emf} = -L\frac{di}{dt}$ (전류 변화를 &lsquo;방해하는&rsquo; 방향, 즉 역기전력)와 $V=L\frac{di}{dt}$ (전류 흐름에 따른 전위 &lsquo;강하&rsquo; 방향) 사이에는 <strong>정확히 부호가 반대</strong>인 관계가 생긴다.</p>
 
@@ -276,8 +276,8 @@ $$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되�
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748748136" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748748136" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748758751" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748758751" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -289,7 +289,7 @@ $$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748748136"></script>
-    <script src="/js/theme.js?1748748136" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748758751"></script>
+    <script src="/js/theme.js?1748758751" defer></script>
   </body>
 </html>
