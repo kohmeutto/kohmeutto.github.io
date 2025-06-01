@@ -5,26 +5,30 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+e9ef53522317877bc23c72c42c8307a62b209dfb">
-    <meta name="description" content="0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E’)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.
-$$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.">
+    <meta name="description" content="프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 정지 프레임 (Rest Frame / Laboratory Frame)
+의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계야. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.
+특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(r) EMF & Voltage :: 수리전자물리학">
-    <meta name="twitter:description" content="0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E’)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.
-$$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.">
-    <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html">
+    <meta name="twitter:title" content="프레임, 관점, 기술법 구분 :: 수리전자물리학">
+    <meta name="twitter:description" content="프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 정지 프레임 (Rest Frame / Laboratory Frame)
+의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계야. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.
+특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.">
+    <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/frame/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(r) EMF & Voltage :: 수리전자물리학">
-    <meta property="og:description" content="0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E’)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.
-$$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.">
+    <meta property="og:title" content="프레임, 관점, 기술법 구분 :: 수리전자물리학">
+    <meta property="og:description" content="프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 정지 프레임 (Rest Frame / Laboratory Frame)
+의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계야. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.
+특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Electromagnetics">
-    <meta itemprop="name" content="(r) EMF & Voltage :: 수리전자물리학">
-    <meta itemprop="description" content="0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E’)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.
-$$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.">
-    <meta itemprop="wordCount" content="388">
-    <title>(r) EMF &amp; Voltage :: 수리전자물리학</title>
+    <meta itemprop="name" content="프레임, 관점, 기술법 구분 :: 수리전자물리학">
+    <meta itemprop="description" content="프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 정지 프레임 (Rest Frame / Laboratory Frame)
+의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계야. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.
+특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.">
+    <meta itemprop="wordCount" content="522">
+    <title>프레임, 관점, 기술법 구분 :: 수리전자물리학</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803493" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803493" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748803493" rel="stylesheet">
     <link href="/css/theme.css?1748803493" rel="stylesheet">
@@ -40,7 +44,7 @@ $$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/electromagnetics\/charges_forces\/r_emf_voltage\/index.html';
+      window.relearn.path='\/electromagnetics\/charges_forces\/frame\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -92,7 +96,7 @@ $$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/electromagnetics/charges_forces/r_emf_voltage/index.html">
+  <body class="mobile-support html" data-url="/electromagnetics/charges_forces/frame/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -103,18 +107,7 @@ $$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-<nav class="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#0-emf--voltage-기전력과-전압-왜-부호가-다른-이유">0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유</a></li>
-        <li><a href="#1-운동-기전력만-있는-경우-변압-기전력--0">1. 운동 기전력만 있는 경우 (변압 기전력 = 0)</a></li>
-        <li><a href="#2-변압-기전력만-있는-경우-운동-기전력--0">2. 변압 기전력만 있는 경우 (운동 기전력 = 0)</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+                <div class="topbar-content-wrapper"> 
                 </div>
               </div>
             </div>
@@ -123,12 +116,12 @@ $$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/index.html"><span itemprop="name">Electromagnetics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/charges_forces/index.html"><span itemprop="name">Charges and forces</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(r) EMF &amp; Voltage</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">프레임, 관점, 기술법 구분</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/i_electromotive_force/index.html" title="(i) Electromotive force (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/index.html" title="Charges and forces (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/index.html" title="Temps (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html" title="(a) Lagrangian and Eulerian specification (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -148,53 +141,48 @@ $$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}&#43;\
   <header class="headline">
   </header>
 
-<h1 id="r-emf--voltage">(r) EMF &amp; Voltage</h1>
+<h1 id="프레임-관점-기술법-구분">프레임, 관점, 기술법 구분</h1>
 
-<hr>
-<h3 id="0-emf--voltage-기전력과-전압-왜-부호가-다른-이유">0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유</h3>
-<ul>
-<li><strong>EMF는 전압이 아니다.</strong></li>
-<li>EMF는 <strong>전압을 만들어내기 위해 단위 전하에 해 준 &lsquo;일&rsquo;</strong> 을 뜻한다. 쉽게 말해, <strong>EMF는 전위차(전압)의 &lsquo;원인&rsquo;</strong> 이다.</li>
-</ul>
-<hr>
-<h3 id="1-운동-기전력만-있는-경우-변압-기전력--0">1. 운동 기전력만 있는 경우 (변압 기전력 = 0)</h3>
-<img src="image1.png" width="80%" height="auto">
-<br>
-<p>아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E&rsquo;)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.</p>
-$$
-\oint_{C}d\vec{l}\cdot\vec{E}'=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
-$$<p>만약 <strong>주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면</strong>, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.</p>
-$$
-\oint_{C}d\vec{l}\cdot\vec{E}' = \oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
-$$<p>$\vec{v} \times \vec{B}$ 는 자기장 속에서 움직이는 전하에게 작용하는 <strong>자기력</strong>을 단위 전하당 힘으로 나타낸 것이다. 이 힘이 전하들을 도체 안에서 움직이게 해서 기전력을 만들어낸다. 전하들은 이 자기력과 막대 내부에 형성된 정전기장에 의한 힘($q\vec{E}_{\text{electrostatic}}$)이 균형을 이룰 때까지 움직인다.</p>
-<p>이제 막대 양단 N과 P 사이의 <strong>전압($V_{PN}$)</strong> 을 구해보자.</p>
-$$V_{PN} = -\int_{N}^{P}d\vec{l}\cdot\vec{E}_{electrostatic}$$<p>이 총 힘의 평형을 통해, 도체 내부에는 $\vec{E}_{\text{electrostatic}}=-\vec{v}\times\vec{B}$ 관계가 성립하는 정전기장이 존재하게 된다.</p>
-$$
-V_{PN} = -\int_{N}^{P}d\vec{l}\cdot(-\vec{v}\times\vec{B}) = \int_{N}^{P}d\vec{l}\cdot(\vec{v}\times\vec{B})
-$$<p>이 $V_{PN}$는 운동 기전력 때문에 막대 양단에 생기는 <strong>전압</strong> 이다. 운동 기전력에서는 $\int (\vec{v} \times \vec{B}) \cdot d\vec{l}$ 자체가 전하에게 해 준 &lsquo;일&rsquo;이다.</p>
-<hr>
-<h3 id="2-변압-기전력만-있는-경우-운동-기전력--0">2. 변압 기전력만 있는 경우 (운동 기전력 = 0)</h3>
-<p>이번에는 코일(도체 루프)은 움직이지 않고 가만히 있는데, 주위의 자기장이 시간에 따라 변해서 기전력이 생기는 상황을 <strong>변압 기전력(Transformer EMF)</strong> 이라 한다. 코일이 움직이지 않으니 $\vec{v}=0$이라서 운동 기전력 항은 사라진다.</p>
-<p>패러데이 유도 법칙은 다음과 같이 간단해진다.</p>
-$$
-V_{emf} = \oint_{C}d\vec{l}\cdot\vec{E}=-\frac{\partial}{\partial t}\Phi_{B}
-$$<p>인덕터(코일)의 경우, 유도 기전력은 코일을 통과하는 자기 선속($\Phi_B$)의 변화율에 비례하며, 전류 변화율과 인덕턴스 $L$로 표현할 수 있다.</p>
-$$
-N\Phi_{B} = Li
-$$$$
-V_{emf} = -\frac{\partial}{\partial t}\Phi_{B} = -L\frac{di}{dt}, \quad N=1
-$$<img src="image2.png" width="80%" height="auto">
-<p>코일을 포함하고 코일 바깥쪽을 통과하는 적분 경로를 설정하자.
-이상적인 도체(전기가 아주 잘 통하는)로 만든 코일 안에는 전기장이 0이다. 아래식의 최종 형태는, <strong>코일 외부 전기장이 전하에게 해준 일</strong> 이다.</p>
-$$
-V_{emf}
-=\oint_{C}d\vec{l}\cdot\vec{E}
-=\int_2^1 d\vec{l}\cdot\vec{E}_{coil}+\int_1^2 d\vec{l}\cdot\vec{E}_{ext}
-=\int_1^2 d\vec{l}\cdot\vec{E}_{ext}
-$$<p><strong>이제 EMF와 코일 양단에 걸리는 전압($V$)의 부호 차이를 살펴보자.</strong> 회로 이론에서 코일 양단에 걸리는 <strong>전압($V$)</strong> 은 수동부호규약에 의해, 다음과 같이 정의한다.</p>
-$$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되는 <strong>전압 &lsquo;강하&rsquo;(voltage drop)</strong>, 즉 전기 에너지가 소모되면서 전위가 높은 곳에서 낮은 곳으로 떨어지는 양을 의미한다. 마치 물이 높은 곳에서 낮은 곳으로 흐르면서 에너지를 잃는 것과 비슷하다.</p>
-<p>하지만 <strong>유도 기전력(emf)</strong> 은 <strong>렌츠의 법칙에 따라 &lsquo;자기 선속의 변화를 방해하는 방향&rsquo;</strong> 으로 유도된다. 예를 들어, 코일에 흐르는 전류가 증가하면 코일은 그 증가를 &lsquo;막기 위해&rsquo; 반대 방향으로 EMF를 만들어낸다.</p>
-<p>따라서, $V_{emf} = -L\frac{di}{dt}$ (전류 변화를 &lsquo;방해하는&rsquo; 방향, 즉 역기전력)와 $V=L\frac{di}{dt}$ (전류 흐름에 따른 전위 &lsquo;강하&rsquo; 방향) 사이에는 <strong>정확히 부호가 반대</strong>인 관계가 생긴다.</p>
+<ol>
+<li>프레임 (Frame of Reference): 관측의 &lsquo;기준계&rsquo;
+&lsquo;프레임(Frame of Reference)&lsquo;은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 &ldquo;어디서, 어떤 상태로&rdquo; 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다.</li>
+</ol>
+<p>정지 프레임 (Rest Frame / Laboratory Frame)</p>
+<p>의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계야. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.</p>
+<p>특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.</p>
+<p>예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, &lsquo;땅&rsquo;이 정지 프레임이 된다.</p>
+<p>운동 프레임 (Moving Frame)</p>
+<p>의미: 관측자가 어떤 물체나 시스템과 함께 움직이고 있다고 가정하는 기준계야. 즉, 관측자 자신이 특정 속도로 움직이거나 회전하는 등의 운동을 하고 있는 상황에서 현상을 바라보는 것이다.</p>
+<p>특징: 관측자에게 움직이는 물체는 정지해 보이거나 다르게 보일 수 있다. 상대론에서는 특히 중요한 개념이 된다.</p>
+<p>예시: 자동차 안에 앉아서 창밖으로 지나가는 풍경을 바라보는 경우, &lsquo;자동차&rsquo;가 운동 프레임이 된다.</p>
+<p>**프레임은 현상을 관측하는 &lsquo;물리적 기준&rsquo;**이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.</p>
+<ol start="2">
+<li>관점 (Viewpoint / Perspective): 현상을 &lsquo;해석하는 방식&rsquo;
+&lsquo;관점(Viewpoint)&lsquo;은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 &lsquo;기술법(Description/Formulation)&lsquo;과는 구분된다. &lsquo;관점&rsquo;은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.</li>
+</ol>
+<p>라그랑지안 관점 (Lagrangian Viewpoint)</p>
+<p>의미: 시스템을 구성하는 개별적인 &lsquo;물체(입자)&lsquo;의 운동과 그 물체가 겪는 변화에 초점을 맞추는 관점이야. 각 물체가 시간에 따라 어떤 궤적을 그리며, 그 물체의 물리량(속도, 온도, 에너지 등)이 어떻게 변하는지를 그 &lsquo;물체와 함께 움직이면서&rsquo; 이해하려는 사고방식이다.</p>
+<p>특징:</p>
+<p>&lsquo;물체 중심&rsquo;: 물리량의 변화를 해당 물체의 &lsquo;이력(history)&lsquo;과 연결하여 해석한다.</p>
+<p>에너지 기반: 물리학, 특히 역학에서 뉴턴 역학의 &lsquo;힘&rsquo; 대신 &lsquo;에너지(스칼라량)&lsquo;를 사용하여 시스템의 운동을 기술하려는 철학적 접근(최소 작용 원리 등)과도 연결된다.</p>
+<p>예시: 강물에 떠내려가는 하나의 나뭇잎을 정해놓고, 그 나뭇잎이 흘러가면서 겪는 모든 변화(위치, 속도, 회전 등)를 추적하고 분석하는 방식이다.</p>
+<p>오일러 관점 (Eulerian Viewpoint)</p>
+<p>의미: 시스템이 존재하는 &lsquo;공간의 특정 고정된 지점&rsquo;에 초점을 맞추는 관점이야. 해당 지점을 통과하는 물체들의 물리량이 시간에 따라 어떻게 변하는지를 관찰하고 해석하려는 사고방식이다.</p>
+<p>특징:</p>
+<p>&lsquo;공간 중심&rsquo;: 물리량의 변화를 &lsquo;그 공간 지점&rsquo; 자체의 특성 변화로 해석한다.</p>
+<p>장(Field) 개념: 전자기장, 유체 속도장, 온도장 등 공간에 분포하는 &lsquo;장&rsquo;의 변화를 기술하는 데 특히 유용하다.</p>
+<p>예시: 강가의 특정 교각 아래에 서서, 그 지점을 통과하는 강물의 속도, 온도, 탁도 등이 시간에 따라 어떻게 변하는지를 관찰하고 분석하는 방식이다.</p>
+<ol start="3">
+<li>프레임, 관점, 기술법의 관계 및 명확한 구분
+이 세 가지 개념은 서로 연관되어 있지만, 명확히 구분된다.</li>
+</ol>
+<p>프레임 (Frame of Reference): 현상을 어디서 (Where) 관측하는가? (관측자의 물리적 위치와 운동 상태를 나타내는 기준계)</p>
+<p>예시: 실험실 (정지 프레임), 움직이는 기차 안 (운동 프레임)</p>
+<p>관점 (Viewpoint / Perspective): 현상을 어떤 방식으로 (How to conceptually understand) 이해하고 분석할 것인가? (현상을 바라보는 사고방식이나 철학적 접근)</p>
+<p>예시: 개별 입자의 이력에 집중 (라그랑지안 관점), 공간상의 고정된 지점의 변화에 집중 (오일러 관점)</p>
+<p>기술법 (Description / Formulation): 현상을 어떤 수학적/모델링 방법으로 (How to formally describe) 표현할 것인가? (관점을 구현하기 위한 구체적인 수학적 또는 방법론적 도구)</p>
+<p>예시: 유체역학에서 개별 입자의 위치를 시간의 함수로 표현 (라그랑지안 기술법), 공간 변수와 시간 변수의 함수로 장을 표현 (오일러 기술법).</p>
+<p>핵심: &lsquo;관점&rsquo;은 현상을 이해하려는 개념적인 접근 방식이고, &lsquo;기술법&rsquo;은 그 관점을 수학적으로 구현하는 구체적인 방법론이다. 그리고 이 모든 것은 특정 &lsquo;프레임&rsquo; 안에서 이루어진다. 예를 들어, 우리는 정지 프레임에서 유체의 오일러 관점을 오일러 기술법을 사용하여 분석할 수 있</p>
 
   <footer class="footline">
   </footer>
@@ -248,11 +236,11 @@ $$V = L\frac{di}{dt}$$<p>이 $V$는 전류가 흐르는 방향으로 측정되�
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-id="/electromagnetics/charges_forces/index.html"><a class="padding" href="/electromagnetics/charges_forces/index.html">Charges and forces</a><ul id="R-subsections-be60c3e5f7aabede054d7dcd3ea0bd92" class="collapsible-menu">
-            <li class="" data-nav-id="/electromagnetics/charges_forces/frame/index.html"><a class="padding" href="/electromagnetics/charges_forces/frame/index.html">프레임, 관점, 기술법 구분</a></li>
+            <li class="active " data-nav-id="/electromagnetics/charges_forces/frame/index.html"><a class="padding" href="/electromagnetics/charges_forces/frame/index.html">프레임, 관점, 기술법 구분</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_material_derivative/index.html">(a) Material derivative</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/i_electromotive_force/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force/index.html">(i) Electromotive force</a></li>
-            <li class="active " data-nav-id="/electromagnetics/charges_forces/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/charges_forces/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/charges_forces/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
         </div>

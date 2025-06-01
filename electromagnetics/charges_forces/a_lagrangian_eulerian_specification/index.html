@@ -4,34 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+c72515a5047be372be90277e569a86bc2e13ea21">
-    <meta name="description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta name="generator" content="Relearn 7.6.1+e9ef53522317877bc23c72c42c8307a62b209dfb">
+    <meta name="description" content="1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
-    <meta name="twitter:description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta name="twitter:description" content="1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
     <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
-    <meta property="og:description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta property="og:description" content="1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Electromagnetics">
     <meta itemprop="name" content="(a) Lagrangian and Eulerian specification :: 수리전자물리학">
-    <meta itemprop="description" content="1. Lagrangian coordinate 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. 라그랑지안 좌표계(기술법)의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
+    <meta itemprop="description" content="1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \left(5,1\right)=M\left(1,5,t\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.">
     <meta itemprop="wordCount" content="292">
     <title>(a) Lagrangian and Eulerian specification :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748748136" rel="stylesheet">
-    <link href="/css/theme.css?1748748136" rel="stylesheet">
-    <link href="/css/format-html.css?1748748136" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748748136" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748748136" defer></script>
-    <script src="/js/search.js?1748748136" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803493" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803493" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748803493" rel="stylesheet">
+    <link href="/css/theme.css?1748803493" rel="stylesheet">
+    <link href="/css/format-html.css?1748803493" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748803493" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748803493" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748803493" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748803493" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748803493" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748803493" defer></script>
+    <script src="/js/search.js?1748803493" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -41,7 +41,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748748136";
+      window.relearn.index_js_url="/searchindex.en.js?1748803493";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -104,10 +104,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-lagrangian-coordinate">1. Lagrangian coordinate</a></li>
-        <li><a href="#2-라그랑지안-좌표계기술법의-사용-이유">2. 라그랑지안 좌표계(기술법)의 사용 이유</a></li>
-        <li><a href="#3-eulerian-coordinate">3. Eulerian coordinate</a></li>
-        <li><a href="#4-두-좌표계기술법-차이를-이해">4. 두 좌표계(기술법) 차이를 이해</a></li>
+        <li><a href="#1-lagrangian-specification">1. Lagrangian specification</a></li>
+        <li><a href="#2-lagrangian-specification의-사용-이유">2. Lagrangian specification의 사용 이유</a></li>
+        <li><a href="#3-eulerian-specification">3. Eulerian specification</a></li>
+        <li><a href="#4-두-기술법의-차이를-이해">4. 두 기술법의 차이를 이해</a></li>
       </ul>
     </li>
   </ul>
@@ -123,7 +123,7 @@
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Lagrangian and Eulerian specification</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/index.html" title="Charges and forces (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/frame/index.html" title="프레임, 관점, 기술법 구분 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_material_derivative/index.html" title="(a) Material derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -150,7 +150,7 @@
 <hr>
 <img src="image1.png" width="60%" height="auto">
 <hr>
-<h3 id="1-lagrangian-coordinate">1. Lagrangian coordinate</h3>
+<h3 id="1-lagrangian-specification">1. Lagrangian specification</h3>
 <ul>
 <li>라그랑지 좌표계는 <strong>물체를 따라가면서 기술하는 좌표계</strong>이다.</li>
 <li>중요한 것은 <strong>시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술</strong>한다는 점</li>
@@ -164,21 +164,21 @@ $$<ul>
 물론 시간이 지난 후, 나중 위치를 함수 <em>r</em> 로 확인할 수 있지만, <strong>라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자.</strong></li>
 </ul>
 <hr>
-<h3 id="2-라그랑지안-좌표계기술법의-사용-이유">2. 라그랑지안 좌표계(기술법)의 사용 이유</h3>
+<h3 id="2-lagrangian-specification의-사용-이유">2. Lagrangian specification의 사용 이유</h3>
 <p>&ldquo;그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.</p>
 <p>예를 들어, 무수히 많은 입자들의 변위(displacement, 위치의 변화)는 아래와 같이 구할 수 있다.</p>
 $$
 M\left(x_0,y_0,t\right)-\left(x_0,y_0\right)
 $$<p>$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 초기위치이다. 즉, 초기위치와 시간의 함수로써 구할 수 있다.</p>
 <hr>
-<h3 id="3-eulerian-coordinate">3. Eulerian coordinate</h3>
+<h3 id="3-eulerian-specification">3. Eulerian specification</h3>
 <ul>
 <li>오일러 좌표계는 물체보다는 <strong>고정된 위치를 중요시하는 좌표계</strong></li>
 <li>이러한 좌표기술 방법은 물체 하나하나를 따라가는 것보다 <strong>특정 위치에서의 물성을 중요시하는 분야</strong>에서 주로 사용</li>
 </ul>
 <p>예를 들어, 위에서 위치 (5,1)에 초기에는 물체 B가 있고 시간 <em>t</em>에서는 물체 A가 있다고 하자. 속도의 관점에서 말하면,  초기에 위치 (5,1)의 속도는 물체 B의 속도이며, 시간 <em>t</em>에서의 속도는 물체 A의 속도이다. <strong>이게 바로 오일러 기술 방식이다.</strong></p>
 <hr>
-<h3 id="4-두-좌표계기술법-차이를-이해">4. 두 좌표계(기술법) 차이를 이해</h3>
+<h3 id="4-두-기술법의-차이를-이해">4. 두 기술법의 차이를 이해</h3>
 <ul>
 <li>
 <p>$v_L(x_0, y_0, t)$가 <strong>라그랑지안 관점</strong>에서 기술된 좌표계에 의한 것이라면, 이는 초기좌표가 $x_0$와 $y_0$였던 물질이 시간 $t$가 지난 후에 위치한 지점에서의 속도를 의미한다.</p>
@@ -243,6 +243,7 @@ $$<p>$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 �
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-id="/electromagnetics/charges_forces/index.html"><a class="padding" href="/electromagnetics/charges_forces/index.html">Charges and forces</a><ul id="R-subsections-be60c3e5f7aabede054d7dcd3ea0bd92" class="collapsible-menu">
+            <li class="" data-nav-id="/electromagnetics/charges_forces/frame/index.html"><a class="padding" href="/electromagnetics/charges_forces/frame/index.html">프레임, 관점, 기술법 구분</a></li>
             <li class="active " data-nav-id="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_material_derivative/index.html">(a) Material derivative</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/i_electromotive_force/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force/index.html">(i) Electromotive force</a></li>
@@ -265,8 +266,8 @@ $$<p>$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 �
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748748136" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748748136" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748803493" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748803493" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -278,7 +279,7 @@ $$<p>$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 �
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748748136"></script>
-    <script src="/js/theme.js?1748748136" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748803493"></script>
+    <script src="/js/theme.js?1748803493" defer></script>
   </body>
 </html>

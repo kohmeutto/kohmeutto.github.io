@@ -29,17 +29,17 @@ $$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial 
 $$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$sol1$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)&#43;\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)&#43;\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}&#43;\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}&#43;\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$example2) Consider">
     <meta itemprop="wordCount" content="491">
     <title>(a) Laplace transform :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748748136" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748748136" rel="stylesheet">
-    <link href="/css/theme.css?1748748136" rel="stylesheet">
-    <link href="/css/format-html.css?1748748136" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748748136" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748748136" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748748136" defer></script>
-    <script src="/js/search.js?1748748136" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748798220" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748798220" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748798220" rel="stylesheet">
+    <link href="/css/theme.css?1748798220" rel="stylesheet">
+    <link href="/css/format-html.css?1748798220" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748798220" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748798220" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748798220" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748798220" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748798220" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748798220" defer></script>
+    <script src="/js/search.js?1748798220" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ $$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial 
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748748136";
+      window.relearn.index_js_url="/searchindex.en.js?1748798220";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -619,8 +619,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748748136" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748748136" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748798220" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748798220" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -632,7 +632,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748748136"></script>
-    <script src="/js/theme.js?1748748136" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748798220"></script>
+    <script src="/js/theme.js?1748798220" defer></script>
   </body>
 </html>
