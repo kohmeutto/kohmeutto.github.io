@@ -121,7 +121,7 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/i_emf/index.html</loc>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/i_linearity/index.html</loc>

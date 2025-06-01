@@ -25,17 +25,17 @@
 0. 정리 데카르트 → 원통, 원통 → 구 $$ M_{CD}=\begin{bmatrix} \cos\phi &amp; \sin\phi &amp; 0 \\ -\sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}, \quad M_{CS}=\begin{bmatrix} \sin\theta &amp; 0 &amp; \cos\theta \\ \cos\theta &amp; 0 &amp; -\sin\theta \\ 0 &amp; 1 &amp; 0 \end{bmatrix} $$ 원통 → 데카르트, 구 → 원통 $$ M_{DC}=\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad M_{CS}=\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} &#43;u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} &#43;u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} &#43;v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} &#43;v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.">
     <meta itemprop="wordCount" content="771">
     <title>(b) Tensor components transformation II :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748658486" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748658486" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748658486" rel="stylesheet">
-    <link href="/css/theme.css?1748658486" rel="stylesheet">
-    <link href="/css/format-html.css?1748658486" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748658486" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748658486" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748658486" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748658486" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748658486" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748658486" defer></script>
-    <script src="/js/search.js?1748658486" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747678" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747678" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748747678" rel="stylesheet">
+    <link href="/css/theme.css?1748747678" rel="stylesheet">
+    <link href="/css/format-html.css?1748747678" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748747678" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748747678" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748747678" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748747678" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748747678" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748747678" defer></script>
+    <script src="/js/search.js?1748747678" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748658486";
+      window.relearn.index_js_url="/searchindex.en.js?1748747678";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -514,8 +514,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748658486" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748658486" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748747678" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748747678" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -527,7 +527,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748658486"></script>
-    <script src="/js/theme.js?1748658486" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748747678"></script>
+    <script src="/js/theme.js?1748747678" defer></script>
   </body>
 </html>

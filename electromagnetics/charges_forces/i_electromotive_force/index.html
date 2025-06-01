@@ -23,19 +23,19 @@
     <meta itemprop="name" content="(i) Electromotive force :: 수리전자물리학">
     <meta itemprop="description" content="0. 논의의 제약조건 이 글에서는 자기장 내에서 움직이는 물체와 기전력(Electromotive Force, EMF)의 관계를 설명한다. 설명을 명확히 하기 위해 몇 가지 제약 조건을 둔다.
 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
-    <meta itemprop="wordCount" content="547">
+    <meta itemprop="wordCount" content="722">
     <title>(i) Electromotive force :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748685403" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748685403" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748685403" rel="stylesheet">
-    <link href="/css/theme.css?1748685403" rel="stylesheet">
-    <link href="/css/format-html.css?1748685403" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748685403" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748685403" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748685403" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748685403" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748685403" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748685403" defer></script>
-    <script src="/js/search.js?1748685403" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747764" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748747764" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748747764" rel="stylesheet">
+    <link href="/css/theme.css?1748747764" rel="stylesheet">
+    <link href="/css/format-html.css?1748747764" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748747764" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748747764" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748747764" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748747764" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748747764" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748747764" defer></script>
+    <script src="/js/search.js?1748747764" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748685403";
+      window.relearn.index_js_url="/searchindex.en.js?1748747764";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -112,6 +112,7 @@
         <li><a href="#1-구하고자-하는-것">1. 구하고자 하는 것</a></li>
         <li><a href="#2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</a></li>
         <li><a href="#3-기전력과-힘의-유도-물질-미분의-핵심-역할">3. 기전력과 힘의 유도: 물질 미분의 핵심 역할</a></li>
+        <li><a href="#4-practice">4. Practice</a></li>
       </ul>
     </li>
   </ul>
@@ -227,6 +228,84 @@ $$<p>만약 외부 전기장 E가 없고 원천 자기장의 변화가 없다면
 $$
 \vec{F}=q\vec{v}\times\vec{B}
 $$<hr>
+<h3 id="4-practice">4. Practice</h3>
+<p><strong>example1)</strong> The wire shown in Fig. is in free space and carries a current I = 10 [A]. A 30-cm-long metal rod moves at a
+constant velocity $\vec{v}=\hat{z}3$ [m/s]. Find $V_{12}$</p>
+<img src="image1.png" width="40%" height="auto">
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\vec{B}=\hat{\rho}\frac{\mu I}{2\pi\rho}
+$$
+
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+$$
+V_{12}=\int_{2'}^{1'} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
+=-\int_{2'}^{1'} d\rho\left[v\cdot\frac{\mu I}{2\pi\rho}\right]
+=-\frac{15\mu}{\pi}\int_{0.4}^{0.1} d\rho\left[\frac{1}{\rho}\right]
+=\frac{15\mu}{\pi}\ln4
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example2)</strong> The rectangular loop shown in Fig. has a constant width l, but its length $x_0$ increases with time as a conducting bar slides at a uniform velocity u in a static magnetic field $B=\hat{z}B_0x$. Note that B increases linearly with x. The bar starts from x = 0 at t = 0. Find the motional emf between terminals 1 and 2 and the current I flowing through the resistor R. Assume that the loop resistance is ignored.</p>
+<img src="image2.png" width="60%" height="auto">
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol1
+  </summary>
+  <div class="box-content">
+<p>
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+<br><br>
+
+$$
+V_{emf}=\int_{3'}^{4'} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
+=-\int_{3'}^{4'} dy\left[v\cdot B_0x\right]
+=-lB_0vx
+=-lB_0v^2t
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol2
+  </summary>
+  <div class="box-content">
+<p>
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+<br><br>
+
+$$
+V_{emf}
+=-\frac{d\Phi_B}{dt}
+=-\frac{d}{dt}\int_{s'} d^2\vec{s}\cdot\vec{B}
+=-\frac{d}{dt}\int_{0}^{l}dy\int_{0}^{x}dx'[B_0x']
+$$
+
+$$
+=-l\frac{d}{dt}\left(\frac{B_0x^2}{2}\right)
+=-lB_0v^2t
+$$
+  </div>
+</details>
+<hr>
 <p><a href="https://ghebook.blogspot.com/2010/08/faradays-law-of-electromagnetic.html" rel="external" target="_blank">조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faraday&rsquo;s Law of Electromagnetic Induction)</a></p>
 <p><a href="https://steemit.com/kr-math/@beoped/5jyraq-2" rel="external" target="_blank">[수학, 계산] 벡터 항등식-2탄 계산 — Steemit</a></p>
 
@@ -304,8 +383,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748685403" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748685403" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748747764" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748747764" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -317,7 +396,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748685403"></script>
-    <script src="/js/theme.js?1748685403" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748747764"></script>
+    <script src="/js/theme.js?1748747764" defer></script>
   </body>
 </html>

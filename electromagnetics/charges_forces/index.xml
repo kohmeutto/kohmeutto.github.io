@@ -33,7 +33,7 @@
       <link>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</guid>
-      <description></description>
+      <description>0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 많은 학생이 기전력(Electromotive Force, EMF) 과 전압(Voltage) 의 부호가 왜 반대로 설정되는지 궁금해한다. 이 챕터는 이 질문에 대한 명확한 답을 제시하고, 두 개념의 핵심적인 차이를 명확히 이해하도록 돕는다.&#xA;EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 움직이는 도체 때문에 발생하는 기전력을 운동 기전력(Motional EMF) 이라 한다. 이 현상을 분석하려면, 이전 챕터에서 다룬 물질 미분 개념이 필요하다.</description>
     </item>
   </channel>
 </rss>
