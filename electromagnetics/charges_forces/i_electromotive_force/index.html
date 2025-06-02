@@ -23,19 +23,19 @@
     <meta itemprop="name" content="(i) Electromotive force :: 수리전자물리학">
     <meta itemprop="description" content="0. 논의의 제약조건 이 글에서는 자기장 내에서 움직이는 물체와 기전력(Electromotive Force, EMF)의 관계를 설명한다. 설명을 명확히 하기 위해 몇 가지 제약 조건을 둔다.
 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
-    <meta itemprop="wordCount" content="723">
+    <meta itemprop="wordCount" content="724">
     <title>(i) Electromotive force :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803522" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748803522" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748803522" rel="stylesheet">
-    <link href="/css/theme.css?1748803522" rel="stylesheet">
-    <link href="/css/format-html.css?1748803522" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748803522" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748803522" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748803522" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748803522" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748803522" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748803522" defer></script>
-    <script src="/js/search.js?1748803522" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748831192" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748831192" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748831192" rel="stylesheet">
+    <link href="/css/theme.css?1748831192" rel="stylesheet">
+    <link href="/css/format-html.css?1748831192" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748831192" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748831192" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748831192" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748831192" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748831192" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748831192" defer></script>
+    <script src="/js/search.js?1748831192" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748803522";
+      window.relearn.index_js_url="/searchindex.en.js?1748831192";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -167,12 +167,12 @@
 <li><strong>움직이는 하전 입자에 작용하는 힘</strong>: 자기장 속에서 움직이는 전하가 어떤 힘을 받는지.</li>
 <li><strong>변압 기전력 및 운동 기전력</strong> : 이러한 힘이 어떻게 전기적인 압력(기전력)을 유도하는지.</li>
 </ul>
-<p><strong>&lsquo;힘(Force)&lsquo;은 언제나 특정 &lsquo;물체(입자)&lsquo;에 작용하는 것</strong>이다. 따라서, 이러한 현상을 분석하기 위해서는 물체의 움직임을 따라가는 <strong>라그랑지안 관점이 직관적으로 적합</strong>하다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일러 관점의 기술법이 필요하다.</p>
+<p><strong>&lsquo;힘(Force)&lsquo;은 언제나 특정 &lsquo;물체(입자)&lsquo;에 작용하는 것</strong>이다. 따라서, 이러한 현상을 분석하기 위해서는 물체의 움직임을 따라가는 <strong>운동 프레임에서 라그랑지안 관점이 직관적으로 적합</strong>하다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일러 관점의 기술법이 필요하다.</p>
 <p>이러한 이유로 우리는 라그랑주적 본질(입자가 겪는 변화)을 오일러적 기술법(공간 변수로 표현)으로 바꾸어주는 <strong>물질 미분</strong> 개념을 활용하여 이 현상을 분석한다.</p>
 <hr>
 <h3 id="2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</h3>
 <p>우리가 일반적으로 아는 맥스웰 방정식은 정지한 관성계(실험실 프레임)에서 전자기장 E와 B의 시간적, 공간적 변화를 기술한다. 여기에 나오는 시간 미분(∂/∂t)은 고정된 지점에서의 장 자체의 변화율을 의미한다.</p>
-<p>하지만,  <strong>전하(또는 도체)와 함께 움직이는 관측자의 관점에서 보면(운동프레임+라그랑지안 관점), 장의 방정식은 다르게 보인다</strong>. 이 움직이는 관측자는 자신에게 정지해 있는 전하가 자기장 내에서 자기력을 받지 않는다고 생각한다. 대신, 상대적인 움직임으로 인해 전기장과 자기장이 서로 혼합되어 새로운 형태의 장(E′,H′ )을 경험하게 된다.</p>
+<p>하지만,  <strong>전하(또는 도체)와 함께 움직이는 관측자의 관점에서 보면(운동프레임+라그랑지안 관점), 장의 방정식은 다르게 보인다</strong>. 이 움직이는 관측자는 자신에게 정지해 있는 전하가 자기장 내에서 자기력을 받지 않는다고 생각한다. 대신, 상대적인 움직임으로 인해 전기장과 자기장이 서로 혼합되어 새로운 형태의 장(E′,H′)을 경험하게 된다.</p>
 <ul>
 <li>E&rsquo;은 움직이는 전하(물질)가 자신의 프레임에서 느끼는 유효 전기장이다.</li>
 <li>H&rsquo;은 움직이는 전하(물질)가 자신의 프레임에서 느끼는 유효 자기장이다.</li>
@@ -384,8 +384,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748803522" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748803522" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748831192" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748831192" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -397,7 +397,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748803522"></script>
-    <script src="/js/theme.js?1748803522" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748831192"></script>
+    <script src="/js/theme.js?1748831192" defer></script>
   </body>
 </html>

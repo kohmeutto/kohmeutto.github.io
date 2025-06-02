@@ -4,9 +4,6 @@
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
@@ -55,7 +52,10 @@
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</loc>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/frame/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operator_generator/index.html</loc>
@@ -106,6 +106,9 @@
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operators_in_quantum_mechanics/index.html</loc>
   </url>
   <url>
@@ -119,9 +122,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/i_linearity/index.html</loc>
@@ -160,6 +160,9 @@
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_ii/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</loc>
   </url>
   <url>
@@ -170,9 +173,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/q_linearity_for_circuits/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
@@ -203,6 +203,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/lti/index.html</loc>
