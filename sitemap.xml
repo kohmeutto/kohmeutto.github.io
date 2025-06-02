@@ -187,6 +187,9 @@
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_iii/index.html</loc>
   </url>
   <url>
@@ -197,9 +200,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_diffusion_equation_for_periodic_boundary_condition/index.html</loc>

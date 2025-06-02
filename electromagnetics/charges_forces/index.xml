@@ -3,7 +3,7 @@
   <channel>
     <title>Charges and forces :: 수리전자물리학</title>
     <link>http://localhost:1313/electromagnetics/charges_forces/index.html</link>
-    <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(i) Electromotive force II&#xD;(r) EMF &amp; Voltage</description>
+    <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(a) Electromotive force II&#xD;(r) EMF &amp; Voltage</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/electromagnetics/charges_forces/index.xml" rel="self" type="application/rss+xml" />
@@ -36,10 +36,10 @@
       <description>움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
     </item>
     <item>
-      <title>(i) Electromotive force II</title>
-      <link>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</link>
+      <title>(a) Electromotive force II</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</guid>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html</guid>
       <description>움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
     </item>
     <item>

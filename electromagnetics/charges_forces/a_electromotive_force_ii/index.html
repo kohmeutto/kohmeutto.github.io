@@ -5,30 +5,26 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+e9ef53522317877bc23c72c42c8307a62b209dfb">
-    <meta name="description" content="움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
-움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.
+    <meta name="description" content="움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
 0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(i) Electromotive force I :: 수리전자물리학">
-    <meta name="twitter:description" content="움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
-움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.
+    <meta name="twitter:title" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta name="twitter:description" content="움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
 0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
-    <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_i/index.html">
+    <meta property="og:url" content="http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(i) Electromotive force I :: 수리전자물리학">
-    <meta property="og:description" content="움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
-움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.
+    <meta property="og:title" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta property="og:description" content="움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
 0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Electromagnetics">
-    <meta itemprop="name" content="(i) Electromotive force I :: 수리전자물리학">
-    <meta itemprop="description" content="움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
-움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.
+    <meta itemprop="name" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta itemprop="description" content="움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.
 0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
-    <meta itemprop="wordCount" content="636">
-    <title>(i) Electromotive force I :: 수리전자물리학</title>
+    <meta itemprop="wordCount" content="598">
+    <title>(a) Electromotive force II :: 수리전자물리학</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748878460" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748878460" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748878460" rel="stylesheet">
     <link href="/css/theme.css?1748878460" rel="stylesheet">
@@ -44,7 +40,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/electromagnetics\/charges_forces\/i_electromotive_force_i\/index.html';
+      window.relearn.path='\/electromagnetics\/charges_forces\/a_electromotive_force_ii\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -96,7 +92,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/electromagnetics/charges_forces/i_electromotive_force_i/index.html">
+  <body class="mobile-support html" data-url="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -114,9 +110,9 @@
       <ul>
         <li><a href="#0-논의의-제약조건">0. 논의의 제약조건</a></li>
         <li><a href="#1-구하고자-하는-것">1. 구하고자 하는 것</a></li>
-        <li><a href="#2-맥스웰-방정식과-물질-미분-정지-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 정지 관측자의 시선</a></li>
-        <li><a href="#3-기전력의-유도-물질-미분의-핵심-역할">3. 기전력의 유도: 물질 미분의 핵심 역할</a></li>
-        <li><a href="#4-practice">4. Practice</a></li>
+        <li><a href="#2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</a></li>
+        <li><a href="#3-기전력과-힘의-유도-물질-미분의-핵심-역할">3. 기전력과 힘의 유도: 물질 미분의 핵심 역할</a></li>
+        <li><a href="#4-로렌츠-힘-정지-프레임과의-연결">4. 로렌츠 힘: 정지 프레임과의 연결</a></li>
       </ul>
     </li>
   </ul>
@@ -129,12 +125,12 @@
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/index.html"><span itemprop="name">Electromagnetics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/charges_forces/index.html"><span itemprop="name">Charges and forces</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) Electromotive force I</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Electromotive force II</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_material_derivative/index.html" title="(a) Material derivative (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/i_electromotive_force_i/index.html" title="(i) Electromotive force I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html" title="(a) Electromotive force II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/r_emf_voltage/index.html" title="(r) EMF & Voltage (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -154,11 +150,10 @@
   <header class="headline">
   </header>
 
-<h1 id="i-electromotive-force-i">(i) Electromotive force I</h1>
+<h1 id="a-electromotive-force-ii">(a) Electromotive force II</h1>
 
 <hr>
-<p>움직이는 물체를 <strong>정지프레임에서 라그랑지안 관점</strong>으로 <strong>정지프레임에서 오일리안 기술법</strong>으로 표현한 것이다.</p>
-<p>움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.</p>
+<p>움직이는 물체를 <strong>운동프레임에서 라그랑지안 관점</strong>으로 <strong>정지프레임에서 오일리안 기술법</strong>으로 표현한 것이다.</p>
 <hr>
 <h3 id="0-논의의-제약조건">0. 논의의 제약조건</h3>
 <ul>
@@ -173,27 +168,26 @@
 <li><strong>움직이는 하전 입자에 작용하는 힘</strong>: 자기장 속에서 움직이는 전하가 어떤 힘을 받는지.</li>
 <li><strong>변압 기전력 및 운동 기전력</strong> : 이러한 힘이 어떻게 전기적인 압력(기전력)을 유도하는지.</li>
 </ul>
-<p><strong>힘(Force)은 언제나 특정 물체(입자)에 작용하는 것</strong>이다. 여기에서는 <strong>정지 프레임에서 라그랑지안 관점을 사용</strong>한다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일리안 기술법이 필요하다.</p>
+<p><strong>&lsquo;힘(Force)&lsquo;은 언제나 특정 &lsquo;물체(입자)&lsquo;에 작용하는 것</strong>이다. 따라서, 이러한 현상을 분석하기 위해서는 물체의 움직임을 따라가는 <strong>운동 프레임에서 라그랑지안 관점을 적용</strong>한다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일리안 관점의 기술법이 필요하다.</p>
 <p>이러한 이유로 우리는 라그랑주적 본질(입자가 겪는 변화)을 오일러적 기술법(공간 변수로 표현)으로 바꾸어주는 <strong>물질 미분</strong> 개념을 활용하여 이 현상을 분석한다.</p>
 <hr>
-<h3 id="2-맥스웰-방정식과-물질-미분-정지-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 정지 관측자의 시선</h3>
-<p>우리가 일반적으로 아는 맥스웰 방정식은 정지한 관성계(실험실 프레임)에서 전자기장 E와 B의 시간적, 공간적 변화를 기술한다. 여기에 나오는 시간 미분(∂/∂t)은 고정된 지점에서의 장 자체의 변화율을 의미한다. <strong>정지 관측자는 움직이는 전하가 자기장 내에서 자기력을 받는것으로 관측(매우중요)</strong> 한다. <strong>여기서의 v는 물체의 속도</strong>를 의미한다.</p>
+<h3 id="2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</h3>
+<p>우리가 일반적으로 아는 맥스웰 방정식은 정지한 관성계(실험실 프레임)에서 전자기장 E와 B의 시간적, 공간적 변화를 기술한다. 여기에 나오는 시간 미분(∂/∂t)은 고정된 지점에서의 장 자체의 변화율을 의미한다.</p>
+<p>하지만,  <strong>전하(또는 도체)와 함께 움직이는 관측자의 관점에서 보면(운동프레임+라그랑지안 관점), 장의 방정식은 다르게 보인다</strong>. 이 움직이는 관측자는 자신에게 정지해 있는 전하가 자기장 내에서 <strong>자기력을 받지 않는것으로 관측(매우 중요)</strong> 한다. 대신, 상대적인 움직임으로 인해 전기장과 자기장이 서로 혼합되어 새로운 형태의 장(E′,H′)을 경험하게 된다. <strong>여기서의 v는 운동 프레임의 속도</strong>를 의미한다.</p>
 <ul>
-<li>E은 정지 프레임에서 측정되는 전기장이다.</li>
-<li>H은 정지 프레임에서 측정되는 자기장이다.</li>
-<li>J은 정지 프레임이서 측정되는 전류밀도이다.</li>
+<li>E&rsquo;은 운동 프레임에서 측정되는 전기장이다.</li>
+<li>H&rsquo;은 운동 프레임에서 측정되는 자기장이다.</li>
+<li>J&rsquo;은 운동 프레임이서 측정되는 전류밀도이다.</li>
 </ul>
 $$
-\nabla\times\vec{E}
-=-\frac{d}{dt}\vec{B}=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}
+\nabla\times\vec{E}'=-\frac{d}{dt}\vec{B}'=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}'
 $$$$
-\nabla\times\vec{H}
-=\vec{J}+\frac{d}{dt}\vec{D}=\vec{J}+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}
+\nabla\times\vec{H}'=\vec{J}'+\frac{d}{dt}\vec{D}'=\vec{J}'+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}'
 $$<hr>
-<h3 id="3-기전력의-유도-물질-미분의-핵심-역할">3. 기전력의 유도: 물질 미분의 핵심 역할</h3>
-<p>비상대론적 근사를 사용한다.</p>
+<h3 id="3-기전력과-힘의-유도-물질-미분의-핵심-역할">3. 기전력과 힘의 유도: 물질 미분의 핵심 역할</h3>
+<p>이제 움직이는 관측자가 느끼는 패러데이의 유도 법칙에서 출발하여, 유효 전기장 E′이 정지 관성계의 장 E 및 B와 어떤 관계를 가지는지 유도해 보자. (비상대론적 근사에서 B′≈B로 가정한다.)</p>
 $$
-\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}-\vec{v}\cdot\nabla\vec{B}
+\nabla\times\vec{E}'=-\frac{\partial\vec{B}}{\partial t}-\vec{v}\cdot\nabla\vec{B}
 $$<p>아래와 같은 벡터 항등식을 이용한다.</p>
 $$
 \nabla\times\vec{v}\times\vec{B}=\vec{v}\left(\nabla\cdot\vec{B}\right)-\vec{B}\left(\nabla\cdot\vec{v}\right)+\left(\vec{B}\cdot\nabla\right)\vec{v}-\left(\vec{v}\cdot\nabla\right)\vec{B}
@@ -205,108 +199,43 @@ $$
 \nabla\times\vec{v}\times\vec{B}=-\left(\vec{v}\cdot\nabla\right)\vec{B}
 $$<p>따라서, 식은 다음과 같이 바꿀 수 있다.</p>
 $$
-\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}+\nabla\times\vec{v}\times\vec{B}
+\nabla\times\vec{E}'=-\frac{\partial\vec{B}}{\partial t}+\nabla\times\vec{v}\times\vec{B}
 $$<p>Stoke’s theorem 을 사용한다.</p>
 $$
-\int_{s}d^2\vec{s}\cdot\nabla\times\vec{E}=-\frac{\partial}{\partial t}\int_{s}d^2\vec{s}\cdot\vec{B}+\int_{s}d^2\vec{s}\cdot\nabla\times\vec{v}\times\vec{B}
+\int_{s'}d^2\vec{s}\cdot\nabla\times\vec{E}'=-\frac{\partial}{\partial t}\int_{s'}d^2\vec{s}\cdot\vec{B}+\int_{s'}d^2\vec{s}\cdot\nabla\times\vec{v}\times\vec{B}
 $$$$
-\oint_{C}d\vec{l}\cdot\vec{E}=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
+\oint_{C}d\vec{l}\cdot\vec{E}'=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
 $$<p>이 최종 기전력 식은 두 가지 주요 항으로 나눌 수 있다.</p>
 <p><strong>(1) 원천 자기장의 변화에 의한 변압 기전력</strong></p>
 $$
--\frac{\partial}{\partial t}\Phi_{B}
-=\oint_{C}d\vec{l}\cdot\vec{E}_{ind}
-$$<p>이 항은 원천 자기장 B자체가 시간에 따라 변함으로써 유도되는 기전력이다. <strong>여기서 E는 자기장 변화에 의해 유도되는 전기장</strong>이다.</p>
+-\frac{\partial}{\partial t}\Phi_{B}=\oint_{C}d\vec{l}\cdot\vec{E}
+$$<p>이 항은 원천 자기장 B자체가 시간에 따라 변함으로써 유도되는 기전력이다. <strong>여기서 E는 자기장 변화에 의해 정지 관성계에서 유도되는 전기장</strong>이다.</p>
 <p><strong>(2) 외부 움직이는 요소에 의한 운동 기전력</strong></p>
 $$
 \oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
-$$<p>이 항은 외부에서 움직이는 도체(루프 C)가 자기장 B를 가로지르면서 생기는 기전력이다. 이는 물질(도체)의 움직임(v)에 따른 이류(convection) 효과를 직접적으로 나타낸다.</p>
-<p>위의 두 항을 종합하면, 전기장 E에 대한 기전력은 다음과 같이 표현된다.</p>
+$$<p>이 항은 외부에서 움직이는 도체(루프 C)가 자기장 B를 가로지르면서 생기는 기전력이다. 이는 물질(도체)의 움직임(v)에 따른 &lsquo;이류(convection)&rsquo; 효과를 직접적으로 나타낸다.</p>
+<p>위의 두 항을 종합하면, 움직이는 입자가 느끼는 유효 전기장 E′에 대한 기전력은 다음과 같이 표현된다.</p>
 $$
-\oint_{C}d\vec{l}\cdot\vec{E}=\oint_{C}d\vec{l}\cdot\left(\vec{E}_{ind}+\vec{v}\times\vec{B}\right)
-$$<p>이 식은 적분 영역이 동일하므로, 피적분 함수를 비교하여 전기장 E는 다음과 같이 표현됨을 알 수 있다.</p>
+\oint_{C}d\vec{l}\cdot\vec{E}'=\oint_{C}d\vec{l}\cdot\left(\vec{E}+\vec{v}\times\vec{B}\right)
+$$<p>이 식은 적분 영역이 동일하므로, 피적분 함수를 비교하여 움직이는 입자가 느끼는 유효 전기장 E′은 다음과 같이 표현됨을 알 수 있다.</p>
 $$
-\vec{E}=\vec{E}_{ind}+\vec{v}\times\vec{B}
+\vec{E}'=\vec{E}+\vec{v}\times\vec{B}
+$$<p>이 식이 의미하는 바를 명확하게 해야한다. 이것은 이전 챕터와의 차이점을 나타내는 것이다. 이전 챕터(정지프레임)는 $\vec{v}\times\vec{B}$ 가 힘의 형태로 나타난 것이다. 그러나, <strong>운동프레임에서는 $\vec{v}\times\vec{B}$ 이 힘의 형태로 나타나는 것이 아니라, 유효 전기장의 일부인 것</strong> 이다. 앞서 서술한 바와 같이 운동프레임에서는 전하가 정지한 것으로 보이므로, <strong>자기력은 0</strong> 이라는 점을 상기한다.</p>
+<hr>
+<h3 id="4-로렌츠-힘-정지-프레임과의-연결">4. 로렌츠 힘: 정지 프레임과의 연결</h3>
+<p>다시 아래식을 살펴보자.</p>
+$$
+\vec{E}'=\vec{E}+\vec{v}\times\vec{B}
+$$<p><strong>이것이 바로 로렌츠 힘(Lorentz Force)의 핵심을 이룬다.</strong> 양변에 전하량을 곱하면, 힘을 구할 수 있다. 또한 상대성 원리(<a href="https://namu.wiki/w/%EC%83%81%EB%8C%80%EC%84%B1%20%EC%9B%90%EB%A6%AC(%EB%AC%BC%EB%A6%AC%ED%95%99)" rel="external" target="_blank">상대성 원리</a>), 에 의해 관성계에서 작용하는 힘은 동일해야 한다.</p>
+$$
+\vec{F}'=\vec{F}=q\vec{E}'
+$$$$
+\vec{F}=q\left(\vec{E}+\vec{v}\times\vec{B}\right)
+$$<p>만약 외부 전기장 E가 없고 원천 자기장의 변화가 없다면(∂B/∂t=0), 즉 정적인 자기장(B)만 존재한다면, 자기장에 의해서 움직이는 입자에 작용하는 힘은 다음과 같이 자기력 항만 남게 된다.</p>
+$$
+\vec{F}=q\vec{v}\times\vec{B}
 $$<hr>
-<h3 id="4-practice">4. Practice</h3>
-<p><strong>example1)</strong> The wire shown in Fig. is in free space and carries a current I = 10 [A]. A 30-cm-long metal rod moves at a
-constant velocity $\vec{v}=\hat{z}3$ [m/s]. Find $V_{12}$</p>
-<img src="image1.png" width="40%" height="auto">
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\vec{B}=\hat{\phi}\frac{\mu I}{2\pi\rho}
-$$
-
-움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
-
-$$
-V_{12}=\int_{2}^{1} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
-=-\int_{2}^{1} d\rho\left[v\cdot\frac{\mu I}{2\pi\rho}\right]
-=-\frac{15\mu}{\pi}\int_{0.4}^{0.1} d\rho\left[\frac{1}{\rho}\right]
-=\frac{15\mu}{\pi}\ln4
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>example2)</strong> The rectangular loop shown in Fig. has a constant width l, but its length $x_0$ increases with time as a conducting bar slides at a uniform velocity u in a static magnetic field $B=\hat{z}B_0x$. Note that B increases linearly with x. The bar starts from x = 0 at t = 0. Find the motional emf between terminals 1 and 2 and the current I flowing through the resistor R. Assume that the loop resistance is ignored.</p>
-<img src="image2.png" width="60%" height="auto">
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol1
-  </summary>
-  <div class="box-content">
-<p>
-움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
-
-<br><br>
-
-$$
-V_{emf}=\int_{3}^{4} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
-=-\int_{3}^{4} dy\left[v\cdot B_0x\right]
-=-lB_0vx
-=-lB_0v^2t
-$$
-
-<hr>
-  </div>
-</details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol2
-  </summary>
-  <div class="box-content">
-<p>
-움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
-
-<br><br>
-
-$$
-V_{emf}
-=-\frac{d\Phi_B}{dt}
-=-\frac{d}{dt}\int_{s} d^2\vec{s}\cdot\vec{B}
-=-\frac{d}{dt}\int_{0}^{l}dy\int_{0}^{x}dx[B_0x]
-$$
-
-$$
-=-l\frac{d}{dt}\left(\frac{B_0x^2}{2}\right)
-=-lB_0v^2t
-$$
-  </div>
-</details>
-<hr>
-<p><a href="https://ghebook.blogspot.com/2010/08/faradays-law-of-electromagnetic.html" rel="external" target="_blank">조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faradays Law of Electromagnetic Induction)</a></p>
+<p><a href="https://ghebook.blogspot.com/2010/08/faradays-law-of-electromagnetic.html" rel="external" target="_blank">조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faraday&rsquo;s Law of Electromagnetic Induction)</a></p>
 <p><a href="https://steemit.com/kr-math/@beoped/5jyraq-2" rel="external" target="_blank">[수학, 계산] 벡터 항등식-2탄 계산 — Steemit</a></p>
 
   <footer class="footline">
@@ -364,8 +293,8 @@ $$
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_frame_viewpoint/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_frame_viewpoint/index.html">(a) Frame &amp; Viewpoint</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_material_derivative/index.html">(a) Material derivative</a></li>
-            <li class="active " data-nav-id="/electromagnetics/charges_forces/i_electromotive_force_i/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force_i/index.html">(i) Electromotive force I</a></li>
-            <li class="" data-nav-id="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html">(a) Electromotive force II</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/i_electromotive_force_i/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force_i/index.html">(i) Electromotive force I</a></li>
+            <li class="active " data-nav-id="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_electromotive_force_ii/index.html">(a) Electromotive force II</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/charges_forces/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
