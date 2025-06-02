@@ -3,7 +3,7 @@
   <channel>
     <title>Charges and forces :: 수리전자물리학</title>
     <link>http://localhost:1313/electromagnetics/charges_forces/index.html</link>
-    <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(r) EMF &amp; Voltage</description>
+    <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(i) Electromotive force II&#xD;(r) EMF &amp; Voltage</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/electromagnetics/charges_forces/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>http://localhost:1313/electromagnetics/charges_forces/a_frame_viewpoint/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/a_frame_viewpoint/index.html</guid>
-      <description>1. 프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이지. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. **프레임은 현상을 관측하는 ‘물리적 기준’**이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.&#xA;(1) 정지 프레임 (Rest Frame / Laboratory Frame)&#xA;의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다. 특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다. 예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, ‘땅’이 정지 프레임이 된다. (2) 운동 프레임 (Moving Frame)</description>
+      <description>1. 프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.&#xA;(1) 정지 프레임 (Rest Frame / Laboratory Frame)&#xA;의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다. 특징: 가속 운동을 하지 않는 **관성계(Inertial Frame)**일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다. 예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, ‘땅’이 정지 프레임이 된다. (2) 운동 프레임 (Moving Frame)</description>
     </item>
     <item>
       <title>(a) Lagrangian and Eulerian specification</title>
@@ -26,21 +26,28 @@
       <link>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/a_material_derivative/index.html</guid>
-      <description>입자(물체)를 추적하면서 물리량을 구한다고 하자.입자를 추적하기에 오일리안 관점은 적합하지 않다. 결국, 라그랑지안 관점이 되어야 하는 것이다.&#xA;1. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석 벡터장 해석에서, 오일리안 기술법을 사용하여 표현되고 해석될 때, 계산적으로 더 효율적이이다. 그러나, 관측 대상(입자 또는 물체)이 정해져 있는 경우, 해석은 라그랑지안 관점이 적합하다. 입자의 ‘진정한’ 변화율(라그랑지안 관점의 개념)을, 우리가 계산적으로 다루기 쉬운 오일러 기술법의 변수들을 사용하여 표현하는 방법이 필요하다. 이것이 바로 물질 미분을 통해 이루어진다. $$ \vec{F}\left(\vec{r_0},t\right)\implies\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$$$ \frac{d}{dt}\vec{F}\left(\vec{r_0},t\right)\implies\frac{d}{dt}\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$ 2. 어떠한 속도를 가지고 움직이는 입자는 세상을 달리 본다. 고정된 지점에서의 변화: 설령 입자가 움직이지 않고 특정 지점에 가만히 있었다고 가정해 보자. 이 지점의 온도가 시간 t에 따라 변할 수 있다 (예: 난방이 켜지면서 방의 온도가 점차 올라감). 입자가 이 지점에 머물렀다면, 시간이 지남에 따라 온도가 변하는 것을 느꼈을 것이다. 이것이 오일러 관점에서 ∂T/∂t로 표현되는 국소 미분이다. 입자는 움직이면서도, ‘시간의 흐름’을 겪기 때문에 이 변화를 여전히 경험한다. 움직여서 변화: 입자가 움직이면서 온도가 다른 공간의 다른 지점으로 이동하기 때문에 온도가 변한다. 예를 들어, 차가운 공기가 난로 쪽으로 이동하면 공기의 온도가 올라간다. 이때 공기 흐름 자체가 안정적이어서 난로 주변 공간의 온도는 시간에 따라 변하지 않는다고 해도 (즉, ∂T/∂t =0), 공기 입자는 이동하면서 더 높은 온도의 지역으로 들어가기 때문에 온도가 상승하는 것을 느낀다. 이것이 오일러 관점에서 (v⋅∇)T로 표현되는 대류 미분이다. 입자는 움직이기 때문에, 이 ‘공간을 이동하며 겪는 변화’를 직접적으로 경험하게 된다. 3. 물질 미분 물체가 이동하므로, 시간에 따른 변화(국소 변화) 와 공간 이동에 따른 변화(대류 변화) 를 동시에 겪는다. 따라서, 입자가 실제로 경험하는 전체 변화율을 나타내기 위해 단순히 시간에 대한 편미분(∂/∂t)이 아닌, 총 변화율을 나타내는 물질 미분(d/dt) 이 필요하다. $$ d\vec{F}=dt\frac{\partial\vec{F}}{\partial t}+dx_{i}\frac{\partial\vec{F}}{\partial x_{i}} $$$$ \frac{d\vec{F}}{dt}=\left(\frac{\partial}{\partial t}+\frac{dx_{i}}{dt}\frac{\partial}{\partial x_{i}}\right)\vec{F}=\left(\frac{\partial}{\partial t}+v_{i}\frac{\partial}{\partial x_{i}}\right)\vec{F} $$$$ \displaystyle\frac{d}{dt}=\frac{\partial}{\partial t}+\vec{v}\cdot\nabla $$ Eulerian and Lagrangian Descriptions in Fluid Mechanics</description>
+      <description>입자(물체)를 추적하면서 물리량을 구한다고 하자.입자를 추적하기에 오일리안 관점은 적합하지 않다. 결국, 라그랑지안 관점이 되어야 하는 것이다.&#xA;1. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석 벡터장 해석에서, 오일리안 기술법을 사용하여 표현되고 해석될 때, 계산적으로 더 효율적이이다. 그러나, 관측 대상(입자 또는 물체)이 정해져 있는 경우, 해석은 라그랑지안 관점이 적합하다. 입자의 ‘진정한’ 변화율(라그랑지안 관점의 개념)을, 우리가 계산적으로 다루기 쉬운 오일러 기술법의 변수들을 사용하여 표현하는 방법이 필요하다. 이것이 바로 물질 미분을 통해 이루어진다. $$ \vec{F}\left(\vec{r_0},t\right)\implies\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$$$ \frac{d}{dt}\vec{F}\left(\vec{r_0},t\right)\implies\frac{d}{dt}\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$ 2. 어떠한 속도를 가지고 움직이는 입자는 세상을 달리 본다. 고정된 지점에서의 변화: 설령 입자가 움직이지 않고 특정 지점에 가만히 있었다고 가정해 보자. 이 지점의 온도가 시간 t에 따라 변할 수 있다 (예: 난방이 켜지면서 방의 온도가 점차 올라감). 입자가 이 지점에 머물렀다면, 시간이 지남에 따라 온도가 변하는 것을 느꼈을 것이다. 이것이 오일리안 관점에서 ∂T/∂t로 표현되는 국소 미분이다. 입자는 움직이면서도, ‘시간의 흐름’을 겪기 때문에 이 변화를 여전히 경험한다. 움직여서 변화: 입자가 움직이면서 온도가 다른 공간의 다른 지점으로 이동하기 때문에 온도가 변한다. 예를 들어, 차가운 공기가 난로 쪽으로 이동하면 공기의 온도가 올라간다. 이때 공기 흐름 자체가 안정적이어서 난로 주변 공간의 온도는 시간에 따라 변하지 않는다고 해도 (즉, ∂T/∂t =0), 공기 입자는 이동하면서 더 높은 온도의 지역으로 들어가기 때문에 온도가 상승하는 것을 느낀다. 이것이 오일리안 관점에서 (v⋅∇)T로 표현되는 대류 미분이다. 입자는 움직이기 때문에, 이 ‘공간을 이동하며 겪는 변화’를 직접적으로 경험하게 된다. 3. 물질 미분 물체가 이동하므로, 시간에 따른 변화(국소 변화) 와 공간 이동에 따른 변화(대류 변화) 를 동시에 겪는다. 따라서, 입자가 실제로 경험하는 전체 변화율을 나타내기 위해 단순히 시간에 대한 편미분(∂/∂t)이 아닌, 총 변화율을 나타내는 물질 미분(d/dt) 이 필요하다. $$ d\vec{F}=dt\frac{\partial\vec{F}}{\partial t}+dx_{i}\frac{\partial\vec{F}}{\partial x_{i}} $$$$ \frac{d\vec{F}}{dt}=\left(\frac{\partial}{\partial t}+\frac{dx_{i}}{dt}\frac{\partial}{\partial x_{i}}\right)\vec{F}=\left(\frac{\partial}{\partial t}+v_{i}\frac{\partial}{\partial x_{i}}\right)\vec{F} $$$$ \displaystyle\frac{d}{dt}=\frac{\partial}{\partial t}+\vec{v}\cdot\nabla $$ Eulerian and Lagrangian Descriptions in Fluid Mechanics</description>
     </item>
     <item>
       <title>(i) Electromotive force I</title>
-      <link>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</link>
+      <link>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</guid>
-      <description>움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;0. 논의의 제약조건 자기장 내에서 움직이는 물체와 기전력(Electromotive Force, EMF)을 상대론적 관계로 설명한다. 설명을 명확히 하기 위해 몇 가지 제약 조건을 둔다.&#xA;비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_i/index.html</guid>
+      <description>움직이는 물체를 정지프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;움직이는 물체에서 발생하는 전자기 유도 현상은 물리학에서 중요한 주제이다. 이 문서에서는 이러한 현상을 정지 프레임(실험실 프레임)에서 라그랑지안 관점을 오일러 기술법을 사용하여 분석한다. 특히, 입자(물체)의 움직임을 추적하는 라그랑지안 관점과 공간 전체에 분포하는 장(field)을 효율적으로 다루는 오일리안 기술법 방식 사이를 물질 미분(Material Derivative) 개념을 활용하여 기전력의 본질을 깊이 있게 이해하고자 한다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
+    </item>
+    <item>
+      <title>(i) Electromotive force II</title>
+      <link>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</guid>
+      <description>움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
     </item>
     <item>
       <title>(r) EMF &amp; Voltage</title>
       <link>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</guid>
-      <description>0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E’)을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.&#xA;$$ \oint_{C}d\vec{l}\cdot\vec{E}&#39;=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.</description>
+      <description>0. EMF &amp; Voltage: 기전력과 전압, 왜 부호가 다른 이유 EMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0) 아래 식은 정지 프레임에서 전자기 유도를 설명하는 패러데이 법칙의 일반적인 형태&#34; 또는 “물질 미분 개념을 통해 유도된 정지 프레임에서의 패러데이 법칙이다.&#xA;$$ \oint_{C}d\vec{l}\cdot\vec{E}=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B} $$만약 주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.</description>
     </item>
   </channel>
 </rss>

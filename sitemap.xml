@@ -160,7 +160,7 @@
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force/index.html</loc>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_ideal_metal/index.html</loc>
@@ -199,13 +199,13 @@
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/i_electromotive_force_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_diffusion_equation_for_periodic_boundary_condition/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/lti/index.html</loc>
@@ -227,6 +227,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_non_free_space/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/r_emf_voltage/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/index.html</loc>
