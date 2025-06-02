@@ -40,7 +40,7 @@
       <link>http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/electromagnetics/charges_forces/a_electromotive_force_ii/index.html</guid>
-      <description>움직이는 물체를 운동프레임에서 라그랑지안 관점으로 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
+      <description>움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.&#xA;0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</description>
     </item>
     <item>
       <title>(r) EMF &amp; Voltage</title>
