@@ -25,17 +25,17 @@
 1. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석 벡터장 해석에서, 오일리안 기술법을 사용하여 표현되고 해석될 때, 계산적으로 더 효율적이이다. 그러나, 관측 대상(입자 또는 물체)이 정해져 있는 경우, 해석은 라그랑지안 관점이 적합하다. 입자의 ‘진정한’ 변화율(라그랑지안 관점의 개념)을, 우리가 계산적으로 다루기 쉬운 오일러 기술법의 변수들을 사용하여 표현하는 방법이 필요하다. 이것이 바로 물질 미분을 통해 이루어진다. $$ \vec{F}\left(\vec{r_0},t\right)\implies\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$$$ \frac{d}{dt}\vec{F}\left(\vec{r_0},t\right)\implies\frac{d}{dt}\vec{F}\left(M\left(\vec{r_0},t\right),t\right) $$ 2. 어떠한 속도를 가지고 움직이는 입자는 세상을 달리 본다. 고정된 지점에서의 변화: 설령 입자가 움직이지 않고 특정 지점에 가만히 있었다고 가정해 보자. 이 지점의 온도가 시간 t에 따라 변할 수 있다 (예: 난방이 켜지면서 방의 온도가 점차 올라감). 입자가 이 지점에 머물렀다면, 시간이 지남에 따라 온도가 변하는 것을 느꼈을 것이다. 이것이 오일러 관점에서 ∂T/∂t로 표현되는 국소 미분이다. 입자는 움직이면서도, ‘시간의 흐름’을 겪기 때문에 이 변화를 여전히 경험한다. 움직여서 변화: 입자가 움직이면서 온도가 다른 공간의 다른 지점으로 이동하기 때문에 온도가 변한다. 예를 들어, 차가운 공기가 난로 쪽으로 이동하면 공기의 온도가 올라간다. 이때 공기 흐름 자체가 안정적이어서 난로 주변 공간의 온도는 시간에 따라 변하지 않는다고 해도 (즉, ∂T/∂t =0), 공기 입자는 이동하면서 더 높은 온도의 지역으로 들어가기 때문에 온도가 상승하는 것을 느낀다. 이것이 오일러 관점에서 (v⋅∇)T로 표현되는 대류 미분이다. 입자는 움직이기 때문에, 이 ‘공간을 이동하며 겪는 변화’를 직접적으로 경험하게 된다. 3. 물질 미분 물체가 이동하므로, 시간에 따른 변화(국소 변화) 와 공간 이동에 따른 변화(대류 변화) 를 동시에 겪는다. 따라서, 입자가 실제로 경험하는 전체 변화율을 나타내기 위해 단순히 시간에 대한 편미분(∂/∂t)이 아닌, 총 변화율을 나타내는 물질 미분(d/dt) 이 필요하다. $$ d\vec{F}=dt\frac{\partial\vec{F}}{\partial t}&#43;dx_{i}\frac{\partial\vec{F}}{\partial x_{i}} $$$$ \frac{d\vec{F}}{dt}=\left(\frac{\partial}{\partial t}&#43;\frac{dx_{i}}{dt}\frac{\partial}{\partial x_{i}}\right)\vec{F}=\left(\frac{\partial}{\partial t}&#43;v_{i}\frac{\partial}{\partial x_{i}}\right)\vec{F} $$$$ \displaystyle\frac{d}{dt}=\frac{\partial}{\partial t}&#43;\vec{v}\cdot\nabla $$ Eulerian and Lagrangian Descriptions in Fluid Mechanics">
     <meta itemprop="wordCount" content="270">
     <title>(a) Material derivative :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748831903" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748831903" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748831903" rel="stylesheet">
-    <link href="/css/theme.css?1748831903" rel="stylesheet">
-    <link href="/css/format-html.css?1748831903" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748831903" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748831903" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748831903" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748831903" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748831903" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1748831903" defer></script>
-    <script src="/js/search.js?1748831903" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748870906" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748870906" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748870906" rel="stylesheet">
+    <link href="/css/theme.css?1748870906" rel="stylesheet">
+    <link href="/css/format-html.css?1748870906" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748870906" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748870906" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748870906" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748870906" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748870906" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1748870906" defer></script>
+    <script src="/js/search.js?1748870906" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1748831903";
+      window.relearn.index_js_url="/searchindex.en.js?1748870906";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -128,7 +128,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html" title="(a) Lagrangian and Eulerian specification (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/i_electromotive_force/index.html" title="(i) Electromotive force (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/electromagnetics/charges_forces/i_electromotive_force/index.html" title="(i) Electromotive force I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -154,8 +154,8 @@
 <p>입자(물체)를 추적하면서 물리량을 구한다고 하자.<strong>입자를 추적</strong>하기에 오일리안 관점은 적합하지 않다. 결국, 라그랑지안 관점이 되어야 하는 것이다.</p>
 <hr>
 <h3 id="1-라그랑지안-관점을-유지하면서-오일리안-기술법으로-해석">1. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석</h3>
-<p><a href="#R-image-869c15a9121512934f7806007c2ce8c2" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/electromagnetics/charges_forces/a_material_derivative/image1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-869c15a9121512934f7806007c2ce8c2"><img class="lazy lightbox lightbox-image" loading="lazy" src="/electromagnetics/charges_forces/a_material_derivative/image1.png"></a></p>
+<p><a href="#R-image-381d02c146521c8d3675c586da35de04" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/electromagnetics/charges_forces/a_material_derivative/image1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-381d02c146521c8d3675c586da35de04"><img class="lazy lightbox lightbox-image" loading="lazy" src="/electromagnetics/charges_forces/a_material_derivative/image1.png"></a></p>
 <br>
 <ul>
 <li>벡터장 해석에서, 오일리안 기술법을 사용하여 표현되고 해석될 때, 계산적으로 더 효율적이이다.</li>
@@ -238,10 +238,10 @@ $$<hr>
             <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-id="/electromagnetics/charges_forces/index.html"><a class="padding" href="/electromagnetics/charges_forces/index.html">Charges and forces</a><ul id="R-subsections-be60c3e5f7aabede054d7dcd3ea0bd92" class="collapsible-menu">
-            <li class="" data-nav-id="/electromagnetics/charges_forces/frame/index.html"><a class="padding" href="/electromagnetics/charges_forces/frame/index.html">프레임, 관점, 기술법 구분</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/a_frame_viewpoint/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_frame_viewpoint/index.html">(a) Frame &amp; Viewpoint</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
             <li class="active " data-nav-id="/electromagnetics/charges_forces/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/charges_forces/a_material_derivative/index.html">(a) Material derivative</a></li>
-            <li class="" data-nav-id="/electromagnetics/charges_forces/i_electromotive_force/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force/index.html">(i) Electromotive force</a></li>
+            <li class="" data-nav-id="/electromagnetics/charges_forces/i_electromotive_force/index.html"><a class="padding" href="/electromagnetics/charges_forces/i_electromotive_force/index.html">(i) Electromotive force I</a></li>
             <li class="" data-nav-id="/electromagnetics/charges_forces/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/charges_forces/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -261,8 +261,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748831903" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748831903" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748870906" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748870906" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -274,7 +274,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748831903"></script>
-    <script src="/js/theme.js?1748831903" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1748870906"></script>
+    <script src="/js/theme.js?1748870906" defer></script>
   </body>
 </html>

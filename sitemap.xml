@@ -4,6 +4,9 @@
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/electromagnetics/charges_forces/a_frame_viewpoint/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
@@ -50,9 +53,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/electromagnetics/charges_forces/frame/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/charges_forces/a_lagrangian_eulerian_specification/index.html</loc>
