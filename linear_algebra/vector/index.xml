@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vector :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/vector/index.html</link>
+    <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits&#xD;(b) Matrix&#xD;(b) Column vector of matrix I - Basis&#xD;(b) Column vector of matrix II - Determinant&#xD;(b) Inner product&#xD;(b) Projection&#xD;(b) Row vector of matrix</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/vector/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Vector</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_vector/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_vector/index.html</guid>
+      <description>1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.&#xA;이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.&#xA;이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.</description>
+    </item>
+    <item>
+      <title>(b) Basic vector operations</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_basic_vector_operations/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_basic_vector_operations/index.html</guid>
+      <description>1. 덧셈 &amp; 뺄셈 벡터의 궤적을 따라 움직이는 것이다.&#xA;$\vec{v}+\vec{w}$는 벡터 $\vec{v}$의 궤적으로 움직인 다음, 벡터 $\vec{w}$의 궤적으로 움직이는 것이다.&#xA;이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.&#xA;$$ \vec{v}+\vec{w} =\left[\begin{matrix} v_1 \\ v_2 \end{matrix}\right]+ \left[\begin{matrix} w_1 \\ w_2 \end{matrix}\right] =\left[\begin{matrix} v_1+w_1 \\ v_2+w_2 \end{matrix}\right] $$ 2. Scaling 이를 리스트(숫자의 나열)로 표현하면, 다음과 같다.&#xA;$$ a\vec{v} =a\left[\begin{matrix} v_1 \\ v_2 \end{matrix}\right] =\left[\begin{matrix} av_1 \\ av_2 \end{matrix}\right] $$ Vectors, what even are they?</description>
+    </item>
+    <item>
+      <title>(i) Linearity</title>
+      <link>http://localhost:1313/linear_algebra/vector/i_linearity/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/i_linearity/index.html</guid>
+      <description>0. 정리 선형성 (Linearity)는 공학/수학에서 가장 핵심적으로 중요한 개념이다.&#xA;$$&#xD;f\left(au_1+bu_2\right)=af\left(u_1\right)+bf\left(u_2\right)&#xD;$$위 식을 만족하는 시스템은 선형적(선형변환)이라고 할 수 있다.&#xA;Linear Algebra(선형대수학) 학문은 선형시스템을 다루기 위한 “도구” 이다.&#xA;다음 챕터에서 행렬이 왜 선형변환이고, 선형대수학에서 배우는지 알 수 있다.&#xA;1. 성질 - 가산성 (additivity) 위 식의 오른쪽 항에서 “+”로 표현되는 것을 가산성이라고 한다.&#xA;해석하려는 시스템 $f\left(u\right)$는 선형적이다.&#xA;입력값이 $u_1+u_2$일 때, $u_1$에 대한 결과와 $u_2$에 대한 결과를 각각 따로 얻은다음 더하기한 하면 된다.</description>
+    </item>
+    <item>
+      <title>(q) Linearity for circuits</title>
+      <link>http://localhost:1313/linear_algebra/vector/q_linearity_for_circuits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/q_linearity_for_circuits/index.html</guid>
+      <description>Q1) 1V의 이상적인 전압원이 있다. 이상적이므로 내부 임피던스는 0이다. 그렇다면, 옴의 법칙을 적용하였을 때, 이 전압원에 흐르는 전류는 무한대여야 한다. 무엇이 잘못되어 있는지 설명하라.&#xA;옴의 법칙을 따르는 소자를 선형 회로 소자라 하고 그런 소자들로 이루어진 회로를 선형 회로라고 한다. 이는 선형 회로여야 옴의 법칙이 적용 된다는 뜻이다. 선형적 조건을 만족하기 위해서는 중첩의 원리를 만족하고 함수로 표현하였을 때, 원점을 지나는 직선이어야 한다. 이상적 전압원의 v-i그래프를 그려보면 시간에 관계없이 v는 일정하고 i는 무한대로 가는 것을 확인 할 수 있다. 따라서 이상적 전압원은 비선형적이라고 볼 수 있다. 즉, 옴의 법칙을 따르지 않는다는 뜻이다. Q2) 임의의 회로를 전달함수로 표현할 때, 선형 소자들을 묶어 선형 전달함수로 표현한다. 이상적인 전압원과 전류원이 선형 전달함수에 포함되지 못하는 이유를 설명하라.</description>
+    </item>
+    <item>
+      <title>(b) Matrix</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</guid>
+      <description>1. Matrix 행렬은 아래와 같이 표현할 수 있다.&#xA;$$&#xD;A&#xD;=\begin{bmatrix}&#xD;A_{11} &amp; A_{12} &amp; A_{13} &amp; A_{14} &amp; A_{15} \\&#xD;A_{21} &amp; A_{22} &amp; A_{23} &amp; A_{24} &amp; A_{25} \\&#xD;A_{31} &amp; A_{32} &amp; A_{33} &amp; A_{34} &amp; A_{35} \\&#xD;A_{41} &amp; A_{42} &amp; A_{43} &amp; A_{44} &amp; A_{45} \\&#xD;A_{51} &amp; A_{52} &amp; A_{53} &amp; A_{54} &amp; A_{55}&#xD;\end{bmatrix}&#xD;$$ 2. Matrix operation 행렬 연산은 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Column vector of matrix I - Basis</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</guid>
+      <description>1. Matrix는 선형 변환된 열벡터 기저의 집합 행렬은 아래와 같이 표현할 수 있다.&#xA;$$&#xD;A&#xD;=\begin{bmatrix}&#xD;A_{11} &amp; A_{12} \\&#xD;A_{21} &amp; A_{22} \end{bmatrix}&#xD;$$표준기저와의 연산은&#xA;$$&#xD;\begin{bmatrix}&#xD;A_{11} \\ A_{12}&#xD;\end{bmatrix}&#xD;=\begin{bmatrix}&#xD;A_{11} &amp; A_{12} \\&#xD;A_{21} &amp; A_{22}&#xD;\end{bmatrix}&#xD;\begin{bmatrix}&#xD;1 \\ 0&#xD;\end{bmatrix}&#xD;$$$$&#xD;\begin{bmatrix}&#xD;A_{21} \\ A_{22}&#xD;\end{bmatrix}&#xD;=\begin{bmatrix}&#xD;A_{11} &amp; A_{12} \\&#xD;A_{21} &amp; A_{22}&#xD;\end{bmatrix}&#xD;\begin{bmatrix}&#xD;0 \\ 1&#xD;\end{bmatrix}&#xD;$$따라서, Matrix 는 선형 변환된 기저의 열벡터 집합이다.</description>
+    </item>
+    <item>
+      <title>(b) Column vector of matrix II - Determinant</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</guid>
+      <description>1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</description>
+    </item>
+    <item>
+      <title>(b) Inner product</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_inner_product/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_inner_product/index.html</guid>
+      <description>1. 벡터의 내적 벡터 $\vec{a}$, 벡터 $\vec{b}$의 내적은 다음과 같다.&#xA;첫번째는 일반 벡터 표기, 두번쨰는 Dirac notation, 세번쨰는 행렬 연산의 표기이다.&#xA;$$&#xD;\vec{a}\cdot\vec{b}=\langle a| b \rangle = [a]^T[b]&#xD;$$ 2. 복소내적공간에서 벡터의 내적 벡터의 크기는 내적을 사용하여 구할 수 있다. 벡터의 크기는 실수 값 이므로, 복소 벡터의 크기를 정의하기 위해서는, 켤레복소수(asterisk)를 취한다. 아래는 sufiix notation 이다.&#xA;$$&#xD;|\vec{a}|=\sqrt{a_{i}^{*}a_{i}}&#xD;$$ 3. 복소내적공간에서 함수의 내적 $$&#xD;\langle f|g \rangle=\int_{a}^{b}dx\left[f\left(x\right)^{\ast}g\left(x\right)\right]&#xD;$$함수의 내적을 적분으로 정의하는 이유는 수학적 벡터를, 함수 공간으로 옮겼을 때, 벡터의 각 성분들은 정의역의 간격이 1인 함수의 값이라고 볼 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Projection</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_projection/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_projection/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>(b) Row vector of matrix</title>
+      <link>http://localhost:1313/linear_algebra/vector/b_row_vector_of_matrix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/b_row_vector_of_matrix/index.html</guid>
+      <description>1. 행렬연산의 행벡터는 내적 연산의 집합이다. 행렬에서 행벡터는 $v_{i,:}$ 와 같이 표현한다. 행렬에서 열벡터는 $v_{:,j}$ 와 같이 표현한다. 일반적인 벡터는 열벡터 이며, $x_{j}$ 와 같이 표현한다. 행렬연산의 행벡터에 대한 $v_{i,:}\cdot$ 는 벡터 $x_{j}$ 대한 각각의 내적 연산자라고 볼 수 있다.&#xA;$$ \begin{bmatrix} y_{1} \\ y_{2} \\ y_{3} \end{bmatrix} =\begin{bmatrix} v_{11} &amp; v_{12} &amp; v_{12} \\ v_{21} &amp; v_{22} &amp; v_{23} \\ v_{31} &amp; v_{32} &amp; v_{33} \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \\ x_{3} \end{bmatrix}=\begin{bmatrix} v_{1,:}\cdot x_{j} \\ v_{2,:}\cdot x_{j} \\ v_{3,:}\cdot x_{j} \end{bmatrix} $$ 2. 적분변환은 행렬연산에 대응된다. $$ \left(Tf\right)\left(v\right)=\int_{u_1}^{u_2}du\left\lbrack K\left(v,u\right)f\left(u\right)\right\rbrack $$위를 행렬 연산과 비교해 보면,</description>
+    </item>
+  </channel>
+</rss>

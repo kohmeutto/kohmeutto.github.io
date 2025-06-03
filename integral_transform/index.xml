@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integral transform :: 수리전자물리학</title>
+    <link>http://localhost:1313/integral_transform/index.html</link>
+    <description>Preface&#xD;(b) Convolution&#xD;Transformation&#xD;Operators&#xD;LTI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/integral_transform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preface</title>
+      <link>http://localhost:1313/integral_transform/preface/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/preface/index.html</guid>
+      <description>Integral Transformation $$ T\{f(t)\}\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Laplace transformation $$ \langle s|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-st}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F\left(s\right)\right\rbrack $$ Fourier transformation, 비대칭형 $$ \langle\omega|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack e^{i\omega t}F\left(\omega\right)\right\rbrack $$ Fourier transformation, 대칭형 $$ \langle k|f\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{-ikx}f\left(k\right)\right\rbrack $$$$ \langle x|F\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{+ikx}F\left(k\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$</description>
+    </item>
+    <item>
+      <title>(b) Convolution</title>
+      <link>http://localhost:1313/integral_transform/b_convolution/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/b_convolution/index.html</guid>
+      <description>0. Convolution의 정의 Causal: 이전 입력의 현재상태 + 현재 입력의 현재상태&#xA;Non-causal: 이전 입력의 현재상태 + 현재 입력의 현재상태 + 미래 입력의 현재상태&#xA;$$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 1. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.&#xA;(1) 시간에 대한 시스템 응답을, 리스트화 한다.&#xA;$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.&#xA;$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.</description>
+    </item>
+    <item>
+      <title>Transformation</title>
+      <link>http://localhost:1313/integral_transform/transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/transformation/index.html</guid>
+      <description>(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Fourier transform I&#xD;(b) Fourier transform II</description>
+    </item>
+    <item>
+      <title>Operators</title>
+      <link>http://localhost:1313/integral_transform/operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/operators/index.html</guid>
+      <description>(a) Algebra structure&#xD;(a) Operator &amp; Generator&#xD;(a) Operators in quantum mechanics</description>
+    </item>
+    <item>
+      <title>LTI</title>
+      <link>http://localhost:1313/integral_transform/lti/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/lti/index.html</guid>
+      <description>(i) LTI system&#xD;(b) Causality&#xD;(b) LTI &amp; Circuit analysis</description>
+    </item>
+  </channel>
+</rss>
