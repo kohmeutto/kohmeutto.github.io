@@ -40,7 +40,7 @@
       <link>http://localhost:1313/vector_calculus/transformation/b_mapping_iii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_calculus/transformation/b_mapping_iii/index.html</guid>
-      <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.&#xA;1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.&#xA;u 매개변수 공간 에서, 미소변위벡터 $$ d\vec{u}=\begin{bmatrix} du_1 \\ du_2 \\ du_3 \end{bmatrix} =\hat{u}_1du_1+\hat{u}_2du_2+\hat{u}_3du_3 $$ v 실 공간 에서, 매핑된 위치 에서의 미소변위벡터 $$ d\vec{v}=\begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =\hat{v}_1dv_1+\hat{v}_2dv_2+\hat{v}_3dv_3 $$ 변환(mapping) 연산자 작용, [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v}=d\vec{u}\cdot\nabla_{u}\vec{v} $$$$ =du_1\frac{\partial\vec{v}}{\partial u_1}+du_2\frac{\partial\vec{v}}{\partial u_2}+du_3\frac{\partial\vec{v}}{\partial u_3} $$수학적 벡터로 표현하면,</description>
+      <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.&#xA;1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.&#xA;u 매개변수 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{u}_p=\begin{bmatrix} du_1 \\ du_2 \\ du_3 \end{bmatrix} =\hat{u}_1du_1+\hat{u}_2du_2+\hat{u}_3du_3 $$ v 실 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{v}_p=\begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =\hat{v}_1dv_1+\hat{v}_2dv_2+\hat{v}_3dv_3 $$ 변환(mapping) 연산자 작용, 매핑 위치에 해당하는 [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v}_{p}=[d\vec{u}\cdot\nabla_{u}\vec{v}]_p $$$$ =du_1\frac{\partial\vec{v}}{\partial u_1}+du_2\frac{\partial\vec{v}}{\partial u_2}+du_3\frac{\partial\vec{v}}{\partial u_3} $$수학적 벡터로 표현하면,</description>
     </item>
     <item>
       <title>(b) Tensor components transformation I</title>
