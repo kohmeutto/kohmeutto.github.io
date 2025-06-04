@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Green function :: 수리전자물리학</title>
+    <link>http://localhost:1313/ode_pde/green_function/index.html</link>
+    <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples&#xD;(i) Divergence for free-space&#xD;(i) Laplacian for free-space&#xD;(i) Helmholtz operator for free-space&#xD;(i) GF from SL</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/ode_pde/green_function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preface</title>
+      <link>http://localhost:1313/ode_pde/green_function/preface/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/preface/index.html</guid>
+      <description>그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다. 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.&#xA;1. Green function &amp; 미분 미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.&#xA;$$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할 수 있다. 다른 관점으로 보면, 전압 신호가 회로에 입력된다고도 볼 수 있다. 즉, 입력 신호로 볼 수 있다.만약, t’ 초에서 입력된 신호가 dirac delta 라면, $f(t)=\delta(t-t’)$ 으로 쓸 수 있다. 이 때, 이 f를 만족하는 $y$를 $G(t,t’)$ 이라고 할 수 있으며, 이것을 그린함수라고 한다. 컨볼루션과 임펄스 응답과 동일한 개념임을 상기하라.</description>
+    </item>
+    <item>
+      <title>(b) First-order PDE</title>
+      <link>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</guid>
+      <description>1. Jump condition $$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)+q\left(x\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right), \quad q\left(x\right):\text{ continuous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x’\right)$또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분 결과가 $\delta’$이 나오기 때문에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x’\right)$는 디렉 델타가 되어야 한다.&#xA;$$ \frac{\partial}{\partial x}G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, 그린함수는 “단위 계단 함수” 임을 알 수 있다.&#xA;$$ G\left(x,x&#39;\right)=u\left(x-x&#39;\right) $$위 그린함수의 형태를 그려보면 다음과 같다.&#xA;ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x’\right)$는 $x=x’$에서 불연속이다.</description>
+    </item>
+    <item>
+      <title>(i) Second-order PDE</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_second_order_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_second_order_pde/index.html</guid>
+      <description>1. Jump condition &amp; Continuous $$ \left\lbrack\frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)+q\left(x\right)\right\rbrack G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$$$ p\left(x\right),q\left(x\right):\text{ continous} $$위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x’\right)$ 또는 $G\left(x,x’\right)$가 디렉 델타가 되어야 한다. $G\left(x,x’\right)$이 디렉 델타 라면, $x$에 대한 미분은 $\delta’$ 이므로, $G\left(x,x’\right)$이 디렉 델타가 될 수 없다. 따라서, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x’\right)$ 이 디렉 델타가 되어야 한다.&#xA;$$ \frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)G\left(x,x&#39;\right)=\delta\left(x-x&#39;\right) $$위로부터, $x’$과 인접한 부분에서, $\partial_{x}{\displaystyle G\left(x,x’\right)}$는 불연속 함수인 “단위 계단 함수” 임을 알 수 있다. *Characteristics of Dirac delta</description>
+    </item>
+    <item>
+      <title>(p) Green function examples</title>
+      <link>http://localhost:1313/ode_pde/green_function/p_gf_examples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/p_gf_examples/index.html</guid>
+      <description>example1) 특수해를 구하여라.&#xA;$$y&#39;&#39;-16y=xe^{-2x}, \quad x\in(-∞,∞)$$&#xD;IOPM-D&#xD;$$ D^2-16=0 $$ $$ y_{p}=\frac{1}{\left(D+4\right)\left(D-4\right)}\left\lbrack xe^{-2x}\right\rbrack=\frac{e^{-2x}}{\left(D+2\right)\left(D-6\right)}\left\lbrack x\right\rbrack $$ $$ =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D+\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$ GF&#xD;(1) $x\ne x&#39;$ $$ \left(D^2-16\right)G\left(x,x&#39;\right)=0 $$ 경계조건에서 0이어야 하므로, $$ G\left(x,x&#39;\right)= \begin{cases} c_1\left(x&#39;\right)e^{4x} &amp; x &lt; x&#39; \\ c_2\left(x&#39;\right)e^{-4x} &amp; x &gt; x&#39; \end{cases} $$ (2) $x=x&#39;$ $$ W=\left|\left[\begin{matrix} e^{4x} &amp; e^{-4x} \\ 4e^{4x} &amp; -4e^{-4x} \end{matrix}\right]\right| =-4-4=-8 $$ $$ c_1=-\frac{e^{-4x&#39;}}{8},\quad c_2=-\frac{e^{4x&#39;}}{8} $$ (3) $y_{p}(x)$ $$ y_{p}=-\frac18\int_{x}^{\infty}dx&#39;\left\lbrack e^{-4x&#39;}e^{4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack-\frac18\int_{-\infty}^{x}dx&#39;\left\lbrack e^{4x&#39;}e^{-4x}\cdot x&#39;e^{-2x&#39;}\right\rbrack $$ $$ =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack $$ $$ \int_{x}^{\infty}dx&#39;\left\lbrack x&#39;e^{-6x&#39;}\right\rbrack=\left\lbrack-\frac16x&#39;e^{-6x&#39;}-\frac{1}{36}e^{-6x&#39;}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}+\frac{1}{36}e^{-6x} $$ $$ \int_{-\infty}^{x}dx&#39;\left\lbrack x&#39;e^{2x&#39;}\right\rbrack=\left\lbrack\frac12x&#39;e^{2x&#39;}-\frac14e^{2x&#39;}\right\rbrack_{-\infty}^{x}=\frac12xe^{2x}-\frac14 e^{2x} $$ $$ y_{p}=-\frac18\left\lbrack\frac16xe^{-2x}+\frac{1}{36}e^{-2x}+\frac12xe^{-2x}-\frac14e^{-2x}\right\rbrack $$ $$ =-\frac18\left\lbrack\frac23xe^{-2x}-\frac29e^{-2x}\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right) $$&#xD;example2) 특수해를 구하여라.</description>
+    </item>
+    <item>
+      <title>(i) Divergence for free-space</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</guid>
+      <description>0. 정리 그린 함수는 항상 소스점 r’을 기준으로 정의된다.&#xA;3D 좌표계 $$ \nabla\cdot\hat{R}G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}-\vec{r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{4\pi\left|\vec{R}\right|^2}=\frac{1}{4\pi\left|\vec{r}-\vec{r}&#39;\right|^2},\quad\vec{R}=\vec{r}-\vec{r}&#39; $$ 2D 좌표계 $$ \nabla\cdot\hat{\rho}G\left(\vec{r},\vec{r}&#39;\right)=\delta^2\left(\vec{r}-\vec{r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{2\pi\left|\vec{\rho}\right|}=\frac{1}{2\pi\left|\vec{r}-\vec{r}&#39;\right|},\quad\vec{\rho}=\vec{r}-\vec{r}&#39; $$ 1. 3D Divergence &amp; Green function $$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{1}{4\pi\left|\vec{R}\right|^2}=\frac{1}{4\pi\left|\vec{r}-\vec{r}&#39;\right|^2},\quad\vec{R}=\vec{r}-\vec{r}&#39; $$proof)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, gradient 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \nabla\cdot\hat{R}G\left(R\right)=\delta^3\left(R\right) $$$$ \nabla\cdot\hat{R}G\left(R\right)=\frac{1}{R^2}\frac{\partial}{\partial R}R^2\cdot G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$$$ R^2G\left(R\right)=\frac{1}{4\pi}u\left(R\right) $$$$ G\left(R\right)=\frac{1}{4\pi R^2},\quad R&gt;0 $$일반화하면, 다음과 같다.</description>
+    </item>
+    <item>
+      <title>(i) Laplacian for free-space</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</guid>
+      <description>0. 정리 그린 함수는 항상 소스점 r’을 기준으로 정의된다.&#xA;3D (결과 암기) $$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{1}{4\pi\left|\vec{R}\right|}=-\frac{1}{4\pi\left|\vec{r-\vec{r}&#39;}\right|},\quad\vec{R}=\vec{r-\vec{r}&#39;} $$ 2D (결과 암기) $$ G\left(\vec{r},\vec{r}&#39;\right)=\frac{\ln\left|\vec{\rho}\right|}{2\pi}=\frac{\ln\left|\vec{r-\vec{r}&#39;}\right|}{2\pi},\quad\vec{\rho}=\vec{r-\vec{r}&#39;} $$ 1. 3D, 라플라스 연산에 대한 그린함수 $$ \nabla^2G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}\vec{-r}&#39;\right) $$$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{1}{4\pi\left|\vec{r-\vec{r}&#39;}\right|}=-\frac{1}{4\pi\left|\vec{R}\right|},\quad\vec{R}=\vec{r-\vec{r}&#39;} $$proof1)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, Laplacian 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \frac{1}{R^2}\frac{d}{dR}\left(R^2\frac{d}{dR}\right)G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$$$ \frac{d}{dR}\left(R^2\frac{d}{dR}\right)G\left(R\right)=\frac{\delta\left(R\right)}{4\pi} $$$$ R^2\frac{d}{dR}G\left(R\right)=\frac{1}{4\pi}u\left(R\right) $$$$ \frac{d}{dR}G\left(R\right)=\frac{1}{4\pi R^2} $$$$ G\left(R\right)=-\frac{1}{4\pi R}+C $$proof2)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다.</description>
+    </item>
+    <item>
+      <title>(i) Helmholtz operator for free-space</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</guid>
+      <description>1. 구 대칭, free-space (결과 암기) $$ \left(\nabla^2+k^2\right)G\left(\vec{r},\vec{r}&#39;\right)=\delta^3\left(\vec{r}-\vec{r}&#39;\right) $$그린함수는 다음과 같다.&#xA;(1) 방사방향이 e$^{+ikR}$&#xA;$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{e^{+ik\left|\vec{r}-\vec{r}&#39;\right|}}{4\pi\left|\vec{r}-\vec{r}&#39;\right|}=-\frac{e^{+ikR}}{4\pi R} $$(2) 방사방향이 e$^{-ikR}$&#xA;$$ G\left(\vec{r},\vec{r}&#39;\right)=-\frac{e^{-ik\left|\vec{r}-\vec{r}&#39;\right|}}{4\pi\left|\vec{r}-\vec{r}&#39;\right|}=-\frac{e^{-ikR}}{4\pi R} $$ proof)&#xA;경계조건이 특정하게 주어져 있지 않은 경우, Helmholtz 연산자는 이동 불변성을 만족한다. 미분 연산은 기울기 이기 때문에, 위치가 이동하더라도, 기울기는 변하지 않는다. 또한 상수 곱셈의 경우, 위치가 이동하여도, 곱해지는 값은 동일하다.&#xA;$$ R=\left|\vec{r}-\vec{r}&#39;\right| $$$$ \nabla^2:=\frac{1}{R^2}\frac{\partial}{\partial R}\left(R^2\frac{\partial}{\partial R}\right) $$$$ \left\lbrack\frac{1}{R^2}\frac{\partial}{\partial R}\left(R^2\frac{\partial}{\partial R}\right)+k^2\right\rbrack G\left(R\right)=\frac{\delta\left(R\right)}{4\pi R^2} $$위 미분 방정식은 구면 베셀 방정식 형태이다. 변수 치환을 사용하여 간단하게 만들 수 있다.</description>
+    </item>
+    <item>
+      <title>(i) GF from SL</title>
+      <link>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</guid>
+      <description>미분방정식이 아래와 같이 표현되었을 때,&#xA;$$ Ly=f $$미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.&#xA;$$ y=\sum_{n=1}^{\infty}\frac{\left&lt;\varphi_{n}|f\right&gt;_{w}}{\lambda_{n}}\varphi_{n} $$$$ =\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx&#39;\left\lbrack\frac{w\left(x&#39;\right)f\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right) $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}}f\left(x&#39;\right)\right\rbrack $$$$ =\int_{x_1}^{x_2}dx&#39;\left\lbrack G\left(x,x&#39;\right)f\left(x&#39;\right)\right\rbrack $$따라서,&#xA;$$ G\left(x,x&#39;\right)=\sum_{n=1}^{\infty}\frac{w\left(x&#39;\right)\varphi_{n}^{\ast}\left(x&#39;\right)\varphi_{n}\left(x\right)}{\lambda_{n}} $$ℹ️ 미분방정식이 self-adjoint 라면, 그린함수를 사용하여 구한 특수해는 전체해와 동일하다.&#xA;만약, self-adjoint 하지 않다라면, 특수해를 구하기 위한 조건을 self-adjoint로 만들고, 일반해는 따로 구한다.&#xA;실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는</description>
+    </item>
+  </channel>
+</rss>
