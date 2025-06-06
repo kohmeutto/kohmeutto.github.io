@@ -22,6 +22,9 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/operators/b_suffix_notation/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_vector/index.html</loc>
   </url>
   <url>
@@ -76,6 +79,9 @@
     <loc>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/operators/b_kronecker_levicivita_symbols/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_ii/index.html</loc>
   </url>
   <url>
@@ -103,6 +109,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/operators/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</loc>
   </url>
   <url>
@@ -113,6 +122,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_i/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/operators/b_gradient/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/lti/b_lti_circuit_analysis/index.html</loc>
@@ -152,6 +164,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/operators/b_divergence/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
