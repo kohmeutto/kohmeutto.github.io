@@ -27,19 +27,19 @@ u 매개변수 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{u}&#39; =
     <meta itemprop="description" content="중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.
 1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.
 u 매개변수 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{u}&#39; =\hat{u}_1du_1&#39;&#43;\hat{u}_2du_2&#39;&#43;\hat{u}_3du_3&#39; $$ v 실 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{v}&#39; =\hat{v}_1&#39;dv_1&#39;&#43;\hat{v}_2&#39;dv_2&#39;&#43;\hat{v}_3&#39;dv_3&#39; $$ 변환(mapping) 연산자 작용, 매핑 위치에 해당하는 [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v}&#39; =d\vec{u}&#39;\cdot\nabla_{u}\vec{v}&#39; =du_1&#39;\frac{\partial\vec{v}&#39;}{\partial u_1&#39;}&#43;du_2&#39;\frac{\partial\vec{v}&#39;}{\partial u_2&#39;}&#43;du_3&#39;\frac{\partial\vec{v}&#39;}{\partial u_3&#39;} $$수학적 벡터로 표현하면,">
-    <meta itemprop="wordCount" content="710">
+    <meta itemprop="wordCount" content="738">
     <title>(a) Mapping III - Jacobian :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749303937" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749303937" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749303937" rel="stylesheet">
-    <link href="/css/theme.css?1749303937" rel="stylesheet">
-    <link href="/css/format-html.css?1749303937" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1749303937" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1749303937" defer></script>
-    <script src="/js/lunr/lunr.min.js?1749303937" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1749303937" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1749303937" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1749303937" defer></script>
-    <script src="/js/search.js?1749303937" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749391831" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749391831" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749391831" rel="stylesheet">
+    <link href="/css/theme.css?1749391831" rel="stylesheet">
+    <link href="/css/format-html.css?1749391831" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749391831" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749391831" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749391831" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749391831" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749391831" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749391831" defer></script>
+    <script src="/js/search.js?1749391831" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ u 매개변수 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{u}&#39; =
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1749303937";
+      window.relearn.index_js_url="/searchindex.en.js?1749391831";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -207,8 +207,14 @@ $$
 \begin{bmatrix}
     du_1' \\ du_2' \\ du_3'
 \end{bmatrix}
-$$<p>여기에서, 3x3 행렬을 Jacobian 이라고 한다. <strong>Jacobian의 각 열 벡터</strong>는 매개변수 공간의 각 축이 실 공간으로 변환(mapping)될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 <strong>실 공간의 새로운 기준 방향들(기저)을 형성</strong>한다. 이와 관련한 기하학적 해석 및 그림은 아래를 학습한다.</p>
-<hr>
+$$<p>여기에서, 3x3 행렬을 Jacobian 이라고 한다. <strong>Jacobian의 각 열 벡터</strong>는 매개변수 공간의 각 축이 실 공간으로 변환(mapping)될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 <strong>실 공간의 새로운 기준 방향들(기저)을 형성</strong>한다.suffix notation을 사용하여 각 열벡터 성분에 대해 아래와 같이 표현할 수 있으며, 이와 관련한 기하학적 해석을 해보자.</p>
+$$
+d\vec{v}'
+=du_i'\frac{\partial\vec{v}'}{\partial u_i'}
+=du_i'\vec{h}_i
+$$$$
+\vec{h}_i=\frac{\partial\vec{v}'}{\partial u_i'} \text{, 매개변수의 미소변화량에 대한 벡터 v의 미소변화량 - 궤적의 접선 벡터}
+$$<hr>
 <h3 id="2-scale-factor">2. Scale factor</h3>
 $$
 d\vec{v}'=du_1'\frac{\partial\vec{v}'}{\partial u_1'}+du_2'\frac{\partial\vec{v}'}{\partial u_2'}+du_3'\frac{\partial\vec{v}'}{\partial u_3'}
@@ -505,7 +511,6 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/vector_calculus/vector_notation/index.html"><a class="padding" href="/vector_calculus/vector_notation/index.html">Vector notation</a><ul id="R-subsections-609fcc9d6d3024ab7db0bcee86452c07" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a></li>
             <li class="parent alwaysopen " data-nav-id="/vector_calculus/transformation/index.html"><a class="padding" href="/vector_calculus/transformation/index.html">Transformation</a><ul id="R-subsections-edb9cfa8ff2670ec33419f0a9086b19f" class="collapsible-menu">
             <li class="" data-nav-id="/vector_calculus/transformation/preface/index.html"><a class="padding" href="/vector_calculus/transformation/preface/index.html">Preface</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html"><a class="padding" href="/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html">(b) Space &amp; Coordinate &amp; Vector &amp; Tensor</a></li>
@@ -514,6 +519,7 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
             <li class="active " data-nav-id="/vector_calculus/transformation/b_mapping_iii/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_iii/index.html">(a) Mapping III - Jacobian</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html">(b) Tensor components transformation I</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html">(b) Tensor components transformation II</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-b0706b103dc045d5c644e07a1de68310" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/operators/index.html"><a class="padding" href="/vector_calculus/operators/index.html">Operators</a><ul id="R-subsections-0da763a1f1771671de9f96b3e6099b25" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
@@ -534,8 +540,8 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1749303937" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749303937" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1749391831" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749391831" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -547,7 +553,7 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749303937"></script>
-    <script src="/js/theme.js?1749303937" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749391831"></script>
+    <script src="/js/theme.js?1749391831" defer></script>
   </body>
 </html>

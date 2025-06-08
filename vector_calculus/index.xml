@@ -3,7 +3,7 @@
   <channel>
     <title>Vector calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_calculus/index.html</link>
-    <description>Vector notation&#xD;General coordinates&#xD;Transformation&#xD;Operators</description>
+    <description>Vector notation&#xD;Transformation&#xD;General coordinates&#xD;Operators</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -15,18 +15,18 @@
       <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols</description>
     </item>
     <item>
-      <title>General coordinates</title>
-      <link>http://localhost:1313/vector_calculus/general_coordinates/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_calculus/general_coordinates/index.html</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Transformation</title>
       <link>http://localhost:1313/vector_calculus/transformation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_calculus/transformation/index.html</guid>
       <description>Preface&#xD;(b) Space &amp; Coordinate &amp; Vector &amp; Tensor&#xD;(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Tensor components transformation I&#xD;(b) Tensor components transformation II</description>
+    </item>
+    <item>
+      <title>General coordinates</title>
+      <link>http://localhost:1313/vector_calculus/general_coordinates/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/general_coordinates/index.html</guid>
+      <description>(a) Covariant and contravariant&#xD;(a) Metric tensor</description>
     </item>
     <item>
       <title>Operators</title>
