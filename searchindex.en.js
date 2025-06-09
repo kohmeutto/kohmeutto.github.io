@@ -9,7 +9,7 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rGeneral coordinates",
-    "content": "이 챕터를 학습하려면, 이전 Transformation을 반드시 숙지해야 한다.\n1. 일반좌표계에서의 표기법 suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.\n$$ \\vec{v}=v^{i}\\vec{h}_i=v_i\\vec{h}^i $$ $\\vec{h}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 공변기저벡터 라고 한다. $v^i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 contravariant(반변) 성분이라고 한다. $\\vec{h}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 반변기저벡터 라고 한다. $v_i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 covariant(공변) 성분이라고 한다. 2. 공변기저벡터 매개변수공간[u] → 실공간[v] 변환에 대한 설명으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.\n$$ d\\vec{v} =d\\vec{u}\\cdot\\nabla_{u}\\vec{v} =du^i\\frac{\\partial\\vec{v}}{\\partial u^i} =\\vec{h}_idu^i $$여기에서, $\\partial\\vec{v}/\\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\\vec{v}$ 의 접선 벡터를 의미하며, 이것이 자연기저벡터(공변기저벡터) $\\vec{h}_i$를 의미한다.\n3. 반변기저벡터 앞서, 매개변수공간[u] → 실공간[v] 변환할 때, 실공간의 기저(공변기저벡터)를 벡터 $\\vec{v}$ 의 접선벡터로 정의하였다. 또 다른 관점으로는 매개변수공간의 $u^i$ 는 실공간의 $u^i$의 등위면을 만들어 내며, 이 등위면의 법선벡터를 기저로 정의할 수 있다. 이것을 반변기저벡터 $\\vec{h}^i$ 라고 한다.\n반변기저벡터 $\\vec{h}^i$ 를 사용해 실공간에서의 미소변위벡터 $d\\vec{v}$를 표현할 수 있다. $\\vec{h}^i=\\nabla u^i$ 이다. (여기서 $\\nabla u^i$ 는 스칼라 함수 $u^i$ 의 그래디언트)\n$$ d\\vec{v}=\\vec{h}^idv_i=dv_i\\nabla u^i $$ 4. 매트릭 텐서: 공변기저벡터 ↔ 반변기저벡터 동일 실공간[v]의 텐서에 대한 기저 변환의 설명이다.\n매트릭 텐서는 실공간[v]에서 두 기저 시스템, 즉 공변기저벡터( $h_i$)와 반변기저벡터($h^i$) 사이의 관계를 정의하는 핵심적인 텐서이다. 이는 마치 두 언어 사이의 ‘사전’ 역할을 하며, 한 종류의 기저를 다른 종류의 기저로, 또는 한 종류의 성분을 다른 종류의 성분으로 변환하는 다리 역할을 한다.",
+    "content": "이 챕터를 학습하려면, 이전 Transformation을 반드시 숙지해야 한다.\n1. 일반좌표계에서의 표기법 suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.\n$$ \\vec{v}=v^{i}\\vec{h}_i=v_i\\vec{h}^i $$ $\\vec{h}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 공변기저벡터 라고 한다. $v^i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 contravariant(반변) 성분이라고 한다. $\\vec{h}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 반변기저벡터 라고 한다. $v_i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 covariant(공변) 성분이라고 한다. 2. 공변기저벡터 매개변수공간[u] → 실공간[v] 변환에 대한 설명으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.\n$$ d\\vec{v} =d\\vec{u}\\cdot\\nabla_{u}\\vec{v} =du^i\\frac{\\partial\\vec{v}}{\\partial u^i} =\\vec{h}_idu^i $$여기에서, $\\partial\\vec{v}/\\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\\vec{v}$ 의 접선 벡터를 의미하며, 이것이 자연기저벡터(공변기저벡터) $\\vec{h}_i$를 의미한다.\n3. 반변기저벡터 앞서, 매개변수공간[u] → 실공간[v] 변환할 때, 실공간의 기저(공변기저벡터)를 벡터 $\\vec{v}$ 의 접선벡터로 정의하였다. 또 다른 관점으로는 매개변수공간의 $u^i$ 는 실공간의 $u^i$의 등위면을 만들어 내며, 이 등위면의 법선벡터를 기저로 정의할 수 있다. 이것을 반변기저벡터 $\\vec{h}^i$ 라고 한다.\n반변기저벡터 $\\vec{h}^i$ 를 사용해 실공간에서의 미소변위벡터 $d\\vec{v}$를 표현할 수 있다. $\\vec{h}^i=\\nabla u^i$ 이다. (여기서 $\\nabla u^i$ 는 스칼라 함수 $u^i$ 의 그래디언트)\n$$ d\\vec{v}=\\vec{h}^idv_i=dv_i\\nabla u^i $$ 4. 왜 ‘공변(Covariant)‘이고 ‘반변(Contravariant)‘인가 (1) 공변 기저 벡터 ($\\vec{h}_i$)와 반변 성분 ($v^i$)\n공변 기저 벡터 ($\\vec{h}_i$):\n매개변수 축($u^i$)을 따라 실공간의 벡터 궤적에 접선으로 놓인다. 매개변수 축이 늘어나면, $\\vec{h}_i$도 실공간에서 그 늘어난 축을 따라 ‘함께’ 길어진다. 이처럼 좌표계 변화에 ‘함께(co-vary)’ 반응하는 특성 때문에 ‘공변’ 기저 벡터라고 불린다. 반변 성분 ($v^i$):\n전체 벡터 $\\vec{v}$의 값을 일정하게 유지하기 위해, 공변 기저 벡터($\\vec{h}_i$)의 변화와 ‘반대’ 방향으로 변하는 성분이다. 예를 들어, $\\vec{h}_i$가 길어지면, $v^i$는 상대적으로 작아져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 반대되기 때문에 ‘반변’ 성분이라고 불린다. (2) 반변 기저 벡터 ($\\vec{h}^i$)와 공변 성분 ($v_i$)\n반변 기저 벡터 ($\\vec{h}^i$):\n매개변수 $u^i$의 등위면(level surface)에 수직인 법선 벡터이다. 매개변수 축($u^i$)이 늘어나서 등위면들이 실공간에서 더 넓게 퍼지면(덜 촘촘해지면), $\\vec{h}^i$의 크기는 ‘짧아진다.’ 반대로 매개변수 축이 압축되어 등위면들이 더 촘촘하게 모이면, $\\vec{h}^i$의 크기는 ‘길어진다.’ 이처럼 매개변수 축의 변화 방향과 ‘반대’되는 경향으로 길이가 변하므로 ‘반변’ 기저 벡터라고 불린다. 또한 공변 기저($\\vec{h}_i$)와 $\\vec{h}_i \\cdot \\vec{h}^j = \\delta_i^j$ 관계처럼 상보적이고 역수적인 관계를 가진다. 공변 성분 ($v_i$):\n전체 벡터 $\\vec{v}$의 값을 일정하게 유지하기 위해, 반변 기저 벡터($\\vec{h}^i$)의 변화와 ‘같은’ 방향으로 변하는 성분이다. $\\vec{h}^i$가 길어지면(등위면이 촘촘해지면), $v_i$도 커져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 같기 때문에 ‘공변’ 성분이라고 불린다.",
     "description": "이 챕터를 학습하려면, 이전 Transformation을 반드시 숙지해야 한다.\n1. 일반좌표계에서의 표기법 suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.\n$$ \\vec{v}=v^{i}\\vec{h}_i=v_i\\vec{h}^i $$ $\\vec{h}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 공변기저벡터 라고 한다. $v^i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 contravariant(반변) 성분이라고 한다. $\\vec{h}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 반변기저벡터 라고 한다. $v_i$ 는 성분을 나타내며, 이것을 $\\vec{v}$ 의 covariant(공변) 성분이라고 한다. 2. 공변기저벡터 매개변수공간[u] → 실공간[v] 변환에 대한 설명으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.",
     "tags": [],
     "title": "(a) Covariant and contravariant",
@@ -136,12 +136,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/preface/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
     "content": "혹시 물리나 전자기학 공부하며 좌표 변환 때문에 답답했던 경험 있는가. 복잡한 공식만 잔뜩 나오고, 왜 그렇게 되는지 알기 어려워서 결국 외워버리거나 포기하고 싶었던 순간 말이다. 많은 학생들이 여기서 힘들어한다.\n왜 좌표 변환이 우리에게 이토록 어렵게 느껴질까. 어쩌면 좌표계가 바뀔 때 물리적인 양들, 특히 벡터의 성분들이 ‘왜’, 그리고 ‘어떻게’ 변해야 하는지에 대한 근본 원리를 제대로 알려주지 않았기 때문일지도 모른다. 딱딱한 공식 뒤에 숨겨진 아름다운 원리를 발견하는 기쁨을 온전히 느끼기 어려웠던 것이다.\n사실, 좌표 변환의 핵심 원리는 아주 간단한 두 가지 세상 이야기와 그 규칙에 대한 것이다. 바로 좌표 값들이 사는 ‘매개변수 공간’이라는 세상과 물리 현상이 일어나는 ‘실제 공간’이라는 세상이다. 좌표 변환은 이 두 세상 사이를 자연스럽게 오가는 ‘변환’ 과정이다.\n그리고 이 변환을 할 때, 물리적인 양들(벡터 포함)의 성분들은 그냥 제멋대로 바뀌는 게 아니다. 여기에는 명확한 ‘기준’이 있다. 이 규칙을 이해하는 가장 기본적인 열쇠가 바로 텐서(Tensor) 이다. 텐서라는 이름에 주눅 들 필요 없다. 텐서는 좌표계가 바뀌어도 본질적인 성질은 유지되는 것이라고 생각하면 된다. 복잡한 이론 전체를 다룰 필요 없이, 딱 필요한 만큼만 쉽게 알아볼 것이다.\n이 챕터는 바로 그 ‘매개변수 공간’ ↔ ‘실제 공간’ 변환의 원리와 그 바탕이 되는 텐서의 아주 기본적인 성질을 쉽고 명확하게 안내한다. 외우는 대신 ‘아하!’ 하고 이해하며, 좌표 변환을 넘어 물리 세계를 더 깊이 탐험하는 즐거움을 느끼게 되길 희망한다.",
     "description": "혹시 물리나 전자기학 공부하며 좌표 변환 때문에 답답했던 경험 있는가. 복잡한 공식만 잔뜩 나오고, 왜 그렇게 되는지 알기 어려워서 결국 외워버리거나 포기하고 싶었던 순간 말이다. 많은 학생들이 여기서 힘들어한다.\n왜 좌표 변환이 우리에게 이토록 어렵게 느껴질까. 어쩌면 좌표계가 바뀔 때 물리적인 양들, 특히 벡터의 성분들이 ‘왜’, 그리고 ‘어떻게’ 변해야 하는지에 대한 근본 원리를 제대로 알려주지 않았기 때문일지도 모른다. 딱딱한 공식 뒤에 숨겨진 아름다운 원리를 발견하는 기쁨을 온전히 느끼기 어려웠던 것이다.",
     "tags": [],
     "title": "Preface",
-    "uri": "/vector_calculus/transformation/preface/index.html"
+    "uri": "/vector_calculus/preface/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rLinear algebra",
@@ -150,14 +150,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Vector",
     "uri": "/linear_algebra/vector/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
-    "content": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols",
-    "description": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols",
-    "tags": [],
-    "title": "Vector notation",
-    "uri": "/vector_calculus/vector_notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rElectromagnetics \u003e \rElectromotive force",
@@ -248,12 +240,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/transformation/b_phasor_transform_for_pde/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rTransformation",
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
     "content": "1. Space \u0026 Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.\n좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다.\n매개 변수공간(Parameter space) 은 실제 물리 공간이 아닌, 실제 공간의 점을 나타내기 위해 사용되는 좌표 값(매개변수)들이 모여 이루는 개념적인 공간이다. 매개변수 공간 자체는 그 축이 각 매개변수의 값을 나타내므로, 그 자체가 일종의 ‘좌표계’와 같은 구조를 가진다. 매개변수 공간을 생각할 때는 좌표 값들($u_1$,$u_2$,$u_3$)을 축으로 하는 단순하고 ‘평평한’ 공간($\\mathbb{R}^3$)을 가정 한다. 하지만 이 공간에서의 거리나 기하학적 관계는 실제 공간에서의 물리적 거리나 기하학과 직접적으로 일치하지 않는다. scale factor나 Jacobian 등이 이 둘을 연결해 준다. 우리가 Jacobian이나 척도 인자를 논의할 때, 매개변수 공간은 변환의 ‘출발점’ 또는 좌표 값들이 존재하는 ‘영역’을 개념적으로 이해하는게 도움이 된다.\n2. Vector 원천벡터 (source vector r′): 전하나 전류가 있는 곳. 즉, 전자기장을 만드는 근원지의 좌표를 나타내는 벡터. 위치벡터 (position vector r): 전기장 E나 자기장 B 등을 측정하는 곳의 좌표를 나타내는 벡터. 변위벡터 (displacement vector η): 위치벡터와 원천벡터(근원벡터)의 차., η=r-r’’ 국소벡터, 벡터장 (local vector, vector field): 공간의 각 점에 물리량 벡터(예: 전기장 E나 자기장 B)를 할당하는 개념 3. Tensor (1) 텐서의 핵심: 좌표계 독립성\n어떠한 물리량을 표현할 때, 좌표계를 바꾸더라고 그 본질적인 성질을 유지해야 한다. 이는 마치 어떤 사건을 서로 다른 언어로 설명하더라도 그 사건 자체는 변하지 않는 것과 같다. 그런데 여기서 중요한 점은, 텐서인 벡터의 경우, 좌표계에 따라 성분 값이 변할 수 있다. 텐서란 본질적인 성질을 유지한다는 것이지, 벡터 표현 방법이 달라지면 안 된다는 것이 아니다. 이 점 때문에 텐서가 아니라고 생각할 수 있지만, 텐서의 핵심적인 특징은 변환 규칙에 있다.\n텐서는 좌표계에 상관없이 본질성을 유지한다. 텐서 성분은 좌표계에 따라, 변할 수 있다. 단, 변환 규칙 이 있어야 한다. (2) 벡터는 1차 텐서이다.\n텐서(벡터 포함)는 좌표계에 상관없이 물리적/기하학적 실체의 불변성을 나타낸다. 위치 벡터: ‘원점 O에 대한 점 P의 상대적 위치’라는 본질적인 기하학적 관계를 나타낸다. 이 관계 자체는 좌표계 선택에 의존하지 않는다. 위치 벡터의 성분은 좌표계에 따라 변하지만, 그 변환이 텐서 변환 규칙을 따르기 때문에 어떤 좌표계에서든 그 본질적인 관계를 일관되게 표현할 수 있다. 변위 벡터: 두 점 사이의 변위 벡터는 좌표계에 무관하므로 텐서이다. 벡터장: 전기장 E나 자기장 B 등을 나타내는 벡터는 좌표에 무관하므로, 텐서이다. (3) 스칼라는 0차 텐서이다.\n0차 텐서에 해당 좌표계 변환에 따라 값이 변하지 않음 (텐서인 벡터는 좌표계 변환에 따라 성분이 달라질 수 있다.) 덧셈, 뺄셈, 곱셈, 나눗셈 등 기본적인 연산 가능",
     "description": "1. Space \u0026 Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.\n좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다.",
     "tags": [],
-    "title": "(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor",
-    "uri": "/vector_calculus/transformation/b_space_coordinate_vector_tensor/index.html"
+    "title": "(b) Space \u0026 Tensor",
+    "uri": "/vector_calculus/b_space_tensor/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rInhomogeneous",
@@ -304,14 +296,6 @@ var relearn_searchindex = [
     "uri": "/ode_pde/inhomogeneous/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
-    "content": "Preface\r(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor\r(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Tensor components transformation I\r(b) Tensor components transformation II",
-    "description": "Preface\r(b) Space \u0026 Coordinate \u0026 Vector \u0026 Tensor\r(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Tensor components transformation I\r(b) Tensor components transformation II",
-    "tags": [],
-    "title": "Transformation",
-    "uri": "/vector_calculus/transformation/index.html"
-  },
-  {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE \u003e \rTransformation",
     "content": "라플라스 변환을 수행할 수 있는 조건\n적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE\n$$ \\frac{\\partial}{\\partial t}y\\left(x,t\\right)=-\\alpha\\frac{\\partial}{\\partial x}y\\left(x,t\\right),\\quad x\u003e0,\\quad t\u003e0 $$$$ \\text{[B.C]}\\quad y\\left(0,t\\right)=C,\\quad\\text{[I.C]}\\quad y\\left(x,0\\right)=0 $$\rsol1\r$$ sY\\left(x,s\\right)-y\\left(x,0\\right)=-\\alpha\\frac{\\partial}{\\partial x}Y\\left(x,s\\right) $$ $$ \\frac{\\partial}{\\partial x}Y\\left(x,s\\right)+\\frac{s}{\\alpha}Y\\left(x,s\\right)=0 $$ $$ Y\\left(x,s\\right)=c_1e^{-\\frac{s}{\\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\\left(0,s\\right)=\\frac{C}{s}=c_1 $$ $$ Y\\left(x,s\\right)=\\frac{C}{s}e^{-\\frac{x}{\\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=Cu\\left(t-\\frac{x}{\\alpha}\\right) $$ sol2\r$$ \\frac{\\partial}{\\partial t}Y\\left(s,t\\right)=-\\alpha\\left\\lbrace s Y\\left(s,t\\right)-y\\left(0,t\\right)\\right\\rbrace $$ $$ \\frac{\\partial}{\\partial t}Y\\left(s,t\\right)+\\alpha sY\\left(s,t\\right)=\\alpha C $$ $$ Y\\left(s,t\\right)=c_1e^{-\\alpha st}+\\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\\left(s,0\\right)=0\\to c_1=-\\frac{C}{s} $$ $$ Y\\left(s,t\\right)=-\\frac{C}{s}e^{-\\alpha st}+\\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(s,t\\right)\\right\\rbrace\\left(x,t\\right)=Cu\\left(x\\right)-Cu\\left(x-\\alpha t\\right) $$\rexample2) Consider\n$$ \\frac{\\partial}{\\partial t}y\\left(x,t\\right)+\\frac{\\partial}{\\partial x}y\\left(x,t\\right)+y\\left(x,t\\right)=0,\\quad x\u003e0,\\quad t\u003e0 $$$$ \\text{[B.C]}\\quad y\\left(0,t\\right)=\\sin t,\\quad\\text{[I.C]}\\quad y\\left(x,0\\right)=0 $$\rsol\r$$ sY\\left(x,s\\right)-y\\left(x,0\\right)+\\frac{\\partial}{\\partial x}Y\\left(x,s\\right)+Y\\left(x,s\\right)=0 $$ $$ \\frac{\\partial}{\\partial x}Y\\left(x,s\\right)+\\left(s+1\\right)Y\\left(x,s\\right)=0 $$ $$ Y\\left(x,s\\right)=c_1e^{-\\left(s+1\\right)x} $$ [B.C]을 라플라스 변환한다. $$ Y\\left(0,s\\right)=\\frac{1}{s^2+1}=c_1 $$ $$ Y\\left(x,s\\right)=e^{-x}\\frac{e^{-xs}}{s^2+1} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=e^{-x} \\left\\lbrack\\sin t\\cdot u\\left(t\\right)\\right\\rbrack _{t=x}=e^{-x}\\sin\\left(t-x\\right)u\\left(t-x\\right) $$\rexample3) Let us use Laplace for the following problem\n$$ \\frac{\\partial}{\\partial t}y\\left(x,t\\right)=\\frac{\\partial^2}{\\partial x^2}y\\left(x,t\\right),\\quad x\u003e0,\\quad t\u003e0 $$$$ \\text{[B.C]}\\quad y_{x}\\left(0,t\\right)=f\\left(t\\right),\\quad\\text{[I.C]}\\quad y\\left(x,0\\right)=0 $$\rsol\r$$ \\frac{\\partial}{\\partial t}Y\\left(s,t\\right)=s^2Y\\left(s,t\\right)-sY\\left(0,t\\right)-y\\left(0,t\\right) $$ 위는 x에 대한 라플라스 변환이다. 그러나 I.C 을 적용하기가 힘들다. 따라서, t에 대한 라플라스 변환을 수행한다. $$ sY\\left(x,s\\right)-y\\left(x,0\\right)=\\frac{\\partial^2}{\\partial x^2}Y\\left(x,s\\right) $$ $$ Y\\left(x,s\\right)=c_1e^{-\\sqrt{s}x}+c_2e^{+\\sqrt{s}x} $$ 수렴하기 위해서는 $c_{2}=0$ 이어야 한다. $$ Y\\left(x,s\\right)=c_1e^{-\\sqrt{s}x} $$ [B.C]을 라플라스 변환한다. $$ \\frac{\\partial}{\\partial x}Y\\left(0,s\\right)=F\\left(s\\right)\\implies\\frac{\\partial}{\\partial x}Y\\left(0,s\\right)=-c_1\\sqrt{s}=F\\left(s\\right)\\implies c_1=-\\frac{F\\left(s\\right)}{\\sqrt{s}} $$ $$ Y\\left(x,s\\right)=-\\frac{F\\left(s\\right)}{\\sqrt{s}}e^{-\\sqrt{s}x} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=\\frac{1}{2\\pi i}\\int_{c-i\\infty}^{c+i\\infty}ds\\left\\lbrack\\frac{F\\left(s\\right)}{s}e^{-\\sqrt{s}x}e^{st}\\right\\rbrack $$\rexample4) Consider the first order PDE\n$$ \\frac{\\partial}{\\partial x}u\\left(x,t\\right)+\\frac{\\partial}{\\partial t}u\\left(x,t\\right)=x,\\quad x\u003e0,\\quad t\u003e0 $$$$ \\text{[B.C]}\\quad u\\left(0,t\\right)=0,\\quad\\text{[I.C]}\\quad u\\left(x,0\\right)=0 $$\rsol\r$$ sU\\left(s,t\\right)-u\\left(0,t\\right)+\\frac{\\partial}{\\partial t}U\\left(s,t\\right)=\\frac{1}{s^2} $$ $$ \\frac{\\partial}{\\partial t}U\\left(s,t\\right)+sU\\left(s,t\\right)=\\frac{1}{s^2} $$ 일반해를 구한다. $$ U_{h}\\left(x,s\\right)=c_1e^{-\\sqrt{s}x}+c_2e^{+\\sqrt{s}x} $$ 특수해를 구한다. $$ U_{p}=\\left.\\frac{1}{D+s}\\right|_{D=0}\\frac{1}{s^2}=\\frac{1}{s^3} $$ 따라서, $$ U\\left(s,t\\right)=c_1e^{-st}+\\frac{1}{s^3} $$ 계수$_{1}$구하고 적용한다. $$ U\\left(s,t\\right)=\\frac{1}{s^3}\\left(1-e^{-st}\\right) $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace U\\left(s,t\\right)\\right\\rbrace\\left(x,t\\right)=\\frac12x^2u\\left(x\\right)-\\left.\\frac12x^2u\\left(x\\right)\\right|_{x=x-t}=\\frac12x^2u\\left(x\\right)-\\frac12\\left(x-t\\right)^2u\\left(x-t\\right) $$\rexample5)\n$$ \\frac{\\partial}{\\partial t}u\\left(x,t\\right)=\\frac{\\partial^2}{\\partial x^2}u\\left(x,t\\right),\\quad 0 \u003c x \u003c 2,\\quad t \u003e 0 $$$$ \\text{[B.C]}\\quad u\\left(0,t\\right)=0,\\quad u\\left(2,t\\right)=0 $$$$ \\text{[I.C]}\\quad u\\left(x,0\\right)=3\\sin2\\pi x $$\rsol\r$$ sU\\left(x,s\\right)-u\\left(x,0\\right)=\\frac{\\partial^2}{\\partial x^2}U\\left(x,s\\right) $$ $$ \\frac{\\partial^2}{\\partial x^2}U\\left(x,s\\right)-sU\\left(x,s\\right)=-3\\sin2\\pi x $$ 일반해를 구한다. $$ U_{h}\\left(x,s\\right)=c_1e^{-\\sqrt{s}x}+c_2e^{+\\sqrt{s}x} $$ 특수해를 구한다. 페이저 변환을 사용한다. (아래 풀이가 성립하려면, s가 실수여야 한다.) $$ \\left(-4\\pi^2-s\\right)U_{p}\\left(x,s\\right)=3i $$ $$ U_{p}=\\operatorname{Re}\\left\\lbrack\\frac{-3i}{4\\pi^2+s}e^{i2\\pi x}\\right\\rbrack=\\frac{3}{4\\pi^2+s}\\sin2\\pi x $$ 따라서, $$ U\\left(x,s\\right)=c_1e^{-\\sqrt{s}x}+c_2e^{+\\sqrt{s}x}+\\frac{3}{4\\pi^2+s}\\sin2\\pi x $$ 계수를 구하고 적용한다. $$ U\\left(0,s\\right)=c_1+c_2=0 $$ $$ U\\left(2,s\\right)=c_1e^{-2\\sqrt{s}}+c_2e^{+2\\sqrt{s}}=0 $$ $$ c_1e^{-2\\sqrt{s}}-c_1e^{+2\\sqrt{s}}=0\\implies c_1\\left(e^{-2\\sqrt{s}}-e^{+2\\sqrt{s}}\\right)=0 $$ s는 0이 아니여야 한다. 따라서, $c_{1}=c_{2}=0$ 이다. 여기서 중요한 사실을 기억해라. 연산자가 self-adjoint 하다면, 특수해는 전체해와 같다. $$ U\\left(x,s\\right)=\\frac{3}{4\\pi^2+s}\\sin2\\pi x $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace U\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=3\\sin2\\pi x\\cdot e^{-4\\pi^2t}u\\left(t\\right) $$\rexample6)\n$$ \\frac{\\partial^2}{\\partial t^2}u\\left(x,t\\right)=c^2\\frac{\\partial^2}{\\partial x^2}u\\left(x,t\\right)+\\sin\\pi x,\\quad 0 \u003c x \u003c 1,\\quad t \u003e 0 $$$$ \\text{[B.C]}\\quad u\\left(0,t\\right)=u\\left(1,t\\right)=0 $$$$ \\text{[I.C]}\\quad u\\left(x,0\\right)=0,\\quad u_{t}\\left(x,0\\right)=0 $$\rsol\r$$ s^2U\\left(x,s\\right)-sU\\left(x,s\\right)-u\\left(x,0\\right)=c^2\\frac{\\partial^2}{\\partial x^2}U\\left(x,s\\right)+\\frac{\\sin\\pi x}{s} $$ $$ \\frac{\\partial^2}{\\partial x^2}U\\left(x,s\\right)-\\frac{s^2}{c^2}U\\left(x,s\\right)=-\\frac{1}{c^2}\\left\\lbrace sU\\left(x,0\\right)+u\\left(x,0\\right)+\\frac{\\sin\\pi x}{s}\\right\\rbrace $$ $$ \\frac{\\partial^2}{\\partial x^2}U\\left(x,s\\right)-\\frac{s^2}{c^2}U\\left(x,s\\right)=-\\frac{1}{c^2}\\left(\\frac{\\sin\\pi x}{s}\\right) $$ 일반해를 구한다. $$ U_{h}\\left(x,s\\right)=c_1e^{-\\frac{s}{c}x}+c_2e^{+\\frac{s}{c}x} $$ 특수해를 구한다. $$ U_{p}=-\\operatorname{\\frac{1}{sc^2}Im}\\left\\lbrack\\left.\\frac{1}{D^2-\\frac{s^2}{c^2}}\\right|_{D=i\\pi}e^{i\\pi x}\\right\\rbrack=\\frac{1}{s}\\operatorname{Im}\\left\\lbrack\\frac{1}{c^2\\pi^2+s^2}e^{i\\pi x}\\right\\rbrack=\\frac{\\sin\\pi x}{s\\left(s^2+c^2\\pi^2\\right)} $$ $$ U\\left(x,s\\right)=c_1e^{-\\frac{s}{c}x}+c_2e^{+\\frac{s}{c}x}+\\frac{\\sin\\pi x}{s\\left(s^2+c^2\\pi^2\\right)} $$ $$ U\\left(x,s\\right)=c_1e^{-\\frac{s}{c}x}+c_2e^{+\\frac{s}{c}x}+\\frac{\\sin\\pi x}{c^2\\pi^2}\\left(\\frac{1}{s}-\\frac{s}{s^2+c^2\\pi^2}\\right) $$ 계수를 구하고 적용한다. $$ U\\left(0,s\\right)=c_1+c_2=0 $$ $$ U\\left(1,s\\right)=c_1e^{-\\frac{s}{c}}+c_2e^{+\\frac{s}{c}}=0 $$ $$ c_1e^{-\\frac{s}{c}}-c_1e^{\\frac{s}{c}}=0\\implies c_1\\left(e^{-\\frac{s}{c}}-e^{\\frac{s}{c}}\\right)=0 $$ s는 0이 아니여야 한다. 따라서,$c_{1}=c_{2}=0$ 이다. 여기서 중요한 사실을 기억해라. 연산자가 self-adjoint 하다면, 특수해는 전체해와 같다. $$ U\\left(x,s\\right)=\\frac{\\sin\\pi x}{c^2\\pi^2}\\left(\\frac{1}{s}-\\frac{s}{s^2+c^2\\pi^2}\\right) $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace U\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=\\frac{\\sin\\pi x}{c^2\\pi^2}\\left\\lbrace u\\left(t\\right)-\\cos c\\pi t\\cdot u\\left(t\\right)\\right\\rbrace $$\r6.5: Solving PDEs with the Laplace Transform - Mathematics LibreTexts\nFull.pdf\nlaplace_trans_pdes_09.pdf",
     "description": "라플라스 변환을 수행할 수 있는 조건\n적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE\n$$ \\frac{\\partial}{\\partial t}y\\left(x,t\\right)=-\\alpha\\frac{\\partial}{\\partial x}y\\left(x,t\\right),\\quad x\u003e0,\\quad t\u003e0 $$$$ \\text{[B.C]}\\quad y\\left(0,t\\right)=C,\\quad\\text{[I.C]}\\quad y\\left(x,0\\right)=0 $$\rsol1\r$$ sY\\left(x,s\\right)-y\\left(x,0\\right)=-\\alpha\\frac{\\partial}{\\partial x}Y\\left(x,s\\right) $$ $$ \\frac{\\partial}{\\partial x}Y\\left(x,s\\right)+\\frac{s}{\\alpha}Y\\left(x,s\\right)=0 $$ $$ Y\\left(x,s\\right)=c_1e^{-\\frac{s}{\\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\\left(0,s\\right)=\\frac{C}{s}=c_1 $$ $$ Y\\left(x,s\\right)=\\frac{C}{s}e^{-\\frac{x}{\\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(x,s\\right)\\right\\rbrace\\left(x,t\\right)=Cu\\left(t-\\frac{x}{\\alpha}\\right) $$ sol2\r$$ \\frac{\\partial}{\\partial t}Y\\left(s,t\\right)=-\\alpha\\left\\lbrace s Y\\left(s,t\\right)-y\\left(0,t\\right)\\right\\rbrace $$ $$ \\frac{\\partial}{\\partial t}Y\\left(s,t\\right)+\\alpha sY\\left(s,t\\right)=\\alpha C $$ $$ Y\\left(s,t\\right)=c_1e^{-\\alpha st}+\\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\\left(s,0\\right)=0\\to c_1=-\\frac{C}{s} $$ $$ Y\\left(s,t\\right)=-\\frac{C}{s}e^{-\\alpha st}+\\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\\left\\lbrace Y\\left(s,t\\right)\\right\\rbrace\\left(x,t\\right)=Cu\\left(x\\right)-Cu\\left(x-\\alpha t\\right) $$\rexample2) Consider",
@@ -342,6 +326,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Fourier transform I",
     "uri": "/integral_transform/transformation/b_fourier_transform_i/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.\n(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.\n(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)\n(4) 하나의 방정식에서, free index는 같아야 한다.\n(5) 대칭 행렬이 아니라면, $a_{ij}\\ne a_{ji}$ 이다.\n1. free suffix $$\r\\vec{c}=\\vec{a}+\\vec{b}\r\\rightarrow\rc_i=a_i+b_i\r$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.\n2. single vector expression $$\r\\vec{a}=\\hat{u}_{i}a_{i}\r$$ 3. dot product expression 1 Now consider the dot product of two vectors, $a\\cdot b = a_1 b_1 + a_2 b_2 + a_3 b_3$. This can be written more compactly as\n$$\r\\vec{a}\\cdot\\vec{b}=\\sum_{i=1}^3a_{i}b_{i}\\rightarrow a_{i}b_{i}\r$$ 4. dot product expression 2 $$\r\\vec{a}\\cdot\\vec{b}\r=a_{i}\\hat{u}_{i}\\cdot b_{j}\\hat{u}_{j}=a_{i}b_{j}\\left(\\hat{u}_{i}\\cdot\\hat{u}_{j}\\right)\r=a_{i}b_{j}\\delta_{ij}=a_{i}b_{i}\r$$$$\r\\hat{u}_{i}\\cdot\\hat{u}_{j}\r=\\delta_{ij}\r$$ 5. Matrix expression $$\rM_{ij}\\ne M_{ji}\r$$$$\rM_{ij}=a_{i}b_{j}\r$$$$\rM_{ij}x_{i}=a_{i}b_{j}x_{i}=\\left(\\vec{a\\cdot\\vec{x}}\\right)b_{j}\r$$ example 1)\nSuppose that an expression involves two dot products multiplied together, (a·b)(c·d). In order to indicate which vector is dotted with which, a different dummy suffix must be used for each of the dot products:\n$$\r\\left(\\vec{a}\\cdot\\vec{b}\\right)\\left(\\vec{c}\\cdot\\vec{d}\\right)=a_{j}b_{j}c_{k}d_{k}\r$$example 2)\nWrite the suffix notation expression in ordinary vector notation.\n$$\ra_{j}b_{i}c_{j}\r\\rightarrow\r\\left(\\vec{a\\cdot\\vec{c}}\\right)\\vec{b}\r$$example 3)\nWrite the vector equation in suffix notation.\n$$\r\\vec{u}+\\left(\\vec{a}\\cdot\\vec{b}\\right)\\vec{v}\r=\\left|\\vec{a}\\right|^2\\left(\\vec{b}\\cdot\\vec{v}\\right)\\vec{a}\r$$sol)\n$$\ru_{i}+\\left\\lbrack\\left(\\vec{a}\\cdot\\vec{b}\\right)\\vec{v}\\right\\rbrack_{i}\r=a_{j}a_{j}b_{k}v_{k}a_{i}\r$$$$\ru_{i}+a_{j}b_{j}v_{i}=a_{j}a_{j}b_{k}v_{k}a_{i}\r$$example 4)\nShow that the product of two N x N matrices A and B, G = AB can be written in suffix notation as $C_{ij}=A_{ik}B_{kj}$.\n$$\r\\vec{C}=\\vec{AB}\\rightarrow C_{ij}\r=\\left\\lbrack\\vec{AB}\\right\\rbrack_{ij}\r=A_{ik}B_{kj}\r$$example 5)\nShow that the trace of the matrix AB (defined as the sum of the elements on the diagonal) is the same as the trace of BA.\nproof)\n$$\r\\operatorname{Tr}\\left(\\vec{A}\\vec{B}\\right)\r=A_{ik}B_{ki}\r=B_{ki}A_{ik}\r=Tr\\left(\\vec{B}\\vec{A}\\right)\r$$ 5. Non-identities example1)\n$$\ra_{ij}\\left(x_{i}+y_{j}\\right)\\ne a_{ij}x_{i}+a_{ij}y_{j}\r$$proof)\n하나의 방정식에서, free index는 같아야 한다. 를 만족하지 않으므로 문제가 성립 불가능\nexample2)\n$$\rM_{ij}x_{i}y_{j}\\ne M_{ij}y_{i}x_{j}\r$$proof)\n대칭 행렬이 아닌 경우에는,\n$$\rM_{ij}\\ne M_{ji}\r$$따라서,\n$$\rM_{ij}x_{i}y_{j}\r=a_{i}b_{j}x_{i}y_{j}\r=\\left(\\vec{a}\\cdot\\vec{x}\\right)\\left(\\vec{b}\\cdot \\vec{y}\\right)\r$$$$\rM_{ij}y_{i}x_{j}\r=a_{i}b_{j}y_{i}x_{j}\r=\\left(\\vec{a}\\cdot\\vec{y}\\right)\\left(\\vec{b}\\cdot\\vec{x}\\right)\r$$example3)\n$$\r\\left(a_{ij}+a_{ji}\\right)x_{i}y_{j}\\ne2a_{ij}x_{i}y_{j}\r$$proof)\n대칭 행렬이 아닌 경우에는,\n$$\ra_{ij}\\ne a_{ji}\r$$ 6. Identities $$\ra_{ij}\\left(x_{i}+y_{i}\\right)\r=a_{ij}x_{i}+a_{ij}y_{i}\r$$$$\ra_{ij}x_{i}x_{j}\r=a_{ji}x_{i}x_{j}\r$$$$\r\\left(a_{ij}+a_{ji}\\right)x_{i}x_{j}\r=2a_{ij}x_{i}x_{j}\r$$ Einstein Summation Convention: an Introduction",
+    "description": "0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.\n(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.\n(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)\n(4) 하나의 방정식에서, free index는 같아야 한다.\n(5) 대칭 행렬이 아니라면, $a_{ij}\\ne a_{ji}$ 이다.\n1. free suffix $$\r\\vec{c}=\\vec{a}+\\vec{b}\r\\rightarrow\rc_i=a_i+b_i\r$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.",
+    "tags": [],
+    "title": "(b) Gradient",
+    "uri": "/vector_calculus/b_gradient/b_gradient/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rOperators",
@@ -422,14 +414,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(r) Uniqueness of Helmholtz equation",
     "uri": "/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
-    "content": "(a) Covariant and contravariant\r(a) Metric tensor",
-    "description": "(a) Covariant and contravariant\r(a) Metric tensor",
-    "tags": [],
-    "title": "General coordinates",
-    "uri": "/vector_calculus/general_coordinates/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rTemps",
@@ -552,20 +536,20 @@ var relearn_searchindex = [
     "uri": "/integral_transform/operators/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
-    "content": "(b) Gradient\r(b) Divergence",
-    "description": "(b) Gradient\r(b) Divergence",
-    "tags": [],
-    "title": "Operators",
-    "uri": "/vector_calculus/operators/index.html"
-  },
-  {
     "breadcrumb": "수리전자물리학 \u003e \rODE \u0026 PDE",
     "content": "공사중",
     "description": "공사중",
     "tags": [],
     "title": "Special ODEs",
     "uri": "/ode_pde/special_odes/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols",
+    "description": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols",
+    "tags": [],
+    "title": "Vector notation",
+    "uri": "/vector_calculus/vector_notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rElectromagnetics \u003e \rElectromotive force",
@@ -624,6 +608,14 @@ var relearn_searchindex = [
     "uri": "/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "(a) Covariant and contravariant\r(a) Metric tensor",
+    "description": "(a) Covariant and contravariant\r(a) Metric tensor",
+    "tags": [],
+    "title": "General coordinates",
+    "uri": "/vector_calculus/general_coordinates/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e \rIntegral transform",
     "content": "(i) LTI system\r(b) Causality\r(b) LTI \u0026 Circuit analysis",
     "description": "(i) LTI system\r(b) Causality\r(b) LTI \u0026 Circuit analysis",
@@ -646,6 +638,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Strum-Lioville",
     "uri": "/ode_pde/sturm_liouville/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Tensor components transformation I\r(b) Tensor components transformation II",
+    "description": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Tensor components transformation I\r(b) Tensor components transformation II",
+    "tags": [],
+    "title": "Transformation",
+    "uri": "/vector_calculus/transformation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
@@ -688,9 +688,17 @@ var relearn_searchindex = [
     "uri": "/electromagnetics/electromotive_force/r_emf_voltage/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "(b) Gradient\r(b) Divergence",
+    "description": "(b) Gradient\r(b) Divergence",
+    "tags": [],
+    "title": "Operators",
+    "uri": "/vector_calculus/operators/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학",
-    "content": "Vector notation\rTransformation\rGeneral coordinates\rOperators",
-    "description": "Vector notation\rTransformation\rGeneral coordinates\rOperators",
+    "content": "Preface\r(b) Space \u0026 Tensor\r(b) Gradient\rVector notation\rGeneral coordinates\rTransformation\rOperators",
+    "description": "Preface\r(b) Space \u0026 Tensor\r(b) Gradient\rVector notation\rGeneral coordinates\rTransformation\rOperators",
     "tags": [],
     "title": "Vector calculus",
     "uri": "/vector_calculus/index.html"
