@@ -8,21 +8,21 @@
     <meta name="description" content="0. Total derivative &amp; Gradient 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수를 $u^i$ 라고 하자.
 $$df=du^i\frac{\partial f}{\partial u^i}$$위 식을 벡터로 표현하면, 아래와 같다.
 $$df=d\vec{u}\cdot\nabla_u f$$$$\nabla_u=\left[\frac{\partial}{\partial u^1}, \frac{\partial}{\partial u^2}, \frac{\partial}{\partial u^3}\right]^T$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)
-$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공간($u^1,u^2,u^3$)은 실 공간 $v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3)$ 에 대응된다. 따라서, 스칼라 $f$는 다음과 같이 표현될 수 있다.">
+$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar in an arbitrary space 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Gradient :: 수리전자물리학">
     <meta name="twitter:description" content="0. Total derivative &amp; Gradient 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수를 $u^i$ 라고 하자.
 $$df=du^i\frac{\partial f}{\partial u^i}$$위 식을 벡터로 표현하면, 아래와 같다.
 $$df=d\vec{u}\cdot\nabla_u f$$$$\nabla_u=\left[\frac{\partial}{\partial u^1}, \frac{\partial}{\partial u^2}, \frac{\partial}{\partial u^3}\right]^T$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)
-$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공간($u^1,u^2,u^3$)은 실 공간 $v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3)$ 에 대응된다. 따라서, 스칼라 $f$는 다음과 같이 표현될 수 있다.">
+$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar in an arbitrary space 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.">
     <meta property="og:url" content="http://localhost:1313/vector_calculus/b_gradient/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Gradient :: 수리전자물리학">
     <meta property="og:description" content="0. Total derivative &amp; Gradient 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수를 $u^i$ 라고 하자.
 $$df=du^i\frac{\partial f}{\partial u^i}$$위 식을 벡터로 표현하면, 아래와 같다.
 $$df=d\vec{u}\cdot\nabla_u f$$$$\nabla_u=\left[\frac{\partial}{\partial u^1}, \frac{\partial}{\partial u^2}, \frac{\partial}{\partial u^3}\right]^T$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)
-$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공간($u^1,u^2,u^3$)은 실 공간 $v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3)$ 에 대응된다. 따라서, 스칼라 $f$는 다음과 같이 표현될 수 있다.">
+$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar in an arbitrary space 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Vector calculus">
@@ -30,20 +30,20 @@ $$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공�
     <meta itemprop="description" content="0. Total derivative &amp; Gradient 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수를 $u^i$ 라고 하자.
 $$df=du^i\frac{\partial f}{\partial u^i}$$위 식을 벡터로 표현하면, 아래와 같다.
 $$df=d\vec{u}\cdot\nabla_u f$$$$\nabla_u=\left[\frac{\partial}{\partial u^1}, \frac{\partial}{\partial u^2}, \frac{\partial}{\partial u^3}\right]^T$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)
-$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공간($u^1,u^2,u^3$)은 실 공간 $v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3)$ 에 대응된다. 따라서, 스칼라 $f$는 다음과 같이 표현될 수 있다.">
-    <meta itemprop="wordCount" content="175">
+$$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar in an arbitrary space 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.">
+    <meta itemprop="wordCount" content="621">
     <title>(b) Gradient :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749484645" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749484645" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749484645" rel="stylesheet">
-    <link href="/css/theme.css?1749484645" rel="stylesheet">
-    <link href="/css/format-html.css?1749484645" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1749484645" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1749484645" defer></script>
-    <script src="/js/search.js?1749484645" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749517849" rel="stylesheet">
+    <link href="/css/theme.css?1749517849" rel="stylesheet">
+    <link href="/css/format-html.css?1749517849" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749517849" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749517849" defer></script>
+    <script src="/js/search.js?1749517849" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -53,7 +53,7 @@ $$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공�
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1749484645";
+      window.relearn.index_js_url="/searchindex.en.js?1749517849";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -117,8 +117,9 @@ $$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공�
     <li>
       <ul>
         <li><a href="#0--total-derivative--gradient">0.  Total derivative &amp; Gradient</a></li>
-        <li><a href="#1-gradient-for-scalar">1. Gradient for scalar</a></li>
-        <li><a href="#2-gradient-for-vector">2. Gradient for vector</a></li>
+        <li><a href="#1-gradient-for-scalar-in-an-arbitrary-space">1. Gradient for scalar in an arbitrary space</a></li>
+        <li><a href="#2-gradient-for-scalar-in-parameter--real-spaces">2. Gradient for scalar in parameter &amp; real spaces</a></li>
+        <li><a href="#3-gradient-for-vector">3. Gradient for vector</a></li>
       </ul>
     </li>
   </ul>
@@ -133,9 +134,9 @@ $$d:=d\vec{u}\cdot\nabla_u$$ 1. Gradient for scalar 우선, 매개변수 공�
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Gradient</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/b_space_tensor/index.html" title="(b) Space & Tensor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/vector_notation/b_kronecker_levicivita_symbols/index.html" title="(b) Kronecker and Levi-Civit`a Symbols (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/vector_notation/index.html" title="Vector notation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_calculus/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -174,10 +175,31 @@ $$<p>여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다
 $$
 d:=d\vec{u}\cdot\nabla_u
 $$<hr>
-<h3 id="1-gradient-for-scalar">1. Gradient for scalar</h3>
+<h3 id="1-gradient-for-scalar-in-an-arbitrary-space">1. Gradient for scalar in an arbitrary space</h3>
+<p>일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.</p>
+<p><strong>(1) 방향 도함수 해석</strong></p>
+<p>gradient 의 특성을 엄밀하게 해석하는 방법이다. 임의의 위치에서 gradient 와 그 위치에서의 임의의 단위벡터를 내적해보자.</p>
+$$
+\nabla_q f \cdot \hat{l} = |\nabla_q f|\cdot1\cdot\cos\theta
+$$<p>$\nabla_q f$의 크기를 생각하면, $\cos\theta=1$ 이 되어야 하므로 $\theta=0$ 이다. 따라서, <strong>$\nabla_q f$의 특성은 공간상의 기울기가 최대가 되는 방향임</strong>을 알수 있다.</p>
+<p><strong>(2) 등고선 or 등위면 해석</strong></p>
+<p><strong>등위면이나 등고선 해석</strong>은 (1)의 방법보다 gradient 의 기하학적 의미를 &lsquo;시각화&rsquo;하고 &lsquo;직관적&rsquo;으로 이해하는 데 매우 유용하다. (단, 이 방식은 등위 값을 가질 때 적용할 수 있다.)
+등고선은 같은 값을 선으로 연결한 형태를 의미하고, 등위면은 같은 값을 면으로 연결한 형태를 말한다. 공간 $q$에 대해 수식으로 표현하면, 다음과 같다.</p>
+$$
+f(q^1,q^2,q^3)=c,\quad \text{단, c는 상수}
+$$<p>전미분을 수행한다.</p>
+$$
+df=d\vec{q}\cdot\nabla_q f=0
+$$<p><strong>여기에서 중요하게 생각해야 할 지점이 있다. $f=c$ 이라고 해서, $\nabla_q f=0$ 이 아닐 수 있다는 점이다. 이것은 자칫하면 오해할 수 있는 부분으로, 꼭 기억하자.</strong></p>
+<p>$df=0$이 되려면, $d\vec{q}$ 와 $\nabla_q f$ 는 서로 수직이어야 한다. $d\vec{q}$는 등위면 상에 존재하므로, <strong>$\nabla_q f$는 등위면과 수직</strong>이다. 어떤 지점에서 함수 $f$의 값을 가장 빠르게 변화시키려면, <strong>함수 값이 변하지 않는 등위면의 접선 방향이 아닌, 등위면에 수직인 방향으로 이동</strong>해야 한다. 마치 언덕에서 등고선을 따라가면 높이 변화가 없지만, 등고선에 수직으로 올라가면 가장 가파른 경사를 만나는 것과 같다. 이는 위(1)의 결과와 연결시켜 생각하면 이해하기 쉽다.</p>
+<p>아래 그림은 구 대칭 형태로 온도가 분포할 때며, gradient 연산 결과의 방향은 방사 방향에 해당함을 확인할 수 있다.</p>
+<img src="image1.png" width="60%" height="auto">
+<hr>
+<h3 id="2-gradient-for-scalar-in-parameter--real-spaces">2. Gradient for scalar in parameter &amp; real spaces</h3>
+<p><strong>(1) 매개변수 공간과 실공간에서의 스칼라 $f$</strong></p>
 <p>우선, 매개변수 공간($u^1,u^2,u^3$)은 실 공간 $v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3)$ 에 대응된다. 따라서, 스칼라 $f$는 다음과 같이 표현될 수 있다.</p>
 $$
-f(u^2,u^2,u^3)=f(v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3))
+f(u^1,u^2,u^3)=f(v^1(u^1,u^2,u^3),v^2(u^1,u^2,u^3),v^3(u^1,u^2,u^3))
 $$<p>매개변수 공간과, 실공간에서 gradient는 아래와 같이 표현된다.</p>
 $$
 \nabla_u f
@@ -185,18 +207,31 @@ $$
 ,\quad
 \nabla_v f
 =\left[\frac{\partial f}{\partial v^1}, \frac{\partial f}{\partial v^2}, \frac{\partial f}{\partial v^3}\right]^T
-$$<p>단, <strong>위와 달리</strong>, 각 공간에서의 gradient 가 동일하지 않음을 주의하라.</p>
+$$<p><strong>위와 달리</strong>, 각 공간에서의 gradient 가 동일하지 않음을 주의하라. 두 경우 모두 하나의 물리량 $f$를 다루고 있으며, 그 &lsquo;$f$의 기울기&rsquo;라는 <strong>하나의 벡터량을 서로 다른 &lsquo;공간 또는 좌표계&rsquo;에서 표현</strong>한 것이다. 그리고 이 두 표현($\nabla_u f$, $\nabla_v f$)은 서로 다르게 나타난다.</p>
 $$
 \nabla_u f \ne \nabla_v f
-$$<p>이제 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.</p>
-<hr>
-<h3 id="2-gradient-for-vector">2. Gradient for vector</h3>
+$$<p>이는 곧, 해석공간 또는 좌표계가 바뀌면 같은 물리량을 나타내는 벡터의 성분 표현이 달라질 수 있음을 의미한다. 이러한 좌표계 변환에 따른 물리량의 표현 변화를 체계적으로 다루는 것이 바로 텐서의 핵심 개념 중 하나이다.</p>
+<p><strong>(2) [매개변수 공간]에서 [실 공간]의 공간 자체 변환(기저 변환)</strong></p>
+<p>앞선, 등위면이나 등고선 해석을 생각해보자. 매개변수 공간[u]에서 등위면은 실공간[v]로 mapping 되는 등위면을 만든다. 예로, 구 좌표계 매개변수 공간 $r=a$에 해당하는 등위면($r=a$, $\theta=$모든값, $\phi=$모든값)은 실공간에서 $r=a$의 구면을 형성하는 것으로 생각할 수 있다.</p>
+<p>매개변수공간 [$u$, $u^i$]에서 실공간으로 mapping된 등위면 [$v$, $u^i(v^1,v^2,v^3)=$상수]에 대한 법선 벡터는 아래와 같이 구할 수 있다.</p>
 $$
-\vec{c}=\vec{a}+\vec{b}
-\rightarrow
-c_i=a_i+b_i
-$$<p>The suffix i is called a &lsquo;free suffix&rsquo;. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.</p>
+\nabla_vu^i
+$$<p>위의 식은 추후 <strong>반변기저벡터로서 사용</strong>된다.</p>
 <hr>
+<h3 id="3-gradient-for-vector">3. Gradient for vector</h3>
+<p>벡터에 대한 gradient는 위의 스칼라에 대한 gradient 보다 직관적이다. 전미분 연산자를 사용하여, 미소변위벡터를 표현해 보자.</p>
+$$
+d\vec{r}
+=d\vec{u}\cdot\nabla_u\vec{r}
+=du^i\frac{\partial \vec{r}}{\partial u^i}
+$$<p>이것을 매개변수공간의 벡터와 실공간으로 해석하면, $d\vec{u}$ 는 매개변수 공간의 미소변위벡터이다. &lsquo;$\cdot\nabla_u\vec{r}$&lsquo;는 이 매개변수공간의 미소변위벡터를 <strong>실공간의 미소변위벡터 $d\vec{r}$ 로 변환</strong>하는 연산자로 볼 수 있으며, 2계 tensor 형태인 Jacobian 행렬이다.</p>
+$$
+\frac{\partial \vec{r}}{\partial u^i}
+$$<p>위 식의 의미를 자세하게 살펴보자. Jacobian 행렬의 각 열벡터에 해당하며, 이는 <strong>매개변수 공간의 기저(직교 단위 벡터) $\hat{u}_i$가 실공간에서 $\partial \vec{r}/\partial u^i$ 의 기저로 변환되었음</strong>을 나타낸다. $\partial \vec{r}/\partial u^i$ 의 기하학적 의미는 상당히 중요하다. 실공간에서, 매개변수 $u^i$의 변화에 따라, $\vec{r}$는 이동 궤적을 형성하게 된다. <strong>$\partial \vec{r}/\partial u^i$는 이동 궤적의 접선 벡터임</strong>을 알 수 있다. 추후, <strong>공변기저백터로 사용</strong>된다. 아래 이미지의 벡터 표기는 궤적에 대한 접선벡터를 보여준다.</p>
+<img src="image2.png" width="50%" height="auto">
+<hr>
+<p><a href="https://angeloyeo.github.io/2019/08/25/gradient.html" rel="external" target="_blank">공돌이의 수학정리 노트-스칼라장의 기울기(gradient)</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Tangent_space" rel="external" target="_blank">wikipedia-Tangent_space</a></p>
 
   <footer class="footline">
   </footer>
@@ -250,10 +285,10 @@ $$<p>The suffix i is called a &lsquo;free suffix&rsquo;. The choice of this free
             <li class="parent " data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu">
             <li class="" data-nav-id="/vector_calculus/preface/index.html"><a class="padding" href="/vector_calculus/preface/index.html">Preface</a></li>
             <li class="" data-nav-id="/vector_calculus/b_space_tensor/index.html"><a class="padding" href="/vector_calculus/b_space_tensor/index.html">(b) Space &amp; Tensor</a></li>
-            <li class="active " data-nav-id="/vector_calculus/b_gradient/index.html"><a class="padding" href="/vector_calculus/b_gradient/index.html">(b) Gradient</a></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/vector_notation/index.html"><a class="padding" href="/vector_calculus/vector_notation/index.html">Vector notation</a><ul id="R-subsections-609fcc9d6d3024ab7db0bcee86452c07" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-b0706b103dc045d5c644e07a1de68310" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-id="/vector_calculus/b_gradient/index.html"><a class="padding" href="/vector_calculus/b_gradient/index.html">(b) Gradient</a></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/transformation/index.html"><a class="padding" href="/vector_calculus/transformation/index.html">Transformation</a><ul id="R-subsections-edb9cfa8ff2670ec33419f0a9086b19f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-b0706b103dc045d5c644e07a1de68310" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/operators/index.html"><a class="padding" href="/vector_calculus/operators/index.html">Operators</a><ul id="R-subsections-0da763a1f1771671de9f96b3e6099b25" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
@@ -274,8 +309,8 @@ $$<p>The suffix i is called a &lsquo;free suffix&rsquo;. The choice of this free
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1749484645" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749484645" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1749517849" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749517849" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -287,7 +322,7 @@ $$<p>The suffix i is called a &lsquo;free suffix&rsquo;. The choice of this free
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749484645"></script>
-    <script src="/js/theme.js?1749484645" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749517849"></script>
+    <script src="/js/theme.js?1749517849" defer></script>
   </body>
 </html>

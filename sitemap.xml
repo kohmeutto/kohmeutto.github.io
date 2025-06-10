@@ -124,9 +124,6 @@
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_i/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/b_gradient/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/vector_calculus/operators/b_gradient/index.html</loc>
   </url>
   <url>
@@ -163,6 +160,9 @@
     <loc>http://localhost:1313/integral_transform/transformation/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_calculus/vector_notation/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
@@ -173,6 +173,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/b_gradient/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/transformation/b_mapping_ii/index.html</loc>
@@ -205,9 +208,6 @@
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/vector_notation/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html</loc>
   </url>
   <url>
@@ -227,9 +227,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_calculus/general_coordinates/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/lti/index.html</loc>
@@ -257,6 +254,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/r_emf_voltage/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/general_coordinates/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_calculus/operators/index.html</loc>

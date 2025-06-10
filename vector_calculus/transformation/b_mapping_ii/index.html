@@ -25,17 +25,17 @@
 1. Scale factor 우리에게 의미있는 “길이, 넓이, 부피”는 실 공간(real space) 에서 정의된 값이다. 실 공간에서의 물리량 계산을 위해, 매개변수 공간의 영역을 이용하여 계산하는 것이 편리한 경우가 많다. 매개변수 공간의 미소 변화량을 실 공간에서의 물리적 미소 길이, 넓이, 부피 요소로 변환(mapping)하기 위해 scale factor가 사용된다. 매개변수 공간에서 미소 변화량은 scale factor 와의 단순 곱으로, 실 공간에서 물리적 미소 길이로 변환(mapping) 된다. 2. 원통좌표계, Scale factor 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다. 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 물리적 의미를 가지는 미소변위벡터로 변환(mapping) 한다. $$ \hat{u}_\rho d\rho&#39;&#43;\hat{u}_\phi d\phi&#39;&#43;\hat{u}_z dz&#39; \rightarrow \hat{\rho}&#39;d\rho&#39;&#43;\hat{\phi}&#39;\rho&#39;d\phi&#39;&#43;\hat{z}&#39;z&#39; $$ 보정 계수를 $h_1, h_2, h_3$ 라고 하면,">
     <meta itemprop="wordCount" content="182">
     <title>(b) Mapping II - Scale factor :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749484645" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749484645" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749484645" rel="stylesheet">
-    <link href="/css/theme.css?1749484645" rel="stylesheet">
-    <link href="/css/format-html.css?1749484645" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1749484645" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1749484645" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1749484645" defer></script>
-    <script src="/js/search.js?1749484645" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749517849" rel="stylesheet">
+    <link href="/css/theme.css?1749517849" rel="stylesheet">
+    <link href="/css/format-html.css?1749517849" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749517849" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749517849" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749517849" defer></script>
+    <script src="/js/search.js?1749517849" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -45,7 +45,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1749484645";
+      window.relearn.index_js_url="/searchindex.en.js?1749517849";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -242,15 +242,15 @@ $$
             <li class="parent " data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu">
             <li class="" data-nav-id="/vector_calculus/preface/index.html"><a class="padding" href="/vector_calculus/preface/index.html">Preface</a></li>
             <li class="" data-nav-id="/vector_calculus/b_space_tensor/index.html"><a class="padding" href="/vector_calculus/b_space_tensor/index.html">(b) Space &amp; Tensor</a></li>
-            <li class="" data-nav-id="/vector_calculus/b_gradient/index.html"><a class="padding" href="/vector_calculus/b_gradient/index.html">(b) Gradient</a></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/vector_notation/index.html"><a class="padding" href="/vector_calculus/vector_notation/index.html">Vector notation</a><ul id="R-subsections-609fcc9d6d3024ab7db0bcee86452c07" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-b0706b103dc045d5c644e07a1de68310" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_calculus/b_gradient/index.html"><a class="padding" href="/vector_calculus/b_gradient/index.html">(b) Gradient</a></li>
             <li class="parent alwaysopen " data-nav-id="/vector_calculus/transformation/index.html"><a class="padding" href="/vector_calculus/transformation/index.html">Transformation</a><ul id="R-subsections-edb9cfa8ff2670ec33419f0a9086b19f" class="collapsible-menu">
             <li class="" data-nav-id="/vector_calculus/transformation/b_mapping_i/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_i/index.html">(b) Mapping I - Position</a></li>
             <li class="active " data-nav-id="/vector_calculus/transformation/b_mapping_ii/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_ii/index.html">(b) Mapping II - Scale factor</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_mapping_iii/index.html"><a class="padding" href="/vector_calculus/transformation/b_mapping_iii/index.html">(a) Mapping III - Jacobian</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_i/index.html">(b) Tensor components transformation I</a></li>
             <li class="" data-nav-id="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html"><a class="padding" href="/vector_calculus/transformation/b_tensor_components_transformation_ii/index.html">(b) Tensor components transformation II</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_calculus/general_coordinates/index.html"><a class="padding" href="/vector_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-b0706b103dc045d5c644e07a1de68310" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_calculus/operators/index.html"><a class="padding" href="/vector_calculus/operators/index.html">Operators</a><ul id="R-subsections-0da763a1f1771671de9f96b3e6099b25" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
@@ -271,8 +271,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1749484645" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749484645" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1749517849" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749517849" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -284,7 +284,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749484645"></script>
-    <script src="/js/theme.js?1749484645" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749517849"></script>
+    <script src="/js/theme.js?1749517849" defer></script>
   </body>
 </html>
