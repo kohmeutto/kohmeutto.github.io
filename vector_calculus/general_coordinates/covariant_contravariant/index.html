@@ -27,19 +27,19 @@ $$ \vec{v}=v^{i}\vec{h}_i=v_i\vec{h}^i $$ $\vec{h}_i$는 자연 기저 벡터 (n
     <meta itemprop="description" content="이 챕터를 학습하려면, 이전 Transformation을 반드시 숙지해야 한다.
 1. 일반좌표계에서의 표기법 suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.
 $$ \vec{v}=v^{i}\vec{h}_i=v_i\vec{h}^i $$ $\vec{h}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 공변기저벡터 라고 한다. $v^i$ 는 성분을 나타내며, 이것을 $\vec{v}$ 의 contravariant(반변) 성분이라고 한다. $\vec{h}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 반변기저벡터 라고 한다. $v_i$ 는 성분을 나타내며, 이것을 $\vec{v}$ 의 covariant(공변) 성분이라고 한다. 2. 공변기저벡터 매개변수공간[u] → 실공간[v] 변환에 대한 설명으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.">
-    <meta itemprop="wordCount" content="364">
+    <meta itemprop="wordCount" content="403">
     <title>(a) Covariant and contravariant :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749517849" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749517849" rel="stylesheet">
-    <link href="/css/theme.css?1749517849" rel="stylesheet">
-    <link href="/css/format-html.css?1749517849" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1749517849" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1749517849" defer></script>
-    <script src="/js/lunr/lunr.min.js?1749517849" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1749517849" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1749517849" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1749517849" defer></script>
-    <script src="/js/search.js?1749517849" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749657473" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749657473" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749657473" rel="stylesheet">
+    <link href="/css/theme.css?1749657473" rel="stylesheet">
+    <link href="/css/format-html.css?1749657473" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749657473" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749657473" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749657473" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749657473" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749657473" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749657473" defer></script>
+    <script src="/js/search.js?1749657473" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ $$ \vec{v}=v^{i}\vec{h}_i=v_i\vec{h}^i $$ $\vec{h}_i$는 자연 기저 벡터 (n
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1749517849";
+      window.relearn.index_js_url="/searchindex.en.js?1749657473";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -115,7 +115,8 @@ $$ \vec{v}=v^{i}\vec{h}_i=v_i\vec{h}^i $$ $\vec{h}_i$는 자연 기저 벡터 (n
         <li><a href="#1-일반좌표계에서의-표기법">1. 일반좌표계에서의 표기법</a></li>
         <li><a href="#2-공변기저벡터">2. 공변기저벡터</a></li>
         <li><a href="#3-반변기저벡터">3. 반변기저벡터</a></li>
-        <li><a href="#4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</a></li>
+        <li><a href="#4-중복지수표기법">4. 중복지수표기법</a></li>
+        <li><a href="#5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</a></li>
       </ul>
     </li>
   </ul>
@@ -184,9 +185,23 @@ $$<p>여기에서, $\partial\vec{v}/\partial u^i$는 매개변수 $u^i$ 대한 �
 <p>앞서, 매개변수공간[u] → 실공간[v] 변환할 때, 실공간의 기저(공변기저벡터)를 벡터 $\vec{v}$ 의 접선벡터로 정의하였다. 또 다른 관점으로는 매개변수공간의 $u^i$ 는 실공간의 $u^i$의 등위면을 만들어 내며, 이 <strong>등위면의 법선벡터를 기저로 정의</strong>할 수 있다. 이것을 <strong>반변기저벡터</strong> $\vec{h}^i$ 라고 한다.</p>
 <p>반변기저벡터 $\vec{h}^i$ 를 사용해 실공간에서의 미소변위벡터 $d\vec{v}$를 표현할 수 있다. $\vec{h}^i=\nabla_v u^i$ 이다. (여기서 $\nabla_v u^i$ 는 <strong>스칼라 함수</strong> $u^i$ 의 그래디언트)</p>
 $$
-d\vec{v}=\vec{h}^idv_i=dv_i\nabla_v u^i
+d\vec{v}=\vec{h}^idu_i=du_i\nabla_v u^i
+$$<p>여기에서 주의해야할 사항은, <strong>$u_i$ 는 매개변수가 아니라, 실공간에서 반변기저벡터의 성분이다.</strong></p>
+<hr>
+<h3 id="4-중복지수표기법">4. 중복지수표기법</h3>
+<p>일반 tensor의 표기에서 중복 지수는 반드시 위 아래로 교차해야 한다.</p>
+<ul>
+<li><strong>올바른 표기</strong></li>
+</ul>
+$$
+v_iu^i,\quad u^iv_i,\quad a_ig_{ij},\quad b_ig^{ij}c_j,\quad g^{ij}d^kg_{kj}
+$$<ul>
+<li><strong>잘못된 표기</strong></li>
+</ul>
+$$
+v^iu^i,\quad u_iv_i,\quad a^ig^{ij},\quad b_{i}g_{ij}c_j,\quad g_{ij}d^kg^{kj}
 $$<hr>
-<h3 id="4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
+<h3 id="5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
 <p><strong>(1) 공변 기저 벡터 ($\vec{h}_i$)와 반변 성분 ($v^i$)</strong></p>
 <ul>
 <li>
@@ -303,8 +318,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1749517849" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749517849" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1749657473" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749657473" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -316,7 +331,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749517849"></script>
-    <script src="/js/theme.js?1749517849" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749657473"></script>
+    <script src="/js/theme.js?1749657473" defer></script>
   </body>
 </html>
