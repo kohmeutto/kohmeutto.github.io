@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="라플라스 변환을 수행할 수 있는 조건
+적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE
+$$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$sol1$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)&#43;\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)&#43;\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}&#43;\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}&#43;\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$example2) Consider">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Laplace transform :: 수리전자물리학">
+    <meta name="twitter:description" content="라플라스 변환을 수행할 수 있는 조건
+적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE
+$$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$sol1$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)&#43;\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)&#43;\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}&#43;\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}&#43;\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$example2) Consider">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Laplace transform :: 수리전자물리학">
+    <meta property="og:description" content="라플라스 변환을 수행할 수 있는 조건
+적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE
+$$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$sol1$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)&#43;\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)&#43;\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}&#43;\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}&#43;\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$example2) Consider">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ODE & PDE">
+    <meta itemprop="name" content="(a) Laplace transform :: 수리전자물리학">
+    <meta itemprop="description" content="라플라스 변환을 수행할 수 있는 조건
+적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE
+$$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$sol1$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)&#43;\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)&#43;\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}&#43;\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}&#43;\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$example2) Consider">
+    <meta itemprop="wordCount" content="491">
+    <title>(a) Laplace transform :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749809781" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749809781" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749809781" rel="stylesheet">
+    <link href="/css/theme.css?1749809781" rel="stylesheet">
+    <link href="/css/format-html.css?1749809781" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749809781" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749809781" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749809781" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749809781" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749809781" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749809781" defer></script>
+    <script src="/js/search.js?1749809781" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/ode_pde\/transformation\/a_laplace_transform\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1749809781";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/ode_pde/transformation/a_laplace_transform/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/transformation/index.html"><span itemprop="name">Transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Laplace transform</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/transformation/b_phasor_transform_for_pde/index.html" title="(b) Phasor transform for PDE (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/transformation/a_fourier_transform/index.html" title="(a) Fourier transform (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable ode_pde" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-laplace-transform">(a) Laplace transform</h1>
+
+<hr>
+<p><strong>라플라스 변환을 수행할 수 있는 조건</strong></p>
+<ul>
+<li>적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다.</li>
+</ul>
+<hr>
+<p><strong>example1) Consider the first order PDE</strong></p>
+$$
+\frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x>0,\quad t>0
+$$$$
+\text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol1
+  </summary>
+  <div class="box-content">
+<img src="image1.png" width="40%" height="auto">
+
+<br>
+    
+$$
+sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right)
+$$
+    
+$$
+\frac{\partial}{\partial x}Y\left(x,s\right)+\frac{s}{\alpha}Y\left(x,s\right)=0
+$$
+    
+$$
+Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x}
+$$
+    
+[B.C]을 라플라스 변환한다.
+    
+$$
+Y\left(0,s\right)=\frac{C}{s}=c_1
+$$
+    
+$$
+Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s}
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right)
+$$
+
+<br>
+    
+ <img src="image2.png" width="50%" height="auto">
+
+ <hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol2
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace
+$$
+    
+$$
+\frac{\partial}{\partial t}Y\left(s,t\right)+\alpha sY\left(s,t\right)=\alpha C
+$$
+    
+$$
+Y\left(s,t\right)=c_1e^{-\alpha st}+\frac{C}{s}
+$$
+    
+[I.C]을 라플라스 변환한다.
+    
+$$
+Y\left(s,0\right)=0\to c_1=-\frac{C}{s}
+$$
+    
+$$
+Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}+\frac{C}{s}
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right)
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example2) Consider</strong></p>
+$$
+\frac{\partial}{\partial t}y\left(x,t\right)+\frac{\partial}{\partial x}y\left(x,t\right)+y\left(x,t\right)=0,\quad x>0,\quad t>0
+$$$$
+\text{[B.C]}\quad y\left(0,t\right)=\sin t,\quad\text{[I.C]}\quad y\left(x,0\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+sY\left(x,s\right)-y\left(x,0\right)+\frac{\partial}{\partial x}Y\left(x,s\right)+Y\left(x,s\right)=0
+$$
+    
+$$
+\frac{\partial}{\partial x}Y\left(x,s\right)+\left(s+1\right)Y\left(x,s\right)=0
+$$
+    
+$$
+Y\left(x,s\right)=c_1e^{-\left(s+1\right)x}
+$$
+    
+[B.C]을 라플라스 변환한다.
+    
+$$
+Y\left(0,s\right)=\frac{1}{s^2+1}=c_1
+$$
+    
+$$
+Y\left(x,s\right)=e^{-x}\frac{e^{-xs}}{s^2+1}
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=e^{-x} \left\lbrack\sin t\cdot u\left(t\right)\right\rbrack _{t=x}=e^{-x}\sin\left(t-x\right)u\left(t-x\right)
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example3) Let us use Laplace for the following problem</strong></p>
+$$
+\frac{\partial}{\partial t}y\left(x,t\right)=\frac{\partial^2}{\partial x^2}y\left(x,t\right),\quad x>0,\quad t>0
+$$$$
+\text{[B.C]}\quad y_{x}\left(0,t\right)=f\left(t\right),\quad\text{[I.C]}\quad y\left(x,0\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\frac{\partial}{\partial t}Y\left(s,t\right)=s^2Y\left(s,t\right)-sY\left(0,t\right)-y\left(0,t\right)
+$$
+    
+위는 x에 대한 라플라스 변환이다. 그러나 I.C 을 적용하기가 힘들다. 따라서, t에 대한 라플라스 변환을 수행한다.
+    
+$$
+sY\left(x,s\right)-y\left(x,0\right)=\frac{\partial^2}{\partial x^2}Y\left(x,s\right)
+$$
+    
+$$
+Y\left(x,s\right)=c_1e^{-\sqrt{s}x}+c_2e^{+\sqrt{s}x}
+$$
+    
+수렴하기 위해서는 $c_{2}=0$ 이어야 한다.
+    
+$$
+Y\left(x,s\right)=c_1e^{-\sqrt{s}x}
+$$
+    
+[B.C]을 라플라스 변환한다.
+    
+$$
+\frac{\partial}{\partial x}Y\left(0,s\right)=F\left(s\right)\implies\frac{\partial}{\partial x}Y\left(0,s\right)=-c_1\sqrt{s}=F\left(s\right)\implies c_1=-\frac{F\left(s\right)}{\sqrt{s}}
+$$
+    
+$$
+Y\left(x,s\right)=-\frac{F\left(s\right)}{\sqrt{s}}e^{-\sqrt{s}x}
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=\frac{1}{2\pi i}\int_{c-i\infty}^{c+i\infty}ds\left\lbrack\frac{F\left(s\right)}{s}e^{-\sqrt{s}x}e^{st}\right\rbrack
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example4) Consider the first order PDE</strong></p>
+$$
+\frac{\partial}{\partial x}u\left(x,t\right)+\frac{\partial}{\partial t}u\left(x,t\right)=x,\quad x>0,\quad t>0
+$$$$
+\text{[B.C]}\quad u\left(0,t\right)=0,\quad\text{[I.C]}\quad u\left(x,0\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+sU\left(s,t\right)-u\left(0,t\right)+\frac{\partial}{\partial t}U\left(s,t\right)=\frac{1}{s^2}
+$$
+    
+$$
+\frac{\partial}{\partial t}U\left(s,t\right)+sU\left(s,t\right)=\frac{1}{s^2}
+$$
+    
+일반해를 구한다.
+    
+$$
+U_{h}\left(x,s\right)=c_1e^{-\sqrt{s}x}+c_2e^{+\sqrt{s}x}
+$$
+    
+특수해를 구한다.
+    
+$$
+U_{p}=\left.\frac{1}{D+s}\right|_{D=0}\frac{1}{s^2}=\frac{1}{s^3}
+$$
+    
+따라서,
+    
+$$
+U\left(s,t\right)=c_1e^{-st}+\frac{1}{s^3}
+$$
+    
+계수$_{1}$구하고 적용한다.
+    
+$$
+U\left(s,t\right)=\frac{1}{s^3}\left(1-e^{-st}\right)
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace U\left(s,t\right)\right\rbrace\left(x,t\right)=\frac12x^2u\left(x\right)-\left.\frac12x^2u\left(x\right)\right|_{x=x-t}=\frac12x^2u\left(x\right)-\frac12\left(x-t\right)^2u\left(x-t\right)
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example5)</strong></p>
+$$
+\frac{\partial}{\partial t}u\left(x,t\right)=\frac{\partial^2}{\partial x^2}u\left(x,t\right),\quad 0 < x < 2,\quad t > 0
+$$$$
+\text{[B.C]}\quad u\left(0,t\right)=0,\quad u\left(2,t\right)=0
+$$$$
+\text{[I.C]}\quad u\left(x,0\right)=3\sin2\pi x
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+sU\left(x,s\right)-u\left(x,0\right)=\frac{\partial^2}{\partial x^2}U\left(x,s\right)
+$$
+    
+$$
+\frac{\partial^2}{\partial x^2}U\left(x,s\right)-sU\left(x,s\right)=-3\sin2\pi x
+$$
+    
+일반해를 구한다.
+    
+$$
+U_{h}\left(x,s\right)=c_1e^{-\sqrt{s}x}+c_2e^{+\sqrt{s}x}
+$$
+    
+특수해를 구한다. 페이저 변환을 사용한다. (아래 풀이가 성립하려면, s가 실수여야 한다.)
+    
+$$
+\left(-4\pi^2-s\right)U_{p}\left(x,s\right)=3i
+$$
+    
+$$
+U_{p}=\operatorname{Re}\left\lbrack\frac{-3i}{4\pi^2+s}e^{i2\pi x}\right\rbrack=\frac{3}{4\pi^2+s}\sin2\pi x
+$$
+    
+따라서,
+    
+$$
+U\left(x,s\right)=c_1e^{-\sqrt{s}x}+c_2e^{+\sqrt{s}x}+\frac{3}{4\pi^2+s}\sin2\pi x
+$$
+    
+계수를 구하고 적용한다.
+    
+$$
+U\left(0,s\right)=c_1+c_2=0
+$$
+    
+$$
+U\left(2,s\right)=c_1e^{-2\sqrt{s}}+c_2e^{+2\sqrt{s}}=0
+$$
+    
+$$
+c_1e^{-2\sqrt{s}}-c_1e^{+2\sqrt{s}}=0\implies c_1\left(e^{-2\sqrt{s}}-e^{+2\sqrt{s}}\right)=0
+$$
+    
+s는 0이 아니여야 한다. 따라서, $c_{1}=c_{2}=0$ 이다. 여기서 중요한 사실을 기억해라. 연산자가 self-adjoint 하다면, 특수해는 전체해와 같다.
+    
+$$
+U\left(x,s\right)=\frac{3}{4\pi^2+s}\sin2\pi x
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace U\left(x,s\right)\right\rbrace\left(x,t\right)=3\sin2\pi x\cdot e^{-4\pi^2t}u\left(t\right)
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example6)</strong></p>
+$$
+\frac{\partial^2}{\partial t^2}u\left(x,t\right)=c^2\frac{\partial^2}{\partial x^2}u\left(x,t\right)+\sin\pi x,\quad 0 < x < 1,\quad t > 0
+$$$$
+\text{[B.C]}\quad u\left(0,t\right)=u\left(1,t\right)=0
+$$$$
+\text{[I.C]}\quad u\left(x,0\right)=0,\quad u_{t}\left(x,0\right)=0
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+s^2U\left(x,s\right)-sU\left(x,s\right)-u\left(x,0\right)=c^2\frac{\partial^2}{\partial x^2}U\left(x,s\right)+\frac{\sin\pi x}{s}
+$$
+    
+$$
+\frac{\partial^2}{\partial x^2}U\left(x,s\right)-\frac{s^2}{c^2}U\left(x,s\right)=-\frac{1}{c^2}\left\lbrace sU\left(x,0\right)+u\left(x,0\right)+\frac{\sin\pi x}{s}\right\rbrace
+$$
+    
+$$
+\frac{\partial^2}{\partial x^2}U\left(x,s\right)-\frac{s^2}{c^2}U\left(x,s\right)=-\frac{1}{c^2}\left(\frac{\sin\pi x}{s}\right)
+$$
+    
+일반해를 구한다.
+    
+$$
+U_{h}\left(x,s\right)=c_1e^{-\frac{s}{c}x}+c_2e^{+\frac{s}{c}x}
+$$
+    
+특수해를 구한다.
+    
+$$
+U_{p}=-\operatorname{\frac{1}{sc^2}Im}\left\lbrack\left.\frac{1}{D^2-\frac{s^2}{c^2}}\right|_{D=i\pi}e^{i\pi x}\right\rbrack=\frac{1}{s}\operatorname{Im}\left\lbrack\frac{1}{c^2\pi^2+s^2}e^{i\pi x}\right\rbrack=\frac{\sin\pi x}{s\left(s^2+c^2\pi^2\right)}
+$$
+    
+$$
+U\left(x,s\right)=c_1e^{-\frac{s}{c}x}+c_2e^{+\frac{s}{c}x}+\frac{\sin\pi x}{s\left(s^2+c^2\pi^2\right)}
+$$
+    
+$$
+U\left(x,s\right)=c_1e^{-\frac{s}{c}x}+c_2e^{+\frac{s}{c}x}+\frac{\sin\pi x}{c^2\pi^2}\left(\frac{1}{s}-\frac{s}{s^2+c^2\pi^2}\right)
+$$
+    
+계수를 구하고 적용한다.
+    
+$$
+U\left(0,s\right)=c_1+c_2=0
+$$
+    
+$$
+U\left(1,s\right)=c_1e^{-\frac{s}{c}}+c_2e^{+\frac{s}{c}}=0
+$$
+    
+$$
+c_1e^{-\frac{s}{c}}-c_1e^{\frac{s}{c}}=0\implies c_1\left(e^{-\frac{s}{c}}-e^{\frac{s}{c}}\right)=0
+$$
+    
+s는 0이 아니여야 한다. 따라서,$c_{1}=c_{2}=0$ 이다. 여기서 중요한 사실을 기억해라. 연산자가 self-adjoint 하다면, 특수해는 전체해와 같다.
+    
+$$
+U\left(x,s\right)=\frac{\sin\pi x}{c^2\pi^2}\left(\frac{1}{s}-\frac{s}{s^2+c^2\pi^2}\right)
+$$
+    
+역라플라스 변환을 수행한다.
+    
+$$
+L^{-1}\left\lbrace U\left(x,s\right)\right\rbrace\left(x,t\right)=\frac{\sin\pi x}{c^2\pi^2}\left\lbrace u\left(t\right)-\cos c\pi t\cdot u\left(t\right)\right\rbrace
+$$
+  </div>
+</details>
+<hr>
+<p><a href="https://math.libretexts.org/Bookshelves/Differential_Equations/Differential_Equations_for_Engineers_(Lebl)/6%3A_The_Laplace_Transform/6.5%3A_Solving_PDEs_with_the_Laplace_Transform" rel="external" target="_blank">6.5: Solving PDEs with the Laplace Transform - Mathematics LibreTexts</a></p>
+<p><a href="/ode_pde/transformation/a_laplace_transform/Full.pdf">Full.pdf</a></p>
+<p><a href="/ode_pde/transformation/a_laplace_transform/laplace_trans_pdes_09.pdf">laplace_trans_pdes_09.pdf</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/ode_pde/homogeneous/index.html"><a class="padding" href="/ode_pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-9cf59d00783ac0253b0183f2bd2f94f7" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/inhomogeneous/index.html"><a class="padding" href="/ode_pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-a58d165d753d3969b937897fa286929c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/p_circuit_examples_for_odes/index.html"><a class="padding" href="/ode_pde/p_circuit_examples_for_odes/index.html">(p) Circuit examples for ODEs</a></li>
+            <li class="" data-nav-id="/ode_pde/special_odes/index.html"><a class="padding" href="/ode_pde/special_odes/index.html">Special ODEs</a></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/seperation_of_varibles/index.html"><a class="padding" href="/ode_pde/seperation_of_varibles/index.html">Seperation of variables</a><ul id="R-subsections-c2886adf774e7c77743179e8bf11b8b3" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/green_function/index.html"><a class="padding" href="/ode_pde/green_function/index.html">Green function</a><ul id="R-subsections-d28624b797e893776f3654043b1dccd0" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/ode_pde/transformation/index.html"><a class="padding" href="/ode_pde/transformation/index.html">Transformation</a><ul id="R-subsections-dd8832bb068aada972610b334add7642" class="collapsible-menu">
+            <li class="" data-nav-id="/ode_pde/transformation/b_phasor_transform/index.html"><a class="padding" href="/ode_pde/transformation/b_phasor_transform/index.html">(b) Phasor transform</a></li>
+            <li class="" data-nav-id="/ode_pde/transformation/b_phasor_transform_for_pde/index.html"><a class="padding" href="/ode_pde/transformation/b_phasor_transform_for_pde/index.html">(b) Phasor transform for PDE</a></li>
+            <li class="active " data-nav-id="/ode_pde/transformation/a_laplace_transform/index.html"><a class="padding" href="/ode_pde/transformation/a_laplace_transform/index.html">(a) Laplace transform</a></li>
+            <li class="" data-nav-id="/ode_pde/transformation/a_fourier_transform/index.html"><a class="padding" href="/ode_pde/transformation/a_fourier_transform/index.html">(a) Fourier transform</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/uniqueness_theorem/index.html"><a class="padding" href="/ode_pde/uniqueness_theorem/index.html">Uniqueness theorem</a><ul id="R-subsections-18379903dda62aac390ccefba7f7b640" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1749809781" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749809781" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749809781"></script>
+    <script src="/js/theme.js?1749809781" defer></script>
+  </body>
+</html>

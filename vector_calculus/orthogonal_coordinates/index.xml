@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orthogonal coordinates :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/index.html</link>
+    <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Tensor components transformation I&#xD;(b) Tensor components transformation II</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_calculus/orthogonal_coordinates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Mapping I - Position</title>
+      <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_i/index.html</guid>
+      <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 점(위치) 변환(mapping) 을 다룬다.&#xA;1. [원통 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 원통 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환(mapping)해야 한다.&#xA;2. [구 좌표계 매개변수 공간] → [데카르트 좌표계 실 공간] 아래 그림에서 왼쪽은 구 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환(mapping)해야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Mapping II - Scale factor</title>
+      <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_ii/index.html</guid>
+      <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 길이 변환(mapping) 을 다룬다.&#xA;1. Scale factor 우리에게 의미있는 “길이, 넓이, 부피”는 실 공간(real space) 에서 정의된 값이다. 실 공간에서의 물리량 계산을 위해, 매개변수 공간의 영역을 이용하여 계산하는 것이 편리한 경우가 많다. 매개변수 공간의 미소 변화량을 실 공간에서의 물리적 미소 길이, 넓이, 부피 요소로 변환(mapping)하기 위해 scale factor가 사용된다. 매개변수 공간에서 미소 변화량은 scale factor 와의 단순 곱으로, 실 공간에서 물리적 미소 길이로 변환(mapping) 된다. 2. 원통좌표계, Scale factor 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다. 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 물리적 의미를 가지는 미소변위벡터로 변환(mapping) 한다. $$ \hat{u}_\rho d\rho&#39;+\hat{u}_\phi d\phi&#39;+\hat{u}_z dz&#39; \rightarrow \hat{\rho}&#39;d\rho&#39;+\hat{\phi}&#39;\rho&#39;d\phi&#39;+\hat{z}&#39;z&#39; $$ 보정 계수를 $h_1, h_2, h_3$ 라고 하면,</description>
+    </item>
+    <item>
+      <title>(a) Mapping III - Jacobian</title>
+      <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_iii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_iii/index.html</guid>
+      <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.&#xA;1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.&#xA;u 매개변수 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{u}&#39; =\hat{u}_1du_1&#39;+\hat{u}_2du_2&#39;+\hat{u}_3du_3&#39; $$ v 실 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{v}&#39; =\hat{v}_1&#39;dv_1&#39;+\hat{v}_2&#39;dv_2&#39;+\hat{v}_3&#39;dv_3&#39; $$ 변환(mapping) 연산자 작용, 매핑 위치에 해당하는 [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v}&#39; =d\vec{u}&#39;\cdot\nabla_{u}\vec{v}&#39; =du_1&#39;\frac{\partial\vec{v}&#39;}{\partial u_1&#39;}+du_2&#39;\frac{\partial\vec{v}&#39;}{\partial u_2&#39;}+du_3&#39;\frac{\partial\vec{v}&#39;}{\partial u_3&#39;} $$수학적 벡터로 표현하면,</description>
+    </item>
+    <item>
+      <title>(b) Tensor components transformation I</title>
+      <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_tensor_components_transformation_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_tensor_components_transformation_i/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\begin{bmatrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$$$&#xD;|u_1\rangle=\begin{bmatrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_2\rangle=\begin{bmatrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_3\rangle=\begin{bmatrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Tensor components transformation II</title>
+      <link>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_tensor_components_transformation_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_tensor_components_transformation_ii/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리 기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
+    </item>
+  </channel>
+</rss>

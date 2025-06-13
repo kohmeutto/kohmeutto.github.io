@@ -1,0 +1,451 @@
++++
+title = "(b) One-sided Laplace transform"
+weight = 2
++++
+
+---
+
+이 챕터에서는 단방향 라플라스 변환을 의미한다. 여기에 제시된 결과는 모두 암기한다.
+
+---
+
+### 1. 단방향 라플라스 변환
+
+$$
+\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\langle s|f\cdot u\rangle
+=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack
+$$
+
+Region of Convergence(ROC) 는 라플라스 변환이 존재할 수 있는 s의 수렴영역 이다.
+
+아래 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
+
+---
+
+### 2. 중요변환
+
+**1) 디렉 델타 함수**
+
+$$
+\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\delta\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_0^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad
+\text{ROC: 모든 } s
+$$
+
+<hr>
+
+{{< /details >}}
+
+**2) 단위 계단 함수**
+
+$$
+\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|u\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+<br>
+
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**3) cosine 함수**
+
+$$
+\mathcal{L}\left\lbrace\cos at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\cos at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+
+<hr>
+
+{{< /details >}}
+
+**4) sine 함수**
+
+$$
+\mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\sin at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Im}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+
+<hr>
+
+{{< /details >}}
+
+**5) cosh 함수**
+
+$$
+\mathcal{L}\left\lbrace\cosh at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\cosh at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\cosh at\right\rbrack
+=\int_0^{\infty}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}+e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_0^{\infty}dt\left\lbrack e^{-(s-a)t}+e^{-(s+a)t} \right\rbrack
+=\frac{s}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $\operatorname{Re}\lbrace a\rbrace$ 보다 큰 우측영역에서 형성된다. 
+
+<hr>
+
+{{< /details >}}
+
+**6) sinh 함수**
+
+$$
+\mathcal{L}\left\lbrace\sinh at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\sinh at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\sinh at\right\rbrack
+=\int_0^{\infty}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}-e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_0^{\infty}dt\left\lbrack e^{-(s-a)t}-e^{-(s+a)t} \right\rbrack
+=\frac{a}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $\operatorname{Re}\lbrace a\rbrace$ 보다 큰 우측영역에서 형성된다.  
+
+{{< /details >}}
+
+---
+
+### 3. Properties
+
+**1) time scaling**
+
+$$
+\mathcal{L}\left\lbrace f\left(at-b\right)u\left(at-b\right)\right\rbrace\left(s\right)=\langle s|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{a} e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle
+$$
+
+$$
+\text{단, } a>0, b>0
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\mathcal{L}\left\lbrace f\left(at-b\right)u\left(at-b\right)\right\rbrace\left(s\right)=e^{-\frac{b}{a}s}\int_0^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}e^{-\frac{b}{a}s}F\left(\frac{s}{a}\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**2) time shifting**
+
+$$
+\mathcal{L}\left\lbrace f\left(t-t'\right)u(t-t')\right\rbrace\left(s\right)
+=e^{-st'}\langle s|f\cdot u\rangle
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\mathcal{L}\left\lbrace f\left(t-t'\right)u(t-t')\right\rbrace\left(s\right)
+=\int_0^{\infty}dt\left\lbrack f\left(t-t'\right)e^{-st}\right\rbrack
+=\int_{0}^{\infty}d\tau\left\lbrack f\left(\tau\right)e^{-s\left(\tau+t'\right)}\right\rbrack
+$$
+    
+$$
+=e^{-st'}F\left(s\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+
+**3) frequency shifting**
+
+$$
+\mathcal{L}\left\lbrace e^{at}f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\langle s-a|f\cdot u\rangle
+$$
+
+{{< details summary="proof" >}}
+    
+$$
+\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left\lbrack f\left(t\right)e^{-\left(s-a\right)t}\right\rbrack=F\left(s-a\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**4) convolution**
+
+$$
+\mathcal{L}\left\lbrace h\left(t\right)u(t)\ast f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|h\cdot u\ast f\cdot u\rangle=\langle s|h\cdot u\rangle\langle s|f\cdot u\rangle
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}\int^{\infty}_{0}d\tau\left[h\right(t-\tau\left)f\left(\tau\right)\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}dt\left[e^{-s\left(t-\tau+\tau\right)}\int^{\infty}_{0}d\tau\left[h\right(t-\tau\left)f\left(\tau\right)\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}dt\left[\int^{\infty}_{0}d\tau\left[h\left(t-\tau\right)e^{-s\left(t-\tau\right)}f\left(\tau\right)e^{-s\tau}\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}\int^{\infty}_{0}dt\left[h\left(t-\tau\right)e^{-s\left(t-\tau\right)}\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}H\left(s\right)\right]
+$$
+
+$$
+=H\left(s\right)\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}\right]
+$$
+
+$$
+=H\left(s\right)F\left(s\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**5) 시간영역미분**
+
+$$
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)u(t)\right\rbrace\left(s\right)=s^{n}\langle s|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}\frac{d^{n}}{dt^{n}}f\left(t\right)\right]
+=\int^{\infty}_{0}dt\left[\frac{\partial}{\partial t}\left\lbrace e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right\rbrace-\left(-s\right)e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]
+$$
+
+$$
+=\left[ e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]^{\infty}_{0}
++s\int^{\infty}_{0}dt\left[e^{-st}\frac{\partial^{n-1}}{\partial t^{n-1}} f\left(t\right)\right]
+$$
+
+t가 무한대에서 수렴해야하므로, s의 실수값은 0보다 커야
+한다. 
+
+$$
+=-f^{\left(n-1\right)}\left(0\right)
++s\left\lbrace-f^{\left(n-2\right)}\left(0\right)+s\int^{\infty}_{0}dt \left[e^{-st}\frac{\partial^{n-2}}{\partial t^{n-2}} f\left(t\right)\right]\right\rbrace
+$$
+
+따라서, 반복하면,
+
+$$
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)u(t)\right\rbrace\left(s\right)=s^{n}F\left(s\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+$$
+
+<hr>
+
+{{< /details >}}    
+
+**6) 시간영역적분**
+
+$$
+\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\langle s|u\ast f\rangle
+=\langle s|u\rangle \langle s|f\rangle
+=\frac{1}{s}\langle s|f\rangle
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
+$$
+
+<hr>
+
+{{< /details >}}    
+
+
+**7) s-영역미분**
+
+$$
+\mathcal{L}\left\lbrace tu\left(t\right)\right\rbrace\left(s\right)
+=\langle s|t\cdot u\rangle=\langle s|\hat{t}|u\rangle=(-1)^1\frac{d}{ds}\langle s|u\rangle
+=\frac{1}{s^2}
+$$
+
+{{< details summary="proof" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack te^{-st}\right\rbrack=\frac{1}{s^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+<br>
+
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
+    
+<hr>
+
+{{< /details >}}
+
+**8) s-영역미분**
+
+$$
+\mathcal{L}\left\lbrace t^{n}u\left(t\right)\right\rbrace\left(s\right)
+=\langle s|t^n\cdot u\rangle=\langle s|(\hat{t})^n|u\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|u\rangle
+=\int_0^{\infty}dt\left\lbrack t^{n}e^{-st}\right\rbrack
+=\frac{n!}{s^{n+1}}
+$$
+
+{{< details summary="proof" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack t^{n}e^{-st}\right\rbrack=\frac{n!}{s^{n+1}},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+<br>
+
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**9) initial and final values**
+
+$$
+f\left(0\right)=\lim_{s\to\infty}s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\lim_{s\to\infty}s \langle s|f\cdot u \rangle
+$$
+
+$$
+f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\lim_{s\to 0}s \langle s|f\cdot u \rangle
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\mathcal{L}\left\lbrace \frac{d}{dt} f\left(t\right)u(t)\right\rbrace\left(s\right)=s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)
+$$
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\quad
+$$
+
+<hr>
+
+(1) 첫번째 식의 증명
+
+$$
+\lim_{s\to\infty}\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=\lim_{s\to\infty}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+만약, $f'(t)$ 가 $e^{-st}$의 감소보다 증가량이 크지 않다면, (에너지 보존 법칙으로 인해, 물리 시스템의 응답, 공학적인 신호 등의 대부분 이 조건을 만족하는 함수들임)
+
+$$
+0=\lim_{s\to\infty}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(0\right)=\lim_{s\to\infty}s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+$$
+
+<hr>
+
+(2) 두번째 식의 증명,
+
+$$
+\lim_{s\to 0}\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)-f\left(0\right)=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+$$
+
+<br>
+
+단, sF(s)의 모든 극점이 복소 평면의 좌반부(Re{s}<0)에 위치
+
+{{< /details >}}    
+
+---
+
+### 4. 단방향 라플라스 변환의 극점과 ROC
+
+라플라스 변환의 **극점은 라플라스 변환이 존재하지 않는 위치**이다. 이것은 원함수가 이 위치에 해당하는 $e^{-(\sigma+i\omega)t}$ 의 성분을 가지고 있다는 의미이다. 단방향 라플라스 변환이 존재하려면 **$t=+\infty$** 에서 수렴해야 하므로, ROC는 $\operatorname{Re}\lbrace s\rbrace>\sigma_{max}$ 인 영역에 존재해야 한다.
+
+정리하면, 다음과 같다. 
+
+**단방향 라플라스 변환의 수렴 영역은 극점의 가장 큰 실수 값의 우측 영역이다. 극점이 없다면, 모든 영역에서 수렴한다.**
+
+---
+
+### 5. Practice
+
+연구실 구성원들에게만 허용된 자료 입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/53608611/b+LTI+System)
+
+---
