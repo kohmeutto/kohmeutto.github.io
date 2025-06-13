@@ -4,7 +4,7 @@
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/general_coordinates/covariant_contravariant/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/general_coordinates/a_covariant_contravariant/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_frame_viewpoint/index.html</loc>
@@ -61,7 +61,7 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_calculus/general_coordinates/metric_tensor/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/general_coordinates/b_metric_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operator_generator/index.html</loc>

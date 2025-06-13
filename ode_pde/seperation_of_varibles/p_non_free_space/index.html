@@ -29,17 +29,17 @@ The vertical displacement u(x,t) of a string of length L that is freely vibratin
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$$$\left\lbrack \text{B.C}\right\rbrack\quad u\left(0,t\right)=u\left(L,t\right)=0$$$$\left\lbrack \text{I.C}\right\rbrack\quad u\left(x,0\right)=f\left(x\right),\quad u_{t}\left(x,0\right)=g\left(x\right)$$sol$$u_{n}\left(x,t\right)=X_{n}\left(x\right)T_{n}\left(t\right)$$$$\nabla^2u_{n}\left(x,t\right)=-k_{n}^2u_{n}\left(x,t\right)\implies\nabla^2X_{n}\left(x\right)=-k_{n}^2X_{n}\left(x\right)$$$$\left(\nabla^2&#43;k_{n}^2\right)X_{n}\left(x\right)=0$$$$X_{n}\left(x\right)=a_{x,n}\cos k_{n}x&#43;b_{x,n}\sin k_{n}x$$B.C을 적용한다.$$X_{n}\left(0\right)=0=a_{x,n}$$$$X_{n}\left(L\right)=0=b_{x,n}\sin k_{n}x$$따라서,$$k_{n}L=n\pi,\quad n=1,2,3,\cdots$$$$k_{n}=\frac{n\pi}{L},\quad n=1,2,3,\cdots$$$$X_{n}\left(x\right)=b_{x,n}\sin\frac{n\pi}{L}x,\quad n=1,2,3,\cdots$$$$\frac{\partial^2}{\partial t^2}T_{n}\left(t\right)=-\omega_{n}^2T_{n}\left(t\right),\quad\omega_{n}^2=v^2k_{n}^2$$$$T_{n}\left(t\right)=a_{t,n}\cos\omega_{n}t&#43;b_{t,n}\sin\omega_{n}t$$따라서,$$u_{n}\left(x,t\right)=\left(A_{n}\cos\omega_{n}t&#43;B_{n}\sin\omega_{n}t\right)\sin\left(\frac{n\pi}{L}x\right)$$eigen-expansion 을 수행한다.$$u\left(x,t\right)=\sum\left(c_{n,1}\cos\omega_{n}t&#43;c_{n,2}\sin\omega_{n}t\right)\sin\left(\frac{n\pi}{L}x\right)$$[I.C] $u\left(x,0\right)=f\left(x\right)$$$u\left(x,0\right)=\sum c_{n,1}\sin\left(\frac{n\pi}{L}x\right)=f\left(x\right)$$$$c_{n,1}\int_0^{L}dx\left\lbrack\sin^2\left(\frac{n\pi}{L}x\right)\right\rbrack=\int_0^{L}dx\left\lbrack f\left(x\right)\sin\left(\frac{n\pi}{L}x\right)\right\rbrack$$$$\int_0^{L}dx\left\lbrack\sin^2\left(\frac{n\pi}{L}x\right)\right\rbrack=\frac12\int_{-L}^{L}dx\left\lbrack\sin^2\left(\frac{n\pi}{L}x\right)\right\rbrack=\frac{L}{2}$$$$c_{n,1}=\frac{2}{L}\int_0^{L}dx\left\lbrack f\left(x\right)\sin\left(\frac{n\pi}{L}x\right)\right\rbrack$$[I.C] $u_{t}\left(x,0\right)=g\left(x\right)$$$u_{t}\left(x,0\right)=\sum c_{n,2}\omega_{n}\sin\left(\frac{n\pi}{L}x\right)$$$$c_{n,2}\omega_{n}\int_0^{L}dx\left\lbrack\sin^2\left(\frac{n\pi}{L}x\right)\right\rbrack=\int_0^{L}dx\left\lbrack g\left(x\right)\sin\left(\frac{n\pi}{L}x\right)\right\rbrack$$$$c_{n,2}=\frac{2}{\omega_{n}L}\int_0^{L}dx\left\lbrack g\left(x\right)\sin\left(\frac{n\pi}{L}x\right)\right\rbrack$$example2)">
     <meta itemprop="wordCount" content="236">
     <title>(p) Non free-space :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749647430" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749647430" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749647430" rel="stylesheet">
-    <link href="/css/theme.css?1749647430" rel="stylesheet">
-    <link href="/css/format-html.css?1749647430" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1749647430" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1749647430" defer></script>
-    <script src="/js/lunr/lunr.min.js?1749647430" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1749647430" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1749647430" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1749647430" defer></script>
-    <script src="/js/search.js?1749647430" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749793498" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749793498" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749793498" rel="stylesheet">
+    <link href="/css/theme.css?1749793498" rel="stylesheet">
+    <link href="/css/format-html.css?1749793498" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749793498" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749793498" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749793498" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749793498" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749793498" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1749793498" defer></script>
+    <script src="/js/search.js?1749793498" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@ $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1749647430";
+      window.relearn.index_js_url="/searchindex.en.js?1749793498";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -430,8 +430,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1749647430" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749647430" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1749793498" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749793498" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -443,7 +443,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749647430"></script>
-    <script src="/js/theme.js?1749647430" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1749793498"></script>
+    <script src="/js/theme.js?1749793498" defer></script>
   </body>
 </html>
