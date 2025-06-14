@@ -3,7 +3,7 @@
   <channel>
     <title>Operators :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_calculus/operators/index.html</link>
-    <description>(b) Gradient&#xD;(b) Divergence</description>
+    <description>(b) Gradient&#xD;(b) Divergence&#xD;(b) Curl</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_calculus/operators/index.xml" rel="self" type="application/rss+xml" />
@@ -12,7 +12,7 @@
       <link>http://localhost:1313/vector_calculus/operators/b_gradient/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_calculus/operators/b_gradient/index.html</guid>
-      <description>Gradient - 위키백과, 우리 모두의 백과사전</description>
+      <description>1. Gradient의 의미 (1) 스칼라의 구배&#xA;등위선 또는 등위면에서 법선(수직) 성분의 기울기 이다.&#xA;(2) 벡터의 구배&#xA;벡터의 궤적에서, 접선(수평) 성분의 기울기의 집합이다.&#xA;2. Gradient 의 수학적 표현 (1) 스칼라의 구배&#xA;$$&#xD;\nabla f&#xD;=\sum_{i=1}^3\frac{1}{h_i}\frac{\partial}{\partial u^i}\hat{b}^i&#xD;$$(2) 벡터의 구배&#xA;$$&#xD;\nabla \vec{r}&#xD;=\frac{1}{h_i}\frac{\partial}{\partial u_i}\hat{e}_i&#xD;$$ Gradient - 위키백과, 우리 모두의 백과사전</description>
     </item>
     <item>
       <title>(b) Divergence</title>
@@ -20,6 +20,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_calculus/operators/b_divergence/index.html</guid>
       <description></description>
+    </item>
+    <item>
+      <title>(b) Curl</title>
+      <link>http://localhost:1313/vector_calculus/operators/b_curl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/operators/b_curl/index.html</guid>
+      <description>Gradient - 위키백과, 우리 모두의 백과사전</description>
     </item>
   </channel>
 </rss>

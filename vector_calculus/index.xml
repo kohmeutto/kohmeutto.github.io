@@ -3,7 +3,7 @@
   <channel>
     <title>Vector calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_calculus/index.html</link>
-    <description>Preface&#xD;(b) Space &amp; Tensor&#xD;Vector notation&#xD;(b) Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Operators</description>
+    <description>Preface&#xD;(b) Space &amp; Tensor&#xD;Vector notation&#xD;(i) Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Operators</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -29,10 +29,10 @@
       <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols</description>
     </item>
     <item>
-      <title>(b) Gradient</title>
-      <link>http://localhost:1313/vector_calculus/b_gradient/index.html</link>
+      <title>(i) Gradient</title>
+      <link>http://localhost:1313/vector_calculus/i_gradient/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_calculus/b_gradient/index.html</guid>
+      <guid>http://localhost:1313/vector_calculus/i_gradient/index.html</guid>
       <description>0. Total derivative &amp; Gradient 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수를 $u^i$ 라고 하자.&#xA;$$&#xD;df&#xD;=du^i\frac{\partial f}{\partial u^i}&#xD;$$위 식을 벡터로 표현하면, 아래와 같다.&#xA;$$&#xD;df&#xD;=d\vec{u}\cdot\nabla_u f&#xD;$$$$&#xD;\nabla_u&#xD;=\left[\frac{\partial}{\partial u^1}, \frac{\partial}{\partial u^2}, \frac{\partial}{\partial u^3}\right]^T&#xD;$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)&#xA;$$&#xD;d:=d\vec{u}\cdot\nabla_u&#xD;$$ 1. Gradient for scalar in an arbitrary space 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자.</description>
     </item>
     <item>
@@ -54,7 +54,7 @@
       <link>http://localhost:1313/vector_calculus/operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_calculus/operators/index.html</guid>
-      <description>(b) Gradient&#xD;(b) Divergence</description>
+      <description>(b) Gradient&#xD;(b) Divergence&#xD;(b) Curl</description>
     </item>
   </channel>
 </rss>
