@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>수리전자물리학</title>
+    <link>http://localhost:1313/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 May 2025 23:56:28 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear algebra</title>
+      <link>http://localhost:1313/linear_algebra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/index.html</guid>
+      <description>Vector</description>
+    </item>
+    <item>
+      <title>Integral transform</title>
+      <link>http://localhost:1313/integral_transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/integral_transform/index.html</guid>
+      <description>Preface&#xD;(b) Convolution&#xD;Transformation&#xD;Operators&#xD;LTI</description>
+    </item>
+    <item>
+      <title>ODE &amp; PDE</title>
+      <link>http://localhost:1313/ode_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/index.html</guid>
+      <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) Circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville&#xD;Seperation of variables&#xD;Green function&#xD;Transformation&#xD;Uniqueness theorem</description>
+    </item>
+    <item>
+      <title>Vector calculus</title>
+      <link>http://localhost:1313/vector_calculus/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_calculus/index.html</guid>
+      <description>Preface&#xD;(b) Space &amp; Tensor&#xD;Vector notation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Operators</description>
+    </item>
+    <item>
+      <title>Electromagnetics</title>
+      <link>http://localhost:1313/electromagnetics/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/index.html</guid>
+      <description>Electromotive force</description>
+    </item>
+    <item>
+      <title>Temps</title>
+      <link>http://localhost:1313/temp/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/temp/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

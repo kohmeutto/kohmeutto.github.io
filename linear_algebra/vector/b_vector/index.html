@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
+이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Vector :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
+이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/vector/b_vector/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Vector :: 수리전자물리학">
+    <meta property="og:description" content="1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
+이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear algebra">
+    <meta itemprop="name" content="(b) Vector :: 수리전자물리학">
+    <meta itemprop="description" content="1. 물리학적 벡터 물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.
+이러한 벡터 정의에 대해 첨언하자면 이러한 ‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.">
+    <meta itemprop="wordCount" content="276">
+    <title>(b) Vector :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750008217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750008217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750008217" rel="stylesheet">
+    <link href="/css/theme.css?1750008217" rel="stylesheet">
+    <link href="/css/format-html.css?1750008217" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750008217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750008217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750008217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750008217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750008217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1750008217" defer></script>
+    <script src="/js/search.js?1750008217" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_algebra\/vector\/b_vector\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1750008217";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/linear_algebra/vector/b_vector/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-물리학적-벡터">1. 물리학적 벡터</a></li>
+        <li><a href="#2-수학적-벡터">2. 수학적 벡터</a></li>
+        <li><a href="#3-추상화-물리학적-벡터와-수학적-벡터를-하나로-통일">3. 추상화 (물리학적 벡터와 수학적 벡터를 하나로 통일)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/vector/index.html"><span itemprop="name">Vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Vector</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/vector/index.html" title="Vector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/vector/b_basic_vector_operations/index.html" title="(b) Basic vector operations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-vector">(b) Vector</h1>
+
+<hr>
+<h3 id="1-물리학적-벡터">1. 물리학적 벡터</h3>
+<p><strong>물리학에서 말하는 ‘크기와 방향으로 정의되는 값</strong>’이라고 할 수 있다. <strong>즉, 화살표 이다.</strong></p>
+<p>이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.</p>
+<img src="image1.png" width="50%" height="auto">
+<p>이러한 벡터 정의에 대해 첨언하자면 이러한 <strong>‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점</strong>이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.</p>
+<hr>
+<h3 id="2-수학적-벡터">2. 수학적 벡터</h3>
+<p>벡터에 대해 생각해볼 수 있는 정의는 <strong>순서를 맞춰 숫자를 나열한 리스트</strong>라는 관점이다. 이 관점은 벡터는 하나의 데이터 포인트라는 관점에서 매우 유용하다. 또한, 이런 방식으로 벡터를 생각하게 되면 차원을 무한히 늘리는데에 큰 부담이 없다. 그저 숫자만 더 나열하면 더 고차원의 벡터가 되기 때문이다.</p>
+<p>그리고 벡터 성분이 좌표계의 변환에 대해 가변적(not invariant)이라는 점을 잘 표현해주고 있다. 가변적이라는 말을 좀 더 잘 이해하기 위해 그림을 다시 보자. 벡터를 두 가지 좌표계로 표현하고 있는데, 벡터는 가만히 있더라도 벡터를 보는 좌표계가 바뀌게 되면 벡터를 표현하는 좌표가 바뀌는것을 볼 수 있다.</p>
+<hr>
+<h3 id="3-추상화-물리학적-벡터와-수학적-벡터를-하나로-통일">3. 추상화 (물리학적 벡터와 수학적 벡터를 하나로 통일)</h3>
+<p><strong>추상화된 벡터는 대수(代數)로 표현한 것이다.</strong></p>
+<p>물리학적 벡터를 다룰 떄, 아무렇게나 좌표축을 잡을 수 있음. 즉, 벡터는 좌표축과 무관한 개념이다. 벡터의 방향이란, 우주에 절대 좌표가 있지 않은 한, 방향을 정의하기가 불가능하다.</p>
+<p>그러나, <strong>두 벡터의 방향이 같다는 것은 한 벡터의 길이를 적당히 늘려 다른 벡터와 일치하게 만들 수 있다</strong>고 정의할 수 있다. 이러한 관찰로부터 벡터를 추상화에 다음과 같은 두가지 연산이 가장 중요하다는 결론을 내릴 수 있다.</p>
+<ul>
+<li>두 벡터의 합</li>
+<li>벡터의 실수 배</li>
+</ul>
+<hr>
+<p><a href="https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html" rel="external" target="_blank">공돌이의 수학정리노트 (Angelo&rsquo;s Math Notes)</a></p>
+<p><a href="https://www.google.co.kr/books/edition/8%EC%9D%BC%EA%B0%84%EC%9D%98_%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99/SIXXoAEACAAJ?hl=ko" rel="external" target="_blank">8일 간의 선형대수학, 경문사, 박부성 지음</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/linear_algebra/vector/index.html"><a class="padding" href="/linear_algebra/vector/index.html">Vector</a><ul id="R-subsections-c7410d928abe64b74c391b458d4f1b43" class="collapsible-menu">
+            <li class="active " data-nav-id="/linear_algebra/vector/b_vector/index.html"><a class="padding" href="/linear_algebra/vector/b_vector/index.html">(b) Vector</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_basic_vector_operations/index.html"><a class="padding" href="/linear_algebra/vector/b_basic_vector_operations/index.html">(b) Basic vector operations</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/i_linearity/index.html"><a class="padding" href="/linear_algebra/vector/i_linearity/index.html">(i) Linearity</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/q_linearity_for_circuits/index.html"><a class="padding" href="/linear_algebra/vector/q_linearity_for_circuits/index.html">(q) Linearity for circuits</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_matrix/index.html"><a class="padding" href="/linear_algebra/vector/b_matrix/index.html">(b) Matrix</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html"><a class="padding" href="/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html">(b) Column vector of matrix I - Basis</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html"><a class="padding" href="/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html">(b) Column vector of matrix II - Determinant</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_inner_product/index.html"><a class="padding" href="/linear_algebra/vector/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_projection/index.html"><a class="padding" href="/linear_algebra/vector/b_projection/index.html">(b) Projection</a></li>
+            <li class="" data-nav-id="/linear_algebra/vector/b_row_vector_of_matrix/index.html"><a class="padding" href="/linear_algebra/vector/b_row_vector_of_matrix/index.html">(b) Row vector of matrix</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_calculus/index.html"><a class="padding" href="/vector_calculus/index.html">Vector calculus</a><ul id="R-subsections-57496f31097c2abca858e723e58b8583" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1750008217" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750008217" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750008217"></script>
+    <script src="/js/theme.js?1750008217" defer></script>
+  </body>
+</html>

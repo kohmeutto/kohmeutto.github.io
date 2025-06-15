@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags :: 수리전자물리학</title>
+    <link>http://localhost:1313/tags/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 May 2025 23:56:28 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tag :: 디랙 표기법</title>
+      <link>http://localhost:1313/tags/%EB%94%94%EB%9E%99-%ED%91%9C%EA%B8%B0%EB%B2%95/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/tags/%EB%94%94%EB%9E%99-%ED%91%9C%EA%B8%B0%EB%B2%95/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: 브라-켓</title>
+      <link>http://localhost:1313/tags/%EB%B8%8C%EB%9D%BC-%EC%BC%93/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/tags/%EB%B8%8C%EB%9D%BC-%EC%BC%93/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: 수학적 표기</title>
+      <link>http://localhost:1313/tags/%EC%88%98%ED%95%99%EC%A0%81-%ED%91%9C%EA%B8%B0/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/tags/%EC%88%98%ED%95%99%EC%A0%81-%ED%91%9C%EA%B8%B0/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tag :: 양자역학</title>
+      <link>http://localhost:1313/tags/%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99/index.html</link>
+      <pubDate>Fri, 23 May 2025 23:56:28 +0900</pubDate>
+      <guid>http://localhost:1313/tags/%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
