@@ -29,17 +29,17 @@
 우리는 이 두 가지 장점을 모두 활용하고자 한다. 즉, 관측 대상(입자 또는 물체)이 정해져 있는 경우에도, 입자의 ‘진정한’ 변화율(라그랑지안 관점의 개념)을, 우리가 계산적으로 다루기 쉬운 오일리안 기술법의 변수들을 사용하여 표현하는 방법이 필요하다. 이것이 바로 물질 미분을 통해 이루어진다.">
     <meta itemprop="wordCount" content="475">
     <title>(a) Material derivative :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750057481" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750057481" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750057481" rel="stylesheet">
-    <link href="/css/theme.css?1750057481" rel="stylesheet">
-    <link href="/css/format-html.css?1750057481" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750057481" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750057481" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750057481" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750057481" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750057481" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1750057481" defer></script>
-    <script src="/js/search.js?1750057481" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750073071" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750073071" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750073071" rel="stylesheet">
+    <link href="/css/theme.css?1750073071" rel="stylesheet">
+    <link href="/css/format-html.css?1750073071" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750073071" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750073071" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750073071" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750073071" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750073071" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1750073071" defer></script>
+    <script src="/js/search.js?1750073071" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +49,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1750057481";
+      window.relearn.index_js_url="/searchindex.en.js?1750073071";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -159,8 +159,8 @@
 <p>입자(물체)를 추적하면서 물리량을 구한다고 하자.<strong>입자를 추적</strong>하기에 오일리안 관점은 적합하지 않다. 결국, 라그랑지안 관점이 되어야 하는 것이다.</p>
 <hr>
 <h3 id="1-라그랑지안-관점을-유지하면서-오일리안-기술법으로-해석">1. 라그랑지안 관점을 유지하면서, 오일리안 기술법으로 해석</h3>
-<p><a href="#R-image-5db0dc7ebb261ce1265a63ea35dd8948" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/electromagnetics/electromotive_force/a_material_derivative/image1.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5db0dc7ebb261ce1265a63ea35dd8948"><img class="lazy lightbox lightbox-image" loading="lazy" src="/electromagnetics/electromotive_force/a_material_derivative/image1.png"></a></p>
+<p><a href="#R-image-fe0b04e432ad33298ea09ffcc7bac038" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/electromagnetics/electromotive_force/a_material_derivative/image1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe0b04e432ad33298ea09ffcc7bac038"><img class="lazy lightbox lightbox-image" loading="lazy" src="/electromagnetics/electromotive_force/a_material_derivative/image1.png"></a></p>
 <br>
 <p>입자(물체)를 추적하면서 물리량을 구하고자 할 때, 입자 자체를 따라가는 라그랑지안 관점이 가장 적합하다. 하지만 공간 전체에 걸쳐 분포하는 물리량(예: 온도장, 속도장)을 다루고 계산할 때는, 고정된 공간 지점을 기준으로 하는 오일리안 기술법이 계산적으로 훨씬 효율적이다.</p>
 <p>우리는 이 두 가지 장점을 모두 활용하고자 한다. 즉, 관측 대상(입자 또는 물체)이 정해져 있는 경우에도, 입자의 ‘진정한’ 변화율(라그랑지안 관점의 개념)을, 우리가 계산적으로 다루기 쉬운 오일리안 기술법의 변수들을 사용하여 표현하는 방법이 필요하다. 이것이 바로 물질 미분을 통해 이루어진다.</p>
@@ -278,8 +278,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750057481" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750057481" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1750073071" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750073071" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -291,7 +291,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750057481"></script>
-    <script src="/js/theme.js?1750057481" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750073071"></script>
+    <script src="/js/theme.js?1750073071" defer></script>
   </body>
 </html>

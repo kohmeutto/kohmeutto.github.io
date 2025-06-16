@@ -47,14 +47,14 @@
       <link>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</guid>
-      <description>1. Divergence 어떤 위치에서, Flux의 발산 변화를 만드는 근원을 구하고자 할 때, 쓰는 연산자(도구). 근원의 크기에 비례하여, Flux의 값이 변화한다. (1) 첫번째 Maxwell equation&#xA;$$&#xD;\nabla\cdot\vec{D}=\rho_v&#xD;$$위 식이 의미하는 바는, 전속밀도의 발산 변화를 만드는 근원을 구하기 위해, 어느 위치에서 divergence (연산자)도구 를 사용하였다. 연산 결과, 체적전하밀도가 전속밀도를 변화시킴을 알았다.&#xA;(2) 두번째 Maxwell equation&#xA;$$&#xD;\nabla\cdot\vec{B}=0&#xD;$$위 식이 의미하는 바는, 자기장의 발산 변화를 만드는 근원을 구하기 위해, 어느 위치에서 divergence (연산자)도구 를 사용하였다. 연산 결과, 아무것도가 자기장의 발산 변화을 일이키는 것이 없음을 알았다. 또는 단극이 존재하지 않음(항상 같은 양의 쌍극으로 존재)을 의미한다.</description>
+      <description>1. Divergence 어떤 위치에서, 벡터장의 발산 변화를 만드는 근원을 구하고자 할 때, 쓰는 연산자(도구). 근원의 크기에 비례하여, 벡터장의 값이 변화한다. (1) 첫번째 Maxwell equation&#xA;$$&#xD;\nabla\cdot\vec{D}=\rho_v&#xD;$$위 식이 의미하는 바는, 전속밀도의 발산 변화를 만드는 근원을 구하기 위해, 어느 위치에서 divergence (연산자)도구 를 사용하였다. 연산 결과, 체적전하밀도가 전속밀도를 변화시킴을 알았다.&#xA;(2) 두번째 Maxwell equation&#xA;$$&#xD;\nabla\cdot\vec{B}=0&#xD;$$위 식이 의미하는 바는, 자기장의 발산 변화를 만드는 근원을 구하기 위해, 어느 위치에서 divergence (연산자)도구 를 사용하였다. 연산 결과, 아무것도가 자기장의 발산 변화을 일이키는 것이 없음을 알았다. 또는 단극이 존재하지 않음(항상 같은 양의 쌍극으로 존재)을 의미한다.</description>
     </item>
     <item>
       <title>(b) Curl</title>
       <link>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_curl/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_curl/index.html</guid>
-      <description>Gradient - 위키백과, 우리 모두의 백과사전</description>
+      <description>1. Curl 어떤 위치에서, 벡터장을 회전시키는 근원을 구하고자 할 때, 쓰는 연산자(도구). 근원의 크기에 비례하여, 벡터장이 회전한다. 근원의 방향은 벡터장의 회전방향을 결정(오른손 나사 법칙)한다. (1) 세번째 Maxwell equation&#xA;$$&#xD;\nabla\times\vec{E}&#xD;=-\frac{\partial\vec{B}}{\partial t}&#xD;$$위 식이 의미하는 바는, 전기장을 회전시키는 근원을 구하기 위해, 어느 위치에서 curl (연산자)도구 를 사용하였다. 연산 결과, 시간에 따라 변하는 자기장이 전기장을 회전시킴을 알았다.&#xA;(2) 네번째 Maxwell equation&#xA;$$&#xD;\nabla\times\vec{H}&#xD;=\vec{J}+\frac{\partial\vec{D}}{\partial t}&#xD;$$위 식이 의미하는 바는, 자계강도를 회전시키는 근원을 구하기 위해, 어느 위치에서 curl (연산자)도구 를 사용하였다. 연산 결과, 전류밀도와 시간에 따라 변하는 전속밀도가 자계강도를 회전을 회전시킴을 알았다.</description>
     </item>
   </channel>
 </rss>
