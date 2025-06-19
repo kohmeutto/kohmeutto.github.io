@@ -5,22 +5,30 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="(b) Suffix notation(b) Kronecker and Levi-Civit`a Symbols(a) Dyad(a) Dyad &amp; dot products">
+    <meta name="description" content="1. Dyad와 벡터의 내적 $$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$proof)
+$$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)$$$$=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.
+$$\bar{\bar{A}}\cdot\bar{\bar{B}}=\left[\begin{matrix}A_{11} &amp; A_{12} &amp; \cdots \\A_{21} &amp; A_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]\left[\begin{matrix}B_{11} &amp; B_{12} &amp; \cdots \\B_{21} &amp; B_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]$$$$\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}$$proof)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Notation & Operation :: 수리전자물리학">
-    <meta name="twitter:description" content="(b) Suffix notation(b) Kronecker and Levi-Civit`a Symbols(a) Dyad(a) Dyad &amp; dot products">
-    <meta property="og:url" content="http://localhost:1313/tensor_calculus/notation_operation/index.html">
+    <meta name="twitter:title" content="(a) Dyad & dot products :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Dyad와 벡터의 내적 $$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$proof)
+$$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)$$$$=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.
+$$\bar{\bar{A}}\cdot\bar{\bar{B}}=\left[\begin{matrix}A_{11} &amp; A_{12} &amp; \cdots \\A_{21} &amp; A_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]\left[\begin{matrix}B_{11} &amp; B_{12} &amp; \cdots \\B_{21} &amp; B_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]$$$$\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}$$proof)">
+    <meta property="og:url" content="http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="Notation & Operation :: 수리전자물리학">
-    <meta property="og:description" content="(b) Suffix notation(b) Kronecker and Levi-Civit`a Symbols(a) Dyad(a) Dyad &amp; dot products">
+    <meta property="og:title" content="(a) Dyad & dot products :: 수리전자물리학">
+    <meta property="og:description" content="1. Dyad와 벡터의 내적 $$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$proof)
+$$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)$$$$=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.
+$$\bar{\bar{A}}\cdot\bar{\bar{B}}=\left[\begin{matrix}A_{11} &amp; A_{12} &amp; \cdots \\A_{21} &amp; A_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]\left[\begin{matrix}B_{11} &amp; B_{12} &amp; \cdots \\B_{21} &amp; B_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]$$$$\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}$$proof)">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="Notation & Operation :: 수리전자물리학">
-    <meta itemprop="description" content="(b) Suffix notation(b) Kronecker and Levi-Civit`a Symbols(a) Dyad(a) Dyad &amp; dot products">
-    <meta itemprop="wordCount" content="15">
-    <title>Notation &amp; Operation :: 수리전자물리학</title>
-    <link href="/tensor_calculus/notation_operation/index.xml" rel="alternate" type="application/rss+xml" title="Notation &amp; Operation :: 수리전자물리학">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor calculus">
+    <meta itemprop="name" content="(a) Dyad & dot products :: 수리전자물리학">
+    <meta itemprop="description" content="1. Dyad와 벡터의 내적 $$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$proof)
+$$\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)$$$$=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.
+$$\bar{\bar{A}}\cdot\bar{\bar{B}}=\left[\begin{matrix}A_{11} &amp; A_{12} &amp; \cdots \\A_{21} &amp; A_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]\left[\begin{matrix}B_{11} &amp; B_{12} &amp; \cdots \\B_{21} &amp; B_{22} &amp; \cdots \\\vdots &amp; \vdots &amp; \ddots\end{matrix}\right]$$$$\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}$$proof)">
+    <meta itemprop="wordCount" content="137">
+    <title>(a) Dyad &amp; dot products :: 수리전자물리학</title>
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750301214" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750301214" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750301214" rel="stylesheet">
     <link href="/css/theme.css?1750301214" rel="stylesheet">
@@ -36,9 +44,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/tensor_calculus\/notation_operation\/index.html';
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..';
+      window.relearn.path='\/tensor_calculus\/notation_operation\/a_dyad_dot_products\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
       window.relearn.index_js_url="/searchindex.en.js?1750301214";
@@ -88,7 +96,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/tensor_calculus/notation_operation/index.html">
+  <body class="mobile-support html" data-url="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -99,7 +107,20 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-dyad와-벡터의-내적">1. Dyad와 벡터의 내적</a></li>
+        <li><a href="#2-dyad와-dyad의-내적">2. Dyad와 dyad의 내적</a></li>
+        <li><a href="#3-dyad의-이중-점-곱-1-double-dot-product-1">3. Dyad의 이중 점 곱 1 (double dot product 1)</a></li>
+        <li><a href="#4-dyad의-이중-점-곱-2-double-dot-product-2">4. Dyad의 이중 점 곱 2 (double dot product 2)</a></li>
+        <li><a href="#5-양쪽-점-곱">5. 양쪽 점 곱</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -107,12 +128,13 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_calculus/index.html"><span itemprop="name">Tensor calculus</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Notation &amp; Operation</span><meta itemprop="position" content="3"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_calculus/notation_operation/index.html"><span itemprop="name">Notation &amp; Operation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Dyad &amp; dot products</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_calculus/b_space_tensor/index.html" title="(b) Space & Vector & Tensor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_calculus/notation_operation/a_dyad/index.html" title="(a) Dyad (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_calculus/notation_operation/b_suffix_notation/index.html" title="(b) Suffix notation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_calculus/i_total_derivative_gradient/index.html" title="(i) Total derivative & Gradient (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -132,16 +154,67 @@
   <header class="headline">
   </header>
 
-<h1 id="notation--operation">Notation &amp; Operation</h1>
+<h1 id="a-dyad--dot-products">(a) Dyad &amp; dot products</h1>
 
 <hr>
-<ul class="children children-li children-sort-">
-  <li class="children-title"><a href="/tensor_calculus/notation_operation/b_suffix_notation/index.html">(b) Suffix notation</a></li>
-  <li class="children-title"><a href="/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html">(b) Kronecker and Levi-Civit`a Symbols</a></li>
-  <li class="children-title"><a href="/tensor_calculus/notation_operation/a_dyad/index.html">(a) Dyad</a></li>
-  <li class="children-title"><a href="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html">(a) Dyad &amp; dot products</a></li>
-</ul>
-
+<h3 id="1-dyad와-벡터의-내적">1. Dyad와 벡터의 내적</h3>
+$$
+\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)
+$$<p>proof)</p>
+$$
+\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)
+$$$$
+=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)
+$$<hr>
+<h3 id="2-dyad와-dyad의-내적">2. Dyad와 dyad의 내적</h3>
+<p>Dyad와 dyad의 내적은 <strong>일반적인 행렬 곱</strong>을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.</p>
+$$
+\bar{\bar{A}}\cdot\bar{\bar{B}}
+=\left[\begin{matrix}
+    A_{11} & A_{12} & \cdots \\
+    A_{21} & A_{22} & \cdots \\
+    \vdots & \vdots & \ddots
+\end{matrix}\right]
+\left[\begin{matrix}
+    B_{11} & B_{12} & \cdots \\
+    B_{21} & B_{22} & \cdots \\
+    \vdots & \vdots & \ddots
+\end{matrix}\right]
+$$$$
+\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
+$$<p>proof)</p>
+$$
+\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
+$$$$
+=a_{i}b_{j}c_{k}d_{l}\hat{u}_{i}\delta_{jk}\hat{u}_{l}=a_{i}b_{j}c_{j}d_{l}\hat{u}_{i}\hat{u}_{l}=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
+$$<hr>
+<h3 id="3-dyad의-이중-점-곱-1-double-dot-product-1">3. Dyad의 이중 점 곱 1 (double dot product 1)</h3>
+<p>Dyad와 dyad의 이중 점 곱은, <strong>동일 위치 원소 곱에 대한 합</strong>이다.</p>
+$$
+\bar{\bar{A}}:\bar{\bar{B}}
+=A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
+$$$$
+\left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
+$$<p>proof)</p>
+$$
+\left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}:c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
+$$$$
+=a_{i}b_{j}c_{k}d_{l}\left(\hat{u}_{i}\hat{u}_{j}:\hat{u}_{k}\hat{u}_{l}\right)=a_{i}b_{j}c_{k}d_{l}\left(\hat{u}_{i}\cdot\hat{u}_{k}\right)\left(\hat{u}_{j}\cdot\hat{u}_{l}\right)=a_{i}b_{j}c_{k}d_{l}\delta_{ik}\delta_{jl}
+$$$$
+=a_{i}b_{j}c_{k}d_{l}\delta_{ik}\delta_{jl}=a_{i}c_{i}b_{j}d_{j}=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
+$$<hr>
+<h3 id="4-dyad의-이중-점-곱-2-double-dot-product-2">4. Dyad의 이중 점 곱 2 (double dot product 2)</h3>
+$$
+\bar{\bar{A}}\cdot\cdot\bar{\bar{B}}
+=\bar{\bar{A}}:\bar{\bar{B}}^T
+=\bar{\bar{A}}^T:\bar{\bar{B}}
+$$<hr>
+<h3 id="5-양쪽-점-곱">5. 양쪽 점 곱</h3>
+$$
+\bar{\bar{A}}\cdot\cdot\bar{\bar{B}}
+=\bar{\bar{A}}:\bar{\bar{B}}^T
+=\bar{\bar{A}}^T:\bar{\bar{B}}
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -193,11 +266,11 @@
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/tensor_calculus/index.html"><a class="padding" href="/tensor_calculus/index.html">Tensor calculus</a><ul id="R-subsections-9979c5490fbc736b2157a1476fcc2b77" class="collapsible-menu">
             <li class="" data-nav-id="/tensor_calculus/b_space_tensor/index.html"><a class="padding" href="/tensor_calculus/b_space_tensor/index.html">(b) Space &amp; Vector &amp; Tensor</a></li>
-            <li class="active parent alwaysopen " data-nav-id="/tensor_calculus/notation_operation/index.html"><a class="padding" href="/tensor_calculus/notation_operation/index.html">Notation &amp; Operation</a><ul id="R-subsections-08e02b6ca19387eda83dabe9c1fb007c" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/tensor_calculus/notation_operation/index.html"><a class="padding" href="/tensor_calculus/notation_operation/index.html">Notation &amp; Operation</a><ul id="R-subsections-08e02b6ca19387eda83dabe9c1fb007c" class="collapsible-menu">
             <li class="" data-nav-id="/tensor_calculus/notation_operation/b_suffix_notation/index.html"><a class="padding" href="/tensor_calculus/notation_operation/b_suffix_notation/index.html">(b) Suffix notation</a></li>
             <li class="" data-nav-id="/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html"><a class="padding" href="/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html">(b) Kronecker and Levi-Civit`a Symbols</a></li>
             <li class="" data-nav-id="/tensor_calculus/notation_operation/a_dyad/index.html"><a class="padding" href="/tensor_calculus/notation_operation/a_dyad/index.html">(a) Dyad</a></li>
-            <li class="" data-nav-id="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html"><a class="padding" href="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html">(a) Dyad &amp; dot products</a></li></ul></li>
+            <li class="active " data-nav-id="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html"><a class="padding" href="/tensor_calculus/notation_operation/a_dyad_dot_products/index.html">(a) Dyad &amp; dot products</a></li></ul></li>
             <li class="" data-nav-id="/tensor_calculus/i_total_derivative_gradient/index.html"><a class="padding" href="/tensor_calculus/i_total_derivative_gradient/index.html">(i) Total derivative &amp; Gradient</a></li>
             <li class="alwaysopen " data-nav-id="/tensor_calculus/orthogonal_coordinates/index.html"><a class="padding" href="/tensor_calculus/orthogonal_coordinates/index.html">Orthogonal coordinates</a><ul id="R-subsections-e3f41b46c054665979f4e1fccfb5a3bd" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_calculus/general_coordinates/index.html"><a class="padding" href="/tensor_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-9dd3608097ce86927efa909d9cf58a61" class="collapsible-menu"></ul></li></ul></li>

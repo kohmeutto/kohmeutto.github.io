@@ -3,7 +3,7 @@
   <channel>
     <title>Notation &amp; Operation :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_calculus/notation_operation/index.html</link>
-    <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad</description>
+    <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad&#xD;(a) Dyad &amp; dot products</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_calculus/notation_operation/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,14 @@
       <link>http://localhost:1313/tensor_calculus/notation_operation/a_dyad/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/notation_operation/a_dyad/index.html</guid>
-      <description></description>
+      <description>1. Dyad 개념 Dyad란 두 벡터의 곱으로 이루어진 2차 tensor를 의미한다. 이때의 곱을 tensor 곱 또는 dyad 라고 한다. 표기법은 아래와 같다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}&#xD;=\vec{a}\vec{b}&#xD;=\left[\begin{matrix}&#xD;a_1 \\ a_2 \\ a_3 \\ \vdots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;b_1 &amp; b_2 &amp; b_3 &amp; \cdots&#xD;\end{matrix}\right]&#xD;$$ 2. 기저 벡터 표기법 Dyad는 2차 tensor로서 성분과 기저 dyad로 구성된다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}=a_{i}b_{j}\left(\hat{u}_{i}\otimes\hat{u}_{j}\right)=\text{성분}\cdot\text{(기저 dyad)}&#xD;$$일반적으로 dyad는 교환 법칙이 성립되지 않는다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}\ne\vec{b}\otimes\vec{a}&#xD;$$ 3. 분배법칙과 결합법칙 분배법칙 $$&#xD;\vec{a}\otimes\left(\vec{b}+\vec{c}\right)=\vec{a}\otimes\vec{b}+\vec{a}\otimes\vec{c}&#xD;$$ 결합법칙 $$&#xD;\lambda\vec{a}\otimes\vec{b}=\vec{a}\otimes\left(\lambda\vec{b}\right)=\lambda\left(\vec{a}\otimes\vec{b}\right)&#xD;$$ 4. 대칭 및 비대칭 tensor 이중 bar $\bar{\bar{A}}$는 2차텐서를 의미한다.</description>
+    </item>
+    <item>
+      <title>(a) Dyad &amp; dot products</title>
+      <link>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</guid>
+      <description>1. Dyad와 벡터의 내적 $$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$proof)&#xA;$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)&#xD;$$$$&#xD;=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.&#xA;$$&#xD;\bar{\bar{A}}\cdot\bar{\bar{B}}&#xD;=\left[\begin{matrix}&#xD;A_{11} &amp; A_{12} &amp; \cdots \\&#xD;A_{21} &amp; A_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;B_{11} &amp; B_{12} &amp; \cdots \\&#xD;B_{21} &amp; B_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;$$$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}&#xD;$$proof)</description>
     </item>
   </channel>
 </rss>
