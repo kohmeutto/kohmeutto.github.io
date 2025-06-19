@@ -169,6 +169,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</loc>
   </url>
   <url>

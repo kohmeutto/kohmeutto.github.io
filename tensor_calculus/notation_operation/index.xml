@@ -3,7 +3,7 @@
   <channel>
     <title>Notation &amp; Operation :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_calculus/notation_operation/index.html</link>
-    <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad&#xD;(a) Dyad &amp; dot products</description>
+    <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad&#xD;(a) Dyad &amp; dot products&#xD;(a) Unit tensor</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_calculus/notation_operation/index.xml" rel="self" type="application/rss+xml" />
@@ -33,7 +33,14 @@
       <link>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</guid>
-      <description>1. Dyad와 벡터의 내적 $$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$proof)&#xA;$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)&#xD;$$$$&#xD;=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.&#xA;$$&#xD;\bar{\bar{A}}\cdot\bar{\bar{B}}&#xD;=\left[\begin{matrix}&#xD;A_{11} &amp; A_{12} &amp; \cdots \\&#xD;A_{21} &amp; A_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;B_{11} &amp; B_{12} &amp; \cdots \\&#xD;B_{21} &amp; B_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;$$$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}&#xD;$$proof)</description>
+      <description>1. Dyad와 벡터의 내적 $$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$proof)&#xA;$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)&#xD;$$$$&#xD;=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.&#xA;$$&#xD;(1)&#xD;\bar{\bar{A}}\cdot\bar{\bar{B}}&#xD;=\left[\begin{matrix}&#xD;A_{11} &amp; A_{12} &amp; \cdots \\&#xD;A_{21} &amp; A_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;B_{11} &amp; B_{12} &amp; \cdots \\&#xD;B_{21} &amp; B_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;$$$$&#xD;(2)&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(a) Unit tensor</title>
+      <link>http://localhost:1313/tensor_calculus/notation_operation/a_unit_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_calculus/notation_operation/a_unit_tensor/index.html</guid>
+      <description>1. 2차 단위 텐서 $$&#xD;\bar{\bar{I}}&#xD;=\left[\begin{matrix}&#xD;1 &amp; 0 &amp; 0 \\&#xD;0 &amp; 1 &amp; 0 \\&#xD;0 &amp; 0 &amp; 1&#xD;\end{matrix}\right]&#xD;=\left[\begin{matrix}&#xD;\delta_{11} &amp; \delta_{12} &amp; \delta_{13} \\&#xD;\delta_{21} &amp; \delta_{22} &amp; \delta_{23} \\&#xD;\delta_{31} &amp; \delta_{32} &amp; \delta_{33}&#xD;\end{matrix}\right]&#xD;=\delta_{ij}\hat{u}_i\hat{u}_j&#xD;=\hat{u}_j\hat{u}_j&#xD;$$$$&#xD;\bar{\bar{I}}\cdot\vec{a}&#xD;=\vec{a}&#xD;$$proof)&#xA;$$&#xD;\bar{\bar{I}}\cdot\vec{a}&#xD;=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k&#xD;=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)&#xD;=\delta_{ij}a_k\hat{u}_i\delta_{jk}&#xD;=a_j\hat{u}_j&#xD;=\vec{a}&#xD;$$ 2. 대각합 $$&#xD;\bar{\bar{A}}:\bar{\bar{I}}&#xD;=\operatorname{tr}\bar{\bar{A}}&#xD;=A_{jj}=A_{11}+A_{22}+A_{33}&#xD;$$대각합은 아래와 같은 성질을 가진다.</description>
     </item>
   </channel>
 </rss>
