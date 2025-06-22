@@ -120,12 +120,12 @@ var relearn_searchindex = [
     "uri": "/temp/tensor_calculus/notation_operation/b_suffix_notation/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rNotation \u0026 Operation",
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rNotation \u0026 Basic operations",
     "content": "0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.\n(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.\n(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)\n(4) 하나의 방정식에서, free index는 같아야 한다.\n(5) 대칭 행렬이 아니라면, $a_{ij}\\ne a_{ji}$ 이다.\n1. free suffix $$\r\\vec{c}=\\vec{a}+\\vec{b}\r\\rightarrow\rc_i=a_i+b_i\r$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.\n2. single vector expression $$\r\\vec{a}=\\hat{u}_{i}a_{i}\r$$ 3. dot product expression 1 Now consider the dot product of two vectors, $a\\cdot b = a_1 b_1 + a_2 b_2 + a_3 b_3$. This can be written more compactly as\n$$\r\\vec{a}\\cdot\\vec{b}=\\sum_{i=1}^3a_{i}b_{i}\\rightarrow a_{i}b_{i}\r$$ 4. dot product expression 2 $$\r\\vec{a}\\cdot\\vec{b}\r=a_{i}\\hat{u}_{i}\\cdot b_{j}\\hat{u}_{j}=a_{i}b_{j}\\left(\\hat{u}_{i}\\cdot\\hat{u}_{j}\\right)\r=a_{i}b_{j}\\delta_{ij}=a_{i}b_{i}\r$$$$\r\\hat{u}_{i}\\cdot\\hat{u}_{j}\r=\\delta_{ij}\r$$ 5. Matrix expression $$\rM_{ij}\\ne M_{ji}\r$$$$\rM_{ij}=a_{i}b_{j}\r$$$$\rM_{ij}x_{i}=a_{i}b_{j}x_{i}=\\left(\\vec{a\\cdot\\vec{x}}\\right)b_{j}\r$$ example 1)\nSuppose that an expression involves two dot products multiplied together, (a·b)(c·d). In order to indicate which vector is dotted with which, a different dummy suffix must be used for each of the dot products:\n$$\r\\left(\\vec{a}\\cdot\\vec{b}\\right)\\left(\\vec{c}\\cdot\\vec{d}\\right)=a_{j}b_{j}c_{k}d_{k}\r$$example 2)\nWrite the suffix notation expression in ordinary vector notation.\n$$\ra_{j}b_{i}c_{j}\r\\rightarrow\r\\left(\\vec{a\\cdot\\vec{c}}\\right)\\vec{b}\r$$example 3)\nWrite the vector equation in suffix notation.\n$$\r\\vec{u}+\\left(\\vec{a}\\cdot\\vec{b}\\right)\\vec{v}\r=\\left|\\vec{a}\\right|^2\\left(\\vec{b}\\cdot\\vec{v}\\right)\\vec{a}\r$$sol)\n$$\ru_{i}+\\left\\lbrack\\left(\\vec{a}\\cdot\\vec{b}\\right)\\vec{v}\\right\\rbrack_{i}\r=a_{j}a_{j}b_{k}v_{k}a_{i}\r$$$$\ru_{i}+a_{j}b_{j}v_{i}=a_{j}a_{j}b_{k}v_{k}a_{i}\r$$example 4)\nShow that the product of two N x N matrices A and B, G = AB can be written in suffix notation as $C_{ij}=A_{ik}B_{kj}$.\n$$\r\\vec{C}=\\vec{AB}\\rightarrow C_{ij}\r=\\left\\lbrack\\vec{AB}\\right\\rbrack_{ij}\r=A_{ik}B_{kj}\r$$example 5)\nShow that the trace of the matrix AB (defined as the sum of the elements on the diagonal) is the same as the trace of BA.\nproof)\n$$\r\\operatorname{Tr}\\left(\\vec{A}\\vec{B}\\right)\r=A_{ik}B_{ki}\r=B_{ki}A_{ik}\r=\\operatorname{Tr}\\left(\\vec{B}\\vec{A}\\right)\r$$ 5. Non-identities example1)\n$$\ra_{ij}\\left(x_{i}+y_{j}\\right)\\ne a_{ij}x_{i}+a_{ij}y_{j}\r$$proof)\n하나의 방정식에서, free index는 같아야 한다. 를 만족하지 않으므로 문제가 성립 불가능\nexample2)\n$$\rM_{ij}x_{i}y_{j}\\ne M_{ij}y_{i}x_{j}\r$$proof)\n대칭 행렬이 아닌 경우에는,\n$$\rM_{ij}\\ne M_{ji}\r$$따라서,\n$$\rM_{ij}x_{i}y_{j}\r=a_{i}b_{j}x_{i}y_{j}\r=\\left(\\vec{a}\\cdot\\vec{x}\\right)\\left(\\vec{b}\\cdot \\vec{y}\\right)\r$$$$\rM_{ij}y_{i}x_{j}\r=a_{i}b_{j}y_{i}x_{j}\r=\\left(\\vec{a}\\cdot\\vec{y}\\right)\\left(\\vec{b}\\cdot\\vec{x}\\right)\r$$example3)\n$$\r\\left(a_{ij}+a_{ji}\\right)x_{i}y_{j}\\ne2a_{ij}x_{i}y_{j}\r$$proof)\n대칭 행렬이 아닌 경우에는,\n$$\ra_{ij}\\ne a_{ji}\r$$ 6. Identities $$\ra_{ij}\\left(x_{i}+y_{i}\\right)\r=a_{ij}x_{i}+a_{ij}y_{i}\r$$$$\ra_{ij}x_{i}x_{j}\r=a_{ji}x_{i}x_{j}\r$$$$\r\\left(a_{ij}+a_{ji}\\right)x_{i}x_{j}\r=2a_{ij}x_{i}x_{j}\r$$ Einstein Summation Convention: an Introduction",
     "description": "0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.\n(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.\n(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)\n(4) 하나의 방정식에서, free index는 같아야 한다.\n(5) 대칭 행렬이 아니라면, $a_{ij}\\ne a_{ji}$ 이다.\n1. free suffix $$\r\\vec{c}=\\vec{a}+\\vec{b}\r\\rightarrow\rc_i=a_i+b_i\r$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.",
     "tags": [],
     "title": "(b) Suffix notation",
-    "uri": "/vector_calculus/notation/b_suffix_notation/index.html"
+    "uri": "/vector_calculus/notation_basic_operations/b_suffix_notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rLinear algebra \u003e \rVector",
@@ -288,12 +288,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/b_first_order_pde/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rNotation \u0026 Operation",
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus \u003e \rNotation \u0026 Basic operations",
     "content": "1. The Kronecker delta, $\\delta_{ij}$ $$\r\\delta_{ij}\r=\\left\\lbrace\\begin{aligned}\r\u0026 1,\\,\\, i=j \\\\ \u0026 0,\\,\\, i\\ne j\r\\end{aligned}\\right.\r$$$$\r\\delta_{ij}\r=\\left\\lbrack I\\right\\rbrack_{ij}\r=\\left[\\begin{matrix}\r1 \u0026 0 \u0026 0 \\\\\r0 \u0026 1 \u0026 0 \\\\\r0 \u0026 0 \u0026 1\r\\end{matrix}\\right]\r$$ 2. Substitution tensor, $\\delta_{ij}$ $$\r\\delta_{ij}a_{j}\r=\\delta_{i1}a_1+\\delta_{i2}a_2+\\delta_{i3}a_3=a_{i}\r$$From the symmetry of $δ_{ij}$ it follows that $δ_{ij}$ $a_{i} = a_{j}$. Because of this property of $δ_{ij}$, it is sometimes referred to as the ‘substitution tensor’, since its effect when multiplied by $a_{j}$ is to replace the j with i.\n$$\r\\delta_{ij}a_{i}b_{j}=a_{j}b_{j}=\\vec{a}\\cdot\\vec{b}\r$$ example1) Evaluate $\\delta_{jj}$\nsol)\n$$\r\\delta_{jj}=\\delta_{11}+\\delta_{22}+\\delta_{33}=3\r$$example2) Simplify $\\delta_{ij}\\delta_{jk}$\nsol)\n$$\r\\delta_{ij}\\delta_{jk}=\\delta_{ik}\r$$ 3. Levi-Civita’ tenser, $\\varepsilon_{ijk}$ $$\r\\varepsilon_{ijk}\r=\\left\\lbrace\\begin{aligned}\r\u0026 +1,\\,\\,\\left(1,2,3\\,\\right),\\left(2,3,1\\right),\\left(3,1,2\\right) \\\\\r\u0026 -1,\\,\\,\\left(1,3,2\\right),\\left(2,1,3\\right),\\left(3,2,1\\right) \\\\\r\u0026 \\quad\\,0,\\,\\,\\text{otherwise}\\end{aligned}\\right.\r$$(1) unit vector expression\n$$\r\\vec{a}\\times\\vec{b}\r=a_i\\hat{u}_i\\times b_{j}\\hat{u}_j\r=a_ib_{j}\\hat{u}_i\\times\\hat{u}_j\r$$$$\r=a_ib_{j}\\varepsilon_{ijk}\\hat{u}_k\r=\\varepsilon_{ijk}a_ib_{j}\\hat{u}_k,\\quad\r\\text{since, }\\hat{u}_{i}\\times\\hat{u}_{j}=\\epsilon_{ijk}\\hat{u}_{k}\r$$(2) index expression\nThe relationship between and the cross product is as follows:\n$$\r\\left\\lbrack\\vec{a}\\times\\vec{b}\\right\\rbrack_{i}\r=\\varepsilon_{ijk}a_{j}b_{k}\r\\to a_2b_3-a_3b_2\r$$(3) Determinent\nThere is also a relation between and the determinant of a 3 x 3 matrix. This can be written\n$$\r\\left|M\\right|\r=\\varepsilon_{ijk}M_{1i}M_{2j}M_{3k}\r$$ example1) Simplify $\\varepsilon_{ijk}\\varepsilon_{ijk}$\nsol)\n$$\r\\varepsilon_{ijk}\\varepsilon_{ijk}=1^2+\\left(-1\\right)^2+1^2+\\left(-1\\right)^2+1^2+\\left(-1\\right)^2=6\r$$ 4. Scalar triple product (1) vectors\nAn expression for the scalar triple product $\\vec{a}\\cdot\\vec{b}\\times\\vec{c}$ can be deduced in suffix notation as follows:\n$$\r\\vec{a}\\cdot\\vec{b}\\times\\vec{c}\r=a_{i}\\left\\lbrack\\vec{b}\\times\\vec{c}\\right\\rbrack_{i}\r=a_{i}\\varepsilon_{ijk}b_{j}c_{k}\r=\\varepsilon_{ijk}a_{i}b_{j}c_{k}\r$$$$\r\\varepsilon_{ijk}a_{i}b_{j}c_{k}\r=a_1\\left(b_2c_3-b_3c_2\\right)+a_2\\left(b_3c_1-b_1c_3\\right)+a_3\\left(b_1c_2-b_2c_1\\right)\r$$For unit vector expression,\n$$\r\\vec{a}\\cdot\\vec{b}\\times\\vec{c}\r=a_{i}\\hat{u}_{i}\\cdot\\left(b_{j}\\hat{u}_{j}\\times c_{k}\\hat{u}_{k}\\right)\r=a_{i}\\hat{u}_{i}\\cdot b_{j}c_{k}\\left(\\hat{u}_{j}\\times\\hat{u}_{k}\\right)\r$$$$\r=a_{i}b_{j}c_{k}\\left(\\hat{u}_{i}\\cdot\\hat{u}_{j}\\times\\hat{u}_{k}\\right)\r=a_{i}b_{j}c_{k}\\left(\\hat{u}_{i}\\cdot\\epsilon_{ijk}\\hat{u}_{i}\\right)\r=\\epsilon_{ijk}a_{i}b_{j}c_{k}\r$$(2) Levi-Civita’ tenser\nThe dot product and the cross product are interchangeable.\n$$\r\\varepsilon_{ijk}\r=\\hat{u}_{i}\\cdot\\left(\\hat{u}_{j}\\times\\hat{u}_{k}\\right)\r=\\left(\\hat{u}_{i}\\times\\hat{u}_{j}\\right)\\cdot\\hat{u}_{k}\r$$ 5. Relation betweenand $\\varepsilon_{ijk}$ \u0026 $\\delta_{ij}$ $$\r\\varepsilon_{ijk}\\varepsilon_{lmn}\r=\\left|\\begin{matrix}\r\\delta_{il} \u0026 \\delta_{jl} \u0026 \\delta_{kl} \\\\\r\\delta_{im} \u0026 \\delta_{jm} \u0026 \\delta_{km} \\\\\r\\delta_{in} \u0026 \\delta_{jn} \u0026 \\delta_{kn}\r\\end{matrix}\\right|\r=\\left|\\begin{matrix}\r\\delta_{il} \u0026 \\delta_{im} \u0026 \\delta_{in} \\\\\r\\delta_{jl} \u0026 \\delta_{jm} \u0026 \\delta_{jn} \\\\\r\\delta_{kl} \u0026 \\delta_{km} \u0026 \\delta_{kn}\r\\end{matrix}\\right|\r$$$$\r\\varepsilon_{ijk}\\varepsilon_{klm}\r=\\left|\\begin{matrix}\r\\delta_{il} \u0026 \\delta_{jl} \\\\\r\\delta_{im} \u0026 \\delta_{jm}\r\\end{matrix}\\right|\r=\\delta_{il}\\delta_{jm}-\\delta_{jl}\\delta_{im}\r$$ example1) Simplify $\\delta_{ij}\\varepsilon_{ijk}$\nsol)\n$$\r\\delta_{ij}\\varepsilon_{ijk}=\\varepsilon_{jjk}=0\r$$example2) Show $\\vec{a}\\times\\left(\\vec{b}\\times\\vec{c}\\right)=\\vec{b}\\left(\\vec{a}\\cdot\\vec{c}\\right)-\\vec{c}\\left(\\vec{a}\\cdot\\vec{b}\\right)$\nsol)\n$$\r\\left\\lbrack\\vec{a}\\times\\left(\\vec{b}\\times\\vec{c}\\right)\\right\\rbrack_{i}\r=\\varepsilon_{ijk}a_{j}\\left\\lbrack\\vec{b}\\times\\vec{c}\\right\\rbrack_{k}\r=\\varepsilon_{ijk}a_{j}\\varepsilon_{klm}b_{l}c_{m}\r=\\left(\\delta_{il}\\delta_{jm}-\\delta_{jl}\\delta_{im}\\right)a_{j}b_{l}c_{m}\r$$$$\r\\left(\\delta_{il}\\delta_{jm}-\\delta_{jl}\\delta_{im}\\right)a_{j}b_{l}c_{m}\r=\\delta_{il}\\delta_{jm}a_{j}b_{l}c_{m}-\\delta_{jl}\\delta_{im}a_{j}b_{l}c_{m}\r$$$$\r\\delta_{il}\\delta_{jm}a_{j}b_{l}c_{m}-\\delta_{jl}\\delta_{im}a_{j}b_{l}c_{m}\r=a_{m}b_{i}c_{m}-a_{l}b_{l}c_{i}\r$$$$\ra_{m}b_{i}c_{m}-a_{l}b_{l}c_{i}\r\\rightarrow\r\\vec{b}\\left(\\vec{a}\\cdot\\vec{c}\\right)-\\vec{c}\\left(\\vec{a}\\cdot\\vec{b}\\right)\r$$",
     "description": "1. The Kronecker delta, $\\delta_{ij}$ $$\r\\delta_{ij}\r=\\left\\lbrace\\begin{aligned}\r\u0026 1,\\,\\, i=j \\\\ \u0026 0,\\,\\, i\\ne j\r\\end{aligned}\\right.\r$$$$\r\\delta_{ij}\r=\\left\\lbrack I\\right\\rbrack_{ij}\r=\\left[\\begin{matrix}\r1 \u0026 0 \u0026 0 \\\\\r0 \u0026 1 \u0026 0 \\\\\r0 \u0026 0 \u0026 1\r\\end{matrix}\\right]\r$$ 2. Substitution tensor, $\\delta_{ij}$ $$\r\\delta_{ij}a_{j}\r=\\delta_{i1}a_1+\\delta_{i2}a_2+\\delta_{i3}a_3=a_{i}\r$$From the symmetry of $δ_{ij}$ it follows that $δ_{ij}$ $a_{i} = a_{j}$. Because of this property of $δ_{ij}$, it is sometimes referred to as the ‘substitution tensor’, since its effect when multiplied by $a_{j}$ is to replace the j with i.",
     "tags": [],
     "title": "(b) Kronecker \u0026 Levi-Civit`a Symbols",
-    "uri": "/vector_calculus/notation/b_kronecker_levicivita_symbols/index.html"
+    "uri": "/vector_calculus/notation_basic_operations/b_kronecker_levicivita_symbols/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rTemps \u003e \rVector calculus \u003e \rNotation \u0026 Operation",
@@ -392,20 +392,20 @@ var relearn_searchindex = [
     "uri": "/ode_pde/inhomogeneous/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
+    "content": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols",
+    "description": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols",
+    "tags": [],
+    "title": "Notation \u0026 Basic operations",
+    "uri": "/vector_calculus/notation_basic_operations/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e \rTemps \u003e \rVector calculus",
     "content": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols\r(a) Dyad 1\r(a) Dyad 2\r(a) Unit tensor",
     "description": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols\r(a) Dyad 1\r(a) Dyad 2\r(a) Unit tensor",
     "tags": [],
     "title": "Notation \u0026 Operation",
     "uri": "/temp/tensor_calculus/notation_operation/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e \rVector calculus",
-    "content": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols",
-    "description": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols",
-    "tags": [],
-    "title": "Notation \u0026 Operation",
-    "uri": "/vector_calculus/notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e \rTemps \u003e \rVector calculus \u003e \rNotation \u0026 Operation",
@@ -881,8 +881,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Operation\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates",
-    "description": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Operation\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates",
+    "content": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Basic operations\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates",
+    "description": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Basic operations\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates",
     "tags": [],
     "title": "Vector calculus",
     "uri": "/vector_calculus/index.html"
