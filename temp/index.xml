@@ -21,5 +21,12 @@
       <guid>http://localhost:1313/temp/b_tensor_components_transformation_i/index.html</guid>
       <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\begin{bmatrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$$$&#xD;|u_1\rangle=\begin{bmatrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_2\rangle=\begin{bmatrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_3\rangle=\begin{bmatrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
     </item>
+    <item>
+      <title>Vector calculus</title>
+      <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/index.html</guid>
+      <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates</description>
+    </item>
   </channel>
 </rss>

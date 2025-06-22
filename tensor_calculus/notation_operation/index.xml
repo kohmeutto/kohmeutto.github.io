@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notation &amp; Operation :: 수리전자물리학</title>
+    <title>Notation &amp; Basic operation :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_calculus/notation_operation/index.html</link>
-    <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad 1&#xD;(a) Dyad 2&#xD;(a) Unit tensor</description>
+    <description>(a) Dyad I&#xD;(a) Dyad II&#xD;(a) Unit tensor</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_calculus/notation_operation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>(b) Suffix notation</title>
-      <link>http://localhost:1313/tensor_calculus/notation_operation/b_suffix_notation/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tensor_calculus/notation_operation/b_suffix_notation/index.html</guid>
-      <description>0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.&#xA;(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.&#xA;(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)&#xA;(4) 하나의 방정식에서, free index는 같아야 한다.&#xA;(5) 대칭 행렬이 아니라면, $a_{ij}\ne a_{ji}$ 이다.&#xA;1. free suffix $$&#xD;\vec{c}=\vec{a}+\vec{b}&#xD;\rightarrow&#xD;c_i=a_i+b_i&#xD;$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.</description>
-    </item>
-    <item>
-      <title>(b) Kronecker and Levi-Civit`a Symbols</title>
-      <link>http://localhost:1313/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html</guid>
-      <description>1. The Kronecker delta, $\delta_{ij}$ $$&#xD;\delta_{ij}&#xD;=\left\lbrace\begin{aligned}&#xD;&amp; 1,\,\, i=j \\ &amp; 0,\,\, i\ne j&#xD;\end{aligned}\right.&#xD;$$$$&#xD;\delta_{ij}&#xD;=\left\lbrack I\right\rbrack_{ij}&#xD;=\left[\begin{matrix}&#xD;1 &amp; 0 &amp; 0 \\&#xD;0 &amp; 1 &amp; 0 \\&#xD;0 &amp; 0 &amp; 1&#xD;\end{matrix}\right]&#xD;$$ 2. Substitution tensor, $\delta_{ij}$ $$&#xD;\delta_{ij}a_{j}&#xD;=\delta_{i1}a_1+\delta_{i2}a_2+\delta_{i3}a_3=a_{i}&#xD;$$From the symmetry of $δ_{ij}$ it follows that $δ_{ij}$ $a_{i} = a_{j}$. Because of this property of $δ_{ij}$, it is sometimes referred to as the ‘substitution tensor’, since its effect when multiplied by $a_{j}$ is to replace the j with i.</description>
-    </item>
-    <item>
-      <title>(a) Dyad 1</title>
+      <title>(a) Dyad I</title>
       <link>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_i/index.html</guid>
       <description>1. Dyad 개념 Dyad란 두 벡터의 곱으로 이루어진 2차 tensor를 의미한다. 이때의 곱을 tensor 곱 또는 dyad 라고 한다. 표기법은 아래와 같다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}&#xD;=\vec{a}\vec{b}&#xD;=\left[\begin{matrix}&#xD;a_1 \\ a_2 \\ a_3 \\ \vdots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;b_1 &amp; b_2 &amp; b_3 &amp; \cdots&#xD;\end{matrix}\right]&#xD;$$ 2. 기저 벡터 표기법 Dyad는 2차 tensor로서 성분과 기저 dyad로 구성된다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}=a_{i}b_{j}\left(\hat{u}_{i}\otimes\hat{u}_{j}\right)=\text{성분}\cdot\text{(기저 dyad)}&#xD;$$일반적으로 dyad는 교환 법칙이 성립되지 않는다.&#xA;$$&#xD;\vec{a}\otimes\vec{b}\ne\vec{b}\otimes\vec{a}&#xD;$$ 3. 분배법칙과 결합법칙 분배법칙 $$&#xD;\vec{a}\otimes\left(\vec{b}+\vec{c}\right)=\vec{a}\otimes\vec{b}+\vec{a}\otimes\vec{c}&#xD;$$ 결합법칙 $$&#xD;\lambda\vec{a}\otimes\vec{b}=\vec{a}\otimes\left(\lambda\vec{b}\right)=\lambda\left(\vec{a}\otimes\vec{b}\right)&#xD;$$ 4. 대칭 및 비대칭 tensor 이중 bar $\bar{\bar{A}}$는 2차텐서를 의미한다.</description>
     </item>
     <item>
-      <title>(a) Dyad 2</title>
+      <title>(a) Dyad II</title>
       <link>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_ii/index.html</guid>

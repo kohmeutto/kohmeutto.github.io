@@ -4,7 +4,13 @@
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/a_covariant_contravariant/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tensor_calculus/general_coordinates/a_covariant_contravariant/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_frame_viewpoint/index.html</loc>
@@ -16,7 +22,10 @@
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_i/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</loc>
@@ -25,13 +34,19 @@
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/b_space_tensor/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/b_space_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/b_space_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/b_suffix_notation/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/b_suffix_notation/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/notation_operation/b_suffix_notation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_vector/index.html</loc>
@@ -61,7 +76,13 @@
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/b_metric_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_calculus/general_coordinates/b_metric_tensor/index.html</loc>
@@ -85,13 +106,19 @@
     <loc>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_mapping_ii/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
@@ -112,25 +139,40 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_calculus/general_coordinates/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_calculus/notation_operation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_i/index.html</loc>
+    <loc>http://localhost:1313/vector_calculus/notation_operation/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/a_dyad_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_mapping_iii/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_iii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_mapping_iii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_material_derivative/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operators_in_quantum_mechanics/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_i/index.html</loc>
@@ -151,7 +193,10 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/i_total_derivative_gradient/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/i_total_derivative_gradient/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/i_total_derivative_gradient/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_3d_wave_equation_for_free_space/index.html</loc>
@@ -169,13 +214,16 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_ii/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/a_dyad_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_components_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
@@ -205,7 +253,10 @@
     <loc>http://localhost:1313/integral_transform/operators/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
@@ -214,7 +265,7 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
@@ -223,7 +274,10 @@
     <loc>http://localhost:1313/temp/b_gradient_for_scalar/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
@@ -238,7 +292,7 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/p_ode_solution_using_sl/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/general_coordinates/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/lti/index.html</loc>
@@ -253,7 +307,10 @@
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_tensor_components_transformation_i/index.html</loc>
@@ -268,19 +325,28 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/r_emf_voltage/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/orthogonal_coordinates/b_curl/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_curl/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_calculus/orthogonal_coordinates/b_curl/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_calculus/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_inner_product/index.html</loc>
