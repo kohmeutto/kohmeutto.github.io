@@ -3,7 +3,7 @@
   <channel>
     <title>Vector calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_calculus/index.html</link>
-    <description>(b) Space &amp; Vector &amp; Tensor&#xD;(b) Suffix notation&#xD;(b) Kronecker &amp; Levi-Civit`a Symbols&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates</description>
+    <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -15,18 +15,11 @@
       <description>1. Space &amp; Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.&#xA;좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다. 단, 실공간의 기준 좌표계는 데카르트 좌표계 이며, 다른 좌표계를 사용하여도, 정량적으로 다루기 위해서는 궁극적으로 ‘데카르트 좌표계’라는 기준점을 통해 이해해야 한다.</description>
     </item>
     <item>
-      <title>(b) Suffix notation</title>
-      <link>http://localhost:1313/vector_calculus/b_suffix_notation/index.html</link>
+      <title>Notation &amp; Operation</title>
+      <link>http://localhost:1313/vector_calculus/notation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_calculus/b_suffix_notation/index.html</guid>
-      <description>0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.&#xA;(2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.&#xA;(3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)&#xA;(4) 하나의 방정식에서, free index는 같아야 한다.&#xA;(5) 대칭 행렬이 아니라면, $a_{ij}\ne a_{ji}$ 이다.&#xA;1. free suffix $$&#xD;\vec{c}=\vec{a}+\vec{b}&#xD;\rightarrow&#xD;c_i=a_i+b_i&#xD;$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j+b_j$ or $c_k=a_k+b_k$.</description>
-    </item>
-    <item>
-      <title>(b) Kronecker &amp; Levi-Civit`a Symbols</title>
-      <link>http://localhost:1313/vector_calculus/b_kronecker_levicivita_symbols/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_calculus/b_kronecker_levicivita_symbols/index.html</guid>
-      <description>1. The Kronecker delta, $\delta_{ij}$ $$&#xD;\delta_{ij}&#xD;=\left\lbrace\begin{aligned}&#xD;&amp; 1,\,\, i=j \\ &amp; 0,\,\, i\ne j&#xD;\end{aligned}\right.&#xD;$$$$&#xD;\delta_{ij}&#xD;=\left\lbrack I\right\rbrack_{ij}&#xD;=\left[\begin{matrix}&#xD;1 &amp; 0 &amp; 0 \\&#xD;0 &amp; 1 &amp; 0 \\&#xD;0 &amp; 0 &amp; 1&#xD;\end{matrix}\right]&#xD;$$ 2. Substitution tensor, $\delta_{ij}$ $$&#xD;\delta_{ij}a_{j}&#xD;=\delta_{i1}a_1+\delta_{i2}a_2+\delta_{i3}a_3=a_{i}&#xD;$$From the symmetry of $δ_{ij}$ it follows that $δ_{ij}$ $a_{i} = a_{j}$. Because of this property of $δ_{ij}$, it is sometimes referred to as the ‘substitution tensor’, since its effect when multiplied by $a_{j}$ is to replace the j with i.</description>
+      <guid>http://localhost:1313/vector_calculus/notation/index.html</guid>
+      <description>(b) Suffix notation&#xD;(b) Kronecker &amp; Levi-Civit`a Symbols</description>
     </item>
     <item>
       <title>(i) Total derivative &amp; Gradient</title>
