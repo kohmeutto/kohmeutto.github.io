@@ -118,7 +118,7 @@
     <loc>http://localhost:1313/tensor_calculus/notation_operation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad/index.html</loc>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</loc>
@@ -169,7 +169,7 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_dot_products/index.html</loc>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_dyad_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</loc>
@@ -212,6 +212,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
