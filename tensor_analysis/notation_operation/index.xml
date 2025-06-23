@@ -40,7 +40,7 @@
       <link>http://localhost:1313/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html</guid>
-      <description>1. 4차 단위 텐서</description>
+      <description>1. 4차 단위 텐서 $$&#xD;\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l&#xD;$$$$&#xD;\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}&#xD;$$proof)&#xA;$$&#xD;\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}&#xD;$$$$&#xD;A_{mn}\hat{u}_m\hat{u}_n&#xD;=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:A_{mn}\hat{u}_m\hat{u}_n&#xD;$$아래와 같이 정리할 수 있다.&#xA;$$&#xD;\hat{u}_m\hat{u}_n&#xD;=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n&#xD;=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n)&#xD;=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\cdot\hat{u}_m)(\hat{u}_l\cdot\hat{u}_n)&#xD;$$$$&#xD;=C_{ijkl}\hat{u}_i\hat{u}_j\delta_{km}\delta_{ln}&#xD;=C_{ijmn}\hat{u}_i\hat{u}_j&#xD;$$따라서,&#xA;$$&#xD;C_{ijmn}=\delta_{im}\delta_{jn}&#xD;$$m를 k로 바꾸고, n을 l로 바꾸면,&#xA;$$&#xD;C_{ijkl}=\delta_{ik}\delta_{jl}&#xD;$$ 2. 전치 변환 (4차) 텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.&#xA;$$&#xD;\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l&#xD;$$$$&#xD;\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}&#xD;$$ 3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리</description>
     </item>
     <item>
       <title>(a) Inverse &amp; Determinant</title>
