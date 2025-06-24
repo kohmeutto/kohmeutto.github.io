@@ -5,53 +5,53 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$proof)
+    <meta name="description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$
+$$(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)$$$$(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)$$$$(1,2,1,2;1), (1,3,1,3;1), (1,4,1,4;1) $$$$(1,1,2,2;0), (1,1,3,3;0), (1,1,4,4;0) $$$$(1,2,2,1;0), (1,3,3,1;0), (2,1,1,2;0) $$proof)
 $$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$$$A_{mn}\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:A_{mn}\hat{u}_m\hat{u}_n$$아래와 같이 정리할 수 있다.
 $$\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n)=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\cdot\hat{u}_m)(\hat{u}_l\cdot\hat{u}_n)$$$$=C_{ijkl}\hat{u}_i\hat{u}_j\delta_{km}\delta_{ln}=C_{ijmn}\hat{u}_i\hat{u}_j$$따라서,
-$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
-$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차) 텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.
-$$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}$$ 3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리">
+$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
+$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차)텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) 4nd unit tensor :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$proof)
+    <meta name="twitter:description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$
+$$(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)$$$$(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)$$$$(1,2,1,2;1), (1,3,1,3;1), (1,4,1,4;1) $$$$(1,1,2,2;0), (1,1,3,3;0), (1,1,4,4;0) $$$$(1,2,2,1;0), (1,3,3,1;0), (2,1,1,2;0) $$proof)
 $$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$$$A_{mn}\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:A_{mn}\hat{u}_m\hat{u}_n$$아래와 같이 정리할 수 있다.
 $$\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n)=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\cdot\hat{u}_m)(\hat{u}_l\cdot\hat{u}_n)$$$$=C_{ijkl}\hat{u}_i\hat{u}_j\delta_{km}\delta_{ln}=C_{ijmn}\hat{u}_i\hat{u}_j$$따라서,
-$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
-$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차) 텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.
-$$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}$$ 3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리">
+$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
+$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차)텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) 4nd unit tensor :: 수리전자물리학">
-    <meta property="og:description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$proof)
+    <meta property="og:description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$
+$$(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)$$$$(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)$$$$(1,2,1,2;1), (1,3,1,3;1), (1,4,1,4;1) $$$$(1,1,2,2;0), (1,1,3,3;0), (1,1,4,4;0) $$$$(1,2,2,1;0), (1,3,3,1;0), (2,1,1,2;0) $$proof)
 $$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$$$A_{mn}\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:A_{mn}\hat{u}_m\hat{u}_n$$아래와 같이 정리할 수 있다.
 $$\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n)=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\cdot\hat{u}_m)(\hat{u}_l\cdot\hat{u}_n)$$$$=C_{ijkl}\hat{u}_i\hat{u}_j\delta_{km}\delta_{ln}=C_{ijmn}\hat{u}_i\hat{u}_j$$따라서,
-$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
-$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차) 텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.
-$$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}$$ 3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리">
+$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
+$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차)텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) 4nd unit tensor :: 수리전자물리학">
-    <meta itemprop="description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$proof)
+    <meta itemprop="description" content="1. 4차 단위 텐서 $$\stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$
+$$(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)$$$$(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)$$$$(1,2,1,2;1), (1,3,1,3;1), (1,4,1,4;1) $$$$(1,1,2,2;0), (1,1,3,3;0), (1,1,4,4;0) $$$$(1,2,2,1;0), (1,3,3,1;0), (2,1,1,2;0) $$proof)
 $$\bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}$$$$A_{mn}\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:A_{mn}\hat{u}_m\hat{u}_n$$아래와 같이 정리할 수 있다.
 $$\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\hat{u}_l:\hat{u}_m\hat{u}_n)=C_{ijkl}\hat{u}_i\hat{u}_j(\hat{u}_k\cdot\hat{u}_m)(\hat{u}_l\cdot\hat{u}_n)$$$$=C_{ijkl}\hat{u}_i\hat{u}_j\delta_{km}\delta_{ln}=C_{ijmn}\hat{u}_i\hat{u}_j$$따라서,
-$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
-$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차) 텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.
-$$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$$$$\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}$$ 3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리">
-    <meta itemprop="wordCount" content="76">
+$$C_{ijmn}=\delta_{im}\delta_{jn}$$m를 k로 바꾸고, n을 l로 바꾸면,
+$$C_{ijkl}=\delta_{ik}\delta_{jl}$$ 2. 전치 변환 (4차)텐서 $\stackrel{4T}{I}$ 텐서는 ‘4차 단위 텐서’의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.">
+    <meta itemprop="wordCount" content="184">
     <title>(a) 4nd unit tensor :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750691982" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750691982" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750691982" rel="stylesheet">
-    <link href="/css/theme.css?1750691982" rel="stylesheet">
-    <link href="/css/format-html.css?1750691982" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750691982" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1750691982" defer></script>
-    <script src="/js/search.js?1750691982" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750776968" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750776968" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750776968" rel="stylesheet">
+    <link href="/css/theme.css?1750776968" rel="stylesheet">
+    <link href="/css/format-html.css?1750776968" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750776968" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1750776968" defer></script>
+    <script src="/js/search.js?1750776968" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -61,7 +61,7 @@ $$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1750691982";
+      window.relearn.index_js_url="/searchindex.en.js?1750776968";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -125,8 +125,8 @@ $$\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l$
     <li>
       <ul>
         <li><a href="#1-4차-단위-텐서">1. 4차 단위 텐서</a></li>
-        <li><a href="#2-전치-변환-4차-텐서">2. 전치 변환 (4차) 텐서</a></li>
-        <li><a href="#3-4차-단위-텐서의-대칭--비대칭-분리">3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리</a></li>
+        <li><a href="#2-전치-변환-4차텐서">2. 전치 변환 (4차)텐서</a></li>
+        <li><a href="#3-대칭--비대칭-변환-4차텐서">3. 대칭 &amp; 비대칭 변환 (4차)텐서</a></li>
       </ul>
     </li>
   </ul>
@@ -172,7 +172,18 @@ $$
 \stackrel{4}{I}=\delta_{ik}\delta_{jl}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l
 $$$$
 \bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}
-$$<p>proof)</p>
+$$<p>각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$</p>
+$$
+(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)
+$$$$
+(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)
+$$$$
+(1,2,1,2;1), (1,3,1,3;1), (1,4,1,4;1) 
+$$$$
+(1,1,2,2;0), (1,1,3,3;0), (1,1,4,4;0) 
+$$$$
+(1,2,2,1;0), (1,3,3,1;0), (2,1,1,2;0) 
+$$<p><strong>proof)</strong></p>
 $$
 \bar{\bar{A}}=\stackrel{4}{I}:\bar{\bar{A}}
 $$$$
@@ -189,20 +200,85 @@ $$$$
 =C_{ijmn}\hat{u}_i\hat{u}_j
 $$<p>따라서,</p>
 $$
-C_{ijmn}=\delta_{im}\delta_{jn}
+C_{ijmn}
+=\delta_{im}\delta_{jn}
 $$<p>m를 k로 바꾸고, n을 l로 바꾸면,</p>
 $$
-C_{ijkl}=\delta_{ik}\delta_{jl}
+C_{ijkl}
+=\delta_{ik}\delta_{jl}
 $$<hr>
-<h3 id="2-전치-변환-4차-텐서">2. 전치 변환 (4차) 텐서</h3>
+<h3 id="2-전치-변환-4차텐서">2. 전치 변환 (4차)텐서</h3>
 <p>$\stackrel{4T}{I}$ 텐서는 &lsquo;4차 단위 텐서&rsquo;의 전치가 아님을 주의한다. 2차 텐서가 주어졌을 때, 이 2차 텐서를 전치 텐서로 변환시키는 연산자이다.</p>
 $$
-\stackrel{4T}{I}=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l
+\stackrel{4T}{I}
+=\delta_{il}\delta_{jk}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l
 $$$$
-\bar{\bar{A}}^T=\stackrel{4T}{I}:\bar{\bar{A}}
+\bar{\bar{A}}^T
+=\stackrel{4T}{I}:\bar{\bar{A}}
+$$<p>각 성분과 값을 나열해 보자. $(i,j,k,l;\text{값})$</p>
+$$
+(1,1,1,1;1), (2,2,2,2;1), (3,3,3,3;1)
+$$$$
+(1,1,1,2;0), (1,1,1,3;0), (1,1,1,4;0)
+$$$$
+(1,2,1,2;0), (1,3,1,3;0), (1,4,1,4;0) 
+$$$$
+(1,1,2,2;1), (1,1,3,3;1), (1,1,4,4;1) 
+$$$$
+(1,2,2,1;1), (1,3,3,1;1), (2,1,1,2;1) 
 $$<hr>
-<h3 id="3-4차-단위-텐서의-대칭--비대칭-분리">3. 4차 단위 텐서의 대칭 &amp; 비대칭 분리</h3>
-
+<h3 id="3-대칭--비대칭-변환-4차텐서">3. 대칭 &amp; 비대칭 변환 (4차)텐서</h3>
+<p><strong>(1) 대칭 텐서</strong></p>
+$$
+\operatorname{sym}\bar{\bar{A}}
+=\stackrel{4s}{I}:\bar{\bar{A}}
+=\frac12\left(\bar{\bar{A}}+\bar{\bar{A}}^T\right)
+$$$$
+\stackrel{4s}{I}
+=\operatorname{sym}\stackrel{4}{I}
+=\frac12\left(\stackrel{4}{I}+\stackrel{4T}{I}\right),\quad
+\left(I_{ikjl}\right)_s
+=\frac12\left(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}\right)
+$$<p>proof)</p>
+$$
+\operatorname{sym}\bar{\bar{A}}
+=\stackrel{4s}{I}:\bar{\bar{A}}
+=\frac12\left(\bar{\bar{A}}+\bar{\bar{A}}^T\right)
+=\frac12\stackrel{4}{I}:\left(\bar{\bar{A}}+\bar{\bar{A}}^T\right)
+$$$$
+=\frac12\left(\stackrel{4}{I}:\bar{\bar{A}}+\stackrel{4}{I}:\bar{\bar{A}}^T\right)
+=\frac12\left(\stackrel{4}{I}:\bar{\bar{A}}+\stackrel{4T}{I}:\bar{\bar{A}}\right)
+=\frac12\left(\stackrel{4}{I}+\stackrel{4T}{I}\right):\bar{\bar{A}}
+$$<p>따라서,</p>
+$$
+\stackrel{4s}{I}
+=\frac12\left(\bar{\bar{A}}+\bar{\bar{A}}^T\right)
+$$<p><strong>(2) 비대칭 텐서</strong></p>
+$$
+\operatorname{skew}\bar{\bar{A}}
+=\stackrel{4a}{I}:\bar{\bar{A}}
+=\frac12\left(\bar{\bar{A}}-\bar{\bar{A}}^T\right)
+$$$$
+\stackrel{4a}{I}
+=\operatorname{skew}\stackrel{4}{I}
+=\frac12\left(\stackrel{4}{I}-\stackrel{4T}{I}\right),\quad
+\left(I_{ikjl}\right)_a
+=\frac12\left(\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}\right)
+$$<p>proof)</p>
+$$
+\operatorname{skew}\bar{\bar{A}}
+=\stackrel{4a}{I}:\bar{\bar{A}}
+=\frac12\left(\bar{\bar{A}}-\bar{\bar{A}}^T\right)
+=\frac12\stackrel{4}{I}:\left(\bar{\bar{A}}-\bar{\bar{A}}^T\right)
+$$$$
+=\frac12\left(\stackrel{4}{I}:\bar{\bar{A}}-\stackrel{4}{I}:\bar{\bar{A}}^T\right)
+=\frac12\left(\stackrel{4}{I}:\bar{\bar{A}}-\stackrel{4T}{I}:\bar{\bar{A}}\right)
+=\frac12\left(\stackrel{4}{I}-\stackrel{4T}{I}\right):\bar{\bar{A}}
+$$<p>따라서,</p>
+$$
+\stackrel{4a}{I}
+=\frac12\left(\bar{\bar{A}}-\bar{\bar{A}}^T\right)
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -287,8 +363,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750691982" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750691982" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1750776968" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750776968" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -300,7 +376,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750691982"></script>
-    <script src="/js/theme.js?1750691982" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750776968"></script>
+    <script src="/js/theme.js?1750776968" defer></script>
   </body>
 </html>

@@ -5,29 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="">
+    <meta name="description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
+역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
+$$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Inverse & Determinant :: 수리전자물리학">
+    <meta name="twitter:description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
+역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
+$$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/notation_operation/a_inverse_determinant/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Inverse & Determinant :: 수리전자물리학">
+    <meta property="og:description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
+역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
+$$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Inverse & Determinant :: 수리전자물리학">
+    <meta itemprop="description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
+역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
+$$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
+    <meta itemprop="wordCount" content="219">
     <title>(a) Inverse &amp; Determinant :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750691982" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750691982" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750691982" rel="stylesheet">
-    <link href="/css/theme.css?1750691982" rel="stylesheet">
-    <link href="/css/format-html.css?1750691982" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750691982" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750691982" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1750691982" defer></script>
-    <script src="/js/search.js?1750691982" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750776968" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750776968" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750776968" rel="stylesheet">
+    <link href="/css/theme.css?1750776968" rel="stylesheet">
+    <link href="/css/format-html.css?1750776968" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750776968" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750776968" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1750776968" defer></script>
+    <script src="/js/search.js?1750776968" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -37,7 +53,7 @@
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1750691982";
+      window.relearn.index_js_url="/searchindex.en.js?1750776968";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -95,7 +111,19 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-tensor의-역inverse">1. Tensor의 역(inverse)</a></li>
+        <li><a href="#2-행렬식determinant">2. 행렬식(determinant)</a></li>
+        <li><a href="#3-행렬식의-성질">3. 행렬식의 성질</a></li>
+        <li><a href="#4-역행렬inverse-matrix">4. 역행렬(inverse matrix)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -132,7 +160,107 @@
 <h1 id="a-inverse--determinant">(a) Inverse &amp; Determinant</h1>
 
 <hr>
-
+<p><strong>Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.</strong></p>
+<p>역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며,
+그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.</p>
+<hr>
+<h3 id="1-tensor의-역inverse">1. Tensor의 역(inverse)</h3>
+$$
+\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}
+=\bar{\bar{I}}
+$$<p>$\bar{\bar{A}}^{-1}$의 지수표현은</p>
+$$
+\left[A_{ij}\right]^{-1}
+$$<hr>
+<h3 id="2-행렬식determinant">2. 행렬식(determinant)</h3>
+$$
+\operatorname{det}\bar{\bar{A}}
+=\operatorname{det}\left[\begin{matrix}
+    A_{11} & A_{12} & A_{13} \\
+    A_{21} & A_{22} & A_{23} \\
+    A_{31} & A_{32} & A_{33}
+\end{matrix}\right]
+$$$$
+=A_{11}\hat{A}_{11}+A_{11}\hat{A}_{12}+A_{11}\hat{A}_{13}
+$$$$
+=A_{21}\hat{A}_{21}+A_{22}\hat{A}_{22}+A_{23}\hat{A}_{23}
+$$$$
+=A_{31}\hat{A}_{31}+A_{32}\hat{A}_{32}+A_{33}\hat{A}_{33}
+$$<p>여기에서,</p>
+$$
+\hat{A}_{11}
+=\left|\begin{matrix}
+    A_{22} & A_{23} \\
+    A_{32} & A_{33}
+\end{matrix}\right|,\quad
+\hat{A}_{12}
+=-\left|\begin{matrix}
+    A_{21} & A_{23} \\
+    A_{31} & A_{33}
+\end{matrix}\right|,\quad
+\hat{A}_{13}
+=\left|\begin{matrix}
+    A_{21} & A_{22} \\
+    A_{31} & A_{32}
+\end{matrix}\right|
+$$$$
+\hat{A}_{21}
+=-\left|\begin{matrix}
+    A_{12} & A_{13} \\
+    A_{32} & A_{33}
+\end{matrix}\right|,\quad
+\hat{A}_{22}
+=\left|\begin{matrix}
+    A_{11} & A_{13} \\
+    A_{31} & A_{33}
+\end{matrix}\right|,\quad
+\hat{A}_{23}
+=-\left|\begin{matrix}
+    A_{11} & A_{12} \\
+    A_{31} & A_{32}
+\end{matrix}\right|
+$$$$
+\hat{A}_{31}
+=\left|\begin{matrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+\end{matrix}\right|,\quad
+\hat{A}_{32}
+=-\left|\begin{matrix}
+    A_{11} & A_{13} \\
+    A_{21} & A_{23}
+\end{matrix}\right|,\quad
+\hat{A}_{33}
+=\left|\begin{matrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+\end{matrix}\right|
+$$<p>$\hat{A}_{ij}$를 여인자라고 한다.</p>
+$$
+\hat{A}_{ij}
+=(-1)^{i+j}A_{ij}
+$$<hr>
+<h3 id="3-행렬식의-성질">3. 행렬식의 성질</h3>
+$$
+\operatorname{det}\bar{\bar{A}}^T
+=\operatorname{det}\bar{\bar{A}}
+$$$$
+\operatorname{det}\bar{\bar{A}}\bar{\bar{B}}
+=\operatorname{det}\bar{\bar{A}}\operatorname{det}\bar{\bar{B}}
+$$$$
+\operatorname{det}\bar{\bar{A}}^{-1}
+=\frac{1}{\operatorname{det}\bar{\bar{A}}}
+$$<hr>
+<h3 id="4-역행렬inverse-matrix">4. 역행렬(inverse matrix)</h3>
+$$
+\bar{\bar{A}}
+=[A_{ij}]
+=\left[\begin{matrix}
+    A_{11} & A_{12} & A_{13} & \cdots \\
+    \vdots &        &        & \vdots \\
+    A_{n1} & \cdots & \cdots &        
+\end{matrix}\right]
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -217,8 +345,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750691982" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750691982" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1750776968" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750776968" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -230,7 +358,7 @@
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750691982"></script>
-    <script src="/js/theme.js?1750691982" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750776968"></script>
+    <script src="/js/theme.js?1750776968" defer></script>
   </body>
 </html>
