@@ -19,7 +19,7 @@
       <link>http://localhost:1313/tensor_analysis/notation_operation/a_dot_products/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/notation_operation/a_dot_products/index.html</guid>
-      <description>1. Dyad와 벡터의 내적 $$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$proof)&#xA;$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)&#xD;$$$$&#xD;=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.&#xA;$$&#xD;(1)&#xD;\bar{\bar{A}}\cdot\bar{\bar{B}}&#xD;=\left[\begin{matrix}&#xD;A_{11} &amp; A_{12} &amp; \cdots \\&#xD;A_{21} &amp; A_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;B_{11} &amp; B_{12} &amp; \cdots \\&#xD;B_{21} &amp; B_{22} &amp; \cdots \\&#xD;\vdots &amp; \vdots &amp; \ddots&#xD;\end{matrix}\right]&#xD;$$$$&#xD;(2)&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}&#xD;$$proof2)</description>
+      <description>1. Dyad와 벡터의 내적 $$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$proof)&#xA;$$&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)&#xD;$$$$&#xD;=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)&#xD;$$ 2. Dyad와 dyad의 내적 Dyad와 dyad의 내적은 일반적인 행렬 곱을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.&#xA;$$&#xD;(1)&#xD;\bar{\bar{A}}\cdot\bar{\bar{B}}&#xD;=\left[\begin{matrix}&#xD;A_{11} $ A_{12} $ \cdots \\&#xD;A_{21} $ A_{22} $ \cdots \\&#xD;\vdots $ \vdots $ \ddots&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;B_{11} $ B_{12} $ \cdots \\&#xD;B_{21} $ B_{22} $ \cdots \\&#xD;\vdots $ \vdots $ \ddots&#xD;\end{matrix}\right]&#xD;$$$$&#xD;(2)&#xD;\left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}&#xD;$$proof2)</description>
     </item>
     <item>
       <title>(a) Unit tensor</title>
@@ -54,7 +54,7 @@
       <link>http://localhost:1313/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html</guid>
-      <description></description>
+      <description>공사중</description>
     </item>
   </channel>
 </rss>

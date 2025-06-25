@@ -3,9 +3,16 @@
   <channel>
     <title>Calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/calculus/index.html</link>
-    <description></description>
+    <description>(a) Gradient</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/calculus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Gradient</title>
+      <link>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</guid>
+      <description>데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.&#xA;1. Scalar gradient $$&#xD;\nabla\varphi&#xD;=\frac{\partial \varphi}{\partial\vec{u}}&#xD;=\frac{\partial \varphi}{\partial u_i}\hat{u}_i&#xD;=\frac{\partial \varphi}{\partial u_1}\hat{u}_1+\frac{\partial \varphi}{\partial u_2}\hat{u}_+\frac{\partial \varphi}{\partial u_3}\hat{u}_3&#xD;$$ 2. Vector Gradient $$&#xD;\nabla\vec{f}&#xD;=\frac{\partial \vec{f}}{\partial\vec{u}}&#xD;=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j&#xD;$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.&#xA;$$&#xD;\begin{align}&#xD;\nabla\vec{f}&#xD;= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 + \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 + \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&#xD;&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 + \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 + \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&#xD;&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 + \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 + \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3&#xD;\end{align}&#xD;$$ 3. Conjugate vector gradient $$&#xD;\vec{f}\nabla&#xD;=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j&#xD;$$$$&#xD;[\nabla\vec{f}]^{T}&#xD;=\vec{f}\nabla&#xD;$$ 4. Vector gradient &amp; Kronecker delta $$&#xD;\nabla\vec{u}&#xD;=\frac{\partial \vec{u}}{\partial \vec{u}}&#xD;=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j&#xD;=[\delta_{ij}]&#xD;=\bar{\bar{I}}&#xD;$$ 5. High tensor gradient 2차 텐서에서,</description>
+    </item>
   </channel>
 </rss>
