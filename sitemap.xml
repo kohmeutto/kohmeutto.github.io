@@ -16,6 +16,9 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_frame_viewpoint/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
@@ -80,6 +83,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/calculus/a_divergence/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/notation_operation/a_dot_products/index.html</loc>

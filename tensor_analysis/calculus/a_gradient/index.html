@@ -5,41 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
-1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
-$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
+    <meta name="description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.
+1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$$$[\nabla\varphi]_i=[\nabla]_i\varphi=\frac{\partial \varphi}{\partial u_i}$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]_{ij}=[\nabla]_i\vec{f}_j=\frac{\partial f_j}{\partial u_i}$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
+$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient (잘못되었다고 생각 함) $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$$$[\nabla\vec{u}]_{ij}=\partial_i u_j=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Gradient :: 수리전자물리학">
-    <meta name="twitter:description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
-1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
-$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
+    <meta name="twitter:description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.
+1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$$$[\nabla\varphi]_i=[\nabla]_i\varphi=\frac{\partial \varphi}{\partial u_i}$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]_{ij}=[\nabla]_i\vec{f}_j=\frac{\partial f_j}{\partial u_i}$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
+$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient (잘못되었다고 생각 함) $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$$$[\nabla\vec{u}]_{ij}=\partial_i u_j=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Gradient :: 수리전자물리학">
-    <meta property="og:description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
-1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
-$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
+    <meta property="og:description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.
+1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$$$[\nabla\varphi]_i=[\nabla]_i\varphi=\frac{\partial \varphi}{\partial u_i}$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]_{ij}=[\nabla]_i\vec{f}_j=\frac{\partial f_j}{\partial u_i}$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
+$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient (잘못되었다고 생각 함) $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$$$[\nabla\vec{u}]_{ij}=\partial_i u_j=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Gradient :: 수리전자물리학">
-    <meta itemprop="description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
-1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
-$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
-    <meta itemprop="wordCount" content="144">
+    <meta itemprop="description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.
+1. Scalar gradient $$\nabla\varphi=\frac{\partial \varphi}{\partial\vec{u}}=\frac{\partial \varphi}{\partial u_i}\hat{u}_i=\frac{\partial \varphi}{\partial u_1}\hat{u}_1&#43;\frac{\partial \varphi}{\partial u_2}\hat{u}_&#43;\frac{\partial \varphi}{\partial u_3}\hat{u}_3$$$$[\nabla\varphi]_i=[\nabla]_i\varphi=\frac{\partial \varphi}{\partial u_i}$$ 2. Vector Gradient $$\nabla\vec{f}=\frac{\partial \vec{f}}{\partial\vec{u}}=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]_{ij}=[\nabla]_i\vec{f}_j=\frac{\partial f_j}{\partial u_i}$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.
+$$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 &#43; \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 &#43; \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 &#43; \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3\end{align}$$ 3. Conjugate vector gradient (잘못되었다고 생각 함) $$\vec{f}\nabla=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j$$$$[\nabla\vec{f}]^{T}=\vec{f}\nabla$$ 4. Vector gradient &amp; Kronecker delta $$\nabla\vec{u}=\frac{\partial \vec{u}}{\partial \vec{u}}=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j=[\delta_{ij}]=\bar{\bar{I}}$$$$[\nabla\vec{u}]_{ij}=\partial_i u_j=\bar{\bar{I}}$$ 5. High tensor gradient 2차 텐서에서,">
+    <meta itemprop="wordCount" content="185">
     <title>(a) Gradient :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750871258" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750871258" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750871258" rel="stylesheet">
-    <link href="/css/theme.css?1750871258" rel="stylesheet">
-    <link href="/css/format-html.css?1750871258" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750871258" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750871258" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750871258" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750871258" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750871258" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1750871258" defer></script>
-    <script src="/js/search.js?1750871258" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751001663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751001663" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751001663" rel="stylesheet">
+    <link href="/css/theme.css?1751001663" rel="stylesheet">
+    <link href="/css/format-html.css?1751001663" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751001663" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751001663" defer></script>
+    <script src="/js/search.js?1751001663" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +53,7 @@ $$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1750871258";
+      window.relearn.index_js_url="/searchindex.en.js?1751001663";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -114,7 +118,7 @@ $$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_
       <ul>
         <li><a href="#1-scalar-gradient">1. Scalar gradient</a></li>
         <li><a href="#2-vector-gradient">2. Vector Gradient</a></li>
-        <li><a href="#3-conjugate-vector-gradient">3. Conjugate vector gradient</a></li>
+        <li><a href="#3-conjugate-vector-gradient-잘못되었다고-생각-함">3. Conjugate vector gradient (잘못되었다고 생각 함)</a></li>
         <li><a href="#4-vector-gradient--kronecker-delta">4. Vector gradient &amp; Kronecker delta</a></li>
         <li><a href="#5-high-tensor-gradient">5. High tensor gradient</a></li>
       </ul>
@@ -134,7 +138,7 @@ $$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/index.html" title="Calculus (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_divergence/index.html" title="(a) Divergence (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -157,7 +161,8 @@ $$\begin{align}\nabla\vec{f}= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_
 <h1 id="a-gradient">(a) Gradient</h1>
 
 <hr>
-<p><strong>데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간</strong>에 대한 gradient 이다.</p>
+<p>(1) <strong>데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간</strong>에 대한 gradient 이다.</p>
+<p>(2) Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.</p>
 <hr>
 <h3 id="1-scalar-gradient">1. Scalar gradient</h3>
 $$
@@ -165,12 +170,20 @@ $$
 =\frac{\partial \varphi}{\partial\vec{u}}
 =\frac{\partial \varphi}{\partial u_i}\hat{u}_i
 =\frac{\partial \varphi}{\partial u_1}\hat{u}_1+\frac{\partial \varphi}{\partial u_2}\hat{u}_+\frac{\partial \varphi}{\partial u_3}\hat{u}_3
+$$$$
+[\nabla\varphi]_i
+=[\nabla]_i\varphi
+=\frac{\partial \varphi}{\partial u_i}
 $$<hr>
 <h3 id="2-vector-gradient">2. Vector Gradient</h3>
 $$
 \nabla\vec{f}
 =\frac{\partial \vec{f}}{\partial\vec{u}}
 =\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j
+$$$$
+[\nabla\vec{f}]_{ij}
+=[\nabla]_i\vec{f}_j
+=\frac{\partial f_j}{\partial u_i}
 $$<p>전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.</p>
 $$
 \begin{align}
@@ -180,7 +193,7 @@ $$
   & \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 + \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 + \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3
 \end{align}
 $$<hr>
-<h3 id="3-conjugate-vector-gradient">3. Conjugate vector gradient</h3>
+<h3 id="3-conjugate-vector-gradient-잘못되었다고-생각-함">3. Conjugate vector gradient (잘못되었다고 생각 함)</h3>
 $$
 \vec{f}\nabla
 =\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j
@@ -195,6 +208,10 @@ $$
 =\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j
 =[\delta_{ij}]
 =\bar{\bar{I}}
+$$$$
+[\nabla\vec{u}]_{ij}
+=\partial_i u_j
+=\bar{\bar{I}}
 $$<hr>
 <h3 id="5-high-tensor-gradient">5. High tensor gradient</h3>
 <p>2차 텐서에서,</p>
@@ -202,9 +219,17 @@ $$
 \nabla\bar{\bar{A}}
 =\frac{\partial \bar{\bar{A}}}{\partial \vec{u}}
 =\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\hat{u}_j\hat{u}_k
+$$$$
+[\nabla\bar{\bar{A}}]_{ijk}
+=[\nabla]_i[\bar{\bar{A}}]_{jk}
+=\frac{\partial A_{jk}}{\partial u_i}
 $$<p>4차 텐서에서,</p>
 $$
 \nabla\stackrel{4}{A}
+=\frac{\partial A_{jklm}}{\partial u_i}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l\hat{u}_m
+$$$$
+[\nabla\stackrel{4}{A}]_{ijklm}
+[\nabla]_i[\stackrel{4}{A}]_{jklm}
 =\frac{\partial A_{jklm}}{\partial u_i}\hat{u}_i\hat{u}_j\hat{u}_k\hat{u}_l\hat{u}_m
 $$
   <footer class="footline">
@@ -260,7 +285,9 @@ $$
             <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu">
-            <li class="active " data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li></ul></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus/a_divergence/index.html">(a) Divergence</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li></ul></li>
             <li class="" data-nav-id="/tensor_analysis/transformation/index.html"><a class="padding" href="/tensor_analysis/transformation/index.html">Transformation</a></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
@@ -285,8 +312,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750871258" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750871258" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751001663" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751001663" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -298,7 +325,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750871258"></script>
-    <script src="/js/theme.js?1750871258" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751001663"></script>
+    <script src="/js/theme.js?1751001663" defer></script>
   </body>
 </html>

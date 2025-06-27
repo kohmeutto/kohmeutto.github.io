@@ -5,43 +5,55 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="(a) Covariant and contravariant(a) Metric tensor">
+    <meta name="description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) curl 은 텐서의 차수에 변화를
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_k=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 법칙에 위배하지 않아야 함을 주의한다.
+$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{lk}=\varepsilon_{ijl}\partial_i A_{jk}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="General coordinates :: 수리전자물리학">
-    <meta name="twitter:description" content="(a) Covariant and contravariant(a) Metric tensor">
-    <meta property="og:url" content="http://localhost:1313/tensor_analysis/general_coordinates/index.html">
+    <meta name="twitter:title" content="(a) Curl :: 수리전자물리학">
+    <meta name="twitter:description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) curl 은 텐서의 차수에 변화를
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_k=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 법칙에 위배하지 않아야 함을 주의한다.
+$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{lk}=\varepsilon_{ijl}\partial_i A_{jk}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus/a_curl/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="General coordinates :: 수리전자물리학">
-    <meta property="og:description" content="(a) Covariant and contravariant(a) Metric tensor">
+    <meta property="og:title" content="(a) Curl :: 수리전자물리학">
+    <meta property="og:description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) curl 은 텐서의 차수에 변화를
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_k=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 법칙에 위배하지 않아야 함을 주의한다.
+$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{lk}=\varepsilon_{ijl}\partial_i A_{jk}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="General coordinates :: 수리전자물리학">
-    <meta itemprop="description" content="(a) Covariant and contravariant(a) Metric tensor">
-    <meta itemprop="wordCount" content="7">
-    <title>General coordinates :: 수리전자물리학</title>
-    <link href="/tensor_analysis/general_coordinates/index.xml" rel="alternate" type="application/rss+xml" title="General coordinates :: 수리전자물리학">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750998588" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750998588" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750998588" rel="stylesheet">
-    <link href="/css/theme.css?1750998588" rel="stylesheet">
-    <link href="/css/format-html.css?1750998588" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1750998588" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1750998588" defer></script>
-    <script src="/js/lunr/lunr.min.js?1750998588" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1750998588" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1750998588" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1750998588" defer></script>
-    <script src="/js/search.js?1750998588" defer></script>
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Curl :: 수리전자물리학">
+    <meta itemprop="description" content="(1) 데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 gradient 이다.
+(2) curl 은 텐서의 차수에 변화를
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_k=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 법칙에 위배하지 않아야 함을 주의한다.
+$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{lk}=\varepsilon_{ijl}\partial_i A_{jk}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
+    <meta itemprop="wordCount" content="106">
+    <title>(a) Curl :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751001663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751001663" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751001663" rel="stylesheet">
+    <link href="/css/theme.css?1751001663" rel="stylesheet">
+    <link href="/css/format-html.css?1751001663" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751001663" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751001663" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751001663" defer></script>
+    <script src="/js/search.js?1751001663" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/tensor_analysis\/general_coordinates\/index.html';
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..';
+      window.relearn.path='\/tensor_analysis\/calculus\/a_curl\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1750998588";
+      window.relearn.index_js_url="/searchindex.en.js?1751001663";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -88,7 +100,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/tensor_analysis/general_coordinates/index.html">
+  <body class="mobile-support html" data-url="/tensor_analysis/calculus/a_curl/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -99,7 +111,18 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-curl">1. Curl</a></li>
+        <li><a href="#2-conjugate-curl-잘못되었다고-생각-함">2. Conjugate curl (잘못되었다고 생각 함)</a></li>
+        <li><a href="#3-high-tensor-curl">3. High tensor curl</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -107,12 +130,13 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">General coordinates</span><meta itemprop="position" content="3"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Curl</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation/index.html" title="Transformation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_divergence/index.html" title="(a) Divergence (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html" title="(a) Covariant and contravariant (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -132,13 +156,49 @@
   <header class="headline">
   </header>
 
-<h1 id="general-coordinates">General coordinates</h1>
+<h1 id="a-curl">(a) Curl</h1>
 
 <hr>
-<ul class="children children-li children-sort-">
-  <li class="children-title"><a href="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html">(a) Covariant and contravariant</a></li>
-  <li class="children-title"><a href="/tensor_analysis/general_coordinates/b_metric_tensor/index.html">(a) Metric tensor</a></li>
-</ul>
+<p>(1) <strong>데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간</strong>에 대한 gradient 이다.</p>
+<p>(2) curl 은 텐서의 차수에 변화를</p>
+<hr>
+<h3 id="1-curl">1. Curl</h3>
+$$
+\nabla\times\vec{f}
+=\frac{\partial}{\partial\vec{u}}\times\vec{f}
+=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j
+=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j
+=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k
+$$$$
+[\nabla\times\vec{f}]_k
+=\varepsilon_{ijk}\partial_i f_j
+$$<hr>
+<h3 id="2-conjugate-curl-잘못되었다고-생각-함">2. Conjugate curl (잘못되었다고 생각 함)</h3>
+$$
+\vec{f}\times\nabla
+=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j
+=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j
+=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k
+$$<hr>
+<h3 id="3-high-tensor-curl">3. High tensor curl</h3>
+<p>중복 지수 법칙에 위배하지 않아야 함을 주의한다.</p>
+$$
+\nabla\times\bar{\bar{A}}
+=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k
+=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k
+=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k
+=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k
+$$$$
+[\nabla\times\bar{\bar{A}}]_{lk}
+=\varepsilon_{ijl}\partial_i A_{jk}
+$$<hr>
+<p><strong>example1)</strong> $\nabla\times\nabla f=0$ 임을 보여라.</p>
+<p>sol)</p>
+$$
+\nabla\times\nabla f\implies
+\varepsilon_{ijk}\partial_j[\nabla f]_k
+=\varepsilon_{ijk}\partial_j\partial_k f
+$$<p>전개하면, 순환기호의 특성에 따라, 서로 상쇄된다. 따라서 0이다.</p>
 
   <footer class="footline">
   </footer>
@@ -192,11 +252,12 @@
             <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu">
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus/a_divergence/index.html">(a) Divergence</a></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li></ul></li>
             <li class="" data-nav-id="/tensor_analysis/transformation/index.html"><a class="padding" href="/tensor_analysis/transformation/index.html">Transformation</a></li>
-            <li class="active parent alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu">
-            <li class="" data-nav-id="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html">(a) Covariant and contravariant</a></li>
-            <li class="" data-nav-id="/tensor_analysis/general_coordinates/b_metric_tensor/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/b_metric_tensor/index.html">(a) Metric tensor</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
             <li class="" data-nav-id="/tensor_analysis/transformation_for_gc/index.html"><a class="padding" href="/tensor_analysis/transformation_for_gc/index.html">Transformation for GC</a></li>
             <li class="" data-nav-id="/tensor_analysis/calculus_for_gc/index.html"><a class="padding" href="/tensor_analysis/calculus_for_gc/index.html">Calculus for GC</a></li></ul></li>
@@ -219,8 +280,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1750998588" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750998588" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751001663" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751001663" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -232,7 +293,7 @@
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1750998588"></script>
-    <script src="/js/theme.js?1750998588" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751001663"></script>
+    <script src="/js/theme.js?1751001663" defer></script>
   </body>
 </html>
