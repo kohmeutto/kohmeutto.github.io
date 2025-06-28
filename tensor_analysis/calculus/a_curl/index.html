@@ -6,40 +6,44 @@
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
     <meta name="description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 curl 이다.
-1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.
-$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{il}=\varepsilon_{ijk}\partial_j A_{kl}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Curl :: 수리전자물리학">
     <meta name="twitter:description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 curl 이다.
-1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.
-$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{il}=\varepsilon_{ijk}\partial_j A_{kl}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus/a_curl/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Curl :: 수리전자물리학">
     <meta property="og:description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 curl 이다.
-1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.
-$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{il}=\varepsilon_{ijk}\partial_j A_{kl}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Curl :: 수리전자물리학">
     <meta itemprop="description" content="데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간에 대한 curl 이다.
-1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$ 2. Conjugate curl (잘못되었다고 생각 함) $$\vec{f}\times\nabla=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.
-$$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k=\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k$$$$[\nabla\times\bar{\bar{A}}]_{il}=\varepsilon_{ijk}\partial_j A_{kl}$$ example1) $\nabla\times\nabla f=0$ 임을 보여라.">
-    <meta itemprop="wordCount" content="99">
+1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+$$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
+    <meta itemprop="wordCount" content="181">
     <title>(a) Curl :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751002807" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751002807" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751002807" rel="stylesheet">
-    <link href="/css/theme.css?1751002807" rel="stylesheet">
-    <link href="/css/format-html.css?1751002807" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751002807" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751002807" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751002807" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751002807" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751002807" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751002807" defer></script>
-    <script src="/js/search.js?1751002807" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751120219" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751120219" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751120219" rel="stylesheet">
+    <link href="/css/theme.css?1751120219" rel="stylesheet">
+    <link href="/css/format-html.css?1751120219" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751120219" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751120219" defer></script>
+    <script src="/js/search.js?1751120219" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -49,7 +53,7 @@ $$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751002807";
+      window.relearn.index_js_url="/searchindex.en.js?1751120219";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -113,8 +117,9 @@ $$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk
     <li>
       <ul>
         <li><a href="#1-curl">1. Curl</a></li>
-        <li><a href="#2-conjugate-curl-잘못되었다고-생각-함">2. Conjugate curl (잘못되었다고 생각 함)</a></li>
+        <li><a href="#2-conjugate-curl">2. Conjugate curl</a></li>
         <li><a href="#3-high-tensor-curl">3. High tensor curl</a></li>
+        <li><a href="#4-high-tensor-conjugate-curl">4. High tensor conjugate curl</a></li>
       </ul>
     </li>
   </ul>
@@ -132,7 +137,7 @@ $$\nabla\times\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\times A_{jk
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_divergence/index.html" title="(a) Divergence (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_derivative/index.html" title="(a) Derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -164,16 +169,36 @@ $$
 =\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j
 =\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j
 =\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k
-$$$$
+$$<p>순환 기호는 인덱스는 하나의 항에 대응된다.</p>
+$$
 [\nabla\times\vec{f}]_i
 =\varepsilon_{ijk}\partial_j f_k
+$$$$
+[\nabla\times\vec{f}]_j
+=\varepsilon_{jki}\partial_k f_i
+=\varepsilon_{ijk}\partial_k f_i
+$$$$
+[\nabla\times\vec{f}]_k
+=\varepsilon_{kij}\partial_i f_j
+=\varepsilon_{ijk}\partial_i f_j
 $$<hr>
-<h3 id="2-conjugate-curl-잘못되었다고-생각-함">2. Conjugate curl (잘못되었다고 생각 함)</h3>
+<h3 id="2-conjugate-curl">2. Conjugate curl</h3>
 $$
 \vec{f}\times\nabla
-=f_i\hat{u}_i\times\frac{\partial}{\partial u_j}\hat{u}_j
-=\frac{\partial f_i}{\partial u_j}\hat{u}_i\times\hat{u}_j
-=\varepsilon_{ijk}\frac{\partial f_i}{\partial u_j}\hat{u}_k
+=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j
+=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j
+=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k
+$$<p>순환 기호는 인덱스는 하나의 항에 대응된다.</p>
+$$
+[\vec{f}\times\nabla]_i
+=\varepsilon_{ijk}f_j\partial_k
+$$$$
+[\vec{f}\times\nabla]_j
+=\varepsilon_{jki}f_k\partial_i
+=\varepsilon_{ijk}f_k\partial_i
+$$$$
+[\vec{f}\times\nabla]_k
+=\varepsilon_{ijk}f_i\partial_j
 $$<hr>
 <h3 id="3-high-tensor-curl">3. High tensor curl</h3>
 <p>중복 지수 규칙에 위배하지 않아야 함을 주의한다.</p>
@@ -183,8 +208,13 @@ $$
 =\frac{\partial A_{jk}}{\partial u_i}\hat{u}_i\times\hat{u}_j\hat{u}_k
 =\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\times\hat{u}_j)\hat{u}_k
 =\varepsilon_{ijl}\frac{\partial A_{jk}}{\partial u_i}\hat{u}_l\hat{u}_k
+$$<p>순환 기호는 인덱스는 하나의 항에 대응된다. 그리고 각 항의 인덱스는 순환기호와 인접해야 한다.</p>
+$$
+[\nabla\times\bar{\bar{A}}]_{lk}
+=\varepsilon_{ijl}\partial_i A_{jk}
 $$$$
 [\nabla\times\bar{\bar{A}}]_{il}
+=\varepsilon_{jki}\partial_j A_{kl}
 =\varepsilon_{ijk}\partial_j A_{kl}
 $$<hr>
 <p><strong>example1)</strong> $\nabla\times\nabla f=0$ 임을 보여라.</p>
@@ -194,7 +224,22 @@ $$
 \varepsilon_{ijk}\partial_j[\nabla f]_k
 =\varepsilon_{ijk}\partial_j\partial_k f
 $$<p>전개하면, 순환기호의 특성에 따라, 서로 상쇄된다. 따라서 0이다.</p>
-
+<hr>
+<h3 id="4-high-tensor-conjugate-curl">4. High tensor conjugate curl</h3>
+$$
+\bar{\bar{A}}\times\nabla
+=A_{ij}\hat{u}_i\hat{u}_j\times\frac{\partial}{\partial u_k}\hat{u}_k
+=A_{ij}\frac{\partial}{\partial u_k}\hat{u}_i(\hat{u}_j\times\hat{u}_k)
+=\varepsilon_{jkl}A_{ij}\frac{\partial}{\partial u_k}\hat{u}_i\hat{u}_l
+$$<p>순환 기호는 인덱스는 하나의 항에 대응된다. 그리고 각 항의 인덱스는 순환기호와 인접해야 한다.</p>
+$$
+[\bar{\bar{A}}\times\nabla]_{il}
+=\varepsilon_{jkl}A_{ij}\partial_k
+$$$$
+[\bar{\bar{A}}\times\nabla]_{ij}
+=\varepsilon_{kli}A_{jk}\partial_l
+=\varepsilon_{ikl}A_{jk}\partial_l
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -250,7 +295,9 @@ $$<p>전개하면, 순환기호의 특성에 따라, 서로 상쇄된다. 따라
             <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu">
             <li class="" data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li>
             <li class="" data-nav-id="/tensor_analysis/calculus/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus/a_divergence/index.html">(a) Divergence</a></li>
-            <li class="active " data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li></ul></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_derivative/index.html"><a class="padding" href="/tensor_analysis/calculus/a_derivative/index.html">(a) Derivative</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_integration/index.html"><a class="padding" href="/tensor_analysis/calculus/a_integration/index.html">(a) Integration</a></li></ul></li>
             <li class="" data-nav-id="/tensor_analysis/transformation/index.html"><a class="padding" href="/tensor_analysis/transformation/index.html">Transformation</a></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
@@ -275,8 +322,8 @@ $$<p>전개하면, 순환기호의 특성에 따라, 서로 상쇄된다. 따라
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751002807" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751002807" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751120219" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751120219" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -288,7 +335,7 @@ $$<p>전개하면, 순환기호의 특성에 따라, 서로 상쇄된다. 따라
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751002807"></script>
-    <script src="/js/theme.js?1751002807" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751120219"></script>
+    <script src="/js/theme.js?1751120219" defer></script>
   </body>
 </html>

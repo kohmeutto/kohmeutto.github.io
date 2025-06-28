@@ -232,6 +232,9 @@
     <loc>http://localhost:1313/tensor_analysis/transformation/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/calculus/a_derivative/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
   </url>
   <url>
@@ -296,6 +299,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/calculus/a_integration/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>

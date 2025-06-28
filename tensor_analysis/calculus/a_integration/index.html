@@ -5,47 +5,63 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
-    <meta name="description" content="1. 2차 단위 텐서 $$\bar{\bar{I}}=\left[\begin{matrix}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 1\end{matrix}\right]=\left[\begin{matrix}\delta_{11} &amp; \delta_{12} &amp; \delta_{13} \\\delta_{21} &amp; \delta_{22} &amp; \delta_{23} \\\delta_{31} &amp; \delta_{32} &amp; \delta_{33}\end{matrix}\right]=\delta_{ij}\hat{u}_i\hat{u}_j=\hat{u}_j\hat{u}_j$$$$\bar{\bar{I}}\cdot\vec{a}=\vec{a}$$proof)
-$$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)=\delta_{ij}a_k\hat{u}_i\delta_{jk}=a_j\hat{u}_j=\vec{a}$$ 2. 2차 단위 텐서 점곱 $$\bar{\bar{I}}:\bar{\bar{I}}=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)=\delta_{ij}\delta_{ij}=\delta_{ii}=3$$ 3. 대각합 $$\bar{\bar{A}}:\bar{\bar{I}}=\operatorname{tr}\bar{\bar{A}}=A_{jj}=A_{11}&#43;A_{22}&#43;A_{33}$$대각합은 아래와 같은 성질을 가진다.">
+    <meta name="description" content="앞선 연산자들이 직각좌표계 또는 매개변수 좌표계에서만 적용될 수 있는 것과는 달리, 일반 좌표계(비 직교 포함) 에서 동일하게 적용된다.
+1. 발산정리 $$d^2\vec{s}=d^3V\nabla$$적분 기호를 사용하여 표현하면,
+$$\int_{V&#39;}d^3V\nabla\cdot\vec{f}=\int_{s&#39;}d^2\vec{s}\cdot\vec{f}$$적분 표현을 인덱스 표현으로 전개한다.
+$$\int_{V&#39;}d^3V[\partial_i f_i]=\int_{s&#39;}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.}$$ example1) 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=V\bar{\bar{I}}$$sol)
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=\int_{V}d^3V&#39;[\nabla \vec{u}]=\int_{V}d^3V&#39;\bar{\bar{I}}=V\bar{\bar{I}}$$ 2. Stokes 정리 $$d\vec{l}=d^2\vec{s}\times\nabla$$적분 기호를 사용하여 표현하면,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(a) Unit tensor :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 2차 단위 텐서 $$\bar{\bar{I}}=\left[\begin{matrix}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 1\end{matrix}\right]=\left[\begin{matrix}\delta_{11} &amp; \delta_{12} &amp; \delta_{13} \\\delta_{21} &amp; \delta_{22} &amp; \delta_{23} \\\delta_{31} &amp; \delta_{32} &amp; \delta_{33}\end{matrix}\right]=\delta_{ij}\hat{u}_i\hat{u}_j=\hat{u}_j\hat{u}_j$$$$\bar{\bar{I}}\cdot\vec{a}=\vec{a}$$proof)
-$$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)=\delta_{ij}a_k\hat{u}_i\delta_{jk}=a_j\hat{u}_j=\vec{a}$$ 2. 2차 단위 텐서 점곱 $$\bar{\bar{I}}:\bar{\bar{I}}=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)=\delta_{ij}\delta_{ij}=\delta_{ii}=3$$ 3. 대각합 $$\bar{\bar{A}}:\bar{\bar{I}}=\operatorname{tr}\bar{\bar{A}}=A_{jj}=A_{11}&#43;A_{22}&#43;A_{33}$$대각합은 아래와 같은 성질을 가진다.">
-    <meta property="og:url" content="http://localhost:1313/tensor_analysis/notation_operation/a_unit_tensor/index.html">
+    <meta name="twitter:title" content="(a) Integration :: 수리전자물리학">
+    <meta name="twitter:description" content="앞선 연산자들이 직각좌표계 또는 매개변수 좌표계에서만 적용될 수 있는 것과는 달리, 일반 좌표계(비 직교 포함) 에서 동일하게 적용된다.
+1. 발산정리 $$d^2\vec{s}=d^3V\nabla$$적분 기호를 사용하여 표현하면,
+$$\int_{V&#39;}d^3V\nabla\cdot\vec{f}=\int_{s&#39;}d^2\vec{s}\cdot\vec{f}$$적분 표현을 인덱스 표현으로 전개한다.
+$$\int_{V&#39;}d^3V[\partial_i f_i]=\int_{s&#39;}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.}$$ example1) 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=V\bar{\bar{I}}$$sol)
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=\int_{V}d^3V&#39;[\nabla \vec{u}]=\int_{V}d^3V&#39;\bar{\bar{I}}=V\bar{\bar{I}}$$ 2. Stokes 정리 $$d\vec{l}=d^2\vec{s}\times\nabla$$적분 기호를 사용하여 표현하면,">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus/a_integration/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(a) Unit tensor :: 수리전자물리학">
-    <meta property="og:description" content="1. 2차 단위 텐서 $$\bar{\bar{I}}=\left[\begin{matrix}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 1\end{matrix}\right]=\left[\begin{matrix}\delta_{11} &amp; \delta_{12} &amp; \delta_{13} \\\delta_{21} &amp; \delta_{22} &amp; \delta_{23} \\\delta_{31} &amp; \delta_{32} &amp; \delta_{33}\end{matrix}\right]=\delta_{ij}\hat{u}_i\hat{u}_j=\hat{u}_j\hat{u}_j$$$$\bar{\bar{I}}\cdot\vec{a}=\vec{a}$$proof)
-$$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)=\delta_{ij}a_k\hat{u}_i\delta_{jk}=a_j\hat{u}_j=\vec{a}$$ 2. 2차 단위 텐서 점곱 $$\bar{\bar{I}}:\bar{\bar{I}}=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)=\delta_{ij}\delta_{ij}=\delta_{ii}=3$$ 3. 대각합 $$\bar{\bar{A}}:\bar{\bar{I}}=\operatorname{tr}\bar{\bar{A}}=A_{jj}=A_{11}&#43;A_{22}&#43;A_{33}$$대각합은 아래와 같은 성질을 가진다.">
+    <meta property="og:title" content="(a) Integration :: 수리전자물리학">
+    <meta property="og:description" content="앞선 연산자들이 직각좌표계 또는 매개변수 좌표계에서만 적용될 수 있는 것과는 달리, 일반 좌표계(비 직교 포함) 에서 동일하게 적용된다.
+1. 발산정리 $$d^2\vec{s}=d^3V\nabla$$적분 기호를 사용하여 표현하면,
+$$\int_{V&#39;}d^3V\nabla\cdot\vec{f}=\int_{s&#39;}d^2\vec{s}\cdot\vec{f}$$적분 표현을 인덱스 표현으로 전개한다.
+$$\int_{V&#39;}d^3V[\partial_i f_i]=\int_{s&#39;}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.}$$ example1) 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=V\bar{\bar{I}}$$sol)
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=\int_{V}d^3V&#39;[\nabla \vec{u}]=\int_{V}d^3V&#39;\bar{\bar{I}}=V\bar{\bar{I}}$$ 2. Stokes 정리 $$d\vec{l}=d^2\vec{s}\times\nabla$$적분 기호를 사용하여 표현하면,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
-    <meta itemprop="name" content="(a) Unit tensor :: 수리전자물리학">
-    <meta itemprop="description" content="1. 2차 단위 텐서 $$\bar{\bar{I}}=\left[\begin{matrix}1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 1\end{matrix}\right]=\left[\begin{matrix}\delta_{11} &amp; \delta_{12} &amp; \delta_{13} \\\delta_{21} &amp; \delta_{22} &amp; \delta_{23} \\\delta_{31} &amp; \delta_{32} &amp; \delta_{33}\end{matrix}\right]=\delta_{ij}\hat{u}_i\hat{u}_j=\hat{u}_j\hat{u}_j$$$$\bar{\bar{I}}\cdot\vec{a}=\vec{a}$$proof)
-$$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)=\delta_{ij}a_k\hat{u}_i\delta_{jk}=a_j\hat{u}_j=\vec{a}$$ 2. 2차 단위 텐서 점곱 $$\bar{\bar{I}}:\bar{\bar{I}}=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)=\delta_{ij}\delta_{ij}=\delta_{ii}=3$$ 3. 대각합 $$\bar{\bar{A}}:\bar{\bar{I}}=\operatorname{tr}\bar{\bar{A}}=A_{jj}=A_{11}&#43;A_{22}&#43;A_{33}$$대각합은 아래와 같은 성질을 가진다.">
-    <meta itemprop="wordCount" content="124">
-    <title>(a) Unit tensor :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751115824" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751115824" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751115824" rel="stylesheet">
-    <link href="/css/theme.css?1751115824" rel="stylesheet">
-    <link href="/css/format-html.css?1751115824" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751115824" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751115824" defer></script>
-    <script src="/js/search.js?1751115824" defer></script>
+    <meta itemprop="name" content="(a) Integration :: 수리전자물리학">
+    <meta itemprop="description" content="앞선 연산자들이 직각좌표계 또는 매개변수 좌표계에서만 적용될 수 있는 것과는 달리, 일반 좌표계(비 직교 포함) 에서 동일하게 적용된다.
+1. 발산정리 $$d^2\vec{s}=d^3V\nabla$$적분 기호를 사용하여 표현하면,
+$$\int_{V&#39;}d^3V\nabla\cdot\vec{f}=\int_{s&#39;}d^2\vec{s}\cdot\vec{f}$$적분 표현을 인덱스 표현으로 전개한다.
+$$\int_{V&#39;}d^3V[\partial_i f_i]=\int_{s&#39;}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.}$$ example1) 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=V\bar{\bar{I}}$$sol)
+$$\int_{s}d^2\vec{s}&#39;[\vec{u]}=\int_{V}d^3V&#39;[\nabla \vec{u}]=\int_{V}d^3V&#39;\bar{\bar{I}}=V\bar{\bar{I}}$$ 2. Stokes 정리 $$d\vec{l}=d^2\vec{s}\times\nabla$$적분 기호를 사용하여 표현하면,">
+    <meta itemprop="wordCount" content="122">
+    <title>(a) Integration :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751120219" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751120219" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751120219" rel="stylesheet">
+    <link href="/css/theme.css?1751120219" rel="stylesheet">
+    <link href="/css/format-html.css?1751120219" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751120219" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751120219" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751120219" defer></script>
+    <script src="/js/search.js?1751120219" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/tensor_analysis\/notation_operation\/a_unit_tensor\/index.html';
+      window.relearn.path='\/tensor_analysis\/calculus\/a_integration\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751115824";
+      window.relearn.index_js_url="/searchindex.en.js?1751120219";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -92,7 +108,7 @@ $$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/tensor_analysis/notation_operation/a_unit_tensor/index.html">
+  <body class="mobile-support html" data-url="/tensor_analysis/calculus/a_integration/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -108,9 +124,8 @@ $$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\
   <ul>
     <li>
       <ul>
-        <li><a href="#1-2차-단위-텐서">1. 2차 단위 텐서</a></li>
-        <li><a href="#2-2차-단위-텐서-점곱">2. 2차 단위 텐서 점곱</a></li>
-        <li><a href="#3-대각합">3. 대각합</a></li>
+        <li><a href="#1-발산정리">1. 발산정리</a></li>
+        <li><a href="#2-stokes-정리">2. Stokes 정리</a></li>
       </ul>
     </li>
   </ul>
@@ -122,13 +137,13 @@ $$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/notation_operation/index.html"><span itemprop="name">Notation &amp; Basic operation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Unit tensor</span><meta itemprop="position" content="4"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Integration</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/notation_operation/a_dot_products/index.html" title="(a) Dot products (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_derivative/index.html" title="(a) Derivative (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/notation_operation/a_seperation_of_tensor/index.html" title="(a) Seperation of tensor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation/index.html" title="Transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -148,86 +163,71 @@ $$\bar{\bar{I}}\cdot\vec{a}=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k=\
   <header class="headline">
   </header>
 
-<h1 id="a-unit-tensor">(a) Unit tensor</h1>
+<h1 id="a-integration">(a) Integration</h1>
 
 <hr>
-<h3 id="1-2차-단위-텐서">1. 2차 단위 텐서</h3>
+<p>앞선 연산자들이 직각좌표계 또는 매개변수 좌표계에서만 적용될 수 있는 것과는 달리, <strong>일반 좌표계(비 직교 포함)</strong> 에서 동일하게 적용된다.</p>
+<hr>
+<h3 id="1-발산정리">1. 발산정리</h3>
 $$
-\bar{\bar{I}}
-=\left[\begin{matrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-\end{matrix}\right]
-=\left[\begin{matrix}
-    \delta_{11} & \delta_{12} & \delta_{13} \\
-    \delta_{21} & \delta_{22} & \delta_{23} \\
-    \delta_{31} & \delta_{32} & \delta_{33}
-\end{matrix}\right]
-=\delta_{ij}\hat{u}_i\hat{u}_j
-=\hat{u}_j\hat{u}_j
-$$$$
-\bar{\bar{I}}\cdot\vec{a}
-=\vec{a}
-$$<p>proof)</p>
+d^2\vec{s}=d^3V\nabla
+$$<p>적분 기호를 사용하여 표현하면,</p>
 $$
-\bar{\bar{I}}\cdot\vec{a}
-=\delta_{ij}\hat{u}_i\hat{u}_j\cdot a_k\hat{u}_k
-=\delta_{ij}a_k\hat{u}_i(\hat{u}_j\cdot\hat{u}_k)
-=\delta_{ij}a_k\hat{u}_i\delta_{jk}
-=a_j\hat{u}_j
-=\vec{a}
+\int_{V'}d^3V\nabla\cdot\vec{f}
+=\int_{s'}d^2\vec{s}\cdot\vec{f}
+$$<p>적분 표현을 인덱스 표현으로 전개한다.</p>
+$$
+\int_{V'}d^3V[\partial_i f_i]
+=\int_{s'}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.
+}
 $$<hr>
-<h3 id="2-2차-단위-텐서-점곱">2. 2차 단위 텐서 점곱</h3>
+<p><strong>example1)</strong> 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.</p>
 $$
-\bar{\bar{I}}:\bar{\bar{I}}
-=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j
-=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)
-=\delta_{ij}\delta_{ij}
-=\delta_{ii}
-=3
+\int_{s}d^2\vec{s}'[\vec{u]}=V\bar{\bar{I}}
+$$<p>sol)</p>
+$$
+\int_{s}d^2\vec{s}'[\vec{u]}
+=\int_{V}d^3V'[\nabla \vec{u}]
+=\int_{V}d^3V'\bar{\bar{I}}
+=V\bar{\bar{I}}
 $$<hr>
-<h3 id="3-대각합">3. 대각합</h3>
+<h3 id="2-stokes-정리">2. Stokes 정리</h3>
 $$
-\bar{\bar{A}}:\bar{\bar{I}}
-=\operatorname{tr}\bar{\bar{A}}
-=A_{jj}=A_{11}+A_{22}+A_{33}
-$$<p>대각합은 아래와 같은 성질을 가진다.</p>
+d\vec{l}=d^2\vec{s}\times\nabla
+$$<p>적분 기호를 사용하여 표현하면,</p>
 $$
-(1)
-\operatorname{tr}\bar{\bar{A}}
-=\operatorname{tr}\bar{\bar{A}}^T
-=A_{jj}
-$$$$
-(2)
-\operatorname{tr}\left\lbrace\bar{\bar{A}}+\bar{\bar{B}}\right\rbrace
-=\operatorname{tr}\bar{\bar{A}}+\operatorname{tr}\bar{\bar{B}}
-=A_{jj}+B_{jj}
-$$$$
-(3)
-\bar{\bar{A}}:\bar{\bar{B}}
-=\operatorname{tr}\left\lbrace \bar{\bar{A}}^T\cdot\bar{\bar{B}}\right\rbrace
-=\operatorname{tr}\left\lbrace \bar{\bar{A}}\cdot\bar{\bar{B}^T}\right\rbrace
-=\operatorname{tr}\left\lbrace \bar{\bar{B}}^T\cdot\bar{\bar{A}}\right\rbrace
-=\operatorname{tr}\left\lbrace \bar{\bar{B}}\cdot\bar{\bar{A}^T}\right\rbrace
-$$$$
-(4)
-\operatorname{tr}\left\lbrace \bar{\bar{A}}^2\right\rbrace
-=\operatorname{tr}\left\lbrace \bar{\bar{A}}\cdot\bar{\bar{A}}\right\rbrace
-=\bar{\bar{A}}:\bar{\bar{A}}
-$$<p>proof3)</p>
+\int_{s'}d^2\vec{s}\cdot[\nabla\times\vec{f}]
+=\int_{s'}[d^2\vec{s}\times\nabla]\cdot\vec{f}
+=\int_{l'}d\vec{l}\cdot\vec{f}
+$$<p>적분 표현을 인덱스 표현으로 전개한다.</p>
 $$
-\bar{\bar{A}}:\bar{\bar{B}}
-=A_{ij}B_{ij}
+\int_{s'}[d^2\vec{s}\times\nabla]\cdot\vec{f}
+=\int_{s'}[d^2\vec{s}\times\nabla]_i f_i
+=\int_{s'}d^2s[\varepsilon_{ijk}n_j\partial_k f_i],\quad\text{$n_j$ 은 면에 대한 법선벡터이다.
+}
 $$$$
-\bar{\bar{A}}^T\cdot\bar{\bar{B}}
-=A^T_{ij}B_{jk}\implies
-\operatorname{tr}\left\lbrace\bar{\bar{A}}^T\cdot\bar{\bar{B}}\right\rbrace
-=\operatorname{tr}\left\lbrace A^T_{ij}B_{jk}\right\rbrace
-=A^T_{ij}B_{ji}
-=A_{ji}B_{ji}
+\int_{l'}d\vec{l}\cdot\vec{f}
+=\int_{l'}dl_if_i
 $$<hr>
-
+<p><strong>example1)</strong> Stokes 정리를 사용하여, 다음의 식이 성립함을 보여라.</p>
+$$
+\int_{l'}d\vec{l}\cdot[\phi\nabla\psi]
+=\int_{s'}d^2\vec{s}\cdot[\nabla\phi\times\nabla\psi]
+$$<p>sol1)</p>
+$$
+\int_{s'}d^2\vec{s}\cdot[\nabla\phi\times\nabla\psi]
+=\int_{s'}[d^2\vec{s}\times\nabla\phi]\cdot\nabla\psi
+=\int_{l'}d\vec{l}\phi\cdot\nabla\psi
+=\int_{l'}d\vec{l}\cdot\phi\nabla\psi
+$$<p>sol2)</p>
+$$
+\int_{l'}d\vec{l}\cdot[\phi\nabla\psi]
+=\int_{s'}(d^2\vec{s}\times\nabla)\cdot[\phi\nabla\psi]
+=\int_{s'}d^2\vec{s}\cdot[\nabla\times\phi\nabla\psi]
+$$$$
+=\int_{s'}d^2\vec{s}\cdot[\nabla\phi\times\nabla\psi+\phi\nabla\times\nabla\psi]
+=\int_{s'}d^2\vec{s}\cdot[\nabla\phi\times\nabla\psi]
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -279,15 +279,13 @@ $$<hr>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
-            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu">
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_dyad/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_dyad/index.html">(a) Dyad</a></li>
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_dot_products/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_dot_products/index.html">(a) Dot products</a></li>
-            <li class="active " data-nav-id="/tensor_analysis/notation_operation/a_unit_tensor/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_unit_tensor/index.html">(a) Unit tensor</a></li>
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_seperation_of_tensor/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_seperation_of_tensor/index.html">(a) Seperation of tensor</a></li>
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html">(a) 4nd unit tensor</a></li>
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_inverse_determinant/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_inverse_determinant/index.html">(a) Inverse &amp; Determinant</a></li>
-            <li class="" data-nav-id="/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html">(a) Eigenvalue problem</a></li></ul></li>
-            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu">
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus/a_divergence/index.html">(a) Divergence</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_derivative/index.html"><a class="padding" href="/tensor_analysis/calculus/a_derivative/index.html">(a) Derivative</a></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus/a_integration/index.html"><a class="padding" href="/tensor_analysis/calculus/a_integration/index.html">(a) Integration</a></li></ul></li>
             <li class="" data-nav-id="/tensor_analysis/transformation/index.html"><a class="padding" href="/tensor_analysis/transformation/index.html">Transformation</a></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
@@ -312,8 +310,8 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751115824" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751115824" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751120219" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751120219" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -325,7 +323,7 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751115824"></script>
-    <script src="/js/theme.js?1751115824" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751120219"></script>
+    <script src="/js/theme.js?1751120219" defer></script>
   </body>
 </html>
