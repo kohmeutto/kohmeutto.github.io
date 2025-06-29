@@ -85,6 +85,9 @@
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/transformation/a_components/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tensor_analysis/calculus/a_divergence/index.html</loc>
   </url>
   <url>
@@ -164,6 +167,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/transformation/a_basis_components/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/calculus/a_curl/index.html</loc>
@@ -247,7 +253,7 @@
     <loc>http://localhost:1313/tensor_analysis/notation_operation/a_seperation_of_tensor/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html</loc>
+    <loc>http://localhost:1313/temp/b_components_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_components_transformation/index.html</loc>
@@ -355,9 +361,6 @@
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/temp/b_tensor_components_transformation_i/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>
   </url>
   <url>
@@ -367,7 +370,7 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/r_emf_voltage/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_gc/index.html</loc>
+    <loc>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/index.html</loc>

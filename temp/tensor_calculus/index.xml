@@ -3,7 +3,7 @@
   <channel>
     <title>Vector calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
-    <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates</description>
+    <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Transformation for GC</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/temp/tensor_calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -33,7 +33,7 @@
       <link>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/index.html</guid>
-      <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Components transformation&#xD;(b) Gradient for scalar&#xD;(b) Divergence&#xD;(b) Curl</description>
+      <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Gradient for scalar&#xD;(b) Divergence&#xD;(b) Curl</description>
     </item>
     <item>
       <title>General coordinates</title>
@@ -41,6 +41,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/tensor_calculus/general_coordinates/index.html</guid>
       <description>(a) Covariant and contravariant&#xD;(a) Metric tensor</description>
+    </item>
+    <item>
+      <title>Transformation for GC</title>
+      <link>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -14,7 +14,7 @@ $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp;
     <meta name="twitter:description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
 0. 정리 기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저
 $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} &#43;u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} &#43;u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} &#43;v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} &#43;v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.">
-    <meta property="og:url" content="http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html">
+    <meta property="og:url" content="http://localhost:1313/temp/b_components_transformation/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Components transformation :: 수리전자물리학">
     <meta property="og:description" content="중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.
@@ -29,27 +29,27 @@ $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp;
 $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} &#43;u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} &#43;u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} &#43;v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} &#43;v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.">
     <meta itemprop="wordCount" content="694">
     <title>(b) Components transformation :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751115824" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751115824" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751115824" rel="stylesheet">
-    <link href="/css/theme.css?1751115824" rel="stylesheet">
-    <link href="/css/format-html.css?1751115824" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751115824" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751115824" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751115824" defer></script>
-    <script src="/js/search.js?1751115824" defer></script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751183954" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751183954" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751183954" rel="stylesheet">
+    <link href="/css/theme.css?1751183954" rel="stylesheet">
+    <link href="/css/format-html.css?1751183954" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751183954" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751183954" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751183954" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751183954" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751183954" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751183954" defer></script>
+    <script src="/js/search.js?1751183954" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/temp\/tensor_calculus\/orthogonal_coordinates\/b_components_transformation\/index.html';
-      window.relearn.relBasePath='..\/..\/..\/..';
-      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.path='\/temp\/b_components_transformation\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751115824";
+      window.relearn.index_js_url="/searchindex.en.js?1751183954";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -96,7 +96,7 @@ $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp;
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html">
+  <body class="mobile-support html" data-url="/temp/b_components_transformation/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -127,14 +127,12 @@ $$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp;
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/tensor_calculus/index.html"><span itemprop="name">Vector calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/tensor_calculus/orthogonal_coordinates/index.html"><span itemprop="name">Orthogonal coordinates</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Components transformation</span><meta itemprop="position" content="5"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Components transformation</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_iii/index.html" title="(a) Mapping III - Jacobian (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/index.html" title="Temps (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html" title="(b) Gradient for scalar (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/b_gradient_for_scalar/index.html" title="(b) Gradient for scalar (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -493,21 +491,9 @@ $$
             <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="active " data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
             <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
-            <li class="" data-nav-id="/temp/b_tensor_components_transformation_i/index.html"><a class="padding" href="/temp/b_tensor_components_transformation_i/index.html">(b) Tensor components transformation I</a></li>
-            <li class="parent alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu">
-            <li class="" data-nav-id="/temp/tensor_calculus/b_space_tensor/index.html"><a class="padding" href="/temp/tensor_calculus/b_space_tensor/index.html">(b) Space &amp; Vector &amp; Tensor</a></li>
-            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/notation_operation/index.html"><a class="padding" href="/temp/tensor_calculus/notation_operation/index.html">Notation &amp; Operation</a><ul id="R-subsections-4eac8f1fc4915a2ac329d3e268934af3" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/i_total_derivative_gradient/index.html"><a class="padding" href="/temp/tensor_calculus/i_total_derivative_gradient/index.html">(i) Total derivative &amp; Gradient</a></li>
-            <li class="parent alwaysopen " data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/index.html">Orthogonal coordinates</a><ul id="R-subsections-f323fea0e3a4c8e9947f6c7896adaf67" class="collapsible-menu">
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html">(b) Mapping I - Position</a></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_ii/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_ii/index.html">(b) Mapping II - Scale factor</a></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_iii/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_mapping_iii/index.html">(a) Mapping III - Jacobian</a></li>
-            <li class="active " data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_components_transformation/index.html">(b) Components transformation</a></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html">(b) Divergence</a></li>
-            <li class="" data-nav-id="/temp/tensor_calculus/orthogonal_coordinates/b_curl/index.html"><a class="padding" href="/temp/tensor_calculus/orthogonal_coordinates/b_curl/index.html">(b) Curl</a></li></ul></li>
-            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/general_coordinates/index.html"><a class="padding" href="/temp/tensor_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-51fbc4fbbff7081ede1eac330a397856" class="collapsible-menu"></ul></li></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -525,8 +511,8 @@ $$
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751115824" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751115824" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751183954" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751183954" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -538,7 +524,7 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751115824"></script>
-    <script src="/js/theme.js?1751115824" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751183954"></script>
+    <script src="/js/theme.js?1751183954" defer></script>
   </body>
 </html>
