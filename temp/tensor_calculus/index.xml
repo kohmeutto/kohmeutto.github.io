@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vector calculus :: 수리전자물리학</title>
+    <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
+    <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Transformation for GC</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/temp/tensor_calculus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Space &amp; Vector &amp; Tensor</title>
+      <link>http://localhost:1313/temp/tensor_calculus/b_space_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/b_space_tensor/index.html</guid>
+      <description>1. Space &amp; Coordinate 실 공간(Real space) 은 점, 선, 면 등이 존재하고 서로 관계를 맺는 바탕이 되는 기하학적인 대상을 의미한다. 우리가 경험하는 3차원 공간이나 수학적으로 다루는 n차원 유클리드 공간 등이 여기에 해당한다. 공간 자체는 어떤 기준이나 눈금이 없는 ‘바탕’ 또는 ‘영역’과 같다.&#xA;좌표계(Coordinate system) 는 이러한 공간 안에 있는 점이나 대상의 위치를 숫자의 쌍(좌표)으로 나타내기 위한 ‘약속’ 또는 ‘방법’이다. 좌표계는 공간에 기준점(원점)과 기준 방향(축)을 설정하고, 이 기준에 따라 공간상의 모든 점에 고유한 숫자를 부여한다. 쉽게 비유하자면, 공간은 백지 도화지이고 좌표계는 그 도화지 위에 눈금을 그리고 원점을 표시하여 그림을 그릴 위치를 정하는 자와 같은 역할을 한다. 같은 도화지 위에서도 직교 좌표계를 사용하거나 극좌표계를 사용하는 등 다양한 방법으로 위치를 표현할 수 있다. 단, 실공간의 기준 좌표계는 데카르트 좌표계 이며, 다른 좌표계를 사용하여도, 정량적으로 다루기 위해서는 궁극적으로 ‘데카르트 좌표계’라는 기준점을 통해 이해해야 한다.</description>
+    </item>
+    <item>
+      <title>Notation &amp; Operation</title>
+      <link>http://localhost:1313/temp/tensor_calculus/notation_operation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/notation_operation/index.html</guid>
+      <description>(b) Suffix notation&#xD;(b) Kronecker and Levi-Civit`a Symbols&#xD;(a) Dyad 1&#xD;(a) Dyad 2&#xD;(a) Unit tensor</description>
+    </item>
+    <item>
+      <title>(i) Total derivative &amp; Gradient</title>
+      <link>http://localhost:1313/temp/tensor_calculus/i_total_derivative_gradient/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/i_total_derivative_gradient/index.html</guid>
+      <description>1. Total derivative for parameter variables 다변수 함수에 대한 전미분은 아래와 같다. 여기에서, 매개변수(예: 매개변수 좌표, 시스템을 기술하는 독립 변수 등)를 $u_i$ 라고 하자.&#xA;$$&#xD;df&#xD;=du_i\frac{\partial f}{\partial u_i}&#xD;$$위 식을 벡터로 표현하면, 아래와 같다.&#xA;$$&#xD;df&#xD;=d\vec{u}\cdot\nabla_u f&#xD;$$$$&#xD;\nabla_u&#xD;=\left[\frac{\partial}{\partial u_1}, \frac{\partial}{\partial u_2}, \frac{\partial}{\partial u_3}\right]_T&#xD;$$여기에서 $f$ 를 제거하면, 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, 전미분 연산자를 간략하게 표현하는 매우 유용한 방법이다.)&#xA;2. Total derivative for real space variables 이번에는 실공간의 좌표를 사용하여, 전미분을 알아보자. 위에서, 매개변수에 대한 전미분은 아래와 같이 쓸 수 있음을 보였다.</description>
+    </item>
+    <item>
+      <title>Orthogonal coordinates</title>
+      <link>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/index.html</guid>
+      <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Gradient for scalar&#xD;(b) Divergence&#xD;(b) Curl</description>
+    </item>
+    <item>
+      <title>General coordinates</title>
+      <link>http://localhost:1313/temp/tensor_calculus/general_coordinates/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/general_coordinates/index.html</guid>
+      <description>(a) Covariant and contravariant&#xD;(a) Metric tensor</description>
+    </item>
+    <item>
+      <title>Transformation for GC</title>
+      <link>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

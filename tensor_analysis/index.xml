@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tensor analysis :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/index.html</link>
+    <description>Notation &amp; Basic operation&#xD;Calculus for PS&#xD;Transformation for PS&#xD;General coordinates&#xD;Operation for GC&#xD;Calculus for GC</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notation &amp; Basic operation</title>
+      <link>http://localhost:1313/tensor_analysis/notation_operation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/notation_operation/index.html</guid>
+      <description>(a) Dyad&#xD;(a) Dot products&#xD;(a) Unit tensor&#xD;(a) Seperation of tensor&#xD;(a) 4nd unit tensor&#xD;(a) Inverse &amp; Determinant&#xD;(a) Eigenvalue problem</description>
+    </item>
+    <item>
+      <title>Calculus for PS</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_for_ps/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_for_ps/index.html</guid>
+      <description>(a) Gradient&#xD;(a) Divergence&#xD;(a) Curl&#xD;(a) Derivative&#xD;(a) Integration</description>
+    </item>
+    <item>
+      <title>Transformation for PS</title>
+      <link>http://localhost:1313/tensor_analysis/transformation_for_ps/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/index.html</guid>
+      <description>(a) Basis&#xD;(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    </item>
+    <item>
+      <title>General coordinates</title>
+      <link>http://localhost:1313/tensor_analysis/general_coordinates/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/general_coordinates/index.html</guid>
+      <description>(a) Covariant and contravariant&#xD;(a) Metric tensor</description>
+    </item>
+    <item>
+      <title>Operation for GC</title>
+      <link>http://localhost:1313/tensor_analysis/operation_for_gc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/operation_for_gc/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Calculus for GC</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_for_gc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_for_gc/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

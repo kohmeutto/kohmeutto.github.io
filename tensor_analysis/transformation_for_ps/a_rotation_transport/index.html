@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="기저 변환과 텐서 성분 변환: 수학적 정의 및 관계 이 문서는 선형대수학과 텐서 분석의 핵심 개념인 기저 벡터의 변환과 텐서 성분(벡터 성분)의 변환을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.
+1. 기저 벡터의 변환 (Basis Vector Transformation) 정의: 기저 벡터의 변환은 한 벡터 공간의 새로운 기저 벡터가 기존 기저 벡터들의 선형 결합으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Rotation & Transport :: 수리전자물리학">
+    <meta name="twitter:description" content="기저 변환과 텐서 성분 변환: 수학적 정의 및 관계 이 문서는 선형대수학과 텐서 분석의 핵심 개념인 기저 벡터의 변환과 텐서 성분(벡터 성분)의 변환을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.
+1. 기저 벡터의 변환 (Basis Vector Transformation) 정의: 기저 벡터의 변환은 한 벡터 공간의 새로운 기저 벡터가 기존 기저 벡터들의 선형 결합으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Rotation & Transport :: 수리전자물리학">
+    <meta property="og:description" content="기저 변환과 텐서 성분 변환: 수학적 정의 및 관계 이 문서는 선형대수학과 텐서 분석의 핵심 개념인 기저 벡터의 변환과 텐서 성분(벡터 성분)의 변환을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.
+1. 기저 벡터의 변환 (Basis Vector Transformation) 정의: 기저 벡터의 변환은 한 벡터 공간의 새로운 기저 벡터가 기존 기저 벡터들의 선형 결합으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Rotation & Transport :: 수리전자물리학">
+    <meta itemprop="description" content="기저 변환과 텐서 성분 변환: 수학적 정의 및 관계 이 문서는 선형대수학과 텐서 분석의 핵심 개념인 기저 벡터의 변환과 텐서 성분(벡터 성분)의 변환을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.
+1. 기저 벡터의 변환 (Basis Vector Transformation) 정의: 기저 벡터의 변환은 한 벡터 공간의 새로운 기저 벡터가 기존 기저 벡터들의 선형 결합으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.">
+    <meta itemprop="wordCount" content="647">
+    <title>(a) Rotation &amp; Transport :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751304203" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751304203" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751304203" rel="stylesheet">
+    <link href="/css/theme.css?1751304203" rel="stylesheet">
+    <link href="/css/format-html.css?1751304203" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751304203" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751304203" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751304203" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751304203" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751304203" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751304203" defer></script>
+    <script src="/js/search.js?1751304203" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/tensor_analysis\/transformation_for_ps\/a_rotation_transport\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1751304203";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-기저-벡터의-변환-basis-vector-transformation">1. 기저 벡터의 변환 (Basis Vector Transformation)</a>
+      <ul>
+        <li><a href="#11-텐서-표기법-tensor-notation">1.1 텐서 표기법 (Tensor Notation)</a></li>
+        <li><a href="#12-dirac-notation-dirac-notation">1.2 Dirac notation (Dirac Notation)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-텐서-성분의-변환-tensor-component-transformation">2. 텐서 성분의 변환 (Tensor Component Transformation)</a>
+      <ul>
+        <li><a href="#21-공변-및-반변-성분의-변환-covariant-and-contravariant-component-transformation">2.1 공변 및 반변 성분의 변환 (Covariant and Contravariant Component Transformation)</a></li>
+        <li><a href="#22-dirac-notation을-이용한-성분-변환">2.2 Dirac notation을 이용한 성분 변환</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-결론-기저-변환과-성분-변환의-관계-요약">3. 결론: 기저 변환과 성분 변환의 관계 요약</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/transformation_for_ps/index.html"><span itemprop="name">Transformation for PS</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Rotation &amp; Transport</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html" title="(a) 2nd tensor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/transformation_for_ps/a_derivative/index.html" title="(a) Derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable tensor_analysis" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-rotation--transport">(a) Rotation &amp; Transport</h1>
+
+<hr>
+<h1 id="기저-변환과-텐서-성분-변환-수학적-정의-및-관계">기저 변환과 텐서 성분 변환: 수학적 정의 및 관계</h1>
+<p>이 문서는 선형대수학과 텐서 분석의 핵심 개념인 <strong>기저 벡터의 변환</strong>과 <strong>텐서 성분(벡터 성분)의 변환</strong>을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.</p>
+<hr>
+<h2 id="1-기저-벡터의-변환-basis-vector-transformation">1. 기저 벡터의 변환 (Basis Vector Transformation)</h2>
+<p><strong>정의:</strong> 기저 벡터의 변환은 한 벡터 공간의 <strong>새로운 기저 벡터</strong>가 <strong>기존 기저 벡터들의 선형 결합</strong>으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.</p>
+<h3 id="11-텐서-표기법-tensor-notation">1.1 텐서 표기법 (Tensor Notation)</h3>
+<p>기존 기저 벡터를 ${\hat{u}_j}$ ($j=1, 2, \dots, N$)라 하고, 새로운 기저 벡터를 ${\hat{u}_i&rsquo;}$ ($i=1, 2, \dots, N$)라고 할 때, 새로운 기저 벡터는 기존 기저 벡터의 선형 결합으로 표현될 수 있습니다.</p>
+$$\hat{u}_i'=B_{ij}\hat{u}_j$$<p>여기서 $B_{ij}$는 <strong>기저 변환 행렬의 성분</strong>입니다. 이 성분은 새로운 기저 벡터 $\hat{u}_i&rsquo;$가 기존 기저 벡터 $\hat{u}_j$ 방향으로 얼마만큼의 투영을 가지는지를 나타냅니다.</p>
+<p>만약 ${\hat{u}<em>j}$가 **정규 직교 기저(orthonormal basis)**라면, $B</em>{ij}$는 내적을 통해 다음과 같이 정의됩니다.</p>
+$$B_{ij} = \hat{u}_i' \cdot \hat{u}_j$$<p>이는 $\hat{u}_i&rsquo;$와 $\hat{u}<em>j$ 사이의 각도 $\theta</em>{ij}$에 대한 코사인 값과 같습니다.</p>
+$$B_{ij}=\cos\theta_{ij}$$<h3 id="12-dirac-notation-dirac-notation">1.2 Dirac notation (Dirac Notation)</h3>
+<p>Dirac notation을 사용하면, $B_{ij}$는 새로운 기저 상태 $|u_i&rsquo;\rangle$와 기존 기저 상태 $|u_j\rangle$의 <strong>내적</strong>으로 표현됩니다.</p>
+$$B_{ij}=\langle u_i'|u_j\rangle$$<p>이 내적은 두 기저 벡터 간의 관계를 나타내는 스칼라 값입니다.</p>
+<hr>
+<h2 id="2-텐서-성분의-변환-tensor-component-transformation">2. 텐서 성분의 변환 (Tensor Component Transformation)</h2>
+<p><strong>정의:</strong> 텐서 성분의 변환은 **동일한 물리량(텐서)**이 다른 기저에서 표현될 때, 그 <strong>성분 값들이 어떻게 변화하는지</strong>를 나타냅니다. 텐서(물리량) 자체는 기저 변환에 대해 **불변(invariant)**입니다.</p>
+<p>벡터 $\vec{V}$와 같은 텐서를 생각해 봅시다. 이 벡터는 기존 기저 ${\hat{u}_j}$에서 성분 $V_j$로, 새로운 기저 ${\hat{u}_i&rsquo;}$에서 성분 $V_i&rsquo;$로 표현될 수 있습니다.</p>
+$$\vec{V} = V_i'\hat{u}_i' = V_j\hat{u}_j$$<p>여기에 기저 벡터 변환식 $\hat{u}<em>i&rsquo; = B</em>{ij}\hat{u}_j$를 대입합니다.</p>
+$$V_i'(B_{ij}\hat{u}_j) = V_j\hat{u}_j$$<p>양변의 기저 벡터 $\hat{u}_j$의 선형 독립성을 이용하여 계수를 비교하면 다음 관계를 얻습니다.</p>
+$$V_i'B_{ij} = V_j$$<p>이 식을 행렬 표기법으로 나타내면 $\mathbf{V&rsquo;B} = \mathbf{V}$입니다. 여기서 $\mathbf{V&rsquo;}$와 $\mathbf{V}$는 각각 새로운 기저와 기존 기저에서의 성분들을 행벡터로 나타낸 것입니다. 새로운 기저에서의 성분 $\mathbf{V&rsquo;}$를 기존 기저에서의 성분 $\mathbf{V}$로 표현하기 위해, 양변에 행렬 $\mathbf{B}$의 역행렬 $\mathbf{B}^{-1}$을 곱합니다.</p>
+$$\mathbf{V'} = \mathbf{V}\mathbf{B}^{-1}$$<p>이를 성분 표기법으로 다시 쓰면, **성분 변환 행렬 $C_{ij}$**를 사용하여 다음과 같이 나타낼 수 있습니다.</p>
+$$V_i'=C_{ij}V_j$$<p>위에서 유도된 $\mathbf{V&rsquo;} = \mathbf{V}\mathbf{B}^{-1}$를 성분으로 전개하면,</p>
+$$V_i' = V_j (B^{-1})_{ji}$$<p>따라서, <strong>성분 변환 행렬의 성분 $C_{ij}$는 기저 변환 행렬 $B_{ij}$의 역행렬의 전치 성분</strong>, 즉 $(B^{-1})_{ji}$와 같습니다.</p>
+<h3 id="21-공변-및-반변-성분의-변환-covariant-and-contravariant-component-transformation">2.1 공변 및 반변 성분의 변환 (Covariant and Contravariant Component Transformation)</h3>
+<p>텐서 분석에서는 텐서 성분의 변환 규칙이 성분 첨자의 위치(위 첨자/아래 첨자)에 따라 다르게 정의됩니다.</p>
+<ul>
+<li>
+<p><strong>반변(Contravariant) 성분 ($V^i$)</strong>: 위 첨자를 사용하여 표시하며, 일반적으로 벡터의 성분을 나타낼 때 사용됩니다.</p>
+<ul>
+<li>변환 규칙: $V^{i&rsquo;} = (B^{-1})_{ij}V^j$</li>
+<li>이 경우, 성분 변환 행렬은 기저 변환 행렬의 <strong>역행렬</strong>에 해당합니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>공변(Covariant) 성분 ($V_i$)</strong>: 아래 첨자를 사용하여 표시하며, 코벡터(covector) 또는 1-형식(1-form)의 성분 변환에 주로 나타납니다.</p>
+<ul>
+<li>변환 규칙: $V_{i&rsquo;} = B_{ij}V_j$</li>
+<li>이 경우, 성분 변환 행렬은 기저 변환 행렬과 <strong>동일한 형태</strong>를 가집니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="22-dirac-notation을-이용한-성분-변환">2.2 Dirac notation을 이용한 성분 변환</h3>
+<p>Dirac notation에서 벡터 $|V\rangle$는 기존 기저 $|u_j\rangle$와 새로운 기저 $|u_i&rsquo;\rangle$를 사용하여 다음과 같이 표현될 수 있습니다.</p>
+$$|V\rangle = V_i'|u_i'\rangle = V_j|u_j\rangle$$<p>새로운 기저에서의 성분 $V_i&rsquo;$를 얻기 위해, 벡터 $|V\rangle$에 새로운 기저 $\langle u_i&rsquo;|$를 내적합니다.</p>
+$$V_{i}' = \langle u_i'|V\rangle$$<p>여기에 기존 기저에서의 표현 $|V\rangle = \sum_j V_j|u_j\rangle$를 대입하여 성분을 전개하면:</p>
+$$V_{i}' = \langle u_i'|\left(\sum_j V_j|u_j\rangle\right) = \sum_j V_j \langle u_i'|u_j\rangle$$<p>여기서 $\langle u_i&rsquo;|u_j\rangle$는 앞서 정의한 **기저 변환 행렬의 성분 $B_{ij}$**입니다. 따라서,</p>
+$$V_{i}' = \sum_j B_{ij}V_j$$<p>이 결과는 위에서 언급한 <strong>공변 성분($V_i$)의 변환 규칙</strong>($V_{i&rsquo;} = B_{ij}V_j$)과 정확히 일치합니다. 이는 Dirac notation에서의 성분 $V_i&rsquo;$가 일반적으로 공변 성질을 나타내기 때문입니다.</p>
+<hr>
+<h2 id="3-결론-기저-변환과-성분-변환의-관계-요약">3. 결론: 기저 변환과 성분 변환의 관계 요약</h2>
+<p><strong>기저 벡터의 변환</strong>과 <strong>텐서 성분(벡터 성분)의 변환</strong>은 서로 다른 물리적 개념을 설명하며, 그 수학적 관계도 다릅니다.</p>
+<ul>
+<li>
+<p><strong>기저 벡터 변환:</strong> 새로운 기저 벡터를 기존 기저 벡터로 표현하는 방식($\hat{u}<em>i&rsquo; = B</em>{ij}\hat{u}<em>j$). $B</em>{ij} = \langle u_i&rsquo;|u_j\rangle$는 두 기저 벡터 간의 내적입니다.</p>
+</li>
+<li>
+<p><strong>텐서 성분 변환:</strong> 동일한 텐서의 성분 값이 기저 변화에 따라 어떻게 변하는지 나타냅니다.</p>
+<ul>
+<li><strong>반변 성분($V^i$)</strong>: 성분 변환 행렬은 기저 변환 행렬의 <strong>역행렬</strong>($C_{ij} = (B^{-1})_{ij}$)에 해당합니다.</li>
+<li><strong>공변 성분($V_i$)</strong>: 성분 변환 행렬은 기저 변환 행렬과 <strong>동일한 형태</strong>($C_{ij} = B_{ij}$)를 가집니다.</li>
+</ul>
+</li>
+</ul>
+<p>따라서, <strong>일반적으로 기저 변환 행렬과 성분 변환 행렬은 서로 역관계</strong>에 있다고 말할 수 있습니다 (특히 반변 성분의 경우). 공변 성분의 경우는 기저 변환 행렬과 같은 형태로 나타나지만, 이는 성분의 &ldquo;종류&quot;에 따른 변환 규칙의 차이입니다. 이 두 개념을 명확히 구분하는 것이 텐서 분석의 핵심입니다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus_for_ps/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/index.html">Calculus for PS</a><ul id="R-subsections-82df96393f8dc6caf6693045157d985f" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu">
+            <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_basis/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_basis/index.html">(a) Basis</a></li>
+            <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_components/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_components/index.html">(a) Components</a></li>
+            <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="active " data-nav-id="/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html">(a) Rotation &amp; Transport</a></li>
+            <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_derivative/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_derivative/index.html">(a) Derivative</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_gc/index.html"><a class="padding" href="/tensor_analysis/calculus_for_gc/index.html">Calculus for GC</a></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1751304203" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751304203" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751304203"></script>
+    <script src="/js/theme.js?1751304203" defer></script>
+  </body>
+</html>

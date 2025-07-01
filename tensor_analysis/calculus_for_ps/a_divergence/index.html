@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="매개변수공간에 대한 divergence 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Divergence $$\nabla\cdot\vec{f}=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j=\frac{\partial f_j}{\partial u_j}=\frac{\partial f_1}{\partial u_1}&#43;\frac{\partial f_2}{\partial u_2}&#43;\frac{\partial f_3}{\partial u_3}$$$$\nabla\cdot\vec{f}=[\nabla]_j[\vec{f}]_j=\frac{\partial f_j}{\partial u_j}$$ example1) 벡터 $\vec{u}=u_1\hat{u}_1&#43;u_2\hat{u}_2&#43;u_3\hat{u}_3$ 에 대한 발산을 구하여라.
+sol)
+$$\nabla\cdot\vec{u}=\frac{\partial u_j}{\partial u_j}=3$$ 2. 2차 텐서의 divergence $$\nabla\cdot\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k$$$$[\nabla\cdot\bar{\bar{A}}]_j=[\nabla]_i\bar{\bar{A}}_{ij}=\frac{\partial A_{ij}}{\partial u_i}$$ 3. Laplacian operator $$\nabla^2=\nabla\cdot\nabla=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}=\frac{\partial^2}{\partial u_i \partial u_i}=\frac{\partial^2}{\partial u_i^2}$$$$\nabla^2=[\nabla]_i[\nabla]_i=\frac{\partial^2}{\partial u_i^2}$$">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Divergence :: 수리전자물리학">
+    <meta name="twitter:description" content="매개변수공간에 대한 divergence 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Divergence $$\nabla\cdot\vec{f}=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j=\frac{\partial f_j}{\partial u_j}=\frac{\partial f_1}{\partial u_1}&#43;\frac{\partial f_2}{\partial u_2}&#43;\frac{\partial f_3}{\partial u_3}$$$$\nabla\cdot\vec{f}=[\nabla]_j[\vec{f}]_j=\frac{\partial f_j}{\partial u_j}$$ example1) 벡터 $\vec{u}=u_1\hat{u}_1&#43;u_2\hat{u}_2&#43;u_3\hat{u}_3$ 에 대한 발산을 구하여라.
+sol)
+$$\nabla\cdot\vec{u}=\frac{\partial u_j}{\partial u_j}=3$$ 2. 2차 텐서의 divergence $$\nabla\cdot\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k$$$$[\nabla\cdot\bar{\bar{A}}]_j=[\nabla]_i\bar{\bar{A}}_{ij}=\frac{\partial A_{ij}}{\partial u_i}$$ 3. Laplacian operator $$\nabla^2=\nabla\cdot\nabla=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}=\frac{\partial^2}{\partial u_i \partial u_i}=\frac{\partial^2}{\partial u_i^2}$$$$\nabla^2=[\nabla]_i[\nabla]_i=\frac{\partial^2}{\partial u_i^2}$$">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus_for_ps/a_divergence/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Divergence :: 수리전자물리학">
+    <meta property="og:description" content="매개변수공간에 대한 divergence 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Divergence $$\nabla\cdot\vec{f}=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j=\frac{\partial f_j}{\partial u_j}=\frac{\partial f_1}{\partial u_1}&#43;\frac{\partial f_2}{\partial u_2}&#43;\frac{\partial f_3}{\partial u_3}$$$$\nabla\cdot\vec{f}=[\nabla]_j[\vec{f}]_j=\frac{\partial f_j}{\partial u_j}$$ example1) 벡터 $\vec{u}=u_1\hat{u}_1&#43;u_2\hat{u}_2&#43;u_3\hat{u}_3$ 에 대한 발산을 구하여라.
+sol)
+$$\nabla\cdot\vec{u}=\frac{\partial u_j}{\partial u_j}=3$$ 2. 2차 텐서의 divergence $$\nabla\cdot\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k$$$$[\nabla\cdot\bar{\bar{A}}]_j=[\nabla]_i\bar{\bar{A}}_{ij}=\frac{\partial A_{ij}}{\partial u_i}$$ 3. Laplacian operator $$\nabla^2=\nabla\cdot\nabla=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}=\frac{\partial^2}{\partial u_i \partial u_i}=\frac{\partial^2}{\partial u_i^2}$$$$\nabla^2=[\nabla]_i[\nabla]_i=\frac{\partial^2}{\partial u_i^2}$$">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Divergence :: 수리전자물리학">
+    <meta itemprop="description" content="매개변수공간에 대한 divergence 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Divergence $$\nabla\cdot\vec{f}=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j=\frac{\partial f_j}{\partial u_j}=\frac{\partial f_1}{\partial u_1}&#43;\frac{\partial f_2}{\partial u_2}&#43;\frac{\partial f_3}{\partial u_3}$$$$\nabla\cdot\vec{f}=[\nabla]_j[\vec{f}]_j=\frac{\partial f_j}{\partial u_j}$$ example1) 벡터 $\vec{u}=u_1\hat{u}_1&#43;u_2\hat{u}_2&#43;u_3\hat{u}_3$ 에 대한 발산을 구하여라.
+sol)
+$$\nabla\cdot\vec{u}=\frac{\partial u_j}{\partial u_j}=3$$ 2. 2차 텐서의 divergence $$\nabla\cdot\bar{\bar{A}}=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k$$$$[\nabla\cdot\bar{\bar{A}}]_j=[\nabla]_i\bar{\bar{A}}_{ij}=\frac{\partial A_{ij}}{\partial u_i}$$ 3. Laplacian operator $$\nabla^2=\nabla\cdot\nabla=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}=\frac{\partial^2}{\partial u_i \partial u_i}=\frac{\partial^2}{\partial u_i^2}$$$$\nabla^2=[\nabla]_i[\nabla]_i=\frac{\partial^2}{\partial u_i^2}$$">
+    <meta itemprop="wordCount" content="108">
+    <title>(a) Divergence :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751287022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751287022" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751287022" rel="stylesheet">
+    <link href="/css/theme.css?1751287022" rel="stylesheet">
+    <link href="/css/format-html.css?1751287022" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751287022" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751287022" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751287022" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751287022" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751287022" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751287022" defer></script>
+    <script src="/js/search.js?1751287022" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/tensor_analysis\/calculus_for_ps\/a_divergence\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1751287022";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/tensor_analysis/calculus_for_ps/a_divergence/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-divergence">1. Divergence</a></li>
+        <li><a href="#2-2차-텐서의-divergence">2. 2차 텐서의 divergence</a></li>
+        <li><a href="#3-laplacian-operator">3. Laplacian operator</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/calculus_for_ps/index.html"><span itemprop="name">Calculus for PS</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Divergence</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus_for_ps/a_gradient/index.html" title="(a) Gradient (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus_for_ps/a_curl/index.html" title="(a) Curl (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable tensor_analysis" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-divergence">(a) Divergence</h1>
+
+<hr>
+<ul>
+<li>매개변수공간에 대한 divergence 이다.</li>
+<li>매개변수 공간을 데카르트 좌표계로 표현하고 다룬다.</li>
+</ul>
+<hr>
+<h3 id="1-divergence">1. Divergence</h3>
+$$
+\nabla\cdot\vec{f}
+=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}
+=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j
+=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j
+=\frac{\partial f_j}{\partial u_j}
+=\frac{\partial f_1}{\partial u_1}+\frac{\partial f_2}{\partial u_2}+\frac{\partial f_3}{\partial u_3}
+$$$$
+\nabla\cdot\vec{f}
+=[\nabla]_j[\vec{f}]_j
+=\frac{\partial f_j}{\partial u_j}
+$$<hr>
+<p><strong>example1)</strong> 벡터 $\vec{u}=u_1\hat{u}_1+u_2\hat{u}_2+u_3\hat{u}_3$ 에 대한 발산을 구하여라.</p>
+<p>sol)</p>
+$$
+\nabla\cdot\vec{u}
+=\frac{\partial u_j}{\partial u_j}
+=3
+$$<hr>
+<h3 id="2-2차-텐서의-divergence">2. 2차 텐서의 divergence</h3>
+$$
+\nabla\cdot\bar{\bar{A}}
+=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k
+=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k
+=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k
+=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k
+$$$$
+[\nabla\cdot\bar{\bar{A}}]_j
+=[\nabla]_i\bar{\bar{A}}_{ij}
+=\frac{\partial A_{ij}}{\partial u_i}
+$$<hr>
+<h3 id="3-laplacian-operator">3. Laplacian operator</h3>
+$$
+\nabla^2
+=\nabla\cdot\nabla
+=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j
+=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)
+=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}
+=\frac{\partial^2}{\partial u_i \partial u_i}
+=\frac{\partial^2}{\partial u_i^2}
+$$$$
+\nabla^2
+=[\nabla]_i[\nabla]_i
+=\frac{\partial^2}{\partial u_i^2}
+$$<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus_for_ps/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/index.html">Calculus for PS</a><ul id="R-subsections-82df96393f8dc6caf6693045157d985f" class="collapsible-menu">
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_gradient/index.html">(a) Gradient</a></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus_for_ps/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_divergence/index.html">(a) Divergence</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_curl/index.html">(a) Curl</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_derivative/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_derivative/index.html">(a) Derivative</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_integration/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_integration/index.html">(a) Integration</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_gc/index.html"><a class="padding" href="/tensor_analysis/calculus_for_gc/index.html">Calculus for GC</a></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1751287022" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751287022" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751287022"></script>
+    <script src="/js/theme.js?1751287022" defer></script>
+  </body>
+</html>
