@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
     <meta name="description" content="1. 프레임 (Frame of Reference): 관측의 ‘기준계’ ‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.
 (1) 정지 프레임 (Rest Frame / Laboratory Frame)
 의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다. 특징: 가속 운동을 하지 않는 관성계(Inertial Frame) 일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다. 예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, ‘땅’이 정지 프레임이 된다. (2) 운동 프레임 (Moving Frame)">
@@ -29,17 +29,26 @@
 의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다. 특징: 가속 운동을 하지 않는 관성계(Inertial Frame) 일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다. 예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, ‘땅’이 정지 프레임이 된다. (2) 운동 프레임 (Moving Frame)">
     <meta itemprop="wordCount" content="382">
     <title>(a) Frame &amp; Viewpoint :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751401279" rel="stylesheet">
-    <link href="/css/theme.css?1751401279" rel="stylesheet">
-    <link href="/css/format-html.css?1751401279" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751401279" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751401279" defer></script>
-    <script src="/js/search.js?1751401279" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751421180" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751421180" defer></script>
+    <script src="/js/search-lunr.js?1751421180" defer></script>
+    <script src="/js/search.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1751421180";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751421180" rel="stylesheet">
+    <link href="/css/theme.css?1751421180" rel="stylesheet">
+    <link href="/css/format-html.css?1751421180" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -48,8 +57,6 @@
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751401279";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -58,6 +65,15 @@
       window.relearn.getItem = (s,n) => {return s.getItem(n)};
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -85,15 +101,6 @@
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
   <body class="mobile-support html" data-url="/temp/electromotive_force/a_frame_viewpoint/index.html">
@@ -122,11 +129,7 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/electromotive_force/index.html"><span itemprop="name">Electromotive force</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Frame &amp; Viewpoint</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/electromotive_force/index.html"><span itemprop="name">Electromotive force</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Frame &amp; Viewpoint</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/electromotive_force/index.html" title="Electromotive force (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -268,8 +271,6 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751401279" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751401279" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -281,7 +282,9 @@
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751401279"></script>
-    <script src="/js/theme.js?1751401279" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751421180"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751421180" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751421180" defer></script>
+    <script src="/js/theme.js?1751421180" defer></script>
   </body>
 </html>

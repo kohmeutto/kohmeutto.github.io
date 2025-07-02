@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
     <meta name="description" content="Q1) 1V의 이상적인 전압원이 있다. 이상적이므로 내부 임피던스는 0이다. 그렇다면, 옴의 법칙을 적용하였을 때, 이 전압원에 흐르는 전류는 무한대여야 한다. 무엇이 잘못되어 있는지 설명하라.
 옴의 법칙을 따르는 소자를 선형 회로 소자라 하고 그런 소자들로 이루어진 회로를 선형 회로라고 한다. 이는 선형 회로여야 옴의 법칙이 적용 된다는 뜻이다. 선형적 조건을 만족하기 위해서는 중첩의 원리를 만족하고 함수로 표현하였을 때, 원점을 지나는 직선이어야 한다. 이상적 전압원의 v-i그래프를 그려보면 시간에 관계없이 v는 일정하고 i는 무한대로 가는 것을 확인 할 수 있다. 따라서 이상적 전압원은 비선형적이라고 볼 수 있다. 즉, 옴의 법칙을 따르지 않는다는 뜻이다. Q2) 임의의 회로를 전달함수로 표현할 때, 선형 소자들을 묶어 선형 전달함수로 표현한다. 이상적인 전압원과 전류원이 선형 전달함수에 포함되지 못하는 이유를 설명하라.">
     <meta name="author" content="">
@@ -25,17 +25,26 @@
 옴의 법칙을 따르는 소자를 선형 회로 소자라 하고 그런 소자들로 이루어진 회로를 선형 회로라고 한다. 이는 선형 회로여야 옴의 법칙이 적용 된다는 뜻이다. 선형적 조건을 만족하기 위해서는 중첩의 원리를 만족하고 함수로 표현하였을 때, 원점을 지나는 직선이어야 한다. 이상적 전압원의 v-i그래프를 그려보면 시간에 관계없이 v는 일정하고 i는 무한대로 가는 것을 확인 할 수 있다. 따라서 이상적 전압원은 비선형적이라고 볼 수 있다. 즉, 옴의 법칙을 따르지 않는다는 뜻이다. Q2) 임의의 회로를 전달함수로 표현할 때, 선형 소자들을 묶어 선형 전달함수로 표현한다. 이상적인 전압원과 전류원이 선형 전달함수에 포함되지 못하는 이유를 설명하라.">
     <meta itemprop="wordCount" content="302">
     <title>(q) Linearity for circuits :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751401279" rel="stylesheet">
-    <link href="/css/theme.css?1751401279" rel="stylesheet">
-    <link href="/css/format-html.css?1751401279" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751401279" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751401279" defer></script>
-    <script src="/js/search.js?1751401279" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751421180" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751421180" defer></script>
+    <script src="/js/search-lunr.js?1751421180" defer></script>
+    <script src="/js/search.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1751421180";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751421180" rel="stylesheet">
+    <link href="/css/theme.css?1751421180" rel="stylesheet">
+    <link href="/css/format-html.css?1751421180" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -44,8 +53,6 @@
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751401279";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -54,6 +61,15 @@
       window.relearn.getItem = (s,n) => {return s.getItem(n)};
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -81,15 +97,6 @@
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
   <body class="mobile-support html" data-url="/linear_algebra/vector/q_linearity_for_circuits/index.html">
@@ -108,11 +115,7 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/vector/index.html"><span itemprop="name">Vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(q) Linearity for circuits</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/vector/index.html"><span itemprop="name">Vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(q) Linearity for circuits</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/vector/i_linearity/index.html" title="(i) Linearity (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -244,8 +247,6 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751401279" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751401279" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -257,7 +258,9 @@
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751401279"></script>
-    <script src="/js/theme.js?1751401279" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751421180"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751421180" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751421180" defer></script>
+    <script src="/js/theme.js?1751421180" defer></script>
   </body>
 </html>

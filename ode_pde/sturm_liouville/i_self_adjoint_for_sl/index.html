@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
     <meta name="description" content="1. self-adjoint 를 만족하는 스텀-리우빌 연산자 아래와 같은 연산자와 미분 방정식이 있다.
 $$L=-\frac{1}{w\left(x\right)}\left\lbrack D\left(p\left(x\right)D\right)&#43;q\left(x\right)\right\rbrack $$$$Lu=f$$위 선형 미분연산자의 해는 아래와 같다.
 $$u=\sum_{n}c_{n}\varphi_{n}$$다음과 같은 boundary condition을 만족하면, 위 미분 연산자는 self-adjoint 하다.
@@ -41,17 +41,26 @@ $$u\left(x_1\right)=u\left(x_2\right) $$$$u&#39;\left(x_1\right)=_{}u&#39;\lef
 스텀-리우빌 경계 조건은 특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건이다. 하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다. 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 충분 조건이지만, 필요 조건은 아니다. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 (r) Singular Sturm-Liouville 를 참조한다.">
     <meta itemprop="wordCount" content="318">
     <title>(i) Self-adjoint for SL :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751401279" rel="stylesheet">
-    <link href="/css/theme.css?1751401279" rel="stylesheet">
-    <link href="/css/format-html.css?1751401279" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751401279" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751401279" defer></script>
-    <script src="/js/search.js?1751401279" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751421180" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751421180" defer></script>
+    <script src="/js/search-lunr.js?1751421180" defer></script>
+    <script src="/js/search.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1751421180";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751421180" rel="stylesheet">
+    <link href="/css/theme.css?1751421180" rel="stylesheet">
+    <link href="/css/format-html.css?1751421180" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -60,8 +69,6 @@ $$u\left(x_1\right)=u\left(x_2\right) $$$$u&#39;\left(x_1\right)=_{}u&#39;\lef
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751401279";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -70,6 +77,15 @@ $$u\left(x_1\right)=u\left(x_2\right) $$$$u&#39;\left(x_1\right)=_{}u&#39;\lef
       window.relearn.getItem = (s,n) => {return s.getItem(n)};
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -97,15 +113,6 @@ $$u\left(x_1\right)=u\left(x_2\right) $$$$u&#39;\left(x_1\right)=_{}u&#39;\lef
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
   <body class="mobile-support html" data-url="/ode_pde/sturm_liouville/i_self_adjoint_for_sl/index.html">
@@ -135,11 +142,7 @@ $$u\left(x_1\right)=u\left(x_2\right) $$$$u&#39;\left(x_1\right)=_{}u&#39;\lef
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) Self-adjoint for SL</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/sturm_liouville/index.html"><span itemprop="name">Strum-Lioville</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) Self-adjoint for SL</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/ode_pde/sturm_liouville/b_weight_function/index.html" title="(b) Weight function (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -367,8 +370,6 @@ $$<hr>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751401279" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751401279" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -380,7 +381,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751401279"></script>
-    <script src="/js/theme.js?1751401279" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751421180"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751421180" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751421180" defer></script>
+    <script src="/js/theme.js?1751421180" defer></script>
   </body>
 </html>

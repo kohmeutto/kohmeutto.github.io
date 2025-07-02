@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
     <meta name="description" content="중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.
 1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.
 u 매개변수 공간 미소변위벡터 $$ d\vec{u} =\hat{u}_idu_i $$ v 실 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{v} =\vec{h}_idu_i $$ 변환(mapping) 연산자 작용, 매핑 위치에 해당하는 [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v} =d\vec{u}\cdot\nabla_{u}\vec{v} =du_i\frac{\partial\vec{v}}{\partial u_i} $$수학적 벡터로 표현하면,
@@ -33,17 +33,26 @@ u 매개변수 공간 미소변위벡터 $$ d\vec{u} =\hat{u}_idu_i $$ v 실 공
 $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} \\ \cfrac{\partial v_2}{\partial u_1} \\ \cfrac{\partial v_3}{\partial u_1} \end{bmatrix}&#43;du_2 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_2} \\ \cfrac{\partial v_2}{\partial u_2} \\ \cfrac{\partial v_3}{\partial u_2} \end{bmatrix}&#43;du_3 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} =\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} &amp; \cfrac{\partial v_1}{\partial u_2} &amp; \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_1} &amp; \cfrac{\partial v_2}{\partial u_2} &amp; \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_1} &amp; \cfrac{\partial v_3}{\partial u_2} &amp; \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} \begin{bmatrix} du_1 \\ du_2 \\ du_3 \end{bmatrix} $$여기에서, 3x3 행렬을 Jacobian 이라고 한다. Jacobian의 각 열 벡터는 매개변수 공간의 각 축이 실 공간으로 변환(mapping)될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 실 공간의 새로운 기준 방향들(기저)을 형성한다.suffix notation을 사용하여 각 열벡터 성분에 대해 아래와 같이 표현할 수 있으며, 이와 관련한 기하학적 해석을 해보자.">
     <meta itemprop="wordCount" content="709">
     <title>(a) Mapping III - Jacobian :: 수리전자물리학</title>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751401279" rel="stylesheet">
-    <link href="/css/theme.css?1751401279" rel="stylesheet">
-    <link href="/css/format-html.css?1751401279" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751401279" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751401279" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751401279" defer></script>
-    <script src="/js/search.js?1751401279" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751421180" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751421180" defer></script>
+    <script src="/js/search-lunr.js?1751421180" defer></script>
+    <script src="/js/search.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1751421180";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751421180" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751421180" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751421180" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751421180" rel="stylesheet">
+    <link href="/css/theme.css?1751421180" rel="stylesheet">
+    <link href="/css/format-html.css?1751421180" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -52,8 +61,6 @@ $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfra
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.contentLangs=['en'];
-      window.relearn.index_js_url="/searchindex.en.js?1751401279";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -62,6 +69,15 @@ $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfra
       window.relearn.getItem = (s,n) => {return s.getItem(n)};
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -89,15 +105,6 @@ $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfra
       }
       window.relearn.initVariant();
       window.relearn.markVariant();
-      // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
   <body class="mobile-support html" data-url="/vector_analysis/orthogonal_coordinates/b_mapping_iii/index.html">
@@ -128,11 +135,7 @@ $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfra
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_analysis/index.html"><span itemprop="name">Vector analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_analysis/orthogonal_coordinates/index.html"><span itemprop="name">Orthogonal coordinates</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Mapping III - Jacobian</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_analysis/index.html"><span itemprop="name">Vector analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_analysis/orthogonal_coordinates/index.html"><span itemprop="name">Orthogonal coordinates</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Mapping III - Jacobian</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html" title="(b) Mapping II - Scale factor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
@@ -537,8 +540,6 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751401279" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751401279" defer></script>
     <script>
       window.MathJax = Object.assign( window.MathJax || {}, {
         tex: {
@@ -550,7 +551,9 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751401279"></script>
-    <script src="/js/theme.js?1751401279" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751421180"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751421180" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751421180" defer></script>
+    <script src="/js/theme.js?1751421180" defer></script>
   </body>
 </html>
