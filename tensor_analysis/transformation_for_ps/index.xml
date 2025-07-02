@@ -19,7 +19,7 @@
       <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_components/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_components/index.html</guid>
-      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리 (1) 성분 변환&#xA;$$&#xD;u_i&#39;=C_{ij}u_j&#xD;$$(2) 성분 역변환&#xA;$$&#xD;u_i=C_{ji}u_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{C}}\cdot\bar{\bar{C}}^T,\quad&#xD;\bar{\bar{C}}^T=\bar{\bar{C}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=C_{ki}C_{kj}&#xD;$$ 1. 텐서 성분의 변환: 텐서 표기법 사용 $$&#xD;u_i&#39;=C_{ij}u_j,\quad \text{$C_{ij}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ij}=B_{ij}^{-1}=B_{ij}^T=B_{ji}&#xD;$$proof)&#xA;동일 공간에서, 텐서는 기저가 달라져도 불변임을 기억하라. $\vec{r}$ 을 u 기저와 u’ 기저에서 다음과 같이 표현할 수 있다.</description>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리 (1) 성분 변환&#xA;$$&#xD;u_i&#39;=C_{ij}u_j&#xD;$$(2) 성분 역변환&#xA;$$&#xD;u_i=C_{ji}u_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{C}}\cdot\bar{\bar{C}}^T,\quad&#xD;\bar{\bar{C}}^T=\bar{\bar{C}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=C_{ki}C_{kj}&#xD;$$ 1. 텐서 성분의 변환: Dirac notation 사용 아래의 논의는 매개변수공간(데카르트 좌표계로 표현) 뿐만아니라, 실공간의 일반좌표계에서도 적용할 수 있다. 다시 한번 주의해야할 사항은 여기서의 변환은 동일 공간에서 수행한다.&#xA;힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.</description>
     </item>
     <item>
       <title>(a) 2nd tensor</title>
