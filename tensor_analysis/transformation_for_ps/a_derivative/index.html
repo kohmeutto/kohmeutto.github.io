@@ -5,58 +5,54 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
-    <meta name="description" content="동일 매개변수 공간에서의 변화를 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
-$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_i’=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i’$ 이다.
-$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ji}^{-1}$$따라서,
-$$\nabla&#39;\varphi&#39;=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$직교 기저로의 변환이라면,
-$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
+    <meta name="description" content="동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
+$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.
+$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ij}$$따라서,
+$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Derivative :: 수리전자물리학">
-    <meta name="twitter:description" content="동일 매개변수 공간에서의 변화를 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
-$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_i’=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i’$ 이다.
-$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ji}^{-1}$$따라서,
-$$\nabla&#39;\varphi&#39;=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$직교 기저로의 변환이라면,
-$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
+    <meta name="twitter:description" content="동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
+$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.
+$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ij}$$따라서,
+$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/transformation_for_ps/a_derivative/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Derivative :: 수리전자물리학">
-    <meta property="og:description" content="동일 매개변수 공간에서의 변화를 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
-$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_i’=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i’$ 이다.
-$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ji}^{-1}$$따라서,
-$$\nabla&#39;\varphi&#39;=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$직교 기저로의 변환이라면,
-$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
+    <meta property="og:description" content="동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
+$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.
+$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ij}$$따라서,
+$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Derivative :: 수리전자물리학">
-    <meta itemprop="description" content="동일 매개변수 공간에서의 변화를 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
-$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_i’=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i’$ 이다.
-$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ji}^{-1}$$따라서,
-$$\nabla&#39;\varphi&#39;=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$직교 기저로의 변환이라면,
-$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
-    <meta itemprop="wordCount" content="180">
+    <meta itemprop="description" content="동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. Gradient $$\nabla\varphi\to\nabla&#39;\varphi&#39;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.
+$$\nabla&#39;\varphi&#39;=\nabla&#39;\varphi=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.
+$$\frac{\partial u_j}{\partial u_i&#39;}=C_{ij}$$따라서,
+$$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2&#43;x_2^2&#43;x_3^2$ 로 주어진다.">
+    <meta itemprop="wordCount" content="248">
     <title>(a) Derivative :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1751425477" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751425477" defer></script>
-    <script src="/js/search-lunr.js?1751425477" defer></script>
-    <script src="/js/search.js?1751425477" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751476285" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751476285" defer></script>
+    <script src="/js/search-lunr.js?1751476285" defer></script>
+    <script src="/js/search.js?1751476285" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1751425477";
+      window.relearn.index_js_url="/searchindex.en.js?1751476285";
     </script>
-    <script src="/js/lunr/lunr.min.js?1751425477" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751425477" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751425477" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751425477" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751476285" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751476285" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751476285" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751476285" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751425477" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751425477" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751425477" rel="stylesheet">
-    <link href="/css/theme.css?1751425477" rel="stylesheet">
-    <link href="/css/format-html.css?1751425477" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751476285" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751476285" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751476285" rel="stylesheet">
+    <link href="/css/theme.css?1751476285" rel="stylesheet">
+    <link href="/css/format-html.css?1751476285" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -130,6 +126,7 @@ $$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&
         <li><a href="#1-gradient">1. Gradient</a></li>
         <li><a href="#2-divergence">2. Divergence</a></li>
         <li><a href="#3-curl">3. Curl</a></li>
+        <li><a href="#4-시간-미분">4. 시간 미분</a></li>
       </ul>
     </li>
   </ul>
@@ -167,8 +164,9 @@ $$\nabla&#39;\varphi&#39;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&
 
 <hr>
 <ul>
-<li><strong>동일</strong> 매개변수 공간에서의 변화를 다룬다.</li>
+<li><strong>동일</strong> 매개변수 공간에서의 변환을 다룬다.</li>
 <li>매개변수 공간은 데카르트 좌표계로 표현한다.</li>
+<li><strong>변환은 다른 단위 직교 기저로의 변환</strong>이다.</li>
 </ul>
 <hr>
 <h3 id="1-gradient">1. Gradient</h3>
@@ -180,19 +178,14 @@ $$
 =\nabla'\varphi
 =\frac{\partial\varphi}{\partial u_i'}\hat{u}_i'
 =\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i'}\hat{u}_i'
-$$<p>여기에서, $u_i&rsquo;=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i&rsquo;$ 이다.</p>
+$$<p>여기에서, $u_j=C_{ji}&rsquo; u_i&rsquo;=C_{ij}u_i&rsquo;$ 이다.</p>
 $$
 \frac{\partial u_j}{\partial u_i'}
-=C_{ji}^{-1}
+=C_{ij}
 $$<p>따라서,</p>
 $$
 \nabla'\varphi'
-=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i'
-$$<p>직교 기저로의 변환이라면,</p>
-$$
-\nabla'\varphi'
 =C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i'
-=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i'
 $$<hr>
 <p><strong>example1)</strong> $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi&rsquo;/\partial x_i&rsquo;$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2+x_2^2+x_3^2$ 로 주어진다.</p>
 <p>sol)</p>
@@ -214,8 +207,7 @@ $$
    -2x_1 \\
    2x_3
 \end{bmatrix}
-$$<hr>
-<p><strong>example2)</strong> 임의의 2차 tensor $\bar{\bar{A}}$ 의 변환된 좌표 $x&rsquo;$에 대한 미분을 구하시오.</p>
+$$<p><strong>example2)</strong> 임의의 2차 tensor $\bar{\bar{A}}$ 의 변환된 좌표 $x&rsquo;$에 대한 미분을 구하시오.</p>
 <p>sol)</p>
 $$
 \left[\frac{\partial \bar{\bar{A}}}{\partial x'}\right]_{ijk}
@@ -223,6 +215,16 @@ $$
 =C_{il}C_{jm}C_{kn}\frac{\partial A_{mn}}{\partial x_l}
 $$<hr>
 <h3 id="2-divergence">2. Divergence</h3>
+$$
+\nabla\cdot\vec{f}\to\nabla'\cdot\vec{f}'
+$$<p>변환된 기저와 변환 이전의 기저에서 curl을 비교해 보자.</p>
+$$
+\nabla'\cdot\vec{f}'
+=\partial_i' f_i'
+=C_{ki}C_{ki}\partial_i f_i
+=\delta_{kk}\partial_i f_i
+=\partial_i f_i
+$$<p>divergence는 좌표계에 관계없이 불변량임을 알 수 있다.</p>
 <hr>
 <h3 id="3-curl">3. Curl</h3>
 $$
@@ -235,7 +237,19 @@ $$
 $$$$
 \implies
 \varepsilon_{ijk}C_{il}C_{jm}\frac{\partial f_m}{\partial u_l}\hat{u}_k'
+$$<hr>
+<h3 id="4-시간-미분">4. 시간 미분</h3>
+<p>다양한 운동방정식은 모두 시간미분을 포함하고 있다. 예를 들어 속도 $\vec{v}$를 생각해 보면, 위치벡터 $\vec{r}$ 의 시간에 대한 미분으로 주어진다. 변화된 기저에서 속도는 아래와 같이 표현된다.</p>
 $$
+\vec{v}'=\frac{d\vec{r}'}{dt}
+$$<p>윗 식을 지수로 표현하면 다음과 같다.</p>
+$$
+v_i'
+=\frac{dr_i'}{dt}
+=C_{ij}\frac{dr_j}{dt}
+=C_{ij}v_j
+$$<p>여기에서 <strong>속도는 벡터에 대한 변환법칙을 만족</strong>한다.</p>
+
   <footer class="footline">
   </footer>
 </article>
@@ -290,7 +304,6 @@ $$
             <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus_for_ps/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/index.html">Calculus for PS</a><ul id="R-subsections-82df96393f8dc6caf6693045157d985f" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu">
-            <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_basis/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_basis/index.html">(a) Basis</a></li>
             <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_components/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_components/index.html">(a) Components</a></li>
             <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
             <li class="" data-nav-id="/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html">(a) Rotation &amp; Transport</a></li>
@@ -328,9 +341,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751425477"></script>
-    <script src="/js/clipboard/clipboard.min.js?1751425477" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751425477" defer></script>
-    <script src="/js/theme.js?1751425477" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751476285"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751476285" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751476285" defer></script>
+    <script src="/js/theme.js?1751476285" defer></script>
   </body>
 </html>

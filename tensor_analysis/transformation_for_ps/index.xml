@@ -3,44 +3,37 @@
   <channel>
     <title>Transformation for PS :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/transformation_for_ps/index.html</link>
-    <description>(a) Basis&#xD;(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    <description>(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/transformation_for_ps/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>(a) Basis</title>
-      <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_basis/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_basis/index.html</guid>
-      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리 (1) 기저 변환&#xA;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j&#xD;$$(2) 기저 역변환&#xA;$$&#xD;\hat{u}_i=B_{ji}\hat{u}_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{B}}\cdot\bar{\bar{B}}^T,\quad&#xD;\bar{\bar{B}}^T=\bar{\bar{B}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=B_{ik}B_{jk}&#xD;$$ 1. 기저 벡터의 변환: 텐서 표기법 사용 $$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 기저 변환 텐서의 성분이다.}&#xD;$$$B_{ij}$ 는 다음과 같이 정의될 수 있다.&#xA;$$&#xD;\hat{u}_i&#39;\cdot\hat{u}_j&#xD;=B_{ij}\hat{u}_j\cdot\hat{u}_j&#xD;=B_{ij}&#xD;$$$$&#xD;B_{ij}=\cos\theta_{ij},\quad \text{$\theta_{ij}$는 $\hat{u}_i&#39;$ 와 $\hat{u}_j$ 사이의 각도이다.}&#xD;$$ 2. 기저 벡터의 변환: Dirac notation 사용 Dirac notation 을 사용하여, $B_{ij}$ 는 다음과 같이 정의될 수 있다.</description>
-    </item>
     <item>
       <title>(a) Components</title>
       <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_components/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_components/index.html</guid>
-      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리 (1) 성분 변환&#xA;$$&#xD;u_i&#39;=C_{ij}u_j&#xD;$$(2) 성분 역변환&#xA;$$&#xD;u_i=C_{ji}u_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{C}}\cdot\bar{\bar{C}}^T,\quad&#xD;\bar{\bar{C}}^T=\bar{\bar{C}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=C_{ki}C_{kj}&#xD;$$ 1. 텐서 성분의 변환: Dirac notation 사용 아래의 논의는 매개변수공간(데카르트 좌표계로 표현) 뿐만아니라, 실공간의 일반좌표계에서도 적용할 수 있다. 다시 한번 주의해야할 사항은 여기서의 변환은 동일 공간에서 수행한다.&#xA;힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.</description>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. 텐서 성분의 변환: Dirac notation 사용 힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.&#xA;$$&#xD;|r\rangle&#xD;=u_i&#39;|u_i&#39;\rangle&#xD;=u_j|u_j\rangle&#xD;$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,&#xA;$$&#xD;|r\rangle&#xD;=u_i&#39;|u_i&#39;\rangle&#xD;=u_j|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle&#xD;=\langle u_i&#39;|u_j\rangle u_j|u_i&#39;\rangle&#xD;$$따라서, 성분변환은 아래와 같다.&#xA;$$&#xD;u_{i}&#39;&#xD;=\langle u_i&#39;|u_j\rangle u_j&#xD;$$정리하면, 벡터의 성분 변환 연산자를 아래와 같이 표현할 수 있다.</description>
     </item>
     <item>
       <title>(a) 2nd tensor</title>
       <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html</guid>
-      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. 2차 tensor의 성분 변환: 텐서 표기법 사용 $$&#xD;A_{ij}&#39;=C_{ik}C_{jl}A_{kl},\quad \text{$C_{ik}$, $C_{jl}$는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ik}C_{jl}=B_{ki}B_{lj}&#xD;$$proof)&#xA;동일 공간에서, 텐서는 좌표계가 달라져도 불변임을 기억하라.&#xA;$$&#xD;\bar{\bar{A}}&#xD;=A_{ij}&#39;\hat{u}_i&#39;\hat{u}_j&#39;&#xD;=A_{ij}\hat{u}_i\hat{u}_j&#xD;$$기저 벡터의 변환을 적용해 보자.&#xA;$$&#xD;A_{ij}\hat{u}_i\hat{u}_j&#xD;=A_{ij}(B_{ki}\hat{u}_k&#39;)(B_{lj}\hat{u}_l&#39;)&#xD;=A_{ij}B_{ki}B_{lj}\hat{u}_k&#39;\hat{u}_l&#39;&#xD;$$따라서,&#xA;$$&#xD;A_{ij}&#39;=B_{ik}B_{jl}A_{kl}&#xD;$$새로운 기저 벡터 $\hat{u}i’$를 원래 기저 벡터 $\hat{u}k$의 선형 결합으로 표현하면 다음과 같다. (이때 $B{ik}$는 1. 기저 벡터의 변환에서 정의된 $B{ij}$의 성분이다.)</description>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. 2차 tensor의 성분 변환: Dirac notation 사용 직교좌표계 뿐만아니라, 일반좌표계에서도 적용할 수 있다. 디렉 표기법을 사용하면 보다 우아하게 성분 변환을 표현할 수 있다.&#xA;힐베르트 공간 에서, 텐서 A를 아래와 같이 표현할 수 있다.&#xA;$$&#xD;|\bar{\bar{A}}\rangle=A_{ij}|u_i\rangle\langle u_j|&#xD;=A_{ij}&#39;|u_i&#39;\rangle\langle u_j&#39;|&#xD;$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,&#xA;$$&#xD;|\bar{\bar{A}}\rangle=A_{kl}\left(|u&#39;_i\rangle\langle u&#39;_i|\right)|u_k\rangle\langle u_l|\left(|u&#39;_j\rangle\langle u&#39;_j|\right)&#xD;=\left\lbrace\langle u&#39;_i|u_k\rangle\langle u_l|u&#39;_j\rangle\right\rbrace A_{kl}|u&#39;_i\rangle\langle u&#39;_j|&#xD;$$따라서, 성분변환은 아래와 같다.</description>
     </item>
     <item>
       <title>(a) Rotation &amp; Transport</title>
       <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html</guid>
-      <description>기저 변환과 텐서 성분 변환: 수학적 정의 및 관계 이 문서는 선형대수학과 텐서 분석의 핵심 개념인 기저 벡터의 변환과 텐서 성분(벡터 성분)의 변환을 수학적으로 정의하고, 두 변환 사이의 관계를 명확히 설명합니다. 텐서 표기법과 Dirac notation을 활용하여 개념을 심화합니다.&#xA;1. 기저 벡터의 변환 (Basis Vector Transformation) 정의: 기저 벡터의 변환은 한 벡터 공간의 새로운 기저 벡터가 기존 기저 벡터들의 선형 결합으로 어떻게 표현되는지를 나타냅니다. 이는 좌표계 자체의 재정렬(회전, 스케일링 등)을 반영합니다.</description>
+      <description>공사중</description>
     </item>
     <item>
       <title>(a) Derivative</title>
       <link>http://localhost:1313/tensor_analysis/transformation_for_ps/a_derivative/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/transformation_for_ps/a_derivative/index.html</guid>
-      <description>동일 매개변수 공간에서의 변화를 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 1. Gradient $$&#xD;\nabla\varphi\to\nabla&#39;\varphi&#39;&#xD;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=\nabla&#39;\varphi&#xD;=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;$$여기에서, $u_i’=C_{ij}u_j$ 라고 하면, $u_j=C_{ji}^{-1}u_i’$ 이다.&#xA;$$&#xD;\frac{\partial u_j}{\partial u_i&#39;}&#xD;=C_{ji}^{-1}&#xD;$$따라서,&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=C_{ji}^{-1}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;&#xD;$$직교 기저로의 변환이라면,&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;&#xD;=B_{ji}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;&#xD;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2+x_2^2+x_3^2$ 로 주어진다.</description>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 1. Gradient $$&#xD;\nabla\varphi\to\nabla&#39;\varphi&#39;&#xD;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=\nabla&#39;\varphi&#xD;=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.&#xA;$$&#xD;\frac{\partial u_j}{\partial u_i&#39;}&#xD;=C_{ij}&#xD;$$따라서,&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;&#xD;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2+x_2^2+x_3^2$ 로 주어진다.</description>
     </item>
   </channel>
 </rss>
