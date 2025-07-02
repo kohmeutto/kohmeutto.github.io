@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/temp/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Electromotive force</title>
+      <link>http://localhost:1313/temp/electromotive_force/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/electromotive_force/index.html</guid>
+      <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(a) Electromotive force II&#xD;(r) EMF &amp; Voltage</description>
+    </item>
+    <item>
       <title>(a) 2nd tensor</title>
       <link>http://localhost:1313/temp/a_2nd_tensor/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

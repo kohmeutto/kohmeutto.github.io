@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+4407b4364ab6f7477f7671fbd20c0494bade40ee">
+    <meta name="description" content="움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.
+0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta name="twitter:description" content="움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.
+0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
+    <meta property="og:url" content="http://localhost:1313/temp/electromotive_force/a_electromotive_force_ii/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta property="og:description" content="움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.
+0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Temps">
+    <meta itemprop="name" content="(a) Electromotive force II :: 수리전자물리학">
+    <meta itemprop="description" content="움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.
+0. 논의의 제약조건 비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것 이 논의의 핵심은 다음 두 가지를 이해하는 것이다.">
+    <meta itemprop="wordCount" content="602">
+    <title>(a) Electromotive force II :: 수리전자물리학</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751401279" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751401279" rel="stylesheet">
+    <link href="/css/theme.css?1751401279" rel="stylesheet">
+    <link href="/css/format-html.css?1751401279" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751401279" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751401279" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751401279" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751401279" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751401279" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751401279" defer></script>
+    <script src="/js/search.js?1751401279" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/temp\/electromotive_force\/a_electromotive_force_ii\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.index_js_url="/searchindex.en.js?1751401279";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/temp/electromotive_force/a_electromotive_force_ii/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#0-논의의-제약조건">0. 논의의 제약조건</a></li>
+        <li><a href="#1-구하고자-하는-것">1. 구하고자 하는 것</a></li>
+        <li><a href="#2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</a></li>
+        <li><a href="#3-기전력과-힘의-유도-물질-미분의-핵심-역할">3. 기전력과 힘의 유도: 물질 미분의 핵심 역할</a></li>
+        <li><a href="#4-로렌츠-힘-정지-프레임과의-연결">4. 로렌츠 힘: 정지 프레임과의 연결</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/electromotive_force/index.html"><span itemprop="name">Electromotive force</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Electromotive force II</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/electromotive_force/i_electromotive_force_i/index.html" title="(i) Electromotive force I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/electromotive_force/r_emf_voltage/index.html" title="(r) EMF & Voltage (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable temp" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-electromotive-force-ii">(a) Electromotive force II</h1>
+
+<hr>
+<p>움직이는 물체의 속도와 동일한 <strong>운동프레임에서 라그랑지안 관점</strong>을 <strong>정지프레임에서 오일리안 기술법</strong>으로 표현한 것이다.</p>
+<hr>
+<h3 id="0-논의의-제약조건">0. 논의의 제약조건</h3>
+<ul>
+<li><strong>비상대론적 한계</strong>: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit)</li>
+<li><strong>관성계</strong>: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다.</li>
+<li><strong>미미한 섭동</strong>: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다.</li>
+</ul>
+<hr>
+<h3 id="1-구하고자-하는-것">1. 구하고자 하는 것</h3>
+<p>이 논의의 핵심은 다음 두 가지를 이해하는 것이다.</p>
+<ul>
+<li><strong>움직이는 하전 입자에 작용하는 힘</strong>: 자기장 속에서 움직이는 전하가 어떤 힘을 받는지.</li>
+<li><strong>변압 기전력 및 운동 기전력</strong> : 이러한 힘이 어떻게 전기적인 압력(기전력)을 유도하는지.</li>
+</ul>
+<p><strong>&lsquo;힘(Force)&lsquo;은 언제나 특정 &lsquo;물체(입자)&lsquo;에 작용하는 것</strong>이다. 따라서, 이러한 현상을 분석하기 위해서는 물체의 움직임을 따라가는 <strong>운동 프레임에서 라그랑지안 관점을 적용</strong>한다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일리안 관점의 기술법이 필요하다.</p>
+<p>이러한 이유로 우리는 라그랑주적 본질(입자가 겪는 변화)을 오일러적 기술법(공간 변수로 표현)으로 바꾸어주는 <strong>물질 미분</strong> 개념을 활용하여 이 현상을 분석한다.</p>
+<hr>
+<h3 id="2-맥스웰-방정식과-물질-미분-움직이는-관측자의-시선">2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선</h3>
+<p>우리가 일반적으로 아는 맥스웰 방정식은 정지한 관성계(실험실 프레임)에서 전자기장 E와 B의 시간적, 공간적 변화를 기술한다. 여기에 나오는 시간 미분(∂/∂t)은 고정된 지점에서의 장 자체의 변화율을 의미한다.</p>
+<p>하지만, <strong>전하(또는 도체)와 함께 움직이는 관측자의 관점에서 보면(운동프레임+라그랑지안 관점), 장의 방정식은 다르게 보인다</strong>. 이 움직이는 관측자는 자신에게 정지해 있는 전하가 자기장 내에서 <strong>자기력을 받지 않는것으로 관측(매우 중요)</strong> 한다. 대신, 상대적인 움직임으로 인해 전기장과 자기장이 서로 혼합되어 새로운 형태의 장(E′,H′)을 경험하게 된다. <strong>여기서의 v는 정지프레임 대비 운동 프레임의 속도</strong>를 의미한다.</p>
+<ul>
+<li>E&rsquo;은 운동 프레임에서 측정되는 전기장이다.</li>
+<li>H&rsquo;은 운동 프레임에서 측정되는 자기장이다.</li>
+<li>J&rsquo;은 운동 프레임이서 측정되는 전류밀도이다.</li>
+</ul>
+$$
+\nabla\times\vec{E}'=-\frac{D}{Dt}\vec{B}'=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}'
+$$$$
+\nabla\times\vec{H}'=\vec{J}'+\frac{D}{Dt}\vec{D}'=\vec{J}'+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}'
+$$<hr>
+<h3 id="3-기전력과-힘의-유도-물질-미분의-핵심-역할">3. 기전력과 힘의 유도: 물질 미분의 핵심 역할</h3>
+<p>이제 움직이는 관측자가 느끼는 패러데이의 유도 법칙에서 출발하여, 유효 전기장 E′이 정지 관성계의 장 E 및 B와 어떤 관계를 가지는지 유도해 보자. (비상대론적 근사에서 B′≈B로 가정한다.)</p>
+$$
+\nabla\times\vec{E}'=-\frac{\partial\vec{B}}{\partial t}-\vec{v}\cdot\nabla\vec{B}
+$$<p>아래와 같은 벡터 항등식을 이용한다.</p>
+$$
+\nabla\times\vec{v}\times\vec{B}=\vec{v}\left(\nabla\cdot\vec{B}\right)-\vec{B}\left(\nabla\cdot\vec{v}\right)+\left(\vec{B}\cdot\nabla\right)\vec{v}-\left(\vec{v}\cdot\nabla\right)\vec{B}
+$$<p>비압축성(∇⋅v=0) 및 속도 벡터가 공간적으로 일정(∇v=0), 즉 물체가 강체처럼 병진 운동만 하는 경우)하다고 가정하면,</p>
+$$
+\nabla\times\vec{v}\times\vec{B}=-\left(\vec{v}\cdot\nabla\right)\vec{B}+\vec{v}\left(\nabla\cdot\vec{B}\right)
+$$<p>맥스웰 방정식의 자기 가우스 법칙(∇⋅B=0)을 고려하면,</p>
+$$
+\nabla\times\vec{v}\times\vec{B}=-\left(\vec{v}\cdot\nabla\right)\vec{B}
+$$<p>따라서, 식은 다음과 같이 바꿀 수 있다.</p>
+$$
+\nabla\times\vec{E}'=-\frac{\partial\vec{B}}{\partial t}+\nabla\times\vec{v}\times\vec{B}
+$$<p>Stoke’s theorem 을 사용한다.</p>
+$$
+\int_{s'}d^2\vec{s}\cdot\nabla\times\vec{E}'=-\frac{\partial}{\partial t}\int_{s'}d^2\vec{s}\cdot\vec{B}+\int_{s'}d^2\vec{s}\cdot\nabla\times\vec{v}\times\vec{B}
+$$$$
+\oint_{C}d\vec{l}\cdot\vec{E}'=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
+$$<p>이 최종 기전력 식은 두 가지 주요 항으로 나눌 수 있다.</p>
+<p><strong>(1) 원천 자기장의 변화에 의한 변압 기전력</strong></p>
+$$
+-\frac{\partial}{\partial t}\Phi_{B}=\oint_{C}d\vec{l}\cdot\vec{E}
+$$<p>이 항은 원천 자기장 B자체가 시간에 따라 변함으로써 유도되는 기전력이다. <strong>여기서 E는 자기장 변화에 의해 정지 관성계에서 유도되는 전기장</strong>이다.</p>
+<p><strong>(2) 외부 움직이는 요소에 의한 운동 기전력</strong></p>
+$$
+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
+$$<p>이 항은 외부에서 움직이는 도체(루프 C)가 자기장 B를 가로지르면서 생기는 기전력이다. 이는 물질(도체)의 움직임(v)에 따른 &lsquo;이류(convection)&rsquo; 효과를 직접적으로 나타낸다.</p>
+<p>위의 두 항을 종합하면, 움직이는 입자가 느끼는 유효 전기장 E′에 대한 기전력은 다음과 같이 표현된다.</p>
+$$
+\oint_{C}d\vec{l}\cdot\vec{E}'=\oint_{C}d\vec{l}\cdot\left(\vec{E}+\vec{v}\times\vec{B}\right)
+$$<p>이 식은 적분 영역이 동일하므로, 피적분 함수를 비교하여 움직이는 입자가 느끼는 유효 전기장 E′은 다음과 같이 표현됨을 알 수 있다.</p>
+$$
+\vec{E}'=\vec{E}+\vec{v}\times\vec{B}
+$$<p>이 식이 의미하는 바를 명확하게 해야한다. 이것은 이전 챕터와의 차이점을 나타내는 것이다. 이전 챕터(정지프레임)는 $\vec{v}\times\vec{B}$ 가 힘의 형태로 나타난 것이다. 그러나, <strong>운동프레임에서는 $\vec{v}\times\vec{B}$ 이 힘의 형태로 나타나는 것이 아니라, 유효 전기장의 일부인 것</strong> 이다. 앞서 서술한 바와 같이 운동프레임에서는 전하가 정지한 것으로 보이므로, <strong>자기력은 0</strong> 이라는 점을 상기한다.</p>
+<hr>
+<h3 id="4-로렌츠-힘-정지-프레임과의-연결">4. 로렌츠 힘: 정지 프레임과의 연결</h3>
+<p>다시 아래식을 살펴보자.</p>
+$$
+\vec{E}'=\vec{E}+\vec{v}\times\vec{B}
+$$<p><strong>이것이 바로 로렌츠 힘(Lorentz Force)의 핵심을 이룬다.</strong> 양변에 전하량을 곱하면, 힘을 구할 수 있다. 또한 상대성 원리(<a href="https://namu.wiki/w/%EC%83%81%EB%8C%80%EC%84%B1%20%EC%9B%90%EB%A6%AC(%EB%AC%BC%EB%A6%AC%ED%95%99)" rel="external" target="_blank">상대성 원리</a>), 에 의해 관성계에서 작용하는 힘은 동일해야 한다.</p>
+$$
+\vec{F}'=\vec{F}=q\vec{E}'
+$$$$
+\vec{F}=q\left(\vec{E}+\vec{v}\times\vec{B}\right)
+$$<p>만약 외부 전기장 E가 없고 원천 자기장의 변화가 없다면(∂B/∂t=0), 즉 정적인 자기장(B)만 존재한다면, 자기장에 의해서 움직이는 입자에 작용하는 힘은 다음과 같이 자기력 항만 남게 된다.</p>
+$$
+\vec{F}=q\vec{v}\times\vec{B}
+$$<hr>
+<p><a href="https://ghebook.blogspot.com/2010/08/faradays-law-of-electromagnetic.html" rel="external" target="_blank">조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faraday&rsquo;s Law of Electromagnetic Induction)</a></p>
+<p><a href="https://steemit.com/kr-math/@beoped/5jyraq-2" rel="external" target="_blank">[수학, 계산] 벡터 항등식-2탄 계산 — Steemit</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/temp/electromotive_force/index.html"><a class="padding" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/electromotive_force/a_frame_viewpoint/index.html"><a class="padding" href="/temp/electromotive_force/a_frame_viewpoint/index.html">(a) Frame &amp; Viewpoint</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/a_material_derivative/index.html"><a class="padding" href="/temp/electromotive_force/a_material_derivative/index.html">(a) Material derivative</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/i_electromotive_force_i/index.html"><a class="padding" href="/temp/electromotive_force/i_electromotive_force_i/index.html">(i) Electromotive force I</a></li>
+            <li class="active " data-nav-id="/temp/electromotive_force/a_electromotive_force_ii/index.html"><a class="padding" href="/temp/electromotive_force/a_electromotive_force_ii/index.html">(a) Electromotive force II</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/r_emf_voltage/index.html"><a class="padding" href="/temp/electromotive_force/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li>
+            <li class="" data-nav-id="/temp/a_2nd_tensor/index.html"><a class="padding" href="/temp/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
+            <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1751401279" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751401279" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751401279"></script>
+    <script src="/js/theme.js?1751401279" defer></script>
+  </body>
+</html>
