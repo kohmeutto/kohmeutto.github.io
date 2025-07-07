@@ -5,55 +5,55 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
-    <meta name="description" content="매개변수공간에 대한 curl 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+    <meta name="description" content="1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Curl :: 수리전자물리학">
-    <meta name="twitter:description" content="매개변수공간에 대한 curl 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+    <meta name="twitter:description" content="1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
-    <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus_for_ps/a_curl/index.html">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/calculus/a_curl/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Curl :: 수리전자물리학">
-    <meta property="og:description" content="매개변수공간에 대한 curl 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+    <meta property="og:description" content="1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Curl :: 수리전자물리학">
-    <meta itemprop="description" content="매개변수공간에 대한 curl 이다. 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
+    <meta itemprop="description" content="1. Curl $$\nabla\times\vec{f}=\frac{\partial}{\partial\vec{u}}\times\vec{f}=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\nabla\times\vec{f}]_i=\varepsilon_{ijk}\partial_j f_k$$$$[\nabla\times\vec{f}]_j=\varepsilon_{jki}\partial_k f_i=\varepsilon_{ijk}\partial_k f_i$$$$[\nabla\times\vec{f}]_k=\varepsilon_{kij}\partial_i f_j=\varepsilon_{ijk}\partial_i f_j$$ 2. Conjugate curl $$\vec{f}\times\nabla=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k$$순환 기호는 인덱스는 하나의 항에 대응된다.
 $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\nabla]_j=\varepsilon_{jki}f_k\partial_i=\varepsilon_{ijk}f_k\partial_i$$$$[\vec{f}\times\nabla]_k=\varepsilon_{ijk}f_i\partial_j$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.">
-    <meta itemprop="wordCount" content="179">
+    <meta itemprop="wordCount" content="169">
     <title>(a) Curl :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1751477377" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751477377" defer></script>
-    <script src="/js/search-lunr.js?1751477377" defer></script>
-    <script src="/js/search.js?1751477377" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751876592" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751876592" defer></script>
+    <script src="/js/search-lunr.js?1751876592" defer></script>
+    <script src="/js/search.js?1751876592" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1751477377";
+      window.relearn.index_js_url="/searchindex.en.js?1751876592";
     </script>
-    <script src="/js/lunr/lunr.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751477377" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751876592" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751477377" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751477377" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751477377" rel="stylesheet">
-    <link href="/css/theme.css?1751477377" rel="stylesheet">
-    <link href="/css/format-html.css?1751477377" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751876592" rel="stylesheet">
+    <link href="/css/theme.css?1751876592" rel="stylesheet">
+    <link href="/css/format-html.css?1751876592" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/tensor_analysis\/calculus_for_ps\/a_curl\/index.html';
+      window.relearn.path='\/tensor_analysis\/calculus\/a_curl\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -103,7 +103,7 @@ $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\n
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/tensor_analysis/calculus_for_ps/a_curl/index.html">
+  <body class="mobile-support html" data-url="/tensor_analysis/calculus/a_curl/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -131,12 +131,12 @@ $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\n
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/calculus_for_ps/index.html"><span itemprop="name">Calculus for PS</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Curl</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Curl</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus_for_ps/a_divergence/index.html" title="(a) Divergence (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_divergence/index.html" title="(a) Divergence (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus_for_ps/a_derivative/index.html" title="(a) Derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/calculus/a_derivative/index.html" title="(a) Derivative (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -158,11 +158,6 @@ $$[\vec{f}\times\nabla]_i=\varepsilon_{ijk}f_j\partial_k$$$$[\vec{f}\times\n
 
 <h1 id="a-curl">(a) Curl</h1>
 
-<hr>
-<ul>
-<li>매개변수공간에 대한 curl 이다.</li>
-<li>매개변수 공간을 데카르트 좌표계로 표현하고 다룬다.</li>
-</ul>
 <hr>
 <h3 id="1-curl">1. Curl</h3>
 $$
@@ -294,12 +289,12 @@ $$
             <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus_for_ps/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/index.html">Calculus for PS</a><ul id="R-subsections-82df96393f8dc6caf6693045157d985f" class="collapsible-menu">
-            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_gradient/index.html">(a) Gradient</a></li>
-            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_divergence/index.html">(a) Divergence</a></li>
-            <li class="active " data-nav-id="/tensor_analysis/calculus_for_ps/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_curl/index.html">(a) Curl</a></li>
-            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_derivative/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_derivative/index.html">(a) Derivative</a></li>
-            <li class="" data-nav-id="/tensor_analysis/calculus_for_ps/a_integration/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/a_integration/index.html">(a) Integration</a></li></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu">
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_gradient/index.html"><a class="padding" href="/tensor_analysis/calculus/a_gradient/index.html">(a) Gradient</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_divergence/index.html"><a class="padding" href="/tensor_analysis/calculus/a_divergence/index.html">(a) Divergence</a></li>
+            <li class="active " data-nav-id="/tensor_analysis/calculus/a_curl/index.html"><a class="padding" href="/tensor_analysis/calculus/a_curl/index.html">(a) Curl</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_derivative/index.html"><a class="padding" href="/tensor_analysis/calculus/a_derivative/index.html">(a) Derivative</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus/a_integration/index.html"><a class="padding" href="/tensor_analysis/calculus/a_integration/index.html">(a) Integration</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
@@ -334,9 +329,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751477377"></script>
-    <script src="/js/clipboard/clipboard.min.js?1751477377" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751477377" defer></script>
-    <script src="/js/theme.js?1751477377" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751876592"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751876592" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751876592" defer></script>
+    <script src="/js/theme.js?1751876592" defer></script>
   </body>
 </html>

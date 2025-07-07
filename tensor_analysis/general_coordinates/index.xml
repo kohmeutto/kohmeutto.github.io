@@ -12,7 +12,7 @@
       <link>http://localhost:1313/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html</guid>
-      <description>이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. Orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다&#xA;1. 일반좌표계에서의 표기법 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.&#xA;직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, 직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다. 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.</description>
+      <description>이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.&#xA;여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다&#xA;1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.</description>
     </item>
     <item>
       <title>(a) Metric tensor</title>

@@ -6,21 +6,21 @@
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
     <meta name="description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
-역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+역행렬을 손으로 계산하기에 적당한 크기는 3X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
 1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
 $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Inverse & Determinant :: 수리전자물리학">
     <meta name="twitter:description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
-역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+역행렬을 손으로 계산하기에 적당한 크기는 3X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
 1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
 $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta property="og:url" content="http://localhost:1313/tensor_analysis/notation_operation/a_inverse_determinant/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Inverse & Determinant :: 수리전자물리학">
     <meta property="og:description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
-역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+역행렬을 손으로 계산하기에 적당한 크기는 3X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
 1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
 $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
     <meta property="og:locale" content="en_us">
@@ -28,31 +28,31 @@ $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\b
     <meta property="article:section" content="Tensor analysis">
     <meta itemprop="name" content="(a) Inverse & Determinant :: 수리전자물리학">
     <meta itemprop="description" content="Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.
-역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
+역행렬을 손으로 계산하기에 적당한 크기는 3X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며, 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.
 1. Tensor의 역(inverse) $$\bar{\bar{A}}\cdot\bar{\bar{A}}^{-1}=\bar{\bar{I}}$$$\bar{\bar{A}}^{-1}$의 지수표현은
 $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\bar{\bar{A}}=\operatorname{det}\left[\begin{matrix}A_{11} &amp; A_{12} &amp; A_{13} \\A_{21} &amp; A_{22} &amp; A_{23} \\A_{31} &amp; A_{32} &amp; A_{33}\end{matrix}\right]$$$$=A_{11}\hat{A}_{11}&#43;A_{11}\hat{A}_{12}&#43;A_{11}\hat{A}_{13}$$$$=A_{21}\hat{A}_{21}&#43;A_{22}\hat{A}_{22}&#43;A_{23}\hat{A}_{23}$$$$=A_{31}\hat{A}_{31}&#43;A_{32}\hat{A}_{32}&#43;A_{33}\hat{A}_{33}$$여기에서,">
-    <meta itemprop="wordCount" content="265">
+    <meta itemprop="wordCount" content="264">
     <title>(a) Inverse &amp; Determinant :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1751477377" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751477377" defer></script>
-    <script src="/js/search-lunr.js?1751477377" defer></script>
-    <script src="/js/search.js?1751477377" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751876592" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751876592" defer></script>
+    <script src="/js/search-lunr.js?1751876592" defer></script>
+    <script src="/js/search.js?1751876592" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1751477377";
+      window.relearn.index_js_url="/searchindex.en.js?1751876592";
     </script>
-    <script src="/js/lunr/lunr.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751477377" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751477377" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751876592" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751477377" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751477377" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751477377" rel="stylesheet">
-    <link href="/css/theme.css?1751477377" rel="stylesheet">
-    <link href="/css/format-html.css?1751477377" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751876592" rel="stylesheet">
+    <link href="/css/theme.css?1751876592" rel="stylesheet">
+    <link href="/css/format-html.css?1751876592" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -164,7 +164,7 @@ $$\left[A_{ij}\right]^{-1}$$ 2. 행렬식(determinant) $$\operatorname{det}\b
 
 <hr>
 <p><strong>Tensor 방정식을 사용하여 연산을 하는 많은 경우에 tensor의 역을 구해야 할 필요가 있다.</strong></p>
-<p>역행렬을 손으로 계산하기에 적당한 크기는 3 X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며,
+<p>역행렬을 손으로 계산하기에 적당한 크기는 3X3의 행렬식으로 표시가 가능한 2차 tensor 정도이며,
 그 이상은 계산량의 증가로 인하여 해석적인 방법은 실제 사용하지 않는다.</p>
 <hr>
 <h3 id="1-tensor의-역inverse">1. Tensor의 역(inverse)</h3>
@@ -337,7 +337,7 @@ $$
             <li class="" data-nav-id="/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html">(a) 4nd unit tensor</a></li>
             <li class="active " data-nav-id="/tensor_analysis/notation_operation/a_inverse_determinant/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_inverse_determinant/index.html">(a) Inverse &amp; Determinant</a></li>
             <li class="" data-nav-id="/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html"><a class="padding" href="/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html">(a) Eigenvalue problem</a></li></ul></li>
-            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus_for_ps/index.html"><a class="padding" href="/tensor_analysis/calculus_for_ps/index.html">Calculus for PS</a><ul id="R-subsections-82df96393f8dc6caf6693045157d985f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
@@ -372,9 +372,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751477377"></script>
-    <script src="/js/clipboard/clipboard.min.js?1751477377" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751477377" defer></script>
-    <script src="/js/theme.js?1751477377" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751876592"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751876592" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751876592" defer></script>
+    <script src="/js/theme.js?1751876592" defer></script>
   </body>
 </html>
