@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_gc/a_2nd-tensor/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/integral_transform/operators/a_algebra_structure/index.html</loc>
   </url>
   <url>
@@ -23,9 +26,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/m_transformation/a_covariant_contravariant/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tensor_analysis/operation_gc/a_dot_products/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/operation_oc/a_dyad/index.html</loc>
@@ -116,6 +116,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_divergence/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_gc/a_dot_products/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/operation_oc/a_dot_products/index.html</loc>
