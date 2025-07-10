@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calculus for OC :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/calculus_oc/index.html</link>
+    <description>(a) Gradient&#xD;(a) Divergence&#xD;(a) Curl&#xD;(a) Derivative&#xD;(a) Integration</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/calculus_oc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Gradient</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_oc/a_gradient/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_oc/a_gradient/index.html</guid>
+      <description>1. Scalar gradient $$&#xD;\nabla\varphi&#xD;=\frac{\partial \varphi}{\partial\vec{u}}&#xD;=\frac{\partial \varphi}{\partial u_i}\hat{u}_i&#xD;=\frac{\partial \varphi}{\partial u_1}\hat{u}_1+\frac{\partial \varphi}{\partial u_2}\hat{u}_+\frac{\partial \varphi}{\partial u_3}\hat{u}_3&#xD;$$$$&#xD;[\nabla\varphi]_i&#xD;=[\nabla]_i\varphi&#xD;=\frac{\partial \varphi}{\partial u_i}&#xD;$$ 2. Vector Gradient $$&#xD;\nabla\vec{f}&#xD;=\frac{\partial \vec{f}}{\partial\vec{u}}&#xD;=\frac{\partial f_j}{\partial u_i}\hat{u}_i\hat{u}_j&#xD;$$$$&#xD;[\nabla\vec{f}]_{ij}&#xD;=[\nabla]_i\vec{f}_j&#xD;=\frac{\partial f_j}{\partial u_i}&#xD;$$전개하면, 다음과 같으며, 2차 텐서임을 알 수 있다.&#xA;$$&#xD;\begin{align}&#xD;\nabla\vec{f}&#xD;= &amp; \frac{\partial f_1}{\partial u_1}\hat{u}_1\hat{u}_1 + \frac{\partial f_1}{\partial u_2}\hat{u}_2\hat{u}_1 + \frac{\partial f_1}{\partial u_3}\hat{u}_3\hat{u}_1 \\&#xD;&amp; \frac{\partial f_2}{\partial u_1}\hat{u}_1\hat{u}_2 + \frac{\partial f_2}{\partial u_2}\hat{u}_2\hat{u}_2 + \frac{\partial f_2}{\partial u_3}\hat{u}_3\hat{u}_2 \\&#xD;&amp; \frac{\partial f_3}{\partial u_1}\hat{u}_1\hat{u}_3 + \frac{\partial f_3}{\partial u_2}\hat{u}_2\hat{u}_3 + \frac{\partial f_3}{\partial u_3}\hat{u}_3\hat{u}_3&#xD;\end{align}&#xD;$$ 3. Conjugate vector gradient $$&#xD;\vec{f}\nabla&#xD;= f_i\frac{\partial}{\partial u_j}\hat{u}_i\hat{u}_j&#xD;$$ 4. Vector gradient &amp; Kronecker delta $$&#xD;\nabla\vec{u}&#xD;=\frac{\partial \vec{u}}{\partial \vec{u}}&#xD;=\frac{\partial u_i}{\partial u_j}\hat{u}_i\hat{u}_j&#xD;=[\delta_{ij}]&#xD;=\bar{\bar{I}}&#xD;$$$$&#xD;[\nabla\vec{u}]_{ij}&#xD;=\partial_i u_j&#xD;=\bar{\bar{I}}&#xD;$$ 5. High tensor gradient 2차 텐서에서,</description>
+    </item>
+    <item>
+      <title>(a) Divergence</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_oc/a_divergence/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_oc/a_divergence/index.html</guid>
+      <description>1. Divergence $$&#xD;\nabla\cdot\vec{f}&#xD;=\frac{\partial}{\partial\vec{u}}\cdot\vec{f}&#xD;=\frac{\partial}{\partial u_i}\hat{u}_i\cdot f_j\hat{u}_j&#xD;=\frac{\partial f_j}{\partial u_i}\hat{u}_i\cdot \hat{u}_j&#xD;=\frac{\partial f_j}{\partial u_j}&#xD;=\frac{\partial f_1}{\partial u_1}+\frac{\partial f_2}{\partial u_2}+\frac{\partial f_3}{\partial u_3}&#xD;$$$$&#xD;\nabla\cdot\vec{f}&#xD;=[\nabla]_j[\vec{f}]_j&#xD;=\frac{\partial f_j}{\partial u_j}&#xD;$$ example1) 벡터 $\vec{u}=u_1\hat{u}_1+u_2\hat{u}_2+u_3\hat{u}_3$ 에 대한 발산을 구하여라.&#xA;sol)&#xA;$$&#xD;\nabla\cdot\vec{u}&#xD;=\frac{\partial u_j}{\partial u_j}&#xD;=3&#xD;$$ 2. 2차 텐서의 divergence $$&#xD;\nabla\cdot\bar{\bar{A}}&#xD;=\frac{\partial}{\partial u_i}\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k&#xD;=\frac{\partial A_{jk}}{\partial u_i}(\hat{u}_i\cdot\hat{u}_j)\hat{u}_k&#xD;=\frac{\partial A_{jk}}{\partial u_i}\delta_{ij}\hat{u}_k&#xD;=\frac{\partial A_{ik}}{\partial u_i}\hat{u}_k&#xD;$$$$&#xD;[\nabla\cdot\bar{\bar{A}}]_j&#xD;=[\nabla]_i\bar{\bar{A}}_{ij}&#xD;=\frac{\partial A_{ij}}{\partial u_i}&#xD;$$ 3. Laplacian operator $$&#xD;\nabla^2&#xD;=\nabla\cdot\nabla&#xD;=\frac{\partial}{\partial u_i}\hat{u}_i\cdot\frac{\partial}{\partial u_j}\hat{u}_j&#xD;=\frac{\partial^2}{\partial u_i \partial u_j}(\hat{u}_i\cdot\hat{u}_j)&#xD;=\frac{\partial^2}{\partial u_i \partial u_j}\delta_{ij}&#xD;=\frac{\partial^2}{\partial u_i \partial u_i}&#xD;=\frac{\partial^2}{\partial u_i^2}&#xD;$$$$&#xD;\nabla^2&#xD;=[\nabla]_i[\nabla]_i&#xD;=\frac{\partial^2}{\partial u_i^2}&#xD;$$</description>
+    </item>
+    <item>
+      <title>(a) Curl</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_oc/a_curl/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_oc/a_curl/index.html</guid>
+      <description>1. Curl $$&#xD;\nabla\times\vec{f}&#xD;=\frac{\partial}{\partial\vec{u}}\times\vec{f}&#xD;=\frac{\partial}{\partial u_i}\hat{u}_i\times f_j\hat{u}_j&#xD;=\frac{\partial f_j}{\partial u_i}\hat{u}_i\times\hat{u}_j&#xD;=\varepsilon_{ijk}\frac{\partial f_j}{\partial u_i}\hat{u}_k&#xD;$$순환 기호는 인덱스는 하나의 항에 대응된다.&#xA;$$&#xD;[\nabla\times\vec{f}]_i&#xD;=\varepsilon_{ijk}\partial_j f_k&#xD;$$$$&#xD;[\nabla\times\vec{f}]_j&#xD;=\varepsilon_{jki}\partial_k f_i&#xD;=\varepsilon_{ijk}\partial_k f_i&#xD;$$$$&#xD;[\nabla\times\vec{f}]_k&#xD;=\varepsilon_{kij}\partial_i f_j&#xD;=\varepsilon_{ijk}\partial_i f_j&#xD;$$ 2. Conjugate curl $$&#xD;\vec{f}\times\nabla&#xD;=\hat{u}_if_i\times\frac{\partial}{\partial u_j}\hat{u}_j&#xD;=f_i\frac{\partial}{\partial u_j}\hat{u}_i\times\hat{u}_j&#xD;=\varepsilon_{ijk}f_i\frac{\partial}{\partial u_j}\hat{u}_k&#xD;$$순환 기호는 인덱스는 하나의 항에 대응된다.&#xA;$$&#xD;[\vec{f}\times\nabla]_i&#xD;=\varepsilon_{ijk}f_j\partial_k&#xD;$$$$&#xD;[\vec{f}\times\nabla]_j&#xD;=\varepsilon_{jki}f_k\partial_i&#xD;=\varepsilon_{ijk}f_k\partial_i&#xD;$$$$&#xD;[\vec{f}\times\nabla]_k&#xD;=\varepsilon_{ijk}f_i\partial_j&#xD;$$ 3. High tensor curl 중복 지수 규칙에 위배하지 않아야 함을 주의한다.</description>
+    </item>
+    <item>
+      <title>(a) Derivative</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_oc/a_derivative/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_oc/a_derivative/index.html</guid>
+      <description>1. 스칼라에 대한 미분 $$&#xD;\frac{\partial}{\partial \bar{\bar{A}}} f&#xD;=\frac{\partial}{\partial A_{ij}} f\hat{u}_i\hat{u}_j&#xD;$$$$&#xD;\left[\frac{\partial}{\partial \bar{\bar{A}}} f\right]_{ij}&#xD;=\frac{\partial f}{\partial A_{ij}}&#xD;$$ 2. Chain rule $\bar{\bar{\sigma}}(\bar{\bar{\epsilon}})$ 는 $\bar{\bar{\epsilon}}$에 대한 함수이다. $\bar{\bar{\epsilon}}$은 시간에 대한 함수이다. $\bar{\bar{\sigma}}$의 시간 변화율을 구하려고 한다. 체인룰로 표현하면, 다음과 같다.&#xA;$$&#xD;\frac{\partial\bar{\bar{\sigma}}}{\partial t}&#xD;=\frac{\partial\bar{\bar{\sigma}}}{\partial \bar{\bar{\epsilon}}}:\frac{\partial\bar{\bar{\epsilon}}}{\partial t}&#xD;$$이를 벡터 성분 표기로 표현해 보자. 여기서 기존과 다른 주의해야할 사항은, 2차 텐서에 대한 2차 텐서의 편미분은 분자인덱스를 먼저 쓴다는 것이다(그렇게 해야 성분이 일치한다).</description>
+    </item>
+    <item>
+      <title>(a) Integration</title>
+      <link>http://localhost:1313/tensor_analysis/calculus_oc/a_integration/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/calculus_oc/a_integration/index.html</guid>
+      <description>1. 발산정리 $$&#xD;d^2\vec{s}=d^3V\nabla&#xD;$$적분 기호를 사용하여 표현하면,&#xA;$$&#xD;\int_{V&#39;}d^3V\nabla\cdot\vec{f}&#xD;=\int_{s&#39;}d^2\vec{s}\cdot\vec{f}&#xD;$$적분 표현을 인덱스 표현으로 전개한다.&#xA;$$&#xD;\int_{V&#39;}d^3V[\partial_i f_i]&#xD;=\int_{s&#39;}d^2s[n_if_i],\quad\text{$n_i$ 은 면에 대한 법선벡터이다.&#xD;}&#xD;$$ example1) 임의의 표현 s에 대해, 다음의 식이 성립함을 보여라.&#xA;$$&#xD;\int_{s}d^2\vec{s}&#39;[\vec{u]}=V\bar{\bar{I}}&#xD;$$sol)&#xA;$$&#xD;\int_{s}d^2\vec{s}&#39;[\vec{u]}&#xD;=\int_{V}d^3V&#39;[\nabla \vec{u}]&#xD;=\int_{V}d^3V&#39;\bar{\bar{I}}&#xD;=V\bar{\bar{I}}&#xD;$$ 2. Stokes 정리 $$&#xD;d\vec{l}=d^2\vec{s}\times\nabla&#xD;$$적분 기호를 사용하여 표현하면,&#xA;$$&#xD;\int_{s&#39;}d^2\vec{s}\cdot[\nabla\times\vec{f}]&#xD;=\int_{s&#39;}[d^2\vec{s}\times\nabla]\cdot\vec{f}&#xD;=\int_{l&#39;}d\vec{l}\cdot\vec{f}&#xD;$$적분 표현을 인덱스 표현으로 전개한다.&#xA;$$&#xD;\int_{s&#39;}[d^2\vec{s}\times\nabla]\cdot\vec{f}&#xD;=\int_{s&#39;}[d^2\vec{s}\times\nabla]_i f_i&#xD;=\int_{s&#39;}d^2s[\varepsilon_{ijk}n_j\partial_k f_i],\quad\text{$n_j$ 은 면에 대한 법선벡터이다.&#xD;}&#xD;$$$$&#xD;\int_{l&#39;}d\vec{l}\cdot\vec{f}&#xD;=\int_{l&#39;}dl_if_i&#xD;$$ example1) Stokes 정리를 사용하여, 다음의 식이 성립함을 보여라.</description>
+    </item>
+  </channel>
+</rss>

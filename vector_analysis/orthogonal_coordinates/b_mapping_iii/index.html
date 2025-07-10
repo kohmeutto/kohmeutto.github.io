@@ -33,26 +33,26 @@ u 매개변수 공간 미소변위벡터 $$ d\vec{u} =\hat{u}_idu_i $$ v 실 공
 $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} \\ \cfrac{\partial v_2}{\partial u_1} \\ \cfrac{\partial v_3}{\partial u_1} \end{bmatrix}&#43;du_2 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_2} \\ \cfrac{\partial v_2}{\partial u_2} \\ \cfrac{\partial v_3}{\partial u_2} \end{bmatrix}&#43;du_3 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} =\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} &amp; \cfrac{\partial v_1}{\partial u_2} &amp; \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_1} &amp; \cfrac{\partial v_2}{\partial u_2} &amp; \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_1} &amp; \cfrac{\partial v_3}{\partial u_2} &amp; \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} \begin{bmatrix} du_1 \\ du_2 \\ du_3 \end{bmatrix} $$여기에서, 3x3 행렬을 Jacobian 이라고 한다. Jacobian의 각 열 벡터는 매개변수 공간의 각 축이 실 공간으로 변환(mapping)될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 실 공간의 새로운 기준 방향들(기저)을 형성한다.suffix notation을 사용하여 각 열벡터 성분에 대해 아래와 같이 표현할 수 있으며, 이와 관련한 기하학적 해석을 해보자.">
     <meta itemprop="wordCount" content="709">
     <title>(a) Mapping III - Jacobian :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1751876592" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751876592" defer></script>
-    <script src="/js/search-lunr.js?1751876592" defer></script>
-    <script src="/js/search.js?1751876592" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1752050610" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1752050610" defer></script>
+    <script src="/js/search-lunr.js?1752050610" defer></script>
+    <script src="/js/search.js?1752050610" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1751876592";
+      window.relearn.index_js_url="/searchindex.en.js?1752050610";
     </script>
-    <script src="/js/lunr/lunr.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.min.js?1752050610" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1752050610" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1752050610" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1752050610" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751876592" rel="stylesheet">
-    <link href="/css/theme.css?1751876592" rel="stylesheet">
-    <link href="/css/format-html.css?1751876592" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752050610" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752050610" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752050610" rel="stylesheet">
+    <link href="/css/theme.css?1752050610" rel="stylesheet">
+    <link href="/css/format-html.css?1752050610" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -140,7 +140,7 @@ $$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfra
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html" title="(b) Mapping II - Scale factor (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_analysis/orthogonal_coordinates/b_components_transformation/index.html" title="(b) Components transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html" title="(b) Representation transformation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -518,7 +518,7 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
             <li class="" data-nav-id="/vector_analysis/orthogonal_coordinates/b_mapping_i/index.html"><a class="padding" href="/vector_analysis/orthogonal_coordinates/b_mapping_i/index.html">(b) Mapping I - Position</a></li>
             <li class="" data-nav-id="/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html"><a class="padding" href="/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html">(b) Mapping II - Scale factor</a></li>
             <li class="active " data-nav-id="/vector_analysis/orthogonal_coordinates/b_mapping_iii/index.html"><a class="padding" href="/vector_analysis/orthogonal_coordinates/b_mapping_iii/index.html">(a) Mapping III - Jacobian</a></li>
-            <li class="" data-nav-id="/vector_analysis/orthogonal_coordinates/b_components_transformation/index.html"><a class="padding" href="/vector_analysis/orthogonal_coordinates/b_components_transformation/index.html">(b) Components transformation</a></li></ul></li>
+            <li class="" data-nav-id="/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html"><a class="padding" href="/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html">(b) Representation transformation</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_analysis/calculus/index.html"><a class="padding" href="/vector_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-a7f042b215a993a4ba30cab40273f918" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
@@ -551,9 +551,9 @@ $$<p>아래 이미지의 이해는 매우 중요하다.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751876592"></script>
-    <script src="/js/clipboard/clipboard.min.js?1751876592" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751876592" defer></script>
-    <script src="/js/theme.js?1751876592" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1752050610"></script>
+    <script src="/js/clipboard/clipboard.min.js?1752050610" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752050610" defer></script>
+    <script src="/js/theme.js?1752050610" defer></script>
   </body>
 </html>

@@ -27,28 +27,28 @@
     <meta itemprop="description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
 여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
 1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
-    <meta itemprop="wordCount" content="799">
+    <meta itemprop="wordCount" content="695">
     <title>(a) Covariant and contravariant :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1751876592" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751876592" defer></script>
-    <script src="/js/search-lunr.js?1751876592" defer></script>
-    <script src="/js/search.js?1751876592" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1751896401" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751896401" defer></script>
+    <script src="/js/search-lunr.js?1751896401" defer></script>
+    <script src="/js/search.js?1751896401" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1751876592";
+      window.relearn.index_js_url="/searchindex.en.js?1751896401";
     </script>
-    <script src="/js/lunr/lunr.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751876592" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1751876592" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751896401" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751896401" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751896401" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751896401" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751876592" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751876592" rel="stylesheet">
-    <link href="/css/theme.css?1751876592" rel="stylesheet">
-    <link href="/css/format-html.css?1751876592" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751896401" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751896401" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751896401" rel="stylesheet">
+    <link href="/css/theme.css?1751896401" rel="stylesheet">
+    <link href="/css/format-html.css?1751896401" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -176,9 +176,8 @@ $$<ul>
 </ul>
 <hr>
 <h3 id="2-공변기저벡터">2. 공변기저벡터</h3>
-<p>아래 2가지 관점은 동등하며, 서로를 통해 완전한 의미를 가진다. <strong>관점 1</strong>은 q좌표계의 기하학적 틀을 제공한다. <strong>관점 2</strong>는 그 기하학적 틀 위에서, 물리적 대상을 어떻게 분석하고 표현할 것인지에 대한 도구를 제공한다.</p>
 <img src="image1.png" width="65%" height="auto">
-<p><strong>[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
+<p><strong>매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
 <p>데카르트 좌표계처럼 다룰 수 있는 매개변수 공간의 미소변위벡터($d\vec{q}$)는 아래와 같이 표현할 수 있다. 여기에서, $\hat{q}_j$가 $\hat{e}_k$ 와 같은 물리적 공간의 벡터가 아니라, 매개변수 공간 내에서 $q^j$ 축 방향의 단위 변화를 나타내는 <strong>추상적인 기저 벡터</strong> 이다.</p>
 $$
 d\vec{q}=dq^j\hat{q}_j
@@ -200,28 +199,19 @@ $$<p>처음과 윗 식을 비교해보자. 매핑 관점에서, 매개변수 공
 $$
 \hat{q}_j\to
 \vec{g}_j=\frac{\partial x^k}{\partial q^j}\hat{e}_k
-$$<p><strong>[관점 2] 동일 실공간에서 $q$좌표계로의 표현</strong></p>
-<p>실공간의 데카르트 좌표계에서 원점으로부터 임의의 거리 만큼 떨어진 공간상의 한 점 P를 고려하면, 그 점에 대한 위치벡터는 다음과 같이 표현할 수 있다.</p>
-$$
-\vec{x}=x^j\hat{e}_j
-$$<p>점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.</p>
-$$
-d\vec{x}
-=dx^j\hat{e}_j
 $$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
 $$
 d\vec{x}
 =dq^j\vec{g}_j
 =dq^jg_j^k\hat{e}_k
-$$<p>위 식을 <strong>관점 1</strong>의 결과와 비교하면 아래와 같다.</p>
-$$
+$$$$
 g^k_j
 =\frac{\partial x^k}{\partial q^j}
 $$<hr>
 <h3 id="3-역반변기저벡터">3. 역(반변)기저벡터</h3>
 <p>공변기저벡터의 경우, 매개변수공간의 (추상적인) 단위 기저벡터를 실공간으로 mapping된 궤적의 접선벡터라고 하였다. 이번에는 매개변수공간의 단위기저벡터를 등위면의 법선벡터라고 정의하자. 그러면, <strong>실공간으로 mapping 하였을 때, mapping된 등위면이 생기며, 이 등위면의 법선 벡터를 반변기저벡터</strong>라고 한다.</p>
 <img src="image2.png" width="65%" height="auto">
-<p><strong>[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
+<p><strong>실공간에서 매개변수 공간($q$)으로의 매핑</strong></p>
 <p>실공간의 미소변위벡터 $d\vec{x}$를 매개변수공간의 $q^i$로 mapping 해 보자. 여기에서, 매개변수 공간의 (추상적) 단위 기저 벡터는 이미 알고 있기에 구하는 의미가 없다. 매개변수공간으로 mapping 된 각 단위 벡터의 성분은 아래와 같이 구할 수 있다.</p>
 $$
 dq^i
@@ -231,18 +221,12 @@ $$<p>여기에서, $\vec{g}^i=\nabla q^i$를 <strong>반변기저벡터</strong>
 $$
 dq^i
 =d\vec{x}\cdot \vec{g}^i
-$$<p><strong>[관점 2] 동일 실공간에서 $q$좌표계로의 표현</strong></p>
-<p>점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.</p>
-$$
-d\vec{x}
-=dx^j\hat{e}_j
 $$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 반변 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
 $$
 d\vec{x}
 =dq_j\vec{g}^j
 =dq_jg_k^j\hat{e}_k
-$$<p>위 식을 <strong>관점 1</strong>의 결과와 비교하면 아래와 같다.</p>
-$$
+$$$$
 g_k^j
 =\frac{\partial q^j}{\partial x^k}
 $$<hr>
@@ -321,7 +305,7 @@ $$
 =x^i
 $$<p><strong>(2) 공변성분추출</strong></p>
 $$
-\vec{x}\cdot\vec{g}_i=v_i
+\vec{x}\cdot\vec{g}_i=x_i
 $$<p>proof)</p>
 $$
 \vec{x}\cdot\vec{g}^i
@@ -384,7 +368,7 @@ $$<hr>
             <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
             <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/tensor_analysis/transformation_for_ps/index.html"><a class="padding" href="/tensor_analysis/transformation_for_ps/index.html">Transformation for PS</a><ul id="R-subsections-da9d033c0dfd7e4bed9b653489ea9f30" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/representation_transformation/index.html"><a class="padding" href="/tensor_analysis/representation_transformation/index.html">Representation transformation I</a><ul id="R-subsections-bf5aadfc0e6849168453b973113d17af" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/tensor_analysis/general_coordinates/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-6cf74f17907df6cb89bde69570657146" class="collapsible-menu">
             <li class="active " data-nav-id="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html">(a) Covariant and contravariant</a></li>
             <li class="" data-nav-id="/tensor_analysis/general_coordinates/b_metric_tensor/index.html"><a class="padding" href="/tensor_analysis/general_coordinates/b_metric_tensor/index.html">(a) Metric tensor</a></li></ul></li>
@@ -420,9 +404,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751876592"></script>
-    <script src="/js/clipboard/clipboard.min.js?1751876592" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751876592" defer></script>
-    <script src="/js/theme.js?1751876592" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751896401"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751896401" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751896401" defer></script>
+    <script src="/js/theme.js?1751896401" defer></script>
   </body>
 </html>

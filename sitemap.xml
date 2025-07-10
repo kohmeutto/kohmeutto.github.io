@@ -7,7 +7,13 @@
     <loc>http://localhost:1313/temp/a_basis/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_ps/a_components/index.html</loc>
+    <loc>http://localhost:1313/temp/transformation/a_components/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_gc/a_components/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_oc/a_components/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/a_covariant_contravariant/index.html</loc>
@@ -16,10 +22,13 @@
     <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/a_covariant_contravariant/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/general_coordinates/a_covariant_contravariant/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/m_transformation/a_covariant_contravariant/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_dyad/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_gc/a_dot_products/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_dyad/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_frame/index.html</loc>
@@ -28,7 +37,7 @@
     <loc>http://localhost:1313/temp/electromotive_force/a_frame_viewpoint/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_gradient/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
@@ -85,7 +94,7 @@
     <loc>http://localhost:1313/linear_algebra/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/preface/index.html</loc>
@@ -97,22 +106,25 @@
     <loc>http://localhost:1313/linear_algebra/vector/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_ps/a_2nd_tensor/index.html</loc>
+    <loc>http://localhost:1313/temp/transformation/a_2nd_tensor/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/a_divergence/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_gc/a_2nd_tensor/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_dot_products/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_oc/a_2nd_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_divergence/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_dot_products/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/b_metric_tensor/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tensor_analysis/general_coordinates/b_metric_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/operators/a_operator_generator/index.html</loc>
@@ -169,7 +181,7 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/index.html</loc>
@@ -193,7 +205,7 @@
     <loc>http://localhost:1313/temp/a_basis_components/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/a_curl/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_curl/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_description/index.html</loc>
@@ -217,10 +229,16 @@
     <loc>http://localhost:1313/integral_transform/operators/a_operators_in_quantum_mechanics/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_ps/a_rotation_transport/index.html</loc>
+    <loc>http://localhost:1313/temp/transformation/a_rotation_transport/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_unit_tensor/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_gc/a_rotation_transport/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_oc/a_rotation_transport/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_unit_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/calculus/b_curl/index.html</loc>
@@ -259,16 +277,25 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_oc/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/integral_transform/transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_ps/index.html</loc>
+    <loc>http://localhost:1313/temp/transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/a_derivative/index.html</loc>
+    <loc>http://localhost:1313/temp/transformation/a_derivative/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/transformation_for_ps/a_derivative/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_derivative/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_gc/a_derivative/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_oc/a_derivative/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_displacement_iopm/index.html</loc>
@@ -283,16 +310,16 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_material_derivative/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_seperation_of_tensor/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_seperation_of_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_components_transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_components_transformation/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
+    <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>
@@ -316,10 +343,10 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/general_coordinates/index.html</loc>
+    <loc>http://localhost:1313/integral_transform/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/integral_transform/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/m_transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/operators/index.html</loc>
@@ -334,13 +361,13 @@
     <loc>http://localhost:1313/ode_pde/special_odes/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_4nd_unit_tensor/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_4nd_unit_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/a_electromotive_force_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus/a_integration/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_oc/a_integration/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/a_unit_tensor/index.html</loc>
@@ -382,7 +409,7 @@
     <loc>http://localhost:1313/ode_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/operation_for_gc/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/r_transformation_gc/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/index.html</loc>
@@ -391,7 +418,7 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_inverse_determinant/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_inverse_determinant/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_i_basis/index.html</loc>
@@ -409,6 +436,9 @@
     <loc>http://localhost:1313/temp/electromotive_force/r_emf_voltage/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/operation_gc/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</loc>
   </url>
   <url>
@@ -418,7 +448,7 @@
     <loc>http://localhost:1313/temp/tensor_calculus/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/notation_operation/a_eigenvalue_problem/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/operation_oc/a_eigenvalue_problem/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_column_vector_of_matrix_ii_determinant/index.html</loc>
@@ -433,7 +463,7 @@
     <loc>http://localhost:1313/electromagnetics/electromotive_force/r_emf_voltage/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tensor_analysis/calculus_for_gc/index.html</loc>
+    <loc>http://localhost:1313/tensor_analysis/calculus_gc/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</loc>
@@ -464,6 +494,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/vector/b_row_vector_of_matrix/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tensor_analysis/m_transformation/b_metric_tensor/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

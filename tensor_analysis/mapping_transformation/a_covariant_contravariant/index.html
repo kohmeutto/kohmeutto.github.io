@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
+    <meta name="description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
+여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
+1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Covariant and contravariant :: 수리전자물리학">
+    <meta name="twitter:description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
+여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
+1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/mapping_transformation/a_covariant_contravariant/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Covariant and contravariant :: 수리전자물리학">
+    <meta property="og:description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
+여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
+1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Covariant and contravariant :: 수리전자물리학">
+    <meta itemprop="description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
+여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
+1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
+    <meta itemprop="wordCount" content="695">
+    <title>(a) Covariant and contravariant :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1751914239" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751914239" defer></script>
+    <script src="/js/search-lunr.js?1751914239" defer></script>
+    <script src="/js/search.js?1751914239" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1751914239";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1751914239" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751914239" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751914239" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1751914239" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751914239" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751914239" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751914239" rel="stylesheet">
+    <link href="/css/theme.css?1751914239" rel="stylesheet">
+    <link href="/css/format-html.css?1751914239" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/tensor_analysis\/mapping_transformation\/a_covariant_contravariant\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/tensor_analysis/mapping_transformation/a_covariant_contravariant/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-벡터의-표현">1. 벡터의 표현</a></li>
+        <li><a href="#2-공변기저벡터">2. 공변기저벡터</a></li>
+        <li><a href="#3-역반변기저벡터">3. 역(반변)기저벡터</a></li>
+        <li><a href="#4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</a></li>
+        <li><a href="#5-공변기저벡터와-반변기저벡터의-내적-쌍대성">5. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</a></li>
+        <li><a href="#6-공변-반변-성분-추출">6. 공변, 반변 성분 추출</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/mapping_transformation/index.html"><span itemprop="name">Mapping transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Covariant and contravariant</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/mapping_transformation/index.html" title="Mapping transformation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/mapping_transformation/b_metric_tensor/index.html" title="(a) Metric tensor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable tensor_analysis" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-covariant-and-contravariant">(a) Covariant and contravariant</h1>
+
+<hr>
+<p>이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 <strong>모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.</strong></p>
+<p>여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. <strong>orthogonal coordinates</strong> 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다</p>
+<hr>
+<h3 id="1-벡터의-표현">1. 벡터의 표현</h3>
+<p><strong>일반 좌표계에서 벡터의 &ldquo;좌표값&quot;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수</strong> 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.</p>
+$$
+\vec{x}=x^{i}\vec{g}_i=x_i\vec{g}^i
+$$<ul>
+<li>$\vec{g}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 <strong>공변기저벡터</strong> 라고 한다.</li>
+<li>$x^i$ 는 성분을 나타내며, 이것을 $\vec{x}$ 의 contravariant(반변) 성분이라고 한다.</li>
+<li>$\vec{g}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 <strong>반변기저벡터</strong> 라고 한다.</li>
+<li>$x_i$ 는 성분을 나타내며, 이것을 $\vec{x}$ 의 covariant(공변) 성분이라고 한다.</li>
+</ul>
+<hr>
+<h3 id="2-공변기저벡터">2. 공변기저벡터</h3>
+<img src="image1.png" width="65%" height="auto">
+<p><strong>매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
+<p>데카르트 좌표계처럼 다룰 수 있는 매개변수 공간의 미소변위벡터($d\vec{q}$)는 아래와 같이 표현할 수 있다. 여기에서, $\hat{q}_j$가 $\hat{e}_k$ 와 같은 물리적 공간의 벡터가 아니라, 매개변수 공간 내에서 $q^j$ 축 방향의 단위 변화를 나타내는 <strong>추상적인 기저 벡터</strong> 이다.</p>
+$$
+d\vec{q}=dq^j\hat{q}_j
+$$<p>이제, $d\vec{q}$를 실공간의 벡터 $d\vec{x}$로 mapping 한다.</p>
+$$
+d\vec{x}
+=(d\vec{q}\cdot\nabla)\vec{x}
+=dq^j\partial_j\vec{x}
+$$<p>여기에서의 $\vec{x}$는 매개변수공간의 위치벡터 $\vec{q}$ 가 실공간으로 매핑되었을 때, 실공간의 위치벡터를 의미한다.</p>
+$$
+\vec{x}
+=x^k(q^1,q^2,q^3)\hat{e}_k
+$$<p>실공간의 위치벡터 $\vec{x}$를 대입하면,</p>
+$$
+d\vec{x}
+=dq^j\partial_jx^k\hat{e}_k
+=dq^j\frac{\partial x^k}{\partial q^j}\hat{e}_k
+$$<p>처음과 윗 식을 비교해보자. 매핑 관점에서, 매개변수 공간의 단위 벡터 $\hat{q}_j$ 가 실공간의 $\partial x^k/\partial q^j\hat{e}_k$ 로 매핑됨을 확인할 수 있다. 여기에서, <strong>$\partial x^k/\partial q^j\hat{e}_k$를 공변기저벡터</strong>라고 한다. 공변기저벡터의 기하학적 의미를 살펴보자. 위의 수식에서 매개변수 $q$가 변함에 따라, <strong>실공간에서 궤적을 만들며, 이 궤적의 접선벡터가 공변기저 벡터</strong>임을 알 수 있다.</p>
+$$
+\hat{q}_j\to
+\vec{g}_j=\frac{\partial x^k}{\partial q^j}\hat{e}_k
+$$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
+$$
+d\vec{x}
+=dq^j\vec{g}_j
+=dq^jg_j^k\hat{e}_k
+$$$$
+g^k_j
+=\frac{\partial x^k}{\partial q^j}
+$$<hr>
+<h3 id="3-역반변기저벡터">3. 역(반변)기저벡터</h3>
+<p>공변기저벡터의 경우, 매개변수공간의 (추상적인) 단위 기저벡터를 실공간으로 mapping된 궤적의 접선벡터라고 하였다. 이번에는 매개변수공간의 단위기저벡터를 등위면의 법선벡터라고 정의하자. 그러면, <strong>실공간으로 mapping 하였을 때, mapping된 등위면이 생기며, 이 등위면의 법선 벡터를 반변기저벡터</strong>라고 한다.</p>
+<img src="image2.png" width="65%" height="auto">
+<p><strong>실공간에서 매개변수 공간($q$)으로의 매핑</strong></p>
+<p>실공간의 미소변위벡터 $d\vec{x}$를 매개변수공간의 $q^i$로 mapping 해 보자. 여기에서, 매개변수 공간의 (추상적) 단위 기저 벡터는 이미 알고 있기에 구하는 의미가 없다. 매개변수공간으로 mapping 된 각 단위 벡터의 성분은 아래와 같이 구할 수 있다.</p>
+$$
+dq^i
+=d\vec{x}\cdot\nabla q^i
+=dx^j\partial_jq^i
+$$<p>여기에서, $\vec{g}^i=\nabla q^i$를 <strong>반변기저벡터</strong> 라고 한다. mapping 으로의 의미를 생각해보자. $\vec{g}^i\cdot$ 는 <strong>매개변수공간의 성분(스칼라)으로 변환하는 연산자</strong> 이다. 이것을 <strong>쌍대공간의 기저</strong>라고 볼 수 있다. 따라서, 아래와 같이 쓸 수 있다.</p>
+$$
+dq^i
+=d\vec{x}\cdot \vec{g}^i
+$$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 반변 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
+$$
+d\vec{x}
+=dq_j\vec{g}^j
+=dq_jg_k^j\hat{e}_k
+$$$$
+g_k^j
+=\frac{\partial q^j}{\partial x^k}
+$$<hr>
+<h3 id="4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
+<p><strong>(1) 공변 기저 벡터 ($\vec{g}_i$)와 반변 성분 ($q^i$)</strong></p>
+<ul>
+<li>
+<p><strong>공변 기저 벡터 ($\vec{g}_i$)</strong>:</p>
+<ul>
+<li>매개변수 축($q^i$)을 따라 실공간의 벡터 궤적에 <strong>접선</strong>으로 놓인다.</li>
+<li>매개변수 축이 늘어나면, $\vec{g}_i$도 실공간에서 그 늘어난 축을 따라 <strong>&lsquo;함께&rsquo; 길어진다.</strong></li>
+<li>이처럼 좌표계 변화에 <strong>&lsquo;함께(co-vary)&rsquo; 반응</strong>하는 특성 때문에 &lsquo;공변&rsquo; 기저 벡터라고 불린다.</li>
+</ul>
+</li>
+<li>
+<p><strong>반변 성분 ($q^i$)</strong>:</p>
+<ul>
+<li>벡터 $\vec{x}$의 값을 일정하게 유지하기 위해, 공변 기저 벡터($\vec{g}_i$)의 변화와 <strong>&lsquo;반대&rsquo; 방향으로 변하는</strong> 성분이다.</li>
+<li>예를 들어, $\vec{g}_i$가 길어지면, $q^i$는 상대적으로 작아져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>반대</strong>되기 때문에 &lsquo;반변&rsquo; 성분이라고 불린다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>(2) 반변 기저 벡터 ($\vec{g}^i$)와 공변 성분 ($q_i$)</strong></p>
+<ul>
+<li>
+<p><strong>반변 기저 벡터 ($\vec{g}^i$)</strong>:</p>
+<ul>
+<li>매개변수 $q^i$의 <strong>등위면(level surface)에 수직인 법선 벡터</strong>이다.</li>
+<li>매개변수 축($q^i$)이 늘어나서 등위면들이 실공간에서 <strong>더 넓게 퍼지면(덜 촘촘해지면)</strong>, $\vec{g}^i$의 크기는 <strong>&lsquo;짧아진다.&rsquo;</strong></li>
+<li>반대로 매개변수 축이 압축되어 등위면들이 <strong>더 촘촘하게 모이면</strong>, $\vec{g}^i$의 크기는 <strong>&lsquo;길어진다.&rsquo;</strong></li>
+<li>이처럼 매개변수 축의 변화 방향과 <strong>&lsquo;반대&rsquo;되는 경향으로 길이가 변하므로</strong> &lsquo;반변&rsquo; 기저 벡터라고 불린다. 또한 공변 기저($\vec{g}_i$)와 $\vec{g}_i \cdot \vec{g}^j = \delta_i^j$ 관계처럼 <strong>상보적이고 역수적인 관계</strong>를 가진다.</li>
+</ul>
+</li>
+<li>
+<p><strong>공변 성분 ($q_i$)</strong>:</p>
+<ul>
+<li>벡터 $\vec{q}$의 값을 일정하게 유지하기 위해, 반변 기저 벡터($\vec{g}^i$)의 변화와 <strong>&lsquo;같은&rsquo; 방향으로 변하는</strong> 성분이다.</li>
+<li>$\vec{g}^i$가 길어지면(등위면이 촘촘해지면), $q_i$도 커져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>같기</strong> 때문에 &lsquo;공변&rsquo; 성분이라고 불린다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-공변기저벡터와-반변기저벡터의-내적-쌍대성">5. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</h3>
+$$
+\vec{g}_i\cdot\vec{g}^j=\delta_i^j
+$$<p>proof)</p>
+$$
+\vec{g}_i
+=g_i^k\hat{e}_k
+=\frac{\partial x^k}{\partial q^i}\hat{e}_k
+$$$$
+\vec{g}^j
+=g^j_l\hat{e}_l
+=\frac{\partial q^j}{\partial x^l}\hat{e}_l
+$$$$
+\vec{g}_i\cdot\vec{g}^j
+=\frac{\partial x^k}{\partial q^i}\hat{e}_k\cdot
+\frac{\partial q^j}{\partial x^l}\hat{e}_l
+=\frac{\partial x^k}{\partial q^i}
+\frac{\partial q^j}{\partial x^l}\delta_{kl}
+=\frac{\partial x^l}{\partial q^i}
+\frac{\partial q^j}{\partial x^l}
+=\frac{\partial q^j}{\partial q^i}
+=\delta_i^j
+$$<hr>
+<h3 id="6-공변-반변-성분-추출">6. 공변, 반변 성분 추출</h3>
+<img src="image3.png" width="50%" height="auto">
+<p><strong>(1) 반변성분추출</strong></p>
+$$
+\vec{x}\cdot\vec{g}^i=x^i
+$$<p>proof)</p>
+$$
+\vec{x}\cdot\vec{g}^i
+=x^k\vec{g}_k\cdot\vec{g}^i
+=x^k\delta^i_k
+=x^i
+$$<p><strong>(2) 공변성분추출</strong></p>
+$$
+\vec{x}\cdot\vec{g}_i=x_i
+$$<p>proof)</p>
+$$
+\vec{x}\cdot\vec{g}^i
+=x_k\vec{g}^k\cdot\vec{g}_i
+=x_k\delta^k_i
+=x_i
+$$<hr>
+<p><a href="https://m.blog.naver.com/jmj_0309/222311484066" rel="external" target="_blank">[일반 상대성이론] 공변(Covariant)과 반변(Contravariant)</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/notation_operation/index.html"><a class="padding" href="/tensor_analysis/notation_operation/index.html">Notation &amp; Basic operation</a><ul id="R-subsections-100baa60d1c63a81caf596844f862b6d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/basic_calculus/index.html"><a class="padding" href="/tensor_analysis/basic_calculus/index.html">Basic calculus</a><ul id="R-subsections-60125a9d29055f255d8c017d5930bcfb" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/basic_representation_transformation/index.html"><a class="padding" href="/tensor_analysis/basic_representation_transformation/index.html">Basic representation transformation</a><ul id="R-subsections-046962b5d56e1abbe2d05ac648073683" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/mapping_transformation/index.html"><a class="padding" href="/tensor_analysis/mapping_transformation/index.html">Mapping transformation</a><ul id="R-subsections-49983ec9d62939fbc755fefd8c122730" class="collapsible-menu">
+            <li class="active " data-nav-id="/tensor_analysis/mapping_transformation/a_covariant_contravariant/index.html"><a class="padding" href="/tensor_analysis/mapping_transformation/a_covariant_contravariant/index.html">(a) Covariant and contravariant</a></li>
+            <li class="" data-nav-id="/tensor_analysis/mapping_transformation/b_metric_tensor/index.html"><a class="padding" href="/tensor_analysis/mapping_transformation/b_metric_tensor/index.html">(a) Metric tensor</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/representation_transformation-copy/index.html"><a class="padding" href="/tensor_analysis/representation_transformation-copy/index.html">Representation transformation</a><ul id="R-subsections-1373177713fe8d291ce96116177abaf4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/operation_for_gc/index.html"><a class="padding" href="/tensor_analysis/operation_for_gc/index.html">Operation for GC</a></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_for_gc/index.html"><a class="padding" href="/tensor_analysis/calculus_for_gc/index.html">Calculus for GC</a></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1751914239"></script>
+    <script src="/js/clipboard/clipboard.min.js?1751914239" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751914239" defer></script>
+    <script src="/js/theme.js?1751914239" defer></script>
+  </body>
+</html>

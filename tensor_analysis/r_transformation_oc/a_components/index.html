@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 7.6.1+81b6d3c32c77aeecc29c4700d2123bd2fb3401c2">
+    <meta name="description" content="1. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.
+$$u_i&#39;=\langle u_i&#39;|u_j\rangle u_j$$$$\langle u_i&#39;|u_j\rangle=\langle u_j|u_i&#39;\rangle^\ast=\langle u_j|u_i&#39;\rangle$$이번에는 역변환을 생각해 보자.
+$$u_i=\langle u_i|u_j&#39;\rangle u_j&#39;$$$$\langle u_i|u_j&#39;\rangle=\langle u_j&#39;|u_i\rangle^\ast=\langle u_j&#39;|u_i\rangle$$proof)
+힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_j\rangle$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle=\langle u_i&#39;|u_j\rangle u_j|u_i&#39;\rangle$$따라서, 성분변환은 아래와 같다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Components :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.
+$$u_i&#39;=\langle u_i&#39;|u_j\rangle u_j$$$$\langle u_i&#39;|u_j\rangle=\langle u_j|u_i&#39;\rangle^\ast=\langle u_j|u_i&#39;\rangle$$이번에는 역변환을 생각해 보자.
+$$u_i=\langle u_i|u_j&#39;\rangle u_j&#39;$$$$\langle u_i|u_j&#39;\rangle=\langle u_j&#39;|u_i\rangle^\ast=\langle u_j&#39;|u_i\rangle$$proof)
+힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_j\rangle$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle=\langle u_i&#39;|u_j\rangle u_j|u_i&#39;\rangle$$따라서, 성분변환은 아래와 같다.">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/r_transformation_oc/a_components/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Components :: 수리전자물리학">
+    <meta property="og:description" content="1. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.
+$$u_i&#39;=\langle u_i&#39;|u_j\rangle u_j$$$$\langle u_i&#39;|u_j\rangle=\langle u_j|u_i&#39;\rangle^\ast=\langle u_j|u_i&#39;\rangle$$이번에는 역변환을 생각해 보자.
+$$u_i=\langle u_i|u_j&#39;\rangle u_j&#39;$$$$\langle u_i|u_j&#39;\rangle=\langle u_j&#39;|u_i\rangle^\ast=\langle u_j&#39;|u_i\rangle$$proof)
+힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_j\rangle$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle=\langle u_i&#39;|u_j\rangle u_j|u_i&#39;\rangle$$따라서, 성분변환은 아래와 같다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Components :: 수리전자물리학">
+    <meta itemprop="description" content="1. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.
+$$u_i&#39;=\langle u_i&#39;|u_j\rangle u_j$$$$\langle u_i&#39;|u_j\rangle=\langle u_j|u_i&#39;\rangle^\ast=\langle u_j|u_i&#39;\rangle$$이번에는 역변환을 생각해 보자.
+$$u_i=\langle u_i|u_j&#39;\rangle u_j&#39;$$$$\langle u_i|u_j&#39;\rangle=\langle u_j&#39;|u_i\rangle^\ast=\langle u_j&#39;|u_i\rangle$$proof)
+힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_j\rangle$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,
+$$|r\rangle=u_i&#39;|u_i&#39;\rangle=u_j|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle=\langle u_i&#39;|u_j\rangle u_j|u_i&#39;\rangle$$따라서, 성분변환은 아래와 같다.">
+    <meta itemprop="wordCount" content="216">
+    <title>(a) Components :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1752086422" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1752086422" defer></script>
+    <script src="/js/search-lunr.js?1752086422" defer></script>
+    <script src="/js/search.js?1752086422" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1752086422";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1752086422" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1752086422" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1752086422" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1752086422" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752086422" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752086422" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752086422" rel="stylesheet">
+    <link href="/css/theme.css?1752086422" rel="stylesheet">
+    <link href="/css/format-html.css?1752086422" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/tensor_analysis\/r_transformation_oc\/a_components\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/tensor_analysis/r_transformation_oc/a_components/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-다른-단위-직교-기저로의-변환-dirac-notation-사용">1. 다른 단위 직교 기저로의 변환: Dirac notation 사용</a></li>
+        <li><a href="#2-성분-추출">2. 성분 추출</a></li>
+        <li><a href="#3-항등-연산">3. 항등 연산</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/r_transformation_oc/index.html"><span itemprop="name">R. transformation for OC</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Components</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/r_transformation_oc/index.html" title="R. transformation for OC (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/r_transformation_oc/a_2nd_tensor/index.html" title="(a) 2nd tensor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable tensor_analysis" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-components">(a) Components</h1>
+
+<hr>
+<h3 id="1-다른-단위-직교-기저로의-변환-dirac-notation-사용">1. 다른 단위 직교 기저로의 변환: Dirac notation 사용</h3>
+<p>기저의 성분은 모두 실수이다.</p>
+$$
+u_i'=\langle u_i'|u_j\rangle u_j
+$$$$
+\langle u_i'|u_j\rangle
+=\langle u_j|u_i'\rangle^\ast
+=\langle u_j|u_i'\rangle
+$$<p>이번에는 역변환을 생각해 보자.</p>
+$$
+u_i=\langle u_i|u_j'\rangle u_j'
+$$$$
+\langle u_i|u_j'\rangle
+=\langle u_j'|u_i\rangle^\ast
+=\langle u_j'|u_i\rangle
+$$<p>proof)</p>
+<p><strong>힐베르트 공간</strong> 에서, 텐서 r를 아래와 같이 표현할 수 있다.</p>
+$$
+|r\rangle
+=u_i'|u_i'\rangle
+=u_j|u_j\rangle
+$$<p><strong>텐서의 성분 변환</strong>을 파악하기 위해, <strong>기저 벡터 변환</strong> 을 수행하자. 항등 연산자를 사용하면,</p>
+$$
+|r\rangle
+=u_i'|u_i'\rangle
+=u_j|u_i'\rangle\langle u_i'|u_j\rangle
+=\langle u_i'|u_j\rangle u_j|u_i'\rangle
+$$<p>따라서, 성분변환은 아래와 같다.</p>
+$$
+u_{i}'
+=\langle u_i'|u_j\rangle u_j
+$$<p>정리하면, <strong>벡터의 성분 변환 연산자</strong>를 아래와 같이 표현할 수 있다.</p>
+$$
+\hat{C}_{ij}'
+=\langle u_i'|u_j\rangle
+$$<hr>
+<h3 id="2-성분-추출">2. 성분 추출</h3>
+<p><strong>일반적으로 벡터의 성분 변환은 내적의 관점</strong>으로 아래와 같이 쓸 수 있다.</p>
+$$
+u_{i}'
+=\langle u_i'|r\rangle
+$$<p>proof)</p>
+<p>성분변환은 아래와 같다.</p>
+$$
+u_{i}'
+=\langle u_i'|u_j\rangle u_j
+=\langle u_i'| (u_j|u_j\rangle)
+=\langle u_i'| r\rangle
+$$<hr>
+<h3 id="3-항등-연산">3. 항등 연산</h3>
+<p>기저의 성분은 모두 실수이다.</p>
+$$
+\delta_{ij}=\langle u_i | u_j \rangle
+= \langle u_i | u_k'\rangle \langle u_k'| u_j \rangle
+= \langle u_k' | u_i\rangle \langle u_k'| u_j \rangle
+= \langle u_i | u_k'\rangle \langle u_j| u_k' \rangle
+$$<p>proof)</p>
+$$
+\delta_{ij}=\langle u_i | u_j \rangle
+= \langle u_i |\left(| u_k'\rangle \langle u_k'|\right)| u_j \rangle
+= \langle u_i | u_k'\rangle \langle u_k'| u_j \rangle
+$$<p>여기에서, 기저의 성분이 실수라면,</p>
+$$
+\langle u_i | u_k'\rangle
+=\langle u_k' | u_i\rangle^\ast
+=\langle u_k' | u_i\rangle
+$$
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/operation_oc/index.html"><a class="padding" href="/tensor_analysis/operation_oc/index.html">Operation for OC</a><ul id="R-subsections-1ea38b1e30c9276750eafe398ccdd49e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus_oc/index.html"><a class="padding" href="/tensor_analysis/calculus_oc/index.html">Calculus for OC</a><ul id="R-subsections-022c7edeae0dafc6670f9d2957d986f0" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/r_transformation_oc/index.html"><a class="padding" href="/tensor_analysis/r_transformation_oc/index.html">R. transformation for OC</a><ul id="R-subsections-43bc2530c98cd52331e4e19dcfd2cea9" class="collapsible-menu">
+            <li class="active " data-nav-id="/tensor_analysis/r_transformation_oc/a_components/index.html"><a class="padding" href="/tensor_analysis/r_transformation_oc/a_components/index.html">(a) Components</a></li>
+            <li class="" data-nav-id="/tensor_analysis/r_transformation_oc/a_2nd_tensor/index.html"><a class="padding" href="/tensor_analysis/r_transformation_oc/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/tensor_analysis/r_transformation_oc/a_rotation_transport/index.html"><a class="padding" href="/tensor_analysis/r_transformation_oc/a_rotation_transport/index.html">(a) Rotation &amp; Transport</a></li>
+            <li class="" data-nav-id="/tensor_analysis/r_transformation_oc/a_derivative/index.html"><a class="padding" href="/tensor_analysis/r_transformation_oc/a_derivative/index.html">(a) Derivative</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/m_transformation/index.html"><a class="padding" href="/tensor_analysis/m_transformation/index.html">M. transformation</a><ul id="R-subsections-e64000e2e808be75881f32d22f41948b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/r_transformation_gc/index.html"><a class="padding" href="/tensor_analysis/r_transformation_gc/index.html">R. transformation for GC</a><ul id="R-subsections-204b2423528da535f109720ec1901683" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/operation_gc/index.html"><a class="padding" href="/tensor_analysis/operation_gc/index.html">Operation for GC</a><ul id="R-subsections-b1da3719e3a4a7b44e7179d068035a00" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/calculus_gc/index.html"><a class="padding" href="/tensor_analysis/calculus_gc/index.html">Calculus for GC</a></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1752086422"></script>
+    <script src="/js/clipboard/clipboard.min.js?1752086422" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752086422" defer></script>
+    <script src="/js/theme.js?1752086422" defer></script>
+  </body>
+</html>

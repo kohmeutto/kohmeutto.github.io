@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Operation for GC :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/operation_gc/index.html</link>
+    <description>(a) 2nd tensor&#xD;(a) Dot products</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/operation_gc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/tensor_analysis/operation_gc/a_2nd-tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/operation_gc/a_2nd-tensor/index.html</guid>
+      <description>1. 2차 mixed tensor 표기법 2차 혼합 텐서의 경우, 지수 순서를 파악하기 위해 아래와 같이 표기한다.&#xA;$$&#xD;\bar{\bar{A}}&#xD;=A^{i}_{.j}\vec{g}_i\vec{g}^j&#xD;=A_{i.}^{\ j}\vec{g}^i\vec{g}_j&#xD;$$ 2. 2차 tensor의 전치 표기법 (1) sym 2차 tensor&#xA;$$&#xD;\bar{\bar{A}}^T&#xD;=(A^{ij})^T(\vec{g}_i\vec{g}_j)^T&#xD;=A^{ji}\vec{g}_j\vec{g}_i&#xD;=A^{ji}\vec{g}_i\vec{g}_j&#xD;$$$$&#xD;(A^{ij})^T=A^{ji},\quad&#xD;(A_{ij})^T=A_{ji},\quad&#xD;(A^i_{.j})^T=A_{j.}^{\ i},\quad&#xD;$$(2) skew 2차 tensor&#xA;$$&#xD;(A^{ij})^T=-A^{ji},\quad&#xD;(A_{ij})^T=-A_{ji},\quad&#xD;(A^i_{.j})^T=-A_{j.}^{\ i},\quad&#xD;$$ 3. 고차 tensor 표기법 $$&#xD;\stackrel{4}{A}&#xD;=A^{ij}_{..kl}\vec{g}^i\vec{g}^j\vec{g}_k\vec{g}_l&#xD;$$</description>
+    </item>
+    <item>
+      <title>(a) Dot products</title>
+      <link>http://localhost:1313/tensor_analysis/operation_gc/a_dot_products/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/operation_gc/a_dot_products/index.html</guid>
+      <description>1. 고차 tensor 내적 When $\bar{\bar{\sigma}}=\sigma^{ij}\vec{g}_i\vec{g}_j$ and $\vec{n}=n^k\vec{g}_k$,&#xA;$$&#xD;\vec{T}&#xD;=\bar{\bar{\sigma}}\cdot\vec{n}&#xD;=\sigma^{ij}\vec{g}_i\vec{g}_j\cdot n^k\vec{g}_k&#xD;=\sigma^{ij}n^k\vec{g}_i\vec{g}_j\cdot \vec{g}_k&#xD;$$$$&#xD;=\sigma^{ij}n^k\vec{g}_ig_{jk}&#xD;$$$$&#xD;=\sigma^{ij}n_j\vec{g}_i&#xD;$$and also when $\bar{\bar{\varepsilon}}=\varepsilon_{kl}\vec{g}^k\vec{g}^l$&#xA;$$&#xD;W&#xD;=\frac12\bar{\bar{\sigma}}:\bar{\bar{\varepsilon}}&#xD;=\frac12\sigma^{ij}\vec{g}_i\vec{g}_j:\varepsilon_{kl}\vec{g}^k\vec{g}^l&#xD;=\frac12\sigma^{ij}\varepsilon_{kl}\vec{g}_i\vec{g}_j:\vec{g}^k\vec{g}^l&#xD;=\frac12\sigma^{ij}\varepsilon_{kl}(\vec{g}_i\cdot\vec{g}^k)(\vec{g}_j\cdot\vec{g}^l)&#xD;$$$$&#xD;=\frac12\sigma^{ij}\varepsilon_{kl}\delta_i^k\delta_j^l&#xD;$$$$&#xD;=\frac12\sigma^{ij}\varepsilon_{ij}&#xD;$$ 2. 대각합(trace) $$&#xD;\operatorname{tr}\bar{\bar{A}}&#xD;=\bar{\bar{A}}:\bar{\bar{I}}&#xD;=A^i_{.i}&#xD;$$proof)&#xA;$$&#xD;\operatorname{tr}\bar{\bar{A}}&#xD;=\bar{\bar{A}}:\bar{\bar{I}}&#xD;=A^{ij}\vec{g}_i\vec{g}_j:\vec{g}_k\vec{g}^k&#xD;=A^{ij}(\vec{g}_i\cdot\vec{g}_k)(\vec{g}_j\cdot\vec{g}^k)&#xD;$$$$&#xD;=A^{ij}g_{ik}\delta_j^k&#xD;=A^{ik}g_{ik}&#xD;=A^{i}_{.i}&#xD;$$ 4. 벡터의 크기 $$&#xD;||\vec{n}||&#xD;=\sqrt{n^in_i}&#xD;$$proof)&#xA;$$&#xD;||\vec{n}||&#xD;=\sqrt{\vec{n}\cdot\vec{n}}&#xD;=\sqrt{n^i\vec{g}_i\cdot n_j\vec{g}^j}&#xD;=\sqrt{n^in_j\vec{g}_i\cdot\vec{g}^j}&#xD;=\sqrt{n^in_j\delta_i^j}&#xD;=\sqrt{n^in_i}&#xD;$$ 5. 기저 벡터의 크기 $$&#xD;||\vec{g}_i||&#xD;=\sqrt{g_{\underline{i}\underline{i}}}&#xD;$$$$&#xD;||\vec{g}^i||&#xD;=\sqrt{g^{\underline{i}\underline{i}}}&#xD;$$여기에서 주의 해야할 점은, 지수 $i$ 는 중복 지수가 아니라는 것이다. 따라서, $\underline{i}$ 는 지수에 대한 중복법칙을 적용하지 말라는 의미이다.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic representation transformation :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/representation_transformation/index.html</link>
+    <description>(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/representation_transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Components</title>
+      <link>http://localhost:1313/tensor_analysis/representation_transformation/a_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/representation_transformation/a_components/index.html</guid>
+      <description>1. 텐서 성분의 표기 (1) 변환&#xA;$$&#xD;u_i&#39;=C&#39;_{ij}u_j,\quad \text{$C&#39;_{ij}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$(2) 역변환&#xA;$$&#xD;u_i=C_{ij}u_j&#39;,\quad \text{$C_{ij}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$ 2. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.&#xA;$$&#xD;u_i&#39;=C_{ij}&#39;u_j,\quad \text{$C_{ij}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ij}&#39;&#xD;=\langle u_i&#39;|u_j\rangle&#xD;=\langle u_j|u_i&#39;\rangle^\ast&#xD;=C_{ji}&#xD;$$이번에는 역변환을 생각해 보자.&#xA;$$&#xD;u_i=C_{ij}u_j&#39;,\quad \text{$C_{ij}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ij}&#xD;=\langle u_i|u_j&#39;\rangle&#xD;=\langle u_j&#39;|u_i\rangle^\ast&#xD;=C_{ji}&#39;&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/tensor_analysis/representation_transformation/a_2nd_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/representation_transformation/a_2nd_tensor/index.html</guid>
+      <description>1. 텐서 성분의 표기 (1) 변환&#xA;$$&#xD;A_{ij}&#39;=C_{ik}&#39;C_{jl}&#39;A_{kl},\quad \text{$C_{ik}&#39;$, $C_{jl}&#39;$는 성분 변환 텐서의 성분이다.}&#xD;$$(2) 역변환&#xA;$$&#xD;A_{ij}=C_{ik}C_{jl}A_{kl}&#39;,\quad \text{$C_{ik}$, $C_{jl}$는 성분 변환 텐서의 성분이다.}&#xD;$$ 2. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.&#xA;$$&#xD;A_{ij}&#39;=C_{ik}&#39;C_{jl}&#39;A_{kl}&#xD;$$$$&#xD;C_{ik}&#39;C_{jl}&#39;&#xD;=\langle u&#39;_i|u_k\rangle\langle u&#39;_j|u_l\rangle&#xD;$$이번에는 역변환을 생각해 보자.&#xA;$$&#xD;A_{ij}=C_{ik}C_{jl}A_{kl}&#39;&#xD;$$$$&#xD;C_{ik}C_{jl}&#xD;=\langle u_i|u&#39;_k\rangle\langle u_j|u&#39;_l\rangle&#xD;$$proof)&#xA;디렉 표기법을 사용하면 보다 우아하게 성분 변환을 표현할 수 있다. 힐베르트 공간 에서, 텐서 A를 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(a) Rotation &amp; Transport</title>
+      <link>http://localhost:1313/tensor_analysis/representation_transformation/a_rotation_transport/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/representation_transformation/a_rotation_transport/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>(a) Derivative</title>
+      <link>http://localhost:1313/tensor_analysis/representation_transformation/a_derivative/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/representation_transformation/a_derivative/index.html</guid>
+      <description>다른 단위 직교 기저로의 변환이다. 1. Gradient $$&#xD;\nabla\varphi\to\nabla&#39;\varphi&#39;&#xD;$$변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=\nabla&#39;\varphi&#xD;=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;$$여기에서, $u_j=C_{ji}’ u_i’=C_{ij}u_i’$ 이다.&#xA;$$&#xD;\frac{\partial u_j}{\partial u_i&#39;}&#xD;=C_{ij}&#xD;$$따라서,&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=C_{ij}\frac{\partial\varphi}{\partial u_j}\hat{u}_i&#39;&#xD;$$ example1) $x_3=z$ 에 대하여 90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2+x_2^2+x_3^2$ 로 주어진다.&#xA;sol)&#xA;$$&#xD;\left[\frac{\partial \varphi&#39;}{\partial x_i&#39;}\right]&#xD;=\left[C_{ij}\frac{\partial \varphi}{\partial x_j}\right]&#xD;=\begin{bmatrix}&#xD;\cos90^\circ &amp; \sin90^\circ &amp; 0 \\&#xD;-\sin90^\circ &amp; \cos90^\circ &amp; 0 \\&#xD;0 &amp; 0 &amp; 1&#xD;\end{bmatrix}&#xD;\begin{bmatrix}&#xD;\cfrac{\partial \varphi}{\partial x_1} \\&#xD;\cfrac{\partial \varphi}{\partial x_2} \\&#xD;\cfrac{\partial \varphi}{\partial x_3}&#xD;\end{bmatrix}&#xD;=\begin{bmatrix}&#xD;2x_2 \\&#xD;-2x_1 \\&#xD;2x_3&#xD;\end{bmatrix}&#xD;$$example2) 임의의 2차 tensor $\bar{\bar{A}}$ 의 변환된 좌표 $x’$에 대한 미분을 구하시오.</description>
+    </item>
+  </channel>
+</rss>
