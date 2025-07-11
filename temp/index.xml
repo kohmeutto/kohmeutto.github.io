@@ -64,6 +64,13 @@
       <description>1. Gradient의 의미 등위선 또는 등위면에서 법선(수직) 뱡향의 기울기 이다.&#xA;2. Gradient for scalar 매개변수 공간 -&gt; 실공간 직교좌표계&#xA;$$&#xD;\nabla_u&#xD;:=\hat{u}^j\frac{\partial}{\partial u^j} \implies&#xD;\nabla&#xD;:=\vec{h}^j\frac{\partial}{\partial u^j}&#xD;$$ 데카르트좌표계: $h_1=1, h_2=1, h_3=1$ 원통좌표계: $h_1=1, h_2=\rho, h_3=1$ 구좌표계: $h_1=1, h_2=r, h_3=r\sin\theta$ (2) 실공간 직교좌표계&#xA;$$&#xD;\nabla&#xD;:=\hat{e}_j\frac{\partial}{h_j\partial u^j}&#xD;$$proof)&#xA;일반적으로, suffix가 동일한 공변가저와 반변기저의 내적은 1이다. 직교좌표계에서, 공변기저와 반변기저의 방향은 동일하다. $$&#xD;\vec{h}^j&#xD;=h^j\hat{e}^j&#xD;=h^j\hat{e}_j&#xD;,\quad&#xD;h_jh^j&#xD;=1&#xD;$$따라서,&#xA;$$&#xD;\vec{h}^j&#xD;=\hat{e}_j\frac{1}{h_j}&#xD;$$위 식을 일반식에 대입하면,</description>
     </item>
     <item>
+      <title>[GC] Operation</title>
+      <link>http://localhost:1313/temp/gc_operation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/gc_operation/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Vector calculus</title>
       <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
