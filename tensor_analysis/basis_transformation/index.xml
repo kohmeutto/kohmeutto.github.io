@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basis transformation :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/basis_transformation/index.html</link>
+    <description>동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.&#xA;(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/basis_transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Components</title>
+      <link>http://localhost:1313/tensor_analysis/basis_transformation/a_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/basis_transformation/a_components/index.html</guid>
+      <description>1. 성분 추출 &amp; 성분 변환: Dirac notation 사용 (1) 성분 추출&#xA;일반적으로 벡터의 성분 변환은 내적의 관점으로 아래와 같이 쓸 수 있다.&#xA;$$&#xD;u_{i}&#39;&#xD;=\langle u_i&#39;|r\rangle&#xD;$$(2) 성분 변환&#xA;기저의 성분은 모두 실수이다.&#xA;$$&#xD;u_i&#39;=\langle u_i&#39;|u_j\rangle u_j&#xD;$$$$&#xD;\langle u_i&#39;|u_j\rangle&#xD;=\langle u_j|u_i&#39;\rangle^\ast&#xD;=\langle u_j|u_i&#39;\rangle&#xD;$$이번에는 역변환을 생각해 보자.&#xA;$$&#xD;u_i=\langle u_i|u_j&#39;\rangle u_j&#39;&#xD;$$$$&#xD;\langle u_i|u_j&#39;\rangle&#xD;=\langle u_j&#39;|u_i\rangle^\ast&#xD;=\langle u_j&#39;|u_i\rangle&#xD;$$proof)&#xA;힐베르트 공간 에서, 텐서 r를 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/tensor_analysis/basis_transformation/a_2nd_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/basis_transformation/a_2nd_tensor/index.html</guid>
+      <description>1. 다른 단위 직교 기저로의 변환: Dirac notation 사용 기저의 성분은 모두 실수이다.&#xA;$$&#xD;A_{ij}&#39;=\langle u&#39;_i|u_k\rangle\langle u&#39;_j|u_l\rangle A_{kl}&#xD;$$이번에는 역변환을 생각해 보자.&#xA;$$&#xD;A_{ij}=\langle u_i|u&#39;_k\rangle\langle u_j|u&#39;_l\rangle A_{kl}&#39;&#xD;$$proof)&#xA;디렉 표기법을 사용하면 보다 우아하게 성분 변환을 표현할 수 있다. 힐베르트 공간 에서, 텐서 A를 아래와 같이 표현할 수 있다.&#xA;$$&#xD;|\bar{\bar{A}}\rangle=A_{ij}|u_i\rangle\langle u_j|&#xD;=A_{ij}&#39;|u_i&#39;\rangle\langle u_j&#39;|&#xD;$$텐서의 성분 변환을 파악하기 위해, 기저 벡터 변환 을 수행하자. 항등 연산자를 사용하면,&#xA;$$&#xD;|\bar{\bar{A}}\rangle=A_{kl}\left(|u&#39;_i\rangle\langle u&#39;_i|\right)|u_k\rangle\langle u_l|\left(|u&#39;_j\rangle\langle u&#39;_j|\right)&#xD;=\left\lbrace\langle u&#39;_i|u_k\rangle\langle u_l|u&#39;_j\rangle\right\rbrace A_{kl}|u&#39;_i\rangle\langle u&#39;_j|&#xD;$$따라서, 성분변환은 아래와 같다.</description>
+    </item>
+    <item>
+      <title>(a) Rotation &amp; Transport</title>
+      <link>http://localhost:1313/tensor_analysis/basis_transformation/a_rotation_transport/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/basis_transformation/a_rotation_transport/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>(a) Derivative</title>
+      <link>http://localhost:1313/tensor_analysis/basis_transformation/a_derivative/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/basis_transformation/a_derivative/index.html</guid>
+      <description>1. Gradient $$&#xD;\nabla\varphi&#xD;=\frac{\partial\varphi}{\partial u_j}\hat{u}_j,\quad&#xD;\nabla&#39;\varphi&#39;&#xD;=\frac{\partial\varphi&#39;}{\partial u_j&#39;}\hat{u}_j&#39;&#xD;$$$$&#xD;\nabla\varphi&#xD;=\nabla&#39;\varphi&#39;&#xD;$$proof)&#xA;변환된 기저와 변환 이전의 기저에서 gradient를 비교해 보자. 스칼라는 0차 텐서이므로, 기저에 상관없이 동일하다.&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=\nabla&#39;\varphi&#xD;=\frac{\partial\varphi}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;=\frac{\partial\varphi}{\partial u_j}\frac{\partial u_j}{\partial u_i&#39;}\hat{u}_i&#39;&#xD;$$여기에서, $u_j=\langle u_j|u_i’\rangle u_i’$ 이다. 국소적 변화를 선형으로 볼 수 있으므로&#xA;$$&#xD;\frac{\partial u_j}{\partial u_i&#39;}&#xD;=\langle u_j|u_i&#39;\rangle&#xD;=\langle u_i&#39;|u_j\rangle^{\dagger}&#xD;=\langle u_i&#39;|u_j\rangle&#xD;$$따라서,&#xA;$$&#xD;\nabla&#39;\varphi&#39;&#xD;=\langle u_i&#39;|u_j\rangle\frac{\partial\varphi}{\partial u_j}|u_i&#39;\rangle&#xD;=\frac{\partial\varphi}{\partial u_j}|u_i&#39;\rangle\langle u_i&#39;|u_j\rangle&#xD;=\frac{\partial\varphi}{\partial u_j}|u_j\rangle&#xD;$$ example1) $x_3=z$ 에 대하여 +90도 회전 변환된 좌표계에서의 $\partial \varphi’/\partial x_i’$를 구하시오. 단, 스칼라장은 $\varphi=x_1^2+x_2^2+x_3^2$ 로 주어진다.</description>
+    </item>
+  </channel>
+</rss>

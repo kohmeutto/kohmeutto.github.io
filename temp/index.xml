@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Temps :: 수리전자물리학</title>
+    <link>http://localhost:1313/temp/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/temp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Basis</title>
+      <link>http://localhost:1313/temp/a_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_basis/index.html</guid>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리 (1) 기저 변환&#xA;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j&#xD;$$(2) 기저 역변환&#xA;$$&#xD;\hat{u}_i=B_{ji}\hat{u}_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{B}}\cdot\bar{\bar{B}}^T,\quad&#xD;\bar{\bar{B}}^T=\bar{\bar{B}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=B_{ik}B_{jk}&#xD;$$ 1. 기저 벡터의 변환: 텐서 표기법 사용 $$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 기저 변환 텐서의 성분이다.}&#xD;$$$B_{ij}$ 는 다음과 같이 정의될 수 있다.&#xA;$$&#xD;\hat{u}_i&#39;\cdot\hat{u}_j&#xD;=B_{ij}\hat{u}_j\cdot\hat{u}_j&#xD;=B_{ij}&#xD;$$$$&#xD;B_{ij}=\cos\theta_{ij},\quad \text{$\theta_{ij}$는 $\hat{u}_i&#39;$ 와 $\hat{u}_j$ 사이의 각도이다.}&#xD;$$ 2. 기저 벡터의 변환: Dirac notation 사용 Dirac notation 을 사용하여, $B_{ij}$ 는 다음과 같이 정의될 수 있다.</description>
+    </item>
+    <item>
+      <title>(a) Covariant and contravariant</title>
+      <link>http://localhost:1313/temp/a_covariant_contravariant/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_covariant_contravariant/index.html</guid>
+      <description>이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.&#xA;여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다&#xA;1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.</description>
+    </item>
+    <item>
+      <title>Electromotive force</title>
+      <link>http://localhost:1313/temp/electromotive_force/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/electromotive_force/index.html</guid>
+      <description>(a) Frame &amp; Viewpoint&#xD;(a) Lagrangian and Eulerian specification&#xD;(a) Material derivative&#xD;(i) Electromotive force I&#xD;(a) Electromotive force II&#xD;(r) EMF &amp; Voltage</description>
+    </item>
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/temp/a_2nd_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_2nd_tensor/index.html</guid>
+      <description>1. 2차 tensor의 성분 변환: 텐서 표기법 사용 여기에서의 설명은 직교좌표계의 기저로 한정한다. 직교가 아닌 일반 좌표계에서는 적용할 수 없다.&#xA;$$&#xD;A_{ij}&#39;=C_{ijkl}A_{kl},\quad \text{$C_{ijkl}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ijkl}=B_{ik}B_{jl}&#xD;$$proof)&#xA;동일 공간에서, 텐서는 좌표계가 달라져도 불변임을 기억하라.&#xA;$$&#xD;\bar{\bar{A}}&#xD;=A_{ij}&#39;\hat{u}_i&#39;\hat{u}_j&#39;&#xD;=A_{ij}\hat{u}_i\hat{u}_j&#xD;$$기저 벡터의 변환을 적용해 보자.&#xA;$$&#xD;A_{ij}\hat{u}_i\hat{u}_j&#xD;=A_{ij}(B_{ki}\hat{u}_k&#39;)(B_{lj}\hat{u}_l&#39;)&#xD;=A_{ij}B_{ki}B_{lj}\hat{u}_k&#39;\hat{u}_l&#39;&#xD;$$$k$↔$i$, $l$↔$j$ 로 조정하면,&#xA;$$&#xD;A_{kl}B_{ik}B_{jl}\hat{u}_i&#39;\hat{u}_j&#39;&#xD;=A_{ij}&#39;\hat{u}_i&#39;\hat{u}_j&#39;&#xD;$$따라서,&#xA;$$&#xD;A_{ij}&#39;=B_{ik}B_{jl}A_{kl}&#xD;$$ 2. 2차 tensor의 성분 변환: Dirac notation 사용 직교좌표계 뿐만아니라, 일반좌표계에서도 적용할 수 있다. 디렉 표기법을 사용하면 보다 우아하게 성분 변환을 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(a) Basis &amp; Components</title>
+      <link>http://localhost:1313/temp/a_basis_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_basis_components/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\begin{bmatrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$$$&#xD;|u_1\rangle=\begin{bmatrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_2\rangle=\begin{bmatrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_3\rangle=\begin{bmatrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>Transformation</title>
+      <link>http://localhost:1313/temp/transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/transformation/index.html</guid>
+      <description>(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    </item>
+    <item>
+      <title>(b) Components transformation</title>
+      <link>http://localhost:1313/temp/b_components_transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_components_transformation/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리 기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Gradient for scalar</title>
+      <link>http://localhost:1313/temp/b_gradient_for_scalar/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_gradient_for_scalar/index.html</guid>
+      <description>1. Gradient의 의미 등위선 또는 등위면에서 법선(수직) 뱡향의 기울기 이다.&#xA;2. Gradient for scalar 매개변수 공간 -&gt; 실공간 직교좌표계&#xA;$$&#xD;\nabla_u&#xD;:=\hat{u}^j\frac{\partial}{\partial u^j} \implies&#xD;\nabla&#xD;:=\vec{h}^j\frac{\partial}{\partial u^j}&#xD;$$ 데카르트좌표계: $h_1=1, h_2=1, h_3=1$ 원통좌표계: $h_1=1, h_2=\rho, h_3=1$ 구좌표계: $h_1=1, h_2=r, h_3=r\sin\theta$ (2) 실공간 직교좌표계&#xA;$$&#xD;\nabla&#xD;:=\hat{e}_j\frac{\partial}{h_j\partial u^j}&#xD;$$proof)&#xA;일반적으로, suffix가 동일한 공변가저와 반변기저의 내적은 1이다. 직교좌표계에서, 공변기저와 반변기저의 방향은 동일하다. $$&#xD;\vec{h}^j&#xD;=h^j\hat{e}^j&#xD;=h^j\hat{e}_j&#xD;,\quad&#xD;h_jh^j&#xD;=1&#xD;$$따라서,&#xA;$$&#xD;\vec{h}^j&#xD;=\hat{e}_j\frac{1}{h_j}&#xD;$$위 식을 일반식에 대입하면,</description>
+    </item>
+    <item>
+      <title>[GC] Operation</title>
+      <link>http://localhost:1313/temp/gc_operation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/gc_operation/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vector calculus</title>
+      <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/index.html</guid>
+      <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Operation&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;General coordinates&#xD;Transformation for GC</description>
+    </item>
+  </channel>
+</rss>
