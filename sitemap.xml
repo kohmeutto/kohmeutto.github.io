@@ -7,6 +7,9 @@
     <loc>http://localhost:1313/temp/a_basis/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tensor_analysis/coordinate_transformation/a_basis/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/transformation/a_components/index.html</loc>
   </url>
   <url>
@@ -98,9 +101,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/basis_transformation/a_2nd_tensor/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tensor_analysis/coordinate_transformation/a_basis/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/coordinate_transformation/a_components/index.html</loc>
