@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metric tensor :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/metric_tensor/index.html</link>
+    <description>(a) Metric tensor&#xD;(a) 2nd tensor&#xD;(a) Magnitude&#xD;(a) Cross product&#xD;(a) Triple scalar product</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/metric_tensor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Metric tensor</title>
+      <link>http://localhost:1313/tensor_analysis/metric_tensor/b_metric_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/metric_tensor/b_metric_tensor/index.html</guid>
+      <description>1. 공변 기저 벡터의 매트릭 텐서 $$&#xD;g_{ij}&#xD;=\langle g_i|g_j \rangle&#xD;=\vec{g}_i\cdot\vec{g}_j&#xD;$$매트릭 텐서를 행렬로 표시하면 다음과 같다.&#xA;$$&#xD;\left[g_{ij}\right]&#xD;=\begin{bmatrix}&#xD;g_{11} &amp; g_{12} &amp; g_{13} \\&#xD;g_{21} &amp; g_{22} &amp; g_{23} \\&#xD;g_{31} &amp; g_{32} &amp; g_{33} \&#xD;\end{bmatrix}&#xD;$$만약, 공변기저벡터들이 서로 ortgorhonal 하다면, 대각 성분을 제외한 모든 성분은 0이 된다. 공변기저벡터를 사용한 두 벡터의 내적은 매트릭 텐서를 사용하여 표현할 수 있다.&#xA;$$&#xD;\vec{a}\cdot\vec{b}=a^i\vec{g}_i\cdot b^j\vec{g}_j=a^ib^jg_{ij}&#xD;$$ 2. 반변기저벡터의 역 매트릭 텐서 $$&#xD;g^{ij}=\vec{g}^i\cdot\vec{g}^j&#xD;$$역 매트릭 텐서를 행렬로 표시하면 다음과 같다.</description>
+    </item>
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/tensor_analysis/metric_tensor/a_2nd-tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/metric_tensor/a_2nd-tensor/index.html</guid>
+      <description>1. 2차 mixed tensor 표기법 2차 혼합 텐서의 경우, 지수 순서를 파악하기 위해 아래와 같이 표기한다.&#xA;$$&#xD;\bar{\bar{A}}&#xD;=A^{i}_{.j}\vec{g}_i\vec{g}^j&#xD;=A_{i.}^{\ j}\vec{g}^i\vec{g}_j&#xD;$$ 2. 2차 tensor의 전치 표기법 (1) sym 2차 tensor&#xA;$$&#xD;\bar{\bar{A}}^T&#xD;=(A^{ij})^T(\vec{g}_i\vec{g}_j)^T&#xD;=A^{ji}\vec{g}_j\vec{g}_i&#xD;=A^{ji}\vec{g}_i\vec{g}_j&#xD;$$$$&#xD;(A^{ij})^T=A^{ji},\quad&#xD;(A_{ij})^T=A_{ji},\quad&#xD;(A^i_{.j})^T=A_{j.}^{\ i},\quad&#xD;$$(2) skew 2차 tensor&#xA;$$&#xD;(A^{ij})^T=-A^{ji},\quad&#xD;(A_{ij})^T=-A_{ji},\quad&#xD;(A^i_{.j})^T=-A_{j.}^{\ i},\quad&#xD;$$ 3. 고차 tensor 표기법 $$&#xD;\stackrel{4}{A}&#xD;=A^{ij}_{..kl}\vec{g}_i\vec{g}_j\vec{g}^k\vec{g}^l&#xD;$$ 4. 성분 추출 When $\bar{\bar{A}}=A^{ij}\vec{g}_i\vec{g}_j$&#xA;(1) covarient 성분&#xA;$$&#xD;\vec{g}_k\cdot\bar{\bar{A}}\cdot\vec{g}_l&#xD;=\langle g_k|\bar{\bar{A}}|g_l\rangle&#xD;$$$$&#xD;=\vec{g}_k\cdot A^{ij}\vec{g}_i\vec{g}_j\cdot\vec{g}_l&#xD;=A^{ij}(\vec{g}_k\cdot\vec{g}_i)(\vec{g}_j\cdot\vec{g}_l)&#xD;=A^{ij}g_{ki}g_{jl}&#xD;$$$$&#xD;=A_{kl}&#xD;$$(2) mixed 성분</description>
+    </item>
+    <item>
+      <title>(a) Magnitude</title>
+      <link>http://localhost:1313/tensor_analysis/metric_tensor/a_magnitude/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/metric_tensor/a_magnitude/index.html</guid>
+      <description>1. 벡터의 크기 $$&#xD;||\vec{n}||&#xD;=\sqrt{n^in_i}&#xD;$$proof)&#xA;$$&#xD;||\vec{n}||&#xD;=\sqrt{\vec{n}\cdot\vec{n}}&#xD;=\sqrt{n^i\vec{g}_i\cdot n_j\vec{g}^j}&#xD;=\sqrt{n^in_j\vec{g}_i\cdot\vec{g}^j}&#xD;=\sqrt{n^in_j\delta_i^j}&#xD;=\sqrt{n^in_i}&#xD;$$ 2. 기저 벡터의 크기 $$&#xD;||\vec{g}_i||&#xD;=\sqrt{g_\underline{i}g_\underline{i}}&#xD;=\sqrt{g_{\underline{i}\underline{i}}}&#xD;$$$$&#xD;||\vec{g}^i||&#xD;=\sqrt{g^\underline{i}g^\underline{i}}&#xD;=\sqrt{g^{\underline{i}\underline{i}}}&#xD;$$여기에서 주의 해야할 점은, 지수 $i$ 는 중복 지수가 아니라는 것이다. 따라서, $\underline{i}$ 는 지수에 대한 중복법칙을 적용하지 말라는 의미이다.</description>
+    </item>
+    <item>
+      <title>(a) Cross product</title>
+      <link>http://localhost:1313/tensor_analysis/metric_tensor/a_cross_product/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/metric_tensor/a_cross_product/index.html</guid>
+      <description>1. contravariant 성분을 가진 벡터의 외적 When $\vec{a}=a^i\vec{g}_i$, $\vec{b}=b^j\vec{g}_j$&#xA;$$&#xD;\vec{a}\times\vec{b}&#xD;=a^i\vec{g}_i\times b^j\vec{g}_j&#xD;=\varepsilon_{ijk}a^ib^j\vec{g}^k&#xD;$$여기에서의, $\varepsilon$ 는 순환기호(permutation symbol)로 직교좌표계에서와는 다르다.&#xA;2. covariant 성분을 가진 벡터의 외적 When $\vec{a}=a_i\vec{g}^i$, $\vec{b}=b_j\vec{g}^j$&#xA;$$&#xD;\vec{a}\times\vec{b}&#xD;=a_i\vec{g}^i\times b_j\vec{g}^j&#xD;=\varepsilon^{ijk}a_ib_j\vec{g}_k&#xD;$$여기에서의, $\varepsilon$ 는 순환기호(permutation symbol)로 직교좌표계에서와는 다르다.</description>
+    </item>
+    <item>
+      <title>(a) Triple scalar product</title>
+      <link>http://localhost:1313/tensor_analysis/metric_tensor/a_triple_scalar_product/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/metric_tensor/a_triple_scalar_product/index.html</guid>
+      <description>1. 삼중 내적 $$&#xD;(\vec{a}\times\vec{b})\cdot\vec{c}&#xD;=\varepsilon_{ijk}a^ib^jc^k&#xD;=\varepsilon^{ijk}a_ib_jc_k&#xD;$$proof)&#xA;$$&#xD;(\vec{a}\times\vec{b})\cdot\vec{c}&#xD;=\varepsilon_{ijk}a^ib^j\vec{g}^k\cdot c^l\vec{g}_l&#xD;$$$$&#xD;=\varepsilon_{ijk}a^ib^jc^l\vec{g}^k\cdot\vec{g}_l&#xD;=\varepsilon_{ijk}a^ib^jc^l\delta^k_l&#xD;$$$$&#xD;=\varepsilon_{ijk}a^ib^jc^k&#xD;=\varepsilon^{ijk}a_ib_jc_k&#xD;$$ 2. 순환기호의 정의 $$&#xD;\varepsilon_{ijk}&#xD;=V_ge_{ijk}&#xD;=\sqrt{g}e_{ijk}&#xD;=\begin{cases}&#xD;\,\,\,\,\,V_g &amp; (123,231,312) \\&#xD;-V_g &amp; (321,132,213) \\&#xD;\,\,\,\,\,\,0 &amp; (111,223,331) \text{ 등} \end{cases}&#xD;$$$$&#xD;g&#xD;=\begin{vmatrix}&#xD;g_{11} &amp; g_{12} &amp; g_{13} \\&#xD;g_{21} &amp; g_{22} &amp; g_{23} \\&#xD;g_{31} &amp; g_{32} &amp; g_{33}&#xD;\end{vmatrix}&#xD;$$proof1)&#xA;$$&#xD;(\vec{g}_i\times\vec{g}_j)\cdot\vec{g}_k&#xD;=\varepsilon_{ijk}&#xD;$$여기에서, $\varepsilon_{ijk}$는 3차 tensor $\stackrel{3}{E}=\varepsilon_{ijk}\vec{g}^i\vec{g}^j\vec{g}^k$의 covariant 성분이다. 한편, 기하학적으로는 세개의 기저 벡터가 이루는 평향 사변체의 체적 $V_g$ 를 의미하게 된다.</description>
+    </item>
+  </channel>
+</rss>

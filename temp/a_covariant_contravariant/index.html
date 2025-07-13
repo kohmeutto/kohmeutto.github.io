@@ -27,28 +27,28 @@
     <meta itemprop="description" content="이전 챕터에서는 매개변수공간(데카르트 좌표계로 간주)에서 단위 기저 벡터에 대해서 다루었다. 그러나 모든 기저가 직교하지 않을 수도 있으며, 그 크기가 1이 아닐 수도 있다.
 여기에서는 실공간의 일반 좌표계에서 기하학적 텐서를 표현하는 새로운 방식을 소개한다. orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
 1. 벡터의 표현 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.">
-    <meta itemprop="wordCount" content="1305">
+    <meta itemprop="wordCount" content="712">
     <title>(a) Covariant and contravariant :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1752201812" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1752201812" defer></script>
-    <script src="/js/search-lunr.js?1752201812" defer></script>
-    <script src="/js/search.js?1752201812" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1752202587" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1752202587" defer></script>
+    <script src="/js/search-lunr.js?1752202587" defer></script>
+    <script src="/js/search.js?1752202587" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1752201812";
+      window.relearn.index_js_url="/searchindex.en.js?1752202587";
     </script>
-    <script src="/js/lunr/lunr.min.js?1752201812" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1752201812" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1752201812" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1752201812" defer></script>
+    <script src="/js/lunr/lunr.min.js?1752202587" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1752202587" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1752202587" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1752202587" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752201812" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752201812" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752201812" rel="stylesheet">
-    <link href="/css/theme.css?1752201812" rel="stylesheet">
-    <link href="/css/format-html.css?1752201812" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752202587" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752202587" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752202587" rel="stylesheet">
+    <link href="/css/theme.css?1752202587" rel="stylesheet">
+    <link href="/css/format-html.css?1752202587" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -121,13 +121,10 @@
       <ul>
         <li><a href="#1-벡터의-표현">1. 벡터의 표현</a></li>
         <li><a href="#2-공변기저벡터">2. 공변기저벡터</a></li>
-        <li><a href="#2-역반변기저벡터">2. 역(반변)기저벡터</a></li>
-        <li><a href="#2-공변기저벡터-1">2. 공변기저벡터</a></li>
-        <li><a href="#3-반변기저벡터">3. 반변기저벡터</a></li>
-        <li><a href="#2-반변기저벡터">2. 반변기저벡터</a></li>
-        <li><a href="#4-중복지수표기법">4. 중복지수표기법</a></li>
-        <li><a href="#5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</a></li>
-        <li><a href="#6-공변기저벡터와-반변기저벡터의-내적-쌍대성">6. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</a></li>
+        <li><a href="#3-역반변기저벡터">3. 역(반변)기저벡터</a></li>
+        <li><a href="#4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</a></li>
+        <li><a href="#5-공변기저벡터와-반변기저벡터의-내적-쌍대성">5. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</a></li>
+        <li><a href="#6-공변기저벡터와-반변기저벡터의-dyad-단위-tensor">6. 공변기저벡터와 반변기저벡터의 dyad: 단위 tensor</a></li>
         <li><a href="#7-공변-반변-성분-추출">7. 공변, 반변 성분 추출</a></li>
       </ul>
     </li>
@@ -171,18 +168,17 @@
 <h3 id="1-벡터의-표현">1. 벡터의 표현</h3>
 <p><strong>일반 좌표계에서 벡터의 &ldquo;좌표값&quot;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수</strong> 이다. suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.</p>
 $$
-\vec{v}=v^{i}\vec{h}_i=v_i\vec{h}^i
+\vec{x}=x^{i}\vec{g}_i=x_i\vec{g}^i
 $$<ul>
-<li>$\vec{h}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 <strong>공변기저벡터</strong> 라고 한다.</li>
-<li>$v^i$ 는 성분을 나타내며, 이것을 $\vec{v}$ 의 contravariant(반변) 성분이라고 한다.</li>
-<li>$\vec{h}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 <strong>반변기저벡터</strong> 라고 한다.</li>
-<li>$v_i$ 는 성분을 나타내며, 이것을 $\vec{v}$ 의 covariant(공변) 성분이라고 한다.</li>
+<li>$\vec{g}_i$는 자연 기저 벡터 (natural base vectors) 라고 한다. 또는 <strong>공변기저벡터</strong> 라고 한다.</li>
+<li>$x^i$ 는 성분을 나타내며, 이것을 $\vec{x}$ 의 contravariant(반변) 성분이라고 한다.</li>
+<li>$\vec{g}^i$는 역 기저 벡터 (reciprocal base vectors) 라고 한다. 또는 <strong>반변기저벡터</strong> 라고 한다.</li>
+<li>$x_i$ 는 성분을 나타내며, 이것을 $\vec{x}$ 의 covariant(공변) 성분이라고 한다.</li>
 </ul>
 <hr>
 <h3 id="2-공변기저벡터">2. 공변기저벡터</h3>
-<p>아래 2가지 관점은 동등하며, 서로를 통해 완전한 의미를 가진다. <strong>관점 1</strong>은 q좌표계의 기하학적 틀을 제공한다. <strong>관점 2</strong>는 그 기하학적 틀 위에서, 물리적 대상을 어떻게 분석하고 표현할 것인지에 대한 도구를 제공한다.</p>
 <img src="image1.png" width="65%" height="auto">
-<p><strong>[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
+<p><strong>매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
 <p>데카르트 좌표계처럼 다룰 수 있는 매개변수 공간의 미소변위벡터($d\vec{q}$)는 아래와 같이 표현할 수 있다. 여기에서, $\hat{q}_j$가 $\hat{e}_k$ 와 같은 물리적 공간의 벡터가 아니라, 매개변수 공간 내에서 $q^j$ 축 방향의 단위 변화를 나타내는 <strong>추상적인 기저 벡터</strong> 이다.</p>
 $$
 d\vec{q}=dq^j\hat{q}_j
@@ -204,29 +200,20 @@ $$<p>처음과 윗 식을 비교해보자. 매핑 관점에서, 매개변수 공
 $$
 \hat{q}_j\to
 \vec{g}_j=\frac{\partial x^k}{\partial q^j}\hat{e}_k
-$$<p><strong>[관점 2] 동일 실공간에서 $q$좌표계로의 표현</strong></p>
-<p>실공간의 데카르트 좌표계에서 원점으로부터 임의의 거리 만큼 떨어진 공간상의 한 점 P를 고려하면, 그 점에 대한 위치벡터는 다음과 같이 표현할 수 있다.</p>
-$$
-\vec{x}=x^j\hat{e}_j
-$$<p>점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.</p>
-$$
-d\vec{x}
-=dx^j\hat{e}_j
 $$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
 $$
 d\vec{x}
 =dq^j\vec{g}_j
 =dq^jg_j^k\hat{e}_k
-$$<p>위 식을 <strong>관점 1</strong>의 결과와 비교하면 아래와 같다.</p>
-$$
+$$$$
 g^k_j
 =\frac{\partial x^k}{\partial q^j}
 $$<hr>
-<h3 id="2-역반변기저벡터">2. 역(반변)기저벡터</h3>
-<p>공변기저벡터의 경우, 매개변수공간의 (추상적인) 단위 기저벡터를 실공간으로 mapping된 궤적의 접선벡터라고 하였다. 이번에는 매개변수공간의 단위기저벡터를 등위면의 법선벡터라고 정의하자. 그러면, 실공간으로 mapping 하였을 때, mapping된 등위면이 생기며, 이 등위면의 법선 벡터를 반변기저벡터라고 한다.</p>
+<h3 id="3-역반변기저벡터">3. 역(반변)기저벡터</h3>
+<p>공변기저벡터의 경우, 매개변수공간의 (추상적인) 단위 기저벡터를 실공간으로 mapping된 궤적의 접선벡터라고 하였다. 이번에는 매개변수공간의 단위기저벡터를 등위면의 법선벡터라고 정의하자. 그러면, <strong>실공간으로 mapping 하였을 때, mapping된 등위면이 생기며, 이 등위면의 법선 벡터를 반변기저벡터</strong>라고 한다.</p>
 <img src="image2.png" width="65%" height="auto">
-<p><strong>[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑</strong></p>
-<p>실공간의 미소변위벡터 $d\vec{x}$를 매개변수공간의 $q^i$로 mapping 해 보자. 여기에서, 매개변수 공간의 (추상적) 단위 기저 벡터를 구하는 것은 의미가 없다. 왜냐하면, 이미 알고 있기 때문이다. mapping 된 각 단위 벡터의 성분은 아래와 같이 구할 수 있다.</p>
+<p><strong>실공간에서 매개변수 공간($q$)으로의 매핑</strong></p>
+<p>실공간의 미소변위벡터 $d\vec{x}$를 매개변수공간의 $q^i$로 mapping 해 보자. 여기에서, 매개변수 공간의 (추상적) 단위 기저 벡터는 이미 알고 있기에 구하는 의미가 없다. 매개변수공간으로 mapping 된 각 단위 벡터의 성분은 아래와 같이 구할 수 있다.</p>
 $$
 dq^i
 =d\vec{x}\cdot\nabla q^i
@@ -235,155 +222,107 @@ $$<p>여기에서, $\vec{g}^i=\nabla q^i$를 <strong>반변기저벡터</strong>
 $$
 dq^i
 =d\vec{x}\cdot \vec{g}^i
-$$<p><strong>[관점 2] 동일 실공간에서 $q$좌표계로의 표현</strong></p>
-<p>점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.</p>
-$$
-d\vec{x}
-=dx^j\hat{e}_j
-$$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
+$$<p>$q$ <strong>좌표계에서 $d\vec{x}$를 표현하기 위함</strong>이다. 다만, $q$ <strong>좌표계의 반변 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 &lsquo;설명&rsquo;</strong> 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.</p>
 $$
 d\vec{x}
 =dq_j\vec{g}^j
 =dq_jg_k^j\hat{e}_k
-$$<p>위 식을 <strong>관점 1</strong>의 결과와 비교하면 아래와 같다.</p>
-$$
+$$$$
 g_k^j
 =\frac{\partial q^j}{\partial x^k}
 $$<hr>
-<hr>
-<h3 id="2-공변기저벡터-1">2. 공변기저벡터</h3>
-<p><strong>매개변수공간[u] → 실공간[v] 변환에 대한 설명</strong>으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.</p>
-$$
-d\vec{v}
-=d\vec{u}\cdot\nabla_{u}\vec{v}
-=du^i\frac{\partial\vec{v}}{\partial u^i}
-=\vec{h}_idu^i
-$$<p>여기에서, $\partial\vec{v}/\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\vec{v}$ 의 <strong>접선 벡터</strong>를 의미하며, 이것이 <strong>자연기저벡터(공변기저벡터)</strong> $\vec{h}_i$를 의미한다.</p>
-<hr>
-<h3 id="3-반변기저벡터">3. 반변기저벡터</h3>
-<p>앞서, 매개변수공간[u] → 실공간[v] 변환할 때, 실공간의 기저(공변기저벡터)를 벡터 $\vec{v}$ 의 접선벡터로 정의하였다. 또 다른 관점으로는 매개변수공간의 $u^i$ 는 실공간의 $u^i$의 등위면을 만들어 낸다. <strong>매개변수공간 $u^i$ 에서 실공간으로 mapping 된 등위면</strong> &lsquo;$u^i(v^1,v^2,v^3)=\text{상수}$&lsquo;이다. 이 <strong>등위면의 법선벡터를 기저로 정의</strong>할 수 있다. 이것을 <strong>반변기저벡터</strong> $\vec{h}^i$ 라고 한다.</p>
-<p>반변기저벡터 $\vec{h}^i$ 를 사용해 실공간에서의 미소변위벡터 $d\vec{v}$를 표현할 수 있다. $\vec{h}^i=\nabla_v u^i$ 이다. (여기서 $\nabla_v u^i$ 는 <strong>스칼라 함수</strong> $u^i$ 의 그래디언트)</p>
-$$
-d\vec{v}=\vec{h}^idv_i=dv_i\nabla_v u^i
-$$<p>여기에서 주의해야할 사항은, <strong>$v_i$ 는 실공간에서 벡터를 반변 기저 벡터로 표현했을 때의 공변 성분이다.</strong></p>
-<hr>
-<h3 id="2-반변기저벡터">2. 반변기저벡터</h3>
-<p>공변기저벡터와 마찬가지로, 반변기저벡터 역시 아래 2가지 관점에서 동등하며, 서로를 통해 완전한 의미를 가진다. <strong>관점 1</strong>은 $q$좌표계의 기하학적 틀(특히 좌표면의 방향)을 제공한다. <strong>관점 2</strong>는 그 기하학적 틀 위에서, 물리적 대상을 어떻게 분석하고 표현할 것인지에 대한 도구를 제공한다.</p>
-<p><strong>관점 1) 실공간($x$)에서 매개변수($q$)의 변화로의 매핑</strong></p>
-<p>우리는 실공간의 미소변위벡터($d\vec{x}$)가 데카르트 기저 $\hat{e}_k$를 사용하여 다음과 같이 표현됨을 알고 있다.</p>
-$$d\vec{x}=dx^k\hat{e}_k$$<p>이제 이 실공간의 미소변위 $d\vec{x}$가 각 매개변수 $q^i$ 값(스칼라 함수)을 어떻게 변화시키는지 살펴보자. 각 $q^i$는 실공간의 위치($\vec{x}$)에 따라 변하는 스칼라 함수로 볼 수 있다: $q^i = q^i(\vec{x})$.</p>
-<p>스칼라 함수 $q^i(\vec{x})$의 미소 변화 $dq^i$는 그레디언트(gradient)와 $d\vec{x}$의 내적을 통해 구할 수 있다. 이 관계는 $q^i$의 전미분으로부터 유도된다.</p>
-$$dq^i = \nabla q^i \cdot d\vec{x}$$<p>여기서 $\nabla q^i$는 스칼라 함수 $q^i$의 구배(gradient)이다. 구배는 스칼라 값이 가장 가파르게 증가하는 방향을 가리키는 벡터이며, <strong>이 벡터는 실공간에 존재한다.</strong> 이 $\nabla q^i$ 벡터를 **반변기저벡터(contravariant basis vector)**라고 정의한다.</p>
-$$\vec{g}^i \equiv \nabla q^i$$<p>이제 $\nabla q^i$를 실공간의 데카르트 기저 $\hat{e}_k$를 사용하여 표현해 보자. $\nabla$ 연산자는 $\frac{\partial}{\partial x^k}\hat{e}_k$ 이므로,</p>
-$$
-\nabla q^i
-=\frac{\partial q^i}{\partial x^k}\hat{e}_k
-$$<p>따라서, 반변기저벡터는 다음과 같이 표현될 수 있다.</p>
-$$\vec{g}^i = \frac{\partial q^i}{\partial x^k}\hat{e}_k$$<p>반변기저벡터의 기하학적 의미를 살펴보자. $\nabla q^i$는 스칼라 함수 $q^i$의 등위면(level surface, $q^i=\text{상수}$)에 항상 수직인 벡터이다. 즉, <strong>반변기저벡터는 $q^i$ 좌표면에 대한 법선 벡터</strong>이다.</p>
-<hr>
-<p><strong>관점 2) 공변기저벡터와의 쌍대성(Duality)을 통한 반변기저벡터의 이해</strong></p>
-<p>우리는 실공간의 미소변위벡터 $d\vec{x}$를 $q$ 좌표계의 공변 성분($dx_i$)과 반변 기저 벡터($\vec{g}^i$)의 곱으로도 표현할 수 있다. 이는 $d\vec{x} = dx_i \vec{g}^i$와 같이 쓸 수 있다.</p>
-<p>이때 반변기저벡터 $\vec{g}^i$는 공변기저벡터 $\vec{g}_j$와 매우 중요한 <strong>쌍대 관계</strong>를 가진다. 이 관계는 $dq^i = \nabla q^i \cdot d\vec{x}$ (관점 1의 핵심식)와 $d\vec{x} = dq^j \vec{g}_j$ (공변기저벡터 섹션의 결과)를 결합하여 유도할 수 있다.</p>
-<p>$dq^i = \nabla q^i \cdot d\vec{x}$ 에 $d\vec{x} = dq^j \vec{g}_j$를 대입하면,
-$dq^i = (\nabla q^i) \cdot (dq^j \vec{g}_j)$
-$dq^i = dq^j (\nabla q^i \cdot \vec{g}_j)$</p>
-<p>이때 $dq^i = \delta^i_j dq^j$ (여기서 $\delta^i_j$는 크로네커 델타) 이므로, 양변의 $dq^j$ 계수를 비교하면 다음 관계를 얻는다.
-$\nabla q^i \cdot \vec{g}_j = \delta^i_j$</p>
-<p>그리고 관점 1에서 $\vec{g}^i \equiv \nabla q^i$ 이므로, 최종적으로 다음과 같은 쌍대 관계가 성립한다.</p>
-$$\vec{g}^i \cdot \vec{g}_j = \delta^i_j$$<p>이 쌍대 관계는 반변기저벡터 $\vec{g}^i$와 공변기저벡터 $\vec{g}_j$가 서로 <strong>역수(reciprocal) 관계</strong>에 있음을 보여준다. 이는 <strong>공변 기저 벡터가 좌표선에 접선인 반면, 반변 기저 벡터는 해당 좌표면에 법선</strong>이라는 기하학적 의미와 완벽하게 일치하며, 서로의 방향에 대해 특정 조건을 만족함을 의미한다.</p>
-<hr>
-<h3 id="4-중복지수표기법">4. 중복지수표기법</h3>
-<p>일반 tensor의 표기에서 중복 지수는 반드시 위 아래로 교차해야 한다.</p>
-<ul>
-<li><strong>올바른 표기</strong></li>
-</ul>
-$$
-v_iu^i,\quad u^iv_i,\quad a_ig^i_j,\quad b_ig^{ij}c_j,\quad g^{ij}d^kg_{kj}
-$$<ul>
-<li><strong>잘못된 표기</strong></li>
-</ul>
-$$
-v^iu^i,\quad u_iv_i,\quad a^ig^{ij},\quad b_{i}g_{ij}c_j,\quad g_{ij}d^kg^{kj}
-$$<hr>
-<h3 id="5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
-<p><strong>(1) 공변 기저 벡터 ($\vec{h}_i$)와 반변 성분 ($v^i$)</strong></p>
+<h3 id="4-왜-공변covariant이고-반변contravariant인가">4. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
+<p><strong>(1) 공변 기저 벡터 ($\vec{g}_i$)와 반변 성분 ($q^i$)</strong></p>
 <ul>
 <li>
-<p><strong>공변 기저 벡터 ($\vec{h}_i$)</strong>:</p>
+<p><strong>공변 기저 벡터 ($\vec{g}_i$)</strong>:</p>
 <ul>
-<li>매개변수 축($u^i$)을 따라 실공간의 벡터 궤적에 <strong>접선</strong>으로 놓인다.</li>
-<li>매개변수 축이 늘어나면, $\vec{h}_i$도 실공간에서 그 늘어난 축을 따라 <strong>&lsquo;함께&rsquo; 길어진다.</strong></li>
+<li>매개변수 축($q^i$)을 따라 실공간의 벡터 궤적에 <strong>접선</strong>으로 놓인다.</li>
+<li>매개변수 축이 늘어나면, $\vec{g}_i$도 실공간에서 그 늘어난 축을 따라 <strong>&lsquo;함께&rsquo; 길어진다.</strong></li>
 <li>이처럼 좌표계 변화에 <strong>&lsquo;함께(co-vary)&rsquo; 반응</strong>하는 특성 때문에 &lsquo;공변&rsquo; 기저 벡터라고 불린다.</li>
 </ul>
 </li>
 <li>
-<p><strong>반변 성분 ($v^i$)</strong>:</p>
+<p><strong>반변 성분 ($q^i$)</strong>:</p>
 <ul>
-<li>전체 벡터 $\vec{v}$의 값을 일정하게 유지하기 위해, 공변 기저 벡터($\vec{h}_i$)의 변화와 <strong>&lsquo;반대&rsquo; 방향으로 변하는</strong> 성분이다.</li>
-<li>예를 들어, $\vec{h}_i$가 길어지면, $v^i$는 상대적으로 작아져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>반대</strong>되기 때문에 &lsquo;반변&rsquo; 성분이라고 불린다.</li>
+<li>벡터 $\vec{x}$의 값을 일정하게 유지하기 위해, 공변 기저 벡터($\vec{g}_i$)의 변화와 <strong>&lsquo;반대&rsquo; 방향으로 변하는</strong> 성분이다.</li>
+<li>예를 들어, $\vec{g}_i$가 길어지면, $q^i$는 상대적으로 작아져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>반대</strong>되기 때문에 &lsquo;반변&rsquo; 성분이라고 불린다.</li>
 </ul>
 </li>
 </ul>
-<p><strong>(2) 반변 기저 벡터 ($\vec{h}^i$)와 공변 성분 ($v_i$)</strong></p>
+<p><strong>(2) 반변 기저 벡터 ($\vec{g}^i$)와 공변 성분 ($q_i$)</strong></p>
 <ul>
 <li>
-<p><strong>반변 기저 벡터 ($\vec{h}^i$)</strong>:</p>
+<p><strong>반변 기저 벡터 ($\vec{g}^i$)</strong>:</p>
 <ul>
-<li>매개변수 $u^i$의 <strong>등위면(level surface)에 수직인 법선 벡터</strong>이다.</li>
-<li>매개변수 축($u^i$)이 늘어나서 등위면들이 실공간에서 <strong>더 넓게 퍼지면(덜 촘촘해지면)</strong>, $\vec{h}^i$의 크기는 <strong>&lsquo;짧아진다.&rsquo;</strong></li>
-<li>반대로 매개변수 축이 압축되어 등위면들이 <strong>더 촘촘하게 모이면</strong>, $\vec{h}^i$의 크기는 <strong>&lsquo;길어진다.&rsquo;</strong></li>
-<li>이처럼 매개변수 축의 변화 방향과 <strong>&lsquo;반대&rsquo;되는 경향으로 길이가 변하므로</strong> &lsquo;반변&rsquo; 기저 벡터라고 불린다. 또한 공변 기저($\vec{h}_i$)와 $\vec{h}_i \cdot \vec{h}^j = \delta_i^j$ 관계처럼 <strong>상보적이고 역수적인 관계</strong>를 가진다.</li>
+<li>매개변수 $q^i$의 <strong>등위면(level surface)에 수직인 법선 벡터</strong>이다.</li>
+<li>매개변수 축($q^i$)이 늘어나서 등위면들이 실공간에서 <strong>더 넓게 퍼지면(덜 촘촘해지면)</strong>, $\vec{g}^i$의 크기는 <strong>&lsquo;짧아진다.&rsquo;</strong></li>
+<li>반대로 매개변수 축이 압축되어 등위면들이 <strong>더 촘촘하게 모이면</strong>, $\vec{g}^i$의 크기는 <strong>&lsquo;길어진다.&rsquo;</strong></li>
+<li>이처럼 매개변수 축의 변화 방향과 <strong>&lsquo;반대&rsquo;되는 경향으로 길이가 변하므로</strong> &lsquo;반변&rsquo; 기저 벡터라고 불린다. 또한 공변 기저($\vec{g}_i$)와 $\vec{g}_i \cdot \vec{g}^j = \delta_i^j$ 관계처럼 <strong>상보적이고 역수적인 관계</strong>를 가진다.</li>
 </ul>
 </li>
 <li>
-<p><strong>공변 성분 ($v_i$)</strong>:</p>
+<p><strong>공변 성분 ($q_i$)</strong>:</p>
 <ul>
-<li>전체 벡터 $\vec{v}$의 값을 일정하게 유지하기 위해, 반변 기저 벡터($\vec{h}^i$)의 변화와 <strong>&lsquo;같은&rsquo; 방향으로 변하는</strong> 성분이다.</li>
-<li>$\vec{h}^i$가 길어지면(등위면이 촘촘해지면), $v_i$도 커져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>같기</strong> 때문에 &lsquo;공변&rsquo; 성분이라고 불린다.</li>
+<li>벡터 $\vec{q}$의 값을 일정하게 유지하기 위해, 반변 기저 벡터($\vec{g}^i$)의 변화와 <strong>&lsquo;같은&rsquo; 방향으로 변하는</strong> 성분이다.</li>
+<li>$\vec{g}^i$가 길어지면(등위면이 촘촘해지면), $q_i$도 커져야 총 벡터의 크기가 유지된다. 기저와 성분의 변화 방향이 <strong>같기</strong> 때문에 &lsquo;공변&rsquo; 성분이라고 불린다.</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h3 id="6-공변기저벡터와-반변기저벡터의-내적-쌍대성">6. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</h3>
+<h3 id="5-공변기저벡터와-반변기저벡터의-내적-쌍대성">5. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</h3>
 $$
-\vec{h}_i\cdot\vec{h}^j=\delta_i^j
+\vec{g}_i\cdot\vec{g}^j
+=\langle g_i|g^j\rangle
+=\delta_i^j
 $$<p>proof)</p>
 $$
-d\vec{v}
-=du^i\vec{h}_i,\quad
-du^j
-=d\vec{v}\cdot\nabla_v u^j
-$$$$
-du^j
-=du^i\vec{h}_i\cdot\nabla_v u^j
-=\left(\vec{h}_i\cdot\nabla_v u^j\right)du^i
-$$<p>양변이 같으려면,</p>
+\langle g_i|g^j\rangle
+=\frac{\partial x^k}{\partial q^i}\hat{e}_k\cdot
+\frac{\partial q^j}{\partial x^l}\hat{e}_l
+=\frac{\partial x^k}{\partial q^i}
+\frac{\partial q^j}{\partial x^l}\delta_{kl}
+=\frac{\partial x^l}{\partial q^i}
+\frac{\partial q^j}{\partial x^l}
+=\frac{\partial q^j}{\partial q^i}
+=\delta_i^j
+$$<hr>
+<h3 id="6-공변기저벡터와-반변기저벡터의-dyad-단위-tensor">6. 공변기저벡터와 반변기저벡터의 dyad: 단위 tensor</h3>
 $$
-\vec{h}_i\cdot\nabla_v u^j=\delta_i^j
-$$<p>$\nabla_v u^j=\vec{h}^j$ 이므로,</p>
+\bar{\bar{I}}
+=\vec{g}_i\vec{g}^i
+=|g^i\rangle\langle g_i|
+$$<p>proof)</p>
 $$
-\vec{h}_i\cdot\vec{h}^j=\delta_i^j
+\langle g_i|g^j\rangle\langle g_j|g^i\rangle
+=\delta_i^j\delta^i_j
+=\delta_i^i
+=1
+$$<p>따라서,</p>
+$$
+|g^j\rangle\langle g_j|
+=\bar{\bar{I}}
 $$<hr>
 <h3 id="7-공변-반변-성분-추출">7. 공변, 반변 성분 추출</h3>
 <img src="image3.png" width="50%" height="auto">
 <p><strong>(1) 반변성분추출</strong></p>
 $$
-\vec{v}\cdot\vec{h}^i=v^i
+\vec{x}\cdot\vec{g}^i=x^i
 $$<p>proof)</p>
 $$
-\vec{v}\cdot\vec{h}^i
-=v^k\vec{h}_k\cdot\vec{h}^i
-=v^k\delta^i_k
-=v^i
+\vec{x}\cdot\vec{g}^i
+=x^k\vec{g}_k\cdot\vec{g}^i
+=x^k\delta^i_k
+=x^i
 $$<p><strong>(2) 공변성분추출</strong></p>
 $$
-\vec{v}\cdot\vec{h}_i=v_i
+\vec{x}\cdot\vec{g}_i=x_i
 $$<p>proof)</p>
 $$
-\vec{v}\cdot\vec{h}^i
-=v_k\vec{h}^k\cdot\vec{h}_i
-=v_k\delta^k_i
-=v_i
+\vec{x}\cdot\vec{g}^i
+=x_k\vec{g}^k\cdot\vec{g}_i
+=x_k\delta^k_i
+=x_i
 $$<hr>
 <p><a href="https://m.blog.naver.com/jmj_0309/222311484066" rel="external" target="_blank">[일반 상대성이론] 공변(Covariant)과 반변(Contravariant)</a></p>
 
@@ -478,9 +417,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1752201812"></script>
-    <script src="/js/clipboard/clipboard.min.js?1752201812" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752201812" defer></script>
-    <script src="/js/theme.js?1752201812" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1752202587"></script>
+    <script src="/js/clipboard/clipboard.min.js?1752202587" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752202587" defer></script>
+    <script src="/js/theme.js?1752202587" defer></script>
   </body>
 </html>

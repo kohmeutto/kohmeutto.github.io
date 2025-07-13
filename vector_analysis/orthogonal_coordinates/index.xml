@@ -3,7 +3,7 @@
   <channel>
     <title>Orthogonal coordinates :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_analysis/orthogonal_coordinates/index.html</link>
-    <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Representation transformation</description>
+    <description>(b) Mapping I - Position&#xD;(b) Mapping II - Scale factor&#xD;(a) Mapping III - Jacobian&#xD;(b) Basis transformation</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_analysis/orthogonal_coordinates/index.xml" rel="self" type="application/rss+xml" />
@@ -29,10 +29,10 @@
       <description>중요사항: [매개변수 공간] → [실 공간] 에 대한 것으로 미소변위벡터 변환(mapping) 을 다룬다.&#xA;1. Jacobian Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.&#xA;u 매개변수 공간 미소변위벡터 $$ d\vec{u} =\hat{u}_idu_i $$ v 실 공간 매핑 위치에서, 미소변위벡터 $$ d\vec{v} =\vec{h}_idu_i $$ 변환(mapping) 연산자 작용, 매핑 위치에 해당하는 [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv $$ d\vec{v} =d\vec{u}\cdot\nabla_{u}\vec{v} =du_i\frac{\partial\vec{v}}{\partial u_i} $$수학적 벡터로 표현하면,&#xA;$$ \begin{bmatrix} dv_1 \\ dv_2 \\ dv_3 \end{bmatrix} =du_1\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} \\ \cfrac{\partial v_2}{\partial u_1} \\ \cfrac{\partial v_3}{\partial u_1} \end{bmatrix}+du_2 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_2} \\ \cfrac{\partial v_2}{\partial u_2} \\ \cfrac{\partial v_3}{\partial u_2} \end{bmatrix}+du_3 \begin{bmatrix} \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} =\begin{bmatrix} \cfrac{\partial v_1}{\partial u_1} &amp; \cfrac{\partial v_1}{\partial u_2} &amp; \cfrac{\partial v_1}{\partial u_3} \\ \cfrac{\partial v_2}{\partial u_1} &amp; \cfrac{\partial v_2}{\partial u_2} &amp; \cfrac{\partial v_2}{\partial u_3} \\ \cfrac{\partial v_3}{\partial u_1} &amp; \cfrac{\partial v_3}{\partial u_2} &amp; \cfrac{\partial v_3}{\partial u_3} \end{bmatrix} \begin{bmatrix} du_1 \\ du_2 \\ du_3 \end{bmatrix} $$여기에서, 3x3 행렬을 Jacobian 이라고 한다. Jacobian의 각 열 벡터는 매개변수 공간의 각 축이 실 공간으로 변환(mapping)될 때 만들어지는 벡터이다. 이 벡터들이 해당 지점에서 실 공간의 새로운 기준 방향들(기저)을 형성한다.suffix notation을 사용하여 각 열벡터 성분에 대해 아래와 같이 표현할 수 있으며, 이와 관련한 기하학적 해석을 해보자.</description>
     </item>
     <item>
-      <title>(b) Representation transformation</title>
-      <link>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html</link>
+      <title>(b) Basis transformation</title>
+      <link>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_basis_transformation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_representation_transformation/index.html</guid>
+      <guid>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_basis_transformation/index.html</guid>
       <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리 기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
     </item>
   </channel>
