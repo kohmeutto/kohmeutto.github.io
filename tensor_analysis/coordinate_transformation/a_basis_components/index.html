@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.0.0+9803d5122ebb3276acea823f476e9eb44f607862">
+    <meta name="description" content="아래를 살펴보면, 성분과 기저변환은 서로 역변환 관계임을 알 수 있다.
+1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}^i\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g^{j}\rangle q_j=\frac{\partial q^j}{\partial \bar{q}^i}q_j$$$$|g^i\rangle=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quadq_i=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j$$proof) 기저
+$$|\bar{g}^i\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle$$$$=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle$$proof) 성분
+$$q^j|g_j\rangle=\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\langle\bar{g}^i|q^j|g_j\rangle=\langle\bar{g}^i|\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\bar{q}^i=\langle\bar{g}^i|g_j\rangle q^j$$$$\langle\bar{g}^i|g_{j}\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial q^j}$$ 2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g^{j}\rangle|g_j\rangle=\frac{\partial q^j}{\partial \bar{q}^i}|g_j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g_{j}\rangle q^j=\frac{\partial \bar{q}^i}{\partial q^j}q^j$$$$|g_i\rangle=\langle g_i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=\frac{\partial\bar{q}^j}{\partial q^i}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}_{j}\rangle\bar{q}^j=\frac{\partial q^i}{\partial \bar{q}^j}\bar{q}^j$$ 3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g^{j}\rangle q_j=\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j$$$$|g_i\rangle=\langle g_i|\bar{g}_j\rangle|\bar{g}^j\rangle=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}|\bar{g}^j\rangle=\frac{\partial\bar{q}^k}{\partial q^i}\bar{g}_{kj}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}^j\rangle\bar{q}_j=g^{ik}\frac{\partial \bar{q}^j}{\partial q^k}\bar{q}_j=\frac{\partial q^i}{\partial\bar{q}^k}\bar{g}^{kj}\bar{q}_j$$$$|\bar{g}^i\rangle=\langle\bar{g}^i|g^{j}\rangle|g_j\rangle=\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g_{j}\rangle q^j=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}q^j$$$$|g^i\rangle=\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle,\quadq_i=\langle g_i|\bar{g}_j\rangle\bar{q}^j=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{q}^j=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{q}^j$$proof1)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Basis & Components :: 수리전자물리학">
+    <meta name="twitter:description" content="아래를 살펴보면, 성분과 기저변환은 서로 역변환 관계임을 알 수 있다.
+1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}^i\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g^{j}\rangle q_j=\frac{\partial q^j}{\partial \bar{q}^i}q_j$$$$|g^i\rangle=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quadq_i=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j$$proof) 기저
+$$|\bar{g}^i\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle$$$$=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle$$proof) 성분
+$$q^j|g_j\rangle=\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\langle\bar{g}^i|q^j|g_j\rangle=\langle\bar{g}^i|\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\bar{q}^i=\langle\bar{g}^i|g_j\rangle q^j$$$$\langle\bar{g}^i|g_{j}\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial q^j}$$ 2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g^{j}\rangle|g_j\rangle=\frac{\partial q^j}{\partial \bar{q}^i}|g_j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g_{j}\rangle q^j=\frac{\partial \bar{q}^i}{\partial q^j}q^j$$$$|g_i\rangle=\langle g_i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=\frac{\partial\bar{q}^j}{\partial q^i}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}_{j}\rangle\bar{q}^j=\frac{\partial q^i}{\partial \bar{q}^j}\bar{q}^j$$ 3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g^{j}\rangle q_j=\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j$$$$|g_i\rangle=\langle g_i|\bar{g}_j\rangle|\bar{g}^j\rangle=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}|\bar{g}^j\rangle=\frac{\partial\bar{q}^k}{\partial q^i}\bar{g}_{kj}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}^j\rangle\bar{q}_j=g^{ik}\frac{\partial \bar{q}^j}{\partial q^k}\bar{q}_j=\frac{\partial q^i}{\partial\bar{q}^k}\bar{g}^{kj}\bar{q}_j$$$$|\bar{g}^i\rangle=\langle\bar{g}^i|g^{j}\rangle|g_j\rangle=\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g_{j}\rangle q^j=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}q^j$$$$|g^i\rangle=\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle,\quadq_i=\langle g_i|\bar{g}_j\rangle\bar{q}^j=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{q}^j=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{q}^j$$proof1)">
+    <meta property="og:url" content="http://localhost:1313/tensor_analysis/coordinate_transformation/a_basis_components/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Basis & Components :: 수리전자물리학">
+    <meta property="og:description" content="아래를 살펴보면, 성분과 기저변환은 서로 역변환 관계임을 알 수 있다.
+1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}^i\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g^{j}\rangle q_j=\frac{\partial q^j}{\partial \bar{q}^i}q_j$$$$|g^i\rangle=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quadq_i=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j$$proof) 기저
+$$|\bar{g}^i\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle$$$$=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle$$proof) 성분
+$$q^j|g_j\rangle=\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\langle\bar{g}^i|q^j|g_j\rangle=\langle\bar{g}^i|\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\bar{q}^i=\langle\bar{g}^i|g_j\rangle q^j$$$$\langle\bar{g}^i|g_{j}\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial q^j}$$ 2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g^{j}\rangle|g_j\rangle=\frac{\partial q^j}{\partial \bar{q}^i}|g_j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g_{j}\rangle q^j=\frac{\partial \bar{q}^i}{\partial q^j}q^j$$$$|g_i\rangle=\langle g_i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=\frac{\partial\bar{q}^j}{\partial q^i}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}_{j}\rangle\bar{q}^j=\frac{\partial q^i}{\partial \bar{q}^j}\bar{q}^j$$ 3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g^{j}\rangle q_j=\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j$$$$|g_i\rangle=\langle g_i|\bar{g}_j\rangle|\bar{g}^j\rangle=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}|\bar{g}^j\rangle=\frac{\partial\bar{q}^k}{\partial q^i}\bar{g}_{kj}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}^j\rangle\bar{q}_j=g^{ik}\frac{\partial \bar{q}^j}{\partial q^k}\bar{q}_j=\frac{\partial q^i}{\partial\bar{q}^k}\bar{g}^{kj}\bar{q}_j$$$$|\bar{g}^i\rangle=\langle\bar{g}^i|g^{j}\rangle|g_j\rangle=\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g_{j}\rangle q^j=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}q^j$$$$|g^i\rangle=\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle,\quadq_i=\langle g_i|\bar{g}_j\rangle\bar{q}^j=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{q}^j=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{q}^j$$proof1)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tensor analysis">
+    <meta itemprop="name" content="(a) Basis & Components :: 수리전자물리학">
+    <meta itemprop="description" content="아래를 살펴보면, 성분과 기저변환은 서로 역변환 관계임을 알 수 있다.
+1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}^i\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g^{j}\rangle q_j=\frac{\partial q^j}{\partial \bar{q}^i}q_j$$$$|g^i\rangle=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quadq_i=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j$$proof) 기저
+$$|\bar{g}^i\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle$$$$=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle$$proof) 성분
+$$q^j|g_j\rangle=\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\langle\bar{g}^i|q^j|g_j\rangle=\langle\bar{g}^i|\bar{q}^i|\bar{g}_{i}\rangle$$$$\implies\bar{q}^i=\langle\bar{g}^i|g_j\rangle q^j$$$$\langle\bar{g}^i|g_{j}\rangle=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}=\frac{\partial\bar{q}^i}{\partial q^j}$$ 2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g^{j}\rangle|g_j\rangle=\frac{\partial q^j}{\partial \bar{q}^i}|g_j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g_{j}\rangle q^j=\frac{\partial \bar{q}^i}{\partial q^j}q^j$$$$|g_i\rangle=\langle g_i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=\frac{\partial\bar{q}^j}{\partial q^i}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}_{j}\rangle\bar{q}^j=\frac{\partial q^i}{\partial \bar{q}^j}\bar{q}^j$$ 3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저 $$|\bar{g}_i\rangle=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle,\quad\bar{q}^i=\langle\bar{g}^i|g^{j}\rangle q_j=\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j$$$$|g_i\rangle=\langle g_i|\bar{g}_j\rangle|\bar{g}^j\rangle=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}|\bar{g}^j\rangle=\frac{\partial\bar{q}^k}{\partial q^i}\bar{g}_{kj}|\bar{g}_j\rangle,\quadq^i=\langle g^i|\bar{g}^j\rangle\bar{q}_j=g^{ik}\frac{\partial \bar{q}^j}{\partial q^k}\bar{q}_j=\frac{\partial q^i}{\partial\bar{q}^k}\bar{g}^{kj}\bar{q}_j$$$$|\bar{g}^i\rangle=\langle\bar{g}^i|g^{j}\rangle|g_j\rangle=\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle,\quad\bar{q}_i=\langle\bar{g}_i|g_{j}\rangle q^j=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}q^j$$$$|g^i\rangle=\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle=g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle,\quadq_i=\langle g_i|\bar{g}_j\rangle\bar{q}^j=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{q}^j=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{q}^j$$proof1)">
+    <meta itemprop="wordCount" content="260">
+    <title>(a) Basis &amp; Components :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1752469100" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1752469100" defer></script>
+    <script src="/js/search-lunr.js?1752469100" defer></script>
+    <script src="/js/search.js?1752469100" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1752469100";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1752469100" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1752469100" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1752469100" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1752469100" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752469100" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1752469100" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1752469100" rel="stylesheet">
+    <link href="/css/theme.css?1752469100" rel="stylesheet">
+    <link href="/css/format-html.css?1752469100" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/tensor_analysis\/coordinate_transformation\/a_basis_components\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/tensor_analysis/coordinate_transformation/a_basis_components/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-공변성분--반변기저--공변성분--반변기저">1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저</a></li>
+        <li><a href="#2-반변성분--공변기저--반변성분--공변기저">2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저</a></li>
+        <li><a href="#3-반변성분--공변기저--공변성분--반변기저">3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/index.html"><span itemprop="name">Tensor analysis</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/tensor_analysis/coordinate_transformation/index.html"><span itemprop="name">Coordinate transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Basis &amp; Components</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/coordinate_transformation/index.html" title="Coordinate transformation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/tensor_analysis/coordinate_transformation/a_components/index.html" title="(a) Components (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable tensor_analysis" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-basis--components">(a) Basis &amp; Components</h1>
+
+<hr>
+<p>아래를 살펴보면, 성분과 기저변환은 <strong>서로 역변환 관계</strong>임을 알 수 있다.</p>
+<hr>
+<h3 id="1-공변성분--반변기저--공변성분--반변기저">1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저</h3>
+$$
+|\bar{g}^i\rangle
+=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle
+=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad
+\bar{q}_i
+=\langle\bar{g}_i|g^{j}\rangle q_j
+=\frac{\partial q^j}{\partial \bar{q}^i}q_j
+$$$$
+|g^i\rangle
+=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle
+=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quad
+q_i
+=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j
+=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j
+$$<p>proof) 기저</p>
+$$
+|\bar{g}^i\rangle
+=\frac{\partial\bar{q}^i}{\partial\vec{x}}
+=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j
+=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j
+=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle
+$$$$
+=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle
+=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle
+$$<p>proof) 성분</p>
+$$
+q^j|g_j\rangle
+=\bar{q}^i|\bar{g}_{i}\rangle
+$$$$
+\implies
+\langle\bar{g}^i|q^j|g_j\rangle
+=\langle\bar{g}^i|\bar{q}^i|\bar{g}_{i}\rangle
+$$$$
+\implies
+\bar{q}^i
+=\langle\bar{g}^i|g_j\rangle q^j
+$$$$
+\langle\bar{g}^i|g_{j}\rangle
+=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}
+=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}
+=\frac{\partial\bar{q}^i}{\partial q^j}
+$$<hr>
+<h3 id="2-반변성분--공변기저--반변성분--공변기저">2. 반변성분 &amp; 공변기저 ↔ 반변성분 &amp; 공변기저</h3>
+$$
+|\bar{g}_i\rangle
+=\langle\bar{g}_i|g^{j}\rangle|g_j\rangle
+=\frac{\partial q^j}{\partial \bar{q}^i}|g_j\rangle,\quad
+\bar{q}^i
+=\langle\bar{g}^i|g_{j}\rangle q^j
+=\frac{\partial \bar{q}^i}{\partial q^j}q^j
+$$$$
+|g_i\rangle
+=\langle g_i|\bar{g}^{j}\rangle|\bar{g}_j\rangle
+=\frac{\partial\bar{q}^j}{\partial q^i}|\bar{g}_j\rangle,\quad
+q^i
+=\langle g^i|\bar{g}_{j}\rangle\bar{q}^j
+=\frac{\partial q^i}{\partial \bar{q}^j}\bar{q}^j
+$$<hr>
+<h3 id="3-반변성분--공변기저--공변성분--반변기저">3. 반변성분 &amp; 공변기저 ↔ 공변성분 &amp; 반변기저</h3>
+$$
+|\bar{g}_i\rangle
+=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle
+=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle
+,\quad
+\bar{q}^i
+=\langle\bar{g}^i|g^{j}\rangle q_j
+=\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j
+=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j
+$$$$
+|g_i\rangle
+=\langle g_i|\bar{g}_j\rangle|\bar{g}^j\rangle
+=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}|\bar{g}^j\rangle
+=\frac{\partial\bar{q}^k}{\partial q^i}\bar{g}_{kj}|\bar{g}_j\rangle
+,\quad
+q^i
+=\langle g^i|\bar{g}^j\rangle\bar{q}_j
+=g^{ik}\frac{\partial \bar{q}^j}{\partial q^k}\bar{q}_j
+=\frac{\partial q^i}{\partial\bar{q}^k}\bar{g}^{kj}\bar{q}_j
+$$$$
+|\bar{g}^i\rangle
+=\langle\bar{g}^i|g^{j}\rangle|g_j\rangle
+=\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle
+=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle
+,\quad
+\bar{q}_i
+=\langle\bar{g}_i|g_{j}\rangle q^j
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j
+=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}q^j
+$$$$
+|g^i\rangle
+=\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle
+=g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle
+=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle
+,\quad
+q_i
+=\langle g_i|\bar{g}_j\rangle\bar{q}^j
+=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{q}^j
+=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{q}^j
+$$<p>proof1)</p>
+$$
+\bar{q}_i
+=\langle\bar{g}_i|g_{j}\rangle q^j
+=\frac{\partial \vec{x}}{\partial \bar{q}^i}\cdot\frac{\partial \vec{x}}{\partial q^j}q^j
+=\frac{\partial q^k}{\partial\bar{q}^i}\left(\frac{\partial \vec{x}}{\partial q^k}\cdot\frac{\partial \vec{x}}{\partial q^j}\right)q^j
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j
+$$<p>proof2)</p>
+$$
+\bar{q}_i
+=\langle\bar{g}_i|g_{j}\rangle q^j
+=\langle\bar{g}_i|g^k\rangle\langle g_k|g_{j}\rangle q^j
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j
+$$$$
+\bar{q}_i
+=\langle\bar{g}_i|g_{j}\rangle q^j
+=\langle\bar{g}_i|\bar{g}_k\rangle\langle \bar{g}^k|g_{j}\rangle q^j
+=\bar{g}_{ik}\frac{\partial \bar{q}^k}{\partial q^j}q^j
+$$<p>proof3)</p>
+$$
+\bar{q}_i
+=\langle\bar{g}_i | g_{j}\rangle q^j
+=\left\langle \frac{\partial g^k}{\partial \bar{q}^i}g_k\middle|g_{j}\right\rangle q^j
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}q^j
+$$$$
+\bar{q}_i
+=\langle\bar{g}_i|g_{j}\rangle q^j
+=\left\langle\bar{g}_i\middle|\frac{\partial\bar{q}^k}{\partial q^j}\bar{g}_{k}\right\rangle q^j
+=\frac{\partial\bar{q}^k}{\partial q^j}\bar{g}_{ik}q^j
+$$<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/operation/index.html"><a class="padding" href="/tensor_analysis/operation/index.html">Operation</a><ul id="R-subsections-dace2bcc7a334f3804516ad4b00322f3" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/calculus/index.html"><a class="padding" href="/tensor_analysis/calculus/index.html">Calculus</a><ul id="R-subsections-785ad12baa85a92a7e9ce591da587aac" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/basis_transformation/index.html"><a class="padding" href="/tensor_analysis/basis_transformation/index.html">Basis transformation</a><ul id="R-subsections-7ff36428d6af168e6d39970d3436bb8b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/a_covariant_contravariant/index.html"><a class="padding" href="/tensor_analysis/a_covariant_contravariant/index.html">(a) Mapping</a></li>
+            <li class="alwaysopen " data-nav-id="/tensor_analysis/metric_tensor/index.html"><a class="padding" href="/tensor_analysis/metric_tensor/index.html">Metric tensor</a><ul id="R-subsections-eae5d11389c254fde6efb653363a0965" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/tensor_analysis/coordinate_transformation/index.html"><a class="padding" href="/tensor_analysis/coordinate_transformation/index.html">Coordinate transformation</a><ul id="R-subsections-43cefc9f5be8da8b0d9f6800831d4802" class="collapsible-menu">
+            <li class="active " data-nav-id="/tensor_analysis/coordinate_transformation/a_basis_components/index.html"><a class="padding" href="/tensor_analysis/coordinate_transformation/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/tensor_analysis/coordinate_transformation/a_components/index.html"><a class="padding" href="/tensor_analysis/coordinate_transformation/a_components/index.html">(a) Components</a></li></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/gc_calculus/index.html"><a class="padding" href="/tensor_analysis/gc_calculus/index.html">[GC] Calculus</a></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1752469100"></script>
+    <script src="/js/clipboard/clipboard.min.js?1752469100" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1752469100" defer></script>
+    <script src="/js/theme.js?1752469100" defer></script>
+  </body>
+</html>
