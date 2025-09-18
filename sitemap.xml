@@ -31,6 +31,9 @@
     <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/dirac_notation/a_hibert_space/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
@@ -112,6 +115,9 @@
     <loc>http://localhost:1313/tensor_analysis/operation/a_dot_products/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/dirac_notation/a_ket/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
@@ -176,6 +182,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/calculus/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/electromagnetics/electromotive_force/index.html</loc>
