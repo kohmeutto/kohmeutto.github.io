@@ -5,58 +5,58 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.0.1+b23cf6629eada0c2802f34ae4012e04343497862">
-    <meta name="description" content="1. 유한차원의 내적 (1) 유클리드 공간
+    <meta name="description" content="1. Bra (1) 유클리드 공간
 “$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.
-$$\vec{a}\cdot:=[a]^T$$$$\vec{a}\cdot\vec{b}=[a]^T[b]$$(2) 힐버트 공간
-$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$ 2. 유한차원의 항등 연산자 $$\hat{I} = \sum_i |u_i\rangle \langle u_i|$$proof)
-$$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,">
+$$\vec{a}\cdot:=\vec{a}^T:=[a]^T$$$$\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=[a]^T[b]$$(2) 힐버트 공간
+$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,
+$$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$ 2. 항등 연산자 (1) 유한차원">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Bra :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 유한차원의 내적 (1) 유클리드 공간
+    <meta name="twitter:description" content="1. Bra (1) 유클리드 공간
 “$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.
-$$\vec{a}\cdot:=[a]^T$$$$\vec{a}\cdot\vec{b}=[a]^T[b]$$(2) 힐버트 공간
-$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$ 2. 유한차원의 항등 연산자 $$\hat{I} = \sum_i |u_i\rangle \langle u_i|$$proof)
-$$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,">
+$$\vec{a}\cdot:=\vec{a}^T:=[a]^T$$$$\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=[a]^T[b]$$(2) 힐버트 공간
+$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,
+$$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$ 2. 항등 연산자 (1) 유한차원">
     <meta property="og:url" content="http://localhost:1313/dirac_notation/a_bra/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Bra :: 수리전자물리학">
-    <meta property="og:description" content="1. 유한차원의 내적 (1) 유클리드 공간
+    <meta property="og:description" content="1. Bra (1) 유클리드 공간
 “$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.
-$$\vec{a}\cdot:=[a]^T$$$$\vec{a}\cdot\vec{b}=[a]^T[b]$$(2) 힐버트 공간
-$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$ 2. 유한차원의 항등 연산자 $$\hat{I} = \sum_i |u_i\rangle \langle u_i|$$proof)
-$$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,">
+$$\vec{a}\cdot:=\vec{a}^T:=[a]^T$$$$\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=[a]^T[b]$$(2) 힐버트 공간
+$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,
+$$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$ 2. 항등 연산자 (1) 유한차원">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Dirac notation">
     <meta itemprop="name" content="(a) Bra :: 수리전자물리학">
-    <meta itemprop="description" content="1. 유한차원의 내적 (1) 유클리드 공간
+    <meta itemprop="description" content="1. Bra (1) 유클리드 공간
 “$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.
-$$\vec{a}\cdot:=[a]^T$$$$\vec{a}\cdot\vec{b}=[a]^T[b]$$(2) 힐버트 공간
-$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$ 2. 유한차원의 항등 연산자 $$\hat{I} = \sum_i |u_i\rangle \langle u_i|$$proof)
-$$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,">
-    <meta itemprop="wordCount" content="182">
+$$\vec{a}\cdot:=\vec{a}^T:=[a]^T$$$$\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=[a]^T[b]$$(2) 힐버트 공간
+$$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,
+$$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$ 2. 항등 연산자 (1) 유한차원">
+    <meta itemprop="wordCount" content="260">
     <title>(a) Bra :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1758154896" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1758154896" defer></script>
-    <script src="/js/search-lunr.js?1758154896" defer></script>
-    <script src="/js/search.js?1758154896" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1758161500" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1758161500" defer></script>
+    <script src="/js/search-lunr.js?1758161500" defer></script>
+    <script src="/js/search.js?1758161500" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1758154896";
+      window.relearn.index_js_url="/searchindex.en.js?1758161500";
     </script>
-    <script src="/js/lunr/lunr.min.js?1758154896" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1758154896" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1758154896" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1758154896" defer></script>
+    <script src="/js/lunr/lunr.min.js?1758161500" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1758161500" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1758161500" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1758161500" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758154896" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758154896" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1758154896" rel="stylesheet">
-    <link href="/css/theme.css?1758154896" rel="stylesheet">
-    <link href="/css/format-html.css?1758154896" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758161500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758161500" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1758161500" rel="stylesheet">
+    <link href="/css/theme.css?1758161500" rel="stylesheet">
+    <link href="/css/format-html.css?1758161500" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -127,10 +127,10 @@ $$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위
   <ul>
     <li>
       <ul>
-        <li><a href="#1-유한차원의-내적">1. 유한차원의 내적</a></li>
-        <li><a href="#2-유한차원의-항등-연산자">2. 유한차원의 항등 연산자</a></li>
-        <li><a href="#3-무한차원의-항등-연산자">3. 무한차원의 항등 연산자</a></li>
-        <li><a href="#4-무한차원의-내적">4. 무한차원의 내적</a></li>
+        <li><a href="#1-bra">1. Bra</a></li>
+        <li><a href="#2-항등-연산자">2. 항등 연산자</a></li>
+        <li><a href="#3-함수의-내적">3. 함수의 내적</a></li>
+        <li><a href="#4-내적-연산의-특성">4. 내적 연산의 특성</a></li>
       </ul>
     </li>
   </ul>
@@ -167,20 +167,25 @@ $$|\psi\rangle = \sum_i u_i|u_i\rangle$$여기에서, $|u_i\rangle$ 는 단위
 <h1 id="a-bra">(a) Bra</h1>
 
 <hr>
-<h3 id="1-유한차원의-내적">1. 유한차원의 내적</h3>
+<h3 id="1-bra">1. Bra</h3>
 <p><strong>(1) 유클리드 공간</strong></p>
 <p>&ldquo;$\vec{a}\cdot$&rdquo; 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.</p>
 $$
-\vec{a}\cdot:=[a]^T
+\vec{a}\cdot:=\vec{a}^T:=[a]^T
 $$$$
-\vec{a}\cdot\vec{b}=[a]^T[b]
+\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}
+=[a]^T[b]
 $$<p><strong>(2) 힐버트 공간</strong></p>
 $$
 \langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}
 $$$$
 \langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}
+$$<p>유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,</p>
+$$
+\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger 
 $$<hr>
-<h3 id="2-유한차원의-항등-연산자">2. 유한차원의 항등 연산자</h3>
+<h3 id="2-항등-연산자">2. 항등 연산자</h3>
+<p><strong>(1) 유한차원</strong></p>
 $$
 \hat{I} = \sum_i |u_i\rangle \langle u_i|
 $$<p>proof)</p>
@@ -195,8 +200,7 @@ $$$$
 $$<p>따라서,</p>
 $$
 \hat{I} = \sum_i |u_i\rangle \langle u_i|
-$$<hr>
-<h3 id="3-무한차원의-항등-연산자">3. 무한차원의 항등 연산자</h3>
+$$<p><strong>(2) 무한차원</strong></p>
 $$
 \hat{I} = \int dx |x\rangle \langle x|
 $$<p>proof)</p>
@@ -207,7 +211,7 @@ $$<p>따라서,</p>
 $$
 \hat{I} = \int dx |x\rangle \langle x|
 $$<hr>
-<h3 id="4-무한차원의-내적">4. 무한차원의 내적</h3>
+<h3 id="3-함수의-내적">3. 함수의 내적</h3>
 <p>힐버트 공간에서, 함수 f(x)와 함수 g(x)의 내적을 표현할 때,</p>
 $$
 \langle f|g\rangle = \int dx  f^{*}(x) g(x)
@@ -216,6 +220,27 @@ $$
 \langle f|g\rangle = \langle f|\hat{I}|g\rangle
 = \langle f| \left( \int dx |x\rangle \langle x| \right) |g\rangle
 = \int dx f^{*}(x) g(x)
+$$<hr>
+<h3 id="4-내적-연산의-특성">4. 내적 연산의 특성</h3>
+<p>힐버트 공간 상태 벡터를 $|\psi_n\rangle$ 라 하고, $a_n$ 를 임의의 복소수 스칼라($a_n \in \mathbf{C}$)라고 하자. 아래와 같이 표현할 수 있다.</p>
+<p><strong>(1) Ket의 스칼라 곱</strong></p>
+$$
+\langle a\psi| = a^\ast \langle\psi|
+$$<p><strong>(2) 내적 연산1</strong></p>
+$$
+\operatorname{In}\{|\psi_1\rangle,|a_2\psi_2\rangle+|a_3\psi_3\rangle\}
+=a_2\langle \psi_1|\psi_2\rangle+a_3\langle \psi_1|\psi_3\rangle
+$$<p>주의사항 (잘못된 표기)</p>
+$$
+a_2|\psi_2\rangle+a_3|\psi_3\rangle\ne|a_2\psi_2+a_3\psi_3\rangle
+$$<p><strong>(3) 내적 연산2</strong></p>
+$$
+\operatorname{In}\{|a_1\psi_1\rangle,|\psi_2\rangle+|\psi_3\rangle\}
+=a_1^\ast\langle \psi_1|\psi_2\rangle+a_1^\ast\langle \psi_1|\psi_3\rangle
+$$<p><strong>(4) Dagger (complex conjugate)</strong></p>
+$$
+\langle \psi_1|\psi_2\rangle^\dagger
+=\langle \psi_2|\psi_1\rangle
 $$
   <footer class="footline">
   </footer>
@@ -302,9 +327,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1758154896"></script>
-    <script src="/js/clipboard/clipboard.min.js?1758154896" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1758154896" defer></script>
-    <script src="/js/theme.js?1758154896" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1758161500"></script>
+    <script src="/js/clipboard/clipboard.min.js?1758161500" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1758161500" defer></script>
+    <script src="/js/theme.js?1758161500" defer></script>
   </body>
 </html>
