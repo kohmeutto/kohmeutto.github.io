@@ -211,6 +211,9 @@
     <loc>http://localhost:1313/temp/a_basis_components/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/dirac_notation/a_bra/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tensor_analysis/calculus/a_curl/index.html</loc>
   </url>
   <url>
