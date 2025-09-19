@@ -80,14 +80,6 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/calculus/a_gradient/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
-    "content": "1. 유클리드 공간 (Euclidean Space) 우리가 아는 2차원, 3차원 공간처럼 차원이 유한 하고, 모든 계산이 실수(real numbers) 를 기반으로 한다. (기본적으로 함수는 무한개의 원소이므로, 유클리드 공간에 속하지 않는다.) 두 벡터 사이의 거리와 각도(내적)를 정의할 수 있다. 일반적으로 화살표 벡터 $\\vec{a}$ 를 의미한다. 수학적 표현 방식은 열벡터 이다. 이것은 약속이다. 2. 힐버트 공간 (Hibert space) 확장 1: 무한 차원 (Infinite Dimensions) 유클리드 공간은 1차원, 2차원, 3차원, … , n차원 등 항상 유한한 차원만 다룬다. 반면, 힐베르트 공간은 이러한 유한 차원뿐만 아니라 무한 차원까지 포함 한다. 파동 함수 ψ(x)와 같이 함수 전체를 하나의 벡터로 다루는 공간이 바로 무한 차원 힐베르트 공간의 대표적인 예. 확장 2: 복소수 (Complex Numbers) 유클리드 공간의 벡터 성분은 보통 실수이지만, 힐베르트 공간은 성분이 복소수인 벡터를 자연스럽게 다룬다. 양자역학에서는 상태의 위상(phase)을 표현하기 위해 복소수가 필수적. 벡터를 Ket, $|\\psi\\rangle$ 로 표현한다. 3. 힐버트 or 유클리드 공간이 될 자격 조건, 4가지 (1) Linear vector space\n덧셈에 대해 닫혀 있다: 공간의 두 원소(함수)를 더한 결과도 반드시 같은 공간의 원소여야 한다. (f(x) + g(x)도 회원 자격이 있어야 함) 스칼라 곱에 대해 닫혀 있다: 원소(함수)에 복소수를 곱한 결과도 반드시 같은 공간의 원소여야 한다. (c × f(x)도 회원 자격이 있어야 함) (2) 내적이 정의된다.\n원소들 사이의 기하학적 관계를 측정할 수 있는 내적(inner product) 이 반드시 정의되어야 한다. 내적은 두 벡터(함수) f, g를 입력받아 하나의 수를 ⟨f|g⟩를 출력하는 연산이다. 이 내적이 있기 때문에 크기와 닮음의 정도를 계산할 수 있다. 내적을 정의할 수 없다면, 크기나 길이라는 개념 자체가 없으므로 회원이 될 수 없다.\n벡터의 크기(Norm): ||f||² = ⟨f|f⟩ 두 벡터 사이의 각도(직교성): ⟨f|g⟩ = 0이면 두 벡터는 서로 직교(orthogonal) 한다. (3) 크기가 유한할 것 (제곱 적분 가능성)\n벡터의 크기 ||f||가 반드시 유한한 값이어야 한다.\n$$\r||f||^2=\\int dx |f(x)|^2 \u003c \\infty\r$$원소가 무한대로 간주할 수 있는 함수를 생각해 보자. 모든 함수가 힐베르트 공간에 속할 수 없다. 제곱 적분 가능한 함수만이 힐베르트 공간의 회원이 될 수 있다. 물리적으로는 입자를 발견할 총 확률이 유한해야 한다는 의미한다.\n(4) 완비성 (공간에 빈틈이 없을 것)\n공간 내의 회원들(함수들)로 이루어진 코시 수열(수렴할 것처럼 보이는 수열)이 있다면, 그 수열의 최종 목적지(극한값) 역시 반드시 그 공간의 회원이어야 한다.\n유리수체는 완비성을 갖지 않는다. 실수체는 완비성을 갖는다. 복소수체는 완비성을 같는다.",
-    "description": "1. 유클리드 공간 (Euclidean Space) 우리가 아는 2차원, 3차원 공간처럼 차원이 유한 하고, 모든 계산이 실수(real numbers) 를 기반으로 한다. (기본적으로 함수는 무한개의 원소이므로, 유클리드 공간에 속하지 않는다.) 두 벡터 사이의 거리와 각도(내적)를 정의할 수 있다. 일반적으로 화살표 벡터 $\\vec{a}$ 를 의미한다. 수학적 표현 방식은 열벡터 이다. 이것은 약속이다. 2. 힐버트 공간 (Hibert space) 확장 1: 무한 차원 (Infinite Dimensions) 유클리드 공간은 1차원, 2차원, 3차원, … , n차원 등 항상 유한한 차원만 다룬다. 반면, 힐베르트 공간은 이러한 유한 차원뿐만 아니라 무한 차원까지 포함 한다. 파동 함수 ψ(x)와 같이 함수 전체를 하나의 벡터로 다루는 공간이 바로 무한 차원 힐베르트 공간의 대표적인 예. 확장 2: 복소수 (Complex Numbers) 유클리드 공간의 벡터 성분은 보통 실수이지만, 힐베르트 공간은 성분이 복소수인 벡터를 자연스럽게 다룬다. 양자역학에서는 상태의 위상(phase)을 표현하기 위해 복소수가 필수적. 벡터를 Ket, $|\\psi\\rangle$ 로 표현한다. 3. 힐버트 or 유클리드 공간이 될 자격 조건, 4가지 (1) Linear vector space",
-    "tags": [],
-    "title": "(a) Hibert space",
-    "uri": "/dirac_notation/a_hibert_space/index.html"
-  },
-  {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE \u003e Inhomogeneous",
     "content": "미분방정식의 해는 일반해+특수해 이다.\n아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.\n1. 유형1 $$\r\\frac{1}{f\\left(D\\right)}e^{\\alpha x}=\\frac{1}{f\\left(\\alpha\\right)}e^{\\alpha x,}, \\quad f\\left(\\alpha\\right)\\ne0\r$$\rexample1)\n$$\ry''+y'-2y=e^{3x}\r$$\rsol\r$$\r\\left(D+2\\right)\\left(D-1\\right)y_{p}=e^{3x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D+2\\right)\\left(D-1\\right)\\left|_{D=3}\\right.}e^{3x}=\\frac{1}{10}e^{3x}\r$$\rexample2)\n$$\ry''-y'-6y=e^{-x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D+2\\right)y_{p}=e^{-x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D-3\\right)\\left(D+2\\right)\\left|_{D=-1}^{}\\right.}e^{-x}=-\\frac14e^{-x}\r$$\rexample3)\n$$\ry''-4y'+3y=10e^{-2x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D-1\\right)y_{p}=10e^{-2x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D-3\\right)\\left(D-1\\right)\\left|_{D=-2}\\right.}10_{}e^{-2x}=\\frac23e^{-2x}\r$$\rexample4)\n$$\ry''+4y'+3y=-5e^{5x}\r$$\rsol\r$$\r\\left(D+1\\right)\\left(D+3\\right)y_{p}=-5e^{5x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D+1\\right)\\left(D+3\\right)\\left|_{D=5}\\right.}-5e^{5x}=-\\frac{5}{48}e^{5x}\r$$\rexample5)\n$$\rx^2y''-4xy'+6y=2e^{4x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D-2\\right)y_{p}=2e^{4x} $$\r$$\ry_{p}=\\frac{1}{\\left(D-3\\right)\\left(D-2\\right)\\left|_{D=4}\\right.}2e^{4x}=e^{4x}\r$$\rexample6)\n$$\rx^2y''-xy'-8y=9e^{-7x}\r$$\rsol\r$$\r\\left(D-4\\right)\\left(D+2\\right)y_{p}=9e^{-7x} $$\r$$\ry_{p}=\\frac{1}{\\left(D-4\\right)\\left(D+2\\right)\\left|_{D=-7}\\right.}9e^{-7x}=-\\frac{9}{55}e^{-7x}\r$$\r2. 유형2 $$\r\\frac{1}{\\left(D-\\alpha\\right)^{n}}e^{\\alpha x}=\\frac{x^{n}}{n!}e^{\\alpha x}\r$$\rexample1)\n$$\ry''+2y'+y=e^{-x}\r$$\rsol\r$$\r\\left(D+1\\right)^2y_{p}=e^{-x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D+1\\right)^2}e^{-x}=\\frac{x^2}{2}e^{-x}\r$$\rexample2)\n$$\ry''-6y'+9y=-e^{3x}\r$$\rsol\r$$\r\\left(D-3\\right)^2y_{p}=-e^{3x}\r$$\r$$\ry_{p}=-\\frac{1}{\\left(D-3\\right)^2}e^{3x}=-\\frac{x^2}{2}e^{3x}\r$$\rexample3)\n$$\ry''+4y'+4y=3e^{-2x}\r$$\rsol\r$$\r\\left(D+2\\right)^2y_{p}=3e^{-2x} $$\r$$\ry_{p}=\\frac{1}{\\left(D+2\\right)^2}3e^{-2x}=\\frac{3x^2}{2}e^{-2x}\r$$\r3. 유형3 $$\r\\frac{1}{f\\left(D\\right)\\left(D-\\alpha\\right)^{n}}e^{\\alpha x}=\\frac{x^{n}}{f\\left(\\alpha\\right)n!}e^{\\alpha x}\r$$\rexample1)\n$$\ry''+y'-2y=e^{x}\r$$\rsol\r$$\r\\left(D+2\\right)\\left(D-1\\right)y_{p}=e^{x} $$\r$$\ry_{p}=\\frac{1}{\\left.\\left(D+2\\right)\\right|_{D=1}\\left(D-1\\right)^{}}e^{x}=\\frac13\\cdot xe^{-x}\r$$\rexample2)\n$$\ry''-4y'+3y=-2e^{3x}\r$$\rsol\r$$\r\\left(D-1\\right)\\left(D-3\\right)y_{p}=-2e^{3x} $$\r$$\ry_{p}=\\frac{1}{\\left.\\left(D-1\\right)\\right|_{D=3}\\left(D-3\\right)}-2e^{3x}=\\frac12\\cdot x\\cdot-2e^{3x}\r$$\rexample3)\n$$\rx^2y''-4xy'+6y=2e^{3x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D-2\\right)y_{p}=2e^{3x} $$\r$$\ry_{p}=\\frac{1}{\\left(D-2\\right)\\left|_{D=3}^{}\\right.\\left(D-3\\right)^{}}2e^{3x}=2xe^{3x}\r$$\rexample4)\n$$\rx^2y''-4xy'-14y=3e^{-2x}\r$$\rsol\r$$\r\\left(D+2\\right)\\left(D-7\\right)y_{p}=3e^{-2x} $$\r$$\ry_{p}=\\frac{1}{\\left(D-7\\right)\\left|_{D=-2}\\right.\\left(D+2\\right)}3e^{-2x}=-\\frac{x}{3}e^{-2x}\r$$",
     "description": "미분방정식의 해는 일반해+특수해 이다.\n아래 예제의 풀이는 일반해를 생략하고, 특수해만 구하는 것이다.\n1. 유형1 $$\r\\frac{1}{f\\left(D\\right)}e^{\\alpha x}=\\frac{1}{f\\left(\\alpha\\right)}e^{\\alpha x,}, \\quad f\\left(\\alpha\\right)\\ne0\r$$\rexample1)\n$$\ry''+y'-2y=e^{3x}\r$$\rsol\r$$\r\\left(D+2\\right)\\left(D-1\\right)y_{p}=e^{3x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D+2\\right)\\left(D-1\\right)\\left|_{D=3}\\right.}e^{3x}=\\frac{1}{10}e^{3x}\r$$\rexample2)\n$$\ry''-y'-6y=e^{-x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D+2\\right)y_{p}=e^{-x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D-3\\right)\\left(D+2\\right)\\left|_{D=-1}^{}\\right.}e^{-x}=-\\frac14e^{-x}\r$$\rexample3)\n$$\ry''-4y'+3y=10e^{-2x}\r$$\rsol\r$$\r\\left(D-3\\right)\\left(D-1\\right)y_{p}=10e^{-2x}\r$$\r$$\ry_{p}=\\frac{1}{\\left(D-3\\right)\\left(D-1\\right)\\left|_{D=-2}\\right.}10_{}e^{-2x}=\\frac23e^{-2x}\r$$\rexample4)",
@@ -102,6 +94,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Gradient for scalar",
     "uri": "/vector_analysis/calculus/b_gradient/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
+    "content": "1. 유클리드 공간 (Euclidean Space) 우리가 아는 2차원, 3차원 공간처럼 차원이 유한 하고, 모든 계산이 실수(real numbers) 를 기반으로 한다. (기본적으로 함수는 무한개의 원소이므로, 유클리드 공간에 속하지 않는다.) 두 벡터 사이의 거리와 각도(내적)를 정의할 수 있다. 일반적으로 화살표 벡터 $\\vec{a}$ 를 의미한다. 수학적 표현 방식은 열벡터 이다. 이것은 약속이다. 2. 힐버트 공간 (Hibert space) 확장 1: 무한 차원 (Infinite Dimensions) 유클리드 공간은 1차원, 2차원, 3차원, … , n차원 등 항상 유한한 차원만 다룬다. 반면, 힐베르트 공간은 이러한 유한 차원뿐만 아니라 무한 차원까지 포함 한다. 파동 함수 ψ(x)와 같이 함수 전체를 하나의 벡터로 다루는 공간이 바로 무한 차원 힐베르트 공간의 대표적인 예. 확장 2: 복소수 (Complex Numbers) 유클리드 공간의 벡터 성분은 보통 실수이지만, 힐베르트 공간은 성분이 복소수인 벡터를 자연스럽게 다룬다. 양자역학에서는 상태의 위상(phase)을 표현하기 위해 복소수가 필수적. 벡터를 Ket, $|\\psi\\rangle$ 로 표현한다. 3. 힐버트 or 유클리드 공간이 될 자격 조건, 4가지 (1) Linear vector space\n덧셈에 대해 닫혀 있다: 공간의 두 원소(함수)를 더한 결과도 반드시 같은 공간의 원소여야 한다. (f(x) + g(x)도 회원 자격이 있어야 함) 스칼라 곱에 대해 닫혀 있다: 원소(함수)에 복소수를 곱한 결과도 반드시 같은 공간의 원소여야 한다. (c × f(x)도 회원 자격이 있어야 함) (2) 내적이 정의된다.\n원소들 사이의 기하학적 관계를 측정할 수 있는 내적(inner product) 이 반드시 정의되어야 한다. 내적은 두 벡터(함수) f, g를 입력받아 하나의 수를 ⟨f|g⟩를 출력하는 연산이다. 이 내적이 있기 때문에 크기와 닮음의 정도를 계산할 수 있다. 내적을 정의할 수 없다면, 크기나 길이라는 개념 자체가 없으므로 회원이 될 수 없다.\n벡터의 크기(Norm): ||f||² = ⟨f|f⟩ 두 벡터 사이의 각도(직교성): ⟨f|g⟩ = 0이면 두 벡터는 서로 직교(orthogonal) 한다. (3) 크기가 유한할 것 (제곱 적분 가능성)\n벡터의 크기 ||f||가 반드시 유한한 값이어야 한다.\n$$\r||f||^2=\\int dx |f(x)|^2 \u003c \\infty\r$$원소가 무한대로 간주할 수 있는 함수를 생각해 보자. 모든 함수가 힐베르트 공간에 속할 수 없다. 제곱 적분 가능한 함수만이 힐베르트 공간의 회원이 될 수 있다. 물리적으로는 입자를 발견할 총 확률이 유한해야 한다는 의미한다.\n(4) 완비성 (공간에 빈틈이 없을 것)\n공간 내의 회원들(함수들)로 이루어진 코시 수열(수렴할 것처럼 보이는 수열)이 있다면, 그 수열의 최종 목적지(극한값) 역시 반드시 그 공간의 회원이어야 한다.\n유리수체는 완비성을 갖지 않는다. 실수체는 완비성을 갖는다. 복소수체는 완비성을 같는다.",
+    "description": "1. 유클리드 공간 (Euclidean Space) 우리가 아는 2차원, 3차원 공간처럼 차원이 유한 하고, 모든 계산이 실수(real numbers) 를 기반으로 한다. (기본적으로 함수는 무한개의 원소이므로, 유클리드 공간에 속하지 않는다.) 두 벡터 사이의 거리와 각도(내적)를 정의할 수 있다. 일반적으로 화살표 벡터 $\\vec{a}$ 를 의미한다. 수학적 표현 방식은 열벡터 이다. 이것은 약속이다. 2. 힐버트 공간 (Hibert space) 확장 1: 무한 차원 (Infinite Dimensions) 유클리드 공간은 1차원, 2차원, 3차원, … , n차원 등 항상 유한한 차원만 다룬다. 반면, 힐베르트 공간은 이러한 유한 차원뿐만 아니라 무한 차원까지 포함 한다. 파동 함수 ψ(x)와 같이 함수 전체를 하나의 벡터로 다루는 공간이 바로 무한 차원 힐베르트 공간의 대표적인 예. 확장 2: 복소수 (Complex Numbers) 유클리드 공간의 벡터 성분은 보통 실수이지만, 힐베르트 공간은 성분이 복소수인 벡터를 자연스럽게 다룬다. 양자역학에서는 상태의 위상(phase)을 표현하기 위해 복소수가 필수적. 벡터를 Ket, $|\\psi\\rangle$ 로 표현한다. 3. 힐버트 or 유클리드 공간이 될 자격 조건, 4가지 (1) Linear vector space",
+    "tags": [],
+    "title": "(b) Hibert space",
+    "uri": "/dirac_notation/b_hibert_space/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Integral transform \u003e Transformation",
@@ -304,14 +304,6 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/operation/a_dot_products/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
-    "content": "1. 유한차원 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,\n(1) 유클리드 공간\n$$\r\\vec{a}=1\\hat{u}_1+2\\hat{u}_2,\\quad\r\\hat{u}_1=[1 \\ 0]^T,\\quad \\hat{u}_2=[0 \\ 1]^T\r$$(2) 힐버트 공간\n$$\r|a\\rangle=1|u_1\\rangle+2|u_1\\rangle,\\quad\r|u_1\\rangle=[1 \\ 0]^T,\\quad |u_1\\rangle=[0 \\ 1]^T\r$$ 2. 무한차원 함수 f(x)의 함수를 표현할 때,\n(1) 유클리드 공간\n함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.\n(2) 힐버트 공간\nf(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$\r|f\\rangle = \\int dx f(x) |x\\rangle\r$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$\r|f\\rangle=|f(x)\\rangle\r$$",
-    "description": "1. 유한차원 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,\n(1) 유클리드 공간\n$$\r\\vec{a}=1\\hat{u}_1+2\\hat{u}_2,\\quad\r\\hat{u}_1=[1 \\ 0]^T,\\quad \\hat{u}_2=[0 \\ 1]^T\r$$(2) 힐버트 공간\n$$\r|a\\rangle=1|u_1\\rangle+2|u_1\\rangle,\\quad\r|u_1\\rangle=[1 \\ 0]^T,\\quad |u_1\\rangle=[0 \\ 1]^T\r$$ 2. 무한차원 함수 f(x)의 함수를 표현할 때,\n(1) 유클리드 공간\n함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.\n(2) 힐버트 공간\nf(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$\r|f\\rangle = \\int dx f(x) |x\\rangle\r$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$\r|f\\rangle=|f(x)\\rangle\r$$",
-    "tags": [],
-    "title": "(a) Ket",
-    "uri": "/dirac_notation/a_ket/index.html"
-  },
-  {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromotive force",
     "content": "1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \\left(5,1\\right)=M\\left(1,5,t\\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.\n예를 들어, 무수히 많은 입자들의 변위(displacement, 위치의 변화)는 아래와 같이 구할 수 있다.\n$$ M\\left(x_0,y_0,t\\right)-\\left(x_0,y_0\\right) $$$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 초기위치이다. 즉, 초기위치와 시간의 함수로써 구할 수 있다.\n3. Eulerian specification 오일러 좌표계는 물체보다는 고정된 위치를 중요시하는 좌표계 이러한 좌표 기술법은 물체 하나하나를 따라가는 것보다 특정 위치에서의 물성을 중요시하는 분야에서 주로 사용 예를 들어, 위에서 위치 (5,1)에 초기에는 물체 B가 있고 시간 t에서는 물체 A가 있다고 하자. 속도의 관점에서 말하면, 초기에 위치 (5,1)의 속도는 물체 B의 속도이며, 시간 t에서의 속도는 물체 A의 속도이다. 이게 바로 오일러 기술 방식이다.\n4. 두 기술법의 차이를 이해 $v_L(x_0, y_0, t)$가 라그랑지안 기술법 이며, 초기좌표가 $x_0$와 $y_0$였던 물질이 시간 $t$가 지난 후에 위치한 지점에서의 속도를 의미. $v_E(x, y, t)$가 오일리안 기술법 이며, 그냥 $x$와 $y$라는 위치에서 $t$라는 시간에 우연찮게 놓인 물질의 속도를 의미. 5. Frame, Viewpoint, Specification 관계 및 명확한 구분 ‘관점’은 현상을 이해하려는 개념적인 접근 방식이고, ‘기술법’은 그 관점을 수학적으로 구현하는 구체적인 방법론이다. 그리고 이 모든 것은 특정 ‘프레임’ 안에서 이루어진다. 예를 들어, 우리는 정지 프레임에서 유체의 오일리안 관점을 오일러 기술법을 사용하여 분석할 수 있다.\n(1) 프레임 (Frame of Reference): 현상을 어디서 (Where) 관측하는가? (관측자의 물리적 위치와 운동 상태를 나타내는 기준계), 예시: 실험실 (정지 프레임), 움직이는 기차 안 (운동 프레임)\n(2) 관점 (Viewpoint / Perspective): 현상을 어떤 방식으로 (How to conceptually understand) 이해하고 분석할 것인가? (현상을 바라보는 사고방식이나 철학적 접근), 예시: 개별 입자의 이력에 집중 (라그랑지안 관점), 공간상의 고정된 지점의 변화에 집중 (오일리안 관점)\n(3) 기술법 (Description / Formulation): 현상을 어떤 수학적/모델링 방법으로 (How to formally describe) 표현할 것인가? (관점을 구현하기 위한 구체적인 수학적 또는 방법론적 도구), 예시: 유체역학에서 개별 입자의 위치를 시간의 함수로 표현 (라그랑지안 기술법), 공간 변수와 시간 변수의 함수로 장을 표현 (오일리안 기술법).\n오일러(Eulerian)와 라그랑지(Lagrangian)의 좌표계의 차이와 물질미분(material derivative) - 성돌의 전자노트\n라그랑지안 vs 오일러리안 해석 : 네이버 블로그",
     "description": "1. Lagrangian specification 라그랑지 좌표계는 물체를 따라가면서 기술하는 좌표계이다. 중요한 것은 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다는 점 물체 A는 라그랑지 기술방법으로 초기 시간에 (1,5,0)인 것이고, 시간 t에서는 (1,5,t)인 것 물론, 물체 A의 시간 t에서의 실제 위치는 (5,1)이다.그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M 가 필요 $$ \\left(5,1\\right)=M\\left(1,5,t\\right) $$ 물질 A의 라그랑지 좌표는 (label된 초기좌표) 계속 (1,5)로써 시간에 따라 변하지 않는다. 물론 시간이 지난 후, 나중 위치를 함수 r 로 확인할 수 있지만, 라그랑지 방법에서 좌표는 초기위치를 사용함을 다시 새겨두자. 2. Lagrangian specification의 사용 이유 “그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.",
@@ -398,6 +390,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) First-order PDE",
     "uri": "/ode_pde/green_function/b_first_order_pde/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
+    "content": "1. 유한차원 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,\n(1) 유클리드 공간\n$$\r\\vec{a}=1\\hat{u}_1+2\\hat{u}_2,\\quad\r\\hat{u}_1=[1 \\ 0]^T,\\quad \\hat{u}_2=[0 \\ 1]^T\r$$(2) 힐버트 공간\n$$\r|a\\rangle=1|u_1\\rangle+2|u_1\\rangle,\\quad\r|u_1\\rangle=[1 \\ 0]^T,\\quad |u_1\\rangle=[0 \\ 1]^T\r$$ 2. 무한차원 함수 f(x)의 함수를 표현할 때,\n(1) 유클리드 공간\n함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.\n(2) 힐버트 공간\nf(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$\r|f\\rangle = \\int dx f(x) |x\\rangle\r$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$\r|f\\rangle=|f(x)\\rangle\r$$ 3. 스칼라 곱의 표현 힐버트 공간 상태 벡터를 $|\\psi\\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \\in \\mathbf{C}$)라고 하자. 아래와 같이 표현할 수 있다.\n$$\r|a\\psi\\rangle = a|\\psi\\rangle\r$$",
+    "description": "1. 유한차원 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,\n(1) 유클리드 공간\n$$\r\\vec{a}=1\\hat{u}_1+2\\hat{u}_2,\\quad\r\\hat{u}_1=[1 \\ 0]^T,\\quad \\hat{u}_2=[0 \\ 1]^T\r$$(2) 힐버트 공간\n$$\r|a\\rangle=1|u_1\\rangle+2|u_1\\rangle,\\quad\r|u_1\\rangle=[1 \\ 0]^T,\\quad |u_1\\rangle=[0 \\ 1]^T\r$$ 2. 무한차원 함수 f(x)의 함수를 표현할 때,\n(1) 유클리드 공간\n함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.\n(2) 힐버트 공간\nf(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$\r|f\\rangle = \\int dx f(x) |x\\rangle\r$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$\r|f\\rangle=|f(x)\\rangle\r$$ 3. 스칼라 곱의 표현 힐버트 공간 상태 벡터를 $|\\psi\\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \\in \\mathbf{C}$)라고 하자. 아래와 같이 표현할 수 있다.",
+    "tags": [],
+    "title": "(b) Ket",
+    "uri": "/dirac_notation/b_ket/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector analysis \u003e Notation \u0026 Basic operations",
@@ -489,8 +489,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "(a) Hibert space\r(a) Ket\r(a) Bra",
-    "description": "(a) Hibert space\r(a) Ket\r(a) Bra",
+    "content": "(b) Hibert space\r(b) Ket\r(b) Bra\r(b) Outer product",
+    "description": "(b) Hibert space\r(b) Ket\r(b) Bra\r(b) Outer product",
     "tags": [],
     "title": "Dirac notation",
     "uri": "/dirac_notation/index.html"
@@ -558,14 +558,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(a) Basis \u0026 Components",
     "uri": "/temp/a_basis_components/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
-    "content": "1. 유한차원의 내적 (1) 유클리드 공간\n“$\\vec{a}\\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.\n$$\r\\vec{a}\\cdot:=[a]^T\r$$$$\r\\vec{a}\\cdot\\vec{b}=[a]^T[b]\r$$(2) 힐버트 공간\n$$\r\\langle a| \\text{ 는 } \\vec{a}\\cdot \\text{에 대응한다.}\r$$$$\r\\langle a|b\\rangle \\text{ 는 } \\vec{a}\\cdot\\vec{b} \\text{ 에 대응한다.}\r$$ 2. 유한차원의 항등 연산자 $$\r\\hat{I} = \\sum_i |u_i\\rangle \\langle u_i|\r$$proof)\n$$\r|\\psi\\rangle = \\sum_i u_i|u_i\\rangle\r$$여기에서, $|u_i\\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,\n$$\ru_i=\\langle u_i|\\psi\\rangle\r$$$$\r|\\psi\\rangle = \\sum_i \\langle u_i|\\psi\\rangle|u_i\\rangle\r= \\sum_i |u_i\\rangle \\langle u_i|\\psi\\rangle\r$$따라서,\n$$\r\\hat{I} = \\sum_i |u_i\\rangle \\langle u_i|\r$$ 3. 무한차원의 항등 연산자 $$\r\\hat{I} = \\int dx |x\\rangle \\langle x|\r$$proof)\n$$\r|\\psi\\rangle = \\int dx \\langle x|\\psi\\rangle |x\\rangle = \\int dx |x\\rangle \\langle x|\\psi\\rangle $$따라서,\n$$\r\\hat{I} = \\int dx |x\\rangle \\langle x|\r$$ 4. 무한차원의 내적 힐버트 공간에서, 함수 f(x)와 함수 g(x)의 내적을 표현할 때,\n$$\r\\langle f|g\\rangle = \\int dx f^{*}(x) g(x)\r$$proof)\n$$\r\\langle f|g\\rangle = \\langle f|\\hat{I}|g\\rangle\r= \\langle f| \\left( \\int dx |x\\rangle \\langle x| \\right) |g\\rangle\r= \\int dx f^{*}(x) g(x)\r$$",
-    "description": "1. 유한차원의 내적 (1) 유클리드 공간\n“$\\vec{a}\\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.\n$$\r\\vec{a}\\cdot:=[a]^T\r$$$$\r\\vec{a}\\cdot\\vec{b}=[a]^T[b]\r$$(2) 힐버트 공간\n$$\r\\langle a| \\text{ 는 } \\vec{a}\\cdot \\text{에 대응한다.}\r$$$$\r\\langle a|b\\rangle \\text{ 는 } \\vec{a}\\cdot\\vec{b} \\text{ 에 대응한다.}\r$$ 2. 유한차원의 항등 연산자 $$\r\\hat{I} = \\sum_i |u_i\\rangle \\langle u_i|\r$$proof)\n$$\r|\\psi\\rangle = \\sum_i u_i|u_i\\rangle\r$$여기에서, $|u_i\\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,",
-    "tags": [],
-    "title": "(a) Bra",
-    "uri": "/dirac_notation/a_bra/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis \u003e Calculus",
@@ -654,6 +646,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(a) Unit tensor",
     "uri": "/tensor_analysis/operation/a_unit_tensor/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
+    "content": "1. Bra (1) 유클리드 공간\n“$\\vec{a}\\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.\n$$\r\\vec{a}\\cdot:=\\vec{a}^T:=[a]^T\r$$$$\r\\vec{a}\\cdot\\vec{b}=\\vec{a}^T\\vec{b}\r=[a]^T[b]\r$$(2) 힐버트 공간\n$$\r\\langle a| \\text{ 는 } \\vec{a}\\cdot \\text{에 대응한다.}\r$$$$\r\\langle a|b\\rangle \\text{ 는 } \\vec{a}\\cdot\\vec{b} \\text{ 에 대응한다.}\r$$유클리드 공간의 $\\vec{a}\\cdot:=\\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,\n$$\r\\langle a|:=|a\\rangle^{\\ast T}:=|a \\rangle^\\dagger $$ 2. 항등 연산자 (1) 유한차원\n$$\r\\hat{I} = \\sum_i |u_i\\rangle \\langle u_i|\r$$proof)\n$$\r|\\psi\\rangle = \\sum_i u_i|u_i\\rangle\r$$여기에서, $|u_i\\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,\n$$\ru_i=\\langle u_i|\\psi\\rangle\r$$$$\r|\\psi\\rangle = \\sum_i \\langle u_i|\\psi\\rangle|u_i\\rangle\r= \\sum_i |u_i\\rangle \\langle u_i|\\psi\\rangle\r$$따라서,\n$$\r\\hat{I} = \\sum_i |u_i\\rangle \\langle u_i|\r$$(2) 무한차원\n$$\r\\hat{I} = \\int dx |x\\rangle \\langle x|\r$$proof)\n$$\r|\\psi\\rangle = \\int dx \\langle x|\\psi\\rangle |x\\rangle = \\int dx |x\\rangle \\langle x|\\psi\\rangle $$따라서,\n$$\r\\hat{I} = \\int dx |x\\rangle \\langle x|\r$$ 3. 함수의 내적 힐버트 공간에서, 함수 f(x)와 함수 g(x)의 내적을 표현할 때,\n$$\r\\langle f|g\\rangle = \\int dx f^{*}(x) g(x)\r$$proof)\n$$\r\\langle f|g\\rangle = \\langle f|\\hat{I}|g\\rangle\r= \\langle f| \\left( \\int dx |x\\rangle \\langle x| \\right) |g\\rangle\r= \\int dx f^{*}(x) g(x)\r$$ 4. 내적 연산의 특성 힐버트 공간 상태 벡터를 $|\\psi_n\\rangle$ 라 하고, $a_n$ 를 임의의 복소수 스칼라($a_n \\in \\mathbf{C}$)라고 하자. 아래와 같이 표현할 수 있다.\n(1) Ket의 스칼라 곱\n$$\r\\langle a\\psi| = a^\\ast \\langle\\psi|\r$$(2) 내적 연산1\n$$\r\\operatorname{In}\\{|\\psi_1\\rangle,|a_2\\psi_2\\rangle+|a_3\\psi_3\\rangle\\}\r=a_2\\langle \\psi_1|\\psi_2\\rangle+a_3\\langle \\psi_1|\\psi_3\\rangle\r$$주의사항 (잘못된 표기)\n$$\ra_2|\\psi_2\\rangle+a_3|\\psi_3\\rangle\\ne|a_2\\psi_2+a_3\\psi_3\\rangle\r$$(3) 내적 연산2\n$$\r\\operatorname{In}\\{|a_1\\psi_1\\rangle,|\\psi_2\\rangle+|\\psi_3\\rangle\\}\r=a_1^\\ast\\langle \\psi_1|\\psi_2\\rangle+a_1^\\ast\\langle \\psi_1|\\psi_3\\rangle\r$$(4) Dagger (complex conjugate)\n$$\r\\langle \\psi_1|\\psi_2\\rangle^\\dagger\r=\\langle \\psi_2|\\psi_1\\rangle\r$$",
+    "description": "1. Bra (1) 유클리드 공간\n“$\\vec{a}\\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.\n$$\r\\vec{a}\\cdot:=\\vec{a}^T:=[a]^T\r$$$$\r\\vec{a}\\cdot\\vec{b}=\\vec{a}^T\\vec{b}\r=[a]^T[b]\r$$(2) 힐버트 공간\n$$\r\\langle a| \\text{ 는 } \\vec{a}\\cdot \\text{에 대응한다.}\r$$$$\r\\langle a|b\\rangle \\text{ 는 } \\vec{a}\\cdot\\vec{b} \\text{ 에 대응한다.}\r$$유클리드 공간의 $\\vec{a}\\cdot:=\\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,\n$$\r\\langle a|:=|a\\rangle^{\\ast T}:=|a \\rangle^\\dagger $$ 2. 항등 연산자 (1) 유한차원",
+    "tags": [],
+    "title": "(b) Bra",
+    "uri": "/dirac_notation/b_bra/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector analysis \u003e Calculus",
@@ -878,6 +878,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Fourier transform II",
     "uri": "/integral_transform/transformation/b_fourier_transform_ii/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e Dirac notation",
+    "content": "1. 수학적 정의과 계산 (1) 유한차원\n유한차원에서, Ket-Bra → matrix 연산으로 정의된다.\n예를 들어, 두 개의 2차원 벡터 |a⟩와 |b⟩가 있다.\n$$\r|a\\rangle\r=\\left[\\begin{matrix}\ra_1 \\\\ a_2\r\\end{matrix}\\right],\\quad\r|b\\rangle\r=\\left[\\begin{matrix}\rb_1 \\\\ b_2\r\\end{matrix}\\right]\r$$",
+    "description": "1. 수학적 정의과 계산 (1) 유한차원\n유한차원에서, Ket-Bra → matrix 연산으로 정의된다.\n예를 들어, 두 개의 2차원 벡터 |a⟩와 |b⟩가 있다.\n$$\r|a\\rangle\r=\\left[\\begin{matrix}\ra_1 \\\\ a_2\r\\end{matrix}\\right],\\quad\r|b\\rangle\r=\\left[\\begin{matrix}\rb_1 \\\\ b_2\r\\end{matrix}\\right]\r$$",
+    "tags": [],
+    "title": "(b) Outer product",
+    "uri": "/dirac_notation/b_outer_product/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromotive force",

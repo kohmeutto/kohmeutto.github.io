@@ -31,13 +31,13 @@
     <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/a_hibert_space/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/calculus/b_gradient/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation/b_hibert_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_i/index.html</loc>
@@ -115,9 +115,6 @@
     <loc>http://localhost:1313/tensor_analysis/operation/a_dot_products/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/a_ket/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
@@ -149,6 +146,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation/b_ket/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/notation_basic_operations/b_kronecker_levicivita_symbols/index.html</loc>
@@ -211,9 +211,6 @@
     <loc>http://localhost:1313/temp/a_basis_components/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/a_bra/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/tensor_analysis/calculus/a_curl/index.html</loc>
   </url>
   <url>
@@ -245,6 +242,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/operation/a_unit_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation/b_bra/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/calculus/b_curl/index.html</loc>
@@ -329,6 +329,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation/b_outer_product/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>
