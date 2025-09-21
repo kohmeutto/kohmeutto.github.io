@@ -3,7 +3,7 @@
   <channel>
     <title>Dirac notation :: 수리전자물리학</title>
     <link>http://localhost:1313/dirac_notation/index.html</link>
-    <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix</description>
+    <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix&#xD;(b) Syntax</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/dirac_notation/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +19,7 @@
       <link>http://localhost:1313/dirac_notation/b_ket/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/dirac_notation/b_ket/index.html</guid>
-      <description>1. 이산기저 (Discrete Basis) 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,&#xA;(1) 유클리드 공간&#xA;$$&#xD;\vec{a}=1\hat{u}_1+2\hat{u}_2,\quad&#xD;\hat{u}_1=[1 \ 0]^T,\quad \hat{u}_2=[0 \ 1]^T&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;|a\rangle=1|u_1\rangle+2|u_1\rangle,\quad&#xD;|u_1\rangle=[1 \ 0]^T,\quad |u_1\rangle=[0 \ 1]^T&#xD;$$ 2. 연속 기저 (Continuous Basis) 함수 f(x)의 함수를 표현할 때,&#xA;(1) 유클리드 공간&#xA;함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.&#xA;(2) 힐버트 공간&#xA;f(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$&#xD;|f\rangle = \int dx f(x) |x\rangle&#xD;$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$&#xD;|f\rangle=|f(x)\rangle&#xD;$$ 3. 스칼라 곱의 표현 힐버트 공간 상태 벡터를 $|\psi\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \in \mathbb{C}$)라고 하자. 아래와 같이 표현할 수 있다.</description>
+      <description>1. 이산기저 (Discrete Basis) 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,&#xA;(1) 유클리드 공간&#xA;$$&#xD;\vec{a}=1\hat{u}_1+2\hat{u}_2,\quad&#xD;\hat{u}_1=[1 \ 0]^T,\quad \hat{u}_2=[0 \ 1]^T&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;|a\rangle=1|u_1\rangle+2|u_1\rangle,\quad&#xD;|u_1\rangle=[1 \ 0]^T,\quad |u_1\rangle=[0 \ 1]^T&#xD;$$ 2. 연속 기저 (Continuous Basis) 함수 f(x)의 함수를 표현할 때,&#xA;(1) 유클리드 공간&#xA;함수는 무한한 원소를 가지므로, 유클리드 공간의 벡터가 아니다.&#xA;(2) 힐버트 공간&#xA;f(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$&#xD;|f\rangle = \int dx f(x) |x\rangle&#xD;$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$&#xD;|f\rangle=|f(x)\rangle&#xD;$$ 3. 스칼라 곱의 표현 힐버트 공간 상태 벡터를 $|\psi\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \in \mathbb{C}$)라고 하자. 관습적으로 아래와 같이 표현할 수 있다.</description>
     </item>
     <item>
       <title>(b) Bra</title>
@@ -41,6 +41,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/dirac_notation/b_matrix/index.html</guid>
       <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다.&#xA;1. 행렬의 디렉 표기법 (1) 단위기저(orthonormal basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$</description>
+    </item>
+    <item>
+      <title>(b) Syntax</title>
+      <link>http://localhost:1313/dirac_notation/b_matrix-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dirac_notation/b_matrix-copy/index.html</guid>
+      <description>1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.&#xA;수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.&#xA;OK: $|a\rangle+|b\rangle$ NG: $|a+b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.&#xA;연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.&#xA;OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.</description>
     </item>
   </channel>
 </rss>

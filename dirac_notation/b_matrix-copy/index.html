@@ -5,22 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.0.1+b23cf6629eada0c2802f34ae4012e04343497862">
-    <meta name="description" content="Vector">
+    <meta name="description" content="1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.
+수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.
+OK: $|a\rangle&#43;|b\rangle$ NG: $|a&#43;b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.
+연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.
+OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.
+스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Linear algebra :: 수리전자물리학">
-    <meta name="twitter:description" content="Vector">
-    <meta property="og:url" content="http://localhost:1313/linear_algebra/index.html">
+    <meta name="twitter:title" content="(b) Syntax :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.
+수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.
+OK: $|a\rangle&#43;|b\rangle$ NG: $|a&#43;b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.
+연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.
+OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.
+스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.">
+    <meta property="og:url" content="http://localhost:1313/dirac_notation/b_matrix-copy/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="Linear algebra :: 수리전자물리학">
-    <meta property="og:description" content="Vector">
+    <meta property="og:title" content="(b) Syntax :: 수리전자물리학">
+    <meta property="og:description" content="1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.
+수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.
+OK: $|a\rangle&#43;|b\rangle$ NG: $|a&#43;b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.
+연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.
+OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.
+스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="Linear algebra :: 수리전자물리학">
-    <meta itemprop="description" content="Vector">
-    <meta itemprop="wordCount" content="1">
-    <title>Linear algebra :: 수리전자물리학</title>
-    <link href="/linear_algebra/index.xml" rel="alternate" type="application/rss+xml" title="Linear algebra :: 수리전자물리학">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Dirac notation">
+    <meta itemprop="name" content="(b) Syntax :: 수리전자물리학">
+    <meta itemprop="description" content="1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.
+수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.
+OK: $|a\rangle&#43;|b\rangle$ NG: $|a&#43;b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.
+연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.
+OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.
+스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.">
+    <meta itemprop="wordCount" content="148">
+    <title>(b) Syntax :: 수리전자물리학</title>
     <link href="/css/auto-complete/auto-complete.min.css?1758481553" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1758481553" defer></script>
     <script src="/js/search-lunr.js?1758481553" defer></script>
@@ -45,9 +65,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/linear_algebra\/index.html';
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.path='\/dirac_notation\/b_matrix-copy\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -95,7 +115,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/linear_algebra/index.html">
+  <body class="mobile-support html" data-url="/dirac_notation/b_matrix-copy/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -106,17 +126,27 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-규칙과-관습">1. 규칙과 관습</a></li>
+        <li><a href="#2-bra">2. Bra</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Linear algebra</span><meta itemprop="position" content="2"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/dirac_notation/index.html"><span itemprop="name">Dirac notation</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Syntax</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/index.html" title="수리전자물리학 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation/b_matrix/index.html" title="(b) Matrix (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/vector/index.html" title="Vector (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/index.html" title="Integral transform (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -130,19 +160,54 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable linear_algebra" tabindex="-1">
+      <main id="R-body-inner" class="highlightable dirac_notation" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="linear-algebra">Linear algebra</h1>
+<h1 id="b-syntax">(b) Syntax</h1>
 
 <hr>
-<ul class="children children-li children-sort-">
-  <li class="children-title"><a href="/linear_algebra/vector/index.html">Vector</a></li>
+<h3 id="1-규칙과-관습">1. 규칙과 관습</h3>
+<p><strong>(1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.</strong></p>
+<p>수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.</p>
+<ul>
+<li>OK: $|a\rangle+|b\rangle$</li>
+<li>NG:  $|a+b\rangle$</li>
 </ul>
-
+<p><strong>(2) &lsquo;모자(^)&rsquo; 기호는 공식적인 &lsquo;연산자&rsquo; 선언이다.</strong></p>
+<p>연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.</p>
+<ul>
+<li>OK: $\hat{A}|\psi\rangle$</li>
+<li>NG: $|\hat{A}\psi\rangle$</li>
+</ul>
+<p><strong>(3) 기호의 병치는 &lsquo;결과&rsquo;에 대한 별명으로 허용된다.</strong></p>
+<p>스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.</p>
+<ul>
+<li>OK: $a|\psi\rangle=|a\psi\rangle$</li>
+<li>OK: $U|\psi\rangle=|U\psi\rangle$</li>
+</ul>
+<p><strong>(4) 함수 인자에 대한 연산은 이름표 내부에서 허용된다.</strong></p>
+<ul>
+<li>OK: $|\psi(t+a)\rangle=\hat{T}(-a)|\psi\rangle$</li>
+</ul>
+<p>|f(t+a)⟩와 같은 표현이 허용되는 이유는, + 연산이 벡터 |f⟩에 작용하는 것이 아니라, 이름표로 사용된 함수 f의 <strong>입력 인자(argument) t</strong> 에 작용하기 때문이다. 이것은 이동 연산자 T̂(-a)가 |f⟩에 작용한 결과 벡터에 대한 별명이다.</p>
+<hr>
+<h3 id="2-bra">2. Bra</h3>
+<p><strong>(1) 스칼라 곱</strong></p>
+$$
+\langle a\psi|=a^\ast\langle\psi|
+$$<p>proof)</p>
+$$
+\langle a\psi|=(a|\psi\rangle)^\dagger=a^\ast\langle \psi|
+$$<p><strong>(2) 연산자</strong></p>
+$$
+\langle U\psi|=\langle\psi|U^\dagger
+$$<p>proof)</p>
+$$
+\langle U\psi|=(U|\psi\rangle)^\dagger=\langle \psi|U^\dagger
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -189,10 +254,15 @@
       <div id="R-content-wrapper" class="highlightable">
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="active parent " data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-id="/linear_algebra/vector/index.html"><a class="padding" href="/linear_algebra/vector/index.html">Vector</a><ul id="R-subsections-c7410d928abe64b74c391b458d4f1b43" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/einstein-notation/index.html"><a class="padding" href="/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-c88f7822996d6e3d2cdd3540e51b7709" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/dirac_notation/index.html"><a class="padding" href="/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-9cf96b7563c25a741a1a5bceda547cfe" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/dirac_notation/index.html"><a class="padding" href="/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-9cf96b7563c25a741a1a5bceda547cfe" class="collapsible-menu">
+            <li class="" data-nav-id="/dirac_notation/b_hibert_space/index.html"><a class="padding" href="/dirac_notation/b_hibert_space/index.html">(b) Hibert space</a></li>
+            <li class="" data-nav-id="/dirac_notation/b_ket/index.html"><a class="padding" href="/dirac_notation/b_ket/index.html">(b) Ket</a></li>
+            <li class="" data-nav-id="/dirac_notation/b_bra/index.html"><a class="padding" href="/dirac_notation/b_bra/index.html">(b) Bra</a></li>
+            <li class="" data-nav-id="/dirac_notation/b_outer_product/index.html"><a class="padding" href="/dirac_notation/b_outer_product/index.html">(b) Outer product</a></li>
+            <li class="" data-nav-id="/dirac_notation/b_matrix/index.html"><a class="padding" href="/dirac_notation/b_matrix/index.html">(b) Matrix</a></li>
+            <li class="active " data-nav-id="/dirac_notation/b_matrix-copy/index.html"><a class="padding" href="/dirac_notation/b_matrix-copy/index.html">(b) Syntax</a></li></ul></li>
             <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
