@@ -15,11 +15,18 @@
       <description>Vector</description>
     </item>
     <item>
+      <title>Einstein notation</title>
+      <link>http://localhost:1313/einstein-notation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/einstein-notation/index.html</guid>
+      <description>(b) Suffix notation&#xD;(b) Kronecker &amp; Levi-Civit`a Symbols&#xD;(b) Dyad</description>
+    </item>
+    <item>
       <title>Dirac notation</title>
       <link>http://localhost:1313/dirac_notation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/dirac_notation/index.html</guid>
-      <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product</description>
+      <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix</description>
     </item>
     <item>
       <title>Integral transform</title>
@@ -40,7 +47,7 @@
       <link>http://localhost:1313/vector_analysis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_analysis/index.html</guid>
-      <description>(b) Space &amp; Vector &amp; Tensor&#xD;Notation &amp; Basic operations&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;Calculus</description>
+      <description>(b) Space &amp; Vector &amp; Tensor&#xD;(i) Total derivative &amp; Gradient&#xD;Orthogonal coordinates&#xD;Calculus</description>
     </item>
     <item>
       <title>Tensor analysis</title>
