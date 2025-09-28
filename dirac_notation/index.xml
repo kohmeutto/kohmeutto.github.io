@@ -3,7 +3,7 @@
   <channel>
     <title>Dirac notation :: 수리전자물리학</title>
     <link>http://localhost:1313/dirac_notation/index.html</link>
-    <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix&#xD;(b) Syntax</description>
+    <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/dirac_notation/index.xml" rel="self" type="application/rss+xml" />
@@ -36,17 +36,17 @@
       <description>1. 수학적 정의과 계산 (1) 유한차원&#xA;유한차원에서, Ket-Bra → matrix 연산으로 정의된다. 예를 들어, 두 개의 2차원 벡터 |a⟩와 |b⟩가 있다.&#xA;$$&#xD;|a\rangle&#xD;=\left[\begin{matrix}&#xD;a_1 \\ a_2&#xD;\end{matrix}\right],\quad&#xD;|b\rangle&#xD;=\left[\begin{matrix}&#xD;b_1 \\ b_2&#xD;\end{matrix}\right]&#xD;$$outer product의 결과는 matrix이며, matrix는 연산자 로 간주할 수 있다. 따라서, 아래와 같이 쓸 수 있다.&#xA;$$&#xD;\hat{A}&#xD;=|a\rangle\langle b|&#xD;=\left[\begin{matrix}&#xD;a_1 \\ a_2&#xD;\end{matrix}\right]&#xD;\left[\begin{matrix}&#xD;b_1^\ast &amp; b_2^\ast&#xD;\end{matrix}\right]&#xD;=\left[\begin{matrix}&#xD;a_1b_1^\ast &amp; a_1b_2^\ast \\&#xD;a_2b_1^\ast &amp; a_2b_2^\ast&#xD;\end{matrix}\right]&#xD;$$(2) 무한차원</description>
     </item>
     <item>
-      <title>(b) Matrix</title>
-      <link>http://localhost:1313/dirac_notation/b_matrix/index.html</link>
+      <title>(b) Matrix &amp; Kernel</title>
+      <link>http://localhost:1313/dirac_notation/b_matrix_kernel/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dirac_notation/b_matrix/index.html</guid>
-      <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다.&#xA;1. 행렬의 디렉 표기법 (1) 단위기저(orthonormal basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$</description>
+      <guid>http://localhost:1313/dirac_notation/b_matrix_kernel/index.html</guid>
+      <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다. ‘커널’이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다. 1. 이산기저와 행렬 (1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$(3) 행렬을 이용한 연산</description>
     </item>
     <item>
       <title>(b) Syntax</title>
-      <link>http://localhost:1313/dirac_notation/b_matrix-copy/index.html</link>
+      <link>http://localhost:1313/dirac_notation/b_syntax/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dirac_notation/b_matrix-copy/index.html</guid>
+      <guid>http://localhost:1313/dirac_notation/b_syntax/index.html</guid>
       <description>1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.&#xA;수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.&#xA;OK: $|a\rangle+|b\rangle$ NG: $|a+b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.&#xA;연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.&#xA;OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.</description>
     </item>
   </channel>

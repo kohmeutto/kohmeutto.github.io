@@ -400,10 +400,10 @@
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_gradient_for_scalar/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_matrix/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation/b_matrix_kernel/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
@@ -448,7 +448,7 @@
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_matrix-copy/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation/b_syntax/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>
