@@ -186,11 +186,13 @@ code.copy-to-clipboard-code:after,
 
 #R-body h1,
 #R-body h2,
+#R-body .card-title,
 #R-body h3,
 #R-body .article-subheading,
 #R-body h4,
 #R-body h5,
-#R-body h6 {
+#R-body h6,
+#R-body .children-type-list .children-title {
   /* better contrast for colored elements */
   color: rgba(0, 0, 0, 1);
 }
@@ -238,10 +240,9 @@ hr {
 }
 
 /* Children shortcode */
-.children p,
-.children-li p,
-.children-h2 p,
-.children-h3 p {
+.children-type-tree p,
+.children-type-list p,
+.children-type-flat p {
   font-size: 1rem;
 }
 
@@ -310,10 +311,10 @@ mark.search {
   color: rgba(0, 0, 0, 1);
 }
 
-article {
+article:not(.card) {
   break-before: page;
 }
-#R-body-inner article:first-of-type {
+#R-body-inner article:not(.card):first-of-type {
   break-before: avoid;
 }
 
