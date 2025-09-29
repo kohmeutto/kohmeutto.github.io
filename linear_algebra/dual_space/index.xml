@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dual space :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/dual_space/index.html</link>
+    <description>(b) State &amp; Ket&#xD;(b) Linear functional &amp; Dual space &amp; Bra&#xD;(b) Basis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/dual_space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) State &amp; Ket</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_state/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_state/index.html</guid>
+      <description>1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.&#xA;덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A + 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Linear functional &amp; Dual space &amp; Bra</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_linear_functional/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_linear_functional/index.html</guid>
+      <description>1. 선형 범함수, 벡터에서 숫자를 추출하는 기계 이전 챕터에서 세상의 다양한 대상을 $|v\rangle$라는 Ket 벡터로 표현하는 법을 배웠다. 하지만 추상적인 벡터만으로는 부족하다. 우리는 벡터로부터 위치, 운동량, 에너지, 확률 같은 구체적인 숫자(스칼라) 를 얻어내고 싶어 한다.&#xA;이처럼 벡터 공간의 벡터를 입력으로 받아, 스칼라를 출력하는 특별한 종류의 ‘함수’를 범함수(Functional) 라고 부른다. 이 두 가지 규칙을 합쳐 선형성(Linearity) 이라고 한다. 범함수가 벡터의 덧셈과 스칼라 곱 연산을 그대로 보존해준다는 의미를 가진다.&#xA;범함수(Functional): 벡터를 입력받아 스칼라를 출력하는 함수. $$&#xD;f(|v\rangle)=c, \quad \text{where, } |v\rangle \text{ 는 벡터}, c \text{ 는 스칼라}&#xD;$$수많은 범함수 중에서, 우리는 벡터 공간의 구조를 “존중하는” 착한 범함수에만 관심이 있다. 이러한 범함수를 선형 범함수(Linear Functional) 라고 부르며, 다음 두 가지 규칙을 만족한다.</description>
+    </item>
+    <item>
+      <title>(b) Basis</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</guid>
+      <description>1. 기저 추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.&#xA;기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 직교기저: 공간을 구성하는 모든 기저들이 서로 간 수직일 경우를 말한다. 정규직교기저: 직교기저 + 각 기저의 크기가 1 2. 이산기저와 쌍대 기저 이산 기저는 셀수 있는 기저 를 말한다. 기저 벡터들($|u_1\rangle$, $|u_2\rangle$, …)을 적절히 조합(선형 결합)하면 그 공간 안의 어떤 벡터라도 만들어 낼 수 있다. 임의의 벡터 $|v\rangle$를 다음과 같이 정규기기저 벡터 {$|e_i\rangle$} 들의 합으로 다음과 같이 표현해보자.</description>
+    </item>
+  </channel>
+</rss>

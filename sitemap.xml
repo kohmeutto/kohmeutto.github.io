@@ -37,7 +37,7 @@
     <loc>http://localhost:1313/vector_analysis/calculus/b_gradient/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_hibert_space/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_hibert_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_i/index.html</loc>
@@ -59,6 +59,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/b_space_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/dual_space/b_state/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_strum_liouville_operator/index.html</loc>
@@ -148,7 +151,7 @@
     <loc>http://localhost:1313/ode_pde/green_function/b_first_order_pde/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_ket/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_ket/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/einstein-notation/b_kronecker_levicivita_symbols/index.html</loc>
@@ -158,6 +161,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/dual_space/b_linear_functional/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_ii/index.html</loc>
@@ -244,7 +250,10 @@
     <loc>http://localhost:1313/tensor_analysis/operation/a_unit_tensor/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_bra/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_bra/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/calculus/b_curl/index.html</loc>
@@ -286,7 +295,10 @@
     <loc>http://localhost:1313/tensor_analysis/basis_transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/dual_space/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/index.html</loc>
@@ -337,7 +349,7 @@
     <loc>http://localhost:1313/integral_transform/transformation/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_outer_product/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_outer_product/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>
@@ -403,7 +415,7 @@
     <loc>http://localhost:1313/linear_algebra/vector/b_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_matrix_kernel/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_matrix_kernel/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
@@ -448,7 +460,7 @@
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/dirac_notation/b_syntax/index.html</loc>
+    <loc>http://localhost:1313/dirac_notation_for_qm/b_syntax/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_laplacian_for_free_space/index.html</loc>

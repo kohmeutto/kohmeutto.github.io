@@ -3,7 +3,7 @@
   <channel>
     <title>Linear algebra :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_algebra/index.html</link>
-    <description>Vector</description>
+    <description>Vector&#xD;Dual space</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_algebra/index.xml" rel="self" type="application/rss+xml" />
@@ -13,6 +13,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/vector/index.html</guid>
       <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits&#xD;(b) Matrix&#xD;(b) Column vector of matrix I - Basis&#xD;(b) Column vector of matrix II - Determinant&#xD;(b) Inner product&#xD;(b) Projection&#xD;(b) Row vector of matrix</description>
+    </item>
+    <item>
+      <title>Dual space</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/index.html</guid>
+      <description>(b) State &amp; Ket&#xD;(b) Linear functional &amp; Dual space &amp; Bra&#xD;(b) Basis</description>
     </item>
   </channel>
 </rss>

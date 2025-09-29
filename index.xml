@@ -12,7 +12,7 @@
       <link>http://localhost:1313/linear_algebra/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/index.html</guid>
-      <description>Vector</description>
+      <description>Vector&#xD;Dual space</description>
     </item>
     <item>
       <title>Einstein notation</title>
@@ -22,10 +22,10 @@
       <description>(b) Suffix notation&#xD;(b) Kronecker &amp; Levi-Civit`a Symbols&#xD;(b) Dyad</description>
     </item>
     <item>
-      <title>Dirac notation</title>
-      <link>http://localhost:1313/dirac_notation/index.html</link>
+      <title>Dirac notation for QM</title>
+      <link>http://localhost:1313/dirac_notation_for_qm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dirac_notation/index.html</guid>
+      <guid>http://localhost:1313/dirac_notation_for_qm/index.html</guid>
       <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
     </item>
     <item>
