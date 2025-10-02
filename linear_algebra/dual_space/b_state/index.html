@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.0.0+97777ec5111409397e83f44eca496eea97697836">
+    <meta name="generator" content="Relearn 8.0.0+6f266e9b46dc2a685d18950a0f32c37f74e6c50d">
     <meta name="description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta name="author" content="">
@@ -25,26 +25,26 @@
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta itemprop="wordCount" content="243">
     <title>(b) State &amp; Ket :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1759313867" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1759313867" defer></script>
-    <script src="/js/search-lunr.js?1759313867" defer></script>
-    <script src="/js/search.js?1759313867" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1759410195" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759410195" defer></script>
+    <script src="/js/search-lunr.js?1759410195" defer></script>
+    <script src="/js/search.js?1759410195" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1759313867";
+      window.relearn.index_js_url="/searchindex.en.js?1759410195";
     </script>
-    <script src="/js/lunr/lunr.min.js?1759313867" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1759313867" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1759313867" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1759313867" defer></script>
+    <script src="/js/lunr/lunr.min.js?1759410195" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759410195" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759410195" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759410195" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759313867" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759313867" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759313867" rel="stylesheet">
-    <link href="/css/theme.css?1759313867" rel="stylesheet">
-    <link href="/css/format-html.css?1759313867" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759410195" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759410195" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759410195" rel="stylesheet">
+    <link href="/css/theme.css?1759410195" rel="stylesheet">
+    <link href="/css/format-html.css?1759410195" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -206,7 +206,7 @@ $$<p>Ket의 가장 중요한 철학은 <strong>&lsquo;표현으로부터의 자�
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-homelinks">
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
@@ -223,20 +223,20 @@ $$<p>Ket의 가장 중요한 철학은 <strong>&lsquo;표현으로부터의 자�
       <div id="R-content-wrapper" class="highlightable">
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="parent " data-nav-id="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-id="/linear_algebra/vector/index.html"><a class="padding" href="/linear_algebra/vector/index.html">Vector</a><ul id="R-subsections-c7410d928abe64b74c391b458d4f1b43" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-id="/linear_algebra/dual_space/index.html"><a class="padding" href="/linear_algebra/dual_space/index.html">Dual space</a><ul id="R-subsections-345aa4c91eee3bdea3a693a957b81878" class="collapsible-menu">
-            <li class="active " data-nav-id="/linear_algebra/dual_space/b_state/index.html"><a class="padding" href="/linear_algebra/dual_space/b_state/index.html">(b) State &amp; Ket</a></li>
-            <li class="" data-nav-id="/linear_algebra/dual_space/b_linear_functional/index.html"><a class="padding" href="/linear_algebra/dual_space/b_linear_functional/index.html">(b) Linear functional &amp; Dual space &amp; Bra</a></li>
-            <li class="" data-nav-id="/linear_algebra/dual_space/b_basis/index.html"><a class="padding" href="/linear_algebra/dual_space/b_basis/index.html">(b) Basis</a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/einstein-notation/index.html"><a class="padding" href="/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-c88f7822996d6e3d2cdd3540e51b7709" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/dirac_notation_for_qm/index.html"><a class="padding" href="/dirac_notation_for_qm/index.html">Dirac notation for QM</a><ul id="R-subsections-c47ff55b953d4eb6d0cb7995ade45088" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/linear_algebra/vector/index.html"><a class="padding" href="/linear_algebra/vector/index.html">Vector</a><ul id="R-subsections-c7410d928abe64b74c391b458d4f1b43" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/linear_algebra/dual_space/index.html"><a class="padding" href="/linear_algebra/dual_space/index.html">Dual space</a><ul id="R-subsections-345aa4c91eee3bdea3a693a957b81878" class="collapsible-menu">
+            <li class="active " data-nav-url="/linear_algebra/dual_space/b_state/index.html"><a class="padding" href="/linear_algebra/dual_space/b_state/index.html">(b) State &amp; Ket</a></li>
+            <li class="" data-nav-url="/linear_algebra/dual_space/b_linear_functional/index.html"><a class="padding" href="/linear_algebra/dual_space/b_linear_functional/index.html">(b) Linear functional &amp; Dual space &amp; Bra</a></li>
+            <li class="" data-nav-url="/linear_algebra/dual_space/b_basis/index.html"><a class="padding" href="/linear_algebra/dual_space/b_basis/index.html">(b) Basis</a></li></ul></li></ul></li>
+            <li class="" data-nav-url="/einstein-notation/index.html"><a class="padding" href="/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-c88f7822996d6e3d2cdd3540e51b7709" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/index.html"><a class="padding" href="/dirac_notation_for_qm/index.html">Dirac notation for QM</a><ul id="R-subsections-c47ff55b953d4eb6d0cb7995ade45088" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -265,9 +265,9 @@ $$<p>Ket의 가장 중요한 철학은 <strong>&lsquo;표현으로부터의 자�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759313867"></script>
-    <script src="/js/clipboard/clipboard.min.js?1759313867" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759313867" defer></script>
-    <script src="/js/theme.js?1759313867" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759410195"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759410195" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759410195" defer></script>
+    <script src="/js/theme.js?1759410195" defer></script>
   </body>
 </html>
