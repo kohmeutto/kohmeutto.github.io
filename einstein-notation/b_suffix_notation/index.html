@@ -39,28 +39,28 @@
 (4) 하나의 방정식에서 각 항(term)은 모두 동일한 free index를 가져야 한다.
 (5) 대칭 행렬이 아니라면, $a_{ij}\ne a_{ji}$ 이다.
 1. free suffix $$\vec{c}=\vec{a}&#43;\vec{b}\rightarrowc_i=a_i&#43;b_i$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j&#43;b_j$ or $c_k=a_k&#43;b_k$.">
-    <meta itemprop="wordCount" content="368">
+    <meta itemprop="wordCount" content="420">
     <title>(b) Suffix notation :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1759117771" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1759117771" defer></script>
-    <script src="/js/search-lunr.js?1759117771" defer></script>
-    <script src="/js/search.js?1759117771" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1759313867" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759313867" defer></script>
+    <script src="/js/search-lunr.js?1759313867" defer></script>
+    <script src="/js/search.js?1759313867" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1759117771";
+      window.relearn.index_js_url="/searchindex.en.js?1759313867";
     </script>
-    <script src="/js/lunr/lunr.min.js?1759117771" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1759117771" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1759117771" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1759117771" defer></script>
+    <script src="/js/lunr/lunr.min.js?1759313867" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759313867" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759313867" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759313867" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759117771" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759117771" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759117771" rel="stylesheet">
-    <link href="/css/theme.css?1759117771" rel="stylesheet">
-    <link href="/css/format-html.css?1759117771" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759313867" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759313867" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759313867" rel="stylesheet">
+    <link href="/css/theme.css?1759313867" rel="stylesheet">
+    <link href="/css/format-html.css?1759313867" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -213,7 +213,7 @@ M_{ij}\ne M_{ji}
 $$$$
 M_{ij}=a_{i}b_{j}
 $$$$
-M_{ij}x_{i}=a_{i}b_{j}x_{i}=\left(\vec{a\cdot\vec{x}}\right)b_{j}
+M_{ij}x_{i}=a_{i}b_{j}x_{i}=\left(\vec{a}\cdot\vec{x}\right)b_{j}
 $$<hr>
 <p><strong>example 1)</strong></p>
 <p>Suppose that an expression involves two dot products multiplied together, (a·b)(c·d). In order to indicate which vector is dotted with which, a different dummy suffix must be used for each of the dot products:</p>
@@ -224,7 +224,7 @@ $$<p><strong>example 2)</strong></p>
 $$
 a_{j}b_{i}c_{j}
 \rightarrow
-\left(\vec{a\cdot\vec{c}}\right)\vec{b}
+\left(\vec{a}\cdot\vec{c}\right)\vec{b}
 $$<p><strong>example 3)</strong></p>
 <p>Write the vector equation in suffix notation.</p>
 $$
@@ -260,11 +260,7 @@ $$<p>proof)</p>
 <p><strong>example2)</strong></p>
 $$
 M_{ij}x_{i}y_{j}\ne M_{ij}y_{i}x_{j}
-$$<p>proof)</p>
-<p>대칭 행렬이 아닌 경우에는,</p>
-$$
-M_{ij}\ne M_{ji}
-$$<p>따라서,</p>
+$$<p>proof1)</p>
 $$
 M_{ij}x_{i}y_{j}
 =a_{i}b_{j}x_{i}y_{j}
@@ -273,25 +269,66 @@ $$$$
 M_{ij}y_{i}x_{j}
 =a_{i}b_{j}y_{i}x_{j}
 =\left(\vec{a}\cdot\vec{y}\right)\left(\vec{b}\cdot\vec{x}\right)
-$$<p><strong>example3)</strong></p>
+$$<p>proof2)</p>
 $$
-\left(a_{ij}+a_{ji}\right)x_{i}y_{j}\ne2a_{ij}x_{i}y_{j}
-$$<p>proof)</p>
-<p>대칭 행렬이 아닌 경우에는,</p>
+M_{ij}x_{i}y_{j}=(My)_ix_i
+$$$$
+M_{ij}y_{i}x_{j}=(Mx)_iy_i
+$$<p>여기에서, $(My)$와 $(Mx)$는 하나의 벡터 이름이다.</p>
+<p><strong>example3)</strong></p>
 $$
-a_{ij}\ne a_{ji}
-$$<hr>
+\left(a_{ij}+a_{ji}\right)x_{i}y_{j}
+\ne 2a_{ij}x_{i}y_{j}
+$$<p>proof1)</p>
+<p>$a_{ij}=\alpha_i\beta_j$ 라 하면, 왼쪽항은</p>
+$$
+\left(\alpha_i\beta_j+\alpha_j\beta_i\right)x_{i}y_{j}
+=\alpha_i x_i\beta_j y_j+\alpha_j y_j \beta_i x_i
+$$$$
+=(\vec{\alpha}\cdot\vec{x})(\vec{\beta}\cdot\vec{y})+(\vec{\alpha}\cdot\vec{y})(\vec{\beta}\cdot\vec{x})
+$$<p>오른쪽항은</p>
+$$
+2a_{ij}x_{i}y_{j}
+=2\alpha_i\beta_jx_iy_j
+=2(\vec{\alpha}\cdot\vec{x})(\vec{\beta}\cdot\vec{y})
+$$<p>proof2)</p>
+<p>왼쪽항은</p>
+$$
+\left(a_{ij}+a_{ji}\right)x_{i}y_{j}
+=(ay)_ix_i+(ax)_jy_j
+$$<p>오른쪽항은</p>
+$$
+2a_{ij}x_{i}y_{j}
+=2(ay)_ix_{i}
+$$<p>여기에서, $(ay)$와 $(ax)$는 하나의 벡터 이름이다.</p>
+<hr>
 <h3 id="6-identities">6. Identities</h3>
+<p><strong>example1)</strong></p>
 $$
 a_{ij}\left(x_{i}+y_{i}\right)
 =a_{ij}x_{i}+a_{ij}y_{i}
-$$$$
+$$<p>proof)</p>
+$$
+a_{ij}\left(x_{i}+y_{i}\right)
+=(xa)_j+(ya)_{j}
+$$<p><strong>example2)</strong></p>
+$$
 a_{ij}x_{i}x_{j}
 =a_{ji}x_{i}x_{j}
+$$<p>proof)</p>
+$$
+a_{ij}x_{i}x_{j}
+=x_i(ax)_i
 $$$$
+a_{ji}x_{i}x_{j}
+=x_j(ax)_j
+$$<p><strong>example3)</strong></p>
+$$
 \left(a_{ij}+a_{ji}\right)x_{i}x_{j}
 =2a_{ij}x_{i}x_{j}
-$$<hr>
+$$<p>proof)</p>
+<p>예제2 에 의해서, 같음을 알 수 있다.</p>
+<hr>
 <p><a href="https://youtu.be/CLrTj7D2fLM?list=PLdgVBOaXkb9D6zw47gsrtE5XqLeRPh27_" rel="external" target="_blank">Einstein Summation Convention: an Introduction</a></p>
 
   <footer class="footline">
@@ -380,9 +417,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759117771"></script>
-    <script src="/js/clipboard/clipboard.min.js?1759117771" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759117771" defer></script>
-    <script src="/js/theme.js?1759117771" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759313867"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759313867" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759313867" defer></script>
+    <script src="/js/theme.js?1759313867" defer></script>
   </body>
 </html>
