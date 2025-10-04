@@ -3,7 +3,7 @@
   <channel>
     <title>Dual space :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_algebra/dual_space/index.html</link>
-    <description>(b) State &amp; Ket&#xD;(b) Linear functional &amp; Dual space &amp; Bra&#xD;(b) Basis</description>
+    <description>(b) State &amp; Ket&#xD;(b) Linear functional &amp; Dual space &amp; Bra&#xD;(b) Basis&#xD;(b) Hibert space&#xD;(b) Riesz representation theorem</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_algebra/dual_space/index.xml" rel="self" type="application/rss+xml" />
@@ -26,7 +26,21 @@
       <link>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</guid>
-      <description>1. 기저 추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.&#xA;기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 직교기저: 공간을 구성하는 모든 기저들이 서로 간 수직일 경우를 말한다. 정규직교기저: 직교기저 + 각 기저의 크기가 1 2. 이산기저와 쌍대 기저 이산 기저는 셀수 있는 기저 를 말한다. 기저 벡터들($|u_1\rangle$, $|u_2\rangle$, …)을 적절히 조합(선형 결합)하면 그 공간 안의 어떤 벡터라도 만들어 낼 수 있다. 임의의 벡터 $|v\rangle$를 다음과 같이 정규기기저 벡터 {$|e_i\rangle$} 들의 합으로 다음과 같이 표현해보자.</description>
+      <description>1. 기저 추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.&#xA;기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 직교기저: 공간을 구성하는 모든 기저들이 서로 간 수직일 경우를 말한다. 정규직교기저: 직교기저 + 각 기저의 크기가 1 2. 이산기저와 쌍대 기저 이산 기저는 셀수 있는 기저 를 말한다. 기저 벡터들($|u_1\rangle$, $|u_2\rangle$, …)을 적절히 조합(선형 결합)하면 그 공간 안의 어떤 벡터라도 만들어 낼 수 있다. 임의의 벡터 $|v\rangle$를 다음과 같이 기저 벡터 {$|u_i\rangle$} 들의 합으로 다음과 같이 표현해보자.</description>
+    </item>
+    <item>
+      <title>(b) Hibert space</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_hibert_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_hibert_space/index.html</guid>
+      <description>1. 힐버트 공간(Hibert space)과 내적 dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, 기하학 이 빠져있다. 아직 벡터 $|v\rangle$의 ‘길이’를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 ‘각도’를 계산할 방법이 없다.&#xA;이러한 기하학적 구조를 부여하는 강력한 도구가 바로 내적(Inner Product) 이다. 그리고 내적이 정의된 벡터 공간을 내적 공간(Inner Product Space) 이라고 부른다.</description>
+    </item>
+    <item>
+      <title>(b) Riesz representation theorem</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_riesz_representation_theorem/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_riesz_representation_theorem/index.html</guid>
+      <description>1. 리즈의 표현 정리, 디렉 표기법과의 연결 고리 Bra의 작용: 쌍대공간 $V^\ast$의 원소 $\langle f|$ 가 원래 공간 V의 원소 $|v\rangle$ 에 작용하는 것, $\langle f|v\rangle$ 내적: 원래 공간 V의 두 원소 $|f\rangle$와 $|v\rangle$ 사이의 기하학적 관계, $\langle f,v\rangle$. 두 표기법이 너무나 비슷하게 생겼다는 것은 우연이 아니다. 힐베르트 공간에서는 이 둘을 하나로 묶어주는 운명적인 연결고리가 있으며, 그 연결고리의 이름이 바로 리즈 표현 정리(Riesz Representation Theorem) 이다.&#xA;이 정리의 수학적 증명은 복잡하지만, 그 결론은 아주 명확하고 강력하다.</description>
     </item>
   </channel>
 </rss>

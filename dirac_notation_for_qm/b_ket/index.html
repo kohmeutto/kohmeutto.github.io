@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.0.0+6f266e9b46dc2a685d18950a0f32c37f74e6c50d">
+    <meta name="generator" content="Relearn 8.0.1+95d03a021180390bcb52f6f0920fce9b276aef99">
     <meta name="description" content="1. 이산기저 (Discrete Basis) 원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,
 (1) 유클리드 공간
 $$\vec{a}=1\hat{u}_1&#43;2\hat{u}_2,\quad\hat{u}_1=[1 \ 0]^T,\quad \hat{u}_2=[0 \ 1]^T$$(2) 힐버트 공간
@@ -49,26 +49,26 @@ $$|a\rangle=1|u_1\rangle&#43;2|u_1\rangle,\quad|u_1\rangle=[1 \ 0]^T,\quad |u_
 f(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩는 힐버트 공간에 존재하는, 기저에 무관한 추상적인 상태 벡터 그 자체를 의미한다. f(x)는 x상태 에서의 f의 값이다. 따라서, 아래와 같이 표현할 수 있다. $$|f\rangle = \int dx f(x) |x\rangle$$ 관용적 표현으로, 아래와 같이 쓸 수 있다. $$|f\rangle=|f(x)\rangle$$ 3. 스칼라 곱의 표현 힐버트 공간 상태 벡터를 $|\psi\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \in \mathbb{C}$)라고 하자. 관습적으로 아래와 같이 표현할 수 있다.">
     <meta itemprop="wordCount" content="151">
     <title>(b) Ket :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1759410272" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1759410272" defer></script>
-    <script src="/js/search-lunr.js?1759410272" defer></script>
-    <script src="/js/search.js?1759410272" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1759548878" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759548878" defer></script>
+    <script src="/js/search-lunr.js?1759548878" defer></script>
+    <script src="/js/search.js?1759548878" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1759410272";
+      window.relearn.index_js_url="/searchindex.en.js?1759548878";
     </script>
-    <script src="/js/lunr/lunr.min.js?1759410272" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1759410272" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1759410272" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1759410272" defer></script>
+    <script src="/js/lunr/lunr.min.js?1759548878" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759548878" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759548878" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759548878" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759410272" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759410272" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759410272" rel="stylesheet">
-    <link href="/css/theme.css?1759410272" rel="stylesheet">
-    <link href="/css/format-html.css?1759410272" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759548878" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759548878" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759548878" rel="stylesheet">
+    <link href="/css/theme.css?1759548878" rel="stylesheet">
+    <link href="/css/format-html.css?1759548878" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -153,7 +153,7 @@ f(x)를 분해하면, f는 이름표 이다. 이 이름표가 붙은 Ket |f⟩�
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/dirac_notation_for_qm/index.html"><span itemprop="name">Dirac notation for QM</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Ket</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation_for_qm/b_hibert_space/index.html" title="(b) Hibert space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation_for_qm/index.html" title="Dirac notation for QM (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation_for_qm/b_bra/index.html" title="(b) Bra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -261,7 +261,6 @@ $$<p>ket 안에는 이름(문자, 숫자, 그림 등등) 이 들어간다. $a\ps
             <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/einstein-notation/index.html"><a class="padding" href="/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-c88f7822996d6e3d2cdd3540e51b7709" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-url="/dirac_notation_for_qm/index.html"><a class="padding" href="/dirac_notation_for_qm/index.html">Dirac notation for QM</a><ul id="R-subsections-c47ff55b953d4eb6d0cb7995ade45088" class="collapsible-menu">
-            <li class="" data-nav-url="/dirac_notation_for_qm/b_hibert_space/index.html"><a class="padding" href="/dirac_notation_for_qm/b_hibert_space/index.html">(b) Hibert space</a></li>
             <li class="active " data-nav-url="/dirac_notation_for_qm/b_ket/index.html"><a class="padding" href="/dirac_notation_for_qm/b_ket/index.html">(b) Ket</a></li>
             <li class="" data-nav-url="/dirac_notation_for_qm/b_bra/index.html"><a class="padding" href="/dirac_notation_for_qm/b_bra/index.html">(b) Bra</a></li>
             <li class="" data-nav-url="/dirac_notation_for_qm/b_outer_product/index.html"><a class="padding" href="/dirac_notation_for_qm/b_outer_product/index.html">(b) Outer product</a></li>
@@ -301,9 +300,9 @@ $$<p>ket 안에는 이름(문자, 숫자, 그림 등등) 이 들어간다. $a\ps
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759410272"></script>
-    <script src="/js/clipboard/clipboard.min.js?1759410272" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759410272" defer></script>
-    <script src="/js/theme.js?1759410272" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759548878"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759548878" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759548878" defer></script>
+    <script src="/js/theme.js?1759548878" defer></script>
   </body>
 </html>

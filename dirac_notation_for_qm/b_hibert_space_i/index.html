@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.0.0+6f266e9b46dc2a685d18950a0f32c37f74e6c50d">
+    <meta name="description" content="1. 힐버트 공간(Hibert space)과 내적 dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, 기하학 이 빠져있다. 아직 벡터 $|v\rangle$의 ‘길이’를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 ‘각도’를 계산할 방법이 없다.
+이러한 기하학적 구조를 부여하는 강력한 도구가 바로 내적(Inner Product) 이다. 그리고 내적이 정의된 벡터 공간을 내적 공간(Inner Product Space) 이라고 부른다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Inner product :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 힐버트 공간(Hibert space)과 내적 dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, 기하학 이 빠져있다. 아직 벡터 $|v\rangle$의 ‘길이’를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 ‘각도’를 계산할 방법이 없다.
+이러한 기하학적 구조를 부여하는 강력한 도구가 바로 내적(Inner Product) 이다. 그리고 내적이 정의된 벡터 공간을 내적 공간(Inner Product Space) 이라고 부른다.">
+    <meta property="og:url" content="http://localhost:1313/dirac_notation_for_qm/b_hibert_space_i/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Inner product :: 수리전자물리학">
+    <meta property="og:description" content="1. 힐버트 공간(Hibert space)과 내적 dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, 기하학 이 빠져있다. 아직 벡터 $|v\rangle$의 ‘길이’를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 ‘각도’를 계산할 방법이 없다.
+이러한 기하학적 구조를 부여하는 강력한 도구가 바로 내적(Inner Product) 이다. 그리고 내적이 정의된 벡터 공간을 내적 공간(Inner Product Space) 이라고 부른다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Dirac notation for QM">
+    <meta itemprop="name" content="(b) Inner product :: 수리전자물리학">
+    <meta itemprop="description" content="1. 힐버트 공간(Hibert space)과 내적 dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, 기하학 이 빠져있다. 아직 벡터 $|v\rangle$의 ‘길이’를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 ‘각도’를 계산할 방법이 없다.
+이러한 기하학적 구조를 부여하는 강력한 도구가 바로 내적(Inner Product) 이다. 그리고 내적이 정의된 벡터 공간을 내적 공간(Inner Product Space) 이라고 부른다.">
+    <meta itemprop="wordCount" content="471">
+    <title>(b) Inner product :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1759545719" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759545719" defer></script>
+    <script src="/js/search-lunr.js?1759545719" defer></script>
+    <script src="/js/search.js?1759545719" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1759545719";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1759545719" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759545719" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759545719" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759545719" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759545719" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759545719" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759545719" rel="stylesheet">
+    <link href="/css/theme.css?1759545719" rel="stylesheet">
+    <link href="/css/format-html.css?1759545719" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/dirac_notation_for_qm\/b_hibert_space_i\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/dirac_notation_for_qm/b_hibert_space_i/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-힐버트-공간hibert-space과-내적">1. 힐버트 공간(Hibert space)과 내적</a></li>
+        <li><a href="#2-복소수-벡터-공간에서-내적의-세-가지-중요한-규칙">2. 복소수 벡터 공간에서 내적의 세 가지 중요한 규칙</a></li>
+        <li><a href="#3-리즈의-표현-정리-디렉-표기법과의-연결-고리">3. 리즈의 표현 정리, 디렉 표기법과의 연결 고리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/dirac_notation_for_qm/index.html"><span itemprop="name">Dirac notation for QM</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Inner product</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation_for_qm/b_hibert_space_ii/index.html" title="(b) Hibert space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/dirac_notation_for_qm/b_ket/index.html" title="(b) Ket (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable dirac_notation_for_qm" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-inner-product">(b) Inner product</h1>
+
+<hr>
+<h3 id="1-힐버트-공간hibert-space과-내적">1. 힐버트 공간(Hibert space)과 내적</h3>
+<p>dual space 에서 우리는 두 개의 세상을 탐험했다. 벡터들이 사는 공간 $V$ (Ket의 세계)와 선형 범함수들이 사는 쌍대공간 $V^\ast$ (Bra의 세계). 이 둘은 $\langle f|v\rangle$ 라는 작용을 통해 서로 연결되지만, 아직까지는 서로를 비추는 거울처럼 분리된 느낌이 있다. 가장 결정적으로, <strong>기하학</strong> 이 빠져있다. 아직 벡터 $|v\rangle$의 &lsquo;길이&rsquo;를 재거나, 두 벡터 $|v\rangle$와 $|w\rangle$사이의 &lsquo;각도&rsquo;를 계산할 방법이 없다.</p>
+<p>이러한 기하학적 구조를 부여하는 강력한 도구가 바로 <strong>내적(Inner Product)</strong> 이다. 그리고 내적이 정의된 벡터 공간을 <strong>내적 공간(Inner Product Space)</strong> 이라고 부른다.</p>
+<ul>
+<li>물리학에서 사용하는 무한 차원의 완비 내적 공간을 특별히 <strong>힐베르트 공간(Hilbert Space)</strong> 이라고 한다.</li>
+<li>내적 (Inner Product): 같은 벡터 공간에 사는 두 개의 Ket 벡터를 입력받아 <strong>하나의 스칼라(복소수)</strong> 를 출력하는 연산이다. 수학적으로는 보통 $\langle v,w\rangle$ 로 표기한다.</li>
+</ul>
+<hr>
+<h3 id="2-복소수-벡터-공간에서-내적의-세-가지-중요한-규칙">2. 복소수 벡터 공간에서 내적의 세 가지 중요한 규칙</h3>
+<p><strong>(1) 켤레 대칭 (Conjugate Symmetry)</strong></p>
+<p>순서를 바꾸면 켤레 복소수(complex conjugate)가 된다.</p>
+$$
+\langle v,w\rangle = \langle w,v\rangle^\ast
+$$<p><strong>(2) 두 번째 인수에 대한 선형성 (Linearity in the second argument)</strong></p>
+$$
+\langle u,a|v\rangle + b|w\rangle \rangle
+= a \langle u,w\rangle + b \langle u,w\rangle 
+$$<p><strong>(3) 양의 정부호성 (Positive-definiteness)</strong></p>
+<p>벡터를 자기 자신과 내적하면 항상 0 이상의 실수가 나오며, 이를 통해 벡터의 <strong>&lsquo;길이&rsquo; 또는 &lsquo;노름(norm)&rsquo;</strong> 정의할 수 있다.</p>
+$$
+\langle v,w\rangle \geq 0
+$$$$
+||v||
+= \langle v,v\rangle
+$$<hr>
+<h3 id="3-리즈의-표현-정리-디렉-표기법과의-연결-고리">3. 리즈의 표현 정리, 디렉 표기법과의 연결 고리</h3>
+<ul>
+<li>Bra의 작용: 쌍대공간 $V^\ast$의 원소 $\langle f|$ 가 원래 공간 V의 원소 $|v\rangle$ 에 작용하는 것, $\langle f|v\rangle$</li>
+<li>내적: 원래 공간 V의 두 원소 $|f\rangle$와 $|v\rangle$ 사이의 기하학적 관계, $\langle f,v\rangle$.</li>
+</ul>
+<p>두 표기법이 너무나 비슷하게 생겼다는 것은 우연이 아니다. 힐베르트 공간에서는 이 둘을 하나로 묶어주는 운명적인 연결고리가 있으며, 그 연결고리의 이름이 바로 <strong>리즈 표현 정리(Riesz Representation Theorem)</strong> 이다.</p>
+<p>이 정리의 수학적 증명은 복잡하지만, 그 결론은 아주 명확하고 강력하다.</p>
+<ul>
+<li>힐베르트 공간 $V$에서는, 어떤 (연속적인) 선형 범함수(Bra) $\langle f|$ 를 가져오더라도, 그 Bra에 유일하게 대응하는 단 하나의 파트너 Ket 벡터 $|f\rangle$가 $V$ 안에 반드시 존재한다.</li>
+<li>Bra $\langle f|$가 어떤 벡터 $|v\rangle$에 작용하여 얻는 결과값은, 파트너 Ket $|f\rangle$와 벡터 $|v\rangle$의 내적 결과값과 완벽하게 동일하다.</li>
+</ul>
+<p>이를 수식으로 표현하면 다음과 같다.</p>
+$$
+$\langle f|v\rangle$
+ =$\langle f,v\rangle$
+$$<p>⟨f∣v⟩≡⟨f,v⟩
+이 정리가 의미하는 바는 실로 엄청납니다.</p>
+<p>두 공간의 통합: 이전까지 서로 다른 세상에 살던 쌍대공간 V*와 원래 공간 V 사이에 완벽한 일대일 대응 관계가 생긴 것입니다. 모든 Bra는 자신만의 유일한 Ket 파트너를 가지며, 그 반대도 마찬가지입니다. 이제 쌍대공간은 더 이상 추상적이고 독립적인 공간이 아닙니다.</p>
+<p>물리학의 대담한 단순화: 물리학자들은 이 정리 덕분에 더 이상 쌍대공간 V*를 독립적으로 생각할 필요가 없어졌습니다. 어떤 Bra &lt;f|가 궁금하다면, 그냥 그것의 파트너인 Ket |f&gt;만 알면 모든 것이 해결됩니다.</p>
+<p>비유하자면, Bra는 &lsquo;정보를 추출하는 임무&rsquo;이고 Ket은 &lsquo;임무를 수행하는 요원&rsquo;입니다. 리즈 표현 정리는 &ldquo;모든 임무는 단 한 명의 전담 요원에게만 할당되며, 임무의 결과는 그 요원이 다른 요원과 상호작용한 결과(내적)와 같다&quot;고 선언하는 것과 같습니다.</p>
+<p>이 운명적인 만남 덕분에, 우리는 이제 Bra와 Ket을 더 이상 분리된 개념으로 볼 필요가 없습니다. Bra &lt;f|는 그저 Ket |f&gt;의 &lsquo;쌍대 파트너&rsquo;일 뿐입니다. 다음 장에서는 이 새로운 관점을 바탕으로 물리학자들이 사용하는 간결하고 새로운 약속을 정의해 보겠습니다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/einstein-notation/index.html"><a class="padding" href="/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-c88f7822996d6e3d2cdd3540e51b7709" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/dirac_notation_for_qm/index.html"><a class="padding" href="/dirac_notation_for_qm/index.html">Dirac notation for QM</a><ul id="R-subsections-c47ff55b953d4eb6d0cb7995ade45088" class="collapsible-menu">
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_hibert_space_ii/index.html"><a class="padding" href="/dirac_notation_for_qm/b_hibert_space_ii/index.html">(b) Hibert space</a></li>
+            <li class="active " data-nav-url="/dirac_notation_for_qm/b_hibert_space_i/index.html"><a class="padding" href="/dirac_notation_for_qm/b_hibert_space_i/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_ket/index.html"><a class="padding" href="/dirac_notation_for_qm/b_ket/index.html">(b) Ket</a></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_bra/index.html"><a class="padding" href="/dirac_notation_for_qm/b_bra/index.html">(b) Bra</a></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_outer_product/index.html"><a class="padding" href="/dirac_notation_for_qm/b_outer_product/index.html">(b) Outer product</a></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_matrix_kernel/index.html"><a class="padding" href="/dirac_notation_for_qm/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
+            <li class="" data-nav-url="/dirac_notation_for_qm/b_syntax/index.html"><a class="padding" href="/dirac_notation_for_qm/b_syntax/index.html">(b) Syntax</a></li></ul></li>
+            <li class="" data-nav-url="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759545719"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759545719" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759545719" defer></script>
+    <script src="/js/theme.js?1759545719" defer></script>
+  </body>
+</html>

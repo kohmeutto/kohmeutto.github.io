@@ -3,17 +3,10 @@
   <channel>
     <title>Dirac notation for QM :: 수리전자물리학</title>
     <link>http://localhost:1313/dirac_notation_for_qm/index.html</link>
-    <description>(b) Hibert space&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
+    <description>(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/dirac_notation_for_qm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>(b) Hibert space</title>
-      <link>http://localhost:1313/dirac_notation_for_qm/b_hibert_space/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dirac_notation_for_qm/b_hibert_space/index.html</guid>
-      <description>1. 유클리드 공간 (Euclidean Space) 우리가 아는 2차원, 3차원 공간처럼 차원이 유한 하고, 모든 계산이 실수(real numbers) 를 기반으로 한다. (기본적으로 함수는 무한개의 원소이므로, 유클리드 공간에 속하지 않는다.) 두 벡터 사이의 거리와 각도(내적)를 정의할 수 있다. 일반적으로 화살표 벡터 $\vec{a}$ 를 의미한다. 수학적 표현 방식은 열벡터 이다. 이것은 약속이다. 2. 힐버트 공간 (Hibert space) 확장 1: 무한 차원 (Infinite Dimensions) 유클리드 공간은 1차원, 2차원, 3차원, … , n차원 등 항상 유한한 차원만 다룬다. 반면, 힐베르트 공간은 이러한 유한 차원뿐만 아니라 무한 차원까지 포함 한다. 파동 함수 ψ(x)와 같이 함수 전체를 하나의 벡터로 다루는 공간이 바로 무한 차원 힐베르트 공간의 대표적인 예. 확장 2: 복소수 (Complex Numbers) 유클리드 공간의 벡터 성분은 보통 실수이지만, 힐베르트 공간은 성분이 복소수인 벡터를 자연스럽게 다룬다. 양자역학에서는 상태의 위상(phase)을 표현하기 위해 복소수가 필수적. 벡터를 Ket, $|\psi\rangle$ 로 표현한다. 3. 원소의 갯수, 기저의 갯수 ‘기저의 개수’ 와 ‘성분의 개수’ 는 항상 같다.</description>
-    </item>
     <item>
       <title>(b) Ket</title>
       <link>http://localhost:1313/dirac_notation_for_qm/b_ket/index.html</link>
