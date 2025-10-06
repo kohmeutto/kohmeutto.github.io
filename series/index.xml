@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series :: 수리전자물리학</title>
+    <link>http://localhost:1313/series/index.html</link>
+    <description>(b) Lourent&#39;s series&#xD;(b) Fourier series&#xD;(p) Circuit examples for FS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Lourent&#39;s series</title>
+      <link>http://localhost:1313/series/b_laurents_series-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/b_laurents_series-copy/index.html</guid>
+      <description>모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) + 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.</description>
+    </item>
+    <item>
+      <title>(b) Fourier series</title>
+      <link>http://localhost:1313/series/b_fourier_series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/b_fourier_series/index.html</guid>
+      <description>1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos n\omega_0 t\rangle$, $|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 푸리에 급수라고 한다.&#xA;$$ f(t) =a_0+\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t + b_n\sin n\omega_0 t\} $$$$ =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} $$$$ =d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n) $$where,&#xA;$$ a_0 =\langle 1|f\rangle =\frac{1}{T}\int_T dt f(t) $$$$ a_n =\langle\cos n\omega_0 t|f\rangle =\frac{2}{T}\int_T dt \cos (n\omega_0t)f(t) $$$$ b_n =\langle\sin n\omega_0 t|f\rangle =\frac{2}{T}\int_T dt \sin (n\omega_0t)f(t) $$$$ c_n =\langle e^{jn\omega_0t}|f\rangle =\frac{1}{T}\int_T dt e^{-jn\omega_0t}f(t) $$$$ d_0=c_0 $$$$ d_n=2|c_n| $$$$ \varphi_n=\operatorname{ang}\{c_n\} $$proof)</description>
+    </item>
+    <item>
+      <title>(p) Circuit examples for FS</title>
+      <link>http://localhost:1313/series/p_circuit_examples_for_fs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/series/p_circuit_examples_for_fs/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

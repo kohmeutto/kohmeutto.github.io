@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear algebra :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/index.html</link>
+    <description>Vector&#xD;Dual space&#xD;Einstein notation&#xD;Dirac notation for QM&#xD;Eigenvalue problem</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector</title>
+      <link>http://localhost:1313/linear_algebra/vector/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/vector/index.html</guid>
+      <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits&#xD;(b) Matrix&#xD;(b) Column vector of matrix&#xD;(b) Inner product&#xD;(b) Row vector of matrix</description>
+    </item>
+    <item>
+      <title>Dual space</title>
+      <link>http://localhost:1313/linear_algebra/dual_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dual_space/index.html</guid>
+      <description>(b) State &amp; Ket&#xD;(b) Linear functional &amp; Dual space &amp; Bra&#xD;(b) Basis&#xD;(b) Hibert space&#xD;(b) Riesz representation theorem</description>
+    </item>
+    <item>
+      <title>Einstein notation</title>
+      <link>http://localhost:1313/linear_algebra/einstein-notation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/einstein-notation/index.html</guid>
+      <description>(b) Suffix notation&#xD;(b) Kronecker &amp; Levi-Civit`a Symbols&#xD;(b) Dyad</description>
+    </item>
+    <item>
+      <title>Dirac notation for QM</title>
+      <link>http://localhost:1313/linear_algebra/dirac_notation_for_qm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dirac_notation_for_qm/index.html</guid>
+      <description>(b) Ket&#xD;(b) Bra&#xD;(b) Outer product&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
+    </item>
+    <item>
+      <title>Eigenvalue problem</title>
+      <link>http://localhost:1313/linear_algebra/eigenvalue_problem/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/index.html</guid>
+      <description>(b) Linear transformation &amp; Determinent</description>
+    </item>
+  </channel>
+</rss>
