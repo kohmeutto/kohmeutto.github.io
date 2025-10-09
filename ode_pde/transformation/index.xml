@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transformation :: 수리전자물리학</title>
+    <link>http://localhost:1313/ode_pde/transformation/index.html</link>
+    <description>(b) Phasor transform&#xD;(b) Phasor transform for PDE&#xD;(a) Laplace transform&#xD;(a) Fourier transform</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/ode_pde/transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Phasor transform</title>
+      <link>http://localhost:1313/ode_pde/transformation/b_phasor_transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/transformation/b_phasor_transform/index.html</guid>
+      <description>페이저 변환을 수행할 수 있는 조건&#xA;입력과 출력이 단일 주기와 단일 파장을 가진다. 연산자가 self-adjoint 일 경우, 특수해는 전체해가 된다. 1. Phasor 변환 $$&#xD;A\cos\left(\omega t+\phi\right) \to Ae^{i\phi}&#xD;$$$$&#xD;A\sin\left(\omega t+\phi\right)\to-iAe^{i\phi}&#xD;$$$$&#xD;A\cos\left(\omega t+\phi\right) \to Ae^{i\phi}&#xD;$$$$&#xD;A\sin\left(\omega t+\phi\right)\to-iAe^{i\phi}&#xD;$$$$&#xD;A\cos\left(\omega t-kx+\phi\right)\to Ae^{i\left(-kx+\phi\right)}&#xD;$$$$&#xD;A\sin\left(\omega t-kx+\phi\right)\to-iAe^{i\left(-kx+\phi\right)}&#xD;$$$$&#xD;Ae^{ikx}e^{-i\omega t}\to Ae^{ikx}&#xD;$$$e^{-i\omega t}$를 기준으로,&#xA;$$&#xD;\frac{\partial}{\partial t}\to-i\omega&#xD;$$$$&#xD;\frac{\partial^2}{\partial t^2}\to-\omega^2&#xD;$$$e^{+i\omega t}$를 기준으로,&#xA;$$&#xD;\frac{\partial}{\partial t}\to i\omega&#xD;$$$$&#xD;\frac{\partial^2}{\partial t^2}\to-\omega^2&#xD;$$ example1-1)</description>
+    </item>
+    <item>
+      <title>(b) Phasor transform for PDE</title>
+      <link>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</guid>
+      <description>example1) Lossless wave equation&#xA;아래 미분방정식의 해는 단일 주기를 가지며, 실수이다.&#xA;$$ \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right) $$&#xD;sol&#xD;$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다. $$ \nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right) $$ $$ \left(\nabla^2+\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0 $$ $k=\omega/v$ 이면, $$ \left(\nabla^2+k^2\right)\underline u\left(\vec{r}\right)=0 $$ 따라서, $$ u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack $$ 만약, 1차원의 +x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면, $$ \underline u\left(x\right)=Ae^{+ik x} $$ $$ u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right] $$&#xD;example2) Lossy wave equation</description>
+    </item>
+    <item>
+      <title>(a) Laplace transform</title>
+      <link>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/transformation/a_laplace_transform/index.html</guid>
+      <description>라플라스 변환을 수행할 수 있는 조건&#xA;적분 범위를 0부터 무한대로 잡을 수 있는 경계조건이어야 한다. example1) Consider the first order PDE&#xA;$$ \frac{\partial}{\partial t}y\left(x,t\right)=-\alpha\frac{\partial}{\partial x}y\left(x,t\right),\quad x&gt;0,\quad t&gt;0 $$$$ \text{[B.C]}\quad y\left(0,t\right)=C,\quad\text{[I.C]}\quad y\left(x,0\right)=0 $$&#xD;sol1&#xD;$$ sY\left(x,s\right)-y\left(x,0\right)=-\alpha\frac{\partial}{\partial x}Y\left(x,s\right) $$ $$ \frac{\partial}{\partial x}Y\left(x,s\right)+\frac{s}{\alpha}Y\left(x,s\right)=0 $$ $$ Y\left(x,s\right)=c_1e^{-\frac{s}{\alpha}x} $$ [B.C]을 라플라스 변환한다. $$ Y\left(0,s\right)=\frac{C}{s}=c_1 $$ $$ Y\left(x,s\right)=\frac{C}{s}e^{-\frac{x}{\alpha}s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(x,s\right)\right\rbrace\left(x,t\right)=Cu\left(t-\frac{x}{\alpha}\right) $$ sol2&#xD;$$ \frac{\partial}{\partial t}Y\left(s,t\right)=-\alpha\left\lbrace s Y\left(s,t\right)-y\left(0,t\right)\right\rbrace $$ $$ \frac{\partial}{\partial t}Y\left(s,t\right)+\alpha sY\left(s,t\right)=\alpha C $$ $$ Y\left(s,t\right)=c_1e^{-\alpha st}+\frac{C}{s} $$ [I.C]을 라플라스 변환한다. $$ Y\left(s,0\right)=0\to c_1=-\frac{C}{s} $$ $$ Y\left(s,t\right)=-\frac{C}{s}e^{-\alpha st}+\frac{C}{s} $$ 역라플라스 변환을 수행한다. $$ L^{-1}\left\lbrace Y\left(s,t\right)\right\rbrace\left(x,t\right)=Cu\left(x\right)-Cu\left(x-\alpha t\right) $$&#xD;example2) Consider</description>
+    </item>
+    <item>
+      <title>(a) Fourier transform</title>
+      <link>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/transformation/a_fourier_transform/index.html</guid>
+      <description>푸리에 변환을 수행할 수 있는 조건&#xA;적분 범위를 -무한대 부터 무한대로 잡을 수 있는 경계조건이어야 한다. 1. Expansion 여기에서는 변환 의미인 푸리에 변환을 사용한다.&#xA;$$ \hat{f}\left(k\right)=\int_{-\infty}^{\infty}dk\left\lbrack f\left(x\right)e^{-ikx}\right\rbrack $$$$ f\left(x\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dk\left\lbrack\hat{f}\left(k\right)e^{+ikx}\right\rbrack $$ 2. Solving PDEs with Fourier methods [필수조건] $f(\pm\infty)=0$&#xA;The Fourier transform is one example of an integral transform: a general technique for solving differential equations. Transformation of a PDE (e.g. from x to k) often leads to simpler equations (algebraic or ODE typically) for the integral transform of the unknown function. This is because spatial derivatives turn into factors of ik. Similar behaviour is seen in higher numbers of dimensions. When is a single Fourier mode,</description>
+    </item>
+  </channel>
+</rss>

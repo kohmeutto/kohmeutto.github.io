@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
+    <meta name="description" content="1. 푸리에 변환의 본질 함수는 여러 주파수 성분들이 중첩 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
+cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 표준 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{&#43;i\omega t}F\left(\omega\right)\right\rbrack $$ 5. 푸리에 변환의 확장: 분포 푸리에 변환 (1) 표준 푸리에 변환의 한계">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Fourier transform I :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 푸리에 변환의 본질 함수는 여러 주파수 성분들이 중첩 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
+cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 표준 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{&#43;i\omega t}F\left(\omega\right)\right\rbrack $$ 5. 푸리에 변환의 확장: 분포 푸리에 변환 (1) 표준 푸리에 변환의 한계">
+    <meta property="og:url" content="http://localhost:1313/integral_transform/transformation/b_fourier_transform_i/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Fourier transform I :: 수리전자물리학">
+    <meta property="og:description" content="1. 푸리에 변환의 본질 함수는 여러 주파수 성분들이 중첩 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
+cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 표준 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{&#43;i\omega t}F\left(\omega\right)\right\rbrack $$ 5. 푸리에 변환의 확장: 분포 푸리에 변환 (1) 표준 푸리에 변환의 한계">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Integral transform">
+    <meta itemprop="name" content="(b) Fourier transform I :: 수리전자물리학">
+    <meta itemprop="description" content="1. 푸리에 변환의 본질 함수는 여러 주파수 성분들이 중첩 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
+cosine 함수 sine 함수 2. 각 주파수 성분들은 orthogonal 하다. $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$proof) 중요$$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega&#39;t}\right\rbrack $$ 위 식이 무엇인지 구하는 것이 목적이다. &#39;Regularization(정칙화) 기법&#39;을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 &#39;해석적인(meaningful)&#39; 결과를 얻어내는 기법 이다. $$ \Omega=\omega-\omega&#39; $$ $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack $$ $$ \int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega&#39;\right)t}\right\rbrack =\lim_{\epsilon\to0}f_{\epsilon}(\Omega) =\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack =\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack&#43;\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack $$ 음수 구간 $$ \int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon&#43;i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon&#43; i\Omega}e^{(\epsilon&#43;i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon&#43; i\Omega} $$ 양수 구간 $$ \int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon &#43; i\Omega)t} dt = \left[ \frac{1}{-\epsilon &#43; i\Omega} e^{(-\epsilon &#43; i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega} $$ 따라서, $$ f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} $$ (1) $\Omega=0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty $$ (2) $\Omega\ne0$ $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0 $$ (1) &amp; (2) 의 결과를 사용하면, 다음을 얻을 수 있다. $$ \lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right) $$ 계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다. $$ A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 &#43; \epsilon^2} \right\rbrack =2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 &#43; 1} \right\rbrack =2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi $$ 최종적으로, $$ \langle e^{i\omega&#39;t}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega&#39;\right) $$ 만약 orthonormal 한 기저로서 표현하고 싶다면, $$ \left\langle \frac{e^{i\omega&#39;t}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega&#39;\right) $$3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의 물리학, 특히 양자역학: 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다. 물리학적으로 사용될 때, 해석 공간의 변환보다는 주파수가 중첩되어 있다는 의미가 강함 $$ f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack $$$$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{&#43;i\omega t}\right\rbrack $$ 4. 표준 푸리에 변환, 비대칭성 기반의 정의 수학: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 공학, 특히 신호 처리: 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 수학, 공학적으로 사용될 때, 주파수 중첩 보다는 해석 공간의 변환 이라는 의미가 강함 $$ F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{&#43;i\omega t}F\left(\omega\right)\right\rbrack $$ 5. 푸리에 변환의 확장: 분포 푸리에 변환 (1) 표준 푸리에 변환의 한계">
+    <meta itemprop="wordCount" content="631">
+    <title>(b) Fourier transform I :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1759992778" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759992778" defer></script>
+    <script src="/js/search-lunr.js?1759992778" defer></script>
+    <script src="/js/search.js?1759992778" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1759992778";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1759992778" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759992778" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759992778" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759992778" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759992778" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759992778" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759992778" rel="stylesheet">
+    <link href="/css/theme.css?1759992778" rel="stylesheet">
+    <link href="/css/format-html.css?1759992778" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/integral_transform\/transformation\/b_fourier_transform_i\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/integral_transform/transformation/b_fourier_transform_i/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-푸리에-변환의-본질">1. 푸리에 변환의 본질</a></li>
+        <li><a href="#2-각-주파수-성분들은-orthogonal-하다">2. 각 주파수 성분들은 orthogonal 하다.</a></li>
+        <li><a href="#3-표준-푸리에-변환-정규-직교성orthonormal-or-대칭성-기반의-정의">3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의</a></li>
+        <li><a href="#4-표준-푸리에-변환-비대칭성-기반의-정의">4. 표준 푸리에 변환, 비대칭성 기반의 정의</a></li>
+        <li><a href="#5-푸리에-변환의-확장-분포-푸리에-변환">5. 푸리에 변환의 확장: 분포 푸리에 변환</a></li>
+        <li><a href="#6-라플라스-변환과의-관계">6. 라플라스 변환과의 관계</a></li>
+        <li><a href="#7-페이저-변환과의-관계">7. 페이저 변환과의 관계</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/integral_transform/index.html"><span itemprop="name">Integral transform</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/integral_transform/transformation/index.html"><span itemprop="name">Transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Fourier transform I</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/transformation/b_laplace_transform_ii/index.html" title="(b) Laplace transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/integral_transform/transformation/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable integral_transform" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-fourier-transform-i">(b) Fourier transform I</h1>
+
+<hr>
+<h3 id="1-푸리에-변환의-본질">1. 푸리에 변환의 본질</h3>
+<p><strong>함수는 여러 주파수 성분들이 중첩</strong> 되어 있다고 볼 수 있다. 푸리에 변환은 각 주파수 성분의 크기를 구하는 것이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.</p>
+<ul>
+<li>
+<p>cosine 함수
+<img src="image1.png" width="60%" height="auto"></p>
+</li>
+<li>
+<p>sine 함수
+<img src="image2.png" width="60%" height="auto"></p>
+</li>
+</ul>
+<hr>
+<h3 id="2-각-주파수-성분들은-orthogonal-하다">2. 각 주파수 성분들은 orthogonal 하다.</h3>
+$$
+\langle e^{i\omega't}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega'\right)
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof) 중요
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega't}\right\rbrack
+$$
+
+위 식이 무엇인지 구하는 것이 목적이다. 'Regularization(정칙화) 기법'을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 '해석적인(meaningful)' 결과를 얻어내는 기법 이다.
+
+$$
+\Omega=\omega-\omega'
+$$
+
+$$
+f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack
+$$
+
+$$
+\int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega'\right)t}\right\rbrack
+=\lim_{\epsilon\to0}f_{\epsilon}(\Omega)
+=\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack
+=\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack+\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack
+$$
+
+음수 구간
+
+$$
+\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon+i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon+ i\Omega}e^{(\epsilon+i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon+ i\Omega}
+$$
+
+양수 구간
+
+$$
+\int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon + i\Omega)t} dt = \left[ \frac{1}{-\epsilon + i\Omega} e^{(-\epsilon + i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega}
+$$
+
+따라서,
+
+$$
+f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 + \epsilon^2}
+$$
+
+(1) $\Omega=0$
+
+$$
+\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty
+$$
+
+(2) $\Omega\ne0$
+
+$$
+\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0
+$$
+
+
+(1) & (2) 의 결과를 사용하면, 다음을 얻을 수 있다.
+
+$$
+\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right)
+$$
+
+계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다.
+
+$$
+A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 + \epsilon^2} \right\rbrack
+=2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 + 1} \right\rbrack
+=2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi
+$$
+
+최종적으로,
+
+$$
+\langle e^{i\omega't}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega'\right)
+$$
+
+만약 orthonormal 한 기저로서 표현하고 싶다면,
+
+$$
+\left\langle \frac{e^{i\omega't}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega'\right)
+$$
+  </div>
+</details>
+<hr>
+<h3 id="3-표준-푸리에-변환-정규-직교성orthonormal-or-대칭성-기반의-정의">3. 표준 푸리에 변환, 정규 직교성(orthonormal) or 대칭성 기반의 정의</h3>
+<ul>
+<li><strong>물리학, 특히 양자역학:</strong> 정규 직교성 기반 정의가 압도적으로 많이 사용된다. 에너지 보존과 확률 진폭 해석의 중요성 때문이다.</li>
+<li>물리학적으로 사용될 때, 해석 공간의 변환보다는 <strong>주파수가 중첩되어 있다는 의미가 강함</strong></li>
+</ul>
+$$
+f\left(t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}d\omega\left\lbrack F\left(\omega\right)e^{-i\omega t}\right\rbrack
+$$$$
+F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{+i\omega t}\right\rbrack
+$$<hr>
+<h3 id="4-표준-푸리에-변환-비대칭성-기반의-정의">4. 표준 푸리에 변환, 비대칭성 기반의 정의</h3>
+<ul>
+<li><strong>수학:</strong> 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문</li>
+<li><strong>공학, 특히 신호 처리:</strong> 비대칭성 기반 정의가 더 많이 사용되는 경향이 있다.</li>
+<li>수학, 공학적으로 사용될 때, 주파수 중첩 보다는 <strong>해석 공간의 변환 이라는 의미가 강함</strong></li>
+</ul>
+$$
+F\left(\omega\right)=F\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack
+$$$$
+f\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dt\left\lbrack e^{+i\omega t}F\left(\omega\right)\right\rbrack
+$$<hr>
+<h3 id="5-푸리에-변환의-확장-분포-푸리에-변환">5. 푸리에 변환의 확장: 분포 푸리에 변환</h3>
+<p><strong>(1) 표준 푸리에 변환의 한계</strong></p>
+$$
+\int_{-\infty}^{\infty}dt |f\left(t\right)| <\infty
+$$<p>위 식은 표준 푸리에 변환이 가능한 조건(절대 적분)이다. 표준 푸리에 변환의 한계를 극복하고 절대 적분 가능하지 않은 신호들을 포함한 더 넓은 범위의 신호에 대해 푸리에 변환을 정의하기 위해 분포(Distribution) 이론을 기반으로 푸리에 변환 개념을 확장한다.</p>
+<p><strong>(2) 분포 푸리에 변환 (Generalized Fourier Transform)</strong></p>
+<ul>
+<li>
+<p><strong>도입 이유:</strong> 표준 푸리에 변환으로는 다룰 수 없는 디랙 델타 함수($\delta(t)$), 단위 계단 함수($u(t)$), 상수 함수 등의 푸리에 변환을 정의하고, 푸리에 분석을 더 넓은 범위의 신호에 적용하기 위함이다.</p>
+</li>
+<li>
+<p><strong>정의 방식:</strong> 분포의 푸리에 변환은 직접적인 적분으로 정의되기보다는, 푸리에 변환의 성질(선형성, 미분, 이동 등)을 이용하거나 &ldquo;시험 함수&quot;와의 상호 작용을 통해 간접적으로 정의된다. <strong>정칙화(Regularization)</strong> 는 이러한 분포의 푸리에 변환을 이해하고 도출하는 한 가지 유용한 기법으로, 이상적인 신호를 잘 동작하는 함수의 수열로 근사하고 그 수열의 표준 푸리에 변환의 극한을 취하는 방식이다.</p>
+</li>
+<li>
+<p><strong>결과 형태:</strong> 결과 또한 분포 형태가 될 수 있으며, 주파수 영역에서 델타 함수 $\delta(\omega)$와 같은 특이점을 포함할 수 있다.</p>
+</li>
+</ul>
+<p><strong>(3) 주요 예시</strong></p>
+<ul>
+<li>
+<p><strong>디랙 델타 함수:</strong> $\mathcal{F}\lbrace\delta(t)\rbrace = 1$</p>
+</li>
+<li>
+<p><strong>단위 계단 함수:</strong> $\mathcal{F}\lbrace u(t)\rbrace = \pi\delta(\omega) + \frac{1}{i\omega}$</p>
+</li>
+<li>
+<p><strong>상수 함수 ($A$):</strong> $\mathcal{F}\lbrace A\rbrace = 2\pi A\delta(\omega)$</p>
+</li>
+</ul>
+<hr>
+<h3 id="6-라플라스-변환과의-관계">6. 라플라스 변환과의 관계</h3>
+$$
+\langle s|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
+$$<p>위 식을 만족하려면,</p>
+<ul>
+<li>ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)</li>
+<li>ROC가 $\operatorname{Re}\lbrace s\rbrace&gt;0$ 또는 $\operatorname{Re}\lbrace s\rbrace&lt;0$ 시: 분포 푸리에 변환 존재</li>
+<li>단, ROC <strong>공집합</strong> 시: 표준 &amp; 분포 푸리에 변환이 존재 안 함</li>
+</ul>
+<hr>
+<h3 id="7-페이저-변환과의-관계">7. 페이저 변환과의 관계</h3>
+<p>페이저 변환과 수학적 뿌리는 동일하다. <strong>그러나 전혀 다른 변환으로 생각하자.</strong> 페이저 변환은 주파수가 1개 (2개 이상 안됨) 일 때, 적용할 수 있는 방법이다.</p>
+<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu">
+            <li class="" data-nav-url="/integral_transform/preface/index.html"><a class="padding" href="/integral_transform/preface/index.html">Preface</a></li>
+            <li class="" data-nav-url="/integral_transform/b_convolution/index.html"><a class="padding" href="/integral_transform/b_convolution/index.html">(b) Convolution</a></li>
+            <li class="parent alwaysopen " data-nav-url="/integral_transform/transformation/index.html"><a class="padding" href="/integral_transform/transformation/index.html">Transformation</a><ul id="R-subsections-08b90ac8c0f8ee1a1ba6195d19e2189d" class="collapsible-menu">
+            <li class="" data-nav-url="/integral_transform/transformation/b_laplace_transform_i/index.html"><a class="padding" href="/integral_transform/transformation/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-url="/integral_transform/transformation/b_laplace_transform_ii/index.html"><a class="padding" href="/integral_transform/transformation/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="active " data-nav-url="/integral_transform/transformation/b_fourier_transform_i/index.html"><a class="padding" href="/integral_transform/transformation/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-url="/integral_transform/transformation/b_fourier_transform_ii/index.html"><a class="padding" href="/integral_transform/transformation/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/integral_transform/operators/index.html"><a class="padding" href="/integral_transform/operators/index.html">Operators</a><ul id="R-subsections-483761c2238cb8dfccf302ba9280c909" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/integral_transform/lti/index.html"><a class="padding" href="/integral_transform/lti/index.html">LTI</a><ul id="R-subsections-c3eadf42e99eb0fad45235c36d49cd26" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759992778"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759992778" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759992778" defer></script>
+    <script src="/js/theme.js?1759992778" defer></script>
+  </body>
+</html>
