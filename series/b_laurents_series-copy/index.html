@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
+    <meta name="description" content="모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) &#43; 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Lourent&#39;s series :: 수리전자물리학">
+    <meta name="twitter:description" content="모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) &#43; 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.">
+    <meta property="og:url" content="http://localhost:1313/series/b_laurents_series-copy/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Lourent&#39;s series :: 수리전자물리학">
+    <meta property="og:description" content="모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) &#43; 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Series">
+    <meta itemprop="name" content="(b) Lourent&#39;s series :: 수리전자물리학">
+    <meta itemprop="description" content="모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) &#43; 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.">
+    <meta itemprop="wordCount" content="607">
+    <title>(b) Lourent&#39;s series :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1759990635" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1759990635" defer></script>
+    <script src="/js/search-lunr.js?1759990635" defer></script>
+    <script src="/js/search.js?1759990635" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1759990635";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1759990635" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1759990635" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1759990635" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1759990635" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759990635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759990635" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759990635" rel="stylesheet">
+    <link href="/css/theme.css?1759990635" rel="stylesheet">
+    <link href="/css/format-html.css?1759990635" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/series\/b_laurents_series-copy\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/series/b_laurents_series-copy/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-로랑-급수">1. 로랑 급수</a></li>
+        <li><a href="#2-테일러-급수">2. 테일러 급수</a></li>
+        <li><a href="#3-매크로니-급수">3. 매크로니 급수</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/series/index.html"><span itemprop="name">Series</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Lourent&#39;s series</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/series/index.html" title="Series (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/series/b_fourier_series/index.html" title="(b) Fourier series (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable series" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-lourents-series">(b) Lourent&#39;s series</h1>
+
+<hr>
+<img src="image1.png" width="50%" height="auto">
+<ul>
+<li>모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다.</li>
+<li>모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다.</li>
+<li>테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다.</li>
+<li>로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) + 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다.</li>
+</ul>
+<hr>
+<h3 id="1-로랑-급수">1. 로랑 급수</h3>
+<p>지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.</p>
+$$
+f(z)=\sum_{n=-\infty}^{\infty} b_n (z-z_0)^n,
+\quad\text{where, }
+b_n
+=\frac{1}{2\pi i}\oint dz (z-z_0)^{-n-1}f(z)
+$$<p>proof)</p>
+<p>$|(z-z_0)^n\rangle=|n\rangle$ 이라고 하자. 그러면 함수를 위치 기저로 표현하면 $\langle z|n\rangle=(z−z_0)^n$
+이다.</p>
+$$
+|f\rangle
+=\sum_{n=-\infty}^{\infty} b_n |n\rangle
+$$<p>$b_n$ 이 무엇인지 알기 위해서는, $|n\rangle$의 쌍대기저 $\langle n|$가 무엇인지 알아야 한다.</p>
+$$
+\langle m|n\rangle
+=\delta_{mn}
+$$<p>즉, 위 식을 만족하기 위한 $\langle n|$를 찾아야 한다. 쌍대기저(범함수)는 아래를 만족해야한다.</p>
+$$
+\langle m|n\rangle
+=\delta_{mn}
+=C\oint dz {g_m^\ast(z)(z-z_0)^n}
+=C\oint dz (z-z_0)^{k}
+$$<p>코시의 적분 정리에 의해서,</p>
+$$
+\oint dz (z-z_0)^{k}
+=\begin{cases}
+(k=-1) & 2\pi i\\
+(k\ne-1) & 0
+\end{cases}
+$$<p>따라서,</p>
+$$
+C
+=\frac{1}{2\pi i}
+$$$$
+\langle m|n\rangle
+=\frac{1}{2\pi i}\oint dz \{ (z-z_0)^{-m-1}(z-z_0)^n \}
+=\frac{1}{2\pi i}\oint dz \{ (z-z_0)^{-m-1}\langle z|n\rangle\}
+$$<p>쌍대기저는 아래와 같이 표현할 수 있다.</p>
+$$
+\langle m|
+=\frac{1}{2\pi i}\oint dz (z-z_0)^{-m-1}\langle z|
+$$<p>또한, $b_n$은 다음과 같다.</p>
+$$
+b_n
+=\langle n|f\rangle
+=\frac{1}{2\pi i}\oint dz (z-z_0)^{-n-1}f(z)
+$$<hr>
+<h3 id="2-테일러-급수">2. 테일러 급수</h3>
+<p>테일러 급수는 로랑급수의 특별한 경우로, 함수 $f(z)$가 점 $z_
+0$를 포함하는 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적일 경우 적용할 수 있다.</p>
+$$
+f(z)=\sum_{n=0}^{\infty} b_n (z-z_0)^n,
+\quad\text{where, }
+b_n
+=\frac{f^n(z_0)}{n!}
+$$<p>proof)</p>
+<p>함수 $f(z)$가 점 $z_
+0$를 포함하는 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적임을 이용한다.</p>
+<p>(1) $n&lt;0$</p>
+<p>$n=-1$ 인 경우,</p>
+$$
+b_{-1}=\frac{1}{2\pi i}\oint dz f(z)(z-z_0)^0 =0
+$$<p>따라서, $n&lt;0$ 일때, 모두 해석적이므로,</p>
+$$
+b_{n}=0 \,\, (n<0)
+$$<p>(2) $n&gt;0$</p>
+$$
+b_n=\frac{1}{2\pi i}\oint dz f(z)(z-z_0)^{-n-1}
+$$<p>$n&gt;0$에서, 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적이면, 코시의 도함수 공식을 사용할 수 있다.</p>
+$$
+\frac{f^n(z_0)}{n!}
+=\frac{1}{2\pi i}\oint dz f(z)(z-z_0)^{-n-1}
+$$<hr>
+<h3 id="3-매크로니-급수">3. 매크로니 급수</h3>
+<p>매크로니 급수는 테일러 급수의 특별한 경우로, 함수 $f(z)$가 점 $z_
+0=0$를 포함하는 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적일 경우, 적용할수 있다.</p>
+$$
+f(z)=\sum_{n=0}^{\infty} b_n z^n,
+\quad\text{where, }
+b_n
+=\frac{f^n(0)}{n!}
+$$<p>아래는 몇가지 중요(암기) 매크로니 급수를 보여준다.</p>
+$$
+e^x
+=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+$$$$
+\sin x
+=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}+\cdots
+$$$$
+\cos x
+=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}+\cdots
+$$$$
+\frac{1}{1-z}
+=1+z+z^2+z^3+\cdots,\quad\text{단, }|z|<1
+$$<hr>
+<p><strong>example1)</strong> Expand $f(z)$ in a Laurent series valid for the following annular domains.</p>
+$$
+f(z)=\frac{1}{z(z-1)}
+$$<p>(a) $0&lt;|z|&lt;1$, (b) $1&lt;|z|$, (c) $0&lt;|z-1|&lt;1$, (d) $1&lt;|z-1|$, (e) $ 1&lt;|z-2|&lt;2$</p>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol(a), 0&lt;|z|&lt;1
+  </summary>
+  <div class="box-content">
+<p>
+$$
+f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\frac{1}{z-1}
+$$
+
+<br>
+
+(1) $1/z$, $z=0$ 에서 특이점을 가진다. 따라서, 로랑급수로 전개한다.
+
+$$
+-\frac{1}{z}
+$$
+
+(2) $1/(z-1)$, 특이점이 없다. 따라서, 테일러 급수로 전개한다.
+
+$$
+\frac{1}{z-1}=-1(1+z+z^2+z^3+\cdots)
+$$
+
+따라서,
+
+$$
+f(z)
+=-\frac{1}{z}-1-z-z^2-z^3+\cdots
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol(b), 1&lt;|z|
+  </summary>
+  <div class="box-content">
+<p>
+$$
+f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\frac{1}{z-1}
+$$
+
+<br>
+
+(1) $1/z$, 특이점이 있다. 따라서, 로랑급수로 전개한다.
+
+$$
+-\frac{1}{z}
+$$
+
+(2) $1/(z-1)$, 특이점이 있다. 따라서, 로랑 급수로 전개한다.
+
+$$
+\frac{1}{z-1}=\frac{1}{z(1-1/z)}=\frac{1}{z}(1+\frac{1}{z}+\frac{1}{z^2}+\cdots)
+$$
+
+따라서,
+
+$$
+f(z)
+=\frac{1}{z^2}+\frac{1}{z^3}+\frac{1}{z^4}+\cdots
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol(c), 0&lt;|z-1|&lt;1
+  </summary>
+  <div class="box-content">
+<p>
+$$
+f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\frac{1}{z-1}
+$$
+
+<br>
+
+(1) $1/z$, 특이점이 없다. 따라서, 테일러 급수로 전개한다.
+
+$$
+-\frac{1}{z}
+=\frac{1}{1-(z-1)}
+=1+(z-1)+(z-1)^2+(z-1)^3+\cdots
+$$
+
+(2) $1/(z-1)$, 특이점이 있다. 따라서, 로랑 급수로 전개한다.
+
+$$
+\frac{1}{z-1}
+$$
+
+따라서,
+
+$$
+f(z)
+=\frac{1}{z-1}+1+(z-1)+(z-1)^2+(z-1)^3+\cdots
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol(d), 1&lt;|z-1|
+  </summary>
+  <div class="box-content">
+<p>
+$$
+f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\frac{1}{z-1}
+$$
+
+<br>
+
+(1) $1/z$, 특이점이 있다. 따라서, 로랑 급수로 전개한다.
+
+$$
+-\frac{1}{z}
+=-\frac{1}{(z-1)(1+1/(z-1))}
+=-\frac{1}{z-1}\left\{1-\frac{1}{z-1}+\frac{1}{(z-1)^2}+\cdots\right\}
+$$
+
+(2) $1/(z-1)$, 특이점이 있다. 따라서, 로랑 급수로 전개한다.
+
+$$
+\frac{1}{z-1}
+$$
+
+따라서,
+
+$$
+f(z)
+=\frac{1}{(z-1)^2}-\frac{1}{(z-1)^3}+\frac{1}{(z-1)^4}+\cdots
+$$
+
+<hr>
+  </div>
+</details>
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol(e), 1&lt;|z-2|&lt;2
+  </summary>
+  <div class="box-content">
+<p>
+$$
+f(z)=\frac{1}{z(z-1)}=-\frac{1}{z}+\frac{1}{z-1}
+$$
+
+<br>
+
+(1) $1/z$, 특이점이 없다. 따라서, 테일러 급수로 전개한다.
+
+$$
+-\frac{1}{z}
+=\frac{1}{-2-(z-2)}
+=\frac{-1/2}{1-\{-(z-2)/2\}}
+=-\frac{1}{2}\left\{1-\frac{z-2}{2}+\left(\frac{z-2}{2}\right)^2+\left(\frac{z-2}{2}\right)^3+\cdots\right\}
+$$
+
+(2) $1/(z-1)$, 특이점이 있다. 따라서, 로랑 급수로 전개한다.
+
+$$
+\frac{1}{z-1}
+=\frac{1}{(z-2)(1+1/(z-2))}
+=\frac{1}{z-2}\left\{1-\frac{1}{z-2}+\frac{1}{(z-2)^2}+\cdots\right\}
+$$
+
+<br>
+
+따라서, 조건에 맞게 전개한 식을 합치면 된다.
+
+<hr>
+  </div>
+</details>
+<p><strong>example2)</strong> Expand $f(z$) in a Laurent series valid for $0&lt;|z|$</p>
+$$
+f(z)=e^{3/z}
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+e^{3/z}
+=1+\frac{3}{z}+\frac{1}{2!}\cdot\left(\frac{3}{z}\right)^2+\frac{1}{3!}\cdot\left(\frac{3}{z}\right)^3\cdots
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example3)</strong> Expand $f(z$) in a Laurent series valid for $0&lt;|z|$</p>
+$$
+f(z)=\frac{\cos z}{z}
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\frac{\cos z}{z}
+=\frac{1}{z}\left\{1-\frac{z^2}{2!}+\frac{z^4}{4!}+\cdots\right\}
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>example4)</strong> Expand $f(z$) in a Laurent series valid for $0&lt;|z-1|$</p>
+$$
+f(z)=\frac{e^{z}}{z-1}
+$$
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\frac{e^{z}}{z-1}
+=\frac{e\cdot e^{z-1}}{z-1}
+=\frac{e}{z-1}\left\{1+\frac{(z-1)^2}{2!}+\frac{(z-1)^3}{4!}+\cdots\right\}
+$$
+  </div>
+</details>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu">
+            <li class="active " data-nav-url="/series/b_laurents_series-copy/index.html"><a class="padding" href="/series/b_laurents_series-copy/index.html">(b) Lourent&#39;s series</a></li>
+            <li class="" data-nav-url="/series/b_fourier_series/index.html"><a class="padding" href="/series/b_fourier_series/index.html">(b) Fourier series</a></li>
+            <li class="" data-nav-url="/series/p_circuit_examples_for_fs/index.html"><a class="padding" href="/series/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li></ul></li>
+            <li class="" data-nav-url="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759990635"></script>
+    <script src="/js/clipboard/clipboard.min.js?1759990635" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759990635" defer></script>
+    <script src="/js/theme.js?1759990635" defer></script>
+  </body>
+</html>
