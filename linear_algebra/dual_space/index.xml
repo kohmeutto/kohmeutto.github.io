@@ -37,9 +37,9 @@
     </item>
     <item>
       <title>(b) Riesz representation theorem</title>
-      <link>http://localhost:1313/linear_algebra/dual_space/b_riesz_representation_theorem/index.html</link>
+      <link>http://localhost:1313/linear_algebra/dual_space/b_riesz/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_algebra/dual_space/b_riesz_representation_theorem/index.html</guid>
+      <guid>http://localhost:1313/linear_algebra/dual_space/b_riesz/index.html</guid>
       <description>1. 리즈의 표현 정리, 디렉 표기법과의 연결 고리 Bra의 작용: 쌍대공간 $V^\ast$의 원소 $\langle f|$ 가 원래 공간 V의 원소 $|v\rangle$ 에 작용하는 것, $\langle f|v\rangle$ 내적: 원래 공간 V의 두 원소 $|f\rangle$와 $|v\rangle$ 사이의 기하학적 관계, $\langle f,v\rangle$. 두 표기법이 너무나 비슷하게 생겼다는 것은 우연이 아니다. 힐베르트 공간에서는 이 둘을 하나로 묶어주는 운명적인 연결고리가 있으며, 그 연결고리의 이름이 바로 리즈 표현 정리(Riesz Representation Theorem) 이다.&#xA;이 정리의 수학적 증명은 복잡하지만, 그 결론은 아주 명확하고 강력하다.</description>
     </item>
   </channel>

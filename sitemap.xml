@@ -46,7 +46,7 @@
     <loc>http://localhost:1313/integral_transform/transformation/b_laplace_transform_i/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/series/b_laurents_series-copy/index.html</loc>
+    <loc>http://localhost:1313/series/b_laurents_series/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
@@ -478,7 +478,7 @@
     <loc>http://localhost:1313/linear_algebra/euclidean_vector/b_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_riesz_representation_theorem/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/dual_space/b_riesz/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_syntax/index.html</loc>

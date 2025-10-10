@@ -54,7 +54,7 @@
       <link>http://localhost:1313/linear_algebra/euclidean_vector/b_inner_product/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/euclidean_vector/b_inner_product/index.html</guid>
-      <description>1. 벡터의 내적 벡터 $\vec{a}$, 벡터 $\vec{b}$의 내적은 다음과 같다.&#xA;첫번째는 일반 벡터 표기, 두번쨰는 Dirac notation, 세번쨰는 행렬 연산의 표기이다.&#xA;$$&#xD;\vec{a}\cdot\vec{b}=\langle a| b \rangle = [a]^T[b]&#xD;$$ 2. Norm 벡터의 크기는 내적을 사용하여 구할 수 있다. 벡터의 크기는 실수 값 이므로, 복소 벡터의 크기를 정의하기 위해서는, 켤레복소수(asterisk)를 취한다. 아래는 sufiix notation 이다.&#xA;$$&#xD;|\vec{a}|=\sqrt{a_{i}^{*}a_{i}}&#xD;$$ 3. Projection</description>
+      <description>1. 벡터의 내적 벡터 $\vec{a}$, 벡터 $\vec{b}$의 내적은 다음과 같다.&#xA;$$&#xD;\vec{a}\cdot\vec{b}&#xD;=[a]^T[b]&#xD;=\sum_i a_i b_i&#xD;$$ 2. Norm 벡터의 크기는 내적을 사용하여 구할 수 있다.&#xA;$$&#xD;||\vec{a}||=\sqrt{\sum_i a_{i}^2}&#xD;$$ 3. Projection $$&#xD;\vec{a}\cdot\vec{b}=||\vec{a}||\cdot||\vec{b}||\cos\theta&#xD;$$proof)&#xA;$\vec{a}$와 $\vec{b}$가 만드는 삼각형에 코사인 법칙을 적용하면 다음과 같다.&#xA;$$&#xD;||\vec{c}||^2=||\vec{a}||^2+||\vec{b}||^2-2||\vec{a}||\cdot||\vec{b}||\cos\theta&#xD;$$$$&#xD;||\vec{c}||^2&#xD;=\sum_i (a_i-b_i)^2&#xD;=\sum_i (a_i^2+b_i^2-2a_ib_i)&#xD;=||\vec{a}||^2+||\vec{b}||^2-2\vec{a}\cdot\vec{b}&#xD;$$따라서,&#xA;$$&#xD;\vec{a}\cdot\vec{b}=||\vec{a}||\cdot||\vec{b}||\cos\theta&#xD;$$</description>
     </item>
     <item>
       <title>(b) Row vector of matrix</title>
