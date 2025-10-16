@@ -19,14 +19,14 @@
       <link>http://localhost:1313/series/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/series/index.html</guid>
-      <description>(b) Lourent&#39;s series&#xD;(b) Fourier series&#xD;(p) Circuit examples for FS</description>
+      <description>(b) Lourent&#39;s series</description>
     </item>
     <item>
-      <title>Integral transform</title>
-      <link>http://localhost:1313/integral_transform/index.html</link>
+      <title>Linear operators &amp; System</title>
+      <link>http://localhost:1313/singnal_system/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/integral_transform/index.html</guid>
-      <description>Preface&#xD;(b) Convolution&#xD;Transformation&#xD;Operators&#xD;LTI</description>
+      <guid>http://localhost:1313/singnal_system/index.html</guid>
+      <description>LSI&#xD;LSV</description>
     </item>
     <item>
       <title>ODE &amp; PDE</title>

@@ -22,11 +22,25 @@
       <description>(b) Cauchy&#39;s Integral Formula&#xD;(b) Residue</description>
     </item>
     <item>
+      <title>Preface</title>
+      <link>http://localhost:1313/temp/preface/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/preface/index.html</guid>
+      <description>Integral Transformation $$ T\{f(t)\}\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Laplace transformation $$ \langle s|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-st}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F\left(s\right)\right\rbrack $$ Fourier transformation, 비대칭형 $$ \langle\omega|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack e^{i\omega t}F\left(\omega\right)\right\rbrack $$ Fourier transformation, 대칭형 $$ \langle k|f\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{-ikx}f\left(k\right)\right\rbrack $$$$ \langle x|F\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{+ikx}F\left(k\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$</description>
+    </item>
+    <item>
       <title>(b) Determinant</title>
       <link>http://localhost:1313/temp/b_determinant/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/b_determinant/index.html</guid>
       <description>1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</description>
+    </item>
+    <item>
+      <title>Algebra structure for LSI</title>
+      <link>http://localhost:1313/temp/algebra_structure/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/algebra_structure/index.html</guid>
+      <description>(a) Operator &amp; Generator&#xD;(a) Operators in quantum mechanics</description>
     </item>
     <item>
       <title>Electromotive force</title>

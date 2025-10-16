@@ -5,50 +5,46 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="3. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다.
-3.1 정의와 기본 성질 정의 (교환자) 두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 다음과 같이 정의된다.
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다. 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다. 네, 알겠습니다. 교환자의 기본 성질 세 가지(반대칭성, 선형성, 야코비 항등식)에 대한 완전한 증명을 포함하여 Hugo 마크다운 문서로 작성해 드리겠습니다.">
+    <meta name="description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Commutator :: 수리전자물리학">
-    <meta name="twitter:description" content="3. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다.
-3.1 정의와 기본 성질 정의 (교환자) 두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 다음과 같이 정의된다.
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다. 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다. 네, 알겠습니다. 교환자의 기본 성질 세 가지(반대칭성, 선형성, 야코비 항등식)에 대한 완전한 증명을 포함하여 Hugo 마크다운 문서로 작성해 드리겠습니다.">
+    <meta name="twitter:description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
     <meta property="og:url" content="http://localhost:1313/linear_algebra/b_commutator/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Commutator :: 수리전자물리학">
-    <meta property="og:description" content="3. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다.
-3.1 정의와 기본 성질 정의 (교환자) 두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 다음과 같이 정의된다.
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다. 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다. 네, 알겠습니다. 교환자의 기본 성질 세 가지(반대칭성, 선형성, 야코비 항등식)에 대한 완전한 증명을 포함하여 Hugo 마크다운 문서로 작성해 드리겠습니다.">
+    <meta property="og:description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
     <meta itemprop="name" content="(b) Commutator :: 수리전자물리학">
-    <meta itemprop="description" content="3. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다.
-3.1 정의와 기본 성질 정의 (교환자) 두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 다음과 같이 정의된다.
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다. 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다. 네, 알겠습니다. 교환자의 기본 성질 세 가지(반대칭성, 선형성, 야코비 항등식)에 대한 완전한 증명을 포함하여 Hugo 마크다운 문서로 작성해 드리겠습니다.">
-    <meta itemprop="wordCount" content="892">
+    <meta itemprop="description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
+    <meta itemprop="wordCount" content="590">
     <title>(b) Commutator :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1760101650" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1760101650" defer></script>
-    <script src="/js/search-lunr.js?1760101650" defer></script>
-    <script src="/js/search.js?1760101650" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1760632058" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760632058" defer></script>
+    <script src="/js/search-lunr.js?1760632058" defer></script>
+    <script src="/js/search.js?1760632058" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1760101650";
+      window.relearn.index_js_url="/searchindex.en.js?1760632058";
     </script>
-    <script src="/js/lunr/lunr.min.js?1760101650" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1760101650" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1760101650" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1760101650" defer></script>
+    <script src="/js/lunr/lunr.min.js?1760632058" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760632058" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760632058" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760632058" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760101650" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760101650" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760101650" rel="stylesheet">
-    <link href="/css/theme.css?1760101650" rel="stylesheet">
-    <link href="/css/format-html.css?1760101650" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760632058" rel="stylesheet">
+    <link href="/css/theme.css?1760632058" rel="stylesheet">
+    <link href="/css/format-html.css?1760632058" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -117,18 +113,13 @@ $$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#3-교환자-commutator">3. 교환자 (Commutator)</a>
+    <li>
       <ul>
-        <li><a href="#31-정의와-기본-성질">3.1 정의와 기본 성질</a></li>
-      </ul>
-    </li>
-    <li><a href="#31-교환자의-정의와-기본-성질">3.1 교환자의 정의와 기본 성질</a>
-      <ul>
-        <li><a href="#기본-성질-및-증명">기본 성질 및 증명</a></li>
-        <li><a href="#32-핵심-정리-동시-대각화-가능성">3.2 핵심 정리: 동시 대각화 가능성</a></li>
-        <li><a href="#33-물리적-의미-1-동시-측정-가능성과-불확정성-원리">3.3 물리적 의미 1: 동시 측정 가능성과 불확정성 원리</a></li>
-        <li><a href="#34-물리적-의미-2-대칭성과-보존-법칙">3.4 물리적 의미 2: 대칭성과 보존 법칙</a></li>
-        <li><a href="#33-예제">3.3 예제</a></li>
+        <li><a href="#1-교환자-commutator">1. 교환자 (Commutator)</a></li>
+        <li><a href="#2-항등-성질">2. 항등 성질</a></li>
+        <li><a href="#3-동시-스팩트럼-분해대각화-가능성">3. 동시 스팩트럼 분해(대각화) 가능성</a></li>
+        <li><a href="#4-물리적-의미1--csco">4. 물리적 의미1,  CSCO</a></li>
+        <li><a href="#5-물리적-의미2-동시측정-가능성">5. 물리적 의미2, 동시측정 가능성</a></li>
       </ul>
     </li>
   </ul>
@@ -140,7 +131,7 @@ $$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Commutator</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/eigenvalue_problem/b_decomposition/index.html" title="(b) Decomposition of spectrum (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html" title="(b) Spectral theory (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/normal_operators/index.html" title="Normal operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -165,178 +156,132 @@ $$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$만약 $[\hat{A}, \hat{
 <h1 id="b-commutator">(b) Commutator</h1>
 
 <hr>
-<h2 id="3-교환자-commutator">3. 교환자 (Commutator)</h2>
-<p>교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다.</p>
-<h3 id="31-정의와-기본-성질">3.1 정의와 기본 성질</h3>
-<p><strong>정의 (교환자)</strong>
-두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 다음과 같이 정의된다.</p>
-<blockquote>
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$</blockquote>
-<ul>
-<li>만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다.</li>
-<li>만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다.</li>
-</ul>
-<p>네, 알겠습니다. 교환자의 기본 성질 세 가지(반대칭성, 선형성, 야코비 항등식)에 대한 완전한 증명을 포함하여 Hugo 마크다운 문서로 작성해 드리겠습니다.</p>
-<h2 id="31-교환자의-정의와-기본-성질">3.1 교환자의 정의와 기본 성질</h2>
-<p><strong>정의 (교환자)</strong></p>
-<p>두 연산자 $\hat{A}$와 $\hat{B}$의 **교환자(Commutator)**는 두 연산자의 곱셈 순서를 바꾸어 뺐을 때의 차이로 정의된다.</p>
-<blockquote>
-$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$</blockquote>
-<ul>
-<li>만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 **교환 가능하다(commute)**고 한다.</li>
-<li>만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 **교환 가능하지 않다(do not commute)**고 한다.</li>
+<h3 id="1-교환자-commutator">1. 교환자 (Commutator)</h3>
+<p>교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 <strong>교환자(Commutator)</strong> 는 다음과 같이 정의된다.</p>
+$$
+[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}
+$$<ul>
+<li>만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 <strong>교환 가능하다(commute)</strong></li>
+<li>만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 <strong>교환 가능하지 않다(do not commute)</strong></li>
 </ul>
 <hr>
-<h3 id="기본-성질-및-증명">기본 성질 및 증명</h3>
-<h4 id="1-반대칭성-anti-symmetry"><strong>1. 반대칭성 (Anti-symmetry)</strong></h4>
-<blockquote>
-$$[\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]$$</blockquote>
-<blockquote>
+<h3 id="2-항등-성질">2. 항등 성질</h3>
+<p><strong>(1) 반대칭성 (Anti-symmetry)</strong></p>
 $$
-\begin{align*}
-[\hat{A}, \hat{B}] &= \hat{A}\hat{B} - \hat{B}\hat{A} \\
-&= -(\hat{B}\hat{A} - \hat{A}\hat{B}) \\
-&= -[\hat{B}, \hat{A}] \quad \blacksquare
-\end{align*}
-> $$</blockquote>
-<h4 id="2-선형성-linearity"><strong>2. 선형성 (Linearity)</strong></h4>
-<blockquote>
-$$[\hat{A}, b\hat{B}+c\hat{C}] = b[\hat{A},\hat{B}] + c[\hat{A},\hat{C}]$$<p>
-(여기서 $b, c$는 스칼라)</p></blockquote>
-<blockquote>
-<p><strong>증명</strong>:</p></blockquote>
+[\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]
+$$<p>proof)</p>
 $$
-\begin{align*}
-[\hat{A}, b\hat{B}+c\hat{C}] &= \hat{A}(b\hat{B}+c\hat{C}) - (b\hat{B}+c\hat{C})\hat{A} \\
-&= (\hat{A}b\hat{B} + \hat{A}c\hat{C}) - (b\hat{B}\hat{A} + c\hat{C}\hat{A}) \\
-&= b(\hat{A}\hat{B}) + c(\hat{A}\hat{C}) - b(\hat{B}\hat{A}) - c(\hat{C}\hat{A}) \\
-&= b(\hat{A}\hat{B} - \hat{B}\hat{A}) + c(\hat{A}\hat{C} - \hat{C}\hat{A}) \\
-&= b[\hat{A}, \hat{B}] + c[\hat{A}, \hat{C}] \quad \blacksquare
-\end{align*}
-$$<h4 id="3-야코비-항등식-jacobi-identity"><strong>3. 야코비 항등식 (Jacobi Identity)</strong></h4>
-<blockquote>
-$$[\hat{A}, [\hat{B}, \hat{C}]] + [\hat{B}, [\hat{C}, \hat{A}]] + [\hat{C}, [\hat{A}, \hat{B}]] = 0$$</blockquote>
-<blockquote>
-<p><strong>증명</strong>: 각 항을 교환자의 정의에 따라 전개한다.</p>
-<ol>
+[\hat{A}, \hat{B}]
+= \hat{A}\hat{B} - \hat{B}\hat{A}
+= -(\hat{B}\hat{A} - \hat{A}\hat{B})
+= -[\hat{B}, \hat{A}]
+$$<p><strong>(2) 선형성 (Linearity)</strong></p>
+$$
+[\hat{A}, b\hat{B}+c\hat{C}] = b[\hat{A},\hat{B}] + c[\hat{A},\hat{C}] \text{, where b and c are scalar}
+$$<p>proof)</p>
+$$
+[\hat{A}, b\hat{B}+c\hat{C}]=\hat{A}(b\hat{B}+c\hat{C}) - (b\hat{B}+c\hat{C})\hat{A} \\
+$$$$
+= (\hat{A}b\hat{B} + \hat{A}c\hat{C}) - (b\hat{B}\hat{A} + c\hat{C}\hat{A})
+$$$$
+= b(\hat{A}\hat{B}) + c(\hat{A}\hat{C}) - b(\hat{B}\hat{A}) - c(\hat{C}\hat{A})
+$$$$
+= b(\hat{A}\hat{B} - \hat{B}\hat{A}) + c(\hat{A}\hat{C} - \hat{C}\hat{A})
+$$$$
+= b[\hat{A}, \hat{B}] + c[\hat{A}, \hat{C}]
+$$<p><strong>(3) 야코비 항등식 (Jacobi Identity)</strong></p>
+$$
+[\hat{A}, [\hat{B}, \hat{C}]] + [\hat{B}, [\hat{C}, \hat{A}]] + [\hat{C}, [\hat{A}, \hat{B}]] = 0
+$$<p>proof)</p>
+<ul>
 <li>첫 번째 항:</li>
-</ol></blockquote>
+</ul>
 $$
-\begin{align*}
-[\hat{A}, [\hat{B}, \hat{C}]] &= [\hat{A}, (\hat{B}\hat{C} - \hat{C}\hat{B})] \\
-&= \hat{A}(\hat{B}\hat{C} - \hat{C}\hat{B}) - (\hat{B}\hat{C} - \hat{C}\hat{B})\hat{A} \\
-&= \hat{A}\hat{B}\hat{C} - \hat{A}\hat{C}\hat{B} - \hat{B}\hat{C}\hat{A} + \hat{C}\hat{B}\hat{A}
-\end{align*}
-$$<blockquote>
-<ol start="2">
+[\hat{A}, [\hat{B}, \hat{C}]= [\hat{A}, (\hat{B}\hat{C} - \hat{C}\hat{B})]
+$$$$
+= \hat{A}(\hat{B}\hat{C} - \hat{C}\hat{B}) - (\hat{B}\hat{C} - \hat{C}\hat{B})\hat{A}
+$$$$
+= \hat{A}\hat{B}\hat{C} - \hat{A}\hat{C}\hat{B} - \hat{B}\hat{C}\hat{A} + \hat{C}\hat{B}\hat{A}
+$$<ul>
 <li>두 번째 항 (인덱스 순환: $A \to B, B \to C, C \to A$):</li>
-</ol></blockquote>
+</ul>
 $$
-\begin{align*}
-[\hat{B}, [\hat{C}, \hat{A}]] &= \hat{B}\hat{C}\hat{A} - \hat{B}\hat{A}\hat{C} - \hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B}
-\end{align*}
-$$<blockquote>
-<ol start="3">
+[\hat{B}, [\hat{C}, \hat{A}]] = \hat{B}\hat{C}\hat{A} - \hat{B}\hat{A}\hat{C} - \hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B}
+$$<ul>
 <li>세 번째 항 (인덱스 순환: $B \to C, C \to A, A \to B$):</li>
-</ol></blockquote>
+</ul>
 $$
-\begin{align*}
-[\hat{C}, [\hat{A}, \hat{B}]] &= \hat{C}\hat{A}\hat{B} - \hat{C}\hat{B}\hat{A} - \hat{A}\hat{B}\hat{C} + \hat{B}\hat{A}\hat{C}
-\end{align*}
-$$<blockquote>
-<ol start="4">
+[\hat{C}, [\hat{A}, \hat{B}]] = \hat{C}\hat{A}\hat{B} - \hat{C}\hat{B}\hat{A} - \hat{A}\hat{B}\hat{C} + \hat{B}\hat{A}\hat{C}
+$$<ul>
 <li>이제 세 개의 결과를 모두 더하면,</li>
-</ol></blockquote>
+</ul>
 $$
-\begin{align*}
-(\hat{A}\hat{B}\hat{C}-\hat{A}\hat{C}\hat{B}-\hat{B}\hat{C}\hat{A}+\hat{C}\hat{B}\hat{A}) \\
-+&(\hat{B}\hat{C}\hat{A}-\hat{B}\hat{A}\hat{C}-\hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B}) \\
-+&(\hat{C}\hat{A}\hat{B}-\hat{C}\hat{B}\hat{A}-\hat{A}\hat{B}\hat{C}+\hat{B}\hat{A}\hat{C}) \\
-= & \quad 0 
-\end{align*}
-$$<blockquote>
-<p>모든 항이 서로 상쇄되어 0이 된다.</p></blockquote>
-<hr>
-<h3 id="32-핵심-정리-동시-대각화-가능성">3.2 핵심 정리: 동시 대각화 가능성</h3>
-<p>교환자의 가장 중요한 수학적 의미는 **동시 대각화 가능성(simultaneous diagonalizability)**과 연결된다.</p>
-<blockquote>
-<p><strong>정리</strong>: 두 대각화 가능한 행렬 $\hat{A}$와 $\hat{B}$가 교환 가능한 것($[\hat{A}, \hat{B}]=0$)은, 두 행렬이 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>하는 것과 동치이다.</p></blockquote>
-<p><strong>증명 요약)</strong>
-$|v\rangle$가 $\hat{A}$의 고유벡터($\hat{A}|v\rangle=a|v\rangle$)라고 하자. $[\hat{A}, \hat{B}]|v\rangle=0$ 으로부터 $\hat{A}(\hat{B}|v\rangle) = a(\hat{B}|v\rangle)$를 보일 수 있다. 이는 $\hat{B}|v\rangle$라는 새로운 벡터 역시 $\hat{A}$의 고유값 $a$에 대한 고유벡터임을 의미한다. 만약 고유값이 겹치지 않는다면(non-degenerate), $\hat{B}|v\rangle$는 $|v\rangle$의 상수배여야 하므로, $|v\rangle$는 $\hat{B}$의 고유벡터이기도 하다. (겹치는 경우에도 이 논리는 확장 가능하다.)</p>
-<p><strong>의미</strong>: 교환자가 0이라는 것은, 두 변환의 &lsquo;자연스러운 좌표축&rsquo;(고유벡터)이 서로 같아서, <strong>하나의 좌표계에서 두 변환을 모두 가장 간단한 형태(대각 행렬)로 동시에 표현할 수 있다</strong>는 의미이다. 이는 두 연산자의 구조적 &lsquo;호환성&rsquo;을 판별하는 근본적인 도구임을 보여준다.</p>
-<hr>
-<h3 id="33-물리적-의미-1-동시-측정-가능성과-불확정성-원리">3.3 물리적 의미 1: 동시 측정 가능성과 불확정성 원리</h3>
-<p>교환자는 두 물리량을 동시에 얼마나 정확하게 알 수 있는지를 판별하는 &lsquo;측정 호환성 테스트&rsquo;이다.</p>
-<blockquote>
-<p><strong>정리 (동시 대각화)</strong>: 두 에르미트 연산자 $\hat{A}$와 $\hat{B}$가 교환 가능할 때($[\hat{A}, \hat{B}]=0$), 두 연산자를 <strong>동시에 대각화</strong>할 수 있다. 즉, $\hat{A}$의 고유벡터이면서 동시에 $\hat{B}$의 고유벡터인 완벽한 기저가 존재한다.</p></blockquote>
-<blockquote>
-<p><strong>증명 요약</strong>:
-$|a\rangle$가 $\hat{A}$의 고유벡터($\hat{A}|a\rangle=a|a\rangle$)라고 하자. $[\hat{A}, \hat{B}]|a\rangle=0$ 으로부터 $\hat{A}(\hat{B}|a\rangle) = a(\hat{B}|a\rangle)$를 보일 수 있다. 이는 $\hat{B}|a\rangle$라는 새로운 벡터 역시 $\hat{A}$의 고유값 $a$에 대한 고유벡터임을 의미한다. 만약 고유값이 겹치지 않는다면, $\hat{B}|a\rangle$는 $|a\rangle$의 상수배여야 하므로, $|a\rangle$는 $\hat{B}$의 고유벡터이기도 하다.</p></blockquote>
-<p><strong>A) 교환하는 경우 ($[\hat{A}, \hat{B}] = 0$): 양립 가능한 측정량</strong>
-두 물리량은 **&lsquo;양립 가능(compatible)&rsquo;**하며 동시에 확정된 값을 가질 수 있다. 하나의 양을 측정하는 행위가 다른 양의 상태를 교란시키지 않는다.</p>
-<ul>
-<li><strong>예제</strong>: 자유 입자의 에너지($\hat{H}=\hat{P}^2/2m$)와 운동량($\hat{P}$)
-<blockquote>
-$$[\hat{H}, \hat{P}] = 0$$<p>
-따라서 &lsquo;확정된 에너지&rsquo;를 가지면서 동시에 &lsquo;확정된 운동량&rsquo;을 가지는 상태(운동량 고유 상태)가 존재할 수 있다.</p></blockquote>
-</li>
-</ul>
-<p><strong>B) 교환하지 않는 경우 ($[\hat{A}, \hat{B}] \neq 0$): 양립 불가능한 측정량</strong>
-두 물리량 사이에는 **불확정성 원리(Uncertainty Principle)**가 존재한다. 하나의 양을 정확하게 측정하면 다른 양의 정보가 필연적으로 불확실해진다.</p>
-<ul>
-<li><strong>예제</strong>: 위치($\hat{X}$)와 운동량($\hat{P}$)
-<blockquote>
-$$[\hat{X}, \hat{P}] = i\hbar$$<p>
-교환자가 0이 아니므로, 위치와 운동량을 동시에 정확하게 측정할 수 없다. 이는 $\sigma_x \sigma_p \ge \hbar/2$ 라는 하이젠베르크 불확정성 관계로 이어진다.</p></blockquote>
-</li>
-</ul>
-<hr>
-<h3 id="34-물리적-의미-2-대칭성과-보존-법칙">3.4 물리적 의미 2: 대칭성과 보존 법칙</h3>
-<p>어떤 물리량이 시간에 따라 변하지 않고 &lsquo;보존&rsquo;되는지 여부는, 그 물리량의 연산자가 **해밀토니안 연산자($\hat{H}$)**와 교환 가능한지에 따라 결정된다.</p>
-<blockquote>
-$$\frac{d\hat{A}}{dt} = \frac{1}{i\hbar}[\hat{A}, \hat{H}] + \frac{\partial\hat{A}}{\partial t}$$</blockquote>
-<blockquote>
-$$\frac{d\hat{A}}{dt} = 0$$<p>
-이는 물리량 $\hat{A}$의 기댓값이 시간에 따라 변하지 않음, 즉 <strong>보존됨</strong>을 의미한다.</p></blockquote>
-<ul>
-<li><strong>에너지 보존</strong>: 해밀토니안이 시간에 무관하면, 자기 자신과는 항상 교환 가능하므로($[\hat{H}, \hat{H}]=0$) <strong>에너지가 보존된다.</strong></li>
-<li><strong>운동량 보존</strong>: 시스템이 공간적 대칭성(위치에 따라 포텐셜이 변하지 않음)을 가지면, $[\hat{P}, \hat{H}]=0$ 이 되어 <strong>운동량이 보존된다.</strong></li>
-<li><strong>각운동량 보존</strong>: 시스템이 회전 대칭성(방향에 따라 포텐셜이 변하지 않음)을 가지면, $[\hat{L}, \hat{H}]=0$ 이 되어 <strong>각운동량이 보존된다.</strong></li>
-</ul>
-<hr>
-<h3 id="33-예제">3.3 예제</h3>
+(\hat{A}\hat{B}\hat{C}-\hat{A}\hat{C}\hat{B}-\hat{B}\hat{C}\hat{A}+\hat{C}\hat{B}\hat{A})
+$$$$
++(\hat{B}\hat{C}\hat{A}-\hat{B}\hat{A}\hat{C}-\hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B})
+$$$$
++(\hat{C}\hat{A}\hat{B}-\hat{C}\hat{B}\hat{A}-\hat{A}\hat{B}\hat{C}+\hat{B}\hat{A}\hat{C})
+$$$$
+= 0 
+$$<hr>
+<h3 id="3-동시-스팩트럼-분해대각화-가능성">3. 동시 스팩트럼 분해(대각화) 가능성</h3>
+<p>두 대각화 가능한 연산자 $\hat{A}$와 $\hat{B}$가 교환 가능한 것($[\hat{A}, \hat{B}]=0$)은, 두 연산자가 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>하는 것과 동치이다.</p>
+<p>proof)</p>
+<p>$|v\rangle$가 $\hat{A}$의 고유벡터($\hat{A}|v\rangle=a|v\rangle$)라고 하자.</p>
 $$
-A = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
-B = \begin{pmatrix} 2 & 0 \\ 0 & 5 \end{pmatrix}
-$$<ol>
-<li>
+0=[\hat{A}, \hat{B}]|v\rangle
+=(\hat{A}\hat{B}-\hat{B}\hat{A})|v\rangle
+$$$$
+=\hat{A}\hat{B}|v\rangle-\hat{B}\hat{A}|v\rangle
+=\hat{A}\hat{B}|v\rangle-\hat{B}a|v\rangle
+$$<p>아래와 같이 정리할 수 있다.</p>
 $$
-    AB = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}, \quad
-    BA = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}
-    $$<p>
-따라서 $[A, B] = AB - BA = 0$ 이다.</p>
-</li>
-<li>
-<p><strong>각 행렬의 고유벡터 찾기</strong>:</p>
+\hat{A}\hat{B}|v\rangle=a(\hat{B}|v\rangle)
+$$<p>이것은 $\hat{B}|v\rangle$ 가 $\hat{A}$의 고유벡터임을 의미한다. 또한 $\hat{B}|v\rangle$에 대응되는 고유값은 $a$이다. 따라서, $\hat{B}|v\rangle$는 $|v\rangle$와 종속이다.</p>
+$$
+\hat{B}|v\rangle=c|v\rangle
+$$<p>따라서, $\hat{B}$의 고유벡터는 $|v\rangle$ 이다.</p>
+<hr>
+<h3 id="4-물리적-의미1--csco">4. 물리적 의미1,  CSCO</h3>
+<p>Complete Set of Commuting Observables</p>
+<p>연산자는 고유벡터를 만나면, 고유벡터를 스케일링 한다. ~</p>
+<hr>
+<h3 id="5-물리적-의미2-동시측정-가능성">5. 물리적 의미2, 동시측정 가능성</h3>
+<p>교환자는 두 물리량을 동시에 얼마나 정확하게 알 수 있는지를 판별하는 &lsquo;측정 호환성 테스트&rsquo;이다. <strong>측정이란 어떤 고유값을 선택(중복포함하여)하는 것</strong> 이다. 예로, $\hat{H}$ 를 기준으로 측정하여라 하면, $\hat{H}$ 고유값(중복고유값 포함) 중 하나가 임의로 선택되는 것을 말한다.</p>
+$$
+|\psi\rangle \xrightarrow{\text{Measure=Pick}} \lambda^\text{중복도,3}(|\lambda_1^3\rangle+|\lambda_2^3\rangle+|\lambda_3^3\rangle)
+$$<p><strong>(1) 교환하는 경우 ($[\hat{A}, \hat{B}] = 0$): 양립 가능한 측정량</strong></p>
+<p>두 물리량은 <strong>&lsquo;양립 가능(compatible)&rsquo;</strong> 하며 동시에 확정된 값을 가질 수 있다. 하나의 양을 측정하는 행위가 다른 양의 상태를 교란시키지 않는다.</p>
+<p><strong>(2) 교환하지 않는 경우 ($[\hat{A}, \hat{B}] \neq 0$): 양립 불가능한 측정량</strong></p>
+<p>두 물리량 사이에는 <strong>불확정성 원리(Uncertainty Principle)</strong> 가 존재한다. 하나의 양을 정확하게 측정하면 다른 양의 정보가 필연적으로 불확실해진다.</p>
+<hr>
+<p><strong>example1)</strong> 다음 두 행렬 $A$와 $B$의 교환연산을 생각해 보자.</p>
+$$
+A = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \quad
+B = \begin{bmatrix} 2 & 0 \\ 0 & 5 \end{bmatrix}
+$$<p>sol)</p>
+$$
+ AB = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}, \quad
+ BA = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}
+ $$<p>따라서 $[A, B] = AB - BA = 0$ 이다.</p>
 <ul>
-<li><strong>A의 고유벡터</strong>:
-<ul>
-<li>$\lambda=1$: $|e_1\rangle = \begin{pmatrix} 1 \ 0 \end{pmatrix}$</li>
-<li>$\lambda=-1$: $|e_2\rangle = \begin{pmatrix} 0 \ 1 \end{pmatrix}$</li>
+<li>A의 고유벡터:</li>
 </ul>
-</li>
-<li><strong>B의 고유벡터</strong>:
-<ul>
-<li>$\lambda=2$: $|e_1\rangle = \begin{pmatrix} 1 \ 0 \end{pmatrix}$</li>
-<li>$\lambda=5$: $|e_2\rangle = \begin{pmatrix} 0 \ 1 \end{pmatrix}$</li>
+$$\lambda=1,\quad
+|u_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$$$\lambda=-1,\quad
+|u_1\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$<ul>
+<li>B의 고유벡터:</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>결론</strong>: 두 행렬은 교환 가능하며, 그 결과 ${|e_1\rangle, |e_2\rangle}$라는 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>함을 확인할 수 있다.</p>
-</li>
-</ol>
+$$\lambda=2,\quad
+ |u_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+ $$$$
+ \lambda=5,\quad
+ |u_2\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+ $$<p>두 행렬은 교환 가능하며, 그 결과 ${|u_1\rangle, |u_2\rangle}$라는 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>함을 확인할 수 있다.</p>
+<hr>
+<p><strong>example2)</strong> convolution 연산자와 Laplace transform 연산자가 교환가능함을 보여라. 교환가능함은 고유벡터가 동일함을 의미한다. 이 고유벡터를 구하여라.</p>
 
   <footer class="footline">
   </footer>
@@ -394,7 +339,7 @@ $$
             <li class="active " data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/integral_transform/index.html"><a class="padding" href="/integral_transform/index.html">Integral transform</a><ul id="R-subsections-bab64a1e0d28cfb72b85de55f40c02f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/singnal_system/index.html"><a class="padding" href="/singnal_system/index.html">Linear operators &amp; System</a><ul id="R-subsections-c31430c6e1f5da728851752cac4b39a3" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
@@ -428,9 +373,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760101650"></script>
-    <script src="/js/clipboard/clipboard.min.js?1760101650" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760101650" defer></script>
-    <script src="/js/theme.js?1760101650" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760632058"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760632058" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760632058" defer></script>
+    <script src="/js/theme.js?1760632058" defer></script>
   </body>
 </html>
