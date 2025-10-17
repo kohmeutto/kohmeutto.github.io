@@ -23,28 +23,28 @@
     <meta itemprop="name" content="(b) Convolution I :: 수리전자물리학">
     <meta itemprop="description" content="1. LSI operators LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. 예외 없이 모든 LSI 연산자들은 합성곱(Convolution)으로 표현 될 수 있다는 공통점을 가진다.
 미분 (Differentiation) $$ |\psi&#39;\rangle=\hat{D}|\psi\rangle $$$$ \psi&#39;(x)=\langle x|\psi&#39;\rangle=\langle x|\hat{D}|\psi\rangle=\frac{d}{dx}\psi(x) $$ 적분 (Integration) $$ |g\rangle=\hat{D}^{-1}|f\rangle $$$$ g(x)=\langle x|g\rangle=\langle x|\hat{D}^{-1}|f\rangle=\int dx f(x) $$ 이동 (Shift / Delay) $$ |\psi(t-\tau)\rangle=\hat{S}_{\tau}|\psi(t)\rangle $$ 스케일링 (Scaling) $$ |a\psi\rangle=a|\psi\rangle $$ 2. 모든 LSI 연산자는 합성곱 귀결된다. 어떤 신호 $|\psi\rangle$든, 그 신호는 모든 순간의 임펄스(impulse) 기저 $|\tau\rangle$들의 연속적인 합(적분)으로 표현할 수 있다. 이는 디랙 델타 함수의 기본 성질이다.">
-    <meta itemprop="wordCount" content="154">
+    <meta itemprop="wordCount" content="202">
     <title>(b) Convolution I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1760632058" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1760632058" defer></script>
-    <script src="/js/search-lunr.js?1760632058" defer></script>
-    <script src="/js/search.js?1760632058" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1760682611" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760682611" defer></script>
+    <script src="/js/search-lunr.js?1760682611" defer></script>
+    <script src="/js/search.js?1760682611" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1760632058";
+      window.relearn.index_js_url="/searchindex.en.js?1760682611";
     </script>
-    <script src="/js/lunr/lunr.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1760632058" defer></script>
+    <script src="/js/lunr/lunr.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760682611" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760632058" rel="stylesheet">
-    <link href="/css/theme.css?1760632058" rel="stylesheet">
-    <link href="/css/format-html.css?1760632058" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760682611" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760682611" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760682611" rel="stylesheet">
+    <link href="/css/theme.css?1760682611" rel="stylesheet">
+    <link href="/css/format-html.css?1760682611" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -117,6 +117,7 @@
       <ul>
         <li><a href="#1-lsi-operators">1. LSI operators</a></li>
         <li><a href="#2-모든-lsi-연산자는-합성곱-귀결된다">2. 모든 LSI 연산자는 합성곱 귀결된다.</a></li>
+        <li><a href="#3-convolution">3. Convolution</a></li>
       </ul>
     </li>
   </ul>
@@ -210,6 +211,23 @@ $$
 =|\psi\rangle\ast|h\rangle
 =|\psi\ast h\rangle
 $$<p>이로써, 모든 LSI 연산자의 입출력 관계는 입력과 임펄스 응답의 합성곱이라는 단 하나의 형태로 귀결됨이 증명되었다.</p>
+<hr>
+<h3 id="3-convolution">3. Convolution</h3>
+<p>LSI 연산자라면,</p>
+$$
+\hat{H}=|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
+$$<p>위 식은 선형연산자가 하는 역할을 보여준다. 현재 위치(시간) 상태를 추출 $\langle\tau|$ 하고, 그 위치(시간)에 있는 연산자의 상태 $|h(t-\tau)\rangle$ 로 변환한다.</p>
+<p>proof)</p>
+$$
+|h\rangle\ast|\psi\rangle
+=\int_{-\infty}^{\infty}d\tau \psi(\tau) |h(t-\tau)\rangle
+=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\psi(\tau)
+=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\langle\tau|\psi\rangle
+$$<p>따라서,</p>
+$$
+|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
+$$<hr>
+<p><strong>example)</strong> $|f\rangle+$ 연산자는 선형인가.</p>
 
   <footer class="footline">
   </footer>
@@ -307,9 +325,9 @@ $$<p>이로써, 모든 LSI 연산자의 입출력 관계는 입력과 임펄스 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760632058"></script>
-    <script src="/js/clipboard/clipboard.min.js?1760632058" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760632058" defer></script>
-    <script src="/js/theme.js?1760632058" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760682611"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760682611" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760682611" defer></script>
+    <script src="/js/theme.js?1760682611" defer></script>
   </body>
 </html>

@@ -5,58 +5,66 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="이 문서는 LSI 연산자의 스팩트럼 분해 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
-1. Eigenfunction &amp; eigenvalue for convolution $$ \text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
-$$ |h\rangle = \int ds F(s)|s\rangle $$고유기저에 대한 좌표는
-$$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle =\int dt\langle s|t\rangle\langle t|h\rangle $$$$ =\int dt e^{-st} h(t) $$ 2. 라플라스 변환 라플라스 변환은 LSI 연산자의 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta name="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
+$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
+proof)
+연산자는 스팩트럼 분해에 의해서,
+$$ |h\rangle\ast = \int ds H(s)|s\rangle\langle s| $$시스템 벡터는 고유벡터로 표현할 수 있다.
+$$ |h\rangle = \int ds \langle s|h\rangle|s\rangle $$고유기저에 대한 좌표는">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta name="twitter:description" content="이 문서는 LSI 연산자의 스팩트럼 분해 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
-1. Eigenfunction &amp; eigenvalue for convolution $$ \text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
-$$ |h\rangle = \int ds F(s)|s\rangle $$고유기저에 대한 좌표는
-$$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle =\int dt\langle s|t\rangle\langle t|h\rangle $$$$ =\int dt e^{-st} h(t) $$ 2. 라플라스 변환 라플라스 변환은 LSI 연산자의 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta name="twitter:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
+$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
+proof)
+연산자는 스팩트럼 분해에 의해서,
+$$ |h\rangle\ast = \int ds H(s)|s\rangle\langle s| $$시스템 벡터는 고유벡터로 표현할 수 있다.
+$$ |h\rangle = \int ds \langle s|h\rangle|s\rangle $$고유기저에 대한 좌표는">
     <meta property="og:url" content="http://localhost:1313/singnal_system/lsi/b_laplace_transform_i/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta property="og:description" content="이 문서는 LSI 연산자의 스팩트럼 분해 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
-1. Eigenfunction &amp; eigenvalue for convolution $$ \text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
-$$ |h\rangle = \int ds F(s)|s\rangle $$고유기저에 대한 좌표는
-$$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle =\int dt\langle s|t\rangle\langle t|h\rangle $$$$ =\int dt e^{-st} h(t) $$ 2. 라플라스 변환 라플라스 변환은 LSI 연산자의 eigenvalue(고유값)을 찾아 내는 방법이다.">
+    <meta property="og:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
+$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
+proof)
+연산자는 스팩트럼 분해에 의해서,
+$$ |h\rangle\ast = \int ds H(s)|s\rangle\langle s| $$시스템 벡터는 고유벡터로 표현할 수 있다.
+$$ |h\rangle = \int ds \langle s|h\rangle|s\rangle $$고유기저에 대한 좌표는">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear operators & System">
     <meta itemprop="name" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta itemprop="description" content="이 문서는 LSI 연산자의 스팩트럼 분해 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
-1. Eigenfunction &amp; eigenvalue for convolution $$ \text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
-$$ |h\rangle = \int ds F(s)|s\rangle $$고유기저에 대한 좌표는
-$$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle =\int dt\langle s|t\rangle\langle t|h\rangle $$$$ =\int dt e^{-st} h(t) $$ 2. 라플라스 변환 라플라스 변환은 LSI 연산자의 eigenvalue(고유값)을 찾아 내는 방법이다.">
-    <meta itemprop="wordCount" content="245">
+    <meta itemprop="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
+$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
+proof)
+연산자는 스팩트럼 분해에 의해서,
+$$ |h\rangle\ast = \int ds H(s)|s\rangle\langle s| $$시스템 벡터는 고유벡터로 표현할 수 있다.
+$$ |h\rangle = \int ds \langle s|h\rangle|s\rangle $$고유기저에 대한 좌표는">
+    <meta itemprop="wordCount" content="257">
     <title>(b) Laplace transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1760632058" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1760632058" defer></script>
-    <script src="/js/search-lunr.js?1760632058" defer></script>
-    <script src="/js/search.js?1760632058" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1760682611" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760682611" defer></script>
+    <script src="/js/search-lunr.js?1760682611" defer></script>
+    <script src="/js/search.js?1760682611" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1760632058";
+      window.relearn.index_js_url="/searchindex.en.js?1760682611";
     </script>
-    <script src="/js/lunr/lunr.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1760632058" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1760632058" defer></script>
+    <script src="/js/lunr/lunr.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760682611" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760682611" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760632058" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760632058" rel="stylesheet">
-    <link href="/css/theme.css?1760632058" rel="stylesheet">
-    <link href="/css/format-html.css?1760632058" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760682611" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760682611" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760682611" rel="stylesheet">
+    <link href="/css/theme.css?1760682611" rel="stylesheet">
+    <link href="/css/format-html.css?1760682611" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -127,13 +135,11 @@ $$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt
   <ul>
     <li>
       <ul>
-        <li><a href="#1-eigenfunction--eigenvalue-for-convolution">1. Eigenfunction &amp; eigenvalue for convolution</a></li>
-        <li><a href="#2-라플라스-변환">2. 라플라스 변환</a></li>
-        <li><a href="#0-정리">0. 정리</a></li>
-        <li><a href="#1-eigenfunction--eigenvalue">1. Eigenfunction &amp; Eigenvalue</a></li>
-        <li><a href="#2-laplace-transformation">2. Laplace transformation</a></li>
-        <li><a href="#3-대수방정식">3. 대수방정식</a></li>
-        <li><a href="#4-주의사항">4. 주의사항</a></li>
+        <li><a href="#1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</a></li>
+        <li><a href="#2-state-vector--operator">2. State vector &amp; operator</a></li>
+        <li><a href="#3-라플라스-변환">3. 라플라스 변환</a></li>
+        <li><a href="#4-대수방정식">4. 대수방정식</a></li>
+        <li><a href="#5-주의사항">5. 주의사항</a></li>
       </ul>
     </li>
   </ul>
@@ -170,11 +176,10 @@ $$ F(s) =\langle s|h\rangle =\langle s|\hat{I}|h\rangle =\langle s|\left(\int dt
 <h1 id="b-laplace-transform-i">(b) Laplace transform I</h1>
 
 <hr>
-<p>이 문서는 <strong>LSI 연산자의 스팩트럼 분해</strong> 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.</p>
-<hr>
-<h3 id="1-eigenfunction--eigenvalue-for-convolution">1. Eigenfunction &amp; eigenvalue for convolution</h3>
+<h3 id="1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</h3>
+<p>연산자 $|h\rangle\ast$ 의 고유값과 고유벡터</p>
 $$
-\text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+\text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
 $$$$
 \text{eigenvector}: |s\rangle=|e^{st}\rangle
 $$<p>proof)</p>
@@ -182,63 +187,57 @@ $$
 |h\rangle\ast|e^{st}\rangle
 =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle
 =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle
-$$<p>스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.</p>
+$$$$
+\lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+$$<hr>
+<h3 id="2-state-vector--operator">2. State vector &amp; operator</h3>
+<p>벡터 $|h\rangle$는 <strong>&lsquo;설계도(DNA)&rsquo;</strong> 이고, 연산자 $|h\rangle\ast$는 <strong>&lsquo;설계도대로 작동하는 기계&rsquo;</strong> 이다.</p>
+<p>proof)</p>
+<p>연산자는 스팩트럼 분해에 의해서,</p>
 $$
-|h\rangle = \int ds F(s)|s\rangle
+|h\rangle\ast = \int ds H(s)|s\rangle\langle s|
+$$<p>시스템 벡터는 고유벡터로 표현할 수 있다.</p>
+$$
+|h\rangle = \int ds \langle s|h\rangle|s\rangle
 $$<p>고유기저에 대한 좌표는</p>
 $$
-F(s)
-=\langle s|h\rangle
+\langle s|h\rangle
 =\langle s|\hat{I}|h\rangle
 =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle
 =\int dt\langle s|t\rangle\langle t|h\rangle
 $$$$
-=\int dt e^{-st} h(t)
-$$<hr>
-<h3 id="2-라플라스-변환">2. 라플라스 변환</h3>
-<p><strong>라플라스 변환</strong>은 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
+=\int dt e^{-st} h(t)=H(s)
+$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 완전하게 동일함을 알 수 있다.</p>
 <hr>
-<h3 id="0-정리">0. 정리</h3>
-<p>(1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다</p>
+<h3 id="3-라플라스-변환">3. 라플라스 변환</h3>
+<p>아래는 동일한 것을 다른 관점으로 설명한 것이다.</p>
+<p>(1) 관점1: <strong>라플라스 변환</strong>은 convolution으로 모두 귀결되는 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
 $$
-e^{st},\quad s\in\mathbb{C}
-$$<p>(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.</p>
+H(s)=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다.</p>
 $$
-\lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right]
+H(s)=\langle s|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
 $$<hr>
-<h3 id="1-eigenfunction--eigenvalue">1. Eigenfunction &amp; Eigenvalue</h3>
-<p><strong>모든 합성곱에 대한 공통적인 eigenfunction이 존재한다.</strong> <strong>eigenfunction</strong>의 의미는 연산자를 통과하였을 때, &lsquo;기본성질이 변하지않는 함수`를 의미한다.</p>
-<p>이 eigenfunction은</p>
+<h3 id="4-대수방정식">4. 대수방정식</h3>
 $$
-e^{st},\quad s\in\mathbb{C}
-$$<p>이 eigenfunction에 대한 eigenvalue는</p>
+y''-7y'=7e^{t}\implies
+|f_1\rangle+|f_2\rangle=|f_3\rangle
+$$<p>(1) 관점1: <strong>라플라스 변환</strong>은 convolution으로 모두 귀결되는 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
 $$
-h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right]
-=\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st}
-=\lambda_{s}e^{st}
+|f_1\rangle\ast|s\rangle+|f_2\rangle\ast|s\rangle=|f_3\rangle\ast|s\rangle
 $$$$
-\lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+\lambda_1|s\rangle+\lambda_2|s\rangle=\lambda_3|s\rangle
+$$$$
+\lambda_1+\lambda_2=\lambda_3
+$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다.</p>
+$$
+\langle s|f_1\rangle+\langle s|f_2\rangle=\langle s|f_3\rangle
+$$$$
+\lambda_1+\lambda_2=\lambda_3
 $$<hr>
-<h3 id="2-laplace-transformation">2. Laplace transformation</h3>
-<p>위 eigenvalue를 라플라스 변환이라고 한다. 즉, <strong>라플라스 변환</strong>은 연산자의 입력 $e^{st}$에 대한 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
-$$
-\lambda_{s}=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
-$$<hr>
-<h3 id="3-대수방정식">3. 대수방정식</h3>
-<p>eigenfuction과 eigenvalue를 이용한다는 것은, 복잡한 식을 단순하게 바꿀 수 있는 편리한 도구를 사용한다는 말과 같다.
-convolution에 대한, eigenfuction, $e^{st}$ 은 모두 동일하므로, $e^{st}$은 나눠져서 사라지게 된다.</p>
-<p><strong>즉, eigenvalue에 대한 대수 방정식으로 바뀐다.</strong> 아래의 예를 보면, 쉽게 이해할 수 있다.</p>
-$$
-y''-7y'=7e^{t}
-$$$$
-\implies y''\ast e^{st}-7y'\ast e^{st}=7e^{t}\ast e^{st}
-$$$$
-\implies\lambda_1e^{st}+\lambda_2e^{st}=\lambda_3e^{st}
-$$$$
-\implies\lambda_1+\lambda_2=\lambda_3
-$$<hr>
-<h3 id="4-주의사항">4. 주의사항</h3>
-<p><strong>Laplace transform</strong>은 함수 $h\left(t\right)$ 이 <strong>선형/비선형 인지 상관없이</strong> 수학적으로 수행할 수 있다.</p>
+<h3 id="5-주의사항">5. 주의사항</h3>
+<p>Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.</p>
+<p>비선형 시스템은 중첩의 원리를 만족하지 않으므로, 임펄스 응답 h(t)와 전달 함수 H(s)라는 개념 자체가 시스템 전체를 대표할 수 없다. 따라서 이 문서에서 다루는 모든 시스템 분석 기법은 LSI 시스템을 전제로 한다.</p>
 
   <footer class="footline">
   </footer>
@@ -336,9 +335,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760632058"></script>
-    <script src="/js/clipboard/clipboard.min.js?1760632058" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760632058" defer></script>
-    <script src="/js/theme.js?1760632058" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760682611"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760682611" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760682611" defer></script>
+    <script src="/js/theme.js?1760682611" defer></script>
   </body>
 </html>
