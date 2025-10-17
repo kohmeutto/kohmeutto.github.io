@@ -23,28 +23,28 @@
     <meta itemprop="name" content="(b) Basis :: 수리전자물리학">
     <meta itemprop="description" content="1. 기저 추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.
 기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 2. 이산(유한, 무한)기저, 연속(무한)기저 이산 유한 기저: 셀 수 있고, 갯수가 유한, 이러한 기저로 이루어진 벡터는 유한 열벡터 라고 한다. 이산 무한 기저: 셀 수 있고, 갯수가 무한, 이러한 기저로 이루어진 벡터는 무한 열벡터 라고 한다. 연속 무한 기저: 셀 수 없음, 이러한 기저로 이루어진 벡터는 함수 벡터 라고 한다. 3. 이산기저와 쌍대 기저 이산 기저는 셀수 있는 기저 를 말한다. 기저 벡터들($|u_1\rangle$, $|u_2\rangle$, …)을 적절히 조합(선형 결합)하면 그 공간 안의 어떤 벡터라도 만들어 낼 수 있다. 임의의 벡터 $|v\rangle$를 다음과 같이 기저 벡터 {$|u_i\rangle$} 들의 합으로 다음과 같이 표현해보자.">
-    <meta itemprop="wordCount" content="529">
+    <meta itemprop="wordCount" content="466">
     <title>(b) Basis :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1760670745" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1760670745" defer></script>
-    <script src="/js/search-lunr.js?1760670745" defer></script>
-    <script src="/js/search.js?1760670745" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1760722304" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760722304" defer></script>
+    <script src="/js/search-lunr.js?1760722304" defer></script>
+    <script src="/js/search.js?1760722304" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1760670745";
+      window.relearn.index_js_url="/searchindex.en.js?1760722304";
     </script>
-    <script src="/js/lunr/lunr.min.js?1760670745" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1760670745" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1760670745" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1760670745" defer></script>
+    <script src="/js/lunr/lunr.min.js?1760722304" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760722304" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760722304" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760722304" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760670745" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760670745" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760670745" rel="stylesheet">
-    <link href="/css/theme.css?1760670745" rel="stylesheet">
-    <link href="/css/format-html.css?1760670745" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760722304" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760722304" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760722304" rel="stylesheet">
+    <link href="/css/theme.css?1760722304" rel="stylesheet">
+    <link href="/css/format-html.css?1760722304" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -119,7 +119,6 @@
         <li><a href="#2-이산유한-무한기저-연속무한기저">2. 이산(유한, 무한)기저, 연속(무한)기저</a></li>
         <li><a href="#3-이산기저와-쌍대-기저">3. 이산기저와 쌍대 기저</a></li>
         <li><a href="#4-연속무한기저와-쌍대기저">4. 연속무한기저와 쌍대기저</a></li>
-        <li><a href="#5-임펄스-기저">5. 임펄스 기저</a></li>
       </ul>
     </li>
   </ul>
@@ -195,13 +194,13 @@ $$
 $$<hr>
 <h3 id="4-연속무한기저와-쌍대기저">4. 연속무한기저와 쌍대기저</h3>
 <p>지금까지 우리는 기저 벡터를 $|u_1\rangle$, $|u_2\rangle$, &hellip; 와 같이 하나하나 셀 수 있는 경우를 다뤘다. 하지만 만약 벡터가 &lsquo;함수&rsquo;라면 어떨까, 예를 들어, 줄의 진동을 나타내는 파동 함수 $f(x)$를 생각해 보자. 이 함수 역시 하나의 Ket $|f\rangle$ 로 볼 수 있다.</p>
-<p>함수들이 사는 공간을 <strong>함수 공간(Function Space)</strong> 이라고 한다. 이 공간의 기저는 어떻게 표현할 수 있을까. 줄 위의 모든 점, 즉 모든 실수 x 각각에 대해, 그 지점에서의 상태를 나타내는 기저 벡터가 하나씩 존재한다고 상상해 보자. 이 기저 벡터를 <strong>위치 기저(position basis)</strong> 라고 부르며, $|x\rangle$ 라고 쓴다.</p>
+<p>함수들이 사는 공간을 <strong>함수 공간(Function Space)</strong> 이라고 한다. 이 공간의 기저는 어떻게 표현할 수 있을까. 줄 위의 모든 점, 즉 모든 실수 x 각각에 대해, 그 지점에서의 상태를 나타내는 기저 벡터가 하나씩 존재한다고 상상해 보자. 이 기저 벡터를 <strong>위치 기저(position basis)</strong> 라고 부르며, $|x\rangle$ 라고 쓴다. 이러한 기저는 <strong>임펄스 기저</strong> 라고도 한다.</p>
 <ul>
-<li>$|1.5\rangle$: $x=1.5$ 지점의 상태를 나타내는 기저 벡터</li>
-<li>$|3.14\rangle$: $x=3.14$ 지점의 상태를 나타내는 기저 벡터</li>
+<li>$|1.5\rangle=|\delta(x-1.5)\rangle$: $x=1.5$ 지점의 상태를 나타내는 기저 벡터</li>
+<li>$|3.14\rangle=|\delta(x-1.5)\rangle$: $x=3.14$ 지점의 상태를 나타내는 기저 벡터</li>
+<li>$|x&rsquo;\rangle=|\delta(x-x&rsquo;)\rangle$: $x=x&rsquo;$ 지점의 상태를 나타내는 기저 벡터</li>
 </ul>
-<p>이 기저 벡터 $|x\rangle$는 셀 수 없이 빽빽하게 연속적으로 존재한다.</p>
-<p>그렇다면, 이 연속적인 기저에 짝을 이루는 쌍대 기저 Bra는 무엇일까. 바로 $\langle 1.5|$이다. 이 Bra의 역할은 이산기저의 쌍대기저와 마찬가지로 &lsquo;성분 추출&rsquo;이다. 하지만 이번에 추출하는 것은 특정 &lsquo;성분&rsquo;이 아니라, 특정 &lsquo;지점에서의 함숫값&rsquo; 이다.</p>
+<p>이 기저 벡터 $|x\rangle$는 셀 수 없이 빽빽하게 연속적으로 존재한다. 그렇다면, 이 연속적인 기저에 짝을 이루는 쌍대 기저 Bra는 무엇일까. 바로 $\langle x|$이다. 이 Bra의 역할은 이산기저의 쌍대기저와 마찬가지로 &lsquo;성분 추출&rsquo;이다. 하지만 이번에 추출하는 것은 특정 &lsquo;성분&rsquo;이 아니라, 특정 &lsquo;지점에서의 함숫값&rsquo; 이다.</p>
 $$
 \langle x|f\rangle = f(x)
 $$<p>따라서, $|f\rangle$ 는 다음과 같이 쓸 수 있다.</p>
@@ -216,21 +215,6 @@ $$
 $$<p>따라서,</p>
 $$
 \langle x'|x\rangle = \delta(x-x')
-$$<hr>
-<h3 id="5-임펄스-기저">5. 임펄스 기저</h3>
-<p>임펄스 기저에는 크게 연속적인 경우와 이산적인 경우 두 가지 종류가 있다. 이 둘은 각자 다른 영역에서 <strong>&lsquo;완벽한 한 점&rsquo; 또는 &lsquo;순간&rsquo;을 나타내는 역할</strong>을 한다.</p>
-<p><strong>(1) 이산기저</strong></p>
-<p>변수가 정수처럼 띄엄띄엄 떨어진 이산적인 값을 가질 때 사용된다. 디지털 신호나 행렬을 다룰 때 기본이 된다. 이를 이산임펄스 기저라고 한다.</p>
-$$
-|n\rangle
-$$$$
-\langle m|n\rangle = \delta_{mn}
-$$<p><strong>(2) 연속기저</strong></p>
-<p>위치 기저(position basis)과 같은 종류의 기저를 연속임펄스기저라고 한다.</p>
-$$
-|x\rangle, |\tau\rangle, \cdots
-$$$$
-\langle x|x'\rangle=\delta(x-x'), \langle \tau|\tau'\rangle=\delta(\tau-\tau')
 $$
   <footer class="footline">
   </footer>
@@ -293,7 +277,7 @@ $$
             <li class="" data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/singnal_system/index.html"><a class="padding" href="/singnal_system/index.html">Linear operators &amp; System</a><ul id="R-subsections-c31430c6e1f5da728851752cac4b39a3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
@@ -327,9 +311,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760670745"></script>
-    <script src="/js/clipboard/clipboard.min.js?1760670745" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760670745" defer></script>
-    <script src="/js/theme.js?1760670745" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760722304"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760722304" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760722304" defer></script>
+    <script src="/js/theme.js?1760722304" defer></script>
   </body>
 </html>
