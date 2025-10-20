@@ -5,22 +5,50 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="(b) Normal operators(b) Hermitian(b) anti-Hermitian(b) Unitary(b) Copy-shift(b) Evoulution">
+    <meta name="description" content="1. 연산자 자체의 표현 (1) 이산기저
+$$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
+$$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
+$$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
+$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Normal operators :: 수리전자물리학">
-    <meta name="twitter:description" content="(b) Normal operators(b) Hermitian(b) anti-Hermitian(b) Unitary(b) Copy-shift(b) Evoulution">
-    <meta property="og:url" content="http://localhost:1313/linear_algebra/normal_operators/index.html">
+    <meta name="twitter:title" content="(b) Copy-shift :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 연산자 자체의 표현 (1) 이산기저
+$$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
+$$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
+$$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
+$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/normal_operators/b_copy_shift/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="Normal operators :: 수리전자물리학">
-    <meta property="og:description" content="(b) Normal operators(b) Hermitian(b) anti-Hermitian(b) Unitary(b) Copy-shift(b) Evoulution">
+    <meta property="og:title" content="(b) Copy-shift :: 수리전자물리학">
+    <meta property="og:description" content="1. 연산자 자체의 표현 (1) 이산기저
+$$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
+$$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
+$$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
+$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
-    <meta itemprop="name" content="Normal operators :: 수리전자물리학">
-    <meta itemprop="description" content="(b) Normal operators(b) Hermitian(b) anti-Hermitian(b) Unitary(b) Copy-shift(b) Evoulution">
-    <meta itemprop="wordCount" content="13">
-    <title>Normal operators :: 수리전자물리학</title>
-    <link href="/linear_algebra/normal_operators/index.xml" rel="alternate" type="application/rss+xml" title="Normal operators :: 수리전자물리학">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear algebra">
+    <meta itemprop="name" content="(b) Copy-shift :: 수리전자물리학">
+    <meta itemprop="description" content="1. 연산자 자체의 표현 (1) 이산기저
+$$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
+$$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
+$$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
+$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
+    <meta itemprop="wordCount" content="232">
+    <title>(b) Copy-shift :: 수리전자물리학</title>
     <link href="/css/auto-complete/auto-complete.min.css?1760977429" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1760977429" defer></script>
     <script src="/js/search-lunr.js?1760977429" defer></script>
@@ -45,9 +73,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/linear_algebra\/normal_operators\/index.html';
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..';
+      window.relearn.path='\/linear_algebra\/normal_operators\/b_copy_shift\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -95,7 +123,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/linear_algebra/normal_operators/index.html">
+  <body class="mobile-support html" data-url="/linear_algebra/normal_operators/b_copy_shift/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -106,17 +134,31 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-연산자-자체의-표현">1. 연산자 자체의 표현</a></li>
+        <li><a href="#2-ket의-작용">2. Ket의 작용</a></li>
+        <li><a href="#3-bra의-작용">3. Bra의 작용</a></li>
+        <li><a href="#4-상태-벡터의-작용">4. 상태 벡터의 작용</a></li>
+        <li><a href="#5-연속적-성분-표현">5. 연속적 성분 표현</a></li>
+        <li><a href="#6-주의-사항">6. 주의 사항</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Normal operators</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/normal_operators/index.html"><span itemprop="name">Normal operators</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Copy-shift</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/b_commutator/index.html" title="(b) Commutator (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/normal_operators/b_unitary/index.html" title="(b) Unitary (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/normal_operators/b_normal_operators/index.html" title="(b) Normal operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/normal_operators/b_evolution/index.html" title="(b) Evoulution (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -136,17 +178,120 @@
   <header class="headline">
   </header>
 
-<h1 id="normal-operators">Normal operators</h1>
+<h1 id="b-copy-shift">(b) Copy-shift</h1>
 
 <hr>
-<ul class="children children-type-tree children-sort-">
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_normal_operators/index.html">(b) Normal operators</a></li>
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_copy_shift/index.html">(b) Copy-shift</a></li>
-  <li class="children-title children-title-1"><a href="/linear_algebra/normal_operators/b_evolution/index.html">(b) Evoulution</a></li>
+<h3 id="1-연산자-자체의-표현">1. 연산자 자체의 표현</h3>
+<p><strong>(1) 이산기저</strong></p>
+$$
+\hat{S}_l
+=\sum_{n}|n+l\rangle\langle n^d|
+=\sum_{n}\gamma_n^{-1}|n+l\rangle\langle n|
+$$<p><strong>(2) 연속기저</strong></p>
+$$
+\hat{S}_\tau
+=\int^{\infty}_{-\infty}du |u+\tau\rangle\langle u^d|
+=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u+\tau\rangle\langle u|
+$$<hr>
+<h3 id="2-ket의-작용">2. Ket의 작용</h3>
+<p><strong>(1) 이산기저</strong></p>
+$$
+\hat{S}_l|n\rangle
+=|n+l\rangle
+$$<p>proof)</p>
+$$
+\hat{S}_l|n\rangle
+=\sum_{m}\gamma_m^{-1}|m+l\rangle\langle m|n\rangle
+=\sum_{m}|m+l\rangle\delta_{mn}
+=|n+l\rangle
+$$<p><strong>(2) 연속기저</strong></p>
+$$
+\hat{S}_\tau|u\rangle
+=|u+\tau\rangle
+$$<p>proof)</p>
+$$
+\hat{S}_\tau|u\rangle
+=\int^{\infty}_{-\infty}du' \gamma_{u'}^{-1}|u'+\tau\rangle\langle u'|u\rangle
+=\int^{\infty}_{-\infty}du' |u'+\tau\rangle\delta(u'-u)
+=|u+\tau\rangle
+$$<hr>
+<h3 id="3-bra의-작용">3. Bra의 작용</h3>
+<p><strong>(1) 이산기저</strong></p>
+$$
+\langle n^d|\hat{S}_l
+=\langle (n-l)^d|
+$$$$
+\langle n^d|\hat{S}_l
+=\gamma_{n-l}^{-1}\langle n-l|
+$$$$
+\langle n|\hat{S}_l
+=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|
+$$<p>proof)</p>
+$$
+\langle n|\hat{S}_l
+=\langle n|\sum_m \gamma_{m}^{-1}|m+l\rangle\langle m|
+=\sum_m \gamma_{m}^{-1}\langle n|m+l\rangle\langle m|
+=\sum_m \gamma_{m}^{-1}\gamma_{n}\delta_{n,m+l}\langle m|
+$$<p>크로네커 델타의 성질에 의해, $n=m+l$ 이외에는 모두 사라진다. 따라서,</p>
+$$
+=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|
+$$<p><strong>(2) 연속기저</strong></p>
+$$
+\langle u^d|\hat{S}_\tau=\langle (u-\tau)^d|
+$$$$
+\langle u^d|\hat{S}_\tau=\gamma_{u-\tau}^{-1}\langle u-\tau|
+$$$$
+\langle u|\hat{S}_\tau=\gamma_{u-\tau}^{-1}\gamma_{u}\langle u-\tau|
+$$<p>proof)</p>
+$$
+\langle u|\hat{S}_\tau
+=\langle u|\int du' \gamma^{-1}_{u'}|u'+\tau\rangle\langle u'|
+=\int du' \gamma^{-1}_{u'}\langle u|u'+\tau\rangle\langle u'|
+=\int du' \gamma^{-1}_{u'}\gamma_{u}\delta(u-u'-\tau)\langle u'|
+$$$$
+=\gamma_{u-\tau}^{-1}\gamma_{u}\langle u-\tau|
+$$<hr>
+<h3 id="4-상태-벡터의-작용">4. 상태 벡터의 작용</h3>
+<p><strong>(1) 이산기저</strong></p>
+$$
+|\varphi\rangle=\hat{S}_l|\psi\rangle
+$$<p>이 새로운 상태 $|\varphi\rangle$의 파동함수 $\varphi_n$는 다음과 같다.</p>
+$$
+\varphi_n
+=\langle n^d|\psi\rangle
+=\langle n^d|\hat{S}_l|\psi\rangle
+=\langle (n-l)^d|\psi\rangle
+=\psi_{n-l}
+$$<p><strong>(2) 연속기저</strong></p>
+$$
+|\varphi\rangle=\hat{S}_\tau|\psi\rangle
+$$<p>이 새로운 상태 $|\varphi\rangle$의 파동함수 $\varphi(u)$는 다음과 같다.</p>
+$$
+\varphi(u)=\langle u^d|\hat{S}_\tau|\varphi\rangle=\langle (u-\tau)^d|\psi\rangle=\psi(u-\tau)
+$$<hr>
+<h3 id="5-연속적-성분-표현">5. 연속적 성분 표현</h3>
+<p><strong>(1) 이산기저</strong></p>
+$$
+\langle m|\hat{S}_l|n\rangle
+=\langle m|n+l\rangle
+=\gamma_m\langle m^d|n+l\rangle
+=\gamma_m\delta_{m,n+l}
+$$<p><strong>(2) 연속기저</strong></p>
+$$
+\langle u|\hat{S}_\tau|u'\rangle
+=\langle u|u'+\tau\rangle
+=\gamma_u\langle u^d|u'+\tau\rangle
+=\gamma_u\delta(u-u'-\tau)
+$$<hr>
+<h3 id="6-주의-사항">6. 주의 사항</h3>
+$$
+|\psi(t+\tau)\rangle\ne\hat{S}_\tau|\psi(t)\rangle
+$$<ul>
+<li>$|\psi(t)\rangle$을 현재 찍은 사진이라고 생각하자.</li>
+<li>$\hat{S}_\tau$는 이 사진을 복사한 다음 $\tau$ 후에 전송하는 것이다.</li>
+<li>$|\psi(t+\tau)\rangle$는 $\tau$초 후에 찍은 사진이다.</li>
 </ul>
+<p>따라서 같을 수 없다.</p>
 
   <footer class="footline">
   </footer>
@@ -202,12 +347,12 @@
             <li class="alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/eigenvalue_problem/index.html"><a class="padding" href="/linear_algebra/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-b0908a9bacae59e6b5b925fecbcf8348" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
-            <li class="active parent alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu">
             <li class="" data-nav-url="/linear_algebra/normal_operators/b_normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_normal_operators/index.html">(b) Normal operators</a></li>
             <li class="" data-nav-url="/linear_algebra/normal_operators/b_hermitian/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
             <li class="" data-nav-url="/linear_algebra/normal_operators/b_anti_hermitian/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
             <li class="" data-nav-url="/linear_algebra/normal_operators/b_unitary/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
-            <li class="" data-nav-url="/linear_algebra/normal_operators/b_copy_shift/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_copy_shift/index.html">(b) Copy-shift</a></li>
+            <li class="active " data-nav-url="/linear_algebra/normal_operators/b_copy_shift/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_copy_shift/index.html">(b) Copy-shift</a></li>
             <li class="" data-nav-url="/linear_algebra/normal_operators/b_evolution/index.html"><a class="padding" href="/linear_algebra/normal_operators/b_evolution/index.html">(b) Evoulution</a></li></ul></li></ul></li>
             <li class="" data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
