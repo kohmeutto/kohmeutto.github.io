@@ -28,6 +28,9 @@
     <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_basis/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/determinant/b_determinant/index.html</loc>
   </url>
   <url>
@@ -40,7 +43,7 @@
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_ket/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_ket/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/hibert_vector/b_ket/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/series/b_laurents_series/index.html</loc>
@@ -86,6 +89,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_system/lsi/i_lsi/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/i_lsi/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_weak_solution/index.html</loc>
@@ -151,7 +157,7 @@
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_bra/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_bra/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/hibert_vector/b_bra/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/laurents_series/b_cauchy/index.html</loc>
@@ -160,10 +166,10 @@
     <loc>http://localhost:1313/ode_pde/homogeneous/b_cee/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_system/lsi/b_convolution_i/index.html</loc>
+    <loc>http://localhost:1313/linear_system/lsi/b_convolution/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_system/lsi/b_convolution_ii/index.html</loc>
+    <loc>http://localhost:1313/temp/b_convolution_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_determinant/index.html</loc>
@@ -191,6 +197,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
@@ -298,10 +307,10 @@
     <loc>http://localhost:1313/linear_algebra/determinant/b_gram/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_hibert_space/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/hibert_vector/b_hibert_space/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
@@ -337,7 +346,7 @@
     <loc>http://localhost:1313/tensor_analysis/basis_transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/hibert_vector/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_system/lsv/index.html</loc>
@@ -394,7 +403,10 @@
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_matrix_kernel/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_riesz/index.html</loc>
+    <loc>http://localhost:1313/temp/b_matrix_kernel/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/hibert_vector/b_riesz/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/normal_operators/b_unitary/index.html</loc>
@@ -451,9 +463,6 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dual_space/b_basis/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/temp/b_gradient_for_scalar/index.html</loc>
   </url>
   <url>
@@ -467,6 +476,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_syntax/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/b_syntax/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>

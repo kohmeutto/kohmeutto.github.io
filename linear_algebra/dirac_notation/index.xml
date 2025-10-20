@@ -3,10 +3,17 @@
   <channel>
     <title>Dirac notation :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_algebra/dirac_notation/index.html</link>
-    <description>(b) Ket&#xD;(b) Bra&#xD;(b) Operator&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
+    <description>(b) Basis&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Operator I&#xD;(b) Operator II&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_algebra/dirac_notation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Basis</title>
+      <link>http://localhost:1313/linear_algebra/dirac_notation/b_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dirac_notation/b_basis/index.html</guid>
+      <description>1. 기저 추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.&#xA;기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 2. 이산(유한, 무한)기저, 연속(무한)기저 이산 유한 기저: 셀 수 있고, 갯수가 유한, 이러한 기저로 이루어진 벡터는 유한 열벡터 라고 한다. 이산 무한 기저: 셀 수 있고, 갯수가 무한, 이러한 기저로 이루어진 벡터는 무한 열벡터 라고 한다. 연속 무한 기저: 셀 수 없음, 이러한 기저로 이루어진 벡터는 함수 벡터 라고 한다. (1) 이산기저</description>
+    </item>
     <item>
       <title>(b) Ket</title>
       <link>http://localhost:1313/linear_algebra/dirac_notation/b_ket/index.html</link>
@@ -19,13 +26,20 @@
       <link>http://localhost:1313/linear_algebra/dirac_notation/b_bra/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/dirac_notation/b_bra/index.html</guid>
-      <description>1. Bra (1) 유클리드 공간&#xA;“$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.&#xA;$$&#xD;\vec{a}\cdot:=\vec{a}^T:=[a]^T&#xD;$$$$&#xD;\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}&#xD;=[a]^T[b]&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}&#xD;$$$$&#xD;\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}&#xD;$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,&#xA;$$&#xD;\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$ 2. 단위 기저 벡터의 내적 (1) 이산기저 (Discrete Basis)</description>
+      <description>1. Bra (1) 유클리드 공간&#xA;“$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.&#xA;$$&#xD;\vec{a}\cdot:=\vec{a}^T:=[a]^T&#xD;$$$$&#xD;\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}&#xD;=[a]^T[b]&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}&#xD;$$$$&#xD;\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}&#xD;$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,&#xA;$$&#xD;\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아래와 같이 부른다.</description>
     </item>
     <item>
-      <title>(b) Operator</title>
-      <link>http://localhost:1313/linear_algebra/dirac_notation/b_operator/index.html</link>
+      <title>(b) Operator I</title>
+      <link>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_algebra/dirac_notation/b_operator/index.html</guid>
+      <guid>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</guid>
+      <description>1. 항등 연산자 (1) 이산기저 (Discrete Basis)&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;= \sum_{i,j} (G^{-1})^{ij}|u_i\rangle \langle u_j|&#xD;,\quad&#xD;\hat{I} = \sum_i |u_i\rangle \langle u_i|&#xD;$$proof)&#xA;$$&#xD;|\psi\rangle = \sum_i u_i|u_i\rangle&#xD;$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 듀얼 기저 벡터와 내적을 하면,&#xA;$$&#xD;u_i=\langle u^i|\psi\rangle&#xD;$$$$&#xD;|\psi\rangle = \sum_i \langle u^i|\psi\rangle|u_i\rangle&#xD;= \sum_i |u_i\rangle \langle u^i|\psi\rangle&#xD;$$따라서,&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;$$$$&#xD;=\sum_i|u_i\rangle\sum_j(G^{-1})^{ij}\langle u_j|&#xD;=\sum_{i,j}(G^{-1})^{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 연속 기저 (Continuous Basis)</description>
+    </item>
+    <item>
+      <title>(b) Operator II</title>
+      <link>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</guid>
       <description>1. Bra vs. 연산자 (1) Ket 벡터 $|f\rangle$: 본질&#xA;추상적인 Ket 벡터 $∣f\rangle$ 는 그 자체로 하나의 완벽한 ‘설계도’ 또는 ‘DNA’ 와 같다. 이 설계도 안에는 함수에 대한 모든 정보(특정 지점에서의 값, 변화율, 에너지, 운동량 등)가 잠재적 으로 전부 담겨 있다.&#xA;(2) Bra 벡터 $\langle v|$: 추출 연산자 (Extraction Operator)&#xA;역할 : $|f\rangle$가 가진 수많은 정보 중에서, 특정 정보 하나($v\rangle$ 성분)만을 추출(extract) 하여 하나의 숫자로 보여주는 연산자이다. 비유 : 전체 DNA($|f\rangle$)에서 눈 색깔 유전자($\langle v|$)정보만 쏙 뽑아내어 갈색이라는 값(스칼라)을 읽어내는 유전자 분석기 와 같다. 결과 : $\langle v∣f\rangle$ → 스칼라 (숫자) (3) $\hat{A}$: 변환 연산자 (Transformation Operator)</description>
     </item>
     <item>
@@ -33,14 +47,14 @@
       <link>http://localhost:1313/linear_algebra/dirac_notation/b_matrix_kernel/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/dirac_notation/b_matrix_kernel/index.html</guid>
-      <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다. ‘커널’이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다. 1. 이산기저와 행렬 (1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$(3) 행렬을 이용한 연산</description>
+      <description>1. 이산기저와 행렬 (1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$(3) 행렬을 이용한 연산&#xA;연산자 Â가 벡터 |ψ⟩에 작용하여 새로운 벡터 |φ⟩를 만드는 과정($|\phi\rangle = \hat{A}|\psi\rangle$)은, 행렬을 이용하여 다음과 같이 표현된다.</description>
     </item>
     <item>
       <title>(b) Syntax</title>
       <link>http://localhost:1313/linear_algebra/dirac_notation/b_syntax/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/dirac_notation/b_syntax/index.html</guid>
-      <description>1. 규칙과 관습 (1) 연산은 항상 Ket/Bra의 바깥에서 이루어진다.&#xA;수학적 연산을 나타내는 기호는 이름표 안으로 들어가지 않는다.&#xA;OK: $|a\rangle+|b\rangle$ NG: $|a+b\rangle$ (2) ‘모자(^)’ 기호는 공식적인 ‘연산자’ 선언이다.&#xA;연산자 기호 Â는 Ket의 이름표 안으로 들어가지 않는 것이 엄격한 관습이다. 위 (1)에서 보다싶이, 모자(^)는 연산자의 선언이므로 이름표 안으로 들어가지 않는다.&#xA;OK: $\hat{A}|\psi\rangle$ NG: $|\hat{A}\psi\rangle$ (3) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.</description>
+      <description>1. 규칙과 관습 (1) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;OK: $\hat{A}|\psi\rangle=|A\psi\rangle$ OK: $\hat{U}|\psi\rangle=|U\psi\rangle$ (2) 함수 인자(매개변수)는 허용된다.&#xA;일반적으로&#xA;OK: $|\psi(t)\rangle$ OK: $|\psi(x)\rangle$ (3) bar 안의 매개변수와 ket안의 매개변수가 중복되면 안된다.&#xA;NG: $\langle t|\psi(t)\rangle$ OK: $\langle x’|\psi(x)\rangle$ 2. Bra (1) 스칼라 곱&#xA;$$&#xD;\langle a\psi|=a^\ast\langle\psi|&#xD;$$proof)&#xA;$$&#xD;\langle a\psi|=(a|\psi\rangle)^\dagger=a^\ast\langle \psi|&#xD;$$(2) 연산자&#xA;$$&#xD;\langle U\psi|=\langle\psi|U^\dagger&#xD;$$proof)&#xA;$$&#xD;\langle U\psi|=(U|\psi\rangle)^\dagger=\langle \psi|U^\dagger&#xD;$$</description>
     </item>
   </channel>
 </rss>

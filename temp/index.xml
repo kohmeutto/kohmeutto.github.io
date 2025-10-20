@@ -29,6 +29,13 @@
       <description>Integral Transformation $$ T\{f(t)\}\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Laplace transformation $$ \langle s|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-st}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F\left(s\right)\right\rbrack $$ Fourier transformation, 비대칭형 $$ \langle\omega|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack e^{i\omega t}F\left(\omega\right)\right\rbrack $$ Fourier transformation, 대칭형 $$ \langle k|f\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{-ikx}f\left(k\right)\right\rbrack $$$$ \langle x|F\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{+ikx}F\left(k\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$</description>
     </item>
     <item>
+      <title>(b) Convolution I</title>
+      <link>http://localhost:1313/temp/b_convolution_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_convolution_i/index.html</guid>
+      <description>LSI 연산자 정리&#xA;(1) $\hat{H}|x’\rangle=|h(x-x’)\rangle$&#xA;(2) $\hat{H}=|h\rangle\ast=\int dx’ |h(x-x’)\rangle\langle x’|$&#xA;(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$&#xA;1. 대표적인 LSI operators LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. 예외 없이 모든 LSI 연산자들은 합성곱(Convolution)으로 표현 될 수 있다는 공통점을 가진다.&#xA;미분 (Differentiation) $$ |\psi&#39;\rangle=\hat{D}|\psi\rangle $$$$ \psi&#39;(x)=\langle x|\psi&#39;\rangle=\langle x|\hat{D}|\psi\rangle=\frac{d}{dx}\psi(x) $$ 적분 (Integration) $$ |g\rangle=\hat{D}^{-1}|f\rangle $$$$ g(x)=\langle x|g\rangle=\langle x|\hat{D}^{-1}|f\rangle=\int dx f(x) $$ 이동 (Shift / Delay) $$ |\psi(t-\tau)\rangle=\hat{S}_{\tau}|\psi(t)\rangle $$ 스케일링 (Scaling) $$ |a\psi\rangle=a|\psi\rangle $$ 2. 모든 LSI 연산자는 합성곱 귀결된다. 어떤 신호 $|\psi\rangle$든, 그 신호는 모든 순간의 임펄스(impulse) 기저 $|\tau\rangle$들의 연속적인 합(적분)으로 표현할 수 있다. 이는 디랙 델타 함수의 기본 성질이다.</description>
+    </item>
+    <item>
       <title>(b) Determinant</title>
       <link>http://localhost:1313/temp/b_determinant/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -85,11 +92,25 @@
       <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리 기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
     </item>
     <item>
+      <title>(b) Matrix &amp; Kernel</title>
+      <link>http://localhost:1313/temp/b_matrix_kernel/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_matrix_kernel/index.html</guid>
+      <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다. ‘커널’이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다. 1. 이산기저와 행렬 (1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|&#xD;$$(3) 행렬을 이용한 연산</description>
+    </item>
+    <item>
       <title>(b) Gradient for scalar</title>
       <link>http://localhost:1313/temp/b_gradient_for_scalar/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/b_gradient_for_scalar/index.html</guid>
       <description>1. Gradient의 의미 등위선 또는 등위면에서 법선(수직) 뱡향의 기울기 이다.&#xA;2. Gradient for scalar 매개변수 공간 -&gt; 실공간 직교좌표계&#xA;$$&#xD;\nabla_u&#xD;:=\hat{u}^j\frac{\partial}{\partial u^j} \implies&#xD;\nabla&#xD;:=\vec{h}^j\frac{\partial}{\partial u^j}&#xD;$$ 데카르트좌표계: $h_1=1, h_2=1, h_3=1$ 원통좌표계: $h_1=1, h_2=\rho, h_3=1$ 구좌표계: $h_1=1, h_2=r, h_3=r\sin\theta$ (2) 실공간 직교좌표계&#xA;$$&#xD;\nabla&#xD;:=\hat{e}_j\frac{\partial}{h_j\partial u^j}&#xD;$$proof)&#xA;일반적으로, suffix가 동일한 공변가저와 반변기저의 내적은 1이다. 직교좌표계에서, 공변기저와 반변기저의 방향은 동일하다. $$&#xD;\vec{h}^j&#xD;=h^j\hat{e}^j&#xD;=h^j\hat{e}_j&#xD;,\quad&#xD;h_jh^j&#xD;=1&#xD;$$따라서,&#xA;$$&#xD;\vec{h}^j&#xD;=\hat{e}_j\frac{1}{h_j}&#xD;$$위 식을 일반식에 대입하면,</description>
+    </item>
+    <item>
+      <title>(b) Syntax</title>
+      <link>http://localhost:1313/temp/b_syntax/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_syntax/index.html</guid>
+      <description>1. 규칙과 관습 (1) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.&#xA;OK: $a|\psi\rangle=|a\psi\rangle$ OK: $U|\psi\rangle=|U\psi\rangle$ (2) 함수 인자에 대한 연산은 이름표 내부에서 허용된다.&#xA;일반저그로&#xA;OK: $|\psi(t+a)\rangle=\hat{T}(-a)|\psi\rangle$ |f(t+a)⟩와 같은 표현이 허용되는 이유는, + 연산이 벡터 |f⟩에 작용하는 것이 아니라, 이름표로 사용된 함수 f의 입력 인자(argument) t 에 작용하기 때문이다. 이것은 이동 연산자 T̂(-a)가 |f⟩에 작용한 결과 벡터에 대한 별명이다.</description>
     </item>
     <item>
       <title>[GC] Operation</title>

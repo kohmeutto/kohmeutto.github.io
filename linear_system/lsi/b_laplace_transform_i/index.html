@@ -51,28 +51,28 @@ $$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ 
 $$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
 proof)
 연산자는 스팩트럼 분해에 의해서,">
-    <meta itemprop="wordCount" content="272">
+    <meta itemprop="wordCount" content="306">
     <title>(b) Laplace transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1760722304" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1760722304" defer></script>
-    <script src="/js/search-lunr.js?1760722304" defer></script>
-    <script src="/js/search.js?1760722304" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1760927174" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760927174" defer></script>
+    <script src="/js/search-lunr.js?1760927174" defer></script>
+    <script src="/js/search.js?1760927174" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1760722304";
+      window.relearn.index_js_url="/searchindex.en.js?1760927174";
     </script>
-    <script src="/js/lunr/lunr.min.js?1760722304" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1760722304" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1760722304" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1760722304" defer></script>
+    <script src="/js/lunr/lunr.min.js?1760927174" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760927174" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760927174" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760927174" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760722304" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760722304" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760722304" rel="stylesheet">
-    <link href="/css/theme.css?1760722304" rel="stylesheet">
-    <link href="/css/format-html.css?1760722304" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760927174" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760927174" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760927174" rel="stylesheet">
+    <link href="/css/theme.css?1760927174" rel="stylesheet">
+    <link href="/css/format-html.css?1760927174" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -147,7 +147,8 @@ proof)
         <li><a href="#2-state-vector--operator">2. State vector &amp; operator</a></li>
         <li><a href="#3-라플라스-변환">3. 라플라스 변환</a></li>
         <li><a href="#4-대수방정식">4. 대수방정식</a></li>
-        <li><a href="#5-주의사항">5. 주의사항</a></li>
+        <li><a href="#5-라플라스-역변환">5. 라플라스 역변환</a></li>
+        <li><a href="#6-주의사항">6. 주의사항</a></li>
       </ul>
     </li>
   </ul>
@@ -211,16 +212,14 @@ $$
 |h\rangle\ast = \int ds H(s)|s\rangle\langle s|
 $$<p>시스템 벡터는 고유벡터로 표현할 수 있다.</p>
 $$
-|h\rangle = \int ds \langle s|h\rangle|s\rangle
+|h\rangle
+= \int ds \langle s^d|h\rangle|s\rangle
+= \frac{1}{2\pi i}\int ds H(s)|s\rangle
 $$<p>고유기저에 대한 좌표는</p>
 $$
-\langle s|h\rangle
-=\langle s|\hat{I}|h\rangle
-=\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle
-=\int dt\langle s|t\rangle\langle t|h\rangle
-$$$$
-=\int dt e^{-st} h(t)=H(s)
-$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 완전하게 동일함을 알 수 있다.</p>
+\langle s^d|h\rangle
+=\frac{1}{2\pi i}H(s)
+$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 유사함을 알 수 있다.</p>
 <hr>
 <h3 id="3-라플라스-변환">3. 라플라스 변환</h3>
 <p>아래는 동일한 것을 다른 관점으로 설명한 것이다.</p>
@@ -248,7 +247,18 @@ $$
 $$$$
 \lambda_1+\lambda_2=\lambda_3
 $$<hr>
-<h3 id="5-주의사항">5. 주의사항</h3>
+<h3 id="5-라플라스-역변환">5. 라플라스 역변환</h3>
+<p>$|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이다.</p>
+$$
+\langle t|h\rangle
+= \langle t|\left(\int ds H(s)|s\rangle \right)
+= \int ds H(s)\langle t|s\rangle
+= \int ds H(s)e^{st}
+$$<p>브라연산자는 모두 선형이므로(필수 조건이며, 선택적인 성질이 아님)</p>
+$$
+\langle s|\left(\int dt |t\rangle\langle t|\right)|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<hr>
+<h3 id="6-주의사항">6. 주의사항</h3>
 <p>Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.</p>
 <p>비선형 시스템은 중첩의 원리를 만족하지 않으므로, 임펄스 응답 h(t)와 전달 함수 H(s)라는 개념 자체가 시스템 전체를 대표할 수 없다. 따라서 이 문서에서 다루는 모든 시스템 분석 기법은 LSI 시스템을 전제로 한다.</p>
 
@@ -303,7 +313,7 @@ $$<hr>
             <li class="parent " data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-url="/linear_system/lsi/index.html"><a class="padding" href="/linear_system/lsi/index.html">LSI</a><ul id="R-subsections-6edefbcbba05c9cebe64fd7be58a0ff7" class="collapsible-menu">
             <li class="" data-nav-url="/linear_system/lsi/i_lsi/index.html"><a class="padding" href="/linear_system/lsi/i_lsi/index.html">(i) LSI</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_convolution_ii/index.html"><a class="padding" href="/linear_system/lsi/b_convolution_ii/index.html">(b) Convolution</a></li>
+            <li class="" data-nav-url="/linear_system/lsi/b_convolution/index.html"><a class="padding" href="/linear_system/lsi/b_convolution/index.html">(b) Convolution</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_causality/index.html"><a class="padding" href="/linear_system/lsi/b_causality/index.html">(b) Causality</a></li>
             <li class="active " data-nav-url="/linear_system/lsi/b_laplace_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
@@ -347,9 +357,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760722304"></script>
-    <script src="/js/clipboard/clipboard.min.js?1760722304" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760722304" defer></script>
-    <script src="/js/theme.js?1760722304" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760927174"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760927174" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760927174" defer></script>
+    <script src="/js/theme.js?1760927174" defer></script>
   </body>
 </html>

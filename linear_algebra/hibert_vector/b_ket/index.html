@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
+    <meta name="description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Ket :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/hibert_vector/b_ket/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Ket :: 수리전자물리학">
+    <meta property="og:description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear algebra">
+    <meta itemprop="name" content="(b) Ket :: 수리전자물리학">
+    <meta itemprop="description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
+    <meta itemprop="wordCount" content="324">
+    <title>(b) Ket :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1760850137" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1760850137" defer></script>
+    <script src="/js/search-lunr.js?1760850137" defer></script>
+    <script src="/js/search.js?1760850137" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1760850137";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1760850137" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1760850137" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1760850137" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1760850137" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760850137" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1760850137" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1760850137" rel="stylesheet">
+    <link href="/css/theme.css?1760850137" rel="stylesheet">
+    <link href="/css/format-html.css?1760850137" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_algebra\/hibert_vector\/b_ket\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/linear_algebra/hibert_vector/b_ket/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-벡터의-본질">1. 벡터의 본질</a></li>
+        <li><a href="#2-벡터의-표기-ket">2. 벡터의 표기, Ket</a></li>
+        <li><a href="#3-본질과-표현">3. 본질과 표현</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/hibert_vector/index.html"><span itemprop="name">Hilbert vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Ket</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/hibert_vector/index.html" title="Hilbert vector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/hibert_vector/b_bra/index.html" title="(b) Bra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-ket">(b) Ket</h1>
+
+<hr>
+<h3 id="1-벡터의-본질">1. 벡터의 본질</h3>
+<p>우리가 수학과 물리학에서 다루는 많은 대상은 <strong>&lsquo;벡터(vector)&rsquo;</strong> 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 &lsquo;덧셈&rsquo;과 &lsquo;스칼라 곱&rsquo;이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 <strong>벡터 공간(Vector Space)</strong> 이라고 부른다.</p>
+<ul>
+<li>덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A + 화살표 B = 새로운 화살표 C)</li>
+<li>스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표)</li>
+</ul>
+<p>이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.</p>
+<hr>
+<h3 id="2-벡터의-표기-ket">2. 벡터의 표기, Ket</h3>
+<p>문제는 이들을 표현하는 방식이 제각각이라는 것이다. 화살표는 (x, y, z) 같은 좌표로, 다항식은 $ax^2 + bx + c$ 같은 형태로 표현된다. 이렇게 겉모습이 다른 대상들을 하나의 일관된 언어로 표현하기 위해, 물리학자 폴 디랙(Paul Dirac)은 천재적인 표기법을 도입했다. 바로 <strong>Ket (켓) 벡터</strong> 이다.</p>
+<ul>
+<li>Ket 벡터: 벡터의 이름이나 기호를 꺾쇠  $|\text{{이름}}\rangle$ 안에 넣어 표현한다.</li>
+</ul>
+$$
+|v\rangle, |\psi\rangle, |\text{고양이}⟩
+$$<p>Ket의 가장 중요한 철학은 <strong>&lsquo;표현으로부터의 자유&rsquo;</strong> 이다. $|v\rangle$ 라는 기호는 벡터 v의 좌표나 성분이 무엇인지에 상관없이, <strong>&lsquo;v라는 상태 또는 대상 그 자체&rsquo;</strong> 를 의미하는 <strong>추상적인 기호</strong>이다.</p>
+<ul>
+<li>3차원 공간의 위치 벡터 r은 $|r\rangle$ 이다.</li>
+<li>어떤 입자의 운동량 p는 $|p\rangle$ 이다.</li>
+<li>함수 f(x) 역시 하나의 벡터로 취급하여 $|f\rangle$ 라고 쓸 수 있다.</li>
+<li>전자의 상태가 &lsquo;스핀 업&rsquo;이라면, 그 상태를 $|\text{스핀업}\rangle$ 또는 $|↑\rangle$ 이라고 쓸 수 있다.</li>
+</ul>
+<p>이처럼 <strong>Ket은 우리가 다루고자 하는 대상을 그 본질적인 &lsquo;상태&rsquo;로 간주</strong> 하고, 복잡한 겉모습에서 벗어나 통일된 규칙을 적용할 수 있게 해주는 강력한 첫걸음이다.</p>
+<hr>
+<h3 id="3-본질과-표현">3. 본질과 표현</h3>
+<p><strong>비유: &lsquo;보라색&rsquo;이라는 색깔</strong></p>
+<p><strong>(1) 추상적인 벡터</strong></p>
+$$
+|f\rangle
+$$<p>이것은 <strong>&lsquo;보라색&rsquo;</strong> 이라는 색깔 그 자체이다. &lsquo;보라색&rsquo;이 어떤 색인지 알고 있고, 다른 색과 구별할 수 있다. 이것이 벡터의 추상적이고 본질적인 존재이다.</p>
+<p><strong>(2) 구체적인 표현</strong></p>
+<p>이제 이 &lsquo;보라색&rsquo;을 컴퓨터에 입력하려면 어떻게 해야 할끼? <strong>숫자로 된 &lsquo;색상 코드&rsquo;</strong> 가 필요하다. 하지만 색상 코드를 정하려면, 먼저 어떤 <strong>&lsquo;색 공간(color space)&rsquo;</strong> 을 사용할지 약속(기저 선택)해야 한다. 빛의 삼원색(Red, Green, Blue)을 기준으로 삼으면,</p>
+$$
+|f\rangle
+=128|\text{Red}\rangle+0|\text{Green}\rangle+128|\text{Blue}\rangle
+=[128\,\,0\,\,128]^T
+$$<p>위와 같이 <strong>기저가 유한하면, 열벡터로 표현 가능</strong> 하다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/linear_algebra/euclidean_vector/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-90b593c3e6ccd56c7ef6568dac3474c2" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/einstein-notation/index.html"><a class="padding" href="/linear_algebra/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-46ff162fccdae67c9ac626252f035c5e" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/linear_algebra/hibert_vector/index.html"><a class="padding" href="/linear_algebra/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-3952275d04515a95653ad4d10035e985" class="collapsible-menu">
+            <li class="active " data-nav-url="/linear_algebra/hibert_vector/b_ket/index.html"><a class="padding" href="/linear_algebra/hibert_vector/b_ket/index.html">(b) Ket</a></li>
+            <li class="" data-nav-url="/linear_algebra/hibert_vector/b_bra/index.html"><a class="padding" href="/linear_algebra/hibert_vector/b_bra/index.html">(b) Bra</a></li>
+            <li class="" data-nav-url="/linear_algebra/hibert_vector/b_hibert_space/index.html"><a class="padding" href="/linear_algebra/hibert_vector/b_hibert_space/index.html">(b) Hibert space</a></li>
+            <li class="" data-nav-url="/linear_algebra/hibert_vector/b_riesz/index.html"><a class="padding" href="/linear_algebra/hibert_vector/b_riesz/index.html">(b) Riesz representation theorem</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/dirac_notation/index.html"><a class="padding" href="/linear_algebra/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-2fd45bf5b7dbc60084758fab76856087" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/eigenvalue_problem/index.html"><a class="padding" href="/linear_algebra/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-b0908a9bacae59e6b5b925fecbcf8348" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/series/index.html"><a class="padding" href="/series/index.html">Series</a><ul id="R-subsections-0fef00c4d886788ea7314a31468925b6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1760850137"></script>
+    <script src="/js/clipboard/clipboard.min.js?1760850137" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1760850137" defer></script>
+    <script src="/js/theme.js?1760850137" defer></script>
+  </body>
+</html>
