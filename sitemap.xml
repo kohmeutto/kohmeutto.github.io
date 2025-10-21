@@ -94,6 +94,9 @@
     <loc>http://localhost:1313/temp/i_lsi/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/i_lsi2/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_weak_solution/index.html</loc>
   </url>
   <url>
@@ -463,6 +466,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_algebra/normal_operators/b_copy_shift/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/b_gradient_for_scalar/index.html</loc>
   </url>
   <url>
@@ -521,6 +527,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_algebra/normal_operators/b_evolution/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html</loc>
