@@ -9,10 +9,11 @@
 $$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
 $$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
 $$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
-$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_l|n\rangle=\sum_{m}|m&#43;l\rangle\langle m^d|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
 $$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
-$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
-$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\langle u&#39;^d|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$proof)
+$$\langle n^d|\hat{S}_l=\langle n|\sum_m |m&#43;l\rangle\langle m^d|=\sum_m \langle n^d|m&#43;l\rangle\langle m^d|=\sum_m \delta_{n,m&#43;l}\langle m^d|$$크로네커 델타의 성질에 의해, $n=m&#43;l$ 이외에는 모두 사라진다. 따라서,">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Copy-shift :: 수리전자물리학">
@@ -20,10 +21,11 @@ $$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n
 $$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
 $$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
 $$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
-$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_l|n\rangle=\sum_{m}|m&#43;l\rangle\langle m^d|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
 $$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
-$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
-$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\langle u&#39;^d|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$proof)
+$$\langle n^d|\hat{S}_l=\langle n|\sum_m |m&#43;l\rangle\langle m^d|=\sum_m \langle n^d|m&#43;l\rangle\langle m^d|=\sum_m \delta_{n,m&#43;l}\langle m^d|$$크로네커 델타의 성질에 의해, $n=m&#43;l$ 이외에는 모두 사라진다. 따라서,">
     <meta property="og:url" content="http://localhost:1313/linear_algebra/normal_operators/b_copy_shift/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Copy-shift :: 수리전자물리학">
@@ -31,10 +33,11 @@ $$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n
 $$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
 $$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
 $$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
-$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_l|n\rangle=\sum_{m}|m&#43;l\rangle\langle m^d|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
 $$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
-$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
-$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\langle u&#39;^d|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$proof)
+$$\langle n^d|\hat{S}_l=\langle n|\sum_m |m&#43;l\rangle\langle m^d|=\sum_m \langle n^d|m&#43;l\rangle\langle m^d|=\sum_m \delta_{n,m&#43;l}\langle m^d|$$크로네커 델타의 성질에 의해, $n=m&#43;l$ 이외에는 모두 사라진다. 따라서,">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
@@ -43,32 +46,33 @@ $$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n
 $$\hat{S}_l=\sum_{n}|n&#43;l\rangle\langle n^d|=\sum_{n}\gamma_n^{-1}|n&#43;l\rangle\langle n|$$(2) 연속기저
 $$\hat{S}_\tau=\int^{\infty}_{-\infty}du |u&#43;\tau\rangle\langle u^d|=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u&#43;\tau\rangle\langle u|$$ 2. Ket의 작용 (1) 이산기저
 $$\hat{S}_l|n\rangle=|n&#43;l\rangle$$proof)
-$$\hat{S}_l|n\rangle=\sum_{m}\gamma_m^{-1}|m&#43;l\rangle\langle m|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
+$$\hat{S}_l|n\rangle=\sum_{m}|m&#43;l\rangle\langle m^d|n\rangle=\sum_{m}|m&#43;l\rangle\delta_{mn}=|n&#43;l\rangle$$(2) 연속기저
 $$\hat{S}_\tau|u\rangle=|u&#43;\tau\rangle$$proof)
-$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; \gamma_{u&#39;}^{-1}|u&#39;&#43;\tau\rangle\langle u&#39;|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
-$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n-l}^{-1}\langle n-l|$$$$\langle n|\hat{S}_l=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|$$proof)">
-    <meta itemprop="wordCount" content="232">
+$$\hat{S}_\tau|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\langle u&#39;^d|u\rangle=\int^{\infty}_{-\infty}du&#39; |u&#39;&#43;\tau\rangle\delta(u&#39;-u)=|u&#43;\tau\rangle$$ 3. Bra의 작용 (1) 이산기저
+$$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$proof)
+$$\langle n^d|\hat{S}_l=\langle n|\sum_m |m&#43;l\rangle\langle m^d|=\sum_m \langle n^d|m&#43;l\rangle\langle m^d|=\sum_m \delta_{n,m&#43;l}\langle m^d|$$크로네커 델타의 성질에 의해, $n=m&#43;l$ 이외에는 모두 사라진다. 따라서,">
+    <meta itemprop="wordCount" content="183">
     <title>(b) Copy-shift :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761194848" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761194848" defer></script>
-    <script src="/js/search-lunr.js?1761194848" defer></script>
-    <script src="/js/search.js?1761194848" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761205167" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761205167" defer></script>
+    <script src="/js/search-lunr.js?1761205167" defer></script>
+    <script src="/js/search.js?1761205167" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761194848";
+      window.relearn.index_js_url="/searchindex.en.js?1761205167";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761194848" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761194848" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761194848" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761194848" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761205167" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761205167" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761205167" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761205167" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761194848" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761194848" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761194848" rel="stylesheet">
-    <link href="/css/theme.css?1761194848" rel="stylesheet">
-    <link href="/css/format-html.css?1761194848" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761205167" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761205167" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761205167" rel="stylesheet">
+    <link href="/css/theme.css?1761205167" rel="stylesheet">
+    <link href="/css/format-html.css?1761205167" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -144,7 +148,6 @@ $$\langle n^d|\hat{S}_l=\langle (n-l)^d|$$$$\langle n^d|\hat{S}_l=\gamma_{n
         <li><a href="#3-bra의-작용">3. Bra의 작용</a></li>
         <li><a href="#4-상태-벡터의-작용">4. 상태 벡터의 작용</a></li>
         <li><a href="#5-연속적-성분-표현">5. 연속적 성분 표현</a></li>
-        <li><a href="#6-주의-사항">6. 주의 사항</a></li>
       </ul>
     </li>
   </ul>
@@ -201,7 +204,7 @@ $$
 $$<p>proof)</p>
 $$
 \hat{S}_l|n\rangle
-=\sum_{m}\gamma_m^{-1}|m+l\rangle\langle m|n\rangle
+=\sum_{m}|m+l\rangle\langle m^d|n\rangle
 =\sum_{m}|m+l\rangle\delta_{mn}
 =|n+l\rangle
 $$<p><strong>(2) 연속기저</strong></p>
@@ -211,7 +214,7 @@ $$
 $$<p>proof)</p>
 $$
 \hat{S}_\tau|u\rangle
-=\int^{\infty}_{-\infty}du' \gamma_{u'}^{-1}|u'+\tau\rangle\langle u'|u\rangle
+=\int^{\infty}_{-\infty}du' |u'+\tau\rangle\langle u'^d|u\rangle
 =\int^{\infty}_{-\infty}du' |u'+\tau\rangle\delta(u'-u)
 =|u+\tau\rangle
 $$<hr>
@@ -220,36 +223,26 @@ $$<hr>
 $$
 \langle n^d|\hat{S}_l
 =\langle (n-l)^d|
-$$$$
-\langle n^d|\hat{S}_l
-=\gamma_{n-l}^{-1}\langle n-l|
-$$$$
-\langle n|\hat{S}_l
-=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|
 $$<p>proof)</p>
 $$
-\langle n|\hat{S}_l
-=\langle n|\sum_m \gamma_{m}^{-1}|m+l\rangle\langle m|
-=\sum_m \gamma_{m}^{-1}\langle n|m+l\rangle\langle m|
-=\sum_m \gamma_{m}^{-1}\gamma_{n}\delta_{n,m+l}\langle m|
+\langle n^d|\hat{S}_l
+=\langle n|\sum_m |m+l\rangle\langle m^d|
+=\sum_m \langle n^d|m+l\rangle\langle m^d|
+=\sum_m \delta_{n,m+l}\langle m^d|
 $$<p>크로네커 델타의 성질에 의해, $n=m+l$ 이외에는 모두 사라진다. 따라서,</p>
 $$
-=\gamma_{n-l}^{-1}\gamma_{n}\langle n-l|
+=\langle (n-l)^d|
 $$<p><strong>(2) 연속기저</strong></p>
 $$
 \langle u^d|\hat{S}_\tau=\langle (u-\tau)^d|
-$$$$
-\langle u^d|\hat{S}_\tau=\gamma_{u-\tau}^{-1}\langle u-\tau|
-$$$$
-\langle u|\hat{S}_\tau=\gamma_{u-\tau}^{-1}\gamma_{u}\langle u-\tau|
 $$<p>proof)</p>
 $$
-\langle u|\hat{S}_\tau
-=\langle u|\int du' \gamma^{-1}_{u'}|u'+\tau\rangle\langle u'|
-=\int du' \gamma^{-1}_{u'}\langle u|u'+\tau\rangle\langle u'|
-=\int du' \gamma^{-1}_{u'}\gamma_{u}\delta(u-u'-\tau)\langle u'|
+\langle u^d|\hat{S}_\tau
+=\langle u^d|\int du' |u'+\tau\rangle\langle u'^d|
+=\int du'\langle u^d|u'+\tau\rangle\langle u'^d|
 $$$$
-=\gamma_{u-\tau}^{-1}\gamma_{u}\langle u-\tau|
+=\int du'\delta(u-u'-\tau)\langle u'^d|
+=\langle (u-\tau)^d|
 $$<hr>
 <h3 id="4-상태-벡터의-작용">4. 상태 벡터의 작용</h3>
 <p><strong>(1) 이산기저</strong></p>
@@ -272,27 +265,17 @@ $$<hr>
 <h3 id="5-연속적-성분-표현">5. 연속적 성분 표현</h3>
 <p><strong>(1) 이산기저</strong></p>
 $$
-\langle m|\hat{S}_l|n\rangle
+\langle m^d|\hat{S}_l|n\rangle
 =\langle m|n+l\rangle
-=\gamma_m\langle m^d|n+l\rangle
-=\gamma_m\delta_{m,n+l}
+=\langle m^d|n+l\rangle
+=\delta_{m,n+l}
 $$<p><strong>(2) 연속기저</strong></p>
 $$
-\langle u|\hat{S}_\tau|u'\rangle
-=\langle u|u'+\tau\rangle
-=\gamma_u\langle u^d|u'+\tau\rangle
-=\gamma_u\delta(u-u'-\tau)
-$$<hr>
-<h3 id="6-주의-사항">6. 주의 사항</h3>
+\langle u^d|\hat{S}_\tau|u'\rangle
+=\langle u^d|u'+\tau\rangle
+=\langle u^d|u'+\tau\rangle
+=\delta(u-u'-\tau)
 $$
-|\psi(t+\tau)\rangle\ne\hat{S}_\tau|\psi(t)\rangle
-$$<ul>
-<li>$|\psi(t)\rangle$을 현재 찍은 사진이라고 생각하자.</li>
-<li>$\hat{S}_\tau$는 이 사진을 복사한 다음 $\tau$ 후에 전송하는 것이다.</li>
-<li>$|\psi(t+\tau)\rangle$는 $\tau$초 후에 찍은 사진이다.</li>
-</ul>
-<p>따라서 같을 수 없다.</p>
-
   <footer class="footline">
   </footer>
 </article>
@@ -389,9 +372,9 @@ $$<ul>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761194848"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761194848" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761194848" defer></script>
-    <script src="/js/theme.js?1761194848" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761205167"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761205167" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761205167" defer></script>
+    <script src="/js/theme.js?1761205167" defer></script>
   </body>
 </html>
