@@ -127,6 +127,13 @@
       <description>1. Gradient의 의미 등위선 또는 등위면에서 법선(수직) 뱡향의 기울기 이다.&#xA;2. Gradient for scalar 매개변수 공간 -&gt; 실공간 직교좌표계&#xA;$$&#xD;\nabla_u&#xD;:=\hat{u}^j\frac{\partial}{\partial u^j} \implies&#xD;\nabla&#xD;:=\vec{h}^j\frac{\partial}{\partial u^j}&#xD;$$ 데카르트좌표계: $h_1=1, h_2=1, h_3=1$ 원통좌표계: $h_1=1, h_2=\rho, h_3=1$ 구좌표계: $h_1=1, h_2=r, h_3=r\sin\theta$ (2) 실공간 직교좌표계&#xA;$$&#xD;\nabla&#xD;:=\hat{e}_j\frac{\partial}{h_j\partial u^j}&#xD;$$proof)&#xA;일반적으로, suffix가 동일한 공변가저와 반변기저의 내적은 1이다. 직교좌표계에서, 공변기저와 반변기저의 방향은 동일하다. $$&#xD;\vec{h}^j&#xD;=h^j\hat{e}^j&#xD;=h^j\hat{e}_j&#xD;,\quad&#xD;h_jh^j&#xD;=1&#xD;$$따라서,&#xA;$$&#xD;\vec{h}^j&#xD;=\hat{e}_j\frac{1}{h_j}&#xD;$$위 식을 일반식에 대입하면,</description>
     </item>
     <item>
+      <title>(b) Laplace transform II</title>
+      <link>http://localhost:1313/temp/b_laplace_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_laplace_transform_ii/index.html</guid>
+      <description>1. 라플라스 변환 (1) 단방향 라플라스 변환&#xA;$$&#xD;\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)&#xD;=\langle s^L|f\cdot u\rangle&#xD;=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack&#xD;$$(2) 양방향 라플라스 변환, causal system&#xA;$$&#xD;\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)&#xD;=\langle s^L|f\rangle&#xD;=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack&#xD;$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.&#xA;2. 중요변환 1-1) 디렉 델타 함수&#xA;$$&#xD;\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)&#xD;=\langle s^L|\delta\rangle&#xD;$$&#xD;sol&#xD;$$&#xD;\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad&#xD;\text{ROC: 모든 } s&#xD;$$&#xD;1-2) 디렉 델타 함수</description>
+    </item>
+    <item>
       <title>(b) Syntax</title>
       <link>http://localhost:1313/temp/b_syntax/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
