@@ -5,74 +5,62 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="LSI 연산자 정리
-(1) $\hat{H}|x’\rangle=|h(x-x’)\rangle$
-(2) $\hat{H}=|h\rangle\ast=\int dx’ |h(x-x’)\rangle\langle x’|$
-(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
-1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
-$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
-proof)
-연산자는 스팩트럼 분해에 의해서,">
+    <meta name="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta name="twitter:description" content="LSI 연산자 정리
-(1) $\hat{H}|x’\rangle=|h(x-x’)\rangle$
-(2) $\hat{H}=|h\rangle\ast=\int dx’ |h(x-x’)\rangle\langle x’|$
-(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
-1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
-$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
-proof)
-연산자는 스팩트럼 분해에 의해서,">
+    <meta name="twitter:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_laplace_transform_i/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta property="og:description" content="LSI 연산자 정리
-(1) $\hat{H}|x’\rangle=|h(x-x’)\rangle$
-(2) $\hat{H}=|h\rangle\ast=\int dx’ |h(x-x’)\rangle\langle x’|$
-(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
-1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
-$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
-proof)
-연산자는 스팩트럼 분해에 의해서,">
+    <meta property="og:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Laplace transform I :: 수리전자물리학">
-    <meta itemprop="description" content="LSI 연산자 정리
-(1) $\hat{H}|x’\rangle=|h(x-x’)\rangle$
-(2) $\hat{H}=|h\rangle\ast=\int dx’ |h(x-x’)\rangle\langle x’|$
-(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
-1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
-$$ \text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle=|e^{st}\rangle $$proof)
-$$ |h\rangle\ast|e^{st}\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle $$$$ \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$ 2. State vector &amp; operator 벡터 $|h\rangle$는 ‘설계도(DNA)’ 이고, 연산자 $|h\rangle\ast$는 ‘설계도대로 작동하는 기계’ 이다.
-proof)
-연산자는 스팩트럼 분해에 의해서,">
-    <meta itemprop="wordCount" content="306">
+    <meta itemprop="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
+    <meta itemprop="wordCount" content="502">
     <title>(b) Laplace transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761025465" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761025465" defer></script>
-    <script src="/js/search-lunr.js?1761025465" defer></script>
-    <script src="/js/search.js?1761025465" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761198136" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761198136" defer></script>
+    <script src="/js/search-lunr.js?1761198136" defer></script>
+    <script src="/js/search.js?1761198136" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761025465";
+      window.relearn.index_js_url="/searchindex.en.js?1761198136";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761025465" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761198136" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761025465" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761025465" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761025465" rel="stylesheet">
-    <link href="/css/theme.css?1761025465" rel="stylesheet">
-    <link href="/css/format-html.css?1761025465" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761198136" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761198136" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761198136" rel="stylesheet">
+    <link href="/css/theme.css?1761198136" rel="stylesheet">
+    <link href="/css/format-html.css?1761198136" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -144,11 +132,12 @@ proof)
     <li>
       <ul>
         <li><a href="#1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</a></li>
-        <li><a href="#2-state-vector--operator">2. State vector &amp; operator</a></li>
-        <li><a href="#3-라플라스-변환">3. 라플라스 변환</a></li>
-        <li><a href="#4-대수방정식">4. 대수방정식</a></li>
-        <li><a href="#5-라플라스-역변환">5. 라플라스 역변환</a></li>
-        <li><a href="#6-주의사항">6. 주의사항</a></li>
+        <li><a href="#2-dual-vector--dual-basis-for-srangle">2. Dual vector &amp; dual basis for $|s\rangle$</a></li>
+        <li><a href="#3-state-vector--operator">3. State vector &amp; operator</a></li>
+        <li><a href="#4-라플라스-변환">4. 라플라스 변환</a></li>
+        <li><a href="#5-대수방정식">5. 대수방정식</a></li>
+        <li><a href="#6-라플라스-역변환">6. 라플라스 역변환</a></li>
+        <li><a href="#7-주의사항">7. 주의사항</a></li>
       </ul>
     </li>
   </ul>
@@ -185,52 +174,127 @@ proof)
 <h1 id="b-laplace-transform-i">(b) Laplace transform I</h1>
 
 <hr>
-<p><strong>LSI 연산자 정리</strong></p>
-<p>(1) $\hat{H}|x&rsquo;\rangle=|h(x-x&rsquo;)\rangle$</p>
-<p>(2) $\hat{H}=|h\rangle\ast=\int dx&rsquo; |h(x-x&rsquo;)\rangle\langle x&rsquo;|$</p>
-<p>(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$</p>
+<img src="image1.png" width="90%" height="auto">
 <hr>
 <h3 id="1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</h3>
 <p>연산자 $|h\rangle\ast$ 의 고유값과 고유벡터</p>
 $$
-\text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+\text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
 $$$$
-\text{eigenvector}: |s\rangle=|e^{st}\rangle
+\text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st}
 $$<p>proof)</p>
 $$
-|h\rangle\ast|e^{st}\rangle
-=\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle
-=\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle
+|h\rangle\ast|s\rangle=H(s)|s\rangle
+$$<p>위의 식을 토대로,</p>
+$$
+\langle t|(|h\rangle\ast)|s\rangle
+=\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)
 $$$$
-\lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+\langle t|H(s)|s\rangle
+=H(s)\langle t|s\rangle
+=H(s) s(t)
+$$<p>$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,</p>
+$$
+\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)
+=\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)}
+=\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st}
+$$<p>따라서,</p>
+$$
+H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) 
 $$<hr>
-<h3 id="2-state-vector--operator">2. State vector &amp; operator</h3>
+<h3 id="2-dual-vector--dual-basis-for-srangle">2. Dual vector &amp; dual basis for $|s\rangle$</h3>
+<p><strong>(1) Dual vector</strong></p>
+$$
+\langle s|s'\rangle=2\pi \delta(s-s'),\quad \text{if }\operatorname{Re}[s]=\operatorname{Re}[s']=0
+$$<p>proof)</p>
+$$
+\langle s|s'\rangle
+=\langle s|\left(\int dt |t\rangle\langle t| \right)|s'\rangle
+=\int dt \langle s|t\rangle\langle t|s'\rangle
+=\int dt e^{s^\ast t}e^{s't}
+=\int dt e^{(s^\ast+s')t}
+$$<p>if $\operatorname{Re}[s]\ne\operatorname{Re}[s&rsquo;]=0$,
+발산하기 때문에 정의할 수 없다.</p>
+<p>if $\operatorname{Re}[s]=\operatorname{Re}[s&rsquo;]=0$</p>
+<p>위 조건하에, 아래의 형태를 생각해 본다.</p>
+$$
+\int dt e^{i(\omega-\omega')t}=2\pi\delta(\omega-\omega')
+$$$$
+\langle s|s'\rangle=2\pi\delta(s-s')
+$$<p><strong>(2) Dual basis, 푸리에 변환 기저</strong></p>
+$$
+\langle s^d|=\frac{1}{2\pi} \langle s|,\quad
+\text{if }\operatorname{Re}[s]=0
+$$<p>proof)</p>
+$$
+\langle s^d|s'\rangle=\delta(s-s')
+$$<p>$\operatorname{Re}[s]=0$ 일 때, 직교기저이다.</p>
+$$
+\langle s|s'\rangle=2\pi\delta(s-s')
+$$<p>따라서,</p>
+$$
+\langle s^d|=\frac{1}{2\pi} \langle s|
+$$<p><strong>(3) Dual basis, 라플라스 변환 기저</strong></p>
+$$
+\langle s^d|t\rangle=\frac{1}{2\pi i}e^{-st},\quad
+\langle s^d|h\rangle=\frac{1}{2\pi i}H(s),\quad
+\text{if }\operatorname{Re}[s]\ne0
+$$<p>proof)</p>
+<p>$\operatorname{Re}[s]\ne 0$ 일 때, 비직교기저이다. 따라서, $\langle s|s&rsquo;\rangle=2\pi\delta(s-s&rsquo;)$ 관계는 더 이상 성립하지 않는다.</p>
+$$
+\langle s^d|s'\rangle=\delta(s-s')
+$$$$
+\langle s^d|\hat{I}|s'\rangle
+=\langle s^d|\left(\int dt |t\rangle\langle t|\right)|s'\rangle
+=\int dt \langle s^d|t\rangle\langle t|s'\rangle
+=\int^{\infty}_{-\infty} dt \langle s^d|t\rangle e^{s't}
+=\delta(s-s')
+$$<p>브롬 위치 적분을 사용하여,</p>
+$$
+\langle s^d|t\rangle
+=\frac{1}{2\pi i}e^{-st}
+$$<p>이번에는 $\langle s^d|h\rangle$ 을 구해보자.</p>
+$$
+\langle s^d|h\rangle
+=\langle s^d|\hat{I}|h\rangle
+=\langle s^d|\left(\int dt |t\rangle\langle t|\right)|h\rangle
+=\int dt \langle s^d|t\rangle\langle t|h\rangle
+=\frac{1}{2\pi i}\int dt e^{-st}h(t)
+$$<p>따라서,</p>
+$$
+\langle s^d|h\rangle
+=\frac{1}{2\pi i}H(s)
+$$<hr>
+<h3 id="3-state-vector--operator">3. State vector &amp; operator</h3>
 <p>벡터 $|h\rangle$는 <strong>&lsquo;설계도(DNA)&rsquo;</strong> 이고, 연산자 $|h\rangle\ast$는 <strong>&lsquo;설계도대로 작동하는 기계&rsquo;</strong> 이다.</p>
 <p>proof)</p>
 <p>연산자는 스팩트럼 분해에 의해서,</p>
 $$
-|h\rangle\ast = \int ds H(s)|s\rangle\langle s|
+|h\rangle\ast = \int ds H(s)|s\rangle\langle s^d|
 $$<p>시스템 벡터는 고유벡터로 표현할 수 있다.</p>
 $$
 |h\rangle
 = \int ds \langle s^d|h\rangle|s\rangle
 = \frac{1}{2\pi i}\int ds H(s)|s\rangle
-$$<p>고유기저에 대한 좌표는</p>
+$$<p>고유기저 $|s\rangle$ 에 대한 좌표는</p>
 $$
 \langle s^d|h\rangle
 =\frac{1}{2\pi i}H(s)
-$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 유사함을 알 수 있다.</p>
+$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 통일됨을 알 수 있다.</p>
 <hr>
-<h3 id="3-라플라스-변환">3. 라플라스 변환</h3>
+<h3 id="4-라플라스-변환">4. 라플라스 변환</h3>
 <p>아래는 동일한 것을 다른 관점으로 설명한 것이다.</p>
 <p>(1) 관점1: <strong>라플라스 변환</strong>은 convolution으로 모두 귀결되는 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
 $$
-H(s)=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
-$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다.</p>
+H(s)
+=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다. 직관적으로 표현하기 위해, 아래와 같이 사용한다.</p>
 $$
-H(s)=\langle s|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+H(s)
+=2\pi i\langle s^d|h\rangle
+=\langle s^L|h\rangle
 $$<hr>
-<h3 id="4-대수방정식">4. 대수방정식</h3>
+<h3 id="5-대수방정식">5. 대수방정식</h3>
 $$
 y''-7y'=7e^{t}\implies
 |f_1\rangle+|f_2\rangle=|f_3\rangle
@@ -243,22 +307,19 @@ $$$$
 \lambda_1+\lambda_2=\lambda_3
 $$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다.</p>
 $$
-\langle s|f_1\rangle+\langle s|f_2\rangle=\langle s|f_3\rangle
+\langle s^L|f_1\rangle+\langle s^L|f_2\rangle=\langle s^L|f_3\rangle
 $$$$
 \lambda_1+\lambda_2=\lambda_3
 $$<hr>
-<h3 id="5-라플라스-역변환">5. 라플라스 역변환</h3>
+<h3 id="6-라플라스-역변환">6. 라플라스 역변환</h3>
 <p>$|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이다.</p>
 $$
 \langle t|h\rangle
-= \langle t|\left(\int ds H(s)|s\rangle \right)
-= \int ds H(s)\langle t|s\rangle
-= \int ds H(s)e^{st}
-$$<p>브라연산자는 모두 선형이므로(필수 조건이며, 선택적인 성질이 아님)</p>
-$$
-\langle s|\left(\int dt |t\rangle\langle t|\right)|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+= \langle t|\left(\int ds \langle s^d|h\rangle|s\rangle \right)
+= \int ds \frac{1}{2\pi i}H(s)\langle t|s\rangle
+= \frac{1}{2\pi i}\int ds H(s)e^{st}
 $$<hr>
-<h3 id="6-주의사항">6. 주의사항</h3>
+<h3 id="7-주의사항">7. 주의사항</h3>
 <p>Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.</p>
 <p>비선형 시스템은 중첩의 원리를 만족하지 않으므로, 임펄스 응답 h(t)와 전달 함수 H(s)라는 개념 자체가 시스템 전체를 대표할 수 없다. 따라서 이 문서에서 다루는 모든 시스템 분석 기법은 LSI 시스템을 전제로 한다.</p>
 
@@ -357,9 +418,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761025465"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761025465" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761025465" defer></script>
-    <script src="/js/theme.js?1761025465" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761198136"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761198136" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761198136" defer></script>
+    <script src="/js/theme.js?1761198136" defer></script>
   </body>
 </html>

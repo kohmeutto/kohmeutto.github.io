@@ -3,7 +3,7 @@
   <channel>
     <title>Dirac notation :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_algebra/dirac_notation/index.html</link>
-    <description>(b) Basis&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Operator I&#xD;(b) Operator II&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
+    <description>(b) Basis&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Operator&#xD;(b) Matrix &amp; Kernel&#xD;(b) Syntax</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_algebra/dirac_notation/index.xml" rel="self" type="application/rss+xml" />
@@ -29,14 +29,7 @@
       <description>1. Bra (1) 유클리드 공간&#xA;“$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.&#xA;$$&#xD;\vec{a}\cdot:=\vec{a}^T:=[a]^T&#xD;$$$$&#xD;\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}&#xD;=[a]^T[b]&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}&#xD;$$$$&#xD;\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}&#xD;$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,&#xA;$$&#xD;\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아래와 같이 부른다.</description>
     </item>
     <item>
-      <title>(b) Operator I</title>
-      <link>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</guid>
-      <description>1. 항등 연산자 (1) 이산기저 (Discrete Basis)&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;= \sum_{i,j} (G^{-1})^{ij}|u_i\rangle \langle u_j|&#xD;,\quad&#xD;\hat{I} = \sum_i |u_i\rangle \langle u_i|&#xD;$$proof)&#xA;$$&#xD;|\psi\rangle = \sum_i u_i|u_i\rangle&#xD;$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 듀얼 기저 벡터와 내적을 하면,&#xA;$$&#xD;u_i=\langle u^i|\psi\rangle&#xD;$$$$&#xD;|\psi\rangle = \sum_i \langle u^i|\psi\rangle|u_i\rangle&#xD;= \sum_i |u_i\rangle \langle u^i|\psi\rangle&#xD;$$따라서,&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;$$$$&#xD;=\sum_i|u_i\rangle\sum_j(G^{-1})^{ij}\langle u_j|&#xD;=\sum_{i,j}(G^{-1})^{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 연속 기저 (Continuous Basis)</description>
-    </item>
-    <item>
-      <title>(b) Operator II</title>
+      <title>(b) Operator</title>
       <link>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</guid>

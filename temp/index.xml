@@ -57,6 +57,13 @@
       <description>1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</description>
     </item>
     <item>
+      <title>(b) Operator I</title>
+      <link>http://localhost:1313/temp/b_operator_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_operator_i/index.html</guid>
+      <description>1. 항등 연산자 (1) 이산기저 (Discrete Basis)&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;= \sum_{i,j} (G^{-1})^{ij}|u_i\rangle \langle u_j|&#xD;,\quad&#xD;\hat{I} = \sum_i |u_i\rangle \langle u_i|&#xD;$$proof)&#xA;$$&#xD;|\psi\rangle = \sum_i u_i|u_i\rangle&#xD;$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 듀얼 기저 벡터와 내적을 하면,&#xA;$$&#xD;u_i=\langle u^i|\psi\rangle&#xD;$$$$&#xD;|\psi\rangle = \sum_i \langle u^i|\psi\rangle|u_i\rangle&#xD;= \sum_i |u_i\rangle \langle u^i|\psi\rangle&#xD;$$따라서,&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;$$$$&#xD;=\sum_i|u_i\rangle\sum_j(G^{-1})^{ij}\langle u_j|&#xD;=\sum_{i,j}(G^{-1})^{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 연속 기저 (Continuous Basis)</description>
+    </item>
+    <item>
       <title>Algebra structure for LSI</title>
       <link>http://localhost:1313/temp/algebra_structure/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

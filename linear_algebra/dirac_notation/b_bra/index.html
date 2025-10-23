@@ -35,28 +35,28 @@ $$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아
 $$\vec{a}\cdot:=\vec{a}^T:=[a]^T$$$$\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}=[a]^T[b]$$(2) 힐버트 공간
 $$\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}$$$$\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,
 $$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아래와 같이 부른다.">
-    <meta itemprop="wordCount" content="309">
+    <meta itemprop="wordCount" content="316">
     <title>(b) Bra :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761033283" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761033283" defer></script>
-    <script src="/js/search-lunr.js?1761033283" defer></script>
-    <script src="/js/search.js?1761033283" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761151068" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761151068" defer></script>
+    <script src="/js/search-lunr.js?1761151068" defer></script>
+    <script src="/js/search.js?1761151068" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761033283";
+      window.relearn.index_js_url="/searchindex.en.js?1761151068";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761033283" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761033283" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761033283" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761033283" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761151068" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761151068" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761151068" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761151068" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761033283" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761033283" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761033283" rel="stylesheet">
-    <link href="/css/theme.css?1761033283" rel="stylesheet">
-    <link href="/css/format-html.css?1761033283" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761151068" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761151068" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761151068" rel="stylesheet">
+    <link href="/css/theme.css?1761151068" rel="stylesheet">
+    <link href="/css/format-html.css?1761151068" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -131,7 +131,7 @@ $$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아
         <li><a href="#2-모든-bra-벡터는-선형연산자-이다-이것은-반드시-만족한다">2. 모든 Bra 벡터는 선형연산자 이다. 이것은 반드시 만족한다.</a></li>
         <li><a href="#3-쌍대-기저">3. 쌍대 기저</a></li>
         <li><a href="#4-쌍대-벡터-vs-쌍대-기저-정규직교기저">4. 쌍대 벡터 vs. 쌍대 기저, 정규직교기저</a></li>
-        <li><a href="#5-계량텐서metric-tensor-가중함수weight-function">5. 계량텐서(Metric tensor), 가중함수(Weight function)</a></li>
+        <li><a href="#5-직교기저와-정규화-상수">5. 직교기저와 정규화 상수</a></li>
       </ul>
     </li>
   </ul>
@@ -145,7 +145,7 @@ $$\langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger $$위와 같은 것을 아
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/dirac_notation/b_ket/index.html" title="(b) Ket (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/dirac_notation/b_operator_i/index.html" title="(b) Operator I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/linear_algebra/dirac_notation/b_operator_ii/index.html" title="(b) Operator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -246,8 +246,8 @@ $$$$
 =\delta(u'-u)
 =\delta(u-u'):\text{연속정규직교기저}
 $$<hr>
-<h3 id="5-계량텐서metric-tensor-가중함수weight-function">5. 계량텐서(Metric tensor), 가중함수(Weight function)</h3>
-<p>쌍대기저와 쌍대벡터의 경우 서로 변환 관계가 있다.</p>
+<h3 id="5-직교기저와-정규화-상수">5. 직교기저와 정규화 상수</h3>
+<p><strong>직교기저의 경우</strong>(비 직교 기저는 안됨), 쌍대 벡터와 쌍대 기저는 서로 정규화 상수의 변환 관계가 있다.</p>
 <p><strong>(1) 이산기저</strong></p>
 $$
 \langle u^i|=\sum_j (G^{-1})^{ij} \langle u_j|
@@ -309,8 +309,7 @@ $$
             <li class="" data-nav-url="/linear_algebra/dirac_notation/b_basis/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_basis/index.html">(b) Basis</a></li>
             <li class="" data-nav-url="/linear_algebra/dirac_notation/b_ket/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_ket/index.html">(b) Ket</a></li>
             <li class="active " data-nav-url="/linear_algebra/dirac_notation/b_bra/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_bra/index.html">(b) Bra</a></li>
-            <li class="" data-nav-url="/linear_algebra/dirac_notation/b_operator_i/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_operator_i/index.html">(b) Operator I</a></li>
-            <li class="" data-nav-url="/linear_algebra/dirac_notation/b_operator_ii/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_operator_ii/index.html">(b) Operator II</a></li>
+            <li class="" data-nav-url="/linear_algebra/dirac_notation/b_operator_ii/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_operator_ii/index.html">(b) Operator</a></li>
             <li class="" data-nav-url="/linear_algebra/dirac_notation/b_matrix_kernel/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
             <li class="" data-nav-url="/linear_algebra/dirac_notation/b_syntax/index.html"><a class="padding" href="/linear_algebra/dirac_notation/b_syntax/index.html">(b) Syntax</a></li></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu"></ul></li>
@@ -352,9 +351,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761033283"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761033283" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761033283" defer></script>
-    <script src="/js/theme.js?1761033283" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761151068"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761151068" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761151068" defer></script>
+    <script src="/js/theme.js?1761151068" defer></script>
   </body>
 </html>

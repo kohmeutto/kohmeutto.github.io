@@ -7,48 +7,48 @@
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
     <meta name="description" content="1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
 $$ f(t) =a_0&#43;\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t &#43; b_n\sin n\omega_0 t\} =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} =d_0&#43;\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t &#43; \varphi_n) $$where,
-$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
+$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n^d|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\langle\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Fourier series :: 수리전자물리학">
     <meta name="twitter:description" content="1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
 $$ f(t) =a_0&#43;\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t &#43; b_n\sin n\omega_0 t\} =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} =d_0&#43;\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t &#43; \varphi_n) $$where,
-$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
+$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n^d|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\langle\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_fourier_series/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Fourier series :: 수리전자물리학">
     <meta property="og:description" content="1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
 $$ f(t) =a_0&#43;\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t &#43; b_n\sin n\omega_0 t\} =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} =d_0&#43;\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t &#43; \varphi_n) $$where,
-$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
+$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n^d|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\langle\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Fourier series :: 수리전자물리학">
     <meta itemprop="description" content="1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
 $$ f(t) =a_0&#43;\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t &#43; b_n\sin n\omega_0 t\} =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} =d_0&#43;\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t &#43; \varphi_n) $$where,
-$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
-    <meta itemprop="wordCount" content="387">
+$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n^d|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\langle\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)">
+    <meta itemprop="wordCount" content="395">
     <title>(b) Fourier series :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761025465" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761025465" defer></script>
-    <script src="/js/search-lunr.js?1761025465" defer></script>
-    <script src="/js/search.js?1761025465" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761198136" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761198136" defer></script>
+    <script src="/js/search-lunr.js?1761198136" defer></script>
+    <script src="/js/search.js?1761198136" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761025465";
+      window.relearn.index_js_url="/searchindex.en.js?1761198136";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761025465" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761025465" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761198136" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761198136" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761025465" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761025465" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761025465" rel="stylesheet">
-    <link href="/css/theme.css?1761025465" rel="stylesheet">
-    <link href="/css/format-html.css?1761025465" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761198136" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761198136" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761198136" rel="stylesheet">
+    <link href="/css/theme.css?1761198136" rel="stylesheet">
+    <link href="/css/format-html.css?1761198136" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -172,14 +172,14 @@ a_0
 =\frac{1}{T}\langle1|f\rangle,\quad
 a_n
 =\langle \cos_n^d|f\rangle
-=\frac{2}{T}\langle \cos_n|f\rangle,\quad
+=\frac{2}{T}\langle \cos_n^d|f\rangle,\quad
 b_n
 =\langle \sin_n^d|f\rangle
 =\frac{2}{T}\langle \sin_n|f\rangle
 $$$$
 c_n
 =\langle \exp_n^d|f\rangle
-=\frac{1}{T}\exp_n|f\rangle
+=\frac{1}{T}\langle\exp_n|f\rangle
 $$$$
 d_0=c_0,\quad
 d_n=2|c_n|,\quad
@@ -188,20 +188,25 @@ $$<p>proof)</p>
 $$
 |f\rangle
 =a_0|1\rangle + \sum_{n=1}^{\infty} \left\{ a_n |\cos_ n\rangle + b_n |\sin_n\rangle \right\}
-$$<p>각 계수를 구하기 위해서, 각 기저를 정규직교기저로 만들기 위한 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 독립임을 확인한다. Wronskian 방법을 사용하면,</p>
+$$<p>각 계수를 구하기 위해서, 각 기저의 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 직교 독립임을 확인한다. Gram 방법을 사용하면,</p>
 $$
 W
 =\begin{bmatrix}
-\cos n\omega_0 t & \sin n\omega_0  t \\
--\omega_0n\sin n\omega_0t & \omega_0 n\cos n\omega_0 t
-\end{bmatrix}\implies
+\langle \cos_n|\cos_n\rangle & \langle \cos_n|\sin_n\rangle \\
+\langle \sin_n|\cos_n\rangle & \langle \sin_n|\sin_n\rangle
+\end{bmatrix}
+=\begin{bmatrix}
+T/2 & 0 \\ 0 & T/2 \end{bmatrix}\implies
 |W|\ne0
-$$<p>따라서, 서로 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.</p>
+$$<p>따라서, 서로 직교 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.</p>
 <p>(1) $a_0$, $\langle 1^d|$</p>
 $$
 \langle 1^d|1\rangle
-=\frac{1}{\gamma}\int_T dt 1^\ast \cdot 1=1\implies
-\gamma=\frac{1}{T}
+=\gamma^{-1}|\langle 1|1\rangle
+=\frac{1}{\gamma}\langle1|\int_T dt |t\rangle\langle t|1\rangle
+=\frac{1}{\gamma}\int_T dt
+=1\implies
+\gamma=T
 $$$$
 \langle 1^d|
 =\frac{1}{T}\langle 1|
@@ -213,7 +218,7 @@ $$<p>(2) $a_n$, $\langle \cos_n^d|$</p>
 $$
 \langle \cos_n^d|\cos_n\rangle
 =\frac{1}{\gamma}\int_T dt \cos^2 n\omega_0 t=1\implies
-\gamma=\frac{2}{T}
+\gamma=\frac{T}{2}
 $$$$
 \langle \cos_n^d|
 =\frac{2}{T}\langle \cos_n|
@@ -225,7 +230,7 @@ $$<p>(3) $b_n$, $\langle \sin n^d|$</p>
 $$
 \langle \sin_n^d|\sin_n\rangle
 =\frac{1}{\gamma}\int_T dt \sin^2 n\omega_0 t=1\implies
-\gamma=\frac{2}{T}
+\gamma=\frac{T}{2}
 $$$$
 \langle \sin_n^d|
 =\frac{2}{T}\langle \sin_n|
@@ -237,7 +242,7 @@ $$<p>(4) $c_n$, $\langle \exp_n^d|$</p>
 $$
 \langle \exp_n^d|\exp_n\rangle
 =\frac{1}{\gamma}\int_T dt e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
-\gamma=\frac{1}{T}
+\gamma=T
 $$$$
 \langle \exp_n^d|
 =\frac{1}{T}\langle \exp_n|
@@ -459,9 +464,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761025465"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761025465" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761025465" defer></script>
-    <script src="/js/theme.js?1761025465" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761198136"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761198136" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761198136" defer></script>
+    <script src="/js/theme.js?1761198136" defer></script>
   </body>
 </html>
