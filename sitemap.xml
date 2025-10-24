@@ -202,7 +202,7 @@
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator_i/index.html</loc>
+    <loc>http://localhost:1313/temp/b_operator_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
@@ -313,7 +313,7 @@
     <loc>http://localhost:1313/linear_algebra/hibert_vector/b_hibert_space/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator_ii/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_polynomial_iopm/index.html</loc>
@@ -478,10 +478,13 @@
     <loc>http://localhost:1313/linear_system/lsi/b_laplace_transform_ii/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/b_laplace_transform_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/euclidean_vector/b_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_syntax/index.html</loc>
+    <loc>http://localhost:1313/linear_algebra/dirac_notation/b_short_cut/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_syntax/index.html</loc>

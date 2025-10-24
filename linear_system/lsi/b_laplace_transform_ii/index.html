@@ -39,28 +39,28 @@ $$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\r
 적분연산자 자체가 선형연산자이다.
 $$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$2) time shifting
 $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rangle=e^{-s\tau}\langle s^L|f\cdot u\rangle$$$$\langle s^L|f(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\rangle=e^{-s\tau}\langle s^L|f\rangle$$proof$$\langle s^L|\hat{S}_\tau=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau=\int dt \langle s^L|t\rangle\langle t-\tau|=\int dt e^{-st}\langle t-\tau|$$$$=\int dt&#39; e^{-s(t&#39;&#43;\tau)}\langle t&#39;|=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|$$$$=e^{-s\tau}\langle s^L|$$3) amplitude scaling">
-    <meta itemprop="wordCount" content="898">
+    <meta itemprop="wordCount" content="887">
     <title>(b) Laplace transform II :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761237297" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761237297" defer></script>
-    <script src="/js/search-lunr.js?1761237297" defer></script>
-    <script src="/js/search.js?1761237297" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761274753" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761274753" defer></script>
+    <script src="/js/search-lunr.js?1761274753" defer></script>
+    <script src="/js/search.js?1761274753" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761237297";
+      window.relearn.index_js_url="/searchindex.en.js?1761274753";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761237297" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761237297" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761237297" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761237297" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761274753" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761274753" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761274753" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761274753" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761237297" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761237297" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761237297" rel="stylesheet">
-    <link href="/css/theme.css?1761237297" rel="stylesheet">
-    <link href="/css/format-html.css?1761237297" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761274753" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761274753" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761274753" rel="stylesheet">
+    <link href="/css/theme.css?1761274753" rel="stylesheet">
+    <link href="/css/format-html.css?1761274753" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -256,72 +256,48 @@ $$
 </details>
 <p><strong>4) amplitude scaling &amp; time shifting</strong></p>
 $$
-\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{a} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle,\quad
-\text{단, } a>0, b>0
+\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
 $$$$
-\langle s|f\left(at-b\right)\rangle=\frac{1}{|a|}e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle
+\langle s^L|f\left(at-b\right)\rangle
+=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    proof, 단방향
+    proof
   </summary>
   <div class="box-content">
 <p>
+라플라스 변환은 연산자→괄호→Ket 순이다.
+
+<br><br>
+
 $$
-\mathcal{L}\left\lbrace f\left(at-b\right)u\left(at-b\right)\right\rbrace\left(s\right)=e^{-\frac{b}{a}s}\int_0^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}e^{-\frac{b}{a}s}F\left(\frac{s}{a}\right)
+\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle
+=\left\langle
+s^L\middle|
+f\left(a\left(t-\frac{b}{a}\right)\right)
+u\left(a\left(t-\frac{b}{a}\right)\right)
+\right\rangle
+$$
+
+$$
+=e^{-\frac{b}{a}s}\left\langle s^L\middle|f(at)u(at)\right\rangle
+=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
 $$
 
 <hr>
   </div>
 </details>
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    proof, 양방향
-  </summary>
-  <div class="box-content">
-<p>
-(1) a>0
-
+<p><strong>5) frequency shifting</strong></p>
 $$
-\mathcal{L}\left\lbrace f\left(at-b\right)\right\rbrace\left(s\right)
-=e^{-\frac{b}{a}s}\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}e^{-\frac{b}{a}s}\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{s}{a}\right)
-$$
-
-(2) a<0
-
-$$
-\mathcal{L}\left\lbrace f\left(at-b\right)\right\rbrace\left(s\right)
-=e^{-\frac{b}{a}s}\int_{-\infty}^{\infty}-\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=-\frac{1}{a}e^{-\frac{b}{a}s}\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{s}{a}\right)
-$$
-
-<hr>
-  </div>
-</details>
-<p><strong>4) frequency shifting</strong></p>
-<ul>
-<li>라플라스 변환</li>
-</ul>
-$$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)u(t)\right\rbrace\left(s\right)
+\langle s^L|e^{at}\cdot f\cdot u\rangle
 =\langle s|e^{a\hat{t}}|f\cdot u\rangle
 =\langle s-a|f\cdot u\rangle
 $$$$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)
-=\langle s|e^{a\hat{t}}|f\rangle
-=\langle s-a|f\rangle
-=F(s-a)
-$$<ul>
-<li>라플라스 역변환</li>
-</ul>
-$$
-\mathcal{L^{-1}}\left\lbrace e^{as}F\left(s\right)\right\rbrace\left(t\right)
-=\langle t|e^{as}F(s)\rangle
-=\langle t|e^{a\hat{s}}|F\rangle
-=\langle t+a|F\rangle
-=f(t+a)
+\langle s^L|e^{at}\cdot f\rangle
+=\langle s^L|e^{a\hat{t}}|f\rangle
+=\langle (s-a)^L|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -331,15 +307,16 @@ $$
   <div class="box-content">
 <p>
 $$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-\left(s-a\right)t}\right\rbrack=F\left(s-a\right)
+\int_{-\infty}^{\infty}dt\left\lbrack e^{-\left(s-a\right)t}f\left(t\right)\right\rbrack
+=\langle (s-a)^L|f\rangle
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>5) convolution</strong></p>
+<p><strong>6) convolution</strong></p>
 $$
-\mathcal{L}\left\lbrace h\left(t\right)u(t)\ast f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|h\cdot u\ast f\cdot u\rangle=\langle s|h\cdot u\rangle\langle s|f\cdot u\rangle
+\mathcal{L}\left\lbrace h\left(t\right)u(t)\ast f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|(h\cdot u)\ast (f\cdot u)\rangle=\langle s|h\cdot u\rangle\langle s|f\cdot u\rangle
 $$$$
 \mathcal{L}\left\lbrace h\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\langle s|h\ast f\rangle=\langle s|h\rangle\langle s|f\rangle
 $$
@@ -381,11 +358,11 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>6) 시간영역미분</strong></p>
+<p><strong>7) 시간영역미분</strong></p>
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)u(t)\right\rbrace\left(s\right)=s^{n}\langle s|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)u(t)\right\rangle=s^{n}\langle s^L|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$$$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}\langle s|f\rangle
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=s^{n}\langle s^L|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -426,14 +403,16 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>7) 시간영역적분</strong></p>
+<p><strong>8) 시간영역적분</strong></p>
 $$
-\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\langle s|u\ast f\rangle
-=\langle s|u\rangle \langle s|f\rangle
+\left\langle s^L\middle|\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rangle
+=\langle s^L|u\ast f\rangle
+=\langle s^L|u\rangle\langle s^L|f\rangle
 =\frac{1}{s}\langle s|f\rangle
 $$$$
-\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\langle s|u\ast f\rangle
-=\langle s|u\rangle \langle s|f\rangle
+\left\langle s^L\middle|\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rangle
+=\langle s^L|u\ast f\rangle
+=\langle s^L|u\rangle\langle s^L|f\rangle
 =\frac{1}{s}\langle s|f\rangle
 $$
 <details class=" box cstyle notices transparent expand">
@@ -444,16 +423,15 @@ $$
   <div class="box-content">
 <p>
 $$
-\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
+\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}\langle s|f\rangle
 $$
 
 <hr>
   </div>
 </details>
-<p><strong>8) s-영역미분</strong></p>
+<p><strong>9) s-영역미분</strong></p>
 $$
-\mathcal{L}\left\lbrace t^{n}f\left(t\right)u(t)\right\rbrace\left(s\right)
-=\langle s|t^n\cdot fu\rangle=\langle s|(\hat{t})^n|fu\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|fu\rangle
+\langle s^L|t^n\cdot f\cdot u\rangle=\langle s|(\hat{t})^n|f\cdot u\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|f\cdot u\rangle
 $$$$
 \mathcal{L}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(s\right)
 =\langle s|t^n\cdot f\rangle=\langle s|(\hat{t})^n|f\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|f\rangle
@@ -770,9 +748,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761237297"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761237297" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761237297" defer></script>
-    <script src="/js/theme.js?1761237297" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761274753"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761274753" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761274753" defer></script>
+    <script src="/js/theme.js?1761274753" defer></script>
   </body>
 </html>
