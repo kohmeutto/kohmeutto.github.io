@@ -478,7 +478,13 @@
     <loc>http://localhost:1313/linear_system/lsi/b_laplace_transform_ii/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/b_laplace_transform_ii-copy/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/b_laplace_transform_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/euclidean_vector/b_matrix/index.html</loc>

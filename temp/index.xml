@@ -128,6 +128,13 @@
     </item>
     <item>
       <title>(b) Laplace transform II</title>
+      <link>http://localhost:1313/temp/b_laplace_transform_ii-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_laplace_transform_ii-copy/index.html</guid>
+      <description>1. 라플라스 변환 (1) 단방향 라플라스 변환&#xA;$$&#xD;\langle s^L|f\cdot u\rangle&#xD;=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack&#xD;$$(2) 양방향 라플라스 변환, causal system&#xA;$$&#xD;\langle s^L|f\rangle&#xD;=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack&#xD;$$ 2. 중요 Properties (1) linearity&#xA;적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^L|af\cdot u+bg\cdot u\rangle&#xD;=a\langle s^L|f\cdot u\rangle+b\langle s^L|g\cdot u\rangle&#xD;$$$$&#xD;\langle s^L|af+bg\rangle&#xD;=a\langle s^L|f\rangle+b\langle s^L|g\rangle&#xD;$$(2) time shifting&#xA;$$&#xD;\langle s^L|f(t-\tau)u(t-\tau)\rangle&#xD;=\langle s^L|\hat{S}_\tau|f\cdot u\rangle&#xD;=e^{-s\tau}\langle s^L|f\cdot u\rangle&#xD;$$$$&#xD;\langle s^L|f(t-\tau)\rangle&#xD;=\langle s^L|\hat{S}_\tau|f\rangle&#xD;=e^{-s\tau}\langle s^L|f\rangle&#xD;$$&#xD;proof&#xD;$$&#xD;\langle s^L|\hat{S}_\tau&#xD;=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau&#xD;=\int dt \langle s^L|t\rangle\langle t-\tau|&#xD;=\int dt e^{-st}\langle t-\tau|&#xD;$$&#xD;$$&#xD;=\int dt&#39; e^{-s(t&#39;+\tau)}\langle t&#39;|&#xD;=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|&#xD;$$&#xD;$$&#xD;=e^{-s\tau}\langle s^L|&#xD;$$&#xD;(3) amplitude scaling</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform II</title>
       <link>http://localhost:1313/temp/b_laplace_transform_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/b_laplace_transform_ii/index.html</guid>
