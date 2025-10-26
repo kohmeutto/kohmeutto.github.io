@@ -47,7 +47,7 @@
       <link>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</guid>
-      <description>1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수&#xA;$$&#xD;\langle s^L|\delta\rangle=1&#xD;$$&#xD;sol&#xD;$$&#xD;\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad&#xD;\text{ROC: 모든 } s&#xD;$$&#xD;1-2) 디렉 델타 함수&#xA;$$&#xD;\langle s^L|\delta \cdot u\rangle=1&#xD;$$&#xD;sol&#xD;$$&#xD;\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack&#xD;=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad&#xD;\text{ROC: 모든 } s&#xD;$$&#xD;2-1) 단위 계단 함수</description>
+      <description>수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수</description>
     </item>
     <item>
       <title>(b) Fourier transform I</title>

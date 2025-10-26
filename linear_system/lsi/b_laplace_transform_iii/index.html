@@ -5,50 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수
-$$\langle s^L|\delta\rangle=1$$sol$$\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수
-$$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$2-1) 단위 계단 함수">
+    <meta name="description" content="수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Laplace transform III :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수
-$$\langle s^L|\delta\rangle=1$$sol$$\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수
-$$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$2-1) 단위 계단 함수">
+    <meta name="twitter:description" content="수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Laplace transform III :: 수리전자물리학">
-    <meta property="og:description" content="1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수
-$$\langle s^L|\delta\rangle=1$$sol$$\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수
-$$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$2-1) 단위 계단 함수">
+    <meta property="og:description" content="수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Laplace transform III :: 수리전자물리학">
-    <meta itemprop="description" content="1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수
-$$\langle s^L|\delta\rangle=1$$sol$$\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad\text{ROC: 모든 } s$$1-2) 디렉 델타 함수
-$$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad\text{ROC: 모든 } s$$2-1) 단위 계단 함수">
-    <meta itemprop="wordCount" content="1066">
+    <meta itemprop="description" content="수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환 Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수">
+    <meta itemprop="wordCount" content="1282">
     <title>(b) Laplace transform III :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761454252" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761454252" defer></script>
-    <script src="/js/search-lunr.js?1761454252" defer></script>
-    <script src="/js/search.js?1761454252" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761494752" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761494752" defer></script>
+    <script src="/js/search-lunr.js?1761494752" defer></script>
+    <script src="/js/search.js?1761494752" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761454252";
+      window.relearn.index_js_url="/searchindex.en.js?1761494752";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761454252" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761454252" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761454252" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761454252" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761494752" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761494752" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761494752" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761494752" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761454252" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761454252" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761454252" rel="stylesheet">
-    <link href="/css/theme.css?1761454252" rel="stylesheet">
-    <link href="/css/format-html.css?1761454252" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761494752" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761494752" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761494752" rel="stylesheet">
+    <link href="/css/theme.css?1761494752" rel="stylesheet">
+    <link href="/css/format-html.css?1761494752" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -157,6 +149,14 @@ $$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrac
 <h1 id="b-laplace-transform-iii">(b) Laplace transform III</h1>
 
 <hr>
+<ul>
+<li>수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다.</li>
+<li>일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다.</li>
+<li><strong>99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다.</strong></li>
+<li>여기에 나온, <strong>표준 라플라스 변환은 모두 암기</strong> 해야 한다.</li>
+<li>분포 라플라스 변환에서, <strong>허수축의 경우 푸리에 변환과 동일</strong> 하다.</li>
+</ul>
+<hr>
 <h3 id="1-중요-변환">1. 중요 변환</h3>
 <ul>
 <li>Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다.</li>
@@ -164,7 +164,7 @@ $$\langle s^L|\delta \cdot u\rangle=1$$sol$$\int_{0-}^{\infty}dt\left\lbrac
 </ul>
 <p><strong>1-1) 디렉 델타 함수</strong></p>
 $$
-\langle s^L|\delta\rangle=1
+\langle s^L|\delta\rangle=1,\quad\text{표준 ROC: 모든 } s
 $$<img src="image1-1.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
@@ -184,7 +184,7 @@ $$
 </details>
 <p><strong>1-2) 디렉 델타 함수</strong></p>
 $$
-\langle s^L|\delta \cdot u\rangle=1
+\langle s^L|\delta \cdot u\rangle=1\quad\text{표준 ROC: 모든 } s
 $$<img src="image1-2.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
@@ -203,57 +203,9 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>2-1) 단위 계단 함수</strong></p>
+<p><strong>2-1) 상수 함수, 분포</strong></p>
 $$
-\langle s^L|u\rangle=\frac{1}{s}
-$$<img src="image2-1.png" width="85%" height="auto">
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
-$$
-
-<br>
-
-극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
-
-<hr>
-  </div>
-</details>
-<p><strong>2-2) 단위 계단 함수</strong></p>
-$$
-\langle s^L|u(-t)\rangle=-\frac{1}{s}
-$$<img src="image2-2.png" width="85%" height="auto">
-
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    sol
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\int_{-\infty}^{0}dt\left\lbrack e^{-st}\right\rbrack=-\frac{1}{s},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace < 0
-$$
-
-<br>
-
-극점은 0에서 존재한다. 이 때, ROC는 왼쪽영역에서 형성된다.
-
-<hr>
-  </div>
-</details>
-<p><strong>2-3) 상수 함수, 분포</strong></p>
-$$
-\langle s^L|1\rangle=2\pi\delta(s)|_{\operatorname{Re\{s\}=0}}
+\langle s^L|1\rangle=2\pi\delta(\omega),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
 $$<img src="image2-3.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
@@ -280,11 +232,13 @@ $$
 <hr>
   </div>
 </details>
-<p><strong>3-1) cosine 함수</strong></p>
+<p><strong>2-2) 단위 계단 함수</strong></p>
 $$
-\langle s^L|\cos at\cdot u(t)\rangle
-=\frac{s}{s^2+a^2}
-$$<img src="image3-1.png" width="85%" height="auto">
+\langle s^L|u\rangle=\frac{1}{s},\quad\text{표준 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace>0
+$$$$
+\langle s^L|u\rangle
+=\pi\delta(\omega)+\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
+$$<img src="image2-1.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -294,24 +248,29 @@ $$<img src="image3-1.png" width="85%" height="auto">
   <div class="box-content">
 <p>
 $$
-\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
 $$
 
-극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\lim_{\sigma\to 0}\langle s^L|u\rangle
+=\lim_{\sigma\to 0}\left\langle s^L\middle|\frac{1}{2}+\frac{1}{2}\text{sgn}\right\rangle
+=\pi\delta(\omega)+\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
   </div>
 </details>
-<p><strong>3-2) cosine 함수</strong></p>
+<p><strong>2-3) 단위 계단 함수</strong></p>
 $$
-\langle s^L|\cos at\cdot u(-t)\rangle
-=-\frac{s}{s^2+a^2}
-$$<img src="image3-2.png" width="85%" height="auto">
+\langle s^L|u(-t)\rangle=-\frac{1}{s},\quad\text{표준 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace<0
+$$$$
+\langle s^L|u(-t)\rangle
+=\pi\delta(\omega)-\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
+$$<img src="image2-2.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -321,24 +280,25 @@ $$<img src="image3-2.png" width="85%" height="auto">
   <div class="box-content">
 <p>
 $$
-F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
-=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
-=-\frac{s}{s^2+a^2},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+\int_{-\infty}^{0}dt\left\lbrack e^{-st}\right\rbrack=-\frac{1}{s},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace < 0
 $$
 
-극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다.
+극점은 0에서 존재한다. 이 때, ROC는 좌측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\lim_{\sigma\to 0}\langle s^L|u(-t)\rangle
+=\lim_{\sigma\to 0}\left\langle s^L\middle|\frac{1}{2}-\frac{1}{2}\text{sgn}\right\rangle
+=\pi\delta(\omega)-\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
   </div>
 </details>
-<p><strong>3-3) cosine 함수, 분포</strong></p>
+<p><strong>3-1) cosine 함수, 분포</strong></p>
 $$
-\langle s^L|\cos at\rangle
+\langle s^L|\cos at\rangle=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
 $$<img src="image3-3.png" width="85%" height="auto">
 
 <details class=" box cstyle notices transparent expand">
@@ -363,8 +323,103 @@ $$
 $$
 
 $$
-=\pi\delta(s-ia)+\pi\delta(s+ia),\quad
+=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>3-2) cosine 함수</strong></p>
+$$
+\langle s^L|\cos at\cdot u(t)\rangle
+=\frac{s}{s^2+a^2},\quad
+\text{표준 ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$$$
+\langle s^L|\cos at\cdot u(t)\rangle
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)-\frac{i\omega}{\omega^2-a^2},
+\quad\text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$<img src="image3-1.png" width="85%" height="auto">
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\langle s^L|\cos at\cdot u\rangle
+=\left\langle s^L\middle|\frac{1}{2}(e^{iat}\cdot u+e^{-iat}\cdot u)\right\rangle
+=\frac{1}{2}\left\langle (s+ia)^L\middle|u\right\rangle+\frac{1}{2}\left\langle (s-ia)^L\middle|u\right\rangle
+$$
+
+$$
+=\frac{\pi}{2}\delta(i\omega+ia)+\frac{1}{2i(\omega+a)}+\frac{\pi}{2}\delta(i\omega-ia)+\frac{1}{2i(\omega-a)} 
+$$
+
+$$
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)-\frac{i\omega}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>3-3) cosine 함수</strong></p>
+$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=-\frac{s}{s^2+a^2},\quad\text{표준 ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)+\frac{i\omega}{\omega^2-a^2},\quad\text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$<img src="image3-2.png" width="85%" height="auto">
+
+<details class=" box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+<p>
+$$
+F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
+=-\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=\left\langle s^L\middle|\frac{1}{2}(e^{iat}\cdot u(-t)+e^{-iat}\cdot u(-t))\right\rangle
+$$
+
+$$
+=\frac{1}{2}\left\langle (s+ia)^L\middle|u(-t)\right\rangle+\frac{1}{2}\left\langle (s-ia)^L\middle|u(-t)\right\rangle
+$$
+
+$$
+=\frac{\pi}{2}\delta(i\omega+ia)-\frac{1}{2i(\omega+a)}+\frac{\pi}{2}\delta(i\omega-ia)-\frac{1}{2i(\omega-a)} 
+$$
+
+$$
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)+\frac{i\omega}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
 $$
 
 <hr>
@@ -797,9 +852,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761454252"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761454252" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761454252" defer></script>
-    <script src="/js/theme.js?1761454252" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761494752"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761494752" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761494752" defer></script>
+    <script src="/js/theme.js?1761494752" defer></script>
   </body>
 </html>
