@@ -5,22 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을">
+    <meta name="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) Determinant :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을">
-    <meta property="og:url" content="http://localhost:1313/temp/b_determinant/index.html">
+    <meta name="twitter:title" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
+    <meta property="og:url" content="http://localhost:1313/temp/b_laplace_transform_i/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) Determinant :: 수리전자물리학">
-    <meta property="og:description" content="1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을">
+    <meta property="og:title" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta property="og:description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Temps">
-    <meta itemprop="name" content="(b) Determinant :: 수리전자물리학">
-    <meta itemprop="description" content="1. 행렬식의 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을">
-    <meta itemprop="wordCount" content="215">
-    <title>(b) Determinant :: 수리전자물리학</title>
+    <meta itemprop="name" content="(b) Laplace transform I :: 수리전자물리학">
+    <meta itemprop="description" content="1. Eigenvector &amp; eigenvalue of LSI systems 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
+$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)
+$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,
+$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,
+$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,
+$$ H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) $$ 2. Dual vector &amp; dual basis for $|s\rangle$ (1) Dual vector">
+    <meta itemprop="wordCount" content="502">
+    <title>(b) Laplace transform I :: 수리전자물리학</title>
     <link href="/css/auto-complete/auto-complete.min.css?1761576365" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1761576365" defer></script>
     <script src="/js/search-lunr.js?1761576365" defer></script>
@@ -45,7 +65,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/temp\/b_determinant\/index.html';
+      window.relearn.path='\/temp\/b_laplace_transform_i\/index.html';
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -95,7 +115,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/temp/b_determinant/index.html">
+  <body class="mobile-support html" data-url="/temp/b_laplace_transform_i/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -111,13 +131,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-행렬식의-의미">1. 행렬식의 의미</a></li>
-        <li><a href="#2-2d-변환">2. 2D 변환</a></li>
-        <li><a href="#3-2d-변환--deta0">3. 2D 변환 &amp; det(A)=0</a></li>
-        <li><a href="#4-3d-변환">4. 3D 변환</a></li>
-        <li><a href="#5-3d-변환--deta0">5. 3D 변환 &amp; det(A)=0</a></li>
-        <li><a href="#6-중요-특성">6. 중요 특성</a></li>
-        <li><a href="#7-deta0-선형-독립--선형-종속">7. det(A)=0, 선형 독립 &amp; 선형 종속</a></li>
+        <li><a href="#1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</a></li>
+        <li><a href="#2-dual-vector--dual-basis-for-srangle">2. Dual vector &amp; dual basis for $|s\rangle$</a></li>
+        <li><a href="#3-state-vector--operator">3. State vector &amp; operator</a></li>
+        <li><a href="#4-라플라스-변환">4. 라플라스 변환</a></li>
+        <li><a href="#5-대수방정식">5. 대수방정식</a></li>
+        <li><a href="#6-라플라스-역변환">6. 라플라스 역변환</a></li>
+        <li><a href="#7-주의사항">7. 주의사항</a></li>
       </ul>
     </li>
   </ul>
@@ -126,12 +146,12 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Determinant</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Laplace transform I</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/b_convolution_i/index.html" title="(b) Convolution I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/b_components_transformation/index.html" title="(b) Components transformation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/b_operator_i/index.html" title="(b) Operator I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/temp/b_matrix_kernel/index.html" title="(b) Matrix & Kernel (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -151,70 +171,157 @@
   <header class="headline">
   </header>
 
-<h1 id="b-determinant">(b) Determinant</h1>
+<h1 id="b-laplace-transform-i">(b) Laplace transform I</h1>
 
 <hr>
-<h3 id="1-행렬식의-의미">1. 행렬식의 의미</h3>
-<ul>
-<li>X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X&rsquo;=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X&rsquo;으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다.</li>
-<li><strong>행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값</strong> 으로 볼 수 있다.</li>
-<li><strong>det(A)&gt;0이면 도형의 방향(orientation)이 보존</strong>되고 <strong>det(A)&lt;0이면 도형의 방향이 보존</strong> 되지 않는다.</li>
-</ul>
+<img src="image1.png" width="90%" height="auto">
+<hr>
+<h3 id="1-eigenvector--eigenvalue-of-lsi-systems">1. Eigenvector &amp; eigenvalue of LSI systems</h3>
+<p>연산자 $|h\rangle\ast$ 의 고유값과 고유벡터</p>
 $$
-P'=AP
+\text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
 $$$$
-\text{면적}\left(P'\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right)
+\text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st}
+$$<p>proof)</p>
+$$
+|h\rangle\ast|s\rangle=H(s)|s\rangle
+$$<p>위의 식을 토대로,</p>
+$$
+\langle t|(|h\rangle\ast)|s\rangle
+=\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)
 $$$$
-\text{부피}\left(P'\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right)
-$$<hr>
-<h3 id="2-2d-변환">2. 2D 변환</h3>
-<img src="image1.png" width="60%" height="auto">
-<hr>
-<h3 id="3-2d-변환--deta0">3. 2D 변환 &amp; det(A)=0</h3>
-<img src="image2.png" width="60%" height="auto">
-<ul>
-<li>det(A)=0, 넓이 보정값은 0</li>
-<li>det(A)=0, 차원 축소를 의미한다. <strong>2D-&gt;1D or dot</strong></li>
-</ul>
-<hr>
-<h3 id="4-3d-변환">4. 3D 변환</h3>
-<img src="image3.png" width="60%" height="auto">
-<hr>
-<h3 id="5-3d-변환--deta0">5. 3D 변환 &amp; det(A)=0</h3>
-<img src="image4.png" width="60%" height="auto">
-<ul>
-<li>det(A)=0, 부피 보정값은 0</li>
-<li>det(A)=0, 차원 축소를 의미한다. <strong>3D-&gt;2D or 1D or dot</strong></li>
-</ul>
-<hr>
-<h3 id="6-중요-특성">6. 중요 특성</h3>
+\langle t|H(s)|s\rangle
+=H(s)\langle t|s\rangle
+=H(s) s(t)
+$$<p>$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,</p>
 $$
-\left|AB\right|=\left|A\right|\left|B\right|
-$$<hr>
-<h3 id="7-deta0-선형-독립--선형-종속">7. det(A)=0, 선형 독립 &amp; 선형 종속</h3>
-<p>det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</p>
-<ul>
-<li>같은 (선 또는 면)방향으로 재배치 하거나,</li>
-<li>같은 동일한 점으로 재배치 한다.</li>
-<li>같은 방향 또는 하나의 점으로 재배치 하므로, <strong>det(A)=0 은, 행렬 A의 각 열벡터가 종속 성분이 있음을 의미한다.</strong></li>
-</ul>
-<p>행렬 A의 각 열벡터를 $v_{1}, v_{2}, v_{3}, \cdots$ 라고 하자.</p>
+\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)
+=\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)}
+=\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st}
+$$<p>따라서,</p>
 $$
-c_1v_{1}+c_2v_{2}+c_3v_{3}+\cdots=0
+H(s)=\int_{-\infty}^{\infty} dt e^{-st} h(t) 
+$$<hr>
+<h3 id="2-dual-vector--dual-basis-for-srangle">2. Dual vector &amp; dual basis for $|s\rangle$</h3>
+<p><strong>(1) Dual vector</strong></p>
+$$
+\langle s|s'\rangle=2\pi \delta(s-s'),\quad \text{if }\operatorname{Re}[s]=\operatorname{Re}[s']=0
+$$<p>proof)</p>
+$$
+\langle s|s'\rangle
+=\langle s|\left(\int dt |t\rangle\langle t| \right)|s'\rangle
+=\int dt \langle s|t\rangle\langle t|s'\rangle
+=\int dt e^{s^\ast t}e^{s't}
+=\int dt e^{(s^\ast+s')t}
+$$<p>if $\operatorname{Re}[s]\ne\operatorname{Re}[s&rsquo;]=0$,
+발산하기 때문에 정의할 수 없다.</p>
+<p>if $\operatorname{Re}[s]=\operatorname{Re}[s&rsquo;]=0$</p>
+<p>위 조건하에, 아래의 형태를 생각해 본다.</p>
+$$
+\int dt e^{i(\omega-\omega')t}=2\pi\delta(\omega-\omega')
 $$$$
-A\vec{c}=0
-$$<ul>
-<li><strong>각 열벡터가 선형 독립</strong> 이라면, 각 열벡터에 곱한 계수가 모두 0이어야<strong>만</strong> 한다. 따라서, 계수는 0인 자명해만 존재해야한다.</li>
-</ul>
+\langle s|s'\rangle=2\pi\delta(s-s')
+$$<p><strong>(2) Dual basis, 푸리에 변환 기저</strong></p>
 $$
-\text{det}(A)\ne0
-$$<ul>
-<li><strong>각 열벡터가 선형 종속</strong> 이라면, 각 열벡터에 곱한 계수가 모두 0이 아닌것이 존재해야 한다. 따라서, 0이외의 자명하지 않은 해도 존재해야한다.</li>
-</ul>
+\langle s^d|=\frac{1}{2\pi} \langle s|,\quad
+\text{if }\operatorname{Re}[s]=0
+$$<p>proof)</p>
 $$
-\text{det}(A)=0
+\langle s^d|s'\rangle=\delta(s-s')
+$$<p>$\operatorname{Re}[s]=0$ 일 때, 직교기저이다.</p>
+$$
+\langle s|s'\rangle=2\pi\delta(s-s')
+$$<p>따라서,</p>
+$$
+\langle s^d|=\frac{1}{2\pi} \langle s|
+$$<p><strong>(3) Dual basis, 라플라스 변환 기저</strong></p>
+$$
+\langle s^d|t\rangle=\frac{1}{2\pi i}e^{-st},\quad
+\langle s^d|h\rangle=\frac{1}{2\pi i}H(s),\quad
+\text{if }\operatorname{Re}[s]\ne0
+$$<p>proof)</p>
+<p>$\operatorname{Re}[s]\ne 0$ 일 때, 비직교기저이다. 따라서, $\langle s|s&rsquo;\rangle=2\pi\delta(s-s&rsquo;)$ 관계는 더 이상 성립하지 않는다.</p>
+$$
+\langle s^d|s'\rangle=\delta(s-s')
+$$$$
+\langle s^d|\hat{I}|s'\rangle
+=\langle s^d|\left(\int dt |t\rangle\langle t|\right)|s'\rangle
+=\int dt \langle s^d|t\rangle\langle t|s'\rangle
+=\int^{\infty}_{-\infty} dt \langle s^d|t\rangle e^{s't}
+=\delta(s-s')
+$$<p>브롬 위치 적분을 사용하여,</p>
+$$
+\langle s^d|t\rangle
+=\frac{1}{2\pi i}e^{-st}
+$$<p>이번에는 $\langle s^d|h\rangle$ 을 구해보자.</p>
+$$
+\langle s^d|h\rangle
+=\langle s^d|\hat{I}|h\rangle
+=\langle s^d|\left(\int dt |t\rangle\langle t|\right)|h\rangle
+=\int dt \langle s^d|t\rangle\langle t|h\rangle
+=\frac{1}{2\pi i}\int dt e^{-st}h(t)
+$$<p>따라서,</p>
+$$
+\langle s^d|h\rangle
+=\frac{1}{2\pi i}H(s)
 $$<hr>
-<p><a href="https://darkpgmr.tistory.com/104" rel="external">다크 프로그래머 :: [선형대수학 #2] 역행렬과 행렬식(determinant)</a></p>
+<h3 id="3-state-vector--operator">3. State vector &amp; operator</h3>
+<p>벡터 $|h\rangle$는 <strong>&lsquo;설계도(DNA)&rsquo;</strong> 이고, 연산자 $|h\rangle\ast$는 <strong>&lsquo;설계도대로 작동하는 기계&rsquo;</strong> 이다.</p>
+<p>proof)</p>
+<p>연산자는 스팩트럼 분해에 의해서,</p>
+$$
+|h\rangle\ast = \int ds H(s)|s\rangle\langle s^d|
+$$<p>시스템 벡터는 고유벡터로 표현할 수 있다.</p>
+$$
+|h\rangle
+= \int ds \langle s^d|h\rangle|s\rangle
+= \frac{1}{2\pi i}\int ds H(s)|s\rangle
+$$<p>고유기저 $|s\rangle$ 에 대한 좌표는</p>
+$$
+\langle s^d|h\rangle
+=\frac{1}{2\pi i}H(s)
+$$<p>위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 통일됨을 알 수 있다.</p>
+<hr>
+<h3 id="4-라플라스-변환">4. 라플라스 변환</h3>
+<p>아래는 동일한 것을 다른 관점으로 설명한 것이다.</p>
+<p>(1) 관점1: <strong>라플라스 변환</strong>은 convolution으로 모두 귀결되는 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
+$$
+H(s)
+=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다. 직관적으로 표현하기 위해, 아래와 같이 사용한다.</p>
+$$
+H(s)
+=2\pi i\langle s^d|h\rangle
+=\langle s^L|h\rangle
+$$<hr>
+<h3 id="5-대수방정식">5. 대수방정식</h3>
+$$
+y''-7y'=7e^{t}\implies
+|f_1\rangle+|f_2\rangle=|f_3\rangle
+$$<p>(1) 관점1: <strong>라플라스 변환</strong>은 convolution으로 모두 귀결되는 LSI 연산자의 <strong>eigenvalue</strong>(고유값)을 찾아 내는 방법이다.</p>
+$$
+|f_1\rangle\ast|s\rangle+|f_2\rangle\ast|s\rangle=|f_3\rangle\ast|s\rangle
+$$$$
+\lambda_1|s\rangle+\lambda_2|s\rangle=\lambda_3|s\rangle
+$$$$
+\lambda_1+\lambda_2=\lambda_3
+$$<p>(2) 관점2: <strong>라플라스 변환</strong>은 벡터의 <strong>좌표</strong>를 찾아 내는 방법이다.</p>
+$$
+\langle s^L|f_1\rangle+\langle s^L|f_2\rangle=\langle s^L|f_3\rangle
+$$$$
+\lambda_1+\lambda_2=\lambda_3
+$$<hr>
+<h3 id="6-라플라스-역변환">6. 라플라스 역변환</h3>
+<p>$|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이다.</p>
+$$
+\langle t|h\rangle
+= \langle t|\left(\int ds \langle s^d|h\rangle|s\rangle \right)
+= \int ds \frac{1}{2\pi i}H(s)\langle t|s\rangle
+= \frac{1}{2\pi i}\int ds H(s)e^{st}
+$$<hr>
+<h3 id="7-주의사항">7. 주의사항</h3>
+<p>Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.</p>
+<p>비선형 시스템은 중첩의 원리를 만족하지 않으므로, 임펄스 응답 h(t)와 전달 함수 H(s)라는 개념 자체가 시스템 전체를 대표할 수 없다. 따라서 이 문서에서 다루는 모든 시스템 분석 기법은 LSI 시스템을 전제로 한다.</p>
 
   <footer class="footline">
   </footer>
@@ -276,7 +383,7 @@ $$<hr>
             <li class="alwaysopen " data-nav-url="/temp/laurents_series/index.html"><a class="padding" href="/temp/laurents_series/index.html">Lourent&#39;s series</a><ul id="R-subsections-b622dc49c5dbb13575c50ea27a9dcb03" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/temp/preface/index.html"><a class="padding" href="/temp/preface/index.html">Preface</a></li>
             <li class="" data-nav-url="/temp/b_convolution_i/index.html"><a class="padding" href="/temp/b_convolution_i/index.html">(b) Convolution I</a></li>
-            <li class="active " data-nav-url="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
+            <li class="" data-nav-url="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
             <li class="" data-nav-url="/temp/b_operator_i/index.html"><a class="padding" href="/temp/b_operator_i/index.html">(b) Operator I</a></li>
             <li class="alwaysopen " data-nav-url="/temp/algebra_structure/index.html"><a class="padding" href="/temp/algebra_structure/index.html">Algebra structure for LSI</a><ul id="R-subsections-a739685797281f87672919f683d814d9" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-url="/temp/electromotive_force/index.html"><a class="padding" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu"></ul></li>
@@ -285,7 +392,7 @@ $$<hr>
             <li class="" data-nav-url="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
             <li class="alwaysopen " data-nav-url="/temp/transformation/index.html"><a class="padding" href="/temp/transformation/index.html">Transformation</a><ul id="R-subsections-7c83dcb82857ce3ae0d42995afa71ed6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
-            <li class="" data-nav-url="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="active " data-nav-url="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
             <li class="" data-nav-url="/temp/b_matrix_kernel/index.html"><a class="padding" href="/temp/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
             <li class="" data-nav-url="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
             <li class="" data-nav-url="/temp/b_laplace_transform_ii-copy/index.html"><a class="padding" href="/temp/b_laplace_transform_ii-copy/index.html">(b) Laplace transform II</a></li>
