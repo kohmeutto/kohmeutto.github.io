@@ -19,7 +19,7 @@
       <link>http://localhost:1313/linear_system/lsi/b_convolution/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_convolution/index.html</guid>
-      <description>1. Convolution (이전입력+현재입력+미래입력)의 현재상태: LSI convolution (이전입력+현재입력)의 현재상태: LSI + causal convolution $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.&#xA;(1) 시간에 대한 시스템 응답을, 리스트화 한다.&#xA;$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.&#xA;$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.&#xA;$$ h\left(\tau\right)x\left(t-\tau\right) $$(4) 곱해진 각 개별 결과를 더한다.</description>
+      <description>1. Convolution (이전입력+현재입력+미래입력)의 현재상태: convolution for LSI + non-causal (이전입력+현재입력)의 현재상태: convolution for LSI + causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.&#xA;(1) 시간에 대한 시스템 응답을, 리스트화 한다.&#xA;$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.&#xA;$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.</description>
     </item>
     <item>
       <title>(b) Causality</title>
@@ -54,7 +54,7 @@
       <link>http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html</guid>
-      <description>1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.&#xA;우선 라플라스 변환 연산자를 살펴보자.&#xA;$$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,&#xA;$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비대칭 푸리에 변환 &amp; 변환 연산자&#xA;수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문</description>
+      <description>1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.&#xA;우선 라플라스 변환 연산자를 살펴보자.&#xA;$$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,&#xA;$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자&#xA;수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자</description>
     </item>
     <item>
       <title>(b) Fourier transform II</title>
