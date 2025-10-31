@@ -27,28 +27,28 @@ $$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{H}(a|\ps
     <meta itemprop="description" content="1. LSI Linear &#43; Shift Invariance
 2. Linearity(선형성)=Superpostion Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
 $$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{H}(a|\psi_1\rangle&#43;b|\psi_2\rangle) =a\hat{H}|\psi_1\rangle&#43;b\hat{H}|\psi_2\rangle $$ 3. Copy-shift invariance 이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 똑같은 모양으로 나온다. LSI 연산자는 copy-shift 연산자와 교환가능함 을 의미한다. $$ [\hat{H},\hat{S}_{\tau}] \implies \hat{S}_\tau\hat{H}=\hat{H}\hat{S}_\tau $$ ‘똑같은 모양으로 나온다.‘의 의미는 단지 출력이 평행 이동할 뿐이다. $$ h(u-\tau,u)=h(u,u&#43;\tau)\implies h(u,\tau)=h(u-\tau) $$proof)">
-    <meta itemprop="wordCount" content="379">
+    <meta itemprop="wordCount" content="380">
     <title>(i) LSI :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761888456" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761888456" defer></script>
-    <script src="/js/search-lunr.js?1761888456" defer></script>
-    <script src="/js/search.js?1761888456" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761888578" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761888578" defer></script>
+    <script src="/js/search-lunr.js?1761888578" defer></script>
+    <script src="/js/search.js?1761888578" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761888456";
+      window.relearn.index_js_url="/searchindex.en.js?1761888578";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761888456" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761888456" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761888456" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761888456" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761888578" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761888578" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761888578" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761888578" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888456" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888456" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761888456" rel="stylesheet">
-    <link href="/css/theme.css?1761888456" rel="stylesheet">
-    <link href="/css/format-html.css?1761888456" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888578" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888578" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761888578" rel="stylesheet">
+    <link href="/css/theme.css?1761888578" rel="stylesheet">
+    <link href="/css/format-html.css?1761888578" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -124,9 +124,9 @@ $$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{H}(a|\ps
         <li><a href="#1-lsi">1. LSI</a></li>
         <li><a href="#2-linearity선형성superpostion">2. Linearity(선형성)=Superpostion</a></li>
         <li><a href="#3-copy-shift-invariance">3. Copy-shift invariance</a></li>
-        <li><a href="#3모든-lsi-연산자는-합성곱-귀결된다">3.모든 LSI 연산자는 합성곱 귀결된다.</a></li>
-        <li><a href="#4-convolution의-유도">4. Convolution의 유도</a></li>
-        <li><a href="#5-연산자의-합성">5. 연산자의 합성</a></li>
+        <li><a href="#4-모든-lsi-연산자는-합성곱-귀결된다">4. 모든 LSI 연산자는 합성곱 귀결된다.</a></li>
+        <li><a href="#5-convolution의-유도">5. Convolution의 유도</a></li>
+        <li><a href="#6-연산자의-합성">6. 연산자의 합성</a></li>
       </ul>
     </li>
   </ul>
@@ -211,7 +211,7 @@ $$
 h(x,y)=h(x-y,0)
 $$<p>함수 $h$ 의 값은, 첫 번째 인자가 $x-y$ 이고 두 번째 인자가 $0$일 때의 값과 항상 같다. 즉, 함수 $h$ 의 값은 오직 $x-y$ 라는 <strong>차이 값에만 의존한다</strong> 는 것이 증명되었다.</p>
 <hr>
-<h3 id="3모든-lsi-연산자는-합성곱-귀결된다">3.모든 LSI 연산자는 합성곱 귀결된다.</h3>
+<h3 id="4-모든-lsi-연산자는-합성곱-귀결된다">4. 모든 LSI 연산자는 합성곱 귀결된다.</h3>
 <p>LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. <strong>&ldquo;예외 없이 모든&rdquo; LSI 연산자들은 합성곱(Convolution)으로 표현</strong> 될 수 있다는 공통점을 가진다.</p>
 <ul>
 <li>미분 (Differentiation)</li>
@@ -238,7 +238,7 @@ $$<ul>
 $$
 |a\psi\rangle=a|\psi\rangle
 $$<hr>
-<h3 id="4-convolution의-유도">4. Convolution의 유도</h3>
+<h3 id="5-convolution의-유도">5. Convolution의 유도</h3>
 <p>아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다. 하지만 아직 이동 불변(Shift-Invariance) 조건은 포함하지 않았다.</p>
 $$
 \hat{H}=\iint du du' h(u,u')|u\rangle\langle u'^d|
@@ -259,7 +259,7 @@ $$<p>따라서,</p>
 $$
 \hat{H} = |h\rangle\ast
 $$<hr>
-<h3 id="5-연산자의-합성">5. 연산자의 합성</h3>
+<h3 id="6-연산자의-합성">6. 연산자의 합성</h3>
 <p>이 내용은 선형 부품(작은 선형 시스템)이 모였을 때 만들어지는 회로 전체(큰 시스템)을 왜 선형시스템으로 볼 수 있는지에 대한 설명이 가능하다.</p>
 <p><strong>(1) 선형연산자 + 선형연산자 = 선형연산자</strong></p>
 <ul>
@@ -410,9 +410,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761888456"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761888456" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761888456" defer></script>
-    <script src="/js/theme.js?1761888456" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761888578"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761888578" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761888578" defer></script>
+    <script src="/js/theme.js?1761888578" defer></script>
   </body>
 </html>

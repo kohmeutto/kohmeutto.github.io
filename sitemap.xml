@@ -577,13 +577,13 @@
     <loc>http://localhost:1313/temp/tensor_calculus/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tensor_analysis/operation/a_permutation_symbol/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_curl/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_fourier_transform_ii/index.html</loc>
@@ -613,6 +613,9 @@
     <loc>http://localhost:1313/linear_algebra/b_commutator/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/euclidean_vector/b_inner_product/index.html</loc>
   </url>
   <url>
@@ -623,9 +626,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_system/lsi/b_fourier_series/index.html</loc>
