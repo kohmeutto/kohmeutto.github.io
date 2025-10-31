@@ -35,28 +35,28 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
 $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
 수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
-    <meta itemprop="wordCount" content="620">
+    <meta itemprop="wordCount" content="353">
     <title>(b) Fourier transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761779706" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761779706" defer></script>
-    <script src="/js/search-lunr.js?1761779706" defer></script>
-    <script src="/js/search.js?1761779706" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761888439" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761888439" defer></script>
+    <script src="/js/search-lunr.js?1761888439" defer></script>
+    <script src="/js/search.js?1761888439" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761779706";
+      window.relearn.index_js_url="/searchindex.en.js?1761888439";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761779706" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761888439" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761779706" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761779706" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761779706" rel="stylesheet">
-    <link href="/css/theme.css?1761779706" rel="stylesheet">
-    <link href="/css/format-html.css?1761779706" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888439" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761888439" rel="stylesheet">
+    <link href="/css/theme.css?1761888439" rel="stylesheet">
+    <link href="/css/format-html.css?1761888439" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -133,8 +133,7 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
         <li><a href="#2-basis">2. Basis</a></li>
         <li><a href="#3-푸리에-역변환">3. 푸리에 역변환</a></li>
         <li><a href="#4-푸리에-변환의-물리적-의미">4. 푸리에 변환의 물리적 의미</a></li>
-        <li><a href="#2-각-주파수-성분들은-orthogonal-하다">2. 각 주파수 성분들은 orthogonal 하다.</a></li>
-        <li><a href="#6-라플라스-변환과의-관계">6. 라플라스 변환과의 관계</a></li>
+        <li><a href="#6-푸리에-변환의-존재-조건">6. 푸리에 변환의 존재 조건</a></li>
       </ul>
     </li>
   </ul>
@@ -150,7 +149,7 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
 <span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_laplace_transform_iii/index.html" title="(b) Laplace transform III (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/a_algebra_structure/index.html" title="(a) Algebra structure (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -211,7 +210,7 @@ $$
 $$$$
 \langle\omega^d|
 =\frac{1}{2\pi}\langle\omega|
-$$<p>이것은 푸리에 변환의 결과가, $|\omega\rangle$의 기저를 사용한 좌표 $\langle \omega^d|f\rangle$ 에 $1/(2\pi)$ 배 임을 알 수 있다.</p>
+$$<p>이것은 푸리에 변환의 결과가, <strong>$|\omega\rangle$의 기저를 사용한 좌표 $\langle \omega^d|f\rangle$ 에 $2\pi$ 배</strong> 임을 알 수 있다.</p>
 <p><strong>(2) 정규 직교 기저</strong></p>
 <p>대칭 푸리에 변환을 기준으로 설명한다.</p>
 $$
@@ -270,107 +269,10 @@ $$<hr>
 </li>
 </ul>
 <hr>
-<h3 id="2-각-주파수-성분들은-orthogonal-하다">2. 각 주파수 성분들은 orthogonal 하다.</h3>
+<h3 id="6-푸리에-변환의-존재-조건">6. 푸리에 변환의 존재 조건</h3>
 $$
-\langle e^{i\omega't}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega'\right)
-$$
-<details class=" box cstyle notices transparent expand">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    proof) 중요
-  </summary>
-  <div class="box-content">
-<p>
-$$
-\int_{-\infty}^{\infty}dt\left\lbrack e^{i\omega t}e^{-i\omega't}\right\rbrack
-$$
-
-위 식이 무엇인지 구하는 것이 목적이다. 'Regularization(정칙화) 기법'을 사용하자. 수학이나 물리학에서 다루는 문제 중에는 발산하거나(divergent), 특이점(singularity)을 포함하거나, 또는 해가 유일하게 결정되지 않는(ill-posed problem) 등 수학적으로 잘 정의되지 않거나 다루기 어려운 경우가 있다. 정칙화는 이러한 문제들을 직접 다루는 대신, 하나 이상의 매개변수(ϵ 등)를 도입하여 문제를 약간 변형(정칙화)함으로써 임시적으로 잘 정의되고 다루기 쉬운 형태로 만든 다음, 그 매개변수에 대해 특정 극한을 취하여 원래 문제의 '해석적인(meaningful)' 결과를 얻어내는 기법 이다.
-
-$$
-\Omega=\omega-\omega'
-$$
-
-$$
-f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack
-$$
-
-$$
-\int_{-\infty}^{\infty}dt\left\lbrack e^{i\left(\omega-\omega'\right)t}\right\rbrack
-=\lim_{\epsilon\to0}f_{\epsilon}(\Omega)
-=\lim_{\epsilon\to0}\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack
-=\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack+\int_0^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon t}\right\rbrack
-$$
-
-음수 구간
-
-$$
-\int_{-\infty}^0dt\left\lbrack e^{i\Omega t}e^{\epsilon t}dt\right\rbrack=\int_{-\infty}^0dt\left\lbrack e^{(\epsilon+i\Omega)t}\right\rbrack=\left[\frac{1}{\epsilon+ i\Omega}e^{(\epsilon+i\Omega)t}\right]_{-\infty}^0=\frac{1}{\epsilon+ i\Omega}
-$$
-
-양수 구간
-
-$$
-\int_{0}^{\infty} e^{i\Omega t} e^{-\epsilon t} dt = \int_{0}^{\infty} e^{(-\epsilon + i\Omega)t} dt = \left[ \frac{1}{-\epsilon + i\Omega} e^{(-\epsilon + i\Omega)t} \right]_{0}^{\infty} = \frac{1}{\epsilon - i\Omega}
-$$
-
-따라서,
-
-$$
-f_{\epsilon}(\Omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{i\Omega t}e^{-\epsilon|t|}\right\rbrack=\frac{2\epsilon}{\Omega^2 + \epsilon^2}
-$$
-
-(1) $\Omega=0$
-
-$$
-\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{2}{\epsilon}=\infty
-$$
-
-(2) $\Omega\ne0$
-
-$$
-\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=\lim_{\epsilon\to0}\frac{0}{\Omega^2}=0
-$$
-
-
-(1) & (2) 의 결과를 사용하면, 다음을 얻을 수 있다.
-
-$$
-\lim_{\epsilon\to0}f_{\epsilon}(\Omega)=A\delta\left(\Omega\right)
-$$
-
-계수 A가 무엇인지 구해보자. 디렉델타함수의 정의를 사용한다.
-
-$$
-A=\int_{-\infty}^{\infty}d\Omega\left\lbrack \frac{2\epsilon}{\Omega^2 + \epsilon^2} \right\rbrack
-=2\int_{-\infty}^{\infty}d\left(\frac{\Omega}{\epsilon}\right)\left\lbrack \frac{1}{\left(\frac{\Omega}{\epsilon}\right)^2 + 1} \right\rbrack
-=2\left[\operatorname{atan}\left(\frac{\Omega}{\epsilon}\right)\right]^{\infty}_{-\infty}=2\pi
-$$
-
-최종적으로,
-
-$$
-\langle e^{i\omega't}|e^{i\omega t} \rangle=2\pi\delta\left(\omega-\omega'\right)
-$$
-
-만약 orthonormal 한 기저로서 표현하고 싶다면,
-
-$$
-\left\langle \frac{e^{i\omega't}}{\sqrt{2\pi}}\middle|\frac{e^{i\omega t}}{\sqrt{2\pi}}\right\rangle=\delta\left(\omega-\omega'\right)
-$$
-  </div>
-</details>
-<hr>
-<h3 id="6-라플라스-변환과의-관계">6. 라플라스 변환과의 관계</h3>
-$$
-\langle s|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
-$$<p>위 식을 만족하려면,</p>
-<ul>
-<li>ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)</li>
-<li>ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)</li>
-<li>ROC가 $\operatorname{Re}\lbrace s\rbrace&gt;0$ 또는 $\operatorname{Re}\lbrace s\rbrace&lt;0$ 시: 분포 푸리에 변환 존재</li>
-<li>단, ROC <strong>공집합</strong> 시: 표준 &amp; 분포 푸리에 변환이 존재 안 함</li>
-</ul>
+\langle s^L|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
+$$<p>위 식을 만족하려면, ROC가 허수축을 포함해야 한다.</p>
 
   <footer class="footline">
   </footer>
@@ -429,8 +331,8 @@ $$<p>위 식을 만족하려면,</p>
             <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_iii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_iii/index.html">(b) Laplace transform III</a></li>
             <li class="active " data-nav-url="/linear_system/lsi/b_fourier_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
             <li class="" data-nav-url="/linear_system/lsi/a_algebra_structure/index.html"><a class="padding" href="/linear_system/lsi/a_algebra_structure/index.html">(a) Algebra structure</a></li>
+            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_fourier_series/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_series/index.html">(b) Fourier series</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_lti_circuit_analysis/index.html"><a class="padding" href="/linear_system/lsi/b_lti_circuit_analysis/index.html">(b) LSI &amp; Circuit analysis</a></li>
             <li class="" data-nav-url="/linear_system/lsi/p_circuit_examples_for_fs/index.html"><a class="padding" href="/linear_system/lsi/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li></ul></li>
@@ -468,9 +370,9 @@ $$<p>위 식을 만족하려면,</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761779706"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761779706" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761779706" defer></script>
-    <script src="/js/theme.js?1761779706" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761888439"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761888439" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761888439" defer></script>
+    <script src="/js/theme.js?1761888439" defer></script>
   </body>
 </html>

@@ -5,46 +5,46 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
-    <meta name="description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
-이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
+    <meta name="description" content="1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Algebra structure :: 수리전자물리학">
-    <meta name="twitter:description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
-이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
+    <meta name="twitter:description" content="1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Algebra structure :: 수리전자물리학">
-    <meta property="og:description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
-이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
+    <meta property="og:description" content="1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(a) Algebra structure :: 수리전자물리학">
-    <meta itemprop="description" content="라플라스 변환의 대수 구조를 정리한다. 푸리에 변환의 대수 구조를 정리한다. 1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
-이동 연산 1 $$\langle s|e^{at}f(t)\rangle=\langle s|e^{a\hat{t}}|f\rangle=\langle s-a|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s|f(t&#43;a)\rangle=\langle s|e^{a\hat{s}}|f\rangle=e^{as}\langle s|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s|f(at)\rangle=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ scaling 2 $$\langle s|f(at&#43;b)\rangle=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle$$ 미분 1 $$\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s\middle|t^nf(t)\right\rangle=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=\frac{1}{s}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=\frac{1}{t}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s\middle|\frac{1}{t}f(t)\right\rangle=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|\frac{1}{s}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
-    <meta itemprop="wordCount" content="302">
+    <meta itemprop="description" content="1. 양방향 라플라스 변환의 대수 구조 작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조 작용 순위: ‘켓’이 가장 후순위">
+    <meta itemprop="wordCount" content="298">
     <title>(a) Algebra structure :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761779706" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761779706" defer></script>
-    <script src="/js/search-lunr.js?1761779706" defer></script>
-    <script src="/js/search.js?1761779706" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1761888439" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761888439" defer></script>
+    <script src="/js/search-lunr.js?1761888439" defer></script>
+    <script src="/js/search.js?1761888439" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761779706";
+      window.relearn.index_js_url="/searchindex.en.js?1761888439";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761779706" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761779706" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761888439" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761888439" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761779706" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761779706" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761779706" rel="stylesheet">
-    <link href="/css/theme.css?1761779706" rel="stylesheet">
-    <link href="/css/format-html.css?1761779706" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761888439" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761888439" rel="stylesheet">
+    <link href="/css/theme.css?1761888439" rel="stylesheet">
+    <link href="/css/format-html.css?1761888439" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -131,10 +131,10 @@
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_fourier_transform_i/index.html" title="(b) Fourier transform I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_fourier_series/index.html" title="(b) Fourier series (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -158,20 +158,15 @@
 <h1 id="a-algebra-structure">(a) Algebra structure</h1>
 
 <hr>
-<ul>
-<li>라플라스 변환의 대수 구조를 정리한다.</li>
-<li>푸리에 변환의 대수 구조를 정리한다.</li>
-</ul>
-<hr>
 <h3 id="1-양방향-라플라스-변환의-대수-구조">1. 양방향 라플라스 변환의 대수 구조</h3>
 <p>작용 순위: 연산자 → 괄호 → 켓</p>
 <ul>
 <li>이동 연산 1</li>
 </ul>
 $$
-\langle s|e^{at}f(t)\rangle
-=\langle s|e^{a\hat{t}}|f\rangle
-=\langle s-a|f\rangle
+\langle s^L|e^{at}f(t)\rangle
+=\langle s^L|e^{a\hat{t}}|f\rangle
+=\langle (s-a)^L|f\rangle
 $$$$
 \langle t|e^{as}f(s)\rangle
 =\langle t|e^{a\hat{s}}|f\rangle
@@ -180,9 +175,9 @@ $$<ul>
 <li>이동 연산 2</li>
 </ul>
 $$
-\langle s|f(t+a)\rangle
-=\langle s|e^{a\hat{s}}|f\rangle
-=e^{as}\langle s|f\rangle
+\langle s^L|f(t+a)\rangle
+=\langle s^L|e^{a\hat{s}}|f\rangle
+=e^{as}\langle s^L|f\rangle
 $$$$
 \langle t|f(s+a)\rangle
 =\langle t|e^{-a\hat{t}}|f\rangle
@@ -191,31 +186,31 @@ $$<ul>
 <li>scaling 1</li>
 </ul>
 $$
-\langle s|f(at)\rangle
-=\frac{1}{|a|}\left\langle\frac{s}{a}\middle|f(t)\right\rangle
+\langle s^L|f(at)\rangle
+=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle
 $$$$
 \langle t|f(as)\rangle
-=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(s)\right\rangle
+=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle
 $$<ul>
 <li>scaling 2</li>
 </ul>
 $$
-\langle s|f(at+b)\rangle
-=\left\langle s\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle
-=e^{\frac{b}{a}s}\left\langle s\middle|f(at)\right\rangle
-=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\frac{s}{a}\middle|f(t)\right\rangle
+\langle s^L|f(at+b)\rangle
+=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle
+=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle
+=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle
 $$$$
 \langle t|f(as+b)\rangle
 =\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle
 =e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle
-=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(s)\right\rangle
+=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle
 $$<ul>
 <li>미분 1</li>
 </ul>
 $$
-\left\langle s\middle|\frac{d^n}{dt^n}f(t)\right\rangle
-=\left\langle s\middle|(\hat{D}_t)^n\middle|f\right\rangle
-=s^n\left\langle s\middle|f\right\rangle
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle
+=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle
+=s^n\left\langle s^L\middle|f\right\rangle
 $$$$
 \left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle
 =\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle
@@ -224,8 +219,8 @@ $$<ul>
 <li>미분 2</li>
 </ul>
 $$
-\left\langle s\middle|t^nf(t)\right\rangle
-=\left\langle s\middle|(\hat{t})^n\middle|f\right\rangle
+\left\langle s^L\middle|t^nf(t)\right\rangle
+=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle
 =(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle
 $$$$
 \left\langle t\middle|s^nf(s)\right\rangle
@@ -235,20 +230,23 @@ $$<ul>
 <li>적분 1</li>
 </ul>
 $$
-\left\langle s\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
-=\frac{1}{s}\left\langle s\middle|f\right\rangle
+\left\langle s^L\middle|\int_{-\infty}^{t} dt'f(t')\right\rangle
+=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
+=s^{-1}\left\langle s\middle|f\right\rangle
 $$$$
-\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle
-=\frac{1}{t}\left\langle t\middle|f\right\rangle
+\left\langle t\middle|\int_{\mathbb{C}} ds'f(s')\right\rangle
+=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle
+=-t^{-1}\left\langle t\middle|f\right\rangle
 $$<ul>
 <li>적분 2</li>
 </ul>
 $$
-\left\langle s\middle|\frac{1}{t}f(t)\right\rangle
-=\left\langle s\middle|(\hat{t})^{-1}\middle|f\right\rangle
+\left\langle s^L\middle|t^{-1}f(t)\right\rangle
+=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle
+=-\int_{\infty}^{s}ds'\left\langle s'\middle|f\right\rangle
 =\int_{s}^{\infty}ds'\left\langle s'\middle|f\right\rangle
 $$$$
-\left\langle t\middle|\frac{1}{s}f(s)\right\rangle
+\left\langle t\middle|s^{-1}f(s)\right\rangle
 =\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle
 =\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
 $$<hr>
@@ -281,23 +279,23 @@ $$<ul>
 </ul>
 $$
 \langle \omega|f(at)\rangle
-=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle
+=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f\right\rangle
 $$$$
 \langle t|f(a\omega)\rangle
-=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle
+=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle
 $$<ul>
 <li>scaling 2</li>
 </ul>
 $$
 \langle \omega|f(at+b)\rangle
-=\left\langle \omega\middle|e^{\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle
-=e^{\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle
-=\frac{1}{|a|}e^{\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f(t)\right\rangle
+=\left\langle \omega\middle|e^{i\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle
+=e^{i\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle
+=\frac{1}{|a|}e^{i\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f\right\rangle
 $$$$
 \langle t|f(a\omega+b)\rangle
-=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle
-=e^{-\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle
-=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f(\omega)\right\rangle
+=\left\langle t\middle|e^{-i\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle
+=e^{-i\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle
+=\frac{1}{|a|}e^{-i\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle
 $$<ul>
 <li>미분 1</li>
 </ul>
@@ -326,20 +324,23 @@ $$<ul>
 $$
 \left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
 =\langle\omega|u\ast f\rangle
-= \frac{1}{i\omega} \langle \omega|f\rangle + \pi \langle 0|f\rangle \delta(\omega)
+=\left\lbrace\pi\delta(\omega)+\frac{1}{i\omega}\right\rbrace f(\omega)
+=\pi\delta(\omega)f(0)+\frac{1}{i\omega}f(\omega)
 $$$$
 \left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle
-=\frac{1}{it}\left\langle t\middle|f\right\rangle
+=(-it)^{-1}\left\langle t\middle|f\right\rangle
 $$<ul>
 <li>적분 2</li>
 </ul>
 $$
-\left\langle \omega\middle|\frac{1}{t}f(t)\right\rangle
+\left\langle \omega\middle|t^{-1}f(t)\right\rangle
 =\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle
+=(i)^{-1}\int_{\infty}^{\omega}d\omega'\left\langle \omega'\middle|f\right\rangle
 =i\int_{\omega}^{\infty}d\omega'\left\langle \omega'\middle|f\right\rangle
 $$$$
-\left\langle t\middle|\frac{1}{\omega}f(\omega)\right\rangle
+\left\langle t\middle|\omega^{-1}f(\omega)\right\rangle
 =\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle
+=(-i)^{-1}\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
 =i\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
 $$<hr>
 
@@ -400,8 +401,8 @@ $$<hr>
             <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_iii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_iii/index.html">(b) Laplace transform III</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
             <li class="active " data-nav-url="/linear_system/lsi/a_algebra_structure/index.html"><a class="padding" href="/linear_system/lsi/a_algebra_structure/index.html">(a) Algebra structure</a></li>
+            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_fourier_series/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_series/index.html">(b) Fourier series</a></li>
             <li class="" data-nav-url="/linear_system/lsi/b_lti_circuit_analysis/index.html"><a class="padding" href="/linear_system/lsi/b_lti_circuit_analysis/index.html">(b) LSI &amp; Circuit analysis</a></li>
             <li class="" data-nav-url="/linear_system/lsi/p_circuit_examples_for_fs/index.html"><a class="padding" href="/linear_system/lsi/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li></ul></li>
@@ -439,9 +440,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761779706"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761779706" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761779706" defer></script>
-    <script src="/js/theme.js?1761779706" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761888439"></script>
+    <script src="/js/clipboard/clipboard.min.js?1761888439" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761888439" defer></script>
+    <script src="/js/theme.js?1761888439" defer></script>
   </body>
 </html>
