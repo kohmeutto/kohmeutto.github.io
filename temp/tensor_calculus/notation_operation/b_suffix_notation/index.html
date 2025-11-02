@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.1.1+0dec9110102c403c1290101bceda89c936fc56fb">
+    <meta name="generator" content="Relearn 8.2.0">
     <meta name="description" content="0. Rule (1) 각 항에서, 1번 사용한 index를 free index 라고 한다.
 (2) 각 항에서, 2번 사용한 index를 dummy index라고 하며, dot product 이다.
 (3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)
@@ -41,26 +41,26 @@
 1. free suffix $$\vec{c}=\vec{a}&#43;\vec{b}\rightarrowc_i=a_i&#43;b_i$$The suffix i is called a ‘free suffix’. The choice of this free suffix is arbitrary, so the equation could equally well be written $c_j=a_j&#43;b_j$ or $c_k=a_k&#43;b_k$.">
     <meta itemprop="wordCount" content="360">
     <title>(b) Suffix notation :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761898748" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761898748" defer></script>
-    <script src="/js/search-lunr.js?1761898748" defer></script>
-    <script src="/js/search.js?1761898748" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1762065747" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1762065747" defer></script>
+    <script src="/js/search-lunr.js?1762065747" defer></script>
+    <script src="/js/search.js?1762065747" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761898748";
+      window.relearn.index_js_url="/searchindex.en.js?1762065747";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761898748" defer></script>
+    <script src="/js/lunr/lunr.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1762065747" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761898748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761898748" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761898748" rel="stylesheet">
-    <link href="/css/theme.css?1761898748" rel="stylesheet">
-    <link href="/css/format-html.css?1761898748" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762065747" rel="stylesheet">
+    <link href="/css/theme.css?1762065747" rel="stylesheet">
+    <link href="/css/format-html.css?1762065747" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -123,10 +123,10 @@
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -153,13 +153,13 @@
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/temp/tensor_calculus/notation_operation/index.html" title="Notation & Operation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/temp/tensor_calculus/notation_operation/index.html" title="Notation & Operation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/temp/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html" title="(b) Kronecker and Levi-Civit`a Symbols (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/temp/tensor_calculus/notation_operation/b_kronecker_levicivita_symbols/index.html" title="(b) Kronecker and Levi-Civit`a Symbols (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -389,6 +389,7 @@ $$<hr>
             <li class="alwaysopen " data-nav-url="/temp/tensor_calculus/general_coordinates/index.html"><a class="padding" href="/temp/tensor_calculus/general_coordinates/index.html">General coordinates</a><ul id="R-subsections-51fbc4fbbff7081ede1eac330a397856" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/temp/tensor_calculus/transformation_for_gc/index.html"><a class="padding" href="/temp/tensor_calculus/transformation_for_gc/index.html">Transformation for GC</a></li></ul></li>
             <li class="" data-nav-url="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-url="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
             <li class="" data-nav-url="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
             <li class="" data-nav-url="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li></ul></li>
           </ul>
@@ -419,9 +420,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761898748"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761898748" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761898748" defer></script>
-    <script src="/js/theme.js?1761898748" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762065747"></script>
+    <script src="/js/clipboard/clipboard.min.js?1762065747" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762065747" defer></script>
+    <script src="/js/theme.js?1762065747" defer></script>
   </body>
 </html>

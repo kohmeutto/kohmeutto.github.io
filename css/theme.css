@@ -1,18 +1,27 @@
 :root {
     /* initially use section background to avoid flickering on load when a non default variant is active;
     this is only possible because every color variant defines this variable, otherwise we would have been lost */
-    --INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba( 0, 0, 0, 0 ))); /* not --INTERNAL-MENU-HEADER-BG-color */
+    --INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba( 125, 201, 3, 1 ))); /* not --INTERNAL-MENU-HEADER-BG-color */
+    --INTERNAL-PRIMARY-HOVER-color: var(--PRIMARY-HOVER-color, var(--MENU-HEADER-BORDER-color, var(--INTERNAL-PRIMARY-color)));
     --INTERNAL-SECONDARY-color: var(--SECONDARY-color, var(--MAIN-LINK-color, rgba( 72, 106, 201, 1 ))); /* not --INTERNAL-MAIN-LINK-color */
+    --INTERNAL-SECONDARY-HOVER-color: var(--SECONDARY-HOVER-color, var(--MAIN-LINK-HOVER-color, var(--INTERNAL-SECONDARY-color)));
     --INTERNAL-ACCENT-color: var(--ACCENT-color, rgba( 255, 215, 0, 1 ));
+    --INTERNAL-ACCENT-HOVER-color: var(--ACCENT-HOVER-color, rgba( 255, 235, 120, 1 ));
 
     --INTERNAL-TOPBAR-BG-color: var(--TOPBAR-BG-color, color-mix(in srgb, var(--INTERNAL-MAIN-BG-color), rgba(134, 134, 134, 0.133)));
     --INTERNAL-TOPBAR-TEXT-color: var(--TOPBAR-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
     --INTERNAL-TOPBAR-SEPARATOR-color: var(--TOPBAR-SEPARATOR-color, color-mix(in srgb, var(--INTERNAL-TOPBAR-BG-color), rgba(134, 134, 134, 0.666)));
     --INTERNAL-TOPBAR-OVERLAY-BG-color: var(--TOPBAR-OVERLAY-BG-color, var(--INTERNAL-MAIN-BG-color));
+    --INTERNAL-TOPBAR-LINK-color: var(--TOPBAR-LINK-color, var(--INTERNAL-MAIN-LINK-color));
+    --INTERNAL-TOPBAR-LINK-HOVER-color: var(--TOPBAR-LINK-HOVER-color, var(--INTERNAL-MAIN-LINK-HOVER-color));
+    --INTERNAL-TOPBAR-BUTTON-color: var(--TOPBAR-BUTTON-color, var(--INTERNAL-TOPBAR-LINK-color));
+    --INTERNAL-TOPBAR-BUTTON-HOVER-color: var(--TOPBAR-BUTTON-HOVER-color, var(--INTERNAL-TOPBAR-LINK-HOVER-color));
     --INTERNAL-MAIN-TOPBAR-BORDER-color: var(--MAIN-TOPBAR-BORDER-color, transparent);
 
-    --INTERNAL-MAIN-LINK-color: var(--MAIN-LINK-color, var(--SECONDARY-color, rgba( 72, 106, 201, 1 ))); /* not --INTERNAL-SECONDARY-color */
-    --INTERNAL-MAIN-LINK-HOVER-color: var(--MAIN-LINK-HOVER-color, var(--INTERNAL-MAIN-LINK-color));
+    --INTERNAL-MAIN-LINK-color: var(--MAIN-LINK-color, var(--INTERNAL-SECONDARY-color));
+    --INTERNAL-MAIN-LINK-HOVER-color: var(--MAIN-LINK-HOVER-color, var(--INTERNAL-SECONDARY-HOVER-color));
+    --INTERNAL-MAIN-BUTTON-color: var(--MAIN-BUTTON-color, var(--INTERNAL-MAIN-LINK-color));
+    --INTERNAL-MAIN-BUTTON-HOVER-color: var(--MAIN-BUTTON-HOVER-color, var(--INTERNAL-MAIN-LINK-HOVER-color));
     --INTERNAL-MAIN-BG-color: var(--MAIN-BG-color, rgba( 255, 255, 255, 1 ));
     --INTERNAL-MAIN-BOLD-font-weight: var(--MAIN-BOLD-font-weight, 800);
 
@@ -90,7 +99,7 @@
 
     --INTERNAL-MENU-HEADER-color: var(--MENU-HEADER-color, var(--INTERNAL-MENU-SECTIONS-LINK-color));
     --INTERNAL-MENU-HEADER-BG-color: var(--MENU-HEADER-BG-color, var(--PRIMARY-color, rgba( 0, 0, 0, 0 ))); /* not --INTERNAL-PRIMARY-color */
-    --INTERNAL-MENU-HEADER-BORDER-color: var(--MENU-HEADER-BORDER-color, var(--INTERNAL-MENU-HEADER-BG-color));
+    --INTERNAL-MENU-HEADER-BORDER-color: var(--MENU-HEADER-BORDER-color, var(--INTERNAL-MENU-HEADER-BG-color)); /* no further fallback to --PRIMARY-HOVER-color, as this would be rude for existing users */
 
     --INTERNAL-MENU-SEARCH-color: var(--MENU-SEARCH-color, var(--MENU-SEARCH-BOX-ICONS-color, rgba( 224, 224, 224, 1 ))); /* fallback for renaming */
     --INTERNAL-MENU-SEARCH-BG-color: var(--MENU-SEARCH-BG-color, rgba( 50, 50, 50, 1 ));
@@ -136,10 +145,6 @@
   --INTERNAL-BOX-ACCENT-TEXT-color: var(--BOX-ACCENT-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
   --INTERNAL-BOX-ACCENT-CAPTION-color: var(--BOX-ACCENT-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-ACCENT-BG-color: var(--BOX-ACCENT-BG-color, var(--INTERNAL-BOX-BG-color));
-  --INTERNAL-BOX-ACTION-color: var(--BOX-ACTION-color, rgba(160, 160, 160, 0.2));
-  --INTERNAL-BOX-ACTION-TEXT-color: var(--BOX-ACTION-TEXT-color, var(--INTERNAL-MAIN-BG-color));
-  --INTERNAL-BOX-ACTION-CAPTION-color: var(--BOX-ACTION-CAPTION-color, var(--INTERNAL-MAIN-LINK-color));
-  --INTERNAL-BOX-ACTION-BG-color: var(--BOX-ACTION-BG-color, var(--INTERNAL-MAIN-LINK-color));
   --INTERNAL-BOX-BLUE-color: var(--BOX-BLUE-color, rgba( 48, 117, 229, 1 ));
   --INTERNAL-BOX-BLUE-TEXT-color: var(--BOX-BLUE-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-BLUE-CAPTION-color: var(--BOX-BLUE-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
@@ -172,10 +177,6 @@
   --INTERNAL-BOX-INFO-TEXT-color: var(--BOX-INFO-TEXT-color, var(--INTERNAL-BOX-BLUE-TEXT-color));
   --INTERNAL-BOX-INFO-CAPTION-color: var(--BOX-INFO-CAPTION-color, var(--INTERNAL-BOX-BLUE-CAPTION-color));
   --INTERNAL-BOX-INFO-BG-color: var(--BOX-INFO-BG-color, var(--INTERNAL-BOX-BLUE-BG-color));
-  --INTERNAL-BOX-LINK-color: var(--BOX-LINK-color, transparent);
-  --INTERNAL-BOX-LINK-TEXT-color: var(--BOX-LINK-TEXT-color, var(--INTERNAL-MAIN-LINK-HOVER-color));
-  --INTERNAL-BOX-LINK-CAPTION-color: var(--BOX-LINK-CAPTION-color, var(--INTERNAL-MAIN-LINK-color));
-  --INTERNAL-BOX-LINK-BG-color: var(--BOX-LINK-BG-color, rgba(160, 160, 160, 0.2));
   --INTERNAL-BOX-MAGENTA-color: var(--BOX-MAGENTA-color, rgba( 229, 50, 210, 1 ));
   --INTERNAL-BOX-MAGENTA-TEXT-color: var(--BOX-MAGENTA-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-MAGENTA-CAPTION-color: var(--BOX-MAGENTA-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
@@ -687,6 +688,8 @@ html {
   color-scheme: only var(--INTERNAL-BROWSER-theme);
   height: 100%;
   width: 100%;
+  --VARIABLE-LINK-color: var(--INTERNAL-MAIN-LINK-color);
+  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-MAIN-LINK-HOVER-color);
 }
 
 body {
@@ -729,13 +732,13 @@ dd {
 }
 
 a {
-  color: var(--INTERNAL-MAIN-LINK-color);
+  color: var(--VARIABLE-LINK-color);
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+  color: var(--VARIABLE-LINK-HOVER-color);
 }
 
 .default-animation {
@@ -1204,7 +1207,7 @@ article a:focus > svg:only-child:empty,
 article a:hover > img:only-child:empty,
 article a:active > img:only-child:empty,
 article a:focus > img:only-child:empty {
-  outline: 0.15rem solid var(--INTERNAL-MAIN-LINK-HOVER-color);
+  outline: 0.15rem solid var(--VARIABLE-LINK-HOVER-color);
 }
 
 #R-body-inner:focus-visible {
@@ -1880,6 +1883,10 @@ tbody > tr:nth-child(even) > td {
 .topbar-button > .btn {
   font-size: 1rem;
 }
+.topbar-button > .btn.cstyle {
+  --VARIABLE-LINK-color: var(--INTERNAL-TOPBAR-BUTTON-color);
+  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-TOPBAR-BUTTON-HOVER-color);
+}
 
 .topbar-button > .btn > button:disabled i,
 .topbar-button > .btn > span i {
@@ -2040,19 +2047,15 @@ code.copy-to-clipboard-code:has(+ .inline-copy-to-clipboard-button):after {
   content: '';
 }
 
-.inline-copy-to-clipboard-button,
-.block-copy-to-clipboard-button {
-  cursor: pointer;
-  display: inline;
-  font: initial;
-}
-
 .inline-copy-to-clipboard-button {
   background-color: var(--INTERNAL-CODE-INLINE-BG-color);
   border-color: var(--INTERNAL-CODE-INLINE-BORDER-color);
   border-inline-start-style: solid;
   border-inline-start-width: 1px;
   color: var(--INTERNAL-CODE-INLINE-color);
+  cursor: pointer;
+  display: inline;
+  font: initial;
   font-size: 0.934375em;
   margin-inline-start: calc(-1 * (1.333em + var(--bpx1) * 0.125em));
   position: relative;
@@ -2064,43 +2067,32 @@ code.copy-to-clipboard-code:has(+ .inline-copy-to-clipboard-button):after {
 }
 
 .block-copy-to-clipboard-button {
-  background-color: rgba(160, 160, 160, 0.2);
-  border-color: transparent;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
-  color: var(--INTERNAL-MAIN-LINK-color);
+  inset-inline-end: 4px;
+  position: absolute;
+  top: 4px;
+}
+
+.block-copy-to-clipboard-button.btn {
   /* only show copy to clipboard on hover for code blocks if configured */
   display: none;
-  font-size: 0.934375rem;
-  padding: 5px 3px;
-  position: absolute;
-  inset-inline-end: 4px;
-  top: 4px;
 }
 @media (any-hover: none) {
   /* if there is at least one input device that does not support hover, we want to force the copy button */
-  .block-copy-to-clipboard-button {
+  .block-copy-to-clipboard-button.btn {
     display: block;
   }
 }
-div.highlight:focus-within .block-copy-to-clipboard-button,
-div.highlight .block-copy-to-clipboard-button:active,
-div.highlight:hover .block-copy-to-clipboard-button {
+div.highlight:focus-within .block-copy-to-clipboard-button.btn,
+div.highlight .block-copy-to-clipboard-button.btn:active,
+div.highlight:hover .block-copy-to-clipboard-button.btn {
   display: block;
 }
-.disableHoverBlockCopyToClipBoard div.highlight .block-copy-to-clipboard-button {
+.disableHoverBlockCopyToClipBoard div.highlight .block-copy-to-clipboard-button.btn {
   display: block;
 }
 .force-display {
   display: block !important;
 }
-.block-copy-to-clipboard-button:hover {
-  background-color: var(--INTERNAL-MAIN-LINK-color);
-  border-color: var(--INTERNAL-MAIN-LINK-color);
-  color: var(--INTERNAL-CODE-BLOCK-BG-color);
-}
-
 .inline-copy-to-clipboard-button > i {
   font-size: 0.859625em;
   padding-left: 0.333em;
@@ -2108,9 +2100,7 @@ div.highlight:hover .block-copy-to-clipboard-button {
 }
 
 .block-copy-to-clipboard-button > i {
-  font-size: 0.859625rem;
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 2em;
 }
 
 option {
@@ -2191,40 +2181,26 @@ html[dir='rtl'] .expand[open] > .box-label > i.expander-icon {
 }
 
 .svg-reset-button {
-  background-color: rgba(160, 160, 160, 0.2);
-  border-color: transparent;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
-  color: var(--INTERNAL-MAIN-LINK-color);
-  cursor: pointer;
-  display: none;
-  font-size: 0.934375rem;
-  line-height: 1.15;
-  padding: 5px 3px;
-  position: absolute;
   inset-inline-end: 4px;
+  position: absolute;
   top: 4px;
 }
-.svg-reset-button:hover {
-  background-color: var(--INTERNAL-MAIN-LINK-color);
-  border-color: var(--INTERNAL-MAIN-LINK-color);
-  color: var(--INTERNAL-MAIN-BG-color);
+
+.svg-reset-button.btn {
+  display: none;
 }
-.mermaid:hover .svg-reset-button.zoomed {
+.mermaid:hover .svg-reset-button.btn.zoomed {
   display: block;
 }
 @media (any-hover: some) {
   /* if there is at least one input device that does not support hover, we want to force the reset button if zoomed */
-  .svg-reset-button.zoomed {
+  .svg-reset-button.btn.zoomed {
     display: block;
   }
 }
 
 .svg-reset-button > i {
-  font-size: 0.859625rem;
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 2em;
 }
 
 .mermaid-code {
@@ -2406,6 +2382,12 @@ i.cstyle {
   -webkit-user-select: none;
   user-select: none;
 }
+
+.btn.cstyle {
+  --VARIABLE-LINK-color: var(--INTERNAL-MAIN-BUTTON-color);
+  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-MAIN-BUTTON-HOVER-color);
+}
+
 .btn.interactive {
   cursor: pointer;
 }
@@ -2441,6 +2423,7 @@ i.cstyle {
   user-select: none;
   white-space: nowrap;
 }
+button.btn.noborder,
 .btn.noborder > * {
   border-color: transparent !important;
 }
@@ -2455,10 +2438,6 @@ i.cstyle {
 
 #R-body #R-body-inner .btn > *.highlight:after {
   background-color: transparent;
-}
-
-.btn.interactive > .btn-interactive:focus {
-  outline: none;
 }
 
 .btn.interactive > *:hover,
@@ -2498,7 +2477,7 @@ i.cstyle {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
-  color: var(--INTERNAL-MAIN-LINK-color);
+  color: var(--VARIABLE-LINK-color);
   cursor: pointer;
   font-size: 0.5em;
   margin-inline-start: 0.66em;
@@ -2515,7 +2494,7 @@ i.cstyle {
 .anchor:hover,
 .anchor:active,
 .anchor:focus {
-  color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+  color: var(--VARIABLE-LINK-HOVER-color);
 }
 
 h2:hover .anchor,
@@ -2770,7 +2749,7 @@ span.math:has(> mjx-container[display]) {
 }
 
 #R-searchresults .autocomplete-suggestion {
-  color: var(--INTERNAL-MAIN-LINK-color);
+  color: var(--VARIABLE-LINK-color);
   display: block;
   font-size: 1.3rem;
   font-weight: 500;
@@ -3181,7 +3160,7 @@ body #R-logo svg :not([fill='#000000']) {
   appearance: none;
   background-color: transparent;
   border: 1px solid transparent;
-  color: var(--INTERNAL-MAIN-LINK-color);
+  color: var(--VARIABLE-LINK-color);
   display: block;
   font-size: 0.9rem;
   font-weight: 300;
@@ -3199,7 +3178,7 @@ body #R-logo svg :not([fill='#000000']) {
 #R-body .tab-nav-button:not(.active):hover,
 #R-body .tab-nav-button:not(.active):active,
 #R-body .tab-nav-button:not(.active):focus {
-  color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+  color: var(--VARIABLE-LINK-HOVER-color);
 }
 
 #R-body .tab-nav-button > .tab-nav-text {
@@ -3225,7 +3204,7 @@ body #R-logo svg :not([fill='#000000']) {
 #R-body .tab-nav-button:not(.active):hover > .tab-nav-text,
 #R-body .tab-nav-button:not(.active):active > .tab-nav-text,
 #R-body .tab-nav-button:not(.active):focus > .tab-nav-text {
-  border-bottom-color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+  border-bottom-color: var(--VARIABLE-LINK-HOVER-color);
 }
 
 #R-body .tab-content {
@@ -3301,6 +3280,8 @@ body #R-logo svg :not([fill='#000000']) {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   color: var(--INTERNAL-TOPBAR-TEXT-color);
+  --VARIABLE-LINK-color: var(--INTERNAL-TOPBAR-LINK-color);
+  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-TOPBAR-LINK-HOVER-color);
 }
 
 #R-header-topbar {
@@ -3470,12 +3451,12 @@ body.notfound #shrug svg {
   padding-top: 0;
 }
 .box.expand.cstyle.transparent > .box-label {
-  color: var(--INTERNAL-MAIN-LINK-color);
+  color: var(--VARIABLE-LINK-color);
 }
 .box.expand.cstyle.transparent > .box-label:hover,
 .box.expand.cstyle.transparent > .box-label:active,
 .box.expand.cstyle.transparent > .box-label:focus {
-  color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+  color: var(--VARIABLE-LINK-HOVER-color);
 }
 
 .box.cstyle.transparent > .box-content {
@@ -3529,12 +3510,12 @@ body.notfound #shrug svg {
 }
 
 .card-container > .card.card-popout {
-  border: 1px solid color-mix(in srgb, var(--INTERNAL-MAIN-LINK-color) 33%, transparent);
+  border: 1px solid color-mix(in srgb, var(--VARIABLE-LINK-color) 33%, transparent);
 }
 
 /* top handle */
 .card-container .card::before {
-  background: linear-gradient(90deg, var(--INTERNAL-MAIN-LINK-color) 0%, color-mix(in srgb, var(--INTERNAL-MAIN-LINK-color) 60%, white) 100%);
+  background: linear-gradient(90deg, var(--VARIABLE-LINK-color) 0%, color-mix(in srgb, var(--VARIABLE-LINK-color) 60%, white) 100%);
   content: '';
   height: 3px;
   left: 0;
@@ -3546,8 +3527,8 @@ body.notfound #shrug svg {
 }
 
 .card-container .card.card-popout:hover {
-  border-color: color-mix(in srgb, var(--INTERNAL-MAIN-LINK-color) 40%, transparent);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--INTERNAL-MAIN-LINK-color) 25%, transparent);
+  border-color: color-mix(in srgb, var(--VARIABLE-LINK-color) 40%, transparent);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--VARIABLE-LINK-color) 25%, transparent);
   transform: translateY(-4px) translateX(4px);
 }
 
@@ -3656,11 +3637,25 @@ body[data-theme='dark'] .card-container .card:hover,
 
 .cstyle {
   --VARIABLE-BOX-color: var(--INTERNAL-BOX-NEUTRAL-color);
+  --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-NEUTRAL-TEXT-color);
   --VARIABLE-BOX-CAPTION-color: var(--INTERNAL-BOX-CAPTION-color);
   --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-BG-color);
-  --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-NEUTRAL-TEXT-color);
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
+}
+
+.cstyle.link {
+  --VARIABLE-BOX-color: transparent;
+  --VARIABLE-BOX-TEXT-color: var(--VARIABLE-LINK-HOVER-color);
+  --VARIABLE-BOX-CAPTION-color: var(--VARIABLE-LINK-color);
+  --VARIABLE-BOX-BG-color: rgba(160, 160, 160, 0.2);
+}
+
+.cstyle.action {
+  --VARIABLE-BOX-color: rgba(160, 160, 160, 0.2);
+  --VARIABLE-BOX-TEXT-color: var(--INTERNAL-MAIN-BG-color);
+  --VARIABLE-BOX-CAPTION-color: var(--VARIABLE-LINK-color);
+  --VARIABLE-BOX-BG-color: var(--VARIABLE-LINK-color);
 }
 
 .cstyle.accent {
@@ -3668,13 +3663,6 @@ body[data-theme='dark'] .card-container .card:hover,
   --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-ACCENT-TEXT-color);
   --VARIABLE-BOX-CAPTION-color: var(--INTERNAL-BOX-ACCENT-CAPTION-color);
   --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-ACCENT-BG-color);
-}
-
-.cstyle.action {
-  --VARIABLE-BOX-color: var(--INTERNAL-BOX-ACTION-color);
-  --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-ACTION-TEXT-color);
-  --VARIABLE-BOX-CAPTION-color: var(--INTERNAL-BOX-ACTION-CAPTION-color);
-  --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-ACTION-BG-color);
 }
 
 .cstyle.blue {
@@ -3731,13 +3719,6 @@ body[data-theme='dark'] .card-container .card:hover,
   --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-INFO-TEXT-color);
   --VARIABLE-BOX-CAPTION-color: var(--INTERNAL-BOX-INFO-CAPTION-color);
   --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-INFO-BG-color);
-}
-
-.cstyle.link {
-  --VARIABLE-BOX-color: var(--INTERNAL-BOX-LINK-color);
-  --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-LINK-TEXT-color);
-  --VARIABLE-BOX-CAPTION-color: var(--INTERNAL-BOX-LINK-CAPTION-color);
-  --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-LINK-BG-color);
 }
 
 .cstyle.magenta {

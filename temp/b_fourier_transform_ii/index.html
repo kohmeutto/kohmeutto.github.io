@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.1.1+0dec9110102c403c1290101bceda89c936fc56fb">
+    <meta name="generator" content="Relearn 8.2.0">
     <meta name="description" content="1. 중요변환 1) Dirac delta function - time to frequency domain
 $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성, 중요비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다. $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle\omega|f\rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right] $$ 따라서, $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
     <meta name="author" content="">
@@ -25,26 +25,26 @@ $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =
 $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$비대칭성, 중요비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다. $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle\omega|f\rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right] $$ 따라서, $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain">
     <meta itemprop="wordCount" content="1350">
     <title>(b) Fourier transform II :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1761898748" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761898748" defer></script>
-    <script src="/js/search-lunr.js?1761898748" defer></script>
-    <script src="/js/search.js?1761898748" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1762065747" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1762065747" defer></script>
+    <script src="/js/search-lunr.js?1762065747" defer></script>
+    <script src="/js/search.js?1762065747" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761898748";
+      window.relearn.index_js_url="/searchindex.en.js?1762065747";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761898748" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761898748" defer></script>
+    <script src="/js/lunr/lunr.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1762065747" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761898748" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761898748" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761898748" rel="stylesheet">
-    <link href="/css/theme.css?1761898748" rel="stylesheet">
-    <link href="/css/format-html.css?1761898748" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762065747" rel="stylesheet">
+    <link href="/css/theme.css?1762065747" rel="stylesheet">
+    <link href="/css/format-html.css?1762065747" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -107,10 +107,10 @@ $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -135,13 +135,13 @@ $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/temp/tensor_calculus/transformation_for_gc/index.html" title="Transformation for GC (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/temp/tensor_calculus/transformation_for_gc/index.html" title="Transformation for GC (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/temp/b_inner_product/index.html" title="(b) Inner product (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/temp/b_fourier_transform_ii-copy/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -1057,8 +1057,8 @@ $$
 <hr>
 <h3 id="6-practice2---비대칭성-기반-풀이">6. Practice2 - 비대칭성 기반 풀이</h3>
 <p><strong>example1) 문제 자체가 중요</strong></p>
-<p><a href="#R-image-02d943cab395b6d0dabe77f104475d25" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-02d943cab395b6d0dabe77f104475d25"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-1.png"></a></p>
+<p><a href="#R-image-f33b232a803f90d03c81d05b75a06224" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f33b232a803f90d03c81d05b75a06224"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-1.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1101,8 +1101,8 @@ $$
   </div>
 </details>
 <p><strong>example2)</strong></p>
-<p><a href="#R-image-9ea5b0d1a729ae69fa6d69a23ebee7ef" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ea5b0d1a729ae69fa6d69a23ebee7ef"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-2.png"></a></p>
+<p><a href="#R-image-cd201d23b1af74c477f65b512f765a18" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cd201d23b1af74c477f65b512f765a18"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-2.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1136,8 +1136,8 @@ $$
   </div>
 </details>
 <p><strong>example3)</strong></p>
-<p><a href="#R-image-3cee339b4c5f562ee23c48ad89eff64d" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3cee339b4c5f562ee23c48ad89eff64d"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-3.png"></a></p>
+<p><a href="#R-image-101b490d4bc94c00cee8e2560c5fbb85" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-101b490d4bc94c00cee8e2560c5fbb85"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-3.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1160,8 +1160,8 @@ $$
   </div>
 </details>
 <p><strong>example4)</strong></p>
-<p><a href="#R-image-755dd776dcfcd43c7d8a215c1702d4a4" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-755dd776dcfcd43c7d8a215c1702d4a4"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-4.png"></a></p>
+<p><a href="#R-image-5908ecb31bed30a383a1aee9f3f63d0e" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5908ecb31bed30a383a1aee9f3f63d0e"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-4.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1188,8 +1188,8 @@ $$
   </div>
 </details>
 <p><strong>example5)</strong></p>
-<p><a href="#R-image-29bb2cabd8c474b1c1ae364046607933" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-29bb2cabd8c474b1c1ae364046607933"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-5.png"></a></p>
+<p><a href="#R-image-8152cd799b1b8255d60491d1178c1686" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8152cd799b1b8255d60491d1178c1686"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-5.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1213,8 +1213,8 @@ $$
   </div>
 </details>
 <p><strong>example6)</strong></p>
-<p><a href="#R-image-a06a6a7c5a461784787ed645d1baf595" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a06a6a7c5a461784787ed645d1baf595"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-6.png"></a></p>
+<p><a href="#R-image-24da555f933af1c5b76accb0a1e32931" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-24da555f933af1c5b76accb0a1e32931"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-6.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1282,8 +1282,8 @@ $$
   </div>
 </details>
 <p><strong>example7)</strong></p>
-<p><a href="#R-image-9e2232d428dcd571f8969b82a9c35b02" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e2232d428dcd571f8969b82a9c35b02"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-7.png"></a></p>
+<p><a href="#R-image-b4fa5c78b140fe517d8cee815ccadc28" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b4fa5c78b140fe517d8cee815ccadc28"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-7.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1332,8 +1332,8 @@ $$
   </div>
 </details>
 <p><strong>example8)</strong></p>
-<p><a href="#R-image-4683ad2972d89bf8870e50bf15375d9d" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-8.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4683ad2972d89bf8870e50bf15375d9d"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-8.png"></a></p>
+<p><a href="#R-image-9816b08465e64bb661d517ffc4f9bb44" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9816b08465e64bb661d517ffc4f9bb44"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-8.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1347,8 +1347,8 @@ $$
 </details>
 <hr>
 <p><strong>example9)</strong></p>
-<p><a href="#R-image-e90d0e51067fa453087514bda0c3931d" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-9.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e90d0e51067fa453087514bda0c3931d"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-9.png"></a></p>
+<p><a href="#R-image-066aca3190f52201a4892803d8e36d4f" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-066aca3190f52201a4892803d8e36d4f"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-9.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1410,8 +1410,8 @@ $$
   </div>
 </details>
 <p><strong>example10)</strong></p>
-<p><a href="#R-image-c8bd56ba0affdbce8a149af394a709c6" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-10.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c8bd56ba0affdbce8a149af394a709c6"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-10.png"></a></p>
+<p><a href="#R-image-18d4af8f0b48bff60da909bbeb4a63c0" class="lightbox-link"><img class="lazy lightbox figure-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-10.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-18d4af8f0b48bff60da909bbeb4a63c0"><img class="lazy lightbox lightbox-image" loading="lazy" src="/temp/b_fourier_transform_ii/image3-10.png"></a></p>
 
 <details class=" box cstyle notices transparent expand">
   <summary class="box-label">
@@ -1546,6 +1546,7 @@ $$
             <li class="" data-nav-url="/temp/gc_operation/index.html"><a class="padding" href="/temp/gc_operation/index.html">[GC] Operation</a></li>
             <li class="alwaysopen " data-nav-url="/temp/tensor_calculus/index.html"><a class="padding" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li>
             <li class="active " data-nav-url="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-url="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
             <li class="" data-nav-url="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
             <li class="" data-nav-url="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li></ul></li>
           </ul>
@@ -1576,9 +1577,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1761898748"></script>
-    <script src="/js/clipboard/clipboard.min.js?1761898748" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761898748" defer></script>
-    <script src="/js/theme.js?1761898748" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762065747"></script>
+    <script src="/js/clipboard/clipboard.min.js?1762065747" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762065747" defer></script>
+    <script src="/js/theme.js?1762065747" defer></script>
   </body>
 </html>
