@@ -3,7 +3,7 @@
   <channel>
     <title>LSI :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_system/lsi/index.html</link>
-    <description>(i) LSI&#xD;(b) Convolution&#xD;(b) Causality&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Laplace transform III&#xD;(b) Fourier transform I&#xD;(a) Algebra structure&#xD;(b) Fourier transform II&#xD;(b) Fourier series&#xD;(b) LSI &amp; Circuit analysis&#xD;(p) Circuit examples for FS</description>
+    <description>(i) LSI&#xD;(b) Convolution&#xD;(b) Causality&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Laplace transform III&#xD;(b) Fourier transform I&#xD;(a) Algebra structure&#xD;(b) Fourier transform II&#xD;(b) Fourier series&#xD;(b) LSI &amp; Circuit analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_system/lsi/index.xml" rel="self" type="application/rss+xml" />
@@ -68,14 +68,14 @@
       <link>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</guid>
-      <description>1. 중요변환 1) Dirac delta function - time to frequency domain&#xA;$$ \langle \omega^A| \delta \rangle=1\quad, \langle \omega^S| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$2) Dirac delta function - frequency to time domain&#xA;$$ \langle t^A| \delta \rangle=\frac{1}{2\pi},\quad \langle t^S| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$3) DC, Constant&#xA;$$ \langle\omega^A|1\rangle=2\pi\delta(\omega),\quad \langle\omega^S|1\rangle=\sqrt{2\pi}\delta(\omega) $$4) Unit function&#xA;$$ \langle\omega^A|u\rangle=\pi\delta(\omega)+\frac{1}{i\omega},\quad \langle\omega^S|u\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega)+\frac{1}{i\omega}\right\rbrace $$5) cosine function&#xA;$$ \langle\omega^A|\cos at\rangle=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad \langle\omega^S|\cos at\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega-a)+\pi\delta(\omega+a)\right\rbrace $$6) sine function&#xA;$$ \langle\omega^A|\sin at\rangle =-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right),\quad \langle\omega^S|\sin at\rangle =\frac{1}{\sqrt{2\pi}}\left\{-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right)\right\} $$ 2. Duality 푸리에 변환의 쌍대성은 시간 영역과 주파수 영역 사이의 대칭적인 관계를 나타낸다. 함수 $f(t)$의 푸리에 변환이 $F(\omega)$일 때, $F(\omega)$를 시간 함수 $F(t)$로 간주하고 그 푸리에 변환을 구하면 원래 함수 $f(t)$와 관련된 형태가 나온다.</description>
+      <description>1. 중요변환 1) Dirac delta function - time to frequency domain&#xA;$$ \langle \omega^A| \delta \rangle=1,\quad \langle \omega^S| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$2) Dirac delta function - frequency to time domain&#xA;$$ \langle t^A| \delta \rangle=\frac{1}{2\pi},\quad \langle t^S| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$3) DC, Constant&#xA;$$ \langle\omega^A|1\rangle=2\pi\delta(\omega),\quad \langle\omega^S|1\rangle=\sqrt{2\pi}\delta(\omega) $$4) Unit function&#xA;$$ \langle\omega^A|u\rangle=\pi\delta(\omega)+\frac{1}{i\omega},\quad \langle\omega^S|u\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega)+\frac{1}{i\omega}\right\rbrace $$5) cosine function&#xA;$$ \langle\omega^A|\cos at\rangle=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad \langle\omega^S|\cos at\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega-a)+\pi\delta(\omega+a)\right\rbrace $$6) sine function&#xA;$$ \langle\omega^A|\sin at\rangle =-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right),\quad \langle\omega^S|\sin at\rangle =\frac{1}{\sqrt{2\pi}}\left\{-i\pi\delta\left(\omega-a\right)+i\pi\delta\left(\omega+a\right)\right\} $$ 2. Duality 푸리에 변환의 쌍대성은 시간 영역과 주파수 영역 사이의 대칭적인 관계를 나타낸다. 함수 $f(t)$의 푸리에 변환이 $F(\omega)$일 때, $F(\omega)$를 시간 함수 $F(t)$로 간주하고 그 푸리에 변환을 구하면 원래 함수 $f(t)$와 관련된 형태가 나온다.</description>
     </item>
     <item>
       <title>(b) Fourier series</title>
       <link>http://localhost:1313/linear_system/lsi/b_fourier_series/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_fourier_series/index.html</guid>
-      <description>1. 푸리에 급수 주기 함수 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.&#xA;$$ f(t) =a_0+\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t + b_n\sin n\omega_0 t\} =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t} =d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n) $$where,&#xA;$$ a_0 =\langle 1^d|f\rangle =\frac{1}{T}\langle1|f\rangle,\quad a_n =\langle \cos_n^d|f\rangle =\frac{2}{T}\langle \cos_n^d|f\rangle,\quad b_n =\langle \sin_n^d|f\rangle =\frac{2}{T}\langle \sin_n|f\rangle $$$$ c_n =\langle \exp_n^d|f\rangle =\frac{1}{T}\langle\exp_n|f\rangle $$$$ d_0=c_0,\quad d_n=2|c_n|,\quad \varphi_n=\operatorname{ang}\{c_n\} $$proof)</description>
+      <description>1. 푸리에 급수의 본질 $|f\rangle$이 이산 무한 기저 $|\omega_{n,A}\rangle$로 표현가능하다면,&#xA;$$ |f\rangle =\sum_{n=-\infty}^{\infty} c_n |\omega_{n,A}\rangle $$여기에서,&#xA;$$ \langle t^A|\omega_{n,A}\rangle =e^{in\omega_0t},\quad \langle \omega_{n}^{A}|t_A\rangle =e^{-in\omega_0t} $$쌍대기저를 구하면,&#xA;$$ \int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{n,A}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{+in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{m,A}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{+im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m,A}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.&#xA;$$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하여, $|f\rangle$을 $|t^A\rangle$로 사영하였을 때, 좌표를 구해보자.&#xA;$$ f(t) =\langle t^A|f\rangle =\sum_n c_n \langle t^A|\omega_{n,A}\rangle =\sum_n c_n e^{in\omega_0t} $$$$ c_n =\langle\omega_n^{A,d}|f\rangle =\frac{1}{T}\int_T dt \{e^{-in\omega_0t}f(t)\} $$ 2. 푸리에 급수의 형태와 직관적 이해 위에서는 푸리에 변환으로 부터, 푸리에 급수의 본질을 이해하였다. 그러나, 푸리에 급수는 직관적으로 테일러 급수 같이 이해할 수 있다. 주기함수일 경우, 주파수의 정수배인 정현파 함수의 합으로 표현할 수 있다.</description>
     </item>
     <item>
       <title>(b) LSI &amp; Circuit analysis</title>
@@ -83,13 +83,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/lsi/b_lti_circuit_analysis/index.html</guid>
       <description>회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.&#xA;1. 미분 방정식을 사용한 풀이1 $$ -2e^{-2t}+5i+D(i-1)-6+v_c&#39;=0,\quad i=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i $$$$ -2e^{-2t}+5i+Di-6+4D^{-1}i=0\to 4e^{-2t}+5Di+D^2i+4i=0 $$정리하면 다음과 같다.&#xA;$$ D^2i+5Di+4i=-4e^{-2t} $$일반해와 특수해를 구한다.&#xA;$$ i_h=c_1e^{-t}+c_2e^{-4t} $$$$ i_p=\left.\frac{-4}{(D+1)(D+4)}\right|_{D=-2}e^{-2t}=2e^{-2t} $$초기조건을 사용하여 계수를 구하면,&#xA;$$ i(0) =1 =c_1+c_2+2 $$$$ Di(0) =3 =-c_1-4c_2-4 $$$$ c_1=1, c_2=-2 $$따라서,&#xA;$$ i=e^{-t}+2e^{-2t}-2e^{-4t} $$ 2. 라플라스 변환을 사용한 풀이 위 회로 시스템은, causality 하다. 따라서, 단방향 라플라스 변환을 수행한다.</description>
-    </item>
-    <item>
-      <title>(p) Circuit examples for FS</title>
-      <link>http://localhost:1313/linear_system/lsi/p_circuit_examples_for_fs/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_system/lsi/p_circuit_examples_for_fs/index.html</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

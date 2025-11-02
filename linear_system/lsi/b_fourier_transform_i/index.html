@@ -35,28 +35,28 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
 $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
 수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega^A|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
-    <meta itemprop="wordCount" content="343">
+    <meta itemprop="wordCount" content="345">
     <title>(b) Fourier transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1762065747" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1762065747" defer></script>
-    <script src="/js/search-lunr.js?1762065747" defer></script>
-    <script src="/js/search.js?1762065747" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1762070152" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1762070152" defer></script>
+    <script src="/js/search-lunr.js?1762070152" defer></script>
+    <script src="/js/search.js?1762070152" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1762065747";
+      window.relearn.index_js_url="/searchindex.en.js?1762070152";
     </script>
-    <script src="/js/lunr/lunr.min.js?1762065747" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1762065747" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1762065747" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1762065747" defer></script>
+    <script src="/js/lunr/lunr.min.js?1762070152" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1762070152" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1762070152" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1762070152" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762065747" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762065747" rel="stylesheet">
-    <link href="/css/theme.css?1762065747" rel="stylesheet">
-    <link href="/css/format-html.css?1762065747" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762070152" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762070152" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762070152" rel="stylesheet">
+    <link href="/css/theme.css?1762070152" rel="stylesheet">
+    <link href="/css/format-html.css?1762070152" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -240,7 +240,8 @@ $$<p>즉, $|\omega_S\rangle$ 은 <strong>정규직교기저</strong> 이다.</p>
 <h3 id="3-푸리에-역변환">3. 푸리에 역변환</h3>
 <p><strong>(1) 비정규 직교 기저</strong></p>
 $$
-\langle t^A|f\rangle
+f(t)
+=\langle t^A|f\rangle
 =\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
 $$<p>proof)</p>
 $$
@@ -248,7 +249,8 @@ $$
 =\frac{1}{2\pi}\int d\omega \langle \omega^{A}|f\rangle e^{i\omega t}
 $$<p><strong>(2) 정규 직교 기저</strong></p>
 $$
-\langle t^S|f\rangle
+f(t)
+=\langle t^S|f\rangle
 =\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
 $$<p>proof)</p>
 $$
@@ -369,9 +371,9 @@ $$<p>위 식을 만족하려면, ROC가 허수축을 포함해야 한다.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762065747"></script>
-    <script src="/js/clipboard/clipboard.min.js?1762065747" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762065747" defer></script>
-    <script src="/js/theme.js?1762065747" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762070152"></script>
+    <script src="/js/clipboard/clipboard.min.js?1762070152" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762070152" defer></script>
+    <script src="/js/theme.js?1762070152" defer></script>
   </body>
 </html>
