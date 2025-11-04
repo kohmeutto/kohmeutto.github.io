@@ -85,6 +85,9 @@
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsci/i_lsi/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_system/lsi/i_lsi/index.html</loc>
   </url>
   <url>
@@ -355,7 +358,7 @@
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/series/index.html</loc>
+    <loc>http://localhost:1313/temp/series/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/transformation/index.html</loc>
