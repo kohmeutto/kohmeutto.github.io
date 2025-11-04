@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LScI :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_system/lsci/index.html</link>
+    <description>(i) LScI&#xD;(b) Lourent&#39;s series</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_system/lsci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(i) LScI</title>
+      <link>http://localhost:1313/linear_system/lsci/i_lsi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsci/i_lsi/index.html</guid>
+      <description>1. LScI Linear + Scale Invariance&#xA;2. Linearity(선형성)=Superpostion Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.&#xA;$$ \text{Superposition}=\text{Addictivity}+\text{Scaling} $$$$ \hat{M}(a|\psi_1\rangle+b|\psi_2\rangle) =a\hat{M}|\psi_1\rangle+b\hat{H}|\psi_2\rangle $$ 3. Scale invariance 축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. 따라서 동일한 ‘형태’의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 ‘형태’로 나온다. LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다. $$ [\hat{M},\hat{Z}_{a}] \implies \hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a $$ ‘똑같은 형태로 나온다.‘의 의미는 단지 출력의 축척이 변할 뿐이다. $$ h(u-\tau,u)=h(u,u+\tau)\implies h(u,\tau)=h(u-\tau) $$proof)</description>
+    </item>
+    <item>
+      <title>(b) Lourent&#39;s series</title>
+      <link>http://localhost:1313/linear_system/lsci/b_laurents_series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsci/b_laurents_series/index.html</guid>
+      <description>모델링 최외각의 안쪽 영역내에서 특이점이 존재하지 않을 경우, 테일러 급수를 사용한다. 모델링 최외각의 안쪽 영역내에서 특이점이 존재할 경우, 로랑급수를 사용한다. 테일러 급수는, 특이점의 영향이 없는 순수 수렴가능한 영역 자체를 모델링 하는 것이다. 로랑급수는 순수 수렴 가능한 영역의 모델링(테일러 급수, 다항 함수) + 특이점이 수렴 가능한 영역에 미치는 영향력의 모델링(유리함수)을 말한다. 1. 로랑 급수 지금까지 함수의 상태 벡터 $|f\rangle$를 연속기저(위치기저) $|x\rangle$를 사용하여 표현하였다. 복소수로 확장하여, $|f\rangle$를 $|(z-z_0)^n\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 로랑급수라고 한다.</description>
+    </item>
+  </channel>
+</rss>

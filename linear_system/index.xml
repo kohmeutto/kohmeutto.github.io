@@ -3,7 +3,7 @@
   <channel>
     <title>Linear system :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_system/index.html</link>
-    <description>LSI&#xD;LSV</description>
+    <description>LSI&#xD;LScI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_system/index.xml" rel="self" type="application/rss+xml" />
@@ -15,11 +15,11 @@
       <description>(i) LSI&#xD;(b) Convolution&#xD;(b) Causality&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Laplace transform III&#xD;(b) Fourier transform I&#xD;(a) Algebra structure&#xD;(b) Fourier transform II&#xD;(b) Fourier series&#xD;(b) LSI &amp; Circuit analysis</description>
     </item>
     <item>
-      <title>LSV</title>
-      <link>http://localhost:1313/linear_system/lsv/index.html</link>
+      <title>LScI</title>
+      <link>http://localhost:1313/linear_system/lsci/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_system/lsv/index.html</guid>
-      <description></description>
+      <guid>http://localhost:1313/linear_system/lsci/index.html</guid>
+      <description>(i) LScI&#xD;(b) Lourent&#39;s series</description>
     </item>
   </channel>
 </rss>

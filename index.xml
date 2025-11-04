@@ -15,18 +15,11 @@
       <description>Euclidean vector&#xD;Einstein notation&#xD;Hilbert vector&#xD;Dirac notation&#xD;Determinant&#xD;Eigenvalue problem&#xD;(b) Commutator&#xD;Normal operators</description>
     </item>
     <item>
-      <title>Series</title>
-      <link>http://localhost:1313/series/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/series/index.html</guid>
-      <description>(b) Lourent&#39;s series</description>
-    </item>
-    <item>
       <title>Linear system</title>
       <link>http://localhost:1313/linear_system/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/index.html</guid>
-      <description>LSI&#xD;LSV</description>
+      <description>LSI&#xD;LScI</description>
     </item>
     <item>
       <title>ODE &amp; PDE</title>

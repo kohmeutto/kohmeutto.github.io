@@ -46,9 +46,6 @@
     <loc>http://localhost:1313/linear_algebra/hibert_vector/b_ket/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/series/b_laurents_series/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
   </url>
   <url>
@@ -250,6 +247,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsci/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/tensor_calculus/notation_operation/index.html</loc>
   </url>
   <url>
@@ -350,9 +350,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/hibert_vector/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/linear_system/lsv/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/index.html</loc>
@@ -649,13 +646,16 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsci/b_laurents_series/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_system/lsi/b_lti_circuit_analysis/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/euclidean_vector/b_row_vector_of_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_system/lsi/p_circuit_examples_for_fs/index.html</loc>
+    <loc>http://localhost:1313/temp/p_circuit_examples_for_fs/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
