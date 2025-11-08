@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 8.2.0+926ba4d1230e27319cf62da0633eb3420e6af1bf">
+    <meta name="description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Commutator :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/b_commutator/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Commutator :: 수리전자물리학">
+    <meta property="og:description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear algebra">
+    <meta itemprop="name" content="(b) Commutator :: 수리전자물리학">
+    <meta itemprop="description" content="1. 교환자 (Commutator) 교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.
+$$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질 (1) 반대칭성 (Anti-symmetry)">
+    <meta itemprop="wordCount" content="590">
+    <title>(b) Commutator :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1762574576" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1762574576" defer></script>
+    <script src="/js/search-lunr.js?1762574576" defer></script>
+    <script src="/js/search.js?1762574576" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1762574576";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1762574576" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1762574576" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1762574576" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1762574576" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762574576" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762574576" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762574576" rel="stylesheet">
+    <link href="/css/theme.css?1762574576" rel="stylesheet">
+    <link href="/css/format-html.css?1762574576" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_algebra\/b_commutator\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/linear_algebra/b_commutator/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-교환자-commutator">1. 교환자 (Commutator)</a></li>
+        <li><a href="#2-항등-성질">2. 항등 성질</a></li>
+        <li><a href="#3-동시-스팩트럼-분해대각화-가능성">3. 동시 스팩트럼 분해(대각화) 가능성</a></li>
+        <li><a href="#4-물리적-의미1--csco">4. 물리적 의미1,  CSCO</a></li>
+        <li><a href="#5-물리적-의미2-동시측정-가능성">5. 물리적 의미2, 동시측정 가능성</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Commutator</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html" title="(b) Spectral theory (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/normal_operators/index.html" title="Normal operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-commutator">(b) Commutator</h1>
+
+<hr>
+<h3 id="1-교환자-commutator">1. 교환자 (Commutator)</h3>
+<p>교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 <strong>교환자(Commutator)</strong> 는 다음과 같이 정의된다.</p>
+$$
+[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}
+$$<ul>
+<li>만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 <strong>교환 가능하다(commute)</strong></li>
+<li>만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 <strong>교환 가능하지 않다(do not commute)</strong></li>
+</ul>
+<hr>
+<h3 id="2-항등-성질">2. 항등 성질</h3>
+<p><strong>(1) 반대칭성 (Anti-symmetry)</strong></p>
+$$
+[\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]
+$$<p>proof)</p>
+$$
+[\hat{A}, \hat{B}]
+= \hat{A}\hat{B} - \hat{B}\hat{A}
+= -(\hat{B}\hat{A} - \hat{A}\hat{B})
+= -[\hat{B}, \hat{A}]
+$$<p><strong>(2) 선형성 (Linearity)</strong></p>
+$$
+[\hat{A}, b\hat{B}+c\hat{C}] = b[\hat{A},\hat{B}] + c[\hat{A},\hat{C}] \text{, where b and c are scalar}
+$$<p>proof)</p>
+$$
+[\hat{A}, b\hat{B}+c\hat{C}]=\hat{A}(b\hat{B}+c\hat{C}) - (b\hat{B}+c\hat{C})\hat{A} \\
+$$$$
+= (\hat{A}b\hat{B} + \hat{A}c\hat{C}) - (b\hat{B}\hat{A} + c\hat{C}\hat{A})
+$$$$
+= b(\hat{A}\hat{B}) + c(\hat{A}\hat{C}) - b(\hat{B}\hat{A}) - c(\hat{C}\hat{A})
+$$$$
+= b(\hat{A}\hat{B} - \hat{B}\hat{A}) + c(\hat{A}\hat{C} - \hat{C}\hat{A})
+$$$$
+= b[\hat{A}, \hat{B}] + c[\hat{A}, \hat{C}]
+$$<p><strong>(3) 야코비 항등식 (Jacobi Identity)</strong></p>
+$$
+[\hat{A}, [\hat{B}, \hat{C}]] + [\hat{B}, [\hat{C}, \hat{A}]] + [\hat{C}, [\hat{A}, \hat{B}]] = 0
+$$<p>proof)</p>
+<ul>
+<li>첫 번째 항:</li>
+</ul>
+$$
+[\hat{A}, [\hat{B}, \hat{C}]= [\hat{A}, (\hat{B}\hat{C} - \hat{C}\hat{B})]
+$$$$
+= \hat{A}(\hat{B}\hat{C} - \hat{C}\hat{B}) - (\hat{B}\hat{C} - \hat{C}\hat{B})\hat{A}
+$$$$
+= \hat{A}\hat{B}\hat{C} - \hat{A}\hat{C}\hat{B} - \hat{B}\hat{C}\hat{A} + \hat{C}\hat{B}\hat{A}
+$$<ul>
+<li>두 번째 항 (인덱스 순환: $A \to B, B \to C, C \to A$):</li>
+</ul>
+$$
+[\hat{B}, [\hat{C}, \hat{A}]] = \hat{B}\hat{C}\hat{A} - \hat{B}\hat{A}\hat{C} - \hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B}
+$$<ul>
+<li>세 번째 항 (인덱스 순환: $B \to C, C \to A, A \to B$):</li>
+</ul>
+$$
+[\hat{C}, [\hat{A}, \hat{B}]] = \hat{C}\hat{A}\hat{B} - \hat{C}\hat{B}\hat{A} - \hat{A}\hat{B}\hat{C} + \hat{B}\hat{A}\hat{C}
+$$<ul>
+<li>이제 세 개의 결과를 모두 더하면,</li>
+</ul>
+$$
+(\hat{A}\hat{B}\hat{C}-\hat{A}\hat{C}\hat{B}-\hat{B}\hat{C}\hat{A}+\hat{C}\hat{B}\hat{A})
+$$$$
++(\hat{B}\hat{C}\hat{A}-\hat{B}\hat{A}\hat{C}-\hat{C}\hat{A}\hat{B} + \hat{A}\hat{C}\hat{B})
+$$$$
++(\hat{C}\hat{A}\hat{B}-\hat{C}\hat{B}\hat{A}-\hat{A}\hat{B}\hat{C}+\hat{B}\hat{A}\hat{C})
+$$$$
+= 0 
+$$<hr>
+<h3 id="3-동시-스팩트럼-분해대각화-가능성">3. 동시 스팩트럼 분해(대각화) 가능성</h3>
+<p>두 대각화 가능한 연산자 $\hat{A}$와 $\hat{B}$가 교환 가능한 것($[\hat{A}, \hat{B}]=0$)은, 두 연산자가 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>하는 것과 동치이다.</p>
+<p>proof)</p>
+<p>$|v\rangle$가 $\hat{A}$의 고유벡터($\hat{A}|v\rangle=a|v\rangle$)라고 하자.</p>
+$$
+0=[\hat{A}, \hat{B}]|v\rangle
+=(\hat{A}\hat{B}-\hat{B}\hat{A})|v\rangle
+$$$$
+=\hat{A}\hat{B}|v\rangle-\hat{B}\hat{A}|v\rangle
+=\hat{A}\hat{B}|v\rangle-\hat{B}a|v\rangle
+$$<p>아래와 같이 정리할 수 있다.</p>
+$$
+\hat{A}\hat{B}|v\rangle=a(\hat{B}|v\rangle)
+$$<p>이것은 $\hat{B}|v\rangle$ 가 $\hat{A}$의 고유벡터임을 의미한다. 또한 $\hat{B}|v\rangle$에 대응되는 고유값은 $a$이다. 따라서, $\hat{B}|v\rangle$는 $|v\rangle$와 종속이다.</p>
+$$
+\hat{B}|v\rangle=c|v\rangle
+$$<p>따라서, $\hat{B}$의 고유벡터는 $|v\rangle$ 이다.</p>
+<hr>
+<h3 id="4-물리적-의미1--csco">4. 물리적 의미1,  CSCO</h3>
+<p>Complete Set of Commuting Observables</p>
+<p>연산자는 고유벡터를 만나면, 고유벡터를 스케일링 한다. ~</p>
+<hr>
+<h3 id="5-물리적-의미2-동시측정-가능성">5. 물리적 의미2, 동시측정 가능성</h3>
+<p>교환자는 두 물리량을 동시에 얼마나 정확하게 알 수 있는지를 판별하는 &lsquo;측정 호환성 테스트&rsquo;이다. <strong>측정이란 어떤 고유값을 선택(중복포함하여)하는 것</strong> 이다. 예로, $\hat{H}$ 를 기준으로 측정하여라 하면, $\hat{H}$ 고유값(중복고유값 포함) 중 하나가 임의로 선택되는 것을 말한다.</p>
+$$
+|\psi\rangle \xrightarrow{\text{Measure=Pick}} \lambda^\text{중복도,3}(|\lambda_1^3\rangle+|\lambda_2^3\rangle+|\lambda_3^3\rangle)
+$$<p><strong>(1) 교환하는 경우 ($[\hat{A}, \hat{B}] = 0$): 양립 가능한 측정량</strong></p>
+<p>두 물리량은 <strong>&lsquo;양립 가능(compatible)&rsquo;</strong> 하며 동시에 확정된 값을 가질 수 있다. 하나의 양을 측정하는 행위가 다른 양의 상태를 교란시키지 않는다.</p>
+<p><strong>(2) 교환하지 않는 경우 ($[\hat{A}, \hat{B}] \neq 0$): 양립 불가능한 측정량</strong></p>
+<p>두 물리량 사이에는 <strong>불확정성 원리(Uncertainty Principle)</strong> 가 존재한다. 하나의 양을 정확하게 측정하면 다른 양의 정보가 필연적으로 불확실해진다.</p>
+<hr>
+<p><strong>example1)</strong> 다음 두 행렬 $A$와 $B$의 교환연산을 생각해 보자.</p>
+$$
+A = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \quad
+B = \begin{bmatrix} 2 & 0 \\ 0 & 5 \end{bmatrix}
+$$<p>sol)</p>
+$$
+ AB = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}, \quad
+ BA = \begin{pmatrix} 2 & 0 \\ 0 & -5 \end{pmatrix}
+ $$<p>따라서 $[A, B] = AB - BA = 0$ 이다.</p>
+<ul>
+<li>A의 고유벡터:</li>
+</ul>
+$$\lambda=1,\quad
+|u_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$$$\lambda=-1,\quad
+|u_1\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$<ul>
+<li>B의 고유벡터:</li>
+</ul>
+$$\lambda=2,\quad
+ |u_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+ $$$$
+ \lambda=5,\quad
+ |u_2\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+ $$<p>두 행렬은 교환 가능하며, 그 결과 ${|u_1\rangle, |u_2\rangle}$라는 <strong>공통의 완비적인 고유벡터 기저를 공유</strong>함을 확인할 수 있다.</p>
+<hr>
+<p><strong>example2)</strong> convolution 연산자와 Laplace transform 연산자가 교환가능함을 보여라. 교환가능함은 고유벡터가 동일함을 의미한다. 이 고유벡터를 구하여라.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/linear_algebra/euclidean_vector/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-90b593c3e6ccd56c7ef6568dac3474c2" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/einstein-notation/index.html"><a class="padding" href="/linear_algebra/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-46ff162fccdae67c9ac626252f035c5e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/hibert_vector/index.html"><a class="padding" href="/linear_algebra/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-3952275d04515a95653ad4d10035e985" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/dirac_notation/index.html"><a class="padding" href="/linear_algebra/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-2fd45bf5b7dbc60084758fab76856087" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/eigenvalue_problem/index.html"><a class="padding" href="/linear_algebra/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-b0908a9bacae59e6b5b925fecbcf8348" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762574576"></script>
+    <script src="/js/clipboard/clipboard.min.js?1762574576" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762574576" defer></script>
+    <script src="/js/theme.js?1762574576" defer></script>
+  </body>
+</html>
