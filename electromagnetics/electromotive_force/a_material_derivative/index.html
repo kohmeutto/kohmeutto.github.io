@@ -4,51 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+fe198b0077bd441c984854c0a0610da02b2162f8">
-    <meta name="description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
+    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
+    <meta name="description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유 타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
 $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.
 그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\nabla_L\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Material derivative :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
+    <meta name="twitter:description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유 타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
 $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.
 그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\nabla_L\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.">
     <meta property="og:url" content="http://localhost:1313/electromagnetics/electromotive_force/a_material_derivative/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Material derivative :: 수리전자물리학">
-    <meta property="og:description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
+    <meta property="og:description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유 타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
 $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.
 그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\nabla_L\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Electromagnetics">
     <meta itemprop="name" content="(a) Material derivative :: 수리전자물리학">
-    <meta itemprop="description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
+    <meta itemprop="description" content="1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유 타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,
 $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.
 그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\nabla_L\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.">
     <meta itemprop="wordCount" content="456">
     <title>(a) Material derivative :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763183251" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763183251" defer></script>
-    <script src="/js/search-lunr.js?1763183251" defer></script>
-    <script src="/js/search.js?1763183251" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763183939" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763183939" defer></script>
+    <script src="/js/search-lunr.js?1763183939" defer></script>
+    <script src="/js/search.js?1763183939" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763183251";
+      window.relearn.index_js_url="/searchindex.en.js?1763183939";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763183251" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763183251" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763183251" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763183251" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763183939" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763183939" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763183939" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763183939" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763183251" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763183251" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763183251" rel="stylesheet">
-    <link href="/css/theme.css?1763183251" rel="stylesheet">
-    <link href="/css/format-html.css?1763183251" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763183939" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763183939" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763183939" rel="stylesheet">
+    <link href="/css/theme.css?1763183939" rel="stylesheet">
+    <link href="/css/format-html.css?1763183939" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,6 +57,8 @@ $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -64,14 +66,14 @@ $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy text to clipboard`;
-      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
-      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
-      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -109,24 +111,10 @@ $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-
-
-
-
-
-
-
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-
-
-
-
-
-
-
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -148,34 +136,13 @@ $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-
-
-
-
-
-
-
-<span class="btn cstyle button link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/a_description/index.html" title="(a) Description (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/a_description/index.html" title="(a) Description (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-
-
-
-
-
-
-
-<span class="btn cstyle button link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/i_electromotive_force_i/index.html" title="(i) Electromotive force I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/i_electromotive_force_i/index.html" title="(i) Electromotive force I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-
-
-
-
-
-
-
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -196,17 +163,8 @@ $$ \varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하
 <h1 id="a-material-derivative">(a) Material derivative</h1>
 
 <hr>
-<h3 id="1-라그랑지안-관점에서-오일러리안-기술법을-사용하는-이유">
-  1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유
-
-
-
-
-
-
-
-<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3><p><strong>타겟 물체</strong>에 대한 물리량을 구한다고 하자.<strong>이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다.</strong> 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,</p>
+<h3 id="1-라그랑지안-관점에서-오일러리안-기술법을-사용하는-이유">1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유</h3>
+<p><strong>타겟 물체</strong>에 대한 물리량을 구한다고 하자.<strong>이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다.</strong> 물체의 어떠한 물리량을 $\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,</p>
 $$
 \varphi(X,t)
 $$<p>여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.</p>
@@ -218,17 +176,8 @@ $$
 =\varphi\left(x(X,t\right))
 $$<p>여기서 $x(X,t)$는 초기 위치 X를 가졌던 물체가 시간 t에 점유하고 있는  공간상의 위치를 의미한다. 우변의 $\varphi(x(X,t), t)$는 물체가 차지하고 있는 <strong>공간상의 해당 위치와 t에 대한 오일러리안 기술법의 물리량</strong>을 나타낸다.</p>
 <hr>
-<h3 id="2-물질-미분">
-  2. 물질 미분
-
-
-
-
-
-
-
-<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3><p><strong>라그랑지안 기술법에서 시간에 대한 변화량</strong>을 생각해 보자. 라그랑지안 기술법의 좌표는 초기위치(고정값) 이므로, 시간에 대한 미분은 형식적으로 편미분 형태가 된다.</p>
+<h3 id="2-물질-미분">2. 물질 미분</h3>
+<p><strong>라그랑지안 기술법에서 시간에 대한 변화량</strong>을 생각해 보자. 라그랑지안 기술법의 좌표는 초기위치(고정값) 이므로, 시간에 대한 미분은 형식적으로 편미분 형태가 된다.</p>
 $$
 \frac{\partial}{\partial t}\varphi(X,t)
 $$<p>그런데, <strong>오일리러안 기술법의 도움을 얻어 표현</strong>하려면, 과연 저 편미분 형태가 유지가 될까. 물체가 움직이기 때문에, 물체가 점유하는 위치는 시간에 따라 변하게 된다.</p>
@@ -250,17 +199,8 @@ $$$$
 $$$$
 \frac{D}{Dt}=\frac{\partial}{\partial t}+\vec{v}\cdot\nabla
 $$<hr>
-<h3 id="3-물질-미분의-적용-여러-프레임-간의-연결">
-  3. 물질 미분의 적용: 여러 프레임 간의 연결
-
-
-
-
-
-
-
-<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3><p>운동프레임의 속도는 정지프레임 대비 V이다. 운동프레임에서 보는 물체의 속도는 운동프레임 대비 v&rsquo;이다. 운동프레임의 관측자가 <strong>라그랑지안 관점(물체 추적)</strong> 으로 이 물체를 해석하고자 한다. 그런데 운동프레임의 관측자는 정지프레임의 관측자가 표준적으로 해석하는 방식(오일리안 기술법)을 레퍼런스로 삼아 물체의 운동을 해석하고 싶다.</p>
+<h3 id="3-물질-미분의-적용-여러-프레임-간의-연결">3. 물질 미분의 적용: 여러 프레임 간의 연결</h3>
+<p>운동프레임의 속도는 정지프레임 대비 V이다. 운동프레임에서 보는 물체의 속도는 운동프레임 대비 v&rsquo;이다. 운동프레임의 관측자가 <strong>라그랑지안 관점(물체 추적)</strong> 으로 이 물체를 해석하고자 한다. 그런데 운동프레임의 관측자는 정지프레임의 관측자가 표준적으로 해석하는 방식(오일리안 기술법)을 레퍼런스로 삼아 물체의 운동을 해석하고 싶다.</p>
 <p>같은 의미를 다르게 표현하면, 운동 프레임의 관측자가 운동 프레임 안에서 움직이는 물체의 변화를 관찰하되, 그 모든 변화를 최종적으로는 <strong>&lsquo;세상 모든 사람이 이해하는 고정된 기준(정지 프레임)&lsquo;의 언어로(오일러리안 기술법)으로 설명</strong> 하고 싶다. 이것은 모든 관성계에서 물리 법칙이 일관되게 적용됨을 보이고자 하는 것이다.</p>
 <p>여기서 물질 미분의 역할을 명확하게 살펴보자.</p>
 <p><strong>(1) &lsquo;물체를 따라가며 관찰하는&rsquo; (라그랑지안) 관점의 표현</strong></p>
@@ -364,9 +304,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763183251"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763183251" defer></script>
-    <script src="/js/theme.js?1763183251" defer></script>
-    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763183939"></script>
+    <script src="/js/clipboard/clipboard.min.js?1763183939" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763183939" defer></script>
+    <script src="/js/theme.js?1763183939" defer></script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eigenvalue problem :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/eigenvalue_problem/index.html</link>
+    <description>(b) Space&#xD;(b) Eigenvalue &amp; Eigenvector&#xD;(b) Spectral theory</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/eigenvalue_problem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Space</title>
+      <link>http://localhost:1313/linear_algebra/eigenvalue_problem/b_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/b_space/index.html</guid>
+      <description>1. 열공간(생성 출력공간) 연산자 $\hat{A}$의 생성공간(Column Space) 이란, 연산자의 작용을 통해 생성(출력)되는 모든 벡터들의 집합이다. 행렬의 열벡터는 생성공간을 만든다.&#xA;$$&#xD;\text{Col}(\hat{A})&#xD;=\{|f\rangle, \hat{A}|v\rangle=|f\rangle\}&#xD;$$ 2. 영공간(소멸 입력공간) 연산자 $\hat{A}$의 영공간(Null Space) 이란, 연산결과가 0벡터가 되는 모든 입력 벡터 들의 집합이다.제차 선형 방정식(Homogeneous Linear Equation) 의 해공간(Solution Space) 과 같다.&#xA;$$&#xD;\text{Null}(\hat{A})&#xD;=\{|n\rangle, \hat{A}|n\rangle=0\}&#xD;$$영공간은 어떤 연산자(변환)에 의해 ‘소멸(annihilate)‘되거나 ‘무시’되는 상태들의 집합이다. 이는 시스템의 평형 상태, 보존 법칙, 대칭성, 정보 손실 등 근본적인 특성을 나타내는 매우 중요한 공간이다. 이 때문에 소멸 공간(Annihilation Space) 이라는 직관적인 이름으로도 이해할 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Eigenvalue &amp; Eigenvector</title>
+      <link>http://localhost:1313/linear_algebra/eigenvalue_problem/b_eigenvalue/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/b_eigenvalue/index.html</guid>
+      <description>1. 고유값과 고유벡터 (Eigenvalues &amp; Eigenvectors) 행렬(연산자) $\hat{A}$가 어떤 벡터 $|\lambda\rangle$에 작용할 때, 그 결과는 다음 세 가지 경우 중 하나로 나타난다.&#xA;소멸 (Annihilation): $\hat{A}|\lambda\rangle = 0$. 이 경우, $|\lambda\rangle$는 고유값이 0인 고유벡터이며, 영공간(Null Space) 에 속한다. 스케일링 (Scaling): $\hat{A}|\lambda\rangle = \lambda|\lambda\rangle$ (단, $\lambda \neq 0$). 이 경우, $|\lambda\rangle$는 0이 아닌 고유값을 가진 고유벡터이다. 변환 (Transformation): $\hat{A}|\lambda\rangle = |w\rangle$ (단, $|w\rangle$는 $|\lambda\rangle$의 상수배가 아님). 이 경우, $|\lambda\rangle$는 고유벡터가 아니다. 영공간이 $\hat{A}|\lambda\rangle=0$이라는 특수한 경우를 다루었다면, 고유값 문제는 이를 더 일반적인 상황으로 확장한다. 즉, 변환에 의해 벡터가 ‘소멸’하는 것을 포함하여, ‘방향은 변하지 않고 크기만 변하는’ 모든 경우를 찾는다. 특히, $\lambda \neq 0$ 경우, 연산자의 작용이 단순한 ‘스케일링’으로 나타나는 특별한 벡터(고유벡터)와 그때의 스케일 값(고유값)을 찾는 과정이다.</description>
+    </item>
+    <item>
+      <title>(b) Spectral theory</title>
+      <link>http://localhost:1313/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html</guid>
+      <description>1. Spectral theroy 고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.&#xA;$$&#xD;\hat{A}|v\rangle=|f\rangle&#xD;$$(1) 입력벡터&#xA;열벡터 $$&#xD;|v\rangle = \sum_i \alpha_i |\lambda_i\rangle&#xD;$$ 함수벡터 $$&#xD;|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle&#xD;$$(2) 출력벡터&#xA;열벡터 $$&#xD;|f\rangle = \sum_i \beta_i |\lambda_i\rangle&#xD;$$ 함수벡터 $$&#xD;|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle&#xD;$$(3) 연산자, 스팩트럼 분해(대각화)&#xA;열벡터 $$&#xD;\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|&#xD;$$만약, 고유벡터가 정규직교라면,&#xA;$$&#xD;\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}&#xD;$$연산자 $\hat{A}$의 작용은, 각 고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$) 한 다음, 그 방향의 고유값($\lambda_i$) 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.</description>
+    </item>
+  </channel>
+</rss>

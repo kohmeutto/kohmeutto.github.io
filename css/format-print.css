@@ -164,15 +164,13 @@ pre:not(.mermaid) {
   }
 }
 
-code.copy-to-clipboard-code:after {
+code.copy-to-clipboard-code:after,
+.inline-copy-to-clipboard-button,
+.block-copy-to-clipboard-button {
   display: none;
 }
 
-#R-body .actionbar {
-  display: none;
-}
-
-#toast-container {
+#R-body .svg-reset-button {
   display: none;
 }
 

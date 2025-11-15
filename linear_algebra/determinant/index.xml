@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Determinant :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_algebra/determinant/index.html</link>
+    <description>(b) Determinant&#xD;(b) Wronskian&#xD;(b) Gram</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_algebra/determinant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Determinant</title>
+      <link>http://localhost:1313/linear_algebra/determinant/b_determinant/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/determinant/b_determinant/index.html</guid>
+      <description>1. 행렬식 여러 벡터들이 서로 독립인지 종속인지를 판단 할 때 사용하는 도구&#xA;$$ \left|M\right| =\varepsilon_{ijk}M_{1i}M_{2j}M_{3k} =\left|\begin{matrix} M_{11} &amp; M_{12} &amp; M_{13} \\ M_{21} &amp; M_{22} &amp; M_{23} \\ M_{31} &amp; M_{32} &amp; M_{33} \\ \end{matrix}\right| $$$$ =M_{11}(M_{22}M_{33}-M_{23}M_{32}) +M_{12}(M_{23}M_{31}-M_{21}M_{33}) +M_{13}(M_{21}M_{32}-M_{22}M_{31}) $$ 2. 행렬식의 기하학적 의미 X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환 3. 2D 변환 &amp; det(A)=0 det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환 5. 3D 변환 &amp; det(A)=0 det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성 $$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</description>
+    </item>
+    <item>
+      <title>(b) Wronskian</title>
+      <link>http://localhost:1313/linear_algebra/determinant/b_wronskian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/determinant/b_wronskian/index.html</guid>
+      <description>1. 론스키안(Wronskian) 행렬 &amp; 행렬식 이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,&#xA;함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.&#xA;$$&#xD;W&#xD;=\begin{bmatrix}&#xD;\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\&#xD;\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\&#xD;\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\&#xD;\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}&#xD;=\begin{bmatrix}&#xD;f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\&#xD;f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\&#xD;\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\&#xD;f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\&#xD;\end{bmatrix}&#xD;$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)</description>
+    </item>
+    <item>
+      <title>(b) Gram</title>
+      <link>http://localhost:1313/linear_algebra/determinant/b_gram/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_algebra/determinant/b_gram/index.html</guid>
+      <description>1. 그람(Gram) 행렬 &amp; 행렬식 유한 열벡터의 독립 종속 판단: 행렬식 사용 함수 벡터의 독립 종속 판단: 론스키안 사용 무한 열벡터의 독립 종속 판단: 그람 사용 또는 위 3가지의 벡터의 구분 없이 독립 종속 판단: 그람 사용 $$&#xD;G&#xD;=\begin{bmatrix}&#xD;\langle f_1|f_1\rangle &amp; \langle f_1|f_2\rangle &amp; \cdots &amp; \langle f_1|f_n\rangle \\&#xD;\langle f_2|f_1\rangle &amp; \langle f_2|f_2\rangle &amp; \cdots &amp; \langle f_2|f_n\rangle \\&#xD;\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\&#xD;\langle f_n|f_1\rangle &amp; \langle f_n|f_2\rangle &amp; \cdots &amp; \langle f_n|f_n\rangle&#xD;\end{bmatrix}&#xD;$$ 독립: $|G|\ne 0$ 종속: $|G|= 0$ proof)</description>
+    </item>
+  </channel>
+</rss>
