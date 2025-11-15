@@ -48,12 +48,12 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/operation/a_dyad/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "1. 프레임 (Frame of Reference): 관측의 ‘기준계’\r‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.\n(1) 정지 프레임 (Rest Frame / Laboratory Frame)\n의미: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다. 특징: 가속 운동을 하지 않는 관성계(Inertial Frame) 일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다. 예시: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, ‘땅’이 정지 프레임이 된다. (2) 운동 프레임 (Moving Frame)\n의미: 관측자가 움직이고 있다고 가정하는 기준계. 즉, 관측자 자신이 특정 속도로 움직이거나 회전하는 등의 운동을 하고 있는 상황에서 현상을 바라보는 것이다. 특징: 관측자에게 움직이는 물체는 정지해 보이거나 다르게 보일 수 있다. 상대론에서는 특히 중요한 개념이 된다. 예시: 자동차 안에 앉아서 창밖으로 지나가는 풍경을 바라보는 경우, ‘자동차’가 운동 프레임이 된다.",
     "description": "1. 프레임 (Frame of Reference): 관측의 ‘기준계’\r‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.",
     "tags": [],
     "title": "(a) Frame",
-    "uri": "/electromagnetics/electromotive_force/a_frame/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/a_frame/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromotive force",
@@ -400,12 +400,12 @@ var relearn_searchindex = [
     "uri": "/temp/algebra_structure/a_operator_generator/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.\n1. 관점 (Perspective): 현상을 ‘해석하는 방식’\r관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.\n(1) 라그랑지안 관점 (Lagrangian Perspective)\n의미: 시스템을 구성하는 개별적인 ‘물체(입자)‘의 운동과 그 물체가 겪는 변화에 초점을 맞추는 관점이다. 각 물체가 시간에 따라 어떤 궤적을 그리며, 그 물체의 물리량(속도, 온도, 에너지 등)이 어떻게 변하는지를 그 ‘물체와 함께 움직이면서’ 이해하려는 사고방식이다. 특징: ‘물체 중심’: 물리량의 변화를 해당 물체의 ‘이력(history)‘과 연결하여 해석한다. 에너지 기반: 물리학, 특히 역학에서 뉴턴 역학의 ‘힘’ 대신 ‘에너지(스칼라량)‘를 사용하여 시스템의 운동을 기술하려는 철학적 접근(최소 작용 원리 등)과도 연결된다. 예시: 강물에 떠내려가는 하나의 나뭇잎을 정해놓고, 그 나뭇잎이 흘러가면서 겪는 모든 변화(위치, 속도, 회전 등)를 추적하고 분석하는 방식이다. (2) 오일리안 관점 (Eulerian Perspective)\n의미: 시스템이 존재하는 ‘공간의 특정 고정된 지점’에 초점을 맞추는 관점이다. 해당 지점을 통과하는 물체들의 물리량이 시간에 따라 어떻게 변하는지를 관찰하고 해석하려는 사고방식이다. 특징: ‘공간 중심’: 물리량의 변화를 ‘그 공간 지점’ 자체의 특성 변화로 해석한다. 장(Field) 개념: 전자기장, 유체 속도장, 온도장 등 공간에 분포하는 ‘장’의 변화를 기술하는 데 특히 유용하다. 예시: 강가의 특정 교각 아래에 서서, 그 지점을 통과하는 강물의 속도, 온도, 탁도 등이 시간에 따라 어떻게 변하는지를 관찰하고 분석하는 방식이다.",
     "description": "관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.\n1. 관점 (Perspective): 현상을 ‘해석하는 방식’\r관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.",
     "tags": [],
     "title": "(a) Perspective",
-    "uri": "/electromagnetics/electromotive_force/a_perspective/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/a_perspective/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Linear algebra \u003e Euclidean vector",
@@ -640,12 +640,12 @@ var relearn_searchindex = [
     "uri": "/linear_algebra/einstein-notation/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics",
     "content": "(a) Frame\r(a) Perspective\r(a) Description\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
     "description": "(a) Frame\r(a) Perspective\r(a) Description\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
     "tags": [],
     "title": "Electromotive force",
-    "uri": "/electromagnetics/electromotive_force/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
@@ -720,12 +720,12 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/calculus/a_curl/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "‘라그랑주 기술법(Lagrangian description)’ 이라는 표현이 ‘라그랑주 좌표계(Lagrangian coordinate system)’ 보다 훨씬 더 적합하고 올바른 용어\n1. Eulerian description\r오일러리안 기술법은 검사(관측) 영역의 임의의 좌표에서 물리량을 기술하는 방식이다. 즉, 일반적으로 우리가 사용하는 방식이다. 예를 들어, t=0 에서 위치 (5,1)에 초기에는 물체 B가 있고 시간 t=5 에서는 물체 A가 있다고 하자. 속도의 예를 들면, (5,1,0)에서의 속도는 물체 B의 속도이며, (5,1,5)에서의 속도는 물체 A의 속도이다. 2. Lagrangian description\r라그랑지안 기술법은 물체를 따라가면서 물리량을 기술한다. 물체의 위치에 초점을 맞추는 것이 아니라. 물체에 대한 물리적양(물체의 모양을 포함)의 변형율 중요시한다. 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다. 물질의 초기 위치는 물질 고유의 label 이다. 물체 A를 라그랑지 기술방법으로 (1,5,0) 쓸 수 있다. 시간 t가 지났을 때, 물체 A는 (1,5,t) 로 기술한다. 물론, 물체 A의 시간 t에서의 실제 위치(오일리안 기술법)는 (1,5)가 아니다. 그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M이 필요 하다. $$ \\left(1,5\\right)=M\\left(1,5,0\\right) $$$$ \\left(x,y\\right)=M\\left(1,5,t\\right) $$ 3. Lagrangian description의 사용 이유\r“그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.\n예를 들어, 무수히 많은 입자들의 변위(displacement, 위치의 변화)는 아래와 같이 구할 수 있다.\n$$ M\\left(x_0,y_0,t\\right)-\\left(x_0,y_0\\right) $$$M(x_0, y_0, t)$는 시간 $t$에서의 위치이고 $(x_0, y_0)$는 초기위치이다. 즉, 초기위치와 시간의 함수로써 구할 수 있다.\n4. 두 기술법의 차이를 이해\r$v_L(x_0, y_0, t)$가 라그랑지안 기술법 이며, 초기좌표가 $x_0$와 $y_0$였던 물질이 시간 $t$가 지난 후에 위치한 지점에서의 속도를 의미. $v_E(x, y, t)$가 오일리안 기술법 이며, 그냥 $x$와 $y$라는 위치에서 $t$라는 시간에 우연찮게 놓인 물질의 속도를 의미. 오일러(Eulerian)와 라그랑지(Lagrangian)의 좌표계의 차이와 물질미분(material derivative) - 성돌의 전자노트\n라그랑지안 vs 오일러리안 해석 : 네이버 블로그",
     "description": "‘라그랑주 기술법(Lagrangian description)’ 이라는 표현이 ‘라그랑주 좌표계(Lagrangian coordinate system)’ 보다 훨씬 더 적합하고 올바른 용어\n1. Eulerian description\r오일러리안 기술법은 검사(관측) 영역의 임의의 좌표에서 물리량을 기술하는 방식이다. 즉, 일반적으로 우리가 사용하는 방식이다. 예를 들어, t=0 에서 위치 (5,1)에 초기에는 물체 B가 있고 시간 t=5 에서는 물체 A가 있다고 하자. 속도의 예를 들면, (5,1,0)에서의 속도는 물체 B의 속도이며, (5,1,5)에서의 속도는 물체 A의 속도이다. 2. Lagrangian description\r라그랑지안 기술법은 물체를 따라가면서 물리량을 기술한다. 물체의 위치에 초점을 맞추는 것이 아니라. 물체에 대한 물리적양(물체의 모양을 포함)의 변형율 중요시한다. 시간 0일 때의 물체의 위치(초기위치)를 좌표로 사용하여 위치를 기술한다. 물질의 초기 위치는 물질 고유의 label 이다. 물체 A를 라그랑지 기술방법으로 (1,5,0) 쓸 수 있다. 시간 t가 지났을 때, 물체 A는 (1,5,t) 로 기술한다. 물론, 물체 A의 시간 t에서의 실제 위치(오일리안 기술법)는 (1,5)가 아니다. 그러므로 초기 위치로부터 시간 t에서의 위치로 보내주는 아래와 맵핑(mapping)함수 M이 필요 하다. $$ \\left(1,5\\right)=M\\left(1,5,0\\right) $$$$ \\left(x,y\\right)=M\\left(1,5,t\\right) $$ 3. Lagrangian description의 사용 이유\r“그냥 A의 경우 (1,5)에서 (5,1)로 이동했다고 하면 되지. 왜 복잡하게 만드는 것인가? 1000개나 100000개 또는 무한개라고 할 수 있는 많은 입자의 좌표를 추적한다고 하자. 이것들이 원래 어디에 있던 물질이고, 어디로 어떤 경로로 얼만큼 이동했느냐를 알고 싶어할 때는 이러한 다소 번거러워 보일 수도 있는 방식이 상당히 쉽고 효과적이다.",
     "tags": [],
     "title": "(a) Description",
-    "uri": "/electromagnetics/electromotive_force/a_description/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/a_description/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Vector calculus \u003e Notation \u0026 Operation",
@@ -1064,12 +1064,12 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/a_covariant_contravariant/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유\r타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,\n$$ \\varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.\n그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\\nabla_L\\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.\n이러한 문제를 해결하기 위해, 라그랑주 관점을 유지하면서도 계산이 편리한 ‘오일러리안 기술법’의 개념을 활용한다. 그 물체가 시간에 따라 변형되거나 지나가는 ‘위치’에 초점(오일러 기술법) 을 맞추어 해석하는 것이다. 여전히 ‘그 물체’가 점유하는 위치이므로, 라그랑지안 관점을 유지하는 것이다.\n이 관계는 다음과 같이 표현될 수 있다:\n$$ \\varphi\\left(X,t\\right) =\\varphi\\left(x(X,t\\right)) $$여기서 $x(X,t)$는 초기 위치 X를 가졌던 물체가 시간 t에 점유하고 있는 공간상의 위치를 의미한다. 우변의 $\\varphi(x(X,t), t)$는 물체가 차지하고 있는 공간상의 해당 위치와 t에 대한 오일러리안 기술법의 물리량을 나타낸다.\n2. 물질 미분\r라그랑지안 기술법에서 시간에 대한 변화량을 생각해 보자. 라그랑지안 기술법의 좌표는 초기위치(고정값) 이므로, 시간에 대한 미분은 형식적으로 편미분 형태가 된다.\n$$ \\frac{\\partial}{\\partial t}\\varphi(X,t) $$그런데, 오일리러안 기술법의 도움을 얻어 표현하려면, 과연 저 편미분 형태가 유지가 될까. 물체가 움직이기 때문에, 물체가 점유하는 위치는 시간에 따라 변하게 된다.\n시간에 따른 변화(국소 변화) 공간 이동에 따른 변화(대류 변화) 를 동시에 겪는다. 따라서, 라그랑지안 관점에서 오일러리안 기술법을 사용하여 표현할 때, 시간에 대한 편미분이 아니라 전미분의 형태로 나타내야 한다. 이것을 물질 미분이라고 하며, $D/Dt$로 표기한다.(전미분과 완전히 동일)\n$$ \\frac{\\partial}{\\partial t}\\varphi(X,t) \\implies\\frac{D}{D t}\\varphi\\left(x(X,t),t\\right) $$전미분의 정의를 사용하면,\n$$ d\\varphi=dt\\frac{\\partial \\varphi}{\\partial t}+dx_{i}\\frac{\\partial\\varphi}{\\partial x_{i}} $$$$ \\frac{D\\varphi}{Dt} =\\left(\\frac{\\partial}{\\partial t}+\\frac{dx_{i}}{dt}\\frac{\\partial}{\\partial x_{i}}\\right)\\varphi =\\left(\\frac{\\partial}{\\partial t}+v_{i}\\frac{\\partial}{\\partial x_{i}}\\right)\\varphi $$$$ \\frac{D}{Dt}=\\frac{\\partial}{\\partial t}+\\vec{v}\\cdot\\nabla $$ 3. 물질 미분의 적용: 여러 프레임 간의 연결\r운동프레임의 속도는 정지프레임 대비 V이다. 운동프레임에서 보는 물체의 속도는 운동프레임 대비 v’이다. 운동프레임의 관측자가 라그랑지안 관점(물체 추적) 으로 이 물체를 해석하고자 한다. 그런데 운동프레임의 관측자는 정지프레임의 관측자가 표준적으로 해석하는 방식(오일리안 기술법)을 레퍼런스로 삼아 물체의 운동을 해석하고 싶다.\n같은 의미를 다르게 표현하면, 운동 프레임의 관측자가 운동 프레임 안에서 움직이는 물체의 변화를 관찰하되, 그 모든 변화를 최종적으로는 ‘세상 모든 사람이 이해하는 고정된 기준(정지 프레임)‘의 언어로(오일러리안 기술법)으로 설명 하고 싶다. 이것은 모든 관성계에서 물리 법칙이 일관되게 적용됨을 보이고자 하는 것이다.\n여기서 물질 미분의 역할을 명확하게 살펴보자.\n(1) ‘물체를 따라가며 관찰하는’ (라그랑지안) 관점의 표현\n우리가 알고 싶은 것은 운동 프레임의 관측자가 측정하는 ‘물체’(라그랑지안 관점)에 대한 물리량의 변화율이다. 물질 미분 D/Dt가 바로 이 변화율을 나타내는 연산자이다.\n(2) ‘정지 프레임의 오일러리안 언어’로의 번역/표현\n물질 미분은 아래와 같이 정의된다.\n$$ \\frac{D}{Dt}=\\frac{\\partial}{\\partial t}+\\vec{v}\\cdot\\nabla $$여기서 ∂/∂t와 ∇는 모두 정지 프레임(r,t)에서 정의된 오일러리안 기술법의 연산자이다. 즉, 고정된 공간 지점에서의 시간적 변화와 공간적 변화를 나타낸다. 물체의 정지 프레임에 대한 총 속도 v는 운동 프레임 속도 V와 운동 프레임 내 물체 속도 v′의 합인 v=V+v′로 표현된다. 따라서,\n$$ \\frac{D}{Dt}=\\frac{\\partial}{\\partial t}+(\\vec{V}+\\vec{v}')\\cdot\\nabla $$ Eulerian and Lagrangian Descriptions in Fluid Mechanics",
     "description": "1. 라그랑지안 관점에서 오일러리안 기술법을 사용하는 이유\r타겟 물체에 대한 물리량을 구한다고 하자.이 물체를 추적하기에 라그랑지안 관점으로 봐야 한다. 물체의 어떠한 물리량을 $\\varphi$ 라고 하자. 우선 라그랑지안 관점이기에 라그랑지안 기술법을 사용헤 표현하면,\n$$ \\varphi(X,t) $$여기에서의 $X$는 물체가 t=0에서 공간을 차지하는 범위를 의미하며, 각 물체를 식별하는 고유한 라벨 역할을 한다.\n그런데, 이 물리량에 대한 gradient를(공간적 기울기) $\\nabla_L\\varphi(X,t)$ 를 를 구하려고 할 때 문제가 발생한다. 물체가 시시각각 이동하고 변형되므로, 물체의 고유 식별자인 $X$를 기준으로 공간 미분을 수행하는 것은 복잡한 연쇄 법칙과 변형 관계를 항상 포함하게 된다. 라그랑지안 기술법만으로는 계산이 매우 복잡해지는 것이다.",
     "tags": [],
     "title": "(a) Material derivative",
-    "uri": "/electromagnetics/electromotive_force/a_material_derivative/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/a_material_derivative/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis \u003e Operation",
@@ -1384,12 +1384,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/i_divergence_for_free_space/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "",
     "description": "",
     "tags": [],
     "title": "(i) Electromotive force I",
-    "uri": "/electromagnetics/electromotive_force/i_electromotive_force_i/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/i_electromotive_force_i/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE \u003e Seperation of variables",
@@ -1448,12 +1448,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/sturm_liouville/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.\n0. 논의의 제약조건\r비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것\r이 논의의 핵심은 다음 두 가지를 이해하는 것이다.\n움직이는 하전 입자에 작용하는 힘: 자기장 속에서 움직이는 전하가 어떤 힘을 받는지. 변압 기전력 및 운동 기전력 : 이러한 힘이 어떻게 전기적인 압력(기전력)을 유도하는지. ‘힘(Force)‘은 언제나 특정 ‘물체(입자)‘에 작용하는 것이다. 따라서, 이러한 현상을 분석하기 위해서는 물체의 움직임을 따라가는 운동 프레임에서 라그랑지안 관점을 적용한다. 그러나 전기장과 자기장은 공간 전체에 걸쳐 분포하는 벡터장이며, 이를 계산적으로 효율적으로 다루기 위해서는 고정된 공간을 기준으로 하는 오일리안 관점의 기술법이 필요하다.\n이러한 이유로 우리는 라그랑주적 본질(입자가 겪는 변화)을 오일러적 기술법(공간 변수로 표현)으로 바꾸어주는 물질 미분 개념을 활용하여 이 현상을 분석한다.\n2. 맥스웰 방정식과 물질 미분: 움직이는 관측자의 시선\r우리가 일반적으로 아는 맥스웰 방정식은 정지한 관성계(실험실 프레임)에서 전자기장 E와 B의 시간적, 공간적 변화를 기술한다. 여기에 나오는 시간 미분(∂/∂t)은 고정된 지점에서의 장 자체의 변화율을 의미한다.\n하지만, 전하(또는 도체)와 함께 움직이는 관측자의 관점에서 보면(운동프레임+라그랑지안 관점), 장의 방정식은 다르게 보인다. 이 움직이는 관측자는 자신에게 정지해 있는 전하가 자기장 내에서 자기력을 받지 않는것으로 관측(매우 중요) 한다. 대신, 상대적인 움직임으로 인해 전기장과 자기장이 서로 혼합되어 새로운 형태의 장(E′,H′)을 경험하게 된다. 여기서의 v는 정지프레임 대비 운동 프레임의 속도를 의미한다.\nE’은 운동 프레임에서 측정되는 전기장이다. H’은 운동 프레임에서 측정되는 자기장이다. J’은 운동 프레임이서 측정되는 전류밀도이다. $$ \\nabla\\times\\vec{E}'=-\\frac{D}{Dt}\\vec{B}'=-\\left(\\frac{\\partial}{\\partial t}+\\vec{v}\\cdot\\nabla\\right)\\vec{B}' $$$$ \\nabla\\times\\vec{H}'=\\vec{J}'+\\frac{D}{Dt}\\vec{D}'=\\vec{J}'+\\left(\\frac{\\partial}{\\partial t}+\\vec{v}\\cdot\\nabla\\right)\\vec{D}' $$ 3. 기전력과 힘의 유도: 물질 미분의 핵심 역할\r이제 움직이는 관측자가 느끼는 패러데이의 유도 법칙에서 출발하여, 유효 전기장 E′이 정지 관성계의 장 E 및 B와 어떤 관계를 가지는지 유도해 보자. (비상대론적 근사에서 B′≈B로 가정한다.)\n$$ \\nabla\\times\\vec{E}'=-\\frac{\\partial\\vec{B}}{\\partial t}-\\vec{v}\\cdot\\nabla\\vec{B} $$아래와 같은 벡터 항등식을 이용한다.\n$$ \\nabla\\times\\vec{v}\\times\\vec{B}=\\vec{v}\\left(\\nabla\\cdot\\vec{B}\\right)-\\vec{B}\\left(\\nabla\\cdot\\vec{v}\\right)+\\left(\\vec{B}\\cdot\\nabla\\right)\\vec{v}-\\left(\\vec{v}\\cdot\\nabla\\right)\\vec{B} $$비압축성(∇⋅v=0) 및 속도 벡터가 공간적으로 일정(∇v=0), 즉 물체가 강체처럼 병진 운동만 하는 경우)하다고 가정하면,\n$$ \\nabla\\times\\vec{v}\\times\\vec{B}=-\\left(\\vec{v}\\cdot\\nabla\\right)\\vec{B}+\\vec{v}\\left(\\nabla\\cdot\\vec{B}\\right) $$맥스웰 방정식의 자기 가우스 법칙(∇⋅B=0)을 고려하면,\n$$ \\nabla\\times\\vec{v}\\times\\vec{B}=-\\left(\\vec{v}\\cdot\\nabla\\right)\\vec{B} $$따라서, 식은 다음과 같이 바꿀 수 있다.\n$$ \\nabla\\times\\vec{E}'=-\\frac{\\partial\\vec{B}}{\\partial t}+\\nabla\\times\\vec{v}\\times\\vec{B} $$Stoke’s theorem 을 사용한다.\n$$ \\int_{s'}d^2\\vec{s}\\cdot\\nabla\\times\\vec{E}'=-\\frac{\\partial}{\\partial t}\\int_{s'}d^2\\vec{s}\\cdot\\vec{B}+\\int_{s'}d^2\\vec{s}\\cdot\\nabla\\times\\vec{v}\\times\\vec{B} $$$$ \\oint_{C}d\\vec{l}\\cdot\\vec{E}'=-\\frac{\\partial}{\\partial t}\\Phi_{B}+\\oint_{C}d\\vec{l}\\cdot\\vec{v}\\times\\vec{B} $$이 최종 기전력 식은 두 가지 주요 항으로 나눌 수 있다.\n(1) 원천 자기장의 변화에 의한 변압 기전력\n$$ -\\frac{\\partial}{\\partial t}\\Phi_{B}=\\oint_{C}d\\vec{l}\\cdot\\vec{E} $$이 항은 원천 자기장 B자체가 시간에 따라 변함으로써 유도되는 기전력이다. 여기서 E는 자기장 변화에 의해 정지 관성계에서 유도되는 전기장이다.\n(2) 외부 움직이는 요소에 의한 운동 기전력\n$$ \\oint_{C}d\\vec{l}\\cdot\\vec{v}\\times\\vec{B} $$이 항은 외부에서 움직이는 도체(루프 C)가 자기장 B를 가로지르면서 생기는 기전력이다. 이는 물질(도체)의 움직임(v)에 따른 ‘이류(convection)’ 효과를 직접적으로 나타낸다.\n위의 두 항을 종합하면, 움직이는 입자가 느끼는 유효 전기장 E′에 대한 기전력은 다음과 같이 표현된다.\n$$ \\oint_{C}d\\vec{l}\\cdot\\vec{E}'=\\oint_{C}d\\vec{l}\\cdot\\left(\\vec{E}+\\vec{v}\\times\\vec{B}\\right) $$이 식은 적분 영역이 동일하므로, 피적분 함수를 비교하여 움직이는 입자가 느끼는 유효 전기장 E′은 다음과 같이 표현됨을 알 수 있다.\n$$ \\vec{E}'=\\vec{E}+\\vec{v}\\times\\vec{B} $$이 식이 의미하는 바를 명확하게 해야한다. 이것은 이전 챕터와의 차이점을 나타내는 것이다. 이전 챕터(정지프레임)는 $\\vec{v}\\times\\vec{B}$ 가 힘의 형태로 나타난 것이다. 그러나, 운동프레임에서는 $\\vec{v}\\times\\vec{B}$ 이 힘의 형태로 나타나는 것이 아니라, 유효 전기장의 일부인 것 이다. 앞서 서술한 바와 같이 운동프레임에서는 전하가 정지한 것으로 보이므로, 자기력은 0 이라는 점을 상기한다.\n4. 로렌츠 힘: 정지 프레임과의 연결\r다시 아래식을 살펴보자.\n$$ \\vec{E}'=\\vec{E}+\\vec{v}\\times\\vec{B} $$이것이 바로 로렌츠 힘(Lorentz Force)의 핵심을 이룬다. 양변에 전하량을 곱하면, 힘을 구할 수 있다. 또한 상대성 원리(상대성 원리), 에 의해 관성계에서 작용하는 힘은 동일해야 한다.\n$$ \\vec{F}'=\\vec{F}=q\\vec{E}' $$$$ \\vec{F}=q\\left(\\vec{E}+\\vec{v}\\times\\vec{B}\\right) $$만약 외부 전기장 E가 없고 원천 자기장의 변화가 없다면(∂B/∂t=0), 즉 정적인 자기장(B)만 존재한다면, 자기장에 의해서 움직이는 입자에 작용하는 힘은 다음과 같이 자기력 항만 남게 된다.\n$$ \\vec{F}=q\\vec{v}\\times\\vec{B} $$ 조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faraday’s Law of Electromagnetic Induction)\n[수학, 계산] 벡터 항등식-2탄 계산 — Steemit",
     "description": "움직이는 물체의 속도와 동일한 운동프레임에서 라그랑지안 관점을 정지프레임에서 오일리안 기술법으로 표현한 것이다.\n0. 논의의 제약조건\r비상대론적 한계: 물체의 움직이는 속도는 빛의 속도에 비해 매우 느리다고 가정한다. (non-relativistic limit) 관성계: 모든 관측과 현상은 관성계(가속하지 않는 기준계)에서 이루어진다. 미미한 섭동: 움직이는 전하(또는 물체)가 주변 자기장이나 전기장을 변화시키지 않는다고 가정한다. 외부 장(external field)이 움직이는 물체에 미치는 영향만 고려하고, 움직이는 물체 자체가 생성하는 장의 영향은 무시한다. 이는 마치 움직이는 물체가 주변 공간의 중력장을 변화시키지 않는다고 가정하는 것과 유사하다. 1. 구하고자 하는 것\r이 논의의 핵심은 다음 두 가지를 이해하는 것이다.",
     "tags": [],
     "title": "(a) Electromotive force II",
-    "uri": "/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis \u003e Operation",
@@ -1640,12 +1640,12 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/i_helmholtz_operator_for_free_space/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Electromagnetics \u003e Electromotive force",
+    "breadcrumb": "수리전자물리학 \u003e Temps \u003e Electromagnetics \u003e Electromotive force",
     "content": "0. EMF \u0026 Voltage: 기전력과 전압, 왜 부호가 다른 이유\rEMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0)\r아래 식은 정지 프레임에서 전자기 유도를 설명하는 패러데이 법칙의 일반적인 형태\" 또는 “물질 미분 개념을 통해 유도된 정지 프레임에서의 패러데이 법칙이다.\n$$ \\oint_{C}d\\vec{l}\\cdot\\vec{E}=-\\frac{\\partial}{\\partial t}\\Phi_{B}+\\oint_{C}d\\vec{l}\\cdot\\vec{v}\\times\\vec{B} $$만약 주변 자기장 $\\vec{B}$ 자체가 시간에 따라 변하지 않는다면, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.\n$$ \\oint_{C}d\\vec{l}\\cdot\\vec{E} = \\oint_{C}d\\vec{l}\\cdot\\vec{v}\\times\\vec{B} $$$\\vec{v} \\times \\vec{B}$ 는 자기장 속에서 움직이는 전하에게 작용하는 자기력을 단위 전하당 힘으로 나타낸 것이다. 이 힘이 전하들을 도체 안에서 움직이게 해서 기전력을 만들어낸다. 전하들은 이 자기력과 막대 내부에 형성된 정전기장에 의한 힘($q\\vec{E}_{\\text{electrostatic}}$)이 균형을 이룰 때까지 움직인다.\n이제 막대 양단 N과 P 사이의 전압($V_{PN}$) 을 구해보자.\n$$V_{PN} = -\\int_{N}^{P}d\\vec{l}\\cdot\\vec{E}_{electrostatic}$$이 총 힘의 평형을 통해, 도체 내부에는 $\\vec{E}_{\\text{electrostatic}}=-\\vec{v}\\times\\vec{B}$ 관계가 성립하는 정전기장이 존재하게 된다.\n$$ V_{PN} = -\\int_{N}^{P}d\\vec{l}\\cdot(-\\vec{v}\\times\\vec{B}) = \\int_{N}^{P}d\\vec{l}\\cdot(\\vec{v}\\times\\vec{B}) $$이 $V_{PN}$는 운동 기전력 때문에 막대 양단에 생기는 전압 이다. 운동 기전력에서는 $\\int (\\vec{v} \\times \\vec{B}) \\cdot d\\vec{l}$ 자체가 전하에게 해 준 ‘일’이다.\n2. 변압 기전력만 있는 경우 (운동 기전력 = 0)\r이번에는 코일(도체 루프)은 움직이지 않고 가만히 있는데, 주위의 자기장이 시간에 따라 변해서 기전력이 생기는 상황을 변압 기전력(Transformer EMF) 이라 한다. 코일이 움직이지 않으니 $\\vec{v}=0$이라서 운동 기전력 항은 사라진다.\n패러데이 유도 법칙은 다음과 같이 간단해진다.\n$$ V_{emf} = \\oint_{C}d\\vec{l}\\cdot\\vec{E}=-\\frac{\\partial}{\\partial t}\\Phi_{B} $$인덕터(코일)의 경우, 유도 기전력은 코일을 통과하는 자기 선속($\\Phi_B$)의 변화율에 비례하며, 전류 변화율과 인덕턴스 $L$로 표현할 수 있다.\n$$ N\\Phi_{B} = Li $$$$ V_{emf} = -\\frac{\\partial}{\\partial t}\\Phi_{B} = -L\\frac{di}{dt}, \\quad N=1 $$ 코일을 포함하고 코일 바깥쪽을 통과하는 적분 경로를 설정하자. 이상적인 도체(전기가 아주 잘 통하는)로 만든 코일 안에는 전기장이 0이다. 아래식의 최종 형태는, 코일 외부 전기장이 전하에게 해준 일 이다.\n$$ V_{emf} =\\oint_{C}d\\vec{l}\\cdot\\vec{E} =\\int_2^1 d\\vec{l}\\cdot\\vec{E}_{coil}+\\int_1^2 d\\vec{l}\\cdot\\vec{E}_{ext} =\\int_1^2 d\\vec{l}\\cdot\\vec{E}_{ext} $$이제 EMF와 코일 양단에 걸리는 전압($V$)의 부호 차이를 살펴보자. 회로 이론에서 코일 양단에 걸리는 전압($V$) 은 수동부호규약에 의해, 다음과 같이 정의한다.\n$$V = L\\frac{di}{dt}$$이 $V$는 전류가 흐르는 방향으로 측정되는 전압 ‘강하’(voltage drop), 즉 전기 에너지가 소모되면서 전위가 높은 곳에서 낮은 곳으로 떨어지는 양을 의미한다. 마치 물이 높은 곳에서 낮은 곳으로 흐르면서 에너지를 잃는 것과 비슷하다.\n하지만 유도 기전력(emf) 은 렌츠의 법칙에 따라 ‘자기 선속의 변화를 방해하는 방향’ 으로 유도된다. 예를 들어, 코일에 흐르는 전류가 증가하면 코일은 그 증가를 ‘막기 위해’ 반대 방향으로 EMF를 만들어낸다.\n따라서, $V_{emf} = -L\\frac{di}{dt}$ (전류 변화를 ‘방해하는’ 방향, 즉 역기전력)와 $V=L\\frac{di}{dt}$ (전류 흐름에 따른 전위 ‘강하’ 방향) 사이에는 정확히 부호가 반대인 관계가 생긴다.",
     "description": "0. EMF \u0026 Voltage: 기전력과 전압, 왜 부호가 다른 이유\rEMF는 전압이 아니다. EMF는 전압을 만들어내기 위해 단위 전하에 해 준 ‘일’ 을 뜻한다. 쉽게 말해, EMF는 전위차(전압)의 ‘원인’ 이다. 1. 운동 기전력만 있는 경우 (변압 기전력 = 0)\r아래 식은 정지 프레임에서 전자기 유도를 설명하는 패러데이 법칙의 일반적인 형태\" 또는 “물질 미분 개념을 통해 유도된 정지 프레임에서의 패러데이 법칙이다.",
     "tags": [],
     "title": "(r) EMF \u0026 Voltage",
-    "uri": "/electromagnetics/electromotive_force/r_emf_voltage/index.html"
+    "uri": "/temp/electromagnetics/electromotive_force/r_emf_voltage/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
@@ -1736,12 +1736,12 @@ var relearn_searchindex = [
     "uri": "/temp/b_inner_product/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학",
+    "breadcrumb": "수리전자물리학 \u003e Temps",
     "content": "Electromotive force",
     "description": "Electromotive force",
     "tags": [],
     "title": "Electromagnetics",
-    "uri": "/electromagnetics/index.html"
+    "uri": "/temp/electromagnetics/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",

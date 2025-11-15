@@ -5,30 +5,26 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 8.2.0+fe198b0077bd441c984854c0a0610da02b2162f8">
-    <meta name="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
-함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
-$$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
+    <meta name="description" content="1. 물리학적 벡터물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) Wronskian :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
-함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
-$$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
-    <meta property="og:url" content="http://localhost:1313/linear_algebra/determinant/b_wronskian/index.html">
+    <meta name="twitter:title" content="(b) Vector :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 물리학적 벡터물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.">
+    <meta property="og:url" content="http://localhost:1313/linear_algebra/euclidean_vector/b_vector/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) Wronskian :: 수리전자물리학">
-    <meta property="og:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
-함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
-$$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
+    <meta property="og:title" content="(b) Vector :: 수리전자물리학">
+    <meta property="og:description" content="1. 물리학적 벡터물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
-    <meta itemprop="name" content="(b) Wronskian :: 수리전자물리학">
-    <meta itemprop="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
-함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
-$$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
-    <meta itemprop="wordCount" content="306">
-    <title>(b) Wronskian :: 수리전자물리학</title>
+    <meta itemprop="name" content="(b) Vector :: 수리전자물리학">
+    <meta itemprop="description" content="1. 물리학적 벡터물리학에서 말하는 ‘크기와 방향으로 정의되는 값’이라고 할 수 있다. 즉, 화살표 이다.
+이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.">
+    <meta itemprop="wordCount" content="276">
+    <title>(b) Vector :: 수리전자물리학</title>
     <link href="/css/auto-complete/auto-complete.min.css?1763183364" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1763183364" defer></script>
     <script src="/js/search-lunr.js?1763183364" defer></script>
@@ -53,7 +49,7 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/linear_algebra\/determinant\/b_wronskian\/index.html';
+      window.relearn.path='\/linear_algebra\/euclidean_vector\/b_vector\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
@@ -101,7 +97,7 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/linear_algebra/determinant/b_wronskian/index.html">
+  <body class="mobile-support html" data-url="/linear_algebra/euclidean_vector/b_vector/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -133,9 +129,9 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
   <ul>
     <li>
       <ul>
-        <li><a href="#1-론스키안wronskian-행렬--행렬식">1. 론스키안(Wronskian) 행렬 &amp; 행렬식</a></li>
-        <li><a href="#2-로랑-급수-기저의-독립">2. 로랑 급수 기저의 독립</a></li>
-        <li><a href="#3-푸리에-급수-기저의-독립">3. 푸리에 급수 기저의 독립</a></li>
+        <li><a href="#1-물리학적-벡터">1. 물리학적 벡터</a></li>
+        <li><a href="#2-수학적-벡터">2. 수학적 벡터</a></li>
+        <li><a href="#3-추상화-물리학적-벡터와-수학적-벡터를-하나로-통일">3. 추상화 (물리학적 벡터와 수학적 벡터를 하나로 통일)</a></li>
       </ul>
     </li>
   </ul>
@@ -144,7 +140,7 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/determinant/index.html"><span itemprop="name">Determinant</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Wronskian</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/index.html"><span itemprop="name">Linear algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_algebra/euclidean_vector/index.html"><span itemprop="name">Euclidean vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Vector</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
@@ -155,7 +151,7 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
 
 
 
-<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/determinant/b_determinant/index.html" title="(b) Determinant (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/euclidean_vector/index.html" title="Euclidean vector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
 
@@ -165,7 +161,7 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
 
 
 
-<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/determinant/b_gram/index.html" title="(b) Gram (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/euclidean_vector/b_basic_vector_operations/index.html" title="(b) Basic vector operations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 
@@ -193,11 +189,11 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
   <header class="headline">
   </header>
 
-<h1 id="b-wronskian">(b) Wronskian</h1>
+<h1 id="b-vector">(b) Vector</h1>
 
 <hr>
-<h3 id="1-론스키안wronskian-행렬--행렬식">
-  1. 론스키안(Wronskian) 행렬 &amp; 행렬식
+<h3 id="1-물리학적-벡터">
+  1. 물리학적 벡터
 
 
 
@@ -206,91 +202,45 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
 
 
 <span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3><p>이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. <strong>연속 무한 기저로 표현되는</strong> 경우,</p>
+</h3><p><strong>물리학에서 말하는 ‘크기와 방향으로 정의되는 값</strong>’이라고 할 수 있다. <strong>즉, 화살표 이다.</strong></p>
+<p>이것은 기하학적인 벡터의 특성을 잘 반영하고 있는 정의라고 할 수 있으며, 특히 벡터의 좌표계의 변환에 대한 불변성(invariance)을 잘 표현하고 있다. 좌표계의 변환에 대해 불변적이라는 말은 아래 그림에서 처럼 좌표계가 변하더라도 벡터 그 자체는 가만히 있다는 것을 의미한다. 아래 그림은 좌표계가 변할 때 벡터는 변하지 않지만 벡터의 성분은 변한다.</p>
+<img src="image1.png" width="50%" height="auto">
+<p>이러한 벡터 정의에 대해 첨언하자면 이러한 <strong>‘크기와 방향으로 정의되는 값’이라는 설명은 Euclidean(유클리드) 벡터에 한해서만 적용해 설명할 수 있다는게 한계점</strong>이다. 하지만, 이러한 정의는 벡터를 시각화하는데 매우 유용하므로 특별한 언급이 없는 이상 Euclidean 벡터를 이용해 시각화 할 것이다.</p>
+<hr>
+<h3 id="2-수학적-벡터">
+  2. 수학적 벡터
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p>벡터에 대해 생각해볼 수 있는 정의는 <strong>순서를 맞춰 숫자를 나열한 리스트</strong>라는 관점이다. 이 관점은 벡터는 하나의 데이터 포인트라는 관점에서 매우 유용하다. 또한, 이런 방식으로 벡터를 생각하게 되면 차원을 무한히 늘리는데에 큰 부담이 없다. 그저 숫자만 더 나열하면 더 고차원의 벡터가 되기 때문이다.</p>
+<p>그리고 벡터 성분이 좌표계의 변환에 대해 가변적(not invariant)이라는 점을 잘 표현해주고 있다. 가변적이라는 말을 좀 더 잘 이해하기 위해 그림을 다시 보자. 벡터를 두 가지 좌표계로 표현하고 있는데, 벡터는 가만히 있더라도 벡터를 보는 좌표계가 바뀌게 되면 벡터를 표현하는 좌표가 바뀌는것을 볼 수 있다.</p>
+<hr>
+<h3 id="3-추상화-물리학적-벡터와-수학적-벡터를-하나로-통일">
+  3. 추상화 (물리학적 벡터와 수학적 벡터를 하나로 통일)
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p><strong>추상화된 벡터는 대수(代數)로 표현한 것이다.</strong></p>
+<p>물리학적 벡터를 다룰 떄, 아무렇게나 좌표축을 잡을 수 있음. 즉, 벡터는 좌표축과 무관한 개념이다. 벡터의 방향이란, 우주에 절대 좌표가 있지 않은 한, 방향을 정의하기가 불가능하다.</p>
+<p>그러나, <strong>두 벡터의 방향이 같다는 것은 한 벡터의 길이를 적당히 늘려 다른 벡터와 일치하게 만들 수 있다</strong>고 정의할 수 있다. 이러한 관찰로부터 벡터를 추상화에 다음과 같은 두가지 연산이 가장 중요하다는 결론을 내릴 수 있다.</p>
 <ul>
-<li><strong>함수 벡터</strong>의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해,</li>
-<li><strong>함수</strong>의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해,</li>
+<li>두 벡터의 합</li>
+<li>벡터의 실수 배</li>
 </ul>
-<p><strong>론스키안 행렬</strong> 을 구성한다.</p>
-$$
-W
-=\begin{bmatrix}
-\langle x|f_1\rangle & \langle x|f_2\rangle & \cdots &\langle x|f_n\rangle \\
-\langle x|\hat{D}|f_1\rangle & \langle x|\hat{D}|f_2\rangle &  \cdots & \langle x|\hat{D}|f_n\rangle &\\
-\vdots & \vdots & \ddots & \vdots \\
-\langle x|\hat{D}^{n-1}|f_1\rangle & \langle x|\hat{D}^{n-1}|f_2\rangle & \cdots & \langle x|\hat{D}^{n-1}|f_n\rangle 
-\end{bmatrix}
-=\begin{bmatrix}
-f_1(x) & f_2(x) & \cdots & f_n(x) \\
-f'_1(x) & f'_2(x) & \cdots & f'_n(x) \\
-\vdots & \vdots & \ddots & \vdots \\
-f^{(n-1)}_1(x) & f^{(n-1)}_2(x) & \cdots & f^{(n-1)}_n(x) \\
-\end{bmatrix}
-$$<ul>
-<li>독립: $|W|\ne 0$</li>
-<li>종속: $|W|= 0$</li>
-</ul>
-<p>proof)</p>
-<p>론스키안(Wronskian)은 함수들의 선형 독립성을 판별하는 강력한 도구이며, 디락 표기법을 사용하면 그 구조를 더 근본적인 수준에서 이해할 수 있다.</p>
-<p>아래와 같이 연속 무한 기저를 가지는 상태벡터가 2개 있다.</p>
-$$
-|f_1\rangle=\int dx f_1(x) |x\rangle
-$$$$
-|f_2\rangle=\int dx f_2(x) |x\rangle
-$$<p>이 두 벡터의 독립 종속 여부를 판단하기 위해 아래의 식을 만든다.</p>
-$$
-c_1|f_1\rangle+c_2|f_2\rangle=0
-$$<p>연속 무한 기저이므로 행벡터로 표현할 수 없다. 따라서, 연산이 가능한 형태로 표현해야 한다.</p>
-$$
-c_1\langle x|f_1\rangle+c_2\langle x|f_2\rangle=0
-\implies
-c_1f_1(x)+c_2f_2(x)=0
-$$<p>미지수가 2개 이므로 하나의 방정식이 더 필요하다. 위 식을 미분하면,</p>
-$$
-c_1f'_1(x)+c_2f'_2(x)=0
-$$<p>따라서, 다음과 같은 론스키안 행렬을 만들 수 있다.</p>
-$$
-W=
-\begin{bmatrix}
-f_1(x) & f_2(x) \\
-f'_1(x) & f'_2(x) \\
-\end{bmatrix}
-$$<p>위 행렬을 bra-ket 으로 표기하면, 본질적 의미를 파악할 수 있다.</p>
-$$
-W
-=\begin{bmatrix}
-\langle x|f_1\rangle & \langle x|f_2\rangle \\
-\langle x|\hat{D}|f_1\rangle & \langle x|\hat{D}|f_2\rangle  \\
-\end{bmatrix}
-$$<p>위 행렬의 열벡터를 살펴보자.</p>
-$$
-\begin{bmatrix}
-\langle x|f_n\rangle \\ \langle x|\hat{D}|f_n\rangle
-\end{bmatrix}
-$$<p><strong>상태 벡터 $|f_n\rangle$는 &lsquo;값&rsquo; 정보와 함께 &lsquo;어떻게 움직이는가&rsquo;에 대한 &lsquo;변화율(미분)&rsquo; 정보도 잠재적으로 포함하고 있다.</strong> 서로 다른 두 벡터의 관계를 정확히 알려면, 이 두 가지 정보를 모두 캐내야 한다.</p>
 <hr>
-<h3 id="2-로랑-급수-기저의-독립">
-  2. 로랑 급수 기저의 독립
+<p><a href="https://angeloyeo.github.io/2020/09/07/basic_vector_operation.html" rel="external">공돌이의 수학정리노트 (Angelo&rsquo;s Math Notes)</a></p>
+<p><a href="https://www.google.co.kr/books/edition/8%EC%9D%BC%EA%B0%84%EC%9D%98_%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99/SIXXoAEACAAJ?hl=ko" rel="external">8일 간의 선형대수학, 경문사, 박부성 지음</a></p>
 
-
-
-
-
-
-
-<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3><hr>
-<h3 id="3-푸리에-급수-기저의-독립">
-  3. 푸리에 급수 기저의 독립
-
-
-
-
-
-
-
-<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
-</h3>
   <footer class="footline">
   </footer>
 </article>
@@ -338,14 +288,19 @@ $$<p><strong>상태 벡터 $|f_n\rangle$는 &lsquo;값&rsquo; 정보와 함께 &
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-url="/linear_algebra/euclidean_vector/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-90b593c3e6ccd56c7ef6568dac3474c2" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/linear_algebra/euclidean_vector/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-90b593c3e6ccd56c7ef6568dac3474c2" class="collapsible-menu">
+            <li class="active " data-nav-url="/linear_algebra/euclidean_vector/b_vector/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_vector/index.html">(b) Vector</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/b_basic_vector_operations/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_basic_vector_operations/index.html">(b) Basic vector operations</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/i_linearity/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/i_linearity/index.html">(i) Linearity</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/q_linearity_for_circuits/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/q_linearity_for_circuits/index.html">(q) Linearity for circuits</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/b_matrix/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_matrix/index.html">(b) Matrix</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/b_column_vector_of_matrix/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_column_vector_of_matrix/index.html">(b) Column vector of matrix</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/b_inner_product/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-url="/linear_algebra/euclidean_vector/b_row_vector_of_matrix/index.html"><a class="padding" href="/linear_algebra/euclidean_vector/b_row_vector_of_matrix/index.html">(b) Row vector of matrix</a></li></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/einstein-notation/index.html"><a class="padding" href="/linear_algebra/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-46ff162fccdae67c9ac626252f035c5e" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/hibert_vector/index.html"><a class="padding" href="/linear_algebra/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-3952275d04515a95653ad4d10035e985" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/dirac_notation/index.html"><a class="padding" href="/linear_algebra/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-2fd45bf5b7dbc60084758fab76856087" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu">
-            <li class="" data-nav-url="/linear_algebra/determinant/b_determinant/index.html"><a class="padding" href="/linear_algebra/determinant/b_determinant/index.html">(b) Determinant</a></li>
-            <li class="active " data-nav-url="/linear_algebra/determinant/b_wronskian/index.html"><a class="padding" href="/linear_algebra/determinant/b_wronskian/index.html">(b) Wronskian</a></li>
-            <li class="" data-nav-url="/linear_algebra/determinant/b_gram/index.html"><a class="padding" href="/linear_algebra/determinant/b_gram/index.html">(b) Gram</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/linear_algebra/determinant/index.html"><a class="padding" href="/linear_algebra/determinant/index.html">Determinant</a><ul id="R-subsections-29fb11e46e657f811f1bf00237a1a070" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/eigenvalue_problem/index.html"><a class="padding" href="/linear_algebra/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-b0908a9bacae59e6b5b925fecbcf8348" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/linear_algebra/b_commutator/index.html"><a class="padding" href="/linear_algebra/b_commutator/index.html">(b) Commutator</a></li>
             <li class="alwaysopen " data-nav-url="/linear_algebra/normal_operators/index.html"><a class="padding" href="/linear_algebra/normal_operators/index.html">Normal operators</a><ul id="R-subsections-e6aad30f1d7547431def18c14ca3bda0" class="collapsible-menu"></ul></li></ul></li>
