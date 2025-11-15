@@ -4,63 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. Spectral theroy 고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+    <meta name="generator" content="Relearn 8.2.0+fe198b0077bd441c984854c0a0610da02b2162f8">
+    <meta name="description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
 $$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
 열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
-열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)
-열벡터 $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|$$만약, 고유벡터가 정규직교라면,
-$$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}$$연산자 $\hat{A}$의 작용은, 각 고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$) 한 다음, 그 방향의 고유값($\lambda_i$) 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.">
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Spectral theory :: 수리전자물리학">
-    <meta name="twitter:description" content="1. Spectral theroy 고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+    <meta name="twitter:description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
 $$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
 열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
-열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)
-열벡터 $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|$$만약, 고유벡터가 정규직교라면,
-$$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}$$연산자 $\hat{A}$의 작용은, 각 고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$) 한 다음, 그 방향의 고유값($\lambda_i$) 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.">
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
     <meta property="og:url" content="http://localhost:1313/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Spectral theory :: 수리전자물리학">
-    <meta property="og:description" content="1. Spectral theroy 고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+    <meta property="og:description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
 $$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
 열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
-열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)
-열벡터 $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|$$만약, 고유벡터가 정규직교라면,
-$$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}$$연산자 $\hat{A}$의 작용은, 각 고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$) 한 다음, 그 방향의 고유값($\lambda_i$) 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.">
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
     <meta itemprop="name" content="(b) Spectral theory :: 수리전자물리학">
-    <meta itemprop="description" content="1. Spectral theroy 고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+    <meta itemprop="description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
 $$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
 열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
-열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)
-열벡터 $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|$$만약, 고유벡터가 정규직교라면,
-$$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}$$연산자 $\hat{A}$의 작용은, 각 고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$) 한 다음, 그 방향의 고유값($\lambda_i$) 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.">
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
     <meta itemprop="wordCount" content="397">
     <title>(b) Spectral theory :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1762739277" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1762739277" defer></script>
-    <script src="/js/search-lunr.js?1762739277" defer></script>
-    <script src="/js/search.js?1762739277" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763181867" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763181867" defer></script>
+    <script src="/js/search-lunr.js?1763181867" defer></script>
+    <script src="/js/search.js?1763181867" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1762739277";
+      window.relearn.index_js_url="/searchindex.en.js?1763181867";
     </script>
-    <script src="/js/lunr/lunr.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1762739277" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763181867" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762739277" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762739277" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762739277" rel="stylesheet">
-    <link href="/css/theme.css?1762739277" rel="stylesheet">
-    <link href="/css/format-html.css?1762739277" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763181867" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763181867" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763181867" rel="stylesheet">
+    <link href="/css/theme.css?1763181867" rel="stylesheet">
+    <link href="/css/format-html.css?1763181867" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -69,8 +61,6 @@ $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -78,14 +68,14 @@ $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -123,10 +113,24 @@ $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -149,13 +153,34 @@ $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/eigenvalue_problem/b_eigenvalue/index.html" title="(b) Eigenvalue & Eigenvector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/eigenvalue_problem/b_eigenvalue/index.html" title="(b) Eigenvalue & Eigenvector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/b_commutator/index.html" title="(b) Commutator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/b_commutator/index.html" title="(b) Commutator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -176,8 +201,17 @@ $$\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1
 <h1 id="b-spectral-theory">(b) Spectral theory</h1>
 
 <hr>
-<h3 id="1-spectral-theroy">1. Spectral theroy</h3>
-<p><strong>고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다.</strong> 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.</p>
+<h3 id="1-spectral-theroy">
+  1. Spectral theroy
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p><strong>고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다.</strong> 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.</p>
 $$
 \hat{A}|v\rangle=|f\rangle
 $$<p><strong>(1) 입력벡터</strong></p>
@@ -224,8 +258,17 @@ $$<ul>
 $$
 \hat{A}=\int d\lambda K(\lambda) |\lambda\rangle \langle\lambda|
 $$<hr>
-<h3 id="2-스팩트럼-분해의-의미">2. 스팩트럼 분해의 의미</h3>
-<p>고유벡터의 의미를 다시한번 살펴보자. 고유벡터가 어떤 시스템(연산자)에 입력되었을 경우, <strong>입력(고유벡터)의 특성이 전혀 변하지(왜곡되지) 않으면서, 크기만 바뀌어 출력되는 입력을 의미한다.</strong></p>
+<h3 id="2-스팩트럼-분해의-의미">
+  2. 스팩트럼 분해의 의미
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p>고유벡터의 의미를 다시한번 살펴보자. 고유벡터가 어떤 시스템(연산자)에 입력되었을 경우, <strong>입력(고유벡터)의 특성이 전혀 변하지(왜곡되지) 않으면서, 크기만 바뀌어 출력되는 입력을 의미한다.</strong></p>
 <p>비유: 오디오 이퀄라이저</p>
 <ul>
 <li>시스템 (연산자): 소리를 변화시키는 복잡한 오디오 필터.</li>
@@ -235,8 +278,17 @@ $$<hr>
 </ul>
 <p>복잡한 오디오 필터(연산자 $\hat{A}$)가 음악(벡터 $|v\rangle$)에 어떻게 작용하는지 이해하기는 어렵다. 하지만 이 필터의 고유벡터($|\lambda_i\rangle$, 순수 주파수들)를 안다면, 그 작용은 매우 단순해진다. 이 필터는 100Hz 성분은 1.5배 증폭($\lambda_1=1.5$)하고, 250Hz 성분은 0.8배 감쇠($\lambda_2=0.8$)시키는구나. <strong>스팩트럼 분해(대각화)</strong> 는 이 복잡한 필터를, <strong>각 주파수 채널마다 독립적으로 작동하는 간단한 &lsquo;볼륨 노브&rsquo;들의 집합</strong> 으로 보는 것과 같다. 결론적으로, 고유벡터를 안다는 것은 복잡하게 얽혀있는 시스템을, 서로 영향을 주지 않는 단순하고 독립적인 문제들의 합으로 분해하여 바라볼 수 있게 됨을 의미한다.</p>
 <hr>
-<h3 id="3-연산자의-고유벡터들이-완비성을-가질-조건">3. 연산자의 고유벡터들이 완비성을 가질 조건</h3>
-<p><strong>모든 고유값(eigenvalue)</strong> 에 대해,</p>
+<h3 id="3-연산자의-고유벡터들이-완비성을-가질-조건">
+  3. 연산자의 고유벡터들이 완비성을 가질 조건
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p><strong>모든 고유값(eigenvalue)</strong> 에 대해,</p>
 $$
 \text{총 대수적 중복도}=\text{기하적 중복도}
 $$<p>쉽게 말해, <strong>중복된 고유값의 개수만큼, 선형 독립인 고유벡터를 찾을 수 있어야 한다.</strong></p>
@@ -253,8 +305,17 @@ $$<p>쉽게 말해, <strong>중복된 고유값의 개수만큼, 선형 독립�
 <p><strong>(2) 기하학적 중복도</strong></p>
 <p>하나의 고유값에 대해, 서로 <strong>&lsquo;선형 독립인 고유벡터를 몇 개나 찾을 수 있는가&rsquo;</strong> 를 의미한다.</p>
 <hr>
-<h3 id="4-연산자의-멱">4. 연산자의 멱</h3>
-$$
+<h3 id="4-연산자의-멱">
+  4. 연산자의 멱
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3>$$
 \hat{A}^n
 =\sum_i (\lambda_i)^n|\lambda_i\rangle\langle\lambda^i|
 $$<p>proof)</p>
@@ -381,9 +442,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762739277"></script>
-    <script src="/js/clipboard/clipboard.min.js?1762739277" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762739277" defer></script>
-    <script src="/js/theme.js?1762739277" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763181867"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763181867" defer></script>
+    <script src="/js/theme.js?1763181867" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

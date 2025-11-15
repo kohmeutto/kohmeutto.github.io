@@ -142,9 +142,6 @@
     <loc>http://localhost:1313/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_system/lsci/a_mellin_transform_i/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/temp/tensor_calculus/general_coordinates/b_metric_tensor/index.html</loc>
   </url>
   <url>
@@ -203,6 +200,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_analysis/orthogonal_coordinates/b_mapping_ii/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_i/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_operator_i/index.html</loc>
@@ -289,7 +289,7 @@
     <loc>http://localhost:1313/temp/electromotive_force/a_material_derivative/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/linear_system/lsci/a_mellin_transform_ii/index.html</loc>
+    <loc>http://localhost:1313/temp/a_mellin_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/algebra_structure/a_operators_in_quantum_mechanics/index.html</loc>
@@ -320,6 +320,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/hibert_vector/b_hibert_space/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_ii/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/linear_algebra/dirac_notation/b_operator/index.html</loc>
@@ -421,6 +424,9 @@
     <loc>http://localhost:1313/temp/b_matrix_kernel/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_iii/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_algebra/hibert_vector/b_riesz/index.html</loc>
   </url>
   <url>
@@ -461,6 +467,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/operation/a_4nd_unit_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/linear_system/lsci/a_algebra_structure/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/metric_tensor/a_cross_product/index.html</loc>

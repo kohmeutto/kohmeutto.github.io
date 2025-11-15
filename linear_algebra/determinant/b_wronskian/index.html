@@ -4,51 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식 이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
+    <meta name="generator" content="Relearn 8.2.0+fe198b0077bd441c984854c0a0610da02b2162f8">
+    <meta name="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
 함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
 $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Wronskian :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식 이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
+    <meta name="twitter:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
 함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
 $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
     <meta property="og:url" content="http://localhost:1313/linear_algebra/determinant/b_wronskian/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Wronskian :: 수리전자물리학">
-    <meta property="og:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식 이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
+    <meta property="og:description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
 함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
 $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
     <meta itemprop="name" content="(b) Wronskian :: 수리전자물리학">
-    <meta itemprop="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식 이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
+    <meta itemprop="description" content="1. 론스키안(Wronskian) 행렬 &amp; 행렬식이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. 연속 무한 기저로 표현되는 경우,
 함수 벡터의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 함수의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해, 론스키안 행렬 을 구성한다.
 $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdots &amp;\langle x|f_n\rangle \\\langle x|\hat{D}|f_1\rangle &amp; \langle x|\hat{D}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}|f_n\rangle &amp;\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\langle x|\hat{D}^{n-1}|f_1\rangle &amp; \langle x|\hat{D}^{n-1}|f_2\rangle &amp; \cdots &amp; \langle x|\hat{D}^{n-1}|f_n\rangle \end{bmatrix}=\begin{bmatrix}f_1(x) &amp; f_2(x) &amp; \cdots &amp; f_n(x) \\f&#39;_1(x) &amp; f&#39;_2(x) &amp; \cdots &amp; f&#39;_n(x) \\\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\f^{(n-1)}_1(x) &amp; f^{(n-1)}_2(x) &amp; \cdots &amp; f^{(n-1)}_n(x) \\\end{bmatrix}$$ 독립: $|W|\ne 0$ 종속: $|W|= 0$ proof)">
     <meta itemprop="wordCount" content="306">
     <title>(b) Wronskian :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1762739277" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1762739277" defer></script>
-    <script src="/js/search-lunr.js?1762739277" defer></script>
-    <script src="/js/search.js?1762739277" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763181867" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763181867" defer></script>
+    <script src="/js/search-lunr.js?1763181867" defer></script>
+    <script src="/js/search.js?1763181867" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1762739277";
+      window.relearn.index_js_url="/searchindex.en.js?1763181867";
     </script>
-    <script src="/js/lunr/lunr.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1762739277" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1762739277" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763181867" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763181867" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762739277" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762739277" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762739277" rel="stylesheet">
-    <link href="/css/theme.css?1762739277" rel="stylesheet">
-    <link href="/css/format-html.css?1762739277" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763181867" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763181867" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763181867" rel="stylesheet">
+    <link href="/css/theme.css?1763181867" rel="stylesheet">
+    <link href="/css/format-html.css?1763181867" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,8 +57,6 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -66,14 +64,14 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -111,10 +109,24 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -136,13 +148,34 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/determinant/b_determinant/index.html" title="(b) Determinant (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/determinant/b_determinant/index.html" title="(b) Determinant (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/determinant/b_gram/index.html" title="(b) Gram (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/determinant/b_gram/index.html" title="(b) Gram (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+
+
+
+
+
+
+
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -163,8 +196,17 @@ $$W=\begin{bmatrix}\langle x|f_1\rangle &amp; \langle x|f_2\rangle &amp; \cdo
 <h1 id="b-wronskian">(b) Wronskian</h1>
 
 <hr>
-<h3 id="1-론스키안wronskian-행렬--행렬식">1. 론스키안(Wronskian) 행렬 &amp; 행렬식</h3>
-<p>이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. <strong>연속 무한 기저로 표현되는</strong> 경우,</p>
+<h3 id="1-론스키안wronskian-행렬--행렬식">
+  1. 론스키안(Wronskian) 행렬 &amp; 행렬식
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><p>이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. <strong>연속 무한 기저로 표현되는</strong> 경우,</p>
 <ul>
 <li><strong>함수 벡터</strong>의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해,</li>
 <li><strong>함수</strong>의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해,</li>
@@ -227,10 +269,28 @@ $$
 \end{bmatrix}
 $$<p><strong>상태 벡터 $|f_n\rangle$는 &lsquo;값&rsquo; 정보와 함께 &lsquo;어떻게 움직이는가&rsquo;에 대한 &lsquo;변화율(미분)&rsquo; 정보도 잠재적으로 포함하고 있다.</strong> 서로 다른 두 벡터의 관계를 정확히 알려면, 이 두 가지 정보를 모두 캐내야 한다.</p>
 <hr>
-<h3 id="2-로랑-급수-기저의-독립">2. 로랑 급수 기저의 독립</h3>
-<hr>
-<h3 id="3-푸리에-급수-기저의-독립">3. 푸리에 급수 기저의 독립</h3>
+<h3 id="2-로랑-급수-기저의-독립">
+  2. 로랑 급수 기저의 독립
 
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3><hr>
+<h3 id="3-푸리에-급수-기저의-독립">
+  3. 푸리에 급수 기저의 독립
+
+
+
+
+
+
+
+<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span>
+</h3>
   <footer class="footline">
   </footer>
 </article>
@@ -323,9 +383,9 @@ $$<p><strong>상태 벡터 $|f_n\rangle$는 &lsquo;값&rsquo; 정보와 함께 &
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1762739277"></script>
-    <script src="/js/clipboard/clipboard.min.js?1762739277" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762739277" defer></script>
-    <script src="/js/theme.js?1762739277" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763181867"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763181867" defer></script>
+    <script src="/js/theme.js?1763181867" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

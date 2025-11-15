@@ -99,6 +99,13 @@
       <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;1. 기저의 표현 아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\begin{bmatrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$$$&#xD;|u_1\rangle=\begin{bmatrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_2\rangle=\begin{bmatrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_3\rangle=\begin{bmatrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
     </item>
     <item>
+      <title>(a) Mellin transform II</title>
+      <link>http://localhost:1313/temp/a_mellin_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_mellin_transform_ii/index.html</guid>
+      <description>1. 멜린 변환 $$&#xD;\langle s^M|f\rangle&#xD;=\int_0^{\infty}\frac{dx}{x}x^{s}f\left(t\right)&#xD;$$ 2. linearity 적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^M|af+bg\rangle&#xD;=a\langle s^M|f\rangle+b\langle s^M|g\rangle&#xD;$$ 3. Core LScI duality (핵심 쌍대성) LSI의 (시간 이동 $\leftrightarrow$ 주파수 곱셈)과 (주파수 이동 $\leftrightarrow$ 시간 곱셈)은 LScI에서 다음과 같이 완벽한 대칭을 이룬다.&#xA;(1) Scaling in x-domain (축척 변환)&#xA;$$&#xD;\langle s^M|f(ax)\rangle&#xD;=\langle s^M|\hat{Z}_a|f\rangle&#xD;=a^{-s}\langle s^M|f\rangle&#xD;$$&#xD;proof&#xD;$$&#xD;\langle s^M|\hat{Z}_a&#xD;=\int \frac{dx}{x} x^s\langle x^d|\hat{Z}_a&#xD;=\int \frac{dx}{x} x^s\langle (ax)^d|&#xD;=\int \frac{dk}{k} (k/a)^s\langle k^d| =a^{-s}\int \frac{dk}{k} k^s \langle k^d| $$&#xD;(2) Power Scaling in x-domain (멱함수 곱)</description>
+    </item>
+    <item>
       <title>Series</title>
       <link>http://localhost:1313/temp/series/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
