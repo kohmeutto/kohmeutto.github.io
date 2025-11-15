@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
     <meta name="description" content="1차원 파동방정식의 해는 아래와 같다.
 $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)$$위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서,
 파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}dk\left\lbrack c_1\left(k\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(k\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ 주파수 중첩의 해 $$u\left(x,t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}&#43;c_2\left(\omega\right)e^{i\left(kx&#43;\omega t\right)}\right\rbrack$$ proof1) 스텀-리우빌 적용, 엄밀한 풀이
@@ -37,26 +37,26 @@ $$\frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^
 $$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left(x\right)T\left(x\right)_{}=-k^2X\left(x\right)T\left(x\right)$$$$\left(\frac{\partial^2}{\partial x^2}&#43;k^2\right)X\left(x\right)=0$$(1) $k\ne0$">
     <meta itemprop="wordCount" content="391">
     <title>(p) 1D Wave equation for free-space :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -65,8 +65,6 @@ $$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -74,14 +72,14 @@ $$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -119,10 +117,10 @@ $$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -142,13 +140,13 @@ $$L:=\frac{\partial^2}{\partial x^2}$$$$\frac{\partial^2}{\partial x^2}X\left
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html" title="(b) Wave equation for free-space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html" title="(b) Wave equation for free-space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/p_3d_wave_equation_for_free_space/index.html" title="(p) 3D Wave equation for free-space (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/p_3d_wave_equation_for_free_space/index.html" title="(p) 3D Wave equation for free-space (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -250,7 +248,7 @@ F^{-1}\left\lbrace\underline{u}\left(k,t\right)\right\rbrace\left(x,t\right)=\fr
 $$$$
 u\left(x,t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}dk\left\lbrack\underline{f}\left(k\right)e^{-i\left(\omega t-kx\right)}+\underline{g}\left(k\right)e^{+i\left(\omega t+kx\right)}\right\rbrack
 $$<hr>
-<h3 id="q-왜-증명-2는-엄밀하지-않은가">Q) 왜 증명 2는 엄밀하지 않은가.</h3>
+<h3 id="q-왜-증명-2는-엄밀하지-않은가">Q) 왜 증명 2는 엄밀하지 않은가.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>proof2)는 단일 주파수 해를 찾은 후, 이를 &lsquo;모든 주파수에 대해 중첩한다&rsquo;는 다음 단계로 넘어간다. 이는 선형 시스템에 대한 중첩 원리에 기반한 유효한 추론이지만, 푸리에 변환의 엄밀한 &lsquo;존재 정리&rsquo; 및 &lsquo;역변환 정리&rsquo;를 통해 일반해를 명시적으로 유도하는 proof1&amp;3) 만큼 수학적으로 &lsquo;완전히 유도된(deductive)&rsquo; 과정은 아니다. 다시 말해, proof2) 는 &lsquo;이러한 형태의 해가 존재한다면 일반해는 그 중첩일 것이다&rsquo;라는 직관적이고 구성적인 접근 방식에 가깝다.</p>
 <hr>
 <p><a href="https://www.ibiblio.org/e-notes/webgl/gpu/boundary.htm" rel="external">ABC for waves</a></p>
@@ -351,9 +349,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -70,6 +70,33 @@ function debounce(func, delay) {
   };
 }
 
+// Toast notification system
+function showToast(message) {
+  if (!message) return;
+
+  var container = document.getElementById('toast-container');
+  if (!container) return;
+
+  var toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-atomic', 'true');
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  setTimeout(function () {
+    toast.classList.add('toast-hiding');
+    setTimeout(function () {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300); // Match the fade-out animation duration
+  }, 2000);
+}
+
+window.relearn.showToast = showToast;
+
 function fixCodeTabs() {
   /* if only a single code block is contained in the tab and no style was selected, treat it like style=code */
   var codeTabContents = Array.from(document.querySelectorAll('.tab-content.tab-panel-style')).filter(function (tabContent) {
@@ -244,13 +271,18 @@ function initMermaid(update, attrs) {
 
       var graph = encodeHTML(serializeGraph(parse));
       var new_element = document.createElement('div');
+      var hasActionbarWrapper = element.classList.contains('actionbar-wrapper');
       Array.from(element.attributes).forEach(function (attr) {
         new_element.setAttribute(attr.name, attr.value);
         element.removeAttribute(attr.name);
       });
       new_element.classList.add('mermaid-container');
       new_element.classList.remove('mermaid');
+      new_element.classList.remove('actionbar-wrapper');
       element.classList.add('mermaid');
+      if (hasActionbarWrapper) {
+        element.classList.add('actionbar-wrapper');
+      }
 
       element.innerHTML = graph;
       if (element.offsetParent !== null) {
@@ -347,26 +379,21 @@ function initMermaid(update, attrs) {
           var svg = d3.select(this);
           svg.html('<g>' + svg.html() + '</g>');
           var inner = svg.select('*:scope > g');
-          parent.insertAdjacentHTML('beforeend', '<button class="svg-reset-button btn cstyle action noborder notitle interactive" title="' + window.T_Reset_view + '"><i class="fa-fw fas fa-undo-alt"></i></button>');
-          var button = parent.querySelector('.svg-reset-button');
+          parent.insertAdjacentHTML('beforeend', '<div class="actionbar"><span class="btn cstyle svg-reset-button action noborder notitle interactive"><button type="button" title="' + window.T_Reset_view + '"><i class="fa-fw fas fa-undo-alt"></i></button></span></div>');
+          var wrapper = parent.querySelector('.svg-reset-button');
+          var button = wrapper.querySelector('button');
           var zoom = d3.zoom().on('zoom', function (e) {
             inner.attr('transform', e.transform);
             if (e.transform.k == 1 && e.transform.x == 0 && e.transform.y == 0) {
-              button.classList.remove('zoomed');
+              wrapper.classList.remove('zoomed');
             } else {
-              button.classList.add('zoomed');
+              wrapper.classList.add('zoomed');
             }
           });
-          button.addEventListener('click', function (event) {
+          button.addEventListener('click', function () {
+            this.blur();
             svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
-            this.setAttribute('aria-label', window.T_View_reset);
-            this.classList.add('tooltipped', 'tooltipped-' + (doBeside ? '' : 's') + (isImageRtl ? 'e' : 'w'));
-          });
-          button.addEventListener('mouseleave', function () {
-            if (this.classList.contains('tooltipped')) {
-              this.classList.remove('tooltipped', 'tooltipped-w', 'tooltipped-se', 'tooltipped-sw');
-              this.removeAttribute('aria-label');
-            }
+            showToast(window.T_View_reset);
           });
           svg.call(zoom);
         });
@@ -575,54 +602,31 @@ function initOpenapi(update, attrs) {
 }
 
 function initAnchorClipboard() {
-  if (window.relearn.disableAnchorCopy && window.relearn.disableAnchorScrolling) {
-    return;
-  }
+  const url = document.location.origin == 'null' ? `${document.location.protocol}//${document.location.host}${document.location.pathname}` : `${document.location.origin}${document.location.pathname}`;
 
-  document.querySelectorAll(':has(h1) :is(h2[id], h3[id], h4[id], h5[id], h6[id])').forEach(function (element) {
-    var origin = document.location.origin == 'null' ? `${document.location.protocol}//${document.location.host}` : document.location.origin;
-    var id = encodeURIComponent(element.id);
-    var link = `${origin}${document.location.pathname}#${id}`;
-    var span = document.createElement('span');
-    span.classList.add('anchor', 'btn', 'cstyle', 'link', 'noborder', 'notitle', 'interactive');
-    span.setAttribute('data-clipboard-text', link);
-    var button = document.createElement('button');
-    if (!window.relearn.disableAnchorCopy) {
-      button.setAttribute('title', window.T_Copy_link_to_clipboard);
-    }
-    button.innerHTML = '<i class="fas fa-link fa-lg"></i>';
-    span.appendChild(button);
-    element.appendChild(span);
-  });
+  const anchors = Array.from(document.querySelectorAll('.anchor'));
+  for (const anchor of anchors) {
+    const id = encodeURIComponent(anchor.parentElement.id);
+    anchor.setAttribute('data-clipboard-text', `${url}#${id}`);
 
-  var anchors = document.querySelectorAll('.anchor');
-  if (!window.relearn.disableAnchorCopy) {
-    for (var i = 0; i < anchors.length; i++) {
-      anchors[i].addEventListener('mouseleave', function (e) {
-        this.removeAttribute('aria-label');
-        this.classList.remove('tooltipped', 'tooltipped-se', 'tooltipped-sw');
+    if (anchor.classList.contains('copyanchor')) {
+      anchor.addEventListener('click', function () {
+        this.blur();
+        if (!navigator.clipboard?.writeText) {
+          showToast(window.T_Browser_unsupported_feature);
+          return;
+        }
+        const text = this.getAttribute('data-clipboard-text');
+        navigator.clipboard.writeText(text);
+        showToast(window.T_Link_copied_to_clipboard);
       });
     }
-
-    var clip = new ClipboardJS('.anchor');
-    clip.on('success', function (e) {
-      e.clearSelection();
-      e.trigger.setAttribute('aria-label', window.T_Link_copied_to_clipboard);
-      e.trigger.classList.add('tooltipped', 'tooltipped-s' + (isRtl ? 'e' : 'w'));
-      if (!window.relearn.disableAnchorScrolling) {
-        e.trigger.parentElement.scrollIntoView({ behavior: 'smooth' });
-        var state = window.history.state || {};
+    if (anchor.classList.contains('scrollanchor')) {
+      anchor.addEventListener('click', function () {
+        this.parentElement.scrollIntoView({ behavior: 'smooth' });
+        let state = window.history.state || {};
         state = Object.assign({}, typeof state === 'object' ? state : {});
-        history.replaceState({}, '', e.text);
-      }
-    });
-  } else if (!window.relearn.disableAnchorScrolling) {
-    for (var i = 0; i < anchors.length; i++) {
-      anchors[i].addEventListener('click', function (e) {
-        e.currentTarget.parentElement.scrollIntoView({ behavior: 'smooth' });
-        var state = window.history.state || {};
-        state = Object.assign({}, typeof state === 'object' ? state : {});
-        history.replaceState({}, '', e.text);
+        history.pushState({}, '', this.dataset.clipboardText);
       });
     }
   }
@@ -640,19 +644,6 @@ function initCodeClipboard() {
     // come from the browser / Hugo transformation
     text = text.replace(/\n$/, '');
     return text;
-  }
-
-  function fallbackMessage(action) {
-    var actionMsg = '';
-    var actionKey = action === 'cut' ? 'X' : 'C';
-    if (/iPhone|iPad/i.test(navigator.userAgent)) {
-      actionMsg = 'No support :(';
-    } else if (/Mac/i.test(navigator.userAgent)) {
-      actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
-    } else {
-      actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
-    }
-    return actionMsg;
   }
 
   document.addEventListener('copy', function (ev) {
@@ -740,45 +731,35 @@ function initCodeClipboard() {
         code = clone;
       }
       var button = null;
+      var insertElement = null;
+      var wrapper = null;
+      var actionbar = null;
       if (isBlock || (!window.relearn.disableInlineCopyToClipboard && !inHeading)) {
         button = document.createElement('button');
-        var buttonPrefix = isBlock ? 'block' : 'inline';
-        button.classList.add(buttonPrefix + '-copy-to-clipboard-button');
-        if (isBlock) {
-          button.classList.add('btn');
-          button.classList.add('cstyle');
-          button.classList.add('action');
-          button.classList.add('noborder');
-          button.classList.add('notitle');
-          button.classList.add('interactive');
-        }
+        button.type = 'button';
         button.setAttribute('title', window.T_Copy_to_clipboard);
-        button.innerHTML = '<i class="fa-fw far fa-copy"></i>';
-        button.addEventListener('mouseleave', function () {
-          this.removeAttribute('aria-label');
-          this.classList.remove('tooltipped', 'tooltipped-w', 'tooltipped-se', 'tooltipped-sw');
-        });
+
         if (isBlock) {
-          // we have to make sure, the button is visible while
-          // Clipboard.js is doing its magic
-          button.addEventListener('focus', function (ev) {
-            setTimeout(function () {
-              ev.target.classList.add('force-display');
-            }, 0);
-          });
-          button.addEventListener('blur', function (ev) {
-            this.removeAttribute('aria-label');
-            this.classList.remove('tooltipped', 'tooltipped-w', 'tooltipped-se', 'tooltipped-sw');
-            setTimeout(function () {
-              ev.target.classList.remove('force-display');
-            }, 0);
-          });
+          // Wrap in actionbar structure for block buttons
+          button.innerHTML = '<i class="fa-fw far fa-copy"></i>';
+          wrapper = document.createElement('span');
+          wrapper.classList.add('btn', 'cstyle', 'block-copy-to-clipboard-button', 'action', 'noborder', 'notitle', 'interactive');
+          wrapper.appendChild(button);
+          actionbar = document.createElement('div');
+          actionbar.className = 'actionbar';
+          actionbar.appendChild(wrapper);
+          insertElement = actionbar;
+        } else {
+          // Simple button for inline buttons (unchanged)
+          button.innerHTML = '<i class="far fa-copy"></i>';
+          button.classList.add('inline-copy-to-clipboard-button');
+          insertElement = button;
         }
       }
       if (inTable) {
         var table = code.parentNode.parentNode.parentNode.parentNode.parentNode;
         table.dataset.code = text;
-        table.parentNode.insertBefore(button, table.nextSibling);
+        table.parentNode.insertBefore(insertElement, table.nextSibling);
       } else if (inPre) {
         var pre = code.parentNode;
         pre.dataset.code = text;
@@ -790,56 +771,43 @@ function initCodeClipboard() {
         if (p == document) {
           var clone = pre.cloneNode(true);
           var div = document.createElement('div');
-          div.classList.add('highlight');
-          div.setAttribute('dir', 'auto');
+          div.classList.add('highlight', 'actionbar-wrapper');
           if (window.relearn.enableBlockCodeWrap) {
             div.classList.add('wrap-code');
           }
+          div.setAttribute('dir', 'auto');
           div.appendChild(clone);
           pre.parentNode.replaceChild(div, pre);
           pre = clone;
         }
-        pre.parentNode.insertBefore(button, pre.nextSibling);
+        pre.parentNode.insertBefore(insertElement, pre.nextSibling);
       } else {
         code.classList.add('highlight');
         code.dataset.code = text;
-        if (button) {
-          code.parentNode.insertBefore(button, code.nextSibling);
+        if (insertElement) {
+          code.parentNode.insertBefore(insertElement, code.nextSibling);
         }
       }
     }
   }
 
-  var clip = new ClipboardJS('.block-copy-to-clipboard-button, .inline-copy-to-clipboard-button', {
-    text: function (trigger) {
-      if (!trigger.previousElementSibling) {
-        return '';
+  var buttons = document.querySelectorAll('.block-copy-to-clipboard-button button, .inline-copy-to-clipboard-button');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      this.blur();
+      if (!navigator.clipboard?.writeText) {
+        showToast(window.T_Browser_unsupported_feature);
+        return;
       }
-      return trigger.previousElementSibling.dataset.code || '';
-    },
-  });
-
-  clip.on('success', function (e) {
-    e.clearSelection();
-    var inPre = e.trigger.previousElementSibling && e.trigger.previousElementSibling.tagName.toLowerCase() == 'pre';
-    var isCodeRtl = window.getComputedStyle(e.trigger).direction == 'rtl';
-    var doBeside = inPre || (e.trigger.previousElementSibling && e.trigger.previousElementSibling.tagName.toLowerCase() == 'table');
-    e.trigger.setAttribute('aria-label', window.T_Copied_to_clipboard);
-    e.trigger.classList.add('tooltipped', 'tooltipped-' + (doBeside ? '' : 's') + (isCodeRtl ? 'e' : 'w'));
-  });
-
-  clip.on('error', function (e) {
-    var inPre = e.trigger.previousElementSibling && e.trigger.previousElementSibling.tagName.toLowerCase() == 'pre';
-    var isCodeRtl = window.getComputedStyle(e.trigger).direction == 'rtl';
-    var doBeside = inPre || (e.trigger.previousElementSibling && e.trigger.previousElementSibling.tagName.toLowerCase() == 'table');
-    e.trigger.setAttribute('aria-label', fallbackMessage(e.action));
-    e.trigger.classList.add('tooltipped', 'tooltipped-' + (doBeside ? '' : 's') + (isCodeRtl ? 'e' : 'w'));
-    var f = function () {
-      e.trigger.setAttribute('aria-label', window.T_Copied_to_clipboard);
-      e.trigger.classList.add('tooltipped', 'tooltipped-' + (doBeside ? '' : 's') + (isCodeRtl ? 'e' : 'w'));
-      document.removeEventListener('copy', f);
-    };
-    document.addEventListener('copy', f);
+      // For block buttons, get the actionbar's previous sibling; for inline, use trigger's previous sibling
+      var codeElement = this.closest('.actionbar') ? this.closest('.actionbar').previousElementSibling : this.previousElementSibling;
+      if (!codeElement) {
+        return;
+      }
+      var text = codeElement.dataset.code || '';
+      navigator.clipboard.writeText(text);
+      showToast(window.T_Copied_to_clipboard);
+    });
   });
 }
 

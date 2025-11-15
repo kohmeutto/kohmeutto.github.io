@@ -4,47 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
+    <meta name="description" content="1. 벡터의 본질우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Ket :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+    <meta name="twitter:description" content="1. 벡터의 본질우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta property="og:url" content="http://localhost:1313/linear_algebra/hibert_vector/b_ket/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Ket :: 수리전자물리학">
-    <meta property="og:description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+    <meta property="og:description" content="1. 벡터의 본질우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear algebra">
     <meta itemprop="name" content="(b) Ket :: 수리전자물리학">
-    <meta itemprop="description" content="1. 벡터의 본질 우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
+    <meta itemprop="description" content="1. 벡터의 본질우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.
 덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A &#43; 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.">
     <meta itemprop="wordCount" content="324">
     <title>(b) Ket :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -53,8 +53,6 @@
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -62,14 +60,14 @@
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -107,10 +105,10 @@
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -132,13 +130,13 @@
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/hibert_vector/index.html" title="Hilbert vector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/hibert_vector/index.html" title="Hilbert vector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_algebra/hibert_vector/b_bra/index.html" title="(b) Bra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_algebra/hibert_vector/b_bra/index.html" title="(b) Bra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -159,7 +157,7 @@
 <h1 id="b-ket">(b) Ket</h1>
 
 <hr>
-<h3 id="1-벡터의-본질">1. 벡터의 본질</h3>
+<h3 id="1-벡터의-본질">1. 벡터의 본질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>우리가 수학과 물리학에서 다루는 많은 대상은 <strong>&lsquo;벡터(vector)&rsquo;</strong> 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 &lsquo;덧셈&rsquo;과 &lsquo;스칼라 곱&rsquo;이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 <strong>벡터 공간(Vector Space)</strong> 이라고 부른다.</p>
 <ul>
 <li>덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A + 화살표 B = 새로운 화살표 C)</li>
@@ -167,7 +165,7 @@
 </ul>
 <p>이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.</p>
 <hr>
-<h3 id="2-벡터의-표기-ket">2. 벡터의 표기, Ket</h3>
+<h3 id="2-벡터의-표기-ket">2. 벡터의 표기, Ket<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>문제는 이들을 표현하는 방식이 제각각이라는 것이다. 화살표는 (x, y, z) 같은 좌표로, 다항식은 $ax^2 + bx + c$ 같은 형태로 표현된다. 이렇게 겉모습이 다른 대상들을 하나의 일관된 언어로 표현하기 위해, 물리학자 폴 디랙(Paul Dirac)은 천재적인 표기법을 도입했다. 바로 <strong>Ket (켓) 벡터</strong> 이다.</p>
 <ul>
 <li>Ket 벡터: 벡터의 이름이나 기호를 꺾쇠  $|\text{{이름}}\rangle$ 안에 넣어 표현한다.</li>
@@ -183,7 +181,7 @@ $$<p>Ket의 가장 중요한 철학은 <strong>&lsquo;표현으로부터의 자�
 </ul>
 <p>이처럼 <strong>Ket은 우리가 다루고자 하는 대상을 그 본질적인 &lsquo;상태&rsquo;로 간주</strong> 하고, 복잡한 겉모습에서 벗어나 통일된 규칙을 적용할 수 있게 해주는 강력한 첫걸음이다.</p>
 <hr>
-<h3 id="3-본질과-표현">3. 본질과 표현</h3>
+<h3 id="3-본질과-표현">3. 본질과 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>비유: &lsquo;보라색&rsquo;이라는 색깔</strong></p>
 <p><strong>(1) 추상적인 벡터</strong></p>
 $$
@@ -290,9 +288,9 @@ $$<p>위와 같이 <strong>기저가 유한하면, 열벡터로 표현 가능</s
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

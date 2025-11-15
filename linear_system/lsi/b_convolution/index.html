@@ -4,55 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. Convolution (이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
+    <meta name="description" content="1. Convolution(이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션수학적으로 표현(절차)하면, 다음과 같다.
 (1) 시간에 대한 시스템 응답을, 리스트화 한다.
-$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.
-$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.">
+$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Convolution :: 수리전자물리학">
-    <meta name="twitter:description" content="1. Convolution (이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.
+    <meta name="twitter:description" content="1. Convolution(이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션수학적으로 표현(절차)하면, 다음과 같다.
 (1) 시간에 대한 시스템 응답을, 리스트화 한다.
-$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.
-$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.">
+$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_convolution/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Convolution :: 수리전자물리학">
-    <meta property="og:description" content="1. Convolution (이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.
+    <meta property="og:description" content="1. Convolution(이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션수학적으로 표현(절차)하면, 다음과 같다.
 (1) 시간에 대한 시스템 응답을, 리스트화 한다.
-$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.
-$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.">
+$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Convolution :: 수리전자물리학">
-    <meta itemprop="description" content="1. Convolution (이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션 수학적으로 표현(절차)하면, 다음과 같다.
+    <meta itemprop="description" content="1. Convolution(이전입력&#43;현재입력&#43;미래입력)의 현재상태: convolution for LSI &#43; non-causal (이전입력&#43;현재입력)의 현재상태: convolution for LSI &#43; causal $$ y\left(t\right)=x\left(t\right)\ast h\left(t\right) =h\left(t\right)\ast x\left(t\right) =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right] =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right] $$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션수학적으로 표현(절차)하면, 다음과 같다.
 (1) 시간에 대한 시스템 응답을, 리스트화 한다.
-$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.
-$$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) $$(3) 리스트화 된 input을 시간에 따라, 오른쪽으로 shift 하면서 시스템 응답과 곱한다.">
+$$ h\left(t\right)\rightarrow h\left(\tau\right) $$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.">
     <meta itemprop="wordCount" content="476">
     <title>(b) Convolution :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -61,8 +57,6 @@ $$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) 
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -70,14 +64,14 @@ $$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) 
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -115,10 +109,10 @@ $$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) 
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -140,13 +134,13 @@ $$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) 
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/i_lsi/index.html" title="(i) LSI (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/i_lsi/index.html" title="(i) LSI (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_causality/index.html" title="(b) Causality (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_causality/index.html" title="(b) Causality (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -167,7 +161,7 @@ $$ x\left(t\right)\rightarrow x\left(\tau\right)\rightarrow x\left(-\tau\right) 
 <h1 id="b-convolution">(b) Convolution</h1>
 
 <hr>
-<h3 id="1-convolution">1. Convolution</h3>
+<h3 id="1-convolution">1. Convolution<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <ul>
 <li><strong>(이전입력+현재입력+미래입력)의 현재상태</strong>: convolution for LSI + non-causal</li>
 <li><strong>(이전입력+현재입력)의 현재상태</strong>: convolution for LSI + causal</li>
@@ -178,7 +172,7 @@ y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right]
 =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right]
 $$<hr>
-<h3 id="2-숫자리스트와-그림으로-이해하는-컨볼루션">2. 숫자(리스트)와 그림으로 이해하는 컨볼루션</h3>
+<h3 id="2-숫자리스트와-그림으로-이해하는-컨볼루션">2. 숫자(리스트)와 그림으로 이해하는 컨볼루션<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <img src="image1-1.png" width="90%" height="auto">
 <img src="image1-2.png" width="90%" height="auto">
 <img src="image1-3.png" width="90%" height="auto">
@@ -198,7 +192,7 @@ $$<p><strong>(4) 곱해진 각 개별 결과를 더한다.</strong></p>
 $$
 y\left(t\right)=\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right]
 $$<hr>
-<h3 id="3-impulse-response">3. Impulse response</h3>
+<h3 id="3-impulse-response">3. Impulse response<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>임펄스 응답 $h(t)$는 시스템 $\mathcal{H}$에 <strong>순간적인 충격(임펄스 $\delta(t)$)을 가했을 때 나오는 출력</strong>을 말한다.</p>
 $$
 \langle t|\delta\ast h\rangle
@@ -219,7 +213,7 @@ $$<p>아래의 convolution 결과를 y로 표현하라.</p>
 $$
 x\left(t-t_1\right)\ast h\left(t-t_2\right)
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -249,7 +243,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -264,7 +258,7 @@ $h$는 $t_2$ 만큼 시간 지연, x는 $t_1$ 만큼 시간 지연이 발생되�
 $$
 x\left(t\right)\ast\delta\left(at+b\right)
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -294,7 +288,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -314,7 +308,7 @@ $$
 $$
 x\left(-t\right)\ast\delta\left(-t-t_0\right)
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -344,7 +338,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -370,7 +364,7 @@ $$$$
 x\left(t\right)\ast h\left(t\right)=x\left(3t-2\right)
 $$<p>를 만족하는, h(t)를 구하여라.</p>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol
@@ -580,9 +574,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -4,63 +4,59 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. 라플라스 변환 (1) 단방향 라플라스 변환
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
+    <meta name="description" content="1. 라플라스 변환(1) 단방향 라플라스 변환
 $$\langle s^L|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$(2) 양방향 라플라스 변환, causal system
-$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties (1) linearity
+$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties(1) linearity
 적분연산자 자체가 선형연산자이다.
-$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting
-$$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rangle=e^{-s\tau}\langle s^L|f\cdot u\rangle$$$$\langle s^L|f(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\rangle=e^{-s\tau}\langle s^L|f\rangle$$proof$$\langle s^L|\hat{S}_\tau=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau=\int dt \langle s^L|t\rangle\langle t-\tau|=\int dt e^{-st}\langle t-\tau|$$$$=\int dt&#39; e^{-s(t&#39;&#43;\tau)}\langle t&#39;|=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|$$$$=e^{-s\tau}\langle s^L|$$(3) amplitude scaling">
+$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Laplace transform II :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 라플라스 변환 (1) 단방향 라플라스 변환
+    <meta name="twitter:description" content="1. 라플라스 변환(1) 단방향 라플라스 변환
 $$\langle s^L|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$(2) 양방향 라플라스 변환, causal system
-$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties (1) linearity
+$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties(1) linearity
 적분연산자 자체가 선형연산자이다.
-$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting
-$$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rangle=e^{-s\tau}\langle s^L|f\cdot u\rangle$$$$\langle s^L|f(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\rangle=e^{-s\tau}\langle s^L|f\rangle$$proof$$\langle s^L|\hat{S}_\tau=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau=\int dt \langle s^L|t\rangle\langle t-\tau|=\int dt e^{-st}\langle t-\tau|$$$$=\int dt&#39; e^{-s(t&#39;&#43;\tau)}\langle t&#39;|=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|$$$$=e^{-s\tau}\langle s^L|$$(3) amplitude scaling">
+$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_laplace_transform_ii/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Laplace transform II :: 수리전자물리학">
-    <meta property="og:description" content="1. 라플라스 변환 (1) 단방향 라플라스 변환
+    <meta property="og:description" content="1. 라플라스 변환(1) 단방향 라플라스 변환
 $$\langle s^L|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$(2) 양방향 라플라스 변환, causal system
-$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties (1) linearity
+$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties(1) linearity
 적분연산자 자체가 선형연산자이다.
-$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting
-$$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rangle=e^{-s\tau}\langle s^L|f\cdot u\rangle$$$$\langle s^L|f(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\rangle=e^{-s\tau}\langle s^L|f\rangle$$proof$$\langle s^L|\hat{S}_\tau=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau=\int dt \langle s^L|t\rangle\langle t-\tau|=\int dt e^{-st}\langle t-\tau|$$$$=\int dt&#39; e^{-s(t&#39;&#43;\tau)}\langle t&#39;|=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|$$$$=e^{-s\tau}\langle s^L|$$(3) amplitude scaling">
+$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Laplace transform II :: 수리전자물리학">
-    <meta itemprop="description" content="1. 라플라스 변환 (1) 단방향 라플라스 변환
+    <meta itemprop="description" content="1. 라플라스 변환(1) 단방향 라플라스 변환
 $$\langle s^L|f\cdot u\rangle=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack$$(2) 양방향 라플라스 변환, causal system
-$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties (1) linearity
+$$\langle s^L|f\rangle=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack$$ 2. 중요 Properties(1) linearity
 적분연산자 자체가 선형연산자이다.
-$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting
-$$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rangle=e^{-s\tau}\langle s^L|f\cdot u\rangle$$$$\langle s^L|f(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\rangle=e^{-s\tau}\langle s^L|f\rangle$$proof$$\langle s^L|\hat{S}_\tau=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau=\int dt \langle s^L|t\rangle\langle t-\tau|=\int dt e^{-st}\langle t-\tau|$$$$=\int dt&#39; e^{-s(t&#39;&#43;\tau)}\langle t&#39;|=e^{-s\tau}\int dt&#39; e^{-st&#39;}\langle t&#39;|$$$$=e^{-s\tau}\langle s^L|$$(3) amplitude scaling">
+$$\langle s^L|af\cdot u&#43;bg\cdot u\rangle=a\langle s^L|f\cdot u\rangle&#43;b\langle s^L|g\cdot u\rangle$$$$\langle s^L|af&#43;bg\rangle=a\langle s^L|f\rangle&#43;b\langle s^L|g\rangle$$(2) time shifting">
     <meta itemprop="wordCount" content="755">
     <title>(b) Laplace transform II :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -69,8 +65,6 @@ $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rang
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -78,14 +72,14 @@ $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rang
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -123,10 +117,10 @@ $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rang
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -147,13 +141,13 @@ $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rang
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_i/index.html" title="(b) Laplace transform I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_i/index.html" title="(b) Laplace transform I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_iii/index.html" title="(b) Laplace transform III (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_iii/index.html" title="(b) Laplace transform III (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -174,7 +168,7 @@ $$\langle s^L|f(t-\tau)u(t-\tau)\rangle=\langle s^L|\hat{S}_\tau|f\cdot u\rang
 <h1 id="b-laplace-transform-ii">(b) Laplace transform II</h1>
 
 <hr>
-<h3 id="1-라플라스-변환">1. 라플라스 변환</h3>
+<h3 id="1-라플라스-변환">1. 라플라스 변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>(1) 단방향 라플라스 변환</p>
 $$
 \langle s^L|f\cdot u\rangle
@@ -184,7 +178,7 @@ $$
 \langle s^L|f\rangle
 =\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack
 $$<hr>
-<h3 id="2-중요-properties">2. 중요 Properties</h3>
+<h3 id="2-중요-properties">2. 중요 Properties<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>(1) linearity</strong></p>
 <p>적분연산자 자체가 선형연산자이다.</p>
 $$
@@ -203,7 +197,7 @@ $$$$
 =\langle s^L|\hat{S}_\tau|f\rangle
 =e^{-s\tau}\langle s^L|f\rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -236,7 +230,7 @@ $$$$
 \langle s^L|f\left(at\right)\rangle
 =\frac{1}{|a|}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -262,7 +256,7 @@ $$$$
 \langle s^L|f\left(at-b\right)\rangle
 =\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -299,7 +293,7 @@ $$$$
 =\langle s^L|e^{a\hat{t}}|f\rangle
 =\langle (s-a)^L|f\rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -321,7 +315,7 @@ $$$$
 \langle s^L|h\ast f\rangle
 =\langle s^L|h\rangle\langle s^L|f\rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -373,7 +367,7 @@ $$$$
 =s\langle s^L|f\cdot u\rangle-sf(0)-f'(0)
 $$<p>함수 $f(t)$의 &ldquo;진화(evolution)&rdquo; $f^{(n)}$ 를 $t=0$에서 &ldquo;자른 $u(t)$ &quot; 신호의 변환이다. <strong>초기값 문제(Initial Value Problem)</strong> 를 푸는 데 특화된 공식이다.</p>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -414,7 +408,7 @@ $$
 =s^{n}\langle s^L|f\cdot u\rangle
 $$<p>$f(t)$를 $u(t)$로 먼저 곱해서 <strong>&ldquo;인과 함수(causal function)&rdquo; $g(t) = f(t)u(t)$</strong> 를 만들고, 그 전체를 미분한 신호의 변환이다.</p>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -495,7 +489,7 @@ $$$$
 =(-1)^n\frac{d^n}{ds^n}\langle s^L|u\rangle
 =\frac{n!}{s^{n+1}}
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -533,7 +527,7 @@ f\left(0\right)
 =\lim_{s\to\infty}\langle s|\hat{D}|f\cdot u \rangle
 =\lim_{s\to\infty}s \langle s|f\cdot u \rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -577,7 +571,7 @@ f\left(\infty\right)
 =\lim_{s\to 0}\langle s^L|\hat{D}|f\cdot u \rangle
 =\lim_{s\to 0}s \langle s^L|f\cdot u \rangle
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     proof
@@ -716,9 +710,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

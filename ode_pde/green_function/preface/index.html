@@ -4,51 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
     <meta name="description" content="그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다. 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.
-1. Green function &amp; 미분 미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
+1. Green function &amp; 미분미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
 $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할 수 있다. 다른 관점으로 보면, 전압 신호가 회로에 입력된다고도 볼 수 있다. 즉, 입력 신호로 볼 수 있다.만약, t’ 초에서 입력된 신호가 dirac delta 라면, $f(t)=\delta(t-t’)$ 으로 쓸 수 있다. 이 때, 이 f를 만족하는 $y$를 $G(t,t’)$ 이라고 할 수 있으며, 이것을 그린함수라고 한다. 컨볼루션과 임펄스 응답과 동일한 개념임을 상기하라.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Preface :: 수리전자물리학">
     <meta name="twitter:description" content="그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다. 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.
-1. Green function &amp; 미분 미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
+1. Green function &amp; 미분미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
 $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할 수 있다. 다른 관점으로 보면, 전압 신호가 회로에 입력된다고도 볼 수 있다. 즉, 입력 신호로 볼 수 있다.만약, t’ 초에서 입력된 신호가 dirac delta 라면, $f(t)=\delta(t-t’)$ 으로 쓸 수 있다. 이 때, 이 f를 만족하는 $y$를 $G(t,t’)$ 이라고 할 수 있으며, 이것을 그린함수라고 한다. 컨볼루션과 임펄스 응답과 동일한 개념임을 상기하라.">
     <meta property="og:url" content="http://localhost:1313/ode_pde/green_function/preface/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="Preface :: 수리전자물리학">
     <meta property="og:description" content="그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다. 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.
-1. Green function &amp; 미분 미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
+1. Green function &amp; 미분미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
 $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할 수 있다. 다른 관점으로 보면, 전압 신호가 회로에 입력된다고도 볼 수 있다. 즉, 입력 신호로 볼 수 있다.만약, t’ 초에서 입력된 신호가 dirac delta 라면, $f(t)=\delta(t-t’)$ 으로 쓸 수 있다. 이 때, 이 f를 만족하는 $y$를 $G(t,t’)$ 이라고 할 수 있으며, 이것을 그린함수라고 한다. 컨볼루션과 임펄스 응답과 동일한 개념임을 상기하라.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="ODE & PDE">
     <meta itemprop="name" content="Preface :: 수리전자물리학">
     <meta itemprop="description" content="그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다. 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.
-1. Green function &amp; 미분 미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
+1. Green function &amp; 미분미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.
 $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할 수 있다. 다른 관점으로 보면, 전압 신호가 회로에 입력된다고도 볼 수 있다. 즉, 입력 신호로 볼 수 있다.만약, t’ 초에서 입력된 신호가 dirac delta 라면, $f(t)=\delta(t-t’)$ 으로 쓸 수 있다. 이 때, 이 f를 만족하는 $y$를 $G(t,t’)$ 이라고 할 수 있으며, 이것을 그린함수라고 한다. 컨볼루션과 임펄스 응답과 동일한 개념임을 상기하라.">
     <meta itemprop="wordCount" content="312">
     <title>Preface :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,8 +57,6 @@ $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -66,14 +64,14 @@ $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -111,10 +109,10 @@ $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -135,13 +133,13 @@ $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/green_function/index.html" title="Green function (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/green_function/index.html" title="Green function (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/green_function/b_first_order_pde/index.html" title="(b) First-order PDE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/green_function/b_first_order_pde/index.html" title="(b) First-order PDE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -165,7 +163,7 @@ $$ Ly=f $$f 는 source 이다. 회로라면, f 는 전원 소스로서 생각할
 <p>그린함수는 미분방정식의 특수해를 찾는데 사용되는 기법이다.
 아래는 그린함수를 미분의 관점(임펄스 응답)과 적분의 관점(중첩)에서 설명한다.</p>
 <hr>
-<h3 id="1-green-function--미분">1. Green function &amp; 미분</h3>
+<h3 id="1-green-function--미분">1. Green function &amp; 미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>미분연산자 $\operatorname{L}$ 에 대한 미분방정식은 아래와 같이 쓸 수 있다.</p>
 $$
 Ly=f
@@ -221,7 +219,7 @@ $$<p>따라서, 임펄스 응답은 다음과 같다.</p>
 $$
 h\left(t\right)=e^{-t}
 $$<hr>
-<h3 id="2-green-function--적분">2. Green function &amp; 적분</h3>
+<h3 id="2-green-function--적분">2. Green function &amp; 적분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <img src="image2.png" width="40%" height="auto">
 <p>위와 같은 그림을 생각하면, 원천소스 특정 &ldquo;점&rdquo;, f(r&rsquo;) 이 관측위치에 어떠한 결과를 만들어 낸다.  이를 수식으로 표현하면, 다음과 같다.</p>
 $$
@@ -336,9 +334,9 @@ $$<p>그린함수 &amp; 미분에서 G는 시스템에 임펄스를 넣어 도�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

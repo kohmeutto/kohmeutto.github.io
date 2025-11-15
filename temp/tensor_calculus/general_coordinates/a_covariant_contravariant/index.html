@@ -4,51 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
     <meta name="description" content="이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. Orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
-1. 일반좌표계에서의 표기법 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
+1. 일반좌표계에서의 표기법일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
 직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, 직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다. 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(a) Covariant and contravariant :: 수리전자물리학">
     <meta name="twitter:description" content="이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. Orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
-1. 일반좌표계에서의 표기법 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
+1. 일반좌표계에서의 표기법일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
 직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, 직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다. 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.">
     <meta property="og:url" content="http://localhost:1313/temp/tensor_calculus/general_coordinates/a_covariant_contravariant/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(a) Covariant and contravariant :: 수리전자물리학">
     <meta property="og:description" content="이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. Orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
-1. 일반좌표계에서의 표기법 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
+1. 일반좌표계에서의 표기법일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
 직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, 직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다. 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Temps">
     <meta itemprop="name" content="(a) Covariant and contravariant :: 수리전자물리학">
     <meta itemprop="description" content="이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. Orthogonal coordinates 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
-1. 일반좌표계에서의 표기법 일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
+1. 일반좌표계에서의 표기법일반 좌표계에서 벡터의 “좌표값&#34;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수 이다.
 직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, 직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다. 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.">
     <meta itemprop="wordCount" content="573">
     <title>(a) Covariant and contravariant :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -57,8 +57,6 @@
       window.relearn.relBasePath='..\/..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -66,14 +64,14 @@
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -111,10 +109,10 @@
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -140,13 +138,13 @@
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/temp/tensor_calculus/general_coordinates/index.html" title="General coordinates (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/tensor_calculus/general_coordinates/index.html" title="General coordinates (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/temp/tensor_calculus/general_coordinates/b_metric_tensor/index.html" title="(a) Metric tensor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/tensor_calculus/general_coordinates/b_metric_tensor/index.html" title="(a) Metric tensor (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -169,7 +167,7 @@
 <hr>
 <p>이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. <strong>Orthogonal coordinates</strong> 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다</p>
 <hr>
-<h3 id="1-일반좌표계에서의-표기법">1. 일반좌표계에서의 표기법</h3>
+<h3 id="1-일반좌표계에서의-표기법">1. 일반좌표계에서의 표기법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>일반 좌표계에서 벡터의 &ldquo;좌표값&quot;은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수</strong> 이다.</p>
 <p>직교좌표계의 경우, 좌표축 벡터의 방향으로 평행하게 분해하는 것이 좌표축에 수선의 발을 내리는 것과 동일하며, 이때 해당 좌표축 벡터(단위 기저 벡터)와의 내적 연산을 통해 좌표값을 쉽게 구할 수 있다. 그러나, <strong>직교가 아닌 일반 좌표계에서는 이러한 방식으로 좌표값을 직접 구할 수 없다.</strong> 이때는 단순히 수선의 발을 내리는 것이 아니라, 각 축에 대한 기하학적 의미를 가지는 특정 역 기저 벡터와의 내적을 통해 좌표값을 추출하거나, 좌표 변환을 위한 매트릭 텐서가 사용된다.</p>
 <p>suffix notation을 사용하여, 일반좌표계에서 벡터표현은 다음과 같다.</p>
@@ -182,7 +180,7 @@ $$<ul>
 <li>$v_i$ 는 성분을 나타내며, 이것을 $\vec{v}$ 의 covariant(공변) 성분이라고 한다.</li>
 </ul>
 <hr>
-<h3 id="2-공변기저벡터">2. 공변기저벡터</h3>
+<h3 id="2-공변기저벡터">2. 공변기저벡터<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>매개변수공간[u] → 실공간[v] 변환에 대한 설명</strong>으로, 즉, Jacobian 에 대한 내용이다. Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.</p>
 $$
 d\vec{v}
@@ -192,7 +190,7 @@ d\vec{v}
 $$<p>여기에서, $\partial\vec{v}/\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\vec{v}$ 의 <strong>접선 벡터</strong>를 의미하며, 이것이 <strong>자연기저벡터(공변기저벡터)</strong> $\vec{h}_i$를 의미한다.</p>
 <img src="image1.png" width="65%" height="auto">
 <hr>
-<h3 id="3-반변기저벡터">3. 반변기저벡터</h3>
+<h3 id="3-반변기저벡터">3. 반변기저벡터<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>앞서, 매개변수공간[u] → 실공간[v] 변환할 때, 실공간의 기저(공변기저벡터)를 벡터 $\vec{v}$ 의 접선벡터로 정의하였다. 또 다른 관점으로는 매개변수공간의 $u^i$ 는 실공간의 $u^i$의 등위면을 만들어 낸다. <strong>매개변수공간 $u^i$ 에서 실공간으로 mapping 된 등위면</strong> &lsquo;$u^i(v^1,v^2,v^3)=\text{상수}$&lsquo;이다. 이 <strong>등위면의 법선벡터를 기저로 정의</strong>할 수 있다. 이것을 <strong>반변기저벡터</strong> $\vec{h}^i$ 라고 한다.</p>
 <p>반변기저벡터 $\vec{h}^i$ 를 사용해 실공간에서의 미소변위벡터 $d\vec{v}$를 표현할 수 있다. $\vec{h}^i=\nabla_v u^i$ 이다. (여기서 $\nabla_v u^i$ 는 <strong>스칼라 함수</strong> $u^i$ 의 그래디언트)</p>
 $$
@@ -200,7 +198,7 @@ d\vec{v}=\vec{h}^idv_i=dv_i\nabla_v u^i
 $$<p>여기에서 주의해야할 사항은, <strong>$v_i$ 는 실공간에서 벡터를 반변 기저 벡터로 표현했을 때의 공변 성분이다.</strong></p>
 <img src="image2.png" width="65%" height="auto">
 <hr>
-<h3 id="4-중복지수표기법">4. 중복지수표기법</h3>
+<h3 id="4-중복지수표기법">4. 중복지수표기법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>일반 tensor의 표기에서 중복 지수는 반드시 위 아래로 교차해야 한다.</p>
 <ul>
 <li><strong>올바른 표기</strong></li>
@@ -213,7 +211,7 @@ $$<ul>
 $$
 v^iu^i,\quad u_iv_i,\quad a^ig^{ij},\quad b_{i}g_{ij}c_j,\quad g_{ij}d^kg^{kj}
 $$<hr>
-<h3 id="5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가</h3>
+<h3 id="5-왜-공변covariant이고-반변contravariant인가">5. 왜 &lsquo;공변(Covariant)&lsquo;이고 &lsquo;반변(Contravariant)&lsquo;인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>(1) 공변 기저 벡터 ($\vec{h}_i$)와 반변 성분 ($v^i$)</strong></p>
 <ul>
 <li>
@@ -252,7 +250,7 @@ $$<hr>
 </li>
 </ul>
 <hr>
-<h3 id="6-공변기저벡터와-반변기저벡터의-내적-쌍대성">6. 공변기저벡터와 반변기저벡터의 내적: 쌍대성</h3>
+<h3 id="6-공변기저벡터와-반변기저벡터의-내적-쌍대성">6. 공변기저벡터와 반변기저벡터의 내적: 쌍대성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 $$
 \vec{h}_i\cdot\vec{h}^j=\delta_i^j
 $$<p>proof)</p>
@@ -272,7 +270,7 @@ $$<p>$\nabla_v u^j=\vec{h}^j$ 이므로,</p>
 $$
 \vec{h}_i\cdot\vec{h}^j=\delta_i^j
 $$<hr>
-<h3 id="7-공변-반변-성분-추출">7. 공변, 반변 성분 추출</h3>
+<h3 id="7-공변-반변-성분-추출">7. 공변, 반변 성분 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <img src="image3.png" width="50%" height="auto">
 <p><strong>(1) 반변성분추출</strong></p>
 $$
@@ -415,9 +413,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

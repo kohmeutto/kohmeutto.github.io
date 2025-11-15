@@ -12,7 +12,7 @@
       <link>http://localhost:1313/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/seperation_of_varibles/b_wave_equation_for_free_space/index.html</guid>
-      <description>1. free-space 의 수학적 기술 자유 공간은 수학적으로 다음과 같이 모델링할 수 있다.&#xA;무한 공간: 3차원 유클리드 공간 전체를 자유 공간으로 간주한다. 무한 부피: 자유 공간 전체의 부피는 무한대이다. (물리학에 적용) 에너지 개념: 자유 공간 전체에 걸친 파동의 총 에너지는 무한대일 수 있다 (예: 평면파). 하지만 에너지 밀도는 유한하며, 유한한 영역에 국한된 소스가 방출하는 총 에너지는 유한하다. 2. 자유공간에서, wave equation 의 self-adjoint 여부 자유공간에서 wave equation 이 self-adjoint 하기 위해서는, 무한대 경계면에서 0이어야 한다.</description>
+      <description>1. free-space 의 수학적 기술&#xD;자유 공간은 수학적으로 다음과 같이 모델링할 수 있다.&#xA;무한 공간: 3차원 유클리드 공간 전체를 자유 공간으로 간주한다. 무한 부피: 자유 공간 전체의 부피는 무한대이다. (물리학에 적용) 에너지 개념: 자유 공간 전체에 걸친 파동의 총 에너지는 무한대일 수 있다 (예: 평면파). 하지만 에너지 밀도는 유한하며, 유한한 영역에 국한된 소스가 방출하는 총 에너지는 유한하다. 2. 자유공간에서, wave equation 의 self-adjoint 여부&#xD;자유공간에서 wave equation 이 self-adjoint 하기 위해서는, 무한대 경계면에서 0이어야 한다.</description>
     </item>
     <item>
       <title>(p) 1D Wave equation for free-space</title>

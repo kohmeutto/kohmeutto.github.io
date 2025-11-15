@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
     <meta name="description" content="example1) Determine the normalized eigenfunctions of the problem
 $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$φ_{n}$ 을 eigenfunction 이라고 하자.$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}_{}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}},\quad\sqrt{\lambda_{n}}=n\pi,\,\,n=1,2,\cdots$$고유함수가 orthonormal 함을 사용하여, 계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x} $$$$\varphi_{n}\left(0\right)=0=a_{n}&#43;b_{n} $$$$\varphi_{n}\left(1\right)=0=a_{n}e^{-\sqrt{-\lambda_{n}}}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}} $$$$a_{n}\left(e^{-\sqrt{-\lambda_{n}}}-e^{&#43;\sqrt{-\lambda_{n}}}\right)=0 $$$$a_{n}=0\text{ or }\lambda_{n}=0 $$$$\varphi_{n}=0\text{ or 존재할 수 없음}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$$$\varphi_0\left(0\right)=0=a_0,\quad a_0=0 $$$$\varphi_0\left(1\right)=0=b_0,\quad b_0=0 $$$$\varphi_0=0$$eigen-expansion을 수행한다.$$y&#39;&#39;&#43;\lambda y=0 $$$$\sum\lambda_{n}c_{n}\varphi_{n}&#43;\sum\lambda c_{n}\varphi_{n}=0\implies\sum\left(\lambda-\lambda_{n}\right)c_{n}\varphi_{n}=0$$orthogonality를 이용한다.$$\left(\lambda-\lambda_{n}\right)c_{n}=0,\quad c_{n}=\frac{\lambda}{\lambda_{n}} $$$$y=\sum_{n=1}^{N}\frac{\lambda}{\lambda_{n}}\sqrt{2}\sin n\pi x$$sol2$φ_{n}$ 을 eigenfunction 이라고 하자.$$\left(D^2&#43;\lambda\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x$$(2) $λ&#43;λ_{n}$=0$$\varphi_{n}=a_{n}&#43;b_{n}x$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda},\quad\sqrt{\lambda_{n}&#43;\lambda}=n\pi,\,\,n=1,2,\cdots$$계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ&#43;λ_{n}=0$$$\varphi_{n}=a_{n}&#43;b_{n}x $$$$\varphi_{n}\left(0\right)=0=a_{n},\quad a_{n}=0 $$$$\varphi_{n}\left(1\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}=0$$eigen-expansion을 수행한다. 따라서,$$y=\sum_{n}c_{n}\sqrt{2}\sin n\pi x$$example2) Determine the normalized eigenfunctions of the problem">
     <meta name="author" content="">
@@ -25,26 +25,26 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
 $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$φ_{n}$ 을 eigenfunction 이라고 하자.$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$(1) $λ_{n}&gt;0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}}_{}x&#43;b_{n}\cos\sqrt{\lambda_{n}}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}},\quad\sqrt{\lambda_{n}}=n\pi,\,\,n=1,2,\cdots$$고유함수가 orthonormal 함을 사용하여, 계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ_{n}&lt;0$$$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}x} $$$$\varphi_{n}\left(0\right)=0=a_{n}&#43;b_{n} $$$$\varphi_{n}\left(1\right)=0=a_{n}e^{-\sqrt{-\lambda_{n}}}&#43;b_{n}e^{&#43;\sqrt{-\lambda_{n}}} $$$$a_{n}\left(e^{-\sqrt{-\lambda_{n}}}-e^{&#43;\sqrt{-\lambda_{n}}}\right)=0 $$$$a_{n}=0\text{ or }\lambda_{n}=0 $$$$\varphi_{n}=0\text{ or 존재할 수 없음}$$(3) $λ_{0}=0$$$\varphi_0=a_0&#43;b_0x$$$$\varphi_0\left(0\right)=0=a_0,\quad a_0=0 $$$$\varphi_0\left(1\right)=0=b_0,\quad b_0=0 $$$$\varphi_0=0$$eigen-expansion을 수행한다.$$y&#39;&#39;&#43;\lambda y=0 $$$$\sum\lambda_{n}c_{n}\varphi_{n}&#43;\sum\lambda c_{n}\varphi_{n}=0\implies\sum\left(\lambda-\lambda_{n}\right)c_{n}\varphi_{n}=0$$orthogonality를 이용한다.$$\left(\lambda-\lambda_{n}\right)c_{n}=0,\quad c_{n}=\frac{\lambda}{\lambda_{n}} $$$$y=\sum_{n=1}^{N}\frac{\lambda}{\lambda_{n}}\sqrt{2}\sin n\pi x$$sol2$φ_{n}$ 을 eigenfunction 이라고 하자.$$\left(D^2&#43;\lambda\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$w(x)=1로 놓으면,$$\left(D^2&#43;\lambda&#43;\lambda_{n}\right)\varphi_{n}=0$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x$$(2) $λ&#43;λ_{n}$=0$$\varphi_{n}=a_{n}&#43;b_{n}x$$(1) $λ&#43;λ_{n}\ne0$$$\varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda}x&#43;b_{n}\cos\sqrt{\lambda_{n}&#43;\lambda}x $$$$\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}\left(1\right)=0=a_{n}\sin\sqrt{\lambda_{n}&#43;\lambda},\quad\sqrt{\lambda_{n}&#43;\lambda}=n\pi,\,\,n=1,2,\cdots$$계수 $a_{n}$을 구하면,$$\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 $$$$\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 $$$$\left|a_{n}\right|=\sqrt2 $$$$\varphi_{n}=\sqrt{2}\sin n\pi x$$(2) $λ&#43;λ_{n}=0$$$\varphi_{n}=a_{n}&#43;b_{n}x $$$$\varphi_{n}\left(0\right)=0=a_{n},\quad a_{n}=0 $$$$\varphi_{n}\left(1\right)=0=b_{n},\quad b_{n}=0 $$$$\varphi_{n}=0$$eigen-expansion을 수행한다. 따라서,$$y=\sum_{n}c_{n}\sqrt{2}\sin n\pi x$$example2) Determine the normalized eigenfunctions of the problem">
     <meta itemprop="wordCount" content="735">
     <title>(p) ODE solution using SL :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -53,8 +53,6 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -62,14 +60,14 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -107,10 +105,10 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"> 
                 </div>
@@ -121,13 +119,13 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html" title="(r) Singular Sturm-Liouville (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/sturm_liouville/r_singular_sturm_liouville/index.html" title="(r) Singular Sturm-Liouville (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/index.html" title="Seperation of variables (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/seperation_of_varibles/index.html" title="Seperation of variables (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -152,7 +150,7 @@ $$y&#39;&#39;&#43;\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$sol1$
 $$
 y''+\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -296,7 +294,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -392,7 +390,7 @@ $$
 $$
 y''+2y=-x,\quad y\left(0\right)=0,\quad y\left(1\right)+y'\left(1\right)=0
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -553,7 +551,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -661,7 +659,7 @@ $$
 $$
 \left(xy'\right)'+\frac{y}{x}=\frac{1}{x},\quad y\left(1\right)=y\left(e\right)=0
 $$
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol1
@@ -795,7 +793,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol2
@@ -994,9 +992,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

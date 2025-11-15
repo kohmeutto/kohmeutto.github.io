@@ -4,59 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. 푸리에 급수의 본질 푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
+    <meta name="description" content="1. 푸리에 급수의 본질푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
 $$ |f\rangle =\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A $$여기에서,
 $$ \langle t|\omega_{n}\rangle_A =e^{in\omega_0t},\quad \langle \omega_{n}^{A}|t\rangle =e^{-in\omega_0t} $$쌍대기저를 구하면,
-$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
-$$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하여, $|f\rangle$을 $|t\rangle$로 사영하였을 때, 좌표를 구해보자.">
+$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Fourier series :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 푸리에 급수의 본질 푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
+    <meta name="twitter:description" content="1. 푸리에 급수의 본질푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
 $$ |f\rangle =\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A $$여기에서,
 $$ \langle t|\omega_{n}\rangle_A =e^{in\omega_0t},\quad \langle \omega_{n}^{A}|t\rangle =e^{-in\omega_0t} $$쌍대기저를 구하면,
-$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
-$$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하여, $|f\rangle$을 $|t\rangle$로 사영하였을 때, 좌표를 구해보자.">
+$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_fourier_series/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Fourier series :: 수리전자물리학">
-    <meta property="og:description" content="1. 푸리에 급수의 본질 푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
+    <meta property="og:description" content="1. 푸리에 급수의 본질푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
 $$ |f\rangle =\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A $$여기에서,
 $$ \langle t|\omega_{n}\rangle_A =e^{in\omega_0t},\quad \langle \omega_{n}^{A}|t\rangle =e^{-in\omega_0t} $$쌍대기저를 구하면,
-$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
-$$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하여, $|f\rangle$을 $|t\rangle$로 사영하였을 때, 좌표를 구해보자.">
+$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Fourier series :: 수리전자물리학">
-    <meta itemprop="description" content="1. 푸리에 급수의 본질 푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
+    <meta itemprop="description" content="1. 푸리에 급수의 본질푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
 $$ |f\rangle =\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A $$여기에서,
 $$ \langle t|\omega_{n}\rangle_A =e^{in\omega_0t},\quad \langle \omega_{n}^{A}|t\rangle =e^{-in\omega_0t} $$쌍대기저를 구하면,
-$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
-$$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하여, $|f\rangle$을 $|t\rangle$로 사영하였을 때, 좌표를 구해보자.">
+$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;in\omega_0t}\} =T $$$$ \int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\} =\int_T dt\{e^{-in\omega_0t}e^{&#43;im\omega_0t}\} =0 $$$$ \langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm} $$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.">
     <meta itemprop="wordCount" content="425">
     <title>(b) Fourier series :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -65,8 +61,6 @@ $$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -74,14 +68,14 @@ $$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -119,10 +113,10 @@ $$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -145,13 +139,13 @@ $$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_lti_circuit_analysis/index.html" title="(b) LSI & Circuit analysis (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_lti_circuit_analysis/index.html" title="(b) LSI & Circuit analysis (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -172,7 +166,7 @@ $$ \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}| $$위 식을 사용하
 <h1 id="b-fourier-series">(b) Fourier series</h1>
 
 <hr>
-<h3 id="1-푸리에-급수의-본질">1. 푸리에 급수의 본질</h3>
+<h3 id="1-푸리에-급수의-본질">1. 푸리에 급수의 본질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다.</strong> $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,</p>
 $$
 |f\rangle
@@ -208,7 +202,7 @@ c_n
 =\langle\omega_n^{A,d}|f\rangle
 =\frac{1}{T}\int_T dt \{e^{-in\omega_0t}f(t)\}
 $$<hr>
-<h3 id="2-푸리에-급수의-형태와-직관적-이해">2. 푸리에 급수의 형태와 직관적 이해</h3>
+<h3 id="2-푸리에-급수의-형태와-직관적-이해">2. 푸리에 급수의 형태와 직관적 이해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>위에서는 푸리에 역변환으로 부터, 푸리에 급수의 본질을 이해하였다. 직관적으로 우리에게 익숙한 테일러 급수 같이 푸리에 급수를 이해할 수 있다. 주기함수일 경우, 주파수의 정수배인 정현파 함수의 합으로 표현할 수 있다.</p>
 $$
 f(t)
@@ -306,7 +300,7 @@ b_n
 =\langle \sin_n^d|f\rangle
 =\frac{2}{T}\langle \sin_n|f\rangle
 $$<hr>
-<h3 id="3-주기함수">3. 주기함수</h3>
+<h3 id="3-주기함수">3. 주기함수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>푸리에 급수는 임의의 주기함수를 정현함수의 합으로 표현할 수 있음을 보여준다. 그렇다면, 주기함수임을 어떻게 판별할 수 있는가이다. 푸리에 급수에서 메인 주파수의 <strong>정수배</strong>에 해당하는 정현파가 합성됨을 주목하라.</p>
 <p><strong>example)</strong> 주기신호인지 비주기신호인지 구별하고, 주기 신호라면 주기를 구하라.</p>
 <p>(a) $x_1(t)=\sin\left(\cfrac{2\pi}{3}t\right)$</p>
@@ -314,7 +308,7 @@ $$<hr>
 <p>(c) $x_3(t)=\sin\left(3t\right)$</p>
 <p>(d) $x_4(t)=x_1(t)-2x_3(t)$</p>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol(a)
@@ -328,7 +322,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol(b)
@@ -360,7 +354,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol(c)
@@ -374,7 +368,7 @@ $$
   </div>
 </details>
 
-<details class=" box cstyle notices transparent expand">
+<details class="box cstyle notices transparent expand">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
     sol(d)
@@ -384,7 +378,7 @@ $$
   </div>
 </details>
 <hr>
-<h3 id="4-푸리에-급수는-로랑-급수의-특별한-경우-이다">4. 푸리에 급수는 로랑 급수의 &ldquo;특별한 경우&rdquo; 이다.</h3>
+<h3 id="4-푸리에-급수는-로랑-급수의-특별한-경우-이다">4. 푸리에 급수는 로랑 급수의 &ldquo;특별한 경우&rdquo; 이다.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>원점에서의 로랑 급수는 아래와 같이 표현한다.</p>
 $$
 f(z)=\sum_{n=-\infty}^{\infty} b_n z^n,
@@ -498,9 +492,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

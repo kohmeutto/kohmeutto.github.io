@@ -4,59 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 8.2.0+9cac649a184a2967957ef9bbececf9402192846c">
-    <meta name="description" content="1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
+    <meta name="generator" content="Relearn 8.2.0+220806ce3ced8264fbdd693f77f28216a8a1b6ae">
+    <meta name="description" content="1. 푸리에 변환의 본질푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
 우선 라플라스 변환 연산자를 살펴보자.
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
-$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
-수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega^A|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
+$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Fourier transform I :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
+    <meta name="twitter:description" content="1. 푸리에 변환의 본질푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
 우선 라플라스 변환 연산자를 살펴보자.
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
-$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
-수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega^A|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
+$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
     <meta property="og:url" content="http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Fourier transform I :: 수리전자물리학">
-    <meta property="og:description" content="1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
+    <meta property="og:description" content="1. 푸리에 변환의 본질푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
 우선 라플라스 변환 연산자를 살펴보자.
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
-$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
-수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega^A|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
+$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linear system">
     <meta itemprop="name" content="(b) Fourier transform I :: 수리전자물리학">
-    <meta itemprop="description" content="1. 푸리에 변환의 본질 푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
+    <meta itemprop="description" content="1. 푸리에 변환의 본질푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.
 우선 라플라스 변환 연산자를 살펴보자.
 $$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,
-$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자
-수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문 $$ \langle \omega^A|f\rangle =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(2) 정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
+$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자">
     <meta itemprop="wordCount" content="347">
     <title>(b) Fourier transform I :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1763184064" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1763184064" defer></script>
-    <script src="/js/search-lunr.js?1763184064" defer></script>
-    <script src="/js/search.js?1763184064" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763212217" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763212217" defer></script>
+    <script src="/js/search-lunr.js?1763212217" defer></script>
+    <script src="/js/search.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1763184064";
+      window.relearn.index_js_url="/searchindex.en.js?1763212217";
     </script>
-    <script src="/js/lunr/lunr.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1763184064" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1763184064" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763212217" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763212217" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763184064" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763184064" rel="stylesheet">
-    <link href="/css/theme.css?1763184064" rel="stylesheet">
-    <link href="/css/format-html.css?1763184064" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763212217" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763212217" rel="stylesheet">
+    <link href="/css/theme.css?1763212217" rel="stylesheet">
+    <link href="/css/format-html.css?1763212217" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -65,8 +61,6 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableAnchorCopy=false;
-      window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
       // legal
@@ -74,14 +68,14 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
-      window.T_Copy_to_clipboard = `Copy to clipboard`;
-      window.T_Copied_to_clipboard = `Copied to clipboard!`;
-      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
-      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
       window.T_Reset_view = `Reset view`;
       window.T_View_reset = `View reset!`;
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
       window.relearn.customvariantname = "my-custom-variant";
@@ -119,10 +113,10 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
           <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
             <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -146,13 +140,13 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_iii/index.html" title="(b) Laplace transform III (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_laplace_transform_iii/index.html" title="(b) Laplace transform III (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/linear_system/lsi/a_algebra_structure/index.html" title="(a) Algebra structure (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/a_algebra_structure/index.html" title="(a) Algebra structure (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
                   <div class="topbar-area topbar-area-more" data-area="more">
@@ -173,7 +167,7 @@ $$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{
 <h1 id="b-fourier-transform-i">(b) Fourier transform I</h1>
 
 <hr>
-<h3 id="1-푸리에-변환의-본질">1. 푸리에 변환의 본질</h3>
+<h3 id="1-푸리에-변환의-본질">1. 푸리에 변환의 본질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, <strong>s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환</strong> 을 의미한다.</p>
 <p>우선 라플라스 변환 연산자를 살펴보자.</p>
 $$
@@ -202,7 +196,7 @@ $$
 =\frac{1}{\sqrt{2\pi}}\langle s^L|f\rangle|_{\operatorname{Re}[s]=0}
 =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$<hr>
-<h3 id="2-basis">2. Basis</h3>
+<h3 id="2-basis">2. Basis<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>(1) 비정규 직교 기저</strong></p>
 $$
 \langle t|\omega\rangle_A
@@ -237,7 +231,7 @@ $$
 \langle \omega^{S,d}|=\langle \omega^S|
 $$<p>즉, $|\omega\rangle_S$ 은 <strong>정규직교기저</strong> 이다.</p>
 <hr>
-<h3 id="3-푸리에-역변환">3. 푸리에 역변환</h3>
+<h3 id="3-푸리에-역변환">3. 푸리에 역변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>(1) 비정규 직교 기저</strong></p>
 $$
 f(t)
@@ -257,7 +251,7 @@ $$
 \langle t|f\rangle_S=\int d\omega \langle \omega^{S,d}|f\rangle \langle t|\omega\rangle
 =\frac{1}{\sqrt{2\pi}}\int d\omega \langle\omega^{S}|f\rangle e^{i\omega t}
 $$<hr>
-<h3 id="4-푸리에-변환의-물리적-의미">4. 푸리에 변환의 물리적 의미</h3>
+<h3 id="4-푸리에-변환의-물리적-의미">4. 푸리에 변환의 물리적 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>함수는 여러 주파수 성분들이 중첩</strong> 되어 있다고 볼 수 있다. 푸리에 변환은 <strong>감쇄하지 않는 정현파의 각주파수 성분 크기를 구하는 것</strong> 이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.</p>
 <ul>
 <li>
@@ -270,7 +264,7 @@ $$<hr>
 </li>
 </ul>
 <hr>
-<h3 id="5-푸리에-변환의-존재-조건">5. 푸리에 변환의 존재 조건</h3>
+<h3 id="5-푸리에-변환의-존재-조건">5. 푸리에 변환의 존재 조건<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 $$
 \langle s^L|f\rangle|_{s=i\omega}\to\langle \omega|f\rangle
 $$<p>위 식을 만족하려면, ROC가 허수축을 포함해야 한다.</p>
@@ -370,9 +364,9 @@ $$<p>위 식을 만족하려면, ROC가 허수축을 포함해야 한다.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763184064"></script>
-    <script src="/js/clipboard/clipboard.min.js?1763184064" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763184064" defer></script>
-    <script src="/js/theme.js?1763184064" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1763212217"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763212217" defer></script>
+    <script src="/js/theme.js?1763212217" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
