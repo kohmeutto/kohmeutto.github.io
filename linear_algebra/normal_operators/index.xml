@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Normal operators :: 수리전자물리학</title>
+    <link>https://kohmeutto.github.io/linear_algebra/normal_operators/index.html</link>
+    <description>(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Copy-shift&#xD;(b) Evoulution&#xD;(b) Simple scaling&#xD;(b) Complex scaling&#xD;(b) Affine&#xD;(b) Noether&#39;s theorem</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://kohmeutto.github.io/linear_algebra/normal_operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Normal operators</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_normal_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_normal_operators/index.html</guid>
+      <description>2.1 정규 연산자 특성&#xD;정의 (정규 연산자)&#xA;연산자 $\hat{A}$가 자신의 에르미트 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 **정규 연산자(Normal Operator)**라고 한다.&#xA;$$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$ 스펙트럼 정리에 따르면, 이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장된다.&#xA;핵심 특성 및 증명&#xD;정규 연산자의 모든 중요한 성질은 다음 특성들로부터 파생되거나 서로 동치 관계에 있다.</description>
+    </item>
+    <item>
+      <title>(b) Hermitian</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_hermitian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_hermitian/index.html</guid>
+      <description>2.2 에르미트 연산자 (Hermitian Operator)&#xD;정의: 연산자 $\hat{A}$가 자신의 에르미트 켤레($\hat{A}^\dagger$)와 같을 때, 즉 $\hat{A} = \hat{A}^\dagger$일 때, 이를 에르미트 연산자라고 한다. 이는 정규 연산자($[\hat{A}, \hat{A}^\dagger]=0$)의 조건을 자명하게 만족한다.&#xA;물리적 의미: 양자역학에서 측정 가능한 모든 물리량(Observable), 예를 들어 에너지, 위치, 운동량 등은 반드시 에르미트 연산자로 표현된다.&#xA;핵심 특성 및 증명&#xD;1. 고유값은 항상 실수이다.</description>
+    </item>
+    <item>
+      <title>(b) anti-Hermitian</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_anti_hermitian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_anti_hermitian/index.html</guid>
+      <description>2.3 반-에르미트 연산자 (Anti-Hermitian Operator)&#xD;정의: 연산자 $\hat{A}$가 자신의 에르미트 켤레($\hat{A}^\dagger$)에 음의 부호를 붙인 것과 같을 때, 즉 $\hat{A}^\dagger = -\hat{A}$일 때, 이를 반-에르미트(또는 스큐-에르미트, Skew-Hermitian) 연산자라고 한다. 이 연산자 역시 정규 연산자($[\hat{A}, \hat{A}^\dagger]=0$)의 조건을 만족한다.&#xA;물리적 의미: 반-에르미트 연산자는 직접적으로 물리량을 나타내지는 않지만, 유니타리 변환을 만들어내는 **‘생성자(Generator)’**로서, 시스템의 동적인 변화를 기술하는 데 핵심적인 역할을 한다.</description>
+    </item>
+    <item>
+      <title>(b) Unitary</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_unitary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_unitary/index.html</guid>
+      <description>2.4 유니타리 연산자 (Unitary Operator)&#xD;정의: 연산자 $\hat{U}$의 에르미트 켤레 $\hat{U}^\dagger$가 $\hat{U}$의 역행렬과 같을 때, 즉 $\hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I}$일 때, 이를 유니타리 연산자라고 한다. 이 연산자 역시 정규 연산자의 조건을 만족한다.&#xA;물리적 의미: 유니타리 연산자는 상태 벡터의 길이(norm), 즉 확률을 보존하는 모든 물리적 변환을 나타낸다. 양자 시스템의 **시간 변화(time evolution)**나 기저 변환(change of basis) 등은 반드시 유니타리 연산자로 기술되어야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Copy-shift</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_copy_shift/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_copy_shift/index.html</guid>
+      <description>1. 연산자 자체의 표현&#xD;(1) 이산기저&#xA;$$&#xD;\hat{S}_l&#xD;=\sum_{n}|n+l\rangle\langle n^d|&#xD;=\sum_{n}\gamma_n^{-1}|n+l\rangle\langle n|&#xD;$$(2) 연속기저&#xA;$$&#xD;\hat{S}_\tau&#xD;=\int^{\infty}_{-\infty}du |u+\tau\rangle\langle u^d|&#xD;=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u+\tau\rangle\langle u|&#xD;$$ 2. Ket의 작용&#xD;(1) 이산기저&#xA;$$&#xD;\hat{S}_l|n\rangle&#xD;=|n+l\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{S}_l|n\rangle&#xD;=\sum_{m}|m+l\rangle\langle m^d|n\rangle&#xD;=\sum_{m}|m+l\rangle\delta_{mn}&#xD;=|n+l\rangle&#xD;$$(2) 연속기저&#xA;$$&#xD;\hat{S}_\tau|u\rangle&#xD;=|u+\tau\rangle&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(b) Evoulution</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_evolution/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_evolution/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(b) Simple scaling</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_simple_scaling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_simple_scaling/index.html</guid>
+      <description>1. 연산자 자체의 표현&#xD;‘축척’은 본질적으로 연속적인 공간(continuous space) 에서만 닫혀있는(closed) 연산이다. shift가 $(-\infty, \infty)$라는 ‘덧셈’의 전체 공간에서 정의되듯이, 축척은 $(0, \infty)$라는 ‘곱셈’의 전체 공간에서 정의되어야 한다. 음수를 포함하는 순간, 그것은 ‘축척’ 이론이 아니라 ‘축척 + 반사’라는 훨씬 더 복잡한 이론이 되어버린다. $$&#xD;\hat{Z}_a&#xD;=\int^{\infty}_{0}du \frac{1}{a}|u/a\rangle\langle u^d|&#xD;$$ 2. Ket의 작용&#xD;$$&#xD;\hat{Z}_a|u\rangle&#xD;=\frac{1}{a}|u/a\rangle&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(b) Complex scaling</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_complex_scaling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_complex_scaling/index.html</guid>
+      <description>1. 연산자 자체의 표현&#xD;‘단순 축척’ 연산자 $\hat{Z}_a$가 $\int du \frac{1}{|a|}|u/a\rangle\langle u^d|$로 정의되듯이, ‘복소 축척’ 연산자 $\hat{Z}_c$는 복소 평면에서의 야코비안($1/|c|^2$)을 포함하여 다음과 같이 정의된다.&#xA;$$&#xD;\hat{Z}_c=\iint_C d^2z \frac{1}{|c|^2} |z/c\rangle\langle z^d|&#xD;$$여기에서, $d^2z=dxdy$ 로 복소평면의 면적소를 의미힌다.&#xA;2. Ket의 작용&#xD;$$&#xD;\hat{Z}_c|z\rangle=\frac{1}{|c|^2} |z/c\rangle&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(b) Affine</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/b_affine/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/b_affine/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(b) Noether&#39;s theorem</title>
+      <link>https://kohmeutto.github.io/linear_algebra/normal_operators/a_noether_theorem/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kohmeutto.github.io/linear_algebra/normal_operators/a_noether_theorem/index.html</guid>
+      <description>1. Conservation&#xD;하이젠베르크 운동 방정식(Heisenberg’s equation of motion)**을 통해 간단히 보일 수 있다.보존량의 정의:어떤 물리량(연산자 $\hat{G}$)이 “보존된다&#34;는 것은, 그것이 시간에 따라 변하지 않는다는 뜻이다.</description>
+    </item>
+  </channel>
+</rss>
