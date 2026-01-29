@@ -1,410 +1,0 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
-    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
-    <meta name="description" content="회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.
-1. 미분 방정식을 사용한 풀이1$$-2e^{-2t}&#43;5i&#43;D(i-1)-6&#43;v_c&#39;=0,\quadi=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i$$$$-2e^{-2t}&#43;5i&#43;Di-6&#43;4D^{-1}i=0\to4e^{-2t}&#43;5Di&#43;D^2i&#43;4i=0$$정리하면 다음과 같다.
-$$D^2i&#43;5Di&#43;4i=-4e^{-2t}$$일반해와 특수해를 구한다.
-$$i_h=c_1e^{-t}&#43;c_2e^{-4t}$$$$i_p=\left.\frac{-4}{(D&#43;1)(D&#43;4)}\right|_{D=-2}e^{-2t}=2e^{-2t}$$초기조건을 사용하여 계수를 구하면,
-$$i(0)=1=c_1&#43;c_2&#43;2$$$$Di(0)=3=-c_1-4c_2-4$$$$c_1=1, c_2=-2$$따라서,">
-    <meta name="author" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) LSI & Circuit analysis :: 수리전자물리학">
-    <meta name="twitter:description" content="회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.
-1. 미분 방정식을 사용한 풀이1$$-2e^{-2t}&#43;5i&#43;D(i-1)-6&#43;v_c&#39;=0,\quadi=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i$$$$-2e^{-2t}&#43;5i&#43;Di-6&#43;4D^{-1}i=0\to4e^{-2t}&#43;5Di&#43;D^2i&#43;4i=0$$정리하면 다음과 같다.
-$$D^2i&#43;5Di&#43;4i=-4e^{-2t}$$일반해와 특수해를 구한다.
-$$i_h=c_1e^{-t}&#43;c_2e^{-4t}$$$$i_p=\left.\frac{-4}{(D&#43;1)(D&#43;4)}\right|_{D=-2}e^{-2t}=2e^{-2t}$$초기조건을 사용하여 계수를 구하면,
-$$i(0)=1=c_1&#43;c_2&#43;2$$$$Di(0)=3=-c_1-4c_2-4$$$$c_1=1, c_2=-2$$따라서,">
-    <meta property="og:url" content="https://kohmeutto.github.io/linear_system/lsi/b_lti_circuit_analysis/index.html">
-    <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) LSI & Circuit analysis :: 수리전자물리학">
-    <meta property="og:description" content="회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.
-1. 미분 방정식을 사용한 풀이1$$-2e^{-2t}&#43;5i&#43;D(i-1)-6&#43;v_c&#39;=0,\quadi=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i$$$$-2e^{-2t}&#43;5i&#43;Di-6&#43;4D^{-1}i=0\to4e^{-2t}&#43;5Di&#43;D^2i&#43;4i=0$$정리하면 다음과 같다.
-$$D^2i&#43;5Di&#43;4i=-4e^{-2t}$$일반해와 특수해를 구한다.
-$$i_h=c_1e^{-t}&#43;c_2e^{-4t}$$$$i_p=\left.\frac{-4}{(D&#43;1)(D&#43;4)}\right|_{D=-2}e^{-2t}=2e^{-2t}$$초기조건을 사용하여 계수를 구하면,
-$$i(0)=1=c_1&#43;c_2&#43;2$$$$Di(0)=3=-c_1-4c_2-4$$$$c_1=1, c_2=-2$$따라서,">
-    <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="article">
-    <meta property="article:section" content="Linear system">
-    <meta itemprop="name" content="(b) LSI & Circuit analysis :: 수리전자물리학">
-    <meta itemprop="description" content="회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.
-1. 미분 방정식을 사용한 풀이1$$-2e^{-2t}&#43;5i&#43;D(i-1)-6&#43;v_c&#39;=0,\quadi=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i$$$$-2e^{-2t}&#43;5i&#43;Di-6&#43;4D^{-1}i=0\to4e^{-2t}&#43;5Di&#43;D^2i&#43;4i=0$$정리하면 다음과 같다.
-$$D^2i&#43;5Di&#43;4i=-4e^{-2t}$$일반해와 특수해를 구한다.
-$$i_h=c_1e^{-t}&#43;c_2e^{-4t}$$$$i_p=\left.\frac{-4}{(D&#43;1)(D&#43;4)}\right|_{D=-2}e^{-2t}=2e^{-2t}$$초기조건을 사용하여 계수를 구하면,
-$$i(0)=1=c_1&#43;c_2&#43;2$$$$Di(0)=3=-c_1-4c_2-4$$$$c_1=1, c_2=-2$$따라서,">
-    <meta itemprop="wordCount" content="327">
-    <title>(b) LSI &amp; Circuit analysis :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1769694287" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1769694287" defer></script>
-    <script src="/js/search-lunr.min.js?1769694287" defer></script>
-    <script src="/js/search.min.js?1769694287" defer></script>
-    <script>
-      window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1769694287";
-    </script>
-    <script src="/js/lunr/lunr.min.js?1769694287" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1769694287" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1769694287" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1769694287" defer></script>
-    <script>
-      window.relearn = window.relearn || {};
-      window.relearn.contentLangs=['en'];
-    </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769694287" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769694287" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769694287" rel="stylesheet">
-    <link href="/css/theme.min.css?1769694287" rel="stylesheet">
-    <link href="/css/format-html.min.css?1769694287" rel="stylesheet" id="R-format-style">
-    <script>
-      window.relearn = window.relearn || {};
-      // configuration
-      window.relearn.min = `.min`;
-      window.relearn.path='\/linear_system\/lsi\/b_lti_circuit_analysis\/index.html';
-      window.relearn.relBasePath='..\/..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='https:\/\/kohmeutto.github.io';
-      window.relearn.disableInlineCopyToClipboard=false;
-      window.relearn.enableBlockCodeWrap=true;
-      // legal
-      window.relearn.getItem = (s,n) => {return s.getItem(n)};
-      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
-      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
-      // translations
-      window.T_Copy_to_clipboard = `Copy text to clipboard`;
-      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
-      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
-      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
-      // variant stuff
-      window.relearn.themevariants = [ 'relearn-light' ];
-      window.relearn.customvariantname = "my-custom-variant";
-      window.relearn.changeVariant = function(variant) {
-        var oldVariant = document.documentElement.dataset.rThemeVariant;
-        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        document.documentElement.dataset.rThemeVariant = variant;
-        if (oldVariant != variant) {
-          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
-          window.relearn.markVariant();
-        }
-      }
-      window.relearn.markVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
-        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
-      }
-      window.relearn.initVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
-          variant = window.relearn.themevariants[0];
-          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        }
-        document.documentElement.dataset.rThemeVariant = variant;
-      }
-      window.relearn.initVariant();
-      window.relearn.markVariant();
-    </script>
-  </head>
-  <body class="mobile-support html" data-url="/linear_system/lsi/b_lti_circuit_analysis/index.html">
-    <div id="R-body" class="default-animation">
-      <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
-          <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
-            </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-<nav class="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-미분-방정식을-사용한-풀이1">1. 미분 방정식을 사용한 풀이1</a></li>
-        <li><a href="#2-라플라스-변환을-사용한-풀이">2. 라플라스 변환을 사용한 풀이</a></li>
-        <li><a href="#3-임펄스-응답을-사용한-풀이-잘못된-풀이">3. 임펄스 응답을 사용한 풀이 (잘못된 풀이)</a></li>
-        <li><a href="#4-미분방정식-풀이2-그린함수-사용">4. 미분방정식 풀이2 (그린함수 사용)</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/index.html"><span itemprop="name">Linear system</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/lsi/index.html"><span itemprop="name">LSI</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) LSI &amp; Circuit analysis</span><meta itemprop="position" content="4"></li>
-          </ol>
-          <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_fourier_series/index.html" title="(b) Fourier series (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
-            </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsci/index.html" title="LScI (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
-            </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-                  <div class="topbar-area topbar-area-more" data-area="more">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable linear_system" tabindex="-1">
-        <div class="flex-block-wrapper">
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="b-lsi--circuit-analysis">(b) LSI &amp; Circuit analysis</h1>
-
-<hr>
-<ul>
-<li>회로 시스템에 적분변환 이론을 적용하여 해석한다.</li>
-<li>LTI 의미를 공고히 한다.</li>
-</ul>
-<hr>
-<p>초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.</p>
-<img src="image1.png" width="50%" height="auto">
-<hr>
-<h3 id="1-미분-방정식을-사용한-풀이1">1. 미분 방정식을 사용한 풀이1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-$$
--2e^{-2t}+5i+D(i-1)-6+v_c'=0,\quad
-i=\frac{1}{4}Dv_c'\to v_c'=4D^{-1}i
-$$$$
--2e^{-2t}+5i+Di-6+4D^{-1}i=0\to
-4e^{-2t}+5Di+D^2i+4i=0
-$$<p>정리하면 다음과 같다.</p>
-$$
-D^2i+5Di+4i=-4e^{-2t}
-$$<p>일반해와 특수해를 구한다.</p>
-$$
-i_h=c_1e^{-t}+c_2e^{-4t}
-$$$$
-i_p=\left.\frac{-4}{(D+1)(D+4)}\right|_{D=-2}e^{-2t}=2e^{-2t}
-$$<p>초기조건을 사용하여 계수를 구하면,</p>
-$$
-i(0)
-=1
-=c_1+c_2+2
-$$$$
-Di(0)
-=3
-=-c_1-4c_2-4
-$$$$
-c_1=1, c_2=-2
-$$<p>따라서,</p>
-$$
-i=e^{-t}+2e^{-2t}-2e^{-4t}
-$$<hr>
-<h3 id="2-라플라스-변환을-사용한-풀이">2. 라플라스 변환을 사용한 풀이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>위 회로 시스템은, causality 하다. 따라서, 단방향 라플라스 변환을 수행한다.</p>
-$$
--\frac{2}{s+2}+5I+s\left(I-\frac{1}{s}\right)-\frac{6}{s}+\frac{4}{s}I=0
-$$$$
-\left(5+\frac{4}{s}+s\right)I
-=\frac{2}{s+2}+1+\frac{6}{s}
-$$$$
-I
-=\frac{1}{s+1}+\frac{2}{s+2}-\frac{2}{s+4}
-$$$$
-i
-=\langle t|I\rangle
-=e^{-t}+2e^{-2t}-2e^{-4t}
-$$<hr>
-<h3 id="3-임펄스-응답을-사용한-풀이-잘못된-풀이">3. 임펄스 응답을 사용한 풀이 (잘못된 풀이)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>입력에 임펄스를 넣어, 시스템의 임펄스 응답을 구한다.</p>
-$$
-\delta(t)+5i+D(i-1)-6+v_c'=0,\quad
-i=\frac{1}{4}Dv_c'\to v_c'=4D^{-1}i
-$$$$
-\delta(t)+5i+Di-6+4D^{-1}i=0
-$$<p>단방향 라플라스 변환을 수행한다.</p>
-$$
-1+5I+sI-\frac{6}{s}+4sI=0
-$$$$
-H\left(s\right)=I\left(s\right)=\frac{6/s+2}{5+4/s+s}=\frac{2s+6}{\left(s+4\right)\left(s+1\right)}=\frac{2/3}{s+4}+\frac{4/3}{s+1}
-$$<p>실제 입력을 라플라스 변환하고, 시스템 함수와 곱하여, 입력에 대한 출력을 구한다.</p>
-$$
-I_{in}=\langle s|2e^{-2t}u(t)\rangle
-=2\langle s+2|u\rangle
-=\frac{2}{s+2}
-$$$$
-I
-=I_{in}H
-=\frac{2}{s+2}\left(\frac{2/3}{s+4}+\frac{4/3}{s+1}\right)
-=-\frac{8/3}{s+1}+\frac{2}{s+2}+\frac{2/3}{s+4}
-$$<p>역 라플라스 변환을 수행한다.</p>
-$$
-i
-=\langle t|I\rangle
-=-\frac83e^{-t}+2e^{-2t}+\frac23e^{-4t}
-$$<p>이 결과는 <strong>위에서 풀이한 결과와 다름</strong>을 확인할 수 있다. 앞선 챕터의 내용들을 상기해보자. <strong>임펄스 응답을 사용하여 시스템의 출력을 구하려면, 시스템이 LTI 여야 한다는 전제조건이 있어야 한다.</strong> 그러나, 위 회로는 초기값이 존재함으로, LTI 시스템이 아니다.</p>
-<hr>
-<h3 id="4-미분방정식-풀이2-그린함수-사용">4. 미분방정식 풀이2 (그린함수 사용)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>이 풀이 역시 <strong>임펄스 입력에 대한 해석</strong>을 다룬다. 하지만, <strong>위의 잘못된 풀이와는 다르게 올바른 해를 도출</strong>한다. 어떠한 차이가 있는지 풀이를 보며 생각해보자.</p>
-<p>위 회로에 대한 미분방정식은 다음과 같다.</p>
-$$
-D^2i+5Di+4i=-4e^{-2t}
-$$$$
-i(0)=1, Di(0)=3
-$$<p>그린함수를 구한다.</p>
-$$
-G(t,t')=G(t)=\begin{cases}
-c_{1}e^{-t}+c_2e^{-4t} & t > t'\\
-c_{3}e^{-t}+c_4e^{-4t} & 0\le t < t'
-\end{cases}
-$$<p>(1) t=0 에서</p>
-<p><strong>핵심</strong> → $G(0)=0$, $DG(0)=0$ 로 설정하면, $c_3=c_4=0$ 이다.</p>
-<p>(2) t=t&rsquo; 에서</p>
-$$
-DG(t')=u(t')\to
-DG(t')=-c_1e^{-t'}-4c_2e^{-4t'}=1
-$$$$
-G(t'+)=G(t'-)\to
-c_{1}e^{-t'}+c_2e^{-4t'}=0
-$$$$
-c_1=\frac{1}{3}e^{t'},\quad c_2=-\frac{1}{3}e^{4t'}
-$$<p>따라서,</p>
-$$
-G(t,t')=\begin{cases}
-\frac{1}{3}e^{t'-t}-\frac{1}{3}e^{4(t'-t)} & t > t'\\
-0 & 0\le t < t'
-\end{cases}
-$$<p>특수해를 구한다.</p>
-$$
-i_p
-=\int_{0}^{t} dt' \left[G(t,t')f(t')\right]
-=-\frac{4}{3}\int_{0}^{t} dt' \left[e^{-t'-t}-e^{2t'-4t}\right]
-$$$$
-=-\frac{4}{3}\left\{e^{-t}\int_{0}^{t} dt' \left[e^{t'}\right]-e^{-4t}\int_{0}^{t} dt' \left[e^{2t'}\right]\right\}
-$$$$
-=-\frac{4}{3}\left\{e^{-t}\left[e^{t'}\right]^{t}_{0}-\frac{e^{-4t}}{2}\left[e^{2t'}\right]^{t}_{0}\right\}
-$$$$
-=2e^{-2t}-\frac43e^{-t}-\frac23e^{-4t}
-$$<p>일반해를 구한다.</p>
-$$
-i_h=c_1e^{-t}+c_2e^{-4t}
-$$<p>특수해의 초기조건은 모두 0이므로, 일반해에 초기조건을 적용하여, 계수를 구하면 된다.</p>
-$$
-i_h(0)=1=C_1+C_2
-$$$$
-Di_h(0)=3=-C_1-4C_2
-$$$$
-C_1=\frac73,\quad C_2=-\frac43
-$$<p>따라서, 최종해는 다음과 같이 쓸 수 있다.</p>
-$$
-i=i_h+i_p=e^{-t}+2e^{-2t}-2e^{-4t}
-$$
-  <footer class="footline">
-  </footer>
-</article>
-        </div>
-      </main>
-    </div>
-    <aside id="R-sidebar" class="default-animation">
-      <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-          <a id="R-logo" class="R-default" href="/index.html">
-            <div class="logo-title">수리전자물리학</div>
-          </a>
-        </div>
-        <search><form action="/search/index.html" method="get">
-          <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-            <label class="a11y-only" for="R-search-by">Search</label>
-            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-          </div>
-        </form></search>
-      </div>
-      <div id="R-homelinks" class="default-animation homelinks">
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
-          <ul class="space collapsible-menu">
-            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
-          <ul class="">
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-      </div>
-      <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-main">
-          <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu">
-            <li class="parent alwaysopen " data-nav-url="/linear_system/lsi/index.html"><a class="padding" href="/linear_system/lsi/index.html">LSI</a><ul id="R-subsections-6edefbcbba05c9cebe64fd7be58a0ff7" class="collapsible-menu">
-            <li class="" data-nav-url="/linear_system/lsi/i_lsi/index.html"><a class="padding" href="/linear_system/lsi/i_lsi/index.html">(i) LSI</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_convolution/index.html"><a class="padding" href="/linear_system/lsi/b_convolution/index.html">(b) Convolution</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_causality/index.html"><a class="padding" href="/linear_system/lsi/b_causality/index.html">(b) Causality</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_laplace_transform_iii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_iii/index.html">(b) Laplace transform III</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/a_algebra_structure/index.html"><a class="padding" href="/linear_system/lsi/a_algebra_structure/index.html">(a) Algebra structure</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
-            <li class="" data-nav-url="/linear_system/lsi/b_fourier_series/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_series/index.html">(b) Fourier series</a></li>
-            <li class="active " data-nav-url="/linear_system/lsi/b_lti_circuit_analysis/index.html"><a class="padding" href="/linear_system/lsi/b_lti_circuit_analysis/index.html">(b) LSI &amp; Circuit analysis</a></li></ul></li>
-            <li class="alwaysopen " data-nav-url="/linear_system/lsci/index.html"><a class="padding" href="/linear_system/lsci/index.html">LScI</a><ul id="R-subsections-225a203a12ff7283fbf1526b0b909bb9" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/linear_system/lai/index.html"><a class="padding" href="/linear_system/lai/index.html">LAI</a></li></ul></li>
-            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
-          </ul>
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
-          <ul class="space collapsible-menu">
-          </ul>
-        </div>
-        <div id="R-footer-margin"></div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
-          <ul class="">
-          </ul>
-        </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
-      </div>
-    </aside>
-    <script>
-      window.MathJax = Object.assign( window.MathJax || {}, {
-        tex: {
-          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
-          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
-        },
-        options: {
-          enableMenu: false 
-        }
-      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
-    </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769694287"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769694287" defer></script>
-    <script src="/js/theme.min.js?1769694287" defer></script>
-    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
-  </body>
-</html>
