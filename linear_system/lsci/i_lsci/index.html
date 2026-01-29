@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. LScILinear &#43; Scale Invariance
+2. Linearity(선형성)=SuperpostionSuperposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
+$$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{M}(a|\psi_1\rangle&#43;b|\psi_2\rangle) =a\hat{M}|\psi_1\rangle&#43;b\hat{M}|\psi_2\rangle $$ 3. Scale invariance축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. ‘순수한 축척($a&gt;0$)’ 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 ‘축척’ 이론이 아니라 ‘축척 &#43; 반사’라는 훨씬 더 복잡한 이론이 되어버린다. 축척 불변성은 동일한 ‘형태’의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 ‘형태’로 나온다. LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다. $$ [\hat{M},\hat{Z}_{a}] \implies \hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a $$ ‘똑같은 형태로 나온다.‘의 의미는 단지 출력의 축척이 변할 뿐이다. $$ h(u, u&#39;) = \frac{1}{u&#39;}h_M(u/u&#39;) $$proof)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(i) LScI :: 수리전자물리학">
+    <meta name="twitter:description" content="1. LScILinear &#43; Scale Invariance
+2. Linearity(선형성)=SuperpostionSuperposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
+$$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{M}(a|\psi_1\rangle&#43;b|\psi_2\rangle) =a\hat{M}|\psi_1\rangle&#43;b\hat{M}|\psi_2\rangle $$ 3. Scale invariance축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. ‘순수한 축척($a&gt;0$)’ 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 ‘축척’ 이론이 아니라 ‘축척 &#43; 반사’라는 훨씬 더 복잡한 이론이 되어버린다. 축척 불변성은 동일한 ‘형태’의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 ‘형태’로 나온다. LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다. $$ [\hat{M},\hat{Z}_{a}] \implies \hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a $$ ‘똑같은 형태로 나온다.‘의 의미는 단지 출력의 축척이 변할 뿐이다. $$ h(u, u&#39;) = \frac{1}{u&#39;}h_M(u/u&#39;) $$proof)">
+    <meta property="og:url" content="http://localhost:1313/linear_system/lsci/i_lsci/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(i) LScI :: 수리전자물리학">
+    <meta property="og:description" content="1. LScILinear &#43; Scale Invariance
+2. Linearity(선형성)=SuperpostionSuperposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
+$$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{M}(a|\psi_1\rangle&#43;b|\psi_2\rangle) =a\hat{M}|\psi_1\rangle&#43;b\hat{M}|\psi_2\rangle $$ 3. Scale invariance축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. ‘순수한 축척($a&gt;0$)’ 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 ‘축척’ 이론이 아니라 ‘축척 &#43; 반사’라는 훨씬 더 복잡한 이론이 되어버린다. 축척 불변성은 동일한 ‘형태’의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 ‘형태’로 나온다. LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다. $$ [\hat{M},\hat{Z}_{a}] \implies \hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a $$ ‘똑같은 형태로 나온다.‘의 의미는 단지 출력의 축척이 변할 뿐이다. $$ h(u, u&#39;) = \frac{1}{u&#39;}h_M(u/u&#39;) $$proof)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear system">
+    <meta itemprop="name" content="(i) LScI :: 수리전자물리학">
+    <meta itemprop="description" content="1. LScILinear &#43; Scale Invariance
+2. Linearity(선형성)=SuperpostionSuperposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
+$$ \text{Superposition}=\text{Addictivity}&#43;\text{Scaling} $$$$ \hat{M}(a|\psi_1\rangle&#43;b|\psi_2\rangle) =a\hat{M}|\psi_1\rangle&#43;b\hat{M}|\psi_2\rangle $$ 3. Scale invariance축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. ‘순수한 축척($a&gt;0$)’ 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 ‘축척’ 이론이 아니라 ‘축척 &#43; 반사’라는 훨씬 더 복잡한 이론이 되어버린다. 축척 불변성은 동일한 ‘형태’의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 ‘형태’로 나온다. LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다. $$ [\hat{M},\hat{Z}_{a}] \implies \hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a $$ ‘똑같은 형태로 나온다.‘의 의미는 단지 출력의 축척이 변할 뿐이다. $$ h(u, u&#39;) = \frac{1}{u&#39;}h_M(u/u&#39;) $$proof)">
+    <meta itemprop="wordCount" content="333">
+    <title>(i) LScI :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1769696181" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1769696181" defer></script>
+    <script src="/js/search-lunr.js?1769696181" defer></script>
+    <script src="/js/search.js?1769696181" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1769696181";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1769696181" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1769696181" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1769696181" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1769696181" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769696181" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1769696181" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1769696181" rel="stylesheet">
+    <link href="/css/theme.css?1769696181" rel="stylesheet">
+    <link href="/css/format-html.css?1769696181" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_system\/lsci\/i_lsci\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/linear_system/lsci/i_lsci/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-lsci">1. LScI</a></li>
+        <li><a href="#2-linearity선형성superpostion">2. Linearity(선형성)=Superpostion</a></li>
+        <li><a href="#3-scale-invariance">3. Scale invariance</a></li>
+        <li><a href="#4-모든-lsci-연산자는-합성곱-귀결된다">4. 모든 LScI 연산자는 합성곱 귀결된다.</a></li>
+        <li><a href="#5-mellin-convolution">5. Mellin Convolution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/index.html"><span itemprop="name">Linear system</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/lsci/index.html"><span itemprop="name">LScI</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) LScI</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsci/index.html" title="LScI (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsci/b_mellin_transform_i/index.html" title="(b) Mellin transform I (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_system" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="i-lsci">(i) LScI</h1>
+
+<hr>
+<h3 id="1-lsci">1. LScI<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Linear + Scale Invariance</p>
+<hr>
+<h3 id="2-linearity선형성superpostion">2. Linearity(선형성)=Superpostion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.</p>
+$$
+\text{Superposition}=\text{Addictivity}+\text{Scaling}
+$$$$
+\hat{M}(a|\psi_1\rangle+b|\psi_2\rangle)
+=a\hat{M}|\psi_1\rangle+b\hat{M}|\psi_2\rangle
+$$<hr>
+<h3 id="3-scale-invariance">3. Scale invariance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다.</li>
+<li><strong>&lsquo;순수한 축척($a&gt;0$)&rsquo;</strong> 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 &lsquo;축척&rsquo; 이론이 아니라 &lsquo;축척 + 반사&rsquo;라는 훨씬 더 복잡한 이론이 되어버린다.</li>
+<li>축척 불변성은 동일한 &lsquo;형태&rsquo;의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 &lsquo;형태&rsquo;로 나온다.</li>
+<li>LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다.</li>
+</ul>
+$$
+[\hat{M},\hat{Z}_{a}]
+\implies
+\hat{Z}_a\hat{M}=\hat{M}\hat{Z}_a
+$$<ul>
+<li>&lsquo;똑같은 형태로 나온다.&lsquo;의 의미는 단지 출력의 축척이 변할 뿐이다.</li>
+</ul>
+$$
+h(u, u')
+= \frac{1}{u'}h_M(u/u')
+$$<p>proof)</p>
+$$
+\langle u^d|\hat{Z}_a\hat{M}|u'\rangle
+= \langle (au)^d|\hat{M}|u'\rangle
+= h(au, u')
+$$$$
+\langle u^d|\hat{M}\hat{Z}_a|u'\rangle
+= \frac{1}{a}\langle u^d|\hat{M}|u'/a\rangle
+= \frac{1}{a}h(u, u'/a)
+$$<p>$a$는 임의의 스케일 상수이므로 $u&rsquo;$ 값을 대입할 수 있다.</p>
+$$
+h(u'u, u')
+= \frac{1}{u'}h(u, 1)
+$$<p>$u$에 대한 함수 $h_M(u)$ 를 $h_M(u):=h(u, 1)$ 이라고 새롭게 정의한다. (즉, 입력($u&rsquo;$)이 1일 때의 시스템 응답을 $h_M$으로 정의)</p>
+$$
+h(u, u')
+= \frac{1}{u'}h_M(u/u')
+$$<hr>
+<h3 id="4-모든-lsci-연산자는-합성곱-귀결된다">4. 모든 LScI 연산자는 합성곱 귀결된다.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>LScI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. <strong>&ldquo;예외 없이 모든&rdquo; LScI 연산자들은 멜린 합성곱(Mellin convolution)으로 표현</strong> 될 수 있다는 공통점을 가진다.</p>
+<p><strong>(1) 스케일링 생성 연산자 (Generator of Scaling)</strong></p>
+$$
+\hat{M} = u\frac{d}{du}
+$$<p>proof)</p>
+<p>LScI(선형 축척 불변) 연산자인지, 위의 교환자 증명방법이 엄밀하지만, 좀 더 직관적으로 증명한다.</p>
+$$
+u\frac{d}{du} \psi(u)=(u)\psi'(u)
+$$$$
+u\frac{d}{du} \psi(au)=(au)\psi'(au)
+$$<p>따라서, 축척불변이다.</p>
+<p><strong>(2) 스케일링 연산자 (Scaling operator)</strong></p>
+$$
+\hat{M} = \hat{Z}_a
+$$<p>proof)</p>
+<p>스케일링 연산자 그룹은 아벨(Abelian) 그룹이므로, 모든 스케일링 연산자는 서로 교환 가능하다. $[\hat{Z}_b, \hat{Z}_a] = 0$.따라서 $\hat{Z}_a$ 자체도 LScI 연산자이다.</p>
+<hr>
+<h3 id="5-mellin-convolution">5. Mellin Convolution<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>LSI가 &lsquo;일반 컨볼루션&rsquo;으로 귀결되듯이, 모든 LScI 연산자는 <strong>&lsquo;멜린 컨볼루션&rsquo;</strong> 으로 귀결된다. 아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다.</p>
+$$
+\hat{M}=\iint du du' h(u,u')|u\rangle\langle u'^d|
+$$<p>이 일반적인 형태에 <strong>&ldquo;LScI 시스템&rdquo;</strong> 이라는 강력한 제약 조건을 걸어본다.</p>
+$$
+\hat{M}
+=\iint du du' \frac{1}{u'}h_M(u/u')|u\rangle\langle u'^d|
+$$<p>임의의 벡터와 연산을 수행해보자.</p>
+$$
+\langle u^d|\hat{M}|f\rangle
+=\iint du'' du' \frac{1}{u'}h_M(u''/u')\langle u^d|u''\rangle\langle u'^d|f\rangle
+$$$$
+=\iint du'' du' \frac{1}{u'}h_M(u''/u')\delta(u-u'') f(u')
+=\int\frac{du'}{u'}h_M(u/u')f(u')
+$$$$
+=:h(u)\circledast f(u)
+=\langle u^d|(|h\rangle\circledast|f\rangle)
+=\langle u^d|(|h\rangle\circledast)|f\rangle
+$$<p>따라서,</p>
+$$
+\hat{M} = |h\rangle\circledast
+$$
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/linear_algebra/index.html"><a class="padding" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/lie_group/index.html"><a class="padding" href="/lie_group/index.html">Lie group</a><ul id="R-subsections-8efc1eeed904b7a3bbaa06727bc1f2a7" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/linear_system/lsi/index.html"><a class="padding" href="/linear_system/lsi/index.html">LSI</a><ul id="R-subsections-6edefbcbba05c9cebe64fd7be58a0ff7" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/linear_system/lsci/index.html"><a class="padding" href="/linear_system/lsci/index.html">LScI</a><ul id="R-subsections-225a203a12ff7283fbf1526b0b909bb9" class="collapsible-menu">
+            <li class="active " data-nav-url="/linear_system/lsci/i_lsci/index.html"><a class="padding" href="/linear_system/lsci/i_lsci/index.html">(i) LScI</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/b_mellin_transform_i/index.html"><a class="padding" href="/linear_system/lsci/b_mellin_transform_i/index.html">(b) Mellin transform I</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/b_mellin_transform_ii/index.html"><a class="padding" href="/linear_system/lsci/b_mellin_transform_ii/index.html">(b) Mellin transform II</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/b_mellin_transform_iii/index.html"><a class="padding" href="/linear_system/lsci/b_mellin_transform_iii/index.html">(b) Mellin transform III</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/a_algebra_structure/index.html"><a class="padding" href="/linear_system/lsci/a_algebra_structure/index.html">(a) Algebra structure</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/b_laurents_series_i/index.html"><a class="padding" href="/linear_system/lsci/b_laurents_series_i/index.html">(b) Laurent&#39;s series I</a></li>
+            <li class="" data-nav-url="/linear_system/lsci/b_laurents_series_ii/index.html"><a class="padding" href="/linear_system/lsci/b_laurents_series_ii/index.html">(b) Lourent&#39;s series II</a></li></ul></li>
+            <li class="" data-nav-url="/linear_system/lai/index.html"><a class="padding" href="/linear_system/lai/index.html">LAI</a></li></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1769696181"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1769696181" defer></script>
+    <script src="/js/theme.js?1769696181" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
