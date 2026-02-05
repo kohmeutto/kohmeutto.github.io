@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LSI :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_system/lsi/index.html</link>
+    <description>(i) LSI (b) Convolution (b) Causality (b) Laplace transform I (b) Laplace transform II (b) Laplace transform III (b) Fourier transform I (a) Algebra structure (b) Fourier transform II (b) Fourier series (b) LSI &amp; Circuit analysis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_system/lsi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(i) LSI</title>
+      <link>http://localhost:1313/linear_system/lsi/i_lsi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/i_lsi/index.html</guid>
+      <description>1. LSI&#xD;Linear + Shift Invariance&#xA;2. Linearity(선형성)=Superpostion&#xD;Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.&#xA;$$&#xD;\text{Superposition}=\text{Addictivity}+\text{Scaling}&#xD;$$$$&#xD;\hat{H}(a|\psi_1\rangle+b|\psi_2\rangle)&#xD;=a\hat{H}|\psi_1\rangle+b\hat{H}|\psi_2\rangle&#xD;$$ 3. Copy-shift invariance&#xD;이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 똑같은 모양으로 나온다. LSI 연산자는 copy-shift 연산자와 교환가능함 을 의미한다. $$&#xD;[\hat{H},\hat{S}_{\tau}]&#xD;\implies&#xD;\hat{S}_\tau\hat{H}=\hat{H}\hat{S}_\tau&#xD;$$ ‘똑같은 모양으로 나온다.‘의 의미는 단지 출력이 평행 이동할 뿐이다. $$&#xD;h(u-\tau,u)=h(u,u+\tau)\implies h(u,\tau)=h(u-\tau)&#xD;$$proof)</description>
+    </item>
+    <item>
+      <title>(b) Convolution</title>
+      <link>http://localhost:1313/linear_system/lsi/b_convolution/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_convolution/index.html</guid>
+      <description>1. Convolution&#xD;(이전입력+현재입력+미래입력)의 현재상태: convolution for LSI + non-causal (이전입력+현재입력)의 현재상태: convolution for LSI + causal $$&#xD;y\left(t\right)=x\left(t\right)\ast h\left(t\right)&#xD;=h\left(t\right)\ast x\left(t\right)&#xD;=\int_{-\infty}^{\infty}d\tau\left[h\left(t-\tau\right)x\left(\tau\right)\right]&#xD;=\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right]&#xD;$$ 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션&#xD;수학적으로 표현(절차)하면, 다음과 같다.&#xA;(1) 시간에 대한 시스템 응답을, 리스트화 한다.&#xA;$$&#xD;h\left(t\right)\rightarrow h\left(\tau\right)&#xD;$$(2) input을, 리스트화 한다. 그 다음, 처음 intput이 시스템에 들어가야 하므로 filp 시킨다.</description>
+    </item>
+    <item>
+      <title>(b) Causality</title>
+      <link>http://localhost:1313/linear_system/lsi/b_causality/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_causality/index.html</guid>
+      <description>1. LSI vs. LSI+causality&#xD;LSI: Linearity(선형성) + Shift Invarient(이동 불변) 의 축약어 이다. LSI+causality: LSI 특성 + causality(인과성) 이다. 모든 선형 시스템이 causality 특성을 가지는것이 아니라는 의미이다. 예로, 이상적인 필터는 LSI 특성을 가지지만, 비인과적이다.&#xA;2. Causality(인과성)&#xD;인과성은 시스템의 또 다른 중요한 특성이다. 인과적인(causal) 시스템은 현재의 출력이 오직 현재 또는 과거의 입력에 의해서만 결정되는 시스템을 말한다. 미래의 입력이 현재 출력에 영향을 미치지 않는다.</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform I</title>
+      <link>http://localhost:1313/linear_system/lsi/b_laplace_transform_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_laplace_transform_i/index.html</guid>
+      <description>1. Eigenvector &amp; eigenvalue of LSI systems&#xD;연산자 $|h\rangle\ast$ 의 고유값과 고유벡터&#xA;$$&#xD;\text{eigenvalue}: \langle s^L|h\rangle=\int_{-\infty}^{\infty} dt h(t) e^{-st},\quad \langle s^L|t\rangle=e^{-st}&#xD;$$$$&#xD;\text{eigenvector}: |s\rangle,\quad \langle t|s\rangle=e^{st}&#xD;$$proof)&#xA;$$&#xD;|h\rangle\ast|s\rangle=H(s)|s\rangle&#xD;$$위의 식을 토대로,&#xA;$$&#xD;\langle t|(|h\rangle\ast)|s\rangle&#xD;=\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)&#xD;$$$$&#xD;\langle t|H(s)|s\rangle&#xD;=H(s)\langle t|s\rangle&#xD;=H(s) s(t)&#xD;$$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,&#xA;$$&#xD;\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau)&#xD;=\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)}&#xD;=\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st}&#xD;$$고유값을 라플라스 변환 이라고 하며, 추출(변환) 연산자 로 표현해 보자.</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform II</title>
+      <link>http://localhost:1313/linear_system/lsi/b_laplace_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_laplace_transform_ii/index.html</guid>
+      <description>1. 라플라스 변환&#xD;(1) 단방향 라플라스 변환&#xA;$$&#xD;\langle s^L|f\cdot u\rangle&#xD;=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack&#xD;$$(2) 양방향 라플라스 변환, causal system&#xA;$$&#xD;\langle s^L|f\rangle&#xD;=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack&#xD;$$ 2. 중요 Properties&#xD;(1) linearity&#xA;적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^L|af\cdot u+bg\cdot u\rangle&#xD;=a\langle s^L|f\cdot u\rangle+b\langle s^L|g\cdot u\rangle&#xD;$$$$&#xD;\langle s^L|af+bg\rangle&#xD;=a\langle s^L|f\rangle+b\langle s^L|g\rangle&#xD;$$(2) time shifting</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform III</title>
+      <link>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</guid>
+      <description>수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다. 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다. 99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다. 여기에 나온, 표준 라플라스 변환은 모두 암기 해야 한다. 분포 라플라스 변환에서, 허수축의 경우 푸리에 변환과 동일 하다. 1. 중요 변환&#xD;Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자. 1-1) 디렉 델타 함수</description>
+    </item>
+    <item>
+      <title>(b) Fourier transform I</title>
+      <link>http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_fourier_transform_i/index.html</guid>
+      <description>1. 푸리에 변환의 본질&#xD;푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.&#xA;우선 라플라스 변환 연산자를 살펴보자.&#xA;$$&#xD;\langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right]&#xD;$$실수부가 0으로 고정되면,&#xA;$$&#xD;\langle s^L|f\rangle|_{\operatorname{Re}[s]=0}&#xD;=2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0}&#xD;=\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]&#xD;$$(1) 비정규 직교 기저 푸리에 변환 &amp; 변환 연산자</description>
+    </item>
+    <item>
+      <title>(a) Algebra structure</title>
+      <link>http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html</guid>
+      <description>1. 양방향 라플라스 변환의 대수 구조&#xD;작용 순위: 연산자 → 괄호 → 켓&#xA;이동 연산 1 $$&#xD;\langle s^L|e^{at}f(t)\rangle&#xD;=\langle s^L|e^{a\hat{t}}|f\rangle&#xD;=\langle (s-a)^L|f\rangle&#xD;$$$$&#xD;\langle t|e^{as}f(s)\rangle&#xD;=\langle t|e^{a\hat{s}}|f\rangle&#xD;=\langle t+a|f\rangle&#xD;$$ 이동 연산 2 $$&#xD;\langle s^L|f(t+a)\rangle&#xD;=\langle s^L|e^{a\hat{s}}|f\rangle&#xD;=e^{as}\langle s^L|f\rangle&#xD;$$$$&#xD;\langle t|f(s+a)\rangle&#xD;=\langle t|e^{-a\hat{t}}|f\rangle&#xD;=e^{-at}\langle t|f\rangle&#xD;$$ scaling 1 $$&#xD;\langle s^L|f(at)\rangle&#xD;=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle&#xD;$$$$&#xD;\langle t|f(as)\rangle&#xD;=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle&#xD;$$ scaling 2 $$&#xD;\langle s^L|f(at+b)\rangle&#xD;=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle&#xD;=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle&#xD;=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle&#xD;$$$$&#xD;\langle t|f(as+b)\rangle&#xD;=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle&#xD;=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle&#xD;=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle&#xD;$$ 미분 1 $$&#xD;\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle&#xD;=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle&#xD;=s^n\left\langle s^L\middle|f\right\rangle&#xD;$$$$&#xD;\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle&#xD;=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle&#xD;=(-t)^n\left\langle t\middle|f\right\rangle&#xD;$$ 미분 2 $$&#xD;\left\langle s^L\middle|t^nf(t)\right\rangle&#xD;=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle&#xD;=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle&#xD;$$$$&#xD;\left\langle t\middle|s^nf(s)\right\rangle&#xD;=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle&#xD;=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle&#xD;$$ 적분 1 $$&#xD;\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle&#xD;=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle&#xD;=s^{-1}\left\langle s\middle|f\right\rangle&#xD;$$$$&#xD;\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle&#xD;=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle&#xD;=-t^{-1}\left\langle t\middle|f\right\rangle&#xD;$$ 적분 2 $$&#xD;\left\langle s^L\middle|t^{-1}f(t)\right\rangle&#xD;=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle&#xD;=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle&#xD;=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle&#xD;$$$$&#xD;\left\langle t\middle|s^{-1}f(s)\right\rangle&#xD;=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle&#xD;=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle&#xD;$$ 2. 푸리에 변환의 대수 구조&#xD;푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.</description>
+    </item>
+    <item>
+      <title>(b) Fourier transform II</title>
+      <link>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_fourier_transform_ii/index.html</guid>
+      <description>1. 중요변환&#xD;1) Dirac delta function - time to frequency domain&#xA;$$&#xD;\langle \omega^A| \delta \rangle=1,\quad&#xD;\langle \omega^S| \delta \rangle=\frac{1}{\sqrt{2\pi}}&#xD;$$2) Dirac delta function - frequency to time domain&#xA;$$&#xD;\langle t| \delta \rangle_A=\frac{1}{2\pi},\quad&#xD;\langle t| \delta \rangle_S=\frac{1}{\sqrt{2\pi}}&#xD;$$3) DC, Constant&#xA;$$&#xD;\langle\omega^A|1\rangle=2\pi\delta(\omega),\quad&#xD;\langle\omega^S|1\rangle=\sqrt{2\pi}\delta(\omega)&#xD;$$4) Unit function&#xA;$$&#xD;\langle\omega^A|u\rangle=\pi\delta(\omega)+\frac{1}{i\omega},\quad&#xD;\langle\omega^S|u\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega)+\frac{1}{i\omega}\right\rbrace&#xD;$$5) cosine function&#xA;$$&#xD;\langle\omega^A|\cos at\rangle=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad&#xD;\langle\omega^S|\cos at\rangle=\frac{1}{\sqrt{2\pi}}\left\lbrace\pi\delta(\omega-a)+\pi\delta(\omega+a)\right\rbrace&#xD;$$6) sine function</description>
+    </item>
+    <item>
+      <title>(b) Fourier series</title>
+      <link>http://localhost:1313/linear_system/lsi/b_fourier_series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_fourier_series/index.html</guid>
+      <description>1. 푸리에 급수의 본질&#xD;푸리에 급수는, 기저를 이산화 한 푸리에 역변환이다. $|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,&#xA;$$&#xD;|f\rangle&#xD;=\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A&#xD;$$여기에서,&#xA;$$&#xD;\langle t|\omega_{n}\rangle_A&#xD;=e^{in\omega_0t},\quad&#xD;\langle \omega_{n}^{A}|t\rangle&#xD;=e^{-in\omega_0t}&#xD;$$쌍대기저를 구하면,&#xA;$$&#xD;\int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\}&#xD;=\int_T dt\{e^{-in\omega_0t}e^{+in\omega_0t}\}&#xD;=T&#xD;$$$$&#xD;\int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\}&#xD;=\int_T dt\{e^{-in\omega_0t}e^{+im\omega_0t}\}&#xD;=0&#xD;$$$$&#xD;\langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm}&#xD;$$따라서, $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.</description>
+    </item>
+    <item>
+      <title>(b) LSI &amp; Circuit analysis</title>
+      <link>http://localhost:1313/linear_system/lsi/b_lti_circuit_analysis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/b_lti_circuit_analysis/index.html</guid>
+      <description>회로 시스템에 적분변환 이론을 적용하여 해석한다. LTI 의미를 공고히 한다. 초기조건 : $i(0)=1 [\text{A}],v_c(0)=-6 [\text{V}]$ 일 때, 전류를 구하시오.&#xA;1. 미분 방정식을 사용한 풀이1&#xD;$$&#xD;-2e^{-2t}+5i+D(i-1)-6+v_c&#39;=0,\quad&#xD;i=\frac{1}{4}Dv_c&#39;\to v_c&#39;=4D^{-1}i&#xD;$$$$&#xD;-2e^{-2t}+5i+Di-6+4D^{-1}i=0\to&#xD;4e^{-2t}+5Di+D^2i+4i=0&#xD;$$정리하면 다음과 같다.&#xA;$$&#xD;D^2i+5Di+4i=-4e^{-2t}&#xD;$$일반해와 특수해를 구한다.&#xA;$$&#xD;i_h=c_1e^{-t}+c_2e^{-4t}&#xD;$$$$&#xD;i_p=\left.\frac{-4}{(D+1)(D+4)}\right|_{D=-2}e^{-2t}=2e^{-2t}&#xD;$$초기조건을 사용하여 계수를 구하면,&#xA;$$&#xD;i(0)&#xD;=1&#xD;=c_1+c_2+2&#xD;$$$$&#xD;Di(0)&#xD;=3&#xD;=-c_1-4c_2-4&#xD;$$$$&#xD;c_1=1, c_2=-2&#xD;$$따라서,</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.145.0">
+    <meta name="generator" content="Relearn 9.0.3+8bb66fa674351f3a0b0917a7552caac686eca920">
+    <meta name="description" content="1. 양방향 라플라스 변환의 대수 구조작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Algebra structure :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 양방향 라플라스 변환의 대수 구조작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.">
+    <meta property="og:url" content="http://localhost:1313/linear_system/lsi/a_algebra_structure/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Algebra structure :: 수리전자물리학">
+    <meta property="og:description" content="1. 양방향 라플라스 변환의 대수 구조작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linear system">
+    <meta itemprop="name" content="(a) Algebra structure :: 수리전자물리학">
+    <meta itemprop="description" content="1. 양방향 라플라스 변환의 대수 구조작용 순위: 연산자 → 괄호 → 켓
+이동 연산 1 $$\langle s^L|e^{at}f(t)\rangle=\langle s^L|e^{a\hat{t}}|f\rangle=\langle (s-a)^L|f\rangle$$$$\langle t|e^{as}f(s)\rangle=\langle t|e^{a\hat{s}}|f\rangle=\langle t&#43;a|f\rangle$$ 이동 연산 2 $$\langle s^L|f(t&#43;a)\rangle=\langle s^L|e^{a\hat{s}}|f\rangle=e^{as}\langle s^L|f\rangle$$$$\langle t|f(s&#43;a)\rangle=\langle t|e^{-a\hat{t}}|f\rangle=e^{-at}\langle t|f\rangle$$ scaling 1 $$\langle s^L|f(at)\rangle=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as)\rangle=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle$$ scaling 2 $$\langle s^L|f(at&#43;b)\rangle=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle$$$$\langle t|f(as&#43;b)\rangle=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle$$ 미분 1 $$\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle=s^n\left\langle s^L\middle|f\right\rangle$$$$\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle=(-t)^n\left\langle t\middle|f\right\rangle$$ 미분 2 $$\left\langle s^L\middle|t^nf(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|s^nf(s)\right\rangle=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle$$ 적분 1 $$\left\langle s^L\middle|\int_{-\infty}^{t} dt&#39;f(t&#39;)\right\rangle=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle=s^{-1}\left\langle s\middle|f\right\rangle$$$$\left\langle t\middle|\int_{\mathbb{C}} ds&#39;f(s&#39;)\right\rangle=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle=-t^{-1}\left\langle t\middle|f\right\rangle$$ 적분 2 $$\left\langle s^L\middle|t^{-1}f(t)\right\rangle=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle=-\int_{\infty}^{s}ds&#39;\left\langle s&#39;\middle|f\right\rangle=\int_{s}^{\infty}ds&#39;\left\langle s&#39;\middle|f\right\rangle$$$$\left\langle t\middle|s^{-1}f(s)\right\rangle=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle=\int_{-\infty}^{t}dt&#39;\left\langle t&#39;\middle|f\right\rangle$$ 2. 푸리에 변환의 대수 구조푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.">
+    <meta itemprop="wordCount" content="306">
+    <title>(a) Algebra structure :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1770287791" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1770287791" defer></script>
+    <script src="/js/search-lunr.js?1770287791" defer></script>
+    <script src="/js/search.js?1770287791" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1770287791";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1770287791" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1770287791" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1770287791" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1770287791" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1770287791" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1770287791" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1770287791" rel="stylesheet">
+    <link href="/css/theme.css?1770287791" rel="stylesheet">
+    <link href="/css/format-html.css?1770287791" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/linear_system\/lsi\/a_algebra_structure\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/linear_system/lsi/a_algebra_structure/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-양방향-라플라스-변환의-대수-구조">1. 양방향 라플라스 변환의 대수 구조</a></li>
+        <li><a href="#2-푸리에-변환의-대수-구조">2. 푸리에 변환의 대수 구조</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/index.html"><span itemprop="name">Linear system</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/linear_system/lsi/index.html"><span itemprop="name">LSI</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Algebra structure</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_fourier_transform_i/index.html" title="(b) Fourier transform I (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/lsi/b_fourier_transform_ii/index.html" title="(b) Fourier transform II (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable linear_system" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-algebra-structure">(a) Algebra structure</h1>
+
+<hr>
+<h3 id="1-양방향-라플라스-변환의-대수-구조">1. 양방향 라플라스 변환의 대수 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>작용 순위: 연산자 → 괄호 → 켓</p>
+<ul>
+<li>이동 연산 1</li>
+</ul>
+$$
+\langle s^L|e^{at}f(t)\rangle
+=\langle s^L|e^{a\hat{t}}|f\rangle
+=\langle (s-a)^L|f\rangle
+$$$$
+\langle t|e^{as}f(s)\rangle
+=\langle t|e^{a\hat{s}}|f\rangle
+=\langle t+a|f\rangle
+$$<ul>
+<li>이동 연산 2</li>
+</ul>
+$$
+\langle s^L|f(t+a)\rangle
+=\langle s^L|e^{a\hat{s}}|f\rangle
+=e^{as}\langle s^L|f\rangle
+$$$$
+\langle t|f(s+a)\rangle
+=\langle t|e^{-a\hat{t}}|f\rangle
+=e^{-at}\langle t|f\rangle
+$$<ul>
+<li>scaling 1</li>
+</ul>
+$$
+\langle s^L|f(at)\rangle
+=\frac{1}{|a|}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle
+$$$$
+\langle t|f(as)\rangle
+=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle
+$$<ul>
+<li>scaling 2</li>
+</ul>
+$$
+\langle s^L|f(at+b)\rangle
+=\left\langle s^L\middle|e^{\frac{b}{a}\hat{s}}\middle|f(at)\right\rangle
+=e^{\frac{b}{a}s}\left\langle s^L\middle|f(at)\right\rangle
+=\frac{1}{|a|}e^{\frac{b}{a}s}\left\langle\left(\frac{s}{a}\right)^L\middle|f\right\rangle
+$$$$
+\langle t|f(as+b)\rangle
+=\left\langle t\middle|e^{-\frac{b}{a}\hat{t}}\middle|f(as)\right\rangle
+=e^{-\frac{b}{a}t}\left\langle t\middle|f(as)\right\rangle
+=\frac{1}{|a|}e^{-\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle
+$$<ul>
+<li>미분 1</li>
+</ul>
+$$
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle
+=\left\langle s^L\middle|(\hat{D}_t)^n\middle|f\right\rangle
+=s^n\left\langle s^L\middle|f\right\rangle
+$$$$
+\left\langle t\middle|\frac{d^n}{ds^n}f(s)\right\rangle
+=\left\langle t\middle|(\hat{D}_s)^n\middle|f\right\rangle
+=(-t)^n\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>미분 2</li>
+</ul>
+$$
+\left\langle s^L\middle|t^nf(t)\right\rangle
+=\left\langle s^L\middle|(\hat{t})^n\middle|f\right\rangle
+=(-1)^n\frac{d^n}{ds^n}\left\langle s\middle|f\right\rangle
+$$$$
+\left\langle t\middle|s^nf(s)\right\rangle
+=\left\langle t\middle|(\hat{s})^n\middle|f\right\rangle
+=\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>적분 1</li>
+</ul>
+$$
+\left\langle s^L\middle|\int_{-\infty}^{t} dt'f(t')\right\rangle
+=\left\langle s^L\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
+=s^{-1}\left\langle s\middle|f\right\rangle
+$$$$
+\left\langle t\middle|\int_{\mathbb{C}} ds'f(s')\right\rangle
+=\left\langle t\middle|(\hat{D}_s)^{-1}\middle|f\right\rangle
+=-t^{-1}\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>적분 2</li>
+</ul>
+$$
+\left\langle s^L\middle|t^{-1}f(t)\right\rangle
+=\left\langle s^L\middle|(\hat{t})^{-1}\middle|f\right\rangle
+=-\int_{\infty}^{s}ds'\left\langle s'\middle|f\right\rangle
+=\int_{s}^{\infty}ds'\left\langle s'\middle|f\right\rangle
+$$$$
+\left\langle t\middle|s^{-1}f(s)\right\rangle
+=\left\langle t\middle|(\hat{s})^{-1}\middle|f\right\rangle
+=\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
+$$<hr>
+<h3 id="2-푸리에-변환의-대수-구조">2. 푸리에 변환의 대수 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>푸리에 변환/역변환의 대수 구조는, 정규/비정규 직교 기저가 동일하다.</p>
+<p>작용 순위: &lsquo;켓&rsquo;이 가장 후순위</p>
+<ul>
+<li>이동 연산 1</li>
+</ul>
+$$
+\langle \omega|e^{at}f(t)\rangle
+=\langle \omega|e^{a\hat{t}}|f\rangle
+=\langle \omega+ia|f\rangle
+$$$$
+\langle t|e^{a\omega}f(\omega)\rangle
+=\langle t|e^{a\hat{\omega}}|f\rangle
+=\langle t-ia|f\rangle
+$$<ul>
+<li>이동 연산 2</li>
+</ul>
+$$
+\langle \omega|f(t+a)\rangle
+=\langle \omega|e^{ia\hat{\omega}}|f\rangle
+=e^{ia\omega}\langle \omega|f\rangle
+$$$$
+\langle t|f(\omega+a)\rangle
+=\langle t|e^{-ia\hat{t}}|f\rangle
+=e^{-iat}\langle t|f\rangle
+$$<ul>
+<li>scaling 1</li>
+</ul>
+$$
+\langle \omega|f(at)\rangle
+=\frac{1}{|a|}\left\langle\frac{\omega}{a}\middle|f\right\rangle
+$$$$
+\langle t|f(a\omega)\rangle
+=\frac{1}{|a|}\left\langle\frac{t}{a}\middle|f\right\rangle
+$$<ul>
+<li>scaling 2</li>
+</ul>
+$$
+\langle \omega|f(at+b)\rangle
+=\left\langle \omega\middle|e^{i\frac{b}{a}\hat{\omega}}\middle|f(at)\right\rangle
+=e^{i\frac{b}{a}\omega}\left\langle \omega\middle|f(at)\right\rangle
+=\frac{1}{|a|}e^{i\frac{b}{a}\omega}\left\langle\frac{\omega}{a}\middle|f\right\rangle
+$$$$
+\langle t|f(a\omega+b)\rangle
+=\left\langle t\middle|e^{-i\frac{b}{a}\hat{t}}\middle|f(a\omega)\right\rangle
+=e^{-i\frac{b}{a}t}\left\langle t\middle|f(a\omega)\right\rangle
+=\frac{1}{|a|}e^{-i\frac{b}{a}t}\left\langle\frac{t}{a}\middle|f\right\rangle
+$$<ul>
+<li>미분 1</li>
+</ul>
+$$
+\left\langle \omega\middle|\frac{d^n}{dt^n}f(t)\right\rangle
+=\left\langle \omega\middle|(\hat{D}_t)^n\middle|f\right\rangle
+=(i\omega)^n\left\langle \omega\middle|f\right\rangle
+$$$$
+\left\langle t\middle|\frac{d^n}{d\omega^n}f(\omega)\right\rangle
+=\left\langle t\middle|(\hat{D}_\omega)^n\middle|f\right\rangle
+=(-it)^n\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>미분 2</li>
+</ul>
+$$
+\left\langle \omega\middle|t^nf(t)\right\rangle
+=\left\langle \omega\middle|(\hat{t})^n\middle|f\right\rangle
+=i^n\frac{d^n}{d\omega^n}\left\langle \omega\middle|f\right\rangle
+$$$$
+\left\langle t\middle|\omega^nf(\omega)\right\rangle
+=\left\langle t\middle|(\hat{\omega})^n\middle|f\right\rangle
+=(-i)^n\frac{d^n}{dt^n}\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>적분 1</li>
+</ul>
+$$
+\left\langle \omega\middle|(\hat{D}_t)^{-1}\middle|f\right\rangle
+=\langle\omega|u\ast f\rangle
+=\left\lbrace\pi\delta(\omega)+\frac{1}{i\omega}\right\rbrace f(\omega)
+=\pi\delta(\omega)f(0)+\frac{1}{i\omega}f(\omega)
+$$$$
+\left\langle t\middle|(\hat{D}_\omega)^{-1}\middle|f\right\rangle
+=(-it)^{-1}\left\langle t\middle|f\right\rangle
+$$<ul>
+<li>적분 2</li>
+</ul>
+$$
+\left\langle \omega\middle|t^{-1}f(t)\right\rangle
+=\left\langle \omega\middle|(\hat{t})^{-1}\middle|f\right\rangle
+=(i)^{-1}\int_{\infty}^{\omega}d\omega'\left\langle \omega'\middle|f\right\rangle
+=i\int_{\omega}^{\infty}d\omega'\left\langle \omega'\middle|f\right\rangle
+$$$$
+\left\langle t\middle|\omega^{-1}f(\omega)\right\rangle
+=\left\langle t\middle|(\hat{\omega})^{-1}\middle|f\right\rangle
+=(-i)^{-1}\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
+=i\int_{-\infty}^{t}dt'\left\langle t'\middle|f\right\rangle
+$$<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/linear_algebra/index.html"><a class="padding default-animation" href="/linear_algebra/index.html">Linear algebra</a><ul id="R-subsections-b937575a80a199e48cdafa1b3ea56c23" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group/index.html"><a class="padding default-animation" href="/lie_group/index.html">Lie group</a><ul id="R-subsections-8efc1eeed904b7a3bbaa06727bc1f2a7" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/linear_system/lsi/index.html"><a class="padding default-animation" href="/linear_system/lsi/index.html">LSI</a><ul id="R-subsections-6edefbcbba05c9cebe64fd7be58a0ff7" class="collapsible-menu">
+            <li class="" data-nav-id="/linear_system/lsi/i_lsi/index.html"><a class="padding" href="/linear_system/lsi/i_lsi/index.html">(i) LSI</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_convolution/index.html"><a class="padding" href="/linear_system/lsi/b_convolution/index.html">(b) Convolution</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_causality/index.html"><a class="padding" href="/linear_system/lsi/b_causality/index.html">(b) Causality</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_laplace_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_laplace_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_laplace_transform_iii/index.html"><a class="padding" href="/linear_system/lsi/b_laplace_transform_iii/index.html">(b) Laplace transform III</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_fourier_transform_i/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="active " data-nav-id="/linear_system/lsi/a_algebra_structure/index.html"><a class="padding" href="/linear_system/lsi/a_algebra_structure/index.html">(a) Algebra structure</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_fourier_transform_ii/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_fourier_series/index.html"><a class="padding" href="/linear_system/lsi/b_fourier_series/index.html">(b) Fourier series</a></li>
+            <li class="" data-nav-id="/linear_system/lsi/b_lti_circuit_analysis/index.html"><a class="padding" href="/linear_system/lsi/b_lti_circuit_analysis/index.html">(b) LSI &amp; Circuit analysis</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/linear_system/lsci/index.html"><a class="padding default-animation" href="/linear_system/lsci/index.html">LScI</a><ul id="R-subsections-225a203a12ff7283fbf1526b0b909bb9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/lai/index.html"><a class="padding" href="/linear_system/lai/index.html">LAI</a></li></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_analysis/index.html"><a class="padding default-animation" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1770287791"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1770287791" defer></script>
+    <script src="/js/theme.js?1770287791" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

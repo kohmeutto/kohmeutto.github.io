@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coordinate transformation :: 수리전자물리학</title>
+    <link>http://localhost:1313/tensor_analysis/coordinate_transformation/index.html</link>
+    <description>(a) Basis &amp; Components (a) Components</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tensor_analysis/coordinate_transformation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Basis &amp; Components</title>
+      <link>http://localhost:1313/tensor_analysis/coordinate_transformation/a_basis_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/coordinate_transformation/a_basis_components/index.html</guid>
+      <description>아래를 살펴보면, 성분과 기저변환은 서로 역변환 관계임을 알 수 있다.&#xA;1. 공변성분 &amp; 반변기저 ↔ 공변성분 &amp; 반변기저&#xD;$$&#xD;|\bar{g}^i\rangle&#xD;=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle&#xD;=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle,\quad&#xD;\bar{q}_i&#xD;=\langle\bar{g}_i|g^{j}\rangle q_j&#xD;=\frac{\partial q^j}{\partial \bar{q}^i}q_j&#xD;$$$$&#xD;|g^i\rangle&#xD;=\langle g^i|\bar{g}_{j}\rangle|\bar{g}^j\rangle&#xD;=\frac{\partial q^i}{\partial \bar{q}^j}|\bar{g}^j\rangle,\quad&#xD;q_i&#xD;=\langle g_i|\bar{g}^{j}\rangle\bar{q}_j&#xD;=\frac{\partial \bar{q}^j}{\partial q^i}\bar{q}_j&#xD;$$proof) 기저&#xA;$$&#xD;|\bar{g}^i\rangle&#xD;=\frac{\partial\bar{q}^i}{\partial\vec{x}}&#xD;=\frac{\partial\bar{q}^i}{\partial x_j}\hat{e}_j&#xD;=\frac{\partial\bar{q}^i}{\partial q^j}\frac{\partial q^j}{\partial x_j}\hat{e}_j&#xD;=\frac{\partial\bar{q}^i}{\partial q^j}|g^j\rangle&#xD;$$$$&#xD;=\frac{\partial\bar{q}^i}{\partial x^k}\frac{\partial x^k}{\partial q^j}|g^j\rangle&#xD;=\langle\bar{g}^i|g_{j}\rangle|g^j\rangle&#xD;$$proof) 성분</description>
+    </item>
+    <item>
+      <title>(a) Components</title>
+      <link>http://localhost:1313/tensor_analysis/coordinate_transformation/a_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/coordinate_transformation/a_components/index.html</guid>
+      <description>1. 다른 기저로의 변환: Dirac notation 사용&#xD;(1) 반변성분 ↔ 반변성분&#xA;$$&#xD;\bar{u}^i&#xD;=\langle\bar{g}^i|g_{j}\rangle u^j&#xD;=\frac{\partial\bar{q}^i}{\partial q^j}u^j&#xD;$$$$&#xD;u^i&#xD;=\langle g^i|\bar{g}_{j}\rangle \bar{u}^j&#xD;=\frac{\partial q^i}{\partial \bar{q}^j}\bar{u}^j&#xD;$$proof)&#xA;$$&#xD;u^j|g_j\rangle&#xD;=\bar{u}^i|\bar{g}_{i}\rangle&#xD;$$$$&#xD;\implies&#xD;\langle\bar{g}^i|u^j|g_j\rangle&#xD;=\langle\bar{g}^i|\bar{u}^i|\bar{g}_{i}\rangle&#xD;$$$$&#xD;\implies&#xD;\bar{u}^i&#xD;=\langle\bar{g}^i|g_j\rangle u^j&#xD;$$$$&#xD;\langle\bar{g}^i|g_{j}\rangle&#xD;=\frac{\partial\bar{q}^i}{\partial\vec{x}}\cdot\frac{\partial\vec{x}}{\partial q^j}&#xD;=\frac{\partial\bar{q}^i}{\partial x_k}\frac{\partial x_k}{\partial q^j}&#xD;=\frac{\partial\bar{q}^i}{\partial q^j}&#xD;$$(2) 공변성분 ↔ 공변성분&#xA;$$&#xD;\bar{u}_i&#xD;=\langle\bar{g}_i|g^{j}\rangle u_j&#xD;=\frac{\partial q^j}{\partial \bar{q}^i}u_j&#xD;$$$$&#xD;u_i&#xD;=\langle g_i|\bar{g}^j\rangle \bar{u}_j&#xD;=\frac{\partial \bar{q}^j}{\partial q^i}\bar{u}_j&#xD;$$(3) 반변성분 ↔ 공변성분</description>
+    </item>
+  </channel>
+</rss>
