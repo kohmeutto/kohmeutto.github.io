@@ -3,7 +3,7 @@
   <channel>
     <title>Eigenvalue problem :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_algebra/eigenvalue_problem/index.html</link>
-    <description>(b) Space&#xD;(b) Eigenvalue &amp; Eigenvector&#xD;(b) Spectral theory&#xD;(b) Function of operators</description>
+    <description>(b) Space&#xD;(b) Eigenvalue &amp; Eigenvector&#xD;(b) Spectral theory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_algebra/eigenvalue_problem/index.xml" rel="self" type="application/rss+xml" />
@@ -27,13 +27,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/b_spectral_theory/index.html</guid>
       <description>1. Spectral theroy&#xD;고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.&#xA;$$&#xD;\hat{A}|v\rangle=|f\rangle&#xD;$$(1) 입력벡터&#xA;열벡터 $$&#xD;|v\rangle = \sum_i \alpha_i |\lambda_i\rangle&#xD;$$ 함수벡터 $$&#xD;|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle&#xD;$$(2) 출력벡터&#xA;열벡터 $$&#xD;|f\rangle = \sum_i \beta_i |\lambda_i\rangle&#xD;$$ 함수벡터 $$&#xD;|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle&#xD;$$(3) 연산자, 스팩트럼 분해(대각화)</description>
-    </item>
-    <item>
-      <title>(b) Function of operators</title>
-      <link>http://localhost:1313/linear_algebra/eigenvalue_problem/b_function_of_operators/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/linear_algebra/eigenvalue_problem/b_function_of_operators/index.html</guid>
-      <description>본 챕터는 단순히 연산자에 함수를 대입하는 기계적 요령을 넘어, 어떻게 스칼라 함수 $f(x)$를 연산자 함수 $f(\hat{A})$로 확장할 수 있는가에 대한 수학적 정당성을 부여하는 것을 목표로 한다. 여기에는 해석적 접근(Taylor Series), 대수적 접근(Spectral Decomposition), 그리고 가장 일반적인 복소 해석적 접근(Cauchy Integral) 세 가지 방법이 존재하며, 이들이 상호 일관됨을 증명한다.&#xA;X.1 서론: 문제의 제기&#xD;스칼라 변수 $x \in \mathbb{C}$에 대한 함수 $f(x)$가 주어졌을 때(예: $e^x, \sin x, \sqrt{x}$), 선형 연산자 $\hat{A}$에 대해 $f(\hat{A})$를 정의하고자 한다.</description>
     </item>
   </channel>
 </rss>
