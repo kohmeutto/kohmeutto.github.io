@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. Contraction 연산자1) 정의
+정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.
+$$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.
+부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Contraction :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Contraction 연산자1) 정의
+정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.
+$$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.
+부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Contraction :: 수리전자물리학">
+    <meta property="og:description" content="1. Contraction 연산자1) 정의
+정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.
+$$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.
+부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Contraction :: 수리전자물리학">
+    <meta itemprop="description" content="1. Contraction 연산자1) 정의
+정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.
+$$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.
+부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.">
+    <meta itemprop="wordCount" content="1523">
+    <title>(b) Contraction :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779082393" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779082393" defer></script>
+    <script src="/js/search-lunr.js?1779082393" defer></script>
+    <script src="/js/search.js?1779082393" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779082393";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779082393" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779082393" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779082393" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779082393" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779082393" rel="stylesheet">
+    <link href="/css/theme.css?1779082393" rel="stylesheet">
+    <link href="/css/format-html.css?1779082393" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/normal_operators\/b_contraction\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/normal_operators/b_contraction/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-contraction-연산자">1. Contraction 연산자</a></li>
+        <li><a href="#2-고유값은-닫힌-단위-원판-내부에-있다">2. 고유값은 닫힌 단위 원판 내부에 있다</a></li>
+        <li><a href="#3-네-가지-정규-연산자의-통합">3. 네 가지 정규 연산자의 통합</a></li>
+        <li><a href="#4-기본-성질">4. 기본 성질</a></li>
+        <li><a href="#5-hermitian-과의-변환-상반평면으로의-일반화">5. Hermitian 과의 변환: 상반평면으로의 일반화</a></li>
+        <li><a href="#6-1-parameter-contraction-semigroup">6. 1-Parameter Contraction Semigroup</a></li>
+        <li><a href="#7-닫힌-시스템과-열린-시스템">7. 닫힌 시스템과 열린 시스템</a></li>
+        <li><a href="#8-예">8. 예</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/normal_operators/index.html"><span itemprop="name">Normal operators</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Contraction</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/b_unitary/index.html" title="(b) Unitary (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/b_dilation/index.html" title="(b) Dilation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-contraction">(b) Contraction</h1>
+
+<hr>
+<h3 id="1-contraction-연산자">1. Contraction 연산자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 정의</strong></p>
+<p>정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 <strong>contraction (수축) 연산자</strong> 라 한다.</p>
+$$
+\|\hat{T}|\psi\rangle\| \leq \|\psi\|
+$$<p>즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.</p>
+<p>부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| < \|\psi\|$ — 이를 <strong>strict contraction</strong> 이라 한다.</p>
+<p><strong>2) 물리적 의미</strong></p>
+<p>Contraction 연산자는 작용 후 벡터의 노름이 감소하는 변환을 표현한다. 양자역학에서 노름의 제곱이 확률을 의미하므로, contraction 변환은 <strong>확률이 감소하는 변환</strong> 을 기술한다.</p>
+<p>이는 unitary (확률 보존) 와 대비된다. 환경과 결합된 시스템 (열린 시스템) 에서 시스템 외부로 확률이 누출되는 현상이 자연스러운 예 — NEGF 의 시간 진화가 대표적.</p>
+<hr>
+<h3 id="2-고유값은-닫힌-단위-원판-내부에-있다">2. 고유값은 닫힌 단위 원판 내부에 있다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Contraction 연산자의 고유값은 모두 절댓값이 1 이하인 복소수이다.</p>
+$$
+\sigma(\hat{T}) \subset \{\lambda \in \mathbb{C} : |\lambda| \leq 1\} = \overline{\mathbb{D}}
+$$<p>복소 평면에서 닫힌 단위 원판 ($\overline{\mathbb{D}}$) 안에 위치. Strict contraction 의 경우 열린 단위 원판 (단위 원 경계 미포함) 내부.</p>
+<p>proof)</p>
+<p>$\hat{T}|v\rangle = \lambda|v\rangle$ 가정. 노름 계산:</p>
+$$
+\|\hat{T}|v\rangle\|^2 = \|\lambda|v\rangle\|^2 = |\lambda|^2\,\|v\|^2
+$$<p>Contraction 조건 $\|\hat{T}|v\rangle\|^2 \leq \|v\|^2$ 대입:</p>
+$$
+|\lambda|^2\,\|v\|^2 \leq \|v\|^2
+$$<p>$\|v\|^2 > 0$ 이므로 $|\lambda|^2 \leq 1$, 즉 $|\lambda| \leq 1$.</p>
+<p>Strict contraction 의 경우 부등호가 strict 이므로 $|\lambda| < 1$.</p>
+<hr>
+<h3 id="3-네-가지-정규-연산자의-통합">3. 네 가지 정규 연산자의 통합<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지 도입한 정규 연산자들의 고유값 위치를 정리하면 다음과 같다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>연산자</th>
+          <th>정의</th>
+          <th>고유값 위치</th>
+          <th>복소 평면</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hermitian</td>
+          <td>$\hat{H}^\dagger = \hat{H}$</td>
+          <td>$\lambda \in \mathbb{R}$</td>
+          <td>실수 직선</td>
+      </tr>
+      <tr>
+          <td>Anti-Hermitian</td>
+          <td>$\hat{A}^\dagger = -\hat{A}$</td>
+          <td>$\lambda \in i\mathbb{R}$</td>
+          <td>허수 축</td>
+      </tr>
+      <tr>
+          <td>Unitary</td>
+          <td>$\hat{U}^\dagger\hat{U} = \hat{I}$</td>
+          <td>$\vert\lambda\vert = 1$</td>
+          <td>단위 원 위</td>
+      </tr>
+      <tr>
+          <td>Contraction</td>
+          <td>$\Vert\hat{T}\psi\Vert \leq \Vert\psi\Vert$</td>
+          <td>$\vert\lambda\vert \leq 1$</td>
+          <td>단위 원판 내부</td>
+      </tr>
+  </tbody>
+</table>
+<p>네 가지 정의가 모두 한 단계 안에 고유값의 복소 평면 위에서의 위치를 결정한다. 각 정의가 본질적으로 spectrum 의 기하학적 제약을 표현한다.</p>
+<p>Unitary 와 contraction 의 관계: unitary 는 contraction 의 특수 경우이다. 단위 원이 단위 원판의 경계이므로, 모든 unitary 는 자동으로 contraction (노름 보존이 노름 비증가의 특수 경우). 반대로 contraction 중에서 노름을 정확히 보존하는 것이 unitary.</p>
+<hr>
+<h3 id="4-기본-성질">4. 기본 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 거듭제곱의 거동</strong></p>
+<p>Strict contraction $\hat{T}$ ($|\lambda_n| < 1$ for all $n$) 의 거듭제곱은 0 으로 수렴.</p>
+$$
+\hat{T}^n \to 0 \quad (n \to \infty)
+$$<p>proof) Spectral 분해 $\hat{T} = \sum_n \lambda_n|v_n\rangle\langle v_n|$ 에서</p>
+$$
+\hat{T}^n = \sum_k \lambda_k^n|v_k\rangle\langle v_k|
+$$<p>$|\lambda_k| < 1$ 이므로 $\lambda_k^n \to 0$, 따라서 $\hat{T}^n \to 0$.</p>
+<p>Non-strict contraction (단위 원 경계 포함) 에서는 일반적으로 수렴하지 않을 수 있다. 단위 원 위에 있는 고유값에 대응하는 부분이 영원히 진동.</p>
+<p><strong>2) 노름의 감쇠율</strong></p>
+<p>각 고유 상태 $|v_n\rangle$ 에 대해 $\hat{T}^n|v_k\rangle = \lambda_k^n|v_k\rangle$, 노름 $|\lambda_k|^n$. 가장 큰 $|\lambda_k|$ ($= r(\hat{T})$ = spectral radius) 가 점근적 감쇠율 결정.</p>
+$$
+\|\hat{T}^n\| \approx r(\hat{T})^n \quad (n \to \infty)
+$$<p><strong>3) 합성</strong></p>
+<p>두 contraction 의 곱은 contraction.</p>
+$$
+\|\hat{T}_1\hat{T}_2|\psi\rangle\| \leq \|\hat{T}_2|\psi\rangle\| \leq \|\psi\|
+$$<p>두 단계의 contraction 부등식을 차례로 적용. (단, 두 contraction 이 가환할 때만 결과도 정규 contraction.)</p>
+<hr>
+<h3 id="5-hermitian-과의-변환-상반평면으로의-일반화">5. Hermitian 과의 변환: 상반평면으로의 일반화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§3 의 비교표에서 보았듯, unitary 는 spectrum 이 단위 원 위 (실수 직선의 위로 휘어진 형태), contraction 은 단위 원판 내부. b_unitary.md §5 에서 Hermitian (실수 직선) 과 unitary (단위 원) 사이의 변환 $\hat{U} = e^{i\hat{H}}$ 가 spectral 매핑 $x \mapsto e^{ix}$ 의 functional calculus 표현임을 보았다.</p>
+<p>자연스러운 일반화 질문: contraction (단위 원판 내부) 와 어떤 연산자 사이의 변환이 있는가?</p>
+<p><strong>1) 복소 평면 매핑: 상반평면 → 단위 원판</strong></p>
+<p>지수 함수 $f(z) = e^{iz}$ 를 복소수 $z$ 전체로 확장한다. $z = \theta + i\beta$ 라면</p>
+$$
+e^{iz} = e^{i(\theta + i\beta)} = e^{i\theta}\cdot e^{-\beta}
+$$<p>절댓값 $|e^{iz}| = e^{-\beta}$.</p>
+<p>세 가지 경우:</p>
+<p>| $z$ 의 위치 | $\beta$ | $|e^{iz}|$ | $e^{iz}$ 의 위치 |
+|&mdash;|&mdash;|&mdash;|&mdash;|
+| 실수 직선 | $\beta = 0$ | $= 1$ | 단위 원 위 |
+| 상반평면 | $\beta > 0$ | $< 1$ | 단위 원판 내부 |
+| 하반평면 | $\beta < 0$ | $> 1$ | 단위 원판 외부 |</p>
+<p>따라서 $e^{iz}$ 가 상반평면을 단위 원판 내부로 매핑한다.</p>
+<p><strong>2) Contraction 의 표현</strong></p>
+<p>정규 연산자 $\hat{Z}$ 의 고유값이 모두 상반평면 ($\text{Im}\,\lambda_n \geq 0$) 에 있다고 가정. Functional calculus 로</p>
+$$
+\hat{T} = e^{i\hat{Z}} = \sum_n e^{i\lambda_n}|v_n\rangle\langle v_n|
+$$<p>각 $|e^{i\lambda_n}| = e^{-\text{Im}\,\lambda_n} \leq 1$. 따라서 $\hat{T}$ 의 spectrum 이 단위 원판 내부 — <strong>contraction</strong>.</p>
+<p>명시적으로: $\hat{Z} = \hat{H}_1 + i\hat{H}_2$ 로 분해할 수 있을 때 ($\hat{H}_1, \hat{H}_2$ Hermitian), 정규 조건과 상반평면 조건이 다음과 같이 표현된다.</p>
+<ul>
+<li>$\hat{Z}$ 정규: $[\hat{H}_1, \hat{H}_2] = 0$</li>
+<li>Spectrum 상반평면: $\hat{H}_2 \geq 0$ (양의 정부호)</li>
+</ul>
+<p>두 Hermitian 부분이 가환하고 허수 부분이 양의 정부호일 때 $\hat{Z}$ 가 상반평면 정규 연산자이며, $e^{i\hat{Z}}$ 가 contraction.</p>
+<p><strong>3) 단위 원 경계와 strict contraction</strong></p>
+<p>위 표현에서 $|e^{i\lambda_n}| < 1$ 의 조건은 $\text{Im}\,\lambda_n > 0$ (strict 상반평면). 즉 $\hat{H}_2 > 0$ (strict positive definite). 이 경우 $\hat{T}$ 가 strict contraction.</p>
+<p>$\hat{H}_2 = 0$ 이면 $\hat{Z}$ 가 Hermitian 으로 환원되고 $e^{i\hat{Z}}$ 가 unitary (단위 원 경계). 그 사이 — 일부 고유값은 단위 원 위, 일부는 내부 — 의 경우도 가능.</p>
+<p><strong>4) NEGF 의 시간 진화와의 직접 연결</strong></p>
+<p>NEGF 의 effective Hamiltonian (가환 경우, 정규)</p>
+$$
+\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Delta} - \frac{i}{2}\hat{\Gamma}
+$$<p>$\hat{H}_s + \hat{\Delta}$ 가 Hermitian, $\hat{\Gamma} \geq 0$ 이 Hermitian.</p>
+<p>시간 진화 연산자</p>
+$$
+\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar} = e^{i\hat{Z}(t)}, \quad \hat{Z}(t) = -\frac{t}{\hbar}\hat{H}_{\text{eff}}
+$$<p>$\hat{Z}(t)$ 의 Hermitian / anti-Hermitian 분해:</p>
+$$
+\hat{Z}(t) = -\frac{t}{\hbar}(\hat{H}_s + \hat{\Delta}) + i\,\frac{t}{2\hbar}\hat{\Gamma}
+$$<p>$t > 0$ 에서 허수 부분의 계수 $t\hat{\Gamma}/(2\hbar) \geq 0$ — 상반평면 정규 연산자.</p>
+<p>따라서 $\hat{T}(t) = e^{i\hat{Z}(t)}$ 가 contraction. NEGF 의 시간 진화가 정확히 §5-(2) 의 contraction 표현의 한 사례.</p>
+<p>이 결과는 NEGF 의 열린 시스템 시간 진화가 contraction 구조를 가진다는 사실의 명시적 도출이다.</p>
+<hr>
+<h3 id="6-1-parameter-contraction-semigroup">6. 1-Parameter Contraction Semigroup<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Unitary 의 경우 시간 진화 unitary 들의 모음 $\{\hat{U}(t)\}_{t \in \mathbb{R}}$ 이 1-parameter unitary 군 (group) 을 이루었다 (b_unitary.md §7). Contraction 에서는 비슷한 구조 — 그러나 <strong>semigroup</strong> — 이 등장.</p>
+<p><strong>1) 1-parameter semigroup 의 정의</strong></p>
+<p>연산자들의 모음 $\{\hat{T}(t)\}_{t \geq 0}$ 이 다음을 만족할 때 1-parameter semigroup 이라 한다.</p>
+<p>(a) $\hat{T}(0) = \hat{I}$
+(b) $\hat{T}(t + s) = \hat{T}(t)\hat{T}(s)$ for $t, s \geq 0$
+(c) $t \to s$ 일 때 $\hat{T}(t)|v\rangle \to \hat{T}(s)|v\rangle$ (연속성)</p>
+<p>군 (group) 의 정의 (b_unitary.md §7) 와 차이는 parameter 가 $t \in [0, \infty)$ — 음수 시간이 없음. 즉 시간 역행이 가능하지 않다. 시간 진화가 단방향.</p>
+<p>각 $\hat{T}(t)$ 가 contraction 이면 <strong>1-parameter contraction semigroup</strong>.</p>
+<p><strong>2) 군이 아닌 semigroup 인 이유</strong></p>
+<p>Contraction 의 거듭제곱은 노름을 감쇠시킨다. 만약 역연산자 $\hat{T}(t)^{-1}$ 가 존재한다면, 그것은 노름을 증가시키는 변환 — contraction 이 아님. 따라서 contraction 의 역원이 일반적으로 존재하지 않고, 역시간 진화가 불가능하다.</p>
+<p>물리적 의미: 열린 시스템에서 환경으로 빠져나간 정보는 다시 복원할 수 없다. <strong>비가역성</strong> 의 수학적 표현.</p>
+<p><strong>3) Generator 와 Hille-Yoshida 정리</strong></p>
+<p>1-parameter 군의 경우 Stone 정리가 generator 를 Hermitian (또는 anti-Hermitian 으로) 결정했다. Contraction semigroup 에서는 비슷한 정리 — <strong>Hille-Yoshida 정리</strong> — 가 작동한다.</p>
+<p>대략적 statement: 1-parameter contraction semigroup 의 generator $\hat{X}$ 는 다음 조건을 만족한다.</p>
+$$
+\hat{T}(t) = e^{t\hat{X}}, \quad \hat{X} \text{ 의 spectrum } \subset \{z : \text{Re}\,z \leq 0\}
+$$<p>Generator 의 spectrum 이 <strong>닫힌 좌반평면</strong> 에 위치. 양의 무한대로 발산하는 진폭이 없도록 강제하는 조건.</p>
+<p>NEGF 의 케이스에서: $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$, generator $\hat{X} = -i\hat{H}_{\text{eff}}/\hbar$. $\hat{H}_{\text{eff}}$ 의 spectrum 이 하반평면 ($\text{Im}\,\lambda_n \leq 0$) 이면 $-i\hat{H}_{\text{eff}}/\hbar$ 의 spectrum 이 좌반평면 ($\text{Re}\,\lambda_n \leq 0$) — Hille-Yoshida 조건 만족.</p>
+<hr>
+<h3 id="7-닫힌-시스템과-열린-시스템">7. 닫힌 시스템과 열린 시스템<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지의 결과를 종합하면 정규 연산자 framework 안에서 닫힌 / 열린 시스템의 자연스러운 비교가 가능하다.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>닫힌 시스템</th>
+          <th>열린 시스템</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hamiltonian</td>
+          <td>$\hat{H}$ Hermitian</td>
+          <td>$\hat{H}_{\text{eff}} = \hat{H} + \hat{\Sigma}^R$ 비-Hermitian normal</td>
+      </tr>
+      <tr>
+          <td>Spectrum 위치</td>
+          <td>실수 직선</td>
+          <td>하반평면 ($\text{Im}\,\lambda_n \leq 0$)</td>
+      </tr>
+      <tr>
+          <td>시간 진화</td>
+          <td>$e^{-i\hat{H}t/\hbar}$ Unitary</td>
+          <td>$e^{-i\hat{H}_{\text{eff}}t/\hbar}$ Contraction</td>
+      </tr>
+      <tr>
+          <td>노름 거동</td>
+          <td>보존</td>
+          <td>감쇠</td>
+      </tr>
+      <tr>
+          <td>진화 구조</td>
+          <td>1-parameter 군 (Stone)</td>
+          <td>1-parameter semigroup (Hille-Yoshida)</td>
+      </tr>
+      <tr>
+          <td>가역성</td>
+          <td>가역</td>
+          <td>비가역</td>
+      </tr>
+      <tr>
+          <td>물리적 의미</td>
+          <td>확률 보존</td>
+          <td>환경으로 확률 누출</td>
+      </tr>
+  </tbody>
+</table>
+<p>두 시스템이 정규 연산자 framework 안의 두 극단 (단위 원 위 vs 단위 원판 내부). 각자의 generator 가 다른 spectrum 위치 (실수 직선 vs 하반평면) 를 갖는 정규 연산자.</p>
+<p>이 비교가 NEGF 의 수학적 위치를 명확히 한다. NEGF 의 시간 진화는 정규 contraction semigroup 의 특수한 경우 — $\hat{H}_{\text{eff}}$ 의 Hermitian/anti-Hermitian 부분이 가환할 때.</p>
+<p>비가환 경우 (일반 NEGF) 는 비정규 영역으로 들어가며, 별도 framework (다음 챕터) 가 필요하다.</p>
+<hr>
+<h3 id="8-예">8. 예<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 가장 단순한 strict contraction</strong></p>
+$$
+\hat{T} = c\hat{I}, \quad 0 < c < 1
+$$<p>스칼라 곱. 고유값 = $c$, 모든 고유벡터가 단일 고유공간.</p>
+<p>거듭제곱: $\hat{T}^n = c^n\hat{I} \to 0$. 모든 벡터의 노름이 $c^n$ 으로 감쇠.</p>
+<p>Hermitian generator 와의 관계: $\hat{T} = e^{i\hat{Z}}$ where $\hat{Z} = -i\ln(c)\hat{I}$. 즉 $\hat{Z}$ 의 고유값 = $-i\ln(c) = i\ln(1/c)$ (순허수, 상반평면 — $c < 1$ 이므로 $\ln(1/c) > 0$).</p>
+<p><strong>2) 2-레벨 damped 시스템</strong></p>
+<p>상태 공간 $\mathbb{C}^2$, contraction 연산자:</p>
+$$
+\hat{T} = e^{-\gamma_1/2}|0\rangle\langle 0| + e^{-\gamma_2/2}|1\rangle\langle 1|
+$$<p>$\gamma_1, \gamma_2 > 0$. 두 고유값 $e^{-\gamma_1/2}, e^{-\gamma_2/2}$ 모두 단위 원판 내부 (양의 실수 직선의 한 부분).</p>
+<p>물리적 의미: $|0\rangle, |1\rangle$ 두 상태가 각각 다른 비율로 환경으로 누출. 노름 감쇠 비율이 다름.</p>
+<p>NEGF 와의 연결: 두 lead 와 결합된 2-level system 의 시간 진화의 한 모형. $\gamma_{1,2}$ 가 각 상태의 lifetime 의 역수.</p>
+<p><strong>3) NEGF 시간 진화 (가환 케이스)</strong></p>
+<p>§5-(4) 에서 도출한 결과를 명시적으로 본다.</p>
+<p>시스템 $\hat{H}_s$ 의 고유 상태 $\{\psi_n, \epsilon_n\}$, 가환 결합 $\hat{\Gamma}$ 의 같은 고유 기저에서의 고유값 $\gamma_n$.</p>
+<p>시간 진화:</p>
+$$
+\hat{T}(t)|\psi_n\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|\psi_n\rangle
+$$<p>진폭 $e^{-\gamma_n t/(2\hbar)}$ 으로 시간에 따라 감쇠. 평균 수명 $\tau_n = \hbar/\gamma_n$.</p>
+<p>거듭제곱 거동: $\hat{T}(t)^k = \hat{T}(kt)$ 이므로 $t \to \infty$ 한계에서 모든 상태가 0 으로 수렴 — 결국 시스템 전체가 환경으로 누출.</p>
+<p>이 결과가 NEGF 의 산란 영역의 입자가 시간이 지나면 결국 모두 환경 (lead) 으로 빠져나간다는 사실의 수학적 표현. 정상상태에서는 lead 가 동시에 입자를 주입하기 때문에 평형이 형성되며, 이것이 lesser self-energy $\hat{\Sigma}^<$ 가 표현하는 정보 (NEGF 챕터 참조).</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_adjoint/index.html"><a class="padding" href="/vector_operator/normal_operators/b_adjoint/index.html">(b) Adjoint</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/b_normal_operators/index.html">(b) Normal operators</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_anti_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_unitary/index.html"><a class="padding" href="/vector_operator/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
+            <li class="active " data-nav-url="/vector_operator/normal_operators/b_contraction/index.html"><a class="padding" href="/vector_operator/normal_operators/b_contraction/index.html">(b) Contraction</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_dilation/index.html"><a class="padding" href="/vector_operator/normal_operators/b_dilation/index.html">(b) Dilation</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_symplectic_matrix/index.html"><a class="padding" href="/vector_operator/normal_operators/b_symplectic_matrix/index.html">(a) Symplectic matrix</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/function_of_operators/index.html"><a class="padding" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/non-normal_operators/index.html"><a class="padding" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/greens_function/index.html"><a class="padding" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/quantum_transform/index.html"><a class="padding" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779082393"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779082393" defer></script>
+    <script src="/js/theme.js?1779082393" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

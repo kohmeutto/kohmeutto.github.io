@@ -3,7 +3,7 @@
   <channel>
     <title>Normal operators :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
-    <description>(b) Adjoint&#xD;(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(a) Symplectic matrix</description>
+    <description>(b) Adjoint&#xD;(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Contraction&#xD;(b) Dilation&#xD;(a) Symplectic matrix</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/normal_operators/index.xml" rel="self" type="application/rss+xml" />
@@ -41,6 +41,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</guid>
       <description>1. Unitary 연산자&#xD;1) 정의&#xA;연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 유니타리 (Unitary) 연산자 라 한다.&#xA;$$ \hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I} $$즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건은 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.&#xA;2) 물리적 의미&#xA;유니타리 연산자는 상태 벡터의 노름을 보존하는 모든 변환을 나타낸다. 양자역학에서 확률 보존이 필요한 모든 변환 — 시간 진화, 회전, 위상 변환, 기저 변환 — 이 유니타리 연산자로 기술된다.</description>
+    </item>
+    <item>
+      <title>(b) Contraction</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html</guid>
+      <description>1. Contraction 연산자&#xD;1) 정의&#xA;정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.&#xA;$$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.&#xA;부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.</description>
+    </item>
+    <item>
+      <title>(b) Dilation</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</guid>
+      <description>1. Dilation 연산자&#xD;1) 정의&#xA;정규 연산자 $\hat{D}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 dilation (확장) 연산자 라 한다.&#xA;$$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 감소하지 않는다. 동등하게 작용소 노름의 역 부등식으로 표현하면 $\|\hat{D}^{-1}\| \leq 1$ (역원이 존재할 때).&#xA;부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{D}|\psi\rangle\| &gt; \|\psi\|$ — 이를 strict dilation 이라 한다.</description>
     </item>
     <item>
       <title>(a) Symplectic matrix</title>
