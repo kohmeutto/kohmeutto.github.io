@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NEGF :: 수리전자물리학</title>
+    <link>http://localhost:1313/greens_function/negf/index.html</link>
+    <description>(b) NEGF overview&#xD;(b) Retarded &amp; advanced GF&#xD;(b) Spectral function&#xD;(b) Lesser and greater GF&#xD;(b) Dyson equation and self-energy&#xD;(b) Keldysh contour formalism&#xD;(b) Langreth rules</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/greens_function/negf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) NEGF overview</title>
+      <link>http://localhost:1313/greens_function/negf/b_negf_overview/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_negf_overview/index.html</guid>
+      <description>1. 닫힌 시스템 그린함수의 한계와 NEGF 의 위치&#xD;이전 챕터 (Green’s function) 에서 다룬 그린함수는 다음 조건을 만족하는 시스템에 대한 것이었다. 시스템의 Hamiltonian $H$ 가 Hermitian 이고, 적절한 경계 조건 하에서 자기수반 연산자를 정의하며, 시스템이 외부 세계와 분리되어 있다 (닫힌 시스템). 이 조건들로부터 실수 고유값, 완비 biorthogonal 기저, 그리고 단일 그린함수 $G(E) = (E - H)^{-1}$ 가 도출되었으며, 이 하나의 객체가 시스템에 대한 모든 정보를 담았다.</description>
+    </item>
+    <item>
+      <title>(b) Retarded &amp; advanced GF</title>
+      <link>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</guid>
+      <description>1. 동기: 닫힌 시스템 그린함수의 문제&#xD;이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수&#xA;$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면&#xA;$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.</description>
+    </item>
+    <item>
+      <title>(b) Spectral function</title>
+      <link>http://localhost:1313/greens_function/negf/b_spectral_function/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_spectral_function/index.html</guid>
+      <description>1. 동기: 스펙트럼 정보의 순수한 추출&#xD;이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수&#xA;$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?&#xA;답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^+$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.</description>
+    </item>
+    <item>
+      <title>(b) Lesser and greater GF</title>
+      <link>http://localhost:1313/greens_function/negf/b_lesser_greater/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_lesser_greater/index.html</guid>
+      <description>1. 동기: 점유 정보의 별도 추적&#xD;이전 절에서 스펙트럼 함수 $A(E)$ 가 시스템의 어떤 상태가 어떤 에너지에 있는지를 담는 객체임을 보았다. 그러나 비평형 시스템의 관측량 계산에는 추가 정보가 필요하다 — 그 상태들이 얼마나 채워져 있는가 에 대한 정보. 즉 점유 (occupation) 정보.&#xA;평형 시스템에서는 이 정보가 Fermi-Dirac 분포 $f(E)$ 에 의해 결정되어 외부에서 단순히 주어진다. 시스템에 대해서는 스펙트럼 정보만 계산하면 모든 관측량이 따라온다.</description>
+    </item>
+    <item>
+      <title>(b) Dyson equation and self-energy</title>
+      <link>http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html</guid>
+      <description>1. 동기: 환경 자유도를 어떻게 흡수하는가&#xD;이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^&lt;$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.&#xA;핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.</description>
+    </item>
+    <item>
+      <title>(b) Keldysh contour formalism</title>
+      <link>http://localhost:1313/greens_function/negf/b_keldysh_contour/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_keldysh_contour/index.html</guid>
+      <description>1. 동기: 시간 영역 통합 framework 의 필요성&#xD;지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^&lt;, G^&gt;$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.&#xA;첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Langreth rules</title>
+      <link>http://localhost:1313/greens_function/negf/b_langreth_rules/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/b_langreth_rules/index.html</guid>
+      <description>1. 동기: Contour 에서 real-time 으로의 변환&#xD;이전 절에서 contour Dyson 방정식&#xA;$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) + \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.&#xA;핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_+$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.</description>
+    </item>
+  </channel>
+</rss>

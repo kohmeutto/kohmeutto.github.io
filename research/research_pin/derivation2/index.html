@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출작성자: 김기범, 윤영준 / 일자: 2026.03.26
+1. 물리적 시스템의 정의 및 지배 방정식본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) &lt; x \le d_{eff}$)으로 분리된다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Derivation2 :: 수리전자물리학">
+    <meta name="twitter:description" content="EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출작성자: 김기범, 윤영준 / 일자: 2026.03.26
+1. 물리적 시스템의 정의 및 지배 방정식본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) &lt; x \le d_{eff}$)으로 분리된다.">
+    <meta property="og:url" content="http://localhost:1313/research/research_pin/derivation2/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="Derivation2 :: 수리전자물리학">
+    <meta property="og:description" content="EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출작성자: 김기범, 윤영준 / 일자: 2026.03.26
+1. 물리적 시스템의 정의 및 지배 방정식본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) &lt; x \le d_{eff}$)으로 분리된다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Researches">
+    <meta itemprop="name" content="Derivation2 :: 수리전자물리학">
+    <meta itemprop="description" content="EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출작성자: 김기범, 윤영준 / 일자: 2026.03.26
+1. 물리적 시스템의 정의 및 지배 방정식본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) &lt; x \le d_{eff}$)으로 분리된다.">
+    <meta itemprop="wordCount" content="1346">
+    <title>Derivation2 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779077515" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779077515" defer></script>
+    <script src="/js/search-lunr.js?1779077515" defer></script>
+    <script src="/js/search.js?1779077515" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779077515";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779077515" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779077515" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779077515" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779077515" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779077515" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779077515" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779077515" rel="stylesheet">
+    <link href="/css/theme.css?1779077515" rel="stylesheet">
+    <link href="/css/format-html.css?1779077515" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/research_pin\/derivation2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/research/research_pin/derivation2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#ebic-기반-소수-캐리어-확산-길이-및-life-time-추출">EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출</a>
+      <ul>
+        <li><a href="#1-물리적-시스템의-정의-및-지배-방정식">1. 물리적 시스템의 정의 및 지배 방정식</a></li>
+        <li><a href="#2-중성-영역-확산-방정식의-일반해-유도">2. 중성 영역 확산 방정식의 일반해 유도</a></li>
+        <li><a href="#3-생성-전류">3. 생성 전류 </a></li>
+        <li><a href="#4-물리적-파라미터-캘리브레이션-및-수식-적용">4. 물리적 파라미터 캘리브레이션 및 수식 적용</a></li>
+        <li><a href="#5--추출을-위한-점근적-극한-처리-및-닫힌-형태-도출">5.  추출을 위한 점근적 극한 처리 및 닫힌 형태 도출</a></li>
+        <li><a href="#6-대수적-한계-극복-및-실효-물성-추출">6. 대수적 한계 극복 및 실효 물성 추출</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Researches</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/research_pin/index.html"><span itemprop="name">Reserch_PIN</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Derivation2</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/research_pin/derivation1/index.html" title="Derivation1 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/research_pa/index.html" title="Research_PA (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="derivation2">Derivation2</h1>
+
+<hr>
+<h2 id="ebic-기반-소수-캐리어-확산-길이-및-life-time-추출">EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>작성자: 김기범, 윤영준 / 일자: 2026.03.26</p>
+<hr>
+<h3 id="1-물리적-시스템의-정의-및-지배-방정식">1. 물리적 시스템의 정의 및 지배 방정식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) < x \le d_{eff}$)으로 분리된다.</p>
+<p><strong>1) 캐리어 연속 방정식 (Continuity Equation)의 도출</strong></p>
+<p>1차원 공간 내 임의의 미소 체적(단면적 $A$, 두께 $\Delta x$)에서 소수 캐리어(정공 기준)의 질량 보존 법칙은 다음과 같이 기술된다. 단위 시간당 정공 농도 $p$의 변화율은 정공 플럭스(Flux)의 발산, 체적 내 생성률 $G(x)$, 재결합률 $R$의 합으로 정의된다. 정공의 전류 밀도는 $J_p$이다.</p>
+$$
+\frac{\partial p}{\partial t} = -\frac{1}{q} \frac{\partial J_p}{\partial x} + G(x) - R
+$$<p>정상 상태($\partial p / \partial t = 0$)를 가정하고, 중성 영역 내에서는 전기장 $\mathcal{E} \approx 0$이므로 드리프트 성분이 소거된다. 정공의 순수 확산 전류 밀도는 Fick의 제1법칙에 따라 $J_p = -q D_p \frac{d(\Delta p)}{dx}$ 로 정의된다. 이를 연속 방정식에 대입한다.</p>
+$$
+0 = -\frac{1}{q} \frac{d}{dx} \left( -q D_p \frac{d\Delta p}{dx} \right) + G_0 - \frac{\Delta p}{\tau_p}
+$$$$
+0 = D_p \frac{d^2 \Delta p}{dx^2} + G_0 - \frac{\Delta p}{\tau_p}
+$$<p>양변을 정공 확산 계수 $D_p$로 나누고, $L_p^2 = D_p \tau_p$ 관계를 적용하면, 풀어야 할 2계 선형 비동차 상미분 방정식이 도출된다.</p>
+$$
+\frac{d^2 \Delta p(x)}{dx^2} - \frac{\Delta p(x)}{L_p^2} = -\frac{G_0}{D_p}
+$$<p>여기서 빔에 의한 생성 함수 $G(x)$는 빔 침투 깊이 내에서 상수 $G_0$로 균일하다고 가정한다.</p>
+<hr>
+<h3 id="2-중성-영역-확산-방정식의-일반해-유도">2. 중성 영역 확산 방정식의 일반해 유도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분 방정식의 일반해 $\Delta p(x)$는 우변이 0인 동차해 $\Delta p_h(x)$와, 상수항에 대한 특수해 $\Delta p_p(x)$의 합으로 구성된다.</p>
+<p><strong>1) 특수해 (Particular Solution) 도출</strong></p>
+<p>우변의 항 $-\frac{G_0}{D_p}$가 위치 $x$에 무관한 상수이므로, 미정계수법에 의해 특수해 $\Delta p_p(x) = K$ (상수)로 둔다.</p>
+$$
+\frac{d^2 (K)}{dx^2} - \frac{K}{L_p^2} = -\frac{G_0}{D_p} \implies -\frac{K}{L_p^2} = -\frac{G_0}{D_p}
+$$$$
+K = \frac{G_0 L_p^2}{D_p} = \frac{G_0 (D_p \tau_p)}{D_p} = G_0 \tau_p
+$$$$
+\Delta p_p(x) = G_0 \tau_p
+$$<p><strong>2) 동차해 (Homogeneous Solution) 도출</strong></p>
+<p>동차 방정식 $d^2 \Delta p_h/dx^2 - \Delta p_h/L_p^2 = 0$ 의 특성 방정식은 $r^2 - 1/L_p^2 = 0$ 이며, 근은 $r = \pm 1/L_p$ 이다. 공핍층 경계 $x=W$를 기점으로 쌍곡선 함수의 선형 결합으로 표현한다.</p>
+$$
+\Delta p_h(x) = C_1 \cosh\left(\frac{x-W}{L_p}\right) + C_2 \sinh\left(\frac{x-W}{L_p}\right)
+$$<p><strong>3) 일반해 (General Solution) 및 경계 조건 적용</strong></p>
+<p>특수해와 동차해를 합산한 일반해는 다음과 같다.</p>
+$$
+\Delta p(x) = C_1 \cosh\left(\frac{x-W}{L_p}\right) + C_2 \sinh\left(\frac{x-W}{L_p}\right) + G_0 \tau_p
+$$<p>경계조건1-공핍층 경계 ($x = W$): 내부의 강한 전기장에 의해 경계면에 도달한 정공은 즉시 휩쓸려가므로, 이 지점은 완전 흡수체(Perfect Sink)로 작용한다. $\Delta p(W) = 0$ 을 대입하면 $\cosh(0)=1, \sinh(0)=0$ 이므로 다음과 같이 $C_1$이 확정된다.</p>
+$$
+C_1 (1) + 0 + G_0 \tau_p = 0 \implies C_1 = -G_0 \tau_p
+$$<p>경계조건2-유효 후면 경계 ($x = d_{eff}$): 빔이 멈추는 물리적 침투 한계점에서는 캐리어가 재결합하여 소멸한다고 가정한다 ($\Delta p(d_{eff}) = 0$). 중성 영역의 길이를 $H = d_{eff} - W$ 로 치환하고 대입한다.</p>
+$$
+-G_0 \tau_p \cosh\left(\frac{H}{L_p}\right) + C_2 \sinh\left(\frac{H}{L_p}\right) + G_0 \tau_p = 0
+$$<p>쌍곡선 함수의 반각 공식($\cosh(2\theta) - 1 = 2\sinh^2(\theta)$ 및 $\sinh(2\theta) = 2\sinh(\theta)\cosh(\theta)$)을 적용하여 $C_2$에 대해 정리한다.</p>
+$$
+C_2 \sinh\left(\frac{H}{L_p}\right) = G_0 \tau_p \left[ \cosh\left(\frac{H}{L_p}\right) - 1 \right]
+$$$$
+C_2 = G_0 \tau_p \frac{2\sinh^2\left(\frac{H}{2L_p}\right)}{2\sinh\left(\frac{H}{2L_p}\right)\cosh\left(\frac{H}{2L_p}\right)} = G_0 \tau_p \tanh\left(\frac{H}{2L_p}\right)
+$$<hr>
+<h3 id="3-생성-전류">3. 생성 전류 $I_{gen}(V)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>총 생성 전류는 공핍층 내부의 드리프트 전류($I_{drift}$)와 중성 영역에서 확산해 넘어온 확산 전류($I_{diff}$)의 합이다.</p>
+$$
+I_{gen}(V) = I_{drift}(V) + I_{diff}(V)
+$$<p><strong>1) 드리프트 전류 ($I_{drift}$)</strong></p>
+<p>전기장 내($0 \le x \le W$)에서 생성된 정공은 100% 수집되므로, 체적 내 총 생성률을 합산한다. ($A$는 소자의 단면적)</p>
+$$
+I_{drift}(V) = q A \int_{0}^{W(V)} G_0 dx = q A G_0 W(V)
+$$<p><strong>2) 확산 전류 ($I_{diff}$)</strong></p>
+<p>$x=W$ 경계면으로 확산되어 들어오는 전류의 크기를 구한다. $I_{diff} = q A D_p \left| d\Delta p/dx \right|_{x=W}$ 이다. 일반해를 미분하여 $x=W$를 대입한다.</p>
+$$
+\left. \frac{d\Delta p}{dx} \right|_{x=W} = \frac{C_2}{L_p} = \frac{G_0 \tau_p}{L_p} \tanh\left(\frac{d_{eff}-W}{2L_p}\right)
+$$<p>$D_p \tau_p = L_p^2$ 이므로 확산 전류는 다음과 같이 정리된다.</p>
+$$
+I_{diff}(V) = q A D_p \frac{G_0 \tau_p}{L_p} \tanh\left(\frac{d_{eff}-W}{2L_p}\right) = q A G_0 L_p \tanh\left(\frac{d_{eff}-W}{2L_p}\right)
+$$<p><strong>3) 총 생성 전류 초월 방정식 결합</strong></p>
+<p>합산하여 초기 모델을 완성한다.</p>
+$$
+I_{gen}(V) = q A G_0 \left[ W(V) + L_p \tanh\left(\frac{d_{eff}-W(V)}{2L_p}\right) \right]
+$$<hr>
+<h3 id="4-물리적-파라미터-캘리브레이션-및-수식-적용">4. 물리적 파라미터 캘리브레이션 및 수식 적용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>빔의 물리량($25 \text{ keV}, 9.2 \text{ nA}$)과 타겟 물질(4H-SiC)의 물성을 통해 선행 계수 $q A G_0$를 확정한다.</p>
+<p><strong>1) 빔 침투 깊이 ($R_e$) 도출 (ref: 10.1088/0022-3727/5/1/308)</strong></p>
+$$
+R_e = \frac{0.0276 \cdot A_{eff} \cdot E_b^{1.67}}{\rho \cdot Z_{eff}^{0.89}}
+$$<ul>
+<li>$E_b = 25 \text{ keV}$</li>
+<li>4H-SiC 유효 원자량 $A_{eff} = 20.05 \text{ g/mol}$ (Si-28.085, C-12.011)</li>
+<li>4H-SiC 유효 원자 번호 $Z_{eff} = 10$ (Si-14, C-6)</li>
+<li>4H-SiC 밀도 $\rho = 3.21 \text{ g/cm}^3$ (ref: <a href="http://www.yeeyoung.co.kr/spec/SiC_Ceramic.htm" rel="external">http://www.yeeyoung.co.kr/spec/SiC_Ceramic.htm</a>)</li>
+</ul>
+$$
+R_e = \frac{0.0276 \cdot 20.05 \cdot (25)^{1.67}}{3.21 \cdot (10)^{0.89}} \approx 4.8 \text{ }\mu\text{m}
+$$<p><strong>2) 단위 길이당 최대 생성 전류 상수 계산</strong></p>
+<p>4H-SiC의 전자-정공 쌍 생성 에너지 $E_{ehp} \approx 7.8 \text{ eV}$ (ref: 10.1109/TNS.2003.807855) 를 적용하여 입사 전자 1개당 생성되는 증폭 계수 $M$을 구한다.</p>
+$$
+M = \frac{25,000 \text{ eV}}{7.8 \text{ eV}} \approx 3205.13
+$$<p>최대 생성 총 전류 $I_{max}$는 다음과 같다.</p>
+$$
+I_{max} = 9.2 \text{ nA} \times 3205.13 = 29.487 \text{ }\mu\text{A}
+$$<p>총 전류가 빔 침투 깊이 내에서 균일하게 생성될 때, 1차원 선행 계수($\mu\text{A}/\mu\text{m}$)는 대수적으로 상수화된다.</p>
+$$
+q A G_0 = \frac{I_{max}}{d_{eff}} = \frac{29.487 \text{ }\mu\text{A}}{4.8 \text{ }\mu\text{m}} = 6.143 \text{ }\mu\text{A}/\mu\text{m}
+$$<p>파라미터가 확정된 최종 모델 방정식은 아래와 같다.</p>
+$$
+I_{gen}(V) = 6.143 \left[ W(V) + L_p \tanh\left( \frac{4.8 - W(V)}{2L_p} \right) \right], \quad W(V) = \sqrt{\frac{2\varepsilon_s}{q N_D}(V_{bi} - V)}
+$$<hr>
+<h3 id="5--추출을-위한-점근적-극한-처리-및-닫힌-형태-도출">5. $L_p$ 추출을 위한 점근적 극한 처리 및 닫힌 형태 도출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위 방정식은 $\tanh$ 인자 내부에 소수 캐리어 확산 길이 $L_p$가 분모로 포함되어 있어 완전한 해석적 역함수가 존재하지 않는다. 명시적 추출을 위해 물리적 기하 극한 조건을 적용한다. 공핍층 두께 $W(V)$를 제어하여 중성 영역의 길이 $H = 4.8 - W(V)$ 가 확산 거리 $L_p$에 비해 충분히 길게 확보된다면($H \ge 5L_p$), 수학적으로 다음의 점근적 극한이 성립한다.</p>
+$$
+\lim_{x \to \infty} \tanh(x) = 1 \implies \tanh\left( \frac{4.8 - W(V)}{2L_p} \right) \approx 1
+$$<p>위 극한 조건을 만족하는 특정 데이터 포인트 $\left(V, I_{gen}\right)$에 대하여, 초월 항이 상수 $1$로 붕괴하며 수식은 $L_p$를 완벽하게 독립시킬 수 있는 1차 선형 방정식으로 표현된다.</p>
+$$
+I_{gen}(V) = 6.143 \left[ W(V) + L_p \cdot 1 \right]
+$$<p>이를 $L_p$에 대해 이항하여 정리하면, 계측된 데이터로부터 즉각적으로 물성을 분리해 낼 수 있는 대수적 컴팩트 식(Compact formula)이 도출된다.</p>
+$$
+L_p = \frac{I_{gen}(V)}{6.143} - W(V) \quad (\text{단위: }\mu\text{m})
+$$<hr>
+<h3 id="6-대수적-한계-극복-및-실효-물성-추출">6. 대수적 한계 극복 및 실효 물성 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞선 5절에서 유도된 닫힌 형태의 수식 $L_p = I_{gen}/G_{ideal} - W(V)$는 소자 내부의 생성 캐리어가 100% 수집된다는 이상적 가정을 전제로 한다. 그러나 실제 4H-SiC 시료의 측정 데이터를 이 모델에 포인트별로 직접 대입할 경우, 확산 길이 $L_p$가 물리적으로 불가능한 음수($< 0$)로 발산하는 모순이 관측된다. 본 절에서는 이러한 대수적 발산의 물리적 원인을 규명하고, 고정된 이론적 상수($G_{ideal}$)의 맹점을 해결하기 위해 자유 변수 선형 회귀(Free-parameter Linear Regression) 모델과 신호 복원(Robust Signal Restoration) 알고리즘을 도입한다.</p>
+<p><strong>1) 실효 생성율($G_{eff}$)의 도입</strong></p>
+<p>$L_p$가 음수로 산출되는 근본적인 원인은, 계측된 순수 광전류($I_{photo}$)가 이론적으로 공핍층 내부에서만 생성되어야 할 최소 기대 전류($G_{ideal} \times W$)에도 미치지 못하기 때문이다. 이는 시료 표면의 데드 레이어(Dead Layer) 및 공핍층 내부의 극심한 재결합 센터(Recombination Centers)로 인해 실제 캐리어 수집 효율($\eta$)이 이론치 대비 현저히 낮음을 의미한다. 따라서 이론적 최대 생성 상수 $G_{ideal} = 6.143 \text{ }\mu\text{A}/\mu\text{m}$를 사용하는 로직을 개선해야 한다. 대신, 실제 수집 기울기인 유효 생성율($G_{eff}$) 을 도입하여 지배 방정식을 다음과 같은 1차 선형 방정식으로 재구성한다.</p>
+$$
+I_{photo}(W) = G_{eff} \cdot W(V) + G_{eff} \cdot L_p
+$$<p>이 수식에서 측정된 데이터 집합에 대한 선형 회귀(Least Squares Fit, $y = mx + c$)를 수행하면, 두 가지의 미지수를 동시에 독립시킬 수 있다.</p>
+<ul>
+<li>기울기($m$): 시료의 실제 유효 생성율 $G_{eff}$</li>
+<li>x-절편($-c/m$): 물리적으로 타당한 양수(+)의 소수 캐리어 확산 길이 $L_p$</li>
+</ul>
+<p><strong>2) 암전류 대수적 소거 및 신호 복원</strong></p>
+<p>미소 전압 변조 구간($-1.0\text{V} \sim 0\text{V}$)에서 공핍층 두께 $W$의 변화량은 극히 미미하다. 이 좁은 스케일에서 $\text{pA}$ 단위의 계측기 스파이크 노이즈는 회귀 분석의 기울기($G_{eff}$)를 물리적 궤도에서 이탈시키는 원인이 된다. 순수 물리적 DC 트렌드만을 추출하기 위해 다음의 3단계 신호 처리를 수행한다.</p>
+<ul>
+<li>암전류 소거 (Dark Subtraction): 동일 전압에서 계측된 암전류(OFF)를 선형 보간(Linear Interpolation)하여 총 전류에서 소거함으로써, 다이오드 누설 성분을 배제한 순수 $I_{photo}$를 산출한다.</li>
+<li>이동 중앙값 필터 (movmedian): 절댓값을 취하기 전의 부호가 있는 원시 전류 도메인에서 스파이크 노이즈를 1차적으로 제거한다. 평균이 아닌 중앙값을 사용하여 원본 신호의 스케일 훼손을 막는다.</li>
+<li>국소 회귀 (rlowess): 스파이크가 제거된 데이터에 LOWESS 평활화를 적용하여, 노이즈에 가려진 물리적 선형 기울기만을 부드럽게 복원한다.</li>
+</ul>
+<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/greens_function/index.html"><a class="padding" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/quantum_transform/index.html"><a class="padding" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-url="/research/research_pin/index.html"><a class="padding" href="/research/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-82152494e935f1e70539dfcd043a965c" class="collapsible-menu">
+            <li class="" data-nav-url="/research/research_pin/outline/index.html"><a class="padding" href="/research/research_pin/outline/index.html">Outline</a></li>
+            <li class="" data-nav-url="/research/research_pin/derivation1/index.html"><a class="padding" href="/research/research_pin/derivation1/index.html">Derivation1</a></li>
+            <li class="active " data-nav-url="/research/research_pin/derivation2/index.html"><a class="padding" href="/research/research_pin/derivation2/index.html">Derivation2</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/research/research_pa/index.html"><a class="padding" href="/research/research_pa/index.html">Research_PA</a><ul id="R-subsections-2390e6b55015b7af1378a34fefa17a01" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779077515"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779077515" defer></script>
+    <script src="/js/theme.js?1779077515" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

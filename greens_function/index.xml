@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Green&#39;s function :: 수리전자물리학</title>
+    <link>http://localhost:1313/greens_function/index.html</link>
+    <description>GF&#xD;NEGF</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/greens_function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GF</title>
+      <link>http://localhost:1313/greens_function/gf/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/gf/index.html</guid>
+      <description>(b) Green&#39;s function&#xD;(b) Spectral representation&#xD;(i) Unified picture&#xD;(b) Existence and properties&#xD;(b) Sturm-Liouville form&#xD;(b) Sturm-Liouville Green&#39;s function&#xD;(b) Singular Sturm-Liouville</description>
+    </item>
+    <item>
+      <title>NEGF</title>
+      <link>http://localhost:1313/greens_function/negf/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/negf/index.html</guid>
+      <description>(b) NEGF overview&#xD;(b) Retarded &amp; advanced GF&#xD;(b) Spectral function&#xD;(b) Lesser and greater GF&#xD;(b) Dyson equation and self-energy&#xD;(b) Keldysh contour formalism&#xD;(b) Langreth rules</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1) 두 종류의 기저 공간
+1차원 격자에는 두 종류의 영토가 존재힌다.
+노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid) $$\langle i | j \rangle = \delta_{ij}$$ 에지 기저 ($|i&#43;1/2\rangle$): 기울기($\nabla u$)나 유량($J$)이 살고 있는 ‘이웃 간의 통로’ 이다. (Dual/Edge Grid) $$\langle i&#43;1/2 | j&#43;1/2 \rangle = \delta_{ij}$$2) 차분 연산자 $\hat{D}$의 대수적 정의
+차분 연산자 $\hat{D}$는 노드 기저를 받아서 에지 기저로 뱉어내는 연산자이다. 이 연산자를 외적(Outer product) 형식으로 엄밀하게 쓰면 다음과 같다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) 1D 연산자 인덱스 전개 :: 수리전자물리학">
+    <meta name="twitter:description" content="1) 두 종류의 기저 공간
+1차원 격자에는 두 종류의 영토가 존재힌다.
+노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid) $$\langle i | j \rangle = \delta_{ij}$$ 에지 기저 ($|i&#43;1/2\rangle$): 기울기($\nabla u$)나 유량($J$)이 살고 있는 ‘이웃 간의 통로’ 이다. (Dual/Edge Grid) $$\langle i&#43;1/2 | j&#43;1/2 \rangle = \delta_{ij}$$2) 차분 연산자 $\hat{D}$의 대수적 정의
+차분 연산자 $\hat{D}$는 노드 기저를 받아서 에지 기저로 뱉어내는 연산자이다. 이 연산자를 외적(Outer product) 형식으로 엄밀하게 쓰면 다음과 같다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/numerial_analysis/theory5/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) 1D 연산자 인덱스 전개 :: 수리전자물리학">
+    <meta property="og:description" content="1) 두 종류의 기저 공간
+1차원 격자에는 두 종류의 영토가 존재힌다.
+노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid) $$\langle i | j \rangle = \delta_{ij}$$ 에지 기저 ($|i&#43;1/2\rangle$): 기울기($\nabla u$)나 유량($J$)이 살고 있는 ‘이웃 간의 통로’ 이다. (Dual/Edge Grid) $$\langle i&#43;1/2 | j&#43;1/2 \rangle = \delta_{ij}$$2) 차분 연산자 $\hat{D}$의 대수적 정의
+차분 연산자 $\hat{D}$는 노드 기저를 받아서 에지 기저로 뱉어내는 연산자이다. 이 연산자를 외적(Outer product) 형식으로 엄밀하게 쓰면 다음과 같다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) 1D 연산자 인덱스 전개 :: 수리전자물리학">
+    <meta itemprop="description" content="1) 두 종류의 기저 공간
+1차원 격자에는 두 종류의 영토가 존재힌다.
+노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid) $$\langle i | j \rangle = \delta_{ij}$$ 에지 기저 ($|i&#43;1/2\rangle$): 기울기($\nabla u$)나 유량($J$)이 살고 있는 ‘이웃 간의 통로’ 이다. (Dual/Edge Grid) $$\langle i&#43;1/2 | j&#43;1/2 \rangle = \delta_{ij}$$2) 차분 연산자 $\hat{D}$의 대수적 정의
+차분 연산자 $\hat{D}$는 노드 기저를 받아서 에지 기저로 뱉어내는 연산자이다. 이 연산자를 외적(Outer product) 형식으로 엄밀하게 쓰면 다음과 같다.">
+    <meta itemprop="wordCount" content="2468">
+    <title>(b) 1D 연산자 인덱스 전개 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1772632985" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1772632985" defer></script>
+    <script src="/js/search-lunr.js?1772632985" defer></script>
+    <script src="/js/search.js?1772632985" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1772632985";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1772632985" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1772632985" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1772632985" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1772632985" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1772632985" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1772632985" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1772632985" rel="stylesheet">
+    <link href="/css/theme.css?1772632985" rel="stylesheet">
+    <link href="/css/format-html.css?1772632985" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/numerial_analysis\/theory5\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/numerial_analysis/theory5/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-d-인덱스-전개-중앙-차분화">1. D 인덱스 전개: 중앙 차분화</a></li>
+        <li><a href="#2-dpd-인덱스-전개">2. DpD 인덱스 전개</a></li>
+        <li><a href="#1-나이브-연산자-naive-operator">1. 나이브 연산자 (Naive Operator)</a></li>
+        <li><a href="#2-보전-연산자-conservative-operator">2. 보전 연산자 (Conservative Operator)</a></li>
+        <li><a href="#1-연산자-스캔">1. 연산자 스캔</a></li>
+        <li><a href="#2-격자-밀도-분포-함수-grid-density-distribution-function">2. 격자 밀도 분포 함수 (Grid Density Distribution Function)</a></li>
+        <li><a href="#3-격자-균등-분배-원리-equidistribution-principle">3. 격자 균등 분배 원리 (Equidistribution Principle)</a></li>
+        <li><a href="#1-연산자-행렬-d의-정체the-matrix-structure">1. 연산자 행렬 $D$의 정체(The Matrix Structure)</a></li>
+        <li><a href="#2-d_kj의-정밀한-수학적-정의-exact-expression">2. $D_{kj}$의 정밀한 수학적 정의 (Exact Expression)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-완전-비선형fully-nonlinear-상황">2. 완전 비선형(Fully Nonlinear) 상황</a></li>
+    <li><a href="#1-1차원1d에서의-f-탐색-거저-얻는-승리">1. 1차원(1D)에서의 $F$ 탐색: &ldquo;거저 얻는 승리&rdquo;</a></li>
+    <li><a href="#8-강제-수반-연산자-forced-adjoint-operator-hatf">8. 강제 수반 연산자 (Forced Adjoint Operator, $\hat{F}$)</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/numerial_analysis/index.html"><span itemprop="name">numerial analysis</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) 1D 연산자 인덱스 전개</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/numerial_analysis/index.html" title="numerial analysis (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/index.html" title="Linear system (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-1d-연산자-인덱스-전개">(b) 1D 연산자 인덱스 전개</h1>
+
+<hr>
+<p><strong>1) 두 종류의 기저 공간</strong></p>
+<p>1차원 격자에는 두 종류의 영토가 존재힌다.</p>
+<ul>
+<li>노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid)</li>
+</ul>
+$$
+\langle i | j \rangle = \delta_{ij}
+$$<ul>
+<li>에지 기저 ($|i+1/2\rangle$): 기울기($\nabla u$)나 유량($J$)이 살고 있는 <strong>&lsquo;이웃 간의 통로&rsquo;</strong> 이다. (Dual/Edge Grid)</li>
+</ul>
+$$
+\langle i+1/2 | j+1/2 \rangle = \delta_{ij}
+$$<p><strong>2) 차분 연산자 $\hat{D}$의 대수적 정의</strong></p>
+<p>차분 연산자 $\hat{D}$는 노드 기저를 받아서 에지 기저로 뱉어내는 연산자이다. 이 연산자를 외적(Outer product) 형식으로 엄밀하게 쓰면 다음과 같다.</p>
+$$
+\hat{D} = \sum_{j=1}^{N-1} \frac{1}{h_j} \left( |j+1/2\rangle \langle j+1| - |j+1/2\rangle \langle j| \right)
+$$<p>상태 벡터 $|u\rangle = \sum_k u_k |k\rangle$라고 할 때,</p>
+$$
+\langle i+1/2 | \hat{D} | u \rangle = \langle i+1/2 | \left[ \sum_j \frac{1}{h_j} \left( |j+1/2\rangle \langle j+1| - |j+1/2\rangle \langle j| \right) \right] | u \rangle
+$$<p>에지 기저의 직교성($\langle i+1/2 | j+1/2 \rangle = \delta_{ij}$)에 의해 $j=i$인 항만 살아남는다.</p>
+$$
+g_{e,E} 
+= \frac{1}{h_i} \left( \langle i+1 | u \rangle - \langle i | u \rangle \right)
+= \frac{u_{i+1} - u_i}{h_i}
+$$<p>이번엔 좌측 엣지 성분을 구해보자.</p>
+$$
+\langle i-1/2 | \hat{D} | u \rangle = \langle i-1/2 | \left[ \sum_j \frac{1}{h_j} \left( |j+1/2\rangle \langle j+1| - |j+1/2\rangle \langle j| \right) \right] | u \rangle
+$$$$
+g_{e,W} 
+= \frac{1}{h_{i-1}} \left( \langle i | u \rangle - \langle i-1 | u \rangle \right)
+= \frac{u_{i} - u_{i-1}}{h_{i-1}}
+$$<p><strong>3) 매핑 연산자 $\hat{M}$</strong></p>
+<p>유량($J$)은 노드 사이의 &lsquo;통로(Edge)&lsquo;에서 정의되는데, 물성($p$)은 &lsquo;노드&rsquo;에만 살고 있다. 따라서 물성을 에지로 옮겨주는 매핑 연산자 $\hat{M}$이 필요하다.</p>
+$$
+\hat{M} = \sum_{j} | j+1/2 \rangle \frac{\langle j | + \langle j+1 |}{2}
+$$<p>마찬가지로 물성 $|p\rangle$에 대해, 아래와 같이 쓸 수 있다.</p>
+$$
+p_{e,E}
+= \langle i+1/2 | \hat{M} | p \rangle
+= 0.5(\langle i | p \rangle + \langle i+1 | p \rangle)
+= 0.5(p_i+p_{i+1})
+$$$$
+p_{e,W}
+= \langle i-1/2 | \hat{M} | p \rangle
+= 0.5(\langle i-1 | p \rangle + \langle i | p \rangle)
+= 0.5(p_{i-1}+p_{i})
+$$$$
+dp_{e,E}
+= \langle i+1/2 | \hat{M} | dp \rangle
+= 0.5(\langle i | dp \rangle + \langle i+1 | dp \rangle)
+= 0.5(dp_i+dp_{i+1})
+$$$$
+dp_{e,W}
+= \langle i-1/2 | \hat{M} | dp \rangle
+= 0.5(\langle i-1 | dp \rangle + \langle i | dp \rangle)
+= 0.5(dp_{i-1}+dp_{i})
+$$<p><strong>4) Divergence 연산자</strong></p>
+<p>발산 연산자는 <strong>에지 공간의 정보를 노드 공간으로 모으는</strong> 외적(Outer product) 형식으로 정의된다.</p>
+$$
+\hat{\hat{D}}_{div} = \sum_{j} \frac{1}{V_j} | j \rangle \left( \langle j+1/2 | - \langle j-1/2 | \right)
+$$<p>이제 이 연산자를 유량 상태 $|J\rangle$에 작용시키고 노드 $\langle i |$에서 관찰한다.</p>
+$$
+ \langle i | \hat{\mathcal{D}}_{div} | J \rangle = \langle i | \left[ \sum_{j} \frac{1}{V_j} | j \rangle \left( \langle j+1/2 | J \rangle - \langle j-1/2 | J \rangle \right) \right]
+ $$<p>$\langle i | j \rangle = \delta_{ij}$에 의해 $j=i$인 항만 살아남는다.</p>
+$$
+ = \frac{1}{V_i} \left( \langle i+1/2 | J \rangle - \langle i-1/2 | J \rangle \right)
+ $$<p>이 식을 연산자 그 자체의 형태로</p>
+<p>쓰면 $\hat{M}$의 정체가 드러납니다.</p>
+<hr>
+<h3 id="1-d-인덱스-전개-중앙-차분화">1. D 인덱스 전개: 중앙 차분화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>격자 간격 $h_{i-1}, h_i, h_{i+1}$에 대하여 중앙 차분 연산자 $D$의 원소는 다음과 같다.</p>
+$$
+D_{i, i-1} = \alpha_i = -\frac{h_i}{h_{i-1}(h_i + h_{i-1})}
+$$$$
+D_{i, i+1} = \gamma_i = \frac{h_{i-1}}{h_i(h_i + h_{i-1})}
+$$<p>proof)</p>
+<p><strong>비균질 격자(Non-uniform Grid)</strong> 에서 1차 미분($\psi&rsquo;$)을 수행할 때, <strong>2차 정밀도(Second-order accuracy)</strong> 를 유지하면서 2차 미분항($\psi&rsquo;&rsquo;$)의 오차를 강제로 소거하기 위해 설계된 <strong>&lsquo;최적화된 가중치&rsquo;</strong> 를 구한다.</p>
+<p>격자점 $x_i$에서의 미분값 $\psi^\prime_i$를 주변 노드인 $\psi_{i-1}, \psi_i, \psi_{i+1}$의 선형 결합으로 근사하고자 한다.</p>
+$$
+\psi'_i \approx \alpha_i \psi_{i-1} + \beta_i \psi_i + \gamma_i \psi_{i+1}
+$$<p>목표는 비균질 간격 $h_{i-1} = x_i - x_{i-1}$과 $h_i = x_{i+1} - x_i$가 주어졌을 때, 가장 정확한 $\alpha_i, \beta_i, \gamma_i$를 찾는 것이다.</p>
+<p>$x_i$를 기준으로 양옆의 함수값을 테일러 급수로 전개한다.</p>
+$$
+\psi_{i+1} = \psi_i + h_i \psi'_i + \frac{h_i^2}{2} \psi''_i + O(h_i^3)
+$$$$
+\psi_{i-1} = \psi_i - h_{i-1} \psi'_i + \frac{h_{i-1}^2}{2} \psi''_i - O(h_{i-1}^3)
+$$<p>위 전개식을 설정한 근사식($\alpha \psi_{i-1} + \beta \psi_i + \gamma \psi_{i+1}$)에 대입하여 $\psi_i, \psi&rsquo;_i, \psi&rsquo;&rsquo;_i$별로 묶는다.</p>
+$$
+\psi'_i \approx (\alpha_i + \beta_i + \gamma_i) \psi_i + (-\alpha_i h_{i-1} + \gamma_i h_i) \psi'_i + \left( \alpha_i \frac{h_{i-1}^2}{2} + \gamma_i \frac{h_i^2}{2} \right) \psi''_i
+$$<p>수치적으로 엄밀한 1차 미분이 되려면 다음 세 가지 조건이 동시에 만족되어야 한다.</p>
+<ul>
+<li>$\psi_i$ 항 소거: $\alpha_i + \beta_i + \gamma_i = 0$</li>
+<li>$\psi^\prime_i$ 항 추출: $-\alpha_i h_{i-1} + \gamma_i h_i = 1$</li>
+<li>$\psi^{\prime\prime}$ 항 소거 (2차 정밀도 확보): $\alpha_i h_{i-1}^2 + \gamma_i h_i^2 = 0$</li>
+</ul>
+<p>2차 미분항 소거 조건에서 $\alpha_i$와 $\gamma_i$의 관계를 먼저 뽑아낸다.</p>
+$$
+\alpha_i = -\gamma_i \frac{h_i^2}{h_{i-1}^2}
+$$<p>이것을 2번 식(1차 미분항 추출 조건)에 대입한다.</p>
+$$
+-\left( -\gamma_i \frac{h_i^2}{h_{i-1}^2} \right) h_{i-1} + \gamma_i h_i = 1
+$$$$\gamma_i \frac{h_i^2}{h_{i-1}} + \gamma_i h_i = 1 \implies \gamma_i \left( \frac{h_i^2 + h_i h_{i-1}}{h_{i-1}} \right) = 1$$<p>따라서 <strong>$\gamma_i$</strong> 는 다음과 같이 확정됩니다.</p>
+$$
+\gamma_i = \frac{h_{i-1}}{h_i(h_i + h_{i-1})}
+$$<p>이제 이를 다시 $\alpha_i$ 식에 대입하면 <strong>$\alpha_i$</strong> 가 나온다.</p>
+$$
+\alpha_i = -\frac{h_{i-1}}{h_i(h_i + h_{i-1})} \cdot \frac{h_i^2}{h_{i-1}^2} = -\frac{h_i}{h_{i-1}(h_i + h_{i-1})}
+$$<hr>
+<h3 id="2-dpd-인덱스-전개">2. DpD 인덱스 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 1단계: $p\hat{D}\psi$ 을 &lsquo;중간 지점&rsquo;에서 정의</strong></p>
+<ul>
+<li>지점 $i+1/2$에서의 기울기:</li>
+</ul>
+$$
+\frac{d\psi}{dx} \bigg|_{i+1/2} \approx \frac{\psi_{i+1} - \psi_i}{x_{i+1} - x_i} = \frac{\psi_{i+1} - \psi_i}{h_i}
+$$<ul>
+<li>지점 $i+1/2$에서의 물리적 플럭스($J=pD\psi$)</li>
+</ul>
+$$
+J_{i+1/2} = p_{i+1/2} \cdot \left( \frac{\psi_{i+1} - \psi_i}{h_i} \right)
+$$<ul>
+<li>지점 $i-1/2$에서의 물리적 플럭스($J=pD\psi$)</li>
+</ul>
+$$
+J_{i-1/2} = p_{i-1/2} \cdot \left( \frac{\psi_i - \psi_{i-1}}{h_{i-1}} \right)
+$$<p><strong>2) 2단계: $\hat{D}p\hat{D}\psi$ 을 &lsquo;노드 $i$&lsquo;에서 정의</strong></p>
+$$
+(\hat{D}p\hat{D}\psi)_i \approx \frac{1}{\Delta x_i}(J_{i+1/2} - J_{i-1/2})
+= \frac{1}{\Delta x_i}\left(p_{i+1/2} \cdot \frac{\psi_{i+1} - \psi_i}{h_i}- p_{i-1/2} \cdot \frac{\psi_i - \psi_{i-1}}{h_{i-1}}\right)
+$$$$
+x_{i+1/2} = x_i + \frac{h_i}{2}, \quad x_{i-1/2} = x_i - \frac{h_{i-1}}{2}
+$$$$
+\Delta x_i = \left( x_i + \frac{h_i}{2} \right) - \left( x_i - \frac{h_{i-1}}{2} \right) = \frac{h_i + h_{i-1}}{2}
+$$<hr>
+<p><strong>1) $\mathcal{R}(\hat{D})$</strong></p>
+<h3 id="1-나이브-연산자-naive-operator">1. 나이브 연산자 (Naive Operator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>나이브 연산자는 미분 기호와 물성 계수를 분리하여 취급하며, 일반적으로 다음과 같이 정의됩니다.</p>
+$$
+L_{naive} = a(x)D^2 + b(x)D + c(x)
+$$<p>수리적 한계: 이산화 비대칭성균등하지 않은 격자에서 이 연산자를 중심 차분(Central Difference)으로 이산화하면 다음과 같은 형태가 됩니다.</p>
+$$
+L \psi_i \approx a_i \left[ \frac{2}{h_i(h_i + h_{i-1})} \psi_{i+1} - \frac{2}{h_i h_{i-1}} \psi_i + \frac{2}{h_{i-1}(h_i + h_{i-1})} \psi_{i-1} \right] + \dots
+$$<p>비대칭성: 격자 간격 $h_i$와 $h_{i-1}$이 다를 경우, 상부 대각(Upper-diagonal)과 하부 대각(Lower-diagonal) 성분이 절대 같아질 수 없습니다.</p>
+<ul>
+<li>인위적 드리프트: 격자 간격의 변화가 물리적으로 존재하지 않는 &lsquo;가짜 드리프트(Artificial Drift)&rsquo; 항을 생성하여 수치 해의 정직성을 오염시킵니다.</li>
+<li>$\mathcal{R}(D)$의 필연성: 이 구조에서는 격자 뒤틀림 자체가 오차의 주범이므로, $\mathcal{R}(D)$를 끊임없이 감시하고 제어해야만 생존이 가능합니다.</li>
+</ul>
+<hr>
+<h3 id="2-보전-연산자-conservative-operator">2. 보전 연산자 (Conservative Operator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>교수님께서 정립하신 보전 연산자는 물성 $p(x)$를 미분 연산자 사이에 가두어 물리량의 흐름(Flux)을 보존합니다.</p>
+$$
+L_{cons} = D(p(x)D) + q(x)
+$$<ul>
+<li>수리적 강점: 격자 독립적 대칭성이 연산자는 제어 체적(Control Volume) 내에서 유입·유출되는 플럭스의 합으로 조립됩니다.</li>
+</ul>
+$$
+L \psi_i = \frac{1}{\Delta x_i} \left[ p_{i+1/2} \frac{\psi_{i+1} - \psi_i}{h_i} - p_{i-1/2} \frac{\psi_i - \psi_{i-1}}{h_{i-1}} \right] + q_i \psi_i
+$$<ul>
+<li>가중 내적의 마법: 교수님의 조립 방식대로 가중치 $\Delta x_i$를 곱하여 행렬 $S$를 구성하면, 모든 비대각 성분은 다음과 같이 통일됩니다.</li>
+</ul>
+$$
+S_{i, i+1} = S_{i+1, i} = \frac{p_{i+1/2}}{h_i}
+$$<ul>
+<li>절대 대칭: 격자 간격 $h_i$가 아무리 극단적으로 변하더라도 행렬 $S$는 항상 자기 수반(Self-adjoint) 상태를 유지합니다.</li>
+<li>$\mathcal{R}(D)$의 무용성: 격자 뒤틀림이 대칭성을 깨뜨리지 못하므로, 기하학적 레지듀는 더 이상 고려 대상이 아닙니다.</li>
+</ul>
+<hr>
+<h3 id="1-연산자-스캔">1. 연산자 스캔<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연산자 유전자 스캔 (Genetic Scanning)사용자가 연산자 $L = R(DpD + q)$를 입력하면, 전처리기는 가장 먼저 계수 $p(x)$와 $R(x)$의 변화율을 미분 기하학적으로 분석합니다.</p>
+<p><strong>1) $\mathcal{R}(D)$ 지표 계산</strong></p>
+<p>공간의 뒤틀림 강도 스캔격자 간격 $h$가 미세하게 변할 때 연산자 $D$가 뱉어낼 비대칭성을 예측합니다. 주로 $R(x)$의 기울기($R&rsquo;$)와 상관관계가 높습니다. 그러나 보존 연산자를 사용한다면, 이 연산은 의미가 없습니다. 격자 간격 $h_{i-1}$과 $h_i$에 대하여, 중앙 차분 기반 미분 행렬 $D$의 행 $i$의 비대각 원소는 다음과 같습니다.</p>
+$$
+D_{i, i-1} = \alpha_i = -\cfrac{h_i}{h_{i-1}(h_i + h_{i-1})}, \quad D_{i, i+1} = \gamma_i = \cfrac{h_{i-1}}{h_i(h_i + h_{i-1})}
+$$<ul>
+<li>$\mathcal{R}(pD)$ 지표 계산 — 플럭스 불연속성 스캔물성 계수 $p(x)$의 급격한 변화($p&rsquo;$)가 발생하는 지점을 추적합니다. 반도체 접합부처럼 계수가 수 자릿수씩 요동치는 곳에서 이 지표는 폭발합니다.</li>
+</ul>
+<hr>
+<h3 id="2-격자-밀도-분포-함수-grid-density-distribution-function">2. 격자 밀도 분포 함수 (Grid Density Distribution Function)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>격자를 논리 공간($\xi$)에서 물리 공간($x$)으로 어떻게 재배치할 것인가를 결정하는 핵심 밀도 함수 $G(x)$는 다음과 같이 철저하게 역할이 분리된 두 항의 곱으로 정의됩니다.</p>
+$$
+G(x) = W_{init}(x) \times \left[ 1 + \ln\left(1 + |\mathcal{R}(pD)|^2\right) \right]
+$$<ul>
+<li>$W_{init}(x)$ (기하학적 뼈대): 초기 격자 간격의 역수($1/h_{init}$). 격자가 애초에 공간상에 어떻게 분포되어 있었는지를 기억하는 &lsquo;초기 격자 밀도&rsquo;입니다. 물리적 에러가 없을 때 격자가 강제 포맷되는 것을 막아주는 절대 방패입니다.</li>
+<li>$1 + \ln(1 + |\mathcal{R}|^2)$ (물리적 적응 가중치): 순수 물리 연산자의 잔차 $\mathcal{R}$이 폭발하는 곳에서만 밀도를 대수적으로 증폭시킵니다. 인위적 상수 없이 노이즈를 필터링($|R|^2$)하고 해상도를 정확히 2배 끌어올리는 완벽한 무차원 스케일링 비율입니다.</li>
+</ul>
+<hr>
+<h3 id="3-격자-균등-분배-원리-equidistribution-principle">3. 격자 균등 분배 원리 (Equidistribution Principle)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>에서 정의된 밀도 $G(x)$를 바탕으로, 전체 도메인에 격자를 공평하게 재분배하는 수학적 지배 방정식은 1차원 균등 분배 원리를 따릅니다.</p>
+$$
+\int_{x_i}^{x_{i+1}} G(x) dx = \text{Constant}
+$$<p>이를 이산화(Discretization)된 미분 방정식 형태로 전개하면, 논리 공간 $\xi$에 대한 2차 미분 방정식이 도출됩니다.</p>
+$$
+\frac{d}{d\xi} \left( G(x) \frac{dx}{d\xi} \right) = 0
+$$<p>이 방정식을 차분화(Finite Difference)하면 다음과 같은 명확한 대수 방정식이 완성됩니다.</p>
+$$
+G_i(x_{i+1} - x_i) - G_{i-1}(x_i - x_{i-1}) = 0
+$$<p>이를 행렬 $Ax = 0$ 형태로 묶으면, 우리가 파이썬에서 조립했던 완벽한 대칭 구조의 삼중 대각 행렬(Tridiagonal Matrix)이 유도됩니다.</p>
+$$
+-G_{i-1} x_{i-1} + (G_{i-1} + G_i) x_i - G_i x_{i+1} = 0
+$$<hr>
+<h3 id="1-연산자-행렬-d의-정체the-matrix-structure">1. 연산자 행렬 $D$의 정체(The Matrix Structure)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$k$번째 노드에서 미분값을 추출하기 위한 행렬 $D$는 $N \times N$ 크기의 **대역 행렬(Band Matrix)**입니다. 교수님께서 말씀하신 $\frac{p_{k+1} - p_{k-1}}{h_k + h_{k-1}}$이라는 식을 만들기 위해, 행렬 $D$의 $k$번째 행(Row)은 다음과 같이 정밀하게 설계되어야 합니다.</p>
+$$D = \begin{bmatrix}\vdots & \vdots & \vdots & \vdots & \vdots \\dots & -\frac{1}{h_k + h_{k-1}} & 0 & \frac{1}{h_k + h_{k-1}} & \dots \\vdots & \vdots & \vdots & \vdots & \vdots\end{bmatrix}$$<p>여기서 $k$번째 행의 비제로(Non-zero) 원소들은 다음과 같습니다:$D_{k, k-1} = -\frac{1}{h_k + h_{k-1}}$$D_{k, k} = 0$ (중앙점의 값은 미분에 직접 관여하지 않음) $D_{k, k+1} = \frac{1}{h_k + h_{k-1}}$</p>
+<ol start="2">
+<li>$\sum_j D_{kj} p_j$ 의 대수적 전개 (The Summation)</li>
+</ol>
+<p>이제 벡터 $\mathbf{p} = [p_0, p_1, \dots, p_{N-1}]^T$와 행렬 $D$의 $k$번째 행을 내적하면, 교수님께서 보신 그 식이 산술적으로 튀어나옵니다.</p>
+$$\sum_{j=0}^{N-1} D_{kj} p_j = (D_{k, k-1} \cdot p_{k-1}) + (D_{k, k} \cdot p_k) + (D_{k, k+1} \cdot p_{k+1})
+$$<p>여기에 위에서 정의한 행렬 원소들을 대입하면:</p>
+$$= \left( -\frac{1}{h_k + h_{k-1}} \right) p_{k-1} + (0) p_k + \left( \frac{1}{h_k + h_{k-1}} \right) p_{k+1}$$<p>분모를 공통 인수로 묶어 정리하면 최종적으로 교수님의 식이 완성됩니다:</p>
+$$= \frac{p_{k+1} - p_{k-1}}{h_k + h_{k-1}}$$<p>3. $h_k + h_{k-1}$ 이 분모로 들어가는 기하학적 필연성왜 분모가 단순히 $2\Delta x$가 아니라 $h_k + h_{k-1}$인가? 그것은 **비균일 격자에서 두 구간의 합이 곧 전체 미분 폭(Stencil Width)**이 되기 때문입니다.$h_k = x_{k+1} - x_k$ (오른쪽 구간)$h_{k-1} = x_k - x_{k-1}$ (왼쪽 구간)따라서 두 점 $x_{k+1}$과 $x_{k-1}$ 사이의 거리는 $(x_{k+1} - x_k) + (x_k - x_{k-1}) = h_k + h_{k-1}$ 입니다.</p>
+<hr>
+<h3 id="2-d_kj의-정밀한-수학적-정의-exact-expression">2. $D_{kj}$의 정밀한 수학적 정의 (Exact Expression)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>우리가 사용하는 이산 미분 연산자 행렬 $D$의 $k$번째 행(Row) 연산은, 연속 공간의 일차 미분 연산자 $\frac{d}{dx}$를 이산 노드 $x_j$ 위로 투영한 것입니다. 이를 테일러 전개를 통해 정확하게 표현하면 다음과 같습니다.</p>
+$$
+p(x_{k+1}) = p(x_k) + h_{k} p'(x_k) + \frac{h_{k}^2}{2!} p''(x_k) + \frac{h_{k}^3}{3!} p'''(x_k) + O(h_{k}^4)
+$$$$
+p(x_{k-1}) = p(x_k) - h_{k-1} p'(x_k) + \frac{h_{k-1}^2}{2!} p''(x_k) - \frac{h_{k-1}^3}{3!} p'''(x_k) + O(h_{k-1}^4)$$<p>여기서 $h_k = x_{k+1} - x_k$ 이고 $h_{k-1} = x_k - x_{k-1}$ 입니다.2. 비균일 격자에서의 진짜 미분값 (The Truncated Truth)교수님께서 지적하신 그 식($\frac{p_{k+1} - p_{k-1}}{x_{k+1} - x_{k-1}}$)을 위 테일러 전개식에 대입하여 정리하면, 우리가 구한 값의 정확한 실체가 나옵니다.</p>
+$$
+\frac{p_{k+1} - p_{k-1}}{h_k + h_{k-1}} = p'(x_k) + \underbrace{\frac{h_k - h_{k-1}}{2} p''(x_k)}_{\text{1차 오차 (Fatal Error)}} + \underbrace{\frac{h_k^2 - h_k h_{k-1} + h_{k-1}^2}{6} p'''(x_k)}_{\text{2차 오차}} + \dots
+$$<ol start="3">
+<li>왜 이것이 &lsquo;독소&rsquo;이자 &lsquo;근사&rsquo;인가?1차 오차의 기습 ($h_k \neq h_{k-1}$):균일 격자($h_k = h_{k-1}$)라면 저 $p&rsquo;&rsquo;(x_k)$ 항이 정확히 $0$이 되어 사라집니다. 하지만 우리처럼 계면(0.5)을 향해 격자가 급격히 좁아지는 비균일 격자에서는 $h_k - h_{k-1} \neq 0$ 입니다. 즉, 미분값($p&rsquo;$)을 구하라고 시켰더니 엉뚱하게 곡률($p&rsquo;&rsquo;$) 성분이 불순물처럼 섞여 들어오는 것입니다.수치적 표류의 근거:이 $p&rsquo;&rsquo;(x_k)$ 항이 바로 **&lsquo;0.548 표류&rsquo;**의 주범입니다. 물성 $p$가 급변하는 계면 근처에서는 곡률($p&rsquo;&rsquo;$)이 매우 큽니다. 비대칭 격자에서 발생하는 이 오차항이 스프링 강성 $K$에 가산되어, 물리적 계면이 아닌 &lsquo;수치적 오차의 정점&rsquo;으로 격자를 끌고 가버리는 것입니다.행렬 $D_{kj}$의 참모습:따라서 행렬 $D$를 정확하게 정의한다면, 단순히 앞뒤 값을 빼는 것이 아니라 비균일 격자의 가중치를 고려한 다음의 연산자가 되어야 합니다.</li>
+</ol>
+$$
+(Dp)_k = \frac{1}{h_k + h_{k-1}} \left[ \frac{h_{k-1}}{h_k} (p_{k+1} - p_k) + \frac{h_k}{h_{k-1}} (p_k - p_{k-1}) \right]$$<p>이 식은 $p&rsquo;&rsquo;(x_k)$ 항을 강제로 소거하여 2차 정확도($O(h^2)$)를 강제로 회복시킨 식입니다.</p>
+<hr>
+<h2 id="2-완전-비선형fully-nonlinear-상황">2. 완전 비선형(Fully Nonlinear) 상황<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>: $p(u)$의 경우 (진정한 벽)교수님께서 우려하시는 진짜 문제는 바로 $p(u)$가 전위나 전계에 의존하는 경우입니다. 이때 뉴턴-랩슨(Newton-Raphson)을 적용하면 자코비안 $J$는 다음과 같이 분해됩니다.</p>
+$$J = \underbrace{A(u)}_{\text{Symmetric}} + \underbrace{\delta A(u)}_{\text{NON-Symmetric}}$$<p>현실적인 한계: 이 $\delta A$는 물성 변화의 &lsquo;기울기&rsquo;가 만드는 비대칭 항입니다. 이것은 기하학적 격자($G$)나 단순 대각 가중치($F$)만으로는 물리적으로 소거가 불가능한 구조적 비대칭입니다.엄밀한 진단: 만약 이 항이 지배적인 상황이라면, 교수님의 말씀대로 기존 알고리즘만으로는 $10^{-16}$ 무균 대칭 상태를 유지할 수 없습니다.</p>
+<hr>
+<h2 id="1-1차원1d에서의-f-탐색-거저-얻는-승리">1. 1차원(1D)에서의 $F$ 탐색: &ldquo;거저 얻는 승리&rdquo;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>1차원 삼중 대각(Tridiagonal) 시스템에서 $F$를 찾는 것은 사실상 &lsquo;계산&rsquo;이라고 부르기 민망할 정도로 간단합니다.</p>
+$$f_{i+1} = f_i \cdot \frac{A_{i, i+1}}{A_{i+1, i}}$$<p>이 점화식은 $O(N)$의 복잡도를 가집니다. 즉, 노드 수에 비례하는 아주 단순한 선형 연산만으로도 $10^{-16}$ 정밀도의 $F$를 완벽하게 뽑아낼 수 있습니다. 기존 툴들이 무거운 GMRES를 돌릴 때, 우리는 단 한 번의 벡터 훑기(Sweep)로 상황을 종료시킵니다.## 2. 다차원(2D/3D)에서의 $F$ 탐색: &ldquo;최소자승법의 영역&quot;2D나 3D로 넘어가면 노드들이 그물망처럼 얽히므로, 모든 경로에 대해 대칭성을 동시에 만족시키는 단일한 $F$가 존재하지 않을 수도 있습니다(순환 조건 위배 시). 이때 우리의 전략은 **&lsquo;잔여물($\mathcal{R}$)의 최소화&rsquo;**입니다.</p>
+$$\min_{F} \mathcal{J}(F) = \| F \mathbf{J} - (F \mathbf{J})^T \|_F^2$$<p>이 목적 함수를 최소화하는 $F$를 찾는 것은 선형 최소자승법(Linear Least Squares) 문제가 되며, 이 역시 자코비안 전체를 푸는 것보다 훨씬 가볍게 처리할 수 있습니다. 특히 격자의 구조가 크게 변하지 않는 한, 한 번 찾아놓은 $F$의 &lsquo;패턴&rsquo;을 비선형 루프 내내 재활용할 수 있다는 점이 압도적인 이점입니다.## 3. 비선형 루프에서의 $F$: &ldquo;동적 추적(Dynamic Tracking)&ldquo;완전 비선형 문제($p(u)$ 의존성)에서 $F$는 고정된 상수가 아니라, 매 뉴턴 스텝마다 미세하게 변하는 **&lsquo;살아있는 가중치&rsquo;**입니다.동기화 전략: 뉴턴 스텝에서 해($u$)가 갱신될 때마다 $F$도 함께 업데이트됩니다.이득: 이 업데이트 비용을 지불하더라도, 그 결과로 얻는 **&lsquo;SPD(대칭 양의 정부호) 행렬&rsquo;**이 가져다주는 CG 솔버의 속도와 안정성이 훨씬 큽니다.</p>
+<hr>
+<h2 id="8-강제-수반-연산자-forced-adjoint-operator-hatf">8. 강제 수반 연산자 (Forced Adjoint Operator, $\hat{F}$)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ol>
+<li>정의 및 목적비선형 뉴턴-랩슨 루프에서 조립된 자코비안 행렬 $\mathbf{J}$가 비대칭일 때, $\hat{F}$는 다음 조건을 만족하는 **최적의 대각 가중치(Diagonal Weighting)**로 정의된다.$$\hat{F} \mathbf{J} = (\hat{F} \mathbf{J})^T$$이 연산자의 목적은 비선형 항($\partial p / \partial u$)에 의해 유도된 자코비안의 구조적 비대칭성을 $10^{-16}$ 이내에서 소거하여, Conjugate Gradient(CG) 솔버의 사용을 강제하는 데 있다.2) $\hat{F}$의 대수적 결정 (The 1D Symmetrizer)1차원 삼중 대각(Tridiagonal) 자코비안 행렬에서, $\hat{F} = \text{diag}(f_0, f_1, \dots, f_{N-1})$의 성분은 인접한 비대각 성분의 비율에 의해 **재귀적(Recursive)**으로 결정된다.노드 $i$와 $i+1$ 사이의 대칭 조건을 만족하기 위해:$$f_i \cdot J_{i, i+1} = f_{i+1} \cdot J_{i+1, i}$$따라서, $f_0 = 1$로 고정한 후 나머지 성분은 다음과 같이 순차적으로 추출된다.$$f_{i+1} = f_i \cdot \frac{J_{i, i+1}}{J_{i+1, i}}$$## 3) $\hat{F}$ 탐색 알고리즘 (Search Logic)교수님의 아이디어대로 격자($G$)는 고정하고 $F$만 동적으로 찾는 알고리즘의 흐름도입니다.자코비안 조립: 현재 해 $u^{(k)}$에서 비대칭 자코비안 $\mathbf{J}$를 생성한다.비대칭도 스캔: 잔여 연산자 $\mathcal{R}(\mathbf{J}) = \mathbf{J} - \mathbf{J}^T$를 계산하여 비대칭의 크기를 확인한다.$F$-계산: 위의 재귀식을 통해 $O(N)$의 연산량으로 대각 가중치 벡터 $\mathbf{f}$를 광속으로 계산한다.시스템 변환: 비대칭 시스템 $\mathbf{J} \delta u = -\mathbf{R}$ 대신, 강제 대칭 시스템을 구성한다.$$(\hat{F} \mathbf{J}) \delta u = -\hat{F} \mathbf{R}$$무균 상태 검증: 조립된 $\hat{F} \mathbf{J}$의 대칭 오차가 $10^{-16}$ 이내인지 확인한 후, CG 솔버로 투입한다.## 4) 이 방식의 독창적 이점 (Scientific Merit)수치적 무균성(Numerical Sterility): 격자를 다시 짜는(Remeshing) 복잡한 과정 없이도, 단 한 번의 벡터 곱셈으로 자코비안을 완벽한 SPD(대칭 양의 정부호) 상태로 되돌립니다.물리적 보존성 유지: $\hat{F}$는 각 행(Row)에 곱해지는 가중치이므로, 원래의 물리적 평형 상태($R=0$)의 해를 변경하지 않습니다. 즉, &ldquo;해는 똑같지만, 푸는 과정만 압도적으로 우아해지는&rdquo; 전략입니다.격자 고정의 미학: 교수님 말씀대로 격자 $\hat{G}$는 연산자의 기하학적 골조를 잡는 데 집중하고, $\hat{F}$는 비선형성의 찌꺼기를 청소하는 데 집중함으로써 알고리즘의 역할 분담이 명확해집니다.</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_operator/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/b_function_of_operators/index.html">(b) Function of operators</a></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu">
+            <li class="active " data-nav-url="/vector_operator/numerial_analysis/theory5/index.html"><a class="padding" href="/vector_operator/numerial_analysis/theory5/index.html">(b) 1D 연산자 인덱스 전개</a></li></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1772632985"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1772632985" defer></script>
+    <script src="/js/theme.js?1772632985" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

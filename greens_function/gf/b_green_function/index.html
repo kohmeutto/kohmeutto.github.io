@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. 역연산자의 적분 커널연산자 방정식
+$$ \hat{A}|v\rangle = |f\rangle $$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로
+$$ |v\rangle = \hat{A}^{-1}|f\rangle $$이다.
+1) 이산 기저: 역행렬
+유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.
+$$ \psi_i = \sum_j (A^{-1})_{ij}\,\phi_j $$2) 연속 기저: 그린함수">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Green&#39;s function :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 역연산자의 적분 커널연산자 방정식
+$$ \hat{A}|v\rangle = |f\rangle $$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로
+$$ |v\rangle = \hat{A}^{-1}|f\rangle $$이다.
+1) 이산 기저: 역행렬
+유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.
+$$ \psi_i = \sum_j (A^{-1})_{ij}\,\phi_j $$2) 연속 기저: 그린함수">
+    <meta property="og:url" content="http://localhost:1313/greens_function/gf/b_green_function/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Green&#39;s function :: 수리전자물리학">
+    <meta property="og:description" content="1. 역연산자의 적분 커널연산자 방정식
+$$ \hat{A}|v\rangle = |f\rangle $$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로
+$$ |v\rangle = \hat{A}^{-1}|f\rangle $$이다.
+1) 이산 기저: 역행렬
+유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.
+$$ \psi_i = \sum_j (A^{-1})_{ij}\,\phi_j $$2) 연속 기저: 그린함수">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Green&#39;s function :: 수리전자물리학">
+    <meta itemprop="description" content="1. 역연산자의 적분 커널연산자 방정식
+$$ \hat{A}|v\rangle = |f\rangle $$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로
+$$ |v\rangle = \hat{A}^{-1}|f\rangle $$이다.
+1) 이산 기저: 역행렬
+유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.
+$$ \psi_i = \sum_j (A^{-1})_{ij}\,\phi_j $$2) 연속 기저: 그린함수">
+    <meta itemprop="wordCount" content="1183">
+    <title>(b) Green&#39;s function :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779077516" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779077516" defer></script>
+    <script src="/js/search-lunr.js?1779077516" defer></script>
+    <script src="/js/search.js?1779077516" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779077516";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779077516" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779077516" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779077516" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779077516" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779077516" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779077516" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779077516" rel="stylesheet">
+    <link href="/css/theme.css?1779077516" rel="stylesheet">
+    <link href="/css/format-html.css?1779077516" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/gf\/b_green_function\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/greens_function/gf/b_green_function/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-역연산자의-적분-커널">1. 역연산자의 적분 커널</a></li>
+        <li><a href="#2-정의-방정식">2. 정의 방정식</a></li>
+        <li><a href="#3-그린함수를-이용한-출력의-계산">3. 그린함수를 이용한 출력의 계산</a></li>
+        <li><a href="#4-그린함수와-역행렬의-대응">4. 그린함수와 역행렬의 대응</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/gf/index.html"><span itemprop="name">GF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Green&#39;s function</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/index.html" title="GF (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/b_spectral_representation/index.html" title="(b) Spectral representation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-greens-function">(b) Green&#39;s function</h1>
+
+<hr>
+<h3 id="1-역연산자의-적분-커널">1. 역연산자의 적분 커널<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연산자 방정식</p>
+$$
+\hat{A}|v\rangle = |f\rangle
+$$<p>에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로</p>
+$$
+|v\rangle = \hat{A}^{-1}|f\rangle
+$$<p>이다.</p>
+<p><strong>1) 이산 기저: 역행렬</strong></p>
+<p>유한 차원에서 이 역연산자는 <strong>역행렬</strong> $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.</p>
+$$
+\psi_i = \sum_j (A^{-1})_{ij}\,\phi_j
+$$<p><strong>2) 연속 기저: 그린함수</strong></p>
+<p>무한 차원(함수 공간)에서는 어떻게 표현될까. 적분 커널의 정의에 의해, 임의의 연산자 $\hat{H}$ 는 연속 기저에서 다음과 같이 표현된다.</p>
+$$
+\hat{H} = \iint du\,du'\,h(u,u')\,|u\rangle\langle u'^d|, \quad h(u,u') = \langle u^d|\hat{H}|u'\rangle
+$$<p>이 표현을 역연산자 $\hat{A}^{-1}$ 에 그대로 적용하면, 그 적분 커널이 곧 <strong>그린함수(Green&rsquo;s function)</strong> 가 된다.</p>
+$$
+G(u,u') = \langle u^d|\hat{A}^{-1}|u'\rangle
+$$$$
+\hat{A}^{-1} = \iint du\,du'\,G(u,u')\,|u\rangle\langle u'^d|
+$$<p><strong>즉, 그린함수는 새로운 개념이 아니라, 이미 정의된 적분 커널을 역연산자에 적용한 결과이다.</strong></p>
+<p>위치 기저 $|x\rangle$ 와 같은 <strong>정규직교 연속 기저</strong> 의 경우 $\langle u^d|=\langle u|$ 이 성립하여 표기가 단순해진다.</p>
+$$
+G(x,x') = \langle x|\hat{A}^{-1}|x'\rangle \quad (\text{정규직교 기저의 경우})
+$$<hr>
+<h3 id="2-정의-방정식">2. 정의 방정식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>표준 교재에서 그린함수는 다음 방정식으로 정의되는 경우가 많다.</p>
+$$
+\hat{A}_u\,G(u,u') = \delta(u-u')
+$$<p>여기서 $\hat{A}_u$ 는 $\hat{A}$ 가 $u$ 변수에 작용함을 명시하는 표기이다. 이 식은 항등 관계 $\hat{A}\hat{A}^{-1}=\hat{I}$ 의 연속 기저 표현일 뿐이다.</p>
+<p>proof)</p>
+<p>$\hat{A}\hat{A}^{-1}=\hat{I}$ 의 양변을 $\langle u^d|\cdots|u'\rangle$ 로 끼운다.</p>
+$$
+\langle u^d|\hat{A}\hat{A}^{-1}|u'\rangle = \langle u^d|\hat{I}|u'\rangle
+$$<p>우변은 쌍대 기저의 정의에 의해 델타 함수가 된다.</p>
+$$
+\langle u^d|\hat{I}|u'\rangle = \langle u^d|u'\rangle = \delta(u-u')
+$$<p>좌변은 $\hat{A}$ 가 $u$ 변수에 작용함을 살려서</p>
+$$
+\langle u^d|\hat{A}\hat{A}^{-1}|u'\rangle 
+= \hat{A}_u\,\langle u^d|\hat{A}^{-1}|u'\rangle
+= \hat{A}_u\,G(u,u')
+$$<p>이다. 따라서</p>
+$$
+\hat{A}_u\,G(u,u') = \delta(u-u')
+$$<p>이 방정식의 직관: <strong>$u'$ 위치에 가해진 단위 점원(delta source)에 대한 시스템 $\hat{A}$ 의 응답이 $G(u,u')$ 이다.</strong></p>
+<hr>
+<h3 id="3-그린함수를-이용한-출력의-계산">3. 그린함수를 이용한 출력의 계산<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>임의의 입력 $f$ 에 대한 출력 $v$ 는 그린함수에 의해 다음과 같이 표현된다.</p>
+$$
+v(u) = \int du'\,G(u,u')\,f(u')
+$$<p>여기서 $v(u) := \langle u^d|v\rangle$, $f(u') := \langle u'^d|f\rangle$ 는 함수 표현이다.</p>
+<p>proof)</p>
+<p>$|v\rangle = \hat{A}^{-1}|f\rangle$ 의 양변에 $\langle u^d|$ 를 작용시킨다.</p>
+$$
+\langle u^d|v\rangle = \langle u^d|\hat{A}^{-1}|f\rangle
+$$<p>좌변은 $v(u)$ 이다. 우변에 항등 연산자 $\hat{I} = \int du'\,|u'\rangle\langle u'^d|$ 를 삽입하면</p>
+$$
+\langle u^d|\hat{A}^{-1}|f\rangle 
+= \int du'\,\langle u^d|\hat{A}^{-1}|u'\rangle\langle u'^d|f\rangle 
+= \int du'\,G(u,u')\,f(u')
+$$<p>이다.</p>
+<p>이 식의 직관적 의미는 다음과 같다. <strong>임의의 입력 $f$ 에 대한 응답은, 각 위치 $u'$ 에서의 점원 응답 $G(u,u')$ 들의 가중합이다.</strong> 가중치는 입력 함수의 값 $f(u')$ 이다.</p>
+<p>비유: 임펄스 응답</p>
+<ul>
+<li>시스템 $\hat{A}$ 는 어떤 물리 시스템(진동하는 줄, 전자 회로 등)을 표현한다.</li>
+<li>$G(u,u')$ 는 $u'$ 지점에 순간적 충격이 가해졌을 때 $u$ 지점에서 관측되는 반응이다.</li>
+<li>일반 입력 $f$ 에 대한 응답은, 입력의 각 점이 만드는 임펄스 응답들의 합이다.</li>
+</ul>
+<p>이는 신호처리의 임펄스 응답 함수, 회로의 단위 전압 응답 등과 정확히 같은 개념이다.</p>
+<hr>
+<h3 id="4-그린함수와-역행렬의-대응">4. 그린함수와 역행렬의 대응<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이산 기저(행렬)와 연속 기저(적분 커널)의 두 측면을 한 표에 정리한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>이산 기저</th>
+          <th>연속 기저</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>연산자의 성분</td>
+          <td>$A_{ij} = \langle u^i \vert \hat{A} \vert u_j\rangle$</td>
+          <td>$h(u,u') = \langle u^d \vert \hat{H} \vert u'\rangle$</td>
+      </tr>
+      <tr>
+          <td>출력 계산</td>
+          <td>$\phi_i = \sum_j A_{ij}\,\psi_j$</td>
+          <td>$\varphi(u) = \int du'\,h(u,u')\,\psi(u')$</td>
+      </tr>
+      <tr>
+          <td>역연산자의 성분</td>
+          <td>$(A^{-1})_{ij}$</td>
+          <td>$G(u,u') = \langle u^d \vert \hat{A}^{-1} \vert u'\rangle$</td>
+      </tr>
+      <tr>
+          <td>역연산</td>
+          <td>$\psi_i = \sum_j (A^{-1})_{ij}\,\phi_j$</td>
+          <td>$v(u) = \int du'\,G(u,u')\,f(u')$</td>
+      </tr>
+      <tr>
+          <td>항등 조건</td>
+          <td>$\sum_k A_{ik}(A^{-1})_{kj} = \delta_{ij}$</td>
+          <td>$\hat{A}_u\,G(u,u') = \delta(u-u')$</td>
+      </tr>
+  </tbody>
+</table>
+<p>즉, <strong>그린함수는 역행렬의 연속판이다.</strong> 새로운 객체가 아니라, 이미 갖춰진 적분 커널 프레임워크의 자연스러운 확장이다. 특히 <strong>델타 함수 $\delta(u-u')$ 는 크로네커 델타 $\delta_{ij}$ 의 연속판</strong> 임을 표의 마지막 행이 명확히 보여준다.</p>
+<p>표현 기저가 이산인지 연속인지에 따라 그린함수가 어떻게 구체화되는지, example1 과 example2 에서 각각 확인한다.</p>
+<hr>
+<p><strong>example1)</strong> 이산 표현 기저: 3×3 그린행렬</p>
+<p>연속 그린함수의 직관을 위해, 이산 버전인 &ldquo;그린행렬&quot;을 손으로 계산하자.</p>
+$$
+A = \begin{bmatrix} 2 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 & 5 \end{bmatrix}
+$$<p>sol)</p>
+<p>(1) 역행렬</p>
+<p>여인수 전개 또는 분할 행렬로 역행렬을 계산하면,</p>
+$$
+A^{-1} = \begin{bmatrix} 2/3 & -1/3 & 0 \\ -1/3 & 2/3 & 0 \\ 0 & 0 & 1/5 \end{bmatrix}
+$$<p>이 행렬의 성분 $(A^{-1})_{ij}$ 가 그린함수 $G(u,u')$ 의 이산 대응이다. 구체적으로</p>
+<ul>
+<li>$(A^{-1})_{11} = 2/3$ : 1번 자리에 단위 점원이 있을 때 1번 자리에서 보이는 응답</li>
+<li>$(A^{-1})_{21} = -1/3$ : 1번 자리에 단위 점원이 있을 때 2번 자리에서 보이는 응답 (음의 응답은 두 채널의 결합 구조를 반영)</li>
+<li>$(A^{-1})_{33} = 1/5$ : 3번 자리에 단위 점원이 있을 때 3번 자리에서 보이는 응답 (3번 채널이 다른 채널과 분리됨)</li>
+</ul>
+<p>(2) 출력 계산</p>
+<p>입력 $f = [3,\ 3,\ 10]^T$ 에 대한 출력은</p>
+$$
+v = A^{-1}f 
+= \begin{bmatrix} 2/3\cdot 3 - 1/3\cdot 3 \\ -1/3\cdot 3 + 2/3\cdot 3 \\ 1/5\cdot 10 \end{bmatrix} 
+= \begin{bmatrix} 1 \\ 1 \\ 2 \end{bmatrix}
+$$<p>성분별로 보면</p>
+$$
+v_i = \sum_j (A^{-1})_{ij}\,f_j
+$$<p>이고, 이는 연속판 $v(u) = \int du'\,G(u,u')\,f(u')$ 의 정확한 이산 대응이다.</p>
+<p>(3) 검증</p>
+<p>$A A^{-1} = I$ 의 성분 형태는</p>
+$$
+\sum_k A_{ik}(A^{-1})_{kj} = \delta_{ij}
+$$<p>이며, 이는 연속판 $\hat{A}_u\,G(u,u') = \delta(u-u')$ 와 정확히 일치한다.</p>
+<hr>
+<p><strong>example2)</strong> 연속 표현 기저: 1차원 디리클레 박스</p>
+<p>연속 그린함수가 구체적으로 어떻게 생겼는지 보이기 위한 표준 예제이다.</p>
+<p><strong>연산자</strong>: $\hat{A} = -\dfrac{d^2}{dx^2}$, 정의역 $[0,L]$</p>
+<p><strong>경계 조건</strong>: $\psi(0) = \psi(L) = 0$ (Dirichlet)</p>
+<p><strong>표현 기저</strong>: 위치 기저 $|x\rangle$, $x \in [0,L]$ (정규직교이므로 $\langle x^d|=\langle x|$)</p>
+<p>sol)</p>
+<p>(1) 정의 방정식 풀이</p>
+<p>정의 방정식 $\hat{A}_x G(x,x') = \delta(x-x')$ 와 경계 조건 $G(0,x') = G(L,x') = 0$ 을 만족하는 $G$ 를 구한다.</p>
+<p>$x \neq x'$ 영역에서는 $-G''(x;x') = 0$, 즉 $G$ 가 $x$ 에 대해 선형이다.</p>
+<p>영역 분할 + 경계 조건:</p>
+<ul>
+<li>$0 \le x \le x'$ 에서: $G(0,x') = 0$ 으로부터 $G = b\,x$</li>
+<li>$x' \le x \le L$ 에서: $G(L,x') = 0$ 으로부터 $G = d\,(x-L)$</li>
+</ul>
+<p>여기서 $b, d$ 는 $x'$ 의 함수이다.</p>
+<p>연속성 ($x = x'$ 에서):</p>
+$$
+b\,x' = d\,(x'-L)
+$$<p>점프 조건 ($\hat{A}_x G$ 를 $x'$ 의 좌우 미소영역에서 적분):</p>
+$$
+-\int_{x'-\epsilon}^{x'+\epsilon} G''(x;x')\,dx = \int_{x'-\epsilon}^{x'+\epsilon}\delta(x-x')\,dx = 1
+$$$$
+\implies -\left[G'(x'^+;x') - G'(x'^-;x')\right] = 1
+$$$$
+\implies -(d - b) = 1 \implies b - d = 1
+$$<p>두 식을 연립하여 풀면 $b = (L-x')/L$, $d = -x'/L$. 따라서</p>
+$$
+G(x,x') = \begin{cases} \dfrac{x\,(L-x')}{L} & 0 \le x \le x' \\[8pt] \dfrac{x'\,(L-x)}{L} & x' \le x \le L \end{cases}
+$$<p>또는 더 간결하게</p>
+$$
+G(x,x') = \frac{x_<\,(L-x_>)}{L}, \quad x_<=\min(x,x'),\ x_>=\max(x,x')
+$$<p>(2) 의미: 단위 점원에 대한 응답</p>
+<p>$x'$ 점에 가해진 단위 점원(delta source)에 대해, $x$ 점에서 관찰되는 응답이 $G(x,x')$ 이다. 구체적 형상:</p>
+<ul>
+<li>응답은 양 끝 $x=0$, $x=L$ 에서 0 (경계 조건)</li>
+<li>점원 위치 $x=x'$ 에서 최대값 $G(x',x') = x'(L-x')/L$</li>
+<li>양쪽으로 갈수록 선형 감소 (텐트 모양)</li>
+</ul>
+<p>이는 양 끝이 고정된 줄에 단위 힘이 가해진 정상상태 변형과 같다.</p>
+<p>(3) 출력 계산: 상수 입력에 대한 응답</p>
+<p>상수 입력 $f(x) = c$ 에 대한 출력은</p>
+$$
+v(x) = \int_0^L dx'\, G(x,x')\,c = c\int_0^L dx'\,G(x,x')
+$$<p>적분을 두 영역으로 나누면</p>
+$$
+\int_0^L dx'\,G(x,x') 
+= \int_0^x dx'\,\frac{x'(L-x)}{L} + \int_x^L dx'\,\frac{x(L-x')}{L}
+= \frac{x(L-x)}{2}
+$$<p>따라서 $v(x) = c\,x(L-x)/2$. 이는 $-v''(x) = c$ 와 $v(0)=v(L)=0$ 의 직접 적분 해와 일치한다.</p>
+<p>(4) 이산 예제와의 비교</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>example1 (이산)</th>
+          <th>example2 (연속)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>표현 기저</td>
+          <td>3차원 이산</td>
+          <td>위치 기저 $\vert x\rangle$, $x\in[0,L]$</td>
+      </tr>
+      <tr>
+          <td>$\hat{A}$</td>
+          <td>$3\times 3$ 행렬</td>
+          <td>미분 연산자 $-d^2/dx^2$</td>
+      </tr>
+      <tr>
+          <td>그린함수</td>
+          <td>행렬 $(A^{-1})_{ij}$</td>
+          <td>함수 $G(x,x') = x_<(L-x_>)/L$</td>
+      </tr>
+      <tr>
+          <td>점원 응답 의미</td>
+          <td>$(A^{-1})_{ij}$ : $j$ 자리 점원에 대한 $i$ 자리 응답</td>
+          <td>$G(x,x')$ : $x'$ 점원에 대한 $x$ 응답</td>
+      </tr>
+      <tr>
+          <td>출력 계산</td>
+          <td>$v_i = \sum_j (A^{-1})_{ij}\,f_j$</td>
+          <td>$v(x) = \int_0^L dx'\,G(x,x')\,f(x')$</td>
+      </tr>
+      <tr>
+          <td>항등 조건</td>
+          <td>$\sum_k A_{ik}(A^{-1})_{kj} = \delta_{ij}$</td>
+          <td>$\hat{A}_x\,G(x,x') = \delta(x-x')$</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>그린함수는 연속 인덱스 $(x,x')$ 를 갖는 행렬이라고 생각해도 무방하다.</strong> 이산 인덱스 $(i,j)$ 가 연속 변수 $(x,x')$ 로, 행렬 곱이 적분으로, 크로네커 델타 $\delta_{ij}$ 가 디랙 델타 $\delta(x-x')$ 로 바뀐 것일 뿐이다.</p>
+<p>(주: 본 예제의 그린함수는 다음 문서 (스펙트럼 표현) 에서 무한 급수 형태로 다시 도출된다. 같은 $G(x,x')$ 의 두 가지 표현 (폐형 vs 스펙트럼) 을 비교해보면 도움이 된다.)</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/greens_function/index.html"><a class="padding" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-url="/greens_function/gf/index.html"><a class="padding" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu">
+            <li class="active " data-nav-url="/greens_function/gf/b_green_function/index.html"><a class="padding" href="/greens_function/gf/b_green_function/index.html">(b) Green&#39;s function</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_spectral_representation/index.html"><a class="padding" href="/greens_function/gf/b_spectral_representation/index.html">(b) Spectral representation</a></li>
+            <li class="" data-nav-url="/greens_function/gf/i_unified_picture/index.html"><a class="padding" href="/greens_function/gf/i_unified_picture/index.html">(i) Unified picture</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_existence_and_properties/index.html"><a class="padding" href="/greens_function/gf/b_existence_and_properties/index.html">(b) Existence and properties</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_sl_form/index.html"><a class="padding" href="/greens_function/gf/b_sl_form/index.html">(b) Sturm-Liouville form</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_sl_greens_function/index.html"><a class="padding" href="/greens_function/gf/b_sl_greens_function/index.html">(b) Sturm-Liouville Green&#39;s function</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_singular_sl/index.html"><a class="padding" href="/greens_function/gf/b_singular_sl/index.html">(b) Singular Sturm-Liouville</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/greens_function/negf/index.html"><a class="padding" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/quantum_transform/index.html"><a class="padding" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779077516"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779077516" defer></script>
+    <script src="/js/theme.js?1779077516" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

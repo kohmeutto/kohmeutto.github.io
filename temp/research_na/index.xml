@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research_NA :: 수리전자물리학</title>
+    <link>http://localhost:1313/temp/research_na/index.html</link>
+    <description>(b) Theory1&#xD;(b) Theory 2&#xD;OUTLINE&#xD;CHAPTER 1&#xD;CHAPTER 2&#xD;CHAPTER 3&#xD;CHAPTER 4&#xD;Appendix</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/temp/research_na/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Theory1</title>
+      <link>http://localhost:1313/temp/research_na/theory1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/theory1/index.html</guid>
+      <description>1. 연산자 Adjoint의 물리 &amp; 공학적 의미&#xD;측정 대상을 바꿀 것(연산자)인가. 측정 관점을 바꿀 것인가(수반 연산자), 수반 연산자는 대상의 변화($\hat{A}$)를 관찰자의 변화($\hat{A}^\dagger$)로 번역해주는 대칭의 거울이다. 우리는 이 거울을 통해 대상을 직접 건드리지 않고도(Ket), 우리의 시선(Bra)을 정교하게 교정함으로써 우주의 진리에 도달한다.&#xA;1) 범함수(Functional)라는 측정 기계&#xA;브라 $\langle v|$는 수학적으로 켓을 넣으면 숫자를 뱉는 기계 이다.예를 들어, 이 시스템의 에너지는 얼마인가?라고 묻는 기계가 $\langle v|$라고 가정해 보자.</description>
+    </item>
+    <item>
+      <title>(b) Theory 2</title>
+      <link>http://localhost:1313/temp/research_na/theory2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/theory2/index.html</guid>
+      <description>1. Derivation of Global Conservation Identities&#xD;앞에서 언급된 바와 같이, 임의의 선형 연산자 $\hat{L}$에 대하여, 시스템의 경계 비대칭성을 추출하는 레지듀 변환 $\mathcal{R}$ 은 힐베르트 공간 내에서 다음과 같이 정의된다. 이 정의는 모든 유도 과정의 출발점이자, 시스템의 ‘객관적 실재’와 ‘예측’ 사이의 간극을 규정하는 공리이다.&#xA;$$&#xD;\langle \phi \mid \mathcal{R}\hat{L} \mid \psi \rangle \equiv \langle \phi \mid \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi \mid \psi \rangle&#xD;$$1) Operator Conservation Law</description>
+    </item>
+    <item>
+      <title>OUTLINE</title>
+      <link>http://localhost:1313/temp/research_na/outline/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/outline/index.html</guid>
+      <description>1. 논문 목차 및 개요&#xD;TITLE: Algebraic Indicators for Operator Adjointness and Spectral Skewness in Discretized Functional Spaces&#xA;1) Introduction&#xA;본 장에서는 비균일 격자 및 비선형 시스템에서 발생하는 수치적 오차를 연산자 수반성(Operator Adjointness) 파괴라는 대수적 관점에서 정의하고, 본 연구에서 제안하는 수리적 지표의 당위성을 기술한다.&#xA;(1) 비균일 도메인에서의 수반성 파괴와 보존 법칙 위배&#xA;이산 공간에서의 자기 수반성 상실-: 균일 격자에서 성립하던 연산자의 자기 수반성이 비균일 공간 메트릭과 상태 종속적 물성 $p(u)$에 의해 대수적으로 파괴되는 과정을 명시한다. 비보존성 발현의 인과관계-: 수반성 파괴가 시스템 내부의 인위적 소산(Artificial Dissipation)을 유발하며, 연속계의 유량 보존 법칙을 위배하는 수리적 기전을 정의한다. (2) 기존 수치 안정화 기법의 해석적 한계</description>
+    </item>
+    <item>
+      <title>CHAPTER 1</title>
+      <link>http://localhost:1313/temp/research_na/chapter1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/chapter1/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CHAPTER 2</title>
+      <link>http://localhost:1313/temp/research_na/chapter2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/chapter2/index.html</guid>
+      <description>2.1 기초 지표의 공리적 정의와 레지듀 변환&#xD;본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.&#xA;1) 힐베르트 공간 내 범함수 사상 정의&#xA;미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.</description>
+    </item>
+    <item>
+      <title>CHAPTER 3</title>
+      <link>http://localhost:1313/temp/research_na/chapter3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/chapter3/index.html</guid>
+      <description>3.1 이산 공간 국소 비대칭 지표 $S_{kj}$&#xD;본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.</description>
+    </item>
+    <item>
+      <title>CHAPTER 4</title>
+      <link>http://localhost:1313/temp/research_na/chapter4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/chapter4/index.html</guid>
+      <description>4. Experimental Proof of Indicator Validity in Abstract Functional Spaces&#xD;4.1 Construction of the Abstract Strongly Elliptic Testbed for Indicator Validation&#xD;본 절에서는 연역적으로 도출된 대수적 텐션 지표 $\hat{C}$와 내부 소산 성분의 직교 여공간 사영(orthogonal projection) 기법이 지니는 수리적 일관성을 다차원($d \in \{1, 2\}$) 이산 공간에서 입증한다. 본 검증의 목적은 특정 물리적 애플리케이션에 수반되는 다차원적 교란 요인을 완전히 배제하고, 제안된 지표가 비선형 연산자 고유의 대수적 붕괴 현상을 공간 차원이나 격자의 위상 구조(선형 직교 격자 및 비구조적 삼각 격자)에 구애받지 않고 정밀하게 추적해 냄을 증명하는 데 있다. 이를 위해 무차원 유클리드 도메인 $\Omega = [0, 1]^d$을 설정하고, 비선형 스투름-리우빌(Sturm-Liouville) 형태의 지배 방정식을 다음과 같이 취한다.</description>
+    </item>
+    <item>
+      <title>Appendix</title>
+      <link>http://localhost:1313/temp/research_na/appendix_a/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/appendix_a/index.html</guid>
+      <description>5.2 후속 연구 및 대수적 확장 가설&#xD;본 연구에서 확립된 레지듀 변환 $\mathcal{R}$, 연산자 보존 법칙, 그리고 벌크-경계 소산 정리는 힐베르트 공간에 정의된 일반적인 선형 연산자 시스템에 대수적으로 성립한다. 3장에서 도출된 텐션 지표 $\hat{C}$의 정규화 목표인 내부 소멸 조건($\mathcal{R}J_{int} = 0$)은 강타원형 보존계라는 특수한 물리적 전제 하에 성립한 결과이다. 연속계 공리 자체의 보편성을 바탕으로, 본 프레임워크를 내부 소산 및 비대칭성이 존재하는 타 편미분방정식 시스템으로 확장하기 위한 세 가지 대수적 가설과 방법론적 가능성을 후속 연구 과제로 제시한다.</description>
+    </item>
+  </channel>
+</rss>

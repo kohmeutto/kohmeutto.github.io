@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reserch_PIN :: 수리전자물리학</title>
+    <link>http://localhost:1313/research/research_pin/index.html</link>
+    <description>Outline&#xD;Derivation1&#xD;Derivation2</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/research/research_pin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Outline</title>
+      <link>http://localhost:1313/research/research_pin/outline/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_pin/outline/index.html</guid>
+      <description>[Derivation 1 적용] 다크 커런트 (Dark Current) 분석&#xD;(1) 측정 조건: 전자 빔 OFF (방사선 소스가 없는 상태에서 $V$만 스윕)&#xA;(2) 데이터 비교: 양성자 조사 전(Before) vs 후(After) 의 전류($J_{dark}$) 증가량&#xA;(3) 추출하는 물리량: 양자역학적 결함 포획률($\eta_0$) 및 SRH 재결합 수명($\tau_{SRH}$)&#xA;(4) 논문에서의 역할 (미시적 원인 규명)&#xA;양성자를 맞았더니 i-layer 내부에 결함(Vacancy)이 늘어났다. 계측된 다크 전류에 양자 포획 모델을 대입해 보니, 결함이 캐리어를 잡아먹는 덫의 성능($\eta_0$)이 급증했고, 그 결과 캐리어의 생존 수명($\tau_{SRH}$)이 줄어든다. (5) 논문의 규명</description>
+    </item>
+    <item>
+      <title>Derivation1</title>
+      <link>http://localhost:1313/research/research_pin/derivation1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_pin/derivation1/index.html</guid>
+      <description>다크 상태 (Dark State): 결함 포획 모델 및 SRH 재결합 분석&#xD;작성자: 김기범 / 일자: 2026.03.27&#xA;외부 빔이 없는 다크 상태의 역방향 및 저전압 순방향 전류는 i-layer 내부에 방사선 피폭으로 생성된 깊은 준위 결함(Deep-level trap)에 의한 공간 전하 재결합(Space-Charge Recombination)에 의해 지배된다.&#xA;1. SRH 재결합 수명 (Lifetime) 도출&#xD;외부 방사선(Proton irradiation)에 의해 반도체 벌크 내부에 격자 결함(Si 및 C Vacancies)이 생성되면, 연속적인 밴드갭 내부에 불연속적인 깊은 준위의 결함 상태(Deep-level trap states)가 형성된다. 자유 캐리어가 결함 준위 $E_t$ 근처에 접근하여 섭동(포획)이 발생할 시, 유효 해밀토니안은 다음과 같이 정의된다.</description>
+    </item>
+    <item>
+      <title>Derivation2</title>
+      <link>http://localhost:1313/research/research_pin/derivation2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_pin/derivation2/index.html</guid>
+      <description>EBIC 기반 소수 캐리어 확산 길이 및 Life time 추출&#xD;작성자: 김기범, 윤영준 / 일자: 2026.03.26&#xA;1. 물리적 시스템의 정의 및 지배 방정식&#xD;본 모델은 n형 반도체 소자(예: n-type 4H-SiC 에피택셜 층)에 외부에서 전자 빔이 조사되어 전자-정공 쌍(EHP)이 연속적으로 생성되는 정상 상태(Steady-state)를 다룬다. 역방향 바이어스 $V$가 인가된 상태에서 계측되는 생성 전류 $I_{gen}(V)$를 통해 물질의 고유 물성치인 소수 캐리어(정공)의 확산 길이 $L_p$와 재결합 수명 $\tau_p$를 역산하는 것이 목적이다. 소자 내부는 인가 전압 $V$에 의해 두께가 변조되는 공핍층(Depletion Region, $0 \le x \le W(V)$)과, 전기장이 없는 중성 영역(Neutral Region, $W(V) &lt; x \le d_{eff}$)으로 분리된다.</description>
+    </item>
+  </channel>
+</rss>

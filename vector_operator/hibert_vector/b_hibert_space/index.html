@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.
+1. 위상 벡터 공간(Topological Vector Spaces) 구조벡터 공간 ⊃ 노름 공간 ⊃ {내적 공간, 바나흐 공간} ⊃ 힐버트 공간 ⊃ 실체 공간 ( 유클리드 공간, L2 공간 …)
+1) 벡터 공간 (Vector Space)
+덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간. 2) 노름 공간 (Normed Space)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Hilbert space :: 수리전자물리학">
+    <meta name="twitter:description" content="Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.
+1. 위상 벡터 공간(Topological Vector Spaces) 구조벡터 공간 ⊃ 노름 공간 ⊃ {내적 공간, 바나흐 공간} ⊃ 힐버트 공간 ⊃ 실체 공간 ( 유클리드 공간, L2 공간 …)
+1) 벡터 공간 (Vector Space)
+덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간. 2) 노름 공간 (Normed Space)">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/hibert_vector/b_hibert_space/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Hilbert space :: 수리전자물리학">
+    <meta property="og:description" content="Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.
+1. 위상 벡터 공간(Topological Vector Spaces) 구조벡터 공간 ⊃ 노름 공간 ⊃ {내적 공간, 바나흐 공간} ⊃ 힐버트 공간 ⊃ 실체 공간 ( 유클리드 공간, L2 공간 …)
+1) 벡터 공간 (Vector Space)
+덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간. 2) 노름 공간 (Normed Space)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Hilbert space :: 수리전자물리학">
+    <meta itemprop="description" content="Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.
+1. 위상 벡터 공간(Topological Vector Spaces) 구조벡터 공간 ⊃ 노름 공간 ⊃ {내적 공간, 바나흐 공간} ⊃ 힐버트 공간 ⊃ 실체 공간 ( 유클리드 공간, L2 공간 …)
+1) 벡터 공간 (Vector Space)
+덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간. 2) 노름 공간 (Normed Space)">
+    <meta itemprop="wordCount" content="1738">
+    <title>(b) Hilbert space :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1771512870" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1771512870" defer></script>
+    <script src="/js/search-lunr.js?1771512870" defer></script>
+    <script src="/js/search.js?1771512870" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1771512870";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1771512870" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1771512870" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1771512870" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1771512870" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771512870" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771512870" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771512870" rel="stylesheet">
+    <link href="/css/theme.css?1771512870" rel="stylesheet">
+    <link href="/css/format-html.css?1771512870" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/hibert_vector\/b_hibert_space\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/hibert_vector/b_hibert_space/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-위상-벡터-공간topological-vector-spaces-구조">1. 위상 벡터 공간(Topological Vector Spaces) 구조</a></li>
+        <li><a href="#2-벡터-공간">2. 벡터 공간</a></li>
+        <li><a href="#3-노름-공간">3. 노름 공간</a></li>
+        <li><a href="#4-내적-공간">4. 내적 공간</a></li>
+        <li><a href="#5-완비성">5. 완비성</a></li>
+        <li><a href="#6-힐버트-공간의-완성">6. 힐버트 공간의 완성</a></li>
+        <li><a href="#7-힐버트-공간-vs-유클리드-공간-vs-l2-공간">7. 힐버트 공간 vs. 유클리드 공간 vs. L2 공간</a></li>
+        <li><a href="#8-리그드-힐버트-공간-rigged-hilbert-space-rhs">8. 리그드 힐버트 공간 (Rigged Hilbert Space, RHS)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/hibert_vector/index.html"><span itemprop="name">Hilbert vector</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Hilbert space</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/hibert_vector/b_group_ring_field/index.html" title="(b) Group & Ring & Field (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/hibert_vector/b_riesz/index.html" title="(b) Riesz representation theorem (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-hilbert-space">(b) Hilbert space</h1>
+
+<hr>
+<p>Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.</p>
+<hr>
+<h3 id="1-위상-벡터-공간topological-vector-spaces-구조">1. 위상 벡터 공간(Topological Vector Spaces) 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>벡터 공간</strong> ⊃ 노름 공간 ⊃ {<strong>내적 공간</strong>, 바나흐 공간} ⊃ <strong>힐버트 공간</strong> ⊃ 실체 공간 ( 유클리드 공간, L2 공간 &hellip;)</p>
+<p><strong>1) 벡터 공간 (Vector Space)</strong></p>
+<ul>
+<li>덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간.</li>
+</ul>
+<p><strong>2) 노름 공간 (Normed Space)</strong></p>
+<ul>
+<li>벡터 공간 + 노름($||\cdot||$)벡터의 &lsquo;길이&rsquo;를 잴 수 있는 공간.</li>
+</ul>
+<p><strong>3.1) 내적 공간 (Inner Product Space)</strong></p>
+<ul>
+<li>벡터 공간 + 내적($\langle \cdot, \cdot \rangle$)</li>
+<li>벡터의 &lsquo;각도&rsquo;와 &lsquo;길이&rsquo;를 모두 잴 수 있는 공간.</li>
+<li>내적이 정의되면 노름은 자동으로 유도되므로($||x||=\sqrt{\langle x,x\rangle}$), 내적 공간은 노름 공간의 부분집합이다.</li>
+</ul>
+<p><strong>3.2) 바나흐 공간 (Banach Space)</strong></p>
+<ul>
+<li>노름 공간 + 완비성(Completeness)</li>
+<li>공간 안의 모든 코시 수열(Cauchy sequence)이 그 공간 안의 한 점으로 수렴하는, 즉 &lsquo;빈틈이 없는&rsquo; 노름 공간이다.</li>
+<li>미적분학이나 해석학을 전개하기에 매우 좋은 환경을 제공한다.</li>
+</ul>
+<p><strong>4) 힐버트 공간 (Hilbert Space)</strong></p>
+<ul>
+<li>내적 공간+완비성을 만족하는 공간. 즉, <strong>완비 내적 공간(Complete Inner Product Space)</strong> 이다.</li>
+</ul>
+<hr>
+<h3 id="2-벡터-공간">2. 벡터 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>벡터 공간(Vector Space) 또는 선형 공간(Linear Space)은 <strong>체 $F$ 위의 아벨군 $V$</strong> 로 정의된다. 즉, 사칙연산이 완벽한 지반(체) 위에 덧셈과 역원이 정의된 구조물(아벨군)을 세운 것과 같다.</p>
+<p><strong>1) 덧셈에 대한 아벨군 $(V, +, -)$</strong></p>
+<p>집합 $V$의 원소인 벡터들 사이에는 다음의 성질이 성립해야 한다.</p>
+<p>(1) 결합법칙 (Associativity): 임의의 $\lbrace|u\rangle, |v\rangle, |w\rangle\rbrace \in V$에 대해, $(|u\rangle+|v\rangle)+|w\rangle=|u\rangle+(|v\rangle+|w\rangle)$<br>
+(2) 항등원 (Identity): 모든 $|v\rangle \in V$에 대해, $|v\rangle+|0\rangle=|v\rangle$ 를 만족하는 영벡터 $|0\rangle$ 이 존재한다.<br>
+(3) 역원 (Inverse): 모든 $|v\rangle \in V$에 대해, $|v\rangle+|-v\rangle=|0\rangle$ 를 만족하는 역원 $|-v\rangle$ 이 존재한다.<br>
+(4) 교환법칙 (Commutativity): 임의의 $\lbrace|u\rangle, |v\rangle\rbrace \in V$에 대해, $|u\rangle+|v\rangle=|v\rangle+|u\rangle$</p>
+<p><strong>2) 스칼라 체$(F,+,-,\times,\div)$와 아벨군$(V,+,-)$의 관계</strong></p>
+<p>체 $F$의 원소인 스칼라$(a, b)$와 벡터$(|u\rangle, |v\rangle)$ 사이에는 스칼라 곱이라는 외부 작용이 정의되며, 다음의 선형성을 만족해야 한다.</p>
+<p>(1) 분배법칙(Distributivity):</p>
+<ul>
+<li>스칼라에 대한 분배: $a(|v\rangle+|u\rangle)=a|v\rangle+a|u\rangle$</li>
+<li>벡터에 대한 분배: $(a+b)|v\rangle=(ab)|v\rangle$</li>
+</ul>
+<p>(2) 결합법칙(Associativity of Scalar Multiplication): $a(b|v\rangle)=(ab)|v\rangle$<br>
+(3) 항등원(Unitary Property)): 체 $F$의 곱셈 항등원 $\hat{I}$에 대해 $\hat{I}|v\rangle=|v\rangle$</p>
+<hr>
+<h3 id="3-노름-공간">3. 노름 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>벡터 공간 + 노름($|\cdot|$)</li>
+<li>벡터의 &lsquo;크기&rsquo; 또는 &lsquo;길이&rsquo;를 측정할 수 있는 규칙이 정의된 공간이다.</li>
+<li>노름은 반드시 <strong>유클리드 거리($\sqrt{x^2+y^2}$)</strong> 일 필요는 없으며, 아래의 3가지 공리를 만족하는 임의의 함수는 모두 노름이 될 수 있다. (예: 맨해튼 거리 $|x|+|y|$, 최대 거리 $\max(|x|,|y|)$ 등)</li>
+</ul>
+<p><strong>1) 노름의 3대 공리</strong></p>
+<p>(1) 양의 정부호성: 길이는 0보다 크거나 같아야 한다.</p>
+$$\| |v\rangle \| \ge 0, \| |v\rangle \|=0 \iff |v\rangle=0$$<p>(2) 동차성 (스칼라 곱): 벡터가 늘어나면 길이도 비례해서 늘어난다.</p>
+$$\| |cv\rangle \| = |c|\cdot\| |v\rangle \|$$<p>(3) 삼각 부등식: 돌아가는 길은 직선 거리보다 짧을 수 없다.</p>
+$$\| |u\rangle+|v\rangle \| \le \| |u\rangle \| + \| |v\rangle \|$$<hr>
+<h3 id="4-내적-공간">4. 내적 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>내적 공간은 <strong>벡터 공간</strong> 에 <strong>내적 연산(Inner Product Operation)</strong> 이 추가로 정의된 공간이다. 수학적으로 벡터 공간 $V$ 위의 내적은 순서가 있는 두 벡터의 쌍을 스칼라로 보내는 함수이다. 앞서 정의한 켓 벡터 $|u\rangle, |v\rangle \in V$에 대하여, 내적을 다음과 같이 <strong>정의</strong>한다. (이 단계에서 내적은 기하학적 각도와 길이를 정의하는 연산이며, 앞서 정의한 브라 $\langle u |$와의 관계는 추후 힐버트 공간의 성질을 통해 연결된다.)</p>
+$$
+(|u\rangle, |v\rangle) := \langle u , v \rangle
+$$<p><strong>1) 내적의 공리 (Axioms)</strong></p>
+<p>임의의 켓 $|\psi\rangle, |\phi\rangle, |\omega\rangle \in V$와 스칼라 $c \in F$에 대해, 내적 연산 $\langle \cdot , \cdot \rangle$은 다음을 만족해야 한다.</p>
+<p>(1) 선형성 (Linearity): 두 번째 인자(오른쪽 켓)에 대해 선형적이다.</p>
+$$
+\langle \omega , (c|\psi\rangle + |\phi\rangle) \rangle = c\langle \omega , \psi \rangle + \langle \omega , \phi \rangle
+$$<p>(2) 켤레 대칭성 (Conjugate Symmetry): 순서를 바꾸면 켤레 복소수가 된다.</p>
+$$
+\langle \phi , \psi \rangle = \langle \psi , \phi \rangle^{\ast}
+$$<p>(3) 양의 정부호성 (Positive-Definiteness): 자기 자신과의 내적은 항상 0보다 크거나 같은 실수이다.</p>
+$$
+\langle \psi , \psi \rangle \ge 0 \quad \text{ (단,} \langle \psi , \psi \rangle = 0 \text{ 인 것은} |\psi\rangle = |0\rangle \text{일 때뿐이다.)}
+$$<p><strong>2) 주요 성질 (Properties)</strong></p>
+<p>위의 정의로부터 유도되는 <strong>내적 공간</strong> 의 기하학적 성질들이다. (이 성질들은 공간의 완비성 여부와 무관하게 성립하므로, 힐버트 공간이 아니더라도 유효하다.)</p>
+<p>(1) 반선형성 (Antilinearity): 켤레 대칭성에 의해, 첫 번째 인자(왼쪽)에 걸리는 스칼라는 켤레($c^{\ast}$)가 되어 밖으로 나온다.</p>
+$$
+\langle c\phi , \psi \rangle = c^{\ast}\langle \phi , \psi \rangle
+$$
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof)
+  </summary>
+  <div class="box-content">
+$$
+\langle c\phi , \psi \rangle
+=\langle \psi , c\phi \rangle^{\ast}
+=(c\langle \psi , \phi \rangle)^{\ast}
+=c^{\ast}\langle \psi , \phi \rangle^{\ast}
+=c^{\ast}\langle \phi , \psi \rangle
+$$
+  </div>
+</details>
+<p>(2) 코시-슈바르츠 부등식 (Cauchy-Schwarz)</p>
+$$
+|\langle \phi , \psi \rangle|^2 \le \langle \phi , \phi \rangle \langle \psi , \psi \rangle
+$$
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof)
+  </summary>
+  <div class="box-content">
+임의의 복소수 $\lambda$에 대하여,
+
+$$
+|\psi+\lambda\phi\rangle:=|\psi\rangle+\lambda|\phi\rangle 
+$$
+
+내적의 양의 정부호성에 의해,
+
+$$
+\langle\psi+\lambda\phi , \psi+\lambda\phi\rangle
+=\langle\psi , \psi\rangle+\lambda\langle\psi , \phi\rangle+\lambda^{\ast}\langle\phi , \psi\rangle+\lambda\lambda^{\ast}\langle\phi , \phi\rangle \ge 0
+$$
+
+편의상 각 항을 $A, B, C$로 치환하면 ($C = \langle\phi , \phi\rangle \neq 0$),
+
+$$
+\implies A+\lambda B+\lambda^{\ast}B^{\ast}+\lambda\lambda^{\ast} C\ge 0
+\implies C\left(\frac{A}{C}+\lambda \frac{B}{C}+\lambda^{\ast}\frac{B^{\ast}}{C}+\lambda\lambda^{\ast}\right)\ge 0
+$$
+
+완전제곱식 꼴로 정리하면,
+
+$$
+\implies C\left(\lambda+\frac{B^{\ast}}{C}\right)\left(\lambda^{\ast}+\frac{B}{C}\right)-\frac{BB^{\ast}}{C}+A\ge 0
+\implies C\left|\lambda+\frac{B^{\ast}}{C}\right|^2 + \left( A - \frac{|B|^2}{C} \right) \ge 0
+$$
+
+모든 $\lambda$에 대해서 위 식이 항상 만족해야 한다. 따라서 좌변을 최소로 만드는 $\lambda = -B^{\ast}/C$를 대입했을 때도 성립해야 한다. (이때 제곱항은 0이 된다.)
+
+$$
+A - \frac{|B|^2}{C} \ge 0
+\implies |B|^2 \le AC
+\implies |\langle \phi , \psi \rangle|^2 \le \langle \phi , \phi \rangle \langle \psi , \psi \rangle
+$$
+  </div>
+</details>
+<p>(3) 노름의 유도 (Induced Norm): 내적을 통해 벡터의 길이를 정의한다.</p>
+$$
+\| |\psi\rangle \| := \sqrt{\langle \psi , \psi \rangle}
+$$<hr>
+<h3 id="5-완비성">5. 완비성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>내적 공간(Inner Product Space)이 기하학적인 무대(각도, 길이)를 제공한다면, <strong>완비성(Completeness)</strong> 은 그 무대의 바닥이 &lsquo;구멍 없이&rsquo; 매끄러움을 보장하는 해석학적 조건이다. 양자역학에서 상태의 중첩(Superposition)이나 무한 급수($\sum c_n |n\rangle$)를 다룰 때, 계산의 결과가 공간 밖으로 도망가지 않고 안전하게 존재함을 보장하기 위해 반드시 필요한 성질이다.</p>
+<p><strong>1) 코시 수열 (Cauchy Sequence)</strong></p>
+<p>완비성을 정의하기 위해서는 먼저 수열이 &lsquo;수렴할 자격&rsquo;을 갖추었는지 판단하는 기준이 필요하다. 이를 <strong>코시 수열</strong> 이라 한다.</p>
+<p>(1) 정의 (Definition)</p>
+<p>벡터 공간 $V$의 수열 ${|\psi_n\rangle}$에 대하여, 항 번호가 커질수록 항들 사이의 거리가 무한히 가까워진다면 이를 코시 수열이라 한다.</p>
+$$
+\forall \epsilon > 0, \exists N \in \mathbb{N} \text{ s.t. } n, m > N \implies \| |\psi_n\rangle - |\psi_m\rangle \| < \epsilon
+$$<p>(2) 의미</p>
+<ul>
+<li>수렴 수열: &ldquo;특정 목적지(극한값)로 다가가는 수열&rdquo;</li>
+<li>코시 수열: &ldquo;목적지는 모르겠지만, 자기들끼리 옹기종기 모이는 수열&rdquo;</li>
+</ul>
+<p><strong>2) 완비성의 정의 (Completeness)</strong></p>
+<p>어떤 내적 공간 $V$가 다음 조건을 만족하면, 이 공간을 <strong>완비적(Complete)</strong> 이라고 한다. <strong>&ldquo;공간 $V$ 내부의 모든 코시 수열이, 다시 $V$ 내부의 한 점(원소)으로 수렴한다.&rdquo;</strong> 즉, &ldquo;모일 자격(코시 성질)을 갖춘 원소들에게는 반드시 공간 내에 쉴 곳(극한값)이 마련되어 있는 공간&quot;을 의미한다.</p>
+$$
+\{|\psi_n\rangle\} \text{ is Cauchy} \implies \exists |\psi\rangle \in V \text{ s.t. } \lim_{n \to \infty} \| \underbrace{|\psi_n\rangle}_{\text{현재 위치}} - \underbrace{|\psi\rangle}_{\text{목표 지점}} \| = 0
+$$<p><strong>3) 예시: 유리수 vs 실수</strong></p>
+<p>완비성의 개념을 가장 잘 보여주는 예시는 유리수($\mathbb{Q}$)와 실수($\mathbb{R}$)의 차이이다.</p>
+<p>(1) 유리수 공간 ($\mathbb{Q}$) : 불완비 공간</p>
+<p>다음과 같은 수열을 생각해보자.</p>
+$$
+1, 1.4, 1.41, 1.414, \dots
+$$<ul>
+<li>이 수열은 유리수들로 이루어져 있으며, 서로 점점 가까워지므로 <strong>코시 수열</strong> 이다.</li>
+<li>하지만 이 수열이 향하는 목적지는 $\sqrt{2}$이다.</li>
+<li>$\sqrt{2} \notin \mathbb{Q}$ 이므로, 이 수열은 유리수 공간 안에서 수렴하지 않는다. (구멍에 빠짐)</li>
+<li><strong>결론:</strong> 유리수 공간은 완비적이지 않다.</li>
+</ul>
+<p>(2) 실수 공간 ($\mathbb{R}$) : 완비 공간</p>
+<ul>
+<li>실수 공간에는 유리수 사이의 빈틈을 무리수들이 메우고 있다.</li>
+<li>따라서 위의 수열은 실수 공간 내의 점 $\sqrt{2}$로 안전하게 수렴한다.</li>
+<li><strong>결론:</strong> 실수 공간은 완비적이다.</li>
+</ul>
+<p><strong>4) 완비성의 판별(Proof Strategy)</strong></p>
+<p>우리가 사용하는 구체적인 공간(예: $L^2$ 공간)이 완비적인지 증명해야 한다. (이를 <strong>리즈-피셔 정리</strong> 라고 한다.) 증명은 보통 다음 4단계를 따른다.</p>
+<p>(1) 수열 선택: 공간 내의 임의의 코시 수열 ${f_n}$을 잡는다.<br>
+(2) 후보 찾기: 수열이 수렴할 것으로 예상되는 극한 함수 $f$를 찾는다. (보통 실수/복소수의 완비성을 이용)<br>
+(3) 소속 확인(<strong>가장 중요</strong>): 그 극한 함수 $f$가 여전히 공간의 조건(예: 유한한 에너지 $\int |f|^2 &lt; \infty$)을 만족하는지 확인한다.<br>
+(4) 수렴 확인: 노름 $| f_n - f |$가 실제로 0으로 가는지 확인한다.</p>
+<hr>
+<h3 id="6-힐버트-공간의-완성">6. 힐버트 공간의 완성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 힐버트 공간을 정의할 수 있다. <strong>힐버트 공간 (Hilbert Space) $\mathcal{H}$</strong></p>
+<p>(1) <strong>내적 공간</strong>이다. (내적 $\langle \cdot, \cdot \rangle$이 정의됨 $\rightarrow$ 기하학 가능)<br>
+(2) <strong>완비 공간</strong>이다. (모든 코시 수열이 공간 내에서 수렴함 $\rightarrow$ 해석학 가능)</p>
+<p>이 두 가지 조건이 결합됨으로써, 우리는 양자역학의 파동함수를 벡터처럼 다루면서도(기하학), 미분방정식을 풀고 무한 급수를 전개하는(해석학) 작업을 엄밀하게 수행할 수 있다.</p>
+<hr>
+<h3 id="7-힐버트-공간-vs-유클리드-공간-vs-l2-공간">7. 힐버트 공간 vs. 유클리드 공간 vs. L2 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>세 공간의 관계는 단순한 포함 관계가 아니라, <strong>&ldquo;추상적 분류(Category)&rdquo;</strong> 와 <strong>&ldquo;구체적 사례(Instance)&rdquo;</strong> 의 관계이다. 힐버트 공간이라는 거대한 수학적 우산 아래에, 차원과 원소의 형태에 따라 유클리드 공간과 $L^2$ 공간이 각각 구체적인 구현체로 존재하는 구조이다.</p>
+<p><strong>1) 힐버트 공간 (Hilbert Space : 추상적 뼈대)</strong></p>
+<ul>
+<li>&lsquo;내적&rsquo;과 &lsquo;완비성&rsquo;을 만족하는 모든 공간을 통칭하는 대수적·해석학적 조건이다.</li>
+<li>원소가 행렬인지 함수인지, 차원이 유한인지 무한인지를 따지지 않는다.</li>
+<li>양자역학의 모든 상태 벡터($|\psi\rangle$)는 원칙적으로 어떤 힐버트 공간 안에 살고 있다.</li>
+</ul>
+<p><strong>2) 유클리드 공간 (Euclidean Space : 유한 차원의 사례)</strong></p>
+<ul>
+<li>우리가 익히 아는 $n$차원 공간($\mathbb{R}^n$ 또는 $\mathbb{C}^n$)이다.</li>
+<li>원소는 유한한 개수의 성분을 가진 열 벡터(Column vector) 형태이다.</li>
+<li>유한 차원 내적 공간은 수학적으로 완비성이 보장되므로, 유클리드 공간은 힐버트 공간의 완벽한 일종(예시)이다.</li>
+<li>양자역학적 적용: <strong>스핀(Spin)</strong> 이나 양자 컴퓨터의 <strong>큐비트(Qubit)</strong> 처럼 상태가 이산적이고 유한한 시스템을 계산할 때, 이 유한 차원의 복소 유클리드 공간(예: $\mathbb{C}^2$)을 힐버트 공간으로 선택하여 사용한다.</li>
+</ul>
+<p><strong>3) $L^2$ 공간 (Square-integrable Space : 무한 차원의 사례)</strong></p>
+<ul>
+<li>원소가 &lsquo;제곱 적분 가능한 함수(Square-integrable function)&lsquo;들로 이루어진 공간이다.</li>
+<li>무한 차원 공간이며, 리즈-피셔 정리에 의해 완비성이 증명되었으므로 이 역시 힐버트 공간의 일종이다.</li>
+<li>양자역학적 적용: <strong>위치($x$)나 운동량($p$)</strong> 처럼 연속적인 변수를 가지는 시스템을 계산할 때, 파동함수 $\psi(x)$가 서식하는 이 무한 차원 $L^2$ 공간을 힐버트 공간으로 골라서 사용한다.</li>
+</ul>
+<p><strong>물리학에서 &ldquo;힐버트 공간에서 계산한다&quot;는 말은 단일한 공간 하나만 존재한다는 뜻이 아니다.</strong> 우리가 다루는 물리적 시스템의 특성(이산적이냐, 연속적이냐)에 맞춰 힐버트 공간의 구체적인 &lsquo;종류(유클리드 공간 또는 $L^2$ 공간)&lsquo;를 <strong>적절하게 골라서 쓰는 것</strong> 이다.</p>
+<hr>
+<h3 id="8-리그드-힐버트-공간-rigged-hilbert-space-rhs">8. 리그드 힐버트 공간 (Rigged Hilbert Space, RHS)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 왜 필요한가?</strong></p>
+<ul>
+<li>힐버트 공간은 물리적으로 의미 있는 상태(크기가 유한한 벡터)를 다루기에 매우 훌륭한 공간이다. 하지만 한 가지 문제가 있다. 위치 연산자($\hat{x}$)나 운동량 연산자($\hat{p}$)의 고유상태(eigenstate)인 |x⟩나 |p⟩는 크기가 무한대여서, 엄밀히는 힐버트 공간의 정식 멤버가 아니다.</li>
+<li>$|x_0\rangle$의 파동 함수 표현은 디랙 델타 함수 $\delta(x-x_0)$이며, 이 함수의 크기 제곱은 무한대이다.</li>
+<li>$|p_0\rangle$의 파동 함수 표현은 평면파 $e^{ip_0x/\hbar}$이며, 이 함수의 크기 제곱 또한 무한대이다.</li>
+<li>물리적으로 매우 중요한 <strong>이 기저 벡터들이 정작 힐버트 공간에 속하지 않는 수학적 문제를 해결하기 위해</strong> 리그드 힐버트 공간이라는 확장된 개념을 도입한다.</li>
+</ul>
+<p><strong>2) 겔판트 삼중항 (The Gelfand Triplet)</strong></p>
+<p>리그드 힐버트 공간은 세 개의 공간이 샌드위치처럼 겹쳐진 <strong>겔판트 삼중항(Gelfand triplet)</strong> 이라는 구조로 이루어져 있다. 특정 위치 $x$의 함숫값을 뽑아내는 디랙 델타 범함수($\delta_x[\phi] = \phi(x)$) 를 생각하면 명쾌하게 이해된다.</p>
+$$
+\Phi\subset \mathcal{H}\subset\Phi^\ast
+$$<ul>
+<li>$H$ (힐버트 공간): 우리가 지금까지 논의한 표준적인 힐버트 공간이다. 모든 물리적 상태 벡터($|\psi\rangle$)가 여기에 속한다.</li>
+<li>$\Phi \subset \mathcal{H}$ (함수 공간의 축소): $\Phi$는 $\mathcal{H}$($L^2$ 공간) 중에서도 무한 번 미분 가능한 아주 &lsquo;예쁜&rsquo; 함수들만 추려낸 좁은 공간이다.</li>
+<li>$\mathcal{H}$에서의 디렉 델타 (포함 불가): $\mathcal{H}$의 원소는 노름이 유한해야 하므로, 디랙 델타를 품을 수 없다. 따라서 $\delta_x \notin \mathcal{H}$ 이다.</li>
+<li>$\Phi^\ast$에서의 디렉 델타 (자연스러운 포함): 디랙 델타는 &lsquo;예쁜 함수&rsquo;($\Phi$)들의 범함수이므로, 당연히 그 쌍대 공간인 $\Phi^\ast$의 원소가 된다. 따라서 $\delta_x \in \Phi^\ast$ 이다.</li>
+</ul>
+<p><strong>3) 의의</strong></p>
+<p>이 구조를 통해 다음과 같은 이점을 얻는다.</p>
+<ul>
+<li>물리적으로 실현 가능한 상태들은 여전히 힐버트 공간 $\mathcal{H}$에 존재한다.</li>
+<li>수학적으로 문제가 되었던 위치 고유상태 $|x\rangle$나 운동량 고유상태 $|p\rangle$는 더 넓은 공간인 $\Phi^*$에 안전하게 존재할 수 있다.</li>
+<li>결과적으로, 디랙이 사용했던 브라-켓 표기법 전체가 수학적으로 완벽하게 엄밀한 토대를 갖추게 된다.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/hibert_vector/index.html"><a class="padding" href="/vector_operator/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-9d98fa139563ae86afedc0ded94f6ac6" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/hibert_vector/b_ket/index.html"><a class="padding" href="/vector_operator/hibert_vector/b_ket/index.html">(b) Ket</a></li>
+            <li class="" data-nav-url="/vector_operator/hibert_vector/b_bra/index.html"><a class="padding" href="/vector_operator/hibert_vector/b_bra/index.html">(b) Bra</a></li>
+            <li class="" data-nav-url="/vector_operator/hibert_vector/b_group_ring_field/index.html"><a class="padding" href="/vector_operator/hibert_vector/b_group_ring_field/index.html">(b) Group &amp; Ring &amp; Field</a></li>
+            <li class="active " data-nav-url="/vector_operator/hibert_vector/b_hibert_space/index.html"><a class="padding" href="/vector_operator/hibert_vector/b_hibert_space/index.html">(b) Hilbert space</a></li>
+            <li class="" data-nav-url="/vector_operator/hibert_vector/b_riesz/index.html"><a class="padding" href="/vector_operator/hibert_vector/b_riesz/index.html">(b) Riesz representation theorem</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant/index.html"><a class="padding" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771512870"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771512870" defer></script>
+    <script src="/js/theme.js?1771512870" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

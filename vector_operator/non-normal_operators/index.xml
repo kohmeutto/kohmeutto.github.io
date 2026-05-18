@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Non-normal operators :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/non-normal_operators/index.html</link>
+    <description>(b) Adjoint &amp; Decomposition&#xD;(b) Adjoint &amp; Residue transformation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/non-normal_operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Adjoint &amp; Decomposition</title>
+      <link>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_decomposition/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_decomposition/index.html</guid>
+      <description>1. 연산자의 Adjoint&#xD;수반 연산자는 그 자체로 범함수는 아니지만, 범함수(Bra)가 연산자를 만났을 때 어떻게 변하는지를 설명하는 ‘연산자의 그림자’와 같다. 우리는 연산자를 켓(Ket)에 작용시킬 수도 있지만, 수반 연산자를 통해 범함수(Bra)에 작용시킬 수도 있다. 이것이 바로 수반 연산자의 진정한 권능이다.&#xA;$$\langle v | \hat{A} w \rangle = \langle \hat{A}^\dagger v | w \rangle$$ 기하학적 의미: $\hat{A}$가 공간을 특정 방향으로 뒤튼다면, $\hat{A}^\dagger$는 그 뒤틀림을 ‘거울에 비춘 듯한’ 방식으로 되돌리거나 대응시키는 작용을 한다. Dirac Notation: 브라-켓 표기법에서 수반 작용은 매우 직관적이다. $(\hat{A}|w\rangle)^\dagger = \langle w|\hat{A}^\dagger$. 2. 주요 성질 (Algebra of Adjoints)&#xD;수반 작용은 대합(Involution) 의 성질을 가지며, 이는 거울을 두 번 비추면 원래 모습으로 돌아오는 것과 같다.</description>
+    </item>
+    <item>
+      <title>(b) Adjoint &amp; Residue transformation</title>
+      <link>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_derivation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_derivation/index.html</guid>
+      <description>수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.&#xA;1. 유한 차원: 행렬 성분의 자리 바꾸기&#xD;$$&#xD;(A^\dagger)_{ij} = (A_{ji})^{\ast}&#xD;$$proof)&#xA;행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+$$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
+열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Spectral theory :: 수리전자물리학">
+    <meta name="twitter:description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+$$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
+열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
+    <meta property="og:url" content="http://localhost:1313/vector/eigenvalue_problem/b_spectral_theory/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Spectral theory :: 수리전자물리학">
+    <meta property="og:description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+$$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
+열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector">
+    <meta itemprop="name" content="(b) Spectral theory :: 수리전자물리학">
+    <meta itemprop="description" content="1. Spectral theroy고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다. 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.
+$$\hat{A}|v\rangle=|f\rangle$$(1) 입력벡터
+열벡터 $$|v\rangle = \sum_i \alpha_i |\lambda_i\rangle$$ 함수벡터 $$|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle$$(2) 출력벡터
+열벡터 $$|f\rangle = \sum_i \beta_i |\lambda_i\rangle$$ 함수벡터 $$|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle$$(3) 연산자, 스팩트럼 분해(대각화)">
+    <meta itemprop="wordCount" content="397">
+    <title>(b) Spectral theory :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1771295454" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1771295454" defer></script>
+    <script src="/js/search-lunr.js?1771295454" defer></script>
+    <script src="/js/search.js?1771295454" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1771295454";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1771295454" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1771295454" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1771295454" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1771295454" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771295454" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771295454" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771295454" rel="stylesheet">
+    <link href="/css/theme.css?1771295454" rel="stylesheet">
+    <link href="/css/format-html.css?1771295454" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector\/eigenvalue_problem\/b_spectral_theory\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector/eigenvalue_problem/b_spectral_theory/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-spectral-theroy">1. Spectral theroy</a></li>
+        <li><a href="#2-스팩트럼-분해의-의미">2. 스팩트럼 분해의 의미</a></li>
+        <li><a href="#3-연산자의-고유벡터들이-완비성을-가질-조건">3. 연산자의 고유벡터들이 완비성을 가질 조건</a></li>
+        <li><a href="#4-연산자의-멱">4. 연산자의 멱</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector/index.html"><span itemprop="name">Vector</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector/eigenvalue_problem/index.html"><span itemprop="name">Eigenvalue problem</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Spectral theory</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector/eigenvalue_problem/b_eigenvalue/index.html" title="(b) Eigenvalue & Eigenvector (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector/commutator/index.html" title="Commutator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-spectral-theory">(b) Spectral theory</h1>
+
+<hr>
+<h3 id="1-spectral-theroy">1. Spectral theroy<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>고유벡터가 완비적이라면, 연산자, 입력, 출력 모두 고유벡터로 표현할 수 있다.</strong> 고유벡터의 완비성에 대한 증명은 정규연산자에서 다룬다.</p>
+$$
+\hat{A}|v\rangle=|f\rangle
+$$<p><strong>(1) 입력벡터</strong></p>
+<ul>
+<li>열벡터</li>
+</ul>
+$$
+|v\rangle = \sum_i \alpha_i |\lambda_i\rangle
+$$<ul>
+<li>함수벡터</li>
+</ul>
+$$
+|v\rangle = \int d\lambda \alpha(\lambda) |\lambda\rangle
+$$<p><strong>(2) 출력벡터</strong></p>
+<ul>
+<li>열벡터</li>
+</ul>
+$$
+|f\rangle = \sum_i \beta_i |\lambda_i\rangle
+$$<ul>
+<li>함수벡터</li>
+</ul>
+$$
+|f\rangle = \int d\lambda \beta(\lambda) |\lambda\rangle
+$$<p><strong>(3) 연산자, 스팩트럼 분해(대각화)</strong></p>
+<ul>
+<li>열벡터</li>
+</ul>
+$$
+\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|
+$$<p>만약, 고유벡터가 정규직교라면,</p>
+$$
+\hat{A}=\sum_i \lambda_i|\lambda_i\rangle\langle\lambda_i| \implies A=PDP^{-1}
+$$<p>연산자 $\hat{A}$의 작용은, 각 <strong>고유 상태 방향으로 투영($|\lambda_i\rangle\langle \lambda_i|$)</strong> 한 다음, 그 방향의 <strong>고유값($\lambda_i$)</strong> 만큼 크기를 조절해주는 행위를 모든 고유 방향에 대해 합산한 것과 같다.</p>
+<p>proof)</p>
+$$
+\hat{A}=\hat{A}\hat{I}
+=\hat{A}\sum_i|\lambda_i\rangle\langle\lambda^i|
+=\sum_i\hat{A}|\lambda_i\rangle\langle\lambda^i|
+=\sum_i\lambda_i|\lambda_i\rangle\langle\lambda^i|
+$$<ul>
+<li>함수벡터</li>
+</ul>
+$$
+\hat{A}=\int d\lambda K(\lambda) |\lambda\rangle \langle\lambda|
+$$<hr>
+<h3 id="2-스팩트럼-분해의-의미">2. 스팩트럼 분해의 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>고유벡터의 의미를 다시한번 살펴보자. 고유벡터가 어떤 시스템(연산자)에 입력되었을 경우, <strong>입력(고유벡터)의 특성이 전혀 변하지(왜곡되지) 않으면서, 크기만 바뀌어 출력되는 입력을 의미한다.</strong></p>
+<p>비유: 오디오 이퀄라이저</p>
+<ul>
+<li>시스템 (연산자): 소리를 변화시키는 복잡한 오디오 필터.</li>
+<li>임의의 벡터: 수많은 주파수가 섞여있는 &lsquo;음악&rsquo;.</li>
+<li>고유벡터: &lsquo;100Hz 순수 사인파&rsquo;, &lsquo;250Hz 순수 사인파&rsquo; 등 각각의 순수한 주파수 성분.</li>
+<li>고유값: 각 주파수 채널의 볼륨 조절 값 (증폭 또는 감쇠).</li>
+</ul>
+<p>복잡한 오디오 필터(연산자 $\hat{A}$)가 음악(벡터 $|v\rangle$)에 어떻게 작용하는지 이해하기는 어렵다. 하지만 이 필터의 고유벡터($|\lambda_i\rangle$, 순수 주파수들)를 안다면, 그 작용은 매우 단순해진다. 이 필터는 100Hz 성분은 1.5배 증폭($\lambda_1=1.5$)하고, 250Hz 성분은 0.8배 감쇠($\lambda_2=0.8$)시키는구나. <strong>스팩트럼 분해(대각화)</strong> 는 이 복잡한 필터를, <strong>각 주파수 채널마다 독립적으로 작동하는 간단한 &lsquo;볼륨 노브&rsquo;들의 집합</strong> 으로 보는 것과 같다. 결론적으로, 고유벡터를 안다는 것은 복잡하게 얽혀있는 시스템을, 서로 영향을 주지 않는 단순하고 독립적인 문제들의 합으로 분해하여 바라볼 수 있게 됨을 의미한다.</p>
+<hr>
+<h3 id="3-연산자의-고유벡터들이-완비성을-가질-조건">3. 연산자의 고유벡터들이 완비성을 가질 조건<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>모든 고유값(eigenvalue)</strong> 에 대해,</p>
+$$
+\text{총 대수적 중복도}=\text{기하적 중복도}
+$$<p>쉽게 말해, <strong>중복된 고유값의 개수만큼, 선형 독립인 고유벡터를 찾을 수 있어야 한다.</strong></p>
+<p><strong>(1) 대수적 중복도</strong></p>
+<p>고유값을 계산하기 위해 특성 방정식을 풀었을 때, 특정 고유값이 <strong>&lsquo;근으로서 몇 번 중복되는가&rsquo;</strong> 를 의미한다.</p>
+<ul>
+<li>예시: $(\lambda-2)^2(\lambda-5)=0$ 의 특성방정식
+<ul>
+<li>고유값 $\lambda=2$의 대수적 중복도는 2이다.</li>
+<li>고유값 $\lambda=5$의 대수적 중복도는 1이다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>(2) 기하학적 중복도</strong></p>
+<p>하나의 고유값에 대해, 서로 <strong>&lsquo;선형 독립인 고유벡터를 몇 개나 찾을 수 있는가&rsquo;</strong> 를 의미한다.</p>
+<hr>
+<h3 id="4-연산자의-멱">4. 연산자의 멱<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$
+\hat{A}^n
+=\sum_i (\lambda_i)^n|\lambda_i\rangle\langle\lambda^i|
+$$<p>proof)</p>
+$$
+\hat{A}^2=\sum_i\sum_j (\lambda_i|\lambda_i\rangle\langle\lambda^i|)(\lambda_j|\lambda_j\rangle\langle\lambda^j)
+$$$$
+=\sum_i\sum_j \lambda_i\lambda_j|\lambda_i\rangle\langle\lambda^i|\lambda_j\rangle\langle\lambda^j|
+$$$$
+=\sum_i\sum_j \lambda_i\lambda_j|\lambda_i\rangle\delta^i_j\langle\lambda^j|
+$$$$
+=\sum_i (\lambda_i)^2|\lambda_i\rangle\langle\lambda^i|
+$$<hr>
+<p><strong>example1)</strong> 허미션 행렬 $A$를 대각화 하시오.</p>
+$$
+A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}
+$$<p>sol)</p>
+$$
+\hat{A}=\sum_i \lambda_i |\lambda_i\rangle\langle\lambda^i|
+$$<p>(1) 고유값</p>
+$$
+(2-\lambda)^2-1=0\implies\lambda_1=1,\lambda_2=3
+$$<p>(2) 고유벡터</p>
+<ul>
+<li>$\lambda_1=1$에서, $|\lambda_1\rangle=[1,-1]^T$, $\langle\lambda^1|=\cfrac{1}{2}[1,-1]$</li>
+<li>$\lambda_2=3$에서, $|\lambda_2\rangle=[1,1]^T$, $\langle\lambda^2|=\cfrac{1}{2}[1,1]$</li>
+</ul>
+<p>(3) 구성</p>
+$$
+\lambda_1|\lambda_1\rangle\langle\lambda^1|
+=\frac{1}{2}\begin{bmatrix}1 & -1 \\ -1 &1\end{bmatrix}
+$$$$
+\lambda_2|\lambda_2\rangle\langle\lambda^2|
+=\frac{3}{2}\begin{bmatrix}1 & 1 \\ 1 & 1\end{bmatrix}
+$$
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector/index.html"><a class="padding" href="/vector/index.html">Vector</a><ul id="R-subsections-810553432a69597a3763134654068e5b" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector/euclidean_vector/index.html"><a class="padding" href="/vector/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-28e434b72bf6485582a2286afc028105" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/einstein-notation/index.html"><a class="padding" href="/vector/einstein-notation/index.html">Einstein notation</a><ul id="R-subsections-db388e634a8db07ff6ea800545162d80" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/hibert_vector/index.html"><a class="padding" href="/vector/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-5882fdd1bd89f8437add430d66b213c6" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/dirac_notation/index.html"><a class="padding" href="/vector/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-9166a91df888a4ac0ae0b489546e198d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/determinant/index.html"><a class="padding" href="/vector/determinant/index.html">Determinant</a><ul id="R-subsections-4dd471a94203708429c65791084b17cc" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector/eigenvalue_problem/index.html"><a class="padding" href="/vector/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-222de50b372bbfd3ccfe2316342ed6a5" class="collapsible-menu">
+            <li class="" data-nav-url="/vector/eigenvalue_problem/b_space/index.html"><a class="padding" href="/vector/eigenvalue_problem/b_space/index.html">(b) Space</a></li>
+            <li class="" data-nav-url="/vector/eigenvalue_problem/b_eigenvalue/index.html"><a class="padding" href="/vector/eigenvalue_problem/b_eigenvalue/index.html">(b) Eigenvalue &amp; Eigenvector</a></li>
+            <li class="active " data-nav-url="/vector/eigenvalue_problem/b_spectral_theory/index.html"><a class="padding" href="/vector/eigenvalue_problem/b_spectral_theory/index.html">(b) Spectral theory</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/commutator/index.html"><a class="padding" href="/vector/commutator/index.html">Commutator</a><ul id="R-subsections-fd33751a8ae2a6561ab3869fa8621753" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector/normal_operators/index.html"><a class="padding" href="/vector/normal_operators/index.html">Normal operators</a><ul id="R-subsections-6a0464b3225b6fb5c504dabd8d2f3e7c" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/lie_group/index.html"><a class="padding" href="/lie_group/index.html">Lie group</a><ul id="R-subsections-8efc1eeed904b7a3bbaa06727bc1f2a7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771295454"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771295454" defer></script>
+    <script src="/js/theme.js?1771295454" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="비선형 편미분 방정식(Nonlinear Partial Differential Equations, PDEs)은 경계층(boundary layers), 충격파, 그리고 강한 매질 불연속성이 존재하는 영역에서 가파른 상태 변수 구배를 형성한다. 이러한 시스템을 유한체적법(FVM) 등 이산 공간으로 투영하여 선형화할 경우, 프레셰 도함수(Fréchet derivative)인 자코비안(Jacobian) 연산자는 강한 대류 성분에 의해 구조적인 비정규성(non-normality)을 유발한다. 비정규 연산자 시스템의 스펙트럼은 서로 직교하지 않는 고유벡터 기저(skewed basis)를 형성하며, 이는 고유값들이 복소 평면의 안정 영역에 위치하더라도 단기적인 뉴턴 반복 척도에서 섭동의 유의미한 과도 성장(transient growth)을 초래한다. 이러한 대수적 악조건(ill-conditioning)은 크릴로프(Krylov) 부분공간 해법의 수렴 속도를 저하시키고, 비선형 반복 해법의 발산을 야기하는 주요 요인으로 작용한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CHAPTER 1 :: 수리전자물리학">
+    <meta name="twitter:description" content="비선형 편미분 방정식(Nonlinear Partial Differential Equations, PDEs)은 경계층(boundary layers), 충격파, 그리고 강한 매질 불연속성이 존재하는 영역에서 가파른 상태 변수 구배를 형성한다. 이러한 시스템을 유한체적법(FVM) 등 이산 공간으로 투영하여 선형화할 경우, 프레셰 도함수(Fréchet derivative)인 자코비안(Jacobian) 연산자는 강한 대류 성분에 의해 구조적인 비정규성(non-normality)을 유발한다. 비정규 연산자 시스템의 스펙트럼은 서로 직교하지 않는 고유벡터 기저(skewed basis)를 형성하며, 이는 고유값들이 복소 평면의 안정 영역에 위치하더라도 단기적인 뉴턴 반복 척도에서 섭동의 유의미한 과도 성장(transient growth)을 초래한다. 이러한 대수적 악조건(ill-conditioning)은 크릴로프(Krylov) 부분공간 해법의 수렴 속도를 저하시키고, 비선형 반복 해법의 발산을 야기하는 주요 요인으로 작용한다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/research_na/chapter1/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="CHAPTER 1 :: 수리전자물리학">
+    <meta property="og:description" content="비선형 편미분 방정식(Nonlinear Partial Differential Equations, PDEs)은 경계층(boundary layers), 충격파, 그리고 강한 매질 불연속성이 존재하는 영역에서 가파른 상태 변수 구배를 형성한다. 이러한 시스템을 유한체적법(FVM) 등 이산 공간으로 투영하여 선형화할 경우, 프레셰 도함수(Fréchet derivative)인 자코비안(Jacobian) 연산자는 강한 대류 성분에 의해 구조적인 비정규성(non-normality)을 유발한다. 비정규 연산자 시스템의 스펙트럼은 서로 직교하지 않는 고유벡터 기저(skewed basis)를 형성하며, 이는 고유값들이 복소 평면의 안정 영역에 위치하더라도 단기적인 뉴턴 반복 척도에서 섭동의 유의미한 과도 성장(transient growth)을 초래한다. 이러한 대수적 악조건(ill-conditioning)은 크릴로프(Krylov) 부분공간 해법의 수렴 속도를 저하시키고, 비선형 반복 해법의 발산을 야기하는 주요 요인으로 작용한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="CHAPTER 1 :: 수리전자물리학">
+    <meta itemprop="description" content="비선형 편미분 방정식(Nonlinear Partial Differential Equations, PDEs)은 경계층(boundary layers), 충격파, 그리고 강한 매질 불연속성이 존재하는 영역에서 가파른 상태 변수 구배를 형성한다. 이러한 시스템을 유한체적법(FVM) 등 이산 공간으로 투영하여 선형화할 경우, 프레셰 도함수(Fréchet derivative)인 자코비안(Jacobian) 연산자는 강한 대류 성분에 의해 구조적인 비정규성(non-normality)을 유발한다. 비정규 연산자 시스템의 스펙트럼은 서로 직교하지 않는 고유벡터 기저(skewed basis)를 형성하며, 이는 고유값들이 복소 평면의 안정 영역에 위치하더라도 단기적인 뉴턴 반복 척도에서 섭동의 유의미한 과도 성장(transient growth)을 초래한다. 이러한 대수적 악조건(ill-conditioning)은 크릴로프(Krylov) 부분공간 해법의 수렴 속도를 저하시키고, 비선형 반복 해법의 발산을 야기하는 주요 요인으로 작용한다.">
+    <meta itemprop="wordCount" content="351">
+    <title>CHAPTER 1 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1776708034" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1776708034" defer></script>
+    <script src="/js/search-lunr.js?1776708034" defer></script>
+    <script src="/js/search.js?1776708034" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1776708034";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1776708034" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776708034" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776708034" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1776708034" rel="stylesheet">
+    <link href="/css/theme.css?1776708034" rel="stylesheet">
+    <link href="/css/format-html.css?1776708034" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/research_na\/chapter1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/research_na/chapter1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/research_na/index.html"><span itemprop="name">Research_NA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">CHAPTER 1</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/outline/index.html" title="OUTLINE (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/chapter2/index.html" title="CHAPTER 2 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="chapter-1">CHAPTER 1</h1>
+
+<hr>
+<p>비선형 편미분 방정식(Nonlinear Partial Differential Equations, PDEs)은 경계층(boundary layers), 충격파, 그리고 강한 매질 불연속성이 존재하는 영역에서 가파른 상태 변수 구배를 형성한다. 이러한 시스템을 유한체적법(FVM) 등 이산 공간으로 투영하여 선형화할 경우, 프레셰 도함수(Fréchet derivative)인 자코비안(Jacobian) 연산자는 강한 대류 성분에 의해 구조적인 비정규성(non-normality)을 유발한다. 비정규 연산자 시스템의 스펙트럼은 서로 직교하지 않는 고유벡터 기저(skewed basis)를 형성하며, 이는 고유값들이 복소 평면의 안정 영역에 위치하더라도 단기적인 뉴턴 반복 척도에서 섭동의 유의미한 과도 성장(transient growth)을 초래한다. 이러한 대수적 악조건(ill-conditioning)은 크릴로프(Krylov) 부분공간 해법의 수렴 속도를 저하시키고, 비선형 반복 해법의 발산을 야기하는 주요 요인으로 작용한다.</p>
+<p>연속계 보존 법칙을 비균일 격자망으로 이산화할 때 발생하는 유효 속도장 발산의 이산 교환자 오차(discrete commutator error)를 억제하기 위해, 오차 밀도에 따라 격자점의 좌표를 재배치하는 r-적응형(r-adaptive) 위상 사상 기법이 광범위하게 활용된다. 특히 그래프 라플라시안(Graph Laplacian)과 조화 사상(harmonic mapping)에 기반한 적응형 격자 생성은 격자 왜곡(mesh distortion)을 분산시키고 격자 꼬임(mesh tangling)을 방지하는 데 효과적이다. 그러나 이러한 기하학적 정칙성 확보만으로는 시스템 본연의 대류항이 유발하는 자코비안의 고유 비대칭성을 근본적으로 제거하기는 어려우며, 여전히 잔존하는 대수적 스펙트럼의 왜곡을 제어하기 위한 명시적인 전제조건화(preconditioning)가 요구된다.</p>
+<p>이에 본 연구는 경험적 완화 계수나 인위적인 수치 소산을 배제하고, 순수 선형대수학적 조작을 통해 비선형 시스템의 대류적 비대칭성을 제어하는 포괄적인 고해상도 수치해석 기법을 제안한다. 선형 연산자의 레지듀 사상(residue mapping)을 도입하여 자코비안 내부의 1계 대류 잔차를 대수적으로 분리한다. 분리된 잔차를 기반으로 국소 비대칭 지표를 도출하여 그래프 라플라시안 기반의 기하학적 위상 사상을 수행한다. 본 연구에서는 이러한 대수적 조작이 단순한 행렬 연산에 그치지 않고, 시스템의 교차 비대각 성분비로 추출된 대수적 맵핑 벡터가 유한체적법(FVM) 공간의 기하학적 체적비 및 표류 속도의 1차원 선적분과 해석적으로 동치(equivalent)임을 증명한다. 이를 이산 헬름홀츠-호지 분해(Discrete Helmholtz-Hodge Decomposition, DHHD)와 결합함으로써, 유효 자코비안의 고유 반대칭 성분만을 잔차 공간에 고립시키고 선형 솔버의 탐색 영역을 대칭화하는 전제조건자를 설계한다.</p>
+<p>제안된 대수적 정화 기법의 수학적 무결성과 이산화 차수를 독립적으로 검증하기 위해, 본 연구는 제조해 기법(Method of Manufactured Solutions, MMS)을 적용하여 오차 평가를 수행한다. 해석적 정해가 부재하는 매질 불연속성 및 급격한 곡률 변화 조건 하에서도, 제안된 알고리즘이 부동소수점 오차에 기인한 발산을 억제하고 이론적인 점근적 2차 수렴성을 만족함을 확인한다. 본 논문의 구성은 다음과 같다. 2장에서는 비정규 연산자의 레지듀 사상 및 프레셰 도함수 전개를 다루며, 3장에서는 이산 교환자 오차 기반의 대수적 전제조건화 절차를 구축한다. 마지막으로 4장에서는 1차원 및 2차원 특이 섭동 시스템에 대한 수치적 실험 결과를 상술한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_operator/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/b_function_of_operators/index.html">(b) Function of operators</a></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/research_na/index.html"><a class="padding" href="/vector_operator/research_na/index.html">Research_NA</a><ul id="R-subsections-302336cd3102d0268cf92834564071db" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/research_na/theory1/index.html"><a class="padding" href="/vector_operator/research_na/theory1/index.html">(b) Theory1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/theory2/index.html"><a class="padding" href="/vector_operator/research_na/theory2/index.html">(b) Theory 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/outline/index.html"><a class="padding" href="/vector_operator/research_na/outline/index.html">OUTLINE</a></li>
+            <li class="active " data-nav-url="/vector_operator/research_na/chapter1/index.html"><a class="padding" href="/vector_operator/research_na/chapter1/index.html">CHAPTER 1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter2/index.html"><a class="padding" href="/vector_operator/research_na/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter3/index.html"><a class="padding" href="/vector_operator/research_na/chapter3/index.html">CHAPTER 3</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter4/index.html"><a class="padding" href="/vector_operator/research_na/chapter4/index.html">CHAPTER 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter5/index.html"><a class="padding" href="/vector_operator/research_na/chapter5/index.html">CHAPTER 5</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/appendix/index.html"><a class="padding" href="/vector_operator/research_na/appendix/index.html">Appendix</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/references/index.html"><a class="padding" href="/vector_operator/research_na/references/index.html">references</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp4/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp4/index.html">temp 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/paper_kor/index.html"><a class="padding" href="/vector_operator/research_na/paper_kor/index.html">Papaer_kr</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/paper_eng/index.html"><a class="padding" href="/vector_operator/research_na/paper_eng/index.html">Papaer_eng</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp1/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp1/index.html">temp1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp2/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp2/index.html">temp2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp3/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp3/index.html">temp3</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_sbd/index.html"><a class="padding" href="/vector_operator/research_sbd/index.html">research_SBD</a><ul id="R-subsections-e18a822b16ff9efc545c6b23dfc7556b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_pin/index.html"><a class="padding" href="/vector_operator/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-6ddf49e7c174abf7ead60452e1632a62" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1776708034"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1776708034" defer></script>
+    <script src="/js/theme.js?1776708034" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

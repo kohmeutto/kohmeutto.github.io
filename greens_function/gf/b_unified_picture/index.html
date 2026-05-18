@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. 세 객체의 같은 구조본 챕터에서 다음 세 객체를 만났다.
+객체 어디서 의미 $\delta(u-u&#39;)$ 문서 1 §2 정의 방정식의 우변 $A(u,u&#39;)$ 문서 1 §1 연산자의 적분 커널 $G(u,u&#39;)$ 문서 1-2 역연산자의 적분 커널 (그린함수) 언뜻 보기에 이 셋은 완전히 다른 객체이다. 그러나 스펙트럼 표현으로 본 모습은 놀랍도록 유사하다.
+1) 항등 연산자의 커널: 델타 함수
+b_operator.md §3-4의 항등 연산자 분해 $\hat{I} = \sum_i |\lambda_i\rangle\langle\lambda^i|$ 을 표현 기저에서 본다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(i) Unified picture :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 세 객체의 같은 구조본 챕터에서 다음 세 객체를 만났다.
+객체 어디서 의미 $\delta(u-u&#39;)$ 문서 1 §2 정의 방정식의 우변 $A(u,u&#39;)$ 문서 1 §1 연산자의 적분 커널 $G(u,u&#39;)$ 문서 1-2 역연산자의 적분 커널 (그린함수) 언뜻 보기에 이 셋은 완전히 다른 객체이다. 그러나 스펙트럼 표현으로 본 모습은 놀랍도록 유사하다.
+1) 항등 연산자의 커널: 델타 함수
+b_operator.md §3-4의 항등 연산자 분해 $\hat{I} = \sum_i |\lambda_i\rangle\langle\lambda^i|$ 을 표현 기저에서 본다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/gf/b_unified_picture/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(i) Unified picture :: 수리전자물리학">
+    <meta property="og:description" content="1. 세 객체의 같은 구조본 챕터에서 다음 세 객체를 만났다.
+객체 어디서 의미 $\delta(u-u&#39;)$ 문서 1 §2 정의 방정식의 우변 $A(u,u&#39;)$ 문서 1 §1 연산자의 적분 커널 $G(u,u&#39;)$ 문서 1-2 역연산자의 적분 커널 (그린함수) 언뜻 보기에 이 셋은 완전히 다른 객체이다. 그러나 스펙트럼 표현으로 본 모습은 놀랍도록 유사하다.
+1) 항등 연산자의 커널: 델타 함수
+b_operator.md §3-4의 항등 연산자 분해 $\hat{I} = \sum_i |\lambda_i\rangle\langle\lambda^i|$ 을 표현 기저에서 본다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(i) Unified picture :: 수리전자물리학">
+    <meta itemprop="description" content="1. 세 객체의 같은 구조본 챕터에서 다음 세 객체를 만났다.
+객체 어디서 의미 $\delta(u-u&#39;)$ 문서 1 §2 정의 방정식의 우변 $A(u,u&#39;)$ 문서 1 §1 연산자의 적분 커널 $G(u,u&#39;)$ 문서 1-2 역연산자의 적분 커널 (그린함수) 언뜻 보기에 이 셋은 완전히 다른 객체이다. 그러나 스펙트럼 표현으로 본 모습은 놀랍도록 유사하다.
+1) 항등 연산자의 커널: 델타 함수
+b_operator.md §3-4의 항등 연산자 분해 $\hat{I} = \sum_i |\lambda_i\rangle\langle\lambda^i|$ 을 표현 기저에서 본다.">
+    <meta itemprop="wordCount" content="863">
+    <title>(i) Unified picture :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779031992" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779031992" defer></script>
+    <script src="/js/search-lunr.js?1779031992" defer></script>
+    <script src="/js/search.js?1779031992" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779031992";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779031992" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779031992" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779031992" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779031992" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779031992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779031992" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779031992" rel="stylesheet">
+    <link href="/css/theme.css?1779031992" rel="stylesheet">
+    <link href="/css/format-html.css?1779031992" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/gf\/b_unified_picture\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/greens_function/gf/b_unified_picture/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-세-객체의-같은-구조">1. 세 객체의 같은 구조</a></li>
+        <li><a href="#2-λ-멱으로-본-통일">2. λ-멱으로 본 통일</a></li>
+        <li><a href="#3-이퀄라이저-비유의-확장">3. 이퀄라이저 비유의 확장</a></li>
+        <li><a href="#4-functional-calculus-로의-확장">4. Functional calculus 로의 확장</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/gf/index.html"><span itemprop="name">GF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(i) Unified picture</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/b_spectral_representation/index.html" title="(b) Spectral representation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/b_existence_and_properties/index.html" title="(b) Existence and properties (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="i-unified-picture">(i) Unified picture</h1>
+
+<hr>
+<h3 id="1-세-객체의-같은-구조">1. 세 객체의 같은 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 챕터에서 다음 세 객체를 만났다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>어디서</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\delta(u-u')$</td>
+          <td>문서 1 §2</td>
+          <td>정의 방정식의 우변</td>
+      </tr>
+      <tr>
+          <td>$A(u,u')$</td>
+          <td>문서 1 §1</td>
+          <td>연산자의 적분 커널</td>
+      </tr>
+      <tr>
+          <td>$G(u,u')$</td>
+          <td>문서 1-2</td>
+          <td>역연산자의 적분 커널 (그린함수)</td>
+      </tr>
+  </tbody>
+</table>
+<p>언뜻 보기에 이 셋은 완전히 다른 객체이다. 그러나 스펙트럼 표현으로 본 모습은 놀랍도록 유사하다.</p>
+<p><strong>1) 항등 연산자의 커널: 델타 함수</strong></p>
+<p>b_operator.md §3-4의 항등 연산자 분해 $\hat{I} = \sum_i |\lambda_i\rangle\langle\lambda^i|$ 을 표현 기저에서 본다.</p>
+$$
+\delta(u-u') = \langle u^d|\hat{I}|u'\rangle = \sum_i \psi_i(u)\,\psi^i(u')
+$$<p><strong>2) 연산자의 커널</strong></p>
+<p>b_spectral_theory.md §1의 스펙트럼 분해 $\hat{A} = \sum_i \lambda_i|\lambda_i\rangle\langle\lambda^i|$ 의 표현 기저 형태:</p>
+$$
+A(u,u') = \langle u^d|\hat{A}|u'\rangle = \sum_i \lambda_i\,\psi_i(u)\,\psi^i(u')
+$$<p><strong>3) 역연산자의 커널: 그린함수</strong></p>
+<p>본 챕터 문서 2의 결과:</p>
+$$
+G(u,u') = \langle u^d|\hat{A}^{-1}|u'\rangle = \sum_i \frac{\psi_i(u)\,\psi^i(u')}{\lambda_i}
+$$<p>세 객체가 모두 같은 합 구조 ($\sum_i \cdots\,\psi_i(u)\,\psi^i(u')$) 를 가지며, <strong>$\lambda_i$ 의 가중치만 다르다</strong>.</p>
+<hr>
+<h3 id="2-λ-멱으로-본-통일">2. λ-멱으로 본 통일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§1의 세 표현을 나란히 놓고 $\lambda$ 의 멱($n$)을 명시적으로 추출하면:</p>
+$$
+\delta(u-u') = \sum_i \lambda_i^{0}\,\psi_i(u)\,\psi^i(u') \quad (n = 0)
+$$$$
+A(u,u') = \sum_i \lambda_i^{+1}\,\psi_i(u)\,\psi^i(u') \quad (n = +1)
+$$$$
+G(u,u') = \sum_i \lambda_i^{-1}\,\psi_i(u)\,\psi^i(u') \quad (n = -1)
+$$<p>이를 한 식으로 통합하면, 임의의 정수 $n$ 에 대해</p>
+$$
+\langle u^d|\hat{A}^n|u'\rangle = \sum_i \lambda_i^n\,\psi_i(u)\,\psi^i(u')
+$$<p>이다. 이는 b_spectral_theory.md §4에서 도출한 $\hat{A}^n = \sum_i \lambda_i^n|\lambda_i\rangle\langle\lambda^i|$ 의 표현 기저 형태일 뿐이다.</p>
+<p>특별한 경우들:</p>
+<table>
+  <thead>
+      <tr>
+          <th>$n$</th>
+          <th>$\hat{A}^n$의 커널</th>
+          <th>객체 이름</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$-1$</td>
+          <td>$G(u,u')$</td>
+          <td>그린함수</td>
+      </tr>
+      <tr>
+          <td>$0$</td>
+          <td>$\delta(u-u')$</td>
+          <td>델타 함수</td>
+      </tr>
+      <tr>
+          <td>$+1$</td>
+          <td>$A(u,u')$</td>
+          <td>연산자 자체</td>
+      </tr>
+      <tr>
+          <td>$+2$</td>
+          <td>$A^2(u,u')$</td>
+          <td>$\hat{A}$ 의 제곱</td>
+      </tr>
+      <tr>
+          <td>$\vdots$</td>
+          <td>$\vdots$</td>
+          <td>$\vdots$</td>
+      </tr>
+  </tbody>
+</table>
+<p>세 (그리고 무한히 많은) 객체가 <strong>같은 합 구조의 다른 멱</strong>일 뿐이다. <strong>그린함수는 이 일반화 사다리의 $n = -1$ 자리에 위치한 객체이다.</strong></p>
+<p>연속 스펙트럼의 경우 합이 적분으로 바뀔 뿐, 구조는 같다.</p>
+$$
+\langle u^d|\hat{A}^n|u'\rangle = \int d\lambda\,\lambda^n\,\psi_\lambda(u)\,\psi^\lambda(u')
+$$<p>혼합 스펙트럼이면 두 부분 모두 등장한다.</p>
+<hr>
+<h3 id="3-이퀄라이저-비유의-확장">3. 이퀄라이저 비유의 확장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>b_spectral_theory.md §2의 오디오 이퀄라이저 비유를 확장하자.</p>
+<ul>
+<li><strong>시스템(연산자)</strong>: 신호에 작용하는 필터</li>
+<li><strong>고유함수 $|\lambda_i\rangle$</strong>: 시스템의 &ldquo;채널&rdquo; (예: 순수 주파수 성분)</li>
+<li><strong>고유값 $\lambda_i$</strong>: 각 채널의 &ldquo;볼륨 노브&rdquo; 값</li>
+</ul>
+<p>이 비유 안에서 본 챕터의 세 객체는 다음과 같이 해석된다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>채널 $i$의 볼륨</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\hat{I}$ ($\delta$)</td>
+          <td>$1 = \lambda_i^0$</td>
+          <td><strong>신호 통과</strong> (변하지 않음)</td>
+      </tr>
+      <tr>
+          <td>$\hat{A}$</td>
+          <td>$\lambda_i$</td>
+          <td><strong>신호 처리</strong> (필터 적용)</td>
+      </tr>
+      <tr>
+          <td>$\hat{A}^{-1}$ ($G$)</td>
+          <td>$1/\lambda_i$</td>
+          <td><strong>신호 되돌림</strong> ($\hat{A}$ 의 역작용)</td>
+      </tr>
+      <tr>
+          <td>$\hat{A}^2$</td>
+          <td>$\lambda_i^2$</td>
+          <td>두 번 적용</td>
+      </tr>
+      <tr>
+          <td>$\hat{A}^{1/2}$</td>
+          <td>$\sqrt{\lambda_i}$</td>
+          <td>절반 적용</td>
+      </tr>
+  </tbody>
+</table>
+<p>핵심 통일: <strong>같은 채널들 ($|\lambda_i\rangle$) 을 가진 같은 시스템에서, 채널별 볼륨을 어떻게 설정하느냐의 차이</strong>일 뿐이다.</p>
+<ul>
+<li>모든 채널 볼륨을 $1$ 로 → 그대로 통과 = 항등 = 델타</li>
+<li>각 채널 볼륨을 $\lambda_i$ 로 → 원래 시스템 = $\hat{A}$</li>
+<li>각 채널 볼륨을 $1/\lambda_i$ 로 → 역작용 = 그린함수</li>
+</ul>
+<hr>
+<h3 id="4-functional-calculus-로의-확장">4. Functional calculus 로의 확장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§2의 멱 $\lambda^n$ 패턴은 임의의 함수로 일반화된다. 임의의 함수 $f: \mathbb{C} \to \mathbb{C}$ 에 대해, <strong>함수 캘큘러스(functional calculus)</strong> 가 다음과 같이 정의된다.</p>
+$$
+f(\hat{A}) = \sum_i f(\lambda_i)\,|\lambda_i\rangle\langle\lambda^i| \quad \text{또는} \quad f(\hat{A}) = \int d\lambda\,f(\lambda)\,|\lambda\rangle\langle\lambda^d|
+$$<p>본 챕터의 통일된 그림은 이의 특수한 경우들 ($f(\lambda) = \lambda^0, \lambda^{+1}, \lambda^{-1}$) 이다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>$f(\lambda)$</th>
+          <th>$f(\hat{A})$</th>
+          <th>객체 / 용도</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$1$</td>
+          <td>$\hat{I}$</td>
+          <td>항등 (델타 함수)</td>
+      </tr>
+      <tr>
+          <td>$\lambda$</td>
+          <td>$\hat{A}$</td>
+          <td>원래 연산자</td>
+      </tr>
+      <tr>
+          <td>$1/\lambda$</td>
+          <td>$\hat{A}^{-1}$</td>
+          <td>역연산자 (<strong>그린함수</strong>)</td>
+      </tr>
+      <tr>
+          <td>$\lambda^n$</td>
+          <td>$\hat{A}^n$</td>
+          <td>$n$-번째 거듭제곱</td>
+      </tr>
+      <tr>
+          <td>$e^{-\beta\lambda}$</td>
+          <td>$e^{-\beta\hat{A}}$</td>
+          <td>통계역학 분배 연산자, 양자 시간 진화</td>
+      </tr>
+      <tr>
+          <td>$1/(\lambda - z)$</td>
+          <td>$(\hat{A}-z\hat{I})^{-1}$</td>
+          <td><strong>resolvent</strong> (다음 문서 4)</td>
+      </tr>
+      <tr>
+          <td>$1/(\lambda - z \mp i\eta)$</td>
+          <td>$(\hat{A}-z\hat{I}\mp i\eta)^{-1}$</td>
+          <td><strong>retarded/advanced 그린함수</strong> (NEGF 챕터)</td>
+      </tr>
+      <tr>
+          <td>$\text{sign}(\lambda)$</td>
+          <td>$\text{sign}(\hat{A})$</td>
+          <td>부호 연산자</td>
+      </tr>
+  </tbody>
+</table>
+<p>함수 캘큘러스의 관점에서 본다면, <strong>그린함수는 단지 함수 $f(\lambda) = 1/\lambda$ 를 $\hat{A}$ 에 적용한 결과</strong>이다.</p>
+<p>이 일반화 시야가 본 챕터를 NEGF 챕터로 연결하는 다리이다. 다음 문서 4에서는 $f(\lambda) = 1/(\lambda - z)$ 의 resolvent 를, NEGF 챕터에서는 $f(\lambda) = 1/(\lambda - z \mp i\eta)$ 의 retarded/advanced 그린함수를 다룬다. 모두 같은 함수 캘큘러스 프레임의 일원이다.</p>
+<hr>
+<p><strong>example1)</strong> 2×2 허미션 행렬에서의 통일 확인</p>
+<p>문서 2 example1 의 같은 행렬을 재사용한다.</p>
+$$
+A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}, \quad \lambda_1 = 1,\ \lambda_2 = 3
+$$<p>고유벡터 (정규직교):</p>
+$$
+|\lambda_1\rangle = \frac{1}{\sqrt 2}\begin{bmatrix} 1 \\ -1 \end{bmatrix}, \quad
+|\lambda_2\rangle = \frac{1}{\sqrt 2}\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$<p>sol)</p>
+<p>(1) 사영 연산자</p>
+$$
+P_1 = |\lambda_1\rangle\langle\lambda_1| = \frac{1}{2}\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}, \quad
+P_2 = |\lambda_2\rangle\langle\lambda_2| = \frac{1}{2}\begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}
+$$<p>완비성 확인: $P_1 + P_2 = I$ ✓</p>
+<p>(2) 함수 캘큘러스로 객체들 구성</p>
+<p>§2의 공식 $\hat{A}^n = \lambda_1^n P_1 + \lambda_2^n P_2$ 를 사용한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>$n$</th>
+          <th>$\lambda_1^n P_1 + \lambda_2^n P_2$</th>
+          <th>결과</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$0$</td>
+          <td>$1\cdot P_1 + 1\cdot P_2$</td>
+          <td>$\begin{bmatrix}1 & 0\\0 & 1\end{bmatrix} = I\ (\delta)$</td>
+      </tr>
+      <tr>
+          <td>$+1$</td>
+          <td>$1\cdot P_1 + 3\cdot P_2$</td>
+          <td>$\begin{bmatrix}2 & 1\\1 & 2\end{bmatrix} = A$</td>
+      </tr>
+      <tr>
+          <td>$-1$</td>
+          <td>$1\cdot P_1 + \frac{1}{3}\cdot P_2$</td>
+          <td>$\begin{bmatrix}2/3 & -1/3\\-1/3 & 2/3\end{bmatrix} = G\ (\text{그린행렬})$</td>
+      </tr>
+      <tr>
+          <td>$+2$</td>
+          <td>$1\cdot P_1 + 9\cdot P_2$</td>
+          <td>$\begin{bmatrix}5 & 4\\4 & 5\end{bmatrix} = A^2$</td>
+      </tr>
+  </tbody>
+</table>
+<p>각 행은 같은 $P_1, P_2$ 로 구성되며, 단지 $\lambda^n$ 가중치만 다르다. <strong>세 핵심 객체 ($I, A, G$) 가 같은 스펙트럼 분해의 세 멱 ($n = 0, +1, -1$) 임을 명시적으로 확인한다.</strong></p>
+<p>(3) 연속 케이스 (1차원 디리클레 박스)</p>
+<p>문서 2 example2 의 설정 ($\hat{A} = -d^2/dx^2$ on $[0,L]$, $\psi_n(x) = \sqrt{2/L}\sin(n\pi x/L)$, $\lambda_n = (n\pi/L)^2$) 에 본 통일을 적용:</p>
+<p><strong>$n = 0$ (항등, 델타 함수)</strong></p>
+$$
+\delta(x-x') = \sum_{n=1}^\infty \psi_n(x)\,\psi_n(x') = \frac{2}{L}\sum_{n=1}^\infty \sin\!\left(\frac{n\pi x}{L}\right)\sin\!\left(\frac{n\pi x'}{L}\right)
+$$<p>이는 사인 급수 완비성 (Parseval-type identity).</p>
+<p><strong>$n = -1$ (그린함수)</strong></p>
+$$
+G(x,x') = \sum_{n=1}^\infty \frac{\psi_n(x)\,\psi_n(x')}{\lambda_n} = \frac{2L}{\pi^2}\sum_{n=1}^\infty \frac{\sin(n\pi x/L)\,\sin(n\pi x'/L)}{n^2}
+$$<p>문서 2 example2에서 본 형태.</p>
+<p><strong>$n = +1$ (연산자 자체)</strong></p>
+$$
+A(x,x') = \sum_{n=1}^\infty \lambda_n\,\psi_n(x)\,\psi_n(x') = -\partial_x^2\,\delta(x-x')
+$$<p>형식적 합은 분포 의미에서만 수렴하며, <strong>$\hat{A} = -d^2/dx^2$ 가 위치 기저에서 본 미분 연산자의 분포적 표현</strong>이다.</p>
+<p>같은 사인 함수들 ($\psi_n$) 로 모든 객체가 구성되며, 단지 $\lambda_n = (n\pi/L)^2$ 의 멱만 다르다는 점이 명확히 드러난다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/greens_function/index.html"><a class="padding" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-url="/greens_function/gf/index.html"><a class="padding" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu">
+            <li class="" data-nav-url="/greens_function/gf/b_green_function/index.html"><a class="padding" href="/greens_function/gf/b_green_function/index.html">(b) Green&#39;s function</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_spectral_representation/index.html"><a class="padding" href="/greens_function/gf/b_spectral_representation/index.html">(b) Spectral representation</a></li>
+            <li class="active " data-nav-url="/greens_function/gf/b_unified_picture/index.html"><a class="padding" href="/greens_function/gf/b_unified_picture/index.html">(i) Unified picture</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_existence_and_properties/index.html"><a class="padding" href="/greens_function/gf/b_existence_and_properties/index.html">(b) Existence and properties</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_sl_form/index.html"><a class="padding" href="/greens_function/gf/b_sl_form/index.html">(b) Sturm-Liouville form</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_sl_greens_function/index.html"><a class="padding" href="/greens_function/gf/b_sl_greens_function/index.html">(b) Sturm-Liouville Green&#39;s function</a></li>
+            <li class="" data-nav-url="/greens_function/gf/b_singular_sl/index.html"><a class="padding" href="/greens_function/gf/b_singular_sl/index.html">(b) Singular Sturm-Liouville</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/greens_function/negf/index.html"><a class="padding" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779031992"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779031992" defer></script>
+    <script src="/js/theme.js?1779031992" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

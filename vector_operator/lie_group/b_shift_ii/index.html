@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. 이동연산자의 생성자(Generator)함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.
+$$\hat{G}=-\frac{d}{d u}$$proof)
+이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.
+$$\hat{G}=\hat{D}_{\tau\to0}\hat{S}_\tau=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}$$$u$로 사영하여 표현한다.
+$$\hat{G}\psi(u)=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}$$여기에서, $X=u-\tau$ 라고 하면,
+$$\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}=-\frac{d}{du}\psi(u)$$따라서,
+$$\hat{G}=-\frac{d}{d u}$$ 2. 생성자 &amp; 이동연산자의 고유값과 고유벡터(1) 생성자와 이동연산자의 교환자">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Copy-shift II :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이동연산자의 생성자(Generator)함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.
+$$\hat{G}=-\frac{d}{d u}$$proof)
+이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.
+$$\hat{G}=\hat{D}_{\tau\to0}\hat{S}_\tau=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}$$$u$로 사영하여 표현한다.
+$$\hat{G}\psi(u)=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}$$여기에서, $X=u-\tau$ 라고 하면,
+$$\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}=-\frac{d}{du}\psi(u)$$따라서,
+$$\hat{G}=-\frac{d}{d u}$$ 2. 생성자 &amp; 이동연산자의 고유값과 고유벡터(1) 생성자와 이동연산자의 교환자">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/lie_group/b_shift_ii/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Copy-shift II :: 수리전자물리학">
+    <meta property="og:description" content="1. 이동연산자의 생성자(Generator)함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.
+$$\hat{G}=-\frac{d}{d u}$$proof)
+이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.
+$$\hat{G}=\hat{D}_{\tau\to0}\hat{S}_\tau=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}$$$u$로 사영하여 표현한다.
+$$\hat{G}\psi(u)=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}$$여기에서, $X=u-\tau$ 라고 하면,
+$$\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}=-\frac{d}{du}\psi(u)$$따라서,
+$$\hat{G}=-\frac{d}{d u}$$ 2. 생성자 &amp; 이동연산자의 고유값과 고유벡터(1) 생성자와 이동연산자의 교환자">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Copy-shift II :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이동연산자의 생성자(Generator)함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.
+$$\hat{G}=-\frac{d}{d u}$$proof)
+이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.
+$$\hat{G}=\hat{D}_{\tau\to0}\hat{S}_\tau=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}$$$u$로 사영하여 표현한다.
+$$\hat{G}\psi(u)=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}$$여기에서, $X=u-\tau$ 라고 하면,
+$$\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}=-\frac{d}{du}\psi(u)$$따라서,
+$$\hat{G}=-\frac{d}{d u}$$ 2. 생성자 &amp; 이동연산자의 고유값과 고유벡터(1) 생성자와 이동연산자의 교환자">
+    <meta itemprop="wordCount" content="288">
+    <title>(b) Copy-shift II :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1771298853" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1771298853" defer></script>
+    <script src="/js/search-lunr.js?1771298853" defer></script>
+    <script src="/js/search.js?1771298853" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1771298853";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1771298853" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1771298853" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1771298853" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1771298853" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771298853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1771298853" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1771298853" rel="stylesheet">
+    <link href="/css/theme.css?1771298853" rel="stylesheet">
+    <link href="/css/format-html.css?1771298853" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/lie_group\/b_shift_ii\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/lie_group/b_shift_ii/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이동연산자의-생성자generator">1. 이동연산자의 생성자(Generator)</a></li>
+        <li><a href="#2-생성자--이동연산자의-고유값과-고유벡터">2. 생성자 &amp; 이동연산자의 고유값과 고유벡터</a></li>
+        <li><a href="#3-생성자를-사용한-이동연산자의-표현-연산자의-지수화">3. 생성자를 사용한 이동연산자의 표현 (연산자의 지수화)</a></li>
+        <li><a href="#4-리-군lie-group의-적분을-이용한-유도">4. 리 군(Lie Group)의 적분을 이용한 유도</a></li>
+        <li><a href="#5-unitary-가-될-조건">5. Unitary 가 될 조건</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/lie_group/index.html"><span itemprop="name">Lie group</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Copy-shift II</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/lie_group/b_lie_group/index.html" title="(b) Lie group (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/lie_group/b_manifold/index.html" title="(b) Manifold (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-copy-shift-ii">(b) Copy-shift II</h1>
+
+<hr>
+<h3 id="1-이동연산자의-생성자generator">1. 이동연산자의 생성자(Generator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.</p>
+$$
+\hat{G}=-\frac{d}{d u}
+$$<p>proof)</p>
+<p>이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.</p>
+$$
+\hat{G}
+=\hat{D}_{\tau\to0}\hat{S}_\tau
+=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}
+$$<p>$u$로 사영하여 표현한다.</p>
+$$
+\hat{G}\psi(u)
+=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}
+=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}
+$$<p>여기에서, $X=u-\tau$ 라고 하면,</p>
+$$
+\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}
+=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}
+=-\frac{d}{du}\psi(u)
+$$<p>따라서,</p>
+$$
+\hat{G}=-\frac{d}{d u}
+$$<hr>
+<h3 id="2-생성자--이동연산자의-고유값과-고유벡터">2. 생성자 &amp; 이동연산자의 고유값과 고유벡터<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>(1) 생성자와 이동연산자의 교환자</strong></p>
+<p>생성자와 이동연산자의 고유벡터는 동일하므로,</p>
+$$
+[\hat{S}_\tau,\hat{G}]=0
+$$<p><strong>(2) 생성자</strong></p>
+$$
+\hat{G}|s\rangle=-s|s\rangle
+$$$$
+\text{eigenvalue: } -s
+$$$$
+\text{eigenvector: } |s\rangle=\int du\,e^{su}|u\rangle\implies
+\langle u^d|s\rangle=e^{su}
+$$<p><strong>(3) 이동연산자</strong></p>
+$$
+\hat{S}_\tau|s\rangle=e^{-s\tau}|s\rangle
+$$$$
+\text{eigenvalue: } \lambda(\tau)=e^{-s\tau}
+$$$$
+\text{eigenvector: } |s\rangle=\int du\,e^{su}|u\rangle\implies
+\langle u^d|s\rangle=e^{su}
+$$<p>proof)</p>
+$$
+\hat{S}_\tau|s\rangle=\lambda(\tau)|s\rangle,
+\text{ where } \lambda(0)=1
+$$<p>$u$ 로 사영하면,</p>
+$$
+\hat{S}_\tau \psi_s(u)
+=\psi_s(u-\tau)
+=\lambda(\tau)\psi_s(u)
+$$<p>양변을 $\tau=0$ 지점에서 미분한다. 이것은 위에서의 생성자 과정과 동일하다. 따라서,</p>
+$$
+\hat{D}_{\tau\to0}\hat{S}_\tau\psi_s(u)
+=\hat{G}\psi_s(u)
+=-\frac{d}{du}\psi_s(u)
+$$$$
+\left.\frac{d}{d\tau}\lambda(\tau)\psi_s(u)\right|_{\tau\to0}=\lambda'(0)\psi_s(u)
+$$<p>위 2개의 식이 동일함을 사용한다. $\lambda&rsquo;(0)=-s$로 놓고, 미분방정식을 푼다. 따라서,</p>
+$$
+\psi_s(u)
+=\langle u^d|s\rangle
+=Ce^{s u}
+$$<p>$\psi_s(u-\tau)=\lambda(\tau)\psi_s(u)$, $\lambda&rsquo;(0)=-s$, $\lambda(0)=1$ 를 사용하여, 고유값을 구하면,</p>
+$$
+\lambda(\tau)
+=e^{-s\tau}
+$$<hr>
+<h3 id="3-생성자를-사용한-이동연산자의-표현-연산자의-지수화">3. 생성자를 사용한 이동연산자의 표현 (연산자의 지수화)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$
+\hat{S}_\tau = e^{\tau \hat{G}}
+$$<p>proof)</p>
+<p>위 결과들을 종합하여 이동 연산자를 스펙트럼 분해(Spectral Decomposition)하면, 생성자와 이동 연산자 사이의 지수 함수 관계를 대수적으로 증명할 수 있다.</p>
+$$
+\hat{S}_\tau
+= \hat{S}_\tau \hat{I}
+= \int ds \, \hat{S}_\tau |s\rangle \langle s^d|
+= \int ds \, e^{-s\tau} |s\rangle \langle s^d|
+$$<p>여기서 연산자 함수의 성질을 적용한다. 테일러 급수 전개에 의해서,</p>
+$$
+e^{\tau\hat{G}}
+=\hat{I}+\tau\hat{G}+\frac{\tau^2}{2!}\hat{G}^2+\cdots
+$$$$e^{\tau\hat{G}}|s\rangle
+= \left(\sum_{n=0}^{\infty} \frac{\tau^n}{n!} \hat{G}^n \right) |s\rangle
+= \sum_{n=0}^{\infty} \frac{\tau^n}{n!} (-s)^n |s\rangle
+= \left(\sum_{n=0}^{\infty} \frac{(-s\tau)^n}{n!} \right) |s\rangle
+= e^{-s\tau}|s\rangle
+$$<p>따라서,</p>
+$$
+\hat{S}_\tau
+= \int ds \, e^{\tau \hat{G}} |s\rangle \langle s^d|
+= e^{\tau \hat{G}} \left( \int ds |s\rangle \langle s^d| \right)
+$$<p>괄호 안은 항등 연산자 $\hat{I}$ 이므로, 최종적으로 다음 관계가 성립한다.</p>
+$$
+\hat{S}_\tau = e^{\tau \hat{G}}
+$$<hr>
+<h3 id="4-리-군lie-group의-적분을-이용한-유도">4. 리 군(Lie Group)의 적분을 이용한 유도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<hr>
+<h3 id="5-unitary-가-될-조건">5. Unitary 가 될 조건<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hibert_vector/index.html"><a class="padding" href="/vector_operator/hibert_vector/index.html">Hilbert vector</a><ul id="R-subsections-9d98fa139563ae86afedc0ded94f6ac6" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant/index.html"><a class="padding" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/lie_group/b_lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/b_lie_group/index.html">(b) Lie group</a></li>
+            <li class="active " data-nav-url="/vector_operator/lie_group/b_shift_ii/index.html"><a class="padding" href="/vector_operator/lie_group/b_shift_ii/index.html">(b) Copy-shift II</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_manifold/index.html"><a class="padding" href="/vector_operator/lie_group/b_manifold/index.html">(b) Manifold</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_evolution/index.html"><a class="padding" href="/vector_operator/lie_group/b_evolution/index.html">(b) Evoulution</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_lie_algebra/index.html"><a class="padding" href="/vector_operator/lie_group/b_lie_algebra/index.html">(b) Lie algebra</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_generator_i/index.html"><a class="padding" href="/vector_operator/lie_group/b_generator_i/index.html">(b) Generator I</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_generator_ii/index.html"><a class="padding" href="/vector_operator/lie_group/b_generator_ii/index.html">(b) Generator II</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_exponentiation/index.html"><a class="padding" href="/vector_operator/lie_group/b_exponentiation/index.html">(b) Exponentiation</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_simple_scaling/index.html"><a class="padding" href="/vector_operator/lie_group/b_simple_scaling/index.html">(b) Simple scaling</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_complex_scaling/index.html"><a class="padding" href="/vector_operator/lie_group/b_complex_scaling/index.html">(b) Complex scaling</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/affine_group/index.html"><a class="padding" href="/vector_operator/lie_group/affine_group/index.html">Affine group</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_affine/index.html"><a class="padding" href="/vector_operator/lie_group/b_affine/index.html">(b) Affine</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/a_noether_theorem/index.html"><a class="padding" href="/vector_operator/lie_group/a_noether_theorem/index.html">(b) Noether&#39;s theorem</a></li>
+            <li class="" data-nav-url="/vector_operator/lie_group/b_shift_i/index.html"><a class="padding" href="/vector_operator/lie_group/b_shift_i/index.html">(b) Copy-shift</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_analysis/index.html"><a class="padding" href="/vector_analysis/index.html">Vector analysis</a><ul id="R-subsections-c60d281eb290aa9ca2e87adc864d6ab8" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1771298853"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1771298853" defer></script>
+    <script src="/js/theme.js?1771298853" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="4. 수치적 실험 및 검증최근 수치해석 분야에서는 JAX나 PyTorch와 같은 자동 미분(automatic differentiation) 기반 프레임워크를 활용하여 연산 효율과 구현 편의를 도모하는 방식이 활용되고 있다. 그러나 본 연구에서 제안하는 대수적 보정 프레임워크는 비선형 연산자의 조립 단계부터 반대칭 성분 추출에 이르는 명시적인 대수적 제어(algebraic control) 과정을 포함한다. 이에 따라 알고리즘의 제어 계층(control layer)과 표준 선형대수 연산 계층(linear algebra layer)을 분리하여 MATLAB (64-bit double precision) 환경에서 구현하였으며, 범용 자동 미분 라이브러리나 상용 PDE 패키지는 사용하지 않았다. 프레임워크를 구성하는 세부 알고리즘 및 기하-대수적 제어 절차는 다음과 같다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="temp 4 :: 수리전자물리학">
+    <meta name="twitter:description" content="4. 수치적 실험 및 검증최근 수치해석 분야에서는 JAX나 PyTorch와 같은 자동 미분(automatic differentiation) 기반 프레임워크를 활용하여 연산 효율과 구현 편의를 도모하는 방식이 활용되고 있다. 그러나 본 연구에서 제안하는 대수적 보정 프레임워크는 비선형 연산자의 조립 단계부터 반대칭 성분 추출에 이르는 명시적인 대수적 제어(algebraic control) 과정을 포함한다. 이에 따라 알고리즘의 제어 계층(control layer)과 표준 선형대수 연산 계층(linear algebra layer)을 분리하여 MATLAB (64-bit double precision) 환경에서 구현하였으며, 범용 자동 미분 라이브러리나 상용 PDE 패키지는 사용하지 않았다. 프레임워크를 구성하는 세부 알고리즘 및 기하-대수적 제어 절차는 다음과 같다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/research_na/temp/temp4/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="temp 4 :: 수리전자물리학">
+    <meta property="og:description" content="4. 수치적 실험 및 검증최근 수치해석 분야에서는 JAX나 PyTorch와 같은 자동 미분(automatic differentiation) 기반 프레임워크를 활용하여 연산 효율과 구현 편의를 도모하는 방식이 활용되고 있다. 그러나 본 연구에서 제안하는 대수적 보정 프레임워크는 비선형 연산자의 조립 단계부터 반대칭 성분 추출에 이르는 명시적인 대수적 제어(algebraic control) 과정을 포함한다. 이에 따라 알고리즘의 제어 계층(control layer)과 표준 선형대수 연산 계층(linear algebra layer)을 분리하여 MATLAB (64-bit double precision) 환경에서 구현하였으며, 범용 자동 미분 라이브러리나 상용 PDE 패키지는 사용하지 않았다. 프레임워크를 구성하는 세부 알고리즘 및 기하-대수적 제어 절차는 다음과 같다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="temp 4 :: 수리전자물리학">
+    <meta itemprop="description" content="4. 수치적 실험 및 검증최근 수치해석 분야에서는 JAX나 PyTorch와 같은 자동 미분(automatic differentiation) 기반 프레임워크를 활용하여 연산 효율과 구현 편의를 도모하는 방식이 활용되고 있다. 그러나 본 연구에서 제안하는 대수적 보정 프레임워크는 비선형 연산자의 조립 단계부터 반대칭 성분 추출에 이르는 명시적인 대수적 제어(algebraic control) 과정을 포함한다. 이에 따라 알고리즘의 제어 계층(control layer)과 표준 선형대수 연산 계층(linear algebra layer)을 분리하여 MATLAB (64-bit double precision) 환경에서 구현하였으며, 범용 자동 미분 라이브러리나 상용 PDE 패키지는 사용하지 않았다. 프레임워크를 구성하는 세부 알고리즘 및 기하-대수적 제어 절차는 다음과 같다.">
+    <meta itemprop="wordCount" content="1691">
+    <title>temp 4 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1776708034" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1776708034" defer></script>
+    <script src="/js/search-lunr.js?1776708034" defer></script>
+    <script src="/js/search.js?1776708034" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1776708034";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1776708034" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1776708034" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776708034" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776708034" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1776708034" rel="stylesheet">
+    <link href="/css/theme.css?1776708034" rel="stylesheet">
+    <link href="/css/format-html.css?1776708034" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/research_na\/temp\/temp4\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/research_na/temp/temp4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#4-수치적-실험-및-검증">4. 수치적 실험 및 검증</a></li>
+        <li><a href="#41-1차원-특이-섭동-시스템의-대수적-무결성-검증">4.1 1차원 특이 섭동 시스템의 대수적 무결성 검증</a></li>
+        <li><a href="#42-2차원-특이-섭동-시스템의-대수적-무결성-검증">4.2 2차원 특이 섭동 시스템의 대수적 무결성 검증</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/research_na/index.html"><span itemprop="name">Research_NA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">temp 4</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/references/index.html" title="references (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/paper_kor/index.html" title="Papaer_kr (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="temp-4">temp 4</h1>
+
+<hr>
+<h3 id="4-수치적-실험-및-검증">4. 수치적 실험 및 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>최근 수치해석 분야에서는 JAX나 PyTorch와 같은 자동 미분(automatic differentiation) 기반 프레임워크를 활용하여 연산 효율과 구현 편의를 도모하는 방식이 활용되고 있다. 그러나 본 연구에서 제안하는 대수적 보정 프레임워크는 비선형 연산자의 조립 단계부터 반대칭 성분 추출에 이르는 명시적인 대수적 제어(algebraic control) 과정을 포함한다. 이에 따라 알고리즘의 제어 계층(control layer)과 표준 선형대수 연산 계층(linear algebra layer)을 분리하여 MATLAB (64-bit double precision) 환경에서 구현하였으며, 범용 자동 미분 라이브러리나 상용 PDE 패키지는 사용하지 않았다. 프레임워크를 구성하는 세부 알고리즘 및 기하-대수적 제어 절차는 다음과 같다.</p>
+<p>첫째, 3.1절에서 도출된 이산 공간 국소 비대칭 지표 $S_{kj}$를 텐션 모델로 변환하여 $r$-적응형(r-adaptive) 격자 이동을 제어한다. 오차가 발생하는 구역의 텐션을 가중치 행렬 $\hat{W}$에 반영하고, 이를 바탕으로 그래프 라플라시안(Graph Laplacian) 시스템을 구성하여 조화 사상(harmonic mapping) 방정식을 산출한다. 이 과정에서 계면 인접 노드의 자율 스내핑(auto-snapping)을 적용하여, 물성 계면이 단일 요소(element) 내부를 관통할 때 발생하는 조화 평균 역설(harmonic mean paradox) 및 대수 왜곡을 방지한다. 이산 노드가 물리적 계면으로부터 요소 길이의 절반 미만인 특정 거리 이내로 접근할 경우 해당 노드의 좌표를 계면 위치로 조정한다. 이를 통해 요소 내부의 킹크(kink) 발생과 초기 격자망이 계면과 일치하여 오차가 상쇄되는 기하학적 배열(lucky alignment)을 배제한다.</p>
+<p>둘째, 격자 재배치 과정에서 발생하는 기하학적 텐션에 의한 비선형 잔여항(residual) 증가 현상을 제어하기 위해, 위상 동결 기제인 &lsquo;골든 상태 롤백(Golden State Rollback)&lsquo;을 적용하였다. 매 반복 단계에서 잔여항의 노름(norm)을 계산하고, 최소 오차를 나타내는 기하 좌표와 상태 변수를 최적 상태로 저장한다. 격자 이동 후 오차가 증가할 경우 시스템을 이전의 최적 상태로 복구하고 격자의 위상 변형을 동결(mesh freezing)하여 점근적 수렴성을 유도한다. 비선형 잔차($R$) 및 프레셰 도함수(Fréchet derivative, $\hat{J}$)의 조립은 해석적(analytical) 미분 법칙을 기반으로 한다. 공간 적분은 차원별 이산화 특성에 따라 1차원 도메인에서는 다점 가우스-르장드르 구적법(multi-point Gauss-Legendre quadrature)을, 2차원 비구조적 격자계에서는 간선 중점 평가(edge-midpoint evaluation)를 적용하였다.</p>
+<p>셋째, 3.2절의 수반 일관성(adjoint consistency) 조건을 만족하기 위해, 내부 레지듀를 최소화하는 대각 정규화 행렬 $\hat{C}$를 최소자승법(least squares)으로 산출한다. 또한 디리클레 경계 조건이 내부 노드의 연산자 구조에 미치는 영향을 제외하기 위해, 사영 연산자(projection operator) 형태의 마스크 행렬 $\hat{M}_s$를 적용한다. 이를 바탕으로 2.4절의 벌크-경계 소산 정리를 적용하여, 시스템의 비대칭성으로부터 내부 스퓨리어스 반대칭 성분($\hat{A}_{int}$)을 분리한다. 추출된 성분을 원시 자코비안에서 감산하여 보정된 자코비안($\hat{J}_{pure}$)을 구성한다.</p>
+<p>선형 시스템의 풀이 과정에서는 표준적인 행렬 연산 알고리즘을 사용하였다. 행렬의 메모리 구조화에는 CSC(Compressed Sparse Column) 희소 행렬 포맷을 활용하였으며, 선형 연립방정식($\hat{J}_{pure} \delta u = -R$)의 직접 해법에는 내장 솔버(UMFPACK 기반 역슬래시 연산자)를 적용하였다. 자코비안의 조건수(condition number) 산출에는 1-노름 기반의 조건수 추정 함수(condest)를 이용하였다.</p>
+<hr>
+<h3 id="41-1차원-특이-섭동-시스템의-대수적-무결성-검증">4.1 1차원 특이 섭동 시스템의 대수적 무결성 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>무차원 유클리드 1차원 도메인 $\Omega = [0, 1]$ 상에서, 상태 종속적 비선형 확산 계수 $P(u, x)$를 가지는 강타원형(strongly elliptic) 보존 방정식은 다음과 같이 정의된다.</p>
+$$
+\frac{d}{dx} \left( P(u, x) \frac{du}{dx} \right) = Q(x) \quad \text{in } \Omega
+$$<p>시스템의 수치적 강성(stiffness)을 평가하기 위해, 도메인을 계면 $x_{int} = 0.2$ 위치를 기준으로 좌측 매질과 우측 매질로 분할하며, 확산 계수 $P(u, x)$에 불연속성을 부여한다. 우측 매질에는 투과율 단차 계수 $\sigma$가 적용된다.</p>
+$$
+P(u, x) = 
+\begin{cases} 
+1 + u^2 & \text{if } x \le x_{int} \\
+\sigma (1 + u^2) & \text{if } x > x_{int} 
+\end{cases}
+$$<p>해석적 정해 $u_{exact}(x)$는 각속도 $k = 2\pi f$를 가지는 정현파(sinusoidal wave)를 기저 함수로 하여 다음과 같이 조립된다.</p>
+$$
+u_{exact}(x) = 
+\begin{cases} 
+\sin(k x) + C_L x & \text{if } x \le x_{int} \\
+\sin(k x) + C_R (x - 1) + U_{end} & \text{if } x > x_{int} 
+\end{cases}
+$$<p>여기서 1차 계수 $C_L$과 $C_R$은 계면 $x_{int}$에서의 전위 연속성($u_L = u_R$)과 비선형 유량 연속성($P_L u_L' = P_R u_R'$)을 만족하도록 역산된 고정 상수이며, 우측 종단($x=1$)의 목표 전위는 $U_{end} = 1.0$으로 설정된다.</p>
+<p>알고리즘의 대수적 제어 능력을 검증하기 위해 두 가지 수치적 제약(numerical stressor)을 통제 변수로 고정한다. 첫째, 매질의 계면 위치를 도메인 중앙이 아닌 $x_{int} = 0.2$에 배치하여, 균일 격자 분할 시 계면이 특정 노드와 일치함으로써 보간 오차가 소거되는 기하학적 우연성(lucky alignment)을 배제한다. 둘째, 도메인 우측 종단($x=1$)에 비대칭 로빈 혼합 경계 조건($\alpha=2.0, \beta=1.0$, $\alpha u + \beta J = \gamma$)을 적용한다. 이는 자코비안 행렬 구축 시 대각 지배성(diagonal dominance)을 약화시키고 대수적 비대칭성을 유도한다.</p>
+<p><strong>1) Case A: 공간 분해능 확장에 따른 점근적 수렴성 증명 (Varying $N$)</strong></p>
+<p>첫 번째 시나리오는 통제 조건($\sigma=10^{-3}, f=10.0$) 하에서 공간 분해능 $N$을 $32$에서 $4096$까지 배수로 증가시키며, 알고리즘의 거시적 수렴 특성을 평가한다.</p>
+<p>[Figure 4.1 위치: $N=64$ 해상도에서의 해석적 정해(Exact) 및 수치해(Numerical) 중첩 프로파일 도식 삽입]</p>
+<p>[Figure 4.2 위치: $N$ 변화에 따른 $L_2$ 및 $L_\infty$ 오차의 양축 로그 스케일(Log-Log) 수렴 궤적 삽입]</p>
+<p>[Table 4.1 위치: 격자 해상도 $N$ 증가에 따른 수렴 및 대수 지표 통합 표 삽입]</p>
+<p>그림 4.1은 조립 해법(MMS)에 의해 구성된 정해의 물리적 킹크(kink) 특성과 수치해의 정합성을 나타낸다. 표 4.1과 그림 4.2의 스펙트럼 궤적을 분석하면, 격자 수 $N$이 증가하는 전 구간에서 $L_2$ 및 $L_\infty$ 오차는 조대 격자(coarse mesh)로부터 최종 상태까지 일정한 기울기($-2$)로 하강한다. 특히 $N=4096$ 구간에서 파동 이산화로 인해 원시 자코비안의 조건수가 $1.20 \times 10^{13}$에 도달하였으나, 대수적 정화 과정의 조건수 안정화 효과에 의해 오차의 정체(stagnation) 없이 이론적인 $\mathcal{O}(\Delta x^2)$의 2차 수렴성이 유지되었음을 확인하였다.</p>
+<p><strong>2) Case B: 매질 불연속성 변화에 따른 자코비안 대수적 방어능력 검증 (Varying $\sigma$)</strong></p>
+<p>두 번째 시나리오는 파동 주파수($f=10.0$)와 격자 수($N=256$)를 고정한 상태에서 투과율 단차 계수 $\sigma$를 $10^{-1}$에서 $10^{-4}$까지 감소시키며, 프레셰 도함수에 유발되는 대수적 왜곡과 이에 대한 정화기(purifier)의 안정화 효과를 측정한다.</p>
+<p>[Table 4.2 위치: $\sigma$ 축소 변화에 따른 대수적 강건성 지표 표 삽입]</p>
+<p>표 4.2의 결과를 분석하면, $\sigma$가 $10^{-4}$로 감소함에 따라 원시 자코비안의 조건수 $Cond(J)$는 비례적으로 증가하여 $4.07 \times 10^9$에 도달한다. 그러나 수반 정규화 행렬 $\hat{C}$와 내부 소산 추출 기제가 적용된 보정 조건수 $Cond(\hat{C}J)$는 지속적으로 낮은 수준으로 관리된다. 특히 정화 후의 비대칭 지표(treated asymmetry)가 기계 엡실론(machine epsilon) 대역인 $4.55 \times 10^{-13}$ 수준으로 억제되는 현상은, 매질 단차와 혼합 경계가 유발한 시스템의 교차 대칭성 감소를 알고리즘이 효과적으로 제어함을 의미한다.</p>
+<p><strong>3) Case C: 고주파 특이 곡률 확장에 따른 위상 적응 및 대수 제어 검증 (Varying $f$)</strong></p>
+<p>세 번째 시나리오는 공간 분해능($N=256$)과 투과율 단차($\sigma=10^{-2}$)를 고정한 상태에서, 파동 주파수($f$)를 $1.0$에서 $20.0$으로 확장하며 국소적 곡률 증가가 유발하는 기하학적 텐션 및 위상 적응 과정을 분석한다.</p>
+<p>[Figure 4.3 위치: 파동 주파수 $f$ 변화에 따른 공간적 압축 밀도 $\rho(x)$ 진화 도식 삽입]</p>
+<p>[Table 4.3 위치: 주파수 $f$ 확장에 따른 기하/대수적 텐션 제어 표 삽입]</p>
+<p>그림 4.3은 주파수 증가에 따른 시스템의 자율적 위상 변형 과정을 나타낸다. 그래프에서 확인되듯, $f$가 상승하여 파동의 곡률 반경이 감소할수록 r-적응형 엔진은 해당 구간의 격자를 능동적으로 밀집시켜 압축 밀도($\rho$) 피크를 파동의 주기에 동기화시킨다. 표 4.3에 따르면, 이러한 고주파 환경($f=20.0$)에서는 이산화 오차의 누적으로 인해 원시 자코비안의 조건수가 $3.64 \times 10^{10}$으로 급격히 증가한다. 그러나 대수적 보정 파이프라인이 적용된 정화 자코비안은 잔류 비대칭성을 $2.09 \times 10^{-9}$ 수준으로 억제하여 조건수 안정화 배율(Stabilization factor)을 최대 $409.5$배까지 달성하였으며, 에러의 발산 없이 $\mathcal{O}(10^{-7})$ 대역의 $L_2$ 오차 노름을 유지하였다.</p>
+<hr>
+<h3 id="42-2차원-특이-섭동-시스템의-대수적-무결성-검증">4.2 2차원 특이 섭동 시스템의 대수적 무결성 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1차원 공간에서의 검증을 확장하여, 본 절에서는 교차 미분항(cross-derivative)이 존재하고 기하학적 자유도가 높은 2차원 비구조적 삼각 격자계(unstructured triangular mesh)를 대상으로 2장과 3장에서 도출된 대수적 정화 프레임워크의 타당성을 검증한다. 2차원 도메인 $\Omega = [0, 1] \times [0, 1]$ 상에서 정의되는 비선형 타원형 편미분 방정식은 다음과 같다.</p>
+$$
+\nabla \cdot \left( P(u) \nabla u \right) = Q(x, y) \quad \text{in } \Omega
+$$<p>수치적 강성을 제어하기 위해 지수 함수 형태의 비선형 확산 계수 $P(u) = \exp(k_{nl} u)$를 도입한다. 도메인은 수직 계면 $x_{int} = 0.7$을 기준으로 좌측 매질과 우측 매질로 분할되며, 우측 매질에는 투과율 계수 $\sigma$가 적용되어 큰 폭의 물성 불연속성을 유도한다. 조립 해법(MMS)의 해석적 정해로는 다음과 같은 지수 감쇠 모델을 적용하였다.</p>
+$$
+u_{exact}(x, y) = 
+\begin{cases} 
+U_0 \exp(-\alpha_L x) \cos(\pi y) & \text{if } x \le x_{int} \\
+U_0 \exp(-\alpha_L x_{int}) \exp(-\alpha_R (x - x_{int})) \cos(\pi y) & \text{if } x > x_{int} 
+\end{cases}
+$$<p>기준 진폭을 $U_0 = 1.0$, 좌측 매질의 감쇠율을 $\alpha_L = 2.0$으로 상정할 때, 우측 매질의 감쇠율 $\alpha_R$은 계면에서의 비선형 유량 보존 법칙($P_L \nabla u_L \cdot \mathbf{n} = P_R \nabla u_R \cdot \mathbf{n}$)에 의해 결정된다. 연속 조건($u_L = u_R$)에 의해 양변의 비선형 항이 소거됨으로써, 우측 감쇠율은 투과율 단차에 반비례하는 $\alpha_R = \alpha_L / \sigma$ 이다.</p>
+<p><strong>1) Case A: 비선형 강도 스윕에 따른 프레셰 도함수 비대칭성 제어 및 대수적 정화 검증 (Varying $k_{nl}$)</strong></p>
+<p>첫 번째 시나리오는 통제 조건($\sigma=10^{-2}, k_{nl}=2.0$) 하에서 공간 분해능 $N_x$를 8에서 64로 확장하며, 비정합 격자망에서 프레임워크가 점근적 수렴성을 유지하는지 확인한다.</p>
+<p>Figure 4.4 위치: 2차원 해석적 정해(지수 감쇠 모델)의 표면(Surface) 및 등고선(Contour) 도식 삽입]</p>
+<p>[Figure 4.5 위치: $N_x$ 증가에 따른 2D 비구조적 격자계의 Log-Log 오차 수렴 궤적 삽입]</p>
+<p>[Table 4.4 위치: 2D 격자 해상도 $N_x$ 확장에 따른 스펙트럼 지표 표 삽입]</p>
+<p>표 4.4의 스펙트럼 지표를 분석하면 $N_x=64$ 구간에서 원시 비대칭성(Raw Asym)이 $644.0$ 규모로 증가하는 현상이 관측된다. 이는 기하학적 보정만으로는 완전히 제거하기 어려운 2차원 비정합 격자망 특유의 이산 교환자(discrete commutator) 응력에 기인한다. 그러나 직교 여공간 사영을 통한 대수적 정화기가 시스템의 수치 소산을 능동적으로 제어한 결과, 잔류 비대칭성은 $2.84 \times 10^{-2}$ 수준으로 감소하였으며, 이는 원시 시스템 대비 $5.0$배의 조건수 안정화로 이어졌다. 결과적으로 보정된 시스템은 그림 4.5의 로그 스케일 그래프에서 오차의 정체나 진동 없이 이론적인 $\mathcal{O}(h^2)$ 수준의 점근적 하강 궤도를 유지하며 $L_2$ 오차를 $2.56 \times 10^{-3}$으로 수렴시켰다.</p>
+<p><strong>2) Case B: 이산화 한계 공간에서의 대수적 생존성 평가 (Varying $\sigma$)</strong></p>
+<p>두 번째 시나리오는 $k_{nl}=1.0$, $N_x=32$ 조건 하에서 투과율 단차 $\sigma$를 $1.0$에서 $10^{-3}$까지 점진적으로 축소시킨다. 해당 실험은 계면의 미분 불연속성이 격자의 기하학적 해상도 한계를 초과했을 때 유발되는 기하학적 위상 변형과 시스템의 대수적 안정성을 분석한다.</p>
+<p>[Figure 4.6 위치: 투과율 단차 $\sigma$ 축소에 따른 2D 비구조적 격자망의 국소 밀집(Mesh Deformation) 도식 삽입]</p>
+<p>[Table 4.5 위치: 투과율 단차 $\sigma$ 축소에 따른 극한 이산화 한계 생존성 지표 표 삽입]</p>
+<p>$\sigma=10^{-3}$일 때 우측 매질은 $\alpha_R = 2000$ 수준의 감쇠를 겪는다. 그림 4.6의 기하학적 궤적에서 확인되듯, 계면($x_{int}=0.7$)에서 발생하는 극단적인 미분 불연속성(kink)에 대응하기 위해 $r$-적응형 모듈은 해당 구역으로 비구조적 격자의 연결망을 조밀하게 밀집시킨다. 표 4.5의 지표를 분석하면, 이러한 자율적 위상 적응에도 불구하고 $N_x=32$ 격자망의 근본적인 해상도 한계로 인해 절단 오차(truncation error)가 잔존하여 $Cond(J) \approx 10^6$ 수준의 상태가 형성된다. 이로 인해 $L_2$ 오차는 $8.88 \times 10^{-2}$로, 최대 오차(Max Error)는 $3.59 \times 10^{-1}$로 산출되었다. 그럼에도 불구하고 정화된 비대칭성(Treated Asym)은 $2.30 \times 10^{-3}$ 대역으로 억제되며, 이는 대수적 정화 엔진이 해당 이산 공간이 수용할 수 있는 갤러킨 투영(Galerkin projection) 기반의 평형 상태를 도출함을 나타낸다.</p>
+<p><strong>3) Case C: 비선형 강도 스윕에 따른 비대칭 제어 (Varying $k_{nl}$)</strong></p>
+<p>마지막 시나리오는 $N_x=32$, $\sigma=10^{-1}$ 상태에서 비선형 강도 지수 $k_{nl}$을 $0.0$에서 $4.0$까지 변화시키며, 프레셰 도함수의 비대칭성이 대수적 구조에 미치는 영향을 추적한다.</p>
+<p>[Figure 4.6 위치: 비선형 강도 $k_{nl}$ 증가에 따른 2D 비구조적 격자망의 국소 밀집(Mesh Deformation) 도식 삽입]</p>
+<p>[Table 4.6 위치: 비선형 강도 $k_{nl}$ 변화에 따른 2차원 대수적 강건성 지표 표 삽입]</p>
+<p>지수형 비선형 구배($\partial P/\partial u$)가 증가함에 따라 시스템 텐서의 교차 대칭성이 상실된다. 표 4.6에 따르면, $k_{nl}=4.0$ 조건에서 원시 비대칭성(Raw Asym)이 $3,304$ 규모로 증가하고 원시 조건수가 상승하였다. 그러나 내부 소산 제거 결과 잔류 비대칭성은 $6.28 \times 10^{-1}$로 억제되었다. 이 조건에서 조건수 안정화 비율은 최대 $979.1$배로 산출되었으며, 시스템은 추가적인 기하학적 통제 없이 대수적 정화 프레임워크만을 통해 $2.57 \times 10^{-3}$ 대역의 $L_2$ 오차 노름을 일관되게 유지하였다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_operator/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/b_function_of_operators/index.html">(b) Function of operators</a></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/research_na/index.html"><a class="padding" href="/vector_operator/research_na/index.html">Research_NA</a><ul id="R-subsections-302336cd3102d0268cf92834564071db" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/research_na/theory1/index.html"><a class="padding" href="/vector_operator/research_na/theory1/index.html">(b) Theory1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/theory2/index.html"><a class="padding" href="/vector_operator/research_na/theory2/index.html">(b) Theory 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/outline/index.html"><a class="padding" href="/vector_operator/research_na/outline/index.html">OUTLINE</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter1/index.html"><a class="padding" href="/vector_operator/research_na/chapter1/index.html">CHAPTER 1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter2/index.html"><a class="padding" href="/vector_operator/research_na/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter3/index.html"><a class="padding" href="/vector_operator/research_na/chapter3/index.html">CHAPTER 3</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter4/index.html"><a class="padding" href="/vector_operator/research_na/chapter4/index.html">CHAPTER 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter5/index.html"><a class="padding" href="/vector_operator/research_na/chapter5/index.html">CHAPTER 5</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/appendix/index.html"><a class="padding" href="/vector_operator/research_na/appendix/index.html">Appendix</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/references/index.html"><a class="padding" href="/vector_operator/research_na/references/index.html">references</a></li>
+            <li class="active " data-nav-url="/vector_operator/research_na/temp/temp4/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp4/index.html">temp 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/paper_kor/index.html"><a class="padding" href="/vector_operator/research_na/paper_kor/index.html">Papaer_kr</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/paper_eng/index.html"><a class="padding" href="/vector_operator/research_na/paper_eng/index.html">Papaer_eng</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp1/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp1/index.html">temp1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp2/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp2/index.html">temp2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp3/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp3/index.html">temp3</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_sbd/index.html"><a class="padding" href="/vector_operator/research_sbd/index.html">research_SBD</a><ul id="R-subsections-e18a822b16ff9efc545c6b23dfc7556b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_pin/index.html"><a class="padding" href="/vector_operator/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-6ddf49e7c174abf7ead60452e1632a62" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1776708034"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1776708034" defer></script>
+    <script src="/js/theme.js?1776708034" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

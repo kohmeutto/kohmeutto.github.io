@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Function of operators :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/function_of_operators/index.html</link>
+    <description>(b) Dual space&#xD;(b) Function of operators</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/function_of_operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Dual space</title>
+      <link>http://localhost:1313/vector_operator/function_of_operators/b_dual_space_of_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/function_of_operators/b_dual_space_of_operators/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(b) Function of operators</title>
+      <link>http://localhost:1313/vector_operator/function_of_operators/b_function_of_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/function_of_operators/b_function_of_operators/index.html</guid>
+      <description>본 챕터는 단순히 연산자에 함수를 대입하는 기계적 요령을 넘어, 어떻게 스칼라 함수 $f(x)$를 연산자 함수 $f(\hat{A})$로 확장할 수 있는가에 대한 수학적 정당성을 부여하는 것을 목표로 한다. 여기에는 해석적 접근(Taylor Series), 대수적 접근(Spectral Decomposition), 그리고 가장 일반적인 복소 해석적 접근(Cauchy Integral) 세 가지 방법이 존재하며, 이들이 상호 일관됨을 증명한다.&#xA;X.1 서론: 문제의 제기&#xD;스칼라 변수 $x \in \mathbb{C}$에 대한 함수 $f(x)$가 주어졌을 때(예: $e^x, \sin x, \sqrt{x}$), 선형 연산자 $\hat{A}$에 대해 $f(\hat{A})$를 정의하고자 한다.</description>
+    </item>
+  </channel>
+</rss>
