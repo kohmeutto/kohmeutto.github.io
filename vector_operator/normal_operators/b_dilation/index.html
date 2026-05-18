@@ -31,28 +31,28 @@ $$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그
 정규 연산자 $\hat{D}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 dilation (확장) 연산자 라 한다.
 $$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 감소하지 않는다. 동등하게 작용소 노름의 역 부등식으로 표현하면 $\|\hat{D}^{-1}\| \leq 1$ (역원이 존재할 때).
 부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{D}|\psi\rangle\| &gt; \|\psi\|$ — 이를 strict dilation 이라 한다.">
-    <meta itemprop="wordCount" content="1585">
+    <meta itemprop="wordCount" content="1563">
     <title>(b) Dilation :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1779082393" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1779082393" defer></script>
-    <script src="/js/search-lunr.js?1779082393" defer></script>
-    <script src="/js/search.js?1779082393" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1779082785" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779082785" defer></script>
+    <script src="/js/search-lunr.js?1779082785" defer></script>
+    <script src="/js/search.js?1779082785" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1779082393";
+      window.relearn.index_js_url="/searchindex.en.js?1779082785";
     </script>
-    <script src="/js/lunr/lunr.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1779082393" defer></script>
+    <script src="/js/lunr/lunr.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779082785" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779082393" rel="stylesheet">
-    <link href="/css/theme.css?1779082393" rel="stylesheet">
-    <link href="/css/format-html.css?1779082393" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082785" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779082785" rel="stylesheet">
+    <link href="/css/theme.css?1779082785" rel="stylesheet">
+    <link href="/css/format-html.css?1779082785" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -129,7 +129,7 @@ $$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그
         <li><a href="#4-기본-성질">4. 기본 성질</a></li>
         <li><a href="#5-hermitian-과의-변환-하반평면으로의-매핑">5. Hermitian 과의 변환: 하반평면으로의 매핑</a></li>
         <li><a href="#6-contraction-과의-쌍대-관계">6. Contraction 과의 쌍대 관계</a></li>
-        <li><a href="#7-시간-역행과-negf-와의-연결">7. 시간 역행과 NEGF 와의 연결</a></li>
+        <li><a href="#7-시간-역행">7. 시간 역행</a></li>
         <li><a href="#8-nagy-foias-dilation-정리-용어-주의">8. Nagy-Foias Dilation 정리 (용어 주의)</a></li>
         <li><a href="#9-예">9. 예</a></li>
       </ul>
@@ -366,16 +366,27 @@ $$
 \hat{D} = e^{i\hat{Z}}, \quad \hat{T} = e^{-i\hat{Z}} = \hat{D}^{-1}
 $$<p>생성자 $\hat{Z}$ 의 부호 변경이 곧 dilation 과 contraction 의 변환. 시간 역행에 직접 대응 — $\hat{T}(t)$ 가 contraction 이면 $\hat{T}(-t)$ 가 dilation.</p>
 <hr>
-<h3 id="7-시간-역행과-negf-와의-연결">7. 시간 역행과 NEGF 와의 연결<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>NEGF 의 시간 진화 (b_contraction.md §5-(4)) 는 contraction:</p>
+<h3 id="7-시간-역행">7. 시간 역행<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§6-(3) 에서 본 generator 부호 변경 ($\hat{Z} \to -\hat{Z}$) 이 시간 역행에 직접 대응한다. 좀 더 자세히 본다.</p>
+<p><strong>1) Contraction semigroup 의 양의 시간 도메인</strong></p>
+<p>연속 1-parameter contraction semigroup $\{\hat{T}(t)\}_{t \geq 0}$ (b_contraction.md §6) 는 generator $\hat{X}$ 와 $\hat{T}(t) = e^{t\hat{X}}$ 의 관계. Generator $\hat{X}$ 의 spectrum 이 좌반평면 ($\text{Re}\,\lambda_n \leq 0$) 이면 contraction 이 유지된다.</p>
+<p>이 semigroup 은 $t \geq 0$ 에서만 정의된다. 시간 역행 ($t < 0$) 은 일반적으로 정의되지 않는다 — contraction 의 역원이 dilation 이며 역시간 진화는 일반적으로 비물리적.</p>
+<p><strong>2) 시간 역행 dilation</strong></p>
+<p>수학적으로 $\hat{T}(t)$ 를 음의 시간으로 분석적 확장하면</p>
 $$
-\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}, \quad t > 0
-$$<p>$\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Delta} - i\hat{\Gamma}/2$, $\hat{\Gamma} \geq 0$ 이므로 generator 의 spectrum 이 하반평면. $t > 0$ 에서 $\hat{Z}(t) = -t\hat{H}_{\text{eff}}/\hbar$ 가 상반평면 → contraction.</p>
-<p>음의 시간 ($t < 0$) 으로 확장하면 $\hat{Z}(t)$ 의 spectrum 이 하반평면으로 이동 → <strong>$\hat{T}(t)$ 가 dilation</strong>.</p>
-<p>물리적 의미: 시간을 거꾸로 진행시키면 환경으로 누출된 정보가 시스템으로 되돌아오는 것 같은 거동 — 비물리적이지만 수학적으로 명확히 정의됨. 이는 열린 시스템 진화의 비가역성 (b_contraction.md §6) 의 반영. 실제로는 음의 시간 진화가 가능한 시스템은 매우 제한되며, 일반적으로 NEGF 의 contraction semigroup 은 $t \geq 0$ 에서만 정의된다.</p>
-<p><strong>게인 매체로의 응용</strong></p>
-<p>$\hat{\Gamma} < 0$ (음의 정부호) 인 경우 — 환경이 시스템에 입자를 공급 — 의 가상적 시스템에서는 $t > 0$ 에서도 dilation. 게인 매체 (레이저 등) 의 단순화된 수학적 모형.</p>
-<p>이 경우 $\hat{H}_{\text{eff}}$ 의 spectrum 이 상반평면, $\hat{T}(t)$ 의 spectrum 이 단위 원 외부 → dilation.</p>
+\hat{T}(t) = e^{t\hat{X}}, \quad t < 0
+$$<p>$\hat{X}$ 의 spectrum 이 좌반평면이므로 $t\hat{X}$ 의 spectrum 이 ($t < 0$) 우반평면. Spectral 매핑</p>
+$$
+|e^{t\lambda_n}| = e^{t\,\text{Re}\,\lambda_n}
+$$<p>$t < 0$, $\text{Re}\,\lambda_n \leq 0$ 이면 $t\,\text{Re}\,\lambda_n \geq 0$, 따라서 $|e^{t\lambda_n}| \geq 1$ — <strong>dilation</strong>.</p>
+<p><strong>3) 비가역성의 표현</strong></p>
+<p>이 시간 역행 dilation 거동은 contraction semigroup 의 양의 시간 도메인의 자연스러운 수학적 확장이지만, 물리적으로는 환경에서 시스템으로 정보가 흘러들어오는 비물리적 시나리오. Contraction semigroup 이 $t \geq 0$ 에서만 정의되는 이유는 열린 시스템의 <strong>비가역성</strong> 의 표현.</p>
+<p>수학적 정리:</p>
+<ul>
+<li>$t > 0$: contraction (노름 감쇠)</li>
+<li>$t = 0$: 항등</li>
+<li>$t < 0$: dilation (노름 증가, 비물리적)</li>
+</ul>
 <hr>
 <h3 id="8-nagy-foias-dilation-정리-용어-주의">8. Nagy-Foias Dilation 정리 (용어 주의)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>작용소 이론에 같은 이름이지만 다른 의미의 정리가 있다 — <strong>Nagy-Foias unitary dilation theorem</strong>. 헷갈리지 않도록 짧게 정리.</p>
@@ -417,9 +428,6 @@ $$<p>$\hat{P}_\mathcal{H}$ 는 $\mathcal{H}$ 로의 사영. 즉 contraction 의 
   </tbody>
 </table>
 <p>두 용어가 같은 단어이지만 다른 개념. 본 절의 dilation 은 spectrum 의 기하학적 위치로 정의된 정규 연산자의 한 종류. Nagy-Foias 의 dilation 은 contraction 을 더 큰 공간의 unitary 로 끌어올리는 (lifting) 과정.</p>
-<p><strong>3) NEGF 와의 연결</strong></p>
-<p>Nagy-Foias 정리가 NEGF 의 본질적 그림과 직접 연결된다. NEGF 의 비-unitary $\hat{H}_{\text{eff}}$ 시간 진화는 더 큰 시스템 (system + environment) 의 unitary 시간 진화를 시스템 부분으로 사영한 것. Nagy-Foias 의 abstract 정리가 이 그림을 일반화.</p>
-<p>자세한 내용: open quantum systems 또는 NEGF 챕터에서.</p>
 <hr>
 <h3 id="9-예">9. 예<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1) 가장 단순한 strict dilation</strong></p>
@@ -436,20 +444,44 @@ $$
 $$<p>$\gamma_1, \gamma_2 > 0$. 두 고유값 $e^{\gamma_1/2}, e^{\gamma_2/2}$ 모두 단위 원판 외부 (양의 실수 직선의 한 부분, 1 보다 큰 영역).</p>
 <p>물리적 의미: $|0\rangle, |1\rangle$ 두 상태가 각각 다른 비율로 진폭 증폭. 게인 매체의 두 모드.</p>
 <p>대칭성: b_contraction.md §8-(2) 의 damped 시스템과 역원 관계. 한쪽이 contraction (감쇠) 이면 반대쪽이 dilation (증폭).</p>
-<p><strong>3) NEGF 시간 진화의 시간 역행</strong></p>
+<p><strong>3) Contraction semigroup 의 음의 시간 확장</strong></p>
 <p>§7 의 결과를 명시적으로 본다.</p>
-<p>NEGF 시간 진화 $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$ 에서 $t < 0$ 으로 분석적 확장:</p>
+<p>Contraction semigroup $\hat{T}(t) = e^{t\hat{X}}$ ($t \geq 0$, $\hat{X}$ 의 spectrum 좌반평면) 의 음의 시간 분석적 확장. 공통 고유 기저에서</p>
 $$
-\hat{T}(t)|\psi_n\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|\psi_n\rangle
-$$<p>$t < 0$ 에서 $e^{-\gamma_n t/(2\hbar)} > 1$. 진폭이 시간 거꾸로 갈수록 지수적으로 증가.</p>
-<p>이 dilation 거동은 contraction semigroup 의 양의 시간 도메인 ($t \geq 0$) 의 자연스러운 확장이지만, 물리적으로는 환경에서 시스템으로 정보가 흘러들어오는 비물리적 시나리오. NEGF 의 contraction semigroup 이 $t \geq 0$ 에서만 정의되는 이유 — 비가역성의 표현.</p>
-<p>수학적 정리:</p>
-<ul>
-<li>$t > 0$: contraction ($e^{-\gamma_n t/(2\hbar)} < 1$), 정상적 시간 진화</li>
-<li>$t = 0$: 항등 ($e^0 = 1$)</li>
-<li>$t < 0$: dilation ($e^{-\gamma_n t/(2\hbar)} > 1$), 비물리적 시간 역행</li>
-</ul>
-<p>이 분류가 contraction-dilation-unitary 의 통합된 그림에서 NEGF 시간 진화의 정확한 위치.</p>
+\hat{T}(t)|v_n\rangle = e^{t\lambda_n}|v_n\rangle, \quad \lambda_n = \alpha_n + i\beta_n,\;\alpha_n \leq 0
+$$<p>진폭 $|e^{t\lambda_n}| = e^{t\alpha_n}$.</p>
+<p>세 가지 시간 영역:</p>
+<table>
+  <thead>
+      <tr>
+          <th>시간</th>
+          <th>$t\alpha_n$</th>
+          <th>진폭 거동</th>
+          <th>종류</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$t > 0$</td>
+          <td>$\leq 0$</td>
+          <td>$\leq 1$ (감쇠)</td>
+          <td>Contraction</td>
+      </tr>
+      <tr>
+          <td>$t = 0$</td>
+          <td>$0$</td>
+          <td>$= 1$</td>
+          <td>항등</td>
+      </tr>
+      <tr>
+          <td>$t < 0$</td>
+          <td>$\geq 0$</td>
+          <td>$\geq 1$ (증가)</td>
+          <td>Dilation</td>
+      </tr>
+  </tbody>
+</table>
+<p>이 분류가 contraction-dilation-unitary 의 통합된 그림에서 1-parameter semigroup 의 정확한 위치. 음의 시간 도메인의 dilation 거동은 양의 시간 contraction 의 수학적 역원이며, 물리적으로는 비가역성으로 인해 일반적으로 정의되지 않는다.</p>
 
   <footer class="footline">
   </footer>
@@ -554,9 +586,9 @@ $$<p>$t < 0$ 에서 $e^{-\gamma_n t/(2\hbar)} > 1$. 진폭이 시간 거꾸로 �
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779082393"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779082393" defer></script>
-    <script src="/js/theme.js?1779082393" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779082785"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779082785" defer></script>
+    <script src="/js/theme.js?1779082785" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

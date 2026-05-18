@@ -31,28 +31,28 @@ $$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그
 정규 연산자 $\hat{T}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 contraction (수축) 연산자 라 한다.
 $$ \|\hat{T}|\psi\rangle\| \leq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동등하게 작용소 노름으로 표현하면 $\|\hat{T}\| \leq 1$.
 부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| &lt; \|\psi\|$ — 이를 strict contraction 이라 한다.">
-    <meta itemprop="wordCount" content="1523">
+    <meta itemprop="wordCount" content="1321">
     <title>(b) Contraction :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1779082393" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1779082393" defer></script>
-    <script src="/js/search-lunr.js?1779082393" defer></script>
-    <script src="/js/search.js?1779082393" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1779082785" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779082785" defer></script>
+    <script src="/js/search-lunr.js?1779082785" defer></script>
+    <script src="/js/search.js?1779082785" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1779082393";
+      window.relearn.index_js_url="/searchindex.en.js?1779082785";
     </script>
-    <script src="/js/lunr/lunr.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1779082393" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1779082393" defer></script>
+    <script src="/js/lunr/lunr.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779082785" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779082785" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082393" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779082393" rel="stylesheet">
-    <link href="/css/theme.css?1779082393" rel="stylesheet">
-    <link href="/css/format-html.css?1779082393" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082785" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779082785" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779082785" rel="stylesheet">
+    <link href="/css/theme.css?1779082785" rel="stylesheet">
+    <link href="/css/format-html.css?1779082785" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -179,7 +179,7 @@ $$<p>즉 어떤 벡터에 작용해도 그 노름이 증가하지 않는다. 동
 <p>부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{T}|\psi\rangle\| < \|\psi\|$ — 이를 <strong>strict contraction</strong> 이라 한다.</p>
 <p><strong>2) 물리적 의미</strong></p>
 <p>Contraction 연산자는 작용 후 벡터의 노름이 감소하는 변환을 표현한다. 양자역학에서 노름의 제곱이 확률을 의미하므로, contraction 변환은 <strong>확률이 감소하는 변환</strong> 을 기술한다.</p>
-<p>이는 unitary (확률 보존) 와 대비된다. 환경과 결합된 시스템 (열린 시스템) 에서 시스템 외부로 확률이 누출되는 현상이 자연스러운 예 — NEGF 의 시간 진화가 대표적.</p>
+<p>이는 unitary (확률 보존) 와 대비된다. 환경과 결합된 시스템 (열린 시스템) 에서 시스템 외부로 확률이 누출되는 현상이 자연스러운 예이다.</p>
 <hr>
 <h3 id="2-고유값은-닫힌-단위-원판-내부에-있다">2. 고유값은 닫힌 단위 원판 내부에 있다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Contraction 연산자의 고유값은 모두 절댓값이 1 이하인 복소수이다.</p>
@@ -286,20 +286,6 @@ $$<p>각 $|e^{i\lambda_n}| = e^{-\text{Im}\,\lambda_n} \leq 1$. 따라서 $\hat{
 <p><strong>3) 단위 원 경계와 strict contraction</strong></p>
 <p>위 표현에서 $|e^{i\lambda_n}| < 1$ 의 조건은 $\text{Im}\,\lambda_n > 0$ (strict 상반평면). 즉 $\hat{H}_2 > 0$ (strict positive definite). 이 경우 $\hat{T}$ 가 strict contraction.</p>
 <p>$\hat{H}_2 = 0$ 이면 $\hat{Z}$ 가 Hermitian 으로 환원되고 $e^{i\hat{Z}}$ 가 unitary (단위 원 경계). 그 사이 — 일부 고유값은 단위 원 위, 일부는 내부 — 의 경우도 가능.</p>
-<p><strong>4) NEGF 의 시간 진화와의 직접 연결</strong></p>
-<p>NEGF 의 effective Hamiltonian (가환 경우, 정규)</p>
-$$
-\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Delta} - \frac{i}{2}\hat{\Gamma}
-$$<p>$\hat{H}_s + \hat{\Delta}$ 가 Hermitian, $\hat{\Gamma} \geq 0$ 이 Hermitian.</p>
-<p>시간 진화 연산자</p>
-$$
-\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar} = e^{i\hat{Z}(t)}, \quad \hat{Z}(t) = -\frac{t}{\hbar}\hat{H}_{\text{eff}}
-$$<p>$\hat{Z}(t)$ 의 Hermitian / anti-Hermitian 분해:</p>
-$$
-\hat{Z}(t) = -\frac{t}{\hbar}(\hat{H}_s + \hat{\Delta}) + i\,\frac{t}{2\hbar}\hat{\Gamma}
-$$<p>$t > 0$ 에서 허수 부분의 계수 $t\hat{\Gamma}/(2\hbar) \geq 0$ — 상반평면 정규 연산자.</p>
-<p>따라서 $\hat{T}(t) = e^{i\hat{Z}(t)}$ 가 contraction. NEGF 의 시간 진화가 정확히 §5-(2) 의 contraction 표현의 한 사례.</p>
-<p>이 결과는 NEGF 의 열린 시스템 시간 진화가 contraction 구조를 가진다는 사실의 명시적 도출이다.</p>
 <hr>
 <h3 id="6-1-parameter-contraction-semigroup">6. 1-Parameter Contraction Semigroup<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Unitary 의 경우 시간 진화 unitary 들의 모음 $\{\hat{U}(t)\}_{t \in \mathbb{R}}$ 이 1-parameter unitary 군 (group) 을 이루었다 (b_unitary.md §7). Contraction 에서는 비슷한 구조 — 그러나 <strong>semigroup</strong> — 이 등장.</p>
@@ -319,7 +305,6 @@ $$<p>$t > 0$ 에서 허수 부분의 계수 $t\hat{\Gamma}/(2\hbar) \geq 0$ — 
 $$
 \hat{T}(t) = e^{t\hat{X}}, \quad \hat{X} \text{ 의 spectrum } \subset \{z : \text{Re}\,z \leq 0\}
 $$<p>Generator 의 spectrum 이 <strong>닫힌 좌반평면</strong> 에 위치. 양의 무한대로 발산하는 진폭이 없도록 강제하는 조건.</p>
-<p>NEGF 의 케이스에서: $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$, generator $\hat{X} = -i\hat{H}_{\text{eff}}/\hbar$. $\hat{H}_{\text{eff}}$ 의 spectrum 이 하반평면 ($\text{Im}\,\lambda_n \leq 0$) 이면 $-i\hat{H}_{\text{eff}}/\hbar$ 의 spectrum 이 좌반평면 ($\text{Re}\,\lambda_n \leq 0$) — Hille-Yoshida 조건 만족.</p>
 <hr>
 <h3 id="7-닫힌-시스템과-열린-시스템">7. 닫힌 시스템과 열린 시스템<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>지금까지의 결과를 종합하면 정규 연산자 framework 안에서 닫힌 / 열린 시스템의 자연스러운 비교가 가능하다.</p>
@@ -370,8 +355,6 @@ $$<p>Generator 의 spectrum 이 <strong>닫힌 좌반평면</strong> 에 위치.
   </tbody>
 </table>
 <p>두 시스템이 정규 연산자 framework 안의 두 극단 (단위 원 위 vs 단위 원판 내부). 각자의 generator 가 다른 spectrum 위치 (실수 직선 vs 하반평면) 를 갖는 정규 연산자.</p>
-<p>이 비교가 NEGF 의 수학적 위치를 명확히 한다. NEGF 의 시간 진화는 정규 contraction semigroup 의 특수한 경우 — $\hat{H}_{\text{eff}}$ 의 Hermitian/anti-Hermitian 부분이 가환할 때.</p>
-<p>비가환 경우 (일반 NEGF) 는 비정규 영역으로 들어가며, 별도 framework (다음 챕터) 가 필요하다.</p>
 <hr>
 <h3 id="8-예">8. 예<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1) 가장 단순한 strict contraction</strong></p>
@@ -386,16 +369,18 @@ $$
 \hat{T} = e^{-\gamma_1/2}|0\rangle\langle 0| + e^{-\gamma_2/2}|1\rangle\langle 1|
 $$<p>$\gamma_1, \gamma_2 > 0$. 두 고유값 $e^{-\gamma_1/2}, e^{-\gamma_2/2}$ 모두 단위 원판 내부 (양의 실수 직선의 한 부분).</p>
 <p>물리적 의미: $|0\rangle, |1\rangle$ 두 상태가 각각 다른 비율로 환경으로 누출. 노름 감쇠 비율이 다름.</p>
-<p>NEGF 와의 연결: 두 lead 와 결합된 2-level system 의 시간 진화의 한 모형. $\gamma_{1,2}$ 가 각 상태의 lifetime 의 역수.</p>
-<p><strong>3) NEGF 시간 진화 (가환 케이스)</strong></p>
-<p>§5-(4) 에서 도출한 결과를 명시적으로 본다.</p>
-<p>시스템 $\hat{H}_s$ 의 고유 상태 $\{\psi_n, \epsilon_n\}$, 가환 결합 $\hat{\Gamma}$ 의 같은 고유 기저에서의 고유값 $\gamma_n$.</p>
-<p>시간 진화:</p>
+<p><strong>3) 비-Hermitian Normal 연산자의 contraction 거동</strong></p>
+<p>$\hat{Z} = \hat{H}_1 + i\hat{H}_2$ ($\hat{H}_1, \hat{H}_2$ Hermitian, 가환, $\hat{H}_2 \geq 0$) 의 공통 고유 기저 $\{|v_n\rangle\}$, 각각의 고유값 $\epsilon_n$ 과 $\kappa_n$ ($\kappa_n \geq 0$).</p>
+<p>$\hat{Z}$ 의 고유값 $\lambda_n = \epsilon_n + i\kappa_n$ — 상반평면 정규.</p>
+<p>$\hat{T} = e^{i\hat{Z}}$ 의 spectrum:</p>
 $$
-\hat{T}(t)|\psi_n\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|\psi_n\rangle
-$$<p>진폭 $e^{-\gamma_n t/(2\hbar)}$ 으로 시간에 따라 감쇠. 평균 수명 $\tau_n = \hbar/\gamma_n$.</p>
-<p>거듭제곱 거동: $\hat{T}(t)^k = \hat{T}(kt)$ 이므로 $t \to \infty$ 한계에서 모든 상태가 0 으로 수렴 — 결국 시스템 전체가 환경으로 누출.</p>
-<p>이 결과가 NEGF 의 산란 영역의 입자가 시간이 지나면 결국 모두 환경 (lead) 으로 빠져나간다는 사실의 수학적 표현. 정상상태에서는 lead 가 동시에 입자를 주입하기 때문에 평형이 형성되며, 이것이 lesser self-energy $\hat{\Sigma}^<$ 가 표현하는 정보 (NEGF 챕터 참조).</p>
+e^{i\lambda_n} = e^{i\epsilon_n}\,e^{-\kappa_n}
+$$<p>크기 $|e^{i\lambda_n}| = e^{-\kappa_n} \leq 1$. Strict contraction 조건은 $\kappa_n > 0$ 모든 $n$.</p>
+<p>거듭제곱 $\hat{T}^m = e^{im\hat{Z}}$ 의 spectrum:</p>
+$$
+(e^{i\lambda_n})^m = e^{im\epsilon_n}\,e^{-m\kappa_n}
+$$<p>위상 회전 $e^{im\epsilon_n}$ (단위 원) 과 노름 감쇠 $e^{-m\kappa_n}$ 의 곱. $m \to \infty$ 한계에서 $\hat{T}^m \to 0$ (strict contraction).</p>
+<p>이 결과가 §4-(1) (거듭제곱 0 으로 수렴) 의 명시적 검증.</p>
 
   <footer class="footline">
   </footer>
@@ -500,9 +485,9 @@ $$<p>진폭 $e^{-\gamma_n t/(2\hbar)}$ 으로 시간에 따라 감쇠. 평균 �
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779082393"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779082393" defer></script>
-    <script src="/js/theme.js?1779082393" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779082785"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779082785" defer></script>
+    <script src="/js/theme.js?1779082785" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
