@@ -3,7 +3,7 @@
   <channel>
     <title>Green function :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/green_function/index.html</link>
-    <description>Preface&#xD;(b) First-order PDE&#xD;(i) Second-order PDE&#xD;(p) Green function examples&#xD;(i) Divergence for free-space&#xD;(i) Laplacian for free-space&#xD;(i) Helmholtz operator for free-space&#xD;(i) GF from SL</description>
+    <description>Preface (b) First-order PDE (i) Second-order PDE (p) Green function examples (i) Divergence for free-space (i) Laplacian for free-space (i) Helmholtz operator for free-space (i) GF from SL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/green_function/index.xml" rel="self" type="application/rss+xml" />

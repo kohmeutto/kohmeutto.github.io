@@ -3,7 +3,7 @@
   <channel>
     <title>Homogeneous :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/homogeneous/index.html</link>
-    <description>(b) ODE - Homogenous&#xD;(b) CEE - Homogenous</description>
+    <description>(b) ODE - Homogenous (b) CEE - Homogenous</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/homogeneous/index.xml" rel="self" type="application/rss+xml" />

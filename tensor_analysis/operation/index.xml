@@ -3,7 +3,7 @@
   <channel>
     <title>Operation :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/operation/index.html</link>
-    <description>(a) Dyad&#xD;(a) Dot products&#xD;(a) Unit tensor&#xD;(a) Seperation of tensor&#xD;(a) 4nd unit tensor&#xD;(a) Inverse &amp; Determinant&#xD;(a) Permutation symbol&#xD;(a) Eigenvalue problem</description>
+    <description>(a) Dyad (a) Dot products (a) Unit tensor (a) Seperation of tensor (a) 4nd unit tensor (a) Inverse &amp; Determinant (a) Permutation symbol (a) Eigenvalue problem</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/operation/index.xml" rel="self" type="application/rss+xml" />

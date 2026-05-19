@@ -72,12 +72,12 @@ var relearn_searchindex = [
     "uri": "/tensor_analysis/calculus/a_gradient/index.html"
   },
   {
-    "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Normal operators",
-    "content": "1. 연산자 Adjoint의 물리 및 공학적 의미\r연산자의 수반(Adjoint)은 측정 대상을 변형할 것인가($\\hat{A}$), 혹은 측정 관점을 변형할 것인가($\\hat{A}^\\dagger$) 에 대한 대수적 응답이다. 수반 연산자는 대상의 변화를 관찰자의 기준 변화로 번역하는 대칭의 거울 역할을 수행한다. 이를 통해 대상(Ket)에 직접적인 연산을 가하지 않고도, 관찰자의 시선(Bra)을 정교하게 교정함으로써 시스템의 상태를 정의할 수 있다.\n1) 범함수(Functional)를 통한 상태 측정\n브라 $\\langle v|$는 켓을 입력받아 스칼라를 반환하는 범함수이다. 시스템 $|w\\rangle$에 물리적 작용 $\\hat{A}$가 가해졌을 때, 시스템의 특정 물리량을 측정하는 과정은 다음과 같이 분해된다.\n(1) 시스템 $|w\\rangle$에 물리적 작용 $\\hat{A}$가 가해진다.\n(2) 변형된 시스템의 측정값은 내적 $\\langle v | (\\hat{A} | w \\rangle)$로 표현된다.\n(3) 물리적 작용이 가해지기 전의 초기 시스템 $|w\\rangle$을 유지하면서 동일한 측정값을 얻기 위해서는, 측정 도구인 $\\langle v|$에 $\\hat{A}$의 효과를 역으로 반영해야 한다.\n(4) 이때 관찰자의 기준을 재설정한 측정 도구가 수반 연산자가 적용된 $\\langle \\hat{A}^\\dagger v |$이다.\n2) 공학적 적용: 안테나 시스템의 상반성\n연산자 $\\hat{A}$ : 송신단에서 신호를 변조하거나 채널을 통과시키며 발생하는 물리적 변형. 브라 $\\langle v|$ : 수신단에서 신호를 검출하는 감도 특성 및 측정 필터. 송신 신호에 작용 $\\hat{A}$가 가해진 후 수신되는 신호 $\\langle v | \\hat{A} w \\rangle$는, 송신 조건을 고정하고 수신단의 감도 특성을 $\\hat{A}^\\dagger$로 보정했을 때의 결과 $\\langle \\hat{A}^\\dagger v | w \\rangle$와 수학적으로 등가이다. 이는 수신 측에서 송신 측의 물리적 변화를 자신의 측정 기준으로 환산한 결과와 같다.\n2. 유한 차원: 행렬의 켤레 전치\r유한 차원 벡터 공간에서 수반 연산자는 행렬의 켤레 전치(Conjugate Transpose)로 정의되며, 내적의 정의에 의해 다음 관계가 엄밀하게 성립한다.\n$$\r\\langle v|\\hat{A} w\\rangle = \\langle \\hat{A}^\\dagger v| w\\rangle\r$$proof)\n좌변: $\\langle v | Aw \\rangle = \\sum_{i,j} v_i^{\\ast} A_{ij} w_j$ 우변: $\\langle \\hat{A}^\\dagger v | w \\rangle = \\sum_{j,i} (A^\\dagger)_{ji}^{\\ast} v_i^{\\ast} w_j$ 모든 벡터 $v, w$에 대해 위 식의 등호가 유지되려면 $A_{ij} = (A^\\dagger)_{ji}^{\\ast}$ 조건을 만족해야 한다. 따라서 수반 행렬의 성분 정의는 다음과 같다.\n$$\r(A^\\dagger)_{ij} = A_{ji}^{\\ast}\r$$ 3. 무한 차원: 미분 연산자와 경계항\r무한 차원 함수 공간에서 미분 연산자를 다룰 경우, 내적 적분 과정에서 부분 적분이 수반되므로 경계 적분항 $\\mathcal{R}$이 발생한다.\n$$\r\\langle \\phi|\\hat{A} \\psi\\rangle = \\langle \\hat{A}^\\dagger \\phi| \\psi\\rangle + \\mathcal{R}_{\\hat{A}}[\\phi,\\psi]\r$$여기서 경계항은 다음과 같이 정의된다.\n$$\r\\mathcal{R}\\hat{A}[\\phi,\\psi] = \\int_{\\partial\\Omega} d^2s\\, \\mathcal{B}_A[\\phi,\\psi]\r$$$\\mathcal{B}_A[\\phi,\\psi]$는 브라 $\\phi$에 대해 켤레 선형(Conjugate linear)이고 켓 $\\psi$에 대해 선형(Linear)인 반-쌍선형(Sesquilinear) 형식을 취한다. 미분 작용소의 차수가 높아질수록 부분 적분 횟수가 증가하며, $\\mathcal{B}_A$에는 $\\phi, \\psi$ 및 그 도함수들이 결합된 형태로 나타난다.\n4. 주요 성질 (Algebra of Adjoints)\r수반 작용은 대합(Involution) 성질을 가지며, 이는 연산자 자체의 구조적 불변성을 정의한다.\n1) 자기 역원 (Self-inverse)\n$$\r(\\hat{A}^\\dagger)^\\dagger = \\hat{A}\r$$2) 반선형성 (Anti-linearity) $$\r(\\alpha \\hat{A} + \\beta \\hat{B})^\\dagger = \\alpha^\\ast \\hat{A}^\\dagger + \\beta^\\ast \\hat{B}^\\dagger\r$$ 쌍대 공간의 복소 대수 구조에 따라 스칼라 계수는 켤레 복소수로 변환된다.\n2) 곱셈 규칙 (Product rule)과 경계항의 독립성\n$$\r(\\hat{A}\\hat{B})^\\dagger = \\hat{B}^\\dagger \\hat{A}^\\dagger\r$$이 대수적 등식은 무한 차원에서도 항상 성립한다. $(\\hat{A}\\hat{B})^\\dagger = \\hat{B}^\\dagger \\hat{A}^\\dagger$ 규칙과 경계항 $\\mathcal{R}$의 발생은 서로 모순되지 않는다. 이는 ‘연산자의 추상적 형태 정의’ 와 ‘실제 내적 적분의 실행’ 이 다른 차원의 문제이기 때문이다.\n형태 정의 : $(\\hat{A}\\hat{B})^\\dagger$는 연산자 $\\hat{A}$와 $\\hat{B}$를 순차적으로 브라 쪽으로 넘겼을 때, 최종적으로 적분 기호 내부에 남게 되는 연산자의 대수적 형상을 의미한다. 이 형상은 반드시 작용 순서가 뒤집힌 $\\hat{B}^\\dagger \\hat{A}^\\dagger$가 된다. 적분 실행 : 실제 내적 $\\langle \\phi | \\hat{A}\\hat{B} \\psi \\rangle$를 계산하기 위해 부분 적분을 수행하면, 각 미분기를 넘길 때마다 경계 찌꺼기가 발생한다. $$\r\\langle \\phi | \\hat{A}\\hat{B} \\psi \\rangle = \\langle \\hat{B}^\\dagger \\hat{A}^\\dagger \\phi | \\psi \\rangle + (\\mathcal{R}\\hat{A} + \\mathcal{R}\\hat{B})\r$$따라서 곱셈 규칙은 적분 내부의 연산자 커널(Kernel)의 모양 을 결정하는 규칙이며, $\\mathcal{R}$은 그 변환 과정에서 발생하는 물리적 경계 조건의 산물이다. 수반 연산자의 대수 규칙은 시스템의 경계 조건과 무관하게 연산자 자체의 성질로서 유지된다.",
+    "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Adjoint",
+    "content": "1. 연산자 Adjoint의 물리 및 공학적 의미\r연산자의 수반(Adjoint)은 측정 대상을 변형할 것인가($\\hat{A}$), 혹은 측정 관점을 변형할 것인가($\\hat{A}^\\dagger$) 에 대한 대수적 응답이다. 수반 연산자는 대상의 변화를 관찰자의 기준 변화로 번역하는 대칭의 거울 역할을 수행한다. 이를 통해 대상(Ket)에 직접적인 연산을 가하지 않고도, 관찰자의 시선(Bra)을 정교하게 교정함으로써 시스템의 상태를 정의할 수 있다.\n1) 범함수(Functional)를 통한 상태 측정\n브라 $\\langle v|$는 켓을 입력받아 스칼라를 반환하는 범함수이다. 시스템 $|w\\rangle$에 물리적 작용 $\\hat{A}$가 가해졌을 때, 시스템의 특정 물리량을 측정하는 과정은 다음과 같이 분해된다.\n(1) 시스템 $|w\\rangle$에 물리적 작용 $\\hat{A}$가 가해진다.\n(2) 변형된 시스템의 측정값은 내적 $\\langle v | (\\hat{A} | w \\rangle)$로 표현된다.\n(3) 물리적 작용이 가해지기 전의 초기 시스템 $|w\\rangle$을 유지하면서 동일한 측정값을 얻기 위해서는, 측정 도구인 $\\langle v|$에 $\\hat{A}$의 효과를 역으로 반영해야 한다.\n(4) 이때 관찰자의 기준을 재설정한 측정 도구가 수반 연산자가 적용된 $\\langle \\hat{A}^\\dagger v |$이다.\n2) 공학적 적용: 안테나 시스템의 상반성\n연산자 $\\hat{A}$ : 송신단에서 신호를 변조하거나 채널을 통과시키며 발생하는 물리적 변형. 브라 $\\langle v|$ : 수신단에서 신호를 검출하는 감도 특성 및 측정 필터. 송신 신호에 작용 $\\hat{A}$가 가해진 후 수신되는 신호 $\\langle v | \\hat{A} w \\rangle$는, 송신 조건을 고정하고 수신단의 감도 특성을 $\\hat{A}^\\dagger$로 보정했을 때의 결과 $\\langle \\hat{A}^\\dagger v | w \\rangle$와 수학적으로 등가이다. 이는 수신 측에서 송신 측의 물리적 변화를 자신의 측정 기준으로 환산한 결과와 같다.\n2. 유한 차원: 행렬의 켤레 전치\r유한 차원 벡터 공간에서 수반 연산자는 행렬의 켤레 전치(Conjugate Transpose)로 정의되며, 내적의 정의에 의해 다음 관계가 엄밀하게 성립한다.\n$$\r\\langle v|\\hat{A} w\\rangle = \\langle \\hat{A}^\\dagger v| w\\rangle\r$$proof)\n좌변: $\\langle v | Aw \\rangle = \\sum_{i,j} v_i^{\\ast} A_{ij} w_j$ 우변: $\\langle \\hat{A}^\\dagger v | w \\rangle = \\sum_{j,i} (A^\\dagger)_{ji}^{\\ast} v_i^{\\ast} w_j$ 모든 벡터 $v, w$에 대해 위 식의 등호가 유지되려면 $A_{ij} = (A^\\dagger)_{ji}^{\\ast}$ 조건을 만족해야 한다. 따라서 수반 행렬의 성분 정의는 다음과 같다.\n$$\r(A^\\dagger)_{ij} = A_{ji}^{\\ast}\r$$ 3. 무한 차원: 미분 연산자와 경계항\r무한 차원 함수 공간에서 미분 연산자를 다룰 경우, 내적 적분 과정에서 부분 적분이 수반되므로 경계 적분항 $\\mathcal{R}$이 발생한다.\n$$\r\\langle \\phi|\\hat{A} \\psi\\rangle = \\langle \\hat{A}^\\dagger \\phi| \\psi\\rangle + \\mathcal{R}_{\\hat{A}}[\\phi,\\psi]\r$$여기서 경계항은 다음과 같이 정의된다.\n$$\r\\mathcal{R}\\hat{A}[\\phi,\\psi] = \\int_{\\partial\\Omega} d^2s\\, \\mathcal{B}_A[\\phi,\\psi]\r$$$\\mathcal{B}_A[\\phi,\\psi]$는 브라 $\\phi$에 대해 켤레 선형(Conjugate linear)이고 켓 $\\psi$에 대해 선형(Linear)인 반-쌍선형(Sesquilinear) 형식을 취한다. 미분 작용소의 차수가 높아질수록 부분 적분 횟수가 증가하며, $\\mathcal{B}_A$에는 $\\phi, \\psi$ 및 그 도함수들이 결합된 형태로 나타난다.\n1) 1차 미분\n$$\r\\hat{D} = \\frac{d}{dx}\r$$약형의 좌변 $\\langle\\phi|\\hat{L}\\psi\\rangle$ 을 직접 계산할 때, 미분 연산자에 대해 부분 적분이 자연스럽게 등장한다.\n$$\r\\langle\\phi|\\hat{D}\\psi\\rangle = \\int_a^b dx\\,\\phi^*(x)\\,\\frac{d\\psi(x)}{dx}\r= \\bigl[\\phi^*(x)\\psi(x)\\bigr]_a^b - \\int_a^b dx\\,\\frac{d\\phi^*(x)}{dx}\\,\\psi(x)\r$$두 부분으로 분리.\n첫 항 $\\bigl[\\phi^*\\psi\\bigr]_a^b$: 적분 구간의 양 끝점 ($x = a, b$) 에서 평가된 boundary term. $$\r\\bigl[\\phi^*(x)\\psi(x)\\bigr]_a^b = \\mathcal{R}\\hat{D}[\\phi,\\psi]\r$$ 둘째 항: 미분이 $\\phi$ 쪽으로 옮겨진 적분. $$\r-\\int_a^b dx\\,\\frac{d\\phi^*}{dx}\\,\\psi = \\langle(-\\hat{D})\\phi|\\psi\\rangle\r$$따라서 종합하면\n$$\r\\langle\\phi|\\hat{D}\\psi\\rangle = \\langle(-\\hat{D})\\phi|\\psi\\rangle + \\mathcal{R}\\hat{D}[\\phi,\\psi]\r$$$\\hat{D}$ 를 브라 쪽으로 옮기면 작용소가 $-\\hat{D}$ 로 변하고, 그 변환 과정에서 boundary term $\\bigl[\\phi^*\\psi\\bigr]_a^b$ 가 추가로 등장한다. 2차 이상 미분의 경계적분항 $\\mathcal{R}$은 다음 챕터에서 다룬다.\n4. 주요 성질 (Algebra of Adjoints)\r수반 작용은 대합(Involution) 성질을 가지며, 이는 연산자 자체의 구조적 불변성을 정의한다.\n1) 자기 역원 (Self-inverse)\n$$\r(\\hat{A}^\\dagger)^\\dagger = \\hat{A}\r$$2) 반선형성 (Anti-linearity)\n쌍대 공간의 복소 대수 구조에 따라 스칼라 계수는 켤레 복소수로 변환된다.\n$$\r(\\alpha \\hat{A} + \\beta \\hat{B})^\\dagger = \\alpha^\\ast \\hat{A}^\\dagger + \\beta^\\ast \\hat{B}^\\dagger\r$$3) 곱셈 규칙 (Product rule)과 경계항의 독립성\n$$\r(\\hat{A}\\hat{B})^\\dagger = \\hat{B}^\\dagger \\hat{A}^\\dagger\r$$",
     "description": "1. 연산자 Adjoint의 물리 및 공학적 의미\r연산자의 수반(Adjoint)은 측정 대상을 변형할 것인가($\\hat{A}$), 혹은 측정 관점을 변형할 것인가($\\hat{A}^\\dagger$) 에 대한 대수적 응답이다. 수반 연산자는 대상의 변화를 관찰자의 기준 변화로 번역하는 대칭의 거울 역할을 수행한다. 이를 통해 대상(Ket)에 직접적인 연산을 가하지 않고도, 관찰자의 시선(Bra)을 정교하게 교정함으로써 시스템의 상태를 정의할 수 있다.\n1) 범함수(Functional)를 통한 상태 측정\n브라 $\\langle v|$는 켓을 입력받아 스칼라를 반환하는 범함수이다. 시스템 $|w\\rangle$에 물리적 작용 $\\hat{A}$가 가해졌을 때, 시스템의 특정 물리량을 측정하는 과정은 다음과 같이 분해된다.",
     "tags": [],
     "title": "(b) Adjoint",
-    "uri": "/vector_operator/normal_operators/b_adjoint/index.html"
+    "uri": "/vector_operator/adjoint/b_adjoint/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Non-normal operators",
@@ -209,8 +209,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Normal operators",
-    "content": "1. 정규 연산자의 정의\r연산자 $\\hat{A}$가 자신의 허미션 켤레($\\hat{A}^\\dagger$)와 교환 가능할 때, 노름 보존 조건을 만족하는 경우, 정규 연산자(Normal Operator) 라고 한다.\n[$\\hat{A}, \\hat{A}^\\dagger] = \\hat{A}\\hat{A}^\\dagger - \\hat{A}^\\dagger\\hat{A} = 0$\n무한 차원을 포괄하는 보편적/해석학적 조건: 정의역 일치 $\\mathcal{D}(\\hat{A}) = \\mathcal{D}(\\hat{A}^\\dagger)$ 및 노름 보존 $\\|\\hat{A}\\psi\\| = \\|\\hat{A}^\\dagger\\psi\\|$\n이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\\lambda_i$, 고유상태벡터가 $|\\lambda_i\\rangle$ 라고 할 때,\n$$\\hat{A} = \\sum_i \\lambda_i |\\lambda_i\\rangle \\langle \\lambda^i| \\quad \\text{or} \\quad \\hat{A} = \\int d\\lambda\\, \\lambda |\\lambda\\rangle \\langle \\lambda^d|$$$$\\hat{A}^\\dagger = \\sum_i \\lambda_i^\\ast |\\lambda_i\\rangle \\langle \\lambda^i| \\quad \\text{or} \\quad \\hat{A}^\\dagger = \\int d\\lambda\\, \\lambda^\\ast |\\lambda\\rangle \\langle \\lambda^d|$$ 2. 특성 1: 우/좌 고유벡터의 켤레 대응\r$|v\\rangle$ 가 $\\hat{A}$ 의 고유벡터 (eigenvalue $\\lambda$) 이면, 같은 $|v\\rangle$ 가 $\\hat{A}^\\dagger$ 의 고유벡터 (eigenvalue $\\lambda^*$) 이다.\n$$ \\hat{A}|v\\rangle = \\lambda|v\\rangle \\iff \\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle $$(단일 벡터에 대한 진술이므로 듀얼 마커 없이 $\\langle v|$ 사용.)\nproof)\n$|w\\rangle := (\\hat{A}^\\dagger - \\lambda^*)|v\\rangle$ 로 정의하고, $\\|w\\|^2 = 0$ 을 보여 $|w\\rangle = 0$, 즉 $\\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle$ 을 도출한다.\n$$ \\|w\\|^2 = \\langle v|(\\hat{A} - \\lambda)(\\hat{A}^\\dagger - \\lambda^*)|v\\rangle $$전개:\n$$ = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - \\lambda^*\\langle v|\\hat{A}|v\\rangle - \\lambda\\langle v|\\hat{A}^\\dagger|v\\rangle + |\\lambda|^2\\|v\\|^2 $$고유값 방정식 $\\hat{A}|v\\rangle = \\lambda|v\\rangle$ 으로부터 $\\langle v|\\hat{A}|v\\rangle = \\lambda\\|v\\|^2$. 내적의 sesquilinear 성에서 $\\langle v|\\hat{A}^\\dagger|v\\rangle = \\overline{\\langle v|\\hat{A}|v\\rangle} = \\lambda^*\\|v\\|^2$. 대입:\n$$ = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - 2|\\lambda|^2\\|v\\|^2 + |\\lambda|^2\\|v\\|^2 = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - |\\lambda|^2\\|v\\|^2 $$여기서 strict normal 조건 $\\hat{A}\\hat{A}^\\dagger = \\hat{A}^\\dagger\\hat{A}$ 을 적용:\n$$ = \\langle v|\\hat{A}^\\dagger\\hat{A}|v\\rangle - |\\lambda|^2\\|v\\|^2 = \\|\\hat{A}|v\\rangle\\|^2 - |\\lambda|^2\\|v\\|^2 = |\\lambda|^2\\|v\\|^2 - |\\lambda|^2\\|v\\|^2 = 0 $$따라서 $\\|w\\|^2 = 0 \\implies |w\\rangle = 0 \\implies \\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle$.\n3. 특성 2: 서로 다른 고유값의 고유벡터는 biorthogonal\r$\\hat{A}|v_i\\rangle = \\lambda_i|v_i\\rangle$, $\\hat{A}|v_j\\rangle = \\lambda_j|v_j\\rangle$, $\\lambda_i \\neq \\lambda_j$ 이면\n$$ \\langle v^i|v_j\\rangle = 0 $$여기서 $\\langle v^i|$ 는 $|v_i\\rangle$ 의 듀얼 기저 (위첨자 = 반변 인덱스).\nstrict normal in 표준 L² (Hermitian 등) 의 경우 $\\langle v^i| = \\langle v_i|$ 이므로, 위 결과는 표준 교재의 $\\langle v_i|v_j\\rangle = 0$ 으로 자동 환원.\nproof)\n$\\langle v^i|\\hat{A}|v_j\\rangle$ 을 두 방향으로 평가한다.\n(우측 작용) $\\hat{A}|v_j\\rangle = \\lambda_j|v_j\\rangle$ 사용:\n$$ \\langle v^i|\\hat{A}|v_j\\rangle = \\lambda_j\\,\\langle v^i|v_j\\rangle $$(좌측 작용) 특성 1 에 의해 $|v_i\\rangle$ 가 $\\hat{A}^\\dagger$ 의 고유벡터 (eigenvalue $\\lambda_i^*$). 자연 내적에서 $\\langle v^i| = \\langle v_i|$ 이므로 $\\langle v^i|$ 가 $\\hat{A}$ 의 좌고유벡터 (eigenvalue $\\lambda_i$):\n$$ \\langle v^i|\\hat{A} = \\lambda_i\\,\\langle v^i| $$이를 사용:\n$$ \\langle v^i|\\hat{A}|v_j\\rangle = \\lambda_i\\,\\langle v^i|v_j\\rangle $$두 결과를 같게 놓으면:\n$$ (\\lambda_i - \\lambda_j)\\,\\langle v^i|v_j\\rangle = 0 $$$\\lambda_i \\neq \\lambda_j$ 이므로 $\\langle v^i|v_j\\rangle = 0$.\n4. 특성 3: 비결함성 — 중복 고유값에서도 완비 고유 기저\rstrict normal 연산자는 Jordan block 을 가지지 않는다. 즉, 중복 고유값 $\\lambda$ 에 대해 대수적 다중도와 기하적 다중도가 일치하여, 고유 공간 $V_\\lambda$ 의 차원이 다중도와 같다.\nproof) 일반화 고유공간이 고유공간과 일치함.\n핵심: $(\\hat{A} - \\lambda)^2 |v\\rangle = 0$ 인 임의의 $|v\\rangle$ 에 대해 $(\\hat{A} - \\lambda)|v\\rangle = 0$ 임을 보이면, 일반화 고유공간 (높은 차수의 nilpotent 작용으로 0 이 되는 벡터들) 이 고유공간 (1차 작용으로 0) 과 일치함이 따라온다.\n$|w\\rangle := (\\hat{A} - \\lambda)|v\\rangle$ 로 놓으면 $(\\hat{A} - \\lambda)|w\\rangle = (\\hat{A} - \\lambda)^2|v\\rangle = 0$, 즉 $|w\\rangle$ 가 고유값 $\\lambda$ 의 고유벡터. 특성 1 에 의해\n$$ \\hat{A}^\\dagger|w\\rangle = \\lambda^*|w\\rangle \\implies (\\hat{A}^\\dagger - \\lambda^*)|w\\rangle = 0 $$이제 $\\|w\\|^2$ 를 계산:\n$$ \\|w\\|^2 = \\langle w|w\\rangle = \\langle w|(\\hat{A} - \\lambda)|v\\rangle $$b_adjoint.md §2 의 수반 관계로 $\\hat{A} - \\lambda$ 를 bra 쪽으로 옮기면:\n$$ = \\langle (\\hat{A}^\\dagger - \\lambda^*)w|v\\rangle = \\langle 0|v\\rangle = 0 $$따라서 $|w\\rangle = 0$, 즉 $(\\hat{A} - \\lambda)|v\\rangle = 0$. Jordan block 부재 증명 완료.\n다중도 = 고유공간 차원: 위 결과로 고유값 $\\lambda$ 의 대수적 다중도 ($k$) 만큼의 선형 독립 고유벡터가 $V_\\lambda$ 에 존재.\nBiorthogonalization: $V_\\lambda$ 의 $k$ 개의 선형 독립 고유벡터 $\\{|u_1\\rangle, \\ldots, |u_k\\rangle\\}$ 에 Gram-Schmidt 직교화 (자연 내적에서) 를 적용하면 biorthogonal 기저 $\\{|e_1\\rangle, \\ldots, |e_k\\rangle\\}$ 가 얻어진다.\n$$ |e_1\\rangle = |u_1\\rangle, \\quad |e_j\\rangle = |u_j\\rangle - \\sum_{i=1}^{j-1}\\frac{\\langle e^i|u_j\\rangle}{\\langle e^i|e_i\\rangle}|e_i\\rangle $$(여기서 $\\langle e^i|$ 는 듀얼 기저, 위첨자 인덱스.) 특성 2 에 의해 다른 고유값과의 biorthogonality 가 자동 보장. 결과적으로 전체 공간의 biorthogonal 완비 기저가 완성된다.\n5. 특성 4: 영공간과 열공간의 직교성\rstrict normal 연산자에서 영공간(null space) 과 열공간(range) 은 직교한다.\n$$ \\ker(\\hat{A}) \\perp \\text{ran}(\\hat{A}) $$즉, $|u\\rangle \\in \\ker(\\hat{A})$, $|w\\rangle \\in \\text{ran}(\\hat{A})$ 이면 $\\langle u|w\\rangle = 0$. 여기서 $|u\\rangle, |w\\rangle$ 는 부분공간의 단일 원소이므로 듀얼 마커 없이 $\\langle u|, \\langle w|$ 사용.\nproof)\n(단계 1) $\\ker(\\hat{A}) = \\ker(\\hat{A}^\\dagger)$.\n노름 보존 조건 $\\|\\hat{A}|v\\rangle\\| = \\|\\hat{A}^\\dagger|v\\rangle\\|$ 으로부터:\n$$ |v\\rangle \\in \\ker(\\hat{A}) \\iff \\|\\hat{A}|v\\rangle\\| = 0 \\iff \\|\\hat{A}^\\dagger|v\\rangle\\| = 0 \\iff |v\\rangle \\in \\ker(\\hat{A}^\\dagger) $$이는 strict normal 의 직접 결과 (특성 1 의 특수 사례: $\\lambda = 0$).\n(단계 2) 임의의 연산자에서 $\\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}^\\dagger)$.\n$|w\\rangle = \\hat{A}|v\\rangle \\in \\text{ran}(\\hat{A})$, $|u\\rangle \\in \\ker(\\hat{A}^\\dagger)$ 이면 b_adjoint.md §2 의 수반 관계로:\n$$ \\langle u|w\\rangle = \\langle u|\\hat{A}|v\\rangle = \\langle \\hat{A}^\\dagger u|v\\rangle = \\langle 0|v\\rangle = 0 $$이 부분은 strict normal 조건을 사용하지 않으며, 모든 연산자에 대해 성립.\n결합: 단계 1 의 $\\ker(\\hat{A}) = \\ker(\\hat{A}^\\dagger)$ 와 단계 2 의 $\\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}^\\dagger)$ 를 합치면\n$$ \\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}) $$가 성립.\n의미: 영공간 위의 사영과 열공간 위의 사영이 직합 분해를 이루며, $\\mathcal{H} = \\ker(\\hat{A}) \\oplus \\text{ran}(\\hat{A})$. 이 분해가 일반화된 그린함수 (영공간 사영 제거 후 역연산자 구성) 의 정확한 수학적 기반이다.",
-    "description": "1. 정규 연산자의 정의\r연산자 $\\hat{A}$가 자신의 허미션 켤레($\\hat{A}^\\dagger$)와 교환 가능할 때, 노름 보존 조건을 만족하는 경우, 정규 연산자(Normal Operator) 라고 한다.\n[$\\hat{A}, \\hat{A}^\\dagger] = \\hat{A}\\hat{A}^\\dagger - \\hat{A}^\\dagger\\hat{A} = 0$\n무한 차원을 포괄하는 보편적/해석학적 조건: 정의역 일치 $\\mathcal{D}(\\hat{A}) = \\mathcal{D}(\\hat{A}^\\dagger)$ 및 노름 보존 $\\|\\hat{A}\\psi\\| = \\|\\hat{A}^\\dagger\\psi\\|$\n이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\\lambda_i$, 고유상태벡터가 $|\\lambda_i\\rangle$ 라고 할 때,",
+    "content": "1. 정규 연산자의 정의\r아래의 세가지 조건을 모두 만족할 때, 정규 연산자(Normal Operator) 라고 한다.\n[$\\hat{A}, \\hat{A}^\\dagger] = \\hat{A}\\hat{A}^\\dagger - \\hat{A}^\\dagger\\hat{A} = 0$ 정의역 일치 $\\mathcal{D}(\\hat{A}) = \\mathcal{D}(\\hat{A}^\\dagger)$ $\\mathcal{R}\\hat{A}=0$ 이것은 노름 보존 $\\|\\hat{A}\\psi\\| = \\|\\hat{A}^\\dagger\\psi\\|$ 과 동치이다. 이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\\lambda_i$, 고유상태벡터가 $|\\lambda_i\\rangle$ 라고 할 때,\n$$\\hat{A} = \\sum_i \\lambda_i |\\lambda_i\\rangle \\langle \\lambda^i| \\quad \\text{or} \\quad \\hat{A} = \\int d\\lambda\\, \\lambda |\\lambda\\rangle \\langle \\lambda^d|$$$$\\hat{A}^\\dagger = \\sum_i \\lambda_i^\\ast |\\lambda_i\\rangle \\langle \\lambda^i| \\quad \\text{or} \\quad \\hat{A}^\\dagger = \\int d\\lambda\\, \\lambda^\\ast |\\lambda\\rangle \\langle \\lambda^d|$$ 2. 특성 1: 우/좌 고유벡터의 켤레 대응\r$|v\\rangle$ 가 $\\hat{A}$ 의 고유벡터 (eigenvalue $\\lambda$) 이면, 같은 $|v\\rangle$ 가 $\\hat{A}^\\dagger$ 의 고유벡터 (eigenvalue $\\lambda^*$) 이다.\n$$ \\hat{A}|v\\rangle = \\lambda|v\\rangle \\iff \\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle $$(단일 벡터에 대한 진술이므로 듀얼 마커 없이 $\\langle v|$ 사용.)\nproof)\n$|w\\rangle := (\\hat{A}^\\dagger - \\lambda^*)|v\\rangle$ 로 정의하고, $\\|w\\|^2 = 0$ 을 보여 $|w\\rangle = 0$, 즉 $\\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle$ 을 도출한다.\n$$ \\|w\\|^2 = \\langle v|(\\hat{A} - \\lambda)(\\hat{A}^\\dagger - \\lambda^*)|v\\rangle $$전개:\n$$ = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - \\lambda^*\\langle v|\\hat{A}|v\\rangle - \\lambda\\langle v|\\hat{A}^\\dagger|v\\rangle + |\\lambda|^2\\|v\\|^2 $$고유값 방정식 $\\hat{A}|v\\rangle = \\lambda|v\\rangle$ 으로부터 $\\langle v|\\hat{A}|v\\rangle = \\lambda\\|v\\|^2$. 내적의 sesquilinear 성에서 $\\langle v|\\hat{A}^\\dagger|v\\rangle = \\overline{\\langle v|\\hat{A}|v\\rangle} = \\lambda^*\\|v\\|^2$. 대입:\n$$ = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - 2|\\lambda|^2\\|v\\|^2 + |\\lambda|^2\\|v\\|^2 = \\langle v|\\hat{A}\\hat{A}^\\dagger|v\\rangle - |\\lambda|^2\\|v\\|^2 $$여기서 strict normal 조건 $\\hat{A}\\hat{A}^\\dagger = \\hat{A}^\\dagger\\hat{A}$ 을 적용:\n$$ = \\langle v|\\hat{A}^\\dagger\\hat{A}|v\\rangle - |\\lambda|^2\\|v\\|^2 = \\|\\hat{A}|v\\rangle\\|^2 - |\\lambda|^2\\|v\\|^2 = |\\lambda|^2\\|v\\|^2 - |\\lambda|^2\\|v\\|^2 = 0 $$따라서 $\\|w\\|^2 = 0 \\implies |w\\rangle = 0 \\implies \\hat{A}^\\dagger|v\\rangle = \\lambda^*|v\\rangle$.\n3. 특성 2: 서로 다른 고유값의 고유벡터는 biorthogonal\r$\\hat{A}|v_i\\rangle = \\lambda_i|v_i\\rangle$, $\\hat{A}|v_j\\rangle = \\lambda_j|v_j\\rangle$, $\\lambda_i \\neq \\lambda_j$ 이면\n$$ \\langle v^i|v_j\\rangle = 0 $$여기서 $\\langle v^i|$ 는 $|v_i\\rangle$ 의 듀얼 기저 (위첨자 = 반변 인덱스).\nstrict normal in 표준 L² (Hermitian 등) 의 경우 $\\langle v^i| = \\langle v_i|$ 이므로, 위 결과는 표준 교재의 $\\langle v_i|v_j\\rangle = 0$ 으로 자동 환원.\nproof)\n$\\langle v^i|\\hat{A}|v_j\\rangle$ 을 두 방향으로 평가한다.\n(우측 작용) $\\hat{A}|v_j\\rangle = \\lambda_j|v_j\\rangle$ 사용:\n$$ \\langle v^i|\\hat{A}|v_j\\rangle = \\lambda_j\\,\\langle v^i|v_j\\rangle $$(좌측 작용) 특성 1 에 의해 $|v_i\\rangle$ 가 $\\hat{A}^\\dagger$ 의 고유벡터 (eigenvalue $\\lambda_i^*$). 자연 내적에서 $\\langle v^i| = \\langle v_i|$ 이므로 $\\langle v^i|$ 가 $\\hat{A}$ 의 좌고유벡터 (eigenvalue $\\lambda_i$):\n$$ \\langle v^i|\\hat{A} = \\lambda_i\\,\\langle v^i| $$이를 사용:\n$$ \\langle v^i|\\hat{A}|v_j\\rangle = \\lambda_i\\,\\langle v^i|v_j\\rangle $$두 결과를 같게 놓으면:\n$$ (\\lambda_i - \\lambda_j)\\,\\langle v^i|v_j\\rangle = 0 $$$\\lambda_i \\neq \\lambda_j$ 이므로 $\\langle v^i|v_j\\rangle = 0$.\n4. 특성 3: 비결함성 — 중복 고유값에서도 완비 고유 기저\rstrict normal 연산자는 Jordan block 을 가지지 않는다. 즉, 중복 고유값 $\\lambda$ 에 대해 대수적 다중도와 기하적 다중도가 일치하여, 고유 공간 $V_\\lambda$ 의 차원이 다중도와 같다.\nproof) 일반화 고유공간이 고유공간과 일치함.\n핵심: $(\\hat{A} - \\lambda)^2 |v\\rangle = 0$ 인 임의의 $|v\\rangle$ 에 대해 $(\\hat{A} - \\lambda)|v\\rangle = 0$ 임을 보이면, 일반화 고유공간 (높은 차수의 nilpotent 작용으로 0 이 되는 벡터들) 이 고유공간 (1차 작용으로 0) 과 일치함이 따라온다.\n$|w\\rangle := (\\hat{A} - \\lambda)|v\\rangle$ 로 놓으면 $(\\hat{A} - \\lambda)|w\\rangle = (\\hat{A} - \\lambda)^2|v\\rangle = 0$, 즉 $|w\\rangle$ 가 고유값 $\\lambda$ 의 고유벡터. 특성 1 에 의해\n$$ \\hat{A}^\\dagger|w\\rangle = \\lambda^*|w\\rangle \\implies (\\hat{A}^\\dagger - \\lambda^*)|w\\rangle = 0 $$이제 $\\|w\\|^2$ 를 계산:\n$$ \\|w\\|^2 = \\langle w|w\\rangle = \\langle w|(\\hat{A} - \\lambda)|v\\rangle $$b_adjoint.md §2 의 수반 관계로 $\\hat{A} - \\lambda$ 를 bra 쪽으로 옮기면:\n$$ = \\langle (\\hat{A}^\\dagger - \\lambda^*)w|v\\rangle = \\langle 0|v\\rangle = 0 $$따라서 $|w\\rangle = 0$, 즉 $(\\hat{A} - \\lambda)|v\\rangle = 0$. Jordan block 부재 증명 완료.\n다중도 = 고유공간 차원: 위 결과로 고유값 $\\lambda$ 의 대수적 다중도 ($k$) 만큼의 선형 독립 고유벡터가 $V_\\lambda$ 에 존재.\nBiorthogonalization: $V_\\lambda$ 의 $k$ 개의 선형 독립 고유벡터 $\\{|u_1\\rangle, \\ldots, |u_k\\rangle\\}$ 에 Gram-Schmidt 직교화 (자연 내적에서) 를 적용하면 biorthogonal 기저 $\\{|e_1\\rangle, \\ldots, |e_k\\rangle\\}$ 가 얻어진다.\n$$ |e_1\\rangle = |u_1\\rangle, \\quad |e_j\\rangle = |u_j\\rangle - \\sum_{i=1}^{j-1}\\frac{\\langle e^i|u_j\\rangle}{\\langle e^i|e_i\\rangle}|e_i\\rangle $$(여기서 $\\langle e^i|$ 는 듀얼 기저, 위첨자 인덱스.) 특성 2 에 의해 다른 고유값과의 biorthogonality 가 자동 보장. 결과적으로 전체 공간의 biorthogonal 완비 기저가 완성된다.\n5. 특성 4: 영공간과 열공간의 직교성\rstrict normal 연산자에서 영공간(null space) 과 열공간(range) 은 직교한다.\n$$ \\ker(\\hat{A}) \\perp \\text{ran}(\\hat{A}) $$즉, $|u\\rangle \\in \\ker(\\hat{A})$, $|w\\rangle \\in \\text{ran}(\\hat{A})$ 이면 $\\langle u|w\\rangle = 0$. 여기서 $|u\\rangle, |w\\rangle$ 는 부분공간의 단일 원소이므로 듀얼 마커 없이 $\\langle u|, \\langle w|$ 사용.\nproof)\n(단계 1) $\\ker(\\hat{A}) = \\ker(\\hat{A}^\\dagger)$.\n노름 보존 조건 $\\|\\hat{A}|v\\rangle\\| = \\|\\hat{A}^\\dagger|v\\rangle\\|$ 으로부터:\n$$ |v\\rangle \\in \\ker(\\hat{A}) \\iff \\|\\hat{A}|v\\rangle\\| = 0 \\iff \\|\\hat{A}^\\dagger|v\\rangle\\| = 0 \\iff |v\\rangle \\in \\ker(\\hat{A}^\\dagger) $$이는 strict normal 의 직접 결과 (특성 1 의 특수 사례: $\\lambda = 0$).\n(단계 2) 임의의 연산자에서 $\\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}^\\dagger)$.\n$|w\\rangle = \\hat{A}|v\\rangle \\in \\text{ran}(\\hat{A})$, $|u\\rangle \\in \\ker(\\hat{A}^\\dagger)$ 이면 b_adjoint.md §2 의 수반 관계로:\n$$ \\langle u|w\\rangle = \\langle u|\\hat{A}|v\\rangle = \\langle \\hat{A}^\\dagger u|v\\rangle = \\langle 0|v\\rangle = 0 $$이 부분은 strict normal 조건을 사용하지 않으며, 모든 연산자에 대해 성립.\n결합: 단계 1 의 $\\ker(\\hat{A}) = \\ker(\\hat{A}^\\dagger)$ 와 단계 2 의 $\\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}^\\dagger)$ 를 합치면\n$$ \\text{ran}(\\hat{A}) \\perp \\ker(\\hat{A}) $$가 성립.\n의미: 영공간 위의 사영과 열공간 위의 사영이 직합 분해를 이루며, $\\mathcal{H} = \\ker(\\hat{A}) \\oplus \\text{ran}(\\hat{A})$. 이 분해가 일반화된 그린함수 (영공간 사영 제거 후 역연산자 구성) 의 정확한 수학적 기반이다.",
+    "description": "1. 정규 연산자의 정의\r아래의 세가지 조건을 모두 만족할 때, 정규 연산자(Normal Operator) 라고 한다.\n[$\\hat{A}, \\hat{A}^\\dagger] = \\hat{A}\\hat{A}^\\dagger - \\hat{A}^\\dagger\\hat{A} = 0$ 정의역 일치 $\\mathcal{D}(\\hat{A}) = \\mathcal{D}(\\hat{A}^\\dagger)$ $\\mathcal{R}\\hat{A}=0$ 이것은 노름 보존 $\\|\\hat{A}\\psi\\| = \\|\\hat{A}^\\dagger\\psi\\|$ 과 동치이다. 이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\\lambda_i$, 고유상태벡터가 $|\\lambda_i\\rangle$ 라고 할 때,",
     "tags": [],
     "title": "(b) Normal operators",
     "uri": "/vector_operator/normal_operators/b_normal_operators/index.html"
@@ -345,48 +345,48 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Geometric algebra",
-    "content": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols\r(b) Dyad",
-    "description": "(b) Suffix notation\r(b) Kronecker \u0026 Levi-Civit`a Symbols\r(b) Dyad",
+    "content": "(b) Suffix notation (b) Kronecker \u0026 Levi-Civit`a Symbols (b) Dyad",
+    "description": "(b) Suffix notation (b) Kronecker \u0026 Levi-Civit`a Symbols (b) Dyad",
     "tags": [],
     "title": "Einstein notation",
     "uri": "/geometric_algebra/einstein-notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Vector\r(b) Basic vector operations\r(i) Linearity\r(q) Linearity for circuits\r(b) Matrix\r(b) Column vector of matrix\r(b) Inner product\r(b) Row vector of matrix",
-    "description": "(b) Vector\r(b) Basic vector operations\r(i) Linearity\r(q) Linearity for circuits\r(b) Matrix\r(b) Column vector of matrix\r(b) Inner product\r(b) Row vector of matrix",
+    "content": "(b) Vector (b) Basic vector operations (i) Linearity (q) Linearity for circuits (b) Matrix (b) Column vector of matrix (b) Inner product (b) Row vector of matrix",
+    "description": "(b) Vector (b) Basic vector operations (i) Linearity (q) Linearity for circuits (b) Matrix (b) Column vector of matrix (b) Inner product (b) Row vector of matrix",
     "tags": [],
     "title": "Euclidean vector",
     "uri": "/vector_operator/euclidean_vector/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Green's function",
-    "content": "(b) Green's function\r(b) Spectral representation\r(i) Unified picture\r(b) Existence and properties\r(b) Sturm-Liouville form\r(b) Sturm-Liouville Green's function\r(b) Singular Sturm-Liouville",
-    "description": "(b) Green's function\r(b) Spectral representation\r(i) Unified picture\r(b) Existence and properties\r(b) Sturm-Liouville form\r(b) Sturm-Liouville Green's function\r(b) Singular Sturm-Liouville",
+    "content": "(b) Green's function (b) Spectral representation (i) Unified picture (b) Existence and properties (b) Sturm-Liouville form (b) Sturm-Liouville Green's function (b) Singular Sturm-Liouville",
+    "description": "(b) Green's function (b) Spectral representation (i) Unified picture (b) Existence and properties (b) Sturm-Liouville form (b) Sturm-Liouville Green's function (b) Singular Sturm-Liouville",
     "tags": [],
     "title": "GF",
     "uri": "/greens_function/gf/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(b) ODE - Homogenous\r(b) CEE - Homogenous",
-    "description": "(b) ODE - Homogenous\r(b) CEE - Homogenous",
+    "content": "(b) ODE - Homogenous (b) CEE - Homogenous",
+    "description": "(b) ODE - Homogenous (b) CEE - Homogenous",
     "tags": [],
     "title": "Homogeneous",
     "uri": "/ode_pde/homogeneous/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(b) Cauchy's Integral Formula\r(b) Residue",
-    "description": "(b) Cauchy's Integral Formula\r(b) Residue",
+    "content": "(b) Cauchy's Integral Formula (b) Residue",
+    "description": "(b) Cauchy's Integral Formula (b) Residue",
     "tags": [],
     "title": "Lourent's series",
     "uri": "/temp/laurents_series/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Linear system",
-    "content": "(i) LSI\r(b) Convolution\r(b) Causality\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Laplace transform III\r(b) Fourier transform I\r(a) Algebra structure\r(b) Fourier transform II\r(b) Fourier series\r(b) LSI \u0026 Circuit analysis",
-    "description": "(i) LSI\r(b) Convolution\r(b) Causality\r(b) Laplace transform I\r(b) Laplace transform II\r(b) Laplace transform III\r(b) Fourier transform I\r(a) Algebra structure\r(b) Fourier transform II\r(b) Fourier series\r(b) LSI \u0026 Circuit analysis",
+    "content": "(i) LSI (b) Convolution (b) Causality (b) Laplace transform I (b) Laplace transform II (b) Laplace transform III (b) Fourier transform I (a) Algebra structure (b) Fourier transform II (b) Fourier series (b) LSI \u0026 Circuit analysis",
+    "description": "(i) LSI (b) Convolution (b) Causality (b) Laplace transform I (b) Laplace transform II (b) Laplace transform III (b) Fourier transform I (a) Algebra structure (b) Fourier transform II (b) Fourier series (b) LSI \u0026 Circuit analysis",
     "tags": [],
     "title": "LSI",
     "uri": "/linear_system/lsi/index.html"
@@ -401,8 +401,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
-    "content": "(a) Dyad\r(a) Dot products\r(a) Unit tensor\r(a) Seperation of tensor\r(a) 4nd unit tensor\r(a) Inverse \u0026 Determinant\r(a) Permutation symbol\r(a) Eigenvalue problem",
-    "description": "(a) Dyad\r(a) Dot products\r(a) Unit tensor\r(a) Seperation of tensor\r(a) 4nd unit tensor\r(a) Inverse \u0026 Determinant\r(a) Permutation symbol\r(a) Eigenvalue problem",
+    "content": "(a) Dyad (a) Dot products (a) Unit tensor (a) Seperation of tensor (a) 4nd unit tensor (a) Inverse \u0026 Determinant (a) Permutation symbol (a) Eigenvalue problem",
+    "description": "(a) Dyad (a) Dot products (a) Unit tensor (a) Seperation of tensor (a) 4nd unit tensor (a) Inverse \u0026 Determinant (a) Permutation symbol (a) Eigenvalue problem",
     "tags": [],
     "title": "Operation",
     "uri": "/tensor_analysis/operation/index.html"
@@ -433,8 +433,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Euclidean vector\rHilbert vector\rDirac notation\rDeterminant \u0026 Norm\rEigenvalue problem\rCommutator\rNormal operators\rFunction of operators\rNon-normal operators\rLie group\rNumerial analysis",
-    "description": "Euclidean vector\rHilbert vector\rDirac notation\rDeterminant \u0026 Norm\rEigenvalue problem\rCommutator\rNormal operators\rFunction of operators\rNon-normal operators\rLie group\rNumerial analysis",
+    "content": "Euclidean vector Hilbert vector Dirac notation Determinant \u0026 Norm Eigenvalue problem Commutator Adjoint Normal operators Function of operators Non-normal operators Lie group Numerial analysis",
+    "description": "Euclidean vector Hilbert vector Dirac notation Determinant \u0026 Norm Eigenvalue problem Commutator Adjoint Normal operators Function of operators Non-normal operators Lie group Numerial analysis",
     "tags": [],
     "title": "Vector \u0026 Operator",
     "uri": "/vector_operator/index.html"
@@ -542,6 +542,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "(b) Basic vector operations",
     "uri": "/vector_operator/euclidean_vector/b_basic_vector_operations/index.html"
+  },
+  {
+    "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Adjoint",
+    "content": "1. 경계항의 성질\r1) 선형성\n연산자의 선형 결합에 대해 $\\mathcal{R}$ 도 같은 선형 결합 형태:\n$$\r\\mathcal{R}(\\alpha\\hat{A} + \\beta\\hat{B})[\\phi, \\psi] = \\alpha\\,\\mathcal{R}\\hat{A}[\\phi, \\psi] + \\beta\\,\\mathcal{R}\\hat{B}[\\phi, \\psi]\r$$proof)\n$\\mathcal{R}$ 의 정의에 직접 대입.\n$$\r\\langle\\phi|(\\alpha\\hat{A} + \\beta\\hat{B})\\psi\\rangle = \\alpha\\langle\\phi|\\hat{A}\\psi\\rangle + \\beta\\langle\\phi|\\hat{B}\\psi\\rangle\r$$각 항을 레지듀 형태로 변환.\n$$\r= \\alpha\\bigl(\\langle\\hat{A}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{A}[\\phi, \\psi]\\bigr) + \\beta\\bigl(\\langle\\hat{B}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{B}[\\phi, \\psi]\\bigr)\r$$내적의 sesquilinear 성으로 $(\\alpha\\hat{A} + \\beta\\hat{B})^\\dagger\\phi = \\alpha^*\\hat{A}^\\dagger\\phi + \\beta^*\\hat{B}^\\dagger\\phi$ 를 고려하면 첫 항들이 $\\langle(\\alpha\\hat{A} + \\beta\\hat{B})^\\dagger\\phi|\\psi\\rangle$ 로 통합. 따라서 남은 부분이\n$$\r\\mathcal{R}(\\alpha\\hat{A} + \\beta\\hat{B})[\\phi, \\psi] = \\alpha\\,\\mathcal{R}\\hat{A}[\\phi, \\psi] + \\beta\\,\\mathcal{R}\\hat{B}[\\phi, \\psi]\r$$2) 곱셈규칙\n$$\r\\langle\\phi|\\hat{A}\\hat{B}|\\psi\\rangle\r=\\langle\\hat{B}^\\dagger\\hat{A}^\\dagger\\phi||\\psi\\rangle+\\mathcal{R}(\\hat{A}\\hat{B})[\\phi,\\psi]\r$$핵심\n$$\r\\mathcal{R}(\\hat{A}\\hat{B})[\\phi,\\psi]\r=\\mathcal{R}\\hat{A}[\\phi,\\hat{B}\\psi]+\\mathcal{R}\\hat{B}[\\hat{A}^\\dagger\\phi,\\psi]\r$$proof)\n$\\hat{A}$ 를 먼저 브라 쪽으로 옮긴다 ($\\hat{B}\\psi$ 를 새 켓으로 봄):\n$$\r\\langle\\phi|\\hat{A}(\\hat{B}\\psi)\\rangle = \\langle\\hat{A}^\\dagger\\phi|\\hat{B}\\psi\\rangle + \\mathcal{R}\\hat{A}[\\phi, \\hat{B}\\psi]\r$$그 후 $\\hat{B}$ 를 브라 쪽으로 옮긴다 ($\\hat{A}^\\dagger\\phi$ 를 새 브라로 봄):\n$$\r\\langle\\hat{A}^\\dagger\\phi|\\hat{B}\\psi\\rangle = \\langle\\hat{B}^\\dagger\\hat{A}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{B}[\\hat{A}^\\dagger\\phi, \\psi]\r$$결합:\n$$\r\\langle\\phi|\\hat{A}\\hat{B}\\psi\\rangle = \\langle\\hat{B}^\\dagger\\hat{A}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{A}[\\phi, \\hat{B}\\psi] + \\mathcal{R}\\hat{B}[\\hat{A}^\\dagger\\phi, \\psi]\r$$마지막 두 항이 $\\mathcal{R}(\\hat{A}\\hat{B})$ 의 정의. 부분 적분을 두 번 수행한 결과, 각 단계의 중첩된 변형이 인자로 들어옴.\n2. 적용\r1) 곱셈 작용소\n$$\r\\hat{M}:=p\\cdot\r\\implies \\mathcal{R}\\hat{M}=0\r$$proof)\n$$\r\\langle\\phi|\\hat{M}\\psi\\rangle=\\langle\\hat{M}^\\dagger\\phi|\\psi\\rangle\r$$경계항이 발생 안 함. 따라서,\n$$\r\\mathcal{R}\\hat{M}=0\r$$2) 2차 미분\n$$\r\\mathcal{R}\\hat{D}^2[\\phi,\\psi] = [\\phi^*\\psi' -(\\phi^*)'\\psi]^a_b\r=\\begin{vmatrix} \\phi^\\ast \u0026 \\psi \\\\ (\\phi^*)' \u0026 \\psi'\\end{vmatrix}^a_b\r$$proof)\n$$\r\\mathcal{R}\\hat{D}^2[\\phi,\\psi]\r=\\mathcal{R}\\hat{D}[\\phi,\\hat{D}\\psi]+\\mathcal{R}\\hat{D}[\\hat{D}^\\dagger\\phi,\\psi]\r$$여기에서,\n$$\r\\mathcal{R}\\hat{D}[\\phi,\\hat{D}\\psi] = [\\phi^*\\psi']^a_b,\\quad \\mathcal{R}\\hat{D}[\\hat{D}^\\dagger\\phi,\\psi] = [-(\\phi^*)'\\psi]^a_b\r$$따라서,\n$$\r\\mathcal{R}\\hat{D}^2[\\phi,\\psi] = [\\phi^*\\psi' -(\\phi^*)'\\psi]^a_b\r$$3) Strum-Lioville\n$$\r\\hat{L}=\\hat{D}p\\hat{D}+q,\\quad\\text{단, $p,q$ 는 모두 실수이다.}\r$$$$\r\\mathcal{R}\\hat{L} = [p(\\phi^*\\psi' -(\\phi^*)'\\psi)]^a_b\r=\\left(p\\begin{vmatrix} \\phi^\\ast \u0026 \\psi \\\\ (\\phi^*)' \u0026 \\psi'\\end{vmatrix}\\right)^a_b\r$$proof)\n선형성을 적용한다.\n$$\r\\mathcal{R}\\hat{L}=\\mathcal{R}(\\hat{D}p\\hat{D})+\\mathcal{R}({q\\hat{I}})\r$$(1) 첫번째 항\n$$\r\\mathcal{R}(\\hat{D}p\\hat{D})\r=\\mathcal{R}\\hat{D}[\\phi,p\\hat{D}\\psi]+\\mathcal{R}(p\\hat{D})[\\hat{D}^\\dagger\\phi,\\psi]\r$$$$\r=\\mathcal{R}\\hat{D}[\\phi,p\\hat{D}\\psi]\r+\\mathcal{R}(p\\cdot)[\\hat{D}^\\dagger\\phi,\\hat{D}\\psi]\r+\\mathcal{R}\\hat{D}[p^\\dagger\\hat{D}^\\dagger\\phi,\\psi]\r$$$$\r=\\mathcal{R}\\hat{D}[\\phi,p\\hat{D}\\psi]\r+\\mathcal{R}\\hat{D}[p^\\dagger\\hat{D}^\\dagger\\phi,\\psi]\r$$$$\r=[p(\\phi^*\\psi' -(\\phi^*)'\\psi)]^a_b\r$$(2) 두번째 항\n$$\r\\mathcal{R}({q\\hat{I}})=0\r$$ 3. 심플레틱 행렬\r2차 미분과 §2-(3) 의 SL 연산자에서 $\\mathcal{R}$ 이 phase space 벡터의 결정식 형태로 나타났다. 이를 일반화하면 심플렉틱 행렬 (symplectic matrix) 이 등장한다.\n1) 2차의 경우 — 자연 등장\n2차 미분의 결과:\n$$\r\\mathcal{R}\\hat{D}^2[\\phi, \\psi] = \\phi^*\\psi' - (\\phi^*)'\\psi\\bigg|_a^b\r$$phase space 벡터 $\\Phi = (\\phi, \\phi')^T$, $\\Psi = (\\psi, \\psi')^T$ 로 표기하면\n$$\r\\mathcal{R}\\hat{D}^2[\\phi, \\psi] = \\begin{bmatrix}\\phi^* \u0026 (\\phi^*)'\\end{bmatrix}\\begin{bmatrix}0 \u0026 1\\\\-1 \u0026 0\\end{bmatrix}\\begin{bmatrix}\\psi\\\\\\psi'\\end{bmatrix}\\bigg|_a^b = \\bigl[\\Phi^*\\Omega_2\\Psi\\bigr]_a^b\r$$여기서 $\\Omega_2$ 가 2x2 심플렉틱 행렬:\n$$\r\\Omega_2 = \\begin{pmatrix}0 \u0026 1\\\\-1 \u0026 0\\end{pmatrix}\r$$부대각선에서 $+1, -1$ 이 등장하는 반대칭 행렬. 이 행렬을 별도로 정의한 것이 아니라, 곱셈 규칙의 결과에서 자연 추출된 것.\n2) 4차의 경우\n$\\hat{D}^4 = \\hat{D}\\hat{D}\\hat{D}\\hat{D}$ 에 곱셈 규칙을 세 번 반복하면\n$$\r\\mathcal{R}\\hat{D}^4[\\phi, \\psi] = [\\phi^*\\psi''' - (\\phi^*)'\\psi'' + (\\phi^*)''\\psi' - (\\phi^*)'''\\psi]_a^b\r$$phase space 벡터 $\\Phi = (\\phi, \\phi', \\phi'', \\phi''')^T$, $\\Psi = (\\psi, \\psi', \\psi'', \\psi''')^T$ 로 표기:\n$$\r\\mathcal{R}\\hat{D}^4[\\phi, \\psi] = \\bigl[\\Phi^*\\Omega_4\\Psi\\bigr]_a^b\r$$with\n$$\r\\Omega_4 = \\begin{pmatrix}0 \u0026 0 \u0026 0 \u0026 1\\\\0 \u0026 0 \u0026 -1 \u0026 0\\\\0 \u0026 1 \u0026 0 \u0026 0\\\\-1 \u0026 0 \u0026 0 \u0026 0\\end{pmatrix}\r$$부대각선 (anti-diagonal) 에서 부호가 교대로 등장하는 반대칭 행렬.\n3) 일반 $k$ 차 미분\n$\\hat{D}^k$ 의 곱셈 규칙을 $k-1$ 번 반복하면\n$$\r\\mathcal{R}\\hat{D}^k[\\phi, \\psi] = \\sum_{m=0}^{k-1}(-1)^m\\bigl[(\\phi^*)^{(m)}\\psi^{(k-1-m)}\\bigr]_a^b\r$$phase space 벡터 $\\Phi = (\\phi, \\phi', \\ldots, \\phi^{(k-1)})^T$ 로 표기하면\n$$\r\\mathcal{R}\\hat{D}^k[\\phi, \\psi] = \\bigl[\\Phi^*\\Omega_k\\Psi\\bigr]_a^b\r$$with $\\Omega_k$ 가 $k\\times k$ 심플렉틱 행렬:\n$$\r(\\Omega_k)_{ij} = \\begin{cases}(-1)^{i-1} \u0026 \\text{if } i + j = k+1\\\\0 \u0026 \\text{otherwise}\\end{cases}\r$$부대각선 ($i + j = k+1$) 에서 부호 교대, 나머지 0. 반대칭 ($\\Omega_k^T = -\\Omega_k$, $k$ 짝수일 때).\n4) 심플렉틱 형식의 의미\n$\\Omega$ 는 phase space (함수와 모든 도함수의 묶음) 위의 심플렉틱 형식 (symplectic form). 고전 역학의 phase space $(q, p)$ 위의 $dq \\wedge dp$ 와 같은 구조이다.\n함수가 위치 ($q$) 에, 도함수가 운동량 ($p$) 에 대응하는 자연스러운 대응. 이 대응이 미분 연산자의 boundary 분석에 phase space 의 기하학적 구조를 부여한다.\n5) BC 와 라그랑지안 부분공간\n$\\mathcal{R} = 0$ 의 조건이 모든 $\\phi, \\psi \\in \\mathcal{D}$ 에 대해 만족되려면, boundary 위의 phase space 벡터들이 심플렉틱 형식이 0 인 부분공간 — 라그랑지안 부분공간 (Lagrangian subspace) — 에 있어야 한다.\n가능한 라그랑지안 부분공간들의 집합이 미분 연산자의 self-adjoint extension 의 집합과 일대일 대응. 표준 BC (Dirichlet, Neumann, periodic, mixed) 들이 모두 라그랑지안 부분공간의 구체적 사례이다.",
+    "description": "1. 경계항의 성질\r1) 선형성\n연산자의 선형 결합에 대해 $\\mathcal{R}$ 도 같은 선형 결합 형태:\n$$\r\\mathcal{R}(\\alpha\\hat{A} + \\beta\\hat{B})[\\phi, \\psi] = \\alpha\\,\\mathcal{R}\\hat{A}[\\phi, \\psi] + \\beta\\,\\mathcal{R}\\hat{B}[\\phi, \\psi]\r$$proof)\n$\\mathcal{R}$ 의 정의에 직접 대입.\n$$\r\\langle\\phi|(\\alpha\\hat{A} + \\beta\\hat{B})\\psi\\rangle = \\alpha\\langle\\phi|\\hat{A}\\psi\\rangle + \\beta\\langle\\phi|\\hat{B}\\psi\\rangle\r$$각 항을 레지듀 형태로 변환.\n$$\r= \\alpha\\bigl(\\langle\\hat{A}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{A}[\\phi, \\psi]\\bigr) + \\beta\\bigl(\\langle\\hat{B}^\\dagger\\phi|\\psi\\rangle + \\mathcal{R}\\hat{B}[\\phi, \\psi]\\bigr)\r$$내적의 sesquilinear 성으로 $(\\alpha\\hat{A} + \\beta\\hat{B})^\\dagger\\phi = \\alpha^*\\hat{A}^\\dagger\\phi + \\beta^*\\hat{B}^\\dagger\\phi$ 를 고려하면 첫 항들이 $\\langle(\\alpha\\hat{A} + \\beta\\hat{B})^\\dagger\\phi|\\psi\\rangle$ 로 통합. 따라서 남은 부분이",
+    "tags": [],
+    "title": "(b) Boundary",
+    "uri": "/vector_operator/adjoint/b_boundary/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Dirac notation",
@@ -793,16 +801,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(a) Operator \u0026 Generator\r(a) Operators in quantum mechanics",
-    "description": "(a) Operator \u0026 Generator\r(a) Operators in quantum mechanics",
+    "content": "(a) Operator \u0026 Generator (a) Operators in quantum mechanics",
+    "description": "(a) Operator \u0026 Generator (a) Operators in quantum mechanics",
     "tags": [],
     "title": "Algebra structure for LSI",
     "uri": "/temp/algebra_structure/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
-    "content": "(a) Gradient\r(a) Divergence\r(a) Curl\r(a) Derivative\r(a) Integration",
-    "description": "(a) Gradient\r(a) Divergence\r(a) Curl\r(a) Derivative\r(a) Integration",
+    "content": "(a) Gradient (a) Divergence (a) Curl (a) Derivative (a) Integration",
+    "description": "(a) Gradient (a) Divergence (a) Curl (a) Derivative (a) Integration",
     "tags": [],
     "title": "Calculus",
     "uri": "/tensor_analysis/calculus/index.html"
@@ -825,16 +833,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Electromagnetics",
-    "content": "(a) Frame\r(a) Perspective\r(a) Description\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
-    "description": "(a) Frame\r(a) Perspective\r(a) Description\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
+    "content": "(a) Frame (a) Perspective (a) Description (a) Material derivative (i) Electromotive force I (a) Electromotive force II (r) EMF \u0026 Voltage",
+    "description": "(a) Frame (a) Perspective (a) Description (a) Material derivative (i) Electromotive force I (a) Electromotive force II (r) EMF \u0026 Voltage",
     "tags": [],
     "title": "Electromotive force",
     "uri": "/electromagnetics/electromotive_force/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(a) Frame \u0026 Viewpoint\r(a) Lagrangian and Eulerian specification\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
-    "description": "(a) Frame \u0026 Viewpoint\r(a) Lagrangian and Eulerian specification\r(a) Material derivative\r(i) Electromotive force I\r(a) Electromotive force II\r(r) EMF \u0026 Voltage",
+    "content": "(a) Frame \u0026 Viewpoint (a) Lagrangian and Eulerian specification (a) Material derivative (i) Electromotive force I (a) Electromotive force II (r) EMF \u0026 Voltage",
+    "description": "(a) Frame \u0026 Viewpoint (a) Lagrangian and Eulerian specification (a) Material derivative (i) Electromotive force I (a) Electromotive force II (r) EMF \u0026 Voltage",
     "tags": [],
     "title": "Electromotive force",
     "uri": "/temp/electromotive_force/index.html"
@@ -849,32 +857,32 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(b) Exponential - IOPM\r(b) Trigonometric - IOPM\r(b) Polynomial - IOPM\r(a) Displacement - IOPM\r(a) Wronskian method",
-    "description": "(b) Exponential - IOPM\r(b) Trigonometric - IOPM\r(b) Polynomial - IOPM\r(a) Displacement - IOPM\r(a) Wronskian method",
+    "content": "(b) Exponential - IOPM (b) Trigonometric - IOPM (b) Polynomial - IOPM (a) Displacement - IOPM (a) Wronskian method",
+    "description": "(b) Exponential - IOPM (b) Trigonometric - IOPM (b) Polynomial - IOPM (a) Displacement - IOPM (a) Wronskian method",
     "tags": [],
     "title": "Inhomogeneous",
     "uri": "/ode_pde/inhomogeneous/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Linear system",
-    "content": "(i) LScI\r(b) Mellin transform I\r(b) Mellin transform II\r(b) Mellin transform III\r(a) Algebra structure\r(b) Laurent's series I\r(b) Lourent's series II",
-    "description": "(i) LScI\r(b) Mellin transform I\r(b) Mellin transform II\r(b) Mellin transform III\r(a) Algebra structure\r(b) Laurent's series I\r(b) Lourent's series II",
+    "content": "(i) LScI (b) Mellin transform I (b) Mellin transform II (b) Mellin transform III (a) Algebra structure (b) Laurent's series I (b) Lourent's series II",
+    "description": "(i) LScI (b) Mellin transform I (b) Mellin transform II (b) Mellin transform III (a) Algebra structure (b) Laurent's series I (b) Lourent's series II",
     "tags": [],
     "title": "LScI",
     "uri": "/linear_system/lsci/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Green's function",
-    "content": "(b) NEGF overview\r(b) Retarded \u0026 advanced GF\r(b) Spectral function\r(b) Lesser and greater GF\r(b) Dyson equation and self-energy\r(b) Keldysh contour formalism\r(b) Langreth rules",
-    "description": "(b) NEGF overview\r(b) Retarded \u0026 advanced GF\r(b) Spectral function\r(b) Lesser and greater GF\r(b) Dyson equation and self-energy\r(b) Keldysh contour formalism\r(b) Langreth rules",
+    "content": "(b) NEGF overview (b) Retarded \u0026 advanced GF (b) Spectral function (b) Lesser and greater GF (b) Dyson equation and self-energy (b) Keldysh contour formalism (b) Langreth rules",
+    "description": "(b) NEGF overview (b) Retarded \u0026 advanced GF (b) Spectral function (b) Lesser and greater GF (b) Dyson equation and self-energy (b) Keldysh contour formalism (b) Langreth rules",
     "tags": [],
     "title": "NEGF",
     "uri": "/greens_function/negf/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Vector calculus",
-    "content": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols\r(a) Dyad 1\r(a) Dyad 2\r(a) Unit tensor",
-    "description": "(b) Suffix notation\r(b) Kronecker and Levi-Civit`a Symbols\r(a) Dyad 1\r(a) Dyad 2\r(a) Unit tensor",
+    "content": "(b) Suffix notation (b) Kronecker and Levi-Civit`a Symbols (a) Dyad 1 (a) Dyad 2 (a) Unit tensor",
+    "description": "(b) Suffix notation (b) Kronecker and Levi-Civit`a Symbols (a) Dyad 1 (a) Dyad 2 (a) Unit tensor",
     "tags": [],
     "title": "Notation \u0026 Operation",
     "uri": "/temp/tensor_calculus/notation_operation/index.html"
@@ -1177,8 +1185,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
-    "content": "동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.\n(a) Components\r(a) 2nd tensor\r(a) Rotation \u0026 Transport\r(a) Derivative",
-    "description": "동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.\n(a) Components\r(a) 2nd tensor\r(a) Rotation \u0026 Transport\r(a) Derivative",
+    "content": "동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.\n(a) Components (a) 2nd tensor (a) Rotation \u0026 Transport (a) Derivative",
+    "description": "동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.\n(a) Components (a) 2nd tensor (a) Rotation \u0026 Transport (a) Derivative",
     "tags": [],
     "title": "Basis transformation",
     "uri": "/tensor_analysis/basis_transformation/index.html"
@@ -1193,16 +1201,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "GF\rNEGF",
-    "description": "GF\rNEGF",
+    "content": "GF NEGF",
+    "description": "GF NEGF",
     "tags": [],
     "title": "Green's function",
     "uri": "/greens_function/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Ket\r(b) Bra\r(b) Group \u0026 Ring \u0026 Field\r(b) Hilbert space\r(b) Riesz representation theorem",
-    "description": "(b) Ket\r(b) Bra\r(b) Group \u0026 Ring \u0026 Field\r(b) Hilbert space\r(b) Riesz representation theorem",
+    "content": "(b) Ket (b) Bra (b) Group \u0026 Ring \u0026 Field (b) Hilbert space (b) Riesz representation theorem",
+    "description": "(b) Ket (b) Bra (b) Group \u0026 Ring \u0026 Field (b) Hilbert space (b) Riesz representation theorem",
     "tags": [],
     "title": "Hilbert vector",
     "uri": "/vector_operator/hilbert_vector/index.html"
@@ -1217,8 +1225,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Researches",
-    "content": "Outline\rDerivation1\rDerivation2",
-    "description": "Outline\rDerivation1\rDerivation2",
+    "content": "Outline Derivation1 Derivation2",
+    "description": "Outline Derivation1 Derivation2",
     "tags": [],
     "title": "Reserch_PIN",
     "uri": "/research/research_pin/index.html"
@@ -1233,8 +1241,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(a) Components\r(a) 2nd tensor\r(a) Rotation \u0026 Transport\r(a) Derivative",
-    "description": "(a) Components\r(a) 2nd tensor\r(a) Rotation \u0026 Transport\r(a) Derivative",
+    "content": "(a) Components (a) 2nd tensor (a) Rotation \u0026 Transport (a) Derivative",
+    "description": "(a) Components (a) 2nd tensor (a) Rotation \u0026 Transport (a) Derivative",
     "tags": [],
     "title": "Transformation",
     "uri": "/temp/transformation/index.html"
@@ -1497,32 +1505,32 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Geometric algebra",
-    "content": "(b) Gradient for scalar\r(b) Divergence\r(b) Curl\r(p) Integration",
-    "description": "(b) Gradient for scalar\r(b) Divergence\r(b) Curl\r(p) Integration",
+    "content": "(b) Gradient for scalar (b) Divergence (b) Curl (p) Integration",
+    "description": "(b) Gradient for scalar (b) Divergence (b) Curl (p) Integration",
     "tags": [],
     "title": "Calculus",
     "uri": "/geometric_algebra/calculus/index.html"
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Einstein notation\r(b) Space \u0026 Vector \u0026 Tensor\r(i) Total derivative \u0026 Gradient\rCalculus\rOrthogonal coordinates",
-    "description": "Einstein notation\r(b) Space \u0026 Vector \u0026 Tensor\r(i) Total derivative \u0026 Gradient\rCalculus\rOrthogonal coordinates",
+    "content": "Einstein notation (b) Space \u0026 Vector \u0026 Tensor (i) Total derivative \u0026 Gradient Calculus Orthogonal coordinates",
+    "description": "Einstein notation (b) Space \u0026 Vector \u0026 Tensor (i) Total derivative \u0026 Gradient Calculus Orthogonal coordinates",
     "tags": [],
     "title": "Geometric algebra",
     "uri": "/geometric_algebra/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Geometric algebra",
-    "content": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Basis transformation",
-    "description": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Basis transformation",
+    "content": "(b) Mapping I - Position (b) Mapping II - Scale factor (a) Mapping III - Jacobian (b) Basis transformation",
+    "description": "(b) Mapping I - Position (b) Mapping II - Scale factor (a) Mapping III - Jacobian (b) Basis transformation",
     "tags": [],
     "title": "Orthogonal coordinates",
     "uri": "/geometric_algebra/orthogonal_coordinates/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Vector calculus",
-    "content": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Gradient for scalar\r(b) Divergence\r(b) Curl",
-    "description": "(b) Mapping I - Position\r(b) Mapping II - Scale factor\r(a) Mapping III - Jacobian\r(b) Gradient for scalar\r(b) Divergence\r(b) Curl",
+    "content": "(b) Mapping I - Position (b) Mapping II - Scale factor (a) Mapping III - Jacobian (b) Gradient for scalar (b) Divergence (b) Curl",
+    "description": "(b) Mapping I - Position (b) Mapping II - Scale factor (a) Mapping III - Jacobian (b) Gradient for scalar (b) Divergence (b) Curl",
     "tags": [],
     "title": "Orthogonal coordinates",
     "uri": "/temp/tensor_calculus/orthogonal_coordinates/index.html"
@@ -1745,48 +1753,48 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Basis\r(b) Ket\r(b) Bra\r(b) Operator\r(b) Matrix \u0026 Kernel\r(b) Short cut",
-    "description": "(b) Basis\r(b) Ket\r(b) Bra\r(b) Operator\r(b) Matrix \u0026 Kernel\r(b) Short cut",
+    "content": "(b) Basis (b) Ket (b) Bra (b) Operator (b) Matrix \u0026 Kernel (b) Short cut",
+    "description": "(b) Basis (b) Ket (b) Bra (b) Operator (b) Matrix \u0026 Kernel (b) Short cut",
     "tags": [],
     "title": "Dirac notation",
     "uri": "/vector_operator/dirac_notation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps \u003e Vector calculus",
-    "content": "(a) Covariant and contravariant\r(a) Metric tensor",
-    "description": "(a) Covariant and contravariant\r(a) Metric tensor",
+    "content": "(a) Covariant and contravariant (a) Metric tensor",
+    "description": "(a) Covariant and contravariant (a) Metric tensor",
     "tags": [],
     "title": "General coordinates",
     "uri": "/temp/tensor_calculus/general_coordinates/index.html"
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "LSI\rLScI\rLAI",
-    "description": "LSI\rLScI\rLAI",
+    "content": "LSI LScI LAI",
+    "description": "LSI LScI LAI",
     "tags": [],
     "title": "Linear system",
     "uri": "/linear_system/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
-    "content": "(a) Metric tensor\r(a) 2nd tensor\r(a) Magnitude\r(a) Cross product\r(a) Triple scalar product",
-    "description": "(a) Metric tensor\r(a) 2nd tensor\r(a) Magnitude\r(a) Cross product\r(a) Triple scalar product",
+    "content": "(a) Metric tensor (a) 2nd tensor (a) Magnitude (a) Cross product (a) Triple scalar product",
+    "description": "(a) Metric tensor (a) 2nd tensor (a) Magnitude (a) Cross product (a) Triple scalar product",
     "tags": [],
     "title": "Metric tensor",
     "uri": "/tensor_analysis/metric_tensor/index.html"
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Homogeneous\rInhomogeneous\r(p) Circuit examples for ODEs\rSpecial ODEs\rStrum-Lioville\rSeperation of variables\rGreen function\rTransformation\rUniqueness theorem",
-    "description": "Homogeneous\rInhomogeneous\r(p) Circuit examples for ODEs\rSpecial ODEs\rStrum-Lioville\rSeperation of variables\rGreen function\rTransformation\rUniqueness theorem",
+    "content": "Homogeneous Inhomogeneous (p) Circuit examples for ODEs Special ODEs Strum-Lioville Seperation of variables Green function Transformation Uniqueness theorem",
+    "description": "Homogeneous Inhomogeneous (p) Circuit examples for ODEs Special ODEs Strum-Lioville Seperation of variables Green function Transformation Uniqueness theorem",
     "tags": [],
     "title": "ODE \u0026 PDE",
     "uri": "/ode_pde/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(b) Strum-Liouville operator\r(b) Weight function\r(i) Self-adjoint for SL\r(r) Singular Sturm-Liouville\r(p) ODE solution using SL",
-    "description": "(b) Strum-Liouville operator\r(b) Weight function\r(i) Self-adjoint for SL\r(r) Singular Sturm-Liouville\r(p) ODE solution using SL",
+    "content": "(b) Strum-Liouville operator (b) Weight function (i) Self-adjoint for SL (r) Singular Sturm-Liouville (p) ODE solution using SL",
+    "description": "(b) Strum-Liouville operator (b) Weight function (i) Self-adjoint for SL (r) Singular Sturm-Liouville (p) ODE solution using SL",
     "tags": [],
     "title": "Strum-Lioville",
     "uri": "/ode_pde/sturm_liouville/index.html"
@@ -1913,16 +1921,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Tensor analysis",
-    "content": "(a) Basis \u0026 Components\r(a) Components",
-    "description": "(a) Basis \u0026 Components\r(a) Components",
+    "content": "(a) Basis \u0026 Components (a) Components",
+    "description": "(a) Basis \u0026 Components (a) Components",
     "tags": [],
     "title": "Coordinate transformation",
     "uri": "/tensor_analysis/coordinate_transformation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Determinant\r(b) Wronskian\r(b) Gram\r(b) Operator Norm",
-    "description": "(b) Determinant\r(b) Wronskian\r(b) Gram\r(b) Operator Norm",
+    "content": "(b) Determinant (b) Wronskian (b) Gram (b) Operator Norm",
+    "description": "(b) Determinant (b) Wronskian (b) Gram (b) Operator Norm",
     "tags": [],
     "title": "Determinant \u0026 Norm",
     "uri": "/vector_operator/determinant_norm/index.html"
@@ -1937,8 +1945,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Operation\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates\rGeneral coordinates\rTransformation for GC",
-    "description": "(b) Space \u0026 Vector \u0026 Tensor\rNotation \u0026 Operation\r(i) Total derivative \u0026 Gradient\rOrthogonal coordinates\rGeneral coordinates\rTransformation for GC",
+    "content": "(b) Space \u0026 Vector \u0026 Tensor Notation \u0026 Operation (i) Total derivative \u0026 Gradient Orthogonal coordinates General coordinates Transformation for GC",
+    "description": "(b) Space \u0026 Vector \u0026 Tensor Notation \u0026 Operation (i) Total derivative \u0026 Gradient Orthogonal coordinates General coordinates Transformation for GC",
     "tags": [],
     "title": "Vector calculus",
     "uri": "/temp/tensor_calculus/index.html"
@@ -2017,24 +2025,24 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Space\r(b) Eigenvalue \u0026 Eigenvector\r(b) Spectral theory",
-    "description": "(b) Space\r(b) Eigenvalue \u0026 Eigenvector\r(b) Spectral theory",
+    "content": "(b) Space (b) Eigenvalue \u0026 Eigenvector (b) Spectral theory",
+    "description": "(b) Space (b) Eigenvalue \u0026 Eigenvector (b) Spectral theory",
     "tags": [],
     "title": "Eigenvalue problem",
     "uri": "/vector_operator/eigenvalue_problem/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(b) Wave equation for free-space\r(p) 1D Wave equation for free-space\r(p) 3D Wave equation for free-space\r(p) Diffusion equation for free-space\r(p) Diffusion equation for periodic boundary condition\r(p) Non free-space",
-    "description": "(b) Wave equation for free-space\r(p) 1D Wave equation for free-space\r(p) 3D Wave equation for free-space\r(p) Diffusion equation for free-space\r(p) Diffusion equation for periodic boundary condition\r(p) Non free-space",
+    "content": "(b) Wave equation for free-space (p) 1D Wave equation for free-space (p) 3D Wave equation for free-space (p) Diffusion equation for free-space (p) Diffusion equation for periodic boundary condition (p) Non free-space",
+    "description": "(b) Wave equation for free-space (p) 1D Wave equation for free-space (p) 3D Wave equation for free-space (p) Diffusion equation for free-space (p) Diffusion equation for periodic boundary condition (p) Non free-space",
     "tags": [],
     "title": "Seperation of variables",
     "uri": "/ode_pde/seperation_of_varibles/index.html"
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "Operation\rCalculus\rBasis transformation\r(a) Mapping\rMetric tensor\rCoordinate transformation\r[GC] Calculus",
-    "description": "Operation\rCalculus\rBasis transformation\r(a) Mapping\rMetric tensor\rCoordinate transformation\r[GC] Calculus",
+    "content": "Operation Calculus Basis transformation (a) Mapping Metric tensor Coordinate transformation [GC] Calculus",
+    "description": "Operation Calculus Basis transformation (a) Mapping Metric tensor Coordinate transformation [GC] Calculus",
     "tags": [],
     "title": "Tensor analysis",
     "uri": "/tensor_analysis/index.html"
@@ -2081,8 +2089,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Commutator\r(a) Physics",
-    "description": "(b) Commutator\r(a) Physics",
+    "content": "(b) Commutator (a) Physics",
+    "description": "(b) Commutator (a) Physics",
     "tags": [],
     "title": "Commutator",
     "uri": "/vector_operator/commutator/index.html"
@@ -2097,8 +2105,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "Preface\r(b) First-order PDE\r(i) Second-order PDE\r(p) Green function examples\r(i) Divergence for free-space\r(i) Laplacian for free-space\r(i) Helmholtz operator for free-space\r(i) GF from SL",
-    "description": "Preface\r(b) First-order PDE\r(i) Second-order PDE\r(p) Green function examples\r(i) Divergence for free-space\r(i) Laplacian for free-space\r(i) Helmholtz operator for free-space\r(i) GF from SL",
+    "content": "Preface (b) First-order PDE (i) Second-order PDE (p) Green function examples (i) Divergence for free-space (i) Laplacian for free-space (i) Helmholtz operator for free-space (i) GF from SL",
+    "description": "Preface (b) First-order PDE (i) Second-order PDE (p) Green function examples (i) Divergence for free-space (i) Laplacian for free-space (i) Helmholtz operator for free-space (i) GF from SL",
     "tags": [],
     "title": "Green function",
     "uri": "/ode_pde/green_function/index.html"
@@ -2136,28 +2144,28 @@ var relearn_searchindex = [
     "uri": "/ode_pde/green_function/i_gf_from_sl/index.html"
   },
   {
+    "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
+    "content": "(b) Adjoint (b) Boundary",
+    "description": "(b) Adjoint (b) Boundary",
+    "tags": [],
+    "title": "Adjoint",
+    "uri": "/vector_operator/adjoint/index.html"
+  },
+  {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(b) Phasor transform\r(b) Phasor transform for PDE\r(a) Laplace transform\r(a) Fourier transform",
-    "description": "(b) Phasor transform\r(b) Phasor transform for PDE\r(a) Laplace transform\r(a) Fourier transform",
+    "content": "(b) Phasor transform (b) Phasor transform for PDE (a) Laplace transform (a) Fourier transform",
+    "description": "(b) Phasor transform (b) Phasor transform for PDE (a) Laplace transform (a) Fourier transform",
     "tags": [],
     "title": "Transformation",
     "uri": "/ode_pde/transformation/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e ODE \u0026 PDE",
-    "content": "(r) Weak solution\r(r) Uniqueness of Poisson's equation\r(r) Uniqueness of Helmholtz equation\r(i) Ideal metal",
-    "description": "(r) Weak solution\r(r) Uniqueness of Poisson's equation\r(r) Uniqueness of Helmholtz equation\r(i) Ideal metal",
+    "content": "(r) Weak solution (r) Uniqueness of Poisson's equation (r) Uniqueness of Helmholtz equation (i) Ideal metal",
+    "description": "(r) Weak solution (r) Uniqueness of Poisson's equation (r) Uniqueness of Helmholtz equation (i) Ideal metal",
     "tags": [],
     "title": "Uniqueness theorem",
     "uri": "/ode_pde/uniqueness_theorem/index.html"
-  },
-  {
-    "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Normal operators",
-    "content": "수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.\n1. 유한 차원: 행렬 성분의 자리 바꾸기\r$$\r(A^\\dagger)_{ij} = (A_{ji})^{\\ast}\r$$proof)\n행렬 $A$의 수반 행렬 $A^\\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.\n좌변 (대상에 작용): $\\langle v | Aw \\rangle = \\sum_i \\sum_j v_i^* A_{ij} w_j$ 우변 (관찰자에 작용): $\\langle A^\\dagger v | w \\rangle = \\sum_j \\sum_i (A^\\dagger_{ji})^* v_i^* w_j$ 2. 미분 연산자, 수반연산자 도출의 부품\r1) 미분의 부품, 형식적 수반(formal adjoint) \u0026 경계항\n$$\r\\hat{D}=\\frac{d}{dx} \\implies \\hat{D}^{\\dagger}=-\\frac{d}{dx} \\quad\\text{with boundary term: } [\\phi^{\\ast}\\psi]_a^b\r$$proof)\n$$\r\\langle \\phi|\\hat{D}\\psi\\rangle\r=\\int_a^b dx\\left\\lbrack\\phi^{\\ast}\\frac{d}{dx}\\psi\\right\\rbrack\r=\\int_a^b dx\\left\\lbrack\\frac{d}{dx}\\phi^{\\ast}\\psi-\\psi\\frac{d}{dx}\\phi^{\\ast}\\right\\rbrack\r=\\left\\lbrack \\phi^{\\ast}\\psi\\right\\rbrack^b_a-\\int_a^b dx\\left\\lbrack\\psi\\frac{d}{dx}\\phi^{\\ast}\\right\\rbrack\r$$$$\r=\\left\\lbrack \\phi^{\\ast}\\psi\\right\\rbrack^b_a+\\langle\\hat{D}^{\\dagger}\\phi|\\psi\\rangle\r$$위를 라그랑주 항등식(Lagrange Identity) 이라고 하며, 아래와 같이 구분한다.\n$$\\langle \\phi | \\hat{D} \\psi \\rangle = \\underbrace{\\langle-\\hat{D}\\phi|\\psi\\rangle}_{\\text{formal adjoint}}+\\underbrace{\\left\\lbrack\\phi^{\\ast}\\psi\\right\\rbrack^b_a}_{\\text{boundary term}}\r$$2) 복소수 함수의 부품\n$$\rq(x)^{\\dagger}=q(x)^{\\ast}\r$$proof)\n$$\r\\langle \\phi | p \\psi \\rangle = \\int dx \\phi^* p \\psi = \\int dx (p^* \\phi)^* \\psi = \\langle p^* \\phi | \\psi \\rangle\r$$3) $\\dagger$의 역순법칙과 선형성\n역순 법칙: $(\\hat{A}\\hat{B})^\\dagger = \\hat{B}^\\dagger \\hat{A}^\\dagger$ 선형성: $(\\hat{A} + \\hat{B})^\\dagger = \\hat{A}^\\dagger + \\hat{B}^\\dagger$ 3. 미분연산자의 경계항: 심플레틱 행렬\r이전 챕터에서 수반 연산자는 측정의 관점을 바꾸는 도구라고 하였다. 이 관점의 전환 과정에서 발생하는 부산물들을 어떻게 체계적으로 관리할 것인가가 본 장의 핵심이다. 앞서 정의한 ‘미분 부품’ 을 확장하면, 임의의 차수에 대한 경계항 $J$를 다음과 같이 일반화할 수 있다.\n$$\r\\langle \\phi | L \\psi \\rangle - \\langle L^\\dagger \\phi | \\psi \\rangle = [ \\langle \\Phi | \\Omega | \\Psi \\rangle ]_a^b\r$$$k$차 미분 연산자에서 시스템의 상태를 완벽히 규정하기 위해서는 0차(함숫값)부터 $k-1$차 미분치까지의 모든 정보가 필요하다. 따라서 상태 벡터 $\\vec{\\Psi}$는 다음과 같은 $k \\times 1$ 열벡터로 정의된다. 이는 시스템의 현재 위치뿐만 아니라, 모든 고차 미분 정보를 포함하는 고차원 위상 공간(High-dimensional Phase Space) 의 좌표이다.\n$$\r\\vec{\\Phi} = \\begin{bmatrix} \\phi \\\\ \\phi' \\\\ \\phi'' \\\\ \\vdots \\\\ \\phi^{(k-1)} \\end{bmatrix}, \\quad\r\\vec{\\Psi} = \\begin{bmatrix} \\psi \\\\ \\psi' \\\\ \\psi'' \\\\ \\vdots \\\\ \\psi^{(k-1)} \\end{bmatrix}\r$$상태 벡터들 사이에서 ‘배턴 터치’를 수행하는 $\\mathbf{\\Omega}$는 $k \\times k$ 행렬이며, $+1$, $-1$이 번갈아 나타난다. (계수 $p$가 있다면 여기에 $p$가 곱해진다.) 모양은 주대각선이 아니라 ‘부대각선(Anti-diagonal)’ 방향으로 성분들이 배치되는 반대칭(Skew-symmetric) 행렬이 된다. $k=4$ (4차 미분 연산자)일 때 $J$를 조립해 보면, 상태 벡터는 $4 \\times 1$이 되고 $\\mathbf{\\Omega}$는 다음과 같은 $4 \\times 4$ 행렬이 강제된다.\n$$\rJ = \\begin{bmatrix} \\phi^\\ast \u0026 \\phi^{\\ast'} \u0026 \\phi^{\\ast''} \u0026 \\phi^{\\ast'''} \\end{bmatrix} \\underbrace{\\begin{bmatrix} 0 \u0026 0 \u0026 0 \u0026 1 \\\\\r0 \u0026 0 \u0026 -1 \u0026 0 \\\\\r0 \u0026 1 \u0026 0 \u0026 0 \\\\\r-1 \u0026 0 \u0026 0 \u0026 0 \\end{bmatrix}}_{\\mathbf{\\Omega}}\r\\begin{bmatrix} \\psi \\\\ \\psi' \\\\ \\psi'' \\\\ \\psi''' \\end{bmatrix}\r$$proof)\n(1) 적분에서 연산자 대수로: 미분 취하기\n$$\r\\langle \\phi|\\hat{D}^k\\psi\\rangle-\\langle (-\\hat{D})^k\\phi|\\psi\\rangle\r=J(\\phi,\\psi)\r$$여기서 적분 기호를 제거하고 연산자 자체의 구조를 직접 들여다보기 위해, 양변에 미분 연산($D$)을 취한다.\n$$\r\\phi^{\\ast}\\hat{D}^k\\psi-\\psi(-\\hat{D})^k\\phi^{\\ast}=DJ(\\phi,\\psi)\r$$(2) 망원 급수를 통한 유도\n$$\rD^k - \\bar{D}^k = (D - \\bar{D}) \\sum_{j=0}^{k-1} D^{k-1-j} \\bar{D}^j\r$$위의 연산자 구조를 입히면, $J$의 정체가 나오게 된다.\n$$\r\\phi^{\\ast}\\hat{D}^k\\psi-\\psi(-\\hat{D})^k\\phi^{\\ast} = D \\left[ \\sum_{j=0}^{k-1} ((-D)^j \\phi^{\\ast}) \\cdot (D^{k-1-j} \\psi) \\right]\r$$J에 대해 정리하면,\n$$\rJ = \\sum_{j=0}^{k-1} (-1)^j \\phi^{\\ast(j)} \\psi^{(k-1-j)}\r$$(3) 상태 벡터 확장\n미분 차수가 1일 때($k=1$), 스칼라 이다.\n$$\rJ=[\\phi^\\ast]1[\\psi]\r$$미분 차수가 2 이상일 때 ($k=2~$), 심플레틱 행렬이 탄생하게 된다. 이것은 이전 챕터에서 다룬 ‘미분 내제(론스키안)’ 와 완전히 일치한다. 이를 상태 벡터로 사영하면 다음과 같은 행렬 구조가 강제된다.\n$$\rJ = \\phi^\\ast \\psi' - \\phi^{\\ast'} \\psi\r= \\begin{bmatrix}\r\\phi^\\ast \u0026 \\phi^{\\ast'}\r\\end{bmatrix} \\begin{bmatrix}\r0 \u0026 1 \\\\ -1 \u0026 0\r\\end{bmatrix} \\begin{bmatrix}\r\\psi \\\\ \\psi'\r\\end{bmatrix}\r$$여기서 나타나는 $\\mathbf{\\Omega} = \\begin{bmatrix} 0 \u0026 1 ; -1 \u0026 0 \\end{bmatrix}$ 이 바로 심플레틱 행렬이다.",
-    "description": "수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.\n1. 유한 차원: 행렬 성분의 자리 바꾸기\r$$\r(A^\\dagger)_{ij} = (A_{ji})^{\\ast}\r$$proof)\n행렬 $A$의 수반 행렬 $A^\\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.",
-    "tags": [],
-    "title": "(a) Symplectic matrix",
-    "uri": "/vector_operator/normal_operators/b_symplectic_matrix/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator \u003e Lie group",
@@ -2217,16 +2225,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Adjoint\r(b) Normal operators\r(b) Hermitian\r(b) anti-Hermitian\r(b) Unitary\r(b) Contraction\r(b) Dilation\r(a) Symplectic matrix",
-    "description": "(b) Adjoint\r(b) Normal operators\r(b) Hermitian\r(b) anti-Hermitian\r(b) Unitary\r(b) Contraction\r(b) Dilation\r(a) Symplectic matrix",
+    "content": "(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation",
+    "description": "(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation",
     "tags": [],
     "title": "Normal operators",
     "uri": "/vector_operator/normal_operators/index.html"
   },
   {
     "breadcrumb": "수리전자물리학",
-    "content": "(b) Introduction to quantum transport\r(b) Landauer formula\r(b) Büttiker formula\r(b) Transmission and scattering",
-    "description": "(b) Introduction to quantum transport\r(b) Landauer formula\r(b) Büttiker formula\r(b) Transmission and scattering",
+    "content": "(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering",
+    "description": "(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering",
     "tags": [],
     "title": "Quantum transprt",
     "uri": "/quantum_transform/index.html"
@@ -2249,16 +2257,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Dual space\r(b) Function of operators",
-    "description": "(b) Dual space\r(b) Function of operators",
+    "content": "(b) Dual space (b) Function of operators",
+    "description": "(b) Dual space (b) Function of operators",
     "tags": [],
     "title": "Function of operators",
     "uri": "/vector_operator/function_of_operators/index.html"
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Adjoint \u0026 Decomposition\r(b) Adjoint \u0026 Residue transformation",
-    "description": "(b) Adjoint \u0026 Decomposition\r(b) Adjoint \u0026 Residue transformation",
+    "content": "(b) Adjoint \u0026 Decomposition (b) Adjoint \u0026 Residue transformation",
+    "description": "(b) Adjoint \u0026 Decomposition (b) Adjoint \u0026 Residue transformation",
     "tags": [],
     "title": "Non-normal operators",
     "uri": "/vector_operator/non-normal_operators/index.html"
@@ -2281,8 +2289,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Lie group\r(b) Manifold\r(b) Lie algebra\r(b) Generator\r(b) Exponentiation\r(b) Copy-shift\r(b) Evoulution\r(b) Simple scaling\r(b) Complex scaling\r(b) Affine\r(b) Noether's theorem",
-    "description": "(b) Lie group\r(b) Manifold\r(b) Lie algebra\r(b) Generator\r(b) Exponentiation\r(b) Copy-shift\r(b) Evoulution\r(b) Simple scaling\r(b) Complex scaling\r(b) Affine\r(b) Noether's theorem",
+    "content": "(b) Lie group (b) Manifold (b) Lie algebra (b) Generator (b) Exponentiation (b) Copy-shift (b) Evoulution (b) Simple scaling (b) Complex scaling (b) Affine (b) Noether's theorem",
+    "description": "(b) Lie group (b) Manifold (b) Lie algebra (b) Generator (b) Exponentiation (b) Copy-shift (b) Evoulution (b) Simple scaling (b) Complex scaling (b) Affine (b) Noether's theorem",
     "tags": [],
     "title": "Lie group",
     "uri": "/vector_operator/lie_group/index.html"
@@ -2329,8 +2337,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Vector \u0026 Operator",
-    "content": "(b) Universal operators\r(b) 1D FVM",
-    "description": "(b) Universal operators\r(b) 1D FVM",
+    "content": "(b) Universal operators (b) 1D FVM",
+    "description": "(b) Universal operators (b) 1D FVM",
     "tags": [],
     "title": "Numerial analysis",
     "uri": "/vector_operator/numerial_analysis/index.html"
@@ -2393,8 +2401,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "수리전자물리학 \u003e Temps",
-    "content": "(b) Theory1\r(b) Theory 2\rOUTLINE\rCHAPTER 1\rCHAPTER 2\rCHAPTER 3\rCHAPTER 4\rAppendix",
-    "description": "(b) Theory1\r(b) Theory 2\rOUTLINE\rCHAPTER 1\rCHAPTER 2\rCHAPTER 3\rCHAPTER 4\rAppendix",
+    "content": "(b) Theory1 (b) Theory 2 OUTLINE CHAPTER 1 CHAPTER 2 CHAPTER 3 CHAPTER 4 Appendix",
+    "description": "(b) Theory1 (b) Theory 2 OUTLINE CHAPTER 1 CHAPTER 2 CHAPTER 3 CHAPTER 4 Appendix",
     "tags": [],
     "title": "Research_NA",
     "uri": "/temp/research_na/index.html"

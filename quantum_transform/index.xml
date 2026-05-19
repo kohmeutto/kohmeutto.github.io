@@ -3,7 +3,7 @@
   <channel>
     <title>Quantum transprt :: 수리전자물리학</title>
     <link>http://localhost:1313/quantum_transform/index.html</link>
-    <description>(b) Introduction to quantum transport&#xD;(b) Landauer formula&#xD;(b) Büttiker formula&#xD;(b) Transmission and scattering</description>
+    <description>(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/quantum_transform/index.xml" rel="self" type="application/rss+xml" />

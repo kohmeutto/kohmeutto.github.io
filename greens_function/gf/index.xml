@@ -3,7 +3,7 @@
   <channel>
     <title>GF :: 수리전자물리학</title>
     <link>http://localhost:1313/greens_function/gf/index.html</link>
-    <description>(b) Green&#39;s function&#xD;(b) Spectral representation&#xD;(i) Unified picture&#xD;(b) Existence and properties&#xD;(b) Sturm-Liouville form&#xD;(b) Sturm-Liouville Green&#39;s function&#xD;(b) Singular Sturm-Liouville</description>
+    <description>(b) Green&#39;s function (b) Spectral representation (i) Unified picture (b) Existence and properties (b) Sturm-Liouville form (b) Sturm-Liouville Green&#39;s function (b) Singular Sturm-Liouville</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/greens_function/gf/index.xml" rel="self" type="application/rss+xml" />

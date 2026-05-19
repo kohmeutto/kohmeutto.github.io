@@ -3,7 +3,7 @@
   <channel>
     <title>Strum-Lioville :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/sturm_liouville/index.html</link>
-    <description>(b) Strum-Liouville operator&#xD;(b) Weight function&#xD;(i) Self-adjoint for SL&#xD;(r) Singular Sturm-Liouville&#xD;(p) ODE solution using SL</description>
+    <description>(b) Strum-Liouville operator (b) Weight function (i) Self-adjoint for SL (r) Singular Sturm-Liouville (p) ODE solution using SL</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/sturm_liouville/index.xml" rel="self" type="application/rss+xml" />

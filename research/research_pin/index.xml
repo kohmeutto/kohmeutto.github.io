@@ -3,7 +3,7 @@
   <channel>
     <title>Reserch_PIN :: 수리전자물리학</title>
     <link>http://localhost:1313/research/research_pin/index.html</link>
-    <description>Outline&#xD;Derivation1&#xD;Derivation2</description>
+    <description>Outline Derivation1 Derivation2</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/research/research_pin/index.xml" rel="self" type="application/rss+xml" />

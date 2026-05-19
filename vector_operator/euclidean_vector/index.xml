@@ -3,7 +3,7 @@
   <channel>
     <title>Euclidean vector :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/euclidean_vector/index.html</link>
-    <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits&#xD;(b) Matrix&#xD;(b) Column vector of matrix&#xD;(b) Inner product&#xD;(b) Row vector of matrix</description>
+    <description>(b) Vector (b) Basic vector operations (i) Linearity (q) Linearity for circuits (b) Matrix (b) Column vector of matrix (b) Inner product (b) Row vector of matrix</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/euclidean_vector/index.xml" rel="self" type="application/rss+xml" />

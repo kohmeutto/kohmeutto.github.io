@@ -3,7 +3,7 @@
   <channel>
     <title>Eigenvalue problem :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/eigenvalue_problem/index.html</link>
-    <description>(b) Space&#xD;(b) Eigenvalue &amp; Eigenvector&#xD;(b) Spectral theory</description>
+    <description>(b) Space (b) Eigenvalue &amp; Eigenvector (b) Spectral theory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/eigenvalue_problem/index.xml" rel="self" type="application/rss+xml" />

@@ -3,7 +3,7 @@
   <channel>
     <title>Green&#39;s function :: 수리전자물리학</title>
     <link>http://localhost:1313/greens_function/index.html</link>
-    <description>GF&#xD;NEGF</description>
+    <description>GF NEGF</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/greens_function/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +12,14 @@
       <link>http://localhost:1313/greens_function/gf/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/gf/index.html</guid>
-      <description>(b) Green&#39;s function&#xD;(b) Spectral representation&#xD;(i) Unified picture&#xD;(b) Existence and properties&#xD;(b) Sturm-Liouville form&#xD;(b) Sturm-Liouville Green&#39;s function&#xD;(b) Singular Sturm-Liouville</description>
+      <description>(b) Green&#39;s function (b) Spectral representation (i) Unified picture (b) Existence and properties (b) Sturm-Liouville form (b) Sturm-Liouville Green&#39;s function (b) Singular Sturm-Liouville</description>
     </item>
     <item>
       <title>NEGF</title>
       <link>http://localhost:1313/greens_function/negf/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/negf/index.html</guid>
-      <description>(b) NEGF overview&#xD;(b) Retarded &amp; advanced GF&#xD;(b) Spectral function&#xD;(b) Lesser and greater GF&#xD;(b) Dyson equation and self-energy&#xD;(b) Keldysh contour formalism&#xD;(b) Langreth rules</description>
+      <description>(b) NEGF overview (b) Retarded &amp; advanced GF (b) Spectral function (b) Lesser and greater GF (b) Dyson equation and self-energy (b) Keldysh contour formalism (b) Langreth rules</description>
     </item>
   </channel>
 </rss>

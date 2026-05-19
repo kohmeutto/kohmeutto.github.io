@@ -3,7 +3,7 @@
   <channel>
     <title>General coordinates :: 수리전자물리학</title>
     <link>http://localhost:1313/temp/tensor_calculus/general_coordinates/index.html</link>
-    <description>(a) Covariant and contravariant&#xD;(a) Metric tensor</description>
+    <description>(a) Covariant and contravariant (a) Metric tensor</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/temp/tensor_calculus/general_coordinates/index.xml" rel="self" type="application/rss+xml" />

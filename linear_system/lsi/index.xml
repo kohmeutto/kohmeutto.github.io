@@ -3,7 +3,7 @@
   <channel>
     <title>LSI :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_system/lsi/index.html</link>
-    <description>(i) LSI&#xD;(b) Convolution&#xD;(b) Causality&#xD;(b) Laplace transform I&#xD;(b) Laplace transform II&#xD;(b) Laplace transform III&#xD;(b) Fourier transform I&#xD;(a) Algebra structure&#xD;(b) Fourier transform II&#xD;(b) Fourier series&#xD;(b) LSI &amp; Circuit analysis</description>
+    <description>(i) LSI (b) Convolution (b) Causality (b) Laplace transform I (b) Laplace transform II (b) Laplace transform III (b) Fourier transform I (a) Algebra structure (b) Fourier transform II (b) Fourier series (b) LSI &amp; Circuit analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_system/lsi/index.xml" rel="self" type="application/rss+xml" />

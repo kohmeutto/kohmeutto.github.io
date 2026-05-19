@@ -3,7 +3,7 @@
   <channel>
     <title>LScI :: 수리전자물리학</title>
     <link>http://localhost:1313/linear_system/lsci/index.html</link>
-    <description>(i) LScI&#xD;(b) Mellin transform I&#xD;(b) Mellin transform II&#xD;(b) Mellin transform III&#xD;(a) Algebra structure&#xD;(b) Laurent&#39;s series I&#xD;(b) Lourent&#39;s series II</description>
+    <description>(i) LScI (b) Mellin transform I (b) Mellin transform II (b) Mellin transform III (a) Algebra structure (b) Laurent&#39;s series I (b) Lourent&#39;s series II</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/linear_system/lsci/index.xml" rel="self" type="application/rss+xml" />

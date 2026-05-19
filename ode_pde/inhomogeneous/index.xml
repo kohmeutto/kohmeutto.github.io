@@ -3,7 +3,7 @@
   <channel>
     <title>Inhomogeneous :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/inhomogeneous/index.html</link>
-    <description>(b) Exponential - IOPM&#xD;(b) Trigonometric - IOPM&#xD;(b) Polynomial - IOPM&#xD;(a) Displacement - IOPM&#xD;(a) Wronskian method</description>
+    <description>(b) Exponential - IOPM (b) Trigonometric - IOPM (b) Polynomial - IOPM (a) Displacement - IOPM (a) Wronskian method</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/inhomogeneous/index.xml" rel="self" type="application/rss+xml" />

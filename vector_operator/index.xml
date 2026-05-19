@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector&#xD;Hilbert vector&#xD;Dirac notation&#xD;Determinant &amp; Norm&#xD;Eigenvalue problem&#xD;Commutator&#xD;Adjoint&#xD;Normal operators&#xD;Function of operators&#xD;Non-normal operators&#xD;Lie group&#xD;Numerial analysis</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Function of operators Non-normal operators Lie group Numerial analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -12,84 +12,84 @@
       <link>http://localhost:1313/vector_operator/euclidean_vector/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/euclidean_vector/index.html</guid>
-      <description>(b) Vector&#xD;(b) Basic vector operations&#xD;(i) Linearity&#xD;(q) Linearity for circuits&#xD;(b) Matrix&#xD;(b) Column vector of matrix&#xD;(b) Inner product&#xD;(b) Row vector of matrix</description>
+      <description>(b) Vector (b) Basic vector operations (i) Linearity (q) Linearity for circuits (b) Matrix (b) Column vector of matrix (b) Inner product (b) Row vector of matrix</description>
     </item>
     <item>
       <title>Hilbert vector</title>
       <link>http://localhost:1313/vector_operator/hilbert_vector/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/hilbert_vector/index.html</guid>
-      <description>(b) Ket&#xD;(b) Bra&#xD;(b) Group &amp; Ring &amp; Field&#xD;(b) Hilbert space&#xD;(b) Riesz representation theorem</description>
+      <description>(b) Ket (b) Bra (b) Group &amp; Ring &amp; Field (b) Hilbert space (b) Riesz representation theorem</description>
     </item>
     <item>
       <title>Dirac notation</title>
       <link>http://localhost:1313/vector_operator/dirac_notation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/dirac_notation/index.html</guid>
-      <description>(b) Basis&#xD;(b) Ket&#xD;(b) Bra&#xD;(b) Operator&#xD;(b) Matrix &amp; Kernel&#xD;(b) Short cut</description>
+      <description>(b) Basis (b) Ket (b) Bra (b) Operator (b) Matrix &amp; Kernel (b) Short cut</description>
     </item>
     <item>
       <title>Determinant &amp; Norm</title>
       <link>http://localhost:1313/vector_operator/determinant_norm/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/determinant_norm/index.html</guid>
-      <description>(b) Determinant&#xD;(b) Wronskian&#xD;(b) Gram&#xD;(b) Operator Norm</description>
+      <description>(b) Determinant (b) Wronskian (b) Gram (b) Operator Norm</description>
     </item>
     <item>
       <title>Eigenvalue problem</title>
       <link>http://localhost:1313/vector_operator/eigenvalue_problem/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/eigenvalue_problem/index.html</guid>
-      <description>(b) Space&#xD;(b) Eigenvalue &amp; Eigenvector&#xD;(b) Spectral theory</description>
+      <description>(b) Space (b) Eigenvalue &amp; Eigenvector (b) Spectral theory</description>
     </item>
     <item>
       <title>Commutator</title>
       <link>http://localhost:1313/vector_operator/commutator/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/commutator/index.html</guid>
-      <description>(b) Commutator&#xD;(a) Physics</description>
+      <description>(b) Commutator (a) Physics</description>
     </item>
     <item>
       <title>Adjoint</title>
       <link>http://localhost:1313/vector_operator/adjoint/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/adjoint/index.html</guid>
-      <description>(b) Adjoint&#xD;(b) Boundary</description>
+      <description>(b) Adjoint (b) Boundary</description>
     </item>
     <item>
       <title>Normal operators</title>
       <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/index.html</guid>
-      <description>(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Contraction&#xD;(b) Dilation</description>
+      <description>(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation</description>
     </item>
     <item>
       <title>Function of operators</title>
       <link>http://localhost:1313/vector_operator/function_of_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/function_of_operators/index.html</guid>
-      <description>(b) Dual space&#xD;(b) Function of operators</description>
+      <description>(b) Dual space (b) Function of operators</description>
     </item>
     <item>
       <title>Non-normal operators</title>
       <link>http://localhost:1313/vector_operator/non-normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/non-normal_operators/index.html</guid>
-      <description>(b) Adjoint &amp; Decomposition&#xD;(b) Adjoint &amp; Residue transformation</description>
+      <description>(b) Adjoint &amp; Decomposition (b) Adjoint &amp; Residue transformation</description>
     </item>
     <item>
       <title>Lie group</title>
       <link>http://localhost:1313/vector_operator/lie_group/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/lie_group/index.html</guid>
-      <description>(b) Lie group&#xD;(b) Manifold&#xD;(b) Lie algebra&#xD;(b) Generator&#xD;(b) Exponentiation&#xD;(b) Copy-shift&#xD;(b) Evoulution&#xD;(b) Simple scaling&#xD;(b) Complex scaling&#xD;(b) Affine&#xD;(b) Noether&#39;s theorem</description>
+      <description>(b) Lie group (b) Manifold (b) Lie algebra (b) Generator (b) Exponentiation (b) Copy-shift (b) Evoulution (b) Simple scaling (b) Complex scaling (b) Affine (b) Noether&#39;s theorem</description>
     </item>
     <item>
       <title>Numerial analysis</title>
       <link>http://localhost:1313/vector_operator/numerial_analysis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/numerial_analysis/index.html</guid>
-      <description>(b) Universal operators&#xD;(b) 1D FVM</description>
+      <description>(b) Universal operators (b) 1D FVM</description>
     </item>
   </channel>
 </rss>

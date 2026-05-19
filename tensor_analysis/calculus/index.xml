@@ -3,7 +3,7 @@
   <channel>
     <title>Calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/calculus/index.html</link>
-    <description>(a) Gradient&#xD;(a) Divergence&#xD;(a) Curl&#xD;(a) Derivative&#xD;(a) Integration</description>
+    <description>(a) Gradient (a) Divergence (a) Curl (a) Derivative (a) Integration</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/calculus/index.xml" rel="self" type="application/rss+xml" />

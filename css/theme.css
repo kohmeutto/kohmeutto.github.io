@@ -1,12 +1,12 @@
 :root {
     /* initially use section background to avoid flickering on load when a non default variant is active;
     this is only possible because every color variant defines this variable, otherwise we would have been lost */
-    --INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba( 125, 201, 3, 1 ))); /* not --INTERNAL-MENU-HEADER-BG-color */
+    --INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba(125, 201, 3, 1))); /* not --INTERNAL-MENU-HEADER-BG-color */
     --INTERNAL-PRIMARY-HOVER-color: var(--PRIMARY-HOVER-color, var(--MENU-HEADER-BORDER-color, var(--INTERNAL-PRIMARY-color)));
-    --INTERNAL-SECONDARY-color: var(--SECONDARY-color, var(--MAIN-LINK-color, rgba( 72, 106, 201, 1 ))); /* not --INTERNAL-MAIN-LINK-color */
+    --INTERNAL-SECONDARY-color: var(--SECONDARY-color, var(--MAIN-LINK-color, rgba(72, 106, 201, 1))); /* not --INTERNAL-MAIN-LINK-color */
     --INTERNAL-SECONDARY-HOVER-color: var(--SECONDARY-HOVER-color, var(--MAIN-LINK-HOVER-color, var(--INTERNAL-SECONDARY-color)));
-    --INTERNAL-ACCENT-color: var(--ACCENT-color, rgba( 255, 215, 0, 1 ));
-    --INTERNAL-ACCENT-HOVER-color: var(--ACCENT-HOVER-color, rgba( 255, 235, 120, 1 ));
+    --INTERNAL-ACCENT-color: var(--ACCENT-color, rgba(255, 215, 0, 1));
+    --INTERNAL-ACCENT-HOVER-color: var(--ACCENT-HOVER-color, rgba(255, 235, 120, 1));
 
     --INTERNAL-TOPBAR-BG-color: var(--TOPBAR-BG-color, color-mix(in srgb, var(--INTERNAL-MAIN-BG-color), rgba(134, 134, 134, 0.133)));
     --INTERNAL-TOPBAR-TEXT-color: var(--TOPBAR-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
@@ -22,10 +22,10 @@
     --INTERNAL-MAIN-LINK-HOVER-color: var(--MAIN-LINK-HOVER-color, var(--INTERNAL-SECONDARY-HOVER-color));
     --INTERNAL-MAIN-BUTTON-color: var(--MAIN-BUTTON-color, var(--INTERNAL-MAIN-LINK-color));
     --INTERNAL-MAIN-BUTTON-HOVER-color: var(--MAIN-BUTTON-HOVER-color, var(--INTERNAL-MAIN-LINK-HOVER-color));
-    --INTERNAL-MAIN-BG-color: var(--MAIN-BG-color, rgba( 255, 255, 255, 1 ));
+    --INTERNAL-MAIN-BG-color: var(--MAIN-BG-color, rgba(255, 255, 255, 1));
     --INTERNAL-MAIN-BOLD-font-weight: var(--MAIN-BOLD-font-weight, 800);
 
-    --INTERNAL-MAIN-TEXT-color: var(--MAIN-TEXT-color, rgba( 16, 16, 16, 1 ));
+    --INTERNAL-MAIN-TEXT-color: var(--MAIN-TEXT-color, rgba(16, 16, 16, 1));
     --INTERNAL-MAIN-font: var(--MAIN-font, "Roboto Flex", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif);
     --INTERNAL-MAIN-font-variation-settings: var(--MAIN-font-variation-settings, "wdth" 118, "GRAD" -200, "YTFI" 710);
     --INTERNAL-MAIN-font-weight: var(--MAIN-font-weight, 300);
@@ -79,12 +79,12 @@
     --INTERNAL-CODE-letter-spacing: var(--CODE-letter-spacing, normal);
 
     --INTERNAL-CODE-theme: var(--CODE-theme, relearn-light);
-    --INTERNAL-CODE-BLOCK-color: var(--CODE-BLOCK-color, var(--MAIN-CODE-color, rgba( 39, 40, 34, 1 ))); /* fallback for renaming */
-    --INTERNAL-CODE-BLOCK-BG-color: var(--CODE-BLOCK-BG-color, var(--MAIN-CODE-BG-color, rgba( 250, 250, 250, 1 ))); /* fallback for renaming */
+    --INTERNAL-CODE-BLOCK-color: var(--CODE-BLOCK-color, var(--MAIN-CODE-color, rgba(39, 40, 34, 1))); /* fallback for renaming */
+    --INTERNAL-CODE-BLOCK-BG-color: var(--CODE-BLOCK-BG-color, var(--MAIN-CODE-BG-color, rgba(250, 250, 250, 1))); /* fallback for renaming */
     --INTERNAL-CODE-BLOCK-BORDER-color: var(--CODE-BLOCK-BORDER-color, var(--MAIN-CODE-BG-color, var(--INTERNAL-CODE-BLOCK-BG-color))); /* fallback for renaming */
-    --INTERNAL-CODE-INLINE-color: var(--CODE-INLINE-color, rgba( 94, 94, 94, 1 ));
-    --INTERNAL-CODE-INLINE-BG-color: var(--CODE-INLINE-BG-color, rgba( 255, 250, 233, 1 ));
-    --INTERNAL-CODE-INLINE-BORDER-color: var(--CODE-INLINE-BORDER-color, rgba( 251, 240, 203, 1 ));
+    --INTERNAL-CODE-INLINE-color: var(--CODE-INLINE-color, rgba(94, 94, 94, 1));
+    --INTERNAL-CODE-INLINE-BG-color: var(--CODE-INLINE-BG-color, rgba(255, 250, 233, 1));
+    --INTERNAL-CODE-INLINE-BORDER-color: var(--CODE-INLINE-BORDER-color, rgba(251, 240, 203, 1));
 
     --INTERNAL-BROWSER-theme: var(--BROWSER-theme, light);
     --INTERNAL-MERMAID-theme: var(--CONFIG-MERMAID-theme, var(--MERMAID-theme, var(--INTERNAL-PRINT-MERMAID-theme)));
@@ -98,54 +98,63 @@
     --INTERNAL-MENU-TOPBAR-SEPARATOR-color: var(--MENU-TOPBAR-SEPARATOR-color, transparent);
 
     --INTERNAL-MENU-HEADER-color: var(--MENU-HEADER-color, var(--INTERNAL-MENU-SECTIONS-LINK-color));
-    --INTERNAL-MENU-HEADER-BG-color: var(--MENU-HEADER-BG-color, var(--PRIMARY-color, rgba( 0, 0, 0, 0 ))); /* not --INTERNAL-PRIMARY-color */
+    --INTERNAL-MENU-HEADER-BG-color: var(--MENU-HEADER-BG-color, var(--PRIMARY-color, rgba(0, 0, 0, 0))); /* not --INTERNAL-PRIMARY-color */
     --INTERNAL-MENU-HEADER-BORDER-color: var(--MENU-HEADER-BORDER-color, var(--INTERNAL-MENU-HEADER-BG-color)); /* no further fallback to --PRIMARY-HOVER-color, as this would be rude for existing users */
 
-    --INTERNAL-MENU-SEARCH-color: var(--MENU-SEARCH-color, var(--MENU-SEARCH-BOX-ICONS-color, rgba( 224, 224, 224, 1 ))); /* fallback for renaming */
-    --INTERNAL-MENU-SEARCH-BG-color: var(--MENU-SEARCH-BG-color, rgba( 50, 50, 50, 1 ));
+    --INTERNAL-MENU-SEARCH-color: var(--MENU-SEARCH-color, var(--MENU-SEARCH-BOX-ICONS-color, rgba(224, 224, 224, 1))); /* fallback for renaming */
+    --INTERNAL-MENU-SEARCH-HOVER-color: var(--MENU-SEARCH-HOVER-color, var(--INTERNAL-MENU-SEARCH-color));
+    --INTERNAL-MENU-SEARCH-BG-color: var(--MENU-SEARCH-BG-color, rgba(50, 50, 50, 1));
     --INTERNAL-MENU-SEARCH-BORDER-color: var(--MENU-SEARCH-BORDER-color, var(--MENU-SEARCH-BOX-color, var(--INTERNAL-MENU-SEARCH-BG-color))); /* fallback for renaming */
 
-    --INTERNAL-MENU-HOME-LINK-color: var(--MENU-HOME-LINK-color, rgba( 50, 50, 50, 1 ));
-    --INTERNAL-MENU-HOME-LINK-HOVER-color: var(--MENU-HOME-LINK-HOVER-color, var(--MENU-HOME-LINK-HOVERED-color, rgba( 128, 128, 128, 1 ))); /* fallback for renaming */
+    --INTERNAL-MENU-HOME-LINK-color: var(--MENU-HOME-LINK-color, rgba(50, 50, 50, 1));
+    --INTERNAL-MENU-HOME-LINK-HOVER-color: var(--MENU-HOME-LINK-HOVER-color, var(--MENU-HOME-LINK-HOVERED-color, rgba(128, 128, 128, 1))); /* fallback for renaming */
     --INTERNAL-MENU-HOME-TOP-SEPARATOR-color: var(--MENU-HOME-TOP-SEPARATOR-color, var(--INTERNAL-MENU-HOME-LINK-color));
     --INTERNAL-MENU-HOME-SEPARATOR-color: var(--MENU-HOME-SEPARATOR-color, var(--INTERNAL-MENU-HOME-LINK-color));
     --INTERNAL-MENU-HOME-BOTTOM-SEPARATOR-color: var(--MENU-HOME-BOTTOM-SEPARATOR-color, var(--MENU-HEADER-SEPARATOR-color, var(--INTERNAL-MENU-HEADER-BORDER-color))); /* fallback for renaming */
 
-    --INTERNAL-MENU-SECTIONS-ACTIVE-BG-color: var(--MENU-SECTIONS-ACTIVE-BG-color, rgba( 0, 0, 0, .166 ));
-    --INTERNAL-MENU-SECTIONS-BG-color: var(--MENU-SECTIONS-BG-color, rgba( 40, 40, 40, 1 ));
-    --INTERNAL-MENU-SECTIONS-LINK-color: var(--MENU-SECTIONS-LINK-color, rgba( 186, 186, 186, 1 ));
+    --INTERNAL-MENU-SECTIONS-ACTIVE-BG-color: var(--MENU-SECTIONS-ACTIVE-BG-color, rgba(0, 0, 0, .166));
+    --INTERNAL-MENU-SECTIONS-BG-color: var(--MENU-SECTIONS-BG-color, rgba(40, 40, 40, 1));
+    --INTERNAL-MENU-SECTIONS-LINK-color: var(--MENU-SECTIONS-LINK-color, rgba(186, 186, 186, 1));
     --INTERNAL-MENU-SECTIONS-LINK-HOVER-color: var(--MENU-SECTIONS-LINK-HOVER-color, var(--INTERNAL-MENU-SECTIONS-LINK-color));
-    --INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-color: var(--MENU-SECTION-ACTIVE-CATEGORY-color, rgba( 68, 68, 68, 1 ));
+    --INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-color: var(--MENU-SECTION-ACTIVE-CATEGORY-color, rgba(68, 68, 68, 1));
     --INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-BG-color: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color, var(--INTERNAL-MAIN-BG-color));
     --INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-BORDER-color: var(--MENU-SECTION-ACTIVE-CATEGORY-BORDER-color, transparent);
 
     --INTERNAL-MENU-VISITED-color: var(--MENU-VISITED-color, var(--INTERNAL-SECONDARY-color));
     --INTERNAL-MENU-SECTION-SEPARATOR-color: var(--MENU-SECTION-SEPARATOR-color, var(--MENU-SECTION-HR-color, var(--INTERNAL-MENU-SECTIONS-LINK-color))); /* fallback for renaming */
 
-    --INTERNAL-BOX-CAPTION-color: var(--BOX-CAPTION-color, rgba( 255, 255, 255, 1 ));
-    --INTERNAL-BOX-BG-color: var(--BOX-BG-color, rgba( 255, 255, 255, .833 ));
+    --INTERNAL-BOX-CAPTION-color: var(--BOX-CAPTION-color, rgba(255, 255, 255, 1));
+    --INTERNAL-BOX-BG-color: var(--BOX-BG-color, rgba(255, 255, 255, .833));
     --INTERNAL-BOX-TEXT-color: var(--BOX-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
 
     /* print style, values taken from relearn-light as it is used as a default print style */
-    --INTERNAL-PRINT-MAIN-BG-color: var(--PRINT-MAIN-BG-color, rgba( 255, 255, 255, 1 ));
+    --INTERNAL-PRINT-MAIN-BG-color: var(--PRINT-MAIN-BG-color, rgba(255, 255, 255, 1));
     --INTERNAL-PRINT-CODE-font: var(--PRINT-CODE-font, "Consolas", menlo, monospace);
-    --INTERNAL-PRINT-TAG-BG-color: var(--PRINT-TAG-BG-color, rgba( 125, 201, 3, 1 ));
+    --INTERNAL-PRINT-TAG-BG-color: var(--PRINT-TAG-BG-color, rgba(125, 201, 3, 1));
     --INTERNAL-PRINT-MAIN-font: var(--PRINT-MAIN-font, "Roboto Flex", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif);
-    --INTERNAL-PRINT-MAIN-TEXT-color: var(--PRINT-MAIN-TEXT-color, rgba( 16, 16, 16, 1 ));
+    --INTERNAL-PRINT-MAIN-TEXT-color: var(--PRINT-MAIN-TEXT-color, rgba(16, 16, 16, 1));
     --INTERNAL-PRINT-MERMAID-theme: var(--PRINT-MERMAID-theme, default);
     --INTERNAL-PRINT-OPENAPI-theme: var(--PRINT-OPENAPI-theme, var(--PRINT-SWAGGER-theme, light)); /* fallback for renaming */
     --INTERNAL-PRINT-OPENAPI-CODE-theme: var(--PRINT-OPENAPI-CODE-theme, idea);
 
-    --INTERNAL-MENU-WIDTH-S: var(--MENU-WIDTH-S, 14.375rem);
-    --INTERNAL-MENU-WIDTH-M: var(--MENU-WIDTH-M, 14.375rem);
-    --INTERNAL-MENU-WIDTH-L: var(--MENU-WIDTH-L, 18.75rem);
-    --INTERNAL-MAIN-WIDTH-MAX: var(--MAIN-WIDTH-MAX, 81.25rem);
+    --INTERNAL-MENU-S-width: var(--MENU-S-width, var(--MENU-WIDTH-S, 14.375rem));
+    --INTERNAL-MENU-M-width: var(--MENU-M-width, var(--MENU-WIDTH-M, 14.375rem));
+    --INTERNAL-MENU-L-width: var(--MENU-L-width, var(--MENU-WIDTH-L, 18.75rem));
+    --INTERNAL-MAIN-MAX-width: var(--MENU-MAX-width, var(--MAIN-WIDTH-MAX, 81.25rem));
+
+    --INTERNAL-LOGO-font: var(--LOGO-font, var(--INTERNAL-MAIN-font));
+    --INTERNAL-LOGO-font-size: var(--LOGO-font-size, 1em);
+    --INTERNAL-LOGO-LINK-color: var(--LOGO-LINK-color, var(--INTERNAL-MENU-HEADER-color));
+    --INTERNAL-LOGO-LINK-HOVER-color: var(--LOGO-LINK-HOVER-color, var(--INTERNAL-LOGO-LINK-color));
+    --INTERNAL-LOGO-IMAGE-width: var(--LOGO-IMAGE-width, 4em);
+    --INTERNAL-LOGO-IMAGE-color: var(--LOGO-IMAGE-color, var(--INTERNAL-LOGO-LINK-color));
+    --INTERNAL-LOGO-IMAGE-HOVER-color: var(--LOGO-IMAGE-HOVER-color, var(--INTERNAL-LOGO-LINK-HOVER-color));
 
   --INTERNAL-BOX-ACCENT-color: var(--BOX-ACCENT-color, var(--INTERNAL-ACCENT-color));
   --INTERNAL-BOX-ACCENT-TEXT-color: var(--BOX-ACCENT-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
   --INTERNAL-BOX-ACCENT-CAPTION-color: var(--BOX-ACCENT-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-ACCENT-BG-color: var(--BOX-ACCENT-BG-color, var(--INTERNAL-BOX-BG-color));
-  --INTERNAL-BOX-BLUE-color: var(--BOX-BLUE-color, rgba( 48, 117, 229, 1 ));
+  --INTERNAL-BOX-BLUE-color: var(--BOX-BLUE-color, rgba(48, 117, 229, 1));
   --INTERNAL-BOX-BLUE-TEXT-color: var(--BOX-BLUE-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-BLUE-CAPTION-color: var(--BOX-BLUE-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-BLUE-BG-color: var(--BOX-BLUE-BG-color, var(--INTERNAL-BOX-BG-color));
@@ -157,15 +166,15 @@
   --INTERNAL-BOX-CODE-TEXT-color: var(--BOX-CODE-TEXT-color, var(--INTERNAL-CODE-BLOCK-color));
   --INTERNAL-BOX-CODE-CAPTION-color: var(--BOX-CODE-CAPTION-color, var(--INTERNAL-CODE-BLOCK-color));
   --INTERNAL-BOX-CODE-BG-color: var(--BOX-CODE-BG-color, var(--INTERNAL-CODE-BLOCK-BG-color));
-  --INTERNAL-BOX-CYAN-color: var(--BOX-CYAN-color, rgba( 45, 190, 200, 1 ));
+  --INTERNAL-BOX-CYAN-color: var(--BOX-CYAN-color, rgba(45, 190, 200, 1));
   --INTERNAL-BOX-CYAN-TEXT-color: var(--BOX-CYAN-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-CYAN-CAPTION-color: var(--BOX-CYAN-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-CYAN-BG-color: var(--BOX-CYAN-BG-color, var(--INTERNAL-BOX-BG-color));
-  --INTERNAL-BOX-GREEN-color: var(--BOX-GREEN-color, rgba( 42, 178, 24, 1 ));
+  --INTERNAL-BOX-GREEN-color: var(--BOX-GREEN-color, rgba(42, 178, 24, 1));
   --INTERNAL-BOX-GREEN-TEXT-color: var(--BOX-GREEN-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-GREEN-CAPTION-color: var(--BOX-GREEN-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-GREEN-BG-color: var(--BOX-GREEN-BG-color, var(--INTERNAL-BOX-BG-color));
-  --INTERNAL-BOX-GREY-color: var(--BOX-GREY-color, rgba( 160, 160, 160, 1 ));
+  --INTERNAL-BOX-GREY-color: var(--BOX-GREY-color, rgba(160, 160, 160, 1));
   --INTERNAL-BOX-GREY-TEXT-color: var(--BOX-GREY-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-GREY-CAPTION-color: var(--BOX-GREY-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-GREY-BG-color: var(--BOX-GREY-BG-color, var(--INTERNAL-BOX-BG-color));
@@ -181,7 +190,7 @@
   --INTERNAL-BOX-INLINE-TEXT-color: var(--BOX-INLINE-TEXT-color, var(--INTERNAL-CODE-INLINE-BG-color));
   --INTERNAL-BOX-INLINE-CAPTION-color: var(--BOX-INLINE-CAPTION-color, var(--INTERNAL-CODE-INLINE-color));
   --INTERNAL-BOX-INLINE-BG-color: var(--BOX-INLINE-BG-color, var(--INTERNAL-CODE-INLINE-color));
-  --INTERNAL-BOX-MAGENTA-color: var(--BOX-MAGENTA-color, rgba( 229, 50, 210, 1 ));
+  --INTERNAL-BOX-MAGENTA-color: var(--BOX-MAGENTA-color, rgba(229, 50, 210, 1));
   --INTERNAL-BOX-MAGENTA-TEXT-color: var(--BOX-MAGENTA-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-MAGENTA-CAPTION-color: var(--BOX-MAGENTA-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-MAGENTA-BG-color: var(--BOX-MAGENTA-BG-color, var(--INTERNAL-BOX-BG-color));
@@ -193,7 +202,7 @@
   --INTERNAL-BOX-NOTE-TEXT-color: var(--BOX-NOTE-TEXT-color, var(--INTERNAL-BOX-ORANGE-TEXT-color));
   --INTERNAL-BOX-NOTE-CAPTION-color: var(--BOX-NOTE-CAPTION-color, var(--INTERNAL-BOX-ORANGE-CAPTION-color));
   --INTERNAL-BOX-NOTE-BG-color: var(--BOX-NOTE-BG-color, var(--INTERNAL-BOX-ORANGE-BG-color));
-  --INTERNAL-BOX-ORANGE-color: var(--BOX-ORANGE-color, rgba( 237, 153, 9, 1 ));
+  --INTERNAL-BOX-ORANGE-color: var(--BOX-ORANGE-color, rgba(237, 153, 9, 1));
   --INTERNAL-BOX-ORANGE-TEXT-color: var(--BOX-ORANGE-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-ORANGE-CAPTION-color: var(--BOX-ORANGE-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-ORANGE-BG-color: var(--BOX-ORANGE-BG-color, var(--INTERNAL-BOX-BG-color));
@@ -201,7 +210,7 @@
   --INTERNAL-BOX-PRIMARY-TEXT-color: var(--BOX-PRIMARY-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
   --INTERNAL-BOX-PRIMARY-CAPTION-color: var(--BOX-PRIMARY-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-PRIMARY-BG-color: var(--BOX-PRIMARY-BG-color, var(--INTERNAL-BOX-BG-color));
-  --INTERNAL-BOX-RED-color: var(--BOX-RED-color, rgba( 224, 62, 62, 1 ));
+  --INTERNAL-BOX-RED-color: var(--BOX-RED-color, rgba(224, 62, 62, 1));
   --INTERNAL-BOX-RED-TEXT-color: var(--BOX-RED-TEXT-color, var(--INTERNAL-BOX-TEXT-color));
   --INTERNAL-BOX-RED-CAPTION-color: var(--BOX-RED-CAPTION-color, var(--INTERNAL-BOX-CAPTION-color));
   --INTERNAL-BOX-RED-BG-color: var(--BOX-RED-BG-color, var(--INTERNAL-BOX-BG-color));
@@ -761,30 +770,33 @@ a:focus {
   inset-inline-start: 0;
   line-height: 1.574;
   min-height: 100%;
+  overflow: hidden;
   position: fixed;
-  min-width: var(--INTERNAL-MENU-WIDTH-L);
-  max-width: var(--INTERNAL-MENU-WIDTH-L);
-  width: var(--INTERNAL-MENU-WIDTH-L);
+  min-width: var(--INTERNAL-MENU-L-width);
+  max-width: var(--INTERNAL-MENU-L-width);
+  width: var(--INTERNAL-MENU-L-width);
 }
 
 #R-sidebar a {
   text-decoration: none;
 }
 
-#R-header-wrapper {
-  background-color: var(--INTERNAL-MENU-HEADER-BG-color);
+#R-header-wrapper > * {
+  padding-inline: 1rem;
+}
+#R-header-wrapper > search {
   color: var(--INTERNAL-MENU-SEARCH-color);
-  text-align: center;
-  padding: 1rem;
-  position: relative;
+  display: block;
+  margin-block: 0.5rem;
 }
-#R-header {
-  border-block-end: 1px solid transparent;
-  position: relative;
-  z-index: 1;
+
+#R-logo.R-default:has(> .logo-title) + search,
+#R-header-wrapper > search:not(:only-child) {
+  margin-bottom: 1rem;
 }
-#R-header a {
-  display: inline-block;
+
+#R-header-wrapper > search > form {
+  overflow: hidden;
 }
 
 .searchbox {
@@ -794,11 +806,10 @@ a:focus {
   border-style: solid;
   border-width: 1px;
   position: relative;
-  margin-top: 1rem;
 }
 
 .searchbox > :first-child {
-  inset-inline-start: 0.5rem;
+  inset-inline-start: 0.333rem;
   position: absolute;
 }
 
@@ -817,17 +828,17 @@ a:focus {
 }
 
 .searchbox > :last-child {
-  inset-inline-end: 0.5rem;
+  inset-inline-end: 0.333rem;
   position: absolute;
 }
 
-#R-sidebar .searchbox > :first-child,
-#R-sidebar .searchbox > :last-child {
+#R-sidebar .searchbox > button {
   color: var(--INTERNAL-MENU-SEARCH-color);
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
 #R-sidebar .searchbox button:hover {
+  color: var(--INTERNAL-MENU-SEARCH-HOVER-color);
   opacity: 1;
 }
 
@@ -1072,13 +1083,13 @@ article .R-taxonomy.tags a.term-link:hover:after {
   flex-grow: 1;
   flex-shrink: 0;
   height: 100%;
-  margin-inline-start: var(--INTERNAL-MENU-WIDTH-L);
+  margin-inline-start: var(--INTERNAL-MENU-L-width);
   min-height: 100%;
   overflow-wrap: break-word; /* avoid x-scrolling of body if it is to large to fit */
   position: relative; /* PS */
-  min-width: calc(100% - var(--INTERNAL-MENU-WIDTH-L));
-  max-width: calc(100% - var(--INTERNAL-MENU-WIDTH-L));
-  width: calc(100% - var(--INTERNAL-MENU-WIDTH-L));
+  min-width: calc(100% - var(--INTERNAL-MENU-L-width));
+  max-width: calc(100% - var(--INTERNAL-MENU-L-width));
+  width: calc(100% - var(--INTERNAL-MENU-L-width));
   z-index: 70;
 }
 
@@ -1227,17 +1238,17 @@ article a:focus > img:only-child:empty {
 #R-body .flex-block-wrapper {
   margin-left: auto;
   margin-right: auto;
-  max-width: calc(var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem);
+  max-width: calc(var(--INTERNAL-MAIN-MAX-width) - var(--INTERNAL-MENU-L-width) - 2 * 3.25rem);
   width: 100%;
 }
 #R-body .flex-block-wrapper:has(article.narrow) {
-  max-width: calc(var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem);
+  max-width: calc(var(--INTERNAL-MAIN-MAX-width) - var(--INTERNAL-MENU-L-width) - 2 * 9.75rem);
 }
-.main-width-max #R-body .flex-block-wrapper {
-  width: calc(var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem);
+.main-max-width #R-body .flex-block-wrapper {
+  width: calc(var(--INTERNAL-MAIN-MAX-width) - var(--INTERNAL-MENU-L-width) - 2 * 3.25rem);
 }
-.main-width-max #R-body .flex-block-wrapper:has(article.narrow) {
-  width: calc(var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem);
+.main-max-width #R-body .flex-block-wrapper:has(article.narrow) {
+  width: calc(var(--INTERNAL-MAIN-MAX-width) - var(--INTERNAL-MENU-L-width) - 2 * 9.75rem);
 }
 
 #R-body-inner:has(> .flex-block-wrapper article.narrow) {
@@ -1348,8 +1359,7 @@ h1 {
 }
 
 h2,
-.card-title,
-.children-type-list .children-title-1 {
+.card-title {
   color: var(--INTERNAL-MAIN-TITLES-H2-TEXT-color);
   font-size: 2.2rem;
   font-variation-settings: var(--INTERNAL-MAIN-TITLES-H2-font-variation-settings);
@@ -1358,8 +1368,7 @@ h2,
   letter-spacing: var(--INTERNAL-MAIN-TITLES-H2-letter-spacing);
 }
 
-h3,
-.children-type-list .children-title-2 {
+h3 {
   color: var(--INTERNAL-MAIN-TITLES-H3-TEXT-color);
   font-size: 1.8rem;
   font-variation-settings: var(--INTERNAL-MAIN-TITLES-H3-font-variation-settings);
@@ -1368,8 +1377,7 @@ h3,
   letter-spacing: var(--INTERNAL-MAIN-TITLES-H3-letter-spacing);
 }
 
-h4,
-.children-type-list .children-title-3 {
+h4 {
   color: var(--INTERNAL-MAIN-TITLES-H4-TEXT-color);
   font-size: 1.85rem;
   font-variation-settings: var(--INTERNAL-MAIN-TITLES-H4-font-variation-settings);
@@ -1378,8 +1386,7 @@ h4,
   letter-spacing: var(--INTERNAL-MAIN-TITLES-H4-letter-spacing);
 }
 
-h5,
-.children-type-list .children-title-4 {
+h5 {
   color: var(--INTERNAL-MAIN-TITLES-H5-TEXT-color);
   font-size: 1.6rem;
   font-variation-settings: var(--INTERNAL-MAIN-TITLES-H5-font-variation-settings);
@@ -1388,8 +1395,7 @@ h5,
   letter-spacing: var(--INTERNAL-MAIN-TITLES-H5-letter-spacing);
 }
 
-h6,
-.children-type-list .children-title-5 {
+h6 {
   color: var(--INTERNAL-MAIN-TITLES-H6-TEXT-color);
   font-size: 1.3rem;
   font-variation-settings: var(--INTERNAL-MAIN-TITLES-H6-font-variation-settings);
@@ -1404,8 +1410,7 @@ h3,
 .article-subheading,
 h4,
 h5,
-h6,
-.children-type-list .children-title {
+h6 {
   hyphens: auto;
   margin: 1.5rem 0 1rem 0;
   /* big titles cause a horizontal scrollbar - fixing this by wrapping text */
@@ -1523,22 +1528,40 @@ p:empty {
 }
 
 /* Children shortcode */
-
-.children-type-tree p,
-.children-type-flat p {
+.children-type-group li > p + p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap-mode: nowrap;
+}
+.children-type-group li > p + p,
+.children-type-tree li > p + p,
+.children-type-flat li > p {
+  font-size: 0.859625rem;
   font-style: italic;
 }
 
+.children-type-group p,
 .children-type-tree p,
-.children-type-list p,
-.children-type-flat p {
+.children-type-flat p,
+.children-type-list p {
   margin-bottom: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-top: 0;
 }
 
-#R-body-inner .children-type-list .children-title {
+.children-type-flat,
+.children-type-list {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.children-type-flat li,
+.children-type-list li {
+  margin-inline-start: 0;
+}
+
+.children-type-list :is(h1, h2, h3, h4, h5, h6) {
   margin-bottom: 0;
   margin-top: 1rem;
 }
@@ -1768,10 +1791,13 @@ tbody > tr:nth-child(even) > td {
 #R-topbar > .topbar-wrapper {
   align-items: center;
   background: var(--INTERNAL-TOPBAR-BG-color);
+  color: var(--INTERNAL-TOPBAR-TEXT-color);
   display: flex;
   flex-basis: 100%;
   flex-direction: row;
   height: 100%;
+  --VARIABLE-LINK-color: var(--INTERNAL-TOPBAR-LINK-color);
+  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-TOPBAR-LINK-HOVER-color);
 }
 
 .topbar-button {
@@ -1813,8 +1839,9 @@ tbody > tr:nth-child(even) > td {
   border-inline-start-color: var(--INTERNAL-MENU-TOPBAR-SEPARATOR-color);
   border-inline-start-style: solid;
   border-inline-start-width: 1px;
-  margin-inline-end: calc(var(--bpx1) * -0.75px);
-  inset-inline-start: calc(var(--bpx1) * -0.75px);
+  height: 2rem;
+  margin-inline-end: calc(var(--bpx1) * -1px);
+  inset-inline-start: calc(var(--bpx1) * -1px);
   position: relative;
   width: 1px;
 }
@@ -1908,35 +1935,33 @@ html[dir='rtl'] .topbar-button-next i {
 
 @media screen and (max-width: 59.999rem) {
   #R-sidebar {
-    min-width: var(--INTERNAL-MENU-WIDTH-M);
-    max-width: var(--INTERNAL-MENU-WIDTH-M);
-    width: var(--INTERNAL-MENU-WIDTH-M);
+    min-width: var(--INTERNAL-MENU-M-width);
+    max-width: var(--INTERNAL-MENU-M-width);
+    width: var(--INTERNAL-MENU-M-width);
   }
   #R-body {
-    margin-inline-start: var(--INTERNAL-MENU-WIDTH-M);
-    min-width: calc(100% - var(--INTERNAL-MENU-WIDTH-M));
-    max-width: calc(100% - var(--INTERNAL-MENU-WIDTH-M));
-    width: calc(100% - var(--INTERNAL-MENU-WIDTH-M));
+    margin-inline-start: var(--INTERNAL-MENU-M-width);
+    min-width: calc(100% - var(--INTERNAL-MENU-M-width));
+    max-width: calc(100% - var(--INTERNAL-MENU-M-width));
+    width: calc(100% - var(--INTERNAL-MENU-M-width));
   }
 }
 @media screen and (max-width: 47.999rem) {
   /* we don't support sidebar flyout in mobile */
   .mobile-support #R-sidebar {
-    inset-inline-start: calc(-1 * var(--INTERNAL-MENU-WIDTH-S));
-    min-width: var(--INTERNAL-MENU-WIDTH-S);
-    max-width: var(--INTERNAL-MENU-WIDTH-S);
-    width: var(--INTERNAL-MENU-WIDTH-S);
+    inset-inline-start: calc(-1 * var(--INTERNAL-MENU-S-width));
+    min-width: var(--INTERNAL-MENU-S-width);
+    max-width: var(--INTERNAL-MENU-S-width);
+    width: var(--INTERNAL-MENU-S-width);
   }
   .mobile-support #navshow {
     display: inline;
   }
   .mobile-support #R-body {
+    margin-inline-start: 0;
     min-width: 100%;
     max-width: 100%;
     width: 100%;
-  }
-  .mobile-support #R-body {
-    margin-inline-start: 0;
   }
   .mobile-support.sidebar-flyout {
     overflow: hidden;
@@ -1946,7 +1971,7 @@ html[dir='rtl'] .topbar-button-next i {
     z-index: 90;
   }
   .mobile-support.sidebar-flyout #R-body {
-    margin-inline-start: var(--INTERNAL-MENU-WIDTH-S);
+    margin-inline-start: var(--INTERNAL-MENU-S-width);
     overflow: hidden;
   }
   .mobile-support.sidebar-flyout #R-body-overlay {
@@ -2338,7 +2363,8 @@ i.cstyle {
 
 .btn > * > i.fa-fw {
   /* fa-fw makes rectangles instead of squares, so we adjust back, hopefully no icon exceeds that area */
-  width: 1.1em;
+  line-height: 1.15em;
+  width: 1.15em;
 }
 
 .btn > * > i.fa-fw.fa-lg {
@@ -2362,8 +2388,8 @@ i.cstyle {
   /* avoid breakage if no content is given */
   content: '\200b';
   display: block;
-  min-height: 1.1em;
-  min-width: 1.1em;
+  min-height: 1.15em;
+  min-width: 1.15em;
 }
 
 #R-body #R-body-inner .btn > *.highlight:after {
@@ -2431,8 +2457,7 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a,
-.children-type-list .children-title a {
+h6 a {
   font-weight: inherit;
 }
 
@@ -2595,8 +2620,8 @@ span.math:has(> mjx-container[display]) {
     left: 50%;
     text-align: center;
     width: 200px;
-    background: rgba( 255, 255, 255, 1 );
-    color: rgba( 54, 133, 18, 1 );
+    background: rgba(255, 255, 255, 1);
+    color: rgba(54, 133, 18, 1);
     padding: .8em 0 .7em;
     font-size: 16px;
     z-index: 5000;
@@ -2649,17 +2674,16 @@ span.math:has(> mjx-container[display]) {
   height: 1.5rem;
 }
 
-#R-sidebar .autocomplete-suggestion {
-  /* restore autocomplete default value for sidebar, because it is affectd
-  by coarse element styling */
-  color: rgba(40, 40, 40, 1);
-  display: block;
+#R-sidebar .autocomplete-suggestions {
+  background-color: var(--INTERNAL-MAIN-BG-color);
+  border: 0 solid rgba(134, 134, 134, 0.166);
+  box-shadow: 1px 2px 5px 1px rgba(134, 134, 134, 0.333);
 }
 
-#R-sidebar .autocomplete-suggestion.selected {
-  /* restore autocomplete default value for sidebar, because it is affectd
+#R-sidebar .autocomplete-suggestion {
+  /* restore autocomplete default value for sidebar, because it is affected
   by coarse element styling */
-  color: rgba(255, 255, 255, 1);
+  display: block;
 }
 
 #R-sidebar .autocomplete-suggestions > .autocomplete-suggestion > .breadcrumbs {
@@ -2668,7 +2692,6 @@ span.math:has(> mjx-container[display]) {
 }
 
 #R-searchresults .autocomplete-suggestion {
-  color: var(--VARIABLE-LINK-color);
   display: block;
   font-size: 1.3rem;
   font-weight: 500;
@@ -2676,13 +2699,11 @@ span.math:has(> mjx-container[display]) {
   padding: 1rem;
   text-decoration: none;
 }
-
 #R-searchresults .autocomplete-suggestion:after {
   height: 0;
 }
 
 #R-searchresults .autocomplete-suggestion > .breadcrumbs {
-  color: var(--INTERNAL-PRIMARY-color);
   font-size: 0.9rem;
   font-weight: 400;
   margin-top: 0.167em;
@@ -2691,12 +2712,41 @@ span.math:has(> mjx-container[display]) {
 }
 
 #R-searchresults .autocomplete-suggestion > .context {
-  color: var(--INTERNAL-MAIN-TEXT-color);
   font-size: 1rem;
   font-weight: 300;
   margin-top: 0.66em;
   padding-left: 0.1em;
   padding-right: 0.1em;
+}
+
+#R-html .autocomplete-suggestion {
+  color: var(--VARIABLE-LINK-color);
+}
+#R-html .autocomplete-suggestion.selected,
+#R-html .autocomplete-suggestion:focus {
+  color: var(--VARIABLE-LINK-HOVER-color);
+  background-color: rgba(134, 134, 134, 0.133);
+}
+#R-html .autocomplete-suggestion:hover {
+  color: var(--VARIABLE-LINK-HOVER-color);
+  background-color: rgba(134, 134, 134, 0.2);
+}
+#R-html .autocomplete-suggestion .link {
+  color: inherit;
+}
+#R-html .autocomplete-suggestion.selected .link,
+#R-html .autocomplete-suggestion:focus .link,
+#R-html .autocomplete-suggestion:hover .link {
+  color: inherit;
+  text-decoration: underline;
+}
+#R-html .autocomplete-suggestion > .breadcrumbs {
+  background-color: transparent;
+  color: var(--INTERNAL-PRIMARY-color);
+}
+#R-html .autocomplete-suggestion > .context {
+  background-color: transparent;
+  color: var(--INTERNAL-MAIN-TEXT-color);
 }
 
 .badge {
@@ -2996,48 +3046,97 @@ html[dir='rtl'] #R-sidebar ul.collapsible-menu > li > input:checked + label > i.
   transform: rotate(90deg);
 }
 
-/* basic logo stuff
+/* common logo */
 
-a#R-logo {
-  color: var(--INTERNAL-MENU-HEADER-color);
-  font-variation-settings: var(--INTERNAL-MAIN-TITLES-H4-font-variation-settings);
-  font-weight: var(--INTERNAL-MAIN-TITLES-H4-font-weight);
-  font-family: var(--INTERNAL-MAIN-TITLES-H4-font);
-  letter-spacing: var(--INTERNAL-MAIN-TITLES-H4-letter-spacing);
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-a#R-logo:hover {
-  color: var(--INTERNAL-MENU-HEADER-color);
+body #R-logo svg,
+body #R-logo svg :not([color]),
+body #R-logo svg [color='black'],
+body #R-logo svg [color='#000000'] {
+  color: var(--INTERNAL-LOGO-IMAGE-color);
 }
 
-/* those sizes are for the default logo */
-a#R-logo.R-default {
-  font-size: 1.875rem;
+body #R-logo:hover svg,
+body #R-logo:hover svg :not([color]),
+body #R-logo:hover svg [color='black'],
+body #R-logo:hover svg [color='#000000'] {
+  color: var(--INTERNAL-LOGO-IMAGE-HOVER-color);
+}
+
+body #R-logo svg :not([fill]),
+body #R-logo svg [fill='black'],
+body #R-logo svg [fill='#000000'] {
+  fill: var(--INTERNAL-LOGO-IMAGE-color);
+}
+
+body #R-logo:hover svg :not([fill]),
+body #R-logo:hover svg [fill='black'],
+body #R-logo:hover svg [fill='#000000'] {
+  fill: var(--INTERNAL-LOGO-IMAGE-HOVER-color);
+}
+
+body a#R-logo,
+body a#R-logo * {
+  color: var(--INTERNAL-LOGO-LINK-color);
+}
+
+body a#R-logo:hover,
+body a#R-logo:hover * {
+  color: var(--INTERNAL-LOGO-LINK-HOVER-color);
+}
+
+/* default logo */
+
+#R-logo.R-default {
+  align-items: center;
+  column-gap: 0.4em;
+  display: flex;
+  flex-direction: row;
+  font-family: var(--INTERNAL-LOGO-font);
+  font-size: var(--INTERNAL-LOGO-font-size);
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+  margin-block: 0.5rem;
+  row-gap: 0.1em;
+  width: 100%;
+}
+#R-logo.R-default.direction-column {
+  flex-direction: column;
 }
 @media only all and (max-width: 59.999rem) {
-  a#R-logo.R-default {
-    font-size: 1.5625rem;
+  #R-logo.R-default {
+    font-size: calc(var(--INTERNAL-LOGO-font-size) * 0.8);
+    margin-block: 0.9rem;
   }
 }
 
-body a#R-logo,
-body a#R-logo:hover,
-body #R-logo svg,
-body #R-logo svg :not([color]),
-body #R-logo svg :not([color='black']),
-body #R-logo svg :not([color='#000000']) {
-  color: var(--INTERNAL-MENU-HEADER-color) !important;
+#R-logo.R-default .logo-image {
+  display: none;
+  flex-shrink: 0;
+  height: auto;
+  width: var(--INTERNAL-LOGO-IMAGE-width);
 }
 
-body a#R-logo,
-body a#R-logo:hover,
-body #R-logo svg,
-body #R-logo svg :not([fill]),
-body #R-logo svg :not([fill='black']),
-body #R-logo svg :not([fill='#000000']) {
-  fill: var(--INTERNAL-MENU-HEADER-color) !important;
+#R-logo.R-default .logo-image > * {
+  max-width: var(--INTERNAL-LOGO-IMAGE-width);
 }
+
+#R-logo.R-default .logo-title {
+  font-size: 2em;
+  flex-shrink: 1;
+  min-width: 0;
+  text-align: start;
+  text-wrap: auto;
+  word-break: break-word;
+}
+#R-logo.R-default.direction-column .logo-title {
+  text-align: center;
+}
+#R-logo.R-default.manual-wrap .logo-title {
+  white-space: pre;
+}
+
+/* columnize content */
 
 .columnize {
   column-count: 2;
@@ -3050,10 +3149,6 @@ body #R-logo svg :not([fill='#000000']) {
 
 .columnize > * {
   break-inside: avoid-column;
-}
-
-.columnize .breadcrumbs {
-  font-size: 0.859625rem;
 }
 
 #R-body .tab-panel {
@@ -3198,12 +3293,27 @@ body #R-logo svg :not([fill='#000000']) {
   border-bottom-color: var(--INTERNAL-MAIN-TOPBAR-BORDER-color);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color: var(--INTERNAL-TOPBAR-TEXT-color);
-  --VARIABLE-LINK-color: var(--INTERNAL-TOPBAR-LINK-color);
-  --VARIABLE-LINK-HOVER-color: var(--INTERNAL-TOPBAR-LINK-HOVER-color);
+}
+
+#R-header-wrapper {
+  background-color: var(--INTERNAL-MENU-HEADER-BG-color);
+  color: var(--INTERNAL-MENU-HEADER-color);
+  text-align: center;
+}
+
+#R-header-wrapper :is(a, span) {
+  color: var(--INTERNAL-MENU-HEADER-color);
+}
+
+:has(~ #R-content-wrapper),
+#R-content-wrapper > * {
+  border-inline-end-color: var(--INTERNAL-MENU-BORDER-color);
+  border-inline-end-style: solid;
+  border-inline-end-width: 1px;
 }
 
 #R-header-topbar {
+  background-color: transparent;
   border-bottom-color: transparent;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -3211,6 +3321,7 @@ body #R-logo svg :not([fill='#000000']) {
   border-inline-end-style: solid;
   border-inline-end-width: 1px;
   height: 3rem;
+  pointer-events: none;
   position: absolute;
   top: 0;
   width: 100%;
@@ -3220,14 +3331,6 @@ body #R-logo svg :not([fill='#000000']) {
   .mobile-support #R-header-topbar {
     border-inline-end-color: var(--INTERNAL-MENU-BORDER-color);
   }
-}
-
-#R-header-wrapper,
-#R-homelinks,
-#R-content-wrapper > * {
-  border-inline-end-color: var(--INTERNAL-MENU-BORDER-color);
-  border-inline-end-style: solid;
-  border-inline-end-width: 1px;
 }
 
 #topics > ul {
@@ -3258,6 +3361,8 @@ body #R-logo svg :not([fill='#000000']) {
 
 #R-homelinks {
   background-color: var(--INTERNAL-MENU-HEADER-BORDER-color);
+  color: var(--INTERNAL-MENU-HOME-LINK-color);
+  overflow: hidden;
   padding: 0;
 }
 
@@ -3320,44 +3425,44 @@ article .R-taxonomy ul > li ~ li:before {
   content: ' | ';
 }
 
-body.notfound p {
-  text-align: center;
-}
-body.notfound #R-body {
+#R-body:has(article:first-of-type.notfound) {
   margin-inline-start: 0;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
 }
-body.notfound h1 {
+article.notfound p {
+  text-align: center;
+}
+article.notfound h1 {
   color: var(--MAIN-TEXT-color);
   line-height: 1;
   font-size: 5rem;
   overflow: hidden;
 }
-body.notfound h1 span {
+article.notfound h1 span {
   font-size: 6.5rem;
   font-weight: 500;
 }
-body.notfound h1 i {
+article.notfound h1 i {
   font-size: 5rem;
   vertical-align: text-top;
 }
-body.notfound h2 {
+article.notfound h2 {
   color: var(--MAIN-TEXT-color);
   font-size: 2.5rem;
   font-weight: 500;
   padding: 0;
   text-align: center;
 }
-body.notfound #shrug svg,
-body.notfound #shrug svg * {
+article.notfound #shrug svg,
+article.notfound #shrug svg * {
   color: #000000;
   color: var(--MAIN-TEXT-color);
   fill: #000000 !important;
   fill: var(--MAIN-TEXT-color) !important;
 }
-body.notfound #shrug svg {
+article.notfound #shrug svg {
   transform: scaleX(-1);
   width: 15rem;
 }

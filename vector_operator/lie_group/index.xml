@@ -3,7 +3,7 @@
   <channel>
     <title>Lie group :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/lie_group/index.html</link>
-    <description>(b) Lie group&#xD;(b) Manifold&#xD;(b) Lie algebra&#xD;(b) Generator&#xD;(b) Exponentiation&#xD;(b) Copy-shift&#xD;(b) Evoulution&#xD;(b) Simple scaling&#xD;(b) Complex scaling&#xD;(b) Affine&#xD;(b) Noether&#39;s theorem</description>
+    <description>(b) Lie group (b) Manifold (b) Lie algebra (b) Generator (b) Exponentiation (b) Copy-shift (b) Evoulution (b) Simple scaling (b) Complex scaling (b) Affine (b) Noether&#39;s theorem</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/lie_group/index.xml" rel="self" type="application/rss+xml" />

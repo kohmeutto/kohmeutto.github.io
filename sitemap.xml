@@ -28,7 +28,7 @@
     <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_adjoint/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/adjoint/b_adjoint/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_decomposition/index.html</loc>
@@ -203,6 +203,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/euclidean_vector/b_basic_vector_operations/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/adjoint/b_boundary/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/dirac_notation/b_bra/index.html</loc>
@@ -802,13 +805,13 @@
     <loc>http://localhost:1313/ode_pde/green_function/i_gf_from_sl/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/adjoint/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/transformation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_symplectic_matrix/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/lie_group/b_copy_shift/index.html</loc>

@@ -12,42 +12,42 @@
       <link>http://localhost:1313/vector_operator/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/index.html</guid>
-      <description>Euclidean vector&#xD;Hilbert vector&#xD;Dirac notation&#xD;Determinant &amp; Norm&#xD;Eigenvalue problem&#xD;Commutator&#xD;Normal operators&#xD;Function of operators&#xD;Non-normal operators&#xD;Lie group&#xD;Numerial analysis</description>
+      <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Function of operators Non-normal operators Lie group Numerial analysis</description>
     </item>
     <item>
       <title>Green&#39;s function</title>
       <link>http://localhost:1313/greens_function/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/index.html</guid>
-      <description>GF&#xD;NEGF</description>
+      <description>GF NEGF</description>
     </item>
     <item>
       <title>Geometric algebra</title>
       <link>http://localhost:1313/geometric_algebra/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/geometric_algebra/index.html</guid>
-      <description>Einstein notation&#xD;(b) Space &amp; Vector &amp; Tensor&#xD;(i) Total derivative &amp; Gradient&#xD;Calculus&#xD;Orthogonal coordinates</description>
+      <description>Einstein notation (b) Space &amp; Vector &amp; Tensor (i) Total derivative &amp; Gradient Calculus Orthogonal coordinates</description>
     </item>
     <item>
       <title>Linear system</title>
       <link>http://localhost:1313/linear_system/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linear_system/index.html</guid>
-      <description>LSI&#xD;LScI&#xD;LAI</description>
+      <description>LSI LScI LAI</description>
     </item>
     <item>
       <title>ODE &amp; PDE</title>
       <link>http://localhost:1313/ode_pde/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/index.html</guid>
-      <description>Homogeneous&#xD;Inhomogeneous&#xD;(p) Circuit examples for ODEs&#xD;Special ODEs&#xD;Strum-Lioville&#xD;Seperation of variables&#xD;Green function&#xD;Transformation&#xD;Uniqueness theorem</description>
+      <description>Homogeneous Inhomogeneous (p) Circuit examples for ODEs Special ODEs Strum-Lioville Seperation of variables Green function Transformation Uniqueness theorem</description>
     </item>
     <item>
       <title>Tensor analysis</title>
       <link>http://localhost:1313/tensor_analysis/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tensor_analysis/index.html</guid>
-      <description>Operation&#xD;Calculus&#xD;Basis transformation&#xD;(a) Mapping&#xD;Metric tensor&#xD;Coordinate transformation&#xD;[GC] Calculus</description>
+      <description>Operation Calculus Basis transformation (a) Mapping Metric tensor Coordinate transformation [GC] Calculus</description>
     </item>
     <item>
       <title>Electromagnetics</title>
@@ -61,7 +61,7 @@
       <link>http://localhost:1313/quantum_transform/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/quantum_transform/index.html</guid>
-      <description>(b) Introduction to quantum transport&#xD;(b) Landauer formula&#xD;(b) Büttiker formula&#xD;(b) Transmission and scattering</description>
+      <description>(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering</description>
     </item>
     <item>
       <title>Researches</title>

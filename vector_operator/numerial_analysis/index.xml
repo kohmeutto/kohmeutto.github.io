@@ -3,7 +3,7 @@
   <channel>
     <title>Numerial analysis :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/numerial_analysis/index.html</link>
-    <description>(b) Universal operators&#xD;(b) 1D FVM</description>
+    <description>(b) Universal operators (b) 1D FVM</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/numerial_analysis/index.xml" rel="self" type="application/rss+xml" />

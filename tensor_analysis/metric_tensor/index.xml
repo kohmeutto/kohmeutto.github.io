@@ -3,7 +3,7 @@
   <channel>
     <title>Metric tensor :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/metric_tensor/index.html</link>
-    <description>(a) Metric tensor&#xD;(a) 2nd tensor&#xD;(a) Magnitude&#xD;(a) Cross product&#xD;(a) Triple scalar product</description>
+    <description>(a) Metric tensor (a) 2nd tensor (a) Magnitude (a) Cross product (a) Triple scalar product</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/metric_tensor/index.xml" rel="self" type="application/rss+xml" />

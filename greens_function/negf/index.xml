@@ -3,7 +3,7 @@
   <channel>
     <title>NEGF :: 수리전자물리학</title>
     <link>http://localhost:1313/greens_function/negf/index.html</link>
-    <description>(b) NEGF overview&#xD;(b) Retarded &amp; advanced GF&#xD;(b) Spectral function&#xD;(b) Lesser and greater GF&#xD;(b) Dyson equation and self-energy&#xD;(b) Keldysh contour formalism&#xD;(b) Langreth rules</description>
+    <description>(b) NEGF overview (b) Retarded &amp; advanced GF (b) Spectral function (b) Lesser and greater GF (b) Dyson equation and self-energy (b) Keldysh contour formalism (b) Langreth rules</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/greens_function/negf/index.xml" rel="self" type="application/rss+xml" />

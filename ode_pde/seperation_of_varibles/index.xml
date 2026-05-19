@@ -3,7 +3,7 @@
   <channel>
     <title>Seperation of variables :: 수리전자물리학</title>
     <link>http://localhost:1313/ode_pde/seperation_of_varibles/index.html</link>
-    <description>(b) Wave equation for free-space&#xD;(p) 1D Wave equation for free-space&#xD;(p) 3D Wave equation for free-space&#xD;(p) Diffusion equation for free-space&#xD;(p) Diffusion equation for periodic boundary condition&#xD;(p) Non free-space</description>
+    <description>(b) Wave equation for free-space (p) 1D Wave equation for free-space (p) 3D Wave equation for free-space (p) Diffusion equation for free-space (p) Diffusion equation for periodic boundary condition (p) Non free-space</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/ode_pde/seperation_of_varibles/index.xml" rel="self" type="application/rss+xml" />

@@ -3,7 +3,7 @@
   <channel>
     <title>Basis transformation :: 수리전자물리학</title>
     <link>http://localhost:1313/tensor_analysis/basis_transformation/index.html</link>
-    <description>동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.&#xA;(a) Components&#xD;(a) 2nd tensor&#xD;(a) Rotation &amp; Transport&#xD;(a) Derivative</description>
+    <description>동일 좌표계에서 기저변환 시 성분이 어떻게 변하는지를 다룬다.&#xA;(a) Components (a) 2nd tensor (a) Rotation &amp; Transport (a) Derivative</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tensor_analysis/basis_transformation/index.xml" rel="self" type="application/rss+xml" />
