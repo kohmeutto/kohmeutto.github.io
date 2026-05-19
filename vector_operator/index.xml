@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Function of operators Non-normal operators Lie group Numerial analysis</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Diagonalizable operators Function of operators Non-normal operators Lie group Numerial analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -54,14 +54,21 @@
       <link>http://localhost:1313/vector_operator/adjoint/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/adjoint/index.html</guid>
-      <description>(b) Adjoint (b) Boundary (b) Uniqueness (b) Gauge Freedom</description>
+      <description>(b) Adjoint (b) Boundary</description>
     </item>
     <item>
       <title>Normal operators</title>
       <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/index.html</guid>
-      <description>(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation</description>
+      <description>(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) Unitary</description>
+    </item>
+    <item>
+      <title>Diagonalizable operators</title>
+      <link>http://localhost:1313/vector_operator/diagonalizable_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/diagonalizable_operators/index.html</guid>
+      <description>(b) Contraction (b) Dilation</description>
     </item>
     <item>
       <title>Function of operators</title>
@@ -75,7 +82,7 @@
       <link>http://localhost:1313/vector_operator/non-normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/non-normal_operators/index.html</guid>
-      <description>(b) Adjoint &amp; Decomposition (b) Adjoint &amp; Residue transformation</description>
+      <description></description>
     </item>
     <item>
       <title>Lie group</title>

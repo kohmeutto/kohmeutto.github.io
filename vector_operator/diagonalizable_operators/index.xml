@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diagonalizable operators :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/diagonalizable_operators/index.html</link>
+    <description>(b) Contraction (b) Dilation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/diagonalizable_operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Contraction</title>
+      <link>http://localhost:1313/vector_operator/diagonalizable_operators/b_contraction/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/diagonalizable_operators/b_contraction/index.html</guid>
+      <description>1. Contraction 의 정의&#xD;1) 직관적 의미&#xA;작용소 $\hat{T}$ 가 어떤 벡터에 작용했을 때 그 벡터의 길이를 늘리지 않으면 이를 contraction 이라 부른다. 어떤 벡터 $|\psi\rangle$ 에 작용해도 결과 $\hat{T}|\psi\rangle$ 의 길이가 원래의 길이보다 길어지지 않는다는 의미이다. 길이가 줄어들거나 또는 원래의 길이와 같은 상태로 유지된다.&#xA;이 조건이 작용소의 spectrum 이 어디에 있는지 또는 작용소가 정규인지 여부와는 무관하다. 단지 벡터의 길이가 어떻게 변하는지에 대한 조건이며, spectrum 의 위치나 정규성은 정의에 들어가지 않는다.</description>
+    </item>
+    <item>
+      <title>(b) Dilation</title>
+      <link>http://localhost:1313/vector_operator/diagonalizable_operators/b_dilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/diagonalizable_operators/b_dilation/index.html</guid>
+      <description>1. Dilation 의 정의&#xD;1) 직관적 의미&#xA;작용소 $\hat{D}$ 가 어떤 벡터에 작용했을 때 그 벡터의 길이를 줄이지 않으면 이를 dilation 이라 부른다. 어떤 벡터 $|\psi\rangle$ 에 작용해도 결과 $\hat{D}|\psi\rangle$ 의 길이가 원래의 길이보다 짧아지지 않는다는 의미이다. 길이가 늘어나거나 또는 원래의 길이와 같은 상태로 유지된다.&#xA;이 조건이 contraction 의 정의와 부등호의 방향만 반대인 형태이며, 두 작용소가 길이 변화에 대한 쌍대 관계를 이룬다. Contraction 이 길이를 늘리지 않는 작용소이고, dilation 이 길이를 줄이지 않는 작용소이다.</description>
+    </item>
+  </channel>
+</rss>

@@ -31,10 +31,10 @@
     <loc>http://localhost:1313/vector_operator/adjoint/b_adjoint/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_decomposition/index.html</loc>
+    <loc>http://localhost:1313/temp/b_adjoint_decomposition/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_adjoint_derivation/index.html</loc>
+    <loc>http://localhost:1313/temp/b_adjoint_derivation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/dirac_notation/b_basis/index.html</loc>
@@ -541,6 +541,9 @@
     <loc>http://localhost:1313/quantum_transform/b_transmission_scattering/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/temp/b_uniqueness/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</loc>
   </url>
   <url>
@@ -604,10 +607,16 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_contraction/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/temp/b_gauge_freedom/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_generator_ii/index.html</loc>
@@ -686,6 +695,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/euclidean_vector/b_column_vector_of_matrix/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_dilation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</loc>
@@ -845,6 +857,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/theory2/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>

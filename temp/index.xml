@@ -15,6 +15,20 @@
       <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리&#xD;(1) 기저 변환&#xA;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j&#xD;$$(2) 기저 역변환&#xA;$$&#xD;\hat{u}_i=B_{ji}\hat{u}_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{B}}\cdot\bar{\bar{B}}^T,\quad&#xD;\bar{\bar{B}}^T=\bar{\bar{B}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=B_{ik}B_{jk}&#xD;$$ 1. 기저 벡터의 변환: 텐서 표기법 사용&#xD;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 기저 변환 텐서의 성분이다.}&#xD;$$$B_{ij}$ 는 다음과 같이 정의될 수 있다.</description>
     </item>
     <item>
+      <title>(b) Adjoint &amp; Decomposition</title>
+      <link>http://localhost:1313/temp/b_adjoint_decomposition/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_adjoint_decomposition/index.html</guid>
+      <description>1. 연산자의 Adjoint&#xD;수반 연산자는 그 자체로 범함수는 아니지만, 범함수(Bra)가 연산자를 만났을 때 어떻게 변하는지를 설명하는 ‘연산자의 그림자’와 같다. 우리는 연산자를 켓(Ket)에 작용시킬 수도 있지만, 수반 연산자를 통해 범함수(Bra)에 작용시킬 수도 있다. 이것이 바로 수반 연산자의 진정한 권능이다.&#xA;$$\langle v | \hat{A} w \rangle = \langle \hat{A}^\dagger v | w \rangle$$ 기하학적 의미: $\hat{A}$가 공간을 특정 방향으로 뒤튼다면, $\hat{A}^\dagger$는 그 뒤틀림을 ‘거울에 비춘 듯한’ 방식으로 되돌리거나 대응시키는 작용을 한다. Dirac Notation: 브라-켓 표기법에서 수반 작용은 매우 직관적이다. $(\hat{A}|w\rangle)^\dagger = \langle w|\hat{A}^\dagger$. 2. 주요 성질 (Algebra of Adjoints)&#xD;수반 작용은 대합(Involution) 의 성질을 가지며, 이는 거울을 두 번 비추면 원래 모습으로 돌아오는 것과 같다.</description>
+    </item>
+    <item>
+      <title>(b) Adjoint &amp; Residue transformation</title>
+      <link>http://localhost:1313/temp/b_adjoint_derivation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_adjoint_derivation/index.html</guid>
+      <description>수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.&#xA;1. 유한 차원: 행렬 성분의 자리 바꾸기&#xD;$$&#xD;(A^\dagger)_{ij} = (A_{ji})^{\ast}&#xD;$$proof)&#xA;행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.</description>
+    </item>
+    <item>
       <title>(i) LSI</title>
       <link>http://localhost:1313/temp/i_lsi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,6 +167,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/b_matrix_kernel/index.html</guid>
       <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다. ‘커널’이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다. 1. 이산기저와 행렬&#xD;(1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터</description>
+    </item>
+    <item>
+      <title>(b) Uniqueness</title>
+      <link>http://localhost:1313/temp/b_uniqueness/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_uniqueness/index.html</guid>
+      <description>1. 시작: 두 사람이 같은 문제를 풀었다&#xD;PDE 와 BC 가 주어진 문제를 두 사람이 풀었다고 하자.&#xA;A 의 답: $V_1(\vec{x})$ B 의 답: $V_2(\vec{x})$ 자연스러운 질문이 따라온다. 두 답이 같은가, 다른가? 또는 다를 수 있다면 얼마나 다를 수 있는가?&#xA;이 질문이 “유일성 정리 (uniqueness theorem)” 의 의미이다. 문제 풀이의 신뢰성을 위해 답이 어떤 정도로 결정되는지 알아야 한다. 답이 완전히 하나이면 좋고, 그렇지 않더라도 어느 정도의 자유도가 있는지 명확히 알아야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Gauge Freedom</title>
+      <link>http://localhost:1313/temp/b_gauge_freedom/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_gauge_freedom/index.html</guid>
+      <description>1. Neumann 의 모호성이 무엇을 의미하는가&#xD;앞 문서 (b_uniqueness.md) 에서 Neumann BC 의 유일성이 “상수 차이까지” 만 보장된다는 사실을 보았다. 두 해 $V_1$ 과 $V_2$ 가 있을 때 $V_1 = V_2 + c$ (어떤 상수 $c$) 가 가능하다는 것. 이게 단순한 수학적 부산물인지, 아니면 더 깊은 의미를 갖는지가 본 문서의 출발점이다.&#xA;결론부터 짚으면, 이 모호성은 우연이 아니다. 전자기학의 깊은 대칭 — 게이지 자유도 (gauge freedom) — 가 수학에 반영된 모습이다. 본 문서에서 이 연결의 의미를 정리하고, 수치해석에서 실용적으로 어떻게 처리하는지까지 다룬다.</description>
     </item>
     <item>
       <title>(b) Generator II</title>
