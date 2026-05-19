@@ -3,7 +3,7 @@
   <channel>
     <title>Adjoint :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/adjoint/index.html</link>
-    <description>(b) Adjoint (b) Boundary</description>
+    <description>(b) Adjoint (b) Boundary (b) Uniqueness</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/adjoint/index.xml" rel="self" type="application/rss+xml" />
@@ -20,6 +20,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/adjoint/b_boundary/index.html</guid>
       <description>1. 경계항의 성질&#xD;1) 선형성&#xA;연산자의 선형 결합에 대해 $\mathcal{R}$ 도 같은 선형 결합 형태:&#xA;$$&#xD;\mathcal{R}(\alpha\hat{A} + \beta\hat{B})[\phi, \psi] = \alpha\,\mathcal{R}\hat{A}[\phi, \psi] + \beta\,\mathcal{R}\hat{B}[\phi, \psi]&#xD;$$proof)&#xA;$\mathcal{R}$ 의 정의에 직접 대입.&#xA;$$&#xD;\langle\phi|(\alpha\hat{A} + \beta\hat{B})\psi\rangle = \alpha\langle\phi|\hat{A}\psi\rangle + \beta\langle\phi|\hat{B}\psi\rangle&#xD;$$각 항을 레지듀 형태로 변환.&#xA;$$&#xD;= \alpha\bigl(\langle\hat{A}^\dagger\phi|\psi\rangle + \mathcal{R}\hat{A}[\phi, \psi]\bigr) + \beta\bigl(\langle\hat{B}^\dagger\phi|\psi\rangle + \mathcal{R}\hat{B}[\phi, \psi]\bigr)&#xD;$$내적의 sesquilinear 성으로 $(\alpha\hat{A} + \beta\hat{B})^\dagger\phi = \alpha^*\hat{A}^\dagger\phi + \beta^*\hat{B}^\dagger\phi$ 를 고려하면 첫 항들이 $\langle(\alpha\hat{A} + \beta\hat{B})^\dagger\phi|\psi\rangle$ 로 통합. 따라서 남은 부분이</description>
+    </item>
+    <item>
+      <title>(b) Uniqueness</title>
+      <link>http://localhost:1313/vector_operator/adjoint/b_uniqueness/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/adjoint/b_uniqueness/index.html</guid>
+      <description>1. 시작: 두 사람이 같은 문제를 풀었다&#xD;PDE 와 BC 가 주어진 문제를 두 사람이 풀었다고 하자.&#xA;A 의 답: $V_1(\vec{x})$ B 의 답: $V_2(\vec{x})$ 자연스러운 질문: 두 답이 같은가, 다른가?&#xA;만약 항상 같다면 (PDE 와 BC 가 적절히 주어진 경우), 그 문제의 답은 “유일하게 결정&#34;된다. 이것이 유일성 정리 (uniqueness theorem) 의 의미.&#xA;문제 풀이의 신뢰성을 위해 이 유일성이 보장되어야 한다 — 답이 여러 개라면, 어떤 답을 택해야 하는지 모호해진다. 본 문서에서 유일성이 보장되는 조건을 따져본다.</description>
     </item>
   </channel>
 </rss>
