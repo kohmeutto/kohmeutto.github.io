@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector&#xD;Hilbert vector&#xD;Dirac notation&#xD;Determinant &amp; Norm&#xD;Eigenvalue problem&#xD;Commutator&#xD;Normal operators&#xD;Function of operators&#xD;Non-normal operators&#xD;Lie group&#xD;Numerial analysis</description>
+    <description>Euclidean vector&#xD;Hilbert vector&#xD;Dirac notation&#xD;Determinant &amp; Norm&#xD;Eigenvalue problem&#xD;Commutator&#xD;Adjoint&#xD;Normal operators&#xD;Function of operators&#xD;Non-normal operators&#xD;Lie group&#xD;Numerial analysis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -50,11 +50,18 @@
       <description>(b) Commutator&#xD;(a) Physics</description>
     </item>
     <item>
+      <title>Adjoint</title>
+      <link>http://localhost:1313/vector_operator/adjoint/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/adjoint/index.html</guid>
+      <description>(b) Adjoint&#xD;(b) Boundary</description>
+    </item>
+    <item>
       <title>Normal operators</title>
       <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/index.html</guid>
-      <description>(b) Adjoint&#xD;(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(a) Symplectic matrix</description>
+      <description>(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Contraction&#xD;(b) Dilation</description>
     </item>
     <item>
       <title>Function of operators</title>

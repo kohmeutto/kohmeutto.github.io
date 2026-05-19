@@ -3,23 +3,16 @@
   <channel>
     <title>Normal operators :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
-    <description>(b) Adjoint&#xD;(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Contraction&#xD;(b) Dilation&#xD;(a) Symplectic matrix</description>
+    <description>(b) Normal operators&#xD;(b) Hermitian&#xD;(b) anti-Hermitian&#xD;(b) Unitary&#xD;(b) Contraction&#xD;(b) Dilation</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/normal_operators/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>(b) Adjoint</title>
-      <link>http://localhost:1313/vector_operator/normal_operators/b_adjoint/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/normal_operators/b_adjoint/index.html</guid>
-      <description>1. 연산자 Adjoint의 물리 및 공학적 의미&#xD;연산자의 수반(Adjoint)은 측정 대상을 변형할 것인가($\hat{A}$), 혹은 측정 관점을 변형할 것인가($\hat{A}^\dagger$) 에 대한 대수적 응답이다. 수반 연산자는 대상의 변화를 관찰자의 기준 변화로 번역하는 대칭의 거울 역할을 수행한다. 이를 통해 대상(Ket)에 직접적인 연산을 가하지 않고도, 관찰자의 시선(Bra)을 정교하게 교정함으로써 시스템의 상태를 정의할 수 있다.&#xA;1) 범함수(Functional)를 통한 상태 측정&#xA;브라 $\langle v|$는 켓을 입력받아 스칼라를 반환하는 범함수이다. 시스템 $|w\rangle$에 물리적 작용 $\hat{A}$가 가해졌을 때, 시스템의 특정 물리량을 측정하는 과정은 다음과 같이 분해된다.</description>
-    </item>
     <item>
       <title>(b) Normal operators</title>
       <link>http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html</guid>
-      <description>1. 정규 연산자의 정의&#xD;연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 노름 보존 조건을 만족하는 경우, 정규 연산자(Normal Operator) 라고 한다.&#xA;[$\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$&#xA;무한 차원을 포괄하는 보편적/해석학적 조건: 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$ 및 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$&#xA;이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,</description>
+      <description>1. 정규 연산자의 정의&#xD;아래의 세가지 조건을 모두 만족할 때, 정규 연산자(Normal Operator) 라고 한다.&#xA;[$\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$ 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$ $\mathcal{R}\hat{A}=0$ 이것은 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$ 과 동치이다. 이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,</description>
     </item>
     <item>
       <title>(b) Hermitian</title>
@@ -55,13 +48,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</guid>
       <description>1. Dilation 연산자&#xD;1) 정의&#xA;정규 연산자 $\hat{D}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 dilation (확장) 연산자 라 한다.&#xA;$$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 감소하지 않는다. 동등하게 작용소 노름의 역 부등식으로 표현하면 $\|\hat{D}^{-1}\| \leq 1$ (역원이 존재할 때).&#xA;부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{D}|\psi\rangle\| &gt; \|\psi\|$ — 이를 strict dilation 이라 한다.</description>
-    </item>
-    <item>
-      <title>(a) Symplectic matrix</title>
-      <link>http://localhost:1313/vector_operator/normal_operators/b_symplectic_matrix/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/normal_operators/b_symplectic_matrix/index.html</guid>
-      <description>수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.&#xA;1. 유한 차원: 행렬 성분의 자리 바꾸기&#xD;$$&#xD;(A^\dagger)_{ij} = (A_{ji})^{\ast}&#xD;$$proof)&#xA;행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.</description>
     </item>
   </channel>
 </rss>
