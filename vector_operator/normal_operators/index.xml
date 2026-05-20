@@ -33,7 +33,7 @@
       <link>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</guid>
-      <description>1. Unitary 연산자&#xD;1) 정의&#xA;연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 유니타리 (Unitary) 연산자 라 한다.&#xA;$$ \hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I} $$즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건이 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.&#xA;2) 노름 보존&#xA;임의의 두 벡터 $|v\rangle, |w\rangle$ 에 대해</description>
+      <description>1. Unitary 연산자&#xD;1) 정의&#xA;연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 유니타리 (Unitary) 연산자 라 한다.&#xA;$$ \hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I} $$즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건이 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.&#xA;2) 물리적 의미&#xA;유니타리 연산자는 상태 벡터의 길이(norm), 즉 확률을 보존 하는 모든 물리적 변환을 나타낸다. 양자 시스템의 시간 변화(time evolution) 나 기저 변환(change of basis) 등은 반드시 유니타리 연산자로 기술되어야 한다.</description>
     </item>
   </channel>
 </rss>

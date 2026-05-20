@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. Contraction 의 정의1) 직관적 의미
 작용소 $\hat{T}$ 가 어떤 벡터에 작용했을 때 그 벡터의 길이를 늘리지 않으면 이를 contraction 이라 부른다. 어떤 벡터 $|\psi\rangle$ 에 작용해도 결과 $\hat{T}|\psi\rangle$ 의 길이가 원래의 길이보다 길어지지 않는다는 의미이다. 길이가 줄어들거나 또는 원래의 길이와 같은 상태로 유지된다.
 이 조건이 작용소의 spectrum 이 어디에 있는지 또는 작용소가 정규인지 여부와는 무관하다. 단지 벡터의 길이가 어떻게 변하는지에 대한 조건이며, spectrum 의 위치나 정규성은 정의에 들어가지 않는다.">
-    <meta itemprop="wordCount" content="2298">
+    <meta itemprop="wordCount" content="2023">
     <title>(b) Contraction :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1779205319" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1779205319" defer></script>
-    <script src="/js/search-lunr.js?1779205319" defer></script>
-    <script src="/js/search.js?1779205319" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1779257586" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779257586" defer></script>
+    <script src="/js/search-lunr.js?1779257586" defer></script>
+    <script src="/js/search.js?1779257586" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1779205319";
+      window.relearn.index_js_url="/searchindex.en.js?1779257586";
     </script>
-    <script src="/js/lunr/lunr.min.js?1779205319" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1779205319" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1779205319" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1779205319" defer></script>
+    <script src="/js/lunr/lunr.min.js?1779257586" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779257586" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779257586" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779257586" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1779205319" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779205319" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779205319" rel="stylesheet">
-    <link href="/css/theme.css?1779205319" rel="stylesheet">
-    <link href="/css/format-html.css?1779205319" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1779257586" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779257586" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779257586" rel="stylesheet">
+    <link href="/css/theme.css?1779257586" rel="stylesheet">
+    <link href="/css/format-html.css?1779257586" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -117,8 +117,7 @@
     <li>
       <ul>
         <li><a href="#1-contraction-의-정의">1. Contraction 의 정의</a></li>
-        <li><a href="#2-spectral-분해">2. Spectral 분해</a></li>
-        <li><a href="#3-hermitian-과의-자연-관계---의-도출">3. Hermitian 과의 자연 관계 —  의 도출</a></li>
+        <li><a href="#2-hermitian-과의-자연-관계">2. Hermitian 과의 자연 관계</a></li>
         <li><a href="#4-generator-의-spectrum-과-작용소의-spectrum--상반평면--단위-원판-내부">4. Generator 의 spectrum 과 작용소의 spectrum — 상반평면 ↔ 단위 원판 내부</a></li>
         <li><a href="#5-operator-norm-과-spectrum-의-관계--정규-vs-비-정규">5. Operator norm 과 spectrum 의 관계 — 정규 vs 비-정규</a></li>
         <li><a href="#6-회전과-감쇠의-분리">6. 회전과 감쇠의 분리</a></li>
@@ -182,33 +181,17 @@ $$
 \|\hat{T}\| \leq 1
 $$<p>작용소가 벡터를 가장 크게 늘릴 때조차 그 늘림의 크기가 원래 길이의 1배 이하라는 의미이다. 따라서 어떤 벡터도 원래의 길이보다 길어지지 않게 된다.</p>
 <p><strong>4) Strict contraction</strong></p>
-<p>부등호가 모든 비영 벡터에 대해 strict 한 경우 — $\|\hat{T}|\psi\rangle\| < \|\psi\|$ — 를 strict contraction 이라 부른다. 이 경우 모든 비영 벡터의 길이가 strict 하게 줄어들고, 원래의 길이와 같은 상태로 유지되는 일이 없다. Operator norm 의 조건으로는 $\|\hat{T}\| < 1$ 이 성립한다.</p>
-<p>일반 contraction 의 경우 거듭제곱 $\hat{T}^n$ 이 일반적으로 수렴하지 않을 수 있다. 단위 원 위에 있는 고유값에 대응하는 부분이 영원히 같은 노름으로 남아 있기 때문이다. 반면 strict contraction 의 경우 모든 고유값이 단위 원의 내부에 있으므로 거듭제곱이 0 에 가까워진다. 이 두 경우의 차이가 §7 의 거듭제곱 거동에서 자세히 다뤄진다.</p>
+<p>부등호가 모든 비영 벡터에 대해 strict 한 경우, $\|\hat{T}|\psi\rangle\| < \|\psi\|$ 를 strict contraction 이라 부른다. 이 경우 모든 비영 벡터의 길이가 strict 하게 줄어들고, 원래의 길이와 같은 상태로 유지되는 일이 없다. Operator norm 의 조건으로는 $\|\hat{T}\| < 1$ 이 성립한다.</p>
 <hr>
-<h3 id="2-spectral-분해">2. Spectral 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>대각화 가능한 작용소 $\hat{T}$ 가 다음과 같은 spectral 분해를 가진다.</p>
+<h3 id="2-hermitian-과의-자연-관계">2. Hermitian 과의 자연 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 지수 표현</strong></p>
 $$
-\hat{T} = \sum_n \lambda_n |v_n\rangle\langle v^n|
-$$<p>여기서 $\{|v_n\rangle\}$ 이 $\hat{T}$ 의 right eigenvector 들로 이루어진 집합이며, 이 벡터들이 서로 선형 독립이지만 일반적으로 정규 직교는 아니다. $\{\langle v^n|\}$ 이 이 right eigenvector 들에 대응하는 dual basis 를 이루며, 다음과 같은 biorthogonality 조건을 만족한다.</p>
-$$
-\langle v^n|v_m\rangle = \delta^n_m
-$$<p>작용소 $\hat{T}$ 가 정규인 특수한 경우에는 $\langle v^n| = \langle v_n|$ 의 단순화가 성립하여 $\{|v_n\rangle\}$ 이 정규 직교 기저를 이루고, 분해가 표준 형태 $\hat{T} = \sum_n \lambda_n |v_n\rangle\langle v_n|$ 로 환원된다. 비-정규의 경우에는 이러한 단순화가 성립하지 않으며 dual basis $\{\langle v^n|\}$ 이 right eigenvector $\{|v_n\rangle\}$ 의 자연 켤레와 다른 형태를 가지게 된다.</p>
-<p>이 분해에서 사영 부분 $|v_n\rangle\langle v^n|$ 이 biorthogonality 로부터 다음과 같은 곱셈 규칙을 만족하게 된다.</p>
-$$
-|v_n\rangle\langle v^n| \cdot |v_m\rangle\langle v^m| = \delta^n_m |v_n\rangle\langle v^n|
-$$<p>같은 사영을 두 번 곱하면 자기 자신으로 돌아오고 (idempotent), 다른 사영과 곱하면 0 이 된다 (서로 orthogonal). 이 성질이 정규 케이스의 Hermitian 사영 $|v_n\rangle\langle v_n|$ 이 가지는 성질의 자연스러운 일반화에 해당한다. 비-정규 케이스의 사영은 일반적으로 Hermitian 이 아니다.</p>
-<p>작용소 $\hat{T}$ 의 $k$ 거듭제곱이 biorthogonality 로부터 다음과 같이 계산된다.</p>
-$$
-\hat{T}^k = \sum_n \lambda_n^k |v_n\rangle\langle v^n|
-$$<p>반복된 곱셈에서 위의 곱셈 규칙에 의해 같은 인덱스의 항만 살아남고 다른 인덱스의 항들이 모두 소멸하기 때문에 이러한 결과가 얻어진다.</p>
-<hr>
-<h3 id="3-hermitian-과의-자연-관계---의-도출">3. Hermitian 과의 자연 관계 — $\hat{T} = e^{i\hat{Z}}$ 의 도출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>§2 의 spectral 분해에서 출발한다. Contraction 의 각 고유값 $\lambda_n$ 이 단위 원판 내부 또는 경계에 위치하므로 $|\lambda_n| \leq 1$ 이 성립한다. 0 이 아닌 $\lambda_n$ 을 극형식으로 풀면 $\lambda_n = r_n e^{i\theta_n}$ 의 형태가 되며, 여기서 $0 < r_n \leq 1$ 이고 $\theta_n \in \mathbb{R}$ 이다. $r_n$ 이 1 이하인 양수이므로 $r_n = e^{-\kappa_n}$ 의 형태로 다시 쓸 수 있으며, 이때 새 매개변수 $\kappa_n$ 이 0 이상의 실수이다.</p>
-<p>이를 종합하면 각 고유값이 다음과 같이 표현된다.</p>
+\hat{T} = \sum_{k=0}^{\infty} \frac{(i\hat{Z})^k}{k!} = e^{i\hat{Z}}
+$$<p>proof)</p>
+<p>spectral 분해에서 출발한다. Contraction 의 각 고유값 $\lambda_n$ 이 단위 원판 내부 또는 경계에 위치하므로 $|\lambda_n| \leq 1$ 이 성립한다. 0 이 아닌 $\lambda_n$ 을 극형식으로 풀면 $\lambda_n = r_n e^{i\theta_n}$ 의 형태가 되며, 여기서 $0 < r_n \leq 1$ 이고 $\theta_n \in \mathbb{R}$ 이다. $r_n$ 이 1 이하인 양수이므로 $r_n = e^{-\kappa_n}$ 의 형태로 다시 쓸 수 있으며, 이때 새 매개변수 $\kappa_n$ 이 0 이상의 실수이다.</p>
 $$
 \lambda_n = e^{-\kappa_n} e^{i\theta_n} = e^{i(\theta_n + i\kappa_n)} = e^{i\mu_n}, \quad \mu_n = \theta_n + i\kappa_n
-$$<p>새 매개변수 $\mu_n$ 의 허수부가 $\text{Im}\,\mu_n = \kappa_n \geq 0$ 이므로 $\mu_n$ 이 상반평면 (실수 직선 포함) 의 점에 해당한다.</p>
-<p>이 표현을 §2 의 spectral 분해에 대입하면 다음 형태가 된다.</p>
+$$<p>새 매개변수 $\mu_n$ 의 허수부가 $\text{Im}\,\mu_n = \kappa_n \geq 0$ 이므로 $\mu_n$ 이 상반평면 (실수 직선 포함) 의 점에 해당한다. spectral 분해에 대입하면 다음 형태가 된다.</p>
 $$
 \hat{T} = \sum_n e^{i\mu_n} |v_n\rangle\langle v^n|, \quad \mu_n \in \text{closed upper half-plane}
 $$<p>각 스칼라 $e^{i\mu_n}$ 이 스칼라 지수 함수이며, 그 정의가 Taylor 급수의 무한 합으로 주어진다.</p>
@@ -220,7 +203,7 @@ $$
 $$<p>안쪽의 합 $\sum_n \mu_n^k |v_n\rangle\langle v^n|$ 이 어떤 작용소의 $k$ 거듭제곱과 같은 형태를 가지고 있다. 이를 활용하기 위해 다음 작용소를 정의한다.</p>
 $$
 \hat{Z} := \sum_n \mu_n |v_n\rangle\langle v^n|
-$$<p>§2 에서 도출한 거듭제곱의 결과를 이 정의에 적용하면 다음 등식이 성립한다.</p>
+$$<p>거듭제곱의 결과를 이 정의에 적용하면 다음 등식이 성립한다.</p>
 $$
 \hat{Z}^k = \sum_n \mu_n^k |v_n\rangle\langle v^n|
 $$<p>이를 위의 합 표현에 대입하면 작용소 $\hat{T}$ 가 다음과 같이 표현된다.</p>
@@ -435,9 +418,9 @@ $$<p>이 작용소의 spectrum 이 $e^{-i\mathcal{E}_n t/\hbar}$ 이며 그 크�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779205319"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779205319" defer></script>
-    <script src="/js/theme.js?1779205319" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779257586"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779257586" defer></script>
+    <script src="/js/theme.js?1779257586" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

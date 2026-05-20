@@ -218,6 +218,13 @@
       <description>1. 규칙과 관습&#xD;(1) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.&#xA;OK: $a|\psi\rangle=|a\psi\rangle$ OK: $U|\psi\rangle=|U\psi\rangle$ (2) 함수 인자에 대한 연산은 이름표 내부에서 허용된다.&#xA;일반저그로&#xA;OK: $|\psi(t+a)\rangle=\hat{T}(-a)|\psi\rangle$ |f(t+a)⟩와 같은 표현이 허용되는 이유는, + 연산이 벡터 |f⟩에 작용하는 것이 아니라, 이름표로 사용된 함수 f의 입력 인자(argument) t 에 작용하기 때문이다. 이것은 이동 연산자 T̂(-a)가 |f⟩에 작용한 결과 벡터에 대한 별명이다.</description>
     </item>
     <item>
+      <title>(b) Dilation</title>
+      <link>http://localhost:1313/temp/b_dilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_dilation/index.html</guid>
+      <description>1. Dilation 연산자&#xD;1) 정의&#xA;정규 연산자 $\hat{D}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 dilation (확장) 연산자 라 한다.&#xA;$$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 감소하지 않는다. 동등하게 작용소 노름의 역 부등식으로 표현하면 $\|\hat{D}^{-1}\| \leq 1$ (역원이 존재할 때).&#xA;부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{D}|\psi\rangle\| &gt; \|\psi\|$ — 이를 strict dilation 이라 한다.</description>
+    </item>
+    <item>
       <title>(b) Fourier transform I</title>
       <link>http://localhost:1313/temp/b_fourier_transform_i/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

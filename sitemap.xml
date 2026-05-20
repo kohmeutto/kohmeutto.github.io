@@ -43,6 +43,9 @@
     <loc>http://localhost:1313/vector_operator/commutator/b_commutator/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_contraction/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/determinant_norm/b_determinant/index.html</loc>
   </url>
   <url>
@@ -230,6 +233,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_determinant/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_dilation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/geometric_algebra/calculus/b_divergence/index.html</loc>
@@ -607,12 +613,6 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_contraction/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html</loc>
   </url>
   <url>
@@ -697,10 +697,7 @@
     <loc>http://localhost:1313/vector_operator/euclidean_vector/b_column_vector_of_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/diagonalizable_operators/b_dilation/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</loc>
+    <loc>http://localhost:1313/temp/b_dilation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
