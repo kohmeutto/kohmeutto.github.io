@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Normal operators :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
+    <description>(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) I-unitary</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/normal_operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Normal operators</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html</guid>
+      <description>1. 정규 연산자의 정의&#xD;아래의 세가지 조건을 모두 만족할 때, 정규 연산자(Normal Operator) 라고 한다.&#xA;[$\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$ 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$ $\mathcal{R}\hat{A}=0$ 이것은 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$ 과 동치이다. 이 조건을 만족하는 연산자는 항상 완비적인 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,</description>
+    </item>
+    <item>
+      <title>(b) Hermitian</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_hermitian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_hermitian/index.html</guid>
+      <description>1. 허미션 연산자 (Hermitian Operator)&#xD;1) 정의&#xA;연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 같을 때, 즉 $\hat{A} = \hat{A}^\dagger$일 때, 이를 에르미트 연산자라고 한다. 이는 정규 연산자($[\hat{A}, \hat{A}^\dagger]=0$)의 조건을 자명하게 만족한다.&#xA;2) 물리적 의미&#xA;양자역학에서 측정 가능한 모든 물리량(Observable), 예를 들어 에너지, 위치, 운동량 등은 반드시 에르미트 연산자로 표현된다.&#xA;2. 고유값은 항상 실수이다&#xD;고유값은 항상 실수이다</description>
+    </item>
+    <item>
+      <title>(b) anti-Hermitian</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_anti_hermitian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_anti_hermitian/index.html</guid>
+      <description>1. 반-허미션 연산자 (Anti-Hermitian Operator)&#xD;1) 정의&#xA;연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)에 음의 부호를 붙인 것과 같을 때, 즉 $\hat{A}^\dagger = -\hat{A}$일 때, 이를 반-허미션(또는 스큐-허미션, Skew-Hermitian) 연산자라고 한다. 이 연산자 역시 정규 연산자($[\hat{A}, \hat{A}^\dagger]=0$)의 조건을 만족한다.&#xA;2) 물리적 의미&#xA;반-허미션 연산자는 직접적으로 물리량을 나타내지는 않지만, 유니타리 변환을 만들어내는 생성자(Generator) 로서, 시스템의 동적인 변화를 기술하는 데 핵심적인 역할을 한다.</description>
+    </item>
+    <item>
+      <title>(b) I-unitary</title>
+      <link>http://localhost:1313/vector_operator/normal_operators/b_i-unitary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/normal_operators/b_i-unitary/index.html</guid>
+      <description>1. I-Unitary 연산자&#xD;1) 정의&#xA;연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 $\hat{I}$-유니타리 ($\hat{I}$-Unitary) 연산자 라 한다.&#xA;$$&#xD;\hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I}&#xD;$$즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건이 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.&#xA;본 작용소가 표준 inner product (즉 metric operator 가 $\hat{I}$ 인 case) 의 기준에서 norm 을 보존하는 작용소이므로 $\hat{I}$-유니타리 라 부른다. 일반화된 metric ($\hat{G}$ 또는 $\hat{J}$) 의 기준에서의 유니타리 작용소가 별도 chapter 에서 다뤄진다.</description>
+    </item>
+  </channel>
+</rss>

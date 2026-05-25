@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§6 에서 1-매개변수 부분군이 항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원 됨을 보았다. 이 급수가 정확히 지수 사상 $\exp(tX)$. 본 절에서는 지수 사상을 그 자체로 본격 분석 한다.
+다룰 것들 —
+행렬 지수의 정식 정의 와 수렴성 기본 성질 — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분 가환 vs 비가환에서의 지수 법칙 — $\exp(X&#43;Y)$ 의 운명 일반 리 군에서의 지수 사상 — 행렬군 너머 기하학적 의미 — 항등원 근방의 미분 동형사상 왜 지수가 자연스럽게 등장하는가의 깊은 의미 — 미분방정식 유일성 지수 사상의 한계 예고 (§12–§14 본격) 이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§6 에서 1-매개변수 부분군이 항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원 됨을 보았다. 이 급수가 정확히 지수 사상 $\exp(tX)$. 본 절에서는 지수 사상을 그 자체로 본격 분석 한다.
+다룰 것들 —
+행렬 지수의 정식 정의 와 수렴성 기본 성질 — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분 가환 vs 비가환에서의 지수 법칙 — $\exp(X&#43;Y)$ 의 운명 일반 리 군에서의 지수 사상 — 행렬군 너머 기하학적 의미 — 항등원 근방의 미분 동형사상 왜 지수가 자연스럽게 등장하는가의 깊은 의미 — 미분방정식 유일성 지수 사상의 한계 예고 (§12–§14 본격) 이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/7-b_exponential_map/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§6 에서 1-매개변수 부분군이 항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원 됨을 보았다. 이 급수가 정확히 지수 사상 $\exp(tX)$. 본 절에서는 지수 사상을 그 자체로 본격 분석 한다.
+다룰 것들 —
+행렬 지수의 정식 정의 와 수렴성 기본 성질 — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분 가환 vs 비가환에서의 지수 법칙 — $\exp(X&#43;Y)$ 의 운명 일반 리 군에서의 지수 사상 — 행렬군 너머 기하학적 의미 — 항등원 근방의 미분 동형사상 왜 지수가 자연스럽게 등장하는가의 깊은 의미 — 미분방정식 유일성 지수 사상의 한계 예고 (§12–§14 본격) 이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§6 에서 1-매개변수 부분군이 항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원 됨을 보았다. 이 급수가 정확히 지수 사상 $\exp(tX)$. 본 절에서는 지수 사상을 그 자체로 본격 분석 한다.
+다룰 것들 —
+행렬 지수의 정식 정의 와 수렴성 기본 성질 — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분 가환 vs 비가환에서의 지수 법칙 — $\exp(X&#43;Y)$ 의 운명 일반 리 군에서의 지수 사상 — 행렬군 너머 기하학적 의미 — 항등원 근방의 미분 동형사상 왜 지수가 자연스럽게 등장하는가의 깊은 의미 — 미분방정식 유일성 지수 사상의 한계 예고 (§12–§14 본격) 이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.">
+    <meta itemprop="wordCount" content="2342">
+    <title>생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/7-b_exponential_map\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/7-b_exponential_map/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-행렬-지수의-정식-정의">2. 행렬 지수의 정식 정의</a></li>
+        <li><a href="#3-행렬-지수의-기본-성질">3. 행렬 지수의 기본 성질</a></li>
+        <li><a href="#4-가환과-비가환에서의-지수-법칙">4. 가환과 비가환에서의 지수 법칙</a></li>
+        <li><a href="#5-일반-리-군에서의-지수-사상">5. 일반 리 군에서의 지수 사상</a></li>
+        <li><a href="#6-지수-사상의-기하학적-의미">6. 지수 사상의 기하학적 의미</a></li>
+        <li><a href="#7-왜-지수-함수가-등장하는가--깊은-의미-미분방정식-유일성">7. 왜 지수 함수가 등장하는가 — 깊은 의미 (미분방정식 유일성)</a></li>
+        <li><a href="#8-행렬-지수의-구체-계산--스펙트럼-분해">8. 행렬 지수의 구체 계산 — 스펙트럼 분해</a></li>
+        <li><a href="#9-구체-예시들">9. 구체 예시들</a></li>
+        <li><a href="#10-지수-사상의-한계--예고">10. 지수 사상의 한계 — 예고</a></li>
+        <li><a href="#11-이-절을-닫으며--2부-정리">11. 이 절을 닫으며 + 2부 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/6-b_generator_taylor/index.html" title="테일러 전개와 생성자 — 항등원의 특수성 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/8-b_lie_algebra_definition/index.html" title="항등원에서의 접공간 = 리 대수 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="생성자--지수-사상--왜-지수-함수가-등장하는지">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§6 에서 1-매개변수 부분군이 <em>항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원</em> 됨을 보았다. 이 급수가 정확히 <em>지수 사상</em> $\exp(tX)$. 본 절에서는 지수 사상을 <em>그 자체로 본격 분석</em> 한다.</p>
+<p>다룰 것들 —</p>
+<ul>
+<li><em>행렬 지수의 정식 정의</em> 와 수렴성</li>
+<li><em>기본 성질</em> — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분</li>
+<li><em>가환 vs 비가환에서의 지수 법칙</em> — $\exp(X+Y)$ 의 운명</li>
+<li><em>일반 리 군에서의 지수 사상</em> — 행렬군 너머</li>
+<li><em>기하학적 의미</em> — 항등원 근방의 미분 동형사상</li>
+<li><em>왜 지수가 자연스럽게 등장하는가의 깊은 의미</em> — 미분방정식 유일성</li>
+<li><em>지수 사상의 한계 예고</em> (§12–§14 본격)</li>
+</ul>
+<p>이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.</p>
+<h3 id="2-행렬-지수의-정식-정의">2. 행렬 지수의 정식 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>정의</em>. 임의의 $N \times N$ 행렬 $X \in M_N(\mathbb{F})$ ($\mathbb{F} = \mathbb{R}$ 또는 $\mathbb{C}$) 에 대해 <em>행렬 지수</em> 는</p>
+$$\exp(X) := \sum_{n=0}^{\infty} \frac{X^n}{n!} = I + X + \frac{X^2}{2!} + \frac{X^3}{3!} + \cdots$$<p><strong>2)</strong> <em>수렴</em>. 위 급수가 <em>모든 행렬 $X$ 에 대해 절대 수렴</em>. 노름 비교</p>
+$$\left\| \sum_{n=0}^\infty \frac{X^n}{n!} \right\| \le \sum_{n=0}^\infty \frac{\|X\|^n}{n!} = e^{\|X\|} < \infty$$<p>여기 $\|\cdot\|$ 는 임의의 <em>서브 곱 행렬 노름</em> (예 — 작용소 노름, 프로베니우스 노름). $\|XY\| \le \|X\| \|Y\|$ 이라 $\|X^n\| \le \|X\|^n$. 절대 수렴 → 수렴.</p>
+<p><strong>3)</strong> <em>수렴이 일양함</em>. 사실 $X$ 가 임의의 <em>유계 영역</em> 안에서 움직일 때 위 급수가 <em>일양 절대 수렴</em>. 따라서 <em>항별 미분, 항별 적분</em> 같은 조작이 자유로움.</p>
+<p><strong>4)</strong> <em>통상 지수와의 일관성</em>. $X$ 가 $1 \times 1$ 스칼라이면 $\exp(X)$ 가 통상 $e^X$. 행렬 지수가 <em>스칼라 지수의 자연스러운 일반화</em>.</p>
+<h3 id="3-행렬-지수의-기본-성질">3. 행렬 지수의 기본 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$\exp(0) = I$</em>. 직접 — $\sum_n 0^n / n! = 1 + 0 + 0 + \cdots = I$ (정의에서 $0^0 = I$).</p>
+<p><strong>2)</strong> <em>$\exp(-X) = \exp(X)^{-1}$</em>. $X$ 와 $-X$ 가 가환 ($[X, -X] = 0$) 이라 다음 §4 의 가환 지수 법칙 적용 —</p>
+$$\exp(X) \exp(-X) = \exp(X + (-X)) = \exp(0) = I$$<p>대칭적으로 $\exp(-X) \exp(X) = I$. 따라서 $\exp(X)$ 가 <em>항상 가역</em>, 역이 $\exp(-X)$.</p>
+<blockquote>
+<p><em>결과</em> — $\exp : M_N(\mathbb{F}) \to GL(N, \mathbb{F})$. 임의의 행렬을 <em>가역 행렬</em> 로 보낸다. $\det \exp(X) \neq 0$ 자동.</p>
+</blockquote>
+<p><strong>3)</strong> <em>$\det \exp(X) = \exp(\text{tr}(X))$</em>. 행렬 지수의 핵심 항등식 (Jacobi의 공식). 직접 증명 — 대각화 가능 $X$ 에 대해 고유값 $\lambda_i$ 로 $\det \exp(X) = \prod \exp(\lambda_i) = \exp(\sum \lambda_i) = \exp(\text{tr}(X))$. 일반은 연속성 + 대각화 가능 행렬의 조밀성.</p>
+<p>이 항등식이 <em>$\mathfrak{sl}(N)$ 의 정의</em> ($\text{tr} = 0$) 과 <em>$SL(N)$ 의 정의</em> ($\det = 1$) 의 관계를 정확히 매개. §8 본격.</p>
+<p><strong>4)</strong> <em>$\exp(tX)$ 의 미분</em>. §6 §5 의 결과 재확인 —</p>
+$$\frac{d}{dt} \exp(tX) = X \exp(tX) = \exp(tX) \, X$$<p>(항별 미분, $\exp(tX)$ 와 $X$ 의 가환성.)</p>
+<p><strong>5)</strong> <em>$\exp$ 의 항등원 근방 미분 — $(d \exp)_0$</em>. 지수 사상의 미분을 $0 \in M_N(\mathbb{F})$ 에서 잡으면</p>
+$$(d \exp)_0 : T_0 M_N(\mathbb{F}) = M_N(\mathbb{F}) \to T_I GL(N, \mathbb{F}) = M_N(\mathbb{F})$$<p>가 <em>항등 사상</em>. 즉</p>
+$$\left. \frac{d}{dt} \right|_{t=0} \exp(tX) = X = \text{id}(X)$$<p>이 사실이 다음 §6 의 <em>항등원 근방 미분 동형사상</em> 결과의 핵심.</p>
+<h3 id="4-가환과-비가환에서의-지수-법칙">4. 가환과 비가환에서의 지수 법칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬 지수의 <em>덧셈 법칙</em> $\exp(X + Y) = \exp(X) \exp(Y)$ 가 <em>언제 성립</em> 하는지.</p>
+<p><strong>1)</strong> <em>가환의 경우</em> $[X, Y] = 0$ <em>에서</em>. 성립.</p>
+$$\exp(X + Y) = \exp(X) \exp(Y) = \exp(Y) \exp(X)$$<p><em>증명 스케치</em>. 이항 정리</p>
+$$(X + Y)^n = \sum_{k=0}^n \binom{n}{k} X^k Y^{n-k}$$<p>가 $X, Y$ 가환에서만 성립 (비가환에서는 $XY$ 와 $YX$ 가 섞여 단순한 형태 안 됨). 가환 시</p>
+$$\exp(X+Y) = \sum_{n=0}^\infty \frac{(X+Y)^n}{n!} = \sum_{n=0}^\infty \frac{1}{n!} \sum_{k=0}^n \binom{n}{k} X^k Y^{n-k} = \sum_{k, m \ge 0} \frac{X^k Y^m}{k! m!} = \exp(X) \exp(Y)$$<p>(마지막 등호 — $n = k + m$ 으로 재정렬.)</p>
+<p><strong>2)</strong> <em>비가환에서는 일반적으로 깨짐</em>. $[X, Y] \neq 0$ 이면</p>
+$$\exp(X + Y) \neq \exp(X) \exp(Y)$$<p>대신 <em>BCH 공식</em> (§0-1 §9) 으로</p>
+$$\exp(X) \exp(Y) = \exp\Bigl( X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}([X, [X, Y]] - [Y, [X, Y]]) + \cdots \Bigr)$$<p>— <em>교환자 보정 항</em> 이 따라붙는다.</p>
+<p><strong>3)</strong> <em>비가환 반례 — 파울리 행렬</em>. $X = i \sigma_x$, $Y = i \sigma_y$ (반에르미트, $\mathfrak{su}(2)$ 원소). $[X, Y] = [i\sigma_x, i\sigma_y] = -[\sigma_x, \sigma_y] = -2i\sigma_z \neq 0$ (§3 §5).</p>
+<p>직접 계산하면</p>
+$$\exp(X) = \exp(i\sigma_x) = \cos(1) I + i \sin(1) \sigma_x$$<p>(왜냐하면 $\sigma_x^2 = I$, 따라서 $\exp(i\sigma_x) = \sum (i\sigma_x)^n / n! = \cos(1) I + i \sin(1) \sigma_x$ — 오일러 공식의 행렬 버전.)</p>
+<p>비슷하게 $\exp(Y) = \cos(1) I + i \sin(1) \sigma_y$.</p>
+<p>곱하면 $\exp(X) \exp(Y)$ 는 $I, \sigma_x, \sigma_y, \sigma_x \sigma_y = i \sigma_z$ 의 결합. 반면 $\exp(X + Y)$ 는 $X + Y = i(\sigma_x + \sigma_y)$ 의 지수로, $(\sigma_x + \sigma_y)^2 = \sigma_x^2 + \sigma_x \sigma_y + \sigma_y \sigma_x + \sigma_y^2 = 2I$ (왜냐하면 $\sigma_x \sigma_y + \sigma_y \sigma_x = 0$, anticommutator $= 0$ 인 파울리 행렬 성질) 이라 다른 형태.</p>
+<p>→ $\exp(X+Y) \neq \exp(X) \exp(Y)$.</p>
+<p><strong>4)</strong> <em>결론</em>. 지수 법칙 $\exp(X+Y) = \exp(X) \exp(Y)$ 는 <em>$X, Y$ 의 가환성</em> 과 정확히 동치. 가환은 <em>예외</em>, 비가환은 <em>일반</em>. BCH 보정이 비가환을 처리.</p>
+<h3 id="5-일반-리-군에서의-지수-사상">5. 일반 리 군에서의 지수 사상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬군에서 지수 사상은 <em>행렬 지수</em> 로 명시적. 일반 리 군에서는 어떻게 정의되나.</p>
+<p><strong>1)</strong> <em>1-매개변수 부분군의 존재·유일성 정리</em>. 일반 리 군 $G$ 와 임의 $X \in T_e G = \mathfrak{g}$ 에 대해, <em>$X$ 를 생성자로 가지는 1-매개변수 부분군이 유일하게 존재</em></p>
+$$\gamma_X : \mathbb{R} \to G, \quad \gamma_X(0) = e, \quad \gamma_X'(0) = X, \quad \gamma_X(s+t) = \gamma_X(s) \gamma_X(t)$$<p>증명 — 매끄러운 다양체 위의 <em>왼쪽 불변 벡터장</em> 의 흐름 (flow) 으로 구성. 미분 위상수학의 ODE 존재·유일성 정리 + 군 구조 활용.</p>
+<p><strong>2)</strong> <em>지수 사상의 일반 정의</em>.</p>
+$$\exp : \mathfrak{g} \to G, \qquad \exp(X) := \gamma_X(1)$$<p>— <em>$X$ 가 생성하는 1-매개변수 부분군의 $t = 1$ 위치</em>.</p>
+<p><strong>3)</strong> <em>일관성</em>. 행렬군 $G \subseteq GL(N, \mathbb{F})$ 의 경우, 1-매개변수 부분군이 $\gamma_X(t) = \exp(tX)$ (§6 §7), 따라서 $\gamma_X(1) = \exp(X)$ — <em>행렬 지수와 일치</em>. 일반 정의가 행렬군 정의의 자연스러운 확장.</p>
+<p><strong>4)</strong> <em>기본 성질 — 일반 리 군에서도 성립</em>.</p>
+<ul>
+<li>$\exp(0) = e$</li>
+<li>$\exp(-X) = \exp(X)^{-1}$</li>
+<li>$\exp((s+t)X) = \exp(sX) \exp(tX)$ (가환 — $X, X$ 자신과 가환)</li>
+<li>$\exp(X) \exp(Y) = \exp(X+Y)$ 는 $[X, Y] = 0$ 일 때만</li>
+</ul>
+<p><strong>5)</strong> <em>왜 $t = 1$ 인가</em>. <em>스칼라 $t$ 를 $X$ 안에 흡수</em> 하면 $\exp(tX) = \exp(t \cdot X) = \gamma_X(t) = \gamma_{tX}(1)$. 즉 $\exp(tX)$ 도 $\exp$ 의 결과 ($tX \in \mathfrak{g}$ 의 지수). 따라서 $t = 1$ 만 명시해도 모든 $t$ 의 결과를 얻는다.</p>
+<h3 id="6-지수-사상의-기하학적-의미">6. 지수 사상의 기하학적 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\exp : \mathfrak{g} \to G$ 의 기하학적 그림.</p>
+<p><strong>1)</strong> <em>시작점 — 0과 항등원</em>. $\exp$ 가 <em>$\mathfrak{g}$ 의 영벡터 $0$ 을 $G$ 의 항등원 $e$ 로</em> 보낸다.</p>
+$$\exp(0) = e$$<p><strong>2)</strong> <em>$\exp$ 의 미분 $(d\exp)_0$ 가 항등</em>. §3 (5) 의 결과.</p>
+$$(d \exp)_0 : T_0 \mathfrak{g} = \mathfrak{g} \to T_e G = \mathfrak{g}$$<p>가 <em>항등 사상</em>.</p>
+<p>(첫 등호는 벡터 공간 $\mathfrak{g}$ 의 한 점에서의 접공간이 자기 자신, 두 번째 등호는 §0-4 §10.)</p>
+<p><strong>3)</strong> <em>역함수 정리 — 항등원 근방의 미분 동형사상</em>. $(d\exp)_0 = \text{id}$ 가 <em>가역 선형 사상</em> 이라, 역함수 정리에 의해</p>
+<blockquote>
+<p>$\exp$ 가 $\mathfrak{g}$ 의 $0$ 근방에서 $G$ 의 $e$ 근방으로의 <em>미분 동형사상 (diffeomorphism)</em>.</p>
+</blockquote>
+<p>즉 <em>항등원 근방</em> 에서는 $\exp$ 가 <em>완벽한 일대일 대응</em> (역사상 $\log$ 존재, 매끄러움 양방향).</p>
+<p><strong>4)</strong> <em>항등원 근방에서 $\log$ 사상</em>. $\log : (\text{$e$ 근방}) \to (\text{$0$ 근방})$ 이 $\exp$ 의 역. 행렬군에서는 $\log(I + Y) = Y - Y^2/2 + Y^3/3 - \cdots$ (작은 $Y$ 에 수렴).</p>
+<p><strong>5)</strong> <em>전역적 미분 동형사상이 아님</em>. <em>항등원 근방에서만 보장</em>. 전역적으로는 (a) 단사 안 됨 (예 — $\exp(2\pi i n) = 1$, 주기), (b) 전사 안 됨 (비컴팩트 등에서, §13). 이 한계가 §12–§14 의 주제.</p>
+<p><strong>6)</strong> <em>시각적 그림</em>. $\mathfrak{g}$ (평평한 벡터 공간) 에서 $G$ (휘어 있을 수 있는 다양체) 로의 <em>항등원 근방 평탄화</em>.</p>
+<blockquote>
+<p>비유 — 지구 표면 위 한 점에서 <em>접평면</em> 으로 사영하면 가까운 곳은 일대일이지만 멀어지면 깨진다 ($\exp$ 의 역할). 리 대수는 <em>항등원의 접평면</em>, 리 군은 <em>전체 표면</em>.</p>
+</blockquote>
+<h3 id="7-왜-지수-함수가-등장하는가--깊은-의미-미분방정식-유일성">7. 왜 지수 함수가 등장하는가 — 깊은 의미 (미분방정식 유일성)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§6 의 도출 ($\sum (tX)^n/n!$ 이 자연 등장) 은 <em>왜 지수</em> 인지에 대한 답이지만, 그 <em>깊은 의미</em> 가 <em>미분방정식 유일성</em> 에 있다.</p>
+<p><strong>1)</strong> <em>통상 지수 함수의 유일성</em>. 통상 지수 함수 $y(t) = e^{at}$ 는</p>
+$$y'(t) = a \, y(t), \qquad y(0) = 1$$<p>의 <em>유일한 매끄러운 해</em>. 다른 어떤 함수도 이 두 조건을 동시에 만족 못 함. 이것이 <em>지수 함수가 자연 등장</em> 하는 표준 설명.</p>
+<p><strong>2)</strong> <em>행렬 지수의 유일성</em>. 마찬가지로 행렬 지수 $\gamma(t) = \exp(tX)$ 는</p>
+$$\gamma'(t) = X \, \gamma(t), \qquad \gamma(0) = I$$<p>의 <em>유일한 매끄러운 해</em> (ODE 의 존재·유일성 정리, <em>Picard-Lindelöf</em>).</p>
+<p>§6 §5 에서 <em>합성 법칙이 이 미분방정식을 강제</em> 함을 보았다. 따라서 <em>합성 법칙을 만족하는 매끄러운 1-매개변수 곡선이 항등원에서 출발할 때, 그 곡선이 유일하게 지수 함수</em>. <em>다른 선택지가 없음</em>.</p>
+<p><strong>3)</strong> <em>통상 지수와의 평행성</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>통상 지수</th>
+          <th>행렬 지수 / 리 군 지수 사상</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$e^{at}$</td>
+          <td>$\exp(tX) = \gamma_X(t)$</td>
+      </tr>
+      <tr>
+          <td>매개변수 — 스칼라 $a$</td>
+          <td>매개변수 — 리 대수 원소 $X$</td>
+      </tr>
+      <tr>
+          <td>ODE: $y' = ay, y(0) = 1$</td>
+          <td>ODE: $\gamma' = X\gamma, \gamma(0) = e$</td>
+      </tr>
+      <tr>
+          <td>합성: $e^{a(s+t)} = e^{as} e^{at}$</td>
+          <td>합성: $\exp((s+t)X) = \exp(sX) \exp(tX)$</td>
+      </tr>
+      <tr>
+          <td>유일 해 = 지수</td>
+          <td>유일 해 = 지수 사상</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>4)</strong> <em>깊은 결론</em>. <em>지수 함수의 유일성이 합성 법칙에서 강제</em> 되는 것이 <em>왜 지수가 자연스럽게 등장하는가</em> 의 가장 깊은 답. 합성 법칙 + 매끄러움이면 <em>어떤 군 위에서 든 (가환·비가환 무관)</em> 지수가 유일한 해.</p>
+<p>리 군의 <em>모든 1-매개변수 부분군이 지수 형태</em> 인 것이 <em>공허한 약속</em> 이 아니라 <em>합성 법칙의 수학적 필연</em>.</p>
+<h3 id="8-행렬-지수의-구체-계산--스펙트럼-분해">8. 행렬 지수의 구체 계산 — 스펙트럼 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬 지수를 명시적으로 계산하는 방법. §0-5 §9 의 함수 계산 결과 활용.</p>
+<p><strong>1)</strong> <em>대각화 가능 $X$ 의 경우</em>. $X = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i|$ 의 스펙트럼 분해 (§0-5 §8). 행렬 지수는</p>
+$$\exp(X) = \sum_i e^{\lambda_i} \, |\lambda_i\rangle \langle \lambda^i|$$<p>— <em>고유값에 지수를 씌우고 고유벡터 구조는 그대로</em>.</p>
+<p>매개변수 $t$ 포함 시</p>
+$$\exp(tX) = \sum_i e^{t \lambda_i} \, |\lambda_i\rangle \langle \lambda^i|$$<p><strong>2)</strong> <em>해석 — 각 고유 모드의 독립 진화</em>. $X$ 의 고유 모드 $|\lambda_i\rangle$ 가 <em>서로 독립적으로 $e^{t\lambda_i}$ 배율</em> 로 진화.</p>
+<ul>
+<li>$\lambda_i$ 실수 — <em>지수 증가/감소</em></li>
+<li>$\lambda_i$ 순허수 — <em>조화 진동</em> (반에르미트, 유니타리 진화)</li>
+<li>$\lambda_i$ 복소 — 증가/감소 + 진동 (자기에너지)</li>
+</ul>
+<p><strong>3)</strong> <em>반에르미트 행렬의 경우</em> (리 대수의 표본). $X \in \mathfrak{u}(N)$ 또는 $\mathfrak{su}(N)$ 이라 $X^\dagger = -X$. 고유값 $\lambda_i$ 가 <em>순허수</em>. $\exp(X)$ 가 <em>유니타리</em> — 모듈러스 1 고유값 ($|e^{\lambda_i}| = 1$).</p>
+<p>→ $\exp : \mathfrak{u}(N) \to U(N)$. 반에르미트 → 유니타리.</p>
+<p><strong>4)</strong> <em>에르미트 행렬의 경우</em>. $X = X^\dagger$ 이라 $\lambda_i$ 실수. $\exp(X)$ 가 <em>양의 정부호 에르미트 행렬</em>. $\exp : \text{Herm}(N) \to \text{Pos}(N)$.</p>
+<p>(에르미트는 $i\mathfrak{u}(N)$ 과 대응. 물리에서 해밀토니안 = $i\hbar$ × 시간 진화 생성자, 둘이 ($i$ 배 차이로) 연결.)</p>
+<p><strong>5)</strong> <em>비대각화 가능 (조던 형) $X$</em>. 위 식 변형 — 일반화된 고유벡터 사용. 본 시리즈에서는 대각화 가능 경우만 다룬다.</p>
+<h3 id="9-구체-예시들">9. 구체 예시들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$(\mathbb{R}, +)$ — 가장 단순</em>. $\mathfrak{g} = \mathbb{R}$, $G = \mathbb{R}$ (덧셈군). $\exp : \mathbb{R} \to \mathbb{R}$ 이 <em>항등 사상</em> $\exp(X) = X$ (덧셈군 자체로의 지수는 자명).</p>
+<p><em>주의</em> — 다른 견해 — $G = (\mathbb{R}^+, \cdot)$ 으로 보면 $\exp : \mathbb{R} \to \mathbb{R}^+$, $X \mapsto e^X$. 통상 지수. 두 견해 모두 <em>같은 가환 1-차원 리 군</em> 의 다른 표현 (§1 §6).</p>
+<p><strong>2)</strong> <em>$SO(2)$ 또는 $U(1)$</em> (§6 §10 재확인). $\mathfrak{so}(2) = \mathbb{R} \cdot J$ ($J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$).</p>
+$$\exp(\theta J) = R(\theta) = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix}$$<p>$U(1)$ 표현으로는 $\mathfrak{u}(1) = i\mathbb{R}$, $\exp(i\theta) = e^{i\theta} \in U(1)$. <em>오일러 공식</em>.</p>
+<p><strong>3)</strong> <em>$SU(2)$</em> (§16 본격 예고). $\mathfrak{su}(2) = i \cdot (\text{실 선형 결합 of $\sigma_x, \sigma_y, \sigma_z$})$. 예 — $X = i \theta \sigma_z$.</p>
+<p>$\sigma_z^2 = I$ 이라 ($\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$, $\sigma_z^2 = I$)</p>
+$$\exp(i \theta \sigma_z) = \cos\theta \, I + i \sin\theta \, \sigma_z = \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}$$<p>— 일반 파울리 방향에 대한 지수가 <em>Rodrigues 공식의 SU(2) 버전</em>. §16.</p>
+<p><strong>4)</strong> <em>$SO(3)$</em> — 회전 (§17 본격 예고). $\mathfrak{so}(3) = $ 반대칭 $3\times 3$ 실 행렬 = $\mathbb{R}^3$ (단위 벡터 → 반대칭 행렬). 예 — $\hat n \in S^2$ 단위 벡터 + 각도 $\theta$ 에 대해 회전축 $\hat n$, 각도 $\theta$ 회전 = $\exp(\theta \, A_{\hat n})$ where $A_{\hat n}$ 은 $\hat n$ 에 대응하는 반대칭 행렬. <em>Rodrigues 회전 공식</em>.</p>
+<h3 id="10-지수-사상의-한계--예고">10. 지수 사상의 한계 — 예고<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지수 사상이 <em>완벽한 다리</em> 는 아니다. 다음 §12–§14 에서 본격 다룰 한계.</p>
+<p><strong>1)</strong> <em>단사가 아님 (일반적으로)</em>. 예 — $\exp : \mathbb{R} \to U(1)$, $\theta \mapsto e^{i\theta}$ — <em>$2\pi$ 주기</em>. 다른 $\theta$ 가 같은 결과. 일반 가환 컴팩트 ($T^N$) 에서도 격자 주기성.</p>
+<p><strong>2)</strong> <em>전사가 아님 (비컴팩트에서)</em>. 예 — $SL(2, \mathbb{R})$ 의 $\begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix}$ 같은 원소가 $\exp$ 의 이미지에 없음 (§2 §5 (1)). 일반 비컴팩트 리 군에서 지수가 전사 안 될 수 있다 — <em>지수의 곱 필요</em> (§13).</p>
+<p><strong>3)</strong> <em>비연결 경우</em>. $O(N) = SO(N) \cup (-I) \cdot SO(N)$ 같은 비연결 리 군에서, 지수는 <em>항등원 성분</em> 에만 도달. <em>비연결 부분</em> 은 <em>이산 변환과의 곱</em> 으로만 도달 (§14).</p>
+<p><strong>4)</strong> <em>컴팩트 연결의 경우</em>. <em>지수가 전사</em>. 모든 원소가 단일 $\exp(X)$. 가장 깔끔한 경우 (§12).</p>
+<p><strong>5)</strong> <em>세 가지 한계의 위계</em>.</p>
+<ul>
+<li>컴팩트 + 연결 — 전사 OK, 단사는 가환 부분에서 깨질 수 있음 (정규화로 해결)</li>
+<li>비컴팩트 — 전사 깨짐, 지수의 곱 필요</li>
+<li>비연결 — 항등원 성분만 도달, 이산 변환 추가 필요</li>
+</ul>
+<h3 id="11-이-절을-닫으며--2부-정리">11. 이 절을 닫으며 + 2부 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) <em>행렬 지수의 정식 정의</em> — $\exp(X) = \sum_n X^n / n!$. 항상 절대 수렴.</p>
+<p>(2) <em>기본 성질</em> — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, $\det\exp = \exp\text{tr}$, $\exp$ 가 항상 가역으로 보냄.</p>
+<p>(3) <em>가환·비가환 지수 법칙</em> — $\exp(X+Y) = \exp(X)\exp(Y)$ ↔ $[X, Y] = 0$. 비가환은 BCH 보정.</p>
+<p>(4) <em>일반 리 군의 지수 사상</em> — $\exp : \mathfrak{g} \to G$, $X \mapsto \gamma_X(1)$. 행렬군의 행렬 지수와 일관.</p>
+<p>(5) <em>기하학적 의미</em> — $(d\exp)_0 = \text{id}$, 항등원 근방의 미분 동형사상. 전역적이 아닌 <em>국소적 1:1</em>.</p>
+<p>(6) <em>왜 지수인가의 깊은 의미</em> — 미분방정식 $\gamma' = X\gamma, \gamma(0) = e$ 의 <em>유일한 해</em> 가 지수. 합성 법칙이 이 ODE 를 강제, 따라서 <em>지수가 자연스럽게 등장</em> 하는 것이 <em>수학적 필연</em>.</p>
+<p>(7) <em>스펙트럼 분해</em> — $\exp(tX) = \sum_i e^{t\lambda_i} |\lambda_i\rangle \langle \lambda^i|$. 고유값에 지수, 고유벡터 구조 유지.</p>
+<p>(8) <em>한계 예고</em> — 단사·전사·연결성 모두 깨질 수 있음. §12–§14 본격.</p>
+<hr>
+<p><em>2부 (1-매개변수 부분군과 준동형) 정리</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>절</th>
+          <th>핵심 결과</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>§4</td>
+          <td>연속 대칭의 <em>합성 법칙</em> = 군 준동형 조건 — 물리적 동기</td>
+      </tr>
+      <tr>
+          <td>§5</td>
+          <td><em>1-매개변수 부분군</em> = 매끄러운 준동형 $\mathbb{R} \to G$</td>
+      </tr>
+      <tr>
+          <td>§6</td>
+          <td>항등원의 <em>1차 미분 = 생성자 $X$</em>. 모든 고차 미분이 $X^n$ 으로 환원. 테일러 급수가 $\sum (tX)^n/n!$</td>
+      </tr>
+      <tr>
+          <td>§7</td>
+          <td>이 급수 = <em>지수 사상</em> $\exp(tX)$. 미분방정식 유일성에서 자연스러움. 가환/비가환에서의 거동</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>시리즈 핵심 흐름 — 미분 → 테일러 → 지수</em> 가 본격적으로 펼쳐졌다. 이제 <em>생성자 $X$ 들이 살고 있는 공간</em> — <em>리 대수</em> — 를 본격적으로 다룰 차례.</p>
+<p>다음 <em>3부 (리 대수)</em> — §8 (항등원에서의 접공간 = 리 대수) 으로 진입. <em>생성자들의 모임이 어떤 구조 (벡터 공간 + 교환자)</em> 를 가지는지, 그 <em>공리들</em> 이 무엇인지를 본격적으로 다룬다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="active " data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

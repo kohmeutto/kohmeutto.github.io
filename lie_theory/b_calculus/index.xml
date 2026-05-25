@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calculus :: 수리전자물리학</title>
+    <link>http://localhost:1313/lie_theory/b_calculus/index.html</link>
+    <description>(b) SV matrix (b) SV discrete spectrum (b) SV continuous spectrum (b) MV matrix (b) MV discrete spectrum (b) MV continuous spectrum</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/lie_theory/b_calculus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) SV matrix</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_sv_matrix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_matrix/index.html</guid>
+      <description>1. 리 군과 미분&#xD;리 군의 매끄러움을 살리려면, 매개변수로 라벨링된 연산자 $\hat{L}(\tau)$를 미분할 수 있어야 한다. 이 장에서는 1-paramete r에서 연산자의 미분 정의(성분별)와 기본 규칙, 그리고 예제를 다룬다. 매개변수에서 한 점 만 골랐을 때 얻는 미분값이 무엇을 가리키는지도 짚는다.&#xA;2. 행렬 연산자 미분&#xD;행렬 연산자 $\hat{A}(\tau)$의 각 성분 $a_{ij}(\tau)$가 $\tau$의 함수일 때, $\hat{A}$의 미분은 각 성분을 따로 미분 해서 만든 행렬이다.</description>
+    </item>
+    <item>
+      <title>(b) SV discrete spectrum</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</guid>
+      <description>1. 일반 형태: 세 항 분해&#xD;1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.&#xA;$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).&#xA;2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:&#xA;$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert + \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert + \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:</description>
+    </item>
+    <item>
+      <title>(b) SV continuous spectrum</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html</guid>
+      <description>2. 연속 스펙트럼 분해&#xD;1) 연속 매개변수 $u$로 라벨링된 고유상태로 연산자 $A$를 분해하면&#xA;$$A = \int du\, \lambda(u)\, \vert u\rangle\langle u^d\vert$$여기서:&#xA;$\lambda(u)$는 $\vert u\rangle$에 대응되는 고유값 (연속 매개변수의 함수) $\langle u^d\vert$는 연속 기저에 대한 쌍대 기저 (§1 참조) 2) 직교성:&#xA;$$\langle u^d\vert u&#39;\rangle = \delta(u - u&#39;)$$크로네커 $\delta^i_j$ 가 디랙 $\delta(u-u&#39;)$로 바뀐다.&#xA;3) 주의: 연속 고유상태 $\vert u\rangle$ 는 보통의 힐베르트 공간 원소가 아닌 일반화된 고유상태다 (rigged Hilbert space의 원소). 형식적으로 이산 경우와 같은 식이 통하지만, 정확한 수학적 정당화는 별도 이론(분배 이론, rigged Hilbert space)에서 다뤄진다.</description>
+    </item>
+    <item>
+      <title>(b) MV matrix</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html</guid>
+      <description>1. 동기&#xD;§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.&#xA;이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.&#xA;2. 편미분 (성분별)&#xD;1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.</description>
+    </item>
+    <item>
+      <title>(b) MV discrete spectrum</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html</guid>
+      <description>1. 동기&#xD;§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 세 항 — 고유값 변화 + 켓 고유벡터 변화 + 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.&#xA;이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.&#xA;2. 다변수 스펙트럼 분해 (가정)&#xD;1) 매개변수 영역에서 $A(\tau)$ 가 비축퇴 (non-degenerate) 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.</description>
+    </item>
+    <item>
+      <title>(b) MV continuous spectrum</title>
+      <link>http://localhost:1313/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html</guid>
+      <description>1. 동기&#xD;§8 에서 1매개변수 연속 스펙트럼 미분 — 적분형 스펙트럼 분해, 연속 인덱스의 섭동, 분모 영점에서의 발산을 다루는 주값/$i\varepsilon$ 처방 — 을 다뤘다. §12 에서 이산 다변수로 확장했다.&#xA;이 장에서는 두 일반화의 결합 — 연속 스펙트럼을 가진 다변수 행렬(연산자) $A(\tau^1, \ldots, \tau^n)$ — 을 다룬다. NEGF·산란 이론·물리적 응용에서 가장 일반적인 경우다.&#xA;2. 다변수 연속 스펙트럼 분해 (가정)&#xD;1) $A(\tau)$ 가 매개변수 영역에서 연속 스펙트럼을 갖고, 고유값 함수 $\lambda(u, \tau)$ 와 고유벡터 $|u(\tau)\rangle, \langle u^d(\tau)|$ 가 매개변수와 연속 인덱스 모두에 대해 매끄럽다고 가정한다.</description>
+    </item>
+  </channel>
+</rss>

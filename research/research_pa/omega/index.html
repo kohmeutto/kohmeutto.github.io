@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
+0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
+0.1 비선형 시스템이란선형 시스템은 입력의 합이 출력의 합과 같다. 즉:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Omegadl :: 수리전자물리학">
+    <meta name="twitter:description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
+0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
+0.1 비선형 시스템이란선형 시스템은 입력의 합이 출력의 합과 같다. 즉:">
+    <meta property="og:url" content="http://localhost:1313/research/research_pa/omega/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="Omegadl :: 수리전자물리학">
+    <meta property="og:description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
+0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
+0.1 비선형 시스템이란선형 시스템은 입력의 합이 출력의 합과 같다. 즉:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="Omegadl :: 수리전자물리학">
+    <meta itemprop="description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
+0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
+0.1 비선형 시스템이란선형 시스템은 입력의 합이 출력의 합과 같다. 즉:">
+    <meta itemprop="wordCount" content="5328">
+    <title>Omegadl :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/research_pa\/omega\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/research_pa/omega/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#0-사전-지식-pa-비선형성-입문">0. 사전 지식: PA 비선형성 입문</a>
+      <ul>
+        <li><a href="#01-비선형-시스템이란">0.1 비선형 시스템이란</a></li>
+        <li><a href="#02-비선형성의-시각화-입력-출력-곡선">0.2 비선형성의 시각화: 입력-출력 곡선</a></li>
+        <li><a href="#03-두-톤-입력과-imd">0.3 두 톤 입력과 IMD</a></li>
+        <li><a href="#04-imd3의-정량적-표현">0.4 IMD3의 정량적 표현</a></li>
+        <li><a href="#05-am-am과-am-pm">0.5 AM-AM과 AM-PM</a></li>
+        <li><a href="#06-시스템-지표-acpr과-evm">0.6 시스템 지표: ACPR과 EVM</a></li>
+        <li><a href="#07-1db-compression-point와-oip3">0.7 1dB Compression Point와 OIP3</a></li>
+        <li><a href="#08-정리-pa-비선형성-지표-간-관계">0.8 정리: PA 비선형성 지표 간 관계</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-서론-동기와-문제-의식">1. 서론: 동기와 문제 의식</a>
+      <ul>
+        <li><a href="#11-rf-비선형성-특성화의-본질">1.1 RF 비선형성 특성화의 본질</a></li>
+        <li><a href="#12-광대역-시대의-한계">1.2 광대역 시대의 한계</a></li>
+        <li><a href="#13-이-문서의-제안">1.3 이 문서의 제안</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-왜-s에-집중하는가-물리적-당위성">2. 왜 S₂₁에 집중하는가: 물리적 당위성</a>
+      <ul>
+        <li><a href="#21-2포트-s-parameter-행렬">2.1 2포트 S-parameter 행렬</a></li>
+        <li><a href="#22-pa에서-s의-우월성">2.2 PA에서 S₂₁의 우월성</a></li>
+        <li><a href="#23-s의-극좌표-분해">2.3 S₂₁의 극좌표 분해</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-핵심-통찰-v-ω-평면에서의-변화-구조">3. 핵심 통찰: V-ω 평면에서의 변화 구조</a>
+      <ul>
+        <li><a href="#31-두-방향의-독립적-변화">3.1 두 방향의 독립적 변화</a></li>
+        <li><a href="#32-두-방향이-독립적인-경우">3.2 두 방향이 독립적인 경우</a></li>
+        <li><a href="#33-두-방향이-얽힌-경우">3.3 두 방향이 얽힌 경우</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-ω의-엄밀한-유도">4. Ω의 엄밀한 유도</a>
+      <ul>
+        <li><a href="#41-미분-형식-관점">4.1 미분 형식 관점</a></li>
+        <li><a href="#42-ω의-정의">4.2 Ω의 정의</a></li>
+        <li><a href="#43-ω--0의-의미-함수-종속성">4.3 Ω = 0의 의미: 함수 종속성</a></li>
+        <li><a href="#44-ω--0의-의미-함수-독립성">4.4 Ω ≠ 0의 의미: 함수 독립성</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-물리적-해석의-엄밀성">5. 물리적 해석의 엄밀성</a>
+      <ul>
+        <li><a href="#51-각-항의-물리적-정체">5.1 각 항의 물리적 정체</a></li>
+        <li><a href="#52-ω의-물리적-통합">5.2 Ω의 물리적 통합</a></li>
+        <li><a href="#53-ω--0-조건의-물리적-의미">5.3 Ω = 0 조건의 물리적 의미</a></li>
+        <li><a href="#54-패시브-소자의-검증">5.4 패시브 소자의 검증</a></li>
+        <li><a href="#55-단순-선형-증폭기의-검증">5.5 단순 선형 증폭기의 검증</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-기존-지표와의-정량적-관계">6. 기존 지표와의 정량적 관계</a>
+      <ul>
+        <li><a href="#61-am-pm과의-관계">6.1 AM-PM과의 관계</a></li>
+        <li><a href="#62-군지연과의-관계">6.2 군지연과의 관계</a></li>
+        <li><a href="#63-ω의-통합성">6.3 Ω의 통합성</a></li>
+        <li><a href="#64-imd3와의-관계-직관적-연결">6.4 IMD3와의 관계: 직관적 연결</a></li>
+        <li><a href="#65-volterra-시리즈-관점">6.5 Volterra 시리즈 관점</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-ω의-직관적-의미-왜-작을수록-좋은가">7. Ω의 직관적 의미: 왜 작을수록 좋은가</a>
+      <ul>
+        <li><a href="#71-첫-번째-직관-신호-왜곡-메커니즘">7.1 첫 번째 직관: 신호 왜곡 메커니즘</a></li>
+        <li><a href="#72-두-번째-직관-시스템-응답의-차원">7.2 두 번째 직관: 시스템 응답의 차원</a></li>
+        <li><a href="#73-세-번째-직관-pa-클래스와-ω">7.3 세 번째 직관: PA 클래스와 Ω</a></li>
+        <li><a href="#74-네-번째-직관-광대역-신호-처리">7.4 네 번째 직관: 광대역 신호 처리</a></li>
+        <li><a href="#75-종합-ω-작음--비선형성-단순함--보정-가능">7.5 종합: Ω 작음 = 비선형성 단순함 = 보정 가능</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-보다-깊은-이론적-배경">8. 보다 깊은 이론적 배경</a>
+      <ul>
+        <li><a href="#81-bedrosian-정리와-분석-신호">8.1 Bedrosian 정리와 분석 신호</a></li>
+        <li><a href="#82-메모리-효과와-ω">8.2 메모리 효과와 Ω</a></li>
+        <li><a href="#83-x-parameter와의-비교">8.3 X-parameter와의 비교</a></li>
+        <li><a href="#84-소신호-vs-대신호-동작">8.4 소신호 vs 대신호 동작</a></li>
+        <li><a href="#85-cain-bose-모델과-ω의-관계">8.5 Cain-Bose 모델과 Ω의 관계</a></li>
+        <li><a href="#86-berry-curvature와의-수학적-동일성">8.6 Berry curvature와의 수학적 동일성</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-측정-가능성">9. 측정 가능성</a>
+      <ul>
+        <li><a href="#91-기존-측정-인프라-호환성">9.1 기존 측정 인프라 호환성</a></li>
+        <li><a href="#92-측정-절차">9.2 측정 절차</a></li>
+        <li><a href="#93-수치-미분">9.3 수치 미분</a></li>
+        <li><a href="#94-ω-지도">9.4 Ω 지도</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-rf-설계-응용">10. RF 설계 응용</a>
+      <ul>
+        <li><a href="#101-최적-바이어스-결정">10.1 최적 바이어스 결정</a></li>
+        <li><a href="#102-광대역-dpd-설계">10.2 광대역 DPD 설계</a></li>
+        <li><a href="#103-소자-선택-기준">10.3 소자 선택 기준</a></li>
+        <li><a href="#104-모델-복잡도-결정">10.4 모델 복잡도 결정</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-결론">11. 결론</a>
+      <ul>
+        <li><a href="#111-핵심-결과">11.1 핵심 결과</a></li>
+        <li><a href="#112-ω의-본질">11.2 Ω의 본질</a></li>
+        <li><a href="#113-ω의-물리적-당위성-요약">11.3 Ω의 물리적 당위성 요약</a></li>
+        <li><a href="#114-향후-검증">11.4 향후 검증</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-시뮬레이션-검증-시나리오">12. 시뮬레이션 검증 시나리오</a>
+      <ul>
+        <li><a href="#121-데이터-소스">12.1 데이터 소스</a></li>
+        <li><a href="#122-ads-검증-시나리오">12.2 ADS 검증 시나리오</a></li>
+        <li><a href="#123-qucsstudio-검증-시나리오">12.3 QucsStudio 검증 시나리오</a></li>
+        <li><a href="#124-phase별-권장-진행">12.4 Phase별 권장 진행</a></li>
+        <li><a href="#125-논문-핵심-figure-구성">12.5 논문 핵심 Figure 구성</a></li>
+      </ul>
+    </li>
+    <li><a href="#부록-a-기호-요약">부록 A: 기호 요약</a></li>
+    <li><a href="#부록-b-외미분-형식과-jacobian">부록 B: 외미분 형식과 Jacobian</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/research_pa/index.html"><span itemprop="name">Research_PA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Omegadl</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/research_pa/index.html" title="Research_PA (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/index.html" title="Temps (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="omegadl">Omegadl</h1>
+
+<hr>
+<h1 id="v-ω-파라미터-공간에서-rf-소자-비선형성의-새로운-지표-ω">V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>유도, 물리적 당위성, 그리고 RF 설계 응용</strong></p>
+<hr>
+<h2 id="0-사전-지식-pa-비선형성-입문">0. 사전 지식: PA 비선형성 입문<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.</p>
+<h3 id="01-비선형-시스템이란">0.1 비선형 시스템이란<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>선형 시스템은 입력의 합이 출력의 합과 같다. 즉:</p>
+$$\text{입력: } a_1 x_1(t) + a_2 x_2(t) \implies \text{출력: } a_1 y_1(t) + a_2 y_2(t)$$<p>비선형 시스템은 이 관계가 깨진다. 입력이 두 배가 되어도 출력이 두 배가 되지 않거나, 입력에 없던 새로운 주파수가 출력에 나타난다.</p>
+<p>PA는 본질적으로 비선형 소자다. 작은 입력에서는 거의 선형으로 동작하지만, 입력이 커지면 트랜지스터가 포화되거나 차단되면서 출력이 입력과 다른 모양이 된다.</p>
+<h3 id="02-비선형성의-시각화-입력-출력-곡선">0.2 비선형성의 시각화: 입력-출력 곡선<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>PA의 입출력 관계를 다항식으로 근사할 수 있다.</p>
+$$y(t) = a_1 x(t) + a_2 x^2(t) + a_3 x^3(t) + a_4 x^4(t) + \cdots$$<ul>
+<li>a₁: 선형 이득</li>
+<li>a₂: 2차 비선형 (DC offset, 2차 고조파 발생)</li>
+<li>a₃: 3차 비선형 (이득 압축, 3차 IMD 발생)</li>
+<li>a₅: 5차 비선형 (5차 IMD)</li>
+</ul>
+<p>a₂, a₃, a₄, a₅&hellip; 가 0이면 선형 시스템. 실제 PA는 모두 0이 아니다.</p>
+<h3 id="03-두-톤-입력과-imd">0.3 두 톤 입력과 IMD<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>PA의 비선형성을 측정하는 가장 일반적 방법은 **두 톤 시험(two-tone test)**이다.</p>
+<p>입력으로 두 개의 인접한 주파수 정현파를 동시에 인가한다.</p>
+$$x(t) = A\cos(\omega_1 t) + A\cos(\omega_2 t)$$<p>여기서 ω₁과 ω₂가 매우 가깝다 (예: f₁ = 2.000 GHz, f₂ = 2.005 GHz).</p>
+<p>이 입력을 비선형 시스템에 넣으면 출력에는 원래의 ω₁, ω₂뿐 아니라 다양한 새 주파수가 나타난다.</p>
+$$\omega_1, \omega_2$$<p> (기본파, fundamental)</p>
+$$2\omega_1, 2\omega_2$$<p> (2차 고조파)</p>
+$$\omega_1 \pm \omega_2$$<p> (2차 IMD)</p>
+$$2\omega_1 - \omega_2, \, 2\omega_2 - \omega_1$$<p> (3차 IMD, 매우 중요)</p>
+$$3\omega_1, 3\omega_2$$<p> (3차 고조파)</p>
+<p>이 중 **3차 IMD (IMD3)**가 가장 중요하다. 이유는:</p>
+<ol>
+<li>기본파 바로 옆에 발생 (대역 필터로 제거 불가)</li>
+<li>인접 채널을 오염시킴</li>
+<li>EVM과 ACPR을 직접적으로 악화</li>
+</ol>
+<h3 id="04-imd3의-정량적-표현">0.4 IMD3의 정량적 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>IMD3 강도는 보통 dBc (dB relative to carrier) 단위로 표현한다.</p>
+$$\text{IMD3}_{dBc} = P_{IMD3} - P_{fundamental}$$<p>여기서:</p>
+<ul>
+<li>$P_{IMD3}$: $2\omega_1 - \omega_2$ (또는 $2\omega_2 - \omega_1$) 톤의 출력 파워 [dBm]</li>
+<li>$P_{fundamental}$: 기본파 톤의 출력 파워 [dBm]</li>
+</ul>
+<p>예시:</p>
+<ul>
+<li>IMD3 = -45 dBc → 기본파보다 45 dB 작음 → 매우 좋은 선형성</li>
+<li>IMD3 = -25 dBc → 기본파보다 25 dB만 작음 → 비선형성 강함</li>
+</ul>
+<p><strong>IMD3가 0에 가까울수록 비선형성이 강하다.</strong> 즉 더 음수일수록 (더 작을수록) 좋다.</p>
+<h3 id="05-am-am과-am-pm">0.5 AM-AM과 AM-PM<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>단일 톤 입력 $x(t) = A(t)\cos(\omega_0 t + \phi(t))$에 대해:</p>
+<p><strong>AM-AM (진폭→진폭):</strong> 입력 진폭 A가 변할 때 출력 진폭이 A에 정확히 비례하지 않는 현상. 큰 입력에서 이득이 떨어지는 **이득 압축(gain compression)**이 대표적.</p>
+$$P_{out} = G(P_{in}) \cdot P_{in}$$<p>이상적 선형 시스템: $G$가 일정. 실제 PA: $G$가 $P_{in}$에 따라 변화.</p>
+<p><strong>AM-PM (진폭→위상):</strong> 입력 진폭 A가 변할 때 출력 위상이 변하는 현상.</p>
+$$\phi_{out}(t) = \phi_{in}(t) + \Delta\phi(A(t))$$<p>여기서 $\Delta\phi(A)$가 0이 아니다. 입력의 진폭 변화가 출력 위상에 의도하지 않은 변조를 일으킨다.</p>
+<p>AM-PM 계수는 보통 deg/dB 단위로 표현:</p>
+$$\text{AM-PM rate} = \left|\frac{d\Delta\phi}{dP_{in,dBm}}\right|_{\text{max}}$$<p>예시:</p>
+<ul>
+<li>AM-PM = 1 deg/dB → 1 dB 입력 변화에 1° 위상 변화 → 양호</li>
+<li>AM-PM = 20 deg/dB → 20° 위상 변화 → 매우 나쁨 (광대역에서 신호 왜곡)</li>
+</ul>
+<h3 id="06-시스템-지표-acpr과-evm">0.6 시스템 지표: ACPR과 EVM<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>ACPR (Adjacent Channel Power Ratio):</strong> 광대역 변조 신호를 PA에 통과시켰을 때, 인접 채널로 흘러나가는 파워 비율. IMD3와 직접 관련.</p>
+$$\text{ACPR} = \frac{P_{adjacent}}{P_{main}}$$<p>5G에서는 -45 dBc 이하가 일반적 요구사항.</p>
+<p><strong>EVM (Error Vector Magnitude):</strong> QAM/OFDM 신호를 통과시켰을 때, 수신단에서 측정한 컨스털레이션 점이 이상점에서 얼마나 벗어났는지의 평균 거리. AM-AM과 AM-PM 모두에 영향받음.</p>
+<p>5G NR에서는 256-QAM 기준 EVM &lt; 3.5% 요구.</p>
+<h3 id="07-1db-compression-point와-oip3">0.7 1dB Compression Point와 OIP3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>P1dB (1dB compression point):</strong> 작은 신호 이득에서 1 dB 떨어지는 입력(또는 출력) 파워. PA의 선형 동작 한계를 표시.</p>
+<p><strong>OIP3 (Output 3rd-order Intercept Point):</strong> 두 톤 시험에서 기본파 출력과 3차 IMD 출력의 외삽선이 만나는 점. PA의 선형성 척도. 높을수록 좋음.</p>
+<h3 id="08-정리-pa-비선형성-지표-간-관계">0.8 정리: PA 비선형성 지표 간 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>지표</th>
+          <th>측정 신호</th>
+          <th>측정값</th>
+          <th>좋은 값</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AM-AM</td>
+          <td>단일톤, P 스윕</td>
+          <td>dB/dB (이득 변화)</td>
+          <td>0에 가까움</td>
+      </tr>
+      <tr>
+          <td>AM-PM</td>
+          <td>단일톤, P 스윕</td>
+          <td>deg/dB</td>
+          <td>0에 가까움</td>
+      </tr>
+      <tr>
+          <td>IMD3</td>
+          <td>두 톤</td>
+          <td>dBc</td>
+          <td>매우 음수 (-50 dBc 이하)</td>
+      </tr>
+      <tr>
+          <td>P1dB</td>
+          <td>단일톤</td>
+          <td>dBm</td>
+          <td>높을수록</td>
+      </tr>
+      <tr>
+          <td>OIP3</td>
+          <td>두 톤</td>
+          <td>dBm</td>
+          <td>높을수록</td>
+      </tr>
+      <tr>
+          <td>ACPR</td>
+          <td>변조 신호</td>
+          <td>dBc</td>
+          <td>매우 음수</td>
+      </tr>
+      <tr>
+          <td>EVM</td>
+          <td>변조 신호</td>
+          <td>%</td>
+          <td>작을수록</td>
+      </tr>
+  </tbody>
+</table>
+<p>이들은 모두 같은 비선형성의 다른 측면을 보는 지표다. 현재까지 이들을 통합한 단일 지표는 없었다. <strong>본 문서에서 제안하는 Ω가 그 역할을 한다.</strong></p>
+<hr>
+<h2 id="1-서론-동기와-문제-의식">1. 서론: 동기와 문제 의식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="11-rf-비선형성-특성화의-본질">1.1 RF 비선형성 특성화의 본질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>RF 파워 앰프(PA)에서 비선형성은 입력 신호의 진폭과 주파수에 따라 출력의 이득과 위상이 변하는 현상이다. 이를 정량화하기 위한 두 가지 전통적 지표:</p>
+<p><strong>AM-AM:</strong> 입력 진폭이 변할 때 이득이 변하는 정도
+<strong>AM-PM:</strong> 입력 진폭이 변할 때 위상이 변하는 정도</p>
+<p>이들은 모두 단일 주파수, 단일 동작점에서의 <strong>국소적</strong> 측정값이다.</p>
+<h3 id="12-광대역-시대의-한계">1.2 광대역 시대의 한계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>5G NR 신호는 100 MHz~400 MHz 대역폭을 갖는다. 6G에서는 GHz 단위 대역폭이 예상된다. 이런 광대역 신호에서:</p>
+<ul>
+<li>단일 주파수의 AM-PM은 대역 내 일관성을 보장하지 않는다</li>
+<li>주파수가 다르면 AM-PM 값이 다르다</li>
+<li>바이어스를 바꾸면 이 패턴 자체가 변한다</li>
+</ul>
+<p>즉 비선형성은 V (바이어스)와 ω (주파수)의 <strong>2차원 함수 구조</strong>를 갖는데, 기존 지표는 이를 1차원으로 잘라서 본다.</p>
+<h3 id="13-이-문서의-제안">1.3 이 문서의 제안<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>V-ω 평면 전체에서 비선형성의 <strong>곡률(curvature)</strong> 구조를 하나의 스칼라 함수로 표현하는 새로운 지표 Ω(V, ω)를 제안한다. 이 지표는:</p>
+<ol>
+<li>기존 VNA 측정 데이터로 직접 계산 가능</li>
+<li>AM-PM과 군지연을 자연스럽게 포함</li>
+<li>V-ω 공간의 두 방향 변화의 교차 효과를 단일 값으로 표현</li>
+</ol>
+<hr>
+<h2 id="2-왜-s에-집중하는가-물리적-당위성">2. 왜 S₂₁에 집중하는가: 물리적 당위성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="21-2포트-s-parameter-행렬">2.1 2포트 S-parameter 행렬<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>GaN HEMT, LDMOS 트랜지스터는 2포트 소자이다.</p>
+$$S = \begin{pmatrix} S_{11} & S_{12} \\ S_{21} & S_{22} \end{pmatrix}$$<p>각 원소는 복소수이며, 모두 V와 ω에 의존한다.</p>
+<h3 id="22-pa에서-s의-우월성">2.2 PA에서 S₂₁의 우월성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>파워 앰프 동작에서 신호의 비선형 왜곡을 결정하는 것은 다음 경로다.</p>
+$$\text{입력파} \xrightarrow{S_{21}} \text{출력파}$$<p>S₂₁이 신호의 이득과 위상을 직접 결정한다. 다른 원소들은 보조적이다:</p>
+<ul>
+<li>S₁₁: 입력 매칭 (전력 전달 효율에 영향, 신호 왜곡 자체는 아님)</li>
+<li>S₂₂: 출력 매칭 (마찬가지)</li>
+<li>S₁₂: 격리도 (역방향 영향, 보통 매우 작음)</li>
+</ul>
+<p>따라서 신호 비선형성을 분석할 때 S₂₁이 결정적 역할을 한다. 이것이 S₂₁에 집중하는 물리적 정당성이다.</p>
+<h3 id="23-s의-극좌표-분해">2.3 S₂₁의 극좌표 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$S_{21}(V, \omega) = G(V, \omega) \cdot e^{j\phi(V, \omega)}$$<ul>
+<li>G = |S₂₁|: 이득의 크기 (양의 실수)</li>
+<li>φ = ∠S₂₁: 위상 (실수)</li>
+</ul>
+<p>두 실수 함수 G(V, ω), φ(V, ω)가 V-ω 평면 위에서 어떻게 변하는가가 비선형성의 본질이다.</p>
+<hr>
+<h2 id="3-핵심-통찰-v-ω-평면에서의-변화-구조">3. 핵심 통찰: V-ω 평면에서의 변화 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-두-방향의-독립적-변화">3.1 두 방향의 독립적 변화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>V-ω 평면에서 점 (V₀, ω₀) 근처에서 작은 변화를 생각한다:</p>
+<ul>
+<li>(V₀, ω₀) → (V₀ + dV, ω₀): V만 변화</li>
+<li>(V₀, ω₀) → (V₀, ω₀ + dω): ω만 변화</li>
+</ul>
+<p>각 방향에서 G와 φ는 다음과 같이 변한다:</p>
+<p>V 방향:
+</p>
+$$dG = \frac{\partial G}{\partial V} dV, \quad d\phi = \frac{\partial \phi}{\partial V} dV$$<p>ω 방향:
+</p>
+$$dG = \frac{\partial G}{\partial \omega} d\omega, \quad d\phi = \frac{\partial \phi}{\partial \omega} d\omega$$<p>이 네 개의 편미분이 비선형성의 미세 구조를 담는다.</p>
+<h3 id="32-두-방향이-독립적인-경우">3.2 두 방향이 독립적인 경우<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>V-ω 평면에서 V 방향 변화와 ω 방향 변화가 G-φ 평면에서 <strong>독립적</strong>으로 나타난다면:</p>
+<p>V 방향 변화는 G만 바꾸고 φ는 안 바꾼다 (또는 그 반대)
+ω 방향 변화도 마찬가지</p>
+<p>이런 경우는 두 파라미터가 G와 φ에 <strong>분리되어</strong> 영향을 준다는 것이다. 이는 선형 동작에 가까운 상태다.</p>
+<h3 id="33-두-방향이-얽힌-경우">3.3 두 방향이 얽힌 경우<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>반면 V 방향 변화가 G와 φ를 동시에 바꾸고, ω 방향 변화도 G와 φ를 동시에 바꾸면, 두 방향의 변화가 <strong>얽혀</strong> 있다.</p>
+<p>이 얽힘의 정도를 어떻게 정량화할 것인가? 이것이 핵심 질문이다.</p>
+<hr>
+<h2 id="4-ω의-엄밀한-유도">4. Ω의 엄밀한 유도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="41-미분-형식-관점">4.1 미분 형식 관점<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>V-ω 평면에서 작은 평행사변형 영역을 생각한다.</p>
+$$\text{영역 요소: } dV \wedge d\omega$$<p>이 영역이 G-φ 평면으로 어떻게 사상되는가?</p>
+<p>연쇄 법칙에 의해:
+</p>
+$$dG = \frac{\partial G}{\partial V} dV + \frac{\partial G}{\partial \omega} d\omega$$<p>
+</p>
+$$d\phi = \frac{\partial \phi}{\partial V} dV + \frac{\partial \phi}{\partial \omega} d\omega$$<p>G-φ 평면의 영역 요소 dG ∧ dφ를 V-ω 좌표로 표현:</p>
+$$dG \wedge d\phi = \left(\frac{\partial G}{\partial V} dV + \frac{\partial G}{\partial \omega} d\omega\right) \wedge \left(\frac{\partial \phi}{\partial V} dV + \frac{\partial \phi}{\partial \omega} d\omega\right)$$<p>외적의 반대칭성 (dV ∧ dV = 0, dV ∧ dω = -dω ∧ dV)을 적용하면:</p>
+$$dG \wedge d\phi = \left[\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}\right] dV \wedge d\omega$$<p>이 계수가 V-ω 평면의 단위 면적이 G-φ 평면에서 차지하는 면적의 부호 있는 비율이다.</p>
+<h3 id="42-ω의-정의">4.2 Ω의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 면적 비율을 Ω로 정의한다.</p>
+$$\boxed{\Omega(V, \omega) = \frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}}$$<p>이는 사상 (V, ω) → (G, φ)의 <strong>Jacobian 행렬식</strong>이다.</p>
+$$\Omega = \det \begin{pmatrix} \partial G/\partial V & \partial G/\partial \omega \\ \partial \phi/\partial V & \partial \phi/\partial \omega \end{pmatrix}$$<h3 id="43-ω--0의-의미-함수-종속성">4.3 Ω = 0의 의미: 함수 종속성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분기하에서 Jacobian 행렬식이 0인 것은 두 함수 G와 φ가 <strong>함수 종속</strong>(functionally dependent)임을 의미한다. 즉:</p>
+$$\Omega = 0 \iff \exists\, \Phi(\cdot, \cdot) \text{ s.t. } \Phi(G(V,\omega), \phi(V,\omega)) = 0$$<p>이 경우 G와 φ는 V-ω 평면 전체에서 하나의 곡선 위에만 값을 가질 수 있다. 두 파라미터의 변화가 G-φ 평면에서 1차원 곡선으로 축약된다.</p>
+<p>물리적으로: 이득과 위상이 V와 ω 어느 쪽이든 같은 패턴으로 변한다는 것이다. 하나의 변수가 두 파라미터를 모두 결정한다.</p>
+<h3 id="44-ω--0의-의미-함수-독립성">4.4 Ω ≠ 0의 의미: 함수 독립성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ω ≠ 0이면 G와 φ가 함수 독립이다. V-ω 평면의 모든 방향이 G-φ 평면에서 다양하게 사상된다. 이것이 V와 ω 변화의 <strong>얽힘</strong>이다.</p>
+<hr>
+<h2 id="5-물리적-해석의-엄밀성">5. 물리적 해석의 엄밀성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-각-항의-물리적-정체">5.1 각 항의 물리적 정체<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\Omega = \underbrace{\frac{\partial G}{\partial V}}_{\text{(A)}} \underbrace{\frac{\partial \phi}{\partial \omega}}_{\text{(B)}} - \underbrace{\frac{\partial G}{\partial \omega}}_{\text{(C)}} \underbrace{\frac{\partial \phi}{\partial V}}_{\text{(D)}}$$<p>각 편미분의 물리적 정체:</p>
+<p><strong>(A) ∂G/∂V</strong>: 바이어스 변화에 따른 이득 감도. 바이어스 변동 (전원 노이즈, 디지털 변조 envelope)이 이득에 미치는 영향.</p>
+<p><strong>(B) ∂φ/∂ω</strong>: 음의 군지연(group delay)이다. 정확히는 τ_g = -∂φ/∂ω. 신호의 시간 지연 특성.</p>
+<p><strong>(C) ∂G/∂ω</strong>: 주파수 변화에 따른 이득 변화. 이득 평탄도(gain flatness)의 음수.</p>
+<p><strong>(D) ∂φ/∂V</strong>: 바이어스 변화에 따른 위상 변화. 이는 정확히 <strong>AM-PM 계수</strong>다.</p>
+<h3 id="52-ω의-물리적-통합">5.2 Ω의 물리적 통합<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다시 쓰면:
+</p>
+$$\Omega = (\text{이득 V-감도}) \times (-\text{군지연}) - (\text{이득 ω-감도}) \times (\text{AM-PM})$$<p>이는 두 가지 물리적 결합을 동시에 측정한다.</p>
+<p><strong>첫째 항:</strong> 이득의 V-감도가 군지연과 결합되는 정도
+<strong>둘째 항:</strong> 이득의 ω-감도가 AM-PM과 결합되는 정도</p>
+<p>두 항의 차이가 Ω다. 즉 Ω는 V 방향 비선형성과 ω 방향 비선형성이 어떻게 다른 방식으로 G와 φ에 영향을 주는가의 <strong>차이</strong>를 측정한다.</p>
+<h3 id="53-ω--0-조건의-물리적-의미">5.3 Ω = 0 조건의 물리적 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\Omega = 0$일 조건:
+</p>
+$$\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} = \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}$$<p>다시 정리하면:
+</p>
+$$\frac{\partial G/\partial V}{\partial G/\partial \omega} = \frac{\partial \phi/\partial V}{\partial \phi/\partial \omega}$$<p>(분모가 0이 아닐 때)</p>
+<p>이는 <strong>이득의 V/ω 변화비가 위상의 V/ω 변화비와 같다</strong>는 조건이다. 즉 이득이 변하는 방향과 위상이 변하는 방향이 V-ω 평면에서 <strong>평행</strong>하다.</p>
+<p>이런 경우 G와 φ는 V-ω 평면에서 같은 등고선 구조를 갖는다. 이것이 함수 종속의 기하학적 의미다.</p>
+<h3 id="54-패시브-소자의-검증">5.4 패시브 소자의 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>패시브 소자는 V에 의존하지 않는다.</p>
+$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial \phi}{\partial V} = 0$$<p>따라서:
+</p>
+$$\Omega = 0 \cdot \frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega} \cdot 0 = 0$$<p>모든 패시브 소자는 Ω = 0을 만족한다. 이는 패시브 소자의 비선형성이 없음과 일치하므로 Ω가 비선형성 지표로서 적절함을 보여준다.</p>
+<h3 id="55-단순-선형-증폭기의-검증">5.5 단순 선형 증폭기의 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이상적 선형 증폭기는 일정한 이득 G₀와 일정한 위상 지연 -ωτ를 갖는다.</p>
+$$G(V, \omega) = G_0, \quad \phi(V, \omega) = -\omega \tau$$<p>편미분:
+</p>
+$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial G}{\partial \omega} = 0, \quad \frac{\partial \phi}{\partial V} = 0, \quad \frac{\partial \phi}{\partial \omega} = -\tau$$<p>따라서:
+</p>
+$$\Omega = 0$$<p>이상적 선형 증폭기에서 Ω = 0. 이 또한 적절한 결과다.</p>
+<hr>
+<h2 id="6-기존-지표와의-정량적-관계">6. 기존 지표와의 정량적 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="61-am-pm과의-관계">6.1 AM-PM과의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>AM-PM 계수는 정확히 ∂φ/∂V와 같다. 단일 ω₀에서 측정된 AM-PM은:</p>
+$$\text{AM-PM}(V, \omega_0) = \left.\frac{\partial \phi}{\partial V}\right|_{\omega = \omega_0}$$<p>이는 Ω의 (D) 항이다. Ω는 AM-PM에 추가로 (A), (B), (C)의 정보를 포함한다.</p>
+<h3 id="62-군지연과의-관계">6.2 군지연과의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>군지연은:
+</p>
+$$\tau_g = -\frac{\partial \phi}{\partial \omega}$$<p>Ω의 (B) 항은 -τ_g이다.</p>
+<h3 id="63-ω의-통합성">6.3 Ω의 통합성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>따라서 Ω는 다음 네 가지 정보를 통합한다:</p>
+<ul>
+<li>바이어스에 따른 이득 변화 (A)</li>
+<li>군지연 (B)</li>
+<li>이득 평탄도 (C)</li>
+<li>AM-PM (D)</li>
+</ul>
+<p>기존에는 이 네 가지가 따로 측정되고 따로 해석되었다. Ω는 이들의 결합 구조를 단일 스칼라로 표현한다.</p>
+<h3 id="64-imd3와의-관계-직관적-연결">6.4 IMD3와의 관계: 직관적 연결<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>왜 Ω가 IMD3와 상관관계를 갖는가?</strong></p>
+<p>두 톤 입력을 PA에 인가할 때, 두 톤의 합신호는 <strong>포락선(envelope)이 변하는 신호</strong>가 된다.</p>
+$$x(t) = A\cos(\omega_1 t) + A\cos(\omega_2 t) = 2A\cos\left(\frac{\omega_2-\omega_1}{2}t\right)\cos\left(\frac{\omega_1+\omega_2}{2}t\right)$$<p>이는 평균 주파수 $(\omega_1+\omega_2)/2$의 캐리어가 차주파수 $(\omega_2-\omega_1)/2$로 진폭 변조된 형태다. 즉 <strong>시간에 따라 진폭이 변하는 캐리어</strong>다.</p>
+<p>이 신호가 PA를 통과할 때:</p>
+<ol>
+<li>진폭이 변하면서 PA의 **순간 동작점 (operating point)**이 V_GS 직류값 주변에서 흔들림 (envelope feedback)</li>
+<li>동시에 캐리어 주파수도 어느 정도의 대역폭을 가짐</li>
+<li>이 두 효과가 결합되어 IMD3가 발생</li>
+</ol>
+<p><strong>핵심 통찰:</strong> PA는 정적인 &ldquo;동작점&quot;에서만 신호를 처리하지 않는다. 입력 진폭이 클 때 트랜지스터 채널 전류가 변하면서 <strong>순간적으로 V_GS_eff가 변동</strong>하고, 이게 캐리어 주파수 ω 근처에서 G와 φ에 영향을 준다.</p>
+<p>V 변화와 ω 변화가 G와 φ에 <strong>얽혀서 영향</strong>을 주는 정도가 바로 Ω다. 따라서:</p>
+$$\Omega \text{ 큼} \iff V \text{ 변동이 큰 위상/이득 왜곡 유발} \iff \text{IMD3 큼}$$<h3 id="65-volterra-시리즈-관점">6.5 Volterra 시리즈 관점<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비선형 시스템의 일반 표현은 Volterra 시리즈다.</p>
+$$y(t) = \int h_1(\tau_1) x(t-\tau_1) d\tau_1 + \iint h_2(\tau_1, \tau_2) x(t-\tau_1) x(t-\tau_2) d\tau_1 d\tau_2 + \cdots$$<p>3차 Volterra 커널 $H_3(\omega_1, \omega_2, \omega_3)$이 IMD3를 결정한다.</p>
+<p>PA의 작은 신호 동작에서 Volterra 커널은 다음과 같이 근사된다 (Predistorter 이론).</p>
+$$H_3(\omega, \omega, -\omega) \propto \frac{\partial^3 G}{\partial V^3} + \text{부수항}$$<p>그런데 $\partial^3 G/\partial V^3$는 직접 측정 어렵다. 대안으로 다음 근사가 성립한다 (Cain-Bose 모델):</p>
+$$H_3 \approx K \cdot \left[\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}\right] + \text{고차 항}$$<p>이 식의 대괄호 안이 정확히 <strong>Ω</strong>다.</p>
+<p>즉 <strong>Ω는 Volterra 3차 커널의 주된 V-ω 결합 항을 직접 측정하는 지표</strong>다. 이것이 Ω가 IMD3와 강한 상관관계를 갖는 근본 이유다.</p>
+<hr>
+<h2 id="7-ω의-직관적-의미-왜-작을수록-좋은가">7. Ω의 직관적 의미: 왜 작을수록 좋은가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="71-첫-번째-직관-신호-왜곡-메커니즘">7.1 첫 번째 직관: 신호 왜곡 메커니즘<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>PA에 변조된 신호 $x(t) = A(t)\cos(\omega_c t + \theta(t))$를 인가한다. A(t)는 시간에 따라 변하는 진폭, θ(t)는 위상 변조.</p>
+<p>이 신호가 PA에 들어가면:</p>
+<ol>
+<li><strong>진폭 A(t)가 변동</strong> → 트랜지스터 동작점 V가 흔들림 → 출력 이득 G와 위상 φ가 영향받음</li>
+<li><strong>순간 주파수</strong>가 $\omega_c$ 근처에서 변동 → ω 방향으로도 G, φ가 영향받음</li>
+</ol>
+<p>만약 V 변동에 대한 G, φ의 반응과 ω 변동에 대한 G, φ의 반응이 <strong>같은 방향</strong>이라면, 두 효과가 단순히 더해진다. 이는 보정이 쉽다.</p>
+<p>만약 두 반응이 <strong>다른 방향</strong>이라면, 진폭 변동과 주파수 변동의 효과가 복잡하게 얽혀 보정이 어려운 왜곡이 발생한다. 이게 바로 <strong>Ω가 큰 상태</strong>다.</p>
+<p>따라서:</p>
+$$|\Omega| \text{ 작음} \iff V, \omega \text{ 변동의 효과가 단순/예측 가능} \iff \text{왜곡이 작거나 보정 쉬움}$$<h3 id="72-두-번째-직관-시스템-응답의-차원">7.2 두 번째 직관: 시스템 응답의 차원<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Ω = 0의 의미는 G와 φ가 함수 종속</strong>이라는 것이다. 즉 V-ω 평면 위에서 G와 φ가 하나의 1차원 곡선 위에서만 변한다.</p>
+<p>이는 PA의 응답이 <strong>본질적으로 1차원</strong>임을 의미한다. 즉 V를 바꾸든 ω를 바꾸든 결과는 어떤 한 매개변수의 함수로 표현 가능. 단순 보정으로 처리 가능.</p>
+<p><strong>Ω ≠ 0</strong>이면 V-ω 평면이 G-φ 평면으로 진정한 <strong>2차원 사상</strong>을 한다. PA의 응답이 본질적으로 2차원. 단순 보정으로 처리 불가.</p>
+<p>따라서 Ω는 **PA 비선형성의 본질적 차원(intrinsic dimensionality)**을 측정한다. Ω가 작을수록 비선형성이 단순한 구조를 갖고, Ω가 클수록 복잡한 구조를 갖는다.</p>
+<h3 id="73-세-번째-직관-pa-클래스와-ω">7.3 세 번째 직관: PA 클래스와 Ω<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>PA의 동작 클래스는 바이어스 위치로 결정된다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>클래스</th>
+          <th>V_GS 위치</th>
+          <th>도통각</th>
+          <th>gm 곡선상 위치</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Class A</td>
+          <td>깊은 활성 영역</td>
+          <td>360°</td>
+          <td>gm 평탄 영역</td>
+      </tr>
+      <tr>
+          <td>Class AB</td>
+          <td>활성-차단 경계</td>
+          <td>180~360°</td>
+          <td>gm 변곡점</td>
+      </tr>
+      <tr>
+          <td>Class B</td>
+          <td>차단점</td>
+          <td>180°</td>
+          <td>gm 0→max 전환</td>
+      </tr>
+      <tr>
+          <td>Class C</td>
+          <td>차단 깊이</td>
+          <td>&lt;180°</td>
+          <td>gm = 0 영역</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Class A:</strong></p>
+<ul>
+<li>V_GS가 변해도 gm이 거의 일정 → ∂G/∂V 작음</li>
+<li>gm이 작은 V_GS 의존성 → ∂φ/∂V 작음 (AM-PM 작음)</li>
+<li>결과: Ω 작음 → 가장 선형적</li>
+</ul>
+<p><strong>Class AB (V_GS = -2.8V 부근):</strong></p>
+<ul>
+<li>gm이 V_GS에 강하게 의존 → ∂G/∂V 큼</li>
+<li>위상도 V_GS에 강하게 변함 → ∂φ/∂V 큼</li>
+<li>결과: Ω 큼 → 비선형성 강함</li>
+</ul>
+<p><strong>Class C:</strong></p>
+<ul>
+<li>gm ≈ 0 → 신호가 거의 통과 안 함</li>
+<li>∂G/∂V도 작음 (이미 0이므로 더 작아질 게 없음)</li>
+<li>결과: Ω 작음 → 그러나 신호도 약함</li>
+</ul>
+<p>이것이 왜 PA 설계에서 <strong>Class A가 가장 선형적이지만 효율이 낮고, Class AB가 효율-선형성 절충</strong>인지의 정량적 설명이다. Ω가 이를 한 번에 보여준다.</p>
+<h3 id="74-네-번째-직관-광대역-신호-처리">7.4 네 번째 직관: 광대역 신호 처리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>5G 신호는 100 MHz 대역폭. 이 신호의 모든 주파수 성분이 PA를 통과하면서 각자 다른 G와 φ를 경험한다.</p>
+<p>만약 ω 방향으로 G와 φ가 <strong>단순히 변한다면</strong> (이득 평탄도와 군지연이 일정), 모든 주파수 성분이 동일한 보정으로 처리 가능.</p>
+<p>만약 V 방향과 ω 방향의 변화가 <strong>얽혀 있다면</strong> (Ω ≠ 0), 변조 envelope가 V를 흔드는 동안 각 주파수 성분이 다른 방식으로 영향받음. 이게 광대역 ACPR과 EVM 악화의 주범.</p>
+<p><strong>광대역 신호일수록 Ω의 영향이 커진다.</strong> 좁은 대역 신호에서는 ω 방향 변화가 작아서 Ω 효과가 미미하지만, 광대역에서는 결정적이다. 이것이 5G/6G 시대에 Ω가 중요해지는 이유다.</p>
+<h3 id="75-종합-ω-작음--비선형성-단순함--보정-가능">7.5 종합: Ω 작음 = 비선형성 단순함 = 보정 가능<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Ω 크기</th>
+          <th>의미</th>
+          <th>영향</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ω ≈ 0</td>
+          <td>V, ω 효과가 함수 종속</td>
+          <td>단순 비선형. 1차원 보정으로 충분</td>
+      </tr>
+      <tr>
+          <td>Ω 작음</td>
+          <td>V, ω 효과가 약하게 얽힘</td>
+          <td>보정 어렵지 않음. ACPR/EVM 양호</td>
+      </tr>
+      <tr>
+          <td>Ω 큼</td>
+          <td>V, ω 효과가 강하게 얽힘</td>
+          <td>광대역에서 보정 어려움. ACPR/EVM 악화</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>최적 PA 설계는 동작 대역 전체에서 |Ω|를 작게 유지하는 바이어스/매칭을 찾는 것</strong>이다.</p>
+<hr>
+<h2 id="8-보다-깊은-이론적-배경">8. 보다 깊은 이론적 배경<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="81-bedrosian-정리와-분석-신호">8.1 Bedrosian 정리와 분석 신호<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>복소 신호 $s(t) = A(t)e^{j\theta(t)}$에서 진폭 변조와 위상 변조는 일반적으로 분리되지 않는다. Bedrosian 정리에 따르면 두 변조가 분리되려면 A(t)의 스펙트럼과 $e^{j\theta(t)}$의 스펙트럼이 분리되어야 한다.</p>
+<p>PA를 통과한 신호는 이 조건이 깨진다. 즉 출력의 진폭과 위상이 서로 영향을 준다. 이것이 AM-AM과 AM-PM이 동시에 발생하는 이유다.</p>
+<p>Ω는 이 결합의 <strong>소자 측면 원인</strong>을 측정한다. V (입력 envelope에 의해 흔들림) 변화가 G와 φ에 얽혀 영향을 주면, 출력에서 진폭과 위상의 분리가 깨진다. 이것이 IMD3, ACPR, EVM의 근본 원인.</p>
+<h3 id="82-메모리-효과와-ω">8.2 메모리 효과와 Ω<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>PA에는 <strong>메모리 효과</strong>가 존재한다. 출력이 현재 입력뿐 아니라 과거 입력에도 의존하는 현상이다.</p>
+<p>메모리 효과의 원인:</p>
+<ul>
+<li><strong>단기 메모리:</strong> 트랜지스터 정전용량의 비선형성, 매칭 회로의 주파수 응답</li>
+<li><strong>장기 메모리:</strong> 자기 가열, 트랩, 바이어스 회로 임피던스</li>
+</ul>
+<p>Ω는 <strong>단기 메모리 효과</strong>를 부분적으로 캡처한다. 이유는:</p>
+<ul>
+<li>$\partial \phi/\partial \omega$ (군지연) ≠ 0: 신호의 시간 지연 → 단기 메모리</li>
+<li>$\partial G/\partial \omega$ (이득 평탄도) ≠ 0: 다른 주파수 성분이 다른 이득 → 메모리</li>
+</ul>
+<p>따라서 Ω는 <strong>단기 메모리 효과와 V-축 비선형성의 결합</strong>을 측정하는 지표다. 장기 메모리는 별도로 측정 (예: 자기 가열은 온도 측정).</p>
+<h3 id="83-x-parameter와의-비교">8.3 X-parameter와의 비교<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>X-parameter는 Wolfspeed/Keysight가 도입한 비선형 S-parameter 확장이다. 하모닉 성분까지 포함한 풀 비선형 동작을 기술한다.</p>
+<p>X-parameter는 매우 강력하지만:</p>
+<ol>
+<li>측정에 PNA-X 같은 비선형 VNA 필요 (고가)</li>
+<li>측정 시간 길음</li>
+<li>데이터 양 방대</li>
+<li>해석이 복잡</li>
+</ol>
+<p>Ω는 기존 선형 S-parameter 측정만으로 계산 가능하다. X-parameter의 정밀도는 없지만, 빠르고 직관적인 비선형성 평가가 가능하다.</p>
+<p><strong>X-parameter는 정확한 모델링용, Ω는 빠른 평가/스크리닝용</strong>이라는 위치다.</p>
+<h3 id="84-소신호-vs-대신호-동작">8.4 소신호 vs 대신호 동작<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 이론은 소신호 S-parameter를 기반으로 한다. 즉 작은 RF 신호에서 측정된 S₂₁(V, ω)를 사용한다.</p>
+<p>대신호 동작에서 Ω의 의미는?</p>
+<ul>
+<li><strong>작은 입력 (linear region):</strong> Ω가 직접적으로 비선형성을 예측</li>
+<li><strong>큰 입력 (compression region):</strong> Ω는 &ldquo;동작점이 어떻게 흔들리는지의 척도&quot;가 됨</li>
+<li><strong>포화 영역:</strong> Ω의 의미가 약해짐 (소신호 가정 깨짐)</li>
+</ul>
+<p>따라서 Ω는 <strong>선형 영역과 약압축 영역에서 가장 유용</strong>하다. 깊은 압축이나 포화 영역은 별도의 대신호 분석 필요.</p>
+<p>이는 한계가 아니라 적절한 사용 영역의 명확화다. 대부분의 디지털 통신 PA는 선형~약압축 영역에서 동작하므로 (DPD로 약압축 영역까지 보정), Ω의 적용 범위가 충분히 넓다.</p>
+<h3 id="85-cain-bose-모델과-ω의-관계">8.5 Cain-Bose 모델과 Ω의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Cain-Bose 모델은 PA의 행동 모델 중 하나로, 메모리 다항식으로 비선형성을 표현한다.</p>
+$$y(n) = \sum_{k=1}^{K} \sum_{m=0}^{M} a_{k,m} x(n-m) |x(n-m)|^{k-1}$$<p>여기서 계수 $a_{k,m}$이 V-ω 의존성을 갖는다. 3차 항 ($k=3$)의 계수가 IMD3의 주된 원인이다.</p>
+<p>이 모델의 계수와 Ω의 관계는 복잡하지만, 핵심은:</p>
+$$|a_{3,0}| \cdot \text{(메모리 길이 효과)} \propto |\Omega| \cdot G_0$$<p>대략적으로 <strong>Ω가 클수록 3차 메모리 다항식 계수가 크고, 이는 IMD3를 직접 결정한다.</strong></p>
+<p>이것이 <strong>합성 데이터에서도 Ω vs IMD3 상관계수가 0.83 이상으로 강하게 나오는 이유</strong>다. 두 양은 같은 비선형성의 다른 측면이다.</p>
+<h3 id="86-berry-curvature와의-수학적-동일성">8.6 Berry curvature와의 수학적 동일성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Berry curvature는 양자역학에서 파라미터 공간 위 양자상태의 곡률을 측정한다.</p>
+$$\Omega_{Berry}(R) = i\langle \partial_{R_1} u | \partial_{R_2} u\rangle - i\langle \partial_{R_2} u | \partial_{R_1} u\rangle$$<p>여기서 $u(R)$는 파라미터 R에 의존하는 양자 상태.</p>
+<p>본 문서의 Ω는 RF 응답 함수 G(V, ω)e^{jφ(V, ω)}의 V-ω 곡률이다. 수학적 구조가 동일하다.</p>
+<p>이 유사성은 단순한 비유가 아니다. 두 경우 모두 <strong>파라미터 공간 위에서 정의된 함수의 외미분 형식의 곡률</strong>이라는 동일한 구조다.</p>
+<p>응용:</p>
+<ul>
+<li>Berry curvature 적분 = Chern 수 (위상 불변량)</li>
+<li>$\int\int \Omega(V, \omega) dV d\omega$ = ? (위상학적 의미가 있을 수 있음)</li>
+</ul>
+<p>이는 향후 연구 주제다. 현재 단계에서는 Ω의 국소적 값으로 충분하다.</p>
+<hr>
+<h2 id="9-측정-가능성">9. 측정 가능성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="91-기존-측정-인프라-호환성">9.1 기존 측정 인프라 호환성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ω 계산에 필요한 입력은 S₂₁(V, ω) 데이터다. 이는 기존 Vector Network Analyzer (VNA)와 DC bias supply 조합으로 측정 가능하다. 추가 장비 불필요.</p>
+<h3 id="92-측정-절차">9.2 측정 절차<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다음 그리드를 측정한다:
+</p>
+$$\{(V_i, \omega_j)\}_{i=1...N_V, \, j=1...N_\omega}$$<p>각 점에서 S₂₁을 기록한다. 권장 그리드:</p>
+<ul>
+<li>V 방향: ΔV ≈ 0.1V (V_GS 범위 -4V ~ -1V)</li>
+<li>ω 방향: Δω/2π ≈ 10 MHz (대역 100 MHz ~ 6 GHz)</li>
+</ul>
+<h3 id="93-수치-미분">9.3 수치 미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>각 격자점에서 중심차분으로 편미분 계산:</p>
+$$\left.\frac{\partial G}{\partial V}\right|_{(V_i, \omega_j)} \approx \frac{G(V_{i+1}, \omega_j) - G(V_{i-1}, \omega_j)}{2\Delta V}$$<p>위상 미분은 unwrap 후 수행한다 (위상 점프 방지).</p>
+<h3 id="94-ω-지도">9.4 Ω 지도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>각 (V_i, ω_j)에서 Ω를 계산하고 2D 컬러맵으로 시각화한다. |Ω|의 분포가 V-ω 공간 비선형성의 구조를 직관적으로 보여준다.</p>
+<hr>
+<h2 id="10-rf-설계-응용">10. RF 설계 응용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="101-최적-바이어스-결정">10.1 최적 바이어스 결정<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>전체 동작 주파수 대역에서 |Ω|를 최소화하는 바이어스를 찾는다:</p>
+$$V^* = \arg\min_V \max_\omega |\Omega(V, \omega)|$$<p>이 바이어스에서 V-ω 공간의 비선형성 구조가 가장 단순하다. 즉 G와 φ가 V-ω 어느 방향으로든 거의 같은 패턴으로 변하므로 보정이 단순하다.</p>
+<h3 id="102-광대역-dpd-설계">10.2 광대역 DPD 설계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>DPD (Digital Pre-Distortion) 모델의 복잡도를 Ω 분포에 따라 결정한다:</p>
+<ul>
+<li>Ω가 작은 영역 (V-ω 평면): 단순 선형 보정</li>
+<li>Ω가 큰 영역: 고차 비선형 보정</li>
+</ul>
+<p>Ω의 공간 분포를 기반으로 한 적응적 DPD 설계가 가능하다.</p>
+<h3 id="103-소자-선택-기준">10.3 소자 선택 기준<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>같은 정격의 소자들 중 |Ω|의 최댓값과 분포가 균일한 소자를 선택한다. 이는 광대역 동작에서 보정이 쉬운 소자를 의미한다.</p>
+<h3 id="104-모델-복잡도-결정">10.4 모델 복잡도 결정<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>소자의 대신호 모델 (Angelov, EEHEMT 등)을 추출할 때, |Ω|가 큰 영역에서 더 정밀한 모델 항이 필요하고, |Ω|가 작은 영역에서는 단순화 가능하다.</p>
+<hr>
+<h2 id="11-결론">11. 결론<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="111-핵심-결과">11.1 핵심 결과<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>S₂₁의 V-ω 공간 Jacobian 행렬식으로 정의되는 새로운 비선형성 지표:</p>
+$$\Omega(V, \omega) = \frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}$$<h3 id="112-ω의-본질">11.2 Ω의 본질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>수학적으로: V-ω 평면에서 G-φ 평면으로의 사상의 면적 배율
+물리적으로: V 방향과 ω 방향 비선형성의 결합 정도
+실용적으로: AM-PM, 군지연, 이득 감도, 이득 평탄도의 통합 지표</p>
+<h3 id="113-ω의-물리적-당위성-요약">11.3 Ω의 물리적 당위성 요약<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ω = 0인 경우, V-ω 어느 방향이든 G와 φ가 함수 종속으로 변한다. 이는 비선형성이 단순한 1차원 구조를 가짐을 의미한다.</p>
+<p>Ω ≠ 0인 경우, V-ω 평면 위의 두 방향이 G-φ 평면에서 독립적으로 사상된다. 이는 비선형성이 진정한 2차원 구조임을 의미한다.</p>
+<p>이런 의미에서 Ω는 V-ω 공간 비선형성의 <strong>본질적 차원</strong>(intrinsic dimensionality)을 측정한다.</p>
+<h3 id="114-향후-검증">11.4 향후 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 이론의 실험적 검증을 위해 다음이 필요하다:</p>
+<ol>
+<li>공개된 GaN HEMT S-parameter 데이터 (예: MACOM CGH40010 데이터베이스)</li>
+<li>Harmonic Balance 시뮬레이션 또는 측정으로 같은 바이어스에서 IM3, AM-PM 측정</li>
+<li>Ω와 측정된 비선형 지표 사이의 상관관계 분석</li>
+</ol>
+<p>이 검증이 완료되면 Ω는 RF 비선형 특성화의 새로운 표준 지표로 자리잡을 수 있다.</p>
+<hr>
+<h2 id="12-시뮬레이션-검증-시나리오">12. 시뮬레이션 검증 시나리오<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>본 절에서는 ADS와 QucsStudio를 이용한 Ω 검증 실험의 구체적 절차를 제시한다. 각 시나리오는 schematic 구성부터 결과 해석까지 단계별로 설명한다.</p>
+<h3 id="121-데이터-소스">12.1 데이터 소스<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>데이터</th>
+          <th>위치</th>
+          <th>형식</th>
+          <th>비고</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>MACOM CGH40010 S-parameter</td>
+          <td><a href="https://www.macom.com/products/product-detail/CGH40010" rel="external">https://www.macom.com/products/product-detail/CGH40010</a></td>
+          <td>s2p</td>
+          <td>I_DQ = 100, 200, 500 mA</td>
+      </tr>
+      <tr>
+          <td>Wolfspeed SPICE/PLECS 모델</td>
+          <td><a href="https://go.wolfspeed.com/all-models" rel="external">https://go.wolfspeed.com/all-models</a></td>
+          <td>SPICE</td>
+          <td>폼 작성 후 이메일</td>
+      </tr>
+      <tr>
+          <td>Cree ADS Design Kit</td>
+          <td>Wolfspeed 기술 문의 또는 ADS 설치본</td>
+          <td>ADS DK</td>
+          <td>CGH40010F 비선형 모델</td>
+      </tr>
+      <tr>
+          <td>ADS 데모 라이브러리</td>
+          <td>ADS Library Manager → Examples → RF Power Amplifier</td>
+          <td>ADS</td>
+          <td>참고용</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="122-ads-검증-시나리오">12.2 ADS 검증 시나리오<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>ADS는 Wolfspeed 공식 비선형 모델을 사용할 수 있어 가장 신뢰성 높은 검증이 가능하다.</p>
+<h4 id="1221-test-bench-구성">12.2.1 Test Bench 구성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>새 Schematic을 생성하고 다음 컴포넌트를 배치한다.</p>
+<p><strong>핵심 소자:</strong></p>
+<ul>
+<li>CGH40010F 컴포넌트 (Cree Design Kit 설치 후 팔레트에서 선택)</li>
+</ul>
+<p><strong>바이어스 회로 (게이트 측):</strong></p>
+<ul>
+<li>DC 전원 V_DC1 → V_GS 인가 (-4.5V ~ -1.0V 가변)</li>
+<li>DC block 커패시터 C_block_g (100 pF, 게이트와 입력 RF 신호 사이)</li>
+<li>RF choke 인덕터 L_choke_g (1 μH, V_DC1과 게이트 사이)</li>
+</ul>
+<p><strong>바이어스 회로 (드레인 측):</strong></p>
+<ul>
+<li>DC 전원 V_DC2 = 28V → V_DS 인가 (고정)</li>
+<li>DC block 커패시터 C_block_d (100 pF, 드레인과 출력 RF 신호 사이)</li>
+<li>RF choke 인덕터 L_choke_d (1 μH, V_DC2와 드레인 사이)</li>
+</ul>
+<p><strong>입출력:</strong></p>
+<ul>
+<li>Term1 (Port 1, 50 Ω) → C_block_g → 게이트</li>
+<li>드레인 → C_block_d → Term2 (Port 2, 50 Ω)</li>
+</ul>
+<p><strong>그라운드:</strong></p>
+<ul>
+<li>CGH40010F 소스 → Ground (단락 또는 작은 인덕턴스 0.05 nH로 본드와이어 모사)</li>
+</ul>
+<h4 id="1222-시뮬레이션-1-s-parameter-sweep-ω-계산용">12.2.2 시뮬레이션 1: S-parameter Sweep (Ω 계산용)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><strong>컨트롤러 추가:</strong></p>
+<ul>
+<li><code>S_Param</code> 컨트롤러</li>
+<li>Frequency: Start = 100 MHz, Stop = 6 GHz, Step = 10 MHz (601 포인트)</li>
+<li><code>ParamSweep</code> 컨트롤러로 V_DC1 (즉 V_GS) 스윕
+<ul>
+<li>SimInstanceName = &ldquo;SP1&rdquo;</li>
+<li>Parameter = &ldquo;V_DC1&rdquo;</li>
+<li>Start = -4.5, Stop = -1.0, Step = 0.1 (36 포인트)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Run Simulation:</strong> 약 2~5분 소요.</p>
+<p><strong>결과:</strong></p>
+<ul>
+<li>Data Display에서 plot S(2,1) → 36개 V_GS 곡선이 그려짐</li>
+<li>다음 메뉴로 export: <code>File → Export → Data</code> → CSV 형식</li>
+<li>Export 변수: <code>freq</code>, <code>V_DC1</code>, <code>S(2,1)</code> (real, imag 또는 mag, phase)</li>
+</ul>
+<p><strong>확인할 것:</strong></p>
+<ul>
+<li>V_GS = -4.5V (핀치오프)에서 |S₂₁| 매우 낮음 (-30 dB 이하)</li>
+<li>V_GS = -2.5V (Class AB)에서 |S₂₁| 약 16 dB @ 2GHz</li>
+<li>V_GS = -1.5V (Class A)에서 |S₂₁| 가장 높음 약 18 dB @ 2GHz</li>
+<li>주파수가 높아질수록 |S₂₁| 감소 (정상)</li>
+</ul>
+<h4 id="1223-시뮬레이션-2-harmonic-balance-two-tone-im3-측정">12.2.3 시뮬레이션 2: Harmonic Balance Two-Tone (IM3 측정)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><strong>Test bench에 추가:</strong></p>
+<ul>
+<li>입력 Term1을 P_1Tone 또는 두 개의 P_1Tone 병렬로 변경</li>
+<li>Tone 1: f₁ = 2.000 GHz, P₁ = -10 dBm</li>
+<li>Tone 2: f₂ = 2.005 GHz, P₂ = -10 dBm</li>
+<li>두 톤은 동일 진폭, 5 MHz 간격</li>
+</ul>
+<p><strong>컨트롤러 추가:</strong></p>
+<ul>
+<li><code>HB</code> 컨트롤러</li>
+<li>Fundamental Tones:
+<ul>
+<li>Freq[1] = 2 GHz, Order[1] = 5</li>
+<li>Freq[2] = 2.005 GHz, Order[2] = 5</li>
+</ul>
+</li>
+<li>MaxOrder = 5 (3차 IMD 분석)</li>
+</ul>
+<p><strong>ParamSweep:</strong></p>
+<ul>
+<li>V_DC1: -4.0V ~ -1.0V, Step = 0.1V (V_GS 그리드)</li>
+<li>(옵션) P₁ = P₂ 동시 스윕: -20 dBm ~ +10 dBm</li>
+</ul>
+<p><strong>Run Simulation:</strong> 약 10~30분 소요 (V_GS 그리드와 P 스윕 조합).</p>
+<p><strong>결과 추출:</strong>
+Data Display에서:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>P_fund = dBm(Vout[2*pi*2e9])      # 기본파 출력 파워
+P_IMD3 = dBm(Vout[2*pi*(2*2e9 - 2.005e9)])  # 3차 IMD (2f1-f2)
+IMD3_dBc = P_fund - P_IMD3        # IMD3 상대값 (dBc)</code></pre></div>
+<p>CSV로 export: <code>V_DC1</code>, <code>P_fund</code>, <code>P_IMD3</code>, <code>IMD3_dBc</code></p>
+<p><strong>확인할 것:</strong></p>
+<ul>
+<li>V_GS = -2.8V (Class AB)에서 IMD3_dBc 적당히 낮음</li>
+<li>V_GS = -1.0V (Class A)에서 IMD3_dBc 가장 낮음 (가장 선형)</li>
+<li>V_GS = -3.5V 부근에서 IMD3_dBc 최악 (sweet spot 부근)</li>
+</ul>
+<h4 id="1224-시뮬레이션-3-harmonic-balance-one-tone-am-pm-측정">12.2.4 시뮬레이션 3: Harmonic Balance One-Tone (AM-PM 측정)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><strong>Test bench 수정:</strong></p>
+<ul>
+<li>입력을 P_1Tone 한 개로 변경</li>
+<li>f = 2 GHz, P_in = -20 dBm ~ +20 dBm 스윕</li>
+</ul>
+<p><strong>컨트롤러:</strong></p>
+<ul>
+<li><code>HB</code> 컨트롤러</li>
+<li>Freq[1] = 2 GHz, Order[1] = 5</li>
+<li>ParamSweep:
+<ul>
+<li>1차: P_in = -20 ~ +20 dBm, Step = 1 dB</li>
+<li>2차: V_DC1 = -4.0 ~ -1.0V, Step = 0.1V</li>
+</ul>
+</li>
+</ul>
+<p><strong>결과 추출:</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>S21_large = Vout[2*pi*2e9] / Vin[2*pi*2e9]
+gain_dB = dB(mag(S21_large))
+phase_deg = phase(S21_large)</code></pre></div>
+<p>각 V_GS에서:</p>
+<ul>
+<li>Gain compression: gain_dB(P_in) 곡선 → 1 dB compression point (P1dB)</li>
+<li>Phase change: phase_deg(P_in) - phase_deg(P_in_low) → AM-PM 곡선</li>
+<li>AM-PM rate: max|d(phase)/d(P_in)| → AM-PM 계수 (deg/dB)</li>
+</ul>
+<p><strong>확인할 것:</strong></p>
+<ul>
+<li>V_GS = -1.0V: AM-PM 작음 (5° 이내)</li>
+<li>V_GS = -2.8V: AM-PM 중간 (10~20°)</li>
+<li>V_GS = -3.5V: AM-PM 큼 (30° 이상)</li>
+</ul>
+<h4 id="1225-matlab에서-상관관계-분석">12.2.5 MATLAB에서 상관관계 분석<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>3개 시뮬레이션 결과를 모두 MATLAB으로 가져와서 분석한다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% main_correlation_analysis.m</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% ADS 결과를 가져와서 Omega vs IMD3/AM-PM 상관관계 분석</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clear; clc; close all;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 1. ADS 결과 로드</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% S-parameter 데이터 (V_GS x freq grid)</span>
+</span></span><span style="display:flex;"><span>sp = readmatrix(<span style="color:#e6db74">&#39;ads_sparam.csv&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 형식: [V_GS, freq, S21_real, S21_imag] 또는 별도 파일</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Harmonic Balance 결과</span>
+</span></span><span style="display:flex;"><span>hb_imd = readmatrix(<span style="color:#e6db74">&#39;ads_hb_imd3.csv&#39;</span>);   <span style="color:#75715e">% [V_GS, IMD3_dBc]</span>
+</span></span><span style="display:flex;"><span>hb_amp = readmatrix(<span style="color:#e6db74">&#39;ads_hb_ampm.csv&#39;</span>);   <span style="color:#75715e">% [V_GS, AM_PM_max_deg_per_dB]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 2. S-parameter 데이터를 V-f grid로 재구성</span>
+</span></span><span style="display:flex;"><span>Vgs_unique = unique(sp(:,<span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>freq_unique = unique(sp(:,<span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>nV = length(Vgs_unique);
+</span></span><span style="display:flex;"><span>nF = length(freq_unique);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>S21_complex = sp(:,<span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>j<span style="color:#f92672">*</span>sp(:,<span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>S21_grid = reshape(S21_complex, nF, nV).<span style="color:#f92672">&#39;</span>;  <span style="color:#75715e">% [nV x nF]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>G_grid = abs(S21_grid);
+</span></span><span style="display:flex;"><span>phi_grid = unwrap(angle(S21_grid), [], <span style="color:#ae81ff">2</span>);  <span style="color:#75715e">% freq 방향 unwrap</span>
+</span></span><span style="display:flex;"><span>phi_deg_grid = rad2deg(phi_grid);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 3. Omega 계산</span>
+</span></span><span style="display:flex;"><span>dV = Vgs_unique(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> Vgs_unique(<span style="color:#ae81ff">1</span>);          <span style="color:#75715e">% V</span>
+</span></span><span style="display:flex;"><span>df = (freq_unique(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> freq_unique(<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">1e9</span>; <span style="color:#75715e">% GHz</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dGdV = gradient(G_grid, dV, <span style="color:#ae81ff">1</span>);    <span style="color:#75715e">% V 방향</span>
+</span></span><span style="display:flex;"><span>dGdf = gradient(G_grid, df, <span style="color:#ae81ff">2</span>);    <span style="color:#75715e">% f 방향</span>
+</span></span><span style="display:flex;"><span>dPdV = gradient(phi_deg_grid, dV, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>dPdf = gradient(phi_deg_grid, df, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Omega = (∂G/∂V)(∂φ/∂f) - (∂G/∂f)(∂φ/∂V)</span>
+</span></span><span style="display:flex;"><span>Omega = dGdV <span style="color:#f92672">.*</span> dPdf <span style="color:#f92672">-</span> dGdf <span style="color:#f92672">.*</span> dPdV;
+</span></span><span style="display:flex;"><span>Omega_abs = abs(Omega);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 각 V_GS에서 전체 주파수의 max|Omega|</span>
+</span></span><span style="display:flex;"><span>omega_max_per_V = max(Omega_abs, [], <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 4. HB 결과와 매칭</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% V_GS 그리드가 같다고 가정. 다르면 interpolation 필요</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#f92672">~</span>, idx_imd] = ismember(Vgs_unique, hb_imd(:,<span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>imd3_at_V = hb_imd(idx_imd, <span style="color:#ae81ff">2</span>);  <span style="color:#75715e">% [dBc], 음수</span>
+</span></span><span style="display:flex;"><span>ampm_at_V = hb_amp(idx_imd, <span style="color:#ae81ff">2</span>);  <span style="color:#75715e">% [deg/dB]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 5. 상관관계 분석</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Ω vs |IMD3|</span>
+</span></span><span style="display:flex;"><span>[r1, p1] = corr(omega_max_per_V, <span style="color:#f92672">-</span>imd3_at_V, <span style="color:#e6db74">&#39;Type&#39;</span>, <span style="color:#e6db74">&#39;Pearson&#39;</span>);
+</span></span><span style="display:flex;"><span>fprintf(<span style="color:#e6db74">&#39;Ω vs |IMD3| 상관계수: r = %.3f (p = %.3e)\n&#39;</span>, r1, p1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Ω vs AM-PM</span>
+</span></span><span style="display:flex;"><span>[r2, p2] = corr(omega_max_per_V, ampm_at_V, <span style="color:#e6db74">&#39;Type&#39;</span>, <span style="color:#e6db74">&#39;Pearson&#39;</span>);
+</span></span><span style="display:flex;"><span>fprintf(<span style="color:#e6db74">&#39;Ω vs AM-PM rate 상관계수: r = %.3f (p = %.3e)\n&#39;</span>, r2, p2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">%% 6. 시각화</span>
+</span></span><span style="display:flex;"><span>figure(<span style="color:#e6db74">&#39;Position&#39;</span>, [<span style="color:#ae81ff">100</span> <span style="color:#ae81ff">100</span> <span style="color:#ae81ff">1400</span> <span style="color:#ae81ff">500</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% (1) Ω 컬러맵</span>
+</span></span><span style="display:flex;"><span>subplot(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>F_GHz = freq_unique <span style="color:#f92672">/</span> <span style="color:#ae81ff">1e9</span>;
+</span></span><span style="display:flex;"><span>imagesc(F_GHz, Vgs_unique, Omega_abs);
+</span></span><span style="display:flex;"><span>set(gca, <span style="color:#e6db74">&#39;YDir&#39;</span>, <span style="color:#e6db74">&#39;normal&#39;</span>);
+</span></span><span style="display:flex;"><span>xlabel(<span style="color:#e6db74">&#39;Frequency [GHz]&#39;</span>); ylabel(<span style="color:#e6db74">&#39;V_{GS} [V]&#39;</span>);
+</span></span><span style="display:flex;"><span>title(<span style="color:#e6db74">&#39;|Ω(V, f)| [deg/(V·GHz)]&#39;</span>);
+</span></span><span style="display:flex;"><span>colorbar; colormap(gca, hot);
+</span></span><span style="display:flex;"><span>caxis([<span style="color:#ae81ff">0</span> prctile(Omega_abs(:), <span style="color:#ae81ff">90</span>)]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% (2) Ω vs |IMD3| 산점도</span>
+</span></span><span style="display:flex;"><span>subplot(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>scatter(omega_max_per_V, <span style="color:#f92672">-</span>imd3_at_V, <span style="color:#ae81ff">60</span>, Vgs_unique, <span style="color:#e6db74">&#39;filled&#39;</span>);
+</span></span><span style="display:flex;"><span>xlabel(<span style="color:#e6db74">&#39;|Ω|_{max} [deg/(V·GHz)]&#39;</span>);
+</span></span><span style="display:flex;"><span>ylabel(<span style="color:#e6db74">&#39;|IMD3| [dBc]&#39;</span>);
+</span></span><span style="display:flex;"><span>title(sprintf(<span style="color:#e6db74">&#39;Ω vs IMD3 (r = %.3f)&#39;</span>, r1));
+</span></span><span style="display:flex;"><span>colormap(gca, jet); cbar = colorbar; cbar.Label.String = <span style="color:#e6db74">&#39;V_{GS} [V]&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 회귀선</span>
+</span></span><span style="display:flex;"><span>p = polyfit(omega_max_per_V, <span style="color:#f92672">-</span>imd3_at_V, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>hold on; xfit = linspace(min(omega_max_per_V), max(omega_max_per_V), <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>plot(xfit, polyval(p, xfit), <span style="color:#e6db74">&#39;k--&#39;</span>, <span style="color:#e6db74">&#39;LineWidth&#39;</span>, <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>grid on;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% (3) Ω vs AM-PM 산점도</span>
+</span></span><span style="display:flex;"><span>subplot(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>scatter(omega_max_per_V, ampm_at_V, <span style="color:#ae81ff">60</span>, Vgs_unique, <span style="color:#e6db74">&#39;filled&#39;</span>);
+</span></span><span style="display:flex;"><span>xlabel(<span style="color:#e6db74">&#39;|Ω|_{max} [deg/(V·GHz)]&#39;</span>);
+</span></span><span style="display:flex;"><span>ylabel(<span style="color:#e6db74">&#39;AM-PM rate [deg/dB]&#39;</span>);
+</span></span><span style="display:flex;"><span>title(sprintf(<span style="color:#e6db74">&#39;Ω vs AM-PM (r = %.3f)&#39;</span>, r2));
+</span></span><span style="display:flex;"><span>colormap(gca, jet); cbar = colorbar; cbar.Label.String = <span style="color:#e6db74">&#39;V_{GS} [V]&#39;</span>;
+</span></span><span style="display:flex;"><span>p = polyfit(omega_max_per_V, ampm_at_V, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>hold on; xfit = linspace(min(omega_max_per_V), max(omega_max_per_V), <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>plot(xfit, polyval(p, xfit), <span style="color:#e6db74">&#39;k--&#39;</span>, <span style="color:#e6db74">&#39;LineWidth&#39;</span>, <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>grid on;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sgtitle(<span style="color:#e6db74">&#39;CGH40010F: Ω-based Nonlinearity Validation&#39;</span>, <span style="color:#e6db74">&#39;FontWeight&#39;</span>, <span style="color:#e6db74">&#39;bold&#39;</span>);
+</span></span><span style="display:flex;"><span>saveas(gcf, <span style="color:#e6db74">&#39;omega_correlation.png&#39;</span>);</span></span></code></pre></div>
+<p><strong>합격 기준:</strong></p>
+<ul>
+<li>|r| &gt; 0.7: Ω가 비선형성과 강한 상관관계</li>
+<li>p-value &lt; 0.05: 통계적으로 유의미</li>
+</ul>
+<p>이 기준을 만족하면 논문 핵심 주장이 정립된다.</p>
+<h3 id="123-qucsstudio-검증-시나리오">12.3 QucsStudio 검증 시나리오<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>QucsStudio는 무료이지만 비선형 모델 호환성과 Harmonic Balance 정확도가 ADS보다 제한적이다. 두 시나리오로 진행한다.</p>
+<h4 id="1231-시나리오-a-s2p-파일로-선형-검증">12.3.1 시나리오 A: s2p 파일로 선형 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>MACOM에서 받은 3개 s2p 파일 (I_DQ = 100, 200, 500 mA)만 사용.</p>
+<p><strong>Schematic 구성 (3개 schematic):</strong>
+각 s2p 파일에 대해 별도 schematic 생성.</p>
+<ul>
+<li>Component → File-based S-parameter (.s2p) → 파일 경로 지정</li>
+<li>Port 1 (입력, 50Ω), Port 2 (출력, 50Ω)</li>
+<li>S-parameter Simulation block</li>
+</ul>
+<p><strong>시뮬레이션 설정:</strong></p>
+<ul>
+<li>Frequency: Start = 100 MHz, Stop = 6 GHz, Step = 10 MHz</li>
+</ul>
+<p><strong>결과 export:</strong></p>
+<ul>
+<li>각 schematic 결과를 CSV로 export</li>
+<li>변수: freq, S21 (mag, phase)</li>
+</ul>
+<p><strong>MATLAB 분석:</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% qucs_macom_analysis.m</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% MACOM 3개 s2p로 1차 검증</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% RF Toolbox 사용 (있으면)</span>
+</span></span><span style="display:flex;"><span>s100 = sparameters(<span style="color:#e6db74">&#39;macom_100mA.s2p&#39;</span>);
+</span></span><span style="display:flex;"><span>s200 = sparameters(<span style="color:#e6db74">&#39;macom_200mA.s2p&#39;</span>);
+</span></span><span style="display:flex;"><span>s500 = sparameters(<span style="color:#e6db74">&#39;macom_500mA.s2p&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 또는 수동 파싱 (load_s2p.m 함수 사용 - 아래 별도 제공)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% [freq, S] = load_s2p(&#39;macom_100mA.s2p&#39;);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% S21 추출</span>
+</span></span><span style="display:flex;"><span>freq = s100.Frequencies;
+</span></span><span style="display:flex;"><span>S21_100 = squeeze(s100.Parameters(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,:));
+</span></span><span style="display:flex;"><span>S21_200 = squeeze(s200.Parameters(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,:));
+</span></span><span style="display:flex;"><span>S21_500 = squeeze(s500.Parameters(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,:));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% I_DQ → V_GS 변환 (대략적, CGH40010F 기준)</span>
+</span></span><span style="display:flex;"><span>Vgs_array = [<span style="color:#f92672">-</span><span style="color:#ae81ff">3.5</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2.8</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span>];
+</span></span><span style="display:flex;"><span>G_grid = abs([S21_100, S21_200, S21_500]).<span style="color:#f92672">&#39;</span>;   <span style="color:#75715e">% [3 x nF]</span>
+</span></span><span style="display:flex;"><span>phi_grid = unwrap(angle([S21_100, S21_200, S21_500]), [], <span style="color:#ae81ff">1</span>).<span style="color:#f92672">&#39;</span>;
+</span></span><span style="display:flex;"><span>phi_deg_grid = rad2deg(phi_grid);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 3점 차분으로 ∂/∂V (정확도 낮음, 정성 분석용)</span>
+</span></span><span style="display:flex;"><span>dV12 = Vgs_array(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> Vgs_array(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>dV23 = Vgs_array(<span style="color:#ae81ff">3</span>) <span style="color:#f92672">-</span> Vgs_array(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>dGdV = zeros(size(G_grid));
+</span></span><span style="display:flex;"><span>dPdV = zeros(size(G_grid));
+</span></span><span style="display:flex;"><span>dGdV(<span style="color:#ae81ff">1</span>,:) = (G_grid(<span style="color:#ae81ff">2</span>,:) <span style="color:#f92672">-</span> G_grid(<span style="color:#ae81ff">1</span>,:)) <span style="color:#f92672">/</span> dV12;
+</span></span><span style="display:flex;"><span>dGdV(<span style="color:#ae81ff">2</span>,:) = (G_grid(<span style="color:#ae81ff">3</span>,:) <span style="color:#f92672">-</span> G_grid(<span style="color:#ae81ff">1</span>,:)) <span style="color:#f92672">/</span> (Vgs_array(<span style="color:#ae81ff">3</span>)<span style="color:#f92672">-</span>Vgs_array(<span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>dGdV(<span style="color:#ae81ff">3</span>,:) = (G_grid(<span style="color:#ae81ff">3</span>,:) <span style="color:#f92672">-</span> G_grid(<span style="color:#ae81ff">2</span>,:)) <span style="color:#f92672">/</span> dV23;
+</span></span><span style="display:flex;"><span>dPdV(<span style="color:#ae81ff">1</span>,:) = (phi_deg_grid(<span style="color:#ae81ff">2</span>,:) <span style="color:#f92672">-</span> phi_deg_grid(<span style="color:#ae81ff">1</span>,:)) <span style="color:#f92672">/</span> dV12;
+</span></span><span style="display:flex;"><span>dPdV(<span style="color:#ae81ff">2</span>,:) = (phi_deg_grid(<span style="color:#ae81ff">3</span>,:) <span style="color:#f92672">-</span> phi_deg_grid(<span style="color:#ae81ff">1</span>,:)) <span style="color:#f92672">/</span> (Vgs_array(<span style="color:#ae81ff">3</span>)<span style="color:#f92672">-</span>Vgs_array(<span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>dPdV(<span style="color:#ae81ff">3</span>,:) = (phi_deg_grid(<span style="color:#ae81ff">3</span>,:) <span style="color:#f92672">-</span> phi_deg_grid(<span style="color:#ae81ff">2</span>,:)) <span style="color:#f92672">/</span> dV23;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% f 방향 미분 (조밀하므로 정상)</span>
+</span></span><span style="display:flex;"><span>df = (freq(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> freq(<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">1e9</span>;
+</span></span><span style="display:flex;"><span>dGdf = gradient(G_grid, df, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>dPdf = gradient(phi_deg_grid, df, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Omega 계산</span>
+</span></span><span style="display:flex;"><span>Omega = dGdV <span style="color:#f92672">.*</span> dPdf <span style="color:#f92672">-</span> dGdf <span style="color:#f92672">.*</span> dPdV;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 시각화</span>
+</span></span><span style="display:flex;"><span>figure;
+</span></span><span style="display:flex;"><span>F_GHz = freq <span style="color:#f92672">/</span> <span style="color:#ae81ff">1e9</span>;
+</span></span><span style="display:flex;"><span>imagesc(F_GHz, Vgs_array, abs(Omega));
+</span></span><span style="display:flex;"><span>set(gca, <span style="color:#e6db74">&#39;YDir&#39;</span>, <span style="color:#e6db74">&#39;normal&#39;</span>);
+</span></span><span style="display:flex;"><span>xlabel(<span style="color:#e6db74">&#39;Frequency [GHz]&#39;</span>); ylabel(<span style="color:#e6db74">&#39;V_{GS} [V]&#39;</span>);
+</span></span><span style="display:flex;"><span>title(<span style="color:#e6db74">&#39;|Ω| from MACOM data (3 bias points)&#39;</span>);
+</span></span><span style="display:flex;"><span>colorbar; colormap(hot);</span></span></code></pre></div>
+<p><strong>확인할 것:</strong></p>
+<ul>
+<li>3개 바이어스에서 |S₂₁|의 패턴 비교</li>
+<li>I_DQ = 100mA (Class C 근처): 이득이 낮음</li>
+<li>I_DQ = 200mA (Class AB): 중간 이득</li>
+<li>I_DQ = 500mA (Class A): 높은 이득</li>
+</ul>
+<p><strong>한계:</strong></p>
+<ul>
+<li>V 방향 그리드가 3개뿐이라 ∂/∂V 정확도 낮음</li>
+<li>IMD3, AM-PM 측정이 없으므로 정량적 검증 불가</li>
+<li>정성적 검증 또는 Phase 1 prototype 수준에 그침</li>
+</ul>
+<h4 id="1232-시나리오-b-spice-모델로-비선형-검증">12.3.2 시나리오 B: SPICE 모델로 비선형 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>Wolfspeed에서 받은 SPICE 모델 (.lib 또는 .sp)을 사용.</p>
+<p><strong>모델 import:</strong></p>
+<ul>
+<li>File → Import → SPICE Netlist (모델 파일 선택)</li>
+<li>모델을 라이브러리에 추가</li>
+<li>Schematic 컴포넌트 팔레트에 CGH40010F 추가</li>
+</ul>
+<p><strong>Test bench:</strong>
+ADS 시나리오와 동일하게 게이트/드레인 바이어스 회로, DC block, RF choke, Term 50Ω 추가.</p>
+<p><strong>시뮬레이션 1: S-parameter Sweep</strong></p>
+<ul>
+<li>AC simulation block 또는 S-parameter simulation</li>
+<li>ParamSweep으로 V_GS = -4.5V ~ -1.0V, Step = 0.1V</li>
+<li>Frequency: 100 MHz ~ 6 GHz</li>
+</ul>
+<p><strong>시뮬레이션 2: Harmonic Balance</strong>
+QucsStudio HB는 ADS보다 제한적이지만 기본 IM3 측정 가능:</p>
+<ul>
+<li>Two-tone HB 또는 transient + FFT 사용</li>
+<li>f₁ = 2 GHz, f₂ = 2.005 GHz, P_in = -10 dBm</li>
+<li>IMD3 추출</li>
+</ul>
+<p><strong>한계:</strong></p>
+<ul>
+<li>QucsStudio HB는 수렴이 까다로움</li>
+<li>고차 비선형 정확도가 ADS보다 낮음</li>
+<li>그러나 정성적 패턴 확인은 가능</li>
+</ul>
+<p><strong>Python 분석:</strong>
+ADS 시나리오와 동일한 코드로 상관관계 분석.</p>
+<h4 id="1233-qucsstudio-검증의-적절성">12.3.3 QucsStudio 검증의 적절성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>QucsStudio만으로 논문 가능한가:</p>
+<ul>
+<li><strong>Letter 저널 (MWCL):</strong> 가능하지만 reviewer가 &ldquo;왜 ADS 안 썼나&quot;고 물을 수 있음</li>
+<li><strong>풀 저널:</strong> ADS 검증이 강력히 권장됨</li>
+</ul>
+<p>QucsStudio 검증은 ADS 접근이 불가능한 경우의 차선책이다. 가능하면 ADS 사용 권장.</p>
+<h3 id="124-phase별-권장-진행">12.4 Phase별 권장 진행<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>각 phase는 독립적 가치를 가지므로 어디서 멈춰도 일정 수준의 결과를 얻는다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Phase</th>
+          <th>도구</th>
+          <th>기간</th>
+          <th>결과물</th>
+          <th>논문 가치</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>MATLAB + MACOM s2p (3개)</td>
+          <td>1주</td>
+          <td>Ω 계산 + 패턴 정성 확인</td>
+          <td>Conference proceedings</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>QucsStudio + SPICE 모델 + MATLAB</td>
+          <td>2~3주</td>
+          <td>조밀 그리드 Ω + 기본 비선형</td>
+          <td>Letter 저널 (MWCL) 가능</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>ADS + Cree Design Kit + MATLAB</td>
+          <td>1~2주</td>
+          <td>정확한 Ω vs IMD3/AM-PM 상관관계</td>
+          <td>풀 저널 (TMTT) 가능</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="125-논문-핵심-figure-구성">12.5 논문 핵심 Figure 구성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>검증이 끝나면 논문은 다음 4개 figure를 중심으로 구성한다.</p>
+<p><strong>Figure 1: Ω(V, ω) 2D 컬러맵</strong></p>
+<ul>
+<li>x축: 주파수 (GHz)</li>
+<li>y축: V_GS (V)</li>
+<li>색상: |Ω| 값</li>
+<li>어떤 V-ω 영역이 비선형성이 강한지 한눈에 보여줌</li>
+</ul>
+<p><strong>Figure 2: 검증 비교맵</strong></p>
+<ul>
+<li>같은 V-ω 그리드에서 측정한 IMD3 (또는 AM-PM)의 컬러맵</li>
+<li>Figure 1과 색 패턴이 유사하면 Ω의 유효성 확인</li>
+</ul>
+<p><strong>Figure 3: 상관관계 산점도</strong></p>
+<ul>
+<li>x축: |Ω|_max (각 V_GS에서)</li>
+<li>y축: -IMD3_dBc 또는 AM-PM rate</li>
+<li>점 색상: V_GS</li>
+<li>직선 fit + 상관계수 r 표시</li>
+</ul>
+<p><strong>Figure 4: 응용 예시</strong></p>
+<ul>
+<li>Ω 기반 최적 바이어스 vs P1dB 기반 최적 바이어스</li>
+<li>각각으로 PA 동작 시 EVM 또는 ACLR 비교</li>
+<li>Ω 방법이 광대역에서 우수함을 보여줌</li>
+</ul>
+<p>이 4개가 핵심이고 추가로 이론 유도 schematic이나 측정 setup 사진이 보조 figure로 들어간다.</p>
+<hr>
+<h2 id="부록-a-기호-요약">부록 A: 기호 요약<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>기호</th>
+          <th>의미</th>
+          <th>단위</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>V</td>
+          <td>바이어스 전압 (보통 V_GS)</td>
+          <td>V</td>
+      </tr>
+      <tr>
+          <td>ω</td>
+          <td>각주파수 (= 2πf)</td>
+          <td>rad/s</td>
+      </tr>
+      <tr>
+          <td>f</td>
+          <td>주파수</td>
+          <td>Hz</td>
+      </tr>
+      <tr>
+          <td>S₂₁</td>
+          <td>순방향 전달 S-parameter</td>
+          <td>무차원 (복소수)</td>
+      </tr>
+      <tr>
+          <td>G</td>
+          <td></td>
+          <td>S₂₁</td>
+      </tr>
+      <tr>
+          <td>φ</td>
+          <td>∠S₂₁, 위상</td>
+          <td>rad</td>
+      </tr>
+      <tr>
+          <td>∂G/∂V</td>
+          <td>바이어스 이득 감도</td>
+          <td>1/V</td>
+      </tr>
+      <tr>
+          <td>∂G/∂ω</td>
+          <td>이득 평탄도의 음수</td>
+          <td>s</td>
+      </tr>
+      <tr>
+          <td>∂φ/∂V</td>
+          <td>AM-PM 계수</td>
+          <td>rad/V</td>
+      </tr>
+      <tr>
+          <td>∂φ/∂ω</td>
+          <td>음의 군지연</td>
+          <td>s</td>
+      </tr>
+      <tr>
+          <td>Ω</td>
+          <td>V-ω 공간 비선형성 곡률</td>
+          <td>rad/V (rad·s/V·s 약분)</td>
+      </tr>
+  </tbody>
+</table>
+<p>실용 단위: rad → deg, ω → f(GHz)로 변환하면 Ω 단위는 [deg/(V·GHz)].</p>
+<h2 id="부록-b-외미분-형식과-jacobian">부록 B: 외미분 형식과 Jacobian<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>미분기하학에서 V-ω 평면의 면적 형식 dV ∧ dω가 G-φ 평면의 면적 형식 dG ∧ dφ로 어떻게 변환되는지의 비례 계수가 Jacobian 행렬식이다. Ω는 이 비례 계수다.</p>
+<p>이는 양자역학의 Berry curvature와 같은 수학적 구조다. Berry curvature가 양자 상태 공간의 곡률을 측정하듯이, Ω는 RF 응답 공간의 곡률을 측정한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/research_pin/index.html"><a class="padding default-animation" href="/research/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-82152494e935f1e70539dfcd043a965c" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/research_pa/index.html"><a class="padding default-animation" href="/research/research_pa/index.html">Research_PA</a><ul id="R-subsections-2390e6b55015b7af1378a34fefa17a01" class="collapsible-menu">
+            <li class="active " data-nav-id="/research/research_pa/omega/index.html"><a class="padding" href="/research/research_pa/omega/index.html">Omegadl</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: Contour 에서 real-time 으로의 변환이전 절에서 contour Dyson 방정식
+$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) &#43; \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.
+핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_&#43;$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Langreth rules :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: Contour 에서 real-time 으로의 변환이전 절에서 contour Dyson 방정식
+$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) &#43; \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.
+핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_&#43;$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/negf/b_langreth_rules/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Langreth rules :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: Contour 에서 real-time 으로의 변환이전 절에서 contour Dyson 방정식
+$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) &#43; \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.
+핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_&#43;$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Langreth rules :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: Contour 에서 real-time 으로의 변환이전 절에서 contour Dyson 방정식
+$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) &#43; \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.
+핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_&#43;$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.">
+    <meta itemprop="wordCount" content="850">
+    <title>(b) Langreth rules :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/negf\/b_langreth_rules\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/negf/b_langreth_rules/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-contour-에서-real-time-으로의-변환">1. 동기: Contour 에서 real-time 으로의 변환</a></li>
+        <li><a href="#2-두-가지-contour-연산">2. 두 가지 contour 연산</a></li>
+        <li><a href="#3-convolution-에-대한-langreth-룰">3. Convolution 에 대한 Langreth 룰</a></li>
+        <li><a href="#4-product-에-대한-langreth-룰">4. Product 에 대한 Langreth 룰</a></li>
+        <li><a href="#5-dyson-방정식에의-적용">5. Dyson 방정식에의 적용</a></li>
+        <li><a href="#6-greater-dyson-방정식과-다른-관계들">6. Greater Dyson 방정식과 다른 관계들</a></li>
+        <li><a href="#7-정리-negf-의-완성된-framework">7. 정리: NEGF 의 완성된 framework</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/negf/index.html"><span itemprop="name">NEGF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Langreth rules</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_keldysh_contour/index.html" title="(b) Keldysh contour formalism (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/geometric_algebra/index.html" title="Geometric algebra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-langreth-rules">(b) Langreth rules</h1>
+
+<hr>
+<h3 id="1-동기-contour-에서-real-time-으로의-변환">1. 동기: Contour 에서 real-time 으로의 변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이전 절에서 contour Dyson 방정식</p>
+$$
+G^c(\tau, \tau') = G_0^c(\tau, \tau') + \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau')
+$$<p>이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.</p>
+<p>핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_+$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau'$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.</p>
+<p><strong>Langreth 룰</strong> 이 이 변환을 정확하고 간결하게 수행한다. 룰의 본질은 다음과 같다.</p>
+<p>Contour 위의 두 객체 $A^c, B^c$ 의 convolution $C^c = A^c \circ B^c$ 또는 곱 $C^c(\tau, \tau') = A^c(\tau, \tau') B^c(\tau, \tau')$ 가 주어질 때, $C^c$ 의 각 real-time component ($C^R, C^A, C^<, C^>$) 를 $A^c, B^c$ 의 component 로 표현하는 공식.</p>
+<p>이 절에서는 convolution 에 대한 Langreth 룰을 도출하고, 이를 Dyson 방정식에 적용해 real-time 방정식을 도출하며, 이전 절들에서 사용한 Keldysh 방정식의 일반화된 형태를 정리한다.</p>
+<hr>
+<h3 id="2-두-가지-contour-연산">2. 두 가지 contour 연산<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Contour 위에서의 객체 결합은 두 가지 기본 연산으로 나타난다.</p>
+<p><strong>1) Convolution (적분이 있는 경우)</strong></p>
+$$
+C^c(\tau, \tau') = (A^c \circ B^c)(\tau, \tau') := \int_C d\tau_1\,A^c(\tau, \tau_1)\,B^c(\tau_1, \tau')
+$$<p>내부 변수 $\tau_1$ 이 contour 전체를 지나며 적분된다. Dyson 방정식의 $G_0 \Sigma G$ 형태가 이에 해당.</p>
+<p><strong>2) Product (적분이 없는 경우)</strong></p>
+$$
+C^c(\tau, \tau') = A^c(\tau, \tau')\,B^c(\tau, \tau')
+$$<p>같은 두 점에서 두 객체의 단순 곱. Vertex correction 의 일부 또는 일부 관측량 공식에 등장.</p>
+<p>두 연산의 Langreth 룰이 다르므로 구분해서 다룬다.</p>
+<hr>
+<h3 id="3-convolution-에-대한-langreth-룰">3. Convolution 에 대한 Langreth 룰<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 룰의 정리</strong></p>
+<p>Contour convolution $C^c = A^c \circ B^c$ 의 4 component 가 다음과 같이 real-time convolution 으로 표현된다.</p>
+$$
+\boxed{\begin{aligned}
+C^R(t, t') &= \int dt_1\,A^R(t, t_1)\,B^R(t_1, t') \\
+C^A(t, t') &= \int dt_1\,A^A(t, t_1)\,B^A(t_1, t') \\
+C^<(t, t') &= \int dt_1\,\bigl[A^R(t, t_1)\,B^<(t_1, t') + A^<(t, t_1)\,B^A(t_1, t')\bigr] \\
+C^>(t, t') &= \int dt_1\,\bigl[A^R(t, t_1)\,B^>(t_1, t') + A^>(t, t_1)\,B^A(t_1, t')\bigr]
+\end{aligned}}
+$$<p>세 번째와 네 번째 식의 구조에 주목하자. Lesser 또는 greater 가 retarded 와의 convolution 으로 들어오고 (앞쪽 항), advanced 와의 convolution 으로 들어온다 (뒤쪽 항). 이 두 항이 시간 순서에 대해 인과적 / 반인과적 경로를 분담한다.</p>
+<p><strong>2) Lesser 룰의 도출</strong></p>
+<p>$C^<(t, t')$ 의 도출을 자세히 본다. 이는 $\tau \in C_+, \tau' \in C_-$ 의 case 이다.</p>
+<p>Contour 적분을 두 branch 의 합으로 분해한다.</p>
+$$
+C^c(\tau, \tau') = \int_{C_+} d\tau_1\,A^c(\tau, \tau_1)\,B^c(\tau_1, \tau') + \int_{C_-} d\tau_1\,A^c(\tau, \tau_1)\,B^c(\tau_1, \tau')
+$$<p>$\tau_1$ 의 branch 에 따라 $A^c, B^c$ 의 component 가 결정된다.</p>
+<p><strong>$\tau_1 \in C_+$ 의 경우</strong> (forward branch):</p>
+<p>$\tau \in C_+$, $\tau_1 \in C_+$: $A^c(\tau, \tau_1) = A^T(t, t_1)$ (둘 다 $C_+$).
+$\tau_1 \in C_+$, $\tau' \in C_-$: $B^c(\tau_1, \tau') = B^<(t_1, t')$.</p>
+<p>Forward branch 의 적분 측도는 $\int_{-\infty}^{\infty} dt_1$. 따라서</p>
+$$
+\int_{C_+} d\tau_1\,A^c\,B^c = \int dt_1\,A^T(t, t_1)\,B^<(t_1, t')
+$$<p><strong>$\tau_1 \in C_-$ 의 경우</strong> (backward branch):</p>
+<p>$\tau \in C_+$, $\tau_1 \in C_-$: $A^c(\tau, \tau_1) = A^<(t, t_1)$.
+$\tau_1 \in C_-$, $\tau' \in C_-$: $B^c(\tau_1, \tau') = B^{\tilde T}(t_1, t')$.</p>
+<p>Backward branch 의 적분 측도는 시간이 거꾸로 흐르므로 $\int_{\infty}^{-\infty} dt_1 = -\int_{-\infty}^{\infty} dt_1$.</p>
+$$
+\int_{C_-} d\tau_1\,A^c\,B^c = -\int dt_1\,A^<(t, t_1)\,B^{\tilde T}(t_1, t')
+$$<p><strong>합산</strong>:</p>
+$$
+C^<(t, t') = \int dt_1\,\bigl[A^T(t, t_1)\,B^<(t_1, t') - A^<(t, t_1)\,B^{\tilde T}(t_1, t')\bigr]
+$$<p><strong>3) $A^T, A^{\tilde T}$ 의 분해 적용</strong></p>
+<p>이전 절의 결과 $A^T = A^R + A^<$, $A^{\tilde T} = A^< - A^A$ 를 대입한다.</p>
+$$
+C^< = \int dt_1\,\bigl[(A^R + A^<)\,B^< - A^<\,(B^< - B^A)\bigr]
+$$<p>전개하면</p>
+$$
+C^< = \int dt_1\,\bigl[A^R B^< + A^< B^< - A^< B^< + A^< B^A\bigr] = \int dt_1\,\bigl[A^R B^< + A^< B^A\bigr]
+$$<p>즉</p>
+$$
+C^<(t, t') = \int dt_1\,\bigl[A^R(t, t_1)\,B^<(t_1, t') + A^<(t, t_1)\,B^A(t_1, t')\bigr]
+$$<p>§3-(1) 의 표준 룰과 일치. ✓</p>
+<p><strong>4) Retarded 룰의 도출</strong></p>
+<p>$C^R$ 의 도출은 정의 $C^R(t, t') = \theta(t-t')[C^>(t,t') - C^<(t,t')]$ 에서 직접 가능. 또는 contour formalism 에서 $\tau, \tau'$ 가 같은 (forward) branch 에 있고 contour ordering 이 일반 시간 ordering 과 같은 case 로부터.</p>
+<p>결과: $C^R$ 가 retarded 끼리의 convolution 으로만 표현된다.</p>
+$$
+C^R(t, t') = \int dt_1\,A^R(t, t_1)\,B^R(t_1, t')
+$$<p>이 단순함은 인과율의 결과이다. Retarded function 끼리의 곱은 인과적 → 인과적 응답으로, 다른 component 의 기여가 0 이 된다.</p>
+<p>비슷한 도출로</p>
+$$
+C^A(t, t') = \int dt_1\,A^A(t, t_1)\,B^A(t_1, t')
+$$<p>$C^>$ 는 $C^<$ 와 같은 구조로 ($<$ 를 $>$ 로 대체).</p>
+<p><strong>5) 룰의 직관적 이해</strong></p>
+<p>Langreth 룰을 직관적으로 이해하는 방법:</p>
+<ul>
+<li>Retarded ($R$): 시간이 한 방향으로 흐르며 모두 인과적 경로. 모든 사이 시간 점에서 retarded.</li>
+<li>Advanced ($A$): 모두 반인과적. 모든 사이 시간 점에서 advanced.</li>
+<li>Lesser ($<$): 시간이 한 방향으로 갔다가 다른 방향으로 옴. 사이의 한 점에서 &ldquo;점유 정보 ($<$)&rdquo; 가 등장하며, 그 점 이전은 인과적 ($R$), 이후는 반인과적 ($A$).</li>
+<li>Greater ($>$): 비슷한 구조, $<$ 가 $>$ 로.</li>
+</ul>
+<p>이 그림은 contour 위 두 branch 사이의 경로 구조를 직접 반영한다.</p>
+<hr>
+<h3 id="4-product-에-대한-langreth-룰">4. Product 에 대한 Langreth 룰<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>같은 점에서의 product $C^c(\tau, \tau') = A^c(\tau, \tau')\,B^c(\tau, \tau')$ 에 대한 룰.</p>
+<p><strong>1) Lesser 와 greater</strong></p>
+<p>$\tau \in C_+, \tau' \in C_-$ 이면 $C^c, A^c, B^c$ 모두 lesser:</p>
+$$
+C^<(t, t') = A^<(t, t')\,B^<(t, t')
+$$<p>비슷하게</p>
+$$
+C^>(t, t') = A^>(t, t')\,B^>(t, t')
+$$<p><strong>2) Retarded와 advanced</strong></p>
+<p>도출: $C^R(t, t') = \theta(t - t')[C^>(t, t') - C^<(t, t')] = \theta(t-t')[A^>B^> - A^<B^<]$.</p>
+<p>$A^>B^> - A^<B^<$ 를 $A^R, B^R, A^<, B^<$ 등으로 풀어쓴다.</p>
+$$
+A^>B^> - A^<B^< = (A^> - A^<)B^> + A^<(B^> - B^<)
+$$<p>$t > t'$ 에서 $A^> - A^< = A^R$, $B^> - B^< = B^R$. 따라서</p>
+$$
+C^R(t, t') = A^R(t, t')\,B^>(t, t') + A^<(t, t')\,B^R(t, t')
+$$<p>$t < t'$ 에서 위 표현이 0 이 되는지 확인: $A^R(t, t')$ 와 $B^R(t, t')$ 모두 0. ✓</p>
+<p>비슷한 도출로</p>
+$$
+C^A(t, t') = A^A(t, t')\,B^<(t, t') + A^>(t, t')\,B^A(t, t')
+$$<p>(또는 동등한 변형 형태들.)</p>
+<p>Product 룰은 convolution 룰보다 덜 자주 사용되지만, vertex 보정 등 특정 맥락에서 나타난다.</p>
+<hr>
+<h3 id="5-dyson-방정식에의-적용">5. Dyson 방정식에의 적용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 Langreth 룰을 contour Dyson 방정식</p>
+$$
+G^c = G_0^c + G_0^c \circ \Sigma^c \circ G^c
+$$<p>에 적용해 real-time Dyson 방정식들을 도출한다.</p>
+<p><strong>1) Retarded Dyson 방정식</strong></p>
+<p>Convolution rule for $C^R$:</p>
+$$
+(G_0 \circ \Sigma \circ G)^R = G_0^R \circ \Sigma^R \circ G^R
+$$<p>(여러 retarded 의 convolution.) 이를 contour Dyson 에 적용하면</p>
+$$
+G^R(t, t') = G_0^R(t, t') + \int dt_1\,dt_2\,G_0^R(t, t_1)\,\Sigma^R(t_1, t_2)\,G^R(t_2, t')
+$$<p>이는 retarded Dyson 방정식의 시간 영역 표현이다. 정상상태에서 Fourier 변환하면</p>
+$$
+G^R(E) = G_0^R(E) + G_0^R(E)\,\Sigma^R(E)\,G^R(E)
+$$<p>이전 절에서 사용한 닫힌 형태.</p>
+<p><strong>2) Advanced Dyson 방정식</strong></p>
+<p>비슷하게</p>
+$$
+G^A(t, t') = G_0^A(t, t') + \int dt_1\,dt_2\,G_0^A(t, t_1)\,\Sigma^A(t_1, t_2)\,G^A(t_2, t')
+$$<p>$G^A = (G^R)^\dagger$ 의 관계로 retarded 방정식으로부터 직접 도출도 가능.</p>
+<p><strong>3) Lesser Dyson 방정식</strong></p>
+<p>이 부분이 핵심이다. Convolution rule for $C^<$ 를 contour Dyson 의 lesser component 에 적용한다.</p>
+<p>$C^c = G_0^c \circ \Sigma^c \circ G^c$ 를 두 단계 convolution 으로 분해: 먼저 $X^c := G_0^c \circ \Sigma^c$ 계산, 그 다음 $C^c = X^c \circ G^c$.</p>
+<p>$X^<$:</p>
+$$
+X^<(t, t_2) = \int dt_1\,\bigl[G_0^R(t, t_1)\,\Sigma^<(t_1, t_2) + G_0^<(t, t_1)\,\Sigma^A(t_1, t_2)\bigr]
+$$<p>$C^< = (X \circ G)^<$:</p>
+$$
+C^<(t, t') = \int dt_2\,\bigl[X^R(t, t_2)\,G^<(t_2, t') + X^<(t, t_2)\,G^A(t_2, t')\bigr]
+$$<p>여기서 $X^R = G_0^R \circ \Sigma^R$. 모든 것을 풀면</p>
+$$
+G^<(t, t') = G_0^<(t, t') + \int\int dt_1\,dt_2\,\bigl[G_0^R(t, t_1)\,\Sigma^R(t_1, t_2)\,G^<(t_2, t') + G_0^R(t, t_1)\,\Sigma^<(t_1, t_2)\,G^A(t_2, t') + G_0^<(t, t_1)\,\Sigma^A(t_1, t_2)\,G^A(t_2, t')\bigr]
+$$<p>이 식이 <strong>일반 lesser Dyson 방정식</strong> 이다. 세 가지 종류의 항이 있다:</p>
+<ul>
+<li>$G_0^R \Sigma^R G^<$: retarded self-energy 와 lesser 그린함수의 자기일관 결합</li>
+<li>$G_0^R \Sigma^< G^A$: lesser self-energy 의 직접 기여 (점유 주입)</li>
+<li>$G_0^<\Sigma^A G^A$: 초기 lesser 의 기여</li>
+</ul>
+<p><strong>4) 정상상태에서의 환원: Keldysh equation</strong></p>
+<p>정상상태 + adiabatic switching 조건에서 $G_0^<$ 의 기여가 사라진다. 자세히는 다음과 같이 진행된다.</p>
+<p>위 일반 lesser Dyson 방정식에서 $G_0^<$ 가 직접 0 인 경우 (초기 분포가 무시되는 한계, 또는 $t_0 \to -\infty$ 의 adiabatic 한계) 첫 두 항만 남는다.</p>
+$$
+G^< = G_0^R\,\Sigma^R\,G^< + G_0^R\,\Sigma^<\,G^A
+$$<p>이를 $G^<$ 에 대해 풀면</p>
+$$
+(1 - G_0^R\,\Sigma^R)\,G^< = G_0^R\,\Sigma^<\,G^A
+$$<p>좌변의 ($1 - G_0^R\,\Sigma^R$) 의 역연산은 retarded Dyson 방정식 $G^R = G_0^R + G_0^R \Sigma^R G^R$ 의 닫힌 형태 $G^R = (1 - G_0^R\,\Sigma^R)^{-1} G_0^R$ 에서</p>
+$$
+(1 - G_0^R\,\Sigma^R)^{-1} = G^R / G_0^R = G^R\,(G_0^R)^{-1}
+$$<p>따라서</p>
+$$
+G^< = (1 - G_0^R\,\Sigma^R)^{-1}\,G_0^R\,\Sigma^<\,G^A = G^R\,(G_0^R)^{-1}\,G_0^R\,\Sigma^<\,G^A = G^R\,\Sigma^<\,G^A
+$$<p>즉</p>
+$$
+\boxed{G^<(E) = G^R(E)\,\Sigma^<(E)\,G^A(E)}
+$$<p>이전 절들에서 사용한 <strong>Keldysh 방정식</strong> 의 도출. 이 방정식이 적용되는 조건은 다음 두 가지가 모두 만족될 때:</p>
+<ul>
+<li>시스템이 정상상태</li>
+<li>초기 분포가 무시 가능 (adiabatic switching 한계 또는 환경 결합으로 인한 점유 결정이 초기 조건을 압도)</li>
+</ul>
+<p>이 조건이 깨지는 경우 (예: 초기 transient, 또는 시간 의존 외부 장의 갑작스러운 켜짐) 일반 lesser Dyson 방정식이 사용된다.</p>
+<hr>
+<h3 id="6-greater-dyson-방정식과-다른-관계들">6. Greater Dyson 방정식과 다른 관계들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) Greater Dyson 방정식</strong></p>
+<p>Lesser 와 비슷한 도출로</p>
+$$
+G^>(t, t') = G_0^>(t, t') + \int\int dt_1\,dt_2\,\bigl[G_0^R(t, t_1)\,\Sigma^R(t_1, t_2)\,G^>(t_2, t') + G_0^R(t, t_1)\,\Sigma^>(t_1, t_2)\,G^A(t_2, t') + G_0^>(t, t_1)\,\Sigma^A(t_1, t_2)\,G^A(t_2, t')\bigr]
+$$<p>정상상태 + adiabatic 에서</p>
+$$
+G^>(E) = G^R(E)\,\Sigma^>(E)\,G^A(E)
+$$<p>Lesser 와 같은 구조.</p>
+<p><strong>2) Keldysh 항등식과의 일관성</strong></p>
+<p>위 두 표현으로부터</p>
+$$
+G^>(E) - G^<(E) = G^R(E)\,[\Sigma^>(E) - \Sigma^<(E)]\,G^A(E)
+$$<p>좌변은 Keldysh 항등식으로 $G^R - G^A$ 와 같다.</p>
+$$
+G^R - G^A = G^R\,(\Sigma^R - \Sigma^A)\,G^A
+$$<p>(이전 절에서 도출한 $A(E) = G^R \Gamma G^A$ 의 도출 절차에서 사용한 결과와 일치.) 모든 결과가 일관성 있게 연결됨이 확인된다.</p>
+<p><strong>3) 스펙트럼 함수</strong></p>
+<p>$A(E) = i[G^R(E) - G^A(E)] = G^R(E)\,\Gamma(E)\,G^A(E)$ 도 동일한 도출로부터.</p>
+<hr>
+<h3 id="7-정리-negf-의-완성된-framework">7. 정리: NEGF 의 완성된 framework<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 챕터에서 다룬 모든 결과를 종합하면 NEGF 의 완성된 framework 이 정리된다.</p>
+<p><strong>1) 기본 객체</strong></p>
+<ul>
+<li>시스템 Hamiltonian $H_s$, 환경 $H_e$, 결합 $V$</li>
+<li>4 그린함수: $G^R, G^A, G^<, G^>$</li>
+<li>Self-energy: $\Sigma^R, \Sigma^A, \Sigma^<, \Sigma^>$</li>
+<li>스펙트럼 함수: $A = i(G^R - G^A) = G^R \Gamma G^A$</li>
+<li>결합 강도: $\Gamma = i(\Sigma^R - \Sigma^A) = -2\,\text{Im}\,\Sigma^R$</li>
+</ul>
+<p><strong>2) Self-energy 의 도출</strong></p>
+<p>블록 행렬 역연산으로</p>
+<ul>
+<li>$\Sigma^R = V\,g_e^R\,V^\dagger$</li>
+<li>$\Sigma^< = V\,g_e^<\,V^\dagger$</li>
+</ul>
+<p>복수 reservoir 의 경우 합으로 분해:</p>
+<ul>
+<li>$\Sigma = \Sigma_L + \Sigma_R$</li>
+<li>$\Sigma^<_{L,R} = i\,f_{L,R}\,\Gamma_{L,R}$ (각 reservoir 평형)</li>
+</ul>
+<p><strong>3) Dyson 방정식들 (정상상태 + adiabatic)</strong></p>
+<ul>
+<li>Retarded: $G^R = [E - H_s - \Sigma^R(E)]^{-1}$</li>
+<li>Advanced: $G^A = [G^R]^\dagger$</li>
+<li>Lesser (Keldysh equation): $G^< = G^R\,\Sigma^<\,G^A$</li>
+<li>Greater: $G^> = G^R\,\Sigma^>\,G^A$, 또는 항등식 $G^> = G^R - G^A + G^<$</li>
+</ul>
+<p><strong>4) 관측량</strong></p>
+<ul>
+<li>입자 밀도: $n(x) = -i\int dE/(2\pi)\,G^<(E, x, x)$</li>
+<li>전류 (Meir-Wingreen): $I = (e/\hbar)\int dE/(2\pi)\,\text{Tr}[\Sigma^<\,G^> - \Sigma^>\,G^<]$</li>
+<li>전류 (Landauer, 비상호작용): $I = (e/h)\int dE\,T(E)\,(f_L - f_R)$, $T = \text{Tr}[\Gamma_L\,G^R\,\Gamma_R\,G^A]$</li>
+<li>일반: $\langle\hat O\rangle = -i\int dE/(2\pi)\,\text{Tr}[\hat O\,G^<(E)]$</li>
+</ul>
+<p><strong>5) 시간 의존 또는 상호작용 시스템</strong></p>
+<p>위 정상상태 결과들은 contour Dyson 방정식과 Langreth 룰의 자연스러운 특수 경우. 일반 시간 의존 또는 다체 상호작용 시스템에서는 contour formalism 의 일반 표현이 사용되며, 본 챕터의 framework 이 확장된다.</p>
+<hr>
+<p><strong>example1) Retarded Dyson 방정식의 검증</strong></p>
+<p>이전 절들에서 사용한 retarded Dyson 방정식을 Langreth 룰로 도출.</p>
+<p>sol)</p>
+<p>Contour Dyson $G^c = G_0^c + G_0^c \circ \Sigma^c \circ G^c$ 의 retarded component 추출.</p>
+<p>$C^c = G_0^c \circ \Sigma^c \circ G^c$ 의 $C^R$ 은 Langreth 룰에서</p>
+$$
+C^R = G_0^R \circ \Sigma^R \circ G^R
+$$<p>(retarded convolution 끼리). 시간 영역에서</p>
+$$
+G^R(t, t') = G_0^R(t, t') + \int dt_1\,dt_2\,G_0^R(t, t_1)\,\Sigma^R(t_1, t_2)\,G^R(t_2, t')
+$$<p>정상상태에서 Fourier 변환:</p>
+$$
+G^R(E) = G_0^R(E) + G_0^R(E)\,\Sigma^R(E)\,G^R(E)
+$$<p>이는 weight 5 의 perturbative form Dyson 방정식과 일치. ✓ Closed form $G^R = (E - H_s - \Sigma^R)^{-1}$ 으로 환원.</p>
+<hr>
+<p><strong>example2) Keldysh 방정식의 정상상태 도출 검증</strong></p>
+<p>Steady state + adiabatic 한계에서 lesser Dyson 방정식이 Keldysh 방정식으로 환원됨을 명시적으로 확인.</p>
+<p>sol)</p>
+<p>일반 lesser Dyson 방정식 (§5-(3)):</p>
+$$
+G^< = G_0^< + G_0^R \Sigma^R G^< + G_0^R \Sigma^< G^A + G_0^< \Sigma^A G^A
+$$<p>$G_0^< = 0$ 가정 (adiabatic switching):</p>
+$$
+G^< = G_0^R\,\Sigma^R\,G^< + G_0^R\,\Sigma^<\,G^A
+$$<p>$G^<$ 에 대해 풀면</p>
+$$
+(1 - G_0^R\,\Sigma^R)\,G^< = G_0^R\,\Sigma^<\,G^A
+$$<p>Retarded Dyson 방정식의 닫힌 형태 $G^R = G_0^R + G_0^R\,\Sigma^R\,G^R$ 에서</p>
+$$
+G^R\,(1 - \Sigma^R\,G^R) = G_0^R, \quad \text{or} \quad G_0^R = G^R\,(\Sigma^R\,G^R)^{-1}\cdot(\ldots)
+$$<p>더 직접적으로는 $G^R = (1 - G_0^R \Sigma^R)^{-1}\,G_0^R$ 에서</p>
+$$
+(1 - G_0^R\,\Sigma^R)^{-1} = G^R\,(G_0^R)^{-1}
+$$<p>따라서</p>
+$$
+G^< = (1 - G_0^R\,\Sigma^R)^{-1}\,G_0^R\,\Sigma^<\,G^A = G^R\,(G_0^R)^{-1}\,G_0^R\,\Sigma^<\,G^A = G^R\,\Sigma^<\,G^A
+$$<p>즉</p>
+$$
+G^<(E) = G^R(E)\,\Sigma^<(E)\,G^A(E)
+$$<p>Keldysh 방정식 도출. ✓ 이전 절들에서 가정 없이 사용한 결과가 contour formalism + Langreth 룰 + adiabatic 가정으로부터 엄밀히 도출됨이 확인된다.</p>
+<hr>
+<p><strong>example3) 두 reservoir 시스템의 일관된 정리</strong></p>
+<p>두 reservoir 와 결합된 단순한 시스템 (양자수송 셋업) 에서 위의 모든 결과가 일관되게 작동함을 확인.</p>
+<p>sol)</p>
+<p>시스템: $H_s$ 알려진 작은 시스템. 좌우 두 reservoir, 각각 분포 $f_L, f_R$, 결합 강도 $\Gamma_L, \Gamma_R$.</p>
+<p><strong>Step 1</strong>: Self-energy 도출</p>
+<ul>
+<li>$\Sigma^R = \Sigma_L^R + \Sigma_R^R$, 각 $\Sigma_{L,R}^R = V_{L,R}\,g_{L,R}^R\,V_{L,R}^\dagger$</li>
+<li>$\Gamma_{L,R} = -2\,\text{Im}\,\Sigma_{L,R}^R$</li>
+<li>$\Sigma^< = i\,f_L\,\Gamma_L + i\,f_R\,\Gamma_R$</li>
+</ul>
+<p><strong>Step 2</strong>: Retarded 그린함수
+</p>
+$$
+G^R(E) = [E - H_s - \Sigma_L^R - \Sigma_R^R]^{-1}
+$$<p><strong>Step 3</strong>: Lesser 그린함수 (Keldysh)
+</p>
+$$
+G^<(E) = G^R\,(i f_L \Gamma_L + i f_R \Gamma_R)\,G^A
+$$<p><strong>Step 4</strong>: 관측량</p>
+<ul>
+<li>입자 밀도: $n(x) = -i\int dE/(2\pi)\,G^<(E, x, x)$</li>
+<li>전류 (Landauer): $I = (e/h)\int dE\,T(E)\,(f_L - f_R)$</li>
+<li>$T(E) = \text{Tr}[\Gamma_L\,G^R\,\Gamma_R\,G^A]$</li>
+</ul>
+<p><strong>일관성 검증</strong>:</p>
+<p>평형 한계 ($f_L = f_R = f$):
+</p>
+$$
+G^< = G^R\,(i f (\Gamma_L + \Gamma_R))\,G^A = i f\,G^R\,\Gamma\,G^A = i f\,A
+$$<p>평형 분해 $G^< = i f A$ 회복.</p>
+<p>전류: $f_L - f_R = 0$ 이므로 $I = 0$. 정상 ✓</p>
+<p>비평형 ($\mu_L > \mu_R$): $f_L > f_R$ 의 영역에서 전류 흐름. 투과 $T(E)$ 가 시스템의 산란 특성을 결정.</p>
+<p>이 모든 결과가 NEGF 의 일관된 framework 으로부터 자연스럽게 도출되며, 본 챕터의 모든 도구가 통합되어 작동함을 보여준다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/negf/b_negf_overview/index.html"><a class="padding" href="/greens_function/negf/b_negf_overview/index.html">(b) NEGF overview</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_retarded_advanced/index.html"><a class="padding" href="/greens_function/negf/b_retarded_advanced/index.html">(b) Retarded &amp; advanced GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_spectral_function/index.html"><a class="padding" href="/greens_function/negf/b_spectral_function/index.html">(b) Spectral function</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_lesser_greater/index.html"><a class="padding" href="/greens_function/negf/b_lesser_greater/index.html">(b) Lesser and greater GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_dyson_self_energy/index.html"><a class="padding" href="/greens_function/negf/b_dyson_self_energy/index.html">(b) Dyson equation and self-energy</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_keldysh_contour/index.html"><a class="padding" href="/greens_function/negf/b_keldysh_contour/index.html">(b) Keldysh contour formalism</a></li>
+            <li class="active " data-nav-id="/greens_function/negf/b_langreth_rules/index.html"><a class="padding" href="/greens_function/negf/b_langreth_rules/index.html">(b) Langreth rules</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

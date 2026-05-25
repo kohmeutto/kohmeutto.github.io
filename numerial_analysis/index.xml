@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numerial analysis :: 수리전자물리학</title>
+    <link>http://localhost:1313/numerial_analysis/index.html</link>
+    <description>(b) Universal operators (b) 1D FVM</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/numerial_analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Universal operators</title>
+      <link>http://localhost:1313/numerial_analysis/b_universal_operators/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/numerial_analysis/b_universal_operators/index.html</guid>
+      <description>1. 변분 연산자 $\delta$의 정의와 위계&#xD;변분 연산자 $\delta$는 힐베르트 공간의 벡터를 다루는 일반 연산자보다 상위 층위에 존재하는 슈퍼 연산자(Super-operator) 이다. 이는 연산자 대수(Operator Algebra) 위에서 정의되는 미분 사상(Derivation) 으로 규정된다.&#xA;변분 연산자는 다음의 세 가지 공리를 완벽하게 만족한다.&#xA;1) 선형성 (Linearity)&#xA;$$&#xD;\delta(c_1 \hat{A} + c_2 \hat{B}) = c_1 \delta \hat{A} + c_2 \delta \hat{B}&#xD;$$2) 라이프니츠 법칙 (Leibniz Rule)</description>
+    </item>
+    <item>
+      <title>(b) 1D FVM</title>
+      <link>http://localhost:1313/numerial_analysis/1d_fvm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/numerial_analysis/1d_fvm/index.html</guid>
+      <description>1. 기본 연산자&#xD;1) 두 종류의 기저 공간&#xA;1차원 격자에는 두 종류의 영토가 존재한다.&#xA;노드 기저 ($|i\rangle$): 전위($u$)나 물성($p$)이 살고 있는 곳이다. (Primal Grid) $$&#xD;\langle i | j \rangle = \delta_{ij}&#xD;$$ 에지 기저 ($|i+1/2\rangle$): 기울기($\nabla u$)나 유량($F$)이 살고 있는 이웃 간의 통로 이다. (Dual/Edge Grid) $$&#xD;\langle i+1/2 | j+1/2 \rangle = \delta_{ij}&#xD;$$2) 차분 연산자 $\hat{D}$의 대수적 정의</description>
+    </item>
+  </channel>
+</rss>

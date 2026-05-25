@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 익숙한 미분들의 통일§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해
+0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="외미분과 벡터 미적분 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 익숙한 미분들의 통일§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해
+0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="외미분과 벡터 미적분 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 익숙한 미분들의 통일§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해
+0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="외미분과 벡터 미적분 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 익숙한 미분들의 통일§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해
+0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
+    <meta itemprop="wordCount" content="1969">
+    <title>외미분과 벡터 미적분 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/9-b_exterior_derivative_vector_calculus\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-익숙한-미분들의-통일">1. 동기: 익숙한 미분들의 통일</a></li>
+        <li><a href="#2-벡터와-1-form-사이의-다리-음악적-동형사상">2. 벡터와 1-form 사이의 다리: 음악적 동형사상</a></li>
+        <li><a href="#3-0-form-의-외미분--그라디언트">3. 0-form 의 외미분 = 그라디언트</a></li>
+        <li><a href="#4-1-form-의-외미분--회전-3d">4. 1-form 의 외미분 = 회전 (3D)</a></li>
+        <li><a href="#5-2-form-의-외미분--발산-3d">5. 2-form 의 외미분 = 발산 (3D)</a></li>
+        <li><a href="#6-3d-의-통일된-de-rham-사슬">6. 3D 의 통일된 de Rham 사슬</a></li>
+        <li><a href="#7-4차원-이상에서는-어떻게">7. 4차원 이상에서는 어떻게?</a></li>
+        <li><a href="#8-응용-보존-벡터장-비회전-벡터장">8. 응용: 보존 벡터장, 비회전 벡터장</a></li>
+        <li><a href="#9-발산이-0-인-벡터장-incompressible">9. 발산이 0 인 벡터장 (incompressible)</a></li>
+        <li><a href="#10-정리">10. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">외미분과 벡터 미적분</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/8-b_exterior_derivative/index.html" title="외미분 d (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/10-b_integration_of_forms/index.html" title="미분형식의 적분 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="외미분과-벡터-미적분">외미분과 벡터 미적분</h1>
+
+<h3 id="1-동기-익숙한-미분들의-통일">1. 동기: 익숙한 미분들의 통일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§8 에서 외미분 $d$ 가 <em>모든 차수의 미분형식 사이를 잇는 통합된 연산자</em> 임을 봤다. 그리고 <em>3D 에서의 구체적 계산</em> 을 통해</p>
+<ul>
+<li>0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩)</li>
+<li>1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩)</li>
+<li>2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩)</li>
+</ul>
+<p>이라는 <em>대응 관계</em> 도 살짝 언급했다.</p>
+<p>이 장에서는 <em>그 대응을 정확히</em> 본다. <em>왜</em> 외미분이 <em>우리가 익숙한 벡터 미적분 연산자들</em> 과 정확히 같은 일을 하는지, <em>어떤 변환</em> 을 통해 둘이 동일시되는지를 정리한다.</p>
+<p>핵심 메시지는:</p>
+<blockquote>
+<p>3차원 공간에서 그라디언트·회전·발산은 <em>외미분 $d$ 의 세 가지 다른 모습</em>일 뿐. 이들이 <em>동일한 연산자의 다른 표현</em>임이 외대수 언어로 명확해진다.</p>
+</blockquote>
+<p>이게 분명해지면, <em>4차원 이상</em> 으로 가도 <em>회전이라는 익숙한 개념이 왜 사라지는지</em> 와 <em>그래도 외미분이 모든 차원에서 작동하는 이유</em> 가 자연스럽게 보인다.</p>
+<h3 id="2-벡터와-1-form-사이의-다리-음악적-동형사상">2. 벡터와 1-form 사이의 다리: 음악적 동형사상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 <em>익숙한 벡터장 시각</em> 과 <em>미분형식 시각</em> 사이의 다리를 놓아야 한다. 그게 <em>음악적 동형사상 (musical isomorphism)</em>.</p>
+<p><strong>왜 다리가 필요한가?</strong></p>
+<p>§6 §7 에서 강조했듯, <em>벡터와 1-form 은 다른 종류의 객체</em>다. 벡터는 <em>벡터 공간 $T_p M$</em> 에 살고, 1-form 은 <em>그 쌍대 공간 $T_p^* M$</em> 에 산다. 두 공간이 차원은 같지만 <em>자동으로</em> 동일시되지는 않는다.</p>
+<p>그런데 <em>내적 (또는 더 일반적으로 메트릭)</em> 이 주어지면 <em>자연스러운 동일시</em> 가 가능해진다. 이게 음악적 동형사상.</p>
+<p><strong>플랫과 샵 (flat and sharp)</strong></p>
+<p>표준 내적이 있는 $\mathbb{R}^n$ 에서, 두 변환을 정의한다.</p>
+<p><em>플랫 $\flat$</em> (벡터 → 1-form): 벡터 $\vec{v}$ 에 대응하는 1-form $\vec{v}^\flat$ 을</p>
+$$\vec{v}^\flat(\vec{w}) := \vec{v} \cdot \vec{w}$$<p>로 정의. 즉 <em>벡터 $\vec{v}$ 와의 내적</em> 으로 정의되는 1-form.</p>
+<p><em>샵 $\sharp$</em> (1-form → 벡터): 1-form $\alpha$ 에 대응하는 벡터 $\alpha^\sharp$ 를</p>
+$$\alpha(\vec{w}) = \alpha^\sharp \cdot \vec{w} \quad \forall \vec{w}$$<p>가 성립하도록 <em>유일하게</em> 잡는다.</p>
+<p><strong>구체적 표현 (표준 좌표)</strong></p>
+<p>표준 좌표에서 벡터 $\vec{v} = (v^1, v^2, \ldots, v^n)$ 의 플랫은</p>
+$$\vec{v}^\flat = v^1\, dx^1 + v^2\, dx^2 + \cdots + v^n\, dx^n$$<p>(<em>성분이 그대로 1-form 의 계수</em> 가 된다 — 표준 좌표에서.)</p>
+<p>샵은 그 역으로, 1-form $\alpha = \alpha_1\, dx^1 + \cdots + \alpha_n\, dx^n$ 의 샵은 <em>같은 성분을 갖는 벡터</em></p>
+$$\alpha^\sharp = (\alpha_1, \alpha_2, \ldots, \alpha_n)$$<p><strong>음악 기호 이유</strong></p>
+<p>기호 $\flat$ (flat) 과 $\sharp$ (sharp) 는 음악에서 따 온 것. <em>플랫은 인덱스를 내려서</em> (위 첨자 → 아래 첨자) 벡터를 1-form 으로 만들고, <em>샵은 인덱스를 올려서</em> 1-form 을 벡터로 만든다는 비유. 텐서 표기에서 <em>공변 (아래 인덱스)</em> ↔ <em>반변 (위 인덱스)</em> 변환의 의미.</p>
+<p><strong>메트릭이 없으면?</strong></p>
+<p>표준 내적 없이도 $\flat, \sharp$ 가 가능한가? <em>일반적으로 아니다</em>. 다양체에 <em>메트릭 $g_{ij}$</em> 가 주어져야 가능. 메트릭 없는 다양체 (예: 위상학적 다양체) 에서는 벡터와 1-form 이 <em>진정 다른 종류의 객체</em>.</p>
+<p>이 장에서는 $\mathbb{R}^3$ 의 표준 내적을 가정하고 진행한다.</p>
+<h3 id="3-0-form-의-외미분--그라디언트">3. 0-form 의 외미분 = 그라디언트<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가장 단순한 경우부터 다시 정리한다.</p>
+<p>함수 $f$ (= 0-form) 의 외미분:</p>
+$$df = \frac{\partial f}{\partial x}\, dx + \frac{\partial f}{\partial y}\, dy + \frac{\partial f}{\partial z}\, dz$$<p>이 1-form 의 <em>샵</em> 을 취하면 (성분이 그대로):</p>
+$$(df)^\sharp = \left(\frac{\partial f}{\partial x},\, \frac{\partial f}{\partial y},\, \frac{\partial f}{\partial z}\right) = \nabla f$$<p>따라서:</p>
+<blockquote>
+<p><strong>대응</strong>: $(df)^\sharp = \nabla f$, 또는 동치로 $\nabla f$ 의 1-form 표현이 $df$.</p>
+</blockquote>
+<p>음악적 동형사상을 통해 <em>그라디언트의 1-form 버전이 정확히 함수의 외미분</em>.</p>
+<p><strong>기하학적 의미의 재확인</strong></p>
+<p>§6 에서 본 것처럼, $df(v) = \nabla f \cdot v$ 가 <em>$v$ 방향의 방향 미분</em>. 그라디언트가 <em>함수가 가장 빠르게 증가하는 방향과 그 변화율을 담은 벡터</em>. 두 시각이 같은 정보 — 그러나 <em>언어가 다름</em>.</p>
+<p>미분형식 언어의 장점: <em>메트릭 없이도 $df$ 가 잘 정의됨</em>. 그라디언트는 <em>내적이 있어야</em> 정의 가능.</p>
+<h3 id="4-1-form-의-외미분--회전-3d">4. 1-form 의 외미분 = 회전 (3D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3D 에서 1-form 의 외미분이 <em>어떻게 회전과 일치</em> 하는지 자세히 본다.</p>
+<p><strong>시작: 벡터장의 1-form 버전</strong></p>
+<p>벡터장 $\vec{F} = (P, Q, R)$ 의 <em>1-form 버전</em> 은 플랫:</p>
+$$\omega_F := \vec{F}^\flat = P\, dx + Q\, dy + R\, dz$$<p><strong>외미분 계산 (§8 결과)</strong></p>
+<p>§8 §6 의 예제 2 에서 계산했듯:</p>
+$$d\omega_F = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) dy \wedge dz + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) dz \wedge dx + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx \wedge dy$$<p>(부호를 §7 §5 의 표준 정렬 — $dy \wedge dz, dz \wedge dx, dx \wedge dy$ — 로 맞춤.)</p>
+<p>이 <em>세 계수</em> 가 정확히 회전 $\nabla \times \vec{F}$ 의 <em>세 성분</em>:</p>
+$$\nabla \times \vec{F} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},\; \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},\; \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)$$<p><strong>2-form 의 벡터장 버전 (Hodge 별표의 미리보기)</strong></p>
+<p>3D 에서 <em>2-form 을 벡터장에 대응시키는</em> 자연스러운 변환 — 이게 <em>Hodge 별표 $\star$</em>. 자세한 정의는 §13, 지금은 <em>결과만 사용</em>. 표준 좌표에서:</p>
+$$\star(dy \wedge dz) = dx, \quad \star(dz \wedge dx) = dy, \quad \star(dx \wedge dy) = dz$$<p>즉 <em>2-form 의 기저를 1-form 의 기저로</em> 자연스럽게 보내는 변환. (이 대응이 가능한 이유는 §4 의 <em>3D 차원 우연</em> — 2-form 의 기저 수 (3) = 1-form 의 기저 수 (3).)</p>
+<p><strong>합치면</strong>:</p>
+$$d\omega_F = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) dy \wedge dz + \cdots$$<p>이 2-form 에 $\star$ 를 적용하면</p>
+$$\star d\omega_F = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) dx + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) dy + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dz$$<p>이 1-form 의 샵을 다시 취하면 <em>벡터장</em></p>
+$$(\star d\omega_F)^\sharp = \nabla \times \vec{F}$$<p>따라서:</p>
+<blockquote>
+<p><strong>대응</strong>: $(\star d \vec{F}^\flat)^\sharp = \nabla \times \vec{F}$</p>
+<p>즉 <em>플랫 → 외미분 → Hodge → 샵</em> 의 합성이 회전과 같음.</p>
+</blockquote>
+<p><strong>왜 이렇게 복잡한가?</strong></p>
+<p>벡터 미적분의 <em>회전 연산자</em> 는 <em>벡터장을 벡터장으로</em> 보낸다. 외미분 $d$ 는 <em>1-form 을 2-form 으로</em> 보낸다. 두 연산자가 <em>같은 정보를 다룬다</em> 는 걸 확인하려면 양쪽을 <em>공통 언어 (벡터 또는 미분형식)</em> 로 바꿔야 함.</p>
+<p>위 <em>플랫-d-Hodge-샵</em> 의 체인이 그 <em>벡터 ↔ 미분형식 변환의 명시적 경로</em>.</p>
+<h3 id="5-2-form-의-외미분--발산-3d">5. 2-form 의 외미분 = 발산 (3D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비슷하게 <em>2-form 의 외미분이 발산과 일치</em> 함을 본다.</p>
+<p><strong>시작: 벡터장의 2-form 버전</strong></p>
+<p>벡터장 $\vec{F} = (P, Q, R)$ 의 <em>2-form 버전</em> 은 Hodge 별표를 통해:</p>
+$$\eta_F := \star \vec{F}^\flat = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$$<p>(<em>벡터장의 플럭스 형식</em> — 면 적분에서 자연스럽게 등장하는 형태.)</p>
+<p><strong>외미분 계산 (§8 결과)</strong></p>
+<p>§8 §6 의 예제 3 에서 계산했듯:</p>
+$$d\eta_F = \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dx \wedge dy \wedge dz$$<p>세 <em>편미분의 합</em> — 정확히 <em>발산</em>:</p>
+$$\nabla \cdot \vec{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$$<p><strong>3-form 의 함수 버전</strong></p>
+<p>3D 에서 <em>3-form 을 함수에 대응</em> 시키는 변환도 Hodge 별표:</p>
+$$\star(dx \wedge dy \wedge dz) = 1$$<p>즉 부피 형식을 <em>스칼라 1</em> 로 보내는 변환. 이건 <em>최고차 외승의 1차원성</em> (§4) 의 자연스러운 결과.</p>
+<p><strong>합치면</strong>:</p>
+$$\star d\eta_F = \nabla \cdot \vec{F}$$<p>발산이 <em>0-form</em> (즉 함수) 으로 자연스럽게 나옴.</p>
+<blockquote>
+<p><strong>대응</strong>: $\star d (\star \vec{F}^\flat) = \nabla \cdot \vec{F}$</p>
+<p>즉 <em>플랫 → Hodge → 외미분 → Hodge</em> 의 합성이 발산.</p>
+</blockquote>
+<h3 id="6-3d-의-통일된-de-rham-사슬">6. 3D 의 통일된 de Rham 사슬<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위의 세 대응을 한 다이어그램으로 정리하면 <em>3D 의 통일된 구조</em> 가 보인다.</p>
+$$\Omega^0(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^1(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^2(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^3(\mathbb{R}^3)$$<p>각 단계가 정확히 <em>벡터 미적분의 한 연산자</em> 와 대응:</p>
+<table>
+  <thead>
+      <tr>
+          <th>미분형식 사슬</th>
+          <th>벡터 미적분</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\Omega^0$ (함수)</td>
+          <td>스칼라장</td>
+      </tr>
+      <tr>
+          <td>$\Omega^1$ (1-form)</td>
+          <td>벡터장</td>
+      </tr>
+      <tr>
+          <td>$\Omega^2$ (2-form)</td>
+          <td>벡터장</td>
+      </tr>
+      <tr>
+          <td>$\Omega^3$ (3-form)</td>
+          <td>스칼라장 (밀도)</td>
+      </tr>
+      <tr>
+          <td>$d: \Omega^0 \to \Omega^1$</td>
+          <td>그라디언트 $\nabla f$</td>
+      </tr>
+      <tr>
+          <td>$d: \Omega^1 \to \Omega^2$</td>
+          <td>회전 $\nabla \times \vec{F}$</td>
+      </tr>
+      <tr>
+          <td>$d: \Omega^2 \to \Omega^3$</td>
+          <td>발산 $\nabla \cdot \vec{F}$</td>
+      </tr>
+  </tbody>
+</table>
+<p>이 표가 <em>3D 벡터 미적분이 외미분의 세 가지 모습일 뿐</em> 임을 명확히 보여준다.</p>
+<p><strong>$d^2 = 0$ 의 익숙한 결과들 (재확인)</strong></p>
+<p>이 사슬에서 <em>연속된 두 $d$ 를 합성</em> 하면 항상 0:</p>
+<p>$d: \Omega^0 \to \Omega^1$ 다음 $d: \Omega^1 \to \Omega^2$ 의 합성 = 0:</p>
+$$d^2 f = 0 \quad \Longleftrightarrow \quad \nabla \times (\nabla f) = \vec{0}$$<p><em>그라디언트의 회전은 0</em>.</p>
+<p>$d: \Omega^1 \to \Omega^2$ 다음 $d: \Omega^2 \to \Omega^3$ 의 합성 = 0:</p>
+$$d^2 \omega = 0 \quad \Longleftrightarrow \quad \nabla \cdot (\nabla \times \vec{F}) = 0$$<p><em>회전의 발산은 0</em>.</p>
+<p>두 <em>익숙한 부호 항등식이 $d^2 = 0$ 하나로 통합</em>. 우아함의 정점.</p>
+<h3 id="7-4차원-이상에서는-어떻게">7. 4차원 이상에서는 어떻게?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위의 통일된 그림이 <em>3차원에서만</em> 작동한다는 게 <em>결정적인 차이</em>.</p>
+<p><strong>$n$ 차원의 일반 사슬</strong></p>
+$$\Omega^0 \xrightarrow{d} \Omega^1 \xrightarrow{d} \Omega^2 \xrightarrow{d} \cdots \xrightarrow{d} \Omega^n$$<p>각 $\Omega^k$ 의 차원이 $\binom{n}{k}$. <em>모든 차원에서</em> 이 사슬이 잘 정의되고, <em>$d^2 = 0$</em> 도 항상 성립.</p>
+<p><strong>4D 에서의 어려움</strong></p>
+<p>4D 에서:</p>
+<ul>
+<li>$\Omega^0$ : 1 차원 (스칼라)</li>
+<li>$\Omega^1$ : 4 차원 (벡터 같은 객체)</li>
+<li>$\Omega^2$ : 6 차원 (2-form, <em>벡터가 아님</em>)</li>
+<li>$\Omega^3$ : 4 차원</li>
+<li>$\Omega^4$ : 1 차원</li>
+</ul>
+<p>$d: \Omega^1 \to \Omega^2$ 의 결과가 <em>6차원 2-form</em> — <em>벡터로 표현 안 됨</em>. 따라서 <em>회전 같은 단일 벡터 연산자</em> 가 존재하지 않는다.</p>
+<p>대신 <em>전자기 텐서 (electromagnetic tensor) $F_{\mu\nu}$</em> 가 등장. 이게 <em>4D 시공간 위의 2-form</em> 이고, <em>전기장과 자기장이 한 객체로 통합</em> 됨. §14 에서 자세히.</p>
+<p><strong>일반 차원에서</strong></p>
+<p>회전이 <em>3D 만의 우연</em> 임이 분명해진다. <em>외미분은 모든 차원에서 작동</em> 하지만, <em>그것을 벡터 미적분 언어로 번역하는 게 3D 에서만 깔끔</em> 함.</p>
+<p>이게 <em>미분형식 언어가 더 근본적</em> 인 이유. 벡터 미적분은 <em>3D 의 특수 사례</em>. 미분형식은 <em>모든 차원의 일반 언어</em>.</p>
+<h3 id="8-응용-보존-벡터장-비회전-벡터장">8. 응용: 보존 벡터장, 비회전 벡터장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 대응이 <em>흔히 배우는 벡터장의 분류</em> 에 즉시 응용된다.</p>
+<p><strong>보존 벡터장 (conservative field)</strong></p>
+<p>벡터장 $\vec{F}$ 가 <em>보존적 (conservative)</em> — 즉 어떤 스칼라 포텐셜 $f$ 에 대해 $\vec{F} = \nabla f$ — 인지 판정.</p>
+<p>미분형식 언어로: $\vec{F}^\flat = df$ 인 함수 $f$ 의 존재 여부.</p>
+<p>즉 <em>1-form $\vec{F}^\flat$ 이 완전형식 (exact form)</em> 인지의 문제.</p>
+<p><strong>비회전 벡터장 (irrotational field)</strong></p>
+<p>벡터장 $\vec{F}$ 가 <em>비회전적</em> — $\nabla \times \vec{F} = 0$ — 인지 판정.</p>
+<p>미분형식 언어로: <em>$d \vec{F}^\flat = 0$</em> — 즉 <em>1-form $\vec{F}^\flat$ 이 폐형식 (closed form)</em> 인지의 문제.</p>
+<p><strong>핵심 관계</strong></p>
+<p>§8 에서 본 <em>폐형식 vs 완전형식</em> 의 차이:</p>
+<ul>
+<li><em>완전 → 폐</em>: 항상 성립 ($d^2 = 0$). 따라서 <em>보존 → 비회전</em>.</li>
+<li><em>폐 → 완전</em>: <em>공간의 위상에 따라 다름</em>. 따라서 <em>비회전 → 보존</em> 은 <em>공간에 따라 다름</em>.</li>
+</ul>
+<p><strong>예: 볼록 영역과 도넛 영역</strong></p>
+<p>볼록한 영역 (예: $\mathbb{R}^3$ 전체, 공) 에서는 <em>비회전 ⟹ 보존</em> (Poincaré 보조정리). 이게 흔히 배우는 사실.</p>
+<p>하지만 <em>원점을 뺀 평면</em> 같은 <em>비단순한 영역</em> 에서는 <em>비회전이지만 보존이 아닌</em> 벡터장이 존재. 대표적인 예가</p>
+$$\vec{F} = \left(-\frac{y}{x^2 + y^2},\, \frac{x}{x^2 + y^2}\right)$$<p>(소위 <em>각도 함수의 그라디언트</em> 같은 벡터장.)</p>
+<p>이게 <em>비회전이지만 보존이 아니다</em> — 왜냐하면 <em>영역의 위상 (구멍이 있음)</em> 때문에 <em>전체에서 정의된 포텐셜이 존재하지 않음</em>.</p>
+<p>이 <em>위상적 효과</em> 를 <em>측정</em> 하는 것이 <em>de Rham cohomology</em> (§12). 외미분 언어가 <em>위상학과 미적분을 잇는다</em>.</p>
+<h3 id="9-발산이-0-인-벡터장-incompressible">9. 발산이 0 인 벡터장 (incompressible)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비슷한 분류로 <em>발산이 0 인 벡터장</em>.</p>
+<p><strong>비압축 벡터장 (incompressible / solenoidal field)</strong></p>
+<p>$\nabla \cdot \vec{F} = 0$ 인 벡터장. 미분형식 언어로:</p>
+$$d(\star \vec{F}^\flat) = 0$$<p>즉 <em>2-form $\star \vec{F}^\flat$ 가 폐형식</em>.</p>
+<p><strong>$\vec{F}$ 가 다른 벡터장의 회전인지?</strong></p>
+<p>벡터장 $\vec{F}$ 가 <em>어떤 벡터장 $\vec{G}$ 의 회전</em> — 즉 $\vec{F} = \nabla \times \vec{G}$ — 인지 판정.</p>
+<p>미분형식 언어로: <em>2-form $\star \vec{F}^\flat$ 가 완전형식</em> — 즉 어떤 1-form $\eta$ 에 대해 $\star \vec{F}^\flat = d\eta$.</p>
+<p>같은 관계:</p>
+<ul>
+<li><em>어떤 $\vec{G}$ 의 회전</em> → <em>발산 0</em> (완전 → 폐).</li>
+<li>역은 <em>공간 위상에 따라 다름</em> (예: 자기 모노폴이 없을 조건 = $\nabla \cdot \vec{B} = 0$ 이지만 글로벌한 벡터 포텐셜 존재 여부는 <em>위상에 따라 다름</em>).</li>
+</ul>
+<p><strong>물리적 의미</strong></p>
+<p>이게 <em>Maxwell 방정식</em> 의 <em>위상학적 측면</em>과 연결됨. $\nabla \cdot \vec{B} = 0$ (자기 모노폴이 없음) 으로부터 $\vec{B} = \nabla \times \vec{A}$ (벡터 포텐셜의 존재) 가 <em>공간이 단순할 때만</em> 자동으로 따라 나온다.</p>
+<p>(예외적으로 <em>자기 모노폴이 있는 공간</em> 에서는 글로벌한 $\vec{A}$ 가 존재하지 않음 — Dirac monopole 의 위상학적 해석.)</p>
+<p>이 모든 게 <em>외미분과 위상수학의 깊은 연관</em> 이며, §12 의 <em>de Rham cohomology</em> 의 자연스러운 동기.</p>
+<h3 id="10-정리">10. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>3D 벡터 미적분의 세 연산자</em> (그라디언트, 회전, 발산) 가 <em>외미분 $d$ 의 세 가지 표현</em>.</p>
+<p><strong>2)</strong> <em>음악적 동형사상</em> (플랫 $\flat$ 과 샵 $\sharp$) 가 벡터와 1-form 사이의 다리.</p>
+<p><strong>3)</strong> <em>0-form 의 외미분</em>: $df$ 의 샵 = 그라디언트.</p>
+$$\nabla f = (df)^\sharp$$<p><strong>4)</strong> <em>1-form 의 외미분</em> (3D): 회전과 정확한 대응 — Hodge 별표 매개로.</p>
+$$\nabla \times \vec{F} = (\star d \vec{F}^\flat)^\sharp$$<p><strong>5)</strong> <em>2-form 의 외미분</em> (3D): 발산과 정확한 대응.</p>
+$$\nabla \cdot \vec{F} = \star d (\star \vec{F}^\flat)$$<p><strong>6)</strong> <em>3D de Rham 사슬</em>:</p>
+$$\Omega^0 \xrightarrow{d = \text{grad}} \Omega^1 \xrightarrow{d \approx \text{curl}} \Omega^2 \xrightarrow{d \approx \text{div}} \Omega^3$$<p><strong>7)</strong> <em>$d^2 = 0$</em> 이 <em>두 익숙한 항등식</em> 을 통합: $\nabla \times \nabla f = 0$ 와 $\nabla \cdot (\nabla \times \vec{F}) = 0$.</p>
+<p><strong>8)</strong> <em>4D 이상</em> 에서는 회전이 단일 벡터로 표현되지 않음. 외미분은 여전히 작동 — <em>미분형식이 더 근본적인 언어</em>.</p>
+<p><strong>9)</strong> <em>보존·비회전 벡터장</em> 의 분류가 <em>완전형식·폐형식</em> 의 분류와 정확히 일치. 둘의 차이가 <em>공간의 위상</em>.</p>
+<p><strong>10)</strong> <em>비압축 벡터장과 회전의 존재성</em> 도 같은 식의 폐형식·완전형식 차이.</p>
+<p>이 장에서 외대수가 <em>벡터 미적분의 자연스러운 일반화</em> 임이 명확해졌다. 다음 §10 부터는 <em>적분</em> 으로 가서, <em>Stokes 정리</em> 가 어떻게 모든 <em>적분 공식 (기본 정리, Green, Stokes 3D, Gauss)</em> 을 통합하는지 본다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

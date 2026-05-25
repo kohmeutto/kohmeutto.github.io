@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.
+1. 유한 차원: 행렬 성분의 자리 바꾸기$$(A^\dagger)_{ij} = (A_{ji})^{\ast}$$proof)
+행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Adjoint &amp; Residue transformation :: 수리전자물리학">
+    <meta name="twitter:description" content="수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.
+1. 유한 차원: 행렬 성분의 자리 바꾸기$$(A^\dagger)_{ij} = (A_{ji})^{\ast}$$proof)
+행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.">
+    <meta property="og:url" content="http://localhost:1313/temp/b_adjoint_derivation/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Adjoint &amp; Residue transformation :: 수리전자물리학">
+    <meta property="og:description" content="수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.
+1. 유한 차원: 행렬 성분의 자리 바꾸기$$(A^\dagger)_{ij} = (A_{ji})^{\ast}$$proof)
+행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Temps">
+    <meta itemprop="name" content="(b) Adjoint &amp; Residue transformation :: 수리전자물리학">
+    <meta itemprop="description" content="수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.
+1. 유한 차원: 행렬 성분의 자리 바꾸기$$(A^\dagger)_{ij} = (A_{ji})^{\ast}$$proof)
+행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.">
+    <meta itemprop="wordCount" content="2840">
+    <title>(b) Adjoint &amp; Residue transformation :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/temp\/b_adjoint_derivation\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/temp/b_adjoint_derivation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-유한-차원-행렬-성분의-자리-바꾸기">1. 유한 차원: 행렬 성분의 자리 바꾸기</a></li>
+        <li><a href="#2-미분-연산자-수반연산자-도출의-부품">2. 미분 연산자, 수반연산자 도출의 부품</a></li>
+        <li><a href="#3-미분연산자의-경계항-fundamental-residue">3. 미분연산자의 경계항: Fundamental Residue</a></li>
+        <li><a href="#4-적용1-1차-미분-혼합형-lpxddxqx">4. 적용1: 1차 미분 혼합형, L=p(x)d/dx+q(x)</a></li>
+        <li><a href="#5-적용2-스텀-리우빌-l-1wxddx-px-ddxqx">5. 적용2: 스텀-리우빌, L=-1/w(x){d/dx p(x) d/dx+q(x)}</a></li>
+        <li><a href="#비교-비정규-연산자">비교: 비정규 연산자</a></li>
+        <li><a href="#가역성-invertibility">가역성 (Invertibility)</a></li>
+        <li><a href="#심화논문--derivation-of-global-conservation-identities">심화(논문): : Derivation of Global Conservation Identities</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Adjoint &amp; Residue transformation</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/b_adjoint_decomposition/index.html" title="(b) Adjoint & Decomposition (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/i_lsi/index.html" title="(i) LSI (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable temp" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-adjoint--residue-transformation">(b) Adjoint &amp; Residue transformation</h1>
+
+<hr>
+<p>수반 연산자를 구하는 과정은 시스템이 정의된 <strong>공간의 성격(내적의 정의)</strong> 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.</p>
+<hr>
+<h3 id="1-유한-차원-행렬-성분의-자리-바꾸기">1. 유한 차원: 행렬 성분의 자리 바꾸기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$
+(A^\dagger)_{ij} = (A_{ji})^{\ast}
+$$<p>proof)</p>
+<p>행렬 $A$의 수반 행렬 $A^\dagger$가 왜 &lsquo;켤레 전치&rsquo;가 되는지는 성분 단위의 비교를 통해 자명해진다.</p>
+<ul>
+<li>좌변 (대상에 작용): $\langle v | Aw \rangle = \sum_i \sum_j v_i^* A_{ij} w_j$</li>
+<li>우변 (관찰자에 작용): $\langle A^\dagger v | w \rangle = \sum_j \sum_i (A^\dagger_{ji})^* v_i^* w_j$</li>
+</ul>
+<hr>
+<h3 id="2-미분-연산자-수반연산자-도출의-부품">2. 미분 연산자, 수반연산자 도출의 부품<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 미분의 부품, 형식적 수반(formal adjoint) &amp; 경계항</strong></p>
+$$
+\hat{D}=\frac{d}{dx} \implies \hat{D}^{\dagger}=-\frac{d}{dx} \quad\text{with boundary term: } [\phi^{\ast}\psi]_a^b
+$$<p>proof)</p>
+$$
+\langle \phi|\hat{D}\psi\rangle
+=\int_a^b dx\left\lbrack\phi^{\ast}\frac{d}{dx}\psi\right\rbrack
+=\int_a^b dx\left\lbrack\frac{d}{dx}\phi^{\ast}\psi-\psi\frac{d}{dx}\phi^{\ast}\right\rbrack
+=\left\lbrack \phi^{\ast}\psi\right\rbrack^b_a-\int_a^b dx\left\lbrack\psi\frac{d}{dx}\phi^{\ast}\right\rbrack
+$$$$
+=\left\lbrack \phi^{\ast}\psi\right\rbrack^b_a+\langle\hat{D}^{\dagger}\phi|\psi\rangle
+$$<p>위를 라그랑주 항등식(Lagrange Identity) 이라고 하며, 아래와 같이 구분한다.</p>
+$$\langle \phi | \hat{D} \psi \rangle = \underbrace{\langle-\hat{D}\phi|\psi\rangle}_{\text{formal adjoint}}+\underbrace{\left\lbrack\phi^{\ast}\psi\right\rbrack^b_a}_{\text{boundary term}}
+$$<p><strong>2) 복소수 함수의 부품</strong></p>
+$$
+q(x)^{\dagger}=q(x)^{\ast}
+$$<p>proof)</p>
+$$
+\langle \phi | p \psi \rangle = \int dx \phi^* p \psi = \int dx (p^* \phi)^* \psi = \langle p^* \phi | \psi \rangle
+$$<p><strong>3) $\dagger$의 역순법칙과 선형성</strong></p>
+<ul>
+<li>역순 법칙: $(\hat{A}\hat{B})^\dagger = \hat{B}^\dagger \hat{A}^\dagger$</li>
+<li>선형성: $(\hat{A} + \hat{B})^\dagger = \hat{A}^\dagger + \hat{B}^\dagger$</li>
+</ul>
+<hr>
+<h3 id="3-미분연산자의-경계항-fundamental-residue">3. 미분연산자의 경계항: Fundamental Residue<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 정의 (Definition)</strong></p>
+<p>임의의 선형 연산자 $\hat{L}$에 대하여, 시스템 경계에서의 비대칭성을 추출하는 <strong>레지듀 변환(Residue Transform)</strong> 슈퍼 연산자(Super-operator) $\mathcal{R}$은 다음과 같이 <strong>브라-켓 안</strong> 에서 정의된다. $\mathcal{R}$ 은 연산자 공간 $\mathcal{B}(\mathcal{H})$ 에서 정의된 사상(Mapping)으로, 다음과 같은 내적 관계를 통해 그 작용이 규정된다.</p>
+$$
+\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = \langle \phi | \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi | \psi \rangle
+$$<ul>
+<li>연산자 $\hat{L}$이 물리적 상태에 작용할 때 발생하는 <strong>&lsquo;정보의 총 유출량&rsquo;</strong> 이자, 경계면을 통과하는 플럭스(Flux)의 총합을 의미한다.</li>
+<li>시스템이 자기 수반(Self-adjoint)이고 경계 조건이 닫혀 있다면 $\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = 0$이다. 즉, $\mathcal{R} \hat{L}$은 시스템의 <strong>&lsquo;대칭성이 깨진 정도&rsquo;</strong> 를 직접적으로 읽어내는 대수적 센서이다.</li>
+</ul>
+<p>좀 더, 이 식의 의미 깊은 의미를 살펴보자. 다음과 같이 바꿔보면, 의미가 명확해 진다.</p>
+$$
+\underbrace{\langle \phi | \hat{L} \psi \rangle}_{\text{total action}} = \underbrace{\langle \phi | \mathcal{R} \hat{L} | \psi \rangle}_{\text{boundary term}} + \underbrace{\langle \hat{L}^\dagger \phi | \psi \rangle}_{\substack{\text{internal observation} \\ (\text{formal Adjoint})}}
+$$<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">구분</th>
+          <th style="text-align: center">수식</th>
+          <th style="text-align: left">성격</th>
+          <th style="text-align: left">물리적 의미</th>
+          <th style="text-align: left">인식론적 정의</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>전체 실재</strong><br>(Total Action)</td>
+          <td style="text-align: center">$\langle \phi \mid \hat{L} \psi \rangle$</td>
+          <td style="text-align: left"><strong>객관적 실재</strong></td>
+          <td style="text-align: left">내부 작용과 경계 플럭스를 모두 포함한 사건</td>
+          <td style="text-align: left">시스템의 <strong>가감 없는 진실</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>내부 관측</strong><br>(Internal Observation)</td>
+          <td style="text-align: center">$\langle \hat{L}^\dagger \phi \mid \psi \rangle$</td>
+          <td style="text-align: left"><strong>제한적 관측</strong></td>
+          <td style="text-align: left">도메인 내부에서만 수집된 데이터와 법칙</td>
+          <td style="text-align: left">관측자가 <strong>안쪽만 훑어본 행위</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>관측자의 예측</strong><br>(Theoretical Prediction)</td>
+          <td style="text-align: center">(상동)</td>
+          <td style="text-align: left"><strong>이론적 모델</strong></td>
+          <td style="text-align: left">내부 법칙이 전체를 지배할 것이라는 가정</td>
+          <td style="text-align: left">관측자가 가진 <strong>불완전한 예측치</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>레지듀</strong><br>(Residue)</td>
+          <td style="text-align: center">$\langle \phi \mid \mathcal{R} \hat{L} \mid \psi \rangle$</td>
+          <td style="text-align: left"><strong>예측 오차</strong></td>
+          <td style="text-align: left">관측자가 놓쳐버린 경계의 지문(Trace)</td>
+          <td style="text-align: left">관측자가 보지 못한 <strong>경계의 실체</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>2) 조립 법칙 (The Assembly Theorem)</strong></p>
+<p>두 연산자의 직렬 결합 $\hat{L} = \hat{A}\hat{B}$에 대한 레지듀 변환은 마치 미분의 곱 법칙(Leibniz Rule)과 유사한 구조를 가진다.</p>
+$$
+\mathcal{R} (\hat{A} \hat{B}) = (\mathcal{R} \hat{A}) \hat{B} + \hat{A} (\mathcal{R} \hat{B})
+$$<p>주의: 이 등식은 brа-ket 사이에서 평가될 때 성립한다. 즉,</p>
+$$
+\langle \phi | \mathcal{R} (\hat{A} \hat{B}) | \psi \rangle = \langle \phi | (\mathcal{R} \hat{A}) \hat{B} + \hat{A} (\mathcal{R} \hat{B}) | \psi \rangle
+$$<p>proof)</p>
+<p>브라-켓 표기법을 통해 조립된 시스템의 레지듀를 전개한다.</p>
+$$
+\langle \phi | \mathcal{R} (\hat{A} \hat{B}) | \psi \rangle = \langle \phi | \hat{A} \hat{B} \psi \rangle - \langle \hat{B}^\dagger \hat{A}^\dagger \phi | \psi \rangle
+$$<p>중간 상태 $\langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle$를 더하고 빼서 항을 분리한다.</p>
+$$
+= \left( \langle \phi | \hat{A} (\hat{B} \psi) \rangle - \langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle \right) + \left( \langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle - \langle \hat{B}^\dagger (\hat{A}^\dagger \phi) | \psi \rangle \right)
+$$<p>각 괄호는 $\mathcal{R} \hat{A}$와 $\mathcal{R} \hat{B}$의 정의와 일치하므로 최종 식을 얻는다.</p>
+$$
+= \langle \phi | \mathcal{R} \hat{A} | \hat{B} \psi \rangle + \langle \hat{A}^\dagger \phi | \mathcal{R} \hat{B} | \psi \rangle
+= \langle \phi | (\mathcal{R} \hat{A}) \hat{B} | \psi \rangle + \langle \phi | \hat{A} (\mathcal{R} \hat{B}) | \psi \rangle
+$$<p>이 정리는 아무리 복잡한 고차 연산자라도 기계적인 분배 법칙을 통해 하위 레지듀 블록으로 쪼개어 분석할 수 있음을 수학적으로 보장한다.</p>
+<p><strong>3) 보존 법칙: 가산성 (Additivity)</strong></p>
+<p>병렬로 연결된 연산자 $\hat{L} = \hat{L}_1 + \hat{L}_2$에 대하여, 레지듀 변환은 선형성을 유지한다.</p>
+$$
+\mathcal{R} (\hat{L}_1 + \hat{L}_2) = \mathcal{R} \hat{L}_1 + \mathcal{R} \hat{L}_2
+$$<p>proof)</p>
+<p>레지듀 변환의 정의와 수반 연산자의 선형성을 이용한다.</p>
+$$
+\langle \phi | \mathcal{R} (\hat{L}_1 + \hat{L}_2) | \psi \rangle = \langle \phi | (\hat{L}_1 + \hat{L}_2) \psi \rangle - \langle (\hat{L}_1 + \hat{L}_2)^\dagger \phi | \psi \rangle
+$$$$
+= \left( \langle \phi | \hat{L}_1 \psi \rangle - \langle \hat{L}_1^\dagger \phi | \psi \rangle \right) + \left( \langle \phi | \hat{L}_2 \psi \rangle - \langle \hat{L}_2^\dagger \phi | \psi \rangle \right)
+$$$$
+= \langle \phi | \mathcal{R} \hat{L}_1 | \psi \rangle + \langle \phi | \mathcal{R} \hat{L}_2 | \psi \rangle
+$$<p>다물리(Multiphysics) 시스템에서 전체 경계 조건은 각 물리 현상이 독립적으로 만드는 레지듀 센서의 단순 합산으로 구성될 수 있다. 이는 시스템 모델링의 <strong>모듈화(Modularity)</strong> 를 가능케 하는 핵심 근거가 된다.</p>
+<hr>
+<h3 id="4-적용1-1차-미분-혼합형-lpxddxqx">4. 적용1: 1차 미분 혼합형, L=p(x)d/dx+q(x)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 형태는 반도체에서의 드리프트(Drift)나 유체 역학의 대류(Advection)에 해당한다.</p>
+<p><strong>1) formal adjoint</strong></p>
+$$
+L^{\dagger}=\hat{D}^{\dagger}p^{\ast}+q^{\ast}
+$$<p><strong>2) residue</strong></p>
+<p>조립 법칙을 적용한다.</p>
+$$
+\mathcal{R} \hat{L} = \mathcal{R}(p\hat{D} + q) = \mathcal{R}(p\hat{D}) + \mathcal{R}q
+$$<p>여기서 $\mathcal{R}q = 0$이므로,</p>
+$$
+\mathcal{R}(p\hat{D}) = (\mathcal{R}p)\hat{D} + p(\mathcal{R}\hat{D})
+$$<p>스칼라 함수 $p$는 미분이 포함되지 않은 단순 곱 연산자이므로 $\mathcal{R}p = 0$이다.</p>
+$$
+\mathcal{R} \hat{L} = p\mathcal{R}\hat{D}
+$$<p>브라-켓을 적용한다.</p>
+$$
+\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = \langle \phi | p \mathcal{R}\hat{D} | \psi \rangle = \langle p^* \phi | \mathcal{R}\hat{D} | \psi \rangle
+$$<p>미분 센서 $\mathcal{R}\hat{D}$의 정의($[\phi^* \psi]_a^b$)를 적용하면:</p>
+$$
+\mathcal{R} \hat{L} = [ (p^* \phi)^* \psi ]_a^b = [ p \phi^* \psi ]_a^b
+$$<hr>
+<h3 id="5-적용2-스텀-리우빌-l-1wxddx-px-ddxqx">5. 적용2: 스텀-리우빌, L=-1/w(x){d/dx p(x) d/dx+q(x)}<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연산자 정의</p>
+$$
+\hat{L} = \hat{w} \hat{K} = -\frac{1}{w(x)} \{ \hat{D} p(x) \hat{D} + q(x) \}
+$$<p><strong>1) 표준 내적 ($L^2$ Space)</strong></p>
+<p>내적을 $\langle \phi | \psi \rangle = \int dx \phi^* \psi $ 로 정의하는 일반적인 관찰자 시점이다.</p>
+<p>(1) formal adjoint</p>
+<p>먼저 내부 블록 $\hat{K} = \hat{D} p \hat{D} + q$의 수반 연산자를 구한다.</p>
+$$
+\hat{K}^\dagger = (\hat{D} p \hat{D})^\dagger + q^\dagger = \hat{D}^\dagger p^\dagger \hat{D}^\dagger + q^\dagger
+$$<p>$\hat{D}^\dagger = -\hat{D}$ 이고 $p, q$는 실수 함수(Self-adjoint)이므로 다음을 얻는다.</p>
+$$
+\hat{K}^\dagger = (-\hat{D}) p (-\hat{D}) + q = \hat{D} p \hat{D} + q
+$$<p>따라서,</p>
+$$
+\hat{L}^{\dagger} = \hat{K}^{\dagger}\hat{w}^{\dagger} = -\{ \hat{D} p \hat{D} + q \} \frac{1}{w^\ast}
+$$<p>(2) residue</p>
+<p>조립 법칙 $\mathcal{R}(\hat{A}\hat{B}) = (\mathcal{R}\hat{A})\hat{B} + \hat{A}(\mathcal{R}\hat{B})$를 $\hat{L} = \hat{w}\hat{K}$에 적용한다.</p>
+$$
+\mathcal{R} \hat{L} = (\mathcal{R} \hat{w}) \hat{K} + \hat{w} (\mathcal{R} \hat{K})
+$$<p>함수 $\hat{w}$는 $\mathcal{R}\hat{w}=0$이므로, $\mathcal{R} \hat{L} = \hat{w} \mathcal{R} \hat{K}$가 된다. 내부의 $\mathcal{R}\hat{K}$를 전개하면 다음과 같다.</p>
+$$
+\mathcal{R} \hat{L} = \hat{w} \{ (\mathcal{R} \hat{D}) p \hat{D} + \hat{D} p \mathcal{R} \hat{D} \}
+$$<p>이 연산자를 브라-켓 $\langle \phi | \dots | \psi \rangle$ 사이에 넣고 계산한다.</p>
+$$
+\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = \langle \phi | \hat{w} (\mathcal{R} \hat{D}) p \hat{D} | \psi \rangle + \langle \phi | \hat{w} \hat{D} p \mathcal{R} \hat{D} | \psi \rangle
+$$<p>항 1: $\hat{w}$와 $\phi$를 묶어 브라로 인식하면 $\hat{w}$는 실수 함수이므로 그대로 나온다.</p>
+$$
+\langle \phi | \hat{w} (\mathcal{R} \hat{D}) p \hat{D} | \psi \rangle = [ \hat{w} \phi^* (p \psi') ]_a^b
+$$<p>항 2: 브라 쪽에 있는 $\hat{w} \phi$에 $\hat{D}$가 작용해야 한다. $\hat{D}^\dagger = -\hat{D}$</p>
+$$
+\langle -\hat{D}(\hat{w} \phi) | p \mathcal{R} \hat{D} | \psi \rangle = - [ (\hat{w}' \phi + \hat{w} \phi')^* (p \psi) ]_a^b
+$$<p>최종 결과 (Honest Residue)</p>
+$$
+\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = -\frac{1}{w} [ p(x) (\phi^* \psi' - \phi'^* \psi) ]_a^b - \left[ p(x) \frac{w'(x)}{w(x)^2} \phi^* \psi \right]_a^b
+$$<p>따라서, 매질의 가중치 변화($w'$)가 직접적인 레지듀 항으로 노출된다.</p>
+<p><strong>2) 가중 내적 ($L^2_w$ Space)</strong></p>
+<p>내적을 $\langle \phi | \psi \rangle_w = \int dx w \phi^* \psi$ 로 정의하는 일반적인 관찰자 시점이다. 가중내적이 곱해지므로 $\hat{K} = \hat{D} p \hat{D} + q$의 수반 연산자를 구하는것과 동일하다. 위의 결과에다가 $w(x)=1$과 동일하게 간주할 수 있다. 따라서,</p>
+$$
+\text{formal adjoint: }
+\hat{L}^{\dagger} = -( \hat{D} p \hat{D} + q ) 
+$$$$
+\text{residue: }
+\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = - [ p (\phi^* \psi' - \phi'^* \psi) ]_a^b
+$$<hr>
+<p><strong>3) 특성 3: 에르미트/반-에르미트 부분의 교환 가능성</strong></p>
+<blockquote>
+<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 그 에르미트 부분 $\hat{H} = \frac{1}{2}(\hat{A}+\hat{A}^\dagger)$와 반-에르미트 부분 $\hat{S} = \frac{1}{2}(\hat{A}-\hat{A}^\dagger)$가 서로 교환 가능한 것($[\hat{H}, \hat{S}]=0$)과 동치이다.</p>
+</blockquote>
+<blockquote>
+<p><strong>증명</strong>:</p>
+<ol>
+<li>$\hat{A}=\hat{H}+\hat{S}$ 이고 $\hat{A}^\dagger=\hat{H}-\hat{S}$ 이다.</li>
+<li>교환자 $[\hat{A}, \hat{A}^\dagger]$를 계산한다.</li>
+</ol>
+</blockquote>
+$$
+\begin{align*}
+[\hat{A}, \hat{A}^\dagger] &= (\hat{H} + \hat{S})(\hat{H} - \hat{S}) - (\hat{H} - \hat{S})(\hat{H} + \hat{S}) \\
+&= (\hat{H}^2 - \hat{H}\hat{S} + \hat{S}\hat{H} - \hat{S}^2) - (\hat{H}^2 + \hat{H}\hat{S} - \hat{S}\hat{H} - \hat{S}^2) \\
+&= -\hat{H}\hat{S} + \hat{S}\hat{H} - \hat{H}\hat{S} + \hat{S}\hat{H} \\
+&= 2(\hat{S}\hat{H} - \hat{H}\hat{S}) = 2[\hat{S}, \hat{H}]
+\end{align*}
+$$<blockquote>
+<ol start="3">
+<li>따라서 $[\hat{A}, \hat{A}^\dagger]=0$인 것은 $[\hat{S}, \hat{H}]=0$, 즉 $[\hat{H}, \hat{S}]=0$인 것과 동치이다.</li>
+</ol>
+</blockquote>
+<h4 id="특성-4-연산자와-수반의-동일한"><strong>특성 4: 연산자와 수반의 동일한 &lsquo;크기&rsquo;</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<blockquote>
+<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 모든 벡터 $|v\rangle$에 대해 $||\hat{A}|v\rangle|| = ||\hat{A}^\dagger|v\rangle||$ 인 것과 동치이다.</p>
+</blockquote>
+<blockquote>
+<p><strong>증명</strong>: $ ||\hat{A}|v\rangle||^2 = \langle v|\hat{A}^\dagger\hat{A}|v\rangle$ 이고 $ ||\hat{A}^\dagger|v\rangle||^2 = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 이다. 따라서 두 크기가 같은 것은 $\langle v|\hat{A}^\dagger\hat{A}|v\rangle = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 와 동치이며, 이는 $\langle v|[\hat{A}^\dagger, \hat{A}]|v\rangle=0$을 의미한다. 모든 벡터에 대해 이 식이 성립하려면 연산자 $[\hat{A}^\dagger, \hat{A}]$가 0이어야 하므로, $\hat{A}$가 정규 연산자임과 동치이다.</p>
+</blockquote>
+<h4 id="특성-5-영공간과-열공간의-직교성"><strong>특성 5: 영공간과 열공간의 직교성</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<blockquote>
+<p><strong>정리</strong>: 정규 연산자 $\hat{A}$의 영공간($N(A)$)은 그 열공간($C(A)$)과 항상 서로 수직이다.</p>
+</blockquote>
+<blockquote>
+<p><strong>증명</strong>:</p>
+<ol>
+<li><strong>보편적 원리</strong>: 선형대수학의 기본 정리에 따라, 모든 행렬에 대해 영공간은 **행공간(Row Space, $C(A^T)$)**과 수직이다: $N(A) \perp C(A^T)$.</li>
+<li><strong>정규 연산자의 특성</strong>: 정규 연산자는 <strong>열공간과 행공간이 같다</strong>: $C(A) = C(A^T)$. (이는 특성 1로부터 유도된다. 영공간의 직교 보공간은 행공간($N(A)^\perp=C(A^T)$)이고, 좌측 영공간의 직교 보공간은 열공간($N(A^\dagger)^\perp=C(A)$)이다. 특성 1에서 $N(A)=N(A^\dagger)$이므로, 그 직교 보공간인 $C(A^T)$와 $C(A)$도 같다.)</li>
+<li><strong>결론</strong>: 따라서, 1번과 2번을 종합하면, 정규 연산자에 대해서는 $N(A) \perp C(A)$가 성립함이 증명된다. ✅</li>
+</ol>
+</blockquote>
+<h3 id="비교-비정규-연산자">비교: 비정규 연산자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>정규 연산자가 아닌 경우, 완비적인 고유벡터 기저를 갖지 못할 수 있다. 이러한 행렬을 &lsquo;불완전 행렬(defective matrix)&lsquo;이라고 한다. 이들은 공간을 순수하게 늘리거나 줄이는 것이 아닌, &lsquo;찌그러뜨리는(shear)&rsquo; 변환을 포함하여 안정적인 불변 방향이 부족하다.</p>
+<ul>
+<li><strong>예제 (비정규 행렬)</strong>: $\hat{A} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$
+<ul>
+<li>$\hat{A}^\dagger = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}$</li>
+<li>$[\hat{A}, \hat{A}^\dagger] = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \neq 0$ 이므로 정규 행렬이 아니다.</li>
+<li>이 행렬의 고유벡터는 $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ 방향 하나뿐이므로, 2차원 공간의 기저를 이룰 수 없다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="가역성-invertibility">가역성 (Invertibility)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>정규 연산자의 가역성은 고유값에 의해 결정된다. &ldquo;가역적이다&quot;라는 것은 &ldquo;역변환이 존재한다&quot;는 의미이며, 이는 &ldquo;0으로 소멸되는 정보(영공간)가 없다&quot;는 것과 같다.</p>
+<ul>
+<li>
+<p><strong>가역적 정규 연산자 (Invertible Normal Operator)</strong></p>
+<ul>
+<li><strong>조건</strong>: <strong>모든 고유값이 0이 아닐 때</strong>.</li>
+<li><strong>증명</strong>: 행렬식은 고유값의 곱($\det(A) = \prod \lambda_i$)과 같다. 모든 고유값이 0이 아니면, 행렬식은 0이 아니므로 역행렬이 존재한다. 이 경우 영공간은 $\{0\}$ 뿐이다.</li>
+<li><strong>물리적 의미</strong>: 변환 과정에서 정보의 손실이 없으며, 0이 아닌 상태를 0 상태로 보내지 않는다.</li>
+<li><strong>예제</strong>: $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$는 정규(에르미트) 행렬이며, 고유값은 $1, -1$이므로 가역적이다.</li>
+</ul>
+</li>
+<li>
+<p><strong>비가역적 정규 연산자 (Non-invertible Normal Operator)</strong></p>
+<ul>
+<li><strong>조건</strong>: <strong>적어도 하나의 고유값이 0일 때</strong>.</li>
+<li><strong>증명</strong>: 고유값 중 0이 하나라도 포함되면, 행렬식($\det(A) = \prod \lambda_i$)은 0이 된다. 따라서 역행렬이 존재하지 않으며, 고유값 0에 해당하는 고유벡터들이 0이 아닌 영공간을 형성한다.</li>
+<li><strong>물리적 의미</strong>: 변환 과정에서 특정 상태(영공간)의 정보가 &lsquo;소멸&rsquo;된다.</li>
+<li><strong>예제</strong>: $\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$는 정규(에르미트) 행렬이며, 고유값은 $0, 2$이므로 비가역적이다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="심화논문--derivation-of-global-conservation-identities">심화(논문): : Derivation of Global Conservation Identities<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞선 챕터에서 언급된 바와 같이, 임의의 선형 연산자 $\hat{L}$에 대하여, 시스템의 경계 비대칭성을 추출하는 <strong>레지듀 변환 $\mathcal{R}$</strong> 은 힐베르트 공간 내에서 다음과 같이 정의된다. 이 정의는 모든 유도 과정의 출발점이자, 시스템의 &lsquo;객관적 실재&rsquo;와 &lsquo;예측&rsquo; 사이의 간극을 규정하는 공리이다.</p>
+$$
+\langle \phi \mid \mathcal{R}\hat{L} \mid \psi \rangle \equiv \langle \phi \mid \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi \mid \psi \rangle
+$$<p><strong>1) Operator Conservation Law</strong></p>
+<p>아래 식은 연산자의 비정규성(Non-normality)이 상태 함수의 노름 변화와 경계 플럭스에 의해 어떻게 결정되는지 보여준다.</p>
+$$
+\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W(\hat{L}^\dagger, \hat{L}) \mid \psi \rangle
+$$$$
+\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}
+$$<p>proof)</p>
+<p>교환자 기댓값의 전개상태 $|\psi\rangle$에 대한 교환자 $[\hat{L}^\dagger, \hat{L}]$의 기댓값은 다음과 같다. 순수 수학적 정의이지만 직관적으로 이해하기 위해, &ldquo;소자의 공간이 뒤틀린 것($[\hat{L}^\dagger, \hat{L}]$)이라면, 그 길을 지나가던 전자($|\psi\rangle$)가 겪은 변화의 기댓값이다.&rdquo; 라고 비유적으로 해석할 수 있다.</p>
+$$
+\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \langle \psi \mid \hat{L}^\dagger \hat{L} \mid \psi \rangle - \langle \psi \mid \hat{L} \hat{L}^\dagger \mid \psi \rangle
+$$<p>레지듀 정의의 적용첫 번째 항 $\langle \psi \mid \hat{L}^\dagger (\hat{L}\psi) \rangle$에 대해, $\hat{L}^\dagger$를 브라 쪽으로 넘기기 위해 레지듀 정의를 적용한다.</p>
+$$
+\langle \psi \mid \hat{L}^\dagger (\hat{L}\psi) \rangle = \langle \hat{L}\psi \mid \hat{L}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle = \|\hat{L}\psi\|^2 + \langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle
+$$$$
+\langle \psi \mid \hat{L} (\hat{L}^\dagger \psi) \rangle = \langle \hat{L}^\dagger \psi \mid \hat{L}^\dagger \psi \rangle + \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle = \|\hat{L}^\dagger \psi\|^2 + \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle
+$$<p>두 항을 결합한다.</p>
+$$
+\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \underbrace{\langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle - \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle}_{\text{Residue Wronskian}}
+$$<p>여기서 <strong>레지듀 론스키안(Residue Wronskian) $\mathcal{R}_\mathcal{W}$</strong> 를 다음과 같이 정의함으로써 첫 번째 최종 식을 얻는다.</p>
+$$
+\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}$$$$
+\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W(\hat{L}^\dagger, \hat{L}) \mid \psi \rangle
+$$<p><strong>2) Bulk-Boundary Dissipation Theorem</strong></p>
+<p>아래 식은 하이젠베르크 운동 방정식에 기반하여 시스템의 에너지 변화(소산)를 정량화한다. 즉, 시스템 내부의 저항적 변화량(Internal Friction)은 벌크 영역의 에너지 비대칭성과 경계면에서의 유출입량의 합으로 결정된다.</p>
+$$
+\underbrace{\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle}_{\text{Internal Friction}} = \frac{1}{2} \underbrace{\left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right)}_{\text{Net Energy Gap}} + \underbrace{\langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle}_{\text{Residue Wronskian}}
+$$<p>proof)</p>
+<p>해밀토니안 소산 구조를 설정한다. 임의의 연산자 $\hat{L}$ 에 대하여, 허미션 파트 $\hat{H}$ 와 반-허미션 파트 $\hat{A}$ 는 다음과 같이 정의된다.</p>
+$$\hat{L} = \hat{H} + \hat{A}$$<p>
+</p>
+$$\hat{L}^\dagger = \hat{H} - \hat{A} \quad (\text{단, } \hat{H}^\dagger = \hat{H}, \hat{A}^\dagger = -\hat{A})$$<p>교환자의 내적 전개 (Expansion of Commutator)를 한다. 에너지로 비유를 하면, 순간 내부 마찰에 의해 에너지가 열로 전환되고 있는 소산율(Dissipation Rate)의 기댓값을 의미한다. 예시가 아닌 식 자체로의 본질적인 해석은 시스템의 동역학적 불일치를 보여주는 핵심 지표이다.</p>
+$$
+\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \langle \psi \mid \hat{H}\hat{A} \mid \psi \rangle - \langle \psi \mid \hat{A}\hat{H} \mid \psi \rangle
+$$<p>여기서 우리가 이전에 정의한 <strong>레지듀 변환($\mathcal{R}$)</strong> 을 사용한다. 연산자를 브라(Bra) 쪽으로 넘길 때 발생하는 경계 오차를 보정해주는 규칙이다.</p>
+$$
+\langle \psi \mid \hat{H}(\hat{A}\psi) \rangle = \langle \hat{H}^\dagger \psi \mid \hat{A}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{H} \mid \hat{A}\psi \rangle$$$$\langle \psi \mid \hat{A}(\hat{H}\psi) \rangle = \langle \hat{A}^\dagger \psi \mid \hat{H}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{A} \mid \hat{H}\psi \rangle$$<p>두 식을 빼면 다음과 같다.</p>
+$$
+\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \left( \langle \hat{H} \psi \mid \hat{A} \psi \rangle + \langle \hat{A} \psi \mid \hat{H} \psi \rangle \right) + \left( \langle \psi \mid \mathcal{R} \hat{H} (\hat{A}\psi) \rangle - \langle \psi \mid \mathcal{R} \hat{A} (\hat{H}\psi) \rangle \right)
+$$<p>위 식에서 첫번째 괄호는 복소 내적의 성질을 이용해 다음과 같이 변환된다.</p>
+$$
+\langle \hat{H} \psi \mid \hat{A} \psi \rangle + \langle \hat{A} \psi \mid \hat{H} \psi \rangle = 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+$$<p>여기서 $\hat{L} = \hat{H} + \hat{A}$ 와 $\hat{L}^\dagger = \hat{H} - \hat{A}$ 의 노름(Norm) 차이를 계산해 본다.</p>
+$$
+\|\hat{L}\psi\|^2 = \|\hat{H}\psi + \hat{A}\psi\|^2 = \|\hat{H}\psi\|^2 + \|\hat{A}\psi\|^2 + 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+$$$$\|\hat{L}^\dagger\psi\|^2 = \|\hat{H}\psi - \hat{A}\psi\|^2 = \|\hat{H}\psi\|^2 + \|\hat{A}\psi\|^2 - 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+$$<p>따라서, 두 노름의 차이는 다음과 같이 정의된다.</p>
+$$
+\frac{1}{2} \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) = 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+$$<p>이것이 바로 시스템의 벌크 영역에서 발생하는 Net Energy Gap (순수 에너지 불균형) 항이다. 유도 과정에서 남은 경계 보정 항들을 묶어 레지듀 론스키안 $\mathcal{R}_W$로 정의한다.</p>
+$$
+\langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle = \langle \psi \mid \mathcal{R}\hat{H} \mid \hat{A} \psi \rangle - \langle \psi \mid \mathcal{R}\hat{A} \mid \hat{H} \psi \rangle
+$$<p>이 항은 연산자의 비가환성(Non-commutativity)이 경계면(Boundary)에서 어떻게 소산으로 나타나는지를 수학적으로 포착한다. 위의 과정들을 병합하면 최종 정리 형태가 도출된다.</p>
+$$
+\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \frac{1}{2} \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle
+$$<p><strong>3) 레지듀 론스키안의 물리적 의미</strong></p>
+<p>레지듀 론스키안은 단순한 수학적 잔여항이 아니라, 시스템의 <strong>실재(Reality)</strong> 와 이를 수용하는 경계의 관측(Observation) 사이의 위상적 불일치를 정량화하는 지표이다. 이를 <strong>&lsquo;위상적 틀어짐(Topological Skewness)&rsquo;</strong> 의 관점에서 기술한다.</p>
+<p>(1) 열벡터 구조와 위상 공간의 축 정의</p>
+<p>레지듀 론스키안 행렬 $\mathcal{R}_\mathcal{W}$를 구성하는 두 열벡터는 시스템을 기술하는 두 개의 독립적인 위상 축(Basis)으로 해석된다.</p>
+$$
+\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathbf{v}_1 & \mathbf{v}_2 \end{vmatrix} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}
+$$<ul>
+<li>제1열 ($\mathbf{v}_1$, 관측 축): 전극(Contact)이 전자를 받아들이기 위해 설정한 <strong>수용 조건(Lens Profile)</strong> 이다. 이는 시스템이 외부와 소통하는 관측의 기준선을 의미한다.</li>
+<li>제2열 ($\mathbf{v}_2$, 실재 축): 채널(Channel) 내부에서 전자가 실제로 보여주는 <strong>물리적 거동(Object Profile)</strong> 이다. 이는 관측자와 무관하게 존재하는 시스템의 실재를 의미한다.</li>
+</ul>
+<p>(2) 행렬식(Determinant)과 에너지 소산의 메커니즘</p>
+<p>행렬식 $\mathcal{R}_\mathcal{W}$은 두 위상 축이 이루는 평행사변형의 면적을 의미하며, 이는 곧 &lsquo;관측&rsquo;과 &lsquo;실재&rsquo;가 경계면에서 얼마나 어긋나 있는지를 나타내는 <strong>&lsquo;위상적 마찰 계수&rsquo;</strong> 가 된다.</p>
+<ul>
+<li>정합 상태 ($\text{det} \approx 0$): 관측 축과 실재 축이 평행하거나 직교성을 유지하여, 전자가 자신의 파동 형태를 바꾸지 않고 전극으로 부드럽게 전이되는 상태이다.</li>
+<li>뒤틀림 상태 ($\text{det} \neq 0$): 두 축 사이의 각도가 좁아지며 위상 공간이 찌그러지는 상태이다. 전자는 전극의 수용 조건에 맞추기 위해 자신의 양자 상태를 억지로 변형시켜야 하며, 이 과정에서 발생하는 <strong>&lsquo;수학적 불일치의 총량&rsquo;</strong> 이 물리적인 <strong>에너지 소산(Dissipation)</strong> 으로 치환된다.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/a_basis/index.html"><a class="padding" href="/temp/a_basis/index.html">(a) Basis</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_decomposition/index.html"><a class="padding" href="/temp/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
+            <li class="active " data-nav-id="/temp/b_adjoint_derivation/index.html"><a class="padding" href="/temp/b_adjoint_derivation/index.html">(b) Adjoint &amp; Residue transformation</a></li>
+            <li class="" data-nav-id="/temp/i_lsi/index.html"><a class="padding" href="/temp/i_lsi/index.html">(i) LSI</a></li>
+            <li class="" data-nav-id="/temp/i_lsi2/index.html"><a class="padding" href="/temp/i_lsi2/index.html">(i) LSI</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/laurents_series/index.html"><a class="padding default-animation" href="/temp/laurents_series/index.html">Lourent&#39;s series</a><ul id="R-subsections-b622dc49c5dbb13575c50ea27a9dcb03" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/preface/index.html"><a class="padding" href="/temp/preface/index.html">Preface</a></li>
+            <li class="" data-nav-id="/temp/b_convolution_i/index.html"><a class="padding" href="/temp/b_convolution_i/index.html">(b) Convolution I</a></li>
+            <li class="" data-nav-id="/temp/b_shift_ii/index.html"><a class="padding" href="/temp/b_shift_ii/index.html">(b) Copy-shift II</a></li>
+            <li class="" data-nav-id="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
+            <li class="" data-nav-id="/temp/b_operator_i/index.html"><a class="padding" href="/temp/b_operator_i/index.html">(b) Operator I</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/algebra_structure/index.html"><a class="padding default-animation" href="/temp/algebra_structure/index.html">Algebra structure for LSI</a><ul id="R-subsections-a739685797281f87672919f683d814d9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/derivation1-copy/index.html"><a class="padding" href="/temp/derivation1-copy/index.html">Derivation3</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/electromotive_force/index.html"><a class="padding default-animation" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/temp/fourier_series/index.html"><a class="padding default-animation" href="/temp/fourier_series/index.html">Fourier series</a><ul id="R-subsections-23cf8ddda8c632c96aa5ff6c0653ec25" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/a_2nd_tensor/index.html"><a class="padding" href="/temp/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/temp/a_mellin_transform_ii/index.html"><a class="padding" href="/temp/a_mellin_transform_ii/index.html">(a) Mellin transform II</a></li>
+            <li class="" data-nav-id="/temp/series/index.html"><a class="padding" href="/temp/series/index.html">Series</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/transformation/index.html"><a class="padding default-animation" href="/temp/transformation/index.html">Transformation</a><ul id="R-subsections-7c83dcb82857ce3ae0d42995afa71ed6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
+            <li class="" data-nav-id="/temp/b_i-unitary/index.html"><a class="padding" href="/temp/b_i-unitary/index.html">(b) I-unitary</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/temp/b_matrix_kernel/index.html"><a class="padding" href="/temp/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
+            <li class="" data-nav-id="/temp/b_uniqueness/index.html"><a class="padding" href="/temp/b_uniqueness/index.html">(b) Uniqueness</a></li>
+            <li class="" data-nav-id="/temp/b_gauge_freedom/index.html"><a class="padding" href="/temp/b_gauge_freedom/index.html">(b) Gauge Freedom</a></li>
+            <li class="" data-nav-id="/temp/b_generator_ii/index.html"><a class="padding" href="/temp/b_generator_ii/index.html">(b) Generator II</a></li>
+            <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii-copy/index.html"><a class="padding" href="/temp/b_laplace_transform_ii-copy/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii/index.html"><a class="padding" href="/temp/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_syntax/index.html"><a class="padding" href="/temp/b_syntax/index.html">(b) Syntax</a></li>
+            <li class="" data-nav-id="/temp/b_dilation/index.html"><a class="padding" href="/temp/b_dilation/index.html">(b) Dilation</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_i/index.html"><a class="padding" href="/temp/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-id="/temp/gc_operation/index.html"><a class="padding" href="/temp/gc_operation/index.html">[GC] Operation</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding default-animation" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li>
+            <li class="" data-nav-id="/temp/theory1/index.html"><a class="padding" href="/temp/theory1/index.html">(b) Theory</a></li>
+            <li class="" data-nav-id="/temp/p_circuit_examples_for_fs/index.html"><a class="padding" href="/temp/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li>
+            <li class="" data-nav-id="/temp/theory2/index.html"><a class="padding" href="/temp/theory2/index.html">(b) Theory2</a></li>
+            <li class="" data-nav-id="/temp/theory3-copy/index.html"><a class="padding" href="/temp/theory3-copy/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory3/index.html"><a class="padding" href="/temp/theory3/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory4/index.html"><a class="padding" href="/temp/theory4/index.html">(b) Theory4</a></li>
+            <li class="" data-nav-id="/temp/chapter2/index.html"><a class="padding" href="/temp/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/research_na/index.html"><a class="padding default-animation" href="/temp/research_na/index.html">Research_NA</a><ul id="R-subsections-234820bc0d55ee914269e52b4bd69ed8" class="collapsible-menu"></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

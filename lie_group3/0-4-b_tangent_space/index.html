@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§0-3 에서 매끄러운 다양체 의 구조를 점검했다. 이 절에서는 다양체 위 한 점에서의 방향들 을 다룬다 — 접공간(tangent space) $T_p M$.
+접공간이 필요한 이유.
+미분 — 매끄러운 사상의 미분은 접공간 사이의 선형 사상 으로 정의된다. 다양체 사이 미분의 가장 자연스러운 형식. 속도, 변화율, 무한소 변화 — 모든 무한소 개념의 기반. 리 대수 — 리 군 $G$ 의 항등원에서의 접공간 $T_e G$ 가 바로 리 대수 $\mathfrak{g}$ (§8 에서 본격 증명). 시리즈 전체의 핵심 다리. 이 절은 접공간의 직관에서 출발해 곡선의 속도 벡터 로 형식 정의하고, 좌표 표현 (좌표 기저 $\partial_i$), 벡터 공간 구조, 좌표 변환 규칙, 사상의 미분 (pushforward), 그리고 쌍대 공간 (코탄젠트, $dx^i$ 기저) 까지 점검한다. 마지막으로 리 군에서의 접공간 — 리 대수 — 을 예고한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="접공간 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§0-3 에서 매끄러운 다양체 의 구조를 점검했다. 이 절에서는 다양체 위 한 점에서의 방향들 을 다룬다 — 접공간(tangent space) $T_p M$.
+접공간이 필요한 이유.
+미분 — 매끄러운 사상의 미분은 접공간 사이의 선형 사상 으로 정의된다. 다양체 사이 미분의 가장 자연스러운 형식. 속도, 변화율, 무한소 변화 — 모든 무한소 개념의 기반. 리 대수 — 리 군 $G$ 의 항등원에서의 접공간 $T_e G$ 가 바로 리 대수 $\mathfrak{g}$ (§8 에서 본격 증명). 시리즈 전체의 핵심 다리. 이 절은 접공간의 직관에서 출발해 곡선의 속도 벡터 로 형식 정의하고, 좌표 표현 (좌표 기저 $\partial_i$), 벡터 공간 구조, 좌표 변환 규칙, 사상의 미분 (pushforward), 그리고 쌍대 공간 (코탄젠트, $dx^i$ 기저) 까지 점검한다. 마지막으로 리 군에서의 접공간 — 리 대수 — 을 예고한다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/0-4-b_tangent_space/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="접공간 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§0-3 에서 매끄러운 다양체 의 구조를 점검했다. 이 절에서는 다양체 위 한 점에서의 방향들 을 다룬다 — 접공간(tangent space) $T_p M$.
+접공간이 필요한 이유.
+미분 — 매끄러운 사상의 미분은 접공간 사이의 선형 사상 으로 정의된다. 다양체 사이 미분의 가장 자연스러운 형식. 속도, 변화율, 무한소 변화 — 모든 무한소 개념의 기반. 리 대수 — 리 군 $G$ 의 항등원에서의 접공간 $T_e G$ 가 바로 리 대수 $\mathfrak{g}$ (§8 에서 본격 증명). 시리즈 전체의 핵심 다리. 이 절은 접공간의 직관에서 출발해 곡선의 속도 벡터 로 형식 정의하고, 좌표 표현 (좌표 기저 $\partial_i$), 벡터 공간 구조, 좌표 변환 규칙, 사상의 미분 (pushforward), 그리고 쌍대 공간 (코탄젠트, $dx^i$ 기저) 까지 점검한다. 마지막으로 리 군에서의 접공간 — 리 대수 — 을 예고한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="접공간 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§0-3 에서 매끄러운 다양체 의 구조를 점검했다. 이 절에서는 다양체 위 한 점에서의 방향들 을 다룬다 — 접공간(tangent space) $T_p M$.
+접공간이 필요한 이유.
+미분 — 매끄러운 사상의 미분은 접공간 사이의 선형 사상 으로 정의된다. 다양체 사이 미분의 가장 자연스러운 형식. 속도, 변화율, 무한소 변화 — 모든 무한소 개념의 기반. 리 대수 — 리 군 $G$ 의 항등원에서의 접공간 $T_e G$ 가 바로 리 대수 $\mathfrak{g}$ (§8 에서 본격 증명). 시리즈 전체의 핵심 다리. 이 절은 접공간의 직관에서 출발해 곡선의 속도 벡터 로 형식 정의하고, 좌표 표현 (좌표 기저 $\partial_i$), 벡터 공간 구조, 좌표 변환 규칙, 사상의 미분 (pushforward), 그리고 쌍대 공간 (코탄젠트, $dx^i$ 기저) 까지 점검한다. 마지막으로 리 군에서의 접공간 — 리 대수 — 을 예고한다.">
+    <meta itemprop="wordCount" content="2185">
+    <title>접공간 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/0-4-b_tangent_space\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/0-4-b_tangent_space/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-직관--한-점에서의-방향들">2. 직관 — 한 점에서의 방향들</a></li>
+        <li><a href="#3-형식-정의--곡선의-속도-벡터">3. 형식 정의 — 곡선의 속도 벡터</a></li>
+        <li><a href="#4-동치-관계와-좌표-독립성">4. 동치 관계와 좌표 독립성</a></li>
+        <li><a href="#5-좌표-표현--좌표-기저">5. 좌표 표현 — 좌표 기저 </a></li>
+        <li><a href="#6-벡터-공간-구조">6. 벡터 공간 구조</a></li>
+        <li><a href="#7-좌표-변환--접벡터의-반변-변환">7. 좌표 변환 — 접벡터의 반변 변환</a></li>
+        <li><a href="#8-사상의-미분--접공간-사이의-선형-사상">8. 사상의 미분 — 접공간 사이의 선형 사상</a></li>
+        <li><a href="#9-코탄젠트-공간--쌍대-기저와-바이듀얼">9. 코탄젠트 공간 — 쌍대 기저와 바이듀얼</a></li>
+        <li><a href="#10-리-군의-접공간--리-대수-예고">10. 리 군의 접공간 — 리 대수 예고</a></li>
+        <li><a href="#11-이-절을-닫으며">11. 이 절을 닫으며</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">접공간</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/0-3-b_smooth_manifold/index.html" title="매끄러운 다양체 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/0-5-b_spectral_bidual_notation/index.html" title="스펙트럼 분해와 바이듀얼 표기 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="접공간">접공간</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§0-3 에서 <em>매끄러운 다양체</em> 의 구조를 점검했다. 이 절에서는 다양체 위 <em>한 점에서의 방향들</em> 을 다룬다 — <em>접공간(tangent space)</em> $T_p M$.</p>
+<p>접공간이 필요한 이유.</p>
+<ul>
+<li><em>미분</em> — 매끄러운 사상의 미분은 <em>접공간 사이의 선형 사상</em> 으로 정의된다. 다양체 사이 미분의 가장 자연스러운 형식.</li>
+<li><em>속도, 변화율, 무한소 변화</em> — 모든 무한소 개념의 기반.</li>
+<li><em>리 대수</em> — 리 군 $G$ 의 <em>항등원에서의 접공간</em> $T_e G$ 가 바로 리 대수 $\mathfrak{g}$ (§8 에서 본격 증명). 시리즈 전체의 핵심 다리.</li>
+</ul>
+<p>이 절은 접공간의 직관에서 출발해 <em>곡선의 속도 벡터</em> 로 형식 정의하고, 좌표 표현 (좌표 기저 $\partial_i$), 벡터 공간 구조, 좌표 변환 규칙, <em>사상의 미분</em> (pushforward), 그리고 <em>쌍대 공간</em> (코탄젠트, $dx^i$ 기저) 까지 점검한다. 마지막으로 리 군에서의 접공간 — 리 대수 — 을 예고한다.</p>
+<h3 id="2-직관--한-점에서의-방향들">2. 직관 — 한 점에서의 방향들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>접공간의 직관</em> — 다양체 $M$ 의 한 점 $p$ 에서 <em>가능한 모든 방향들의 모임</em>.</p>
+<p><strong>2)</strong> <em>예 — 평면 $\mathbb{R}^2$</em>. 한 점 $p$ 에서 가능한 방향은 모든 2차원 벡터 → 접공간 $T_p \mathbb{R}^2 \cong \mathbb{R}^2$.</p>
+<p><strong>3)</strong> <em>예 — 2-구면 $S^2$</em>. 한 점 $p$ 에서 가능한 방향은 <em>그 점을 스치는 접평면 위의 벡터들</em> → 접공간 $T_p S^2 \cong \mathbb{R}^2$.</p>
+<p><strong>4)</strong> <em>예 — 원 $S^1$</em>. 한 점 $p$ 에서 가능한 방향은 시계방향·반시계방향의 <em>한 차원 방향들</em> → 접공간 $T_p S^1 \cong \mathbb{R}$.</p>
+<p><strong>5)</strong> <em>일반 원리</em> — $n$-차원 다양체의 한 점에서 접공간은 <em>$n$-차원 벡터 공간</em>. 즉 $\dim T_p M = \dim M = n$.</p>
+<blockquote>
+<p>직관적으로는 <em>&ldquo;다양체를 그 점에서 평평하게 펴면 그 점에서 보이는 평평한 공간&rdquo;</em> 이 접공간. 다양체가 $n$-차원이면 평평한 부분도 $n$-차원.</p>
+</blockquote>
+<p><strong>6)</strong> 이 직관을 <em>형식적으로 정의</em> 하는 데 두 가지 자연스러운 방식이 있다.</p>
+<ul>
+<li>(가) <em>곡선의 속도 벡터</em> — 그 점을 지나는 곡선의 속도. 가장 기하학적.</li>
+<li>(나) <em>방향 미분 연산자</em> — 함수에 작용하는 1차 미분 연산자. 가장 대수적.</li>
+</ul>
+<p>둘은 동치다 (적절한 동치 관계를 잡으면). 이 시리즈에서는 (가) <em>곡선의 속도 벡터</em> 로 정의한다. 직관과 가장 가깝고, 리 군에서 <em>1-매개변수 부분군의 속도</em> 가 곧 리 대수 원소 (§7) 라는 연결이 자연스러워서.</p>
+<h3 id="3-형식-정의--곡선의-속도-벡터">3. 형식 정의 — 곡선의 속도 벡터<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>매끄러운 곡선</em>. 다양체 $M$ 위 매끄러운 곡선이란</p>
+$$\gamma : (-\epsilon, \epsilon) \to M$$<p>꼴의 매끄러운 사상 (어떤 $\epsilon > 0$ 에 대해). <em>매끄러움</em> 의 의미 — 어떤 차트 $(U, \varphi)$ 에서 $\varphi \circ \gamma : (-\epsilon, \epsilon) \to \mathbb{R}^n$ 이 $C^\infty$ (전이 사상이 매끄러우니 어느 차트에서 성립하면 모든 차트에서 성립).</p>
+<p><strong>2)</strong> <em>$p$ 를 지나는 곡선</em>. $\gamma(0) = p$ 인 매끄러운 곡선들의 모임을 보자. 이들이 $p$ 에서의 <em>움직임</em> 을 모두 포착한다.</p>
+<p><strong>3)</strong> <em>속도 벡터의 정의 (좌표 의존 표현)</em>. 차트 $(U, \varphi)$ 에서 $\varphi(p) = 0$ 으로 잡으면, 곡선 $\gamma$ 의 $p$ 에서의 <em>속도 벡터</em> 는</p>
+$$\dot{\gamma}(0) := \left. \frac{d}{dt} \right|_{t=0} \varphi(\gamma(t)) \in \mathbb{R}^n$$<p>좌표에 의존해 보이지만, 다음 §4 에서 좌표 독립적임을 본다.</p>
+<p><strong>4)</strong> <em>접공간의 정의</em>. $p$ 에서의 <em>접공간</em> $T_p M$ 은 <em>$p$ 를 지나는 모든 매끄러운 곡선의 속도 벡터들의 집합</em></p>
+$$T_p M = \{ \dot{\gamma}(0) : \gamma \text{ 매끄러움}, \gamma(0) = p \}$$<p>단, 두 곡선이 <em>같은 속도 벡터</em> 를 주는 동치 관계를 적용한다 — 다음 §4.</p>
+<h3 id="4-동치-관계와-좌표-독립성">4. 동치 관계와 좌표 독립성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>언제 두 곡선이 같은 속도 벡터를 주나</em>. 두 곡선 $\gamma_1, \gamma_2$ ($\gamma_1(0) = \gamma_2(0) = p$) 가 <em>같은 속도 벡터</em> 를 갖는다는 것은</p>
+$$\left. \frac{d}{dt} \right|_{t=0} \varphi(\gamma_1(t)) = \left. \frac{d}{dt} \right|_{t=0} \varphi(\gamma_2(t)) \qquad \text{(어떤 차트 $\varphi$ 에서)}$$<p><strong>2)</strong> <em>좌표 독립성</em>. <em>어떤 차트에서 성립하면 모든 차트에서 성립한다</em>. 다른 차트 $\psi$ 에서</p>
+$$\left. \frac{d}{dt} \right|_{t=0} \psi(\gamma(t)) = \left. \frac{d}{dt} \right|_{t=0} (\psi \circ \varphi^{-1}) (\varphi(\gamma(t))) = (D(\psi \circ \varphi^{-1}))_0 \cdot \left. \frac{d}{dt} \right|_{t=0} \varphi(\gamma(t))$$<p>(<em>연쇄 법칙(chain rule)</em> 적용.) 여기 $D(\psi \circ \varphi^{-1})_0$ 는 전이 사상의 $0$ 에서의 <em>야코비 행렬</em> — 가역 (왜냐하면 $\varphi \circ \psi^{-1}$ 가 역사상).</p>
+<p>따라서 <em>한 차트에서 두 곡선의 속도가 같으면, 다른 차트에서도 (같은 가역 변환을 거치므로) 속도가 같다</em>. 접공간이 좌표 선택에 무관하게 정의된다.</p>
+<p><strong>3)</strong> <em>기하학적 의미</em>. 두 곡선이 같은 속도 벡터를 갖는 조건은 <em>$p$ 근방에서 1차 항 (선형 항) 이 같다</em> 는 것. 더 높은 항 (가속도 등) 은 무관. 즉 접공간은 <em>곡선의 1차 정보</em> 만을 담는다.</p>
+<h3 id="5-좌표-표현--좌표-기저">5. 좌표 표현 — 좌표 기저 $\partial_i$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>좌표 곡선</em>. 차트 $(U, \varphi)$ 에서 $\varphi(p) = 0$ 이고 좌표를 $(x^1, \cdots, x^n)$ 이라 하면, <em>$i$ 번째 좌표 곡선</em> 은</p>
+$$\gamma_i(t) := \varphi^{-1}(0, \cdots, \underbrace{t}_{i\text{-번째}}, \cdots, 0)$$<p>— $i$ 번째 좌표만 $t$ 로 움직이고 나머지는 $0$ 으로 고정한 곡선.</p>
+<p><strong>2)</strong> <em>좌표 기저 벡터</em>. 좌표 곡선의 속도 벡터를</p>
+$$\partial_i \big|_p := \dot{\gamma}_i(0) = \left. \frac{\partial}{\partial x^i} \right|_p$$<p>로 정의. 이 $\{\partial_1 |_p, \cdots, \partial_n |_p\}$ 가 $T_p M$ 의 <em>좌표 기저</em>.</p>
+<p><strong>3)</strong> <em>임의 접벡터의 좌표 전개</em>. 임의의 곡선 $\gamma(t)$ 의 속도 벡터 $\dot{\gamma}(0)$ 는, 좌표에서 $\varphi(\gamma(t)) = (x^1(t), \cdots, x^n(t))$ 라 쓰면</p>
+$$\dot{\gamma}(0) = \left. \frac{d}{dt} \right|_{t=0} \varphi(\gamma(t)) = (\dot{x}^1(0), \cdots, \dot{x}^n(0))$$<p>좌표 기저로 전개하면</p>
+$$\dot{\gamma}(0) = \sum_{i=1}^n \dot{x}^i(0) \cdot \partial_i \big|_p \quad =: \quad v^i \partial_i \big|_p$$<p>(아인슈타인 합 규약 — 같은 위·아래 첨자 쌍은 자동 합산.) 성분 $v^i = \dot{x}^i(0)$ 이 접벡터의 <em>좌표 성분</em>.</p>
+<p><strong>4)</strong> <em>왜 $\partial_i$ 표기인가</em>. 다른 정의 — <em>방향 미분 연산자</em> — 에서는 접벡터를 <em>함수에 작용하는 미분 연산자</em> 로 본다. 곡선 $\gamma_i$ 방향의 방향 미분은</p>
+$$\partial_i \big|_p f := \left. \frac{d}{dt} \right|_{t=0} f(\gamma_i(t)) = \frac{\partial f}{\partial x^i}(p)$$<p>— 정확히 좌표 편미분. 두 정의 (속도 벡터 vs 방향 미분 연산자) 는 동치이고, 표기 $\partial_i$ 가 양쪽 모두 자연스럽다.</p>
+<h3 id="6-벡터-공간-구조">6. 벡터 공간 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $T_p M$ 이 <em>벡터 공간</em> 임을 본다. 즉 <em>덧셈</em> 과 <em>스칼라 배</em> 가 잘 정의된다.</p>
+<p><strong>2)</strong> <em>덧셈</em>. 두 접벡터 $v = \dot{\gamma}_1(0)$, $w = \dot{\gamma}_2(0)$ 에 대해 <em>좌표에서</em> 정의</p>
+$$v + w := \sum_i (v^i + w^i) \partial_i \big|_p$$<p>곡선 자체의 덧셈은 자연스럽지 않다 (다양체 위 덧셈은 일반적으로 정의 안 됨). 그러나 <em>좌표 성분의 덧셈</em> 은 가능하고, 이 덧셈이 좌표 선택에 무관함 (§4 의 야코비 변환이 선형이라 합과 호환).</p>
+<p><strong>3)</strong> <em>스칼라 배</em>. 마찬가지로</p>
+$$cv := \sum_i (c v^i) \partial_i \big|_p, \quad c \in \mathbb{R}$$<p><strong>4)</strong> <em>차원</em>. 좌표 기저 $\{\partial_1 |_p, \cdots, \partial_n |_p\}$ 가 <em>선형 독립</em> 이고 <em>공간을 생성</em> 한다 (§5 의 좌표 전개에서). 따라서</p>
+$$\dim T_p M = n = \dim M$$<p>— <em>접공간의 차원 = 다양체의 차원</em>.</p>
+<p><strong>5)</strong> <em>영벡터</em>. $T_p M$ 의 영벡터는 $\gamma(t) \equiv p$ (상수 곡선) 의 속도 — 좌표에서 $0$.</p>
+<h3 id="7-좌표-변환--접벡터의-반변-변환">7. 좌표 변환 — 접벡터의 반변 변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 두 차트 $\varphi : U \to (x^1, \cdots, x^n)$, $\psi : U \to (y^1, \cdots, y^n)$ 가 같은 점 $p$ 를 덮는다고 하자. 접공간 $T_p M$ 의 같은 벡터를 두 좌표에서 표현하면 어떻게 관계되나.</p>
+<p><strong>2)</strong> 같은 곡선 $\gamma$ 의 두 좌표 표현 $x^i(t)$, $y^j(t)$ 가 전이 사상으로 연결 — $y^j = y^j(x^1, \cdots, x^n)$. 연쇄 법칙으로</p>
+$$\dot{y}^j(0) = \frac{\partial y^j}{\partial x^i}(p) \cdot \dot{x}^i(0)$$<p>(아인슈타인 합 규약.)</p>
+<p><strong>3)</strong> <em>접벡터 성분의 변환 규칙</em> (오른쪽이 새 좌표, 왼쪽이 옛 좌표).</p>
+$$w^j = \frac{\partial y^j}{\partial x^i} v^i$$<p>— <em>야코비 행렬</em> 로 변환된다. 이런 변환 규칙을 따르는 양을 <em>반변 벡터(contravariant vector)</em> 라 부른다 (텐서 분석 용어).</p>
+<p><strong>4)</strong> <em>좌표 기저 자체의 변환</em>. 연쇄 법칙에서 옛 기저를 새 기저로 표현하면</p>
+$$\frac{\partial}{\partial x^i} = \frac{\partial y^j}{\partial x^i} \cdot \frac{\partial}{\partial y^j}$$<p>거꾸로 새 기저를 옛 기저로 — 위 식의 행렬을 뒤집어 (야코비의 <em>역행렬</em> $\partial x^i / \partial y^j$ 로) —</p>
+$$\frac{\partial}{\partial y^j} = \frac{\partial x^i}{\partial y^j} \cdot \frac{\partial}{\partial x^i}$$<p>즉 <em>성분</em> 은 야코비 $J = (\partial y^j/\partial x^i)$ 로 변환 (<em>반변</em>), <em>기저</em> 는 야코비의 역행렬 $J^{-1} = (\partial x^i/\partial y^j)$ 로 변환 (<em>공변</em>). 둘이 서로 <em>역행렬 관계</em> 로 변환하므로, 합 $v = v^i \partial_i = w^j \partial'_j$ 가 좌표에 무관.</p>
+<p><strong>5)</strong> <em>의의</em>. 접벡터의 본질은 <em>좌표 표현</em> 이 아니라 <em>좌표 표현이 어떻게 변환되는지</em> 에 있다. 같은 기하적 대상이 좌표에 따라 다르게 표현되되, 변환 규칙은 강하게 제약된다 — 이것이 &ldquo;방향&rdquo; 의 정확한 수학적 의미.</p>
+<h3 id="8-사상의-미분--접공간-사이의-선형-사상">8. 사상의 미분 — 접공간 사이의 선형 사상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>동기</em>. 매끄러운 사상 $f : M \to N$ 이 있을 때, 그 <em>미분</em> 을 어떻게 정의할까. 다양체 사이의 사상이라 단순 편미분으로는 부족하다. 자연스러운 정의는 <em>접공간 사이의 선형 사상</em>.</p>
+<p><strong>2)</strong> <em>정의</em>. $f : M \to N$ 매끄럽고 $p \in M$. $f$ 의 $p$ 에서의 <em>미분(differential)</em>, 또는 <em>push-forward</em> 는</p>
+$$df_p : T_p M \to T_{f(p)} N$$<p>다음으로 정의된다 — 곡선 $\gamma : (-\epsilon, \epsilon) \to M, \ \gamma(0) = p$ 의 속도 벡터 $\dot{\gamma}(0) \in T_p M$ 에 대해</p>
+$$df_p(\dot{\gamma}(0)) := \left. \frac{d}{dt} \right|_{t=0} (f \circ \gamma)(t) \in T_{f(p)} N$$<p>— <em>곡선을 $f$ 로 보낸 후 속도를 잰 것</em>.</p>
+<p><strong>3)</strong> <em>잘 정의됨</em>. 두 곡선이 같은 속도 (동치) 면 $f$ 로 보낸 결과도 같은 속도 — 연쇄 법칙 적용.</p>
+<p><strong>4)</strong> <em>선형성</em>. $df_p$ 가 선형 사상임은 좌표에서 확인 가능 — 다음 (5) 의 야코비 행렬 표현.</p>
+<p><strong>5)</strong> <em>좌표 표현</em>. $M$ 위 차트 $\{x^i\}$, $N$ 위 차트 $\{y^j\}$ 에서 $f$ 가 $(y^1, \cdots, y^m) = (f^1(x), \cdots, f^m(x))$ 로 표현되면, $df_p$ 의 행렬은 <em>야코비 행렬</em></p>
+$$df_p = \begin{pmatrix} \dfrac{\partial f^1}{\partial x^1}(p) & \cdots & \dfrac{\partial f^1}{\partial x^n}(p) \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f^m}{\partial x^1}(p) & \cdots & \dfrac{\partial f^m}{\partial x^n}(p) \end{pmatrix}$$<p>성분으로는 $(df_p(v))^j = (\partial f^j / \partial x^i)(p) \cdot v^i$.</p>
+<p><strong>6)</strong> <em>연쇄 법칙의 깔끔한 형식</em>. $f : M \to N$, $g : N \to P$ 매끄러우면</p>
+$$d(g \circ f)_p = dg_{f(p)} \circ df_p$$<p>— 사상의 합성은 미분의 합성. 야코비 행렬의 곱셈 규칙이 <em>함수 합성의 미분 규칙</em> 으로 자연스럽게 떨어진다.</p>
+<p><strong>7)</strong> <em>미분 동형사상(diffeomorphism)</em>. 매끄러운 일대일 대응이면서 역사상도 매끄러우면 <em>미분 동형사상</em>. 이 경우 모든 $p$ 에서 $df_p$ 가 <em>가역 선형 사상</em> — $M$ 과 $N$ 이 같은 차원이고 접공간들이 동형.</p>
+<p><strong>8)</strong> <em>리 군에서의 예고 사용</em> (§10 에서 자세히). 왼쪽 곱셈 $L_g : G \to G, \ x \mapsto gx$ 는 미분 동형사상. 미분 $d(L_g)_e : T_e G \to T_g G$ 가 가역 선형 사상 — 항등원 접공간을 임의 점 접공간으로 옮기는 표준 방법.</p>
+<h3 id="9-코탄젠트-공간--쌍대-기저와-바이듀얼">9. 코탄젠트 공간 — 쌍대 기저와 바이듀얼<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>동기</em>. 접공간 $T_p M$ 이 벡터 공간이면 그 <em>쌍대 공간(dual space)</em> 도 자연스럽게 정의된다. 이것이 <em>코탄젠트 공간(cotangent space)</em> $T_p^* M$ — <em>접공간 위의 선형 범함수</em> 들의 공간.</p>
+$$T_p^* M = \{ \omega : T_p M \to \mathbb{R} \mid \omega \text{ 선형} \}$$<p>차원은 $\dim T_p^* M = \dim T_p M = \dim M$.</p>
+<p><strong>2)</strong> <em>쌍대 기저</em>. 좌표 기저 $\{\partial_1 |_p, \cdots, \partial_n |_p\}$ 에 대응하는 쌍대 기저를 $\{dx^1 |_p, \cdots, dx^n |_p\}$ 로 적고, <em>쌍대 관계</em></p>
+$$dx^i \big|_p (\partial_j \big|_p) = \delta^i_j$$<p>로 정의. (이 <em>$dx^i$</em> 가 §0-5 이후 시리즈에서 다룰 <em>미분 형식 1-form</em> 의 좌표 표현.)</p>
+<p><strong>3)</strong> <em>바이듀얼 표기와의 연결</em>. 시리즈 전체에서 사용할 <em>바이듀얼 표기</em> (§0-5 에서 본격적) 의 다양체적 구현이 바로 이것 — 켓에 해당하는 <em>기저</em> 가 $\partial_i$, 브라에 해당하는 <em>쌍대 기저</em> 가 $dx^i$. 쌍대 관계</p>
+$$\langle x^i | x_j \rangle = \delta^i_j \quad \longleftrightarrow \quad dx^i (\partial_j) = \delta^i_j$$<p>가 <em>완전히 같은 구조</em>. 다른 점 — 다양체에서는 <em>점마다</em> 접공간·코탄젠트 공간이 따로 있어, 사실은 <em>접다발(tangent bundle) $TM$</em> 과 <em>코탄젠트 다발 $T^*M$</em> 이라는 더 큰 구조의 한 점에서의 <em>섬유(fiber)</em>. 본 시리즈에서는 다발 구조까지는 깊이 들어가지 않는다.</p>
+<p><strong>4)</strong> <em>반변 vs 공변</em>. 접벡터 성분은 <em>반변(contravariant)</em> — 야코비 $J$ 로 변환. 코탄젠트 (1-form) 성분은 <em>공변(covariant)</em> — 야코비의 <em>역</em> $J^{-1}$ 로 변환 (접공간 기저와 같은 방식). 즉 코탄젠트 성분의 변환 규칙은</p>
+$$\omega'_j = \frac{\partial x^i}{\partial y^j} \omega_i$$<p>두 변환이 서로 <em>역행렬</em> 관계라 <em>쌍대 내적 $\omega(v) = \omega_i v^i$</em> 가 좌표 독립.</p>
+<h3 id="10-리-군의-접공간--리-대수-예고">10. 리 군의 접공간 — 리 대수 예고<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>주 정리</em> (§8 본격 증명). 리 군 $G$ 의 <em>항등원에서의 접공간</em> 이 <em>리 대수</em> —</p>
+$$T_e G = \mathfrak{g}$$<p>여기서 $e \in G$ 는 군 항등원.</p>
+<p><strong>2)</strong> <em>왜 항등원이 특별한가</em>. 군 구조 덕분에 <em>왼쪽 곱셈</em> $L_g : G \to G, \ x \mapsto gx$ 가 매끄러운 <em>미분 동형사상</em> (역은 $L_{g^{-1}}$). 따라서 $L_g$ 의 미분</p>
+$$d(L_g)_e : T_e G \to T_g G$$<p>가 <em>가역 선형 사상</em> — 항등원 접공간 $T_e G$ 와 임의 점 접공간 $T_g G$ 가 자연 동형.</p>
+<p><strong>3)</strong> <em>결과</em>. <em>한 점의 접공간만 알면 모든 점의 접공간이 결정</em> 된다. 그 한 점으로 <em>항등원</em> 을 택하는 것이 자연 — 군 구조가 그 점을 특별하게 만든다. 모든 점의 접공간을 다 알 필요 없이 $T_e G$ 하나만 보면 된다.</p>
+<p><strong>4)</strong> <em>행렬군의 경우 — 구체적 표현</em> (§8 자세히). 행렬군 $G \subseteq GL(N, \mathbb{F})$ 에 대해</p>
+$$T_e G = \{ X \in M_N(\mathbb{F}) : I + tX \text{ 가 } G \text{ 의 1차 근사로 머무름} \}$$<p>구체적으로</p>
+<ul>
+<li>$T_e SO(N) = \mathfrak{so}(N) = \{ X : X^T = -X \}$ — 반대칭 실 행렬</li>
+<li>$T_e U(N) = \mathfrak{u}(N) = \{ X : X^\dagger = -X \}$ — 반에르미트 행렬</li>
+<li>$T_e SU(N) = \mathfrak{su}(N) = \{ X : X^\dagger = -X, \ \text{tr}(X) = 0 \}$</li>
+<li>$T_e GL(N, \mathbb{R}) = \mathfrak{gl}(N, \mathbb{R}) = M_N(\mathbb{R})$ — 모든 실 행렬</li>
+</ul>
+<p>(§0-1 §10 의 표 참조. 본격 도출은 §8 에서 <em>정의식의 미분</em> 으로.)</p>
+<p><strong>5)</strong> <em>접공간이 왜 곱셈군에서 덧셈 구조를 가지는가</em>. 군 $G$ 자체는 곱셈군 (비가환 가능) 이지만, <em>접공간 $T_e G$ 는 벡터 공간 — 즉 덧셈 가환군</em>. 이 <em>곱셈군 ↔ 덧셈 (벡터) 공간</em> 의 다리가 §0-2 §8 에서 본 $\mathbb{R}$ 의 두 군 구조 ($+$ 와 $\cdot$) 의 <em>지수 사상에 의한 연결</em> 의 비가환 일반화. 본격적으로는 §7 (생성자 → 지수 사상) 이후.</p>
+<h3 id="11-이-절을-닫으며">11. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) <em>접공간</em> $T_p M$ = 다양체의 한 점에서 <em>방향들의 벡터 공간</em>. 형식 정의는 <em>그 점을 지나는 매끄러운 곡선의 속도 벡터들</em> (적절한 동치 관계).</p>
+<p>(2) <em>좌표 기저</em> $\partial_i$ — 좌표 곡선의 속도 벡터. 임의 접벡터를 $v = v^i \partial_i$ 로 전개.</p>
+<p>(3) <em>벡터 공간 구조</em> — 좌표 성분의 덧셈·스칼라 배. 차원은 다양체 차원과 같음.</p>
+<p>(4) <em>좌표 변환</em> — 야코비 변환 ($w^j = (\partial y^j / \partial x^i) v^i$, <em>반변</em> 성격).</p>
+<p>(5) <em>사상의 미분</em> $df_p : T_p M \to T_{f(p)} N$ — 야코비 행렬로 표현되는 선형 사상. 연쇄 법칙이 합성의 미분 규칙으로 자연스럽게.</p>
+<p>(6) <em>코탄젠트 공간</em> $T_p^* M$ — 접공간의 쌍대. 쌍대 기저 $dx^i (\partial_j) = \delta^i_j$. 시리즈의 바이듀얼 표기와 같은 구조.</p>
+<p>(7) <em>리 군에서</em> — $T_e G = \mathfrak{g}$ 가 리 대수. 왼쪽 곱셈이 모든 점의 접공간을 항등원에서 옮긴다. <em>곱셈군 ↔ 덧셈 (벡터) 공간</em> 의 다리.</p>
+<p>다음 §0-5 (스펙트럼 분해와 바이듀얼 표기) 로 §0 부 사전 준비를 마무리한다. 그러고 나면 §1 (리 군의 정의) 로 본격 진입.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="active " data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

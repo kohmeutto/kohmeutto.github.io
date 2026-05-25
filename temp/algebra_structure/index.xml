@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algebra structure for LSI :: 수리전자물리학</title>
+    <link>http://localhost:1313/temp/algebra_structure/index.html</link>
+    <description>(a) Operator &amp; Generator (a) Operators in quantum mechanics</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/temp/algebra_structure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Operator &amp; Generator</title>
+      <link>http://localhost:1313/temp/algebra_structure/a_operator_generator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/algebra_structure/a_operator_generator/index.html</guid>
+      <description>양자역학에서 연산자와 생성자는 시스템의 행동을 설명하는 데 필수적인 개념이다. 이 둘의 관계를 명확히 이해하는 것이 중요하다.&#xA;1. 연산자(Operator)란 무엇인가?&#xD;연산자는 양자역학에서 양자 상태에 작용하여 그 상태를 바꾸거나, 측정 가능한 물리량(observable)을 나타내는 수학적 도구&#xA;양자 상태(예: $|\psi\rangle$)에 작용하여 다른 상태로 변환: $\hat{A} |\psi\rangle = |\phi\rangle$ 에너지, 운동량, 위치 등 측정 가능한 물리량에 대응된다. 연산자의 고유값(eigenvalue)이 실제로 측정될 수 있는 값이다. 2. 생성자(Generator)란 무엇인가?&#xD;생성자는 연산자의 특별한 역할을 지칭하는 용어. 이 연산자는 연속적인 변환(Continuous Transformation)을 만들어내는 능력</description>
+    </item>
+    <item>
+      <title>(a) Operators in quantum mechanics</title>
+      <link>http://localhost:1313/temp/algebra_structure/a_operators_in_quantum_mechanics/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/algebra_structure/a_operators_in_quantum_mechanics/index.html</guid>
+      <description>푸리에 변환을 사용한 연산자의 관계를 파악한다. 양자역학 연산자의 본질을 파악한다. 1. Shifting operator - Time&#xD;아래는 시간에 대한 푸리에 역변환과 시간 이동을 나타낸다.&#xA;$$&#xD;\langle t|e^{-ia\omega}f(\omega)\rangle&#xD;=\langle t-i\cdot -ia| f\rangle&#xD;=\langle t-a| f\rangle&#xD;$$연산자 형태로 바꿔보자.&#xA;$$&#xD;\langle t|e^{-ia\omega}f(\omega)\rangle&#xD;=\langle t|e^{-ia\hat{\omega}}|f\rangle&#xD;=\langle t|\hat{T}(a)|f\rangle&#xD;$$&#xD;연산자로의 변환 증명 1&#xD;$$&#xD;=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega|f\rangle|\omega\rangle\right]&#xD;=\langle t|\int d\omega \left[e^{-ia\omega}\langle\omega||f\rangle|\omega\rangle\right] $$ $$&#xD;=\langle t|\int d\omega \left[\langle\omega|e^{-ia\hat{\omega}}|f\rangle|\omega\rangle\right]&#xD;=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle&#xD;$$&#xD;$$&#xD;=\langle t|\int d\omega \left[|\omega\rangle\langle\omega|\right]|e^{-ia\hat{\omega}}|f\rangle&#xD;$$&#xD;$$&#xD;=\langle t|\hat{I}|e^{-ia\hat{\omega}}|f\rangle&#xD;=\langle t|e^{-ia\hat{\omega}}|f\rangle&#xD;$$&#xD;연산자로의 변환 증명 2&#xD;$$&#xD;\langle t|e^{-ia\hat{\omega}}|f\rangle&#xD;=\langle t|\hat{I}e^{-ia\hat{\omega}}|f\rangle&#xD;$$&#xD;$$&#xD;=\langle t|\int d\omega |\omega\rangle\langle\omega|e^{-ia\hat{\omega}}|f\rangle&#xD;=\langle t|\int d\omega |\omega\rangle e^{-ia\omega}f(\omega)&#xD;$$&#xD;$$&#xD;=\langle t|\int d\omega \left[e^{-ia\omega}f(\omega)|\omega\rangle\right] =\langle t|e^{-ia\omega}f(\omega)\rangle&#xD;$$&#xD;위 2개의 식을 비교하자.</description>
+    </item>
+  </channel>
+</rss>

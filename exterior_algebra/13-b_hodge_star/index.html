@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응§4 에서 외대수의 차원을 정리할 때 흥미로운 대칭성 이 있었다.
+$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$이항 계수의 대칭성 으로 $k$-form 공간과 $(n-k)$-form 공간의 차원이 같다.
+차원이 같다는 건 두 공간이 벡터 공간으로 동형 임을 뜻한다. 하지만 자연스러운 (canonical) 대응이 있는가 는 별개의 문제 — §6 의 벡터와 1-form 사이의 관계처럼.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hodge 별표 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응§4 에서 외대수의 차원을 정리할 때 흥미로운 대칭성 이 있었다.
+$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$이항 계수의 대칭성 으로 $k$-form 공간과 $(n-k)$-form 공간의 차원이 같다.
+차원이 같다는 건 두 공간이 벡터 공간으로 동형 임을 뜻한다. 하지만 자연스러운 (canonical) 대응이 있는가 는 별개의 문제 — §6 의 벡터와 1-form 사이의 관계처럼.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/13-b_hodge_star/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="Hodge 별표 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응§4 에서 외대수의 차원을 정리할 때 흥미로운 대칭성 이 있었다.
+$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$이항 계수의 대칭성 으로 $k$-form 공간과 $(n-k)$-form 공간의 차원이 같다.
+차원이 같다는 건 두 공간이 벡터 공간으로 동형 임을 뜻한다. 하지만 자연스러운 (canonical) 대응이 있는가 는 별개의 문제 — §6 의 벡터와 1-form 사이의 관계처럼.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="Hodge 별표 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응§4 에서 외대수의 차원을 정리할 때 흥미로운 대칭성 이 있었다.
+$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$이항 계수의 대칭성 으로 $k$-form 공간과 $(n-k)$-form 공간의 차원이 같다.
+차원이 같다는 건 두 공간이 벡터 공간으로 동형 임을 뜻한다. 하지만 자연스러운 (canonical) 대응이 있는가 는 별개의 문제 — §6 의 벡터와 1-form 사이의 관계처럼.">
+    <meta itemprop="wordCount" content="1868">
+    <title>Hodge 별표 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/13-b_hodge_star\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/13-b_hodge_star/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기--form-과--form-의-자연스러운-대응">1. 동기: -form 과 -form 의 자연스러운 대응</a></li>
+        <li><a href="#2-메트릭과-미분형식의-내적">2. 메트릭과 미분형식의 내적</a></li>
+        <li><a href="#3-hodge-별표의-정의">3. Hodge 별표의 정의</a></li>
+        <li><a href="#4-명시적-좌표-표현-3d">4. 명시적 좌표 표현 (3D)</a></li>
+        <li><a href="#5-hodge-별표의-핵심-성질">5. Hodge 별표의 핵심 성질</a></li>
+        <li><a href="#6-4차원-minkowski-공간의-별표">6. 4차원 Minkowski 공간의 별표</a></li>
+        <li><a href="#7-코미분--codifferential">7. 코미분  (codifferential)</a></li>
+        <li><a href="#8-laplace-de-rham-연산자">8. Laplace-de Rham 연산자</a></li>
+        <li><a href="#9-hodge-정리">9. Hodge 정리</a></li>
+        <li><a href="#10-maxwell-방정식의-준비">10. Maxwell 방정식의 준비</a></li>
+        <li><a href="#11-negf응집계와의-연결">11. NEGF·응집계와의 연결</a></li>
+        <li><a href="#12-일반-메트릭과의-일반화">12. 일반 메트릭과의 일반화</a></li>
+        <li><a href="#13-정리">13. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Hodge 별표</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/12-b_de_rham_cohomology/index.html" title="de Rham 코호몰로지 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html" title="응용: Maxwell, 심플렉틱, Berry, Noether (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="hodge-별표">Hodge 별표</h1>
+
+<h3 id="1-동기--form-과--form-의-자연스러운-대응">1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§4 에서 외대수의 차원을 정리할 때 <em>흥미로운 대칭성</em> 이 있었다.</p>
+$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$<p>이항 계수의 <em>대칭성</em> 으로 <em>$k$-form 공간과 $(n-k)$-form 공간의 차원이 같다</em>.</p>
+<p>차원이 같다는 건 두 공간이 <em>벡터 공간으로 동형</em> 임을 뜻한다. 하지만 <em>자연스러운 (canonical) 대응이 있는가</em> 는 별개의 문제 — §6 의 <em>벡터와 1-form</em> 사이의 관계처럼.</p>
+<p><strong>자연스러운 대응을 만들려면</strong></p>
+<p>§6 에서 본 <em>음악적 동형사상</em> 처럼, <em>추가 구조</em> 가 필요하다. 이번에는 <em>메트릭 (metric)</em> — 즉 <em>내적 (inner product)</em> — 이 필요하다.</p>
+<p>메트릭이 주어지면, <em>$k$-form 과 $(n-k)$-form 사이의 자연스러운 대응</em> 이 정의된다. 이 대응이 <strong>Hodge 별표 (Hodge star) $\star$</strong>.</p>
+<blockquote>
+$$\star : \Lambda^k V \to \Lambda^{n-k} V$$</blockquote>
+<p>이 장에서 Hodge 별표의 정확한 정의, 좌표 표현, 핵심 성질, 그리고 <em>왜 물리에서 자연스럽게 등장</em> 하는지를 본다.</p>
+<h3 id="2-메트릭과-미분형식의-내적">2. 메트릭과 미분형식의 내적<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 메트릭이 <em>미분형식 사이의 내적</em> 을 유도하는 방식을 본다.</p>
+<p><strong>벡터의 내적에서 출발</strong></p>
+<p>$V$ 가 $n$ 차원 벡터 공간이고 <em>내적 $g$</em> 가 주어져 있다고 하자. 표준 표기로 벡터들의 내적:</p>
+$$g(v, w) = v_i\, g^{ij}\, w_j \quad \text{또는 단순히} \quad \langle v, w \rangle$$<p>$\mathbb{R}^n$ 의 표준 내적이면 $g^{ij} = \delta^{ij}$ (Kronecker delta), 즉 $g(v, w) = \sum_i v_i w_i$.</p>
+<p><strong>1-form 의 내적</strong></p>
+<p>§6 에서 본 음악적 동형사상 (메트릭으로 가능) 을 사용. 두 1-form $\alpha, \beta$ 에 대해</p>
+$$\langle \alpha, \beta \rangle := g(\alpha^\sharp, \beta^\sharp)$$<p>즉 두 1-form 을 <em>벡터로 바꿔서 내적</em>. 표준 좌표에서</p>
+$$\langle \alpha, \beta \rangle = \sum_i \alpha_i \beta_i$$<p><strong>$k$-form 의 내적</strong></p>
+<p>$k$-form 들 사이의 내적은 <em>기본 단항의 내적을 먼저 정의</em> 한 다음 <em>선형성으로 확장</em>. 두 기본 $k$-form $\alpha_1 \wedge \cdots \wedge \alpha_k$ 와 $\beta_1 \wedge \cdots \wedge \beta_k$ 의 내적:</p>
+$$\langle \alpha_1 \wedge \cdots \wedge \alpha_k,\, \beta_1 \wedge \cdots \wedge \beta_k \rangle := \det\big( \langle \alpha_i, \beta_j \rangle \big)_{i, j = 1, \ldots, k}$$<p>(<em>$k \times k$ 행렬의 행렬식</em>. 두 인자의 내적들의 행렬식.)</p>
+<p><strong>표준 기저에서</strong></p>
+<p>표준 좌표 ($\mathbb{R}^n$ 의 유클리드 메트릭) 에서, <em>서로 다른 기본 $k$-form</em> 들이 <em>정규 직교 (orthonormal)</em>:</p>
+$$\langle dx^{i_1} \wedge \cdots \wedge dx^{i_k},\, dx^{j_1} \wedge \cdots \wedge dx^{j_k} \rangle = \begin{cases} 1 & (i_1, \ldots, i_k) = (j_1, \ldots, j_k) \\ 0 & \text{otherwise} \end{cases}$$<p>(<em>인덱스가 오름차순으로 정렬된</em> 표준 기저 가정.) 따라서 $\Lambda^k V$ 의 <em>표준 기저가 자연스러운 정규 직교 기저</em>.</p>
+<h3 id="3-hodge-별표의-정의">3. Hodge 별표의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 Hodge 별표를 정확히 정의할 준비가 됐다.</p>
+<p><strong>정의 (Hodge 별표)</strong></p>
+<p>$V$ 가 $n$ 차원 <em>정향 (oriented) 내적 공간</em>, $\omega_0 = e^1 \wedge \cdots \wedge e^n$ 이 <em>방향이 주어진 부피 형식</em> 일 때, <em>Hodge 별표</em> $\star: \Lambda^k V \to \Lambda^{n-k} V$ 는 다음 식으로 정의:</p>
+<blockquote>
+$$\alpha \wedge \star \beta = \langle \alpha, \beta \rangle\, \omega_0 \quad \forall \alpha \in \Lambda^k V$$</blockquote>
+<p>이 식이 <em>모든 $\alpha$</em> 에 대해 성립하도록 <em>$\star \beta$ 가 유일하게</em> 결정.</p>
+<p><strong>의미를 풀어 보면</strong></p>
+<p>$\beta$ 가 $k$-form 이고 $\star \beta$ 가 $(n-k)$-form 이면, 그 쐐기곱 $\alpha \wedge \star \beta$ 가 <em>최고차 $n$-form</em>. 1차원 공간 $\Lambda^n V$ 의 원소는 <em>부피 형식의 스칼라 배</em>.</p>
+<p>그 스칼라가 <em>$\alpha$ 와 $\beta$ 의 내적</em> 이 되도록 $\star\beta$ 를 잡는 것.</p>
+<p><strong>Hodge 별표의 직관</strong></p>
+<p>기하학적으로 $\star \beta$ 는 <em>$\beta$ 의 직교 보완 (orthogonal complement)</em>. $\beta$ 가 <em>$k$-차원 부분공간</em> 을 나타낸다면, $\star \beta$ 는 <em>그 부분공간에 수직인 $(n-k)$-차원 부분공간</em> 을 나타낸다.</p>
+<p>이게 <em>왜 Hodge 별표가 &ldquo;별표&quot;인지</em> 의 직관 — <em>원래 객체에 대응되는 &ldquo;여공간&rdquo; (complementary space)</em> 을 가리킴.</p>
+<h3 id="4-명시적-좌표-표현-3d">4. 명시적 좌표 표현 (3D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3차원 유클리드 공간에서 Hodge 별표를 <em>명시적으로</em> 계산해 본다.</p>
+<p><strong>기본 형식들의 별표</strong></p>
+<p>표준 좌표 $x, y, z$ 와 표준 메트릭 (유클리드).</p>
+<p><em>0-form 의 별표</em>: $\Lambda^0 \to \Lambda^3$.</p>
+$$\star 1 = dx \wedge dy \wedge dz$$<p>(<em>상수 1 의 별표는 부피 형식</em>.)</p>
+<p><em>1-form 의 별표</em>: $\Lambda^1 \to \Lambda^2$.</p>
+$$\star\, dx = dy \wedge dz, \quad \star\, dy = dz \wedge dx, \quad \star\, dz = dx \wedge dy$$<p>(<em>1-form 의 별표가 그것에 수직인 2-form</em>. 순환 순서 주의.)</p>
+<p><em>2-form 의 별표</em>: $\Lambda^2 \to \Lambda^1$.</p>
+$$\star (dy \wedge dz) = dx, \quad \star (dz \wedge dx) = dy, \quad \star (dx \wedge dy) = dz$$<p>(1-form ↔ 2-form 이 대칭적으로 매핑.)</p>
+<p><em>3-form 의 별표</em>: $\Lambda^3 \to \Lambda^0$.</p>
+$$\star (dx \wedge dy \wedge dz) = 1$$<p>(<em>부피 형식의 별표는 1</em>.)</p>
+<p><strong>일반 1-form 의 별표</strong></p>
+<p>벡터장 $\vec{F} = (P, Q, R)$ 에 대응하는 1-form $\omega_F = P\, dx + Q\, dy + R\, dz$ 의 별표:</p>
+$$\star \omega_F = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$$<p>이게 <em>§7 §5 에서 본 &ldquo;벡터장의 플럭스 형식&rdquo;</em> — 정확히 같은 객체. <em>Hodge 별표가 1-form 을 그에 대응하는 플럭스 2-form 으로 보낸다</em>.</p>
+<h3 id="5-hodge-별표의-핵심-성질">5. Hodge 별표의 핵심 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) $\star^2 = \pm 1$ (이중 별표)</strong></p>
+<p>Hodge 별표를 두 번 적용하면 <em>원래 형식의 $\pm$ 배</em>:</p>
+$$\star (\star \alpha) = (-1)^{k(n-k)}\, \alpha \quad (\alpha \in \Lambda^k V \text{ in Euclidean signature})$$<p>부호 인자가 <em>차수에 의존</em>.</p>
+<p><strong>3D 유클리드의 경우</strong>: $n = 3$, 모든 $k$ 에 대해 $k(n-k) = k(3-k)$ 가 <em>짝수</em> (직접 확인). 따라서</p>
+$$\star^2 = +1 \text{ (3D 에서)}$$<p><em>이중 별표가 항등사상</em>.</p>
+<p><strong>4D Minkowski의 경우</strong>: 부호가 더 복잡 (Lorentzian metric 때문). 다음 절에서 자세히.</p>
+<p><strong>2) 내적 보존</strong></p>
+$$\langle \alpha, \beta \rangle = \langle \star \alpha, \star \beta \rangle$$<p>Hodge 별표는 <em>내적을 보존하는 등거리 사상 (isometry)</em>. 정의로부터 직접 증명 가능.</p>
+<p><strong>3) 양의 정부호 메트릭에서의 정의의 일관성</strong></p>
+<p>위의 정의 $\alpha \wedge \star \beta = \langle \alpha, \beta \rangle\, \omega_0$ 에서 $\alpha = \beta$ 로 두면</p>
+$$\beta \wedge \star \beta = \langle \beta, \beta \rangle\, \omega_0 = |\beta|^2 \omega_0 \ge 0$$<p>(<em>양의 정부호 메트릭에서</em>.) 이게 <em>형식의 크기</em> 가 자연스럽게 등장하는 자리.</p>
+<h3 id="6-4차원-minkowski-공간의-별표">6. 4차원 Minkowski 공간의 별표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상대성이론과 Maxwell 방정식에서 가장 중요한 <em>4차원 Minkowski 공간</em> 의 별표는 약간 다르다.</p>
+<p><strong>메트릭의 차이</strong></p>
+<p>Minkowski 메트릭은 <em>Lorentzian</em> — 즉 <em>유클리드와 부호가 다른</em> 메트릭. 좌표 $x^0 = ct, x^1, x^2, x^3$ 에 대해</p>
+$$g = \text{diag}(-1, +1, +1, +1) \quad \text{(또는 } \text{diag}(+1, -1, -1, -1)\text{)}$$<p>(<em>signature</em> 의 선택에 따라 부호 약속이 다르지만, 핵심은 <em>시간 좌표가 다른 부호</em>.)</p>
+<p><strong>이중 별표 부호</strong></p>
+<p>Minkowski 4D 에서:</p>
+$$\star^2 = (-1)^{k(4-k)} \cdot (-1)^1 = (-1)^{k(4-k) + 1}$$<p>(여기서 마지막 $-1$ 은 <em>signature 의 negative eigenvalue 의 수가 1</em> 이라는 점에서 옴.)</p>
+<p>$k = 1$ 의 경우: $\star^2 = (-1)^{3+1} = +1$.</p>
+<p>$k = 2$ 의 경우: $\star^2 = (-1)^{4+1} = -1$. <em>마이너스</em>.</p>
+<p>이게 <em>4D Minkowski 2-form 에 대해 $\star^2 = -1$</em> — Maxwell 방정식에서 <em>전기·자기 이중성 (electric-magnetic duality)</em> 의 자연스러운 표현.</p>
+<h3 id="7-코미분--codifferential">7. 코미분 $\delta$ (codifferential)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Hodge 별표가 정의되면, 외미분 $d$ 의 <em>짝 (adjoint)</em> 인 <em>코미분 $\delta$</em> 가 자연스럽게 정의된다.</p>
+<p><strong>정의</strong></p>
+<blockquote>
+$$\delta := (-1)^{\cdots} \star d \star : \Omega^k \to \Omega^{k-1}$$</blockquote>
+<p>부호 인자는 차원과 차수에 의존. <em>결과: $k$-form 을 $(k-1)$-form 으로 보냄</em>. $d$ 의 반대 방향.</p>
+<p><strong>3D 유클리드 표현</strong></p>
+<p>3차원 유클리드에서 코미분이 <em>익숙한 벡터 미적분 연산자</em> 와 대응한다.</p>
+<p><em>1-form 의 코미분</em>: $\delta \omega = -\star d \star \omega$. 벡터장 $\vec{F}$ 의 1-form $\omega_F$ 에 대해</p>
+$$\delta \omega_F = -\nabla \cdot \vec{F}$$<p>(<em>발산의 음수</em>.) 1-form 에 대한 코미분이 <em>발산의 자연스러운 표현</em>.</p>
+<p><em>2-form 의 코미분</em>: 비슷한 계산으로 <em>회전 (curl) 의 음수</em> 와 관련.</p>
+<h3 id="8-laplace-de-rham-연산자">8. Laplace-de Rham 연산자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외미분과 코미분을 합치면 <em>라플라스 연산자의 일반화</em> 가 나온다.</p>
+<p><strong>정의 (Laplace-de Rham)</strong></p>
+<blockquote>
+$$\Delta := d\delta + \delta d : \Omega^k \to \Omega^k$$</blockquote>
+<p><em>$k$-form 을 $k$-form 으로</em> 보내는 <em>2차 미분 연산자</em>.</p>
+<p><strong>0-form 의 라플라시안</strong></p>
+<p>함수 $f$ 에 대해</p>
+$$\Delta f = \delta(df) + d(\delta f) = \delta(df) + 0 = -\nabla \cdot (\nabla f) = -\nabla^2 f$$<p>(<em>$\delta f = 0$</em> 은 $f$ 가 <em>0-form 이므로 더 낮은 차수가 없음</em>.)</p>
+<p>부호 약속에 따라 <em>익숙한 라플라시안 $\nabla^2 f$</em> 과 같은 값 (부호 약속만 다름).</p>
+<p><strong>일반 $k$-form 의 라플라시안</strong></p>
+<p>$\Delta = d\delta + \delta d$ 가 <em>모든 차수에서</em> 잘 정의된 라플라시안.</p>
+<p>이게 <em>물리에서 자주 등장하는 연산자</em>. 예: <em>맥스웰 방정식의 빈 공간 해</em> 가 <em>$\Delta A = 0$</em> 의 해.</p>
+<h3 id="9-hodge-정리">9. Hodge 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>de Rham 코호몰로지의 <em>놀라운 정리</em> 가 Hodge 정리.</p>
+<blockquote>
+<p><strong>Hodge 정리</strong>: 컴팩트 정향 리만 다양체 $M$ 의 각 de Rham 코호몰로지 류에서 <em>조화적 (harmonic) 대표원</em> 이 유일하게 존재.</p>
+</blockquote>
+<p>여기서 <em>조화적 $k$-form</em> 은 $\Delta \omega = 0$ 인 $k$-form.</p>
+<p><strong>의미</strong></p>
+<p>$H^k(M)$ 의 한 원소는 <em>동치류 (폐형식들 모듈로 완전형식들)</em>. Hodge 정리에 의해 <em>각 동치류에서 라플라시안 = 0 인 특별한 대표원 (조화형식)</em> 이 <em>유일하게</em> 존재.</p>
+<p>이게 <em>위상학적 정보 ($H^k$) 와 해석학적 정보 (조화형식) 의 완벽한 대응</em>.</p>
+<p><strong>응용</strong></p>
+<ul>
+<li><em>Hodge 분해</em>: 모든 $k$-form 이 <em>조화형식 + 완전형식 + 코완전형식</em> 으로 <em>유일하게 분해</em>.</li>
+<li><em>지표 정리 (index theorem)</em>: 조화형식의 차원 = 코호몰로지의 Betti 수 = 위상학적 불변량. 이게 <em>Atiyah-Singer 지표 정리</em> 의 출발점.</li>
+</ul>
+<p>이 깊은 결과들이 <em>Hodge 별표가 단순한 도구 이상</em> 임을 보여준다.</p>
+<h3 id="10-maxwell-방정식의-준비">10. Maxwell 방정식의 준비<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§14 에서 자세히 다룰 <em>Maxwell 방정식의 미분형식 표현</em> 을 위한 준비.</p>
+<p><strong>전자기 텐서</strong></p>
+<p>4차원 Minkowski 시공간 위의 <em>전자기 2-form</em>:</p>
+$$F = \frac{1}{2}\, F_{\mu\nu}\, dx^\mu \wedge dx^\nu$$<p>여기서 $F_{\mu\nu}$ 가 <em>전자기 텐서</em> — 6 개의 독립 성분이 <em>전기장의 3 성분 + 자기장의 3 성분</em>.</p>
+<p><strong>Maxwell 방정식 (미리보기)</strong></p>
+<p>자기장의 발산 없음 + Faraday 법칙:</p>
+$$dF = 0$$<p>(<em>$F$ 가 폐 2-form</em>.) 이게 <em>§9 §8 에서 본 &ldquo;비회전 + 자기 모노폴 없음&rdquo;</em> 의 4D 통일된 표현.</p>
+<p>Gauss 법칙 + Ampère-Maxwell 법칙:</p>
+$$d \star F = J$$<p>(<em>외미분과 Hodge 별표 합성이 전류 3-form</em>.)</p>
+<blockquote>
+<p><em>맥스웰의 네 방정식이 두 줄로</em> — $dF = 0$ 과 $d \star F = J$.</p>
+</blockquote>
+<p>이 표현이 가능하려면 <em>Hodge 별표가 필수</em>. Lorentzian 메트릭의 $\star$ 가 <em>전기장과 자기장을 자연스럽게 섞어줌</em> — 전기·자기 이중성.</p>
+<p>§14 에서 자세히 다룬다.</p>
+<h3 id="11-negf응집계와의-연결">11. NEGF·응집계와의 연결<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Hodge 별표가 <em>응집계 물리에서 자주 등장</em>.</p>
+<p><strong>Brillouin 영역의 Hodge 이론</strong></p>
+<p>토러스 위에서 정의된 <em>Bloch 파동함수</em> 들의 <em>Berry 곡률</em> 은 <em>2-form</em>. Brillouin 영역의 <em>볼륨</em> 에 대한 적분이 <em>Chern 수</em> 인데, 이 적분에서 <em>Hodge 별표가 자연스럽게 등장</em>.</p>
+<p><strong>TKNN 공식</strong></p>
+<p><em>Thouless-Kohmoto-Nightingale-den Nijs 공식</em> — 양자 홀 전도도가 <em>Chern 수의 정수 배</em>.</p>
+$$\sigma_{xy} = \frac{e^2}{h} \cdot C, \quad C = \frac{1}{2\pi} \int_{BZ} F$$<p>여기서 $F$ 의 적분에서 <em>Hodge 별표가 메트릭 (Brillouin 영역의 자연 메트릭) 을 통해 등장</em>.</p>
+<p><strong>Green 함수의 스펙트럼 분해</strong></p>
+<p>NEGF 에서 <em>그린 함수의 스펙트럼 분해</em> 가 <em>Hodge 분해의 무한 차원 일반화</em> 로 볼 수 있음. 그린 함수의 <em>조화 부분 (resolvent) 과 비조화 부분</em> 의 분리가 Hodge 정리의 정신.</p>
+<h3 id="12-일반-메트릭과의-일반화">12. 일반 메트릭과의 일반화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위에서 표준 (유클리드 또는 Minkowski) 메트릭을 가정했는데, <em>일반 리만 / 의사-리만 다양체</em> 에서도 Hodge 별표가 잘 정의된다.</p>
+<p><strong>리만 다양체 (양의 정부호)</strong></p>
+<p>리만 다양체에서 메트릭 $g_{ij}$ 가 <em>양의 정부호</em>. 부피 형식</p>
+$$\omega_g = \sqrt{|\det g|}\, dx^1 \wedge \cdots \wedge dx^n$$<p>이게 <em>메트릭의 야코비안</em> 을 포함하는 <em>일반 부피 형식</em>. $\sqrt{|\det g|}$ 가 <em>기준 좌표에서 메트릭의 정보를 인코딩</em>.</p>
+<p><strong>의사-리만 다양체 (Minkowski 처럼)</strong></p>
+<p><em>signature</em> 가 $(p, q)$ — 즉 $p$ 개의 양의 고윳값, $q$ 개의 음의 고윳값. 부피 형식은 같은 형태지만 <em>행렬식의 부호</em> 가 <em>signature</em> 에 의존.</p>
+<p><strong>리 군의 Hodge 별표</strong></p>
+<p>§14 의 Noether 정리 응용에서 사용될 <em>리 군 위의 Haar 측도</em> 가 <em>Hodge 별표의 일반화된 부피 형식</em>. Lie 군 시리즈의 결과와 자연스럽게 연결.</p>
+<h3 id="13-정리">13. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>Hodge 별표</em> $\star: \Lambda^k V \to \Lambda^{n-k} V$ 는 <em>$k$-form 을 $(n-k)$-form 으로</em> 자연스럽게 보내는 변환.</p>
+<p><strong>2)</strong> <em>정의</em>: $\alpha \wedge \star \beta = \langle \alpha, \beta \rangle\, \omega_0$. <em>내적과 부피 형식을 사용</em>.</p>
+<p><strong>3)</strong> <em>필요 조건</em>: 메트릭 (또는 내적) 과 <em>정향 (orientation)</em> 이 있어야 함.</p>
+<p><strong>4)</strong> <em>기본 성질</em>:</p>
+<ul>
+<li>$\star^2 = (-1)^{k(n-k)}$ (유클리드).</li>
+<li>내적 보존 등거리 사상.</li>
+</ul>
+<p><strong>5)</strong> <em>3D 유클리드 별표</em>: 1-form ↔ 2-form 의 자연스러운 대응. 벡터장의 <em>플럭스 형식</em>이 1-form 의 별표.</p>
+<p><strong>6)</strong> <em>4D Minkowski 별표</em>: 2-form 에 대해 $\star^2 = -1$ — <em>전기·자기 이중성</em>의 자연스러운 표현.</p>
+<p><strong>7)</strong> <em>코미분</em> $\delta := \star d \star$ (부호 인자 포함). 외미분의 짝.</p>
+<p><strong>8)</strong> <em>Laplace-de Rham 연산자</em> $\Delta = d\delta + \delta d$. 모든 차수의 미분형식에 작용.</p>
+<p><strong>9)</strong> <em>Hodge 정리</em>: 각 코호몰로지 류에 <em>유일한 조화 대표원</em> 존재. <em>위상학과 해석학의 깊은 연결</em>.</p>
+<p><strong>10)</strong> <em>Maxwell 방정식</em> 의 미분형식 표현 ($dF = 0$, $d \star F = J$) 이 Hodge 별표를 <em>결정적으로 사용</em>.</p>
+<p><strong>11)</strong> <em>응집계 물리</em>: Chern 수, Berry 곡률, NEGF 의 그린 함수 분해 — 모두 Hodge 이론과 연결.</p>
+<p>다음 §14 에서 외대수 시리즈의 <em>마지막 장</em> 으로 <em>주요 응용</em> 들을 자세히 본다. <em>Maxwell 방정식, 심플렉틱 기하 (Hamilton 역학), Berry 위상, Noether 정리</em> — 외대수 언어가 <em>물리의 자연스러운 도구</em> 임을 보여주는 응용들.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

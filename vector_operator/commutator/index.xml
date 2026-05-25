@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commutator :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/commutator/index.html</link>
+    <description>(b) Commutator (a) Physics</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/commutator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Commutator</title>
+      <link>http://localhost:1313/vector_operator/commutator/b_commutator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/commutator/b_commutator/index.html</guid>
+      <description>1. 교환자 (Commutator)&#xD;교환자는 두 연산자의 곱셈 순서가 결과에 미치는 영향을 측정하는 수학적 도구이다. 이는 행렬(연산자)들 사이의 구조적 호환성을 판별하는 데 핵심적인 역할을 한다. 두 연산자 $\hat{A}$와 $\hat{B}$의 교환자(Commutator) 는 다음과 같이 정의된다.&#xA;$$&#xD;[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}&#xD;$$ 만약 $[\hat{A}, \hat{B}] = 0$ 이면, 두 연산자는 교환 가능하다(commute) 만약 $[\hat{A}, \hat{B}] \neq 0$ 이면, 두 연산자는 교환 가능하지 않다(do not commute) 2. 항등 성질&#xD;(1) 반대칭성 (Anti-symmetry)</description>
+    </item>
+    <item>
+      <title>(a) Physics</title>
+      <link>http://localhost:1313/vector_operator/commutator/a_physics/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/commutator/a_physics/index.html</guid>
+      <description>1. 물리적 의미1, 동시측정 가능성&#xD;교환자는 두 물리량을 동시에 얼마나 정확하게 알 수 있는지를 판별하는 ‘측정 호환성 테스트’이다. 측정이란 어떤 고유값을 선택(중복포함하여)하는 것 이다. 예로, $\hat{H}$ 를 기준으로 측정하여라 하면, $\hat{H}$ 고유값(중복고유값 포함) 중 하나가 임의로 선택되는 것을 말한다.&#xA;$$&#xD;|\psi\rangle \xrightarrow{\text{Measure=Pick}} \lambda^\text{중복도,3}(|\lambda_1^3\rangle+|\lambda_2^3\rangle+|\lambda_3^3\rangle)&#xD;$$(1) 교환하는 경우 ($[\hat{A}, \hat{B}] = 0$): 양립 가능한 측정량&#xA;두 물리량은 ‘양립 가능(compatible)’ 하며 동시에 확정된 값을 가질 수 있다. 하나의 양을 측정하는 행위가 다른 양의 상태를 교란시키지 않는다.</description>
+    </item>
+  </channel>
+</rss>

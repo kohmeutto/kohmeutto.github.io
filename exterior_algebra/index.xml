@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exterir algebra :: 수리전자물리학</title>
+    <link>http://localhost:1313/exterior_algebra/index.html</link>
+    <description>동기: 왜 반대칭이 중요한가 다중선형성과 반대칭 쐐기곱의 정의 외대수의 기저와 차원 행렬식의 진정한 의미 미분형식: 1-form 고차 미분형식: k-form 외미분 d 외미분과 벡터 미적분 미분형식의 적분 Stokes 정리 de Rham 코호몰로지 Hodge 별표 응용: Maxwell, 심플렉틱, Berry, Noether</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/exterior_algebra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>동기: 왜 반대칭이 중요한가</title>
+      <link>http://localhost:1313/exterior_algebra/1-b_antisymmetry_motivation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/1-b_antisymmetry_motivation/index.html</guid>
+      <description>1. 시작: 평행사변형의 넓이&#xD;두 벡터 $\vec{v}, \vec{w}$ 가 만드는 평행사변형의 넓이를 어떻게 계산하나?&#xA;2차원에서 $\vec{v} = (a, b)$, $\vec{w} = (c, d)$ 일 때:&#xA;$$\text{넓이} = \det\begin{pmatrix} a &amp; c \\ b &amp; d \end{pmatrix} = ad - bc$$예: $\vec{v} = (3, 1)$, $\vec{w} = (1, 2)$ 면 넓이 $= 3 \cdot 2 - 1 \cdot 1 = 5$.</description>
+    </item>
+    <item>
+      <title>다중선형성과 반대칭</title>
+      <link>http://localhost:1313/exterior_algebra/2-b_multilinearity_antisymmetry/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/2-b_multilinearity_antisymmetry/index.html</guid>
+      <description>1. 복습: 선형 함수&#xD;쐐기곱과 외대수의 정확한 정의로 가기 전에, 먼저 선형성 의 개념을 분명히 해야 한다. §1 에서 “행렬식이 각 인자에 대해 선형” 이라는 표현이 자주 등장했는데, 이게 정확히 무슨 뜻인지부터 짚는다.&#xA;함수 $f: V \to \mathbb{R}$ 이 선형 (linear) 이라는 건 두 가지 성질을 동시에 만족한다는 뜻이다.&#xA;첫째, 가법성 (additivity): 두 벡터를 더한 뒤에 함수를 적용한 결과가, 각 벡터에 함수를 적용한 결과를 더한 것과 같다.</description>
+    </item>
+    <item>
+      <title>쐐기곱의 정의</title>
+      <link>http://localhost:1313/exterior_algebra/3-b_wedge_product_definition/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/3-b_wedge_product_definition/index.html</guid>
+      <description>1. 동기: 왜 새 객체가 필요한가&#xD;§2 에서 반대칭 다중선형 함수 를 봤다. 이건 함수 다. 다시 말해 벡터들을 받아서 숫자 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.&#xA;함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. “방향이 붙은 평행사변형 그 자체” 를 대수적 객체 로 다루고 싶어진다는 것이다.</description>
+    </item>
+    <item>
+      <title>외대수의 기저와 차원</title>
+      <link>http://localhost:1313/exterior_algebra/4-b_exterior_algebra_dimension/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/4-b_exterior_algebra_dimension/index.html</guid>
+      <description>1. 동기: $k$-벡터들이 사는 공간&#xD;§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 새로운 종류의 객체 라는 걸 봤다. 그리고 고차 쐐기곱 $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 벡터가 아니다. 그렇다면 어디에 살고 있는가?&#xA;벡터는 벡터 공간 $V$ 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.</description>
+    </item>
+    <item>
+      <title>행렬식의 진정한 의미</title>
+      <link>http://localhost:1313/exterior_algebra/5-b_determinant_meaning/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/5-b_determinant_meaning/index.html</guid>
+      <description>1. 동기: 익숙한 행렬식, 새로운 관점&#xD;행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식&#xA;$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.</description>
+    </item>
+    <item>
+      <title>미분형식: 1-form</title>
+      <link>http://localhost:1313/exterior_algebra/6-b_differential_forms_1form/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/6-b_differential_forms_1form/index.html</guid>
+      <description>1. 동기: 상수에서 변수로&#xD;§1-§5 에서 다룬 외대수는 고정된 벡터 공간 $V$ 위의 상수 객체들이었다. $v \wedge w$ 는 어떤 두 벡터에 대한 한 번의 쐐기곱이고, 결과로 나오는 2-벡터도 한 번 정해지면 변하지 않는다.&#xA;그런데 물리와 미적분의 현실 은 그렇지 않다. 공간의 각 점마다 다른 양 이 있다.&#xA;예를 들어 전기장 $\vec{E}(\vec{x})$ 는 위치에 따라 변한다. 어떤 점에서는 강하고 어떤 점에서는 약하며 방향도 다르다. 온도 $T(\vec{x})$ 도 위치에 따라 다른 스칼라값을 갖는다.</description>
+    </item>
+    <item>
+      <title>고차 미분형식: k-form</title>
+      <link>http://localhost:1313/exterior_algebra/7-b_differential_forms_kform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/7-b_differential_forms_kform/index.html</guid>
+      <description>1. 동기: 1-form 에서 더 높은 차수로&#xD;§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.&#xA;그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.&#xA;전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).</description>
+    </item>
+    <item>
+      <title>외미분 d</title>
+      <link>http://localhost:1313/exterior_algebra/8-b_exterior_derivative/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/8-b_exterior_derivative/index.html</guid>
+      <description>1. 동기: 미분의 통합된 언어&#xD;미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.&#xA;그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.</description>
+    </item>
+    <item>
+      <title>외미분과 벡터 미적분</title>
+      <link>http://localhost:1313/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html</guid>
+      <description>1. 동기: 익숙한 미분들의 통일&#xD;§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해&#xA;0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.</description>
+    </item>
+    <item>
+      <title>미분형식의 적분</title>
+      <link>http://localhost:1313/exterior_algebra/10-b_integration_of_forms/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/10-b_integration_of_forms/index.html</guid>
+      <description>1. 동기: 왜 미분형식을 적분하는가&#xD;§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.&#xA;이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.</description>
+    </item>
+    <item>
+      <title>Stokes 정리</title>
+      <link>http://localhost:1313/exterior_algebra/11-b_stokes_theorem/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/11-b_stokes_theorem/index.html</guid>
+      <description>1. 동기: 다중 변수 미적분의 네 정리&#xD;다중 변수 미적분에서 우리는 네 가지 적분 정리 를 배운다.&#xA;(1) 미적분의 기본 정리 (Newton-Leibniz): 1차원에서&#xA;$$\int_a^b f&#39;(x)\, dx = f(b) - f(a)$$미분과 적분이 역연산 임을 보여주는 가장 기본적인 사실.&#xA;(2) Green 정리: 2차원 평면의 영역 $D$ 와 그 경계 곡선 $\partial D$ 에 대해&#xA;$$\oint_{\partial D} (P\, dx + Q\, dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx\, dy$$(3) Stokes 정리 (고전 3D): 3차원 공간의 면 $S$ 와 그 경계 곡선 $\partial S$ 에 대해</description>
+    </item>
+    <item>
+      <title>de Rham 코호몰로지</title>
+      <link>http://localhost:1313/exterior_algebra/12-b_de_rham_cohomology/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/12-b_de_rham_cohomology/index.html</guid>
+      <description>1. 동기: 폐형식과 완전형식의 차이&#xD;§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).&#xA;폐형식은 외미분이 0 인 형식: $d\omega = 0$.&#xA;완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.&#xA;$d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 폐형식.&#xA;그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.</description>
+    </item>
+    <item>
+      <title>Hodge 별표</title>
+      <link>http://localhost:1313/exterior_algebra/13-b_hodge_star/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/13-b_hodge_star/index.html</guid>
+      <description>1. 동기: $k$-form 과 $(n-k)$-form 의 자연스러운 대응&#xD;§4 에서 외대수의 차원을 정리할 때 흥미로운 대칭성 이 있었다.&#xA;$$\dim \Lambda^k V = \binom{n}{k} = \binom{n}{n-k} = \dim \Lambda^{n-k} V$$이항 계수의 대칭성 으로 $k$-form 공간과 $(n-k)$-form 공간의 차원이 같다.&#xA;차원이 같다는 건 두 공간이 벡터 공간으로 동형 임을 뜻한다. 하지만 자연스러운 (canonical) 대응이 있는가 는 별개의 문제 — §6 의 벡터와 1-form 사이의 관계처럼.</description>
+    </item>
+    <item>
+      <title>응용: Maxwell, 심플렉틱, Berry, Noether</title>
+      <link>http://localhost:1313/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html</guid>
+      <description>1. 동기: 외대수가 물리에서 자연스러운 이유&#xD;지금까지 §1-§13 에서 외대수의 대수적 기초 (§1-§5), 미분형식과 외미분 (§6-§9), 적분과 Stokes 정리 (§10-§11), 코호몰로지와 Hodge 별표 (§12-§13) 를 다뤘다.&#xA;이 언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구 임을 마지막 장에서 네 가지 핵심 응용 으로 보여준다.&#xA;(1) Maxwell 방정식 — 전자기학의 네 방정식이 두 줄로 압축.&#xA;(2) 심플렉틱 기하 (Hamilton 역학) — 고전 역학의 위상 공간 구조가 2-form 으로 자연스럽게 표현.</description>
+    </item>
+  </channel>
+</rss>

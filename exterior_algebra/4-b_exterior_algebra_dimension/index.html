@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: $k$-벡터들이 사는 공간§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 새로운 종류의 객체 라는 걸 봤다. 그리고 고차 쐐기곱 $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 벡터가 아니다. 그렇다면 어디에 살고 있는가?
+벡터는 벡터 공간 $V$ 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="외대수의 기저와 차원 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: $k$-벡터들이 사는 공간§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 새로운 종류의 객체 라는 걸 봤다. 그리고 고차 쐐기곱 $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 벡터가 아니다. 그렇다면 어디에 살고 있는가?
+벡터는 벡터 공간 $V$ 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/4-b_exterior_algebra_dimension/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="외대수의 기저와 차원 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: $k$-벡터들이 사는 공간§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 새로운 종류의 객체 라는 걸 봤다. 그리고 고차 쐐기곱 $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 벡터가 아니다. 그렇다면 어디에 살고 있는가?
+벡터는 벡터 공간 $V$ 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="외대수의 기저와 차원 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: $k$-벡터들이 사는 공간§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 새로운 종류의 객체 라는 걸 봤다. 그리고 고차 쐐기곱 $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 벡터가 아니다. 그렇다면 어디에 살고 있는가?
+벡터는 벡터 공간 $V$ 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.">
+    <meta itemprop="wordCount" content="1613">
+    <title>외대수의 기저와 차원 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/4-b_exterior_algebra_dimension\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기--벡터들이-사는-공간">1. 동기: -벡터들이 사는 공간</a></li>
+        <li><a href="#2---벡터들의-공간">2. : -벡터들의 공간</a></li>
+        <li><a href="#3-기저-찾기--2d-부터">3. 기저 찾기 — 2D 부터</a></li>
+        <li><a href="#4-3d-기저">4. 3D 기저</a></li>
+        <li><a href="#5-일반-차원의-기저">5. 일반 차원의 기저</a></li>
+        <li><a href="#6-차원-공식">6. 차원 공식</a></li>
+        <li><a href="#7-전체-외대수">7. 전체 외대수 </a></li>
+        <li><a href="#8-명시적-표">8. 명시적 표</a></li>
+        <li><a href="#9-결합법칙과-등급화-가환성">9. 결합법칙과 등급화 가환성</a></li>
+        <li><a href="#10-정리">10. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">외대수의 기저와 차원</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/3-b_wedge_product_definition/index.html" title="쐐기곱의 정의 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/5-b_determinant_meaning/index.html" title="행렬식의 진정한 의미 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="외대수의-기저와-차원">외대수의 기저와 차원</h1>
+
+<h3 id="1-동기--벡터들이-사는-공간">1. 동기: $k$-벡터들이 사는 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§3 에서 두 벡터의 쐐기곱 $v \wedge w$ 가 <em>새로운 종류의 객체</em> 라는 걸 봤다. 그리고 <em>고차 쐐기곱</em> $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 도 정의했다. 이들은 <em>벡터가 아니다</em>. 그렇다면 어디에 살고 있는가?</p>
+<p>벡터는 <em>벡터 공간 $V$</em> 에 산다. 우리는 벡터를 더하고 스칼라 배 하고, 그 결과가 여전히 같은 공간 안에 있다고 안심한다.</p>
+<p>$k$-벡터들도 비슷한 공간을 가져야 한다. 두 개의 2-벡터를 더하면 또 다른 2-벡터가 나와야 하고, 스칼라 배도 잘 정의되어야 한다. 이 공간을 <strong>$\Lambda^k V$</strong> (&ldquo;람다 케이 V&rdquo; 또는 &ldquo;$V$ 의 $k$ 번째 외승&rdquo;) 라 부른다.</p>
+<p>이 장의 목표는 두 가지다.</p>
+<p>첫째, <em>$\Lambda^k V$ 의 기저</em> 를 찾는다. 즉 모든 $k$-벡터를 일차 결합으로 표현할 수 있는 <em>기본 단위 $k$-벡터들</em> 을 명확히 잡는다.</p>
+<p>둘째, <em>$\Lambda^k V$ 의 차원</em> 을 정확히 계산한다. 이 차원이 외대수 이론에서 매우 중요한 역할을 한다.</p>
+<h3 id="2---벡터들의-공간">2. $\Lambda^k V$: $k$-벡터들의 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 $\Lambda^k V$ 가 어떻게 만들어지는지 정확히 본다.</p>
+<p>$V$ 의 벡터들의 <em>모든 가능한 $k$-쌍 쐐기곱</em></p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_k$$<p>을 <em>생성원소</em> 로 잡고, 그 일차 결합 (덧셈과 스칼라 배) 으로 만든 모든 객체의 집합을 $\Lambda^k V$ 로 정의한다.</p>
+<p>이게 <em>벡터 공간 구조</em> 를 가진다는 건 두 가지를 확인하면 된다.</p>
+<p>(1) <em>덧셈에 닫혀 있음</em>: 두 $k$-벡터의 합도 $k$-벡터. 예를 들어 $(v_1 \wedge v_2) + (v_3 \wedge v_4)$ 는 2-벡터들의 합이고, 여전히 2-벡터 공간 $\Lambda^2 V$ 안에 있다.</p>
+<p>(2) <em>스칼라 배에 닫혀 있음</em>: $\alpha \cdot (v_1 \wedge \cdots \wedge v_k)$ 도 $k$-벡터.</p>
+<p>이 두 성질이 자동으로 만족되니, $\Lambda^k V$ 는 정당한 벡터 공간이다.</p>
+<p><strong>작은 차수의 특별한 경우</strong></p>
+<p>$k$ 가 작을 때 $\Lambda^k V$ 가 익숙한 공간이 된다.</p>
+<p>$\Lambda^0 V$ — <em>0-벡터들의 공간</em>. 인자 없이 쐐기곱한 결과. 이건 그냥 <em>스칼라</em> 다. 즉</p>
+$$\Lambda^0 V = \mathbb{R}$$<p>(또는 작업하는 체.) 스칼라가 외대수에 자연스럽게 포함되는 자리.</p>
+<p>$\Lambda^1 V$ — <em>1-벡터들의 공간</em>. 한 벡터의 &ldquo;쐐기곱&rdquo; 은 그냥 그 벡터 자신. 즉</p>
+$$\Lambda^1 V = V$$<p>원래의 벡터 공간 그대로.</p>
+<p>$\Lambda^2 V$ — <em>2-벡터들의 공간</em>. 두 벡터의 쐐기곱 $v \wedge w$ 와 그 일차 결합. 이게 §3 의 주제였다.</p>
+<p>$\Lambda^3 V, \Lambda^4 V, \ldots$ — 더 높은 차수의 $k$-벡터 공간들.</p>
+<h3 id="3-기저-찾기--2d-부터">3. 기저 찾기 — 2D 부터<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\Lambda^k V$ 의 기저를 찾으려면 <em>얼마나 많은 독립적인 $k$-벡터가 있는지</em> 파악해야 한다. §3 의 2D 예제부터 다시 본다.</p>
+<p>$V = \mathbb{R}^2$, 표준 기저 $e_1, e_2$. 두 벡터의 모든 가능한 쐐기곱은</p>
+$$e_1 \wedge e_1,\quad e_1 \wedge e_2,\quad e_2 \wedge e_1,\quad e_2 \wedge e_2$$<p>네 가지. 그런데 §3 의 성질에서:</p>
+<ul>
+<li>$e_1 \wedge e_1 = 0$</li>
+<li>$e_2 \wedge e_2 = 0$</li>
+<li>$e_2 \wedge e_1 = -e_1 \wedge e_2$ (부호만 다름, 독립 아님)</li>
+</ul>
+<p>따라서 <em>독립적인 2-벡터는 $e_1 \wedge e_2$ 하나뿐</em>. 모든 2D 2-벡터가 이 하나의 <em>스칼라 배</em> 로 표현된다.</p>
+$$\dim \Lambda^2(\mathbb{R}^2) = 1$$<p>이게 §3 §5 에서 본 &ldquo;2D 모든 쐐기곱이 $e_1 \wedge e_2$ 의 스칼라 배&rdquo; 결과의 정확한 의미다 — 2D 2-벡터 공간이 1차원이라서.</p>
+<h3 id="4-3d-기저">4. 3D 기저<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 3D 로 가 보자. $V = \mathbb{R}^3$, 기저 $e_1, e_2, e_3$.</p>
+<p>기저 벡터 두 개를 쐐기곱한 모든 경우는 $3 \times 3 = 9$ 가지. 하지만 자기 자신과의 쐐기곱은 0 이고 ($e_1 \wedge e_1, e_2 \wedge e_2, e_3 \wedge e_3$ 모두 0), 순서가 거꾸로인 쌍은 부호만 다르다.</p>
+<p>독립적인 경우는 <em>$i < j$ 인 쌍</em> 만 골라낸 것 — 즉</p>
+$$e_1 \wedge e_2,\quad e_1 \wedge e_3,\quad e_2 \wedge e_3$$<p>세 가지. 따라서</p>
+$$\dim \Lambda^2(\mathbb{R}^3) = 3$$<p>이게 §3 §6 에서 본 <em>3D 외적이 벡터로 표현되는 우연</em> 의 정확한 원인 — 2-벡터 공간의 차원 (3) 이 3D 벡터 차원 (3) 과 같아서.</p>
+<p>3-벡터는? 세 벡터의 쐐기곱 $e_i \wedge e_j \wedge e_k$ 의 모든 경우. 세 인덱스가 모두 다르고 $i < j < k$ 인 것은 단 하나:</p>
+$$e_1 \wedge e_2 \wedge e_3$$<p>따라서</p>
+$$\dim \Lambda^3(\mathbb{R}^3) = 1$$<p>3D 의 <em>최고차 외승</em> 이 1차원이라는 사실은 <em>행렬식이 단 하나의 수</em> 라는 사실과 정확히 같은 의미다. 모든 3-벡터가 표준 단위 정육면체 $e_1 \wedge e_2 \wedge e_3$ 의 스칼라 배이고, 그 스칼라가 <em>3D 행렬식</em>.</p>
+<h3 id="5-일반-차원의-기저">5. 일반 차원의 기저<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위의 두 경우에서 <em>패턴</em> 이 드러난다.</p>
+<p>$V$ 의 기저가 $e_1, e_2, \ldots, e_n$ 이라 하자. $\Lambda^k V$ 의 <em>기저</em> 는 다음과 같이 잡힌다.</p>
+<blockquote>
+<p>$\Lambda^k V$ 의 표준 기저:</p>
+$$\{\, e_{i_1} \wedge e_{i_2} \wedge \cdots \wedge e_{i_k} \;:\; 1 \le i_1 < i_2 < \cdots < i_k \le n \,\}$$</blockquote>
+<p>핵심은 <em>인덱스가 엄격히 오름차순</em> 이라는 것. 이렇게 잡는 이유는 두 가지다.</p>
+<p>첫째, <em>같은 인덱스가 반복되면 0</em>. $e_1 \wedge e_1 = 0$ 등이므로 <em>서로 다른</em> 인덱스만 쓴다.</p>
+<p>둘째, <em>순서가 다르면 부호만 다름</em>. 예를 들어 $e_2 \wedge e_1$ 은 독립적인 것이 아니라 $-e_1 \wedge e_2$. 따라서 한 순서 ($i_1 < i_2 < \cdots < i_k$) 만 골라잡으면 모든 다른 순서가 자동으로 표현된다.</p>
+<p><strong>예제: 4D 의 2-벡터 기저</strong></p>
+<p>$V = \mathbb{R}^4$ 에서 $\Lambda^2 V$ 의 기저는 $i < j$ 인 모든 쌍:</p>
+$$e_1 \wedge e_2,\; e_1 \wedge e_3,\; e_1 \wedge e_4,\; e_2 \wedge e_3,\; e_2 \wedge e_4,\; e_3 \wedge e_4$$<p>여섯 개. 즉 $\dim \Lambda^2(\mathbb{R}^4) = 6$.</p>
+<p>이 사실이 바로 §3 §6 에서 본 &ldquo;4D 에서는 2-벡터의 기저가 6 개라 벡터 (4 개) 로 표현 안 됨&rdquo; 의 정확한 표현.</p>
+<h3 id="6-차원-공식">6. 차원 공식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위의 기저 묘사에서 차원 공식이 즉시 따라 나온다.</p>
+<blockquote>
+<p>$\dim \Lambda^k V$ 는 $\{1, 2, \ldots, n\}$ 에서 <em>크기 $k$ 의 부분집합</em> 의 개수와 같다.</p>
+$$\dim \Lambda^k V = \binom{n}{k} = \frac{n!}{k! (n-k)!}$$</blockquote>
+<p>이건 <em>조합 (combination)</em> 공식 — $n$ 개에서 $k$ 개를 고르는 방법의 수. 우리가 기저 원소를 인덱싱할 때 <em>$\{1, \ldots, n\}$ 에서 $k$ 개를 고르는 것</em> 과 정확히 같으므로.</p>
+<p><strong>작은 차수</strong></p>
+<ul>
+<li>$\dim \Lambda^0 V = \binom{n}{0} = 1$ (스칼라)</li>
+<li>$\dim \Lambda^1 V = \binom{n}{1} = n$ (보통의 벡터, $V$ 자체)</li>
+</ul>
+<p><strong>중간 차수</strong></p>
+<ul>
+<li>$\dim \Lambda^2 V = \binom{n}{2} = \frac{n(n-1)}{2}$ (2-벡터)</li>
+</ul>
+<p><strong>최고차</strong></p>
+<ul>
+<li>$\dim \Lambda^n V = \binom{n}{n} = 1$ (표준 단위 부피 객체의 스칼라 배만)</li>
+</ul>
+<p><strong>그 위로는?</strong></p>
+<p>$k > n$ 일 때 $\binom{n}{k} = 0$. 즉</p>
+$$\dim \Lambda^k V = 0 \quad \text{for } k > n$$<p>이건 자연스럽다 — $n$ 차원 공간에서 $n+1$ 개 이상의 벡터는 <em>반드시 선형종속</em>. 그러면 §3 의 성질에 의해 쐐기곱이 0. 따라서 $k > n$ 인 $k$-벡터는 0 뿐이다.</p>
+<p>이게 <em>유한 차원에서 외대수는 유한하다</em> 는 의미.</p>
+<h3 id="7-전체-외대수">7. 전체 외대수 $\Lambda V$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 모든 차수의 $k$-벡터들을 하나로 묶어 본다. <em>직합 (direct sum)</em></p>
+$$\Lambda V = \Lambda^0 V \oplus \Lambda^1 V \oplus \Lambda^2 V \oplus \cdots \oplus \Lambda^n V$$<p>이걸 <em>외대수 (exterior algebra)</em> 또는 <em>그라스만 대수 (Grassmann algebra)</em> 라 부른다. 일반 원소는 다양한 차수의 $k$-벡터들의 합 — 예를 들어</p>
+$$\text{스칼라} + \text{벡터} + \text{2-벡터} + \cdots$$<p>이 묶음 안에서 <em>쐐기곱이 자유롭게 정의</em> 된다. $\Lambda^k V$ 의 원소와 $\Lambda^l V$ 의 원소를 쐐기곱하면 $\Lambda^{k+l} V$ 의 원소가 나온다.</p>
+$$\wedge: \Lambda^k V \times \Lambda^l V \to \Lambda^{k+l} V$$<p>(단 $k + l > n$ 이면 결과가 자동으로 0.)</p>
+<p><strong>전체 차원</strong></p>
+<p>$\Lambda V$ 의 <em>전체 차원</em> 은 각 $\Lambda^k V$ 의 차원의 합:</p>
+$$\dim \Lambda V = \sum_{k=0}^{n} \binom{n}{k}$$<p>이 합은 <em>이항 정리 (binomial theorem)</em> 의 특수 경우다.</p>
+$$(1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} \cdot 1^k \cdot 1^{n-k} = \sum_{k=0}^{n} \binom{n}{k}$$<p>따라서</p>
+$$\dim \Lambda V = 2^n$$<blockquote>
+<p><em>$n$ 차원 벡터 공간의 외대수는 $2^n$ 차원이다.</em></p>
+</blockquote>
+<p>이게 외대수의 <em>가장 인상적인 사실</em>. $n$ 차원에서 출발해서 $2^n$ 차원의 풍부한 대수 구조가 자연스럽게 따라 나온다.</p>
+<h3 id="8-명시적-표">8. 명시적 표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>작은 $n$ 에 대해 차원을 정리하면 <em>파스칼의 삼각형</em> 패턴이 나온다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>$n$</th>
+          <th>$\Lambda^0$</th>
+          <th>$\Lambda^1$</th>
+          <th>$\Lambda^2$</th>
+          <th>$\Lambda^3$</th>
+          <th>$\Lambda^4$</th>
+          <th>합</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>1</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>1</td>
+          <td>3</td>
+          <td>3</td>
+          <td>1</td>
+          <td>0</td>
+          <td>8</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>1</td>
+          <td>4</td>
+          <td>6</td>
+          <td>4</td>
+          <td>1</td>
+          <td>16</td>
+      </tr>
+  </tbody>
+</table>
+<p>각 행이 이항계수 $\binom{n}{k}$ 의 나열이고, 행의 합이 $2^n$. 익숙한 파스칼 삼각형과 정확히 일치.</p>
+<p><strong>구체적 해석</strong></p>
+<p>3D 의 경우 ($n = 3$):</p>
+<ul>
+<li>$\Lambda^0 = \mathbb{R}$ (1차원, 스칼라)</li>
+<li>$\Lambda^1 = \mathbb{R}^3$ (3차원, 보통 벡터)</li>
+<li>$\Lambda^2$: 2-벡터 (3차원, 외적과 같은 정보)</li>
+<li>$\Lambda^3$: 3-벡터 (1차원, 부피 정보)</li>
+</ul>
+<p>총 $1 + 3 + 3 + 1 = 8$ 차원. 3D 공간에 <em>8 차원의 풍부한 대수 구조</em> 가 숨어 있는 셈.</p>
+<p>4D 의 경우 ($n = 4$):</p>
+<ul>
+<li>$\Lambda^0 = \mathbb{R}$ (1)</li>
+<li>$\Lambda^1 = \mathbb{R}^4$ (4)</li>
+<li>$\Lambda^2$: 2-벡터 (6) — 시공간의 전자기 텐서가 여기 산다</li>
+<li>$\Lambda^3$: 3-벡터 (4) — 3D 부피 객체</li>
+<li>$\Lambda^4$: 4-벡터 (1) — 시공간 부피 (Hodge 별표의 기준)</li>
+</ul>
+<p>총 16 차원. 상대론적 물리에서 자주 등장.</p>
+<h3 id="9-결합법칙과-등급화-가환성">9. 결합법칙과 등급화 가환성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외대수 안에서 쐐기곱은 <em>결합적</em> 이다.</p>
+$$(\alpha \wedge \beta) \wedge \gamma = \alpha \wedge (\beta \wedge \gamma)$$<p>이건 두 벡터의 쐐기곱에 대한 우리 규칙들에서 <em>자동으로</em> 따라 나온다. (자세한 증명은 §2 의 다중선형 반대칭 함수의 결합법칙을 외대수 언어로 옮기면 된다.)</p>
+<p>따라서 쐐기곱은 <em>결합 대수 (associative algebra)</em> — 행렬 곱셈처럼 <em>결합적이지만 비교환적인</em> 곱셈을 가진 대수.</p>
+<p>하지만 외대수의 비교환성은 <em>특별한 형태</em> 다. <strong>등급화 가환성 (graded commutativity)</strong> 이라 부르는 다음 규칙을 만족한다.</p>
+<blockquote>
+<p>$\alpha \in \Lambda^k V$, $\beta \in \Lambda^l V$ 이면</p>
+$$\alpha \wedge \beta = (-1)^{kl}\, \beta \wedge \alpha$$</blockquote>
+<p>즉 두 인자를 바꿀 때 <em>각 인자의 차수의 곱</em> 만큼 부호가 결정된다.</p>
+<p>특별한 경우:</p>
+<ul>
+<li>두 <em>1-벡터</em> ($k = l = 1$): $(-1)^{1 \cdot 1} = -1$. 익숙한 반대칭성 $v \wedge w = -w \wedge v$.</li>
+<li><em>1-벡터와 2-벡터</em> ($k = 1, l = 2$): $(-1)^{1 \cdot 2} = +1$. <em>교환적</em>! 즉 $v \wedge (w_1 \wedge w_2) = (w_1 \wedge w_2) \wedge v$.</li>
+<li>두 <em>2-벡터</em> ($k = l = 2$): $(-1)^{2 \cdot 2} = +1$. <em>교환적</em>.</li>
+</ul>
+<p>이게 외대수가 <em>단순한 반대칭 대수</em> 가 아니라 <em>등급화된 반대칭 대수</em> 인 이유. 차수가 홀수냐 짝수냐에 따라 교환성이 달라진다.</p>
+<h3 id="10-정리">10. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> $\Lambda^k V$ 는 <em>$k$-벡터들이 사는 벡터 공간</em>. 작은 차수 특수 경우: $\Lambda^0 V = \mathbb{R}$ (스칼라), $\Lambda^1 V = V$ (벡터).</p>
+<p><strong>2)</strong> <em>기저</em>: $V$ 의 기저 $\{e_1, \ldots, e_n\}$ 이 주어지면 $\Lambda^k V$ 의 기저는 <em>인덱스가 엄격히 오름차순인</em> 쐐기곱들</p>
+$$\{\, e_{i_1} \wedge \cdots \wedge e_{i_k} : i_1 < \cdots < i_k \,\}$$<p><strong>3)</strong> <em>차원 공식</em>: $\dim \Lambda^k V = \binom{n}{k}$. $k > n$ 일 때는 0.</p>
+<p><strong>4)</strong> <em>전체 외대수</em> $\Lambda V = \bigoplus_{k=0}^{n} \Lambda^k V$. 차원이 $2^n$.</p>
+<p><strong>5)</strong> 차원이 <em>파스칼 삼각형 패턴</em> 으로 정렬된다. 각 행의 합이 $2^n$.</p>
+<p><strong>6)</strong> 외대수는 <em>결합 대수</em> — 쐐기곱이 결합적.</p>
+<p><strong>7)</strong> <em>등급화 가환성</em>: $\alpha \wedge \beta = (-1)^{kl}\, \beta \wedge \alpha$ — 차수의 곱에 따라 교환성이 결정.</p>
+<p><strong>8)</strong> 3D 의 8차원, 4D 의 16차원 외대수가 풍부한 대수 구조를 제공.</p>
+<p>다음 장 §5 에서 <em>행렬식의 진정한 의미</em> — 행렬식이 <em>최고차 외승 $\Lambda^n V$ 위의 자연스러운 객체</em> 라는 점 — 을 자세히 본다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

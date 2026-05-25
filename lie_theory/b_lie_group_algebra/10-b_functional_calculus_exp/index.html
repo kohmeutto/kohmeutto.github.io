@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기§5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 역의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, 전체 곡선 $A(\tau)$를 복원할 수 있는가?
+이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 함수 미적분(functional calculus)— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.
+2. 스펙트럼 분해1) 행렬 $A$가 충분히 많은 일차독립 고유벡터를 가져 대각화 가능하다고 가정한다. 이 경우 다음 분해가 성립한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Functional calculus :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기§5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 역의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, 전체 곡선 $A(\tau)$를 복원할 수 있는가?
+이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 함수 미적분(functional calculus)— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.
+2. 스펙트럼 분해1) 행렬 $A$가 충분히 많은 일차독립 고유벡터를 가져 대각화 가능하다고 가정한다. 이 경우 다음 분해가 성립한다.">
+    <meta property="og:url" content="http://localhost:1313/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Functional calculus :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기§5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 역의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, 전체 곡선 $A(\tau)$를 복원할 수 있는가?
+이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 함수 미적분(functional calculus)— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.
+2. 스펙트럼 분해1) 행렬 $A$가 충분히 많은 일차독립 고유벡터를 가져 대각화 가능하다고 가정한다. 이 경우 다음 분해가 성립한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie theory">
+    <meta itemprop="name" content="(b) Functional calculus :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기§5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 역의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, 전체 곡선 $A(\tau)$를 복원할 수 있는가?
+이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 함수 미적분(functional calculus)— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.
+2. 스펙트럼 분해1) 행렬 $A$가 충분히 많은 일차독립 고유벡터를 가져 대각화 가능하다고 가정한다. 이 경우 다음 분해가 성립한다.">
+    <meta itemprop="wordCount" content="716">
+    <title>(b) Functional calculus :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_theory\/b_lie_group_algebra\/10-b_functional_calculus_exp\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기">1. 동기</a></li>
+        <li><a href="#2-스펙트럼-분해">2. 스펙트럼 분해</a></li>
+        <li><a href="#3-함수-미적분의-스펙트럼-정의">3. 함수 미적분의 스펙트럼 정의</a></li>
+        <li><a href="#4-지수-사상-두-가지-정의">4. 지수 사상: 두 가지 정의</a></li>
+        <li><a href="#5-지수-사상의-핵심-성질">5. 지수 사상의 핵심 성질</a></li>
+        <li><a href="#6-so2-예제-회전-행렬의-복원">6. SO(2) 예제: 회전 행렬의 복원</a></li>
+        <li><a href="#7-미분과-지수의-역대응">7. 미분과 지수의 역대응</a></li>
+        <li><a href="#8-정리">8. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_lie_group_algebra/index.html"><span itemprop="name">Lie group &amp; algebra</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Functional calculus</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_lie_group_algebra/b_exponentiation/index.html" title="(b) Exponentiation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html" title="비교환성과 리 괄호 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_theory" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-functional-calculus">(b) Functional calculus</h1>
+
+<hr>
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 <em>역</em>의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, <em>전체 곡선</em> $A(\tau)$를 복원할 수 있는가?</p>
+<p>이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 <em>함수 미적분(functional calculus)</em>— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.</p>
+<hr>
+<h3 id="2-스펙트럼-분해">2. 스펙트럼 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 행렬 $A$가 충분히 많은 일차독립 고유벡터를 가져 <em>대각화 가능</em>하다고 가정한다. 이 경우 다음 분해가 성립한다.</p>
+$$A = \sum_i \lambda_i\, \vert v_i\rangle\langle v^i\vert$$<p>여기서:</p>
+<ul>
+<li>$\lambda_i$는 $A$의 고유값</li>
+<li>$\vert v_i\rangle$는 대응되는 고유벡터</li>
+<li>$\langle v^i\vert$는 <em>쌍대 기저</em>. 정의로부터 $\langle v^i\vert v_j\rangle = \delta^i_j$ (§1 참조).</li>
+</ul>
+<p><strong>2)</strong> 이 분해의 핵심: $A$의 작용이 <em>고유벡터별로 단순한 스칼라 곱</em>으로 환원된다.</p>
+$$A\, \vert v_j\rangle = \sum_i \lambda_i\, \vert v_i\rangle \underbrace{\langle v^i\vert v_j\rangle}_{=\delta^i_j} = \lambda_j\, \vert v_j\rangle$$<hr>
+<h3 id="3-함수-미적분의-스펙트럼-정의">3. 함수 미적분의 스펙트럼 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 스칼라 함수 $f: \mathbb{C} \to \mathbb{C}$가 주어지면, 행렬 $A$에 대한 $f(A)$를 다음으로 정의한다.</p>
+$$f(A) = \sum_i f(\lambda_i)\, \vert v_i\rangle\langle v^i\vert$$<p>즉 <em>고유벡터는 그대로 두고, 고유값에만 $f$를 적용</em>한다.</p>
+<p><strong>2)</strong> 직관: 행렬을 &ldquo;각 고유방향에 다른 스칼라($\lambda_i$)를 곱하는 작용&quot;으로 보면, 그 작용에 $f$를 적용하는 것은 <em>각 스칼라에 $f$를 따로 적용</em>하는 것과 같다.</p>
+<p><strong>3)</strong> example1) $f(x) = x^2$이면 $f(A) = A^2 = \sum_i \lambda_i^2\, \vert v_i\rangle\langle v^i\vert$. (직접 행렬곱 $A \cdot A$와 일치)</p>
+<p><strong>4)</strong> example2) $f(x) = e^x$이면 $f(A) = e^A = \sum_i e^{\lambda_i}\, \vert v_i\rangle\langle v^i\vert$.</p>
+<hr>
+<h3 id="4-지수-사상-두-가지-정의">4. 지수 사상: 두 가지 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>스펙트럼 정의</em>:</p>
+$$\exp(A) = \sum_i e^{\lambda_i}\, \vert v_i\rangle\langle v^i\vert$$<p><strong>2)</strong> <em>테일러 급수 정의</em>:</p>
+$$\exp(A) = I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{A^n}{n!}$$<p><strong>3)</strong> 대각화 가능 행렬에서는 두 정의가 일치한다 (스펙트럼 분해를 대입하면 같은 식). 더 일반적으로 테일러 급수 정의는 대각화 가능성에 의존하지 않으므로 <em>임의의 정사각 행렬</em>에 대해 잘 정의된다.</p>
+<hr>
+<h3 id="5-지수-사상의-핵심-성질">5. 지수 사상의 핵심 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $\exp(0) = I$. (영행렬을 넣으면 단위행렬.)</p>
+<p><strong>2)</strong> $\exp(A) \exp(-A) = I$. 따라서 $\exp(A)$는 항상 가역이고 $\exp(A)^{-1} = \exp(-A)$.</p>
+<p><strong>3)</strong> $A$와 $B$가 <em>교환</em>하면 ($AB = BA$):</p>
+$$\exp(A + B) = \exp(A) \exp(B)$$<p>교환하지 않으면 이 공식은 일반적으로 <em>성립하지 않는다</em>.</p>
+<p><strong>4)</strong> 매개변수 $\tau$에 무관한 행렬 $A$에 대해:</p>
+$$\frac{d}{d\tau} \exp(\tau A) = A\, \exp(\tau A) = \exp(\tau A)\, A$$<p>proof) 테일러 급수를 항별로 미분한다.
+</p>
+$$\frac{d}{d\tau}\sum_{n=0}^\infty \frac{(\tau A)^n}{n!} = \sum_{n=1}^\infty \frac{n\, \tau^{n-1} A^n}{n!} = A \sum_{n=1}^\infty \frac{(\tau A)^{n-1}}{(n-1)!} = A\, \exp(\tau A)$$<p>$A$가 $\exp(\tau A)$와 교환하는 것은 $\exp(\tau A)$가 $A$의 다항식의 극한이라는 사실에서 따라온다.</p>
+<p>이 성질은 <em>지수 사상이 곡선 $A(\tau) = \exp(\tau X)$의 미분과 자연스럽게 어울린다</em>는 것을 보여준다.</p>
+<hr>
+<h3 id="6-so2-예제-회전-행렬의-복원">6. SO(2) 예제: 회전 행렬의 복원<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> §5에서 $R(\tau)$의 $\tau = 0$에서의 미분이 다음과 같음을 봤다.</p>
+$$X = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad X^2 = -I$$<p><strong>2)</strong> 이제 $X$로부터 $\exp(\tau X)$를 계산해서 $R(\tau)$를 복원해 본다.</p>
+<p><strong>3)</strong> $X$의 거듭제곱:</p>
+<ul>
+<li>$X^0 = I$</li>
+<li>$X^1 = X$</li>
+<li>$X^2 = -I$</li>
+<li>$X^3 = X \cdot X^2 = -X$</li>
+<li>$X^4 = (X^2)^2 = I$</li>
+<li>이후 주기 4로 반복</li>
+</ul>
+<p><strong>4)</strong> 테일러 급수에 대입:</p>
+$$\exp(\tau X) = I + \tau X + \frac{\tau^2}{2!} X^2 + \frac{\tau^3}{3!} X^3 + \frac{\tau^4}{4!} X^4 + \cdots$$<p>거듭제곱 값을 넣으면:</p>
+$$\exp(\tau X) = I + \tau X - \frac{\tau^2}{2!} I - \frac{\tau^3}{3!} X + \frac{\tau^4}{4!} I + \cdots$$<p><strong>5)</strong> $I$ 항과 $X$ 항을 따로 모으면:</p>
+$$\exp(\tau X) = \left(1 - \frac{\tau^2}{2!} + \frac{\tau^4}{4!} - \cdots\right) I + \left(\tau - \frac{\tau^3}{3!} + \frac{\tau^5}{5!} - \cdots\right) X$$$$= \cos\tau \cdot I + \sin\tau \cdot X$$<p><strong>6)</strong> 행렬로 풀어 쓰면:</p>
+$$\exp(\tau X) = \cos\tau \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \sin\tau \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} \cos\tau & -\sin\tau \\ \sin\tau & \cos\tau \end{pmatrix} = R(\tau)$$<p><strong>7)</strong> <em>결론: $\tau = 0$에서의 미분 $X$만 알면 지수 사상으로 곡선 전체 $R(\tau)$가 복원된다.</em></p>
+<hr>
+<h3 id="7-미분과-지수의-역대응">7. 미분과 지수의 역대응<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다음 두 도구가 서로의 <em>역</em>에 해당한다.</p>
+<ul>
+<li><em>미분</em> ($\tau = 0$에서): 곡선 $A(\tau)$를 받아 행렬 $X = \dfrac{dA}{d\tau}\big|_{\tau=0}$을 내놓음</li>
+<li><em>지수 사상</em>: 행렬 $X$를 받아 곡선 $A(\tau) = \exp(\tau X)$를 내놓음</li>
+</ul>
+<p><strong>2)</strong> 메커니즘은 다르다:</p>
+<ul>
+<li>미분은 <em>성분별</em> 작용 (§5)</li>
+<li>지수 사상은 <em>스펙트럼별</em> 작용 (이 장)</li>
+</ul>
+<p><strong>3)</strong> 그러나 위의 SO(2) 예에서 봤듯, 두 도구를 차례로 적용하면 원래 곡선으로 돌아온다.</p>
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:400px">
+  <defs>
+    <marker id="arr6blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#0066cc"/>
+    </marker>
+    <marker id="arr6red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#cc0000"/>
+    </marker>
+  </defs>
+  <rect x="30" y="60" width="100" height="80" fill="none" stroke="black" stroke-width="2" rx="8"/>
+  <text x="80" y="95" text-anchor="middle" font-size="13">곡선</text>
+  <text x="80" y="115" text-anchor="middle" font-size="13">A(τ)</text>
+  <rect x="270" y="60" width="100" height="80" fill="none" stroke="black" stroke-width="2" rx="8"/>
+  <text x="320" y="95" text-anchor="middle" font-size="13">행렬</text>
+  <text x="320" y="115" text-anchor="middle" font-size="13">X</text>
+  <path d="M 130,80 Q 200,30 270,80" fill="none" stroke="#0066cc" stroke-width="2" marker-end="url(#arr6blue)"/>
+  <text x="200" y="32" text-anchor="middle" font-size="11" fill="#0066cc">d/dτ at τ=0</text>
+  <path d="M 270,120 Q 200,170 130,120" fill="none" stroke="#cc0000" stroke-width="2" marker-end="url(#arr6red)"/>
+  <text x="200" y="180" text-anchor="middle" font-size="11" fill="#cc0000">exp(τ·)</text>
+</svg>
+<hr>
+<h3 id="8-정리">8. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>함수 미적분</em>은 스칼라 함수 $f$를 행렬에 적용하는 도구. 스펙트럼 정의는 <em>고유값에만 $f$를 적용</em>: $f(A) = \sum_i f(\lambda_i)\,\vert v_i\rangle\langle v^i\vert$.</p>
+<p><strong>2)</strong> <em>지수 사상</em> $\exp(A)$는 스펙트럼 정의 또는 테일러 급수로 정의된다. 핵심 성질 $\dfrac{d}{d\tau}\exp(\tau A) = A\,\exp(\tau A)$.</p>
+<p><strong>3)</strong> 회전 행렬 예에서: $\tau = 0$에서의 미분 $X$로부터 $\exp(\tau X) = R(\tau)$가 정확히 복원된다.</p>
+<p><strong>4)</strong> 미분과 지수 사상은 <em>서로의 역</em>에 해당한다. 미분은 곡선에서 한 점의 방향(행렬)을 뽑아내고, 지수 사상은 그 방향에서 다시 곡선 전체를 복원한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_calculus/index.html"><a class="padding default-animation" href="/lie_theory/b_calculus/index.html">Calculus</a><ul id="R-subsections-f73819610fdafc445c5f21f18ba37e95" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/lie_theory/b_lie_group_algebra/index.html"><a class="padding default-animation" href="/lie_theory/b_lie_group_algebra/index.html">Lie group &amp; algebra</a><ul id="R-subsections-a34f317130e80a0a68efa3c35ebb9278" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_lie_group/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_lie_group/index.html">(b) Lie group</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_manifold/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_manifold/index.html">(b) Manifold</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html">(b) Lie algebra</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_generator/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_generator/index.html">(b) Generator</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_exponentiation/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_exponentiation/index.html">(b) Exponentiation</a></li>
+            <li class="active " data-nav-id="/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html">(b) Functional calculus</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html">비교환성과 리 괄호</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html">다변수 리 군과 생성자</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_operators/index.html"><a class="padding default-animation" href="/lie_theory/b_operators/index.html">b_operators</a><ul id="R-subsections-a4a547684e87b772ab7dceffd5fea0e1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/a_noether_theorem/index.html"><a class="padding" href="/lie_theory/a_noether_theorem/index.html">(b) Noether&#39;s theorem</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

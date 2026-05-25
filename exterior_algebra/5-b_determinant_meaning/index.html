@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="행렬식의 진정한 의미 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/5-b_determinant_meaning/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="행렬식의 진정한 의미 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="행렬식의 진정한 의미 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
+    <meta itemprop="wordCount" content="2155">
+    <title>행렬식의 진정한 의미 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/5-b_determinant_meaning\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/5-b_determinant_meaning/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-익숙한-행렬식-새로운-관점">1. 동기: 익숙한 행렬식, 새로운 관점</a></li>
+        <li><a href="#2-최고차-외승--의-1차원성">2. 최고차 외승  의 1차원성</a></li>
+        <li><a href="#3-행렬식의-외대수적-정의--다시-정리">3. 행렬식의 외대수적 정의 — 다시 정리</a></li>
+        <li><a href="#4-행렬식의-공리가-자동으로-나오는-이유">4. 행렬식의 공리가 자동으로 나오는 이유</a></li>
+        <li><a href="#5-leibniz-공식의-자연스러운-유도">5. Leibniz 공식의 자연스러운 유도</a></li>
+        <li><a href="#6-곱셈성">6. 곱셈성 </a></li>
+        <li><a href="#7-기하학적-의미-방향이-붙은-부피의-스케일링-인자">7. 기하학적 의미: 방향이 붙은 부피의 스케일링 인자</a></li>
+        <li><a href="#8-가역성-판정">8. 가역성 판정</a></li>
+        <li><a href="#9-코팩터-전개">9. 코팩터 전개</a></li>
+        <li><a href="#10-응용-변수변환의-야코비안">10. 응용: 변수변환의 야코비안</a></li>
+        <li><a href="#11-정리">11. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">행렬식의 진정한 의미</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html" title="외대수의 기저와 차원 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/6-b_differential_forms_1form/index.html" title="미분형식: 1-form (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="행렬식의-진정한-의미">행렬식의 진정한 의미</h1>
+
+<h3 id="1-동기-익숙한-행렬식-새로운-관점">1. 동기: 익숙한 행렬식, 새로운 관점<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식</p>
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$<p>으로 계산하는 방법을 배웠다. 이 공식들은 <em>맞지만 직관적이지 않다</em>. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.</p>
+<p>§1-§4 에서 우리가 쌓아 올린 외대수의 언어로 보면, 행렬식이 <em>훨씬 더 자연스러운 모습으로 등장</em> 한다. 행렬식은 <em>최고차 외승 $\Lambda^n V$ 가 1차원이라는 사실의 자연스러운 귀결</em> 일 뿐이다.</p>
+<p>이 장의 핵심 명제는 단 하나다.</p>
+<blockquote>
+<p>$n$-차원 벡터 공간에서 $n$ 개의 벡터의 쐐기곱은
+</p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, v_2, \ldots, v_n)\, \cdot\, (e_1 \wedge e_2 \wedge \cdots \wedge e_n)$$<p>
+으로 표현되며, 그 스칼라 계수가 <em>바로 행렬식</em> 이다.</p>
+</blockquote>
+<p>이 한 줄에서 행렬식의 모든 성질이 <em>자연스럽게 따라 나온다</em>. 부호 규칙, 곱셈성, 코팩터 전개, 가역성 판정 — 모두 외대수의 성질에서 <em>유도된다</em>. 이 장에서 그 과정을 차근차근 본다.</p>
+<h3 id="2-최고차-외승--의-1차원성">2. 최고차 외승 $\Lambda^n V$ 의 1차원성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 가장 중요한 <em>구조적 사실</em> 부터 짚는다.</p>
+<p>§4 의 차원 공식에 의해, $n$-차원 벡터 공간 $V$ 에 대해</p>
+$$\dim \Lambda^n V = \binom{n}{n} = 1$$<p>이다. <em>최고차 외승은 1차원</em> 이다. 이게 무엇을 뜻하는가?</p>
+<p>1차원 벡터 공간 안에서는 <em>모든 원소가 한 기준 원소의 스칼라 배</em> 다. $\Lambda^n V$ 의 기준 원소를 (표준 기저가 주어졌을 때)</p>
+$$\omega_0 := e_1 \wedge e_2 \wedge \cdots \wedge e_n$$<p>으로 잡자. 이걸 <em>표준 단위 부피 원소 (volume element)</em> 라 부른다. 기하학적으로 표준 단위 $n$-차원 정육면체에 <em>방향</em> 까지 붙인 객체.</p>
+<p>$\Lambda^n V$ 의 모든 원소는 $\omega_0$ 의 스칼라 배다. 그 어떤 $n$ 개의 벡터 $v_1, \ldots, v_n$ 의 쐐기곱</p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n$$<p>도 $\Lambda^n V$ 의 원소이므로, 적당한 스칼라 $c$ 에 대해</p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = c\, \omega_0$$<p>로 표현된다.</p>
+<p><strong>그 스칼라가 무엇인가?</strong></p>
+<p>이 스칼라 $c$ 가 $v_1, \ldots, v_n$ 의 <em>어떤 함수</em> 인지가 핵심 질문이다. 이 함수에는 다음 성질이 자동으로 부여된다.</p>
+<p>(1) <em>다중선형</em>: 쐐기곱이 각 인자에 대해 선형이므로, $c$ 도 각 $v_i$ 에 대해 선형.</p>
+<p>(2) <em>반대칭</em>: 쐐기곱이 반대칭이므로, $c$ 도 두 인자를 바꾸면 부호 반대.</p>
+<p>(3) <em>표준 기저에서 1</em>: $v_i = e_i$ 면 좌변이 $\omega_0$ 가 되어 $c = 1$.</p>
+<p>이 <em>세 조건</em> 이 §2 §7 에서 본 <em>행렬식의 공리적 정의의 세 조건</em> 과 정확히 일치한다. 그리고 §2 에서 말했듯, 이 세 조건은 함수를 <em>유일하게 결정</em> 한다.</p>
+<p>따라서 그 함수가 다름 아닌 <em>행렬식</em>:</p>
+$$\boxed{\;\; v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, v_2, \ldots, v_n)\, \omega_0 \;\;}$$<p>이게 외대수 관점에서의 행렬식의 <em>진정한 정의</em> 다.</p>
+<h3 id="3-행렬식의-외대수적-정의--다시-정리">3. 행렬식의 외대수적 정의 — 다시 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위에서 본 내용을 정의 형식으로 명확히 적어 본다.</p>
+<blockquote>
+<p><strong>정의</strong> (외대수적 행렬식):</p>
+<p>$V$ 가 $n$-차원 벡터 공간이고 $\omega_0 = e_1 \wedge \cdots \wedge e_n$ 이 표준 부피 원소일 때, $n$ 개의 벡터 $v_1, \ldots, v_n \in V$ 의 <em>행렬식</em> 은</p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, \ldots, v_n)\, \omega_0$$<p>의 관계로 정의되는 <em>유일한 스칼라</em> 다.</p>
+</blockquote>
+<p>이 정의는 <em>행렬식이 무엇인지</em> 를 <em>공식이 아니라 의미로</em> 말해 준다. 행렬식은 <em>벡터들이 만드는 $n$-차원 평행체의 (방향이 붙은) 부피가 표준 단위 부피의 몇 배인가</em> 를 측정하는 스칼라.</p>
+<p><strong>행렬 행렬식과의 관계</strong></p>
+<p>$n \times n$ 행렬 $A$ 의 행렬식 $\det(A)$ 는 보통 행렬 자체의 함수로 정의된다. 외대수적 정의와 어떻게 연결되는가?</p>
+<p>$A$ 의 <em>열벡터들</em> 을 $v_1, v_2, \ldots, v_n$ 이라 보면 (즉 $A = [v_1 | v_2 | \cdots | v_n]$), 행렬의 행렬식이 바로 이 열벡터들의 행렬식.</p>
+$$\det(A) = \det(v_1, v_2, \ldots, v_n)$$<p>따라서 외대수적 정의는 <em>행렬을 열벡터들의 묶음으로 보는 관점</em> 에서 자연스럽게 행렬 행렬식이 된다.</p>
+<p>(열 대신 행으로 봐도 결과가 같다 — 행렬식이 <em>전치 (transpose) 에 대해 불변</em> 이라는 사실. §6 에서 자세히.)</p>
+<h3 id="4-행렬식의-공리가-자동으로-나오는-이유">4. 행렬식의 공리가 자동으로 나오는 이유<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§2 에서 행렬식이 세 공리 — 다중선형, 반대칭, 정규화 — 로 유일하게 결정된다는 사실을 봤다. 외대수적 정의에서 이 세 공리가 <em>공짜로</em> 따라 나오는 걸 자세히 본다.</p>
+<p><strong>공리 1: 다중선형성</strong></p>
+<p>증명할 것: $\det(v_1, \ldots, \alpha v_i + \beta v_i', \ldots, v_n) = \alpha \det(v_1, \ldots, v_i, \ldots, v_n) + \beta \det(v_1, \ldots, v_i', \ldots, v_n)$.</p>
+<p>외대수적 정의를 양변에 적용하면, $\omega_0$ 의 계수를 비교하면 된다. 좌변:</p>
+$$v_1 \wedge \cdots \wedge (\alpha v_i + \beta v_i') \wedge \cdots \wedge v_n$$<p>쐐기곱의 <em>쌍선형성</em> (정확히는 $i$ 번째 인자에 대한 선형성) 으로 전개하면</p>
+$$= \alpha (v_1 \wedge \cdots \wedge v_i \wedge \cdots \wedge v_n) + \beta (v_1 \wedge \cdots \wedge v_i' \wedge \cdots \wedge v_n)$$<p>양변을 $\omega_0$ 의 계수로 보면 다중선형성이 즉시 따라 나온다. ∎</p>
+<p><strong>공리 2: 반대칭성</strong></p>
+<p>증명할 것: 두 인자 $v_i$ 와 $v_j$ 의 순서를 바꾸면 부호가 반대.</p>
+<p>외대수적 정의에서 좌변</p>
+$$v_1 \wedge \cdots \wedge v_j \wedge \cdots \wedge v_i \wedge \cdots \wedge v_n$$<p>은 쐐기곱의 <em>반대칭성</em> 으로 (두 인자를 교환하면 부호 반대)</p>
+$$= -\, v_1 \wedge \cdots \wedge v_i \wedge \cdots \wedge v_j \wedge \cdots \wedge v_n$$<p>$\omega_0$ 의 계수를 비교하면 행렬식도 부호가 반대. ∎</p>
+<p><strong>공리 3: 정규화 $\det(e_1, \ldots, e_n) = 1$</strong></p>
+<p>$v_i = e_i$ 일 때 좌변은 정확히 $\omega_0$. 즉 $\omega_0 = \det(e_1, \ldots, e_n) \cdot \omega_0$ 이므로 계수가 1. ∎</p>
+<p>세 공리가 모두 <em>쐐기곱의 정의 규칙에서 직접 따라 나온다</em>. 별도의 정의·증명 없이 자동으로.</p>
+<h3 id="5-leibniz-공식의-자연스러운-유도">5. Leibniz 공식의 자연스러운 유도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 <em>명시적 계산</em> 으로 라이프니츠 공식이 어떻게 나오는지 보자. 외대수에서는 이 공식이 <em>분배 전개의 자연스러운 결과</em> 다.</p>
+<p>$n \times n$ 행렬 $A$ 의 $j$-번째 열을 $v_j = \sum_{i=1}^{n} a_{ij}\, e_i$ 로 표현하자 (즉 $a_{ij}$ 가 $A$ 의 $(i, j)$-성분). 모든 열을 한꺼번에 쐐기곱하면</p>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \left( \sum_{i_1} a_{i_1, 1}\, e_{i_1} \right) \wedge \left( \sum_{i_2} a_{i_2, 2}\, e_{i_2} \right) \wedge \cdots \wedge \left( \sum_{i_n} a_{i_n, n}\, e_{i_n} \right)$$<p>이걸 쐐기곱의 <em>분배 법칙</em> (다중선형성) 으로 전개하면, 모든 가능한 인덱스 조합 $(i_1, i_2, \ldots, i_n)$ 에 대한 합:</p>
+$$= \sum_{i_1, i_2, \ldots, i_n} a_{i_1, 1}\, a_{i_2, 2} \cdots a_{i_n, n}\; (e_{i_1} \wedge e_{i_2} \wedge \cdots \wedge e_{i_n})$$<p><strong>핵심 관찰</strong>: 이 합에서 <em>살아남는 항</em> 만 본다.</p>
+<p>쐐기곱 $e_{i_1} \wedge e_{i_2} \wedge \cdots \wedge e_{i_n}$ 이 0 이 아니려면 <em>모든 인덱스가 서로 달라야 한다</em> (§3 의 핵심 성질). $n$ 개의 인덱스가 $\{1, 2, \ldots, n\}$ 에서 모두 다르다는 건 <em>$(i_1, \ldots, i_n)$ 이 $(1, 2, \ldots, n)$ 의 순열</em> 이라는 뜻이다.</p>
+<p>즉 0 이 아닌 항은 <em>순열에 해당하는 항들뿐</em>. $\sigma \in S_n$ ($n$ 차 대칭군) 으로 인덱스하면</p>
+$$v_1 \wedge \cdots \wedge v_n = \sum_{\sigma \in S_n} a_{\sigma(1), 1}\, a_{\sigma(2), 2} \cdots a_{\sigma(n), n}\; (e_{\sigma(1)} \wedge e_{\sigma(2)} \wedge \cdots \wedge e_{\sigma(n)})$$<p><strong>부호 정리</strong></p>
+<p>이제 $e_{\sigma(1)} \wedge \cdots \wedge e_{\sigma(n)}$ 을 표준 순서 $e_1 \wedge e_2 \wedge \cdots \wedge e_n = \omega_0$ 로 맞추려면 <em>인접 인자를 몇 번 바꿔야 하는가</em> 를 세야 한다. 쐐기곱의 반대칭성으로 매번 바꿀 때마다 부호가 반대.</p>
+<p>순열 $\sigma$ 를 <em>인접 교환의 합성</em> 으로 분해할 때 그 길이의 홀짝성을 <em>순열의 부호 $\text{sgn}(\sigma)$</em> 라 부른다. 짝수번 교환이면 $\text{sgn}(\sigma) = +1$, 홀수번이면 $-1$.</p>
+<p>따라서</p>
+$$e_{\sigma(1)} \wedge \cdots \wedge e_{\sigma(n)} = \text{sgn}(\sigma)\, \omega_0$$<p>이 결과를 대입하면</p>
+$$v_1 \wedge \cdots \wedge v_n = \left( \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{\sigma(1), 1}\, a_{\sigma(2), 2} \cdots a_{\sigma(n), n} \right) \omega_0$$<p>$\omega_0$ 의 계수를 행렬식의 외대수적 정의에서 읽어내면</p>
+$$\boxed{\;\; \det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{\sigma(1), 1}\, a_{\sigma(2), 2} \cdots a_{\sigma(n), n} \;\;}$$<p>이게 <em>라이프니츠 공식</em>. 외대수적 정의에서 <em>명시적 계산을 통해 자연스럽게</em> 따라 나왔다.</p>
+<p><strong>의미</strong>: 라이프니츠 공식의 <em>부호 $\text{sgn}(\sigma)$ 와 순열 합</em> 이 갑자기 등장한 게 아니다. <em>쐐기곱의 반대칭성과 분배 전개의 직접적 결과</em>. 이게 외대수 관점의 <em>명확함</em>.</p>
+<h3 id="6-곱셈성">6. 곱셈성 $\det(AB) = \det(A)\det(B)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬식의 가장 유용한 성질 중 하나 — 두 행렬의 곱의 행렬식이 행렬식의 곱이라는 <em>곱셈성</em> — 도 외대수 관점에서 <em>깔끔하게</em> 따라 나온다.</p>
+<p><strong>선형 사상이 $\Lambda^n V$ 에 유도하는 작용</strong></p>
+<p>$V$ 의 선형 사상 $A: V \to V$ 가 주어지면, 이는 자연스럽게 $\Lambda^n V$ 위의 선형 사상 $\Lambda^n A: \Lambda^n V \to \Lambda^n V$ 을 <em>유도</em> 한다. 정의는</p>
+$$\Lambda^n A\, (v_1 \wedge v_2 \wedge \cdots \wedge v_n) := A v_1 \wedge A v_2 \wedge \cdots \wedge A v_n$$<p>각 인자에 $A$ 를 적용한 다음 쐐기곱한 것.</p>
+<p>$\Lambda^n V$ 가 <em>1차원</em> 이므로 (§4), 그 위의 선형 사상은 <em>단순한 스칼라 곱셈</em> 일 뿐이다. 그 스칼라가 무엇인가?</p>
+<p>표준 부피 원소 $\omega_0$ 에 $\Lambda^n A$ 를 적용하면</p>
+$$\Lambda^n A\, (\omega_0) = A e_1 \wedge A e_2 \wedge \cdots \wedge A e_n$$<p>여기서 $A e_j$ 는 <em>$A$ 의 $j$-번째 열</em> — 즉 외대수적 행렬식 정의로</p>
+$$A e_1 \wedge \cdots \wedge A e_n = \det(A e_1, \ldots, A e_n) \cdot \omega_0 = \det(A) \cdot \omega_0$$<p>따라서 $\Lambda^n A$ 는 <em>$\det(A)$ 만큼의 스칼라 곱셈</em>:</p>
+$$\Lambda^n A\, (\omega) = \det(A)\, \omega \quad \text{모든 } \omega \in \Lambda^n V$$<p><strong>곱셈성의 증명</strong></p>
+<p>이제 두 선형 사상 $A, B: V \to V$ 의 합성 $AB$ 에 유도되는 작용은</p>
+$$\Lambda^n (AB) = \Lambda^n A \circ \Lambda^n B$$<p>(<em>함수성 (functoriality)</em> — 합성의 유도 작용이 유도 작용의 합성과 같다.) 좌변은 $\det(AB)$ 만큼의 곱셈, 우변은 <em>$\det(B)$ 만큼 곱한 다음 $\det(A)$ 만큼 곱하기</em> 이므로</p>
+$$\det(AB) = \det(A) \cdot \det(B) \quad \blacksquare$$<p>이 증명이 <em>놀랍게 간단하다</em>. 행렬식이 단순히 &ldquo;$\Lambda^n V$ 위에 유도된 스칼라 곱셈의 인자&rdquo; 라는 시각에서 보면, 곱셈성이 <em>합성의 결합법칙에서 자동으로 따라 나오는</em> 사소한 사실.</p>
+<p>흔히 라이프니츠 공식으로 $\det(AB) = \det(A)\det(B)$ 를 증명하면 매우 복잡한 인덱스 조작이 필요하다. 외대수 관점에서는 <em>세 줄로 증명</em> 되는 것을 보면, <em>어떤 정의가 더 자연스러운지</em> 가 분명해진다.</p>
+<h3 id="7-기하학적-의미-방향이-붙은-부피의-스케일링-인자">7. 기하학적 의미: 방향이 붙은 부피의 스케일링 인자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외대수적 정의는 행렬식의 <em>기하학적 의미</em> 도 매우 명확하게 드러낸다.</p>
+<p>선형 사상 $A: V \to V$ 가 주어졌을 때, $A$ 는 표준 단위 정육면체 ($e_1, \ldots, e_n$ 으로 만들어진) 를 다른 평행체 ($A e_1, \ldots, A e_n$ 으로 만들어진) 로 보낸다. 이 새 평행체의 <em>방향이 붙은 부피</em> 가 $\det(A)$ 배가 된다.</p>
+<blockquote>
+<p><strong>기하학적 해석</strong>: $\det(A)$ 는 <em>선형 사상 $A$ 가 부피를 어떻게 변형시키는지</em> 를 측정하는 <em>스케일링 인자</em>. 정확히는 <em>방향이 붙은 부피</em> — 그래서 음수도 가능.</p>
+</blockquote>
+<p><strong>부호의 의미</strong></p>
+<p>$\det(A) > 0$: 사상 $A$ 가 <em>방향을 보존</em> (오른손 좌표계는 오른손 좌표계로 감).</p>
+<p>$\det(A) < 0$: 사상 $A$ 가 <em>방향을 뒤집음</em> (오른손 좌표계가 왼손 좌표계로 됨). 거울 반사가 대표적인 예.</p>
+<p>$\det(A) = 0$: 사상 $A$ 가 <em>부피를 완전히 짜부러뜨림</em> — 결과 도형이 낮은 차원으로 떨어진다. 이건 <em>$A$ 가 가역이 아니라는</em> 것 (단사가 아닌 핵이 비자명).</p>
+<p><strong>구체적 예제</strong></p>
+<p>(1) <em>스케일링</em> $A = \alpha I$ (모든 방향으로 $\alpha$ 배 확대): $\det(A) = \alpha^n$. $n$ 차원에서 모든 변이 $\alpha$ 배가 되면 부피는 $\alpha^n$ 배.</p>
+<p>(2) <em>2D 회전</em> $A = R_\theta$: $\det(R_\theta) = \cos^2\theta + \sin^2\theta = 1$. 회전은 방향을 보존하면서 부피도 보존.</p>
+<p>(3) <em>반사</em> (한 축 부호 반전): $\det = -1$. 부피는 그대로지만 방향이 뒤집힘.</p>
+<p>(4) <em>射影 (projection)</em> (한 차원으로 압축): $\det = 0$. 부피가 완전히 사라짐.</p>
+<p>이 모든 기하학적 의미가 <em>외대수의 단 한 줄 정의</em> 에서 즉시 읽힌다.</p>
+<h3 id="8-가역성-판정">8. 가역성 판정<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬식 $= 0$ 이면 가역 아니다, $\neq 0$ 이면 가역이다 — 이 익숙한 사실도 외대수에서 <em>깔끔히</em> 따라 나온다.</p>
+<p>$\det(A) = 0$ ⟺ $A e_1 \wedge A e_2 \wedge \cdots \wedge A e_n = 0$.</p>
+<p>§3 §7 에서 본 외대수의 핵심 성질에 의해, <em>쐐기곱이 0</em> ⟺ <em>벡터들이 선형종속</em>. 따라서</p>
+$$\det(A) = 0 \quad \iff \quad A e_1, A e_2, \ldots, A e_n \text{ 이 선형종속}$$<p>$A$ 의 열벡터들이 선형종속이라는 건 <em>$A$ 의 상공간이 $V$ 전체가 아니라는</em> 뜻이고, 따라서 <em>$A$ 가 가역이 아니다</em>.</p>
+<p>뒤집어서: $\det(A) \neq 0$ ⟺ 열벡터들이 선형독립 ⟺ $A$ 가 <em>전단사</em> ⟺ $A$ 가 가역.</p>
+<h3 id="9-코팩터-전개">9. 코팩터 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>학교에서 배운 코팩터 전개 (라플라스 전개) 도 외대수적으로 자연스럽다. 한 줄의 아이디어만 짚는다.</p>
+<p>$j$-번째 열에 대한 전개:</p>
+$$\det(A) = \sum_{i=1}^{n} (-1)^{i+j}\, a_{ij}\, M_{ij}$$<p>(여기서 $M_{ij}$ 는 $i$-번째 행과 $j$-번째 열을 제거한 <em>소행렬식</em>.)</p>
+<p><strong>외대수 도출의 핵심</strong>: $v_j = \sum_i a_{ij}\, e_i$ 의 한 열을 떼어내서</p>
+$$v_1 \wedge \cdots \wedge v_n = v_1 \wedge \cdots \wedge \left( \sum_i a_{ij}\, e_i \right) \wedge \cdots \wedge v_n$$<p>쐐기곱의 다중선형성으로 합으로 풀면</p>
+$$= \sum_i a_{ij}\, (v_1 \wedge \cdots \wedge e_i \wedge \cdots \wedge v_n)$$<p>이제 각 항에서 $e_i$ 가 $j$-번째 자리에 끼어 있다. 이걸 <em>적절한 자리</em> 로 옮기면서 (반대칭으로 부호 발생), 나머지 인자들이 <em>소행렬식</em> 을 만들도록 정렬하면 코팩터 전개가 나온다. 부호 $(-1)^{i+j}$ 가 <em>인접 교환의 횟수</em> 에서 자연스럽게 등장.</p>
+<p>이 도출에서도 <em>부호와 소행렬식의 등장이 우연이 아니라 외대수의 자연스러운 결과</em> 임이 보인다.</p>
+<h3 id="10-응용-변수변환의-야코비안">10. 응용: 변수변환의 야코비안<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미적분에서 다중적분의 변수변환 공식:</p>
+$$\int_V f(\vec{y})\, dV_y = \int_U f(\Phi(\vec{x}))\, |\det J_\Phi(\vec{x})|\, dV_x$$<p>여기서 $J_\Phi$ 는 야코비 행렬, $|\det J_\Phi|$ 가 <em>야코비안 (Jacobian)</em>.</p>
+<p>이 공식이 <em>왜 행렬식인지</em> 가 외대수 관점에서 즉시 보인다. $\Phi$ 가 작은 영역에서 <em>국소적으로 선형 사상</em> 이고, 그 선형 사상이 <em>부피를 $\det J_\Phi$ 만큼 스케일링</em> 하기 때문이다.</p>
+<p>절댓값이 붙는 이유: 적분에서는 <em>부호 없는 부피</em> 만 신경 쓰기 때문 (방향성은 외대수에 따로 인코딩). 미분형식의 적분 (§10) 에서는 <em>절댓값 없이</em> 행렬식이 그대로 등장하며, 그게 <em>방향이 붙은 적분</em> 의 정확한 정의가 된다.</p>
+<p>이 연결이 <em>외대수가 미적분의 자연스러운 언어임</em> 을 보여주는 첫 신호.</p>
+<h3 id="11-정리">11. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 핵심 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>최고차 외승의 1차원성</em> ($\dim \Lambda^n V = 1$) 이 행렬식의 출발점.</p>
+<p><strong>2)</strong> <em>외대수적 정의</em>: $v_1 \wedge \cdots \wedge v_n = \det(v_1, \ldots, v_n) \cdot \omega_0$. 행렬식은 <em>쐐기곱이 표준 부피 원소의 몇 배인지</em> 를 재는 스칼라.</p>
+<p><strong>3)</strong> <em>세 공리</em> (다중선형, 반대칭, 정규화) 가 쐐기곱의 정의에서 <em>자동으로</em> 따라 나온다.</p>
+<p><strong>4)</strong> <em>라이프니츠 공식</em> 이 분배 전개와 순열 부호로부터 <em>자연스럽게</em> 도출된다.</p>
+<p><strong>5)</strong> <em>곱셈성</em> $\det(AB) = \det(A)\det(B)$ 가 <em>유도 작용의 함수성</em> 에서 <em>세 줄 증명</em>.</p>
+<p><strong>6)</strong> <em>기하학적 의미</em>: $\det(A)$ 는 <em>방향이 붙은 부피의 스케일링 인자</em>. 음수면 방향 반전, 0 이면 부피 압축.</p>
+<p><strong>7)</strong> <em>가역성 판정</em>: $\det(A) \neq 0$ ⟺ 열벡터 선형독립 ⟺ $A$ 가역.</p>
+<p><strong>8)</strong> <em>코팩터 전개</em> 도 외대수의 다중선형성에서 자연스럽게 따라 나옴.</p>
+<p><strong>9)</strong> <em>변수변환의 야코비안</em> 도 외대수적 정의로 직관적으로 이해됨 — 다음 미적분 응용의 토대.</p>
+<p>이 장의 결과를 한 줄로 압축하면:</p>
+<blockquote>
+<p><em>행렬식은 $\Lambda^n V$ 가 1차원이라는 사실의 자연스러운 귀결이며, 그 모든 성질이 쐐기곱의 두 정의 규칙에서 따라 나온다.</em></p>
+</blockquote>
+<p>다음 §6 부터는 외대수의 <em>미적분으로의 확장</em> — <strong>미분형식 (differential forms)</strong> — 으로 들어간다. $V$ 위의 <em>상수</em> 쐐기곱에서, <em>함수처럼 점마다 달라지는</em> 쐐기곱으로 일반화한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

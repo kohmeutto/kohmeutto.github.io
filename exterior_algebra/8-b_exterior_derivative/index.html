@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 미분의 통합된 언어미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.
+그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="외미분 d :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 미분의 통합된 언어미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.
+그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/8-b_exterior_derivative/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="외미분 d :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 미분의 통합된 언어미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.
+그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="외미분 d :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 미분의 통합된 언어미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.
+그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
+    <meta itemprop="wordCount" content="2243">
+    <title>외미분 d :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/8-b_exterior_derivative\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/8-b_exterior_derivative/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-미분의-통합된-언어">1. 동기: 미분의 통합된 언어</a></li>
+        <li><a href="#2-0-form-위의--함수의-전미분-복습">2. 0-form 위의 : 함수의 전미분 (복습)</a></li>
+        <li><a href="#3-일반--form-위의--정의">3. 일반 -form 위의 : 정의</a></li>
+        <li><a href="#4-좌표-표현으로의-명시적-공식">4. 좌표 표현으로의 명시적 공식</a></li>
+        <li><a href="#5-구체적-예제-2d">5. 구체적 예제 (2D)</a></li>
+        <li><a href="#6-구체적-예제-3d">6. 구체적 예제 (3D)</a></li>
+        <li><a href="#7--의-정확한-의미와-증명">7.  의 정확한 의미와 증명</a></li>
+        <li><a href="#8--의-결과-익숙한-항등식들">8.  의 결과: 익숙한 항등식들</a></li>
+        <li><a href="#9-좌표-독립성">9. 좌표 독립성</a></li>
+        <li><a href="#10-폐형식과-완전형식">10. 폐형식과 완전형식</a></li>
+        <li><a href="#11-정리">11. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">외미분 d</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/7-b_differential_forms_kform/index.html" title="고차 미분형식: k-form (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html" title="외미분과 벡터 미적분 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="외미분-d">외미분 d</h1>
+
+<h3 id="1-동기-미분의-통합된-언어">1. 동기: 미분의 통합된 언어<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미적분에서 우리는 <em>여러 가지 미분 연산자</em> 를 배웠다.</p>
+<ul>
+<li><em>그라디언트</em> $\nabla f$: 스칼라 함수 → 벡터장</li>
+<li><em>발산</em> $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수</li>
+<li><em>회전</em> $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만)</li>
+</ul>
+<p>이 세 연산자들이 <em>서로 다른 종류</em> 의 객체들 사이를 오가면서, <em>어떤 통합된 원리</em> 가 있는 것처럼 보이긴 한다. 예를 들어 <em>발산의 회전은 0</em>, <em>회전의 그라디언트는 0</em> 같은 항등식이 있다.</p>
+<p>그런데 <em>4차원 이상</em> 으로 가면 회전이라는 개념 자체가 잘 정의되지 않는다. 회전이 <em>3차원에서만 잘 작동</em> 한다는 사실이 §1 의 <em>외적이 3D 에서만 벡터로 표현</em> 되는 우연과 같은 뿌리.</p>
+<p><em>외미분 (exterior derivative) $d$</em> 는 이 모든 것을 <em>하나의 연산자로 통합</em> 한다.</p>
+<blockquote>
+<p><strong>$d$ 의 역할</strong>: $k$-form 을 받아 $(k+1)$-form 을 내놓는 <em>유일하고 자연스러운</em> 미분 연산자.</p>
+$$d: \Omega^k(M) \to \Omega^{k+1}(M)$$</blockquote>
+<p>이 연산자가 <em>모든 차원에서 잘 정의되며</em>, 그라디언트·발산·회전이 모두 <em>$d$ 의 특수 경우</em> 로 표현된다. <em>부호 항등식</em> ($\nabla \cdot (\nabla \times \vec{F}) = 0$ 등) 도 모두 <em>하나의 본질적 성질</em> $d^2 = 0$ 으로 통합.</p>
+<p>이 장에서 $d$ 를 정확히 정의하고 그 성질을 본다. 다음 §9 에서 그라디언트·발산·회전과의 정확한 관계를 본다.</p>
+<h3 id="2-0-form-위의--함수의-전미분-복습">2. 0-form 위의 $d$: 함수의 전미분 (복습)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가장 단순한 경우, <em>0-form</em> (= 함수) 위의 $d$ 는 이미 §6 에서 봤다.</p>
+<p>매끄러운 함수 $f \in \Omega^0(M)$ 에 대해</p>
+$$df = \sum_{i=1}^{n} \frac{\partial f}{\partial x^i}\, dx^i$$<p>이게 <em>함수의 전미분</em>. 결과는 <em>1-form</em>.</p>
+<p>이 연산이 <em>벡터 작용</em> 의 측면에서 다음을 만족한다. 접벡터 $v$ 에 대해</p>
+$$df(v) = \nabla f \cdot v$$<p>즉 <em>$v$ 방향의 방향 미분</em>. 함수가 <em>얼마나 변하는지</em> 를 측정.</p>
+<p>이제 이 연산을 <em>모든 차수의 미분형식으로</em> 확장하는 게 외미분의 정의.</p>
+<h3 id="3-일반--form-위의--정의">3. 일반 $k$-form 위의 $d$: 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>일반 $k$-form 의 외미분 정의는 <em>공리적으로</em> 주어진다. 즉 $d$ 가 만족해야 할 <em>핵심 성질들</em> 을 먼저 정하고, 그것들이 <em>유일한 연산자를 결정</em> 한다.</p>
+<blockquote>
+<p><strong>외미분 $d$ 의 공리</strong>: $d$ 는 다음 네 성질을 만족하는 <em>유일한</em> 연산자 $d: \Omega^k(M) \to \Omega^{k+1}(M)$ 이다.</p>
+<ol>
+<li>
+<p><em>선형성</em>: $d(\alpha \omega + \beta \eta) = \alpha\, d\omega + \beta\, d\eta$ ($\alpha, \beta$ 상수)</p>
+</li>
+<li>
+<p><em>0-form 에서의 정의</em>: 함수 $f$ 에 대해 $df = \sum_i (\partial f / \partial x^i)\, dx^i$ (§6 의 정의)</p>
+</li>
+<li>
+<p><em>Leibniz 규칙 (등급화)</em>: $\omega$ 가 $k$-form, $\eta$ 가 $l$-form 일 때</p>
+$$d(\omega \wedge \eta) = d\omega \wedge \eta + (-1)^k\, \omega \wedge d\eta$$</li>
+<li>
+<p><em>$d^2 = 0$</em>: $d(d\omega) = 0$ 모든 $\omega$ 에 대해.</p>
+</li>
+</ol>
+</blockquote>
+<p>이 네 조건이 $d$ 를 <em>유일하게 결정</em> 한다.</p>
+<p><strong>왜 이 네 조건이 정당한가</strong></p>
+<ul>
+<li>조건 1 (선형성) 은 자연스러운 요구. 미분 연산자는 보통 선형.</li>
+<li>조건 2 는 외미분이 <em>익숙한 미분과 일치</em> 함을 보장.</li>
+<li>조건 3 (Leibniz 규칙) 은 <em>곱의 미분 법칙</em> 의 일반화. 부호 $(-1)^k$ 는 등급화 가환성과 일관성을 위함.</li>
+<li>조건 4 ($d^2 = 0$) 는 <em>가장 중요한 성질</em> — <em>이중 미분이 사라진다</em>. §6 §7 에서 본 mixed partial 의 대칭성에서 따라 나오는 자연스러운 결과.</li>
+</ul>
+<h3 id="4-좌표-표현으로의-명시적-공식">4. 좌표 표현으로의 명시적 공식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위 공리에서 <em>좌표 표현으로의 명시적 계산법</em> 이 따라 나온다.</p>
+<p>일반 $k$-form</p>
+$$\omega = \sum_{i_1 < \cdots < i_k} f_{i_1 \cdots i_k}(x)\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}$$<p>의 외미분은</p>
+<blockquote>
+$$d\omega = \sum_{i_1 < \cdots < i_k} df_{i_1 \cdots i_k} \wedge dx^{i_1} \wedge \cdots \wedge dx^{i_k}$$</blockquote>
+<p>여기서 $df_{i_1 \cdots i_k}$ 는 조건 2 의 전미분.</p>
+<p><strong>왜 이 공식이 옳은가</strong></p>
+<p>조건 3 (Leibniz 규칙) 을 단항 $f_{i_1 \cdots i_k}\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}$ 에 적용해 보자. $f_{i_1 \cdots i_k}$ 는 0-form 이므로</p>
+$$d(f \cdot dx^{i_1} \wedge \cdots \wedge dx^{i_k}) = df \wedge (dx^{i_1} \wedge \cdots \wedge dx^{i_k}) + (-1)^0\, f \cdot d(dx^{i_1} \wedge \cdots \wedge dx^{i_k})$$<p>두 번째 항에서 <em>$dx^{i_j}$ 가 $d$ 의 결과</em>  ($d(x^{i_j}) = dx^{i_j}$) 이고, $d^2 = 0$ 으로 $d(dx^{i_j}) = 0$. Leibniz 규칙을 반복 적용하면 두 번째 항이 <em>모두 0</em>. 따라서</p>
+$$d(f \cdot dx^{i_1} \wedge \cdots \wedge dx^{i_k}) = df \wedge dx^{i_1} \wedge \cdots \wedge dx^{i_k}$$<p>이 결과를 일반 $k$-form 에 <em>선형성</em> 으로 확장하면 위 공식이 따라 나온다.</p>
+<p><strong>계산 절차</strong></p>
+<p>실용적으로 외미분을 계산할 때:</p>
+<p>(1) 각 단항의 <em>함수 계수</em> $f_I$ 만 <em>$d$ 하기</em> (= 전미분).</p>
+<p>(2) 그 결과 (1-form) 를 단항의 <em>맨 앞</em> 에 쐐기곱.</p>
+<p>(3) 분배. 그게 끝.</p>
+<h3 id="5-구체적-예제-2d">5. 구체적 예제 (2D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>2차원 ($n = 2$, 좌표 $x, y$) 에서 외미분을 손으로 계산해 보자.</p>
+<p><strong>예제 1</strong>: 0-form $f(x, y) = x^2 + xy$ 의 외미분.</p>
+<p>전미분 공식으로:</p>
+$$df = \frac{\partial f}{\partial x}\, dx + \frac{\partial f}{\partial y}\, dy = (2x + y)\, dx + x\, dy$$<p>결과는 1-form.</p>
+<p><strong>예제 2</strong>: 1-form $\omega = P(x, y)\, dx + Q(x, y)\, dy$ 의 외미분.</p>
+<p>위 공식 적용. 각 단항에 대해 $df_I \wedge dx^I$ 형태로:</p>
+<p>먼저 $P\, dx$ 의 외미분:</p>
+$$d(P\, dx) = dP \wedge dx = \left(\frac{\partial P}{\partial x}\, dx + \frac{\partial P}{\partial y}\, dy\right) \wedge dx$$<p>분배하면</p>
+$$= \frac{\partial P}{\partial x}\, (dx \wedge dx) + \frac{\partial P}{\partial y}\, (dy \wedge dx)$$<p>$dx \wedge dx = 0$ 이고 $dy \wedge dx = -dx \wedge dy$ 이므로</p>
+$$d(P\, dx) = -\frac{\partial P}{\partial y}\, dx \wedge dy$$<p>비슷하게 $Q\, dy$ 에 대해</p>
+$$d(Q\, dy) = dQ \wedge dy = \frac{\partial Q}{\partial x}\, (dx \wedge dy) + \frac{\partial Q}{\partial y}\, (dy \wedge dy) = \frac{\partial Q}{\partial x}\, dx \wedge dy$$<p>(여기서 $dy \wedge dy = 0$ 이용.)</p>
+<p>합치면</p>
+$$\boxed{\;\; d\omega = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx \wedge dy \;\;}$$<p>이 결과가 <em>2D 회전 (curl)</em> — Green 정리의 적분량과 정확히 같음. §9 에서 자세히.</p>
+<p><strong>예제 3</strong>: 2-form $\omega = f(x, y)\, dx \wedge dy$ 의 외미분.</p>
+$$d\omega = df \wedge dx \wedge dy = \left(\frac{\partial f}{\partial x}\, dx + \frac{\partial f}{\partial y}\, dy\right) \wedge dx \wedge dy$$<p>전개하면</p>
+$$= \frac{\partial f}{\partial x}\, (dx \wedge dx \wedge dy) + \frac{\partial f}{\partial y}\, (dy \wedge dx \wedge dy)$$<p>첫째 항은 $dx \wedge dx = 0$ 으로 사라지고, 두 번째 항은 $dy$ 가 두 번 등장하므로 (다중선형 반대칭의 $f(v, v) = 0$ 성질) 0. 따라서</p>
+$$d(f\, dx \wedge dy) = 0$$<p><em>2D 에서 2-form 의 외미분은 항상 0</em>. 이유는 <em>결과가 3-form 인데 2차원 공간에는 3-form 이 없음</em> ($\dim \Omega^3(\mathbb{R}^2) = 0$). 차원에 의한 자동 소멸.</p>
+<h3 id="6-구체적-예제-3d">6. 구체적 예제 (3D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3차원 ($n = 3$, 좌표 $x, y, z$) 에서 더 풍부한 외미분 계산.</p>
+<p><strong>예제 1</strong>: 0-form $f$ 의 외미분 (그라디언트의 1-form 버전).</p>
+$$df = \frac{\partial f}{\partial x}\, dx + \frac{\partial f}{\partial y}\, dy + \frac{\partial f}{\partial z}\, dz$$<p>3D 그라디언트 $\nabla f = (\partial f / \partial x, \partial f / \partial y, \partial f / \partial z)$ 의 정보를 <em>1-form 으로 인코딩</em>. (벡터장과의 차이는 §6 에서.)</p>
+<p><strong>예제 2</strong>: 1-form $\omega = P\, dx + Q\, dy + R\, dz$ 의 외미분.</p>
+<p>2D 예제처럼 각 단항에 대해 계산.</p>
+$$d(P\, dx) = \frac{\partial P}{\partial y}\, dy \wedge dx + \frac{\partial P}{\partial z}\, dz \wedge dx$$<p>(나머지는 $dx \wedge dx = 0$.) $dy \wedge dx = -dx \wedge dy$, $dz \wedge dx = -dx \wedge dz$ 로 정렬하면</p>
+$$d(P\, dx) = -\frac{\partial P}{\partial y}\, dx \wedge dy - \frac{\partial P}{\partial z}\, dx \wedge dz$$<p>$d(Q\, dy)$ 와 $d(R\, dz)$ 도 비슷하게 계산. 표준 정리하면</p>
+$$d\omega = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx \wedge dy + \left(\frac{\partial R}{\partial x} - \frac{\partial P}{\partial z}\right) dx \wedge dz + \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) dy \wedge dz$$<p>이 <em>세 계수</em> 가 정확히 3D 회전 $\nabla \times \vec{F}$ 의 <em>세 성분</em>! 자세히 보면</p>
+$$\nabla \times \vec{F} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},\; \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},\; \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)$$<p>부호 정렬 후 정확히 위 외미분 결과와 일치. 따라서:</p>
+<blockquote>
+<p><em>3D 에서 1-form 의 외미분 = 회전 (curl)</em>. 미분형식 언어로 정확한 대응.</p>
+</blockquote>
+<p><strong>예제 3</strong>: 2-form $\omega = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$ 의 외미분.</p>
+<p>각 단항 외미분 후 합치면 (계산 생략)</p>
+$$d\omega = \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dx \wedge dy \wedge dz$$<p>세 <em>편미분의 합</em> — 정확히 <em>발산 (divergence) $\nabla \cdot \vec{F}$</em> 의 식. 따라서:</p>
+<blockquote>
+<p><em>3D 에서 2-form 의 외미분 = 발산 (divergence) × 부피 형식</em>.</p>
+</blockquote>
+<h3 id="7--의-정확한-의미와-증명">7. $d^2 = 0$ 의 정확한 의미와 증명<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외미분의 <em>가장 중요한 성질</em> 이 $d^2 = 0$. 이중 외미분은 항상 0.</p>
+<blockquote>
+<p><strong>정리</strong>: 모든 매끄러운 미분형식 $\omega$ 에 대해</p>
+$$d(d\omega) = 0$$</blockquote>
+<p><strong>0-form 에서의 증명</strong></p>
+<p>먼저 0-form (= 함수) 에 대해서 본다. 함수 $f$ 에 대해 $df = \sum_i (\partial f / \partial x^i)\, dx^i$.</p>
+<p>이걸 다시 $d$ 하면</p>
+$$d(df) = \sum_i d\left(\frac{\partial f}{\partial x^i}\right) \wedge dx^i = \sum_i \sum_j \frac{\partial^2 f}{\partial x^j \partial x^i}\, dx^j \wedge dx^i$$<p>이중 합을 풀어 보자. 각 $(i, j)$ 쌍에서 <em>대각 항</em> ($i = j$) 은 $dx^i \wedge dx^i = 0$ 이므로 사라짐.</p>
+<p><em>비대각 항</em> 은 <em>교차 쌍</em> 으로 묶어 본다. $i < j$ 와 $i > j$ 의 두 항을 합쳐서</p>
+$$\frac{\partial^2 f}{\partial x^i \partial x^j}\, dx^i \wedge dx^j + \frac{\partial^2 f}{\partial x^j \partial x^i}\, dx^j \wedge dx^i$$<p>$dx^j \wedge dx^i = -dx^i \wedge dx^j$ 이므로</p>
+$$= \left( \frac{\partial^2 f}{\partial x^i \partial x^j} - \frac{\partial^2 f}{\partial x^j \partial x^i} \right) dx^i \wedge dx^j$$<p>매끄러운 함수의 <em>혼합 편미분의 대칭성</em> (클레로 정리, Schwarz 정리) 에 의해</p>
+$$\frac{\partial^2 f}{\partial x^i \partial x^j} = \frac{\partial^2 f}{\partial x^j \partial x^i}$$<p>따라서 각 쌍의 차이가 0. 모든 비대각 항도 0. 결과적으로 $d(df) = 0$. ∎</p>
+<p><strong>일반 $k$-form 에 대한 일반화</strong></p>
+<p>일반 $k$-form $\omega = f_I\, dx^I$ (단항으로 표기) 에 대해</p>
+$$d\omega = df_I \wedge dx^I$$<p>다시 $d$ 하면 (Leibniz 규칙 적용)</p>
+$$d(d\omega) = d(df_I) \wedge dx^I + (-1)^1\, df_I \wedge d(dx^I)$$<p>위 결과로 $d(df_I) = 0$. 또 $dx^I$ 가 <em>상수 좌표 미분들의 쐐기곱</em> 이므로 $d(dx^I) = 0$ (역시 Leibniz 규칙과 $d(dx^i) = 0$ 적용).</p>
+<p>두 항 모두 0 이므로 $d^2 \omega = 0$. ∎</p>
+<p><strong>$d^2 = 0$ 의 본질</strong></p>
+<p>이 성질의 <em>본질</em> 은 <em>혼합 편미분의 대칭성</em> — 즉 미적분의 가장 기본적인 사실 중 하나. $d$ 가 이 대칭성을 <em>쐐기곱의 반대칭성과 만나게 해서</em> 자연스럽게 항등식 $d^2 = 0$ 으로 인코딩.</p>
+<p>이게 <em>왜 $d^2 = 0$ 이 자연스러운지</em> 의 답: <em>대칭 + 반대칭 = 0</em>.</p>
+<h3 id="8--의-결과-익숙한-항등식들">8. $d^2 = 0$ 의 결과: 익숙한 항등식들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$d^2 = 0$ 의 <em>익숙한 미적분 항등식들</em> 이 모두 따라 나온다.</p>
+<p><strong>그라디언트의 회전 = 0</strong></p>
+<p>함수 $f$ 의 그라디언트를 <em>1-form 으로 본 외미분</em> 이 $df$. 이걸 다시 $d$ 하면 (3D 회전):</p>
+$$d(df) = 0$$<p>좌변은 <em>$df$ (1-form) 의 외미분</em> — §9 의 결과로 <em>회전과 동치</em>. 따라서</p>
+$$\nabla \times (\nabla f) = 0$$<p>익숙한 항등식.</p>
+<p><strong>회전의 발산 = 0</strong></p>
+<p>벡터장 $\vec{F}$ 를 <em>2-form 으로 본 외미분</em> 이 발산 (위에서 봄).</p>
+<p>$\vec{F}$ 가 어떤 1-form $\omega_F$ 의 <em>외미분 결과</em> (즉 회전) 라면, 그걸 다시 $d$ 하면 0:</p>
+$$d(d\omega_F) = 0$$<p>이걸 발산-회전 언어로 옮기면</p>
+$$\nabla \cdot (\nabla \times \vec{G}) = 0$$<p>(어떤 $\vec{G}$ 에 대해 $\vec{F} = \nabla \times \vec{G}$ 일 때.) 또 익숙한 항등식.</p>
+<p><strong>모든 부호 항등식의 통일</strong></p>
+<p>벡터 미적분의 <em>복잡한 부호 항등식들</em> 이 모두 <em>$d^2 = 0$ 하나로 통합</em>. 이게 외미분의 <em>우아함</em>.</p>
+<h3 id="9-좌표-독립성">9. 좌표 독립성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위에서 $d$ 를 <em>좌표 표현</em> 으로 정의했다. 그런데 다양체에는 <em>여러 좌표계</em> 가 가능. <em>다른 좌표에서 같은 결과</em> 가 나올까?</p>
+<p>답: <em>그렇다</em>. $d$ 는 <em>좌표에 독립적인 자연스러운 연산자</em>.</p>
+<p>증명 아이디어: 두 좌표계 $\{x^i\}$ 와 $\{y^j\}$ 사이의 좌표 변환을 $y^j = y^j(x)$ 라 하자. 함수의 전미분이</p>
+$$df = \sum_i \frac{\partial f}{\partial x^i}\, dx^i = \sum_j \frac{\partial f}{\partial y^j}\, dy^j$$<p>(체인 룰로 자동 일치.) 이 일치가 일반 $k$-form 의 외미분에도 자연스럽게 확장됨 (Leibniz 규칙과 $d^2 = 0$ 보존).</p>
+<p>이게 외미분이 <em>진짜로 자연스러운 객체</em> 라는 증거. 좌표를 어떻게 잡든 같은 결과 — <em>미분형식 언어의 좌표 독립성</em> 의 한 측면.</p>
+<h3 id="10-폐형식과-완전형식">10. 폐형식과 완전형식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외미분 관련 <em>두 가지 중요한 개념</em>.</p>
+<p><strong>폐형식 (closed form)</strong>: 외미분이 0 인 미분형식.</p>
+$$d\omega = 0$$<p>위의 $d^2 = 0$ 에 의해, <em>어떤 형식의 외미분은 항상 폐형식</em>.</p>
+<p><strong>완전형식 (exact form)</strong>: 다른 형식의 외미분으로 표현되는 미분형식.</p>
+$$\omega = d\eta \quad \text{어떤 } \eta \text{ 에 대해}$$<p>$d^2 = 0$ 으로 <em>완전형식은 항상 폐형식</em>:</p>
+$$\omega = d\eta \;\Rightarrow\; d\omega = d(d\eta) = 0$$<p><strong>역은?</strong></p>
+<p><em>폐형식이 항상 완전형식인가?</em> 즉 $d\omega = 0$ 이면 $\omega = d\eta$ 인 $\eta$ 가 존재하는가?</p>
+<p>답은 <em>공간의 위상에 따라 다르다</em>.</p>
+<ul>
+<li><em>볼록한 영역</em> (또는 <em>수축 가능한 영역</em>) 에서는 <em>항상 그렇다</em> — Poincaré 보조정리.</li>
+<li><em>위상적으로 복잡한 영역</em> (예: 원, 도넛 모양) 에서는 <em>그렇지 않을 수 있다</em>.</li>
+</ul>
+<p>이 차이를 측정하는 것이 <em>de Rham cohomology</em> (§12).</p>
+<blockquote>
+<p>폐형식 / 완전형식의 비율 = $H^k(M)$ (de Rham 코호몰로지 군)</p>
+</blockquote>
+<p>이게 <em>외미분이 위상 정보를 인코딩</em> 한다는 놀라운 사실. 자세한 내용은 §12.</p>
+<p><strong>§6 §10 의 예제 다시 보기</strong></p>
+<p>§6 §10 에서 &ldquo;어떤 함수의 미분도 아닌 1-form&rdquo; 의 예로 $\omega = y\, dx - x\, dy$ 를 봤다. 이 1-form 의 외미분을 계산해 보면</p>
+$$d\omega = -dy \wedge dx - dx \wedge dy = dx \wedge dy - dx \wedge dy + \cdots$$<p>다시 정렬하면 (잠깐의 부호 정리)</p>
+$$d(y\, dx) = dy \wedge dx = -dx \wedge dy$$$$d(-x\, dy) = -dx \wedge dy$$<p>합치면 $d\omega = -dx \wedge dy - dx \wedge dy = -2\, dx \wedge dy \neq 0$.</p>
+<p>따라서 $\omega$ 가 <em>폐형식이 아님</em>. 따라서 어떤 함수의 미분도 아닌 것이 <em>외미분으로 즉시 확인</em>.</p>
+<p>(만약 <em>원에서 정의된</em> 비슷한 1-form $\omega = (x\, dy - y\, dx)/(x^2 + y^2)$ 를 보면, <em>폐형식이지만 전체 정의역에서 완전형식이 아닌</em> 1-form 의 유명한 예. §12 에서 다룬다.)</p>
+<h3 id="11-정리">11. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>외미분</em> $d: \Omega^k(M) \to \Omega^{k+1}(M)$ 는 $k$-form 을 $(k+1)$-form 으로 보내는 <em>통합된 미분 연산자</em>.</p>
+<p><strong>2)</strong> <em>네 가지 공리</em> 로 정의: 선형성, 0-form 에서의 정의 (전미분), Leibniz 규칙, $d^2 = 0$.</p>
+<p><strong>3)</strong> <em>좌표 명시적 공식</em>:</p>
+$$d\omega = \sum_I df_I \wedge dx^I$$<p>— 각 단항의 <em>함수 계수만 외미분</em> 하고 <em>맨 앞에 쐐기곱</em>.</p>
+<p><strong>4)</strong> <em>2D 1-form 의 외미분</em>: $d(P\, dx + Q\, dy) = (\partial_x Q - \partial_y P)\, dx \wedge dy$ — <em>2D 회전</em>.</p>
+<p><strong>5)</strong> <em>3D 1-form 의 외미분</em>: $d\omega_F$ 가 <em>3D 회전 $\nabla \times \vec{F}$</em> 와 일치.</p>
+<p><strong>6)</strong> <em>3D 2-form 의 외미분</em>: 발산 × 부피 형식.</p>
+<p><strong>7)</strong> <em>$d^2 = 0$</em> — 이중 외미분은 항상 0. 본질은 <em>혼합 편미분의 대칭성</em>.</p>
+<p><strong>8)</strong> <em>익숙한 부호 항등식들</em> ($\nabla \times \nabla f = 0$, $\nabla \cdot (\nabla \times \vec{F}) = 0$) 이 모두 $d^2 = 0$ 의 결과.</p>
+<p><strong>9)</strong> <em>좌표 독립성</em>: $d$ 가 좌표 선택에 무관한 자연스러운 연산자.</p>
+<p><strong>10)</strong> <em>폐형식</em> $d\omega = 0$ 과 <em>완전형식</em> $\omega = d\eta$. 완전 → 폐는 항상 성립. 폐 → 완전은 <em>공간의 위상에 따라 다름</em>. 차이가 <em>de Rham cohomology</em> (§12).</p>
+<p>다음 §9 에서 <em>외미분과 벡터 미적분의 정확한 대응</em> — 그라디언트·발산·회전이 모두 <em>$d$ 의 특수 경우</em> 로 어떻게 나오는지 — 를 자세히 본다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

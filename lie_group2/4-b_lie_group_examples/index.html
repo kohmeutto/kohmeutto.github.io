@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기지금까지 군(§2)과 다양체(§3)를 따로 봤다. 이 두 구조가 동시에 얹힌 것이 리 군(Lie group)이다. 이 장에서는 리 군의 정의를 짚고, 회전 행렬 $SO(2)$를 표준 예제로 다룬다. 이어서 시각화에 유용한 행렬 다양체들(2-구면, 1매개변수 곡선들)도 함께 본다.
+2. 리 군의 정의1) 리 군(Lie group) 은 다음 두 구조가 양립하는 집합 $G$다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="리 군과 예제 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기지금까지 군(§2)과 다양체(§3)를 따로 봤다. 이 두 구조가 동시에 얹힌 것이 리 군(Lie group)이다. 이 장에서는 리 군의 정의를 짚고, 회전 행렬 $SO(2)$를 표준 예제로 다룬다. 이어서 시각화에 유용한 행렬 다양체들(2-구면, 1매개변수 곡선들)도 함께 본다.
+2. 리 군의 정의1) 리 군(Lie group) 은 다음 두 구조가 양립하는 집합 $G$다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group2/4-b_lie_group_examples/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="리 군과 예제 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기지금까지 군(§2)과 다양체(§3)를 따로 봤다. 이 두 구조가 동시에 얹힌 것이 리 군(Lie group)이다. 이 장에서는 리 군의 정의를 짚고, 회전 행렬 $SO(2)$를 표준 예제로 다룬다. 이어서 시각화에 유용한 행렬 다양체들(2-구면, 1매개변수 곡선들)도 함께 본다.
+2. 리 군의 정의1) 리 군(Lie group) 은 다음 두 구조가 양립하는 집합 $G$다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group2">
+    <meta itemprop="name" content="리 군과 예제 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기지금까지 군(§2)과 다양체(§3)를 따로 봤다. 이 두 구조가 동시에 얹힌 것이 리 군(Lie group)이다. 이 장에서는 리 군의 정의를 짚고, 회전 행렬 $SO(2)$를 표준 예제로 다룬다. 이어서 시각화에 유용한 행렬 다양체들(2-구면, 1매개변수 곡선들)도 함께 본다.
+2. 리 군의 정의1) 리 군(Lie group) 은 다음 두 구조가 양립하는 집합 $G$다.">
+    <meta itemprop="wordCount" content="690">
+    <title>리 군과 예제 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group2\/4-b_lie_group_examples\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group2/4-b_lie_group_examples/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기">1. 동기</a></li>
+        <li><a href="#2-리-군의-정의">2. 리 군의 정의</a></li>
+        <li><a href="#3-표준-예제-so2">3. 표준 예제: SO(2)</a></li>
+        <li><a href="#4-시각화용-행렬-다양체-2-구면">4. 시각화용 행렬 다양체: 2-구면</a></li>
+        <li><a href="#5-1매개변수-곡선들">5. 1매개변수 곡선들</a></li>
+        <li><a href="#6-정리">6. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group2/index.html"><span itemprop="name">Lie group2</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">리 군과 예제</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group2/3-b_manifold_parameter/index.html" title="다양체와 매개변수 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group2/5-b_matrix_derivative/index.html" title="행렬 미분 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="리-군과-예제">리 군과 예제</h1>
+
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지 군(§2)과 다양체(§3)를 따로 봤다. 이 두 구조가 <em>동시에</em> 얹힌 것이 리 군(Lie group)이다. 이 장에서는 리 군의 정의를 짚고, 회전 행렬 $SO(2)$를 표준 예제로 다룬다. 이어서 시각화에 유용한 행렬 다양체들(2-구면, 1매개변수 곡선들)도 함께 본다.</p>
+<h3 id="2-리-군의-정의">2. 리 군의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>리 군(Lie group)</em> 은 다음 두 구조가 양립하는 집합 $G$다.</p>
+<ul>
+<li>매끄러운 다양체(§3) 의 구조</li>
+<li>군(§2) 의 구조</li>
+</ul>
+<p><strong>2)</strong> <em>양립</em>이란 군 연산이 다양체 구조와 <em>매끄럽게</em> 어울린다는 뜻이다. 구체적으로 다음 두 사상이 매끄러워야 한다.</p>
+<ul>
+<li>곱셈 사상 $\mu: G \times G \to G,\ (a, b) \mapsto a \cdot b$</li>
+<li>역원 사상 $\iota: G \to G,\ a \mapsto a^{-1}$</li>
+</ul>
+<p><strong>3)</strong> 즉 군 연산이 매개변수에 대해 $C^\infty$로 변한다는 것이다.</p>
+<p><strong>4)</strong> 리 군은 <em>군 연산 하나</em>만 가진다. &ldquo;매끄러움&quot;은 이 연산의 <em>성질</em>이지 별도의 이항 연산이 아니다 (§2.6 참조). 따라서 리 군은 환이 아닌 군이다.</p>
+<h3 id="3-표준-예제-so2">3. 표준 예제: SO(2)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $SO(2)$는 2차원 회전 행렬의 집합이다.</p>
+$$R(\tau) = \begin{pmatrix} \cos\tau & -\sin\tau \\ \sin\tau & \cos\tau \end{pmatrix}, \qquad \tau \in [0, 2\pi)$$<p><strong>2)</strong> 군 구조:</p>
+<ul>
+<li>곱셈: $R(\tau_1) \cdot R(\tau_2) = R(\tau_1 + \tau_2)$</li>
+<li>항등원: $R(0) = I$</li>
+<li>역원: $R(\tau)^{-1} = R(-\tau)$</li>
+</ul>
+<p><strong>3)</strong> 다양체 구조:</p>
+<ul>
+<li>매개변수 1개 ($\tau$) → 내재적 차원 1</li>
+<li>$\tau = 0$과 $\tau = 2\pi$가 같은 점이라 <em>원</em>의 위상을 가진다</li>
+<li>외재적으로는 4차원 행렬 공간 안에 심어진 곡선</li>
+</ul>
+<p><strong>4)</strong> 매끄러움: $R(\tau)$의 성분이 $\tau$에 대해 매끄럽고, $R(\tau_1)\cdot R(\tau_2) = R(\tau_1 + \tau_2)$로 곱셈도 매개변수 차원에서 매끄럽다.</p>
+<p><strong>5)</strong> <em>시각화</em>: 회전각 $\tau$가 원을 한 바퀴 도는 그림.</p>
+<svg viewBox="0 0 300 290" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:300px">
+  <circle cx="150" cy="140" r="90" fill="none" stroke="black" stroke-width="2"/>
+  <circle cx="240" cy="140" r="4" fill="black"/>
+  <text x="248" y="145" font-size="12">τ = 0 (I)</text>
+  <circle cx="150" cy="50" r="4" fill="black"/>
+  <text x="115" y="40" font-size="12">τ = π/2</text>
+  <circle cx="60" cy="140" r="4" fill="black"/>
+  <text x="15" y="145" font-size="12">τ = π</text>
+  <circle cx="150" cy="230" r="4" fill="black"/>
+  <text x="115" y="252" font-size="12">τ = 3π/2</text>
+  <path d="M 232,160 L 226,170 L 238,168 Z" fill="#0066cc"/>
+  <text x="245" y="175" font-size="11" fill="#0066cc">τ 증가</text>
+  <text x="150" y="280" text-anchor="middle" font-size="13" font-style="italic">SO(2) ≅ S¹</text>
+</svg>
+<h3 id="4-시각화용-행렬-다양체-2-구면">4. 시각화용 행렬 다양체: 2-구면<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다음 형식의 $2 \times 2$ 에르미트 무대각합 행렬을 본다.</p>
+$$M(x, y, z) = x\sigma_x + y\sigma_y + z\sigma_z = \begin{pmatrix} z & x - iy \\ x + iy & -z \end{pmatrix}$$<p>여기서 $\sigma_x, \sigma_y, \sigma_z$는 파울리 행렬이다.</p>
+$$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$<p><strong>2)</strong> 파울리 행렬의 대수에서 $\sigma_i \sigma_j + \sigma_j \sigma_i = 2\delta_{ij}I$가 성립하므로</p>
+$$M^2 = (x^2 + y^2 + z^2)\, I$$<p>따라서 $M^2 = I$ 조건은 $x^2 + y^2 + z^2 = 1$, 즉 단위 <em>2-구면</em>과 일치한다.</p>
+<p><strong>3)</strong> 매개변수 공간 $(x, y, z) \in \mathbb{R}^3$ 위에서 단위 구면이 다양체이고, 그 위의 각 점이 하나의 행렬에 대응된다.</p>
+<p><strong>4)</strong> 차원: 매개변수가 형식적으로 3개지만 $x^2 + y^2 + z^2 = 1$ 구속이 있어 <em>자유도</em>는 2. 즉 내재적 차원이 2인 다양체다.</p>
+<p><strong>5)</strong> 시각화: 에르미트 무대각합 행렬 공간 자체가 3차원($\mathbb{R}^3$)이라, 우리가 사는 공간에 그대로 단위 구를 그리면 된다.</p>
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:320px">
+  <circle cx="160" cy="160" r="100" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M 60,160 A 100,25 0 0,0 260,160" fill="none" stroke="black" stroke-width="1"/>
+  <path d="M 60,160 A 100,25 0 0,1 260,160" fill="none" stroke="black" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="160" y1="40" x2="160" y2="280" stroke="#888" stroke-width="1.5"/>
+  <line x1="40" y1="160" x2="280" y2="160" stroke="#888" stroke-width="1.5"/>
+  <line x1="100" y1="200" x2="220" y2="120" stroke="#888" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="160" cy="60" r="5" fill="#cc0000"/>
+  <text x="170" y="55" font-size="13">(0,0,1): σ_z</text>
+  <circle cx="260" cy="160" r="5" fill="#cc0000"/>
+  <text x="200" y="178" font-size="13">(1,0,0): σ_x</text>
+  <circle cx="220" cy="120" r="5" fill="#cc0000"/>
+  <text x="225" y="115" font-size="13">(0,1,0): σ_y</text>
+  <text x="160" y="305" text-anchor="middle" font-size="13" font-style="italic">M² = I, M = xσ_x + yσ_y + zσ_z, x²+y²+z²=1</text>
+</svg>
+<p><strong>6)</strong> <em>주의</em>: 이 2-구면은 <em>리 군은 아니다</em>. 군 연산이 자연스럽게 주어지지 않기 때문이다. 다만 &ldquo;행렬들이 이루는 다양체&quot;의 직관을 잡기 좋은 예다. (양자정보에서 *블로흐 구면(Bloch sphere)*과 유사한 형태로 등장한다.)</p>
+<h3 id="5-1매개변수-곡선들">5. 1매개변수 곡선들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 매개변수 1개로 만든 행렬은 행렬 공간 안에서 <em>1차원 곡선</em>을 그린다. 위의 무대각합 에르미트 행렬 공간 $\mathbb{R}^3$에서 모양만 다른 곡선들을 본다.</p>
+<p><strong>2)</strong> example1) 직선</p>
+$$M(\tau) = \tau \sigma_z = \begin{pmatrix} \tau & 0 \\ 0 & -\tau \end{pmatrix}$$<p>$(x, y, z) = (0, 0, \tau)$. $z$축을 따라가는 직선.</p>
+<p><strong>3)</strong> example2) 원</p>
+$$M(\tau) = \cos\tau \, \sigma_x + \sin\tau \, \sigma_y$$<p>$(x, y, z) = (\cos\tau,\, \sin\tau,\, 0)$. $xy$평면 위의 단위 원.</p>
+<p><strong>4)</strong> example3) 나선</p>
+$$M(\tau) = \cos\tau \, \sigma_x + \sin\tau \, \sigma_y + \tau \, \sigma_z$$<p>$(x, y, z) = (\cos\tau,\, \sin\tau,\, \tau)$. $z$축을 따라 위로 감기는 나선.</p>
+<svg viewBox="0 0 280 400" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:280px">
+  <line x1="140" y1="370" x2="140" y2="40" stroke="#666" stroke-width="1.5"/>
+  <text x="148" y="45" font-size="13">z</text>
+  <line x1="40" y1="350" x2="240" y2="350" stroke="#666" stroke-width="1.5"/>
+  <text x="245" y="355" font-size="13">x</text>
+  <line x1="110" y1="370" x2="170" y2="320" stroke="#666" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="92" y="375" font-size="13">y</text>
+  <polyline points="200,350 182,323 140,301 98,284 80,271" fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,3"/>
+  <polyline points="80,271 98,259 140,242 182,220 200,193" fill="none" stroke="#0066cc" stroke-width="2"/>
+  <polyline points="200,193 182,166 140,144 98,127 80,114" fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="205" y="345" font-size="11" fill="#0066cc">τ = 0</text>
+  <text x="205" y="190" font-size="11" fill="#0066cc">τ = 2π</text>
+  <text x="65" y="110" font-size="11" fill="#0066cc">τ = 3π</text>
+</svg>
+<p><strong>5)</strong> <em>핵심</em>: 세 예 모두 매개변수가 1개라 <em>내재적 차원은 1</em>인 곡선이다. 모양만 직선/원/나선으로 다를 뿐이다. 외재적으로는 3차원 공간 안에 <em>심어진</em> 1차원 곡선이다.</p>
+<p><strong>6)</strong> 이 곡선들은 일반적으로 리 군은 아니다 (군 연산이 곡선 위에서 닫히지 않는다). 다만 &ldquo;1매개변수 다양체가 3차원 공간 안에서 다양한 모양으로 보일 수 있다&quot;는 직관을 준다.</p>
+<h3 id="6-정리">6. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 리 군 = 매끄러운 다양체 + 군 구조 (양립). 군 연산이 매개변수에 대해 매끄럽다.</p>
+<p><strong>2)</strong> <em>유일한 이항 연산</em>은 군 곱셈. 매끄러움은 이 연산의 성질이지 별도의 이항 연산이 아니라서 환이 아니다.</p>
+<p><strong>3)</strong> $SO(2)$는 1차원 리 군의 표준 예. 원의 위상을 가지며 회전각 $\tau$가 매개변수다.</p>
+<p><strong>4)</strong> 파울리 행렬의 2-구면, 1매개변수 곡선들은 리 군은 아니지만 <em>행렬 다양체</em>의 시각화 직관을 잡는 데 유용하다. 매개변수 개수와 다양체 차원의 관계를 구체적 행렬 예로 확인할 수 있다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group2/1-b_function_vector_operator/index.html"><a class="padding" href="/lie_group2/1-b_function_vector_operator/index.html">함수, 벡터, 연산자</a></li>
+            <li class="" data-nav-id="/lie_group2/2-b_algebraic_structures/index.html"><a class="padding" href="/lie_group2/2-b_algebraic_structures/index.html">대수 구조: 군/환/체</a></li>
+            <li class="" data-nav-id="/lie_group2/3-b_manifold_parameter/index.html"><a class="padding" href="/lie_group2/3-b_manifold_parameter/index.html">다양체와 매개변수</a></li>
+            <li class="active " data-nav-id="/lie_group2/4-b_lie_group_examples/index.html"><a class="padding" href="/lie_group2/4-b_lie_group_examples/index.html">리 군과 예제</a></li>
+            <li class="" data-nav-id="/lie_group2/5-b_matrix_derivative/index.html"><a class="padding" href="/lie_group2/5-b_matrix_derivative/index.html">행렬 미분</a></li>
+            <li class="" data-nav-id="/lie_group2/9-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group2/9-b_one_parameter_subgroup/index.html">1매개변수 부분군과 준동형 사상</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

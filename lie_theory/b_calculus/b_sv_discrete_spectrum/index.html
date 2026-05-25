@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 일반 형태: 세 항 분해1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.
+$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).
+2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:
+$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) SV discrete spectrum :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 일반 형태: 세 항 분해1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.
+$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).
+2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:
+$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:">
+    <meta property="og:url" content="http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) SV discrete spectrum :: 수리전자물리학">
+    <meta property="og:description" content="1. 일반 형태: 세 항 분해1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.
+$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).
+2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:
+$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie theory">
+    <meta itemprop="name" content="(b) SV discrete spectrum :: 수리전자물리학">
+    <meta itemprop="description" content="1. 일반 형태: 세 항 분해1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.
+$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).
+2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:
+$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert &#43; \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:">
+    <meta itemprop="wordCount" content="573">
+    <title>(b) SV discrete spectrum :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_theory\/b_calculus\/b_sv_discrete_spectrum\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-일반-형태-세-항-분해">1. 일반 형태: 세 항 분해</a></li>
+        <li><a href="#2-깔끔한-경우-고유벡터가-고정">2. 깔끔한 경우: 고유벡터가 고정</a></li>
+        <li><a href="#3-example-의-미분">3. example: 의 미분</a></li>
+        <li><a href="#4-일반-경우-고유벡터가-변하는-상황">4. 일반 경우: 고유벡터가 변하는 상황</a></li>
+        <li><a href="#5-정리">5. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) SV discrete spectrum</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_sv_matrix/index.html" title="(b) SV matrix (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html" title="(b) SV continuous spectrum (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_theory" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-sv-discrete-spectrum">(b) SV discrete spectrum</h1>
+
+<hr>
+<h3 id="1-일반-형태-세-항-분해">1. 일반 형태: 세 항 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.</p>
+$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$<p>고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).</p>
+<p><strong>2)</strong> 곱셈 규칙(§5)을 세 인자에 모두 적용하면:</p>
+$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert + \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert + \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$<p>여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:</p>
+<ul>
+<li><em>고유값 변화</em> 항</li>
+<li><em>켓 고유벡터 회전</em> 항</li>
+<li><em>브라 고유벡터 회전</em> 항</li>
+</ul>
+<p><strong>3)</strong> 핵심: 미분이 <em>고유값</em>과 <em>고유벡터</em> 양쪽에 모두 작용한다.</p>
+<hr>
+<h3 id="2-깔끔한-경우-고유벡터가-고정">2. 깔끔한 경우: 고유벡터가 고정<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $\vert v_i\rangle$ 와 $\langle v^i\vert$ 가 $\tau$ 와 무관하면 ($\vert\dot v_i\rangle = 0$, $\langle\dot v^i\vert = 0$), 뒤의 두 항이 사라진다.</p>
+$$\frac{dA}{d\tau} = \sum_i \dot\lambda_i\, \vert v_i\rangle\langle v^i\vert$$<p><strong>2)</strong> 이 식은 <em>함수 미적분의 미분에 해당하는</em> 구조다. §6에서 본 $f(A) = \sum_i f(\lambda_i)\vert v_i\rangle\langle v^i\vert$ 에서 스칼라 함수에 미분을 적용한 결과로 자연스럽게 해석된다.</p>
+<p><strong>3)</strong> 즉 고유벡터가 고정되면 행렬 미분은 <em>고유값에만</em> 미분을 적용하는 것과 동치다. 함수 미적분과 미분이 <em>같은 스펙트럼 분해 위에서</em> 깨끗하게 어울린다.</p>
+<hr>
+<h3 id="3-example-의-미분">3. example: $\exp(\tau X)$의 미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $X$ 가 $\tau$ 에 무관하고 대각화 가능할 때, $A(\tau) = \exp(\tau X)$ 를 스펙트럼 분해로 본다.</p>
+<p>$X$의 스펙트럼 분해를 $X = \sum_i \mu_i\, \vert v_i\rangle\langle v^i\vert$ 로 쓰면, 함수 미적분 정의(§6)로:</p>
+$$A(\tau) = \exp(\tau X) = \sum_i e^{\tau \mu_i}\, \vert v_i\rangle\langle v^i\vert$$<p><strong>2)</strong> 즉 $A(\tau)$ 의 고유값은 $e^{\tau \mu_i}$ ($\tau$-의존), 고유벡터는 $\vert v_i\rangle$ ($\tau$-무관, $X$ 와 동일).</p>
+<p><strong>3)</strong> §3의 깔끔한 경우에 해당하므로:</p>
+$$\frac{dA}{d\tau} = \sum_i \frac{d}{d\tau}\big(e^{\tau\mu_i}\big)\, \vert v_i\rangle\langle v^i\vert = \sum_i \mu_i\, e^{\tau\mu_i}\, \vert v_i\rangle\langle v^i\vert$$<p><strong>4)</strong> 이 결과는 $X \cdot A(\tau)$ 와 같다. 직접 계산:</p>
+$$X \cdot A(\tau) = \left(\sum_j \mu_j\, \vert v_j\rangle\langle v^j\vert\right) \left(\sum_i e^{\tau\mu_i}\, \vert v_i\rangle\langle v^i\vert\right)$$<p>$\langle v^j\vert v_i\rangle = \delta^j_i$ 를 적용하면</p>
+$$= \sum_i \mu_i\, e^{\tau\mu_i}\, \vert v_i\rangle\langle v^i\vert$$<p><strong>5)</strong> 따라서 §6에서 본 $\dfrac{d}{d\tau}\exp(\tau X) = X\, \exp(\tau X)$ 가 <em>스펙트럼 분해 위에서 고유값별 스칼라 미분</em>으로 자연스럽게 재현된다.</p>
+<hr>
+<h3 id="4-일반-경우-고유벡터가-변하는-상황">4. 일반 경우: 고유벡터가 변하는 상황<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 일반적으로 $A(\tau)$ 의 고유벡터도 $\tau$ 에 따라 변한다. 이때 $\vert\dot v_i\rangle$ 을 구체적으로 계산하려면 <em>섭동 이론(perturbation theory)</em> 이 필요하다.</p>
+<p><strong>2)</strong> 비퇴화 고유값 ($\lambda_i \neq \lambda_j$ for $i \neq j$) 가정 하에서:</p>
+$$\vert\dot v_i\rangle = \sum_{j\neq i} \frac{\langle v^j\vert\dot A\vert v_i\rangle}{\lambda_i - \lambda_j}\, \vert v_j\rangle$$<p>($\vert v_i\rangle$ 자신 방향의 성분은 정규화 게이지 자유도에 해당하며, 표준적 선택에서 0으로 잡는다.)</p>
+<p><strong>3)</strong> proof) 고유값 식 $A\vert v_i\rangle = \lambda_i \vert v_i\rangle$ 양변을 미분한다.</p>
+$$\dot A\vert v_i\rangle + A\vert \dot v_i\rangle = \dot\lambda_i\vert v_i\rangle + \lambda_i\vert \dot v_i\rangle$$<p>좌변에 $\langle v^j\vert$ ($j \neq i$)를 곱한다. $\langle v^j\vert v_i\rangle = 0$ 이고 $\langle v^j\vert A = \lambda_j\langle v^j\vert$ 이므로:</p>
+$$\langle v^j\vert \dot A\vert v_i\rangle + \lambda_j\langle v^j\vert \dot v_i\rangle = 0 + \lambda_i\langle v^j\vert \dot v_i\rangle$$<p>정리하면:</p>
+$$\langle v^j\vert \dot v_i\rangle = \frac{\langle v^j\vert\dot A\vert v_i\rangle}{\lambda_i - \lambda_j}$$<p>이를 $\vert\dot v_i\rangle = \sum_j \langle v^j\vert\dot v_i\rangle\, \vert v_j\rangle$ 에 대입하면 위 공식이 나온다.</p>
+<p><strong>4)</strong> 분모에 $\lambda_i - \lambda_j$ 가 나오는 점이 핵심이다.</p>
+<ul>
+<li>고유값이 <em>가까울수록</em> 분모가 작아져 고유벡터의 변화율이 커진다 (작은 섭동에도 큰 회전)</li>
+<li>고유값이 *겹치는 경우(퇴화)*는 분모가 0이 돼 위 공식이 직접 적용되지 않는다. 이 경우 퇴화 섭동 이론이 필요하다</li>
+</ul>
+<hr>
+<h3 id="5-정리">5. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 스펙트럼 분해된 행렬을 미분하면 <em>세 항</em>이 나온다: 고유값 변화 + 켓 고유벡터 회전 + 브라 고유벡터 회전.</p>
+<p><strong>2)</strong> 고유벡터가 고정되면 뒤의 두 항이 사라져, <em>고유값에만 미분이 작용하는</em> 깨끗한 구조가 된다. 함수 미적분의 자연스러운 짝.</p>
+<p><strong>3)</strong> $\exp(\tau X)$ 는 이 깨끗한 경우의 대표 예. 고유벡터가 $X$ 의 고유벡터로 고정, 고유값만 $e^{\tau\mu_i}$ 로 변한다.</p>
+<p><strong>4)</strong> 일반 경우엔 고유벡터도 변한다. 비퇴화 고유값에서 $\vert\dot v_i\rangle$ 은 다른 고유벡터들의 합으로 표시되며, 분모 $\lambda_i - \lambda_j$ 가 회전 속도를 결정한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/lie_theory/b_calculus/index.html"><a class="padding default-animation" href="/lie_theory/b_calculus/index.html">Calculus</a><ul id="R-subsections-f73819610fdafc445c5f21f18ba37e95" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_matrix/index.html">(b) SV matrix</a></li>
+            <li class="active " data-nav-id="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html">(b) SV discrete spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html">(b) SV continuous spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_matrix/index.html">(b) MV matrix</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html">(b) MV discrete spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html">(b) MV continuous spectrum</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_lie_group_algebra/index.html"><a class="padding default-animation" href="/lie_theory/b_lie_group_algebra/index.html">Lie group &amp; algebra</a><ul id="R-subsections-a34f317130e80a0a68efa3c35ebb9278" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_operators/index.html"><a class="padding default-animation" href="/lie_theory/b_operators/index.html">b_operators</a><ul id="R-subsections-a4a547684e87b772ab7dceffd5fea0e1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/a_noether_theorem/index.html"><a class="padding" href="/lie_theory/a_noether_theorem/index.html">(b) Noether&#39;s theorem</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 환경 자유도를 어떻게 흡수하는가이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^&lt;$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.
+핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Dyson equation and self-energy :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 환경 자유도를 어떻게 흡수하는가이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^&lt;$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.
+핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Dyson equation and self-energy :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 환경 자유도를 어떻게 흡수하는가이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^&lt;$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.
+핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Dyson equation and self-energy :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 환경 자유도를 어떻게 흡수하는가이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^&lt;$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.
+핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.">
+    <meta itemprop="wordCount" content="2186">
+    <title>(b) Dyson equation and self-energy :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/negf\/b_dyson_self_energy\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/negf/b_dyson_self_energy/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-환경-자유도를-어떻게-흡수하는가">1. 동기: 환경 자유도를 어떻게 흡수하는가</a></li>
+        <li><a href="#2-블록-행렬-분해">2. 블록 행렬 분해</a></li>
+        <li><a href="#3-retarded-self-energy의-도출">3. Retarded self-energy의 도출</a></li>
+        <li><a href="#4-dyson-방정식의-두-형태">4. Dyson 방정식의 두 형태</a></li>
+        <li><a href="#5-lesser-self-energy와-keldysh-방정식">5. Lesser self-energy와 Keldysh 방정식</a></li>
+        <li><a href="#6-복수-환경의-self-energy-분해">6. 복수 환경의 self-energy 분해</a></li>
+        <li><a href="#7-lead-self-energy의-구체적-계산">7. Lead self-energy의 구체적 계산</a></li>
+        <li><a href="#8-wide-band-근사">8. Wide-band 근사</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/negf/index.html"><span itemprop="name">NEGF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Dyson equation and self-energy</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_lesser_greater/index.html" title="(b) Lesser and greater GF (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_keldysh_contour/index.html" title="(b) Keldysh contour formalism (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-dyson-equation-and-self-energy">(b) Dyson equation and self-energy</h1>
+
+<hr>
+<h3 id="1-동기-환경-자유도를-어떻게-흡수하는가">1. 동기: 환경 자유도를 어떻게 흡수하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이전 절들에서 self-energy $\Sigma$ 라는 객체가 반복적으로 등장했다. 표현 $G^R = (E - H_s - \Sigma^R)^{-1}$, lesser self-energy $\Sigma^<$ 의 도입 등. 그러나 $\Sigma$ 가 어디서 오는지, 어떻게 정확히 정의되는지는 자세히 다루지 않았다. 이 절에서 $\Sigma$ 의 도출과 NEGF 의 핵심 방정식인 Dyson 방정식을 정리한다.</p>
+<p>핵심 발상은 다음과 같다. 시스템이 환경과 결합되어 있을 때, 환경의 모든 자유도를 직접 다루는 것은 일반적으로 불가능하다. Lead 가 무한 크기일 수 있기 때문이다. 그러나 우리의 실질적 관심은 시스템 영역에 한정되어 있다. 환경의 영향을 시스템에 작용하는 effective term — self-energy $\Sigma$ — 으로 흡수하면, 시스템만을 명시적으로 다루면서도 환경의 효과를 정확히 포함하는 계산이 가능하다.</p>
+<p>수학적으로 이 절차는 다음과 같이 수행된다.</p>
+<p>(a) 전체 시스템 (시스템 + 환경) 의 Hamiltonian 을 블록 행렬로 분해
+(b) 블록 행렬 역연산 공식을 적용해 시스템 블록의 그린함수를 추출
+(c) 추출된 표현이 effective Hamiltonian $H_s + \Sigma$ 의 그린함수와 동등함을 확인</p>
+<p>이로부터 $\Sigma$ 가 자연스럽게 정의되며, 환경의 모든 영향이 $\Sigma$ 안에 압축된다. 이 절차의 결과를 Dyson 방정식이라 부른다.</p>
+<hr>
+<h3 id="2-블록-행렬-분해">2. 블록 행렬 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 전체 시스템의 분해</strong></p>
+<p>전체 시스템을 시스템 영역 (scattering region, 우리의 관심 영역) 과 환경 영역 (lead, reservoir 등) 으로 나눈다. 전체 Hamiltonian 은 다음 블록 구조를 갖는다.</p>
+$$
+H_{\text{total}} = \begin{pmatrix} H_s & V \\ V^\dagger & H_e \end{pmatrix}
+$$<p>각 블록의 의미:</p>
+<ul>
+<li>$H_s$: 시스템의 Hamiltonian (유한 행렬, 우리가 직접 다루는 영역)</li>
+<li>$H_e$: 환경의 Hamiltonian (일반적으로 무한 행렬, lead 의 모든 자유도)</li>
+<li>$V$: 시스템과 환경 사이의 결합 행렬 (시스템 끝점과 lead 표면 사이의 hopping 등)</li>
+</ul>
+<p>블록의 차원: $H_s$ 는 $N_s \times N_s$ ($N_s$ = 시스템 자유도 수), $H_e$ 는 $N_e \times N_e$ ($N_e$ = 환경 자유도 수, 보통 무한대), $V$ 는 $N_s \times N_e$.</p>
+<p><strong>2) 전체 그린함수도 블록 구조</strong></p>
+<p>전체 retarded 그린함수</p>
+$$
+G_{\text{total}}^R(E) = (E\hat{I} - H_{\text{total}} + i0^+)^{-1}
+$$<p>도 같은 블록 구조이다.</p>
+$$
+G_{\text{total}}^R = \begin{pmatrix} G^R_{ss} & G^R_{se} \\ G^R_{es} & G^R_{ee} \end{pmatrix}
+$$<p>각 블록의 의미:</p>
+<ul>
+<li>$G^R_{ss}$: 시스템 안에서 한 점에서 다른 점으로의 응답 — 우리가 원하는 것</li>
+<li>$G^R_{se}, G^R_{es}$: 시스템과 환경 사이의 응답</li>
+<li>$G^R_{ee}$: 환경 안에서의 응답</li>
+</ul>
+<p>목표: $G^R_{ss}$ 를 명시적으로 표현하기.</p>
+<hr>
+<h3 id="3-retarded-self-energy의-도출">3. Retarded self-energy의 도출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 블록 행렬 역연산 공식</strong></p>
+<p>$2 \times 2$ 블록 행렬의 역연산은 잘 알려진 결과이다.</p>
+$$
+\begin{pmatrix} A & B \\ C & D \end{pmatrix}^{-1} = \begin{pmatrix} \mathcal{S}^{-1} & -\mathcal{S}^{-1}BD^{-1} \\ -D^{-1}C\mathcal{S}^{-1} & D^{-1} + D^{-1}C\mathcal{S}^{-1}BD^{-1} \end{pmatrix}
+$$<p>여기서 $\mathcal{S} = A - BD^{-1}C$ 는 <strong>Schur 보집합 (Schur complement)</strong> 이다. 핵심: 왼쪽 위 블록이 $\mathcal{S}^{-1} = (A - BD^{-1}C)^{-1}$.</p>
+<p>증명은 직접 곱셈으로 가능 — 위 행렬과 원 행렬을 곱하면 항등 행렬이 됨을 확인.</p>
+<p><strong>2) 우리 케이스에 적용</strong></p>
+<p>$(z\hat{I} - H_{\text{total}})$ 의 블록 분해, $z = E + i0^+$:</p>
+$$
+A = z\hat{I}_s - H_s, \quad B = -V, \quad C = -V^\dagger, \quad D = z\hat{I}_e - H_e
+$$<p>$D^{-1} = (E - H_e + i0^+)^{-1} = g_e^R(E)$ 가 isolated 환경 (시스템과 결합되지 않은) 의 retarded 그린함수.</p>
+<p>Schur 보집합</p>
+$$
+\mathcal{S} = (z\hat{I}_s - H_s) - (-V)\,g_e^R\,(-V^\dagger) = z\hat{I}_s - H_s - V\,g_e^R(E)\,V^\dagger
+$$<p>따라서</p>
+$$
+G^R_{ss}(E) = \mathcal{S}^{-1} = \bigl[E\hat{I}_s - H_s - V\,g_e^R(E)\,V^\dagger\bigr]^{-1}
+$$<p><strong>3) Retarded self-energy의 정의</strong></p>
+<p>위 표현에서 자연스럽게 다음을 정의한다.</p>
+$$
+\boxed{\Sigma^R(E) := V\,g_e^R(E)\,V^\dagger}
+$$<p>이 객체를 <strong>retarded self-energy</strong> 라 한다. $\Sigma^R$ 은 시스템 차원 ($N_s \times N_s$) 의 행렬 함수이며, 환경의 모든 정보 ($g_e^R, V$) 가 압축되어 들어가 있다.</p>
+<p>그 결과로 시스템 retarded 그린함수가</p>
+$$
+G^R(E) = \bigl[E\hat{I}_s - H_s - \Sigma^R(E)\bigr]^{-1}
+$$<p>으로 표현된다 (이후 $G^R_{ss}$ 의 첨자 $ss$ 는 생략).</p>
+<p><strong>4) Self-energy의 구조</strong></p>
+<p>$\Sigma^R(E)$ 의 일반 구조:</p>
+$$
+\Sigma^R(E) = \Delta(E) - \frac{i}{2}\Gamma(E)
+$$<ul>
+<li>$\Delta(E) = \text{Re}\,\Sigma^R$: 실수 부분, 환경 결합으로 인한 에너지 shift</li>
+<li>$\Gamma(E) = -2\,\text{Im}\,\Sigma^R$: 양의 정부호, 환경으로의 전이 비율</li>
+</ul>
+<p>$\Gamma$ 의 양수성은 환경이 정상적인 (안정한) reservoir 라는 물리적 조건에서 나온다. 환경의 spectral function $a_e(E) = -2\,\text{Im}\,g_e^R(E)$ 가 양의 정부호이므로 $\Gamma = V\,a_e\,V^\dagger$ 도 양의 정부호.</p>
+<p><strong>5) Effective Hamiltonian의 비-Hermitian 성격</strong></p>
+<p>Effective Hamiltonian</p>
+$$
+H_{\text{eff}}(E) = H_s + \Sigma^R(E)
+$$<p>은 일반적으로 자기수반이 아니다 ($\Sigma^R$ 의 허수부 때문). 이전 절에서 본 것처럼:</p>
+<ul>
+<li>모든 고유값이 복소 평면 하반평면으로 이동 (허수부 $< 0$)</li>
+<li>복소 고유값의 허수부가 해당 상태의 유한 수명</li>
+<li>Spectral function 이 델타 함수에서 Lorentzian 으로 broadening</li>
+</ul>
+<p>$\Sigma^R$ 이 $H_s$ 와 가환하면 (단순한 경우) $H_{\text{eff}}$ 가 비-Hermitian normal 이지만, 일반적으로 그렇지 않다.</p>
+<hr>
+<h3 id="4-dyson-방정식의-두-형태">4. Dyson 방정식의 두 형태<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Self-energy 가 도출되었으므로, 시스템 retarded 그린함수의 관계식을 Dyson 방정식 형태로 정리한다.</p>
+<p><strong>1) Closed form</strong></p>
+<p>이미 §3 에서</p>
+$$
+G^R(E) = \bigl[E\hat{I}_s - H_s - \Sigma^R(E)\bigr]^{-1}
+$$<p>으로 표현했다. 이를 <strong>closed form</strong> 또는 <strong>resolvent form</strong> 이라 한다. 수치 계산에서는 보통 이 형태를 사용 — 행렬 역연산으로 $G^R$ 을 직접 얻는다.</p>
+<p><strong>2) Perturbative form</strong></p>
+<p>위 표현에서 $G^R\,(E - H_s - \Sigma^R) = \hat{I}$ 또는 $(E - H_s)\,G^R = \hat{I} + \Sigma^R\,G^R$ 을 정리하면</p>
+$$
+G^R = (E - H_s)^{-1} + (E - H_s)^{-1}\,\Sigma^R\,G^R
+$$<p>여기서 $G_0^R(E) := (E - H_s + i0^+)^{-1}$ 는 환경이 없을 때 (즉 $\Sigma^R = 0$) 의 시스템 retarded 그린함수. 이를 사용하면</p>
+$$
+\boxed{G^R = G_0^R + G_0^R\,\Sigma^R\,G^R}
+$$<p>이를 <strong>Dyson 방정식의 perturbative form</strong> 이라 한다. 환경 없는 그린함수 $G_0^R$ 에 환경 보정 항 $G_0^R \Sigma^R G^R$ 이 더해진 형태.</p>
+<p><strong>3) 두 형태의 동등성</strong></p>
+<p>두 형태는 수학적으로 완전히 동등하다. 한쪽에서 다른 쪽으로의 변환은 다음과 같다.</p>
+<p>Perturbative → closed: $G^R = G_0^R + G_0^R \Sigma^R G^R$ 을 $G^R$ 에 대해 풀면 $G^R = (G_0^{R\,-1} - \Sigma^R)^{-1} = (E - H_s - \Sigma^R)^{-1}$.</p>
+<p>Closed → perturbative: 위에서 도출한 그대로.</p>
+<p><strong>4) 기하급수 전개</strong></p>
+<p>Perturbative form 을 반복 대입하면 기하급수가 얻어진다.</p>
+$$
+G^R = G_0^R + G_0^R \Sigma^R G_0^R + G_0^R \Sigma^R G_0^R \Sigma^R G_0^R + \ldots = \sum_{n=0}^{\infty} G_0^R (\Sigma^R G_0^R)^n
+$$<p>각 항의 물리적 의미: 시스템에서 출발한 입자가 $\Sigma^R$ 의 매개로 환경과 0번, 1번, 2번, &hellip; 상호작용한 후 응답하는 과정. 다체 NEGF 에서 이 perturbative 전개가 직접적인 산란 항을 나타내며, 다이어그램 표현으로 시각화된다.</p>
+<p><strong>5) 사용 맥락</strong></p>
+<p>두 형태가 동등하지만, 사용 맥락에 따라 한쪽이 편하다.</p>
+<ul>
+<li><strong>수치 계산</strong>: closed form (행렬 역연산)</li>
+<li><strong>분석적 분석</strong>: 두 형태 모두 사용</li>
+<li><strong>다체 NEGF</strong>: perturbative form (Feynman 다이어그램과 직접 연결)</li>
+</ul>
+<hr>
+<h3 id="5-lesser-self-energy와-keldysh-방정식">5. Lesser self-energy와 Keldysh 방정식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§3 의 도출은 retarded self-energy 에 대한 것이었다. 비슷한 절차로 lesser self-energy 가 정의되며, 이로부터 점유 정보가 시스템으로 전달되는 방식이 표현된다.</p>
+<p><strong>1) Lesser self-energy의 정의</strong></p>
+$$
+\boxed{\Sigma^<(E) := V\,g_e^<(E)\,V^\dagger}
+$$<p>여기서 $g_e^<(E)$ 는 isolated 환경의 lesser 그린함수.</p>
+<p><strong>2) 환경이 평형에 있을 때</strong></p>
+<p>환경이 평형 상태이면 이전 절의 평형 분해</p>
+$$
+g_e^<(E) = i\,f(E)\,a_e(E)
+$$<p>가 성립한다. 여기서 $a_e = -2\,\text{Im}\,g_e^R$ 는 환경의 spectral function, $f(E)$ 는 환경의 분포 함수.</p>
+<p>대입하면</p>
+$$
+\Sigma^<(E) = i\,f(E)\,V\,a_e(E)\,V^\dagger = i\,f(E)\,\Gamma(E)
+$$<p>여기서 $\Gamma(E) = V\,a_e\,V^\dagger$ 는 §3 에서 정의한 결합 강도. $\Gamma = -2\,\text{Im}\,\Sigma^R$ 의 관계가 검증된다 (양쪽 모두 $V\,a_e\,V^\dagger$).</p>
+<p><strong>3) Keldysh 방정식</strong></p>
+<p>블록 행렬 분해를 lesser 그린함수에도 적용하면 (Langreth 룰 등 추가 도구가 필요하나, 결과만 인용):</p>
+$$
+\boxed{G^<(E) = G^R(E)\,\Sigma^<(E)\,G^A(E)}
+$$<p>이를 <strong>Keldysh 방정식</strong> 또는 <strong>lesser Dyson 방정식</strong> 이라 한다. 우변의 각 항의 역할:</p>
+<ul>
+<li>$\Sigma^<(E)$: 환경에서 시스템으로 주입되는 점유 정보 (소스 항)</li>
+<li>$G^R(E), G^A(E)$: 시스템 내부의 동역학적 응답</li>
+<li>곱 $G^R \Sigma^< G^A$: 환경의 점유가 시스템 안에서 어떻게 분포되는지</li>
+</ul>
+<p><strong>4) 평형 극한 확인</strong></p>
+<p>환경이 평형이고 시스템이 환경과 같은 화학 퍼텐셜에 있다면</p>
+$$
+G^< = G^R\,(i f\,\Gamma)\,G^A = i f\,(G^R \Gamma G^A) = i f\,A
+$$<p>여기서 $A = G^R \Gamma G^A$ 는 §3 의 표현. 평형 분해 $G^< = i f A$ 로 환원. ✓</p>
+<hr>
+<h3 id="6-복수-환경의-self-energy-분해">6. 복수 환경의 self-energy 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>실제 NEGF 적용에서 환경은 보통 여러 개의 독립적 reservoir 로 구성된다 (예: 좌측 lead, 우측 lead). 각 reservoir 가 시스템의 다른 영역과 결합되며 서로는 결합되지 않는다 ($V_L, V_R$ 이 서로 다른 영역에 작용).</p>
+<p><strong>1) Block decomposition of environment</strong></p>
+<p>환경 자체가 다시 두 부분 (또는 더 많은 부분) 으로 분해되면</p>
+$$
+H_e = \begin{pmatrix} H_L & 0 \\ 0 & H_R \end{pmatrix}, \quad V = \begin{pmatrix} V_L & V_R \end{pmatrix}
+$$<p>(블록 대각, 좌-우 reservoir 사이는 직접 결합되지 않음).</p>
+<p><strong>2) Self-energy의 합 형태</strong></p>
+<p>이 블록 구조에서 $\Sigma^R = V\,g_e^R\,V^\dagger$ 가</p>
+$$
+\Sigma^R(E) = V_L\,g_L^R(E)\,V_L^\dagger + V_R\,g_R^R(E)\,V_R^\dagger = \Sigma_L^R(E) + \Sigma_R^R(E)
+$$<p>각 reservoir 가 독립적으로 self-energy 에 기여한다. 마찬가지로</p>
+$$
+\Sigma^<(E) = \Sigma_L^<(E) + \Sigma_R^<(E)
+$$<p>여기서 각 reservoir 가 자신의 평형 분포로 점유 정보를 주입.</p>
+$$
+\Sigma_L^<(E) = i\,f_L(E)\,\Gamma_L(E), \quad \Sigma_R^<(E) = i\,f_R(E)\,\Gamma_R(E)
+$$<p>$\Gamma_{L,R}(E) = -2\,\text{Im}\,\Sigma_{L,R}^R(E)$.</p>
+<p><strong>3) Keldysh 방정식의 두 reservoir 형태</strong></p>
+<p>위를 Keldysh 방정식에 대입하면</p>
+$$
+G^<(E) = G^R(E)\,\bigl[i\,f_L(E)\,\Gamma_L(E) + i\,f_R(E)\,\Gamma_R(E)\bigr]\,G^A(E)
+$$<p>이전 절에서 다룬 표현. 시스템 내부 점유가 두 reservoir 의 분포의 가중 평균으로 결정.</p>
+<hr>
+<h3 id="7-lead-self-energy의-구체적-계산">7. Lead self-energy의 구체적 계산<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>실제 NEGF 응용에서 $\Sigma_{L,R}^R$ 의 계산은 lead 의 구조에 따라 진행된다.</p>
+<p><strong>1) 일반 절차</strong></p>
+<p>(a) Lead Hamiltonian $H_L$ 의 정의. 보통 반복 단위 셀로 구성된 tight-binding 모델 또는 연속체 모델.</p>
+<p>(b) Isolated lead 의 <strong>surface 그린함수</strong> $g_L^R(E)$ 계산. 무한 lead 의 표면 행렬 요소 — 시스템과 결합되는 끝점에서의 retarded 그린함수.</p>
+<p>(c) Lead-시스템 결합 행렬 $V_L$ 의 정의 (lead 의 표면 셀과 시스템 끝점 사이의 결합).</p>
+<p>(d) Self-energy 도출: $\Sigma_L^R = V_L\,g_L^R\,V_L^\dagger$.</p>
+<p>여기서 가장 어려운 부분은 (b) — 무한 lead 의 surface 그린함수 계산이다. 직접적인 방법으로 무한 차원 행렬 역연산이 필요하지만, 일반적으로 반복적 알고리즘 (Sancho-Lopez-Rubio, recursive Green&rsquo;s function 등) 으로 효율적으로 계산된다.</p>
+<p><strong>2) 1D tight-binding lead 의 예</strong></p>
+<p>가장 단순한 lead 모델로 일정한 on-site 에너지 $\epsilon_0$ 과 nearest-neighbor hopping $-t$ 의 1D tight-binding chain 을 고려한다.</p>
+$$
+H_L = \sum_{i \geq 1}\epsilon_0\,|i\rangle\langle i| - t\sum_{i \geq 1}\bigl[|i\rangle\langle i+1| + |i+1\rangle\langle i|\bigr]
+$$<p>(여기서 $i = 1$ 이 lead 의 표면, $i = 2, 3, \ldots$ 가 내부.)</p>
+<p>이 lead 의 surface 그린함수 $g_L^R(E) = \langle 1|G_L^R|1\rangle$ 는 명시적으로</p>
+$$
+g_L^R(E) = \frac{E - \epsilon_0 - i\sqrt{(2t)^2 - (E - \epsilon_0)^2}}{2t^2}
+$$<p>(에너지 $|E - \epsilon_0| < 2t$ 영역, 즉 lead 의 band 안에서.) 이 결과는 무한 chain 의 그린함수의 반복적 정의 $g(E) = 1/(E - \epsilon_0 - t^2 g(E))$ 의 해 (이차 방정식) 에서 도출된다.</p>
+<p>Band 안에서 허수부가 유한: $\text{Im}\,g_L^R = -\sqrt{(2t)^2 - (E-\epsilon_0)^2}/(2t^2) < 0$. 이는 lead 가 산란 영역의 입자를 받을 수 있다는 사실 — 즉 산란 영역 → lead 로의 전이가 가능함을 의미.</p>
+<p>Band 밖에서 ($|E - \epsilon_0| > 2t$) 허수부가 0 — lead 가 입자를 받지 않음. 결정학적 band gap 영역.</p>
+<p><strong>3) 시스템과의 결합</strong></p>
+<p>시스템의 끝점이 lead 의 표면과 결합 강도 $-t'$ 으로 연결되어 있다면 ($V_L = -t'\,|x_{\text{end}}\rangle\langle 1|$ 형태)</p>
+$$
+\Sigma_L^R(E) = t'^2\,g_L^R(E)\,|x_{\text{end}}\rangle\langle x_{\text{end}}|
+$$<p>시스템 끝점에서 작용하는 self-energy. 일반적으로 시스템의 lead 와 결합된 영역에만 작용한다.</p>
+<hr>
+<h3 id="8-wide-band-근사">8. Wide-band 근사<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>복잡한 lead self-energy 계산을 피하는 단순화 방법.</p>
+<p><strong>1) 근사의 내용</strong></p>
+<p>Lead 의 DOS 가 산란 영역의 에너지 스케일에서 천천히 변하는 경우, $\Sigma_L^R(E)$ 를 에너지 독립 상수로 근사할 수 있다.</p>
+$$
+\Sigma_L^R(E) \approx \Delta_L - \frac{i}{2}\Gamma_L
+$$<p>여기서 $\Delta_L, \Gamma_L$ 가 모두 에너지 독립 상수. 보통 실수 shift 는 chemical potential 정의에 흡수되어 $\Delta_L = 0$ 으로 다룬다.</p>
+$$
+\boxed{\Sigma_L^R \approx -\frac{i}{2}\Gamma_L \quad (\text{wide-band 근사})}
+$$<p>비슷하게 우측 lead 도 $\Sigma_R^R \approx -i\Gamma_R/2$.</p>
+<p><strong>2) 적용 조건</strong></p>
+<p>근사가 유효한 조건:</p>
+<ul>
+<li>Lead 의 band 폭이 산란 영역의 관련 에너지 스케일보다 훨씬 큼</li>
+<li>관심 에너지 영역이 lead 의 band edge 에서 멀리 떨어져 있음</li>
+<li>Lead 의 DOS 가 관심 에너지 영역에서 평탄함</li>
+</ul>
+<p>응용에서 자주 만족된다 — 큰 금속 전극이나 두꺼운 반도체 lead 가 wide-band 한계에 잘 부합.</p>
+<p><strong>3) 장점과 한계</strong></p>
+<p>장점:</p>
+<ul>
+<li>$\Gamma$ 가 상수: 모든 에너지에서 동일한 수명, 계산 단순화</li>
+<li>$\Sigma^R = -i\Gamma/2$ 가 단순한 비-Hermitian normal: 효과 Hamiltonian 분석이 쉬움</li>
+<li>Spectral function 의 명확한 Lorentzian 구조</li>
+</ul>
+<p>한계:</p>
+<ul>
+<li>결합 강도의 에너지 의존성을 무시</li>
+<li>Band edge 근처에서 부정확 (DOS 가 급격히 변화)</li>
+<li>Lead 의 미세 구조 (Van Hove 특이점 등) 효과를 놓침</li>
+</ul>
+<p>NEGF 의 첫 분석에서는 wide-band 근사로 직관을 얻고, 정확한 결과를 위해서는 전체 $\Sigma^R(E)$ 의 에너지 의존성을 고려한다.</p>
+<hr>
+<p><strong>example1) 단일 레벨 시스템 + 두 reservoir</strong></p>
+<p>가장 단순한 NEGF 시스템: 한 개의 에너지 레벨 $\epsilon_0$ 가 두 reservoir 와 결합 (단위 자유도 $N_s = 1$).</p>
+$$
+H_s = \epsilon_0
+$$<p>Wide-band 근사: $\Sigma_L^R = -i\Gamma_L/2$, $\Sigma_R^R = -i\Gamma_R/2$.</p>
+<p>sol)</p>
+<p>Retarded 그린함수:</p>
+$$
+G^R(E) = \frac{1}{E - \epsilon_0 + i(\Gamma_L + \Gamma_R)/2}
+$$<p>스펙트럼 함수:</p>
+$$
+A(E) = -2\,\text{Im}\,G^R(E) = \frac{\Gamma_L + \Gamma_R}{(E - \epsilon_0)^2 + (\Gamma_L + \Gamma_R)^2/4}
+$$<p>폭 $\Gamma = \Gamma_L + \Gamma_R$ 의 Lorentzian. 두 reservoir 가 각각 broadening 에 기여하며, 합이 총 broadening.</p>
+<p>Lesser 그린함수:</p>
+$$
+G^<(E) = G^R(E)\,\bigl[i f_L \Gamma_L + i f_R \Gamma_R\bigr]\,G^A(E) = \frac{i(f_L\Gamma_L + f_R\Gamma_R)}{(E - \epsilon_0)^2 + (\Gamma_L + \Gamma_R)^2/4}
+$$<p>평형에서 ($f_L = f_R = f$): $G^< = i f\,A$ 회복.</p>
+<p>비평형 점유 (효과 분포 함수):</p>
+$$
+f_{\text{neq}}(E) = -i\,\frac{G^<(E)}{A(E)} = \frac{f_L(E)\,\Gamma_L + f_R(E)\,\Gamma_R}{\Gamma_L + \Gamma_R}
+$$<p>두 reservoir 분포의 결합-강도 가중 평균.</p>
+<p>전류 (Landauer-Büttiker):</p>
+$$
+I = \frac{e}{h}\int dE\,T(E)\,[f_L(E) - f_R(E)], \quad T(E) = \frac{\Gamma_L\,\Gamma_R}{(E - \epsilon_0)^2 + (\Gamma_L + \Gamma_R)^2/4}
+$$<p>투과 함수 $T(E)$ 도 Lorentzian. 최대 투과는 $E = \epsilon_0$ 에서 $T_{\max} = 4\Gamma_L\Gamma_R/(\Gamma_L + \Gamma_R)^2$. $\Gamma_L = \Gamma_R$ 일 때 $T_{\max} = 1$ (완전 투과).</p>
+<hr>
+<p><strong>example2) 1D tight-binding 시스템의 Dyson 방정식</strong></p>
+<p>시스템: 1D tight-binding chain 의 $N$ 개 사이트 ($H_s$ = nearest-neighbor hopping $-t_s$, on-site $\epsilon_s$).</p>
+<p>Lead: 양쪽에 1D tight-binding lead (on-site $\epsilon_L$, hopping $-t_L$), 시스템과의 결합 강도 $-t'$.</p>
+<p>sol)</p>
+<p>좌측 lead self-energy (시스템의 첫 번째 사이트에 작용):</p>
+$$
+\Sigma_L^R(E)_{11} = (t')^2\,g_L^R(E)
+$$<p>다른 행렬 요소는 0.</p>
+<p>우측 lead self-energy (시스템의 마지막 사이트에 작용):</p>
+$$
+\Sigma_R^R(E)_{NN} = (t')^2\,g_R^R(E)
+$$<p>총 self-energy</p>
+$$
+\Sigma^R(E) = \begin{pmatrix} (t')^2 g_L^R & 0 & \cdots & 0 \\ 0 & 0 & \cdots & 0 \\ \vdots & & & \vdots \\ 0 & \cdots & 0 & (t')^2 g_R^R \end{pmatrix}
+$$<p>만 두 끝점에서만 0 아닌 행렬.</p>
+<p>System retarded 그린함수</p>
+$$
+G^R(E) = \bigl[E\hat{I} - H_s - \Sigma^R(E)\bigr]^{-1}
+$$<p>$N \times N$ 행렬의 역연산. 작은 $N$ 에서는 직접 계산, 큰 $N$ 에서는 recursive Green&rsquo;s function 알고리즘이 효율적이다.</p>
+<p>투과 함수</p>
+$$
+T(E) = \text{Tr}\bigl[\Gamma_L\,G^R\,\Gamma_R\,G^A\bigr] = \Gamma_L\,\Gamma_R\,|G^R_{1N}(E)|^2
+$$<p>여기서 $\Gamma_{L,R}(E) = -2\,\text{Im}\,\Sigma_{L,R}^R$, 그리고 $G^R_{1N}$ 은 시스템의 첫 사이트에서 마지막 사이트로의 그린함수 행렬 요소. $|G^R_{1N}|^2$ 가 양 끝점 사이의 양자 산란 진폭의 제곱이다.</p>
+<p>이 결과는 chain 의 양 끝점 사이의 양자 수송 ballistic 전류를 정확히 기술한다. 양 lead 가 충분히 평탄한 band 를 가지면 wide-band 근사로 더 단순화 가능.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/negf/b_negf_overview/index.html"><a class="padding" href="/greens_function/negf/b_negf_overview/index.html">(b) NEGF overview</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_retarded_advanced/index.html"><a class="padding" href="/greens_function/negf/b_retarded_advanced/index.html">(b) Retarded &amp; advanced GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_spectral_function/index.html"><a class="padding" href="/greens_function/negf/b_spectral_function/index.html">(b) Spectral function</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_lesser_greater/index.html"><a class="padding" href="/greens_function/negf/b_lesser_greater/index.html">(b) Lesser and greater GF</a></li>
+            <li class="active " data-nav-id="/greens_function/negf/b_dyson_self_energy/index.html"><a class="padding" href="/greens_function/negf/b_dyson_self_energy/index.html">(b) Dyson equation and self-energy</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_keldysh_contour/index.html"><a class="padding" href="/greens_function/negf/b_keldysh_contour/index.html">(b) Keldysh contour formalism</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_langreth_rules/index.html"><a class="padding" href="/greens_function/negf/b_langreth_rules/index.html">(b) Langreth rules</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

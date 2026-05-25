@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.
+이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.
+2. 편미분 (성분별)1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) MV matrix :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.
+이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.
+2. 편미분 (성분별)1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.">
+    <meta property="og:url" content="http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) MV matrix :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.
+이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.
+2. 편미분 (성분별)1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie theory">
+    <meta itemprop="name" content="(b) MV matrix :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.
+이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.
+2. 편미분 (성분별)1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.">
+    <meta itemprop="wordCount" content="748">
+    <title>(b) MV matrix :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_theory\/b_calculus\/b_mv_matrix\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_theory/b_calculus/b_mv_matrix/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기">1. 동기</a></li>
+        <li><a href="#2-편미분-성분별">2. 편미분 (성분별)</a></li>
+        <li><a href="#3-기본-규칙">3. 기본 규칙</a></li>
+        <li><a href="#4-혼합-편미분과-클레로-정리">4. 혼합 편미분과 클레로 정리</a></li>
+        <li><a href="#5-다변수-테일러-전개">5. 다변수 테일러 전개</a></li>
+        <li><a href="#6-방향-미분">6. 방향 미분</a></li>
+        <li><a href="#7-example--다변수-미분">7. example:  다변수 미분</a></li>
+        <li><a href="#8-정리">8. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) MV matrix</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html" title="(b) SV continuous spectrum (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html" title="(b) MV discrete spectrum (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_theory" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-mv-matrix">(b) MV matrix</h1>
+
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.</p>
+<p>이 장에서는 §5의 <em>다변수 판</em> 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.</p>
+<h3 id="2-편미분-성분별">2. 편미분 (성분별)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 <em>편미분</em>은 한 변수만 변화시키면서 미분한 것이다.</p>
+$$\frac{\partial A}{\partial \tau^a} = \begin{pmatrix} \dfrac{\partial a_{11}}{\partial \tau^a} & \dfrac{\partial a_{12}}{\partial \tau^a} \\ \dfrac{\partial a_{21}}{\partial \tau^a} & \dfrac{\partial a_{22}}{\partial \tau^a} \end{pmatrix}$$<p>($2 \times 2$의 예지만 일반 크기에 그대로 일반화된다.)</p>
+<p><strong>2)</strong> §5와 정확히 같은 정의 — <em>각 성분을 편미분</em>. 결과도 같은 크기의 행렬.</p>
+<p><strong>3)</strong> 매개변수 $n$ 개에 대응되는 $n$ 개의 편미분 행렬이 있다.</p>
+<h3 id="3-기본-규칙">3. 기본 규칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§5의 모든 규칙이 편미분으로 그대로 옮겨진다 (각 매개변수 $\tau^a$ 에 독립적으로 적용).</p>
+<p><strong>1)</strong> <em>선형성</em>:</p>
+$$\frac{\partial}{\partial \tau^a}(\alpha A + \beta B) = \alpha\, \frac{\partial A}{\partial \tau^a} + \beta\, \frac{\partial B}{\partial \tau^a}$$<p><strong>2)</strong> <em>곱셈 규칙</em> (순서 조심):</p>
+$$\frac{\partial(AB)}{\partial \tau^a} = \frac{\partial A}{\partial \tau^a}\, B + A\, \frac{\partial B}{\partial \tau^a}$$<p>행렬 곱셈이 교환적이지 않으므로 순서를 보존해야 한다.</p>
+<p><strong>3)</strong> <em>역행렬 편미분</em>:</p>
+$$\frac{\partial (A^{-1})}{\partial \tau^a} = -A^{-1}\, \frac{\partial A}{\partial \tau^a}\, A^{-1}$$<h3 id="4-혼합-편미분과-클레로-정리">4. 혼합 편미분과 클레로 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 두 번 편미분: $\dfrac{\partial^2 A}{\partial \tau^a \partial \tau^b}$.</p>
+<p><strong>2)</strong> <em>클레로 (Clairaut/Schwarz) 정리</em>: $A$ 가 매끄럽다면 ($C^2$ 이상) 미분 순서를 바꿔도 결과가 같다.</p>
+$$\frac{\partial^2 A}{\partial \tau^a \partial \tau^b} = \frac{\partial^2 A}{\partial \tau^b \partial \tau^a}$$<p><strong>3)</strong> 즉 <em>미분의 순서는 교환 가능</em>하다. 보통의 다변수 미적분에서 잘 알려진 사실을 각 성분에 적용한 것에 불과하다.</p>
+<p><strong>4)</strong> <em>주의 — 미분 순서 ≠ 군 곱셈 순서</em>: 클레로는 <em>미분 작용의 순서</em>에 대한 진술이다. 한편 <em>군 곱셈</em>의 순서는 여전히 보존되어야 한다. $\exp(\tau X)\exp(\sigma Y)$ 와 $\exp(\sigma Y)\exp(\tau X)$ 는 일반적으로 다르다 (§10.6). 이 두 가지가 어떻게 양립하는지가 §14 리 괄호의 핵심.</p>
+<h3 id="5-다변수-테일러-전개">5. 다변수 테일러 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 매끄러운 $g(\tau)$ 가 $g(0) = I$ 를 만족할 때, 단위원 근처에서의 전개:</p>
+$$g(\tau) = I + \sum_a \tau^a\, X_a + \frac{1}{2}\sum_{a,b} \tau^a \tau^b\, X_{ab} + O(\tau^3)$$<p>여기서:</p>
+<ul>
+<li>$X_a = \left.\dfrac{\partial g}{\partial \tau^a}\right|_{\tau=0}$ — 생성자 (§10)</li>
+<li>$X_{ab} = \left.\dfrac{\partial^2 g}{\partial \tau^a \partial \tau^b}\right|_{\tau=0}$ — 2차 미분 계수</li>
+</ul>
+<p><strong>2)</strong> 클레로에 의해 $X_{ab} = X_{ba}$ — <em>대칭</em> 계수다.</p>
+<p><strong>3)</strong> <em>주의</em>: $X_{ab}$ 는 일반적으로 <em>생성자의 곱</em> $X_a X_b$ 와 같지 않다. 매개변수화 $g$ 가 어떻게 정의됐는지에 따라 다르다.</p>
+<p><strong>4)</strong> <em>특수 경우</em> $g(\tau) = \exp\bigl(\sum_a \tau^a X_a\bigr)$ 라면, 지수 사상의 테일러 급수에서</p>
+$$g(\tau) = I + \tau^a X_a + \frac{1}{2}(\tau^a X_a)(\tau^b X_b) + \cdots = I + \tau^a X_a + \frac{1}{2}\tau^a \tau^b X_a X_b + \cdots$$<p>(아인슈타인 합 규약 사용.) 따라서 $X_{ab} = \dfrac{1}{2}(X_a X_b + X_b X_a)$ — <em>대칭화</em> 된 곱. 클레로의 $X_{ab} = X_{ba}$ 와 일치한다.</p>
+<h3 id="6-방향-미분">6. 방향 미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 방향 벡터 $v = (v^1, \ldots, v^n) \in \mathbb{R}^n$ 이 주어졌을 때, 그 방향으로의 미분은</p>
+$$\left.\frac{d}{dt}g(tv)\right|_{t=0} = \sum_a v^a\, X_a$$<p><strong>2)</strong> 즉 <em>모든 방향</em>의 미분이 <em>생성자들의 일차 결합</em>으로 표현된다.</p>
+<p><strong>3)</strong> 이는 <em>단위원에서의 모든 가능한 출발 방향</em>이 생성자 $X_1, \ldots, X_n$ 의 일차 결합으로 만들어짐을 의미한다.</p>
+<p><strong>4)</strong> 따라서 생성자들이 <em>벡터 공간</em>을 이룬다. 1매개변수 경우의 1차원 생성자 공간 (§9.7.6) 의 다변수 일반화. 이 벡터 공간이 §14 이후의 <em>접공간/리 대수</em> 의 토대.</p>
+<h3 id="7-example--다변수-미분">7. example: $SO(3)$ 다변수 미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $SO(3)$ 의 자연스러운 매개변수화 (지수 사상 이용):</p>
+$$g(\tau^1, \tau^2, \tau^3) = \exp(\tau^1 L_x + \tau^2 L_y + \tau^3 L_z)$$<p>벡터 $(\tau^1, \tau^2, \tau^3)$ 가 (회전축 × 회전각도) 를 나타낸다. $\tau = 0$ 에서 $g(0) = \exp(0) = I$.</p>
+<p><strong>2)</strong> 편미분 (테일러 1차 항):</p>
+$$\frac{\partial g}{\partial \tau^a}\bigg|_{\tau=0} = L_a \quad (a = x, y, z)$$<p>§10.5 의 세 생성자 $L_x, L_y, L_z$ 가 정확히 이 편미분.</p>
+<p><strong>3)</strong> 임의의 방향 $v = (v^1, v^2, v^3)$ 으로의 방향 미분:</p>
+$$\left.\frac{d}{dt}g(tv)\right|_{t=0} = v^1 L_x + v^2 L_y + v^3 L_z$$<p>이는 <em>축 $v$ 방향</em>의 무한소 회전 생성자. 회전축 방향이 $v / |v|$, 회전 속도가 $|v|$.</p>
+<p><strong>4)</strong> 2차 미분 계수 (위 매개변수화에서):</p>
+$$X_{ab} = \left.\frac{\partial^2 g}{\partial \tau^a \partial \tau^b}\right|_{\tau=0} = \frac{1}{2}(L_a L_b + L_b L_a)$$<p>(대칭화. §5.4 의 일반론과 일치.) 이 <em>대칭</em> 부분이 클레로로 보장된다. 한편 <em>반대칭</em> 부분 $\frac{1}{2}(L_a L_b - L_b L_a)$ 는 <em>리 괄호</em> $\frac{1}{2}[L_a, L_b]$ — 이는 매개변수화의 2차 미분에는 나타나지 않지만 군 곱셈의 비교환성에서 나타난다 (§14).</p>
+<h3 id="8-정리">8. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>편미분</em>은 한 매개변수만 미분 — 성분별 정의는 §5와 같다.</p>
+<p><strong>2)</strong> <em>기본 규칙</em>(선형성, 곱셈 규칙, 역행렬 미분) 모두 편미분으로 그대로 옮겨진다. 곱셈 규칙은 <em>순서 조심</em>.</p>
+<p><strong>3)</strong> <em>클레로 정리</em>: 매끄러운 $g$ 의 혼합 편미분은 <em>순서 교환 가능</em>. 이는 미분 순서에 대한 진술이지, 군 곱셈 순서에 대한 것이 아니다.</p>
+<p><strong>4)</strong> <em>다변수 테일러 전개</em>: 단위원 근처에서</p>
+$$g(\tau) = I + \tau^a X_a + \frac{1}{2}\tau^a \tau^b X_{ab} + O(\tau^3)$$<p>클레로에 의해 $X_{ab} = X_{ba}$.</p>
+<p><strong>5)</strong> <em>방향 미분</em>은 생성자들의 일차 결합. 따라서 <em>생성자 공간이 벡터 공간</em>이다.</p>
+<p><strong>6)</strong> 이 도구들이 §12 (스펙트럼 미분의 다변수 판), §13 (연속 스펙트럼), §14 (리 괄호) 의 토대가 된다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/lie_theory/b_calculus/index.html"><a class="padding default-animation" href="/lie_theory/b_calculus/index.html">Calculus</a><ul id="R-subsections-f73819610fdafc445c5f21f18ba37e95" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_matrix/index.html">(b) SV matrix</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html">(b) SV discrete spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html">(b) SV continuous spectrum</a></li>
+            <li class="active " data-nav-id="/lie_theory/b_calculus/b_mv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_matrix/index.html">(b) MV matrix</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html">(b) MV discrete spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html">(b) MV continuous spectrum</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_lie_group_algebra/index.html"><a class="padding default-animation" href="/lie_theory/b_lie_group_algebra/index.html">Lie group &amp; algebra</a><ul id="R-subsections-a34f317130e80a0a68efa3c35ebb9278" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_operators/index.html"><a class="padding default-animation" href="/lie_theory/b_operators/index.html">b_operators</a><ul id="R-subsections-a4a547684e87b772ab7dceffd5fea0e1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/a_noether_theorem/index.html"><a class="padding" href="/lie_theory/a_noether_theorem/index.html">(b) Noether&#39;s theorem</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

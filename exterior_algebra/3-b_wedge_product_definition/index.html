@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 왜 새 객체가 필요한가§2 에서 반대칭 다중선형 함수 를 봤다. 이건 함수 다. 다시 말해 벡터들을 받아서 숫자 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.
+함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. “방향이 붙은 평행사변형 그 자체” 를 대수적 객체 로 다루고 싶어진다는 것이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="쐐기곱의 정의 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 왜 새 객체가 필요한가§2 에서 반대칭 다중선형 함수 를 봤다. 이건 함수 다. 다시 말해 벡터들을 받아서 숫자 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.
+함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. “방향이 붙은 평행사변형 그 자체” 를 대수적 객체 로 다루고 싶어진다는 것이다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/3-b_wedge_product_definition/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="쐐기곱의 정의 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 왜 새 객체가 필요한가§2 에서 반대칭 다중선형 함수 를 봤다. 이건 함수 다. 다시 말해 벡터들을 받아서 숫자 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.
+함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. “방향이 붙은 평행사변형 그 자체” 를 대수적 객체 로 다루고 싶어진다는 것이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="쐐기곱의 정의 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 왜 새 객체가 필요한가§2 에서 반대칭 다중선형 함수 를 봤다. 이건 함수 다. 다시 말해 벡터들을 받아서 숫자 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.
+함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. “방향이 붙은 평행사변형 그 자체” 를 대수적 객체 로 다루고 싶어진다는 것이다.">
+    <meta itemprop="wordCount" content="2270">
+    <title>쐐기곱의 정의 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1779690097" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1779690097" defer></script>
+    <script src="/js/search-lunr.js?1779690097" defer></script>
+    <script src="/js/search.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1779690097";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1779690097" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1779690097" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779690097" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779690097" rel="stylesheet">
+    <link href="/css/theme.css?1779690097" rel="stylesheet">
+    <link href="/css/format-html.css?1779690097" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/3-b_wedge_product_definition\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/3-b_wedge_product_definition/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-왜-새-객체가-필요한가">1. 동기: 왜 새 객체가 필요한가</a></li>
+        <li><a href="#2-쐐기곱의-정의-규칙-기반">2. 쐐기곱의 정의 (규칙 기반)</a></li>
+        <li><a href="#3-즉시-따라오는-성질들">3. 즉시 따라오는 성질들</a></li>
+        <li><a href="#4-기하학적-의미">4. 기하학적 의미</a></li>
+        <li><a href="#5-2d-예제-명시적-계산">5. 2D 예제: 명시적 계산</a></li>
+        <li><a href="#6-3d-예제-외적과의-관계">6. 3D 예제: 외적과의 관계</a></li>
+        <li><a href="#7-고차-쐐기곱">7. 고차 쐐기곱</a></li>
+        <li><a href="#8-정리">8. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">쐐기곱의 정의</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html" title="다중선형성과 반대칭 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html" title="외대수의 기저와 차원 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="쐐기곱의-정의">쐐기곱의 정의</h1>
+
+<h3 id="1-동기-왜-새-객체가-필요한가">1. 동기: 왜 새 객체가 필요한가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§2 에서 <em>반대칭 다중선형 함수</em> 를 봤다. 이건 <em>함수</em> 다. 다시 말해 벡터들을 받아서 <em>숫자</em> 를 내놓는 도구다. 예를 들어 $\det(\vec{v}, \vec{w}) = ad - bc$ 는 두 벡터에서 하나의 숫자를 만들어내는 함수다.</p>
+<p>함수로서의 관점은 충분히 강력하다. 하지만 계산을 하다 보면 더 자연스러운 시각이 필요해진다. <em>&ldquo;방향이 붙은 평행사변형 그 자체&rdquo;</em> 를 <em>대수적 객체</em> 로 다루고 싶어진다는 것이다.</p>
+<p>비교를 위해 익숙한 두 경우를 떠올려 보자.</p>
+<p>첫째, <em>복소수</em> $a + bi$ 는 함수가 아니다. 그 자체로 <em>객체</em> 다. 우리는 복소수를 더하고, 곱하고, 절댓값을 재고, 지수를 취한다. 복소수를 &ldquo;두 실수의 함수&rdquo; 라고 부르는 사람은 없다.</p>
+<p>둘째, <em>벡터</em> $\vec{v}$ 도 함수가 아니다. 그 자체로 객체다. 우리는 벡터를 더하고, 스칼라 배 하고, 내적을 계산한다.</p>
+<p>비슷한 방식으로 &ldquo;방향이 붙은 평행사변형&rdquo; 도 <em>객체</em> 로 다루고 싶다. 그래서 <em>대수적 연산</em> 을 자유롭게 적용할 수 있어야 한다. 두 평행사변형을 <em>더할 수 있어야 하고</em>, 평행사변형을 <em>스칼라 배 할 수 있어야 하고</em>, 두 벡터로부터 평행사변형 객체를 <em>만들 수 있어야 한다</em>.</p>
+<p>이 새 객체가 바로 <strong>쐐기곱 $v \wedge w$</strong> 다. 두 벡터 $v, w$ 가 주어지면 그로부터 &ldquo;방향이 붙은 평행사변형&rdquo; 이라는 새 객체를 만들어내는 연산이고, 그 결과로 나온 객체 자체를 가리키는 이름이기도 하다.</p>
+<h3 id="2-쐐기곱의-정의-규칙-기반">2. 쐐기곱의 정의 (규칙 기반)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$v \wedge w$ 는 <em>새로운 종류의 객체</em> 다. 벡터도 아니고, 숫자도 아니다. 새로운 공간 (§4 에서 그 정확한 구조를 다룬다) 의 원소.</p>
+<p>이 객체는 <em>다음 두 규칙으로만 정의</em> 된다.</p>
+<p><strong>규칙 1: 반대칭성</strong></p>
+<p>두 벡터의 쐐기곱은 <em>순서를 바꾸면 부호가 반대</em> 가 된다.</p>
+$$v \wedge w = -\, w \wedge v$$<p>이건 §1, §2 에서 봤던 행렬식·외적의 성질을 <em>그대로 가져온</em> 것이다. 평행사변형을 <em>어느 방향으로 도는지</em> 까지 추적하는 게 핵심.</p>
+<p><strong>규칙 2: 쌍선형성</strong></p>
+<p>쐐기곱은 <em>각 인자에 대해 선형</em> 이다. 즉 첫째 인자에 대해</p>
+$$(\alpha v_1 + \beta v_2) \wedge w = \alpha\, (v_1 \wedge w) + \beta\, (v_2 \wedge w)$$<p>이고, 둘째 인자에 대해서도</p>
+$$v \wedge (\alpha w_1 + \beta w_2) = \alpha\, (v \wedge w_1) + \beta\, (v \wedge w_2)$$<p>이다. 다시 말해 <em>덧셈과 스칼라 곱셈이 쐐기곱 안과 밖을 자유롭게 오갈 수 있다</em>.</p>
+<p>이 두 규칙이 <em>전부</em> 다. 쐐기곱에 대한 다른 약속이나 가정은 없다. 다른 관계는 모두 이 두 규칙에서 <em>따라 나오는 결과</em> 다.</p>
+<p><strong>&ldquo;다른 관계가 없다&rdquo; 의 의미</strong></p>
+<p>이게 무슨 뜻인지 좀 더 곱씹어 보자. 예를 들어 평범한 수의 곱셈은 <em>교환적</em> 이다 ($ab = ba$). 그런데 쐐기곱은 교환적이 <em>아니다</em> (오히려 반대칭이다). 행렬 곱셈은 비교환이지만 <em>결합적</em> 이다 ($A(BC) = (AB)C$). 쐐기곱은 결합적이긴 한데 (§4에서 살펴보겠지만), 우리가 이미 가정한 두 규칙에서 거기까지 따라 나오는지가 <em>중요한 점</em> 이다.</p>
+<p>쐐기곱을 정의할 때 <em>반대칭성과 쌍선형성만</em> 강제하고, 다른 규칙을 <em>추가로 강요하지 않는다</em>. 이게 외대수의 출발 약속이다. 그리고 이 두 규칙만으로 우리가 원하는 모든 성질이 따라 나온다는 게 외대수 이론의 <em>기적적인</em> 부분이다.</p>
+<h3 id="3-즉시-따라오는-성질들">3. 즉시 따라오는 성질들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>두 정의 규칙에서 다음의 성질들이 <em>자동으로</em> 따라 나온다. 모두 §2 에서 일반적인 반대칭 함수에 대해 봤던 결과의 쐐기곱 버전이다.</p>
+<p><strong>1) 자기 자신과의 쐐기곱은 0</strong></p>
+<blockquote>
+<p>$v \wedge v = 0$</p>
+</blockquote>
+<p><strong>증명</strong>: 규칙 1 (반대칭성) 에서 $v \wedge w = -w \wedge v$ 의 양쪽 자리에 같은 $v$ 를 대입하면</p>
+$$v \wedge v = -v \wedge v$$<p>이 식의 양변에 $v \wedge v$ 를 더하면 $2 (v \wedge v) = 0$, 따라서 $v \wedge v = 0$. ∎</p>
+<p><strong>직관</strong>: 같은 벡터 두 개로는 평행사변형을 못 만든다. 두 변이 같으면 도형이 1차원으로 납작해진다. <em>2차원 평행사변형의 객체</em> 인 쐐기곱이 0 이 되는 게 자연스럽다.</p>
+<p><strong>2) 비례하는 벡터들의 쐐기곱은 0</strong></p>
+<blockquote>
+<p>$w = \alpha v$ 이면 $v \wedge w = 0$.</p>
+</blockquote>
+<p><strong>증명</strong>: 규칙 2 (쌍선형성) 으로 $\alpha$ 를 밖으로 빼내고, 성질 1 을 적용하면</p>
+$$v \wedge (\alpha v) = \alpha\, (v \wedge v) = \alpha \cdot 0 = 0 \quad \blacksquare$$<p><strong>직관</strong>: 평행한 두 벡터는 평행사변형을 못 만든다. 한 방향의 직선만 그릴 뿐.</p>
+<p><strong>3) 스칼라는 자유롭게 옮길 수 있다</strong></p>
+<p>규칙 2 의 결과로</p>
+$$(\alpha v) \wedge w = \alpha\, (v \wedge w) = v \wedge (\alpha w)$$<p>가 성립한다. 스칼라 곱셈은 <em>어느 인자 자리에든 자유롭게 옮길 수 있고, 쐐기곱 밖으로도 빼낼 수 있다</em>.</p>
+<p>이건 평행사변형의 <em>크기를 조절</em> 한다는 기하학적 의미를 가진다. 한 변을 두 배로 늘리면 넓이도 두 배 — 평행사변형 객체도 두 배로 커진다.</p>
+<h3 id="4-기하학적-의미">4. 기하학적 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$v \wedge w$ 는 <em>방향이 붙은 평행사변형 자체</em> 를 나타내는 객체다. 좀 더 구체적으로 말하면 다음 두 가지 정보를 모두 담고 있다.</p>
+<p>첫째, <em>크기</em> — 평행사변형의 넓이. 큰 평행사변형은 큰 쐐기곱이고, 작은 평행사변형은 작은 쐐기곱이다. 두 벡터가 비례하면 평행사변형이 납작해져 넓이가 0 — 위의 성질 2 가 확인하는 사실.</p>
+<p>둘째, <em>방향 또는 방위 (orientation)</em> — 평행사변형을 어느 면에서 보고 있는지, 또는 $v$ 에서 $w$ 로 도는 회전 방향이 어떤지. $v$ 에서 $w$ 로 가는 회전을 <em>반시계</em> 로 보면 양의 방향, <em>시계</em> 로 보면 음의 방향이라는 약속.</p>
+<p>순서를 바꾸면 회전 방향이 반대가 되고, 따라서 부호가 반대 — 규칙 1 의 기하학적 의미가 이거다.</p>
+<p><strong>중요한 강조</strong>: $v \wedge w$ 는 <em>벡터가 아니다</em>. §1 에서 3D 외적이 벡터로 표현된 것을 봤지만, 그건 <em>3차원에서만의 우연</em> 이다 (§6 에서 자세히 본다). 일반 차원에서 $v \wedge w$ 는 새로운 종류의 객체로,</p>
+<p>수학에서는 <strong>2-벡터 (bivector)</strong> 또는 <strong>2-형식 (2-form)</strong> 이라 부른다</p>
+<p>(엄밀히는 2-벡터와 2-형식은 서로 다른 개념이지만 - 2-벡터가 V에 살고 2-형식이 V의 쌍대공간에 사는 - 우리 시리즈에서는 일단 같은 종류로 다룬다. §4 와 §6 에서 구별이 명확해진다).</p>
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:400px">
+  <defs>
+    <marker id="vA3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#0066cc"/>
+    </marker>
+    <marker id="wA3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#cc0066"/>
+    </marker>
+    <marker id="oA3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#009955"/>
+    </marker>
+  </defs>
+  <polygon points="80,180 240,180 280,70 120,70" fill="#cce5ff" fill-opacity="0.4" stroke="black" stroke-width="1.5"/>
+  <line x1="80" y1="180" x2="240" y2="180" stroke="#0066cc" stroke-width="2.5" marker-end="url(#vA3)"/>
+  <text x="155" y="200" font-size="14" fill="#0066cc" font-weight="bold">v</text>
+  <line x1="80" y1="180" x2="120" y2="70" stroke="#cc0066" stroke-width="2.5" marker-end="url(#wA3)"/>
+  <text x="88" y="120" font-size="14" fill="#cc0066" font-weight="bold">w</text>
+  <path d="M 200 140 A 35 35 0 0 1 160 110" stroke="#009955" stroke-width="2" fill="none" marker-end="url(#oA3)"/>
+  <text x="185" y="135" text-anchor="middle" font-size="13" fill="#009955" font-weight="bold">v ∧ w</text>
+  <text x="200" y="225" text-anchor="middle" font-size="12" font-style="italic">크기 = 넓이, 방향 = 회전 방향</text>
+</svg>
+<h3 id="5-2d-예제-명시적-계산">5. 2D 예제: 명시적 계산<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>추상적 정의만 본 다음에는 <em>구체적으로 손으로 계산</em> 해 봐야 감이 온다. 2차원에서 쐐기곱을 명시적으로 풀어 보자.</p>
+<p><strong>설정</strong>: $V = \mathbb{R}^2$ 이고, 표준 기저를 $e_1 = (1, 0)$, $e_2 = (0, 1)$ 로 잡는다.</p>
+<p><strong>기본 쐐기곱들</strong></p>
+<p>표준 기저 벡터들 사이의 쐐기곱부터 정리한다.</p>
+<p>$e_1 \wedge e_2$ 는 <em>표준 단위 평행사변형</em> 이다. $e_1$ 에서 $e_2$ 로 가는 회전 방향이 반시계이고, 평행사변형의 넓이가 1 인 단위 정사각형. 모든 다른 2-벡터를 표현하는 <em>기준</em> 이 된다.</p>
+<p>$e_2 \wedge e_1$ 은 반대칭성에 의해 $-e_1 \wedge e_2$ 다. 같은 단위 정사각형이지만 시계 방향, 즉 <em>반대 방향</em> 의 평행사변형.</p>
+<p>$e_1 \wedge e_1 = 0$ 이고 $e_2 \wedge e_2 = 0$ 이다 — 같은 벡터로는 평행사변형이 안 만들어지므로.</p>
+<p><strong>일반 벡터의 쐐기곱 — 분배 전개</strong></p>
+<p>이제 일반적인 두 벡터의 쐐기곱을 계산해 보자. $\vec{v} = a\, e_1 + b\, e_2$ 와 $\vec{w} = c\, e_1 + d\, e_2$ 가 주어졌을 때 $v \wedge w$ 를 정확히 풀어 본다.</p>
+<p>쌍선형성을 사용해 양쪽 인자를 <em>분배 전개</em> 한다. 마치 두 다항식을 곱할 때 모든 항을 곱하는 것처럼.</p>
+$$v \wedge w = (a\, e_1 + b\, e_2) \wedge (c\, e_1 + d\, e_2)$$<p>이걸 전개하면 네 개의 항이 나온다. 각 항은 <em>첫 벡터의 한 성분과 둘째 벡터의 한 성분의 쐐기곱</em>.</p>
+$$= a \cdot c\, (e_1 \wedge e_1) + a \cdot d\, (e_1 \wedge e_2) + b \cdot c\, (e_2 \wedge e_1) + b \cdot d\, (e_2 \wedge e_2)$$<p>이제 위에서 정리한 기본 쐐기곱들을 대입하자. $e_1 \wedge e_1 = 0$ 와 $e_2 \wedge e_2 = 0$ 으로 두 항이 사라지고, $e_2 \wedge e_1 = -e_1 \wedge e_2$ 로 셋째 항이 부호 반대가 된다.</p>
+$$= 0 + a d\, (e_1 \wedge e_2) + b c\, (-e_1 \wedge e_2) + 0$$<p>같은 $e_1 \wedge e_2$ 를 묶어내면</p>
+$$v \wedge w = (a d - b c)\, (e_1 \wedge e_2)$$<p><strong>놀라운 결과</strong></p>
+<p>이 식이 말하는 게 두 가지다.</p>
+<p>첫째, <em>2차원에서 모든 쐐기곱은 $e_1 \wedge e_2$ 의 스칼라 배다</em>. 다양한 평행사변형이 있어도, 모두 &ldquo;표준 단위 정사각형의 몇 배&rdquo; 라는 형태로 표현된다. 2D 쐐기곱의 공간은 본질적으로 <em>1차원</em> — 스칼라 배만 다를 뿐.</p>
+<p>둘째, 그 스칼라 배 계수가 정확히 <em>2D 행렬식 $ad - bc$</em> 다.</p>
+<p>즉</p>
+$$\boxed{2\text{D 쐐기곱} = (2\text{D 행렬식}) \times (\text{표준 방향 단위})}$$<p>이게 <em>쐐기곱과 행렬식의 정확한 관계</em> 다. 행렬식은 쐐기곱의 <em>수치적 정보 (크기와 부호)</em>, 표준 방향 단위 $e_1 \wedge e_2$ 는 <em>방향 정보</em>. 두 정보가 합쳐져 평행사변형 객체를 완전히 결정한다.</p>
+<p><strong>수치 확인</strong></p>
+<p>§1 의 예제로 다시 확인해 보자. $\vec{v} = (3, 1)$, $\vec{w} = (1, 2)$. 그러면 $a = 3, b = 1, c = 1, d = 2$ 이고</p>
+$$v \wedge w = (3 \cdot 2 - 1 \cdot 1)(e_1 \wedge e_2) = 5 \, (e_1 \wedge e_2)$$<p>즉 표준 단위 정사각형의 5 배 — 넓이 5, 반시계 방향의 평행사변형 객체.</p>
+<h3 id="6-3d-예제-외적과의-관계">6. 3D 예제: 외적과의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3차원에서도 같은 방식으로 풀어보면 흥미로운 관계가 드러난다.</p>
+<p><strong>설정</strong>: $V = \mathbb{R}^3$, 표준 기저 $e_1, e_2, e_3$.</p>
+<p><strong>기본 쐐기곱들</strong></p>
+<p>기저 벡터들끼리 만들 수 있는 <em>서로 다른 두 벡터의 쐐기곱</em> 은 세 가지다.</p>
+$$e_1 \wedge e_2, \qquad e_1 \wedge e_3, \qquad e_2 \wedge e_3$$<p>(다른 조합들은 모두 위 셋의 부호 반전. 예: $e_3 \wedge e_2 = -e_2 \wedge e_3$, $e_2 \wedge e_1 = -e_1 \wedge e_2$ 등.)</p>
+<p>자기 자신과의 쐐기곱은 0: $e_1 \wedge e_1 = e_2 \wedge e_2 = e_3 \wedge e_3 = 0$.</p>
+<p>따라서 3D 에서 <em>2-벡터의 독립적 기본 단위는 세 개</em> — 위의 세 가지. 이게 §4 에서 정확히 다룰 <em>외대수의 기저</em> 의 한 예.</p>
+<p><strong>일반 벡터의 쐐기곱</strong></p>
+<p>$\vec{v} = v_1\, e_1 + v_2\, e_2 + v_3\, e_3$ 와 $\vec{w} = w_1\, e_1 + w_2\, e_2 + w_3\, e_3$ 의 쐐기곱을 풀어 보자. 분배 전개로 <em>아홉 개의 항</em> 이 나온다 — 3 × 3 조합.</p>
+$$v \wedge w = \sum_{i=1}^{3} \sum_{j=1}^{3} v_i w_j\, (e_i \wedge e_j)$$<p>이 아홉 항을 정리하자. 먼저 <em>대각선 항</em> (즉 $i = j$ 인 경우) 세 개는 모두 0:</p>
+$$v_1 w_1\, (e_1 \wedge e_1) + v_2 w_2\, (e_2 \wedge e_2) + v_3 w_3\, (e_3 \wedge e_3) = 0$$<p>남은 여섯 항을 <em>순서가 정상</em> ($i < j$) 과 <em>순서가 거꾸로</em> ($i > j$) 로 나누어 정리한다. 거꾸로 된 것은 부호를 반전시켜 정상 순서로 합친다.</p>
+<p>$e_1 \wedge e_2$ 와 $e_2 \wedge e_1 = -e_1 \wedge e_2$ 의 항들:</p>
+$$v_1 w_2\, (e_1 \wedge e_2) + v_2 w_1\, (e_2 \wedge e_1) = (v_1 w_2 - v_2 w_1)\, (e_1 \wedge e_2)$$<p>$e_1 \wedge e_3$ 와 $e_3 \wedge e_1 = -e_1 \wedge e_3$ 의 항들:</p>
+$$v_1 w_3\, (e_1 \wedge e_3) + v_3 w_1\, (e_3 \wedge e_1) = (v_1 w_3 - v_3 w_1)\, (e_1 \wedge e_3)$$<p>$e_2 \wedge e_3$ 와 $e_3 \wedge e_2 = -e_2 \wedge e_3$ 의 항들:</p>
+$$v_2 w_3\, (e_2 \wedge e_3) + v_3 w_2\, (e_3 \wedge e_2) = (v_2 w_3 - v_3 w_2)\, (e_2 \wedge e_3)$$<p>세 결과를 합치면 최종적으로</p>
+$$v \wedge w = (v_1 w_2 - v_2 w_1)\, (e_1 \wedge e_2) + (v_1 w_3 - v_3 w_1)\, (e_1 \wedge e_3) + (v_2 w_3 - v_3 w_2)\, (e_2 \wedge e_3)$$<p><strong>외적과의 비교</strong></p>
+<p>이제 3D 외적과 비교해 보자. 표준 외적은</p>
+$$\vec{v} \times \vec{w} = (v_2 w_3 - v_3 w_2,\; v_3 w_1 - v_1 w_3,\; v_1 w_2 - v_2 w_1)$$<p>위 두 식의 <em>세 계수가 똑같다</em> (부호 순서까지 잘 정렬하면). 즉 <em>3D 쐐기곱의 세 계수가 정확히 3D 외적의 세 성분</em>.</p>
+<p>쐐기곱의 식을 외적의 성분 표기와 정렬해 다시 쓰면</p>
+$$v \wedge w = (\vec{v} \times \vec{w})_3 (e_1 \wedge e_2) + (\vec{v} \times \vec{w})_2 (e_3 \wedge e_1) + (\vec{v} \times \vec{w})_1 (e_2 \wedge e_3)$$<p>이렇게 보면 <em>3D 외적과 3D 쐐기곱이 본질적으로 같은 정보를 담고 있음</em> 이 명확하다.</p>
+<p><strong>왜 3D 에서만 외적이 벡터가 되는가</strong></p>
+<p>3D 에서 2-벡터의 기저가 <em>세 개</em> ($e_1 \wedge e_2, e_1 \wedge e_3, e_2 \wedge e_3$) 이고, 3D 벡터의 성분도 <em>세 개</em> 다. 두 개수가 <em>우연히 일치</em> 한다.</p>
+<p>이 우연 때문에 <em>3D 에서만</em> 2-벡터를 3D 벡터로 표현할 수 있다 (이 변환을 <strong>Hodge 별표</strong> 라 부른다 — §13 에서 정확히 다룬다).</p>
+<p>4D 에서는 2-벡터의 기저가 <em>여섯 개</em> ($e_i \wedge e_j$, $1 \le i < j \le 4$ 인 모든 쌍) 인데, 4D 벡터는 <em>네 개</em> 성분. 일치하지 않으므로 2-벡터를 벡터로 표현 불가. 일반 $n$ 차원에서 2-벡터의 기저는 $\binom{n}{2} = \frac{n(n-1)}{2}$ 개 — $n = 3$ 일 때만 우연히 $n$ 과 같다.</p>
+<p>이게 <em>외대수의 중요성</em> 이다. 3D 만의 특수한 외적이 아니라, <em>모든 차원에서 잘 정의되는 일반 도구</em> 가 쐐기곱.</p>
+<h3 id="7-고차-쐐기곱">7. 고차 쐐기곱<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>쐐기곱은 두 벡터에만 적용되는 게 아니다. <em>세 개 이상</em> 의 벡터에 대해서도 정의된다.</p>
+$$v_1 \wedge v_2 \wedge v_3$$<p>은 <em>방향이 붙은 3차원 평행육면체</em> 를 나타내는 새 객체 — <strong>3-벡터</strong> (또는 <strong>3-형식</strong>) 라 부른다.</p>
+<p>일반화: $v_1 \wedge v_2 \wedge \cdots \wedge v_k$ 는 <em>방향이 붙은 $k$-차원 평행체</em> 를 나타내는 <strong>$k$-벡터</strong>.</p>
+<p><strong>규칙은 동일</strong></p>
+<p>쌍선형성과 반대칭성이 인자가 늘어나도 그대로 적용된다.</p>
+<p>(1) <em>다중선형</em>: 각 인자에 대해 선형. 즉 어느 한 인자에 $\alpha v + \beta v'$ 를 넣으면 $\alpha \cdot (\ldots v \ldots) + \beta \cdot (\ldots v' \ldots)$ 로 분배된다.</p>
+<p>(2) <em>반대칭</em>: 어느 두 인자의 순서를 바꾸면 부호가 반대.</p>
+<p>(3) <em>같은 인자가 두 번 등장하면 0</em>: $v \wedge w \wedge v = 0$ 등. §2 의 성질 1 의 일반화.</p>
+<p>(4) <em>선형종속 → 0</em>: 인자들이 선형종속이면 전체가 0. §2 의 성질 2 의 일반화.</p>
+<p><strong>3D 에서 3-벡터</strong></p>
+<p>3차원에서 <em>최고차 쐐기곱</em> 은 $e_1 \wedge e_2 \wedge e_3$ — 표준 단위 정육면체 객체. 임의의 3-벡터는 이것의 스칼라 배.</p>
+<p>세 일반 벡터 $\vec{u}, \vec{v}, \vec{w}$ 의 쐐기곱을 풀면 (2D 행렬식 결과를 일반화하면)</p>
+$$u \wedge v \wedge w = \det(u, v, w)\, (e_1 \wedge e_2 \wedge e_3)$$<p>이 된다. 즉 <em>3D 의 3-벡터는 행렬식 × 단위 부피</em>. 2D 에서 본 패턴이 그대로 반복.</p>
+<p>(더 자세한 계산은 §5 에서 다룬다.)</p>
+<p><strong>4D 이상</strong></p>
+<p>4D 에서는 1-벡터 (보통의 벡터), 2-벡터, 3-벡터, 4-벡터 모두 다 등장. 각각의 차원이 $\binom{4}{1}, \binom{4}{2}, \binom{4}{3}, \binom{4}{4} = 4, 6, 4, 1$.</p>
+<p>총 $4 + 6 + 4 + 1 + 1 = 16$ 차원의 통합된 대수 (스칼라 = 0-벡터까지 포함) — 이게 4D 외대수 $\Lambda(\mathbb{R}^4)$ 의 구조. §4 에서 자세히 본다.</p>
+<h3 id="8-정리">8. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 쐐기곱 $v \wedge w$ 를 도입했다.</p>
+<p><strong>1)</strong> 쐐기곱은 <em>방향이 붙은 평행사변형 자체</em> 를 나타내는 새 종류의 객체다. 함수가 아니라 <em>대수적 대상</em>.</p>
+<p><strong>2)</strong> 정의는 <em>두 규칙</em> 만으로: <em>반대칭성</em> $v \wedge w = -w \wedge v$ 와 <em>쌍선형성</em>. 다른 약속은 없으며, 모든 추가 성질은 이 두 규칙에서 따라 나온다.</p>
+<p><strong>3)</strong> 즉시 따라오는 성질: $v \wedge v = 0$, 비례하는 벡터 → 0, 스칼라 자유 이동.</p>
+<p><strong>4)</strong> 기하학적으로 쐐기곱은 <em>크기 (넓이) 와 방향 (회전 방향) 정보를 모두 담은</em> 평행사변형 객체. 일반 차원에서 <strong>2-벡터</strong> 또는 <strong>2-형식</strong>.</p>
+<p><strong>5)</strong> 2D 에서 모든 2-벡터는 $e_1 \wedge e_2$ 의 스칼라 배 — 그 배수가 정확히 <em>2D 행렬식 $ad - bc$</em>. 즉 <em>쐐기곱 = 행렬식 × 표준 방향</em>.</p>
+<p><strong>6)</strong> 3D 에서 2-벡터의 세 계수가 정확히 <em>외적의 세 성분</em>. 3D 외적이 벡터로 표현되는 건 <em>우연 — 2-벡터 기저 수가 벡터 차원과 일치</em> 하기 때문. 4D 이상에서는 우연이 깨진다.</p>
+<p><strong>7)</strong> <em>고차 쐐기곱</em> $v_1 \wedge \cdots \wedge v_k$ 는 <em>$k$-차원 평행체</em> — <strong>$k$-벡터</strong>. 같은 규칙 (다중선형 + 반대칭) 이 적용되며, <em>선형종속이면 0</em>.</p>
+<p>다음 장 §4 에서 <em>이 모든 $k$-벡터들이 사는 공간</em> — 외대수 $\Lambda V$ — 의 구조와 차원을 정확히 본다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779690097"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779690097" defer></script>
+    <script src="/js/theme.js?1779690097" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
