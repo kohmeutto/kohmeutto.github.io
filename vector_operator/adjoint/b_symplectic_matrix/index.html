@@ -1,449 +1,0 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
-    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
-    <meta name="description" content="1. 경계항의 성질1) 선형성
-proof)
-2) 곱셈규칙
-$$\langle\phi|\hat{A}\hat{B}|\psi\rangle=\langle\hat{B}^\dagger\hat{A}^\dagger\phi||\psi\rangle&#43;\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]$$핵심
-$$\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]=\mathcal{R}\hat{A}[\phi,\hat{B}\psi]&#43;\mathcal{R}\hat{B}[\hat{A}^\dagger\phi,\psi]$$proof)
-2. 적용1) 곱셈 작용소
-$$\hat{M}:=p\cdot\implies \mathcal{R}\hat{M}=0$$proof)
-$$\langle\phi|\hat{M}\psi\rangle=\langle\hat{M}^\dagger\phi|\psi\rangle$$경계항이 발생 안 함. 따라서,
-$$\mathcal{R}\hat{M}=0$$2) 2차 미분
-$$\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi&#39; -(\phi^*)&#39;\psi]^a_b=\begin{bmatrix} \phi^\ast &amp; \psi \\ (\phi^*)&#39; &amp; \psi&#39;\end{bmatrix}^a_b$$proof)">
-    <meta name="author" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(a) Boundary :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 경계항의 성질1) 선형성
-proof)
-2) 곱셈규칙
-$$\langle\phi|\hat{A}\hat{B}|\psi\rangle=\langle\hat{B}^\dagger\hat{A}^\dagger\phi||\psi\rangle&#43;\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]$$핵심
-$$\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]=\mathcal{R}\hat{A}[\phi,\hat{B}\psi]&#43;\mathcal{R}\hat{B}[\hat{A}^\dagger\phi,\psi]$$proof)
-2. 적용1) 곱셈 작용소
-$$\hat{M}:=p\cdot\implies \mathcal{R}\hat{M}=0$$proof)
-$$\langle\phi|\hat{M}\psi\rangle=\langle\hat{M}^\dagger\phi|\psi\rangle$$경계항이 발생 안 함. 따라서,
-$$\mathcal{R}\hat{M}=0$$2) 2차 미분
-$$\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi&#39; -(\phi^*)&#39;\psi]^a_b=\begin{bmatrix} \phi^\ast &amp; \psi \\ (\phi^*)&#39; &amp; \psi&#39;\end{bmatrix}^a_b$$proof)">
-    <meta property="og:url" content="http://localhost:1313/vector_operator/adjoint/b_symplectic_matrix/index.html">
-    <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(a) Boundary :: 수리전자물리학">
-    <meta property="og:description" content="1. 경계항의 성질1) 선형성
-proof)
-2) 곱셈규칙
-$$\langle\phi|\hat{A}\hat{B}|\psi\rangle=\langle\hat{B}^\dagger\hat{A}^\dagger\phi||\psi\rangle&#43;\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]$$핵심
-$$\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]=\mathcal{R}\hat{A}[\phi,\hat{B}\psi]&#43;\mathcal{R}\hat{B}[\hat{A}^\dagger\phi,\psi]$$proof)
-2. 적용1) 곱셈 작용소
-$$\hat{M}:=p\cdot\implies \mathcal{R}\hat{M}=0$$proof)
-$$\langle\phi|\hat{M}\psi\rangle=\langle\hat{M}^\dagger\phi|\psi\rangle$$경계항이 발생 안 함. 따라서,
-$$\mathcal{R}\hat{M}=0$$2) 2차 미분
-$$\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi&#39; -(\phi^*)&#39;\psi]^a_b=\begin{bmatrix} \phi^\ast &amp; \psi \\ (\phi^*)&#39; &amp; \psi&#39;\end{bmatrix}^a_b$$proof)">
-    <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="article">
-    <meta property="article:section" content="Vector & Operator">
-    <meta itemprop="name" content="(a) Boundary :: 수리전자물리학">
-    <meta itemprop="description" content="1. 경계항의 성질1) 선형성
-proof)
-2) 곱셈규칙
-$$\langle\phi|\hat{A}\hat{B}|\psi\rangle=\langle\hat{B}^\dagger\hat{A}^\dagger\phi||\psi\rangle&#43;\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]$$핵심
-$$\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]=\mathcal{R}\hat{A}[\phi,\hat{B}\psi]&#43;\mathcal{R}\hat{B}[\hat{A}^\dagger\phi,\psi]$$proof)
-2. 적용1) 곱셈 작용소
-$$\hat{M}:=p\cdot\implies \mathcal{R}\hat{M}=0$$proof)
-$$\langle\phi|\hat{M}\psi\rangle=\langle\hat{M}^\dagger\phi|\psi\rangle$$경계항이 발생 안 함. 따라서,
-$$\mathcal{R}\hat{M}=0$$2) 2차 미분
-$$\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi&#39; -(\phi^*)&#39;\psi]^a_b=\begin{bmatrix} \phi^\ast &amp; \psi \\ (\phi^*)&#39; &amp; \psi&#39;\end{bmatrix}^a_b$$proof)">
-    <meta itemprop="wordCount" content="699">
-    <title>(a) Boundary :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1779162548" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1779162548" defer></script>
-    <script src="/js/search-lunr.js?1779162548" defer></script>
-    <script src="/js/search.js?1779162548" defer></script>
-    <script>
-      window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1779162548";
-    </script>
-    <script src="/js/lunr/lunr.min.js?1779162548" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1779162548" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1779162548" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1779162548" defer></script>
-    <script>
-      window.relearn = window.relearn || {};
-      window.relearn.contentLangs=['en'];
-    </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779162548" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1779162548" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779162548" rel="stylesheet">
-    <link href="/css/theme.css?1779162548" rel="stylesheet">
-    <link href="/css/format-html.css?1779162548" rel="stylesheet" id="R-format-style">
-    <script>
-      window.relearn = window.relearn || {};
-      // configuration
-      window.relearn.min = ``;
-      window.relearn.path='\/vector_operator\/adjoint\/b_symplectic_matrix\/index.html';
-      window.relearn.relBasePath='..\/..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.disableInlineCopyToClipboard=false;
-      window.relearn.enableBlockCodeWrap=true;
-      // legal
-      window.relearn.getItem = (s,n) => {return s.getItem(n)};
-      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
-      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
-      // translations
-      window.T_Copy_to_clipboard = `Copy text to clipboard`;
-      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
-      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
-      window.T_Reset_view = `Reset view`;
-      window.T_View_reset = `View reset!`;
-      window.T_No_results_found = `No results found for "{0}"`;
-      window.T_N_results_found = `{1} results found for "{0}"`;
-      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
-      // variant stuff
-      window.relearn.themevariants = [ 'relearn-light' ];
-      window.relearn.customvariantname = "my-custom-variant";
-      window.relearn.changeVariant = function(variant) {
-        var oldVariant = document.documentElement.dataset.rThemeVariant;
-        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        document.documentElement.dataset.rThemeVariant = variant;
-        if (oldVariant != variant) {
-          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
-          window.relearn.markVariant();
-        }
-      }
-      window.relearn.markVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
-        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
-      }
-      window.relearn.initVariant = function() {
-        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
-        if( variant == window.relearn.customvariantname ){
-        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
-          variant = window.relearn.themevariants[0];
-          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
-        }
-        document.documentElement.dataset.rThemeVariant = variant;
-      }
-      window.relearn.initVariant();
-      window.relearn.markVariant();
-    </script>
-  </head>
-  <body class="mobile-support html" data-url="/vector_operator/adjoint/b_symplectic_matrix/index.html">
-    <div id="R-body" class="default-animation">
-      <div id="R-body-overlay"></div>
-      <nav id="R-topbar">
-        <div class="topbar-wrapper">
-          <div class="topbar-sidebar-divider"></div>
-          <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
-            </div>
-            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-<nav class="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-경계항의-성질">1. 경계항의 성질</a></li>
-        <li><a href="#2-적용">2. 적용</a></li>
-        <li><a href="#1-유한-차원-행렬-성분의-자리-바꾸기">1. 유한 차원: 행렬 성분의 자리 바꾸기</a></li>
-        <li><a href="#2-미분-연산자-수반연산자-도출의-부품">2. 미분 연산자, 수반연산자 도출의 부품</a></li>
-        <li><a href="#3-미분연산자의-경계항-심플레틱-행렬">3. 미분연산자의 경계항: 심플레틱 행렬</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/adjoint/index.html"><span itemprop="name">Adjoint</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Boundary</span><meta itemprop="position" content="4"></li>
-          </ol>
-          <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/adjoint/b_adjoint/index.html" title="(b) Adjoint (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
-            </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/index.html" title="Normal operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
-            </div>
-            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
-              <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-                  <div class="topbar-area topbar-area-more" data-area="more">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
-        <div class="flex-block-wrapper">
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="a-boundary">(a) Boundary</h1>
-
-<hr>
-<h3 id="1-경계항의-성질">1. 경계항의 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1) 선형성</strong></p>
-<p>proof)</p>
-<p><strong>2) 곱셈규칙</strong></p>
-$$
-\langle\phi|\hat{A}\hat{B}|\psi\rangle
-=\langle\hat{B}^\dagger\hat{A}^\dagger\phi||\psi\rangle+\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]
-$$<p>핵심</p>
-$$
-\mathcal{R}(\hat{A}\hat{B})[\phi,\psi]
-=\mathcal{R}\hat{A}[\phi,\hat{B}\psi]+\mathcal{R}\hat{B}[\hat{A}^\dagger\phi,\psi]
-$$<p>proof)</p>
-<hr>
-<h3 id="2-적용">2. 적용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1) 곱셈 작용소</strong></p>
-$$
-\hat{M}:=p\cdot
-\implies \mathcal{R}\hat{M}=0
-$$<p>proof)</p>
-$$
-\langle\phi|\hat{M}\psi\rangle=\langle\hat{M}^\dagger\phi|\psi\rangle
-$$<p>경계항이 발생 안 함. 따라서,</p>
-$$
-\mathcal{R}\hat{M}=0
-$$<p><strong>2) 2차 미분</strong></p>
-$$
-\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi' -(\phi^*)'\psi]^a_b
-=\begin{bmatrix} \phi^\ast & \psi \\ (\phi^*)' & \psi'\end{bmatrix}^a_b
-$$<p>proof)</p>
-$$
-\mathcal{R}\hat{D}^2[\phi,\psi]
-=\mathcal{R}\hat{D}[\phi,\hat{D}\psi]+\mathcal{R}\hat{D}[\hat{D}^\dagger\phi,\psi]
-$$<p>여기에서,</p>
-$$
-\mathcal{R}\hat{D}[\phi,\hat{D}\psi] = [\phi^*\psi']^a_b,\quad \mathcal{R}\hat{D}[\hat{D}^\dagger\phi,\psi] = [-(\phi^*)'\psi]^a_b
-$$<p>따라서,</p>
-$$
-\mathcal{R}\hat{D}^2[\phi,\psi] = [\phi^*\psi' -(\phi^*)'\psi]^a_b
-$$<p><strong>3) Strum-Lioville</strong></p>
-$$
-\hat{L}=\hat{D}p\hat{D}+q,\quad\text{단, $p,q$ 는 모두 실수이다.}
-$$<p>proof)</p>
-<p>선형성을 적용한다.</p>
-$$
-\mathcal{R}\hat{L}=\mathcal{R}(\hat{D}p\hat{D})+\mathcal{R}({q\hat{I}})
-$$<p>(1) 첫번째 항</p>
-$$
-\mathcal{R}(\hat{D}p\hat{D})
-=\mathcal{R}\hat{D}[\phi,p\hat{D}\psi]+\mathcal{R}(p\hat{D})[\hat{D}^\dagger\phi,\psi]
-$$$$
-=\mathcal{R}\hat{D}[\phi,p\hat{D}\psi]
-+\mathcal{R}(p\cdot)[\hat{D}^\dagger\phi,\hat{D}\psi]
-+\mathcal{R}\hat{D}[p^\dagger\hat{D}^\dagger\phi,\psi]
-$$$$
-=\mathcal{R}\hat{D}[\phi,p\hat{D}\psi]
-+\mathcal{R}\hat{D}[p^\dagger\hat{D}^\dagger\phi,\psi]
-$$$$
-=[p(\phi^*\psi' -(\phi^*)'\psi)]^a_b
-$$<p>(2) 두번째 항</p>
-$$
-\mathcal{R}({q\hat{I}})=0
-$$<hr>
-<p>수반 연산자를 구하는 과정은 시스템이 정의된 <strong>공간의 성격(내적의 정의)</strong> 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.</p>
-<hr>
-<h3 id="1-유한-차원-행렬-성분의-자리-바꾸기">1. 유한 차원: 행렬 성분의 자리 바꾸기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-$$
-(A^\dagger)_{ij} = (A_{ji})^{\ast}
-$$<p>proof)</p>
-<p>행렬 $A$의 수반 행렬 $A^\dagger$가 왜 &lsquo;켤레 전치&rsquo;가 되는지는 성분 단위의 비교를 통해 자명해진다.</p>
-<ul>
-<li>좌변 (대상에 작용): $\langle v | Aw \rangle = \sum_i \sum_j v_i^* A_{ij} w_j$</li>
-<li>우변 (관찰자에 작용): $\langle A^\dagger v | w \rangle = \sum_j \sum_i (A^\dagger_{ji})^* v_i^* w_j$</li>
-</ul>
-<hr>
-<h3 id="2-미분-연산자-수반연산자-도출의-부품">2. 미분 연산자, 수반연산자 도출의 부품<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1) 미분의 부품, 형식적 수반(formal adjoint) &amp; 경계항</strong></p>
-$$
-\hat{D}=\frac{d}{dx} \implies \hat{D}^{\dagger}=-\frac{d}{dx} \quad\text{with boundary term: } [\phi^{\ast}\psi]_a^b
-$$<p>proof)</p>
-$$
-\langle \phi|\hat{D}\psi\rangle
-=\int_a^b dx\left\lbrack\phi^{\ast}\frac{d}{dx}\psi\right\rbrack
-=\int_a^b dx\left\lbrack\frac{d}{dx}\phi^{\ast}\psi-\psi\frac{d}{dx}\phi^{\ast}\right\rbrack
-=\left\lbrack \phi^{\ast}\psi\right\rbrack^b_a-\int_a^b dx\left\lbrack\psi\frac{d}{dx}\phi^{\ast}\right\rbrack
-$$$$
-=\left\lbrack \phi^{\ast}\psi\right\rbrack^b_a+\langle\hat{D}^{\dagger}\phi|\psi\rangle
-$$<p>위를 라그랑주 항등식(Lagrange Identity) 이라고 하며, 아래와 같이 구분한다.</p>
-$$\langle \phi | \hat{D} \psi \rangle = \underbrace{\langle-\hat{D}\phi|\psi\rangle}_{\text{formal adjoint}}+\underbrace{\left\lbrack\phi^{\ast}\psi\right\rbrack^b_a}_{\text{boundary term}}
-$$<p><strong>2) 복소수 함수의 부품</strong></p>
-$$
-q(x)^{\dagger}=q(x)^{\ast}
-$$<p>proof)</p>
-$$
-\langle \phi | p \psi \rangle = \int dx \phi^* p \psi = \int dx (p^* \phi)^* \psi = \langle p^* \phi | \psi \rangle
-$$<p><strong>3) $\dagger$의 역순법칙과 선형성</strong></p>
-<ul>
-<li>역순 법칙: $(\hat{A}\hat{B})^\dagger = \hat{B}^\dagger \hat{A}^\dagger$</li>
-<li>선형성: $(\hat{A} + \hat{B})^\dagger = \hat{A}^\dagger + \hat{B}^\dagger$</li>
-</ul>
-<hr>
-<h3 id="3-미분연산자의-경계항-심플레틱-행렬">3. 미분연산자의 경계항: 심플레틱 행렬<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>이전 챕터에서 수반 연산자는 측정의 관점을 바꾸는 도구라고 하였다. 이 관점의 전환 과정에서 발생하는 부산물들을 어떻게 체계적으로 관리할 것인가가 본 장의 핵심이다. 앞서 정의한 <strong>&lsquo;미분 부품&rsquo;</strong> 을 확장하면, 임의의 차수에 대한 경계항 $J$를 다음과 같이 일반화할 수 있다.</p>
-$$
-\langle \phi | L \psi \rangle - \langle L^\dagger \phi | \psi \rangle = [ \langle \Phi | \Omega | \Psi \rangle ]_a^b
-$$<p>$k$차 미분 연산자에서 시스템의 상태를 완벽히 규정하기 위해서는 0차(함숫값)부터 $k-1$차 미분치까지의 모든 정보가 필요하다. 따라서 상태 벡터 $\vec{\Psi}$는 다음과 같은 $k \times 1$ 열벡터로 정의된다. 이는 시스템의 현재 위치뿐만 아니라, 모든 고차 미분 정보를 포함하는 <strong>고차원 위상 공간(High-dimensional Phase Space)</strong> 의 좌표이다.</p>
-$$
-\vec{\Phi} = \begin{bmatrix} \phi \\ \phi' \\ \phi'' \\ \vdots \\ \phi^{(k-1)} \end{bmatrix}, \quad
-\vec{\Psi} = \begin{bmatrix} \psi \\ \psi' \\ \psi'' \\ \vdots \\ \psi^{(k-1)} \end{bmatrix}
-$$<p>상태 벡터들 사이에서 &lsquo;배턴 터치&rsquo;를 수행하는 $\mathbf{\Omega}$는 $k \times k$ 행렬이며, $+1$, $-1$이 번갈아 나타난다. (계수 $p$가 있다면 여기에 $p$가 곱해진다.) 모양은 주대각선이 아니라 &lsquo;부대각선(Anti-diagonal)&rsquo; 방향으로 성분들이 배치되는 반대칭(Skew-symmetric) 행렬이 된다. $k=4$ (4차 미분 연산자)일 때 $J$를 조립해 보면, 상태 벡터는 $4 \times 1$이 되고 $\mathbf{\Omega}$는 다음과 같은 $4 \times 4$ 행렬이 강제된다.</p>
-$$
-J = \begin{bmatrix} \phi^\ast & \phi^{\ast'} & \phi^{\ast''} & \phi^{\ast'''} \end{bmatrix} 
-\underbrace{\begin{bmatrix} 
-0 & 0 & 0 & 1 \\
-0 & 0 & -1 & 0 \\
-0 & 1 & 0 & 0 \\
--1 & 0 & 0 & 0 
-\end{bmatrix}}_{\mathbf{\Omega}}
-\begin{bmatrix} \psi \\ \psi' \\ \psi'' \\ \psi''' \end{bmatrix}
-$$<p>proof)</p>
-<p><strong>(1) 적분에서 연산자 대수로: 미분 취하기</strong></p>
-$$
-\langle \phi|\hat{D}^k\psi\rangle-\langle (-\hat{D})^k\phi|\psi\rangle
-=J(\phi,\psi)
-$$<p>여기서 적분 기호를 제거하고 연산자 자체의 구조를 직접 들여다보기 위해, 양변에 미분 연산($D$)을 취한다.</p>
-$$
-\phi^{\ast}\hat{D}^k\psi-\psi(-\hat{D})^k\phi^{\ast}=DJ(\phi,\psi)
-$$<p><strong>(2) 망원 급수를 통한 유도</strong></p>
-$$
-D^k - \bar{D}^k = (D - \bar{D}) \sum_{j=0}^{k-1} D^{k-1-j} \bar{D}^j
-$$<p>위의 연산자 구조를 입히면, $J$의 정체가 나오게 된다.</p>
-$$
-\phi^{\ast}\hat{D}^k\psi-\psi(-\hat{D})^k\phi^{\ast} = D \left[ \sum_{j=0}^{k-1} ((-D)^j \phi^{\ast}) \cdot (D^{k-1-j} \psi) \right]
-$$<p>J에 대해 정리하면,</p>
-$$
-J = \sum_{j=0}^{k-1} (-1)^j \phi^{\ast(j)} \psi^{(k-1-j)}
-$$<p><strong>(3) 상태 벡터 확장</strong></p>
-<p>미분 차수가 1일 때($k=1$), 스칼라 이다.</p>
-$$
-J=[\phi^\ast]1[\psi]
-$$<p>미분 차수가 2 이상일 때 ($k=2~$), 심플레틱 행렬이 탄생하게 된다. 이것은 이전 챕터에서 다룬 <strong>&lsquo;미분 내제(론스키안)&rsquo;</strong> 와 완전히 일치한다. 이를 상태 벡터로 사영하면 다음과 같은 행렬 구조가 강제된다.</p>
-$$
-J = \phi^\ast \psi' - \phi^{\ast'} \psi
-= \begin{bmatrix}
-\phi^\ast & \phi^{\ast'}
-\end{bmatrix} \begin{bmatrix}
-0 & 1 \\ -1 & 0
-\end{bmatrix} \begin{bmatrix}
-\psi \\ \psi'
-\end{bmatrix}
-$$<p>여기서 나타나는 <strong>$\mathbf{\Omega} = \begin{bmatrix} 0 & 1 ; -1 & 0 \end{bmatrix}$</strong> 이 바로 심플레틱 행렬이다.</p>
-<hr>
-
-  <footer class="footline">
-  </footer>
-</article>
-        </div>
-      </main>
-    </div>
-    <aside id="R-sidebar" class="default-animation">
-      <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-          <a id="R-logo" class="R-default" href="/index.html">
-            <div class="logo-title">수리전자물리학</div>
-          </a>
-        </div>
-        <search><form action="/search/index.html" method="get">
-          <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-            <label class="a11y-only" for="R-search-by">Search</label>
-            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-          </div>
-        </form></search>
-      </div>
-      <div id="R-homelinks" class="default-animation homelinks">
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
-          <ul class="space collapsible-menu">
-            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
-          <ul class="">
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-      </div>
-      <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-main">
-          <ul class="enlarge morespace collapsible-menu">
-            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-url="/vector_operator/adjoint/index.html"><a class="padding" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu">
-            <li class="" data-nav-url="/vector_operator/adjoint/b_adjoint/index.html"><a class="padding" href="/vector_operator/adjoint/b_adjoint/index.html">(b) Adjoint</a></li>
-            <li class="active " data-nav-url="/vector_operator/adjoint/b_symplectic_matrix/index.html"><a class="padding" href="/vector_operator/adjoint/b_symplectic_matrix/index.html">(a) Boundary</a></li></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/function_of_operators/index.html"><a class="padding" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/non-normal_operators/index.html"><a class="padding" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li></ul></li>
-            <li class="" data-nav-url="/greens_function/index.html"><a class="padding" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/quantum_transform/index.html"><a class="padding" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
-          </ul>
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
-          <ul class="space collapsible-menu">
-          </ul>
-        </div>
-        <div id="R-footer-margin"></div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
-          <ul class="">
-          </ul>
-        </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
-      </div>
-    </aside>
-    <script>
-      window.MathJax = Object.assign( window.MathJax || {}, {
-        tex: {
-          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
-          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
-        },
-        options: {
-          enableMenu: false 
-        }
-      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
-    </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779162548"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779162548" defer></script>
-    <script src="/js/theme.js?1779162548" defer></script>
-    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
-  </body>
-</html>
