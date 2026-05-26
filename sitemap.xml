@@ -487,9 +487,6 @@
     <loc>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/lie_theory/b_operators/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/tensor_analysis/basis_transformation/index.html</loc>
   </url>
   <url>
@@ -500,6 +497,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/linear_system/lai/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/lie_theory/b_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/research/research_pin/index.html</loc>

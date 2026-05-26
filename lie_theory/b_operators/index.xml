@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>b_operators :: 수리전자물리학</title>
+    <title>Operators :: 수리전자물리학</title>
     <link>http://localhost:1313/lie_theory/b_operators/index.html</link>
     <description>(b) Copy-shift (b) Evoulution (b) Simple scaling (b) Complex scaling (b) Affine</description>
     <generator>Hugo</generator>

@@ -19,7 +19,7 @@
       <link>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</guid>
-      <description>1. 일반 형태: 세 항 분해&#xD;1) 매개변수 $\tau$에 의존하는 행렬 $A(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.&#xA;$$A(\tau) = \sum_i \lambda_i(\tau)\, \vert v_i(\tau)\rangle\langle v^i(\tau)\vert$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert v_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle v^i(\tau)\vert$ 도 함께 변한다).&#xA;2) 곱셈 규칙(§5)을 세 인자에 모두 적용하면:&#xA;$$\frac{dA}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert v_i\rangle\langle v^i\vert + \lambda_i\, \vert\dot v_i\rangle\langle v^i\vert + \lambda_i\, \vert v_i\rangle\langle \dot v^i\vert\Big]$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:</description>
+      <description>1. 일반 형태: 세 항 분해&#xD;매개변수 $\tau$에 의존하는 행렬 $\hat{A}(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.&#xA;$$&#xD;\hat{A}(\tau) = \sum_i \lambda_i(\tau)\, \vert \lambda_i(\tau)\rangle\langle \lambda^i(\tau)\vert&#xD;$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert \lambda_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle \lambda^i(\tau)\vert$ 도 함께 변한다).&#xA;$$&#xD;\frac{d\hat{A}}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert \lambda_i\rangle\langle \lambda^i\vert + \lambda_i\, \vert\dot \lambda_i\rangle\langle \lambda^i\vert + \lambda_i\, \vert \lambda_i\rangle\langle \dot \lambda^i\vert\Big]&#xD;$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:</description>
     </item>
     <item>
       <title>(b) SV continuous spectrum</title>
@@ -33,7 +33,7 @@
       <link>http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html</guid>
-      <description>1. 동기&#xD;§5에서 1매개변수 행렬 $A(\tau)$의 미분을 다뤘다. §10에서 다변수 매개변수화 $g(\tau^1, \ldots, \tau^n)$을 소개했고, 각 방향의 편미분이 생성자 $X_a$를 준다는 것까지 봤다.&#xA;이 장에서는 §5의 다변수 판 을 정리한다 — 편미분의 정의, 기본 규칙, 혼합 편미분 (클레로 정리), 다변수 테일러 전개, 방향 미분. 이 도구들이 §12, §13, 그리고 §14의 리 괄호 정의에 직접 필요하다.&#xA;2. 편미분 (성분별)&#xD;1) 행렬 $A(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.</description>
+      <description>1. 편미분 (성분별)&#xD;1) 행렬 $\hat{A}(\tau^1, \ldots, \tau^n)$ 의 편미분은 한 변수만 변화시키면서 미분한 것이다.($2 \times 2$의 예지만 일반 크기에 그대로 일반화된다.) 매개변수 $n$ 개에 대응되는 $n$ 개의 편미분 행렬이 있다.&#xA;$$&#xD;\frac{\partial \hat{A}}{\partial \tau^a} = \begin{pmatrix} \dfrac{\partial a_{11}}{\partial \tau^a} &amp; \dfrac{\partial a_{12}}{\partial \tau^a} \\ \dfrac{\partial a_{21}}{\partial \tau^a} &amp; \dfrac{\partial a_{22}}{\partial \tau^a} \end{pmatrix}&#xD;$$ 2. 기본 규칙&#xD;1) 선형성</description>
     </item>
     <item>
       <title>(b) MV discrete spectrum</title>
