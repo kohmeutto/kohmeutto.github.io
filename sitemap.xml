@@ -592,10 +592,10 @@
     <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_iii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/lie_theory/b_calculus/b_mv_matrix/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/determinant_norm/b_operator_norm/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/b_operator_norm/index.html</loc>
+    <loc>http://localhost:1313/lie_theory/b_calculus/b_partial_derivative/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/quantum_transform/b_transmission_scattering/index.html</loc>

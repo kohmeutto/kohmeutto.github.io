@@ -5,50 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.155.0">
     <meta name="generator" content="Relearn 9.0.3">
-    <meta name="description" content="1. 동기§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 세 항 — 고유값 변화 &#43; 켓 고유벡터 변화 &#43; 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.
-이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.
-2. 다변수 스펙트럼 분해 (가정)1) 매개변수 영역에서 $A(\tau)$ 가 비축퇴 (non-degenerate) 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.">
+    <meta name="description" content="1. 동기앞서 단일 매개변수 행렬 $A(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial A/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) MV discrete spectrum :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 동기§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 세 항 — 고유값 변화 &#43; 켓 고유벡터 변화 &#43; 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.
-이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.
-2. 다변수 스펙트럼 분해 (가정)1) 매개변수 영역에서 $A(\tau)$ 가 비축퇴 (non-degenerate) 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.">
+    <meta name="twitter:title" content="(b) MV spectrum :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기앞서 단일 매개변수 행렬 $A(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial A/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
     <meta property="og:url" content="http://localhost:1313/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) MV discrete spectrum :: 수리전자물리학">
-    <meta property="og:description" content="1. 동기§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 세 항 — 고유값 변화 &#43; 켓 고유벡터 변화 &#43; 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.
-이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.
-2. 다변수 스펙트럼 분해 (가정)1) 매개변수 영역에서 $A(\tau)$ 가 비축퇴 (non-degenerate) 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.">
+    <meta property="og:title" content="(b) MV spectrum :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기앞서 단일 매개변수 행렬 $A(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial A/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Lie theory">
-    <meta itemprop="name" content="(b) MV discrete spectrum :: 수리전자물리학">
-    <meta itemprop="description" content="1. 동기§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 세 항 — 고유값 변화 &#43; 켓 고유벡터 변화 &#43; 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.
-이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.
-2. 다변수 스펙트럼 분해 (가정)1) 매개변수 영역에서 $A(\tau)$ 가 비축퇴 (non-degenerate) 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.">
-    <meta itemprop="wordCount" content="966">
-    <title>(b) MV discrete spectrum :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1779790800" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1779790800" defer></script>
-    <script src="/js/search-lunr.js?1779790800" defer></script>
-    <script src="/js/search.js?1779790800" defer></script>
+    <meta itemprop="name" content="(b) MV spectrum :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기앞서 단일 매개변수 행렬 $A(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial A/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
+    <meta itemprop="wordCount" content="245">
+    <title>(b) MV spectrum :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1780038221" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780038221" defer></script>
+    <script src="/js/search-lunr.js?1780038221" defer></script>
+    <script src="/js/search.js?1780038221" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1779790800";
+      window.relearn.index_js_url="/searchindex.en.js?1780038221";
     </script>
-    <script src="/js/lunr/lunr.min.js?1779790800" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1779790800" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1779790800" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1779790800" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780038221" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780038221" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780038221" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780038221" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1779790800" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1779790800" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1779790800" rel="stylesheet">
-    <link href="/css/theme.css?1779790800" rel="stylesheet">
-    <link href="/css/format-html.css?1779790800" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780038221" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780038221" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780038221" rel="stylesheet">
+    <link href="/css/theme.css?1780038221" rel="stylesheet">
+    <link href="/css/format-html.css?1780038221" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -117,14 +109,8 @@
     <li>
       <ul>
         <li><a href="#1-동기">1. 동기</a></li>
-        <li><a href="#2-다변수-스펙트럼-분해-가정">2. 다변수 스펙트럼 분해 (가정)</a></li>
-        <li><a href="#3-편미분의-세-항-분해">3. 편미분의 세 항 분해</a></li>
-        <li><a href="#4-다변수-헬만-파인만">4. 다변수 헬만-파인만</a></li>
-        <li><a href="#5-다변수-섭동-공식">5. 다변수 섭동 공식</a></li>
-        <li><a href="#6-혼합-편미분과-클레로">6. 혼합 편미분과 클레로</a></li>
-        <li><a href="#7-특별한-경우">7. 특별한 경우</a></li>
-        <li><a href="#8-example-2준위-계의-자기장-매개변수화">8. example: 2준위 계의 자기장 매개변수화</a></li>
-        <li><a href="#9-정리">9. 정리</a></li>
+        <li><a href="#2-다변수-이산-스펙트럼-분해">2. 다변수 이산 스펙트럼 분해</a></li>
+        <li><a href="#3-이산-스펙트럼의-편미분">3. 이산 스펙트럼의 편미분</a></li>
       </ul>
     </li>
   </ul>
@@ -133,11 +119,11 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) MV discrete spectrum</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_calculus/index.html"><span itemprop="name">Calculus</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) MV spectrum</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_mv_matrix/index.html" title="(b) MV matrix (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_partial_derivative/index.html" title="(b) Partial derivative (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html" title="(b) MV continuous spectrum (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
@@ -161,74 +147,28 @@
   <header class="headline">
   </header>
 
-<h1 id="b-mv-discrete-spectrum">(b) MV discrete spectrum</h1>
+<h1 id="b-mv-spectrum">(b) MV spectrum</h1>
 
 <h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>§7에서 1매개변수 행렬 $A(\tau)$ 의 미분이 <em>세 항</em> — 고유값 변화 + 켓 고유벡터 변화 + 브라 고유벡터 변화 — 으로 분해됨을 봤다. §11에서 다변수 편미분의 일반 규칙을 다뤘다.</p>
-<p>이 장에서는 둘을 결합한다 — 다변수 $A(\tau^1, \ldots, \tau^n)$ 의 각 편미분 $\partial A/\partial \tau^a$ 가 어떻게 스펙트럼 위에서 분해되는지.</p>
-<h3 id="2-다변수-스펙트럼-분해-가정">2. 다변수 스펙트럼 분해 (가정)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 매개변수 영역에서 $A(\tau)$ 가 <em>비축퇴 (non-degenerate)</em> 고유값을 갖고, 고유값 $\lambda_i(\tau)$ 와 고유벡터 $|v_i(\tau)\rangle, \langle v^i(\tau)|$ 가 $\tau$ 에 대해 매끄럽다고 가정한다.</p>
-<p><strong>2)</strong> 이때 각 점 $\tau$ 에서 스펙트럼 분해:</p>
-$$A(\tau) = \sum_i \lambda_i(\tau)\, |v_i(\tau)\rangle \langle v^i(\tau)|$$<p><strong>3)</strong> 쌍대 기저 직교 관계: $\langle v^i(\tau) | v_j(\tau) \rangle = \delta^i_j$ (각 $\tau$ 에서).</p>
-<h3 id="3-편미분의-세-항-분해">3. 편미분의 세 항 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 각 매개변수 $\tau^a$ 에 대한 편미분에 곱셈 규칙 (§11.3) 을 적용:</p>
-$$\frac{\partial A}{\partial \tau^a} = \sum_i \left[ \frac{\partial \lambda_i}{\partial \tau^a}\, |v_i\rangle \langle v^i| \;+\; \lambda_i\, \frac{\partial |v_i\rangle}{\partial \tau^a} \langle v^i| \;+\; \lambda_i\, |v_i\rangle\, \frac{\partial \langle v^i|}{\partial \tau^a} \right]$$<p><strong>2)</strong> <em>세 항의 의미</em>:</p>
-<ul>
-<li><em>첫째</em>: 고유값이 $\tau^a$ 방향으로 변화 (스펙트럼 자체의 이동)</li>
-<li><em>둘째</em>: 켓 고유벡터가 $\tau^a$ 방향으로 변화</li>
-<li><em>셋째</em>: 브라 고유벡터가 $\tau^a$ 방향으로 변화</li>
-</ul>
-<p><strong>3)</strong> §7의 세 항 구조가 <em>각 매개변수마다</em> 그대로 적용된다. 매개변수 $n$ 개에 대해 <em>$n$ 개의 세 항 분해</em> 가 있다.</p>
-<h3 id="4-다변수-헬만-파인만">4. 다변수 헬만-파인만<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> $A|v_i\rangle = \lambda_i |v_i\rangle$ 의 양변을 $\tau^a$ 로 편미분:</p>
-$$\frac{\partial A}{\partial \tau^a}|v_i\rangle + A\frac{\partial |v_i\rangle}{\partial \tau^a} = \frac{\partial \lambda_i}{\partial \tau^a}|v_i\rangle + \lambda_i \frac{\partial |v_i\rangle}{\partial \tau^a}$$<p><strong>2)</strong> 양변에 $\langle v^i|$ 를 왼쪽에서 곱하고 $\langle v^i|A = \lambda_i \langle v^i|$ 활용:</p>
-$$\langle v^i|\frac{\partial A}{\partial \tau^a}|v_i\rangle + \lambda_i \langle v^i|\frac{\partial |v_i\rangle}{\partial \tau^a} = \frac{\partial \lambda_i}{\partial \tau^a} + \lambda_i \langle v^i|\frac{\partial |v_i\rangle}{\partial \tau^a}$$<p>두 둘째 항이 상쇄되어</p>
-$$\boxed{\frac{\partial \lambda_i}{\partial \tau^a} = \langle v^i | \frac{\partial A}{\partial \tau^a} | v_i \rangle}$$<p><strong>3)</strong> <em>고유값의 편미분</em>은 <em>교란 행렬</em> $\partial A/\partial \tau^a$ 의 <em>대각 성분</em>. §7의 헬만-파인만의 자연스러운 일반화 — 매개변수가 늘어도 형태가 그대로다.</p>
-<h3 id="5-다변수-섭동-공식">5. 다변수 섭동 공식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 동일한 식에서 양변에 $\langle v^j|$ ($j \neq i$) 을 왼쪽에서 곱:</p>
-$$\langle v^j|\frac{\partial A}{\partial \tau^a}|v_i\rangle + \lambda_j \langle v^j|\frac{\partial |v_i\rangle}{\partial \tau^a} = \lambda_i \langle v^j|\frac{\partial |v_i\rangle}{\partial \tau^a}$$<p>(왼쪽 둘째 항에 $\langle v^j|A = \lambda_j \langle v^j|$ 적용.)</p>
-<p><strong>2)</strong> 정리하면</p>
-$$\langle v^j|\frac{\partial |v_i\rangle}{\partial \tau^a} = \frac{\langle v^j | \partial A / \partial \tau^a | v_i \rangle}{\lambda_i - \lambda_j}, \quad j \neq i$$<p><strong>3)</strong> $|\partial v_i / \partial \tau^a\rangle$ 를 기저로 전개 ($j = i$ 항은 게이지 선택, 보통 0 으로 둔다):</p>
-$$\boxed{\frac{\partial |v_i\rangle}{\partial \tau^a} = \sum_{j \neq i} \frac{\langle v^j | \partial A / \partial \tau^a | v_i \rangle}{\lambda_i - \lambda_j} |v_j\rangle}$$<p><strong>4)</strong> <em>각 방향</em> $\tau^a$ 마다 독립적인 섭동 공식. §7의 1매개변수 공식에 매개변수 라벨 $a$ 만 추가된 형태.</p>
-<p><strong>5)</strong> 분모 $\lambda_i - \lambda_j$ 는 <em>비축퇴</em> 가정에서 비롯된 안정 조건. 축퇴 영역에서는 발산하며, 이는 베리 위상·고유값 교차 등의 현상과 관련 (이 장 범위 밖).</p>
-<h3 id="6-혼합-편미분과-클레로">6. 혼합 편미분과 클레로<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 클레로 정리 (§11.4) 에 의해 $A$ 의 혼합 편미분은 순서 교환 가능:</p>
-$$\frac{\partial^2 A}{\partial \tau^a \partial \tau^b} = \frac{\partial^2 A}{\partial \tau^b \partial \tau^a}$$<p><strong>2)</strong> 스펙트럼 부품 각각도 클레로 만족:</p>
-$$\frac{\partial^2 \lambda_i}{\partial \tau^a \partial \tau^b} = \frac{\partial^2 \lambda_i}{\partial \tau^b \partial \tau^a}, \qquad \frac{\partial^2 |v_i\rangle}{\partial \tau^a \partial \tau^b} = \frac{\partial^2 |v_i\rangle}{\partial \tau^b \partial \tau^a}$$<p>(매끄러운 매개변수화 하에서.)</p>
-<p><strong>3)</strong> <em>주의</em>: 이는 <em>미분 작용 순서</em>가 교환 가능하다는 뜻이지, 두 <em>교란 행렬</em> $\partial A/\partial \tau^a$ 와 $\partial A/\partial \tau^b$ 가 <em>교환</em>한다는 것과는 다르다. 일반적으로</p>
-$$\left[\frac{\partial A}{\partial \tau^a},\, \frac{\partial A}{\partial \tau^b}\right] \neq 0$$<p>이 교환자는 §14의 <em>리 괄호</em> 와 직결된다.</p>
-<h3 id="7-특별한-경우">7. 특별한 경우<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> <em>고유벡터가 모든 $\tau$ 에서 고정</em>: $\partial |v_i\rangle / \partial \tau^a = 0$ 모든 $a, i$. 그러면 첫째 항만 남고</p>
-$$\frac{\partial A}{\partial \tau^a} = \sum_i \frac{\partial \lambda_i}{\partial \tau^a}\, |v_i\rangle \langle v^i|$$<p>모든 편미분이 <em>같은 기저에서 대각화</em> 된다. 예: $A(\tau) = \sum_a \tau^a H_a$ 에서 모든 $H_a$ 가 동시 대각화 가능한 경우 ($[H_a, H_b]=0$ 모든 $a, b$).</p>
-<p><strong>2)</strong> <em>고유값이 모든 $\tau$ 에서 고정</em>: $\partial \lambda_i / \partial \tau^a = 0$. 그러면 둘째·셋째 항만 — 고유벡터의 회전만 일어난다. 예: 유니터리 변환 $A(\tau) = U(\tau) A_0 U(\tau)^{-1}$.</p>
-<h3 id="8-example-2준위-계의-자기장-매개변수화">8. example: 2준위 계의 자기장 매개변수화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 두 매개변수 $(\tau^1, \tau^2)$ 에 의존하는 2준위 헤르미트 행렬:</p>
-$$A(\tau^1, \tau^2) = \tau^1\, \sigma_z + \tau^2\, \sigma_x$$<p>(파울리 행렬. 자기장의 $z$, $x$ 성분으로 해석 가능.)</p>
-<p><strong>2)</strong> 점 $(\tau^1, \tau^2) = (1, 0)$ 에서 평가:</p>
-<ul>
-<li>$A = \sigma_z = \mathrm{diag}(1, -1)$</li>
-<li>고유값: $\lambda_+ = +1, \lambda_- = -1$</li>
-<li>고유벡터: $|v_+\rangle = |\uparrow\rangle, |v_-\rangle = |\downarrow\rangle$</li>
-</ul>
-<p><strong>3)</strong> 교란 행렬:</p>
-$$\frac{\partial A}{\partial \tau^1} = \sigma_z, \qquad \frac{\partial A}{\partial \tau^2} = \sigma_x$$<p><strong>4)</strong> 고유값의 편미분 (헬만-파인만):</p>
-<p>(1) $\dfrac{\partial \lambda_+}{\partial \tau^1} = \langle\uparrow| \sigma_z |\uparrow\rangle = +1$</p>
-<p>(2) $\dfrac{\partial \lambda_+}{\partial \tau^2} = \langle\uparrow| \sigma_x |\uparrow\rangle = 0$</p>
-<p>(3) $\dfrac{\partial \lambda_-}{\partial \tau^1} = \langle\downarrow| \sigma_z |\downarrow\rangle = -1$</p>
-<p>해석: $\tau^1$ 방향은 고유값을 <em>벌리고</em> ($+\lambda$ 는 더 올리고 $-\lambda$ 는 더 내림), $\tau^2$ 방향은 1차에서 고유값을 <em>건드리지 않는다</em>. 2차 효과는 별도 계산 필요.</p>
-<p><strong>5)</strong> 고유벡터의 편미분 (섭동 공식):</p>
-<p>(1) $\dfrac{\partial |v_+\rangle}{\partial \tau^1} = \dfrac{\langle\downarrow| \sigma_z |\uparrow\rangle}{1-(-1)} |\downarrow\rangle = \dfrac{0}{2} |\downarrow\rangle = 0$ (대각이라 회전 없음)</p>
-<p>(2) $\dfrac{\partial |v_+\rangle}{\partial \tau^2} = \dfrac{\langle\downarrow| \sigma_x |\uparrow\rangle}{1-(-1)} |\downarrow\rangle = \dfrac{1}{2} |\downarrow\rangle$</p>
-<p>해석: $\tau^2$ 방향이 <em>고유벡터를 $|\downarrow\rangle$ 쪽으로 회전</em> 시킨다 — 비대각 섭동의 효과.</p>
-<p><strong>6)</strong> <em>교란 행렬의 교환자</em>:</p>
-$$\left[\frac{\partial A}{\partial \tau^1},\, \frac{\partial A}{\partial \tau^2}\right] = [\sigma_z, \sigma_x] = 2i\sigma_y \neq 0$$<p>미분 순서는 교환 가능하지만 (클레로), 두 교란 행렬은 교환하지 않는다. 이 비교환성이 §14 의 리 괄호로 이어진다.</p>
-<h3 id="9-정리">9. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>1)</strong> 다변수 행렬 $A(\tau)$ 의 편미분이 §7의 <em>세 항</em>으로 분해된다 — <em>각 매개변수마다</em>.</p>
-$$\frac{\partial A}{\partial \tau^a} = \sum_i \left[ \frac{\partial \lambda_i}{\partial \tau^a}\, |v_i\rangle \langle v^i| + \lambda_i \frac{\partial |v_i\rangle}{\partial \tau^a} \langle v^i| + \lambda_i |v_i\rangle \frac{\partial \langle v^i|}{\partial \tau^a} \right]$$<p><strong>2)</strong> <em>다변수 헬만-파인만</em>: 고유값 편미분은 교란 행렬의 대각 성분.</p>
-$$\frac{\partial \lambda_i}{\partial \tau^a} = \langle v^i | \frac{\partial A}{\partial \tau^a} | v_i \rangle$$<p><strong>3)</strong> <em>다변수 섭동 공식</em>: 고유벡터 편미분은 비대각 성분으로 사영.</p>
-$$\frac{\partial |v_i\rangle}{\partial \tau^a} = \sum_{j \neq i} \frac{\langle v^j | \partial A / \partial \tau^a | v_i \rangle}{\lambda_i - \lambda_j} |v_j\rangle$$<p><strong>4)</strong> <em>클레로 정리</em>: 혼합 편미분은 순서 교환 가능 (매끄러운 경우). 단, 두 교란 행렬이 <em>교환</em> 한다는 것과는 다르다 — 이 비교환성이 §14 리 괄호의 기반.</p>
-<p><strong>5)</strong> <em>특수 경우</em>: 고유벡터 고정 → 첫째 항만 / 고유값 고정 → 둘째·셋째 항만.</p>
-<p><strong>6)</strong> 다음 장 §13 에서 연속 스펙트럼으로 확장한다.</p>
+<p>앞서 단일 매개변수 행렬 $A(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial A/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.</p>
+<hr>
+<h3 id="2-다변수-이산-스펙트럼-분해">2. 다변수 이산 스펙트럼 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>매개변수 영역 내에서 행렬 $A(\tau)$가 비축퇴 고유값을 가지며, 고유값 $\lambda_i(\tau)$와 고유벡터 $|v_i(\tau)\rangle$, $\langle v^i(\tau)|$가 매개변수 $\tau$에 대해 유한 차수까지 매끄럽게 변화한다고 가정한다. 각 매개변수 지점 $\tau$에서 스펙트럼 분해는 다음과 같이 정의된다.</p>
+$$
+A(\tau) = \sum_i \lambda_i(\tau)\, |v_i(\tau)\rangle \langle v^i(\tau)|
+$$<p>이때 쌍대 기저의 직교 관계는 모든 매개변수 지점 $\tau$에서 $\langle v^i(\tau) | v_j(\tau) \rangle = \delta^i_j$를 만족한다.</p>
+<hr>
+<h3 id="3-이산-스펙트럼의-편미분">3. 이산 스펙트럼의 편미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>매개변수 공간의 각 성분 $\tau^a$에 대한 편미분 연산은 다른 매개변수 성분을 고정하므로, §7에서 도출된 단일 매개변수 미분 규칙이 선형성에 의해 동일하게 적용된다. 편미분 분해의 결과식은 다음과 같다.</p>
+$$
+\frac{\partial A}{\partial \tau^a} = \sum_i \left[ \frac{\partial \lambda_i}{\partial \tau^a}\, |v_i\rangle \langle v^i| + \lambda_i \frac{\partial |v_i\rangle}{\partial \tau^a} \langle v^i| + \lambda_i |v_i\rangle \frac{\partial \langle v^i|}{\partial \tau^a} \right]
+$$<p>비대각 성분에 대한 투영을 통해 도출되는 헬만-파인만 정리와 고유벡터의 1차 보정식 또한 단일 매개변수 공식의 편미분 확장 형태를 띤다. 다변수 고유값 편미분은 다음과 같다.</p>
+$$
+\frac{\partial \lambda_i}{\partial \tau^a} = \langle v^i | \frac{\partial A}{\partial \tau^a} | v_i \rangle
+$$<p>고유벡터의 1차 보정식은 다음과 같이 결정된다.</p>
+$$
+\frac{\partial |v_i\rangle}{\partial \tau^a} = \sum_{j \neq i} \frac{\langle v^j | \partial A / \partial \tau^a | v_i \rangle}{\lambda_i - \lambda_j} |v_j\rangle
+$$<hr>
 
   <footer class="footline">
   </footer>
@@ -280,8 +220,8 @@ $$\frac{\partial |v_i\rangle}{\partial \tau^a} = \sum_{j \neq i} \frac{\langle v
             <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_matrix/index.html">(b) SV matrix</a></li>
             <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html">(b) SV discrete spectrum</a></li>
             <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html">(b) SV continuous spectrum</a></li>
-            <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_matrix/index.html">(b) MV matrix</a></li>
-            <li class="active " data-nav-id="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html">(b) MV discrete spectrum</a></li>
+            <li class="" data-nav-id="/lie_theory/b_calculus/b_partial_derivative/index.html"><a class="padding" href="/lie_theory/b_calculus/b_partial_derivative/index.html">(b) Partial derivative</a></li>
+            <li class="active " data-nav-id="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html">(b) MV spectrum</a></li>
             <li class="" data-nav-id="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html"><a class="padding" href="/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html">(b) MV continuous spectrum</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/lie_theory/b_lie_group_algebra/index.html"><a class="padding default-animation" href="/lie_theory/b_lie_group_algebra/index.html">Lie group &amp; algebra</a><ul id="R-subsections-a34f317130e80a0a68efa3c35ebb9278" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/lie_theory/b_operators/index.html"><a class="padding default-animation" href="/lie_theory/b_operators/index.html">Operators</a><ul id="R-subsections-a4a547684e87b772ab7dceffd5fea0e1" class="collapsible-menu"></ul></li>
@@ -327,9 +267,9 @@ $$\frac{\partial |v_i\rangle}{\partial \tau^a} = \sum_{j \neq i} \frac{\langle v
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1779790800"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1779790800" defer></script>
-    <script src="/js/theme.js?1779790800" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780038221"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780038221" defer></script>
+    <script src="/js/theme.js?1780038221" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
