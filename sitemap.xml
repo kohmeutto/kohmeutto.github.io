@@ -58,13 +58,7 @@
     <loc>http://localhost:1313/greens_function/gf/b_green_function/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/i_operators/b_i-contraction/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/quantum_transform/b_quantum_transport_intro/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/j_operators/a_j-contraction/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/dirac_notation/b_ket/index.html</loc>
@@ -82,10 +76,13 @@
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_mapping_i/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_metric_operator/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/greens_function/negf/b_negf_overview/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/normal_operators/b_normal/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</loc>
@@ -265,12 +262,6 @@
     <loc>http://localhost:1313/vector_operator/normal_operators/b_hermitian/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/i_operators/b_i-dilation/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/j_operators/a_j-dilation/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/geometric_algebra/einstein-notation/b_kronecker_levicivita_symbols/index.html</loc>
   </url>
   <url>
@@ -293,6 +284,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_operator_i/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_persudo_adjoint/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
@@ -439,6 +433,9 @@
     <loc>http://localhost:1313/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_m-normal/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_ii/index.html</loc>
   </url>
   <url>
@@ -455,9 +452,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/eigenvalue_problem/b_spectral_theory/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/euclidean_vector/i_linearity/index.html</loc>
@@ -571,9 +565,6 @@
     <loc>http://localhost:1313/temp/b_i-unitary/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/normal_operators/b_i-unitary/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/linear_system/lsi/b_laplace_transform_i/index.html</loc>
   </url>
   <url>
@@ -581,6 +572,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_lesser_greater/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_m-hermitian/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_matrix_kernel/index.html</loc>
@@ -602,6 +596,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_uniqueness/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>
@@ -670,6 +667,9 @@
     <loc>http://localhost:1313/ode_pde/inhomogeneous/a_wronskian_method/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/normal_operators/b_contraction/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/greens_function/negf/b_dyson_self_energy/index.html</loc>
   </url>
   <url>
@@ -697,10 +697,13 @@
     <loc>http://localhost:1313/linear_system/lsi/b_laplace_transform_iii/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_m-unitary/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/euclidean_vector/b_matrix/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/lie_theory/b_calculus/b_mv_discrete_spectrum/index.html</loc>
+    <loc>http://localhost:1313/lie_theory/b_calculus/b_mv_spectrum/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/hilbert_vector/b_riesz/index.html</loc>
@@ -763,6 +766,9 @@
     <loc>http://localhost:1313/temp/b_dilation/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/tensor_calculus/orthogonal_coordinates/b_divergence/index.html</loc>
   </url>
   <url>
@@ -776,6 +782,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_keldysh_contour/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_m-contraction/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/b_calculus/b_mv_continuous_spectrum/index.html</loc>
@@ -827,6 +836,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_langreth_rules/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/b_m-dilation/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/gf/b_singular_sl/index.html</loc>
@@ -952,7 +964,7 @@
     <loc>http://localhost:1313/temp/theory2/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/i_operators/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/non-normal_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/exterior_algebra/11-b_stokes_theorem/index.html</loc>
@@ -970,9 +982,6 @@
     <loc>http://localhost:1313/exterior_algebra/12-b_de_rham_cohomology/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/lie_group3/7-b_exponential_map/index.html</loc>
   </url>
   <url>
@@ -985,10 +994,10 @@
     <loc>http://localhost:1313/exterior_algebra/13-b_hodge_star/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/j_operators/index.html</loc>
+    <loc>http://localhost:1313/temp/research_na/outline/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/temp/research_na/outline/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_group3/8-b_lie_algebra_definition/index.html</loc>
@@ -1019,6 +1028,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/research_na/chapter3/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_group3/10-b_commutator_lie_bracket/index.html</loc>

@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators I-operators Function of operators J-operators</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Resolvent operator Function of operators</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -61,14 +61,21 @@
       <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/index.html</guid>
-      <description>(b) Normal operators (b) Hermitian (b) anti-Hermitian (b) I-unitary</description>
+      <description>(b) Normal (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation</description>
     </item>
     <item>
-      <title>I-operators</title>
-      <link>http://localhost:1313/vector_operator/i_operators/index.html</link>
+      <title>Non-normal operators</title>
+      <link>http://localhost:1313/vector_operator/non-normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/i_operators/index.html</guid>
-      <description>(b) I-contraction (b) I-dilation</description>
+      <guid>http://localhost:1313/vector_operator/non-normal_operators/index.html</guid>
+      <description>(b) Metric Operator (b) Pesudo-adjoint (b) M-normal (b) M-Hermitian (b) M-unitary (b) M-contraction (b) M-dilation</description>
+    </item>
+    <item>
+      <title>Resolvent operator</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Function of operators</title>
@@ -76,13 +83,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/function_of_operators/index.html</guid>
       <description>(b) Dual space (b) Function of operators</description>
-    </item>
-    <item>
-      <title>J-operators</title>
-      <link>http://localhost:1313/vector_operator/j_operators/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/j_operators/index.html</guid>
-      <description>(b) J-contraction (b) J-dilation</description>
     </item>
   </channel>
 </rss>

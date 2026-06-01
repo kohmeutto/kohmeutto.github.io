@@ -3,7 +3,7 @@
   <channel>
     <title>Calculus :: 수리전자물리학</title>
     <link>http://localhost:1313/lie_theory/b_calculus/index.html</link>
-    <description>(b) SV matrix (b) SV discrete spectrum (b) SV continuous spectrum (b) Partial derivative (b) MV spectrum (b) MV continuous spectrum</description>
+    <description>(b) SV matrix (b) SV discrete spectrum (b) Partial derivative (b) MV spectrum (b) MV continuous spectrum</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/lie_theory/b_calculus/index.xml" rel="self" type="application/rss+xml" />
@@ -20,13 +20,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</guid>
       <description>1. 일반 형태: 세 항 분해&#xD;매개변수 $\tau$에 의존하는 행렬 $\hat{A}(\tau)$의 스펙트럼 분해를 다음과 같이 쓴다.&#xA;$$&#xD;\hat{A}(\tau) = \sum_i \lambda_i(\tau)\, \vert \lambda_i(\tau)\rangle\langle \lambda^i(\tau)\vert&#xD;$$고유값 $\lambda_i(\tau)$와 고유벡터 $\vert \lambda_i(\tau)\rangle$ 둘 다 $\tau$에 따라 변할 수 있다 (쌍대 기저 $\langle \lambda^i(\tau)\vert$ 도 함께 변한다).&#xA;$$&#xD;\frac{d\hat{A}}{d\tau} = \sum_i \Big[\dot\lambda_i\, \vert \lambda_i\rangle\langle \lambda^i\vert + \lambda_i\, \vert\dot \lambda_i\rangle\langle \lambda^i\vert + \lambda_i\, \vert \lambda_i\rangle\langle \dot \lambda^i\vert\Big]&#xD;$$여기서 점은 $\tau$에 대한 미분이다 ($\dot\lambda_i = d\lambda_i/d\tau$ 등). 세 항의 의미:</description>
-    </item>
-    <item>
-      <title>(b) SV continuous spectrum</title>
-      <link>http://localhost:1313/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/lie_theory/b_calculus/b_sv_continuous_spectrum/index.html</guid>
-      <description>1. 연속 스펙트럼에서의 미분: 세 항&#xD;$$A(\tau) = \int du\, \lambda(u, \tau)\, \vert u(\tau)\rangle\langle u^d(\tau)\vert$$곱셈 규칙을 세 인자에 모두 적용:&#xA;$$\frac{dA}{d\tau} = \int du\, \Big[\dot\lambda(u, \tau)\, \vert u\rangle\langle u^d\vert + \lambda(u, \tau)\, \vert\dot u\rangle\langle u^d\vert + \lambda(u, \tau)\, \vert u\rangle\langle \dot{u^d}\vert\Big]$$ 2. 특정 경우: 고유상태 고정&#xD;$\vert u\rangle$ 가 $\tau$ 와 무관하면 뒤의 두 항이 사라지고</description>
     </item>
     <item>
       <title>(b) Partial derivative</title>
