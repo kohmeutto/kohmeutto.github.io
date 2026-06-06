@@ -27,28 +27,28 @@ $$|\psi\rangle \xrightarrow{\text{Measure=Pick}} \lambda^\text{중복도,3}(|\l
     <meta itemprop="description" content="1. 물리적 의미1, 동시측정 가능성교환자는 두 물리량을 동시에 얼마나 정확하게 알 수 있는지를 판별하는 ‘측정 호환성 테스트’이다. 측정이란 어떤 고유값을 선택(중복포함하여)하는 것 이다. 예로, $\hat{H}$ 를 기준으로 측정하여라 하면, $\hat{H}$ 고유값(중복고유값 포함) 중 하나가 임의로 선택되는 것을 말한다.
 $$|\psi\rangle \xrightarrow{\text{Measure=Pick}} \lambda^\text{중복도,3}(|\lambda_1^3\rangle&#43;|\lambda_2^3\rangle&#43;|\lambda_3^3\rangle)$$(1) 교환하는 경우 ($[\hat{A}, \hat{B}] = 0$): 양립 가능한 측정량
 두 물리량은 ‘양립 가능(compatible)’ 하며 동시에 확정된 값을 가질 수 있다. 하나의 양을 측정하는 행위가 다른 양의 상태를 교란시키지 않는다.">
-    <meta itemprop="wordCount" content="667">
+    <meta itemprop="wordCount" content="393">
     <title>(a) Physics :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780240855" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780240855" defer></script>
-    <script src="/js/search-lunr.js?1780240855" defer></script>
-    <script src="/js/search.js?1780240855" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780708874" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780708874" defer></script>
+    <script src="/js/search-lunr.js?1780708874" defer></script>
+    <script src="/js/search.js?1780708874" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780240855";
+      window.relearn.index_js_url="/searchindex.en.js?1780708874";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780240855" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780708874" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780240855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780240855" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780240855" rel="stylesheet">
-    <link href="/css/theme.css?1780240855" rel="stylesheet">
-    <link href="/css/format-html.css?1780240855" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780708874" rel="stylesheet">
+    <link href="/css/theme.css?1780708874" rel="stylesheet">
+    <link href="/css/format-html.css?1780708874" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -195,15 +195,6 @@ $$<ul>
 <li>연산자 $B$의 도입: $[A, B] = 0$이므로 공통 기저를 가진다. $B$를 측정하여 고유값 $1$을 얻었다면, 우리는 시스템이 정확히 $|u_1\rangle$ 상태임을 확신할 수 있다.</li>
 </ul>
 <hr>
-<p>아주 핵심적인 질문입니다. **&ldquo;교환 가능하다($XY=YX$)&rdquo;**는 조건 하나가 어떻게 마법처럼 지수 법칙($e^X e^Y = e^{X+Y}$)을 성립시키는지, 그 수학적 메커니즘을 **&lsquo;이항 정리(Binomial Theorem)&rsquo;**를 통해 명쾌하게 보여드리겠습니다.결론부터 말씀드리면, **&ldquo;교환이 가능해야만 우리가 아는 곱셈 공식($(A+B)^2 = A^2+2AB+B^2$)이 성립하기 때문&rdquo;**입니다.1. 핵심 이유: 곱셈 공식의 부활지수 함수 $e^X$는 거듭제곱($X, X^2, X^3 \dots$)들의 합입니다. 따라서 지수 법칙이 성립하려면, 그 재료인 거듭제곱의 법칙이 먼저 성립해야 합니다.가장 쉬운 **2제곱(제곱)**을 예로 들어보겠습니다.</p>
-$$(X+Y)^2 = (X+Y)(X+Y) = X^2 + \mathbf{XY + YX} + Y^2$$<p>여기서 **교환 가능($XY=YX$)**하다면?중간항 $XY$와 $YX$가 똑같은 놈이 되어 합쳐집니다.</p>
-$$X^2 + \mathbf{XY + XY} + Y^2 = X^2 + \mathbf{2XY} + Y^2$$<p>우리가 중학교 때 배운 완전제곱식이 드디어 성립합니다. 이것이 바로 **이항 정리(Binomial Theorem)**입니다.교환 가능의 힘:순서가 상관없으므로($XY=YX$), 흩어져 있던 항들을 종류별로 모아서 깔끔한 계수(2, 3, 4&hellip;)로 묶을 수 있습니다.2. 지수 함수에 적용 (증명)이제 이 원리를 지수 함수 $e^{X+Y}$에 적용해 보겠습니다. 지수 함수의 정의에 따라 전개하면:</p>
-$$e^{X+Y} = I + (X+Y) + \frac{1}{2!}(X+Y)^2 + \frac{1}{3!}(X+Y)^3 + \cdots$$<p>교환 법칙($XY=YX$)이 성립한다면, 위에서 본 대로 $(X+Y)^n$을 이항 정리로 쪼갤 수 있습니다.</p>
-$$\frac{1}{2!}(X+Y)^2 = \frac{1}{2!}(X^2 + 2XY + Y^2) = \frac{1}{2!}X^2 + \mathbf{XY} + \frac{1}{2!}Y^2$$<p>이 결과는 $e^X$와 $e^Y$를 따로 곱했을 때 나오는 항들과 완벽하게 일치합니다.</p>
-$$\begin{aligned}
-e^X \cdot e^Y &= \left( I + X + \frac{1}{2}X^2 + \cdots \right) \left( I + Y + \frac{1}{2}Y^2 + \cdots \right) \\
-&= I + (X+Y) + \frac{1}{2}X^2 + \mathbf{XY} + \frac{1}{2}Y^2 + \cdots
-\end{aligned}$$<p>Shutterstock탐색3. 요약: 왜 성립하는가?섞을 수 있다: 교환 가능하다는 것은 $X$와 $Y$의 순서를 마음대로 바꿔도 된다는 뜻입니다.묶을 수 있다: 순서를 바꿀 수 있으니, $XY$와 $YX$를 $2XY$로 합칠 수 있습니다. (이항 정리 성립)일치한다: 이항 정리가 성립하면, $(e^X \cdot e^Y)$의 전개식과 $(e^{X+Y})$의 전개식이 토씨 하나 안 틀리고 똑같아집니다.그래서 **&ldquo;교환 가능하면($[X,Y]=0$), 파라미터 덧셈($e^{X+Y}$)이 성립&rdquo;**하는 것입니다. 마치 실수($2^a 2^b = 2^{a+b}$)처럼 말이죠.</p>
 
   <footer class="footline">
   </footer>
@@ -253,7 +244,8 @@ e^X \cdot e^Y &= \left( I + X + \frac{1}{2}X^2 + \cdots \right) \left( I + Y + \
             <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/determinant_norm/index.html"><a class="padding default-animation" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu">
             <li class="" data-nav-id="/vector_operator/commutator/b_commutator/index.html"><a class="padding" href="/vector_operator/commutator/b_commutator/index.html">(b) Commutator</a></li>
@@ -261,8 +253,9 @@ e^X \cdot e^Y &= \left( I + X + \frac{1}{2}X^2 + \cdots \right) \left( I + Y + \
             <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -305,9 +298,9 @@ e^X \cdot e^Y &= \left( I + X + \frac{1}{2}X^2 + \cdots \right) \left( I + Y + \
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780240855"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780240855" defer></script>
-    <script src="/js/theme.js?1780240855" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780708874"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780708874" defer></script>
+    <script src="/js/theme.js?1780708874" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

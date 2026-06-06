@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector Hilbert vector Dirac notation Determinant &amp; Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Resolvent operator Function of operators</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Resolvent operator Function of operators mixed operator</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -29,11 +29,18 @@
       <description>(b) Basis (b) Ket (b) Bra (b) Operator (b) Matrix &amp; Kernel (b) Short cut</description>
     </item>
     <item>
-      <title>Determinant &amp; Norm</title>
-      <link>http://localhost:1313/vector_operator/determinant_norm/index.html</link>
+      <title>Determinant</title>
+      <link>http://localhost:1313/vector_operator/determinant/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/determinant_norm/index.html</guid>
-      <description>(b) Determinant (b) Wronskian (b) Gram (b) Operator Norm</description>
+      <guid>http://localhost:1313/vector_operator/determinant/index.html</guid>
+      <description>(b) Determinant (b) Wronskian (b) Gram</description>
+    </item>
+    <item>
+      <title>Norm</title>
+      <link>http://localhost:1313/vector_operator/norm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/norm/index.html</guid>
+      <description>(b) Operator norm (b) Operator domain (b) Bounded (b) Unbounded</description>
     </item>
     <item>
       <title>Eigenvalue problem</title>
@@ -75,7 +82,7 @@
       <link>http://localhost:1313/vector_operator/resolvent_operator/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/resolvent_operator/index.html</guid>
-      <description></description>
+      <description>(b) Generalization (b) Resolvent (b) Discrete (b) Generalized (c) Higher-order Poles and Nilpotent Extraction</description>
     </item>
     <item>
       <title>Function of operators</title>
@@ -83,6 +90,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/function_of_operators/index.html</guid>
       <description>(b) Dual space (b) Function of operators</description>
+    </item>
+    <item>
+      <title>mixed operator</title>
+      <link>http://localhost:1313/vector_operator/b_mixed/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/b_mixed/index.html</guid>
+      <description>제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.</description>
     </item>
   </channel>
 </rss>

@@ -43,13 +43,16 @@
     <loc>http://localhost:1313/vector_operator/commutator/b_commutator/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/b_determinant/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/determinant/b_determinant/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/function_of_operators/b_dual_space_of_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_generalization/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/geometric_algebra/calculus/b_gradient/index.html</loc>
@@ -86,6 +89,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/homogeneous/b_ode/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/norm/b_norm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform/index.html</loc>
@@ -283,6 +289,9 @@
     <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_i/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/norm/b_domain/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/b_operator_i/index.html</loc>
   </url>
   <url>
@@ -290,6 +299,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</loc>
@@ -310,7 +322,7 @@
     <loc>http://localhost:1313/ode_pde/sturm_liouville/b_weight_function/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/b_wronskian/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/determinant/b_wronskian/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/seperation_of_varibles/p_1d_wave_equation_for_free_space/index.html</loc>
@@ -415,6 +427,9 @@
     <loc>http://localhost:1313/vector_operator/normal_operators/b_anti_hermitian/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/norm/b_bounded/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/quantum_transform/b_buttiker_formula/index.html</loc>
   </url>
   <url>
@@ -424,10 +439,16 @@
     <loc>http://localhost:1313/geometric_algebra/calculus/b_curl/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/geometric_algebra/einstein-notation/b_dyad/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/b_gram/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_generalized/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/determinant/b_gram/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html</loc>
@@ -586,19 +607,22 @@
     <loc>http://localhost:1313/linear_system/lsci/b_mellin_transform_iii/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/b_operator_norm/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/lie_theory/b_calculus/b_partial_derivative/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/quantum_transform/b_transmission_scattering/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/norm/b_unbounded/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/b_uniqueness/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>
@@ -808,7 +832,10 @@
     <loc>http://localhost:1313/tensor_analysis/coordinate_transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/determinant_norm/index.html</loc>
+    <loc>http://localhost:1313/vector_operator/determinant/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/norm/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/tensor_calculus/transformation_for_gc/index.html</loc>
@@ -1058,6 +1085,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/b_mixed/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html</loc>

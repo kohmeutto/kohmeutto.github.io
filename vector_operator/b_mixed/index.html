@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mixed operator :: 수리전자물리학">
+    <meta name="twitter:description" content="제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/b_mixed/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="mixed operator :: 수리전자물리학">
+    <meta property="og:description" content="제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="mixed operator :: 수리전자물리학">
+    <meta itemprop="description" content="제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.">
+    <meta itemprop="wordCount" content="488">
+    <title>mixed operator :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1780708874" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780708874" defer></script>
+    <script src="/js/search-lunr.js?1780708874" defer></script>
+    <script src="/js/search.js?1780708874" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1780708874";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780708874" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780708874" rel="stylesheet">
+    <link href="/css/theme.css?1780708874" rel="stylesheet">
+    <link href="/css/format-html.css?1780708874" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/b_mixed\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/vector_operator/b_mixed/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">mixed operator</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/function_of_operators/b_function_of_operators/index.html" title="(b) Function of operators (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/index.html" title="Lie theory (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="mixed-operator">mixed operator</h1>
+
+<p>제시된 혼합형 스펙트럼 전개에서 역연산이 각 항의 스칼라 역수로 직접 분배되는 이유는 직관적인 분배 법칙이 아니라, 이산 기저와 연속 기저 사이에 성립하는 상호 직교성(Mutual Orthogonality)에 기인합니다.임의의 연산자 $\hat{T}$ 에 대한 역연산자 $\hat{S}$ 가 존재한다면, 두 연산자의 곱은 필연적으로 항등 연산자 $\hat{I}$ 를 산출해야 합니다 ($\hat{T}\hat{S} = \hat{I}$). 이 대수적 공리를 바탕으로, 역연산의 형태가 성립함을 연역적으로 증명합니다.1. 작용소와 후보 역작용소의 정의원래의 작용소 $\hat{T} = (z\hat{I} - \hat{A})$ 와 스칼라 역수를 취하여 가정한 역작용소 $\hat{S} = R(z, \hat{A})$ 를 전개식 형태로 정의합니다.</p>
+$$\hat{T} = \sum_k (z - \lambda_k) |u_k\rangle \langle u^{d, k}| + \int_{\sigma_c} (z - \lambda(\nu)) |u(\nu)\rangle \langle u^d(\nu)| d\nu$$$$\hat{S} = \sum_m \frac{1}{z - \lambda_m} |u_m\rangle \langle u^{d, m}| + \int_{\sigma_c} \frac{1}{z - \lambda(\nu')} |u(\nu')\rangle \langle u^d(\nu')| d\nu'$$<p>두 연산자의 곱 $\hat{T}\hat{S}$ 를 계산할 때 분배 법칙에 의해 총 4개의 항이 발생합니다.2. 기저의 직교성 조건혼합형 정규 연산자의 완비적 기저는 다음의 3가지 직교성(Orthogonality) 조건을 만족합니다.이산-이산 직교성: $\langle u^{d, k} | u_m \rangle = \delta^k_m$ (크로네커 델타)연속-연속 직교성: $\langle u^d(\nu) | u(\nu') \rangle = \delta(\nu - \nu')$ (디랙 델타 함수)이산-연속 상호 직교성: 이산 고유 공간과 연속 고유 공간은 서로 완벽하게 독립적이므로, 내적은 항상 0입니다.</p>
+$$\langle u^{d, k} | u(\nu) \rangle = 0, \quad \langle u^d(\nu) | u_k \rangle = 0$$<p>3. 항등 연산자 도출 증명곱 $\hat{T}\hat{S}$ 의 4개 전개 항에 직교성 조건을 적용하여 계산합니다.(1) 교차 항 (Cross Terms)의 소거이산 기저와 연속 기저가 결합하는 두 교차 항은 상호 직교성 조건에 의해 대수적으로 소거됩니다.이산 $\times$ 연속: $\sum_k \int (z - \lambda_k) \frac{1}{z - \lambda(\nu')} |u_k\rangle \langle u^{d, k} | u(\nu') \rangle \langle u^d(\nu')| d\nu' = 0$연속 $\times$ 이산: $\int \sum_m (z - \lambda(\nu)) \frac{1}{z - \lambda_m} |u(\nu)\rangle \langle u^d(\nu) | u_m \rangle \langle u^{d, m}| d\nu = 0$(2) 이산-이산 항의 산출두 이산 급수의 곱은 크로네커 델타에 의해 하나의 급수로 축소됩니다.</p>
+$$\sum_k \sum_m (z - \lambda_k) \frac{1}{z - \lambda_m} |u_k\rangle \langle u^{d, k} | u_m \rangle \langle u^{d, m}|$$$$\sum_k \sum_m \frac{z - \lambda_k}{z - \lambda_m} \delta^k_m |u_k\rangle \langle u^{d, m}| = \sum_k \frac{z - \lambda_k}{z - \lambda_k} |u_k\rangle \langle u^{d, k}| = \sum_k |u_k\rangle \langle u^{d, k}|$$<p>(3) 연속-연속 항의 산출두 연속 적분의 곱은 디랙 델타 함수의 필터링 성질에 의해 하나의 적분으로 축소됩니다.</p>
+$$\int_{\sigma_c} \int_{\sigma_c} (z - \lambda(\nu)) \frac{1}{z - \lambda(\nu')} |u(\nu)\rangle \langle u^d(\nu) | u(\nu') \rangle \langle u^d(\nu')| d\nu d\nu'$$$$\int_{\sigma_c} \int_{\sigma_c} \frac{z - \lambda(\nu)}{z - \lambda(\nu')} \delta(\nu - \nu') |u(\nu)\rangle \langle u^d(\nu')| d\nu d\nu'$$<p>$\nu'$ 에 대한 적분을 수행하면 델타 함수에 의해 $\nu' = \nu$ 인 지점의 값만 추출됩니다.</p>
+$$\int_{\sigma_c} \frac{z - \lambda(\nu)}{z - \lambda(\nu)} |u(\nu)\rangle \langle u^d(\nu)| d\nu = \int_{\sigma_c} |u(\nu)\rangle \langle u^d(\nu)| d\nu$$<p>4. 결론살아남은 두 항을 합산하면 완비성 관계(Completeness relation)에 의해 공간의 항등 연산자 $\hat{I}$ 가 도출됩니다.</p>
+$$\hat{T}\hat{S} = \sum_k |u_k\rangle \langle u^{d, k}| + \int_{\sigma_c} |u(\nu)\rangle \langle u^d(\nu)| d\nu = \hat{I}$$<p>동일한 논리로 $\hat{S}\hat{T} = \hat{I}$ 역시 성립합니다. 따라서 각각의 기저에 결합된 스칼라 계수를 독립적으로 역수 취한 형태의 작용소 $\hat{S}$ 는 대수학적 불변량인 직교성에 의해 원래 작용소 $(z\hat{I} - \hat{A})$ 의 엄밀한 역작용소임이 논리적으로 증명됩니다. 무한 차원 공간에서 행렬 연산이 불가능함에도, 스펙트럼 분해가 적용된 상태에서는 각 성분의 역수를 취하는 것만으로 완벽한 역연산을 수행할 수 있습니다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780708874"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780708874" defer></script>
+    <script src="/js/theme.js?1780708874" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

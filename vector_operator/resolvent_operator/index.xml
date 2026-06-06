@@ -3,9 +3,44 @@
   <channel>
     <title>Resolvent operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/resolvent_operator/index.html</link>
-    <description></description>
+    <description>(b) Generalization (b) Resolvent (b) Discrete (b) Generalized (c) Higher-order Poles and Nilpotent Extraction</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/resolvent_operator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Generalization</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_generalization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_generalization/index.html</guid>
+      <description>1. 고유벡터의 결핍과 대수적 퇴화&#xD;임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.&#xA;고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</description>
+    </item>
+    <item>
+      <title>(b) Resolvent</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</guid>
+      <description>1. 행렬식의 붕괴와 해석학적 동기&#xD;임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.&#xA;$$&#xD;(\lambda \hat{I} - \hat{A}) |v\rangle = 0&#xD;$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.&#xA;$$&#xD;\det(\lambda \hat{I} - \hat{A}) = 0&#xD;$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.</description>
+    </item>
+    <item>
+      <title>(b) Discrete</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</guid>
+      <description>1. 로랑 급수&#xD;레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.&#xA;$$&#xD;R(z, \hat{A}) = \sum_{k\ge2}\frac{\hat{C}_{-k}}{(z-\lambda_m)^k} + \frac{\hat{C}_{-1}}{z-\lambda_m} + \sum_{k\ge0}\hat{C}_k(z-\lambda_m)^k&#xD;$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 공간의 멱영 지수(Index of nilpotency)이다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.&#xA;$$&#xD;\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma}\frac{dz}{z-\lambda_m}\frac{R(z)}{(z-\lambda_m)^{n}}&#xD;$$ 2. 1차 단순극점 $\implies$은 사영 연산자(Projection operator)&#xD;위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타내며, 본 장에서는 대각화 가능한 성분을 추출하는 1차 단순 극점(Simple pole)의 해석에 집중한다.</description>
+    </item>
+    <item>
+      <title>(b) Generalized</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_generalized/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_generalized/index.html</guid>
+      <description>1. 고유벡터의 결핍과 대수적 퇴화&#xD;임의의 선형 연산자 $\hat{A}$ 의 고유값 $\lambda$ 는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$ 을 통해 계산된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.&#xA;고유값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|u\rangle = 0$ 에 대입하여 고유벡터 $|u\rangle$ 를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</description>
+    </item>
+    <item>
+      <title>(c) Higher-order Poles and Nilpotent Extraction</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</guid>
+      <description>1. 붕괴와 기저의 상실&#xD;시스템에 대수적 퇴화(Algebraic degeneracy)가 발생하면 특성 방정식의 다중근에 의한 대수적 중복도 $\alpha_m$ 에 비해, 독립적인 진성 고유벡터의 수인 기하적 중복도 $\gamma_m$ 이 작아진다.&#xA;$$&#xD;\gamma_m &lt; \alpha_m&#xD;$$진성 고유벡터들이 상태 공간을 빈틈없이 채우는 완비적 기저(Complete basis)를 형성하지 못하므로, 이들을 행렬로 구성할 때 계수(Rank)가 결여되어 역행렬을 통한 쌍대 기저(Dual basis)의 도출이 수학적으로 완전히 차단된다. 쌍대 기저 체계가 붕괴함에 따라 사영 연산자를 순수한 1차원 텐서곱 $|u_k\rangle \langle u^{d, k}|$ 의 선형 결합으로 온전히 분해하는 대각화 작업은 불가능해진다.</description>
+    </item>
   </channel>
 </rss>

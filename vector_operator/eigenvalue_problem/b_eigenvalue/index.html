@@ -25,26 +25,26 @@
 소멸 (Annihilation): $\hat{A}|\lambda\rangle = 0$. 이 경우, $|\lambda\rangle$는 고유값이 0인 고유벡터이며, 영공간(Null Space) 에 속한다. 스케일링 (Scaling): $\hat{A}|\lambda\rangle = \lambda|\lambda\rangle$ (단, $\lambda \neq 0$). 이 경우, $|\lambda\rangle$는 0이 아닌 고유값을 가진 고유벡터이다. 변환 (Transformation): $\hat{A}|\lambda\rangle = |w\rangle$ (단, $|w\rangle$는 $|\lambda\rangle$의 상수배가 아님). 이 경우, $|\lambda\rangle$는 고유벡터가 아니다. 영공간이 $\hat{A}|\lambda\rangle=0$이라는 특수한 경우를 다루었다면, 고유값 문제는 이를 더 일반적인 상황으로 확장한다. 즉, 변환에 의해 벡터가 ‘소멸’하는 것을 포함하여, ‘방향은 변하지 않고 크기만 변하는’ 모든 경우를 찾는다. 특히, $\lambda \neq 0$ 경우, 연산자의 작용이 단순한 ‘스케일링’으로 나타나는 특별한 벡터(고유벡터)와 그때의 스케일 값(고유값)을 찾는 과정이다.">
     <meta itemprop="wordCount" content="780">
     <title>(b) Eigenvalue &amp; Eigenvector :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780240855" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780240855" defer></script>
-    <script src="/js/search-lunr.js?1780240855" defer></script>
-    <script src="/js/search.js?1780240855" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780708874" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780708874" defer></script>
+    <script src="/js/search-lunr.js?1780708874" defer></script>
+    <script src="/js/search.js?1780708874" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780240855";
+      window.relearn.index_js_url="/searchindex.en.js?1780708874";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780240855" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780240855" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780708874" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780240855" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780240855" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780240855" rel="stylesheet">
-    <link href="/css/theme.css?1780240855" rel="stylesheet">
-    <link href="/css/format-html.css?1780240855" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780708874" rel="stylesheet">
+    <link href="/css/theme.css?1780708874" rel="stylesheet">
+    <link href="/css/format-html.css?1780708874" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -320,7 +320,8 @@ $$A = \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix}$$<p>sol)</p>
             <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/determinant_norm/index.html"><a class="padding default-animation" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu">
             <li class="" data-nav-id="/vector_operator/eigenvalue_problem/b_space/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/b_space/index.html">(b) Space</a></li>
             <li class="active " data-nav-id="/vector_operator/eigenvalue_problem/b_eigenvalue/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/b_eigenvalue/index.html">(b) Eigenvalue &amp; Eigenvector</a></li>
@@ -329,8 +330,9 @@ $$A = \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix}$$<p>sol)</p>
             <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -373,9 +375,9 @@ $$A = \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix}$$<p>sol)</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780240855"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780240855" defer></script>
-    <script src="/js/theme.js?1780240855" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780708874"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780708874" defer></script>
+    <script src="/js/theme.js?1780708874" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

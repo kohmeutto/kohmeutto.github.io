@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
+$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
+$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Resolvent :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
+$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
+$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Resolvent :: 수리전자물리학">
+    <meta property="og:description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
+$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
+$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Resolvent :: 수리전자물리학">
+    <meta itemprop="description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
+$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
+$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta itemprop="wordCount" content="793">
+    <title>(b) Resolvent :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1780708874" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780708874" defer></script>
+    <script src="/js/search-lunr.js?1780708874" defer></script>
+    <script src="/js/search.js?1780708874" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1780708874";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780708874" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780708874" rel="stylesheet">
+    <link href="/css/theme.css?1780708874" rel="stylesheet">
+    <link href="/css/format-html.css?1780708874" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/resolvent_operator\/b_resolvent\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/vector_operator/resolvent_operator/b_resolvent/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-행렬식의-붕괴와-해석학적-동기">1. 행렬식의 붕괴와 해석학적 동기</a></li>
+        <li><a href="#2-resolvent-operator-고유값-찾기의-일반화">2. Resolvent operator: 고유값 찾기의 일반화</a></li>
+        <li><a href="#3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼</a></li>
+        <li><a href="#4-제1-레졸번트-항등식">4. 제1 레졸번트 항등식</a></li>
+        <li><a href="#5-도함수로의-확장">5. 도함수로의 확장</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/resolvent_operator/index.html"><span itemprop="name">Resolvent operator</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Resolvent</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/resolvent_operator/b_generalization/index.html" title="(b) Generalization (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/resolvent_operator/b_discrete/index.html" title="(b) Discrete (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-resolvent">(b) Resolvent</h1>
+
+<hr>
+<h3 id="1-행렬식의-붕괴와-해석학적-동기">1. 행렬식의 붕괴와 해석학적 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.</p>
+$$
+(\lambda \hat{I} - \hat{A}) |v\rangle = 0
+$$<p>유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.</p>
+$$
+\det(\lambda \hat{I} - \hat{A}) = 0
+$$<p>그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.</p>
+<hr>
+<h3 id="2-resolvent-operator-고유값-찾기의-일반화">2. Resolvent operator: 고유값 찾기의 일반화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬식을 쓸 수 없는 무한 차원 공간에서는, 고유값을 찾는 문제를 &ldquo;역작용소가 존재하지 않는 지점을 찾는 문제&quot;와 동치이다.</p>
+$$
+R(z, \hat{A}) = (z \hat{I} - \hat{A})^{-1}
+$$<p>proof)</p>
+<p><em>(1) 고유값 방정식의 이항</em></p>
+<p>$\lambda$ 가 연산자 $\hat{A}$ 의 고유값이라는 것은 0이 아닌 고유벡터 $|v\rangle$ (즉, $|v\rangle \neq 0$) 에 대하여 다음 방정식이 성립함을 뜻한다.</p>
+$$
+(\lambda \hat{I} - \hat{A}) |v\rangle = 0
+$$<p><em>(2) det=0의 의미: 역작용소의 도출 불가능성</em></p>
+<p>det=0 이라는 것은 차원(정보)의 축소를 의미하여, 이것은 정보가 사라졌으므로, 역으로 온전히 되돌릴 방법이 없다는 것을 의미한다. 즉, 역행렬이 존재하지 않는 다는 의미이다.</p>
+<p><em>(3) 고유값 찾기의 일반화</em></p>
+<p>따라서 고유값을 찾는 문제는 &ldquo;역작용소가 정의되지 않는 지점을 찾는 문제&quot;로 치환된다. 이를 체계적으로 탐색하기 위해, 복소 평면 상의 임의의 변수 $z$ 에 대한 함수로서 다음과 같이 레졸번트 연산자(Resolvent Operator) $R(z, \hat{A})$ 를 정의한다.</p>
+$$
+R(z, \hat{A}) = (z \hat{I} - \hat{A})^{-1}
+$$<p><em>(4) 레졸벤트에서 고유값의 거동</em></p>
+<p>고유값에서는 역작용소가 정의되지 않는 지점이라고 하였다. 그렇다면, 레졸번트 연산자가 어떻게 되길래, 정의가 되지 않는다고 하는 것일까. 어떠한 것으로 정의되지 않으려면, 무한대로 발산해야 한다.</p>
+$$
+R(\lambda_i, \hat{A}) = (\lambda_i \hat{I} - \hat{A})^{-1} = \infty
+$$<p>고유값에서 왜 발산하는 가를 알기 위해, 레졸벤트 연산자가 구체적으로 어떤 형태를 가지고 있는지를 파악해야 한다. 이는 후속 챕터에서 다룬다.</p>
+<hr>
+<h3 id="3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 임의의 복소 변수 $z$ 를 도입하여 정의되었으나, $z$ 의 값에 따라 그 수학적 성질이 극명하게 달라진다. 역작용소의 유계성(Boundedness)을 기준으로 복소 평면 $\mathbb{C}$ 는 두 개의 영역으로 분할된다.</p>
+<p><strong>1) 레졸번트 집합 (Resolvent Set, $\rho(\hat{A})$)</strong></p>
+<p>복소수 $z$ 를 대입했을 때, 레졸번트 연산자 $R(z, \hat{A})$ 가 유계 연산자(Bounded Operator)로서 안정적으로 존재하는 $z$ 의 집합이다. 이 영역에서 역작용소는 특정 입력 벡터를 공간 밖으로 이탈시키거나 증폭률을 무한대로 발산시키지 않으며, 복소해석학적 함수로서 안전하게 다뤄질 수 있다.</p>
+<p><strong>2) 스펙트럼 (Spectrum, $\sigma(\hat{A})$)</strong></p>
+<p>복소 평면에서 레졸번트 집합을 제외한 나머지 영역이다.</p>
+$$
+\sigma(\hat{A}) = \mathbb{C} \setminus \rho(\hat{A})
+$$<p>스펙트럼 내의 $z$ 에 대해서는 작용소 $(z\hat{I} - \hat{A})$ 의 역연산이 불가능해지거나, 결과값이 무한대로 발산하여 비유계(Unbounded) 특성을 띠게 된다. 이 발산하는 특이점(Singularity)들이 바로 무한 차원 공간에서 행렬식 없이 찾아낸 연산자 $\hat{A}$ 의 본질적인 고유값 집합이다.</p>
+<hr>
+<h3 id="4-제1-레졸번트-항등식">4. 제1 레졸번트 항등식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞선 노이만 급수는 변수 $z$ 가 $|z| > \lVert \hat{A} \rVert$ 조건을 만족할 때만 성립한다. 1차 미분 연산자 $\hat{D}$ 처럼 본질적으로 비유계인 연산자는 노름이 무한대로 발산하므로($\lVert \hat{D} \rVert = \infty$), 이 급수 수렴 조건을 만족하는 $z$ 가 복소 평면 상에 존재할 수 없다. 즉, $\hat{A}$ 의 거듭제곱( $\hat{A}^n$ )을 직접 전개하는 방식은 무한 차원 공간에서 여전히 정의역의 연쇄적 붕괴를 초래한다.</p>
+<p>이 한계를 극복하기 위해, 비유계 연산자 $\hat{A}$ 를 직접 거듭제곱하는 대신 레졸번트 집합 내부에 존재하는 두 레졸번트 사이의 대수적 관계를 유도한다. 복소수 $z$ 와 $w$ 가 발산 영역인 스펙트럼 $\sigma(\hat{A})$ 를 제외한 레졸번트 집합 $\rho(\hat{A})$ 에 속할 때, 역작용소 $R(z, \hat{A})$ 와 $R(w, \hat{A})$ 는 명확한 유계 연산자로 확정된다. 이 유계성이 대수적으로 보장된 조건 하에서 다음의 항등식이 성립한다.</p>
+$$
+R(z, \hat{A}) - R(w, \hat{A}) = -(z - w) R(z, \hat{A}) R(w, \hat{A}) \quad (z, w \in \rho(\hat{A}))
+$$<p>proof)</p>
+<p>역작용소의 정의에 의해, 레졸번트 집합 내의 $z, w$ 에 대하여 다음 관계가 성립한다.</p>
+$$
+(z \hat{I} - \hat{A}) R(z, \hat{A}) = \hat{I},\quad 
+(w \hat{I} - \hat{A}) R(w, \hat{A}) = \hat{I}
+$$<p>두 식을 상호 교차하여 빼기 위해, 항등 연산자 $\hat{I}$ 를 공통 매개로 결합한다.</p>
+$$
+R(z, \hat{A}) = R(z, \hat{A}) (w \hat{I} - \hat{A}) R(w, \hat{A}),\quad
+R(w, \hat{A}) = R(z, \hat{A}) (z \hat{I} - \hat{A}) R(w, \hat{A})
+$$<p>첫 번째 식에서 두 번째 식을 차감하고 공통 인수로 묶어 분배 법칙을 역으로 적용한다.</p>
+$$
+R(z, \hat{A}) - R(w, \hat{A})
+= R(z, \hat{A}) [ (w \hat{I} - \hat{A}) - (z \hat{I} - \hat{A}) ] R(w, \hat{A})
+= R(z, \hat{A}) [ (w - z)\hat{I} ] R(w, \hat{A})
+$$<p>스칼라 성분 $(w - z)$ 는 선형 연산자와의 교환 법칙이 성립하므로 식의 외부로 분리되어 증명이 완료된다.</p>
+$$
+R(z, \hat{A}) - R(w, \hat{A}) = -(z - w) R(z, \hat{A}) R(w, \hat{A})
+$$<hr>
+<h3 id="5-도함수로의-확장">5. 도함수로의 확장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>유도된 항등식의 양변을 $(z - w)$ 로 나누고 극한 $w \to z$ 를 취하면, 레졸번트 연산자의 복소 미분이 대수적으로 도출된다.</p>
+$$
+\frac{d}{dz}R(z, \hat{A}) = \lim_{w \to z} \frac{R(z, \hat{A}) - R(w, \hat{A})}{z - w} = -[R(z, \hat{A})]^2
+$$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$ 의 거듭제곱이 아니라, $\rho(\hat{A})$ 내부에서 유계임이 보장된 레졸번트 자신의 거듭제곱 $[R(z, \hat{A})]^2$ 으로 산출되었다. 유계 연산자의 거듭제곱은 무한대 발산이나 정의역의 축소 없이 정의되므로, 이는 레졸번트가 레졸번트 집합 $\rho(\hat{A})$ 내부에서 모든 차수의 미분이 수학적으로 보장되는 해석 함수(Analytic function)이다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_generalization/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_generalization/index.html">(b) Generalization</a></li>
+            <li class="active " data-nav-id="/vector_operator/resolvent_operator/b_resolvent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_resolvent/index.html">(b) Resolvent</a></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_discrete/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_discrete/index.html">(b) Discrete</a></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_generalized/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_generalized/index.html">(b) Generalized</a></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_nilpotent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_nilpotent/index.html">(c) Higher-order Poles and Nilpotent Extraction</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780708874"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780708874" defer></script>
+    <script src="/js/theme.js?1780708874" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
