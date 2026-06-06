@@ -5,50 +5,46 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.155.0">
     <meta name="generator" content="Relearn 9.0.3">
-    <meta name="description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
-$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
-$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta name="description" content="1. 동기1) 대수학적 접근(Generalization)의 한계
+일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Resolvent :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
-$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
-$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta name="twitter:description" content="1. 동기1) 대수학적 접근(Generalization)의 한계
+일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
     <meta property="og:url" content="http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Resolvent :: 수리전자물리학">
-    <meta property="og:description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
-$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
-$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
+    <meta property="og:description" content="1. 동기1) 대수학적 접근(Generalization)의 한계
+일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Vector & Operator">
     <meta itemprop="name" content="(b) Resolvent :: 수리전자물리학">
-    <meta itemprop="description" content="1. 행렬식의 붕괴와 해석학적 동기임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.
-$$(\lambda \hat{I} - \hat{A}) |v\rangle = 0$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.
-$$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.">
-    <meta itemprop="wordCount" content="793">
+    <meta itemprop="description" content="1. 동기1) 대수학적 접근(Generalization)의 한계
+일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
+    <meta itemprop="wordCount" content="2651">
     <title>(b) Resolvent :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780708874" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780708874" defer></script>
-    <script src="/js/search-lunr.js?1780708874" defer></script>
-    <script src="/js/search.js?1780708874" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780716463" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780716463" defer></script>
+    <script src="/js/search-lunr.js?1780716463" defer></script>
+    <script src="/js/search.js?1780716463" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780708874";
+      window.relearn.index_js_url="/searchindex.en.js?1780716463";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780708874" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780708874" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780708874" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780708874" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780716463" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780716463" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780716463" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780716463" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780708874" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780708874" rel="stylesheet">
-    <link href="/css/theme.css?1780708874" rel="stylesheet">
-    <link href="/css/format-html.css?1780708874" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780716463" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780716463" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780716463" rel="stylesheet">
+    <link href="/css/theme.css?1780716463" rel="stylesheet">
+    <link href="/css/format-html.css?1780716463" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -116,11 +112,18 @@ $$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는
   <ul>
     <li>
       <ul>
-        <li><a href="#1-행렬식의-붕괴와-해석학적-동기">1. 행렬식의 붕괴와 해석학적 동기</a></li>
+        <li><a href="#1-동기">1. 동기</a></li>
         <li><a href="#2-resolvent-operator-고유값-찾기의-일반화">2. Resolvent operator: 고유값 찾기의 일반화</a></li>
+        <li><a href="#3-연산자-분해를-통한-레졸번트의-대수적-전개">3. 연산자 분해를 통한 레졸번트의 대수적 전개</a></li>
         <li><a href="#3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼</a></li>
         <li><a href="#4-제1-레졸번트-항등식">4. 제1 레졸번트 항등식</a></li>
         <li><a href="#5-도함수로의-확장">5. 도함수로의 확장</a></li>
+        <li><a href="#1-고유벡터의-결핍과-대수적-퇴화">1. 고유벡터의 결핍과 대수적 퇴화</a></li>
+        <li><a href="#2-일반화된-고유벡터와-연산자-분해-대수학적-접근">2. 일반화된 고유벡터와 연산자 분해 (대수학적 접근)</a></li>
+        <li><a href="#3-특성-방정식의-한계와-레졸번트의-도입-해석학적-우회">3. 특성 방정식의 한계와 레졸번트의 도입 (해석학적 우회)</a></li>
+        <li><a href="#4-연산자-분해를-통한-레졸번트의-대수적-전개">4. 연산자 분해를 통한 레졸번트의 대수적 전개</a></li>
+        <li><a href="#5-로랑-급수의-계수-축출-불변-측도의-적용">5. 로랑 급수의 계수 축출 (불변 측도의 적용)</a></li>
+        <li><a href="#6-타-공간의-중첩과-정칙부regular-part의-발현">6. 타 공간의 중첩과 정칙부(Regular part)의 발현</a></li>
       </ul>
     </li>
   </ul>
@@ -160,14 +163,15 @@ $$\det(\lambda \hat{I} - \hat{A}) = 0$$그러나 무한 차원 공간에서는
 <h1 id="b-resolvent">(b) Resolvent</h1>
 
 <hr>
-<h3 id="1-행렬식의-붕괴와-해석학적-동기">1. 행렬식의 붕괴와 해석학적 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.</p>
-$$
-(\lambda \hat{I} - \hat{A}) |v\rangle = 0
-$$<p>유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.</p>
-$$
-\det(\lambda \hat{I} - \hat{A}) = 0
-$$<p>그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.</p>
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 대수학적 접근(Generalization)의 한계</strong></p>
+<p>일반화된 고유벡터를 이용한 챕터는 &ldquo;만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&quot;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m + \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.</p>
+<p><strong>즉, Generalization 챕터는 &lsquo;결과론적 구조&rsquo;일 뿐, 그것을 실제로 추출해 내는 &lsquo;도구&rsquo;를 제공하지 못한다.</strong></p>
+<ol start="2">
+<li>문제의 치환</li>
+</ol>
+<p>상태 공간에서 복소 위상 공간으로이 한계를 돌파하기 위해 스펙트럼 이론은 &ldquo;기저 벡터를 직접 찾는 행위&quot;를 할수 없다. 대신 연산자를 통째로 역수 취해 복소 평면 위로 끌고 가는 레졸번트 $\hat{R}(z) = (z\hat{I}-\hat{A})^{-1}$ 를 도입한다.</p>
+<p>기저 벡터가 부족하여 발생하는 연산자의 대수적 결함(멱영성)은 복소 평면으로 넘어가는 순간, 레졸번트 함수가 단순히 발산하는 것을 넘어 $1/(z-\lambda_m)^k$ 형태로 찢어지는 &lsquo;다중 극점(Multiple pole)이라는 기하학적 특이점&rsquo;으로 형상화된다.</p>
 <hr>
 <h3 id="2-resolvent-operator-고유값-찾기의-일반화">2. Resolvent operator: 고유값 찾기의 일반화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>행렬식을 쓸 수 없는 무한 차원 공간에서는, 고유값을 찾는 문제를 &ldquo;역작용소가 존재하지 않는 지점을 찾는 문제&quot;와 동치이다.</p>
@@ -189,6 +193,35 @@ $$<p><em>(4) 레졸벤트에서 고유값의 거동</em></p>
 $$
 R(\lambda_i, \hat{A}) = (\lambda_i \hat{I} - \hat{A})^{-1} = \infty
 $$<p>고유값에서 왜 발산하는 가를 알기 위해, 레졸벤트 연산자가 구체적으로 어떤 형태를 가지고 있는지를 파악해야 한다. 이는 후속 챕터에서 다룬다.</p>
+<hr>
+<h3 id="3-연산자-분해를-통한-레졸번트의-대수적-전개">3. 연산자 분해를 통한 레졸번트의 대수적 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>복소 평면으로 우회하는 해석학적 동기를 대수학적으로 교차 검증하기 위해, 앞서 일반화된 고유벡터 공간에서 확립한 연산자 분해 결과를 레졸번트의 정의에 직접 대입하여 전개한다. 이 과정은 왜 레졸번트가 로랑 급수(Laurent series) 형태의 다중 극점(Multiple pole) 구조를 가질 수밖에 없는지를 연역적으로 증명한다.</p>
+<p>대상 연산자 $\hat{A}$의 일반화된 스펙트럼 분해는 다음과 같다.</p>
+$$
+\hat{A} = \sum_m (\lambda_m\hat{P}_m + \hat{N}_m)
+$$<p>레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$를 구성하기 위해, 먼저 항등 연산자 $\hat{I}$를 사영 연산자의 완비성 관계(Resolution of identity, $\hat{I} = \sum_m \hat{P}_m$)로 치환하여 식을 결합한다.</p>
+$$
+z\hat{I} - \hat{A} = \sum_m z\hat{P}_m - \sum_m (\lambda_m\hat{P}_m + \hat{N}_m) = \sum_m \left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right]
+$$<p>사영 연산자들은 서로 다른 고윳값 공간에 대해 직교성($\hat{P}_m \hat{P}_l = \hat{0}, m \neq l$)을 만족하므로, 이 연산자 합의 역작용소는 각 부분 공간(Subspace) 역작용소들의 단순 합으로 엄밀하게 분리된다.</p>
+$$
+R(z, \hat{A}) = \left( \sum_m \left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right] \right)^{-1} = \sum_m \left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right]^{-1}
+$$<p>이제 단일 고윳값 공간 $\lambda_m$ 내부에 존재하는 역작용소를 전개한다. 대괄호 내부에서 스칼라 비례항 $(z - \lambda_m)\hat{P}_m$을 공통 인수로 묶어 분리한다.</p>
+$$
+\left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right]^{-1} = \left[ (z - \lambda_m) \left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right) \right]^{-1}
+$$<p>역연산의 분배 법칙에 따라 스칼라 항과 연산자 항을 분리하여 역수를 취한다.</p>
+$$
+= \frac{1}{z - \lambda_m} \left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right)^{-1}
+$$<p>여기서 괄호 내부의 역작용소 $(\hat{P}_m - \hat{X})^{-1}$ 형태는 노이만 급수(Neumann series) 전개에 의해 $\sum_{k=0}^{\infty} \hat{X}^k$ 로 전개된다. 이때 대입되는 연산자 $\hat{X} = \frac{\hat{N}_m}{z - \lambda_m}$ 는 거듭제곱 시 유한 차수 $k_m$ 에서 스스로 소멸하는 멱영 연산자(Nilpotent operator, $\hat{N}_m^{k_m} = \hat{0}$)이므로, 무한 급수는 수렴 조건을 따질 필요 없이 멱영 지수 $k_m$ 전단계에서 대수적으로 완벽하게 종결된다.</p>
+$$
+\left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right)^{-1} = \hat{P}_m + \frac{\hat{N}_m}{z - \lambda_m} + \frac{\hat{N}_m^2}{(z - \lambda_m)^2} + \cdots + \frac{\hat{N}_m^{k_m-1}}{(z - \lambda_m)^{k_m-1}}
+$$<p>이 유한 급수 결과를 본래의 스칼라 항 $\frac{1}{z-\lambda_m}$ 에 분배하여 곱하면, 단일 고유공간에 대한 레졸번트 전개식이 완성된다.</p>
+$$
+R_m(z) = \frac{\hat{P}_m}{z - \lambda_m} + \frac{\hat{N}_m}{(z - \lambda_m)^2} + \frac{\hat{N}_m^2}{(z - \lambda_m)^3} + \cdots + \frac{\hat{N}_m^{k_m-1}}{(z - \lambda_m)^{k_m}}
+$$<p>이를 전체 스펙트럼 공간에 대한 합 기호 $\sum_m$ 에 대입하면 연산자 $\hat{A}$ 의 전체 레졸번트가 최종 도출된다.</p>
+$$
+R(z, \hat{A}) = \sum_m \left( \frac{\hat{P}_m}{z - \lambda_m} + \sum_{k=1}^{k_m-1} \frac{\hat{N}_m^k}{(z - \lambda_m)^{k+1}} \right)
+$$<p>이 전개 과정은 어떠한 복소해석학적 가정도 없이 순수 대수학적 연역 추론만을 거쳤다. 그럼에도 불구하고 그 결과는 레졸번트의 다중 극점을 해체하는 로랑 급수(Laurent series)의 주부(Principal part) 공식과 형태학적으로 완벽하게 일치한다.</p>
+<p>이는 대수학적 공간에서의 &lsquo;기저 벡터의 결핍(멱영성)&lsquo;이 복소 평면 위에서는 &lsquo;역작용소의 다중 극점(로랑 급수의 유한성)&lsquo;이라는 기하학적 특이점 구조로 온전히 투영됨을 의미하며, 연산자 분해와 레졸번트 사이의 동치 관계를 확증한다.</p>
 <hr>
 <h3 id="3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 임의의 복소 변수 $z$ 를 도입하여 정의되었으나, $z$ 의 값에 따라 그 수학적 성질이 극명하게 달라진다. 역작용소의 유계성(Boundedness)을 기준으로 복소 평면 $\mathbb{C}$ 는 두 개의 영역으로 분할된다.</p>
@@ -228,6 +261,104 @@ $$<hr>
 $$
 \frac{d}{dz}R(z, \hat{A}) = \lim_{w \to z} \frac{R(z, \hat{A}) - R(w, \hat{A})}{z - w} = -[R(z, \hat{A})]^2
 $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$ 의 거듭제곱이 아니라, $\rho(\hat{A})$ 내부에서 유계임이 보장된 레졸번트 자신의 거듭제곱 $[R(z, \hat{A})]^2$ 으로 산출되었다. 유계 연산자의 거듭제곱은 무한대 발산이나 정의역의 축소 없이 정의되므로, 이는 레졸번트가 레졸번트 집합 $\rho(\hat{A})$ 내부에서 모든 차수의 미분이 수학적으로 보장되는 해석 함수(Analytic function)이다.</p>
+<hr>
+<p>+++
+title = &ldquo;(b) Generalized eigenvector &amp; Resolvent&rdquo;
+weight = 1
++++</p>
+<hr>
+<h3 id="1-고유벡터의-결핍과-대수적-퇴화">1. 고유벡터의 결핍과 대수적 퇴화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.</p>
+<p>고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</p>
+<p>대각화가 가능하기 위해서는 방정식의 근의 개수만큼 독립적인 기저 벡터가 존재해야 하므로 $\alpha = \gamma$가 성립해야 한다. 그러나 특정 연산자 구조에서는 고유 방정식을 풀어도 대수적 중복도 $\alpha$에 미치지 못하는 수의 진성 고유벡터만 산출된다.</p>
+$$
+\gamma < \alpha
+$$<p>이러한 상태를 연산자의 대수적 퇴화(Algebraic degeneracy)라 한다. 진성 고유벡터의 수가 부족하므로 이들만으로는 전체 공간을 구성할 수 있는 완비적 기저(Complete basis) 행렬을 완성할 수 없으며 대수적인 대각화는 불가능해진다.</p>
+<hr>
+<h3 id="2-일반화된-고유벡터와-연산자-분해-대수학적-접근">2. 일반화된 고유벡터와 연산자 분해 (대수학적 접근)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>대각화가 불가능한 연산자를 해석하기 위해, 진성 고유벡터의 개념을 일반화된 고유벡터(Generalized eigenvector)로 확장하여 부족한 기저 공간을 보완한다.</p>
+<p><strong>1) 이산 공간의 조르당 사슬</strong>
+하나의 고윳값 $\lambda_m$에 종속된 상태들은 고윳값 기호가 아닌 조르당 사슬(Jordan chain) 내부의 랭크 인덱스 $k$를 통해 $|\lambda_{m,k}\rangle$로 명확히 구분된다. 결함 연산자 계의 지배 방정식은 랭크 인덱스 강하를 동반하여 다음과 같이 기술된다.</p>
+$$
+\hat{A}|\lambda_{m,k}\rangle = \lambda_m|\lambda_{m,k}\rangle + |\lambda_{m,k-1}\rangle \quad (\text{단, } |\lambda_{m,0}\rangle = 0)
+$$<p>
+</p>
+$$
+\hat{A}|\lambda_{m,1}\rangle = \lambda_m|\lambda_{m,1}\rangle \quad (\text{진성 고유벡터})
+$$<p><strong>2) 일반화된 연산자 분해</strong>
+결함 연산자의 기저는 스스로 직교하지 않으므로, 대수적 연산자 분해를 성립시키기 위해 직교 규격화 조건($\langle \lambda^{m,j}|\lambda_{n,k}\rangle = \delta^m_n \delta^j_k$)을 만족하는 상호 쌍대 기저(Bi-dual basis)를 도입한다. 이산 공간에서는 인덱스를 윗첨자(반변, Contravariant)로 올려 표기한다.</p>
+<p>조르당 사슬 내 특정 랭크 $k$의 지배 방정식 양변 우측에 쌍대 기저 $\langle \lambda^{m,k}|$를 외적(Outer product)하고 전체 랭크에 대해 합산하면 다음의 연산자 분해 항등식이 성립한다.</p>
+$$
+\hat{A} = \sum_m (\lambda_m\hat{P}_m + \hat{N}_m)
+$$<ul>
+<li><strong>사영 연산자(Projection):</strong> $\hat{P}_m = \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$</li>
+<li><strong>멱영 연산자(Nilpotent):</strong> $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$</li>
+</ul>
+<p>분리된 비대각 성분 $\hat{N}_m$이 멱영(Nilpotent) 연산자가 되는 이유는 쌍대 기저의 직교성에 의해 증명된다. 단일 랭크 강하 항의 교차 곱을 연산하면 $\langle \lambda^{m,k}|\lambda_{m,j-1}\rangle = \delta^k_{j-1}$ 이 되므로 랭크가 일치하지 않는 항들이 제거되며, 결국 유한 번($k_m$)의 거듭제곱 내에서 영연산자 $\hat{0}$으로 붕괴한다.</p>
+<hr>
+<h3 id="3-특성-방정식의-한계와-레졸번트의-도입-해석학적-우회">3. 특성 방정식의 한계와 레졸번트의 도입 (해석학적 우회)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞선 일반화된 고유벡터를 이용한 전개는 &ldquo;찌그러진 기저 벡터들을 모두 찾아낼 수 있다면&rdquo; 성립하는 사후적이고 이상적인 대수학적 구조이다. 그러나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$)의 행렬식 자체가 붕괴하며, 복잡한 시스템에서 조르당 사슬을 역추적하여 잉여 상태를 찾는 것은 해석학적으로 불가능에 가깝다.</p>
+<p>이 한계를 돌파하기 위해 스펙트럼 이론은 **&ldquo;기저 벡터를 직접 찾는 행위&rdquo;**를 포기하고, **&ldquo;역작용소가 붕괴하는 지점&rdquo;**을 찾는 문제로 시각을 전환한다.</p>
+<p>고유 방정식 $(\lambda\hat{I} - \hat{A})|v\rangle = 0$ 이 자명하지 않은 해를 가진다는 것은, 연산자 $(\lambda\hat{I} - \hat{A})$가 특정 정보를 완벽하게 영공간(Null space)으로 소멸시켰음을 의미한다. 한 번 소멸한 정보는 되돌릴 수 없으므로, 고윳값 $\lambda$ 지점에서는 역작용소(Inverse operator)가 존재할 수 없으며 대수적으로 발산($\infty$)하게 된다.</p>
+<p>따라서 임의의 시험 변수 $z$를 스캐너처럼 사용하여 전 구간을 탐색하는 레졸번트 연산자(Resolvent Operator) $R(z, \hat{A})$를 새롭게 정의한다.</p>
+$$
+R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}
+$$<p>만약 변수 $z$를 실수축 위에만 둔다면 레졸번트가 고윳값 $\lambda$에 도달하여 발산하는 순간 계산은 정지된다. 이를 피하기 위해 변수 $z$를 복소 평면(Complex plane)으로 확장한다. 복소 평면에서 발산점은 &lsquo;고립된 특이점(Pole)&lsquo;으로 시각화되며, 특이점 주변을 우회하는 닫힌 경로 적분($\oint$)을 통해 연산자를 붕괴시켰던 결함의 내부 구조를 안전하게 해부할 수 있게 된다.</p>
+<hr>
+<h3 id="4-연산자-분해를-통한-레졸번트의-대수적-전개">4. 연산자 분해를 통한 레졸번트의 대수적 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>복소 평면으로 우회하는 해석학적 동기를 대수학적으로 교차 검증하기 위해, 앞서 일반화된 고유벡터 공간에서 확립한 연산자 분해 결과를 레졸번트의 정의에 직접 대입하여 전개한다. 이 과정은 왜 레졸번트가 필연적으로 로랑 급수(Laurent series) 형태의 다중 극점(Multiple pole) 구조를 가질 수밖에 없는지를 연역적으로 증명한다.</p>
+<p>대상 연산자의 분해 $\hat{A} = \sum_m (\lambda_m\hat{P}_m + \hat{N}_m)$를 레졸번트에 대입하고, 사영 연산자의 완비성 관계($\hat{I} = \sum_m \hat{P}_m$)로 치환하여 식을 결합한다.</p>
+$$
+z\hat{I} - \hat{A} = \sum_m z\hat{P}_m - \sum_m (\lambda_m\hat{P}_m + \hat{N}_m) = \sum_m \left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right]
+$$<p>대괄호 내부의 국소 블록 연산자를 $\hat{B}_m = (z - \lambda_m)\hat{P}_m - \hat{N}_m$ 으로 정의한다. 멱영 연산자 $\hat{N}_m$은 해당 고유공간 내부의 조르당 사슬 전이만을 기술하므로, 사영 공간에 완벽히 종속된다($\hat{N}_m = \hat{P}_m \hat{N}_m = \hat{N}_m \hat{P}_m$).</p>
+<p>이에 따라 서로 다른 공간($m \neq l$)의 연산자를 교차 곱하면 사영 연산자의 직교성($\hat{P}_m \hat{P}_l = \hat{0}$)에 의해 멱영 성분을 포함한 모든 간섭항이 소멸한다($\hat{B}_m \hat{B}_l = \hat{0}$). 각 고유공간의 블록 연산자들이 상호 직교하므로, 전체 합에 대한 역작용소는 각 부분 공간 역작용소들의 단순 합으로 분리된다.</p>
+$$
+R(z, \hat{A}) = \left( \sum_m \hat{B}_m \right)^{-1} = \sum_m \hat{B}_m^{-1} = \sum_m \left[ (z - \lambda_m)\hat{P}_m - \hat{N}_m \right]^{-1}
+$$<p>단일 고윳값 공간 $\lambda_m$ 내부에 존재하는 국소 역작용소를 전개한다. 스칼라 비례항 $(z - \lambda_m)\hat{P}_m$을 공통 인수로 묶어 분리한다.</p>
+$$
+\hat{B}_m^{-1} = \left[ (z - \lambda_m) \left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right) \right]^{-1} = \frac{1}{z - \lambda_m} \left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right)^{-1}
+$$<p>괄호 내부의 역작용소에 노이만 급수(Neumann series) 전개를 적용한다. 연산자 $\frac{\hat{N}_m}{z - \lambda_m}$ 는 유한 차수 $k_m$ 에서 스스로 소멸하는 멱영 연산자이므로 무한 급수는 $k_m$ 전단계에서 대수적으로 완벽하게 종결된다.</p>
+$$
+\left( \hat{P}_m - \frac{\hat{N}_m}{z - \lambda_m} \right)^{-1} = \hat{P}_m + \frac{\hat{N}_m}{z - \lambda_m} + \frac{\hat{N}_m^2}{(z - \lambda_m)^2} + \cdots + \frac{\hat{N}_m^{k_m-1}}{(z - \lambda_m)^{k_m-1}}
+$$<p>이 유한 급수 결과를 스칼라 항 $\frac{1}{z-\lambda_m}$ 에 분배하여 전체 레졸번트 식에 대입한다.</p>
+$$
+R(z, \hat{A}) = \sum_m \left( \frac{\hat{P}_m}{z - \lambda_m} + \sum_{k=1}^{k_m-1} \frac{\hat{N}_m^k}{(z - \lambda_m)^{k+1}} \right)
+$$<p>이 전개 과정은 어떠한 복소해석학적 가정도 없이 순수 대수학적 연역 추론만을 거쳤으나, 그 결과는 레졸번트의 다중 극점을 해체하는 <strong>로랑 급수(Laurent series)의 주부(Principal part) 공식과 형태학적으로 완벽하게 일치한다.</strong> 대수학적 공간에서의 기저 벡터 결핍(멱영성)이 복소 평면 위에서는 역작용소의 다중 극점(유한한 로랑 급수)이라는 기하학적 구조로 투영됨이 확증되었다.</p>
+<hr>
+<h3 id="5-로랑-급수의-계수-축출-불변-측도의-적용">5. 로랑 급수의 계수 축출 (불변 측도의 적용)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞서 대수적으로 유도된 레졸번트의 구조를 바탕으로, 복소해석학적 도구를 사용하여 실제 특이점 정보를 추출한다. 레졸번트 연산자 $R(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수 전개는 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.</p>
+<p>이때 적분 척도를 스케일 불변성(Scale invariance)을 지니는 <strong>불변 측도(Invariant measure) $\frac{dz}{z-\lambda_m}$</strong> 로 설정하여 위상 공간 내의 거동을 명확히 분리한다.</p>
+$$
+\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^{-n}
+$$<p><strong>1) (주부) 1차 단순극점 $\implies$ 사영 연산자</strong>
+로랑 급수의 유수(Residue)에 해당하는 계수 $\hat{C}_{-1}$은 고윳값 $\lambda_m$ 공간으로의 스펙트럼 사영 연산자 $\hat{P}_m$으로 정의된다.</p>
+$$
+\hat{P}_m = \hat{C}_{-1} = \frac{1}{2\pi i}\oint_{\Gamma_m} dz \, \hat{R}(z,\hat{A})
+$$<p><strong>2) (주부) 2차 이상 다중극점 $\implies$ 멱영 연산자</strong>
+시스템 내에서 대각화를 방해하는 결함 성분을 생성해 내는 근원적인 2차 극점 계수 $\hat{C}_{-2}$를 멱영 연산자 $\hat{N}_m$으로 확정하여 정의한다.</p>
+$$
+\hat{N}_m \equiv \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^2 = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z, \hat{A})
+$$<p>$\hat{C}_{-2}$를 코시 2중 적분으로 제곱($\hat{N}_m^2 = \hat{C}_{-2}^2$)하여 레졸번트 항등식을 전개하면 유수 정리에 의해 3차 극점 계수 $\hat{C}_{-3}$과 일치하게 된다. 이를 임의의 정수 $k$로 확장하면 다음의 거듭제곱 불변량이 도출된다.</p>
+$$
+\hat{N}_{m}^k = \hat{C}_{-2}^k = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m)^k \hat{R}(z, \hat{A})
+$$<p>앞선 4장의 전개에서 보았듯 시스템의 대수학적 제약에 의해 레졸번트의 로랑 급수 주부는 특정 차수인 멱영 지수 $k_m$에서 반드시 종결되므로 $\hat{N}_{m}^{k_m} = 0$ 이 성립한다.</p>
+<hr>
+<h3 id="6-타-공간의-중첩과-정칙부regular-part의-발현">6. 타 공간의 중첩과 정칙부(Regular part)의 발현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지의 전개에서 단일 공간 $\lambda_m$에 대한 국소 역작용소 $\hat{B}_m^{-1}$은 로랑 급수에서 음의 지수를 가지는 **주부(Principal part)**만을 구축하였다. 그렇다면 양의 지수($k \ge 0$)를 가지는 **정칙부(Regular part)**는 어디에 존재하는가?</p>
+<p>정칙부는 관측점 $\lambda_m$ 공간 내부에서는 도출되지 않으며, 전체 합 $\sum_m$ 기호 속에 숨어 있던 &lsquo;나머지 타 공간들의 역작용소($\sum_{l \neq m} \hat{B}_l^{-1}$)&lsquo;들이 $z = \lambda_m$ 근방에서 테일러 전개되며 만들어내는 거대한 잉여 배경장이다.</p>
+$$
+R(z, \hat{A}) = \sum_l \hat{B}_l^{-1} = \underbrace{ \hat{B}_m^{-1} }_{\text{주부 (Principal Part)}} + \underbrace{ \sum_{l \neq m} \hat{B}_l^{-1} }_{\text{정칙부 (Regular Part)}}
+$$<p>특이점 $z = \lambda_m$ 근방에서 타 공간들의 역작용소 합을 관찰해 보자. 이 공간들에서는 발산($\lambda_m - \lambda_l \neq 0$)이 발생하지 않으므로 매끄러운 해석 함수(Analytic function)로 작용한다. 타 공간의 역작용소 합을 변수 $(z - \lambda_m)$을 중심으로 재배열하여 전개한다.</p>
+$$
+\sum_{l \neq m} \hat{B}_l^{-1} = \sum_{l \neq m} \left[ (z - \lambda_l)\hat{P}_l - \hat{N}_l \right]^{-1} = \sum_{l \neq m} \left[ (\lambda_m - \lambda_l)\hat{P}_l - \hat{N}_l + (z - \lambda_m)\hat{P}_l \right]^{-1}
+$$<p>$z = \lambda_m$ 일 때의 상수항 연산자를 <strong>환원 레졸번트(Reduced resolvent)</strong> $\hat{S}_m$으로 정의한다. 이는 관측점 $\lambda_m$ 지점에서 타 공간들이 미치는 레졸번트 배경장이다.</p>
+$$
+\hat{S}_m \equiv \sum_{l \neq m} \left[ (\lambda_m - \lambda_l)\hat{P}_l - \hat{N}_l \right]^{-1}
+$$<p>식은 환원 레졸번트의 역작용소 형태와 변위 항의 결합 $\left( \hat{S}_m^{-1} + (z - \lambda_m)\hat{I} \right)^{-1}$ 로 치환되며, 노이만 급수를 적용하면 다음과 같이 전개된다.</p>
+$$
+\hat{S}_m \left( \hat{I} + (z - \lambda_m)\hat{S}_m \right)^{-1} = \sum_{k=0}^{\infty} (-1)^k \hat{S}_m^{k+1} (z - \lambda_m)^k
+$$<p>이는 코시 적분으로 유도되는 정칙부의 불변량 계수 $\hat{C}_k = (-1)^k \hat{S}_m^{k+1}$와 대수적으로 완전히 동치이다. 환원 레졸번트 $\hat{S}_m$은 타 스펙트럼 공간에 대한 기여분이므로, 대상 사영 연산자 $\hat{P}_m$에 작용할 경우 직교성 조건에 따라 즉각 영연산자로 소멸한다($\hat{P}_m \hat{S}_m = \hat{0}$).</p>
+<p>결론적으로, 연산자의 대수적 스펙트럼 분해 구조를 레졸번트에 대입하면, 대상 공간 내부의 대수적 결함($\hat{N}_m$)은 다중 극점인 <strong>주부</strong>로 발현되고, 대상 공간 외부의 타 스펙트럼 배경장($\hat{S}_m$)은 무한 멱급수인 <strong>정칙부</strong>로 형상화됨이 어떠한 비약도 없이 증명된다.</p>
 
   <footer class="footline">
   </footer>
@@ -288,7 +419,6 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
             <li class="" data-nav-id="/vector_operator/resolvent_operator/b_generalization/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_generalization/index.html">(b) Generalization</a></li>
             <li class="active " data-nav-id="/vector_operator/resolvent_operator/b_resolvent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_resolvent/index.html">(b) Resolvent</a></li>
             <li class="" data-nav-id="/vector_operator/resolvent_operator/b_discrete/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_discrete/index.html">(b) Discrete</a></li>
-            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_generalized/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_generalized/index.html">(b) Generalized</a></li>
             <li class="" data-nav-id="/vector_operator/resolvent_operator/b_nilpotent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_nilpotent/index.html">(c) Higher-order Poles and Nilpotent Extraction</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
@@ -334,9 +464,9 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780708874"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780708874" defer></script>
-    <script src="/js/theme.js?1780708874" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780716463"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780716463" defer></script>
+    <script src="/js/theme.js?1780716463" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

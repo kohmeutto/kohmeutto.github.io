@@ -3,7 +3,7 @@
   <channel>
     <title>Resolvent operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/resolvent_operator/index.html</link>
-    <description>(b) Generalization (b) Resolvent (b) Discrete (b) Generalized (c) Higher-order Poles and Nilpotent Extraction</description>
+    <description>(b) Generalization (b) Resolvent (b) Discrete (c) Higher-order Poles and Nilpotent Extraction</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/resolvent_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -19,21 +19,14 @@
       <link>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</guid>
-      <description>1. 행렬식의 붕괴와 해석학적 동기&#xD;임의의 선형 연산자 $\hat{A}$ 의 스펙트럼(고유값) $\lambda$ 를 도출하기 위한 동차 방정식은 다음과 같다.&#xA;$$&#xD;(\lambda \hat{I} - \hat{A}) |v\rangle = 0&#xD;$$유한 차원 벡터 공간에서 이 방정식의 자명하지 않은 해( $|v\rangle \neq 0$ )를 구하기 위한 필요충분조건은 연산자 $(\lambda \hat{I} - \hat{A})$ 의 행렬식이 0이 되는 것이다.&#xA;$$&#xD;\det(\lambda \hat{I} - \hat{A}) = 0&#xD;$$그러나 무한 차원 공간에서는 행렬의 크기가 무한행 무한열로 확장되므로, 부피의 보정값을 의미하는 대수적 도구인 행렬식(Determinant) 자체가 정의되지 않는다. 특성 방정식이라는 도구가 붕괴함에 따라, 연산자의 고유값과 고유벡터를 판별하기 위한 새로운 해석학적 접근법이 요구된다.</description>
+      <description>1. 동기&#xD;1) 대수학적 접근(Generalization)의 한계&#xA;일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m + \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.</description>
     </item>
     <item>
       <title>(b) Discrete</title>
       <link>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</guid>
-      <description>1. 로랑 급수&#xD;레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.&#xA;$$&#xD;R(z, \hat{A}) = \sum_{k\ge2}\frac{\hat{C}_{-k}}{(z-\lambda_m)^k} + \frac{\hat{C}_{-1}}{z-\lambda_m} + \sum_{k\ge0}\hat{C}_k(z-\lambda_m)^k&#xD;$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 공간의 멱영 지수(Index of nilpotency)이다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.&#xA;$$&#xD;\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma}\frac{dz}{z-\lambda_m}\frac{R(z)}{(z-\lambda_m)^{n}}&#xD;$$ 2. 1차 단순극점 $\implies$은 사영 연산자(Projection operator)&#xD;위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타내며, 본 장에서는 대각화 가능한 성분을 추출하는 1차 단순 극점(Simple pole)의 해석에 집중한다.</description>
-    </item>
-    <item>
-      <title>(b) Generalized</title>
-      <link>http://localhost:1313/vector_operator/resolvent_operator/b_generalized/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_generalized/index.html</guid>
-      <description>1. 고유벡터의 결핍과 대수적 퇴화&#xD;임의의 선형 연산자 $\hat{A}$ 의 고유값 $\lambda$ 는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$ 을 통해 계산된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.&#xA;고유값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|u\rangle = 0$ 에 대입하여 고유벡터 $|u\rangle$ 를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</description>
+      <description>1. 로랑 급수&#xD;레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.&#xA;$$&#xD;R(z, \hat{A}) = \sum_{k\ge2}\frac{\hat{C}_{-k}}{(z-\lambda_m)^k} + \frac{\hat{C}_{-1}}{z-\lambda_m} + \sum_{k\ge0}\hat{C}_k(z-\lambda_m)^k&#xD;$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 공간의 멱영 지수(Index of nilpotency)이다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.&#xA;$$&#xD;\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma}\frac{dz}{z-\lambda_m}\frac{R(z)}{(z-\lambda_m)^{n}}&#xD;$$ 2. (주부) 1차 단순극점 $\implies$ 사영 연산자(Projection operator)&#xD;위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타낸다. 로랑 급수의 유수(Residue)에 해당하는 계수 $\hat{C}_{-1}$은 고윳값 $\lambda_m$ 공간으로의 스펙트럼 사영 연산자 $\hat{P}_m$으로 정의된다.</description>
     </item>
     <item>
       <title>(c) Higher-order Poles and Nilpotent Extraction</title>
