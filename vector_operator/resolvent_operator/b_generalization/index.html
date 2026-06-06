@@ -23,28 +23,28 @@
     <meta itemprop="name" content="(b) Generalization :: 수리전자물리학">
     <meta itemprop="description" content="1. 고유벡터의 결핍과 대수적 퇴화임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.
 고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.">
-    <meta itemprop="wordCount" content="1032">
+    <meta itemprop="wordCount" content="1146">
     <title>(b) Generalization :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780716463" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780716463" defer></script>
-    <script src="/js/search-lunr.js?1780716463" defer></script>
-    <script src="/js/search.js?1780716463" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780754340" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780754340" defer></script>
+    <script src="/js/search-lunr.js?1780754340" defer></script>
+    <script src="/js/search.js?1780754340" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780716463";
+      window.relearn.index_js_url="/searchindex.en.js?1780754340";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780716463" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780716463" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780716463" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780716463" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780754340" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780754340" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780754340" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780754340" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780716463" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780716463" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780716463" rel="stylesheet">
-    <link href="/css/theme.css?1780716463" rel="stylesheet">
-    <link href="/css/format-html.css?1780716463" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780754340" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780754340" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780754340" rel="stylesheet">
+    <link href="/css/theme.css?1780754340" rel="stylesheet">
+    <link href="/css/format-html.css?1780754340" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -115,6 +115,7 @@
         <li><a href="#1-고유벡터의-결핍과-대수적-퇴화">1. 고유벡터의 결핍과 대수적 퇴화</a></li>
         <li><a href="#2-일반화된-고유벡터-generalized-eigenvector">2. 일반화된 고유벡터 (Generalized eigenvector)</a></li>
         <li><a href="#3-일반화된-연산자-분해">3. 일반화된 연산자 분해</a></li>
+        <li><a href="#4-반단순-연산자와-비대각-연산자-특성">4. 반단순 연산자와 비대각 연산자 특성</a></li>
       </ul>
     </li>
   </ul>
@@ -239,15 +240,6 @@ $$<ul>
 <li>사영 연산자(Projection): $\hat{P}_m = \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$</li>
 <li>멱영 연산자(Nilpotent): $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$</li>
 </ul>
-<p><strong>2) 연속 공간의 분해</strong></p>
-<p>연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.</p>
-$$
-\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
-\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
-$$<ul>
-<li>사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$</li>
-<li>멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$</li>
-</ul>
 <p><em>proof1) 직접 방법</em></p>
 <p>조르당 사슬 내 특정 랭크 $k$의 지배 방정식 양변 우측에 해당 랭크의 쌍대 기저 $\langle \lambda^{m,k}|$를 외적(Outer product)한다.</p>
 $$
@@ -274,7 +266,24 @@ f^{(0)}(\lambda_m)=\lambda_m, \quad f^{(1)}(\lambda_m)=1, \quad f^{(k \ge 2)}(\l
 $$<p>$k=0$ 항과 $k=1$ 항만 남으며, $\hat{N}_m^0=\hat{P}_m$ 규약에 의해 정리하면 다음과 같다.</p>
 $$
 f(\hat{A})\hat{P}_m=\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{N}_m
-$$<p><em>proof3) Nilpotent</em></p>
+$$<p><strong>2) 연속 공간의 분해</strong></p>
+<p>연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.</p>
+$$
+\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
+\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
+$$<ul>
+<li>사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$</li>
+<li>멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$</li>
+</ul>
+<hr>
+<h3 id="4-반단순-연산자와-비대각-연산자-특성">4. 반단순 연산자와 비대각 연산자 특성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 사영 특성</strong></p>
+$$
+\hat{P}^k = \hat{P}
+$$<p><strong>2) 멱영 특성</strong></p>
+$$
+\hat{N}^{k_m} = 0
+$$<p>proof)</p>
 <p>[이산 공간]</p>
 <p>분리된 비대각 성분 $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$이 멱영(Nilpotent) 연산자가 되는 대수학적 인과율은 쌍대 기저의 직교성에 의해 증명된다. 단일 랭크 강하 항의 곱을 연산하면 다음과 같다.</p>
 $$
@@ -290,11 +299,43 @@ $$
 $$<p>잉여 상태 $|w(\nu')\rangle$는 진성 고유공간과 대수적으로 선형 독립인 결함 공간을 구성하므로, 진성 상태를 투영하는 쌍대 기저 $\langle \lambda^d(\nu)|$와의 내적은 항상 0으로 소멸한다.</p>
 $$
 \langle \lambda^d(\nu)|w(\nu')\rangle = 0
-$$<p>이 스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.</p>
+$$<p>스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.</p>
 $$
 (d\hat{N})^2 = \hat{0}
-$$<hr>
-
+$$<p><strong>3) 상호 특성</strong></p>
+<p>결과적으로 index 가 다르다면, 무조건 0이다.</p>
+<p><em>(1) 교환 관계</em></p>
+$$
+[\hat{A},\hat{P}]=0,\quad [\hat{A},\hat{N}]=0
+$$$$
+[\hat{P}_m,\hat{P}_l]=0,\quad [\hat{N}_m,\hat{N}_l]=0
+$$<p><em>(2) 상호 $\hat{P}$ 와의 관계</em></p>
+$$
+\hat{P}_m \hat{P}_l=0,\quad\text{단, } m \ne l
+$$<p><em>(3) $\hat{P}$ 와 $\hat{N}$의 관계</em></p>
+$$
+\hat{N}_m\hat{P}_m = \hat{P}_m\hat{N}_m = \hat{N}_m 
+$$$$
+\hat{N}_m\hat{P}_l = \hat{P}_m\hat{N}_l = 0,\quad\text{단, } m \ne l
+$$<p>proof1)</p>
+$$
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m
+$$$$
+\hat{A}\hat{P}_m^2 = \lambda_m\hat{P}_m^2 + \hat{N}_m\hat{P}_m \implies
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m\hat{P}_m 
+$$<p>따라서,</p>
+$$
+\hat{N}_m\hat{P}_m = \hat{N}_m
+$$<p>proof2)</p>
+$$
+\hat{N}_m\hat{P}_l = \hat{N}_m\hat{P}_m\hat{P}_l=0
+$$<p><em>(4) 상호 $\hat{N}$ 와의 관계</em></p>
+$$
+\hat{N}_m\hat{N}_l = 0
+$$<p>proof)</p>
+$$
+\hat{N}_m\hat{N}_l = \hat{N}_m\hat{P}_m\hat{N}_l = 0
+$$
   <footer class="footline">
   </footer>
 </article>
@@ -399,9 +440,9 @@ $$<hr>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780716463"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780716463" defer></script>
-    <script src="/js/theme.js?1780716463" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780754340"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780754340" defer></script>
+    <script src="/js/theme.js?1780754340" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
