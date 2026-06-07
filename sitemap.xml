@@ -568,6 +568,9 @@
     <loc>http://localhost:1313/temp/b_components_transformation/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/greens_function/gf/b_existence_and_properties/index.html</loc>
   </url>
   <url>
@@ -617,9 +620,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_unitary/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/temp/electromotive_force/i_electromotive_force_i/index.html</loc>

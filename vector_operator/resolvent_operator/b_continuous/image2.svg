@@ -1,0 +1,46 @@
+<svg width="560" height="380" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Times New Roman', Times, serif; }
+    .it { font-style: italic; }
+  </style>
+
+  <text x="280" y="32" font-size="16" text-anchor="middle" fill="#111111">소호츠키–플레멜 정리 — 극점을 어느 쪽으로 우회하는가</text>
+
+  <!-- 좌표축 : 회색 -->
+  <line x1="40" y1="200" x2="515" y2="200" stroke="#9e9e9e" stroke-width="1"/>
+  <polygon points="508,195 520,200 508,205" fill="#9e9e9e"/>
+  <text x="522" y="218" font-size="15" class="it" fill="#9e9e9e">Re</text>
+  <line x1="280" y1="355" x2="280" y2="60" stroke="#9e9e9e" stroke-width="1"/>
+  <polygon points="275,70 280,58 285,70" fill="#9e9e9e"/>
+  <text x="290" y="72" font-size="15" class="it" fill="#9e9e9e">Im</text>
+
+  <!-- 공통 직선부 : 검정 -->
+  <line x1="70" y1="200" x2="250" y2="200" stroke="#111111" stroke-width="2.5"/>
+  <line x1="310" y1="200" x2="490" y2="200" stroke="#111111" stroke-width="2.5"/>
+  <polygon points="159,195 171,200 159,205" fill="#111111"/>
+  <polygon points="399,195 411,200 399,205" fill="#111111"/>
+  <text x="120" y="190" font-size="15" class="it" fill="#111111">𝒫(1/x)</text>
+  <text x="410" y="190" font-size="15" class="it" fill="#111111">𝒫(1/x)</text>
+
+  <!-- 극점 : 검정 × -->
+  <line x1="273" y1="193" x2="287" y2="207" stroke="#111111" stroke-width="2"/>
+  <line x1="287" y1="193" x2="273" y2="207" stroke="#111111" stroke-width="2"/>
+
+  <!-- 위로 우회 (축 위쪽 반원) : 빨강 -->
+  <path d="M 250 200
+           C 250 183.4, 263.4 170, 280 170
+           C 296.6 170, 310 183.4, 310 200"
+        fill="none" stroke="#c62828" stroke-width="2.5"/>
+  <polygon points="274,166 286,170 274,174" fill="#c62828"/>
+  <text x="334" y="120" font-size="15" class="it" fill="#c62828">위로 우회 : 1/(x + iε)</text>
+  <text x="334" y="140" font-size="15" fill="#c62828">기여 = −iπδ(x)</text>
+
+  <!-- 아래로 우회 (축 아래쪽 반원) : 파랑 -->
+  <path d="M 250 200
+           C 250 216.6, 263.4 230, 280 230
+           C 296.6 230, 310 216.6, 310 200"
+        fill="none" stroke="#1565c0" stroke-width="2.5"/>
+  <polygon points="274,226 286,230 274,234" fill="#1565c0"/>
+  <text x="334" y="268" font-size="15" class="it" fill="#1565c0">아래로 우회 : 1/(x − iε)</text>
+  <text x="334" y="288" font-size="15" fill="#1565c0">기여 = +iπδ(x)</text>
+</svg>

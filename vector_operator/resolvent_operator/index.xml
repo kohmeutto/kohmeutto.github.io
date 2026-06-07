@@ -3,7 +3,7 @@
   <channel>
     <title>Resolvent operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/resolvent_operator/index.html</link>
-    <description>(b) Generalization (b) Resolvent (b) Discrete (c) Higher-order Poles and Nilpotent Extraction</description>
+    <description>(b) Generalization (b) Resolvent (b) Discrete (b) Continuous</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/resolvent_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -29,11 +29,11 @@
       <description>1. 로랑 급수&#xD;레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.&#xA;$$&#xD;R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} + \frac{\hat{C}_{-1}}{z-\lambda_m} + \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n&#xD;$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.</description>
     </item>
     <item>
-      <title>(c) Higher-order Poles and Nilpotent Extraction</title>
-      <link>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</link>
+      <title>(b) Continuous</title>
+      <link>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_nilpotent/index.html</guid>
-      <description>1. 붕괴와 기저의 상실&#xD;시스템에 대수적 퇴화(Algebraic degeneracy)가 발생하면 특성 방정식의 다중근에 의한 대수적 중복도 $\alpha_m$ 에 비해, 독립적인 진성 고유벡터의 수인 기하적 중복도 $\gamma_m$ 이 작아진다.&#xA;$$&#xD;\gamma_m &lt; \alpha_m&#xD;$$진성 고유벡터들이 상태 공간을 빈틈없이 채우는 완비적 기저(Complete basis)를 형성하지 못하므로, 이들을 행렬로 구성할 때 계수(Rank)가 결여되어 역행렬을 통한 쌍대 기저(Dual basis)의 도출이 수학적으로 완전히 차단된다. 쌍대 기저 체계가 붕괴함에 따라 사영 연산자를 순수한 1차원 텐서곱 $|u_k\rangle \langle u^{d, k}|$ 의 선형 결합으로 온전히 분해하는 대각화 작업은 불가능해진다.</description>
+      <guid>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</guid>
+      <description>1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)&#xD;이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼 구간 $\Omega$ 상의 연속 변수 $\nu$ 로 변환된다.</description>
     </item>
   </channel>
 </rss>

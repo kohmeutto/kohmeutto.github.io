@@ -21,26 +21,26 @@
     <meta itemprop="description" content="1. 동기일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
     <meta itemprop="wordCount" content="1415">
     <title>(b) Resolvent :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780754340" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780754340" defer></script>
-    <script src="/js/search-lunr.js?1780754340" defer></script>
-    <script src="/js/search.js?1780754340" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780807341" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780807341" defer></script>
+    <script src="/js/search-lunr.js?1780807341" defer></script>
+    <script src="/js/search.js?1780807341" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780754340";
+      window.relearn.index_js_url="/searchindex.en.js?1780807341";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780754340" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780754340" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780754340" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780754340" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780807341" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780807341" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780807341" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780807341" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780754340" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780754340" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780754340" rel="stylesheet">
-    <link href="/css/theme.css?1780754340" rel="stylesheet">
-    <link href="/css/format-html.css?1780754340" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780807341" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780807341" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780807341" rel="stylesheet">
+    <link href="/css/theme.css?1780807341" rel="stylesheet">
+    <link href="/css/format-html.css?1780807341" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -111,9 +111,9 @@
         <li><a href="#1-동기">1. 동기</a></li>
         <li><a href="#2-resolvent-operator-고유값-찾기의-일반화">2. Resolvent operator: 고유값 찾기의 일반화</a></li>
         <li><a href="#3-연산자-분해를-통한-레졸번트의-대수적-전개">3. 연산자 분해를 통한 레졸번트의 대수적 전개</a></li>
-        <li><a href="#3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼</a></li>
-        <li><a href="#4-제1-레졸번트-항등식">4. 제1 레졸번트 항등식</a></li>
-        <li><a href="#5-도함수로의-확장">5. 도함수로의 확장</a></li>
+        <li><a href="#4-복소-평면의-분할-레졸번트-집합과-스펙트럼">4. 복소 평면의 분할: 레졸번트 집합과 스펙트럼</a></li>
+        <li><a href="#5-제1-레졸번트-항등식">5. 제1 레졸번트 항등식</a></li>
+        <li><a href="#6-도함수로의-확장">6. 도함수로의 확장</a></li>
       </ul>
     </li>
   </ul>
@@ -255,7 +255,7 @@ $$<p>이를 본래의 급수 식에 대입하면, 해석학적 비약 없이 연
 $$
 \sum_{l \neq m} \hat{B}_l^{-1} = \sum_{n=0}^{\infty} (-1)^n \hat{S}_m^{n+1} (z - \lambda_m)^n
 $$<hr>
-<h3 id="3-복소-평면의-분할-레졸번트-집합과-스펙트럼">3. 복소 평면의 분할: 레졸번트 집합과 스펙트럼<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="4-복소-평면의-분할-레졸번트-집합과-스펙트럼">4. 복소 평면의 분할: 레졸번트 집합과 스펙트럼<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 임의의 복소 변수 $z$ 를 도입하여 정의되었으나, $z$ 의 값에 따라 그 수학적 성질이 극명하게 달라진다. 역작용소의 유계성(Boundedness)을 기준으로 복소 평면 $\mathbb{C}$ 는 두 개의 영역으로 분할된다.</p>
 <p><strong>1) 레졸번트 집합 (Resolvent Set, $\rho(\hat{A})$)</strong></p>
 <p>복소수 $z$ 를 대입했을 때, 레졸번트 연산자 $R(z, \hat{A})$ 가 유계 연산자(Bounded Operator)로서 안정적으로 존재하는 $z$ 의 집합이다. 이 영역에서 역작용소는 특정 입력 벡터를 공간 밖으로 이탈시키거나 증폭률을 무한대로 발산시키지 않으며, 복소해석학적 함수로서 안전하게 다뤄질 수 있다.</p>
@@ -265,7 +265,7 @@ $$
 \sigma(\hat{A}) = \mathbb{C} \setminus \rho(\hat{A})
 $$<p>스펙트럼 내의 $z$ 에 대해서는 작용소 $(z\hat{I} - \hat{A})$ 의 역연산이 불가능해지거나, 결과값이 무한대로 발산하여 비유계(Unbounded) 특성을 띠게 된다. 이 발산하는 특이점(Singularity)들이 바로 무한 차원 공간에서 행렬식 없이 찾아낸 연산자 $\hat{A}$ 의 본질적인 고유값 집합이다.</p>
 <hr>
-<h3 id="4-제1-레졸번트-항등식">4. 제1 레졸번트 항등식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="5-제1-레졸번트-항등식">5. 제1 레졸번트 항등식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>앞선 노이만 급수는 변수 $z$ 가 $|z| > \lVert \hat{A} \rVert$ 조건을 만족할 때만 성립한다. 1차 미분 연산자 $\hat{D}$ 처럼 본질적으로 비유계인 연산자는 노름이 무한대로 발산하므로($\lVert \hat{D} \rVert = \infty$), 이 급수 수렴 조건을 만족하는 $z$ 가 복소 평면 상에 존재할 수 없다. 즉, $\hat{A}$ 의 거듭제곱( $\hat{A}^n$ )을 직접 전개하는 방식은 무한 차원 공간에서 여전히 정의역의 연쇄적 붕괴를 초래한다.</p>
 <p>이 한계를 극복하기 위해, 비유계 연산자 $\hat{A}$ 를 직접 거듭제곱하는 대신 레졸번트 집합 내부에 존재하는 두 레졸번트 사이의 대수적 관계를 유도한다. 복소수 $z$ 와 $w$ 가 발산 영역인 스펙트럼 $\sigma(\hat{A})$ 를 제외한 레졸번트 집합 $\rho(\hat{A})$ 에 속할 때, 역작용소 $R(z, \hat{A})$ 와 $R(w, \hat{A})$ 는 명확한 유계 연산자로 확정된다. 이 유계성이 대수적으로 보장된 조건 하에서 다음의 항등식이 성립한다.</p>
 $$
@@ -288,7 +288,7 @@ $$<p>스칼라 성분 $(w - z)$ 는 선형 연산자와의 교환 법칙이 성�
 $$
 R(z, \hat{A}) - R(w, \hat{A}) = -(z - w) R(z, \hat{A}) R(w, \hat{A})
 $$<hr>
-<h3 id="5-도함수로의-확장">5. 도함수로의 확장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="6-도함수로의-확장">6. 도함수로의 확장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>유도된 항등식의 양변을 $(z - w)$ 로 나누고 극한 $w \to z$ 를 취하면, 레졸번트 연산자의 복소 미분이 대수적으로 도출된다.</p>
 $$
 \frac{d}{dz}R(z, \hat{A}) = \lim_{w \to z} \frac{R(z, \hat{A}) - R(w, \hat{A})}{z - w} = -[R(z, \hat{A})]^2
@@ -354,7 +354,7 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
             <li class="" data-nav-id="/vector_operator/resolvent_operator/b_generalization/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_generalization/index.html">(b) Generalization</a></li>
             <li class="active " data-nav-id="/vector_operator/resolvent_operator/b_resolvent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_resolvent/index.html">(b) Resolvent</a></li>
             <li class="" data-nav-id="/vector_operator/resolvent_operator/b_discrete/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_discrete/index.html">(b) Discrete</a></li>
-            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_nilpotent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_nilpotent/index.html">(c) Higher-order Poles and Nilpotent Extraction</a></li></ul></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_continuous/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_continuous/index.html">(b) Continuous</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
@@ -399,9 +399,9 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780754340"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780754340" defer></script>
-    <script src="/js/theme.js?1780754340" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780807341"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780807341" defer></script>
+    <script src="/js/theme.js?1780807341" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
