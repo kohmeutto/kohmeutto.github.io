@@ -33,7 +33,7 @@
       <link>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</guid>
-      <description>1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)&#xD;이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼 구간 $\Omega$ 상의 연속 변수 $\nu$ 로 변환된다.</description>
+      <description>1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)&#xD;이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 이산 챕터에서 보았듯, 고립된 극점 $\lambda_m$ 을 감싸는 코시 닫힌 경로 적분 $\oint_{\Gamma_m}$ 을 통해 사영 연산자 $\hat{P}_m$(1차극)과 멱영 연산자 $\hat{N}_m$(2차 이상 극)을 산출하였다.&#xA;반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼을 형성한다. 이때 레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 더 이상 고립된 극점을 갖지 않으며, 복소 평면 상의 특정 곡선을 따라 특이점이 조밀하게 배열된 분지절단(Branch cut)을 형성한다. 레졸번트는 이 절단선을 경계로 해석적 연속성(Analytic continuation)을 상실하며, 복소수 $z$ 가 절단선의 각기 다른 방향에서 접근할 때 대수적으로 서로 다른 극한값을 가지게 된다.</description>
     </item>
   </channel>
 </rss>

@@ -442,9 +442,6 @@
     <loc>http://localhost:1313/geometric_algebra/calculus/b_curl/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/geometric_algebra/einstein-notation/b_dyad/index.html</loc>
   </url>
   <url>
@@ -572,6 +569,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/gf/b_existence_and_properties/index.html</loc>
