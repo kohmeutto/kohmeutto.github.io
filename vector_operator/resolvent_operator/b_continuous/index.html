@@ -19,28 +19,28 @@
     <meta property="article:section" content="Vector & Operator">
     <meta itemprop="name" content="(b) Continuous :: 수리전자물리학">
     <meta itemprop="description" content="1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼 구간 $\Omega$ 상의 연속 변수 $\nu$ 로 변환된다.">
-    <meta itemprop="wordCount" content="1979">
+    <meta itemprop="wordCount" content="1973">
     <title>(b) Continuous :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1780922231" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1780922231" defer></script>
-    <script src="/js/search-lunr.js?1780922231" defer></script>
-    <script src="/js/search.js?1780922231" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1780931229" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1780931229" defer></script>
+    <script src="/js/search-lunr.js?1780931229" defer></script>
+    <script src="/js/search.js?1780931229" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1780922231";
+      window.relearn.index_js_url="/searchindex.en.js?1780931229";
     </script>
-    <script src="/js/lunr/lunr.min.js?1780922231" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1780922231" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1780922231" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1780922231" defer></script>
+    <script src="/js/lunr/lunr.min.js?1780931229" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1780931229" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1780931229" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1780931229" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1780922231" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780922231" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780922231" rel="stylesheet">
-    <link href="/css/theme.css?1780922231" rel="stylesheet">
-    <link href="/css/format-html.css?1780922231" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1780931229" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1780931229" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780931229" rel="stylesheet">
+    <link href="/css/theme.css?1780931229" rel="stylesheet">
+    <link href="/css/format-html.css?1780931229" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -163,8 +163,8 @@ $$
 d\hat{P}(\nu) = \delta(\nu - \hat{A}) d\nu
 $$<p>proof)</p>
 <p>특이점 구간 $[\nu_1, \nu_2]$ 을 둘러싸는 직사각형 경로 $\Gamma$ 를 실수축에 무한히 밀착시키는 극한 흡수 원리(Limiting absorption principle)를 적용한다.</p>
-<p><a href="#R-image-86ba72cb7f67c50cb7143ba1b18fa955" class="lightbox-link"><img alt="분지절단과 도약 연산" class="lazy lightbox figure-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image1.svg" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-86ba72cb7f67c50cb7143ba1b18fa955"><img alt="분지절단과 도약 연산" class="lazy lightbox lightbox-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image1.svg"></a></p>
+<p><a href="#R-image-f094b6935daf0aafdd376c8234a72d3a" class="lightbox-link"><img alt="분지절단과 도약 연산" class="lazy lightbox figure-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image1.svg" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f094b6935daf0aafdd376c8234a72d3a"><img alt="분지절단과 도약 연산" class="lazy lightbox lightbox-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image1.svg"></a></p>
 <p>수직 구간의 적분은 소멸하고, 실수축과 평행하게 주행하는 상단 경로($z = \nu + i\epsilon$, 역방향 주행)와 하단 경로($z = \nu - i\epsilon$, 순방향 주행)의 적분만이 남아 다음의 극한 차분식을 형성한다.</p>
 $$
 \Delta\hat{P}_{[\nu_1, \nu_2]} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_{\nu_1}^{\nu_2} \left[ R(\nu - i\epsilon, \hat{A}) - R(\nu + i\epsilon, \hat{A}) \right] d\nu
@@ -180,13 +180,13 @@ R(\nu \pm i\epsilon, \hat{A}) = \mathcal{P} \left( \frac{1}{\nu - \hat{A}} \righ
 $$<p>이 항등식을 도약 연산식에 대입하여 상단 극한과 하단 극한의 대수적 차분을 산출한다.</p>
 $$
 R(\nu - i\epsilon) - R(\nu + i\epsilon) = \left[ \mathcal{P} \left( \frac{1}{\nu - \hat{A}} \right) + i\pi \delta(\nu - \hat{A}) \right] - \left[ \mathcal{P} \left( \frac{1}{\nu - \hat{A}} \right) - i\pi \delta(\nu - \hat{A}) \right]
-$$<p>차분 과정에서 배경장을 형성하는 코시 주치 성분은 완벽하게 상쇄되어 소거되며, 상태를 특정하는 델타 함수 성분만이 $2i\pi \delta(\nu - \hat{A})$ 로 보존된다. 이 결과를 본래의 밀도 식에 대입하면 $2\pi i$ 계수가 소거되며 최종적인 항등식으로 귀결된다.</p>
+$$<p>차분 과정에서 배경장을 형성하는 코시 주치 성분은 상쇄되어 소거되며, 상태를 특정하는 델타 함수 성분만이 $2i\pi \delta(\nu - \hat{A})$ 로 보존된다. 이 결과를 본래의 밀도 식에 대입하면 $2\pi i$ 계수가 소거되며 최종적인 항등식으로 귀결된다.</p>
 $$
 d\hat{P}(\nu) = \delta(\nu - \hat{A}) d\nu
 $$<p>극한 흡수 원리와 소호츠키-플레멜 정리의 해석학적 결합을 통해, 임의의 자기수반 연산자 스펙트럼 측도를 레졸번트의 도약으로부터  역추출해 내는 이 최종 대수적 결과물을 스톤의 공식(Stone&rsquo;s formula)이라 명명한다.</p>
 <p>proof) 소호츠키-플레멜 정리의 증명</p>
-<p><a href="#R-image-de6644499b2c55919259f0fd9b1ccc17" class="lightbox-link"><img alt="소호츠키-플레멜 정리의 기하학적 적분 경로" class="lazy lightbox figure-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image2.svg" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-de6644499b2c55919259f0fd9b1ccc17"><img alt="소호츠키-플레멜 정리의 기하학적 적분 경로" class="lazy lightbox lightbox-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image2.svg"></a></p>
+<p><a href="#R-image-e3ca9df9addd3373fdefdb5d49ac0728" class="lightbox-link"><img alt="소호츠키-플레멜 정리의 기하학적 적분 경로" class="lazy lightbox figure-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image2.svg" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3ca9df9addd3373fdefdb5d49ac0728"><img alt="소호츠키-플레멜 정리의 기하학적 적분 경로" class="lazy lightbox lightbox-image" loading="lazy" src="/vector_operator/resolvent_operator/b_continuous/image2.svg"></a></p>
 <p><em>(1) 복소 분수의 대수적 분리 (실수화)</em></p>
 <p>극한 대상이 되는 복소 분수 함수 $f_{\epsilon}(x) = \frac{1}{x \pm i\epsilon}$ 에 켤레 복소수 $x \mp i\epsilon$ 를 분모와 분자에 곱하여 실수부와 허수부로  분리한다.</p>
 $$
@@ -201,7 +201,7 @@ $$$$
 $$<p>극한 $\epsilon \to 0^+$ 을 적분 내부로 전개하면 $\phi(\epsilon y) \to \phi(0)$ 이 되며, 남은 적분 $\int_{-\infty}^{\infty} \frac{1}{y^2 + 1} dy$ 은 아크탄젠트(Arctangent) 함수의 특성에 의해  $\pi$ 로 수렴한다.</p>
 $$
 = \phi(0) \int_{-\infty}^{\infty} \frac{1}{y^2 + 1} dy = \pi \phi(0)
-$$<p>분포 이론의 정의상 임의의 함수 $\phi(x)$ 를 $\phi(0)$ 으로 추출해 내는 연산자는 디랙 델타 함수 $\delta(x)$ 이다. 따라서 허수부는 다음의 극한으로 완벽히 종결된다.</p>
+$$<p>분포 이론의 정의상 임의의 함수 $\phi(x)$ 를 $\phi(0)$ 으로 추출해 내는 연산자는 디랙 델타 함수 $\delta(x)$ 이다. 따라서 허수부는 다음의 극한으로 종결된다.</p>
 $$
 \lim_{\epsilon \to 0^+} \frac{\epsilon}{x^2 + \epsilon^2} = \pi \delta(x)
 $$<p><em>(3) 실수부의 극한: 코시 주치(Principal Value)의 유도</em></p>
@@ -212,7 +212,7 @@ $$<p>적분을 $x=0$ 을 중심으로 대칭적인 미소 구간 $[-\delta, \del
 <p>내부 미소 구간 $[-\delta, \delta]$ 에서는 시험 함수를 $\phi(x) = \phi(0) + x\psi(x)$ 로 테일러 전개하여 대입한다.</p>
 $$
 \int_{-\delta}^{\delta} \frac{x}{x^2 + \epsilon^2} \left[ \phi(0) + x\psi(x) \right] dx = \phi(0) \int_{-\delta}^{\delta} \frac{x}{x^2 + \epsilon^2} dx + \int_{-\delta}^{\delta} \frac{x^2}{x^2 + \epsilon^2} \psi(x) dx
-$$<p>첫 번째 항의 피적분 함수 $\frac{x}{x^2 + \epsilon^2}$ 는 완벽한 기함수이므로 대칭 구간 $[-\delta, \delta]$ 에 대한 적분은 자명하게 0으로 소멸한다. (이것이 발산하는 특이점이 상쇄되는 대수적 원리이다.)
+$$<p>첫 번째 항의 피적분 함수 $\frac{x}{x^2 + \epsilon^2}$ 는 기함수이므로 대칭 구간 $[-\delta, \delta]$ 에 대한 적분은 자명하게 0으로 소멸한다. (이것이 발산하는 특이점이 상쇄되는 대수적 원리이다.)
 두 번째 항은 $\epsilon \to 0$ 극한에서 특이점이 상쇄되어 적분 가능한 값으로 수렴한다.</p>
 <p>결과적으로, 기함수의 대칭성을 이용해 발산 특이점을 제거하고 나머지 유효 면적만을 추출하는 이 적분 방식 자체가 바로 **코시 주치(Cauchy Principal Value, $\mathcal{P}$)**의 정의와  일치한다.</p>
 $$
@@ -320,14 +320,14 @@ $$
 d\hat{P}(\nu) d\hat{P}(\nu') = \delta(\nu - \nu') d\hat{P}(\nu) d\nu'
 $$<p>proof)</p>
 <p>서로 다른 변수 $\nu$ 와 $\nu'$ 에 대하여 도약 연산의 곱을 전개하면 $R(\nu \pm i\epsilon) R(\nu' \pm i\epsilon')$ 항들이 생성된다. 레졸번트 항등식 $R(z)R(w) = \frac{R(z) - R(w)}{w - z}$ 에 의해 이들의 곱은 $\frac{1}{\nu' - \nu}$ 형태의 차분으로 분리된다.</p>
-<p>극한 $\epsilon, \epsilon' \to 0$ 조건에서 $\nu \neq \nu'$ 일 경우, 분모가 0이 되지 않으므로 도약의 차분은 완벽히 상쇄되어 영연산자 $\hat{0}$ 으로 소멸한다. 오직 $\nu = \nu'$ 인 국소 지점에서만 $\epsilon$ 에 의한 극점 발산이 발생하며, 이는 분포 이론에 의해 델타 함수 $\delta(\nu - \nu')$ 로 수렴한다. 따라서 연속 공간 내 이종 특이점 간의 절대적인 대수적 직교성이 성립한다.</p>
+<p>극한 $\epsilon, \epsilon' \to 0$ 조건에서 $\nu \neq \nu'$ 일 경우, 분모가 0이 되지 않으므로 도약의 차분은 상쇄되어 영연산자 $\hat{0}$ 으로 소멸한다. 오직 $\nu = \nu'$ 인 국소 지점에서만 $\epsilon$ 에 의한 극점 발산이 발생하며, 이는 분포 이론에 의해 델타 함수 $\delta(\nu - \nu')$ 로 수렴한다. 따라서 연속 공간 내 이종 특이점 간의 절대적인 대수적 직교성이 성립한다.</p>
 <hr>
 <h3 id="5-정칙부의-확장-코시-주치-적분과-환원-레졸번트-밀도">5. (정칙부의 확장) 코시 주치 적분과 환원 레졸번트 밀도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>이산 공간의 정칙부(Regular part) 상수항이었던 환원 레졸번트 $\hat{S}_m$ 은 관측 공간을 제외한 모든 타 공간들의 배경장 역작용소 합($\sum_{l \neq m}$)으로 규정되었다. 연속 스펙트럼 공간에서는 이산적인 합산 기호 $\sum$ 이 적분 기호 $\int$ 로 대체되며, 관측 특이점 $\nu$ 를 제외한 나머지 연속 구간에 대한 기여도를 계산해야 한다.</p>
 <p>2장의 소호츠키-플레멜 정리 전개 과정에서 확인하였듯, 특이점을 포함하는 적분 구간은 델타 함수(사영 밀도) 성분과 코시 주치 성분으로 분리된다. 스톤의 공식 도출 과정에서 발산하는 델타 함수를 축출하고 상쇄시켰던 바로 그 코시 주치(Cauchy Principal Value, $\mathcal{P}$) 성분이 연속 공간의 환원 레졸번트 $\hat{S}(\nu)$ 를 대수적으로 정의한다.</p>
 $$
 \hat{S}(\nu) = \mathcal{P} \int_{\Omega} \frac{d\hat{P}(\nu')}{\nu - \nu'} = \lim_{\delta \to 0^+} \left( \int_{\min(\Omega)}^{\nu - \delta} \frac{d\hat{P}(\nu')}{\nu - \nu'} + \int_{\nu + \delta}^{\max(\Omega)} \frac{d\hat{P}(\nu')}{\nu - \nu'} \right)
-$$<p>이산 공간에서 증명된 직교성 $\hat{P}_m \hat{S}_m = \hat{0}$ 과 대칭적으로, 연속 공간에서도 국소 사영 밀도 $d\hat{P}(\nu)$ 와 환원 레졸번트 $\hat{S}(\nu)$ 간의 대수적 직교성이 완벽히 보존된다.</p>
+$$<p>이산 공간에서 증명된 직교성 $\hat{P}_m \hat{S}_m = \hat{0}$ 과 대칭적으로, 연속 공간에서도 국소 사영 밀도 $d\hat{P}(\nu)$ 와 환원 레졸번트 $\hat{S}(\nu)$ 간의 대수적 직교성이 보존된다.</p>
 $$
 d\hat{P}(\nu) \hat{S}(\nu) = d\hat{P}(\nu) \left( \mathcal{P} \int_{\Omega} \frac{d\hat{P}(\nu')}{\nu - \nu'} \right) = \mathcal{P} \int_{\Omega} \frac{\delta(\nu - \nu') d\hat{P}(\nu)}{\nu - \nu'} = \hat{0}
 $$<p>(특이점 $\nu = \nu'$ 지점은 주치 적분의 정의에 의해 사전 배제되므로 델타 함수와의 내적은 항상 0으로 소멸한다.)</p>
@@ -356,7 +356,7 @@ $$<p><strong>4) 분해 항등식 교차 검증</strong></p>
 <p>유도된 사영 밀도를 기반으로 대상 연산자를 전체 스펙트럼 구간 $\Omega$ 에 대하여 적분한다.</p>
 $$
 \int_{-\infty}^{\infty} \nu \, d\hat{P}(\nu) = \int_{-\infty}^{\infty} \nu \, \delta(\nu - \hat{X}) d\nu
-$$<p>델타 함수의 적분 필터링(Sifting) 성질에 의해 변수 $\nu$ 는 연산자 $\hat{X}$ 로 치환되며 식이 완벽하게 항등원으로 환원된다.</p>
+$$<p>델타 함수의 적분 필터링(Sifting) 성질에 의해 변수 $\nu$ 는 연산자 $\hat{X}$ 로 치환되며 식이 항등원으로 환원된다.</p>
 $$
 = \hat{X}
 $$<p>결과적으로 스톤의 공식과 소호츠키-플레멜 정리의 해석학적 결합이, 어떠한 논리적 비약 없이 연속 기저를 투영하는 사영 밀도를 정확하게 생성해 냄이 확증된다.</p>
@@ -424,6 +424,7 @@ $$<p>결과적으로 스톤의 공식과 소호츠키-플레멜 정리의 해석
             <li class="active " data-nav-id="/vector_operator/resolvent_operator/b_continuous/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_continuous/index.html">(b) Continuous</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -466,9 +467,9 @@ $$<p>결과적으로 스톤의 공식과 소호츠키-플레멜 정리의 해석
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780922231"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780922231" defer></script>
-    <script src="/js/theme.js?1780922231" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1780931229"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780931229" defer></script>
+    <script src="/js/theme.js?1780931229" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

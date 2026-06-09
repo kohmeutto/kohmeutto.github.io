@@ -82,6 +82,9 @@
     <loc>http://localhost:1313/vector_operator/non-normal_operators/b_metric_operator/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/complex_analysis/complex_numbers/b_multivalued_funtion/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/greens_function/negf/b_negf_overview/index.html</loc>
   </url>
   <url>
@@ -1052,6 +1055,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/research_na/chapter3/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/complex_analysis/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>
