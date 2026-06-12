@@ -325,6 +325,9 @@
     <loc>http://localhost:1313/lie_theory/b_calculus/b_sv_discrete_spectrum/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/combining_spaces/b_tensor_product/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_trigonometric_iopm/index.html</loc>
   </url>
   <url>
@@ -746,9 +749,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/b_syntax/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/combining_spaces/b_tensor_product/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
