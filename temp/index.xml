@@ -29,6 +29,13 @@
       <description>수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.&#xA;1. 유한 차원: 행렬 성분의 자리 바꾸기&#xD;$$&#xD;(A^\dagger)_{ij} = (A_{ji})^{\ast}&#xD;$$proof)&#xA;행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.</description>
     </item>
     <item>
+      <title>(b) Generalization</title>
+      <link>http://localhost:1313/temp/b_generalization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_generalization/index.html</guid>
+      <description>1. 고유벡터의 결핍과 대수적 퇴화&#xD;임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.&#xA;고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</description>
+    </item>
+    <item>
       <title>(i) LSI</title>
       <link>http://localhost:1313/temp/i_lsi/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,6 +160,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/temp/b_components_transformation/index.html</guid>
       <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리&#xD;기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계&#xD;데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Continuous</title>
+      <link>http://localhost:1313/temp/b_continuous/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_continuous/index.html</guid>
+      <description>1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)&#xD;이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 이산 챕터에서 보았듯, 고립된 극점 $\lambda_m$ 을 감싸는 코시 닫힌 경로 적분 $\oint_{\Gamma_m}$ 을 통해 사영 연산자 $\hat{P}_m$(1차극)과 멱영 연산자 $\hat{N}_m$(2차 이상 극)을 산출하였다.&#xA;반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼을 형성한다. 이때 레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 더 이상 고립된 극점을 갖지 않으며, 복소 평면 상의 특정 곡선을 따라 특이점이 조밀하게 배열된 분지절단(Branch cut)을 형성한다. 레졸번트는 이 절단선을 경계로 해석적 연속성(Analytic continuation)을 상실하며, 복소수 $z$ 가 절단선의 각기 다른 방향에서 접근할 때 대수적으로 서로 다른 극한값을 가지게 된다.</description>
     </item>
     <item>
       <title>(b) I-unitary</title>

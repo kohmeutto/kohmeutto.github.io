@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 로랑 급수레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.
+$$R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} &#43; \frac{\hat{C}_{-1}}{z-\lambda_m} &#43; \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) [D] Decomposition :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 로랑 급수레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.
+$$R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} &#43; \frac{\hat{C}_{-1}}{z-\lambda_m} &#43; \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/resolvent_operator/b_decomposition/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) [D] Decomposition :: 수리전자물리학">
+    <meta property="og:description" content="1. 로랑 급수레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.
+$$R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} &#43; \frac{\hat{C}_{-1}}{z-\lambda_m} &#43; \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) [D] Decomposition :: 수리전자물리학">
+    <meta itemprop="description" content="1. 로랑 급수레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.
+$$R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} &#43; \frac{\hat{C}_{-1}}{z-\lambda_m} &#43; \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n$$여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.">
+    <meta itemprop="wordCount" content="3229">
+    <title>(b) [D] Decomposition :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781245760" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781245760" defer></script>
+    <script src="/js/search-lunr.js?1781245760" defer></script>
+    <script src="/js/search.js?1781245760" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781245760";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781245760" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781245760" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781245760" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1781245760" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781245760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781245760" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781245760" rel="stylesheet">
+    <link href="/css/theme.css?1781245760" rel="stylesheet">
+    <link href="/css/format-html.css?1781245760" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/resolvent_operator\/b_decomposition\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/vector_operator/resolvent_operator/b_decomposition/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-로랑-급수">1. 로랑 급수</a></li>
+        <li><a href="#2-주부-1차-단순극점--사영-연산자projection-operator">2. (주부) 1차 단순극점  사영 연산자(Projection operator)</a></li>
+        <li><a href="#3-주부-2차-극점--멱영-연산자nilpotent-operator-비대각">3. (주부) 2차 극점  멱영 연산자(Nilpotent operator), 비대각</a></li>
+        <li><a href="#4-주부-대각화-성분과-비대각-성분의-대수적-분리">4. (주부) 대각화 성분과 비대각 성분의 대수적 분리</a></li>
+        <li><a href="#5-정칙부-환원-레졸번트와-타-공간의-직교성">5. (정칙부) 환원 레졸번트와 타 공간의 직교성</a></li>
+        <li><a href="#6-예제-비정규-대각화-가능-연산자">6. 예제: 비정규 대각화 가능 연산자</a></li>
+        <li><a href="#7-예제-대각화-불가능-연산자-비대각-성분-포함">7. 예제: 대각화 불가능 연산자 (비대각 성분 포함)</a></li>
+        <li><a href="#8-예제-복수-고윳값과-결함의-공존-33">8. 예제: 복수 고윳값과 결함의 공존 (3×3)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/resolvent_operator/index.html"><span itemprop="name">Resolvent operator</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) [D] Decomposition</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/resolvent_operator/b_resolvent/index.html" title="(b) [D] Resolvent (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/resolvent_operator/b_continuous/index.html" title="(b) [C] Continuous (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-d-decomposition">(b) [D] Decomposition</h1>
+
+<hr>
+<h3 id="1-로랑-급수">1. 로랑 급수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>레졸번트 연산자 $\hat{R}(z, \hat{A})$의 특이점 $z = \lambda_m$ 근방에서의 로랑 급수(Laurent series) 전개는 다음과 같이 정의된다.</p>
+$$
+R(z, \hat{A}) = \sum_{n=2}^{k_m}\frac{\hat{C}_{-n}}{(z-\lambda_m)^n} + \frac{\hat{C}_{-1}}{z-\lambda_m} + \sum_{n=0}^{\infty}\hat{C}_n(z-\lambda_m)^n
+$$<p>여기서 $k_m$은 고윳값 $\lambda_m$에 대응하는 결함 공간의 멱영 지수(Index of nilpotency)이며, 주부 다중 극점 차수의 상한선으로 작용한다. 임의의 정수 $n$에 대한 전개 계수 $\hat{C}_n$은 닫힌 경로 $\Gamma_m$에 대한 코시 적분 공식으로 산출된다.</p>
+$$
+\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma_m}\frac{dz}{z-\lambda_m}\frac{R(z)}{(z-\lambda_m)^{n}}
+$$<hr>
+<h3 id="2-주부-1차-단순극점--사영-연산자projection-operator">2. (주부) 1차 단순극점 $\implies$ 사영 연산자(Projection operator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타낸다. 로랑 급수의 유수(Residue)에 해당하는 1차 단순극점 계수 $\hat{C}_{-1}$은 고윳값 $\lambda_m$ 공간으로의 스펙트럼 사영 연산자 $\hat{P}_m$으로 정의된다.</p>
+$$
+\hat{P}_m = \hat{C}_{-1} = \frac{1}{2\pi i}\oint_{\Gamma_m} dz \, R(z,\hat{A})
+$$<p>proof)</p>
+<p>사영 연산자가 대수학적으로 성립하기 위한 필수 조건인 멱등성(Idempotence, $\hat{P}_m^2 = \hat{P}_m$)과 직교성(Orthogonality, $\hat{P}_m \hat{P}_l = \hat{0}, m \neq l$)은 레졸번트 항등식 $\hat{R}(z) - \hat{R}(w) = (w - z)\hat{R}(z)\hat{R}(w)$을 통해 증명된다.</p>
+<p>첫째, 멱등성을 증명하기 위해 특이점 $\lambda_m$을 둘러싸는 두 개의 동심 폐곡선 $\Gamma$와 $\Gamma'$를 설정한다. 단, $\Gamma$는 $\Gamma'$를 완전히 내포한다.</p>
+$$
+\hat{P}_m^2 = \left( \frac{1}{2\pi i} \oint_{\Gamma} \hat{R}(z) dz \right) \left( \frac{1}{2\pi i} \oint_{\Gamma'} \hat{R}(w) dw \right) = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dz dw \hat{R}(z)\hat{R}(w) 
+$$<p>레졸번트 항등식을 대입하여 적분을 분리한다.</p>
+$$
+\hat{P}_m^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dw dz \frac{\hat{R}(z)}{w - z} - \frac{1}{(2\pi i)^2} \oint_{\Gamma'} \oint_{\Gamma} dz dw \frac{\hat{R}(w)}{w - z} 
+$$<p>경로 $\Gamma'$ 내부에 $z$가 존재하지 않으므로 코시 적분 정리에 의해 첫 번째 항은 소멸한다. 두 번째 항에서 경로 $\Gamma$ 내부에 $w$가 존재하므로 $\oint_{\Gamma} \frac{dz}{w - z} = -\oint_{\Gamma} \frac{dz}{z - w} = -2\pi i$가 성립한다.</p>
+$$
+\hat{P}_m^2 = -\frac{1}{(2\pi i)^2} \oint_{\Gamma'} dw \hat{R}(w) (-2\pi i) = \frac{1}{2\pi i} \oint_{\Gamma'} dw \hat{R}(w) = \hat{P}_m
+$$<p>둘째, 직교성을 증명하기 위해 서로 다른 특이점 $\lambda_m$과 $\lambda_l$을 각각 둘러싸며 교차하지 않는 폐곡선 $\Gamma_m$과 $\Gamma_l$을 설정한다.</p>
+$$
+\hat{P}_m \hat{P}_l = \frac{1}{(2\pi i)^2} \oint_{\Gamma_m} \oint_{\Gamma_l} dw dz \frac{\hat{R}(z) - \hat{R}(w)}{w - z}
+$$<p>두 적분 경로가 완전히 분리되어 있으므로, $z$는 $\Gamma_l$ 내부에 존재하지 않고 $w$는 $\Gamma_m$ 내부에 존재하지 않는다. 따라서 코시 적분 정리에 의해 두 항 모두 자명하게 영연산자 $\hat{0}$으로 수렴한다.</p>
+<hr>
+<h3 id="3-주부-2차-극점--멱영-연산자nilpotent-operator-비대각">3. (주부) 2차 극점 $\implies$ 멱영 연산자(Nilpotent operator), 비대각<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 장에서는 스케일 불변 측도 $\frac{dz}{z-\lambda_m}$를 적용한 로랑 급수의 일반 계수 산출 공식으로부터, 주부(Principal part)에 존재하는 모든 다중 극점(Multiple poles) 성분이 단 하나의 연산자 거듭제곱으로 표현됨을 보여준다.</p>
+$$
+\hat{N}_{m} = \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z) 
+$$<p>proof)</p>
+<p>로랑 급수의 일반항 정의에 따라, 임의의 고차 극점 계수 $\hat{C}_{-n}$ ($n \ge 2$)은 불변 측도 $\frac{dz}{z-\lambda_m}$를 도입한 코시 닫힌 경로 적분으로 다음과 같이 기술된다.</p>
+$$
+\hat{C}_{-n} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^n
+$$<p>시스템 내에서 대각화를 방해하는 모든 비대각 결함 성분을 생성해 내는 근원적인 2차 극점 계수 $\hat{C}_{-2}$를 멱영 연산자(Nilpotent operator) $\hat{N}_m$으로 확정하여 정의한다.</p>
+$$
+\hat{N}_m \equiv \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z, \hat{A})
+$$<p>$\hat{P}_m$의 경우 제곱을 하여 사영 연산자임을 도출한 것과 동일하게, $\hat{C}_{-2}$를 제곱하여 전개한다. 특이점 $\lambda_m$을 둘러싸는 두 폐곡선 $\Gamma$와 $\Gamma'$ ($\Gamma$가 $\Gamma'$를 내포)에 대하여 $\hat{C}_{-2}^2$를 구성한다.</p>
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dz dw (z-\lambda_m)(w-\lambda_m) \hat{R}(z)\hat{R}(w)
+$$<p>레졸번트 항등식을 대입하여 적분을 분리한다.</p>
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dz dw \frac{(z-\lambda_m)(w-\lambda_m)}{w - z} \left( \hat{R}(z) - \hat{R}(w) \right)
+$$<p>앞선 사영 연산자의 멱등성 증명과 동일한 코시 적분 정리 절차를 거치면, $\Gamma'$에 대한 $w$ 적분에서 경로 내부에 위치한 극점 $z$에 의해 유수가 발생한다.</p>
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{2\pi i} \oint_{\Gamma} dz (z-\lambda_m)^2 \hat{R}(z)
+$$<p>위 적분식은 로랑 급수의 계수 공식 정의에 의해 정확히 3차 극점의 계수 $\hat{C}_{-3}$과 일치한다. 즉, $\hat{C}_{-2}^2 = \hat{C}_{-3}$가 성립한다. 이 적분 논리를 수학적 귀납법으로 임의의 정수 $n$으로 확장하면 다음의 거듭제곱 불변량이 도출된다.</p>
+$$
+\hat{N}_{m}^{n-1} = \hat{C}_{-2}^{n-1} = \hat{C}_{-n} = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m)^{n-1} \hat{R}(z) 
+$$<p>유한 차원 시스템의 대수학적 제약에 의해 레졸번트의 로랑 급수 주부가 특정 차수인 멱영 지수 $k_m$에서 반드시 종결된다. 따라서 $\hat{N}_{m}^{k_m} = \hat{0}$ 이 성립한다.</p>
+<hr>
+<h3 id="4-주부-대각화-성분과-비대각-성분의-대수적-분리">4. (주부) 대각화 성분과 비대각 성분의 대수적 분리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>사영 연산자 $\hat{P}_m$은 단일 고윳값 $\lambda_m$에 대응하는 일반화된 고유공간 전체를 투영한다. 이 닫힌 공간 내부에서 시스템 연산자 $\hat{A}$가 작용할 때, 대각화가 가능한 반단순(Semisimple) 성분과 대각화가 불가능한 비대각(Off-diagonal) 성분으로 본질적인 대수적 분리가 발생한다. 이는 일반화(Generalization) 챕터에서 구축한 연산자 분해 항등식이 레졸번트 적분을 통해서도 오차 없이 도출되는지를 교차 검증한다.</p>
+$$
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_{m}
+$$<p>proof)</p>
+<p>연산자 $\hat{A}=z\hat{I} - (z\hat{I}-\hat{A})$ 의 관계로부터 도출되는 $\hat{A} = z\hat{I} - \hat{R}(z)^{-1}$ 을 이용해, $\hat{A}\hat{R}(z) = z\hat{R}(z) - \hat{I}$ 를 얻는다. 이를 사영 연산자 $\hat{P}_m$의 정의에 결합하여 적분식으로 전개한다.</p>
+$$
+\hat{A} \hat{P}_m = \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \hat{A} \hat{R}(z) = \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, z \hat{R}(z) - \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \hat{I} 
+$$<p>항등 연산자 $\hat{I}$의 닫힌 경로 적분은 특이점이 존재하지 않으므로 자명하게 0이 되어 소거된다. 남은 적분항 내의 변수 $z$를 $z = (z - \lambda_m) + \lambda_m$으로 분할하여 전개한다.</p>
+$$
+\frac{1}{2\pi i} \oint_{\Gamma_m} dz \, z \hat{R}(z) = \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \{ (z-\lambda_m) + \lambda_m \} \hat{R}(z)
+$$$$
+= \lambda_m \left( \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \hat{R}(z) \right) + \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, (z-\lambda_m) \hat{R}(z)
+$$<p>전자는 $\hat{P}_m$의 정의이며, 후자는 $\hat{N}_m$의 정의와 정확히 일치한다. 따라서 다음의 대수적 분리가 성립한다.</p>
+$$
+\hat{A} \hat{P}_m = \lambda_m \hat{P}_m + \hat{N}_{m}
+$$<hr>
+<h3 id="5-정칙부-환원-레졸번트와-타-공간의-직교성">5. (정칙부) 환원 레졸번트와 타 공간의 직교성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>로랑 급수 전개에서 양의 지수($n \ge 0$)를 가지는 정칙부(Regular part) 계수 $\hat{C}_n$은 특이점 $z = \lambda_m$ 근방에서 발산하지 않는 해석 함수 영역을 구성한다. 정칙부의 상수항($n=0$)을 환원 레졸번트(Reduced resolvent) $\hat{S}_m$ 으로 정의한다.</p>
+$$
+\hat{S}_m \equiv \hat{C}_0 = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A})
+$$$$
+\hat{P}_m\hat{S}_m = \hat{S}_m\hat{P}_m = 0
+$$$$
+\hat{S}_m\hat{N}_m = \hat{N}_m\hat{S}_m = 0
+$$<p>proof)</p>
+<p>레졸번트 전개 챕터에서 대수적으로 유도된 바와 같이, 환원 레졸번트 $\hat{S}_m$은 관측 공간 $\lambda_m$을 제외한 여공간(Complementary space) 내부에 존재하는 국소 역작용소들의 합($\sum_{l \neq m} \hat{Y}_l^{-1}$)으로 정의된다. 이러한 대수적 기원으로 인해, 정칙부 성분은 관측점의 사영 연산자 $\hat{P}_m$과 직교하는 종속 관계를 가진다.</p>
+$$
+\hat{P}_m \hat{S}_m = \hat{0}
+$$<p>또한 다음의 관계도 도출할 수 있다.</p>
+$$
+\hat{S}_m \hat{N}_m =\hat{S}_m \hat{P}_m  \hat{N}_m = 0
+$$<p>다중 극점 계수가 단일 멱영 연산자의 거듭제곱으로 축약되었던 것과 동일한 인과율에 의해, 정칙부의 모든 임의의 계수 $\hat{C}_n$ ($n \ge 1$) 역시 상수항인 환원 레졸번트 $\hat{S}_m$의 무한 멱급수로 전개된다.</p>
+$$
+\hat{C}_n = (-1)^n \hat{S}_m^{n+1} \quad (n \ge 0)
+$$<hr>
+<h3 id="6-예제-비정규-대각화-가능-연산자">6. 예제: 비정규 대각화 가능 연산자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>2차원 비정규 행렬 연산자 $\hat{A}$ 가 대각화 가능성을 가질 때, 스펙트럼을 추출하는 과정을 대수학적 방법과 해석학적 방법으로 교차 검증한다.</p>
+$$
+\hat{A} = \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix}
+$$<p><strong>1) 특성 방정식을 이용한 풀이</strong></p>
+<p>동차 방정식의 행렬식이 0이 되는 조건을 통해 고윳값을 산출한다.</p>
+$$
+\det(\hat{A} - \lambda\hat{I}) = \det \begin{bmatrix} 1 - \lambda & 2 \\ 0 & 3 - \lambda \end{bmatrix} = (1 - \lambda)(3 - \lambda) = 0
+$$<p>산출된 고윳값은 $\lambda_1 = 1$, $\lambda_2 = 3$ 이다. 각 고윳값에 대한 고유 방정식 $(\hat{A} - \lambda_k\hat{I})|\lambda_k\rangle = 0$ 을 전개한다.</p>
+<p><em>(1) $\lambda_1=1$ 일 때:</em></p>
+$$
+\begin{bmatrix} 0 & 2 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \implies 2y = 0 \implies |\lambda_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$<p><em>(2) $\lambda_2=3$ 일 때:</em></p>
+$$
+\begin{bmatrix} -2 & 2 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \implies -2x + 2y = 0 \implies |\lambda_2\rangle = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$<p><strong>2) 레졸번트를 이용한 풀이</strong></p>
+<p>대수적 고유 방정식을 배제하고, 연산자의 레졸번트 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 의 복소 선적분만을 이용하여 동일한 고유 상태를 직접 계산하여 추출한다. 역행렬을 계산하여 레졸번트를 전개한다.</p>
+$$
+R(z, \hat{A}) = \begin{bmatrix} z - 1 & -2 \\ 0 & z - 3 \end{bmatrix}^{-1} = \frac{1}{(z - 1)(z - 3)} \begin{bmatrix} z - 3 & 2 \\ 0 & z - 1 \end{bmatrix}
+$$<p>복소 평면 상의 특이점 $\lambda_1 = 1$ 과 $\lambda_2 = 3$ 에 대한 코시 선적분을 통해 사영 연산자를 도출한다. 1차 극점이므로 극한 연산 $\lim_{z \to \lambda} (z - \lambda) R(z, \hat{A})$ 을 적용하여 유수를 산출한다.</p>
+<p><em>(1) $\lambda_1=1$ 에 대한 사영 연산자 $\hat{P}_1$:</em></p>
+$$
+\hat{P}_1 = \frac{1}{2\pi i}\oint_{\Gamma_1} dz R(z,\hat{A}) = \lim_{z \to 1} (z - 1) R(z, \hat{A}) = \lim_{z \to 1} \frac{1}{z - 3} \begin{bmatrix} z - 3 & 2 \\ 0 & z - 1 \end{bmatrix}
+$$$$
+\hat{P}_1 = -\frac{1}{2} \begin{bmatrix} -2 & 2 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ 0 & 0 \end{bmatrix}
+$$<p>임의의 시험 벡터를 입력하여 고유 상태를 추출한다.</p>
+$$
+\hat{P}_1 \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} a-b \\ 0 \end{bmatrix} = (a-b)\begin{bmatrix} 1 \\ 0 \end{bmatrix} \implies |\lambda_1\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$<p><em>(2) $\lambda_2=3$ 에 대한 사영 연산자 $\hat{P}_2$:</em></p>
+$$
+\hat{P}_2 = \frac{1}{2\pi i}\oint_{\Gamma_2} dz R(z,\hat{A}) = \lim_{z \to 3} (z - 3) R(z, \hat{A}) = \lim_{z \to 3} \frac{1}{z - 1} \begin{bmatrix} z - 3 & 2 \\ 0 & z - 1 \end{bmatrix}
+$$$$
+\hat{P}_2 = \frac{1}{2} \begin{bmatrix} 0 & 2 \\ 0 & 2 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 0 & 1 \end{bmatrix}
+$$<p>동일하게 시험 벡터를 입력하여 투영한다.</p>
+$$
+\hat{P}_2 \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} b \\ b \end{bmatrix} = b\begin{bmatrix} 1 \\ 1 \end{bmatrix} \implies |\lambda_2\rangle = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$<hr>
+<h3 id="7-예제-대각화-불가능-연산자-비대각-성분-포함">7. 예제: 대각화 불가능 연산자 (비대각 성분 포함)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>대각화가 불가능한 결함 연산자(Defective operator)에 대하여, 일반화된 고유벡터를 직접 탐색하지 않고 레졸번트 전개를 통해 사영 연산자와 멱영 연산자를 대수적 오차 없이 도출하는 과정을 검증한다.</p>
+$$
+\hat{A} = \begin{bmatrix} 3 & -1 \\ 1 & 1 \end{bmatrix}
+$$<p><strong>1) 특성 방정식을 이용한 대수적 퇴화 확인</strong></p>
+$$
+\det(\hat{A} - \lambda\hat{I}) = \det \begin{bmatrix} 3 - \lambda & -1 \\ 1 & 1 - \lambda \end{bmatrix} = \lambda^2 - 4\lambda + 4 = (\lambda - 2)^2 = 0
+$$<p>유일한 고윳값은 $\lambda = 2$ 이며, 대수적 중복도(Algebraic multiplicity)는 $\alpha = 2$ 이다. 이에 대한 고유 방정식을 전개한다.</p>
+$$
+(\hat{A} - 2\hat{I}) |v\rangle = \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \implies |v\rangle = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$<p>기하적 중복도(Geometric multiplicity)가 $\gamma = 1$ 에 불과하여, 고유벡터의 결핍으로 인해 통상적인 대각화가 불가능하다.</p>
+<p><strong>2) 레졸번트를 이용한 사영 및 멱영 연산자 추출</strong></p>
+<p>연산자 $\hat{A}$ 의 레졸번트 $R(z, \hat{A})$ 를 전개한다.</p>
+$$
+R(z, \hat{A}) = \begin{bmatrix} z - 3 & 1 \\ -1 & z - 1 \end{bmatrix}^{-1} = \frac{1}{(z - 2)^2} \begin{bmatrix} z - 1 & -1 \\ 1 & z - 3 \end{bmatrix}
+$$<p>분자의 대각 성분을 관측점 $(z - 2)$ 를 중심으로 분할 대입하여 행렬을 분리한다.</p>
+$$
+\begin{bmatrix} (z - 2) + 1 & -1 \\ 1 & (z - 2) - 1 \end{bmatrix} = (z - 2) \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix}
+$$<p>이를 분모인 $(z - 2)^2$ 로 나누어 전체 레졸번트를 로랑 급수 형태로 전개한다.</p>
+$$
+R(z, \hat{A}) = \frac{1}{z - 2} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \frac{1}{(z - 2)^2} \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix}
+$$<p>이 전개 결과는 1장 및 3장에서 구축한 로랑 급수 주부의 구조식과 일치한다. 따라서 닫힌 경로 적분 없이 각 차수의 계수를 즉각적으로 추출하여 연산자 구조를 확정한다.</p>
+<p><em>(1) 1차 단순극점 계수 (사영 연산자 $\hat{P}$)</em></p>
+$$
+\hat{P} = \hat{C}_{-1} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \hat{I}
+$$<p>(단일 고윳값을 가지는 시스템이므로 해당 사영 연산자는 전체 공간의 항등원으로 작용한다.)</p>
+<p><em>(2) 2차 다중극점 계수 (멱영 연산자 $\hat{N}$)</em></p>
+$$
+\hat{N} = \hat{C}_{-2} = \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix}
+$$<p><em>(3) 멱영 지수 검증</em></p>
+<p>추출된 $\hat{N}$ 을 거듭제곱하여 멱영 특성을 확인한다.</p>
+$$
+\hat{N}^2 = \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = \hat{0}
+$$<p>멱영 지수 $k_m = 2$ 에서 연산자가 완전히 소멸하여 대수적 오차 없이 종결됨이 확인된다.</p>
+<p><em>(4) 대수적 분해 항등식 교차 검증</em></p>
+<p>추출된 $\hat{P}$ 와 $\hat{N}$ 을 대수적 연산자 분해 항등식 $\hat{A} = \lambda\hat{P} + \hat{N}$ 에 대입하여 결론을 증명한다.</p>
+$$
+2\hat{P} + \hat{N} = 2 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ 1 & 1 \end{bmatrix} = \hat{A}
+$$<hr>
+<h3 id="8-예제-복수-고윳값과-결함의-공존-33">8. 예제: 복수 고윳값과 결함의 공존 (3×3)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>서로 다른 두 고윳값을 가지되 그중 하나가 결함(Defective)인 3×3 연산자에 대하여, 일반화된 고유벡터를 직접 탐색하지 않고 레졸번트 전개만으로 사영 연산자 $\hat{P}_m$, 멱영 연산자 $\hat{N}_m$, 환원 레졸번트 $\hat{S}_m$을 대수적 오차 없이 추출한다.</p>
+$$
+\hat{A} = \begin{bmatrix} 2 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 5 \end{bmatrix}
+$$<p>상삼각 행렬이므로 대각 성분이 곧 고윳값이며, 고윳값은 $\lambda_1 = 2$ (중복)와 $\lambda_2 = 5$ 이다.</p>
+<p><strong>1) 특성 방정식을 이용한 대수적 퇴화 확인</strong></p>
+$$
+\det(\hat{A} - \lambda\hat{I}) = (2 - \lambda)^2 (5 - \lambda) = 0
+$$<p>고윳값 $\lambda_1 = 2$ 의 대수적 중복도는 $\alpha = 2$ 이다. 기하적 중복도를 확인하기 위해 $(\hat{A} - 2\hat{I})$ 를 전개한다.</p>
+$$
+\hat{A} - 2\hat{I} = \begin{bmatrix} 0 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 3 \end{bmatrix}
+$$<p>제2열 $(1, 0, 0)$ 과 제3열 $(1, 1, 3)$ 이 선형 독립이므로 계수(Rank)는 2이고, 영공간의 차원은 $3 - 2 = 1$ 이다. 따라서 기하적 중복도는 $\gamma = 1$ 이다.</p>
+$$
+\gamma = 1 < \alpha = 2
+$$<p>$\lambda_1 = 2$ 가 결함을 가진다. 반면 $\lambda_2 = 5$ 는 단순 고윳값이므로 결함이 없다.</p>
+<p><strong>2) 레졸번트 전개</strong></p>
+<p>특성 연산자 $z\hat{I} - \hat{A}$ 를 전개한다.</p>
+$$
+z\hat{I} - \hat{A} = \begin{bmatrix} z-2 & -1 & -1 \\ 0 & z-2 & -1 \\ 0 & 0 & z-5 \end{bmatrix}
+$$<p>상삼각이므로 행렬식은 대각 성분의 곱이다.</p>
+$$
+\det(z\hat{I} - \hat{A}) = (z-2)^2 (z-5)
+$$<p>역작용소를 상삼각 형태 $R(z) = \begin{bmatrix} a & b & c \\ 0 & d & e \\ 0 & 0 & f \end{bmatrix}$ 로 두고, 항등식 $(z\hat{I} - \hat{A})R(z) = \hat{I}$ 의 각 성분을 차례로 푼다.</p>
+<p>(3,3) 성분에서 $f$ 를 산출한다.</p>
+$$
+(z-5)f = 1 \implies f = \frac{1}{z-5}
+$$<p>(1,1) 및 (2,2) 성분에서 $a, d$ 를 산출한다.</p>
+$$
+(z-2)a = 1 \implies a = \frac{1}{z-2}, \qquad (z-2)d = 1 \implies d = \frac{1}{z-2}
+$$<p>(1,2) 성분 $(z-2)b - d = 0$ 에서 $b$ 를 산출한다.</p>
+$$
+(z-2)b = d = \frac{1}{z-2} \implies b = \frac{1}{(z-2)^2}
+$$<p>(2,3) 성분 $(z-2)e - f = 0$ 에서 $e$ 를 산출한다.</p>
+$$
+(z-2)e = f = \frac{1}{z-5} \implies e = \frac{1}{(z-2)(z-5)}
+$$<p>(1,3) 성분 $(z-2)c - e - f = 0$ 에서 $c$ 를 산출한다. 먼저 $e + f$ 를 통분한다.</p>
+$$
+e + f = \frac{1}{(z-2)(z-5)} + \frac{1}{z-5} = \frac{1 + (z-2)}{(z-2)(z-5)} = \frac{z-1}{(z-2)(z-5)}
+$$<p>이를 대입하여 $c$ 를 확정한다.</p>
+$$
+(z-2)c = \frac{z-1}{(z-2)(z-5)} \implies c = \frac{z-1}{(z-2)^2 (z-5)}
+$$<p>레졸번트가 완성된다.</p>
+$$
+R(z) = \begin{bmatrix} \frac{1}{z-2} & \frac{1}{(z-2)^2} & \frac{z-1}{(z-2)^2 (z-5)} \\ 0 & \frac{1}{z-2} & \frac{1}{(z-2)(z-5)} \\ 0 & 0 & \frac{1}{z-5} \end{bmatrix}
+$$<p><strong>3) $\lambda_1 = 2$ 근방 로랑 전개를 통한 계수 추출</strong></p>
+<p>관측점을 $\lambda_1 = 2$ 로 두고 $u = z - 2$ 로 치환한다. 이때 $z - 5 = u - 3$, $z - 1 = u + 1$ 이다. 각 성분을 $u$ 의 멱급수로 전개하여 $u^{-2}$, $u^{-1}$, $u^0$ 의 계수를 추출한다.</p>
+<p>성분 (1,1)은 $\frac{1}{u}$ 이므로 $u^{-1}$ 계수가 $1$ 이다.</p>
+<p>성분 (1,2)는 $\frac{1}{u^2}$ 이므로 $u^{-2}$ 계수가 $1$ 이다.</p>
+<p>성분 (2,2)는 $\frac{1}{u}$ 이므로 $u^{-1}$ 계수가 $1$ 이다.</p>
+<p>성분 (2,3) $\frac{1}{u(u-3)}$ 을 전개한다. 먼저 $\frac{1}{u-3}$ 을 전개한다.</p>
+$$
+\frac{1}{u-3} = -\frac{1}{3} \cdot \frac{1}{1 - u/3} = -\frac{1}{3}\left(1 + \frac{u}{3} + \frac{u^2}{9} + \cdots\right)
+$$<p>$\frac{1}{u}$ 를 곱한다.</p>
+$$
+\frac{1}{u(u-3)} = -\frac{1}{3u} - \frac{1}{9} - \frac{u}{27} - \cdots
+$$<p>$u^{-1}$ 계수가 $-\frac{1}{3}$, $u^0$ 계수가 $-\frac{1}{9}$ 이다.</p>
+<p>성분 (3,3) $\frac{1}{u-3}$ 은 위 전개에서 $u^{-1}$ 계수가 $0$, $u^0$ 계수가 $-\frac{1}{3}$ 이다.</p>
+<p>성분 (1,3) $\frac{u+1}{u^2(u-3)}$ 을 전개한다. 먼저 $(u+1)$ 과 $\frac{1}{u-3}$ 의 곱을 정리한다.</p>
+$$
+(u+1)\left(1 + \frac{u}{3} + \frac{u^2}{9} + \cdots\right) = 1 + \frac{4}{3}u + \frac{4}{9}u^2 + \cdots
+$$<p>$-\frac{1}{3}$ 을 곱한다.</p>
+$$
+(u+1)\cdot\frac{1}{u-3} = -\frac{1}{3} - \frac{4}{9}u - \frac{4}{27}u^2 - \cdots
+$$<p>$\frac{1}{u^2}$ 를 곱한다.</p>
+$$
+\frac{u+1}{u^2(u-3)} = -\frac{1}{3u^2} - \frac{4}{9u} - \frac{4}{27} - \cdots
+$$<p>$u^{-2}$ 계수가 $-\frac{1}{3}$, $u^{-1}$ 계수가 $-\frac{4}{9}$, $u^0$ 계수가 $-\frac{4}{27}$ 이다.</p>
+<p>추출된 $u^{-2}$ 계수를 모아 멱영 연산자 $\hat{N}_1 = \hat{C}_{-2}$ 를 확정한다.</p>
+$$
+\hat{N}_1 = \begin{bmatrix} 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+$$<p>$u^{-1}$ 계수를 모아 사영 연산자 $\hat{P}_1 = \hat{C}_{-1}$ 를 확정한다.</p>
+$$
+\hat{P}_1 = \begin{bmatrix} 1 & 0 & -\frac{4}{9} \\ 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$<p>$u^0$ 계수를 모아 환원 레졸번트 $\hat{S}_1 = \hat{C}_0$ 를 확정한다.</p>
+$$
+\hat{S}_1 = \begin{bmatrix} 0 & 0 & -\frac{4}{27} \\ 0 & 0 & -\frac{1}{9} \\ 0 & 0 & -\frac{1}{3} \end{bmatrix}
+$$<p><strong>4) $\lambda_2 = 5$ 사영 연산자 추출</strong></p>
+<p>관측점을 $\lambda_2 = 5$ 로 두고 단순극의 유수(Residue)를 산출한다. $\frac{1}{z-5}$ 성분을 포함하는 항만 잔존한다. 성분 (3,3)의 유수는 $1$, 성분 (2,3) $\frac{1}{(z-2)(z-5)}$ 의 유수는 $\frac{1}{5-2} = \frac{1}{3}$, 성분 (1,3) $\frac{z-1}{(z-2)^2(z-5)}$ 의 유수는 $\frac{5-1}{(5-2)^2} = \frac{4}{9}$ 이다. 나머지 성분은 $z = 5$ 에서 정칙이므로 $0$ 이다.</p>
+$$
+\hat{P}_2 = \begin{bmatrix} 0 & 0 & \frac{4}{9} \\ 0 & 0 & \frac{1}{3} \\ 0 & 0 & 1 \end{bmatrix}
+$$<p><strong>5) 교차 검증</strong></p>
+<p><em>(1) 완비성 ($\hat{P}_1 + \hat{P}_2 = \hat{I}$)</em></p>
+$$
+\hat{P}_1 + \hat{P}_2 = \begin{bmatrix} 1 & 0 & -\frac{4}{9} + \frac{4}{9} \\ 0 & 1 & -\frac{1}{3} + \frac{1}{3} \\ 0 & 0 & 0 + 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \hat{I}
+$$<p><em>(2) 멱등성 ($\hat{P}_1^2 = \hat{P}_1$)</em></p>
+<p>유일한 비자명 성분인 (1,3)을 검증한다.</p>
+$$
+(\hat{P}_1^2)_{13} = 1 \cdot \left(-\frac{4}{9}\right) + 0 \cdot \left(-\frac{1}{3}\right) + \left(-\frac{4}{9}\right) \cdot 0 = -\frac{4}{9}
+$$<p>나머지 성분도 보존되므로 $\hat{P}_1^2 = \hat{P}_1$ 이 성립한다.</p>
+<p><em>(3) 멱영성 ($\hat{N}_1^2 = \hat{0}$)</em></p>
+<p>$\hat{N}_1$ 의 비자명 성분(1행)이 닿는 제2열·제3열의 행이 모두 영벡터이므로 곱이 소멸한다.</p>
+$$
+\hat{N}_1^2 = \hat{0}
+$$<p>멱영 지수는 $k_1 = 2$ 이며, 이는 결함 차수와 일치한다.</p>
+<p><em>(4) 대수적 분해 항등식 ($\hat{A}\hat{P}_1 = \lambda_1\hat{P}_1 + \hat{N}_1$)</em></p>
+<p>좌변을 계산한다.</p>
+$$
+\hat{A}\hat{P}_1 = \begin{bmatrix} 2 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 & -\frac{4}{9} \\ 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 & -\frac{11}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$<p>((1,3) 성분: $2 \cdot (-\frac{4}{9}) + 1 \cdot (-\frac{1}{3}) + 1 \cdot 0 = -\frac{8}{9} - \frac{3}{9} = -\frac{11}{9}$.) 우변을 계산한다.</p>
+$$
+2\hat{P}_1 + \hat{N}_1 = \begin{bmatrix} 2 & 0 & -\frac{8}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 & -\frac{11}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$<p>((1,3) 성분: $-\frac{8}{9} - \frac{1}{3} = -\frac{11}{9}$.) 좌변과 일치한다.</p>
+<p><em>(5) 환원 레졸번트와 타 고윳값의 관계 ($\hat{S}_1 = \frac{1}{\lambda_1 - \lambda_2}\hat{P}_2$)</em></p>
+<p>$\lambda_2 = 5$ 가 단순 고윳값이므로 $\hat{N}_2 = \hat{0}$ 이고, 환원 레졸번트의 정의 $\hat{Y}_l = (\lambda_m - \lambda_l)\hat{P}_l - \hat{N}_l$ 에서 $\hat{Y}_2 = (\lambda_1 - \lambda_2)\hat{P}_2 = -3\hat{P}_2$ 이다. 그 역작용소는 $-\frac{1}{3}\hat{P}_2$ 이다.</p>
+$$
+-\frac{1}{3}\hat{P}_2 = -\frac{1}{3}\begin{bmatrix} 0 & 0 & \frac{4}{9} \\ 0 & 0 & \frac{1}{3} \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 0 & -\frac{4}{27} \\ 0 & 0 & -\frac{1}{9} \\ 0 & 0 & -\frac{1}{3} \end{bmatrix} = \hat{S}_1
+$$<p>3절에서 로랑 전개로 추출한 $\hat{S}_1$ 과 정확히 일치한다. 환원 레졸번트가 관측점 $\lambda_1$ 에서 타 고윳값 $\lambda_2$ 를 거리의 역수 $\frac{1}{\lambda_1 - \lambda_2} = -\frac{1}{3}$ 로 가중하여 집어냄이 수치적으로 확인된다.</p>
+<p><em>(6) 직교성 ($\hat{P}_1 \hat{S}_1 = \hat{0}$)</em></p>
+<p>비자명 성분 (1,3)과 (2,3)을 검증한다.</p>
+$$
+(\hat{P}_1\hat{S}_1)_{13} = 1 \cdot \left(-\frac{4}{27}\right) + 0 \cdot \left(-\frac{1}{9}\right) + \left(-\frac{4}{9}\right)\left(-\frac{1}{3}\right) = -\frac{4}{27} + \frac{4}{27} = 0
+$$$$
+(\hat{P}_1\hat{S}_1)_{23} = 0 \cdot \left(-\frac{4}{27}\right) + 1 \cdot \left(-\frac{1}{9}\right) + \left(-\frac{1}{3}\right)\left(-\frac{1}{3}\right) = -\frac{1}{9} + \frac{1}{9} = 0
+$$<p>따라서 $\hat{P}_1 \hat{S}_1 = \hat{0}$ 이 성립하여, 정칙부가 관측점의 사영 공간과 직교함이 검증된다.</p>
+<hr>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/combining_spaces/index.html"><a class="padding default-animation" href="/vector_operator/combining_spaces/index.html">Combining spaces</a><ul id="R-subsections-92d4f8c24e32980ccbc6e3dc19ac927a" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_discrete/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_discrete/index.html">(b) [D] Discrete</a></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_resolvent/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_resolvent/index.html">(b) [D] Resolvent</a></li>
+            <li class="active " data-nav-id="/vector_operator/resolvent_operator/b_decomposition/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_decomposition/index.html">(b) [D] Decomposition</a></li>
+            <li class="" data-nav-id="/vector_operator/resolvent_operator/b_continuous/index.html"><a class="padding" href="/vector_operator/resolvent_operator/b_continuous/index.html">(b) [C] Continuous</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/vector_operator/b_mixed/index.html"><a class="padding" href="/vector_operator/b_mixed/index.html">mixed operator</a></li></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781245760"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781245760" defer></script>
+    <script src="/js/theme.js?1781245760" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

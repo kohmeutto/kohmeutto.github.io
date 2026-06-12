@@ -28,6 +28,9 @@
     <loc>http://localhost:1313/tensor_analysis/calculus/a_gradient/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/adjoint/b_adjoint/index.html</loc>
   </url>
   <url>
@@ -46,13 +49,16 @@
     <loc>http://localhost:1313/vector_operator/determinant/b_determinant/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/combining_spaces/b_direct_sum/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/function_of_operators/b_dual_space_of_operators/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/inhomogeneous/b_exponential_iopm/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_generalization/index.html</loc>
+    <loc>http://localhost:1313/temp/b_generalization/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/geometric_algebra/calculus/b_gradient/index.html</loc>
@@ -223,6 +229,9 @@
     <loc>http://localhost:1313/vector_operator/commutator/a_physics/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/numerial_analysis/1d_fvm/index.html</loc>
   </url>
   <url>
@@ -302,9 +311,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_resolvent/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</loc>
@@ -425,6 +431,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/operation/a_unit_tensor/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_decomposition/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/normal_operators/b_anti_hermitian/index.html</loc>
@@ -568,10 +577,7 @@
     <loc>http://localhost:1313/temp/b_components_transformation/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_discrete/index.html</loc>
+    <loc>http://localhost:1313/temp/b_continuous/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/greens_function/gf/b_existence_and_properties/index.html</loc>
@@ -742,6 +748,9 @@
     <loc>http://localhost:1313/temp/b_syntax/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/combining_spaces/b_tensor_product/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ode_pde/green_function/i_divergence_for_free_space/index.html</loc>
   </url>
   <url>
@@ -782,6 +791,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/tensor_analysis/metric_tensor/a_triple_scalar_product/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/resolvent_operator/b_continuous/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/euclidean_vector/b_column_vector_of_matrix/index.html</loc>
@@ -1016,6 +1028,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/temp/theory4/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/combining_spaces/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/exterior_algebra/13-b_hodge_star/index.html</loc>

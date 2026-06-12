@@ -1,0 +1,41 @@
+<svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+  <line x1="50" y1="175" x2="550" y2="175" stroke="#000" stroke-width="1.5" />
+  <polygon points="540,170 555,175 540,180" fill="#000" />
+  <text x="545" y="160" font-family="serif" font-size="16" font-style="italic">Re(z)</text>
+
+  <line x1="100" y1="310" x2="100" y2="50" stroke="#000" stroke-width="1.5" />
+  <polygon points="95,60 100,45 105,60" fill="#000" />
+  <text x="75" y="35" font-family="serif" font-size="16" font-style="italic">Im(z)</text>
+
+  <line x1="200" y1="175" x2="450" y2="175" stroke="#cc0000" stroke-width="4" />
+  <text x="210" y="195" font-family="serif" font-size="14" fill="#cc0000">Branch Cut (Continuous Spectrum, Ω)</text>
+
+  <path d="M 200 220 L 450 220 L 450 130 L 200 130 Z" fill="none" stroke="#0055cc" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <line x1="200" y1="220" x2="450" y2="220" stroke="#0055cc" stroke-width="2.5" />
+  <line x1="450" y1="130" x2="200" y2="130" stroke="#0055cc" stroke-width="2.5" />
+
+  <polygon points="315,212 335,220 315,228" fill="#0055cc" />
+  <polygon points="442,185 450,165 458,185" fill="#0055cc" />
+  <polygon points="335,122 315,130 335,138" fill="#0055cc" />
+  <polygon points="192,165 200,185 208,165" fill="#0055cc" />
+
+  <circle cx="200" cy="175" r="4" fill="#000" />
+  <text x="185" y="165" font-family="serif" font-size="18" font-style="italic">ν₁</text>
+  
+  <circle cx="450" cy="175" r="4" fill="#000" />
+  <text x="455" y="165" font-family="serif" font-size="18" font-style="italic">ν₂</text>
+
+  <circle cx="325" cy="175" r="3" fill="#000" />
+  <text x="320" y="165" font-family="serif" font-size="18" font-style="italic">ν</text>
+
+  <text x="250" y="115" font-family="serif" font-size="16" fill="#0055cc">z = ν + iε (R₊)</text>
+  <text x="250" y="245" font-family="serif" font-size="16" fill="#0055cc">z = ν - iε (R₋)</text>
+
+  <text x="165" y="115" font-family="serif" font-size="20" font-style="italic" fill="#0055cc">Γ</text>
+
+  <line x1="325" y1="175" x2="325" y2="130" stroke="#888" stroke-width="1.5" stroke-dasharray="3,2" />
+  <text x="330" y="155" font-family="serif" font-size="14" font-style="italic">ε</text>
+  <line x1="325" y1="175" x2="325" y2="220" stroke="#888" stroke-width="1.5" stroke-dasharray="3,2" />
+  <text x="330" y="205" font-family="serif" font-size="14" font-style="italic">ε</text>
+</svg>
