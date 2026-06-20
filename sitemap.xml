@@ -856,6 +856,9 @@
     <loc>http://localhost:1313/temp/tensor_calculus/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/research/research_pin/paper1_/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/lie_group3/1-b_lie_group_definition/index.html</loc>
   </url>
   <url>
@@ -899,6 +902,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/exterior_algebra/7-b_differential_forms_kform/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/research/research_pin/paper1_detail/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_group3/2-b_compact_connected/index.html</loc>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="이 문서는 빔이 없는 어두운 상태의 전류와 C-V만으로 양성자 변위 손상을 정량화하는 논문 1의 이론 전체를, 표준 교과서 식의 유도까지 한 단계도 건너뛰지 않고 담는다. 핵심 결론을 먼저 한 문장으로 적으면, 이 논문은 순방향 재결합 전류에서 SRH 유효 수명을 뽑아 수명 손상 계수를 얻고 C-V에서 캐리어 제거 계수를 얻은 뒤, 이 두 전기적 계수를 SRIM이 주는 변위 손상에 짝지어 측정된 전기 열화가 변위 손상에서 온다는 것을 보이며, 순방향 이상계수 비대칭과 역방향 장 구동 누설과 C-V 캐리어 제거라는 세 거시 신호가 이를 떠받친다는 것이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="paper1-detail :: 수리전자물리학">
+    <meta name="twitter:description" content="이 문서는 빔이 없는 어두운 상태의 전류와 C-V만으로 양성자 변위 손상을 정량화하는 논문 1의 이론 전체를, 표준 교과서 식의 유도까지 한 단계도 건너뛰지 않고 담는다. 핵심 결론을 먼저 한 문장으로 적으면, 이 논문은 순방향 재결합 전류에서 SRH 유효 수명을 뽑아 수명 손상 계수를 얻고 C-V에서 캐리어 제거 계수를 얻은 뒤, 이 두 전기적 계수를 SRIM이 주는 변위 손상에 짝지어 측정된 전기 열화가 변위 손상에서 온다는 것을 보이며, 순방향 이상계수 비대칭과 역방향 장 구동 누설과 C-V 캐리어 제거라는 세 거시 신호가 이를 떠받친다는 것이다.">
+    <meta property="og:url" content="http://localhost:1313/research/research_pin/paper1_detail/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="paper1-detail :: 수리전자물리학">
+    <meta property="og:description" content="이 문서는 빔이 없는 어두운 상태의 전류와 C-V만으로 양성자 변위 손상을 정량화하는 논문 1의 이론 전체를, 표준 교과서 식의 유도까지 한 단계도 건너뛰지 않고 담는다. 핵심 결론을 먼저 한 문장으로 적으면, 이 논문은 순방향 재결합 전류에서 SRH 유효 수명을 뽑아 수명 손상 계수를 얻고 C-V에서 캐리어 제거 계수를 얻은 뒤, 이 두 전기적 계수를 SRIM이 주는 변위 손상에 짝지어 측정된 전기 열화가 변위 손상에서 온다는 것을 보이며, 순방향 이상계수 비대칭과 역방향 장 구동 누설과 C-V 캐리어 제거라는 세 거시 신호가 이를 떠받친다는 것이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="paper1-detail :: 수리전자물리학">
+    <meta itemprop="description" content="이 문서는 빔이 없는 어두운 상태의 전류와 C-V만으로 양성자 변위 손상을 정량화하는 논문 1의 이론 전체를, 표준 교과서 식의 유도까지 한 단계도 건너뛰지 않고 담는다. 핵심 결론을 먼저 한 문장으로 적으면, 이 논문은 순방향 재결합 전류에서 SRH 유효 수명을 뽑아 수명 손상 계수를 얻고 C-V에서 캐리어 제거 계수를 얻은 뒤, 이 두 전기적 계수를 SRIM이 주는 변위 손상에 짝지어 측정된 전기 열화가 변위 손상에서 온다는 것을 보이며, 순방향 이상계수 비대칭과 역방향 장 구동 누설과 C-V 캐리어 제거라는 세 거시 신호가 이를 떠받친다는 것이다.">
+    <meta itemprop="wordCount" content="5095">
+    <title>paper1-detail :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781946151" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781946151" defer></script>
+    <script src="/js/search-lunr.js?1781946151" defer></script>
+    <script src="/js/search.js?1781946151" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781946151";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781946151" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781946151" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781946151" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1781946151" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781946151" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781946151" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781946151" rel="stylesheet">
+    <link href="/css/theme.css?1781946151" rel="stylesheet">
+    <link href="/css/format-html.css?1781946151" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/research_pin\/paper1_detail\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/research_pin/paper1_detail/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-srh-생성재결합률">1. SRH 생성·재결합률</a></li>
+    <li><a href="#2-다이오드-전류와-이상계수">2. 다이오드 전류와 이상계수</a></li>
+    <li><a href="#3-공핍-폭과-모트-쇼트키-c-v">3. 공핍 폭과 모트-쇼트키 C-V</a></li>
+    <li><a href="#4-poole-frenkel-장-강화-방출-이론">4. Poole-Frenkel 장 강화 방출 (이론)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#5-역방향-생성-전류와-sic에서의-한계">5. 역방향 생성 전류와 SiC에서의 한계</a></li>
+    <li><a href="#6-순방향-재결합-전류와-수명-추출">6. 순방향 재결합 전류와 수명 추출</a></li>
+    <li><a href="#7-이상계수-비대칭과-유효-수명">7. 이상계수 비대칭과 유효 수명</a></li>
+    <li><a href="#8-수명-손상-계수">8. 수명 손상 계수</a></li>
+    <li><a href="#9-캐리어-제거-계수">9. 캐리어 제거 계수</a></li>
+    <li><a href="#10-유효값-틀--무엇이-유효이고-어디서-깨지는가">10. 유효값 틀 — 무엇이 유효이고 어디서 깨지는가</a></li>
+    <li><a href="#11-손상-계수와-변위-손상의-짝짓기">11. 손상 계수와 변위 손상의 짝짓기</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#12-세-거시-신호와-역방향에서-단순-poole-frenkel의-배제">12. 세 거시 신호와 역방향에서 단순 Poole-Frenkel의 배제</a></li>
+    <li><a href="#13-역방향-손상의-두-정량-지표">13. 역방향 손상의 두 정량 지표</a>
+      <ul>
+        <li><a href="#131-전류-손상률--누설의-크기">13.1 전류 손상률 — 누설의 크기</a></li>
+        <li><a href="#132-옴성-병렬-저항의-이론--왜-누설이-출력을-갉아먹는가">13.2 옴성 병렬 저항의 이론 — 왜 누설이 출력을 갉아먹는가</a></li>
+        <li><a href="#133-옴성-병렬-저항의-실측-분리">13.3 옴성 병렬 저항의 실측 분리</a></li>
+        <li><a href="#134-역방향의-두-영역">13.4 역방향의 두 영역</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-미시-추출과-분석-흐름">14. 미시 추출과 분석 흐름</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/research_pin/index.html"><span itemprop="name">Reserch_PIN</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">paper1-detail</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/research_pin/paper1_/index.html" title="논문 1 원고: 4H-SiC p-i-n 베타볼타익 셀의 양성자 변위 손상 — 어두운 전류와 C-V 분석 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/research_pa/index.html" title="Research_PA (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="paper1-detail">paper1-detail</h1>
+
+<p>이 문서는 빔이 없는 어두운 상태의 전류와 C-V만으로 양성자 변위 손상을 정량화하는 논문 1의 이론 전체를, 표준 교과서 식의 유도까지 한 단계도 건너뛰지 않고 담는다. 핵심 결론을 먼저 한 문장으로 적으면, 이 논문은 순방향 재결합 전류에서 SRH 유효 수명을 뽑아 수명 손상 계수를 얻고 C-V에서 캐리어 제거 계수를 얻은 뒤, 이 두 전기적 계수를 SRIM이 주는 변위 손상에 짝지어 측정된 전기 열화가 변위 손상에서 온다는 것을 보이며, 순방향 이상계수 비대칭과 역방향 장 구동 누설과 C-V 캐리어 제거라는 세 거시 신호가 이를 떠받친다는 것이다.</p>
+<p>이 논문은 현재 미조사 기준 시료와 $5\times10^{13}\ \mathrm{cm^{-2}}$ 한 플루언스의 두 측정만을 가진다. 따라서 아래의 모든 손상 계수는 단일 플루언스 추정치이며, 선형 손상 모델을 가정하고 원점과 한 점을 잇는 기울기로 얻은 값이다. 이 문서의 모든 수치 예제는 가정값이 아니라 실측 데이터에서 직접 뽑은 값이다. 모든 유도는 각 치환과 약분을 별도 줄에 적는다.</p>
+<p>이 문서는 세 부분으로 짜인다. 1부는 표준 이론을 모두 유도하고, 2부는 손상 정량화의 틀과 유효값 개념을 세우며, 3부는 실측 데이터에서 값을 뽑되 역방향에서 단순 Poole-Frenkel이 배제됨을 정직하게 보인다.</p>
+<h1 id="1부-표준-이론">1부. 표준 이론<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="1-srh-생성재결합률">1. SRH 생성·재결합률<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>SRH는 Shockley, Read, Hall이 세운 트랩을 통한 생성과 재결합의 이론으로, 트랩이란 띠 사이에 놓인 결함 준위를 가리킨다. 단일 트랩 준위에 대한 알짜 재결합률은 다음으로 주어진다.</p>
+$$
+U = \frac{np - n_i^2}{\tau_p(n + n_1) + \tau_n(p + p_1)}
+$$<p>여기서 각 기호의 뜻을 적는다. $n$ 과 $p$ 는 각각 그 위치의 전자와 정공 농도이다. $n_i$ 는 진성 캐리어 농도로, 도핑이 없는 순수 반도체의 캐리어 농도이다. $n_1$ 은 페르미 준위가 트랩 준위에 놓일 때의 전자 농도로 $n_1 = n_i\exp\!\big((E_t - E_i)/kT\big)$ 이고, $p_1$ 은 같은 조건의 정공 농도로 $p_1 = n_i\exp\!\big((E_i - E_t)/kT\big)$ 이다. $E_t$ 는 트랩 준위, $E_i$ 는 진성 페르미 준위로 띠 가운데 부근이다. $\tau_n$ 과 $\tau_p$ 는 전자와 정공의 포획 수명으로 $\tau_n = 1/(\sigma_n v_{th} N_t)$, $\tau_p = 1/(\sigma_p v_{th} N_t)$ 이며, $\sigma$ 는 포획 단면적, $v_{th}$ 는 열속도, $N_t$ 는 트랩 밀도이다.</p>
+<p>이 식에서 분자 $np - n_i^2$ 의 부호가 생성과 재결합을 가른다. $np > n_i^2$ 이면 $U > 0$ 으로 알짜 재결합이 일어나고, $np < n_i^2$ 이면 $U < 0$ 으로 알짜 생성이 일어난다. 평형에서는 $np = n_i^2$ 이라 $U = 0$ 이다. 트랩 밀도 $N_t$ 가 수명에 들어 있으므로, 양성자가 트랩을 늘리면 수명이 줄어 $U$ 가 커진다. 이것이 뒤에서 수명 손상 계수의 물리적 뿌리가 된다.</p>
+<h2 id="2-다이오드-전류와-이상계수">2. 다이오드 전류와 이상계수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>이 절은 이상계수가 무엇이며 데이터에서 어떻게 나오는지를 세운다. 위계로 적으면 1) 일반적으로 다이오드 전류는 $I = I_0\exp(qV/nkT)$ 꼴로 오르고, 2) 특수하게 그 $n$ 이 1이면 중성 영역의 확산 전류, 2이면 공핍 영역의 재결합 전류이다.</p>
+<p>먼저 확산 전류를 유도해 $n=1$ 을 얻는다. 순방향 전압 $V$ 를 걸면 공핍 영역 가장자리에서 소수 캐리어 농도가 볼츠만 인자만큼 올라간다. n형 쪽 정공의 가장자리 농도를 적는다.</p>
+$$
+p_n(x_n) = p_{n0}\exp\!\left(\frac{qV}{kT}\right)
+$$<p>여기서 $p_{n0}$ 는 평형 정공 농도이다. 가장자리의 초과 정공은 평형값을 뺀 것이다.</p>
+$$
+\Delta p = p_{n0}\exp\!\left(\frac{qV}{kT}\right) - p_{n0} = p_{n0}\left(\exp\!\left(\frac{qV}{kT}\right) - 1\right)
+$$<p>이 초과 정공은 중성 영역으로 확산하며 확산 길이 $L_p$ 로 줄어든다. 확산 전류는 확산 계수 곱하기 농도 기울기이고, 지수 감소 꼴의 기울기는 농도를 $L_p$ 로 나눈 것이므로 가장자리에서 다음이 된다.</p>
+$$
+J_{diff} = q D_p\frac{\Delta p}{L_p} = \frac{q D_p p_{n0}}{L_p}\left(\exp\!\left(\frac{qV}{kT}\right) - 1\right)
+$$<p>이 식의 지수 분모가 $kT$, 곧 $n=1$ 이다. 재결합 전류가 $n=2$ 가 되는 유도는 6절에서 SRH로 직접 한다.</p>
+<p>이제 일반 다이오드 식 $I = I_0\exp(qV/nkT)$ 에서 이상계수를 데이터로 뽑는 식을 세운다. 양변에 자연로그를 취한다.</p>
+$$
+\ln I = \ln I_0 + \frac{qV}{nkT}
+$$<p>$V$ 에 대해 미분한다.</p>
+$$
+\frac{d\ln I}{dV} = \frac{q}{nkT}
+$$<p>$n$ 에 대해 푼다. 양변에 $n$ 을 곱한다.</p>
+$$
+n\,\frac{d\ln I}{dV} = \frac{q}{kT}
+$$<p>양변을 $d\ln I/dV$ 로 나눈다.</p>
+$$
+n = \frac{q}{kT}\,\frac{1}{\,d\ln I/dV\,} = \frac{q}{kT}\,\frac{dV}{d\ln I}
+$$<p>곧 이상계수는 반로그 곡선 기울기의 역수에 $q/kT$ 를 곱한 값이다. 이 식에서 $n$ 은 곡선의 한 점에서 정해지므로, 전압마다(따라서 전류마다) 하나씩 나온다. 한 기제만 지배하는 구간에서만 $n$ 이 일정해진다.</p>
+<p><strong>수치 예제 1: 실측 두 점에서 이상계수 뽑기</strong></p>
+<p>기준 시료의 순방향에서 실측한 이웃한 두 점을 가져온다. $V_1 = 2.00$ V에서 $I_1 = 5.963\times10^{-10}$ A, $V_2 = 2.10$ V에서 $I_2 = 4.076\times10^{-9}$ A이다. 먼저 로그 전류 차이를 구한다.</p>
+$$
+\Delta\ln I = \ln(4.076\times10^{-9}) - \ln(5.963\times10^{-10}) = \ln\!\frac{4.076\times10^{-9}}{5.963\times10^{-10}} = \ln 6.836 = 1.922
+$$<p>전압 차이를 구한다.</p>
+$$
+\Delta V = 2.10 - 2.00 = 0.10\ \mathrm{V}
+$$<p>기울기를 구한다.</p>
+$$
+\frac{d\ln I}{dV} \approx \frac{1.922}{0.10} = 19.22\ \mathrm{V^{-1}}
+$$<p>이상계수를 구한다. $q/kT = 1/0.0259 = 38.61$ 이므로</p>
+$$
+n = \frac{38.61}{19.22} = 2.01
+$$<p>곧 이 구간에서 기준 시료는 $n\approx2.0$ 이라 재결합 전류이다.</p>
+<h2 id="3-공핍-폭과-모트-쇼트키-c-v">3. 공핍 폭과 모트-쇼트키 C-V<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C-V 분석은 공핍 폭과 유효 도핑을 준다. 둘 다 푸아송 방정식에서 나온다. 한쪽이 훨씬 무겁게 도핑된 한면 접합을 보면, 공핍은 가볍게 도핑된 n형 쪽으로만 퍼지고 그 안은 이온화한 도너로 채워진다. 공핍 근사에서 푸아송 방정식은 다음이다.</p>
+$$
+\frac{d^2\psi}{dx^2} = -\frac{\rho}{\varepsilon} = -\frac{qN_d}{\varepsilon}
+$$<p>여기서 $\psi$ 는 정전 퍼텐셜, $\rho = qN_d$ 는 이온화 도너의 전하 밀도, $\varepsilon$ 는 반도체 유전율이다. 한 번 적분해 전기장을 얻는다. 공핍 끝 $x=W$ 에서 전기장이 0이라는 조건을 쓴다.</p>
+$$
+E(x) = -\frac{d\psi}{dx} = \frac{qN_d}{\varepsilon}(W - x)
+$$<p>한 번 더 적분해 퍼텐셜 강하를 얻는다. 공핍 영역 전체에 걸친 퍼텐셜 강하는 내장 전위에서 인가 전압을 뺀 것이므로, 전기장을 0에서 $W$ 까지 적분한다.</p>
+$$
+V_{bi} - V = \int_0^W E(x)\,dx = \int_0^W\frac{qN_d}{\varepsilon}(W-x)\,dx
+$$<p>적분을 수행한다.</p>
+$$
+V_{bi} - V = \frac{qN_d}{\varepsilon}\left(W\cdot W - \frac{W^2}{2}\right) = \frac{qN_d}{\varepsilon}\cdot\frac{W^2}{2} = \frac{qN_d W^2}{2\varepsilon}
+$$<p>$W$ 에 대해 푼다. 양변에 $2\varepsilon/(qN_d)$ 를 곱한다.</p>
+$$
+W^2 = \frac{2\varepsilon(V_{bi}-V)}{qN_d}
+$$<p>제곱근을 취한다.</p>
+$$
+W = \sqrt{\frac{2\varepsilon(V_{bi}-V)}{qN_d}}
+$$<p>다음으로 정전용량을 구한다. 공핍 영역은 폭 $W$ 의 평행판 축전기처럼 행동하므로 정전용량은 다음이다.</p>
+$$
+C = \frac{\varepsilon A}{W}
+$$<p>모트-쇼트키 분석은 $1/C^2$ 을 본다. 정전용량의 역제곱을 적는다.</p>
+$$
+\frac{1}{C^2} = \frac{W^2}{\varepsilon^2 A^2}
+$$<p>$W^2$ 을 공핍 폭 결과로 바꾼다.</p>
+$$
+\frac{1}{C^2} = \frac{1}{\varepsilon^2 A^2}\cdot\frac{2\varepsilon(V_{bi}-V)}{qN_d} = \frac{2(V_{bi}-V)}{q\varepsilon N_d A^2}
+$$<p>곧 $1/C^2$ 은 $V$ 에 대해 직선이고, 기울기에서 유효 도핑이 나온다.</p>
+$$
+N_d = -\frac{2}{q\varepsilon A^2}\cdot\frac{1}{\,d(1/C^2)/dV\,}
+$$<p><strong>수치 예제 2: 실측 유효 도핑과 공핍 폭</strong></p>
+<p>기준 시료의 C-V를 깨끗한 창(역방향 12~24 V, 26 V 위 인공 점프 제외)에서 $1/C_Q^2$ 대 전압으로 적합하면 기울기가 $+1.875\times10^{18}$ 이 나온다. $\varepsilon = 8.6\times10^{-11}\ \mathrm{F/m}$, 면적 $A = 3.24\times10^{-6}\ \mathrm{m^2}$ 를 넣어 유효 도핑을 구한다.</p>
+$$
+N_d = \frac{2}{q\varepsilon A^2\cdot|\text{기울기}|} = \frac{2}{(1.602\times10^{-19})(8.6\times10^{-11})(3.24\times10^{-6})^2(1.875\times10^{18})}
+$$<p>분모를 차례로 곱한다.</p>
+$$
+(1.602\times10^{-19})(8.6\times10^{-11}) = 1.378\times10^{-29}
+$$<p>
+</p>
+$$
+(1.378\times10^{-29})(1.050\times10^{-11}) = 1.447\times10^{-40}
+$$<p>
+</p>
+$$
+(1.447\times10^{-40})(1.875\times10^{18}) = 2.713\times10^{-22}
+$$<p>나눈다.</p>
+$$
+N_d = \frac{2}{2.713\times10^{-22}} = 7.37\times10^{21}\ \mathrm{m^{-3}} = 7.376\times10^{15}\ \mathrm{cm^{-3}}
+$$<p>이 값은 에피 공칭값 $7.38\times10^{15}$ 과 정확히 맞는다. 같은 분석을 조사 시료에 하면 $6.444\times10^{15}\ \mathrm{cm^{-3}}$ 이 나온다. 이 두 도핑이 9절의 캐리어 제거 계수를 준다. 이제 이 도핑으로 순방향 2.0 V에서의 공핍 폭을 구한다. $V_{bi} = 3.1$ V이므로</p>
+$$
+W = \sqrt{\frac{2(8.6\times10^{-11})(3.1-2.0)}{(1.602\times10^{-19})(7.376\times10^{21})}} = \sqrt{\frac{1.892\times10^{-10}}{1.182\times10^{3}}} = \sqrt{1.601\times10^{-13}} = 4.00\times10^{-7}\ \mathrm{m} = 0.400\ \mu\mathrm{m}
+$$<p>이 0.400 µm가 6절의 수명 추출에 들어가는 실측 공핍 폭이다.</p>
+<h2 id="4-poole-frenkel-장-강화-방출-이론">4. Poole-Frenkel 장 강화 방출 (이론)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>이 절은 역방향에서 후보가 되는 기제인 장 강화 트랩 방출의 이론을 유도한다. 위계로 적으면 1) 일반적으로 장 강화 트랩 방출에는 장벽을 열로 넘는 길(Poole-Frenkel)과 장벽을 꿰뚫는 길(트랩 터널링)이 있고, 2) 특수하게 Poole-Frenkel은 전기장이 충전된 트랩의 쿨롱 장벽을 낮춰 방출을 키우는 것이다. 다만 12절에서 실측 데이터가 이 이론을 배제함을 보일 것이므로, 여기서는 이론이 무엇을 예측하는지를 먼저 세운다.</p>
+<p>충전된 트랩에 붙잡힌 카리어의 퍼텐셜 에너지를 적는다.</p>
+$$
+U(x) = -\frac{q^2}{4\pi\varepsilon x} - qEx
+$$<p>첫 항은 트랩의 쿨롱 우물, 둘째 항은 전기장 $E$ 가 만드는 기울기이다. 장벽 마루의 위치는 $U(x)$ 의 최대점이므로 미분을 0으로 둔다.</p>
+$$
+\frac{dU}{dx} = \frac{q^2}{4\pi\varepsilon x^2} - qE = 0
+$$<p>$x$ 에 대해 푼다. 정리한다.</p>
+$$
+\frac{q^2}{4\pi\varepsilon x^2} = qE
+$$<p>$x^2$ 으로 정리한다.</p>
+$$
+x_m^2 = \frac{q}{4\pi\varepsilon E}
+$$<p>제곱근을 취한다.</p>
+$$
+x_m = \sqrt{\frac{q}{4\pi\varepsilon E}}
+$$<p>이 자리에서 장벽 마루값을 $U(x_m)$ 으로 평가한다. 두 항을 차례로 적는다. 첫 항은</p>
+$$
+-\frac{q^2}{4\pi\varepsilon x_m} = -\sqrt{\frac{q^3 E}{4\pi\varepsilon}}
+$$<p>이고, 둘째 항은</p>
+$$
+-qE x_m = -\sqrt{\frac{q^3 E}{4\pi\varepsilon}}
+$$<p>이다. 둘을 더한다.</p>
+$$
+U(x_m) = -2\sqrt{\frac{q^3 E}{4\pi\varepsilon}} = -\sqrt{\frac{q^3 E}{\pi\varepsilon}}
+$$<p>따라서 장벽 낮아짐은 다음이다.</p>
+$$
+\Delta\phi = \sqrt{\frac{q^3 E}{\pi\varepsilon}} = \beta_{PF}\sqrt{E}, \qquad \beta_{PF} = \sqrt{\frac{q^3}{\pi\varepsilon}}
+$$<p>낮아진 장벽을 카리어가 열로 넘으므로, 방출률은 지수로 커진다.</p>
+$$
+e(E) = e(0)\exp\!\left(\frac{\Delta\phi}{kT}\right) = e(0)\exp\!\left(\frac{\beta_{PF}\sqrt{E}}{kT}\right)
+$$<p>이 식의 서명은 $\ln(J/E)$ 를 $\sqrt{E}$ 에 대해 그리면 직선이고, 그 기울기가 $\beta_{PF}/kT$ 라는 것이다. 이 직선 기울기를 12절에서 실측과 견준다.</p>
+<p><strong>수치 예제 3: 이론 Poole-Frenkel이 예측하는 −5 V의 장벽 낮아짐</strong></p>
+<p>4H-SiC의 유전율 $\varepsilon = 9.7\times8.85\times10^{-12} = 8.58\times10^{-11}\ \mathrm{F/m}$ 을 쓴다. 먼저 이론 계수를 구한다.</p>
+$$
+\beta_{PF} = \sqrt{\frac{q^3}{\pi\varepsilon}} = \sqrt{\frac{(1.602\times10^{-19})^3}{\pi(8.58\times10^{-11})}} = \sqrt{\frac{4.11\times10^{-57}}{2.696\times10^{-10}}} = \sqrt{1.525\times10^{-47}} = 3.905\times10^{-24}
+$$<p>다음으로 −5 V의 실측 전기장을 구한다. 조사 시료의 도핑 $N_d = 6.444\times10^{21}\ \mathrm{m^{-3}}$ 과 −5 V 공핍 폭 $W = 1.162\times10^{-6}$ m로 최대 전기장은</p>
+$$
+E_{max} = \frac{qN_d W}{\varepsilon} = \frac{(1.602\times10^{-19})(6.444\times10^{21})(1.162\times10^{-6})}{8.58\times10^{-11}} = 1.395\times10^{7}\ \mathrm{V/m}
+$$<p>이다. 이 장에서 이론 장벽 낮아짐을 구한다. $\sqrt{E} = \sqrt{1.395\times10^{7}} = 3735$ 이므로</p>
+$$
+\Delta\phi = \beta_{PF}\sqrt{E} = (3.905\times10^{-24})(3735) = 1.459\times10^{-20}\ \mathrm{J} = 0.091\ \mathrm{eV}
+$$<p>방출 증대를 구한다.</p>
+$$
+\exp\!\left(\frac{\Delta\phi}{kT}\right) = \exp\!\left(\frac{0.091}{0.0259}\right) = \exp(3.51) = 33.5
+$$<p>곧 이론 Poole-Frenkel은 −5 V의 실측 장에서 장벽을 0.091 eV 낮춰 방출을 33.5배 키운다고 예측한다. 12절에서 보겠지만, 실측 데이터는 이보다 훨씬 가파른 상승을 보여 이 이론값과 맞지 않는다.</p>
+<h1 id="2부-손상-정량화의-틀">2부. 손상 정량화의 틀<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="5-역방향-생성-전류와-sic에서의-한계">5. 역방향 생성 전류와 SiC에서의 한계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>역방향 바이어스를 걸면 공핍 영역에서 캐리어가 전기장에 쓸려 나가 $n$ 과 $p$ 가 $n_i$ 보다 훨씬 작아진다. 이 극한에서 1절의 SRH 식을 정리한다. 먼저 분자에서 $np$ 를 버린다.</p>
+$$
+np - n_i^2 \approx 0 - n_i^2 = -n_i^2
+$$<p>다음으로 분모에서 작은 $n$ 과 $p$ 를 버린다.</p>
+$$
+n + n_1 \approx n_1, \qquad p + p_1 \approx p_1
+$$<p>이를 넣으면 생성률이 된다.</p>
+$$
+U \approx \frac{-n_i^2}{\tau_p n_1 + \tau_n p_1}
+$$<p>띠 가운데 트랩 $E_t = E_i$ 이면 $n_1 = p_1 = n_i$ 이다.</p>
+$$
+n_1 = n_i\exp(0) = n_i, \qquad p_1 = n_i\exp(0) = n_i
+$$<p>포획 수명이 같다고 두면 $\tau_n = \tau_p = \tau_0$ 이다. 이를 넣는다.</p>
+$$
+U \approx \frac{-n_i^2}{\tau_0 n_i + \tau_0 n_i}
+$$<p>분모를 합친다.</p>
+$$
+U \approx \frac{-n_i^2}{2\tau_0 n_i}
+$$<p>$n_i$ 하나를 약분한다.</p>
+$$
+U \approx \frac{-n_i}{2\tau_0}
+$$<p>생성 수명을 $\tau_g = 2\tau_0$ 로 정의하고 크기를 적는다.</p>
+$$
+U_{gen} = |U| = \frac{n_i}{\tau_g}
+$$<p>생성된 캐리어가 전기장에 즉시 쓸려 나가 완전히 모이므로, 생성 전류는 이 생성률을 공핍 폭에 걸쳐 적분한 것이다. 생성률이 위치에 무관한 상수라고 보면 적분이 곱으로 바뀐다.</p>
+$$
+J_{gen} = q\int_0^W\frac{n_i}{\tau_g}\,dx = \frac{q n_i W}{\tau_g}
+$$<p>이 식이 표준 Sah-Noyce-Shockley 역방향 생성 전류이다. 그러나 SiC에서는 이 전류가 측정할 수 없을 만큼 작다. SiC는 띠가 3.26 eV로 넓어 진성 캐리어 농도가 $n_i = 8.4\times10^{-9}\ \mathrm{cm^{-3}}$ 로 극히 작기 때문이다.</p>
+<p><strong>수치 예제 4: 실측 공핍 폭으로 본 역방향 생성 전류의 크기</strong></p>
+<p>생성 수명을 추출된 재결합 수명의 두 배 $\tau_g = 2\tau_0 = 36\ \mathrm{ns} = 3.6\times10^{-8}$ s로, 공핍 폭을 −5 V의 실측 값 $W = 1.162\ \mu\mathrm{m} = 1.162\times10^{-4}$ cm로 둔다. 생성 전류 밀도를 계산한다.</p>
+$$
+J_{gen} = \frac{q n_i W}{\tau_g} = \frac{(1.602\times10^{-19})(8.4\times10^{-9})(1.162\times10^{-4})}{3.6\times10^{-8}}
+$$<p>분자를 차례로 곱한다.</p>
+$$
+(1.602\times10^{-19})(8.4\times10^{-9}) = 1.346\times10^{-27}
+$$<p>
+</p>
+$$
+(1.346\times10^{-27})(1.162\times10^{-4}) = 1.564\times10^{-31}
+$$<p>분모로 나눈다.</p>
+$$
+J_{gen} = \frac{1.564\times10^{-31}}{3.6\times10^{-8}} = 4.34\times10^{-24}\ \mathrm{A/cm^2}
+$$<p>면적을 곱해 전류로 바꾸면 $I_{gen} = 4.34\times10^{-24}\times3.24\times10^{-2} = 1.41\times10^{-25}$ A이다. 그런데 −5 V에서 실측된 역방향 전류는 조사 시료가 $1.36\times10^{-10}$ A이다. 둘의 비는</p>
+$$
+\frac{1.36\times10^{-10}}{1.41\times10^{-25}} = 9.6\times10^{14}
+$$<p>이다. 곧 측정값이 열적 생성보다 약 15자릿수 크다. 따라서 측정된 역방향 전류는 열적 생성일 수가 없고, 12절에서 다룰 장 구동 누설이다. SiC에서 측정 가능한 SRH 수명은 다음 절의 순방향 재결합 전류에서 뽑는다.</p>
+<h2 id="6-순방향-재결합-전류와-수명-추출">6. 순방향 재결합 전류와 수명 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>순방향 바이어스를 걸면 공핍 영역에 캐리어가 주입되어 트랩을 통한 재결합이 일어난다. 재결합이 가장 빠른 곳은 전자와 정공 농도가 같아지는 공핍 영역 중간이다. 그곳에서 $n = p$ 이고, 전압 $V$ 에서 $np = n_i^2\exp(qV/kT)$ 이므로 $n = p = n_i\exp(qV/2kT)$ 이다. 이를 SRH 식에 넣어 최대 재결합률을 구한다. 분자를 적는다.</p>
+$$
+np - n_i^2 = n_i^2\exp(qV/kT) - n_i^2 = n_i^2\big(\exp(qV/kT) - 1\big)
+$$<p>순방향에서 $\exp(qV/kT) \gg 1$ 이므로 $-1$ 을 버린다.</p>
+$$
+np - n_i^2 \approx n_i^2\exp(qV/kT)
+$$<p>분모에 $n = p = n_i\exp(qV/2kT)$ 와 $n_1 = p_1 = n_i$, $\tau_n = \tau_p = \tau_0$ 을 넣는다.</p>
+$$
+\tau_p(n + n_1) + \tau_n(p + p_1) = \tau_0\big(n_i e^{qV/2kT} + n_i\big) + \tau_0\big(n_i e^{qV/2kT} + n_i\big)
+$$<p>지수항이 커서 $n_i$ 를 버린다.</p>
+$$
+\approx 2\tau_0 n_i e^{qV/2kT}
+$$<p>분자와 분모를 합쳐 재결합률을 적는다.</p>
+$$
+U = \frac{n_i^2 e^{qV/kT}}{2\tau_0 n_i e^{qV/2kT}}
+$$<p>$n_i$ 하나를 약분하고 지수를 정리한다. $e^{qV/kT}/e^{qV/2kT} = e^{qV/2kT}$ 이다.</p>
+$$
+U = \frac{n_i}{2\tau_0}e^{qV/2kT}
+$$<p>이 재결합률을 공핍 폭에 걸쳐 적분해 재결합 전류를 얻는다.</p>
+$$
+J_{rec} = q\int_0^W U\,dx = \frac{q n_i W}{2\tau_0}e^{qV/2kT}
+$$<p>지수의 분모가 $2kT$, 곧 이상계수가 2이다. 수명 추출은 이를 $\tau_0$ 에 대해 정리해서 한다. 일반적인 이상계수 $n$ 을 허용해 적으면</p>
+$$
+\tau_0 = \frac{q n_i W A}{2 I}\exp\!\left(\frac{qV}{nkT}\right)
+$$<p>이다. 여기서 $A$ 는 면적이고, 전류 $I = J_{rec}A$ 를 썼다. 한 점 $(V, I)$ 과 그 전압의 공핍 폭 $W$ 를 넣으면 $\tau_0$ 가 나온다.</p>
+<p><strong>수치 예제 5: 실측 순방향 전류에서 수명 뽑기</strong></p>
+<p>기준 시료의 실측값 $V = 2.0$ V, $I = 5.963\times10^{-10}$ A를 쓴다. 이 시료의 이 구간 이상계수는 예제 1에서 $n = 2.01$ 이었고, 공핍 폭은 예제 2에서 $W = 0.400\ \mu\mathrm{m} = 4.00\times10^{-5}$ cm였다. 먼저 지수 인자를 구한다.</p>
+$$
+\exp\!\left(\frac{qV}{nkT}\right) = \exp\!\left(\frac{2.0}{2.01\times0.0259}\right) = \exp(38.42) = 4.84\times10^{16}
+$$<p>앞 인자를 구한다.</p>
+$$
+\frac{q n_i W A}{2 I} = \frac{(1.602\times10^{-19})(8.4\times10^{-9})(4.00\times10^{-5})(3.24\times10^{-2})}{2(5.963\times10^{-10})}
+$$<p>분자를 차례로 곱한다.</p>
+$$
+(1.602\times10^{-19})(8.4\times10^{-9}) = 1.346\times10^{-27}
+$$<p>
+</p>
+$$
+(1.346\times10^{-27})(4.00\times10^{-5}) = 5.383\times10^{-32}
+$$<p>
+</p>
+$$
+(5.383\times10^{-32})(3.24\times10^{-2}) = 1.744\times10^{-33}
+$$<p>분모로 나눈다.</p>
+$$
+\frac{1.744\times10^{-33}}{1.193\times10^{-9}} = 1.462\times10^{-24}
+$$<p>둘을 곱한다.</p>
+$$
+\tau_0 = (1.462\times10^{-24})(4.84\times10^{16}) = 7.08\times10^{-8}\ \mathrm{s} \approx 71\ \mathrm{ns}
+$$<p>이 한 점은 71 ns를 주지만, 기준 시료는 재결합 구간이 좁고 기울기가 미끄러져 적합 창을 바꾸면 수명이 33에서 66 ns로 흩어진다(중앙값 53 ns, 약 2배 불확실). 같은 방법을 조사 시료에 그 시료의 $n = 1.87$ 로 적용하면 수명이 15에서 21 ns로 잘 모인다(중앙값 18 ns). 곧 수명이 약 53 ns에서 약 18 ns로 줄었으며, 이 줄어듦이 손상 신호이다.</p>
+<h2 id="7-이상계수-비대칭과-유효-수명">7. 이상계수 비대칭과 유효 수명<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>실측 두 시료는 이상계수가 다르게 나오고, 이 차이 자체가 손상의 신호이다. 위계로 적으면 1) 일반적으로 이상계수가 2이면 6절의 재결합 공식이 그대로 성립해 $\tau_0$ 가 교과서적 SRH 수명이고, 2) 특수하게 이상계수가 2에서 벗어나면 그 공식을 전제 밖에서 쓰는 것이라 뽑은 값은 유효 수명이 된다.</p>
+<p>기준 시료는 바닥 근처 좁은 구간(약 2.0 V)에서만 $n\approx2$ 를 보이고 곧 확산($n\to1$)으로 넘어간다. 조사 시료는 $n\approx1.87$ 이 약 네 자릿수 전류 범위에 걸쳐 넓게 펼쳐진다. 이 비대칭의 까닭은 조사로 재결합 중심이 늘어 재결합이 더 넓은 전류 범위를 지배하기 때문이며, 그 중심이 정확히 중간 띠가 아닌 약간 치우친 성격이라 $n$ 이 2가 아니라 1.87이다. 곧 2.0에서 1.87로의 이동은 손상이 재결합의 성격까지 바꾼 물리적 결과이다.</p>
+<p>유효 수명을 뽑을 때는 각 시료의 제 기울기를 일관되게 써야 한다. 6절의 추출 식에서 지수의 $n$ 에 그 시료의 실제 기울기를 넣으면, 데이터의 전압 의존과 지수가 맞아떨어져 $\tau_0$ 가 전압에 무관하게 나온다. 곧 $I = I_0\exp(qV/nkT)$ 일 때 추출 식의 지수가 약분되어 $\tau_0 = qn_iWA/(2I_0)$ 가 남는다. 반대로 조사 시료에 억지로 $n=2$ 를 강요하면 지수가 데이터와 어긋나 $\tau_0$ 가 미끄러진다.</p>
+<p><strong>수치 예제 6: 실측 데이터에서 제 기울기와 강요의 차이</strong></p>
+<p>조사 시료에 제 기울기 $n=1.87$ 을 써서 1.85, 1.95, 2.05, 2.15 V에서 수명을 뽑으면 각각 18.3, 18.8, 18.2, 17.2 ns로 거의 일정하다. 같은 데이터에 $n=2$ 를 강요하면 같은 전압에서 1.5, 1.4, 1.2, 1.0 ns로 미끄러진다. 첫째는 지수가 데이터의 기울기와 맞아 약분되어 일정하고, 둘째는 어긋나 미끄러진다. 따라서 조사 시료의 유효 수명은 약 18 ns이다.</p>
+<h2 id="8-수명-손상-계수">8. 수명 손상 계수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>양성자 조사가 트랩을 늘리면 재결합이 빨라져 수명이 줄어든다. 재결합률은 트랩 밀도에 비례한다. 1절에서 수명이 $\tau_0 = 1/(\sigma v_{th} N_t)$ 이므로, 수명의 역수가 트랩 밀도에 비례한다.</p>
+$$
+\frac{1}{\tau_0} = \sigma v_{th} N_t
+$$<p>양성자는 트랩을 플루언스에 비례해 만든다.</p>
+$$
+N_t(\Phi) = N_t(0) + \eta_t\Phi
+$$<p>여기서 $\Phi$ 는 플루언스, $\eta_t$ 는 단위 플루언스당 만들어지는 트랩 수인 도입률이다. 이를 수명 역수 식에 넣는다.</p>
+$$
+\frac{1}{\tau_0(\Phi)} = \sigma v_{th}\big(N_t(0) + \eta_t\Phi\big)
+$$<p>괄호를 푼다.</p>
+$$
+\frac{1}{\tau_0(\Phi)} = \sigma v_{th} N_t(0) + \sigma v_{th}\eta_t\Phi
+$$<p>앞항은 조사 전 수명 역수이다.</p>
+$$
+\frac{1}{\tau_0(\Phi)} = \frac{1}{\tau_0(0)} + \sigma v_{th}\eta_t\Phi
+$$<p>뒷항의 계수를 수명 손상 계수 $K_\tau = \sigma v_{th}\eta_t$ 로 정의한다.</p>
+$$
+\frac{1}{\tau_0(\Phi)} = \frac{1}{\tau_0(0)} + K_\tau\Phi
+$$<p>이 식이 Messenger-Spratt 관계이다. 단위는 $K_\tau$ 가 $\mathrm{cm^2/s}$ 이다. 단일 플루언스에서는 원점과 한 점을 잇는 기울기로 추정한다.</p>
+<p><strong>수치 예제 7: 실측 수명에서 손상 계수 추정</strong></p>
+<p>조사 전 유효 수명 $\tau_0(0) = 53\ \mathrm{ns} = 5.3\times10^{-8}$ s의 역수는 $1.887\times10^{7}\ \mathrm{s^{-1}}$, 조사 후 $\tau_0(\Phi) = 18\ \mathrm{ns} = 1.8\times10^{-8}$ s의 역수는 $5.556\times10^{7}\ \mathrm{s^{-1}}$ 이다. 손상 계수를 계산한다.</p>
+$$
+K_\tau = \frac{1/\tau_0(\Phi) - 1/\tau_0(0)}{\Phi}
+$$<p>분자를 먼저 뺀다.</p>
+$$
+5.556\times10^{7} - 1.887\times10^{7} = 3.669\times10^{7}\ \mathrm{s^{-1}}
+$$<p>플루언스 $\Phi = 5\times10^{13}\ \mathrm{cm^{-2}}$ 로 나눈다.</p>
+$$
+K_\tau = \frac{3.669\times10^{7}}{5\times10^{13}} = 7.34\times10^{-7}\ \mathrm{cm^2/s}
+$$<p>곧 단일 플루언스 추정으로 $K_\tau \approx 7.3\times10^{-7}\ \mathrm{cm^2/s}$ 이다. 기준 시료 수명이 약 2배 불확실하므로 이 계수도 그 불확실을 안는다.</p>
+<h2 id="9-캐리어-제거-계수">9. 캐리어 제거 계수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C-V에서 얻는 손상 양은 캐리어 제거 계수이다. 캐리어 제거란 양성자가 만든 결함이 자유 캐리어를 잡거나 도너를 비활성화해 유효 도핑을 줄이는 효과이다. 캐리어 제거도 플루언스에 직선으로 일어난다.</p>
+$$
+N_{eff}(\Phi) = N_{eff}(0) - \eta_c\Phi
+$$<p>여기서 $\eta_c$ 가 캐리어 제거 계수로 단위는 $\mathrm{cm^{-1}}$ 이다. 이 기울기는 점별 미분이 아니라 전체 회귀에서 나오므로 노이즈에 강하다.</p>
+<p><strong>수치 예제 8: 실측 유효 도핑에서 캐리어 제거 계수</strong></p>
+<p>예제 2에서 얻은 두 실측 유효 도핑 $N_{eff}(0) = 7.376\times10^{15}\ \mathrm{cm^{-3}}$, $N_{eff}(\Phi) = 6.444\times10^{15}\ \mathrm{cm^{-3}}$ 을 넣는다.</p>
+$$
+\eta_c = \frac{N_{eff}(0) - N_{eff}(\Phi)}{\Phi}
+$$<p>분자를 먼저 뺀다.</p>
+$$
+7.376\times10^{15} - 6.444\times10^{15} = 9.32\times10^{14}\ \mathrm{cm^{-3}}
+$$<p>플루언스 $\Phi = 5\times10^{13}\ \mathrm{cm^{-2}}$ 로 나눈다.</p>
+$$
+\eta_c = \frac{9.32\times10^{14}}{5\times10^{13}} = 18.6\ \mathrm{cm^{-1}}
+$$<p>곧 실측 캐리어 제거 계수는 18.6 cm⁻¹이다. 신뢰할 $N_{eff}$ 를 위해 표류 정전용량을 개방 보정으로 고정한 뒤 회귀하며, 기준 시료는 26 V 위 인공 점프를 적합에서 뺀다.</p>
+<h2 id="10-유효값-틀--무엇이-유효이고-어디서-깨지는가">10. 유효값 틀 — 무엇이 유효이고 어디서 깨지는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>유효라는 말은 어느 정도 오차를 감안하고 타당하게 받아들인다는 뜻이다. 위계로 적으면 1) 일반적으로 유효값은 바탕 꼴이 대략 맞아 나온 수가 합리적일 때 받아들이는 것이고, 2) 특수하게 바탕 꼴이 통째로 틀려 나온 수가 황당해지면 유효라는 말로도 살릴 수 없다.</p>
+<p>순방향 유효 수명이 첫째 경우이다. 조사 시료의 $n=1.87$ 은 2에 가까워 재결합 꼴이 대략 맞으므로, 뽑은 18 ns는 합리적이고 유효 수명으로 받아들인다.</p>
+<p>둘째 경우는 역방향 전류를 유효 생성 수명으로 정의하려 할 때 나온다. 5절의 생성 공식 $\tau_g = qn_iWA/I$ 에 −5 V의 실측 전류 $1.36\times10^{-10}$ A를 넣으면 다음이 된다.</p>
+$$
+\tau_g = \frac{(1.602\times10^{-19})(8.4\times10^{-9})(1.162\times10^{-4})(3.24\times10^{-2})}{1.36\times10^{-10}}
+$$<p>분자를 차례로 곱한다.</p>
+$$
+(1.346\times10^{-27})(1.162\times10^{-4}) = 1.564\times10^{-31}
+$$<p>
+</p>
+$$
+(1.564\times10^{-31})(3.24\times10^{-2}) = 5.07\times10^{-33}
+$$<p>분모로 나눈다.</p>
+$$
+\tau_g = \frac{5.07\times10^{-33}}{1.36\times10^{-10}} = 3.7\times10^{-23}\ \mathrm{s}
+$$<p>이 값은 원자 진동 주기인 약 $10^{-13}$ s보다도 10자릿수 아래라 물리적으로 무의미하다. 여기서의 어긋남은 어느 정도 오차가 아니라, 열적 생성 공식이 십수 자릿수 틀린 데서 오는 절대적 무의미이다. 그러므로 역방향은 유효 생성 수명으로 정의하지 않는다. 그리고 다음 12절에서 보듯 유효 Poole-Frenkel 계수도 실측이 이론값의 55배라 깨끗이 내놓을 수 없으므로, 역방향은 정성적 손상 신호로 자리매김한다.</p>
+<h2 id="11-손상-계수와-변위-손상의-짝짓기">11. 손상 계수와 변위 손상의 짝짓기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>지금까지 두 전기적 손상 계수를 얻었다. 하나는 I-V에서 나온 수명 손상 계수 $K_\tau$ 이고, 다른 하나는 C-V에서 나온 캐리어 제거 계수 $\eta_c$ 이다. 이 둘을 양성자가 격자에 준 물리적 손상과 짝짓는다.</p>
+<p>변위 손상이란 양성자가 격자 원자를 자리에서 밀어내 만드는 손상으로, 그 세기는 비전리 에너지 손실 NIEL로 잰다. NIEL은 단위 질량당 변위에 쓰인 에너지 손실로 단위는 $\mathrm{MeV\cdot cm^2/g}$ 이며 SRIM으로 얻는다. 변위 손상의 누적량은 NIEL에 플루언스를 곱한 것이다.</p>
+$$
+D_d = \mathrm{NIEL}\times\Phi
+$$<p>변위 손상 가설은 두 전기적 계수가 NIEL에 비례한다는 것이다.</p>
+$$
+K_\tau = k_\tau\cdot\mathrm{NIEL}, \qquad \eta_c = k_c\cdot\mathrm{NIEL}
+$$<p>이를 검증하려면 서로 다른 에너지에서 측정한 계수의 비가 NIEL 비와 맞는지 본다.</p>
+$$
+\frac{K_\tau(E_1)}{K_\tau(E_2)} = \frac{\mathrm{NIEL}(E_1)}{\mathrm{NIEL}(E_2)}
+$$<p><strong>수치 예제 9: 변위 손상 누적량과 NIEL 비</strong></p>
+<p>문헌이 인용한 NIEL 값은 15 MeV 양성자가 $1.5\times10^{-2}\ \mathrm{MeV\cdot cm^2/g}$, 55 MeV 양성자가 $3.96\times10^{-3}\ \mathrm{MeV\cdot cm^2/g}$ 이다. 14.8 MeV는 15 MeV에 가까우므로 그 NIEL을 쓴다. 변위 손상 누적량을 구한다. 플루언스 $\Phi = 5\times10^{13}\ \mathrm{cm^{-2}}$ 에서</p>
+$$
+D_d = (1.5\times10^{-2})(5\times10^{13}) = 7.5\times10^{11}\ \mathrm{MeV/g}
+$$<p>이다. NIEL의 비를 구한다.</p>
+$$
+\frac{\mathrm{NIEL}(15\ \mathrm{MeV})}{\mathrm{NIEL}(55\ \mathrm{MeV})} = \frac{1.5\times10^{-2}}{3.96\times10^{-3}} = 3.8
+$$<p>따라서 변위 손상 가설이 맞다면 같은 소자에서 14.8 MeV의 계수는 55 MeV 값의 약 3.8배여야 한다. 현재는 단일 에너지·단일 플루언스라 이 비례 검증을 직접 하지 못하며, 이는 추가 실험으로 채울 자리이다. NIEL 값 자체도 인용값이므로 SRIM으로 다시 확정한다.</p>
+<h1 id="3부-실측-데이터로부터의-추출">3부. 실측 데이터로부터의 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="12-세-거시-신호와-역방향에서-단순-poole-frenkel의-배제">12. 세 거시 신호와 역방향에서 단순 Poole-Frenkel의 배제<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>손상의 거시 신호는 셋이며, 미시 추출에 앞서 현상으로 먼저 보인다.</p>
+<p>첫째는 순방향 이상계수 비대칭이다. 기준 시료는 $n\approx2.0$ 이 약 2.0 V 부근의 좁은 구간에만 있고 전류가 오르면 확산으로 미끄러지며, 조사 시료는 $n\approx1.87$ 이 약 네 자릿수 전류 범위에 걸쳐 평탄하다. 7절에서 본 대로 이것은 재결합 중심이 늘고 그 성격이 약간 치우쳤다는 신호이다.</p>
+<p>둘째는 역방향에 새로 생긴 장 구동 누설이다. 기준 시료의 역방향 전류는 −4에서 −1 V에서 부호가 마구 뒤집히는 잡음(약 0.3 pA)이고 −5 V에서 겨우 $-7.06$ pA이다. 조사 시료는 약 −4 V부터 부호가 일정하게 음이며 전기장이 끌어올리는 매끄러운 상승이 −5 V에서 $-135.93$ pA에 이른다. 5절에서 보았듯 이것은 열적 생성($\sim10^{-25}$ A)이 아니라 장이 구동하는 전류이다.</p>
+<p>이 역방향 전류를 4절의 Poole-Frenkel 이론과 실측으로 견준다. 잡음 바닥(약 0.65 pA)을 넘는 쓸 만한 창은 −4.5에서 −5 V로, 이 안에서 최대 전기장은 $1.35\times10^{5}$ 에서 $1.39\times10^{5}$ V/cm로 3.2%만 변하는데 전류는 약 40배 솟는다. 여기에 Poole-Frenkel 꼴 $\ln(I/E)$ 대 $\sqrt{E}$ 를 적합하면 결정계수는 0.90이나, 기울기에서 나온 유효 계수가 다음이다.</p>
+$$
+\beta_{eff} = (\text{기울기})\times kT = 0.520\times0.0259 = 1.35\times10^{-2}\ \mathrm{eV\,(V/cm)^{-0.5}}
+$$<p>예제 3에서 구한 4H-SiC의 이론 계수 $\beta_{PF} = 2.44\times10^{-4}$ 과 견주면</p>
+$$
+\frac{\beta_{eff}}{\beta_{PF}} = \frac{1.35\times10^{-2}}{2.44\times10^{-4}} = 55
+$$<p>이다. 유효 계수가 이론값의 약 55배이다. 유효 계수가 이론값의 1~3배이면 전기장 불균일을 감안한 Poole-Frenkel로 받아들일 수 있으나, 55배는 그 범위를 한참 벗어나 단순 부피 Poole-Frenkel로 설명되지 않는다. 게다가 3.2%의 좁은 전기장 창에서는 Poole-Frenkel(결정계수 0.90)·Fowler-Nordheim 터널링(0.90)·순수 지수(0.91)가 모두 똑같이 맞아 어느 기제인지 가릴 수 없다. 곧 이 한 측정만으로는 역방향 전류를 특정 장 방출 기제에 못 박을 수 없다. 따라서 역방향은 조사로 생긴 장 구동 누설이라는 또렷한 정성적 손상 신호로 자리매김하고, 기제 확정(Poole-Frenkel 대 터널링 대 국소 고전기장)은 온도 의존·더 넓은 전기장 측정의 몫으로 둔다.</p>
+<p>셋째는 C-V 캐리어 제거이다. $1/C^2$ 직선의 기울기에서 얻은 유효 도핑이 $7.376\times10^{15}$ 에서 $6.444\times10^{15}\ \mathrm{cm^{-3}}$ 으로 줄어든다.</p>
+<h2 id="13-역방향-손상의-두-정량-지표">13. 역방향 손상의 두 정량 지표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>12절에서 역방향 전류가 장 구동임은 보였으나 그 기제는 한 측정으로 못 박지 못했다. 그러나 기제를 몰라도 역방향 손상을 두 가지로 정량화할 수 있으며, 이것이 역방향을 정성 신호에서 정량 지표로 올린다. 위계로 적으면 1) 누설의 크기 자체는 전류 손상률 $\alpha$ 로 적고, 2) 그 누설이 소자 출력에 미치는 영향은 옴성 병렬 저항 $R_{sh}$ 로 적는다. 핵심 결론을 먼저 적으면, 전류 손상률은 $\alpha(-5\mathrm{V}) \approx 6.9\times10^{-19}$ A/cm로 실리콘의 약 1/58이고, 옴성 병렬 저항은 조사로 측정 불가에서 약 405 GΩ으로 떨어진다.</p>
+<h3 id="131-전류-손상률--누설의-크기">13.1 전류 손상률 — 누설의 크기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>전류 손상률은 방사선이 더한 누설 전류를 공핍 부피와 플루언스로 나눈 양으로, 방사선 검출기 분야에서 누설 손상을 적는 표준 지표이다. 이 양의 강점은 정의가 산술이라 기제를 묻지 않는 데 있다. 방사선이 더한 누설이 공핍 부피에서 나오고 플루언스에 비례한다고 두면</p>
+$$
+\Delta I = \alpha\, V_{dep}\, \Phi
+$$<p>이고, $\alpha$ 에 대해 푼다. 양변을 $V_{dep}\Phi$ 로 나눈다.</p>
+$$
+\alpha = \frac{\Delta I}{V_{dep}\,\Phi}
+$$<p><strong>수치 예제 10: 실측 전류 손상률</strong></p>
+<p>−5 V에서 누설 증가분은 두 시료 전류 크기의 차이이다.</p>
+$$
+\Delta I = |I_{5e13}| - |I_{ref}| = 135.9 - 7.06 = 128.9\ \mathrm{pA} = 1.289\times10^{-10}\ \mathrm{A}
+$$<p>공핍 부피는 면적 곱하기 −5 V의 공핍 폭이다.</p>
+$$
+V_{dep} = A\times W = (3.24\times10^{-2})(1.162\times10^{-4}) = 3.764\times10^{-6}\ \mathrm{cm^3}
+$$<p>전류 손상률을 구한다. 분모를 먼저 곱한다.</p>
+$$
+V_{dep}\,\Phi = (3.764\times10^{-6})(5\times10^{13}) = 1.882\times10^{8}
+$$<p>나눈다.</p>
+$$
+\alpha = \frac{1.289\times10^{-10}}{1.882\times10^{8}} = 6.85\times10^{-19}\ \mathrm{A/cm}
+$$<p>실리콘 검출기의 표준값이 약 $4\times10^{-17}$ A/cm이므로 이 SiC 셀은 그 약 1/58이라, 누설 손상이 실리콘보다 58배 작다는 방사선 경도를 준다. 다만 실리콘 값은 생성 전류 기준이고 이쪽은 장 강화라 거친 벤치마크로 적는다.</p>
+<p>정직한 단서 하나를 적는다. 부피 생성이 지배하면 $\alpha$ 가 바이어스에 무관해야 하나, 이 전류는 그렇지 않다. 같은 계산을 −4.5 V에서 하면 $1.79\times10^{-20}$, −4.75 V에서 $4.39\times10^{-20}$, −5 V에서 $6.85\times10^{-19}$ A/cm로 0.5 V 사이에 약 38배 변한다. 이 바이어스 의존이 곧 이 전류가 부피 생성이 아니라 장 강화라는 증거이므로, $\alpha$ 는 정해진 기준 바이어스(−5 V)에서 적는다.</p>
+<h3 id="132-옴성-병렬-저항의-이론--왜-누설이-출력을-갉아먹는가">13.2 옴성 병렬 저항의 이론 — 왜 누설이 출력을 갉아먹는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>베타볼타익 셀은 전력을 내는 소자이므로, 누설이 그 전력을 얼마나 갉아먹는지를 등가 회로로 적는다. 위계로 적으면 1) 일반적으로 전력 내는 접합 셀은 전류원·다이오드·두 저항으로 모형화되고, 2) 특수하게 병렬 저항이 누설 경로를 나타낸다.</p>
+<p>셀의 등가 회로는 네 요소이다. 베타선이 만든 전류원 $I_L$(베타 전류), 그와 병렬인 p-n 접합 다이오드, 그와 병렬인 병렬 저항 $R_{sh}$(누설 경로), 직렬인 직렬 저항 $R_s$(접촉·벌크 저항). 이 네 요소를 회로로 그리면 다음과 같다.</p>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="400" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="350" y="34" text-anchor="middle" font-size="18" fill="#334155" font-weight="600">베타볼타익 셀 등가 회로</text>
+  <g stroke="#1f2937" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line x1="120" y1="100" x2="450" y2="100"/>
+    <line x1="120" y1="320" x2="620" y2="320"/>
+    <line x1="120" y1="100" x2="120" y2="186"/>
+    <line x1="120" y1="234" x2="120" y2="320"/>
+    <line x1="290" y1="100" x2="290" y2="190"/>
+    <line x1="290" y1="228" x2="290" y2="320"/>
+    <line x1="450" y1="100" x2="450" y2="178"/>
+    <line x1="450" y1="242" x2="450" y2="320"/>
+    <line x1="450" y1="100" x2="486" y2="100"/>
+    <line x1="550" y1="100" x2="620" y2="100"/>
+  </g>
+  <circle cx="120" cy="210" r="24" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="120" y1="225" x2="120" y2="199" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="120,192 114,204 126,204" fill="#2563eb"/>
+  <text x="60" y="216" font-size="21" fill="#2563eb" font-weight="600">I<tspan font-size="13" dy="5">L</tspan></text>
+  <text x="120" y="282" text-anchor="middle" font-size="12.5" fill="#64748b">베타 전류원</text>
+  <polygon points="272,190 308,190 290,228" fill="#1f2937"/>
+  <line x1="270" y1="228" x2="310" y2="228" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="322" y="216" font-size="21" fill="#1f2937">D</text>
+  <text x="290" y="282" text-anchor="middle" font-size="12.5" fill="#64748b">접합 다이오드</text>
+  <rect x="436" y="178" width="28" height="64" fill="#ffffff" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="478" y="216" font-size="21" fill="#dc2626" font-weight="600">R<tspan font-size="13" dy="5">sh</tspan></text>
+  <text x="450" y="282" text-anchor="middle" font-size="12.5" fill="#dc2626">누설 경로</text>
+  <rect x="486" y="88" width="64" height="24" fill="#ffffff" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="518" y="80" text-anchor="middle" font-size="21" fill="#1f2937">R<tspan font-size="13" dy="5">s</tspan></text>
+  <text x="518" y="132" text-anchor="middle" font-size="12.5" fill="#64748b">접촉·벌크 저항</text>
+  <circle cx="620" cy="100" r="5" fill="#1f2937"/>
+  <circle cx="620" cy="320" r="5" fill="#1f2937"/>
+  <text x="632" y="96" font-size="19" fill="#1f2937" font-weight="600">+</text>
+  <text x="632" y="333" font-size="26" fill="#1f2937" font-weight="600">−</text>
+  <polygon points="601,100 591,95 591,105" fill="#1f2937"/>
+  <text x="580" y="88" font-size="18" fill="#1f2937" font-style="italic">I</text>
+  <line x1="652" y1="108" x2="652" y2="312" stroke="#1f2937" stroke-width="2"/>
+  <polygon points="652,101 647,112 657,112" fill="#1f2937"/>
+  <polygon points="652,319 647,308 657,308" fill="#1f2937"/>
+  <text x="664" y="216" font-size="21" fill="#1f2937" font-style="italic">V</text>
+</svg>
+<p><em>그림 13.1. 베타볼타익 셀의 등가 회로. 베타 전류원 $I_L$ 과 접합 다이오드 $D$ 와 누설 병렬 저항 $R_{sh}$ 이 모두 같은 두 마디 사이에 병렬로 붙고, 접촉·벌크 직렬 저항 $R_s$ 를 거쳐 출력 단자로 나간다. 전류원 화살표는 베타 전류가 위 마디로 공급되는 방향이고, 다이오드는 순방향이 아래로 향해 위 마디의 전류를 빼가며, 병렬 저항 $R_{sh}$ 으로 새는 전류가 출력($V$, $I$)을 깎는다.</em></p>
+<p>부하에 나가는 전류는 키르히호프 전류 법칙으로 적는다.</p>
+$$
+I = I_L - I_0\left[\exp\!\left(\frac{q(V+IR_s)}{nkT}\right) - 1\right] - \frac{V+IR_s}{R_{sh}}
+$$<p>병렬 저항 효과만 보려고 직렬 저항을 0으로 둔다.</p>
+$$
+I = I_L - I_0\left[\exp\!\left(\frac{qV}{nkT}\right) - 1\right] - \frac{V}{R_{sh}}
+$$<p>세 항의 뜻을 적는다. 첫 항 $I_L$ 은 베타선이 공급하는 전류, 둘째 항은 접합 다이오드로 되돌아 흐르는 전류, 셋째 항 $V/R_{sh}$ 은 병렬 저항으로 새는 전류이다. 병렬 저항이 작을수록 셋째 항이 커져, 만든 베타 전류가 부하로 안 가고 누설로 샌다. 이것이 병렬 저항이 출력을 깎는 근본 까닭이다.</p>
+<p>개방 전압은 부하를 떼어 $I=0$ 일 때의 전압으로 셀이 낼 수 있는 가장 높은 전압이며, 셋째 항이 이를 낮춘다. $I=0$ 을 넣는다.</p>
+$$
+0 = I_L - I_0\left[\exp\!\left(\frac{qV_{oc}}{nkT}\right) - 1\right] - \frac{V_{oc}}{R_{sh}}
+$$<p>먼저 병렬 저항이 없는 경우($R_{sh}\to\infty$, 셋째 항 0)를 본다.</p>
+$$
+I_L = I_0\left[\exp\!\left(\frac{qV_{oc}}{nkT}\right) - 1\right]
+$$<p>양변을 $I_0$ 로 나눈다.</p>
+$$
+\frac{I_L}{I_0} = \exp\!\left(\frac{qV_{oc}}{nkT}\right) - 1
+$$<p>양변에 1을 더한다.</p>
+$$
+\frac{I_L}{I_0} + 1 = \exp\!\left(\frac{qV_{oc}}{nkT}\right)
+$$<p>양변에 로그를 취하고 $V_{oc}$ 로 푼다.</p>
+$$
+V_{oc} = \frac{nkT}{q}\ln\!\left(\frac{I_L}{I_0} + 1\right)
+$$<p>이것이 누설 없는 개방 전압이다. 병렬 저항이 유한하면 셋째 항 $V_{oc}/R_{sh}$ 이 베타 전류의 일부를 빼가, 다이오드로 가는 전류가 줄고 그 전류를 만드는 전압도 낮아야 하므로 개방 전압이 이 값보다 떨어진다. 곧 병렬 저항이 작을수록 개방 전압이 깎인다.</p>
+<p>충진율은 셀이 내는 최대 전력을 개방 전압과 단락 전류의 곱으로 나눈 값으로, 출력 곡선이 사각형에 얼마나 가까운지를 잰다. 병렬 저항은 0 V 부근에서 원점을 지나는 직선 $I=V/R_{sh}$ 을 더해 이 사각형을 찌그러뜨린다. 영향의 크기는 정규화 병렬 저항으로 적는다. 셀의 특성 저항을 개방 전압을 단락 전류로 나눈 것으로 정의한다.</p>
+$$
+R_{ch} = \frac{V_{oc}}{I_{sc}}
+$$<p>정규화 병렬 저항은 병렬 저항을 특성 저항으로 나눈 것이다.</p>
+$$
+r_{sh} = \frac{R_{sh}}{R_{ch}}
+$$<p>정규화 병렬 저항이 클 때 충진율 손실은 근사적으로 그 역수이다(Green의 표준 근사).</p>
+$$
+\frac{\Delta FF}{FF} \approx \frac{1}{r_{sh}}
+$$<p>곧 병렬 저항이 특성 저항보다 훨씬 크면 누설이 부하보다 훨씬 안 통해 손실이 작고, 비슷해지면 누설이 부하만큼 전류를 빼가 손실이 크다.</p>
+<p><strong>수치 예제 12: 이 셀의 병렬 저항이 출력에 미치는 영향</strong></p>
+<p>이 셀의 병렬 저항 $R_{sh} = 405$ GΩ이 출력에 미치는 영향은 베타 전류 크기에 달렸으므로 두 경우로 계산한다. 첫째, 베타 전류가 1 nA이고 개방 전압이 1 V이면 특성 저항은</p>
+$$
+R_{ch} = \frac{1}{1\times10^{-9}} = 1\times10^{9}\ \Omega = 1\ \mathrm{G}\Omega
+$$<p>이고, 정규화 병렬 저항은</p>
+$$
+r_{sh} = \frac{405}{1} = 405
+$$<p>이라 충진율 손실은 $1/405 = 0.25\%$ 로 무시할 만하다. 둘째, 베타 전류가 10 pA로 작으면 특성 저항은</p>
+$$
+R_{ch} = \frac{1}{10\times10^{-12}} = 1\times10^{11}\ \Omega = 100\ \mathrm{G}\Omega
+$$<p>이고, 정규화 병렬 저항은</p>
+$$
+r_{sh} = \frac{405}{100} = 4.05
+$$<p>이라 충진율 손실은 $1/4.05 = 25\%$ 로 심각하다. 곧 같은 405 GΩ이라도 베타 전류가 nA급이면 영향이 없고 수십 pA급이면 크므로, 이 셀의 실제 베타 전류를 알아야 영향이 정해진다.</p>
+<h3 id="133-옴성-병렬-저항의-실측-분리">13.3 옴성 병렬 저항의 실측 분리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>앞 이론이 말하듯 병렬 저항은 0 V 부근 전류에서 뽑는다. 그런데 0 V 부근 전류에는 진짜 소자 누설과 계측 오프셋이 섞여 있어 먼저 갈라야 한다. 둘은 전압을 뒤집으면 갈린다. 임의의 전류는 우함수 성분과 기함수 성분으로 갈라진다.</p>
+$$
+I(V) = I_{대칭}(V) + I_{반대칭}(V)
+$$<p>각 성분은 다음으로 정의한다.</p>
+$$
+I_{대칭}(V) = \frac{I(V) + I(-V)}{2}, \qquad I_{반대칭}(V) = \frac{I(V) - I(-V)}{2}
+$$<p>옴성 병렬 저항은 $I = V/R_{sh}$ 이라 전압을 뒤집으면 부호가 뒤집힌다. 정의 $I_{반대칭}(V) = [I(V)-I(-V)]/2$ 에 $I(-V) = -V/R_{sh} = -I(V)$ 를 넣으면</p>
+$$
+I_{반대칭}(V) = \frac{I(V) - (-I(V))}{2} = I(V)
+$$<p>이라, 옴성 병렬 저항은 통째로 반대칭 성분에 들어간다. 계측 오프셋은 전압과 무관한 상수 $I = c$ 이라, 정의 $I_{대칭}(V) = [I(V)+I(-V)]/2$ 에 $I(-V) = c = I(V)$ 를 넣으면</p>
+$$
+I_{대칭}(V) = \frac{c + c}{2} = c
+$$<p>이라, 오프셋은 통째로 대칭 성분에 들어간다. 그러므로 반대칭 성분의 기울기가 병렬 전도 $G$ 이고 그 역수가 병렬 저항이다.</p>
+$$
+R_{sh} = \frac{1}{G}
+$$<p><strong>수치 예제 11: 실측 옴성 병렬 저항 분리</strong></p>
+<p>조사 시료의 ±0.5 V 전류로 두 성분을 구한다. $I(+0.5) = 4.57$ pA, $I(-0.5) = 1.97$ pA이다. 반대칭 성분은</p>
+$$
+I_{반대칭}(0.5) = \frac{4.57 - 1.97}{2} = 1.30\ \mathrm{pA}
+$$<p>대칭 성분은</p>
+$$
+I_{대칭}(0.5) = \frac{4.57 + 1.97}{2} = 3.27\ \mathrm{pA}
+$$<p>이다. ±1.0 V에서도 같이 하면 $I(+1.0)=6.75$ pA, $I(-1.0)=1.68$ pA이라 반대칭이 $(6.75-1.68)/2 = 2.54$ pA이다. 반대칭 성분이 0.5 V에서 1.30 pA, 1.0 V에서 2.54 pA로 거의 2배라 전압에 비례하므로 옴성이 맞다. 그 기울기가 전도 $G = 2.47\times10^{-12}$ S이므로 병렬 저항을 구한다.</p>
+$$
+R_{sh}(5e13) = \frac{1}{2.47\times10^{-12}} = 4.05\times10^{11}\ \Omega = 405\ \mathrm{G}\Omega
+$$<p>같은 분리를 기준 시료에 하면 반대칭 기울기가 음수로 나와(잡음) 옴성 성분이 없으므로, 병렬 저항은 측정 한계 이상($> 10^{13}\ \Omega$)이다. 대칭(오프셋) 성분은 조사 시료가 약 3.7 pA, 기준 시료가 약 0.33 pA로, 전압과 무관한 양의 상수이고 두 측정에서 다르므로 소자가 아니라 계측 잔류이다. 곧 양성자 조사가 측정 불가이던 병렬 저항을 약 405 GΩ으로 떨어뜨렸고, 이것이 오프셋을 걷어낸 진짜 소자 누설이다. 다만 이 신호도 pA급이라 405 GΩ은 약 30% 안팎의 오차를 가진 추정값이다.</p>
+<h3 id="134-역방향의-두-영역">13.4 역방향의 두 영역<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 두 지표는 역방향의 서로 다른 두 영역에서 나온다. 위계로 적으면 1) 0 V 부근은 옴성 병렬 저항($R_{sh} \approx 405$ GΩ, 저전기장, 선형)이 지배하고, 2) 높은 역바이어스(−4에서 −5 V)는 장 구동 터널링(가파른 상승, $\alpha$ 지표)이 지배한다. 둘은 성격이 다르다. 옴성 병렬 저항은 0 V 부근에서 전류를 흘리므로 셀이 일하는 동작점 근처에서 실제로 출력을 갉아먹는 부분이고, 장 구동 터널링은 −5 V에서만 크고 동작점에서는 작아 출력과는 덜 관련된다. 그러므로 소자 출력에 진짜로 중요한 것은 0 V 부근의 옴성 병렬 저항이고, 그 영향의 크기는 이 셀의 실제 베타 전류에 견주어 정한다(405 GΩ은 높은 값이라 베타 전류가 nA급이면 영향이 작고 수십 pA급이면 크다).</p>
+<p>역방향 손상의 결론을 적으면, 누설의 크기는 전류 손상률 $\alpha(-5\mathrm{V}) \approx 6.9\times10^{-19}$ A/cm(실리콘의 약 1/58)로, 소자 출력 영향은 측정 불가에서 약 405 GΩ으로 떨어진 옴성 병렬 저항으로 적으며, 기제는 결함 덩어리의 트랩 보조 터널링으로 정성적으로 좁히되 온도 측정 없이 못 박지는 않는다.</p>
+<h2 id="14-미시-추출과-분석-흐름">14. 미시 추출과 분석 흐름<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>네 신호에 대응하는 양을 뽑는다. 위계로 적으면 1) C-V에서 캐리어 제거를, 2) 순방향 I-V에서 SRH 유효 수명을, 3) 역방향 I-V에서 전류 손상률과 옴성 병렬 저항을 얻은 뒤, 변위 손상에 짝지을 세 계수를 NIEL과 잇는다.</p>
+<p>먼저 C-V를 모트-쇼트키로 분석해 개방 보정 후 유효 도핑을 얻고(기준 시료는 26 V 위 인공물 제외), 9절로 캐리어 제거 계수 $\eta_c = 18.6\ \mathrm{cm^{-1}}$ 을 뽑는다. 같은 분석이 주는 공핍 폭을 수명 추출에 쓴다.</p>
+<p>다음으로 순방향 I-V를 반로그로 그려 각 시료의 재결합 구간을 찾고, 6절과 7절의 식에 각 시료의 제 기울기를 넣어 유효 수명을 뽑는다. 기준 시료는 약 53 ns(33~66 ns, 좁은 구간 탓에 약 2배 불확실), 조사 시료는 약 18 ns이다. 8절로 단일 플루언스 수명 손상 계수 $K_\tau \approx 7.3\times10^{-7}\ \mathrm{cm^2/s}$ 를 추정한다.</p>
+<p>다음으로 역방향 I-V는 13절의 두 지표로 정량화한다. 누설의 크기는 −5 V를 기준으로 전류 손상률 $\alpha(-5\mathrm{V}) \approx 6.9\times10^{-19}\ \mathrm{A/cm}$ 로 적고, 소자 출력 영향은 0 V 부근 전류를 대칭·반대칭으로 갈라 뽑은 옴성 병렬 저항(기준 시료 측정 불가에서 조사 시료 약 405 GΩ)으로 적는다. 단순 Poole-Frenkel은 유효 계수가 이론의 55배라 배제됨을 결과로 적고, 기제는 결함 덩어리의 트랩 보조 터널링으로 정성적으로 좁히되 확정은 추가 측정에 맡긴다.</p>
+<p>끝으로 변위 손상에 짝지을 세 계수, 곧 수명 손상 계수 $K_\tau$ 와 캐리어 제거 계수 $\eta_c$ 와 전류 손상률 $\alpha$ 를 11절의 NIEL과 잇는다. 현재 단일 에너지·단일 플루언스라 비례 검증은 추가 실험의 몫이며, 본 논문은 이 소자에 대한 단일 플루언스 계수와 네 신호의 일관된 묘사를 내놓는다.</p>
+<p>결론을 다시 한 문장으로 적으면, 이 논문은 SiC에서 측정 불가능한 역방향 열적 생성 대신 순방향 재결합 전류에서 SRH 유효 수명(약 53 ns에서 약 18 ns)을 뽑아 수명 손상 계수 $K_\tau \approx 7.3\times10^{-7}\ \mathrm{cm^2/s}$ 를 얻고 C-V에서 캐리어 제거 계수 $\eta_c \approx 18.6\ \mathrm{cm^{-1}}$ 을 얻으며, 역방향 장 구동 누설을 두 지표로 정량화해 누설 크기는 전류 손상률 $\alpha(-5\mathrm{V}) \approx 6.9\times10^{-19}\ \mathrm{A/cm}$(실리콘의 약 1/58)로 소자 출력 영향은 측정 불가에서 약 405 GΩ으로 떨어진 옴성 병렬 저항으로 적은 뒤(단순 Poole-Frenkel은 유효 계수가 이론의 55배라 배제, 기제는 결함 덩어리의 트랩 보조 터널링으로 정성적으로 좁힘), 변위 손상에 짝지을 세 계수 $K_\tau$·$\eta_c$·$\alpha$ 를 NIEL과 이어 양성자 변위 손상의 전기적 서명을 단일 플루언스에서 정량화하는 것이다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/research/research_pin/index.html"><a class="padding default-animation" href="/research/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-82152494e935f1e70539dfcd043a965c" class="collapsible-menu">
+            <li class="" data-nav-id="/research/research_pin/outline/index.html"><a class="padding" href="/research/research_pin/outline/index.html">Outline</a></li>
+            <li class="" data-nav-id="/research/research_pin/derivation1/index.html"><a class="padding" href="/research/research_pin/derivation1/index.html">Derivation1</a></li>
+            <li class="" data-nav-id="/research/research_pin/derivation2/index.html"><a class="padding" href="/research/research_pin/derivation2/index.html">Derivation2</a></li>
+            <li class="" data-nav-id="/research/research_pin/paper1_/index.html"><a class="padding" href="/research/research_pin/paper1_/index.html">논문 1 원고: 4H-SiC p-i-n 베타볼타익 셀의 양성자 변위 손상 — 어두운 전류와 C-V 분석</a></li>
+            <li class="active " data-nav-id="/research/research_pin/paper1_detail/index.html"><a class="padding" href="/research/research_pin/paper1_detail/index.html">paper1-detail</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/research/research_pa/index.html"><a class="padding default-animation" href="/research/research_pa/index.html">Research_PA</a><ul id="R-subsections-2390e6b55015b7af1378a34fefa17a01" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781946151"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781946151" defer></script>
+    <script src="/js/theme.js?1781946151" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
