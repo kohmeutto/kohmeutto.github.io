@@ -1159,6 +1159,9 @@
     <loc>http://localhost:1313/categories/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/semiconductor/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/index.html</loc>
   </url>
   <url>

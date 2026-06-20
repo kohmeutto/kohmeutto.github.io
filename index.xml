@@ -113,6 +113,13 @@
       <description>Reserch_PIN Research_PA</description>
     </item>
     <item>
+      <title>Semiconductors</title>
+      <link>http://localhost:1313/semiconductor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semiconductor/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Temps</title>
       <link>http://localhost:1313/temp/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
