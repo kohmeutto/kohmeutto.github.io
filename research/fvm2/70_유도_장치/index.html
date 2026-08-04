@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="70. 유도 — 감쇠, 보폭, 격자, 시간60_유도_상한.md 에서 $\rho_{\mathrm{int}}$ 를 얻었습니다. 이제 그 값으로 무엇을 정하는지 봅니다.
+절 무엇을 정하나 코드 1 얼마나 갈 것인가 (감쇠 인자) AdaptiveDamper adaptiveTolerances 2 얼마나 정확히 풀 것인가 adaptiveTolerances 3 구조가 안 깨지는 최대 걸음 trustRegionStep 4 격자를 얼마나 늘릴 것인가 meshSufficiency 5 시간 간격을 얼마로 할 것인가 AssembledSystem.dtBound 다섯 다 식에서 나온 값입니다. 사람이 손으로 고른 숫자가 하나도 없습니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="유도 장치 :: 수리전자물리학">
+    <meta name="twitter:description" content="70. 유도 — 감쇠, 보폭, 격자, 시간60_유도_상한.md 에서 $\rho_{\mathrm{int}}$ 를 얻었습니다. 이제 그 값으로 무엇을 정하는지 봅니다.
+절 무엇을 정하나 코드 1 얼마나 갈 것인가 (감쇠 인자) AdaptiveDamper adaptiveTolerances 2 얼마나 정확히 풀 것인가 adaptiveTolerances 3 구조가 안 깨지는 최대 걸음 trustRegionStep 4 격자를 얼마나 늘릴 것인가 meshSufficiency 5 시간 간격을 얼마로 할 것인가 AssembledSystem.dtBound 다섯 다 식에서 나온 값입니다. 사람이 손으로 고른 숫자가 하나도 없습니다.">
+    <meta property="og:url" content="http://localhost:1313/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="유도 장치 :: 수리전자물리학">
+    <meta property="og:description" content="70. 유도 — 감쇠, 보폭, 격자, 시간60_유도_상한.md 에서 $\rho_{\mathrm{int}}$ 를 얻었습니다. 이제 그 값으로 무엇을 정하는지 봅니다.
+절 무엇을 정하나 코드 1 얼마나 갈 것인가 (감쇠 인자) AdaptiveDamper adaptiveTolerances 2 얼마나 정확히 풀 것인가 adaptiveTolerances 3 구조가 안 깨지는 최대 걸음 trustRegionStep 4 격자를 얼마나 늘릴 것인가 meshSufficiency 5 시간 간격을 얼마로 할 것인가 AssembledSystem.dtBound 다섯 다 식에서 나온 값입니다. 사람이 손으로 고른 숫자가 하나도 없습니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="유도 장치 :: 수리전자물리학">
+    <meta itemprop="description" content="70. 유도 — 감쇠, 보폭, 격자, 시간60_유도_상한.md 에서 $\rho_{\mathrm{int}}$ 를 얻었습니다. 이제 그 값으로 무엇을 정하는지 봅니다.
+절 무엇을 정하나 코드 1 얼마나 갈 것인가 (감쇠 인자) AdaptiveDamper adaptiveTolerances 2 얼마나 정확히 풀 것인가 adaptiveTolerances 3 구조가 안 깨지는 최대 걸음 trustRegionStep 4 격자를 얼마나 늘릴 것인가 meshSufficiency 5 시간 간격을 얼마로 할 것인가 AssembledSystem.dtBound 다섯 다 식에서 나온 값입니다. 사람이 손으로 고른 숫자가 하나도 없습니다.">
+    <meta itemprop="wordCount" content="3386">
+    <title>유도 장치 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785808636" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785808636" defer></script>
+    <script src="/js/search-lunr.js?1785808636" defer></script>
+    <script src="/js/search.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1785808636";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785808636" rel="stylesheet">
+    <link href="/css/theme.css?1785808636" rel="stylesheet">
+    <link href="/css/format-html.css?1785808636" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/fvm2\/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-얼마나-갈-것인가--감쇠-인자">1. 얼마나 갈 것인가 — 감쇠 인자</a>
+      <ul>
+        <li><a href="#11-왜-걸음을-줄여야-하는가">1.1 왜 걸음을 줄여야 하는가</a></li>
+        <li><a href="#12-무엇을-가장-작게-만들-것인가">1.2 무엇을 가장 작게 만들 것인가</a></li>
+        <li><a href="#13-잔차를-정리한다">1.3 잔차를 정리한다</a></li>
+        <li><a href="#14-어느-자로-재는가">1.4 어느 자로 재는가</a></li>
+        <li><a href="#15-자를-보통-자로-바꾼다">1.5 자를 보통 자로 바꾼다</a></li>
+        <li><a href="#16--의-고윳값을-안다">1.6  의 고윳값을 안다</a></li>
+        <li><a href="#17-최소점을-구한다">1.7 최소점을 구한다</a></li>
+        <li><a href="#17a-예측한-만큼-안-줄면-되돌아온다">1.7a 예측한 만큼 안 줄면 되돌아온다</a></li>
+        <li><a href="#왜-봐야-하는가">왜 봐야 하는가</a></li>
+        <li><a href="#실제-값을-재는-법">실제 값을 재는 법</a></li>
+        <li><a href="#어긋나면-무슨-뜻인가">어긋나면 무슨 뜻인가</a></li>
+        <li><a href="#맞는--를-거꾸로-구한다">맞는  를 거꾸로 구한다</a></li>
+        <li><a href="#다시-걸음을-정한다">다시 걸음을 정한다</a></li>
+        <li><a href="#숫자를-넣은-보기">숫자를 넣은 보기</a></li>
+        <li><a href="#얼마나-어긋나야-어긋난-것인가">얼마나 어긋나야 어긋난 것인가</a></li>
+        <li><a href="#최소점-근처는-평평하다">최소점 근처는 평평하다</a></li>
+        <li><a href="#실제로-그랬다">실제로 그랬다</a></li>
+        <li><a href="#언제-끝나고-언제-안-끝나는가">언제 끝나고 언제 안 끝나는가</a></li>
+        <li><a href="#은-무슨-뜻인가"> 은 무슨 뜻인가</a></li>
+        <li><a href="#그래서-격자를-먼저-본다">그래서 격자를 먼저 본다</a></li>
+        <li><a href="#격자가-충분할-때는-끝난다">격자가 충분할 때는 끝난다</a></li>
+        <li><a href="#비용">비용</a></li>
+        <li><a href="#이미-있던-것과-새로-만든-것">이미 있던 것과 새로 만든 것</a></li>
+        <li><a href="#걸음을-붙드는-일은-감쇠가-맡는다">걸음을 붙드는 일은 감쇠가 맡는다</a></li>
+        <li><a href="#18-이것이-뜻하는-것">1.8 이것이 뜻하는 것</a></li>
+        <li><a href="#19--가-작으면-걸음이-1-에-가깝다">1.9  가 작으면 걸음이 1 에 가깝다</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-얼마나-정확히-풀-것인가">2. 얼마나 정확히 풀 것인가</a>
+      <ul>
+        <li><a href="#21-왜-조절하는가">2.1 왜 조절하는가</a></li>
+        <li><a href="#22-기준을-무엇으로-삼는가">2.2 기준을 무엇으로 삼는가</a></li>
+        <li><a href="#23-한-번만-더를-기준으로-삼는다">2.3 「한 번만 더」를 기준으로 삼는다</a></li>
+        <li><a href="#24--를-얼마나-정확히-재면-되는가">2.4  를 얼마나 정확히 재면 되는가</a></li>
+        <li><a href="#25-선형해를-얼마나-정확히-풀면-되는가">2.5 선형해를 얼마나 정확히 풀면 되는가</a></li>
+        <li><a href="#26--를-아예-안-재도-될-때">2.6  를 아예 안 재도 될 때</a></li>
+        <li><a href="#26a---은-감쇠-없음이-아니라-모른다이다">2.6a   은 「감쇠 없음」이 아니라 「모른다」이다</a></li>
+        <li><a href="#실제로-그랬다-1">실제로 그랬다</a></li>
+        <li><a href="#모를-때-돌아갈-자리">모를 때 돌아갈 자리</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-구조가-안-깨지는-최대-걸음">3. 구조가 안 깨지는 최대 걸음</a>
+      <ul>
+        <li><a href="#31-무엇을-지키려는가">3.1 무엇을 지키려는가</a></li>
+        <li><a href="#32-괄호-안을-정리한다">3.2 괄호 안을 정리한다</a></li>
+        <li><a href="#33-무차원으로-바꾼다">3.3 무차원으로 바꾼다</a></li>
+        <li><a href="#34-여기서-1-이-나온다">3.4 여기서 1 이 나온다</a></li>
+        <li><a href="#35-걸음으로-바꾼다">3.5 걸음으로 바꾼다</a></li>
+        <li><a href="#34a-세-가지를-뭉치면-안-된다">3.4a 세 가지를 뭉치면 안 된다</a></li>
+        <li><a href="#걸음의-조건은-앞의-둘뿐이다">걸음의 조건은 앞의 둘뿐이다</a></li>
+        <li><a href="#뉴턴이-헤매지-않게-붙드는-것은-감쇠다">뉴턴이 헤매지 않게 붙드는 것은 감쇠다</a></li>
+        <li><a href="#실제로-그-둘이-뭉쳐-있었다">실제로 그 둘이 뭉쳐 있었다</a></li>
+        <li><a href="#35a-걸음은-대리-경계가-아니라-참-조건을-쓴다">3.5a 걸음은 대리 경계가 아니라 참 조건을 쓴다</a></li>
+        <li><a href="#제약은-간선마다-한쪽씩이다">제약은 간선마다 한쪽씩이다</a></li>
+        <li><a href="#격자-판정은-그대로-1-이다">격자 판정은 그대로 1 이다</a></li>
+        <li><a href="#실측">실측</a></li>
+        <li><a href="#36-감쇠와-어떻게-합치는가">3.6 감쇠와 어떻게 합치는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-격자를-얼마나-늘릴-것인가">4. 격자를 얼마나 늘릴 것인가</a>
+      <ul>
+        <li><a href="#41-무엇이-문제인가">4.1 무엇이 문제인가</a></li>
+        <li><a href="#42-얼마나-짧게-해야-하는가">4.2 얼마나 짧게 해야 하는가</a></li>
+        <li><a href="#43-왜-유한-번에-끝나는가">4.3 왜 유한 번에 끝나는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-시간-간격을-얼마로-할-것인가">5. 시간 간격을 얼마로 할 것인가</a>
+      <ul>
+        <li><a href="#51-시간-항이-무엇을-바꾸는가">5.1 시간 항이 무엇을 바꾸는가</a></li>
+        <li><a href="#52-언제-1-밑으로-내려가는가">5.2 언제 1 밑으로 내려가는가</a></li>
+        <li><a href="#53-분모에--가-왜-들어가는가">5.3 분모에  가 왜 들어가는가</a></li>
+        <li><a href="#54-소스가-상수여도-시간-간격에-상한이-생긴다">5.4 소스가 상수여도 시간 간격에 상한이 생긴다</a></li>
+        <li><a href="#55-이것은-충분조건이다">5.5 이것은 충분조건이다</a></li>
+        <li><a href="#56-재시도할-때-얼마나-올리는가">5.6 재시도할 때 얼마나 올리는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-다섯-값이-어디서-왔는지-한자리에">6. 다섯 값이 어디서 왔는지 한자리에</a></li>
+    <li><a href="#7-코드-어디에-있는가">7. 코드 어디에 있는가</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/fvm2/index.html"><span itemprop="name">FVM2</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">유도 장치</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html" title="유도 상한 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/semiconductor/index.html" title="Semiconductors (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="유도-장치">유도 장치</h1>
+
+<hr>
+<h1 id="70-유도--감쇠-보폭-격자-시간">70. 유도 — 감쇠, 보폭, 격자, 시간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><code>60_유도_상한.md</code> 에서 $\rho_{\mathrm{int}}$ 를 얻었습니다.
+이제 그 값으로 무엇을 정하는지 봅니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>절</th>
+          <th>무엇을 정하나</th>
+          <th>코드</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>얼마나 갈 것인가 (감쇠 인자)</td>
+          <td><code>AdaptiveDamper</code> <code>adaptiveTolerances</code></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>얼마나 정확히 풀 것인가</td>
+          <td><code>adaptiveTolerances</code></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>구조가 안 깨지는 최대 걸음</td>
+          <td><code>trustRegionStep</code></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>격자를 얼마나 늘릴 것인가</td>
+          <td><code>meshSufficiency</code></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>시간 간격을 얼마로 할 것인가</td>
+          <td><code>AssembledSystem.dtBound</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>다섯 다 식에서 나온 값입니다.</strong>  사람이 손으로 고른 숫자가 하나도 없습니다.</p>
+<hr>
+<h2 id="1-얼마나-갈-것인가--감쇠-인자">1. 얼마나 갈 것인가 — 감쇠 인자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="11-왜-걸음을-줄여야-하는가">1.1 왜 걸음을 줄여야 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\tilde J$ 대신 $S$ 로 방향을 잡으므로, 그 방향은 정확하지 않습니다.
+<code>60_유도_상한.md</code> 1.3 에서 본 대로입니다.</p>
+$$\delta\mathbf u_{\text{실제}} - \delta\mathbf u_{\text{정확}} = S^{-1}A\,\delta\mathbf u_{\text{정확}}$$$$\text{틀린 방향으로 끝까지 가면 넘어갑니다}$$<p>그래서 $\sigma$ 를 곱해 줄입니다.  <strong>얼마로 줄일지를 구하는 것이 이 절입니다.</strong></p>
+<h3 id="12-무엇을-가장-작게-만들-것인가">1.2 무엇을 가장 작게 만들 것인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>한 걸음 간 뒤의 잔차를 봅니다.</p>
+$$\delta\mathbf u_\sigma = \sigma\,\delta\mathbf u_{\text{실제}}, \qquad
+\text{한 걸음 뒤 잔차} \approx \tilde{\mathbf F} + \tilde J\,\delta\mathbf u_\sigma$$<p>이것이 지금 잔차에 견주어 얼마나 줄었는지가 관심사입니다.</p>
+$$\varsigma(\sigma) = \frac{\lVert \tilde{\mathbf F} + \tilde J\,\delta\mathbf u_\sigma\rVert}{\lVert\tilde{\mathbf F}\rVert}$$$$\text{이 값을 가장 작게 만드는 } \sigma \text{ 를 찾습니다}$$<h3 id="13-잔차를-정리한다">1.3 잔차를 정리한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\delta\mathbf u_{\text{실제}} = S^{-1}(-\tilde{\mathbf F})$ 를 넣습니다.</p>
+$$\tilde J\,\delta\mathbf u_\sigma = \sigma\,\tilde J S^{-1}(-\tilde{\mathbf F})
+= -\sigma(S + A)S^{-1}\tilde{\mathbf F}$$<p>괄호를 풉니다.</p>
+$$(S + A)S^{-1} = SS^{-1} + AS^{-1} = I + AS^{-1}$$$$\therefore\ \tilde J\,\delta\mathbf u_\sigma = -\sigma\bigl(I + AS^{-1}\bigr)\tilde{\mathbf F}$$<p>$\tilde{\mathbf F}$ 를 더합니다.</p>
+$$\tilde{\mathbf F} + \tilde J\,\delta\mathbf u_\sigma
+= \tilde{\mathbf F} - \sigma\tilde{\mathbf F} - \sigma AS^{-1}\tilde{\mathbf F}$$$$\boxed{\ \tilde{\mathbf F} + \tilde J\,\delta\mathbf u_\sigma
+= \bigl[(1-\sigma)I - \sigma AS^{-1}\bigr]\tilde{\mathbf F}\ }$$<h3 id="14-어느-자로-재는가">1.4 어느 자로 재는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>해는 $S$ 로 잰 길이를 씁니다.  그러면 잔차는 그 짝인 $S^{-1}$ 로 재야 합니다.</p>
+$$\lVert\mathbf x\rVert_S = \sqrt{\mathbf x^{*}S\mathbf x},
+\qquad \lVert\mathbf F\rVert_{S^{-1}} = \sqrt{\mathbf F^{*}S^{-1}\mathbf F}$$<p><strong>왜 짝을 맞춰야 하는가.</strong>  $\rho_{\mathrm{int}}$ 를 $S$ 로 잰 자로 얻었기 때문입니다.
+다른 자로 재면 그 값을 쓸 수 없습니다.</p>
+<h3 id="15-자를-보통-자로-바꾼다">1.5 자를 보통 자로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$G = S^{-1/2}$ 로 두면 $S^{-1}$ 로 재는 것이 보통 길이가 됩니다.</p>
+$$\lVert\mathbf F\rVert_{S^{-1}} = \sqrt{(G\mathbf F)^{*}(G\mathbf F)} = \lVert G\mathbf F\rVert_2$$<p>1.3 의 결과 양쪽에 $G$ 를 곱합니다.  가운데를 정리하면</p>
+$$G\,AS^{-1} = S^{-1/2}A S^{-1}
+= \underbrace{S^{-1/2}A S^{-1/2}}_{\tilde B}\cdot S^{-1/2} = \tilde B\,G$$$$\therefore\ G\bigl[(1-\sigma)I - \sigma AS^{-1}\bigr]
+= \bigl[(1-\sigma)I - \sigma\tilde B\bigr]G$$<p>그러면 축소율이 이 꼴로 잡힙니다.</p>
+$$\varsigma(\sigma) = \bigl\lVert (1-\sigma)I - \sigma\tilde B \bigr\rVert_2$$<h3 id="16--의-고윳값을-안다">1.6 $\tilde B$ 의 고윳값을 안다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\tilde B$ 도 반대칭입니다.</p>
+$$\tilde B^{\mathsf T} = S^{-1/2}A^{\mathsf T}S^{-1/2} = -\tilde B$$<p><code>60_유도_상한.md</code> 3.2 에서 본 대로 반대칭 행렬의 고윳값은 순허수이고,
+그중 가장 큰 절댓값이 $\rho_{\mathrm{int}}$ 입니다.</p>
+$$\lambda_k(\tilde B) = i\,s_k, \qquad \max_k \lvert s_k\rvert = \rho_{\mathrm{int}}$$<p>$\tilde B$ 가 정규 행렬이므로 위 노름은 고윳값으로 곧바로 나옵니다.</p>
+$$(1-\sigma)I - \sigma\tilde B \ \text{의 고윳값} = (1-\sigma) - i\sigma s_k$$$$\varsigma(\sigma) = \max_k \sqrt{(1-\sigma)^2 + \sigma^2 s_k^2}$$<p>가장 큰 $\lvert s_k\rvert$ 가 최댓값을 정하므로</p>
+$$\boxed{\ \varsigma(\sigma) = \sqrt{(1-\sigma)^2 + \sigma^2\rho^2}\ }
+\qquad (\rho = \rho_{\mathrm{int}})$$<h3 id="17-최소점을-구한다">1.7 최소점을 구한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>제곱을 미분하는 편이 쉽습니다.  제곱근이 단조증가라 최소점이 같습니다.</p>
+$$\frac{d}{d\sigma}\Bigl[(1-\sigma)^2 + \sigma^2\rho^2\Bigr]
+= -2(1-\sigma) + 2\sigma\rho^2 = 0$$$$-1 + \sigma + \sigma\rho^2 = 0$$$$\sigma(1 + \rho^2) = 1$$$$\boxed{\ \sigma^{*} = \frac{1}{1 + \rho^2}\ }$$<p>그때의 축소율을 구합니다.  먼저 첫 항입니다.</p>
+$$1 - \sigma^{*} = 1 - \frac{1}{1+\rho^2} = \frac{\rho^2}{1+\rho^2}$$$$(1 - \sigma^{*})^2 = \frac{\rho^4}{(1+\rho^2)^2}$$<p>둘째 항입니다.</p>
+$$(\sigma^{*})^2\rho^2 = \frac{\rho^2}{(1+\rho^2)^2}$$<p>더합니다.</p>
+$$\varsigma(\sigma^{*})^2 = \frac{\rho^4 + \rho^2}{(1+\rho^2)^2}
+= \frac{\rho^2(\rho^2 + 1)}{(1+\rho^2)^2} = \frac{\rho^2}{1+\rho^2}$$$$\boxed{\ \varsigma_{\min} = \frac{\rho}{\sqrt{1+\rho^2}}\ }$$<h3 id="17a-예측한-만큼-안-줄면-되돌아온다">1.7a 예측한 만큼 안 줄면 되돌아온다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1.7 절까지는 <strong>걸음을 정하는 것</strong>만 했습니다.  정하고 나서 실제로
+얼마나 줄었는지는 안 봤습니다.</p>
+<h3 id="왜-봐야-하는가">왜 봐야 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1.2 절이 가장 작게 만든 것은 이것입니다.</p>
+$$\varsigma(\sigma) = \frac{\lVert \tilde{\mathbf F} + \tilde J\,\delta\mathbf u_\sigma\rVert}
+{\lVert\tilde{\mathbf F}\rVert}$$<p>분자는 <strong>선형 모형이 예측한 잔차</strong>입니다.  실제 잔차가 아닙니다.
+$F$ 가 비선형이면 그 예측이 빗나갈 수 있고, 그때 붙드는 것이 없습니다.</p>
+<h3 id="실제-값을-재는-법">실제 값을 재는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>한 걸음 밟은 자리에서 잔차를 다시 재면 됩니다.</p>
+$$\varsigma_{\text{실제}} = \frac{\lVert F(u + \sigma\,\delta u)\rVert}{\lVert F(u)\rVert}$$<p>조립 한 번이면 나옵니다.  고윳값 계산이 없습니다.</p>
+<h3 id="어긋나면-무슨-뜻인가">어긋나면 무슨 뜻인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\varsigma_{\text{실제}}$ 가 예측보다 크면 예측만큼 안 준 것입니다.
+그것은 걸음을 정할 때 쓴 $\rho$ 가 실제보다 <strong>작았다</strong>는 뜻입니다.</p>
+<h3 id="맞는--를-거꾸로-구한다">맞는 $\rho$ 를 거꾸로 구한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1.6 절의 식에서 $\varsigma$ 와 $\sigma$ 는 알고 $\rho$ 만 모릅니다.
+그러니 $\rho$ 에 대해 풀면 됩니다.</p>
+$$\varsigma_{\text{실제}}^2 = (1-\sigma)^2 + \sigma^2\rho_{\text{유효}}^2$$$$\boxed{\ \rho_{\text{유효}}^2 = \frac{\varsigma_{\text{실제}}^2 - (1-\sigma)^2}{\sigma^2}\ }$$<p>$\rho$ 를 재는 비용은 고윳값 때문인데, <strong>잔차 노름 하나가 그것을 대신
+알려 줍니다.</strong></p>
+<h3 id="다시-걸음을-정한다">다시 걸음을 정한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>새 식이 아닙니다.  1.7 절이 준 같은 식에 맞는 $\rho$ 를 넣습니다.</p>
+$$\boxed{\ \sigma_{\text{새}} = \min\left(\sigma,\ \frac{1}{1+\rho_{\text{유효}}^2}\right)\ }$$<p>$\min$ 을 두는 까닭은 부호 제한 $\sigma_{\chi}$ 가 더 작을 수 있어서입니다.</p>
+<h3 id="숫자를-넣은-보기">숫자를 넣은 보기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho = 0.5$ 라 하고 걸음을 정하면 이렇게 됩니다.</p>
+$$\sigma = \frac{1}{1+0.25} = 0.8 \qquad \varsigma_{\text{예측}} = 0.447$$<p>곧 <strong>80% 만 가고 잔차가 0.447 배로 준다</strong>는 뜻입니다.</p>
+<p>밟아 보니 잔차가 $0.6$ 배로만 줄었다고 합시다.  그러면</p>
+$$\rho_{\text{유효}}^2 = \frac{0.6^2 - 0.2^2}{0.8^2} = \frac{0.36-0.04}{0.64} = 0.5$$$$\sigma_{\text{새}} = \frac{1}{1+0.5} = 0.667$$$$\text{80% 가려던 것을 66.7% 로 줄여 다시 갑니다}$$<h3 id="얼마나-어긋나야-어긋난-것인가">얼마나 어긋나야 어긋난 것인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\varsigma_{\text{실제}}$ 가 예측보다 조금이라도 크면 되돌린다고 하면 안
+됩니다.  <strong>그 「조금」을 얼마나 믿을 수 있는지를 먼저 봐야 합니다.</strong></p>
+<p>$\varsigma$ 는 잔차의 비이고, 잔차는 $\delta u$ 로 계산합니다.  그런데
+$\delta u$ 는 선형 방정식을 <code>LinTol</code> 만큼만 풀어서 얻은 것입니다.
+2.5 절이 그 값을 정합니다.</p>
+$$\text{선형해를 } \texttt{LinTol} \text{ 만큼만 풀었으므로 } \varsigma \text{ 도 그만큼만 압니다}$$<p>그보다 작은 차이를 놓고 「예측이 빗나갔다」고 하는 것은 모르는 자리를
+가지고 다투는 것입니다.</p>
+$$\varsigma_{\text{실제}} \;\le\; \varsigma_{\text{예측}}\bigl(1 + \texttt{LinTol}\bigr)
+\;\Longrightarrow\; \text{되돌리지 않는다}$$<h3 id="최소점-근처는-평평하다">최소점 근처는 평평하다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\sigma^{*}$ 는 $\varsigma$ 의 최소점입니다.  최소점에서는 기울기가 0 이므로,
+$\sigma$ 를 $\delta$ 만큼 더 다듬어도 $\varsigma$ 는 $\delta^2$ 규모로만 좋아집니다.</p>
+$$\text{끝자리를 따라갈 값이 아닙니다}$$<h3 id="실제로-그랬다">실제로 그랬다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>1 번째   sigma 0.999970 -&gt; 0.997485   예측 0.0055  실제 0.0502
+2 번째   sigma 0.997485 -&gt; 0.997359   예측 0.0502  실제 0.0514
+3 번째   sigma 0.997359 -&gt; 0.997352   예측 0.0514  실제 0.0515
+4 번째부터  sigma 0.997352 -&gt; 0.997352  (여덟 번 더)</code></pre></div>
+<p>세 번째까지가 뜻이 있고, 그 뒤로는 끝자리만 기어갑니다.  조립을
+여덟 번 더 하고 얻는 것이 없습니다.</p>
+<p><code>LinTol</code> 은 손으로 고른 값이 아닙니다.  2.5 절이 $\rho$ 와 <code>ResTol</code> 로
+유도한 값이고, $\rho$ 가 작으면 더 꼼꼼히, 크면 헐렁하게 봅니다.</p>
+<h3 id="언제-끝나고-언제-안-끝나는가">언제 끝나고 언제 안 끝나는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho_{\text{유효}} > \rho$ 이므로 $\sigma$ 는 되돌릴 때마다 엄격히 줄어듭니다.
+그런데 <strong>그것만으로는 끝난다는 보장이 안 됩니다.</strong></p>
+<p>$\sigma$ 가 작을 때 잔차를 펼쳐 보겠습니다.  $g = J\,\delta u$ 라 두면</p>
+$$\varsigma_{\text{실제}}^2 = 1 + 2\sigma a + \sigma^2 b,
+\qquad a = \frac{F^{\mathsf T} g}{\lVert F\rVert^2}$$<p>여기서 $a$ 는 잔차 $F$ 와 그 방향 $g$ 가 얼마나 반대를 향하는가입니다.
+잔차를 줄이는 방향이면 음수여야 합니다.</p>
+$$(1-\sigma)^2 = 1 - 2\sigma + \sigma^2$$<p>두 값을 빼서 $\sigma^2$ 으로 나누면 이렇게 됩니다.</p>
+$$\rho_{\text{유효}}^2 = \frac{2(a+1)}{\sigma} + (b-1)$$<p>$a+1$ 이 0 보다 크면 $\sigma$ 가 줄어들 때 $\rho_{\text{유효}}^2$ 이 그만큼
+커집니다.  $\sigma$ 를 반으로 줄이면 $\rho_{\text{유효}}^2$ 이 두 배가 되고,
+그러면 $\sigma_{\text{새}}$ 도 다시 반이 됩니다.  <strong>끝없이 되풀이됩니다.</strong></p>
+<h3 id="은-무슨-뜻인가">$a+1>0$ 은 무슨 뜻인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>「이 방향으로는 아무리 조금 가도 잔차가 안 준다」는 뜻입니다.
+곧 걸음의 크기 문제가 아니라 <strong>방향의 문제</strong>입니다.</p>
+<p>방향이 못 믿을 것이 되는 까닭은 격자가 이 상태를 못 담기 때문입니다.
+실제로 그 자리에서 $\nu_{\max} = 2.156$ 이었습니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>M6-n2   Wmax 2.1560
+M7-n1   sigma 0.007988 -&gt; 0.003961 -&gt; ... -&gt; 0.000056
+        줄어야 0.9999 인데 0.9999 다</code></pre></div>
+<h3 id="그래서-격자를-먼저-본다">그래서 격자를 먼저 본다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\nu_{\max} > 1 \;\Longrightarrow\; \text{되돌리지 않는다}$$<p><code>trustRegionStep.m</code> 머리말이 그 경우를 이미 적어 두었습니다.</p>
+<blockquote>
+<p>그 상황은 격자 부족이고 $\sigma$ 으로 고칠 수 없다.</p>
+</blockquote>
+<p>답은 h-정제입니다.  걸음을 줄이는 것이 아닙니다.</p>
+<p>새 상수를 안 씁니다.  $\nu_{\max} \le 1$ 은 3.4 절이 이미 정한 판정이고,
+<code>trustRegionStep</code> 이 <code>Insufficient</code> 로 이미 내주고 있습니다.</p>
+<h3 id="격자가-충분할-때는-끝난다">격자가 충분할 때는 끝난다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\nu_{\max} \le 1$ 이면 격자가 계수 변화를 담으므로 방향을 믿을 수 있고,
+$a+1$ 이 0 보다 작아집니다.  그러면 $\sigma$ 가 줄어들 때 $\rho_{\text{유효}}$ 가
+유한한 값으로 모이고, $\sigma_{\text{새}}$ 도 0 보다 큰 자리에 멈춥니다.</p>
+<p>시간 간격을 다시 밟는 규칙이 $\Phi$ 의 단조성으로 끝나는 것과 같은
+자리입니다.</p>
+<h3 id="비용">비용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>예측이 맞으면 한 번도 안 돕니다.  다시 밟을 때만 조립이 한 번 더
+듭니다.  고윳값 계산은 없습니다.</p>
+<h3 id="이미-있던-것과-새로-만든-것">이미 있던 것과 새로 만든 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>무엇</th>
+          <th>어디에 있었나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\varsigma(\sigma)$ 의 식</td>
+          <td>1.6 절.  이미 있었다</td>
+      </tr>
+      <tr>
+          <td>$\sigma = 1/(1+\rho^2)$</td>
+          <td>1.7 절과 <code>AdaptiveDamper.m</code>.  이미 있었다</td>
+      </tr>
+      <tr>
+          <td>$\varsigma_{\min}$</td>
+          <td><code>adaptiveTolerances.m</code> 이 내고 있었으나 <strong>아무도 안 썼다</strong></td>
+      </tr>
+      <tr>
+          <td>견주고 되돌아오는 자리</td>
+          <td><strong>이것만 새로 만들었다</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="걸음을-붙드는-일은-감쇠가-맡는다">걸음을 붙드는 일은 감쇠가 맡는다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3.4a 절이 「$\nu_{\max} \le 1$ 은 걸음의 조건이 아니다」라고 했습니다.
+그 말이 맞으려면 걸음을 붙드는 일을 감쇠가 해야 하는데, 감쇠는 선형
+모형만 보고 있었습니다.  이 절이 그 빈 자리를 채웁니다.</p>
+<h3 id="18-이것이-뜻하는-것">1.8 이것이 뜻하는 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\rho \text{ 가 아무리 커도 } \varsigma_{\min} < 1 \text{ 입니다}$$<p>$\rho^2 < 1 + \rho^2$ 이므로 분자가 분모보다 늘 작기 때문입니다.</p>
+$$\therefore\ \sigma^{*} \text{ 로 줄이면 \textbf{반드시} 수렴합니다}$$<p>감쇠를 안 하면 ($\sigma = 1$) 축소율이 $\rho$ 가 되므로, $\rho \ge 1$ 이면
+잔차가 안 줄어듭니다.  <strong>감쇠가 그 벽을 없앱니다.</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>$\rho$</th>
+          <th>$\sigma = 1$</th>
+          <th>$\sigma = \sigma^{*}$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0.1</td>
+          <td>0.100</td>
+          <td>0.0995</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1.000 (안 줄어듦)</td>
+          <td>0.707</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>5.000 (발산)</td>
+          <td>0.981</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="19--가-작으면-걸음이-1-에-가깝다">1.9 $\rho$ 가 작으면 걸음이 1 에 가깝다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\sigma^{*} = \frac{1}{1+\rho^2} \approx 1 - \rho^2$$<p>$\rho = 0.011$ 이면 $\sigma^{*} = 0.99987$ 입니다.  <strong>거의 안 줄이는 것입니다.</strong></p>
+<p>이것이 이 방법의 값어치입니다.  전처리가 잘 들어 $\rho$ 가 작으면
+감쇠가 걸릴 일이 없고, 뉴턴이 제 속도로 갑니다.</p>
+<hr>
+<h2 id="2-얼마나-정확히-풀-것인가">2. 얼마나 정확히 풀 것인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="21-왜-조절하는가">2.1 왜 조절하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>선형 방정식을 아주 정확히 풀어도, <strong>방향 자체가 이미 근사입니다.</strong>
+방향보다 더 정확히 푸는 것은 낭비입니다.</p>
+$$\text{그 낭비 지점을 } \rho \text{ 로 계산할 수 있습니다}$$<h3 id="22-기준을-무엇으로-삼는가">2.2 기준을 무엇으로 삼는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>잔차를 <code>ResTol</code> 까지 줄이는 데 필요한 반복 횟수를 봅니다.</p>
+$$k = \frac{\ln(1/\text{ResTol})}{\ln(1/\varsigma_{\min})}$$<p>분모를 $\rho$ 로 쓰면 이렇게 됩니다.</p>
+$$\ln\frac{1}{\varsigma_{\min}} = \ln\frac{\sqrt{1+\rho^2}}{\rho}
+= \frac{1}{2}\ln\left(1 + \frac{1}{\rho^2}\right)$$<blockquote>
+<p><strong>이 둘에는 이름을 안 줍니다.</strong>  한 식에서 한 번 쓰이고 마는 중간값이라
+기호만 늘어납니다.  <code>SYMBOLS.md</code> 4절 참조.</p>
+</blockquote>
+<h3 id="23-한-번만-더를-기준으로-삼는다">2.3 「한 번만 더」를 기준으로 삼는다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho$ 를 조금 잘못 재거나 선형해를 조금 덜 정확히 풀면 축소율이 나빠집니다.
+그러면 반복이 늘어납니다.</p>
+$$\text{그 늘어남이 \textbf{한 번}을 안 넘게 하는 값을 씁니다}$$$$\delta k = \frac{\ln(1/\text{ResTol})\cdot e_\varsigma}{\bigl[\ln(1/\varsigma_{\min})\bigr]^2} = 1$$<p>여기서 $e_\varsigma$ 는 축소율이 나빠진 정도입니다.  아래 첨자는 어느 양의
+오차인지를 가리킵니다.  $e_\lambda$ 는 고윳값의 오차, $e_\varsigma$ 는 축소율의 오차입니다.</p>
+<p><strong>왜 한 번인가.</strong>  0 으로 하면 아무리 정확해도 모자라고, 두 번으로 하면
+느슨합니다.  한 번은 「이 오차 때문에 딱 한 걸음 더 걷는다」는 뜻이고,
+그것이 받아들일 만한 가장 작은 손해입니다.</p>
+<h3 id="24--를-얼마나-정확히-재면-되는가">2.4 $\rho$ 를 얼마나 정확히 재면 되는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho$ 를 고윳값으로 잴 때 상대 허용오차를 $\text{tol}$ 이라 하면,
+그 오차가 축소율에 이렇게 전해집니다.</p>
+$$e_\lambda = \frac{\rho^2}{1+\rho^2}\,\text{tol}$$$$e_\varsigma = \frac{e_\lambda^2}{2\rho^2}$$<p><strong>왜 제곱이 나오는가.</strong>  $\varsigma$ 가 $\sigma^{*}$ 에서 최소이므로 그 점에서
+1차 항이 0 입니다.  2차부터 나타납니다.</p>
+<p>$\delta k = 1$ 로 놓고 풀면</p>
+$$\boxed{\ \text{RhoTol} = \frac{1+\rho^2}{\rho}\,\ln\frac{1}{\varsigma_{\min}}
+\sqrt{\frac{2}{\ln(1/\text{ResTol})}}\ }$$<h3 id="25-선형해를-얼마나-정확히-풀면-되는가">2.5 선형해를 얼마나 정확히 풀면 되는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>같은 기준을 선형해에 적용하면</p>
+$$\boxed{\ \text{LinTol} = \frac{\rho\bigl[\ln(1/\varsigma_{\min})\bigr]^2}
+{\ln(1/\text{ResTol})}\ }$$<p><strong>둘 다 같은 데서 나왔습니다.</strong>  「반복이 한 번만 더 늘어난다」입니다.</p>
+<h3 id="26--를-아예-안-재도-될-때">2.6 $\rho$ 를 아예 안 재도 될 때<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\text{RhoTol} \ge 1 \ \Longrightarrow\ \text{잴 필요가 없다}$$<p>허용오차가 1 을 넘는다는 것은 $\rho$ 를 어림잡아도 반복이 한 번밖에 안
+늘어난다는 뜻입니다.  그러면 재는 비용이 아깝습니다.</p>
+<p><code>adaptiveTolerances</code> 가 <code>SkipRho</code> 로 알려 줍니다.</p>
+<hr>
+<h3 id="26a---은-감쇠-없음이-아니라-모른다이다">2.6a  $\rho \le 0$ 은 「감쇠 없음」이 아니라 「모른다」이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>2.6 절이 정한 것은 이것입니다.</p>
+$$\text{RhoTol} \ge 1 \;\Longrightarrow\; \rho \text{ 를 잴 이유가 없다}$$<p><strong>그 판단은 그 상태에 대한 것입니다.</strong>  다음 상태의 $\rho$ 가 얼마인지는
+지난 $\rho$ 로 알 수 없습니다.</p>
+<p>특히 $\rho = 0$ 은 아무 정보도 없는 값입니다.</p>
+$$a = \tfrac12\ln\bigl(1+1/\rho^2\bigr) \;\longrightarrow\; \infty$$<p><code>RhoTol</code> 을 계산할 수조차 없습니다.  그런 값을 다음 판단의 근거로
+삼으면 <code>SkipRho</code> 가 계속 참이 되어 <strong>영영 0 에 머뭅니다.</strong>  그러면
+감쇠 인자가 늘 1 이 되어 감쇠가 죽습니다.</p>
+$$\text{유도는 「한 번 건너뛴다」를 허락했지 「영영 안 잰다」를 허락하지 않았습니다}$$<h3 id="실제로-그랬다-1">실제로 그랬다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$u$ 가 어디서나 0 인 자리에서 출발하면 $\nu = 0$ 이라 자코비안이 대칭이고 $\rho = 0$ 이
+<strong>참입니다.</strong>  그런데 그 뒤로 다시는 안 쟀습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>단계</th>
+          <th>$\nu_{\max}$</th>
+          <th>$\rho$</th>
+          <th>$\sigma_{\text{감쇠}}$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>0.0000</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>0.7475</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>1.5506</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<p>두 번째 단계에서 이미 $u \ne 0$ 이라 반대칭부가 생겼는데 아무도 안
+봤습니다.  붙드는 것이 없으니 한 걸음에 멀리 가 격자가 못 담는 자리로
+갔습니다.</p>
+<h3 id="모를-때-돌아갈-자리">모를 때 돌아갈 자리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>부트스트랩 값 $1.0$ 입니다.  $\rho < 1$ 이 보장 경계이므로 거기서 다시
+재면 됩니다.  새 상수가 아닙니다.</p>
+$$\rho \le 0 \ \text{또는 유한하지 않음} \;\Longrightarrow\; \rho_{\text{prev}} \leftarrow 1.0$$<hr>
+<h2 id="3-구조가-안-깨지는-최대-걸음">3. 구조가 안 깨지는 최대 걸음<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-무엇을-지키려는가">3.1 무엇을 지키려는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>자코비안의 비대각이 음수여야 좋은 성질이 유지됩니다.
+이 성질이 깨지면 $S$ 가 양정치를 잃고, 그러면 $\rho_{\mathrm{int}}$ 자체가
+정의되지 않습니다.</p>
+$$\hat J_{ij} = -D_{ij}\Bigl(P_{\text{eff}} + \frac{\partial P_{\text{eff}}}{\partial u_j}\delta u\Bigr)$$<p>$D_{ij} > 0$ 이므로 괄호 안의 부호만 보면 됩니다.</p>
+<h3 id="32-괄호-안을-정리한다">3.2 괄호 안을 정리한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$P_{\text{eff}} = \dfrac{2ab}{a+b}$ 로 두고 ($a = p_i$, $b = p_j$) 미분합니다.</p>
+$$\frac{\partial P_{\text{eff}}}{\partial u_j} = \frac{2a^2}{(a+b)^2}\,
+\left.\frac{\partial p}{\partial u}\right\rvert_j$$<p>괄호에 넣고 묶습니다.</p>
+<p>$$P_{\text{eff}} + \frac{\partial P_{\text{eff}}}{\partial u_j}\delta u
+= \frac{2a}{(a+b)^2}\Bigl[b(a+b)</p>
+<ul>
+<li>a\left.\frac{\partial p}{\partial u}\right\rvert_j\delta u\Bigr]$$</li>
+</ul>
+<p>앞 인자가 양수이므로 <strong>대괄호 안의 부호만 보면 됩니다.</strong></p>
+<h3 id="33-무차원으로-바꾼다">3.3 무차원으로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$a$ 를 1 로 규격화하고 $\zeta_{ij} = \ln(b/a)$ 로 두면 $b = e^{\zeta_{ij}}$ 입니다.</p>
+$$\nu_j = \left.\frac{\partial\ln p}{\partial u}\right\rvert_j\delta u$$<p>대괄호를 이 기호로 다시 쓰면</p>
+$$e^{\zeta_{ij}}(1 + e^{\zeta_{ij}}) + e^{\zeta_{ij}}\nu_j = e^{\zeta_{ij}}\bigl(\nu_j + 1 + e^{\zeta_{ij}}\bigr)$$<p>$e^{\zeta_{ij}} > 0$ 이므로 조건은 이것입니다.</p>
+$$\boxed{\ \nu_j + 1 + e^{\zeta_{ij}} > 0\ }$$<h3 id="34-여기서-1-이-나온다">3.4 여기서 1 이 나온다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$e^{\zeta_{ij}} > 0$ 이므로, $\nu_j > -1$ 이기만 하면 위 부등식이 저절로 성립합니다.</p>
+$$\therefore\ \lvert \nu_j\rvert \le 1 \ \Longrightarrow\ \text{안전}$$<p>반대쪽 노드도 같은 방식으로 보면 $\lvert \nu_i\rvert \le 1$ 이 나옵니다.
+둘을 합치면</p>
+$$\boxed{\ \max\bigl(\lvert \nu_i\rvert,\ \lvert \nu_j\rvert\bigr) \le 1\ }$$$$\text{이 1 은 부등식을 푼 결과이지 사람이 고른 값이 아닙니다}$$<h3 id="35-걸음으로-바꾼다">3.5 걸음으로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\nu$ 는 $\delta u$ 에 비례하므로, 걸음을 $\sigma$ 배 하면 $\nu$ 도 $\sigma$ 배입니다.</p>
+$$\sigma_{\text{부호}} = \frac{1}{\max\lvert \nu\rvert}
+\qquad (\max\lvert \nu\rvert > 1 \text{ 일 때})$$<p>$\max\lvert \nu\rvert \le 1$ 이면 걸림이 없으므로 $\sigma_{\text{부호}} = 1$ 입니다.</p>
+<h3 id="34a-세-가지를-뭉치면-안-된다">3.4a 세 가지를 뭉치면 안 된다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>걸음과 얽혀 있는 값이 셋인데, 셋이 서로 다른 것을 지킵니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>무엇을 지키나</th>
+          <th>어디서</th>
+          <th>무엇에 대한 조건인가</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\sigma_{\chi}$</td>
+          <td>$\chi_{ij} > 0$</td>
+          <td>3.2 절</td>
+          <td><strong>행렬의 구조</strong></td>
+      </tr>
+      <tr>
+          <td>$\sigma_{\text{감쇠}}$</td>
+          <td>잔차 축소율 최소</td>
+          <td>1.2 절</td>
+          <td><strong>걸음의 크기</strong></td>
+      </tr>
+      <tr>
+          <td>$\nu_{\max} \le 1$</td>
+          <td>$h\lvert\nabla\ln p\rvert \le 1$</td>
+          <td>3.4 절</td>
+          <td><strong>격자의 해상도</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="걸음의-조건은-앞의-둘뿐이다">걸음의 조건은 앞의 둘뿐이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\sigma = \min\bigl(\sigma_{\chi},\ \sigma_{\text{감쇠}}\bigr)$$<p>$\nu_{\max} \le 1$ 은 <strong>걸음의 조건이 아닙니다.</strong>  「이 격자가 이 해를
+담을 수 있는가」를 묻는 것이고, 담을 수 없으면 답은 격자를 늘리는
+것이지 걸음을 줄이는 것이 아닙니다.</p>
+<p><code>trustRegionStep.m</code> 이 그렇게 적어 두었습니다.</p>
+<blockquote>
+<p>$\lvert\nu^0\rvert > 1$ 인 간선은 제약에서 뺀다.  그 상황은 격자 부족이고
+$\sigma$ 으로 고칠 수 없다.</p>
+</blockquote>
+<h3 id="뉴턴이-헤매지-않게-붙드는-것은-감쇠다">뉴턴이 헤매지 않게 붙드는 것은 감쇠다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1.1 절이 그것을 명시합니다.</p>
+<blockquote>
+<p>$\tilde J$ 대신 $S$ 로 방향을 잡으므로 그 방향은 정확하지 않습니다.
+<strong>틀린 방향으로 끝까지 가면 넘어갑니다.</strong></p>
+</blockquote>
+<p>$\sigma_{\chi}$ 는 구조를 지킬 뿐, 걸음을 붙드는 물건이 아닙니다.</p>
+<h3 id="실제로-그-둘이-뭉쳐-있었다">실제로 그 둘이 뭉쳐 있었다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>대리 조건 $\lvert\nu\rvert \le 1$ 을 쓰던 동안, $\sigma_{\chi}$ 가 감쇠의 일을
+대신하고 있었습니다.  $\nu$ 가 0 에서 출발하므로 그 규칙이 있으면
+$\nu$ 가 1 을 영영 못 넘기 때문입니다.</p>
+<p>$k_{nl}=4$ 에서 $\sigma_{\min} = 0.27$ 로 걸음이 세게 깎이고 있었는데,
+그것이 $\chi$ 를 지키려던 것이 아니라 걸음을 붙들고 있었습니다.</p>
+$$\text{그래서 감쇠가 죽어 있어도 굴러갔습니다}$$<p>3.5a 절대로 $\sigma_{\chi}$ 를 제자리로 돌리자 감쇠가 죽어 있다는 사실이
+드러났습니다.  그 까닭은 2.6a 절에 적었습니다.</p>
+<h3 id="35a-걸음은-대리-경계가-아니라-참-조건을-쓴다">3.5a 걸음은 대리 경계가 아니라 참 조건을 쓴다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3.4 절의 $\lvert\nu\rvert \le 1$ 은 <strong>충분조건</strong>입니다.  참 조건은 3.2 절의
+두 부등식이고, 그 경계는 더 바깥에 있습니다.</p>
+$$\nu_i \;<\; 1 + e^{-s} = 1 + \frac{p_i}{p_j}
+\qquad
+\nu_j \;>\; -\bigl(1 + e^{s}\bigr) = -\Bigl(1 + \frac{p_j}{p_i}\Bigr)$$<p>$e^{s} > 0$ 이므로 $s$ 가 무엇이든 이렇습니다.</p>
+$$1 + e^{-s} > 1 \qquad -(1+e^{s}) < -1$$$$\text{참 상자가 대리 상자를 \textbf{품습니다}}$$<p><strong>대리 경계로 걸음을 정하면 갇힙니다.</strong>  걸음 식이 이렇게 생겼기
+때문입니다.</p>
+$$\sigma_e = \frac{1 - \nu^0}{\delta\nu}$$<p>이 값을 쓰면 그 간선이 <strong>정확히</strong> $\nu = 1$ 에 놓입니다.  다음 걸음에서
+분자가 0 이 되어 $\sigma$ 가 사라집니다.</p>
+$$\text{걸음 규칙이 스스로 경계에 세워 놓고 갇힙니다}$$<p>실제로 그랬습니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>sig 4.580e-01 | Wmax 0.9935
+sig 7.152e-16 | Wmax 1.0000   -&gt; 미시 교착</code></pre></div>
+<p>그 자리는 참 경계가 아닙니다.  $\nu_i = 1$ 에서 여유가 $p_i/p_j > 0$
+남아 있습니다.  갈 곳이 있는데 못 간 것입니다.</p>
+<h3 id="제약은-간선마다-한쪽씩이다">제약은 간선마다 한쪽씩이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>3.2 절을 보면 $\hat J_{ij}$ 는 $\nu_j$ 만, $\hat J_{ji}$ 는 $\nu_i$ 만 담습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>무엇</th>
+          <th>막히는 쪽</th>
+          <th>반대쪽으로 가면</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\nu_i$</td>
+          <td>위로만</td>
+          <td>$\hat J_{ji}$ 가 더 음수가 된다</td>
+      </tr>
+      <tr>
+          <td>$\nu_j$</td>
+          <td>아래로만</td>
+          <td>$\hat J_{ij}$ 가 더 음수가 된다</td>
+      </tr>
+  </tbody>
+</table>
+<p>막을 이유가 없으므로 한쪽씩만 제약합니다.</p>
+<h3 id="격자-판정은-그대로-1-이다">격자 판정은 그대로 1 이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\nu_{\max} \le 1$ 은 $h\lvert\nabla\ln p\rvert \le 1$ 이라는 <strong>다른 물음</strong>입니다.
+<code>legacy/L_08_hrefine_spec.md</code> 의 실측 넷이 그 값에 맞춰져 있습니다.</p>
+$$\text{걸음 상한만 참 조건으로 바꿉니다}$$<h3 id="실측">실측<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>r-적응을 켠 과도 풀이 넷입니다.  대리 경계를 쓸 때는 넷 중 하나만
+끝까지 갔습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>$\delta t$</th>
+          <th>걸음</th>
+          <th>푼 뒤 $\nu_{\max}$</th>
+          <th>정제</th>
+          <th>사유</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0.1</td>
+          <td>5</td>
+          <td>0.9933</td>
+          <td>4</td>
+          <td>TEnd 도달</td>
+      </tr>
+      <tr>
+          <td>0.05</td>
+          <td>10</td>
+          <td>0.9980</td>
+          <td>6</td>
+          <td>TEnd 도달</td>
+      </tr>
+      <tr>
+          <td>0.025</td>
+          <td>20</td>
+          <td>0.9998</td>
+          <td>6</td>
+          <td>TEnd 도달</td>
+      </tr>
+      <tr>
+          <td>0.0125</td>
+          <td>40</td>
+          <td>0.9936</td>
+          <td>6</td>
+          <td>TEnd 도달</td>
+      </tr>
+  </tbody>
+</table>
+<p>넷 다 끝까지 갑니다.  $\nu_{\max}$ 가 1 바로 아래에 머무는데, 그것이
+정상입니다.  h-정제가 1 을 넘지 않게 붙들고, 걸음 상한은 그보다
+바깥인 참 경계를 보므로 갇히지 않습니다.</p>
+<h3 id="36-감쇠와-어떻게-합치는가">3.6 감쇠와 어떻게 합치는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\sigma = \min\Bigl(\sigma_{\text{부호}},\ \frac{1}{1+\rho^2}\Bigr)$$<p><strong>둘은 서로 다른 것을 막습니다.</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>값</th>
+          <th>막는 것</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\sigma_{\text{부호}}$</td>
+          <td>비대각의 부호가 뒤집히는 것</td>
+      </tr>
+      <tr>
+          <td>$1/(1+\rho^2)$</td>
+          <td>잔차가 안 줄어드는 것</td>
+      </tr>
+  </tbody>
+</table>
+<p>구조가 무너지면 $\rho$ 를 잴 수조차 없으므로, 앞의 것이 더 근본적입니다.
+그래서 둘 중 작은 쪽을 씁니다.</p>
+<hr>
+<h2 id="4-격자를-얼마나-늘릴-것인가">4. 격자를 얼마나 늘릴 것인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="41-무엇이-문제인가">4.1 무엇이 문제인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\max\lvert \nu\rvert > 1$ 이면 걸음을 줄여야 합니다.  그런데 걸음을 줄이면
+뉴턴이 느려집니다.</p>
+$$\text{걸음을 줄이지 말고 } \lvert \nu\rvert \text{ 를 줄이면 됩니다}$$<p>$\nu$ 는 간선을 건너는 동안 $\ln p$ 가 얼마나 변하는지입니다.
+간선이 짧아지면 그 변화도 줄어듭니다.</p>
+<h3 id="42-얼마나-짧게-해야-하는가">4.2 얼마나 짧게 해야 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>간선 길이는 노드 수에 반비례합니다.</p>
+$$h \propto \frac{1}{N_x - 1}$$<p>$\nu$ 는 간선 길이에 비례하므로, 노드를 늘리면 $\nu$ 가 그만큼 줄어듭니다.</p>
+$$\nu_{\max}^{\text{새로}} = \nu_{\max}\times\frac{N_x - 1}{N_x^{\text{새로}} - 1}$$<p>이것이 1 이 되게 놓습니다.</p>
+$$\nu_{\max}\times\frac{N_x - 1}{N_x^{\text{새로}} - 1} = 1$$$$N_x^{\text{새로}} - 1 = (N_x - 1)\,\nu_{\max}$$$$\boxed{\ N_x^{\text{새로}} = \bigl\lceil 1 + (N_x - 1)\nu_{\max} \bigr\rceil\ }$$$$\text{여유를 위해 곱하는 상수가 없습니다.  필요한 만큼만입니다}$$<h3 id="43-왜-유한-번에-끝나는가">4.3 왜 유한 번에 끝나는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>한 번 늘릴 때마다 $\nu_{\max}$ 가 이 비율로 줄어듭니다.</p>
+$$\gamma_h = \frac{N_x - 1}{N_x^{\text{새로}} - 1}$$<p>$\lceil\cdot\rceil$ 때문에 조금 더 늘어나므로 $\gamma_h$ 가 필요한 것보다 조금
+작습니다.  그러니 $\nu_{\max}$ 가 1 밑으로 확실히 내려갑니다.</p>
+<p><strong>해가 달라져서 $\nu_{\max}$ 가 도로 커질 수는 있습니다.</strong>  노드가 늘면 해도 달라지기
+때문입니다.  그래서 오르내리는 것이 정상이고, 그 이유로 멈추지 않습니다.</p>
+<hr>
+<h2 id="5-시간-간격을-얼마로-할-것인가">5. 시간 간격을 얼마로 할 것인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-시간-항이-무엇을-바꾸는가">5.1 시간 항이 무엇을 바꾸는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>60_유도_상한.md</code> 6절에서 본 대로입니다.</p>
+$$\operatorname{sym}(\tilde J_{\delta t}) = S + \frac{1}{\delta t}M,
+\qquad \operatorname{skew}(\tilde J_{\delta t}) = A$$$$\rho_{\mathrm{int}}(\delta t) = \sup_{\mathbf w}
+\frac{\lvert\mathbf w^{*}A\mathbf w\rvert}{\mathbf w^{*}(S + \frac{1}{\delta t}M)\mathbf w}$$$$\text{분자는 그대로, 분모만 커집니다}$$<p>$M \succ 0$ 이므로 $\delta t$ 를 줄이면 분모가 반드시 커지고, 따라서
+$\rho_{\mathrm{int}}$ 가 반드시 줄어듭니다.</p>
+<h3 id="52-언제-1-밑으로-내려가는가">5.2 언제 1 밑으로 내려가는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상한 A 를 시간 항이 있는 꼴로 다시 씁니다.</p>
+$$\rho_{\mathrm{int}}(\delta t) \le \max_i
+\sqrt{\frac{\Phi_{ii}}{2(\gamma_i + \frac{\hat c_i c_i \tilde V_i}{\delta t})}}$$<p><strong>$\Phi_{ii}$ 가 시간 간격에 안 바뀝니다.</strong>  $M$ 이 대각이라 비대각을 안 건드리고,
+$\Phi_{ii}$ 는 비대각에서만 만들어지기 때문입니다.</p>
+<p>이 값이 1 보다 작으려면</p>
+$$\frac{\Phi_{ii}}{2(\gamma_i + \frac{\hat c_i c_i\tilde V_i}{\delta t})} < 1$$$$\Phi_{ii} < 2\gamma_i + 2\frac{\hat c_i c_i\tilde V_i}{\delta t}$$$$\frac{1}{\delta t} > \frac{\Phi_{ii}/2 - \gamma_i}{\hat c_i c_i\tilde V_i}$$<p>모든 노드에서 성립해야 하므로 가장 큰 값을 취하고, 역수로 뒤집습니다.</p>
+$$\boxed{\ \delta t_{\max} = \min_i \frac{\hat c_i\,c_i\,\tilde V_i}{\Phi_{ii}/2 - \gamma_i}\ }$$$$\delta t < \delta t_{\max} \text{ 이면 } \rho_{\mathrm{int}} < 1 \text{ 이 보장됩니다}$$<blockquote>
+<p><strong>역수를 취하면 max 가 min 이 됩니다.</strong>  분모가 가장 큰 값을 요구하는
+노드가 곧 시간 간격을 가장 작게 만드는 노드입니다.</p>
+</blockquote>
+<h3 id="53-분모에--가-왜-들어가는가">5.3 분모에 $\hat c_i$ 가 왜 들어가는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>이 자리가 헷갈리기 쉽습니다.</strong></p>
+<p>상한이 쓰는 $A$ 와 $S$ 는 $\hat C\hat J$ 에서 나온 것입니다.
+그러니 시간 항도 $\hat C$ 를 통과한 뒤의 것이어야 합니다.</p>
+$$\hat C\hat J_{\delta t} = \hat C\hat J + \frac{1}{\delta t}\,\hat C M$$<p>$\hat C$ 와 $M$ 이 둘 다 대각이므로 곱도 대각입니다.</p>
+$$\hat C M = \operatorname{diag}\bigl(\hat c_i\,c_i\,\tilde V_i\bigr)$$$$\therefore\ \text{상한이 쓰는 질량은 } \hat c_i c_i\tilde V_i \text{ 입니다}$$<p>$p$ 가 상수인 문제에서는 $\hat C \approx I$ 라 이 차이가 안 드러납니다.
+그래서 놓치기 쉬운 자리입니다.</p>
+<h3 id="54-소스가-상수여도-시간-간격에-상한이-생긴다">5.4 소스가 상수여도 시간 간격에 상한이 생긴다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\delta t_{\max} = \min_i \frac{\hat c_i c_i\tilde V_i}{\Phi_{ii}/2 - \gamma_i}$$<p>$\partial q/\partial u = 0$ 이면 $\gamma_i = 0$ 입니다.  그러면 분모가 $\Phi_{ii}/2$ 만
+남아 상한이 없어질 것 같지만 아닙니다.</p>
+$$\Phi_{ii} = \sum_j \varepsilon_{ij}^2\,\chi_{ij}$$<p>$\Phi_{ii}$ 는 간선의 비대칭에서 오는 것이라 소스와 무관합니다.
+격자가 만든 비대칭이 남아 있으면 $\varepsilon_{ij} \ne 0$ 이고,
+그러면 $\Phi_{ii} > 0$ 입니다.</p>
+<h3 id="55-이것은-충분조건이다">5.5 이것은 충분조건이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\delta t < \delta t_{\max}$ 이면 반드시 풀립니다.  그러나 <strong>그보다 큰 시간
+간격으로도 풀릴 수 있습니다.</strong>  상한을 썼기 때문에 넉넉하게 잡혀 있습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>조건</th>
+          <th>무엇을 말하나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\delta t < \delta t_{\max}$</td>
+          <td>풀린다는 <strong>보장</strong></td>
+      </tr>
+      <tr>
+          <td>$\delta t \ge \delta t_{\max}$</td>
+          <td>보장이 없다.  풀릴 수도 있다</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="56-재시도할-때-얼마나-올리는가">5.6 재시도할 때 얼마나 올리는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho_{\mathrm{int}}$ 는 시간 간격을 줄이면 계속 줄어듭니다.  그러니 <strong>상한 밑으로
+내려가기만 하면 되고 얼마나 내려갈지는 상관이 없습니다.</strong></p>
+$$\delta t_{\text{다음}} = \operatorname{nextbelow}\bigl(\delta t_{\max}^{\text{새로}}\bigr)$$<p>부동소수에서 그 수보다 작은 가장 가까운 수입니다.  가장 적게 줄이는 것이
+시간 간격을 가장 크게 남깁니다.</p>
+<p><strong>여유 상수를 곱할 이유가 없습니다.</strong>  곱하면 시간 간격이 그만큼 작아지고,
+걸음 수가 그만큼 늘어납니다.</p>
+<hr>
+<h2 id="6-다섯-값이-어디서-왔는지-한자리에">6. 다섯 값이 어디서 왔는지 한자리에<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>값</th>
+          <th>어디서 나왔나</th>
+          <th>사람이 고른 숫자</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\sigma^{*} = 1/(1+\rho^2)$</td>
+          <td>$\varsigma(\sigma)$ 의 최소점</td>
+          <td>없음</td>
+      </tr>
+      <tr>
+          <td>$\text{RhoTol}$, $\text{LinTol}$</td>
+          <td>반복이 한 번만 더 늘어나는 지점</td>
+          <td>「한 번」</td>
+      </tr>
+      <tr>
+          <td>$\max\lvert \nu\rvert \le 1$</td>
+          <td>$\nu + 1 + e^{\zeta_{ij}} > 0$ 을 푼 결과</td>
+          <td>없음</td>
+      </tr>
+      <tr>
+          <td>$N_x^{\text{새로}} = \lceil 1 + (N_x{-}1)\nu_{\max}\rceil$</td>
+          <td>$\nu_{\max}$ 를 1 로 만드는 배수</td>
+          <td>없음</td>
+      </tr>
+      <tr>
+          <td>$\delta t_{\max}$</td>
+          <td>상한 A 를 1 미만으로 만드는 시간 간격</td>
+          <td>없음</td>
+      </tr>
+  </tbody>
+</table>
+<p>「한 번」 하나만 사람이 정한 것이고, 그것도 근거가 있습니다.
+0 이면 아무리 정확해도 모자라고 2 면 느슨합니다.</p>
+<hr>
+<h2 id="7-코드-어디에-있는가">7. 코드 어디에 있는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>무엇</th>
+          <th>어디</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\sigma^{*}$, <code>RhoTol</code>, <code>LinTol</code></td>
+          <td><code>adaptiveTolerances.m</code></td>
+      </tr>
+      <tr>
+          <td>두 값 중 작은 것 고르기</td>
+          <td><code>AdaptiveDamper.m</code></td>
+      </tr>
+      <tr>
+          <td>$\sigma_{\text{부호}}$ 와 $\nu_{\max}$</td>
+          <td><code>trustRegionStep.m</code></td>
+      </tr>
+      <tr>
+          <td>격자 배수식</td>
+          <td><code>meshSufficiency.m</code></td>
+      </tr>
+      <tr>
+          <td>$\delta t_{\max}$</td>
+          <td><code>AssembledSystem.dtBound</code></td>
+      </tr>
+      <tr>
+          <td>유도가 참인지 재는 검사</td>
+          <td><code>CHECK_A_derive.m</code> A.1, A.5 ~ A.7</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/pin/index.html"><a class="padding default-animation" href="/research/pin/index.html">PIN</a><ul id="R-subsections-f2b93e276ba13714c2eca4d90fe22880" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/fvm2/index.html"><a class="padding default-animation" href="/research/fvm2/index.html">FVM2</a><ul id="R-subsections-d52b5f64b45909ad16f6e8ed8034eca1" class="collapsible-menu">
+            <li class="" data-nav-id="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html"><a class="padding" href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html">전체 그림</a></li>
+            <li class="" data-nav-id="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html"><a class="padding" href="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">격자와 물성</a></li>
+            <li class="" data-nav-id="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html"><a class="padding" href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html">조립</a></li>
+            <li class="" data-nav-id="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html"><a class="padding" href="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">뉴턴 풀이</a></li>
+            <li class="" data-nav-id="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html"><a class="padding" href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html">격자 적응</a></li>
+            <li class="" data-nav-id="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html"><a class="padding" href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">시간 전진</a></li>
+            <li class="" data-nav-id="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html"><a class="padding" href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">유도 상한</a></li>
+            <li class="active " data-nav-id="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html"><a class="padding" href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">유도 장치</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785808636"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785808636" defer></script>
+    <script src="/js/theme.js?1785808636" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

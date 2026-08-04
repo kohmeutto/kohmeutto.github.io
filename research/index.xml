@@ -3,23 +3,23 @@
   <channel>
     <title>Research :: 수리전자물리학</title>
     <link>http://localhost:1313/research/index.html</link>
-    <description>Reserch_PIN Research_PA</description>
+    <description>PIN FVM2</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Reserch_PIN</title>
-      <link>http://localhost:1313/research/research_pin/index.html</link>
+      <title>PIN</title>
+      <link>http://localhost:1313/research/pin/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/research/research_pin/index.html</guid>
+      <guid>http://localhost:1313/research/pin/index.html</guid>
       <description>Outline Derivation1 Derivation2 논문 1 원고: 4H-SiC p-i-n 베타볼타익 셀의 양성자 변위 손상 — 어두운 전류와 C-V 분석 논문 1 상세 이론: 4H-SiC p-i-n 베타볼타익 셀의 양성자 변위 손상 (모든 유도 포함)</description>
     </item>
     <item>
-      <title>Research_PA</title>
-      <link>http://localhost:1313/research/research_pa/index.html</link>
+      <title>FVM2</title>
+      <link>http://localhost:1313/research/fvm2/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/research/research_pa/index.html</guid>
-      <description>Omegadl</description>
+      <guid>http://localhost:1313/research/fvm2/index.html</guid>
+      <description>전체 그림 격자와 물성 조립 뉴턴 풀이 격자 적응 시간 전진 유도 상한 유도 장치</description>
     </item>
   </channel>
 </rss>

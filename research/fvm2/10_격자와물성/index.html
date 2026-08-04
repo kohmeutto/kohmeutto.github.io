@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="10. 격자와 물성문제를 세우는 부분입니다. 어디에 무엇이 있고, 거기서 물성이 어떻고, 어떤 격자로 나눌지를 정합니다.
+이 문서가 다루는 파일파일 하는 일 ContinuousDomain2D.m 영역을 등록한다 RegionShapeBase.m 과 도형 7개 점, 선, 원, 타원, 사각형, 다각형, 음함수 CoordinateSystem.m Cartesian2D.m Cylindrical2D.m 좌표계 resolveRegions.m 점마다 어느 영역의 물성·경계조건을 쓸지 정한다 PhysicsManager2D.m 물성을 갖고 점마다 계수와 도함수를 낸다 compileEquation.m 수식 문자열을 함수 핸들로 바꾼다 MeshManager2D.m 격자를 만들고 계량을 캐시한다 MeshSnapshot.m 격자 상태의 스냅숏 1. 영역 — ContinuousDomain2D1.1 무엇을 하는가바깥 상자 하나를 정하고, 그 안에 영역을 겹쳐 쌓습니다. 겹치는 지점의 물성은 우선순위 하나로 결정됩니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="격자와 물성 :: 수리전자물리학">
+    <meta name="twitter:description" content="10. 격자와 물성문제를 세우는 부분입니다. 어디에 무엇이 있고, 거기서 물성이 어떻고, 어떤 격자로 나눌지를 정합니다.
+이 문서가 다루는 파일파일 하는 일 ContinuousDomain2D.m 영역을 등록한다 RegionShapeBase.m 과 도형 7개 점, 선, 원, 타원, 사각형, 다각형, 음함수 CoordinateSystem.m Cartesian2D.m Cylindrical2D.m 좌표계 resolveRegions.m 점마다 어느 영역의 물성·경계조건을 쓸지 정한다 PhysicsManager2D.m 물성을 갖고 점마다 계수와 도함수를 낸다 compileEquation.m 수식 문자열을 함수 핸들로 바꾼다 MeshManager2D.m 격자를 만들고 계량을 캐시한다 MeshSnapshot.m 격자 상태의 스냅숏 1. 영역 — ContinuousDomain2D1.1 무엇을 하는가바깥 상자 하나를 정하고, 그 안에 영역을 겹쳐 쌓습니다. 겹치는 지점의 물성은 우선순위 하나로 결정됩니다.">
+    <meta property="og:url" content="http://localhost:1313/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="격자와 물성 :: 수리전자물리학">
+    <meta property="og:description" content="10. 격자와 물성문제를 세우는 부분입니다. 어디에 무엇이 있고, 거기서 물성이 어떻고, 어떤 격자로 나눌지를 정합니다.
+이 문서가 다루는 파일파일 하는 일 ContinuousDomain2D.m 영역을 등록한다 RegionShapeBase.m 과 도형 7개 점, 선, 원, 타원, 사각형, 다각형, 음함수 CoordinateSystem.m Cartesian2D.m Cylindrical2D.m 좌표계 resolveRegions.m 점마다 어느 영역의 물성·경계조건을 쓸지 정한다 PhysicsManager2D.m 물성을 갖고 점마다 계수와 도함수를 낸다 compileEquation.m 수식 문자열을 함수 핸들로 바꾼다 MeshManager2D.m 격자를 만들고 계량을 캐시한다 MeshSnapshot.m 격자 상태의 스냅숏 1. 영역 — ContinuousDomain2D1.1 무엇을 하는가바깥 상자 하나를 정하고, 그 안에 영역을 겹쳐 쌓습니다. 겹치는 지점의 물성은 우선순위 하나로 결정됩니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="격자와 물성 :: 수리전자물리학">
+    <meta itemprop="description" content="10. 격자와 물성문제를 세우는 부분입니다. 어디에 무엇이 있고, 거기서 물성이 어떻고, 어떤 격자로 나눌지를 정합니다.
+이 문서가 다루는 파일파일 하는 일 ContinuousDomain2D.m 영역을 등록한다 RegionShapeBase.m 과 도형 7개 점, 선, 원, 타원, 사각형, 다각형, 음함수 CoordinateSystem.m Cartesian2D.m Cylindrical2D.m 좌표계 resolveRegions.m 점마다 어느 영역의 물성·경계조건을 쓸지 정한다 PhysicsManager2D.m 물성을 갖고 점마다 계수와 도함수를 낸다 compileEquation.m 수식 문자열을 함수 핸들로 바꾼다 MeshManager2D.m 격자를 만들고 계량을 캐시한다 MeshSnapshot.m 격자 상태의 스냅숏 1. 영역 — ContinuousDomain2D1.1 무엇을 하는가바깥 상자 하나를 정하고, 그 안에 영역을 겹쳐 쌓습니다. 겹치는 지점의 물성은 우선순위 하나로 결정됩니다.">
+    <meta itemprop="wordCount" content="1670">
+    <title>격자와 물성 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785808636" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785808636" defer></script>
+    <script src="/js/search-lunr.js?1785808636" defer></script>
+    <script src="/js/search.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1785808636";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785808636" rel="stylesheet">
+    <link href="/css/theme.css?1785808636" rel="stylesheet">
+    <link href="/css/format-html.css?1785808636" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/fvm2\/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#이-문서가-다루는-파일">이 문서가 다루는 파일</a></li>
+    <li><a href="#1-영역--continuousdomain2d">1. 영역 — <code>ContinuousDomain2D</code></a>
+      <ul>
+        <li><a href="#11-무엇을-하는가">1.1 무엇을 하는가</a></li>
+        <li><a href="#12-어떻게-쓰는가">1.2 어떻게 쓰는가</a></li>
+        <li><a href="#13-우선순위">1.3 우선순위</a></li>
+        <li><a href="#14-도형-일곱">1.4 도형 일곱</a></li>
+        <li><a href="#15-좌표계">1.5 좌표계</a></li>
+        <li><a href="#16-주의할-것">1.6 주의할 것</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-영역-판정--resolveregions">2. 영역 판정 — <code>resolveRegions</code></a>
+      <ul>
+        <li><a href="#21-무엇을-하는가">2.1 무엇을 하는가</a></li>
+        <li><a href="#22-어떻게-쓰는가">2.2 어떻게 쓰는가</a></li>
+        <li><a href="#23-왜-클래스가-아니라-함수인가">2.3 왜 클래스가 아니라 함수인가</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-물성--physicsmanager2d">3. 물성 — <code>PhysicsManager2D</code></a>
+      <ul>
+        <li><a href="#31-무엇을-하는가">3.1 무엇을 하는가</a></li>
+        <li><a href="#32-어떻게-쓰는가">3.2 어떻게 쓰는가</a></li>
+        <li><a href="#33-무엇이-들어가는가">3.3 무엇이 들어가는가</a></li>
+        <li><a href="#34-robin-경계">3.4 Robin 경계</a></li>
+        <li><a href="#35-열린-경계--openboundary">3.5 열린 경계 — <code>OpenBoundary</code></a></li>
+        <li><a href="#36-무엇이-나오는가--evaluate">3.6 무엇이 나오는가 — <code>evaluate</code></a></li>
+        <li><a href="#37-캐시">3.7 캐시</a></li>
+        <li><a href="#38-주의할-것">3.8 주의할 것</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-수식-컴파일--compileequation">4. 수식 컴파일 — <code>compileEquation</code></a>
+      <ul>
+        <li><a href="#41-무엇을-하는가">4.1 무엇을 하는가</a></li>
+        <li><a href="#42-왜-이렇게-하는가">4.2 왜 이렇게 하는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-격자--meshmanager2d">5. 격자 — <code>MeshManager2D</code></a>
+      <ul>
+        <li><a href="#51-무엇을-하는가">5.1 무엇을 하는가</a></li>
+        <li><a href="#52-어떻게-쓰는가">5.2 어떻게 쓰는가</a></li>
+        <li><a href="#53-물리-좌표에서-나눕니다">5.3 물리 좌표에서 나눕니다</a></li>
+        <li><a href="#54-계량-캐시--metriccache">5.4 계량 캐시 — <code>MetricCache</code></a></li>
+        <li><a href="#55-격자가-바뀌면-계량을-자동으로-지웁니다">5.5 격자가 바뀌면 계량을 자동으로 지웁니다</a></li>
+        <li><a href="#56-주의할-것">5.6 주의할 것</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-스냅숏--meshsnapshot">6. 스냅숏 — <code>MeshSnapshot</code></a></li>
+    <li><a href="#7-흔한-실수">7. 흔한 실수</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/fvm2/index.html"><span itemprop="name">FVM2</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">격자와 물성</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html" title="전체 그림 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html" title="조립 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="격자와-물성">격자와 물성</h1>
+
+<hr>
+<h1 id="10-격자와-물성">10. 격자와 물성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>문제를 세우는 부분입니다.  <strong>어디에</strong> 무엇이 있고, <strong>거기서</strong> 물성이 어떻고,
+<strong>어떤 격자</strong>로 나눌지를 정합니다.</p>
+<h2 id="이-문서가-다루는-파일">이 문서가 다루는 파일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>파일</th>
+          <th>하는 일</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ContinuousDomain2D.m</code></td>
+          <td>영역을 등록한다</td>
+      </tr>
+      <tr>
+          <td><code>RegionShapeBase.m</code> 과 도형 7개</td>
+          <td>점, 선, 원, 타원, 사각형, 다각형, 음함수</td>
+      </tr>
+      <tr>
+          <td><code>CoordinateSystem.m</code> <code>Cartesian2D.m</code> <code>Cylindrical2D.m</code></td>
+          <td>좌표계</td>
+      </tr>
+      <tr>
+          <td><code>resolveRegions.m</code></td>
+          <td>점마다 어느 영역의 물성·경계조건을 쓸지 정한다</td>
+      </tr>
+      <tr>
+          <td><code>PhysicsManager2D.m</code></td>
+          <td>물성을 갖고 점마다 계수와 도함수를 낸다</td>
+      </tr>
+      <tr>
+          <td><code>compileEquation.m</code></td>
+          <td>수식 문자열을 함수 핸들로 바꾼다</td>
+      </tr>
+      <tr>
+          <td><code>MeshManager2D.m</code></td>
+          <td>격자를 만들고 계량을 캐시한다</td>
+      </tr>
+      <tr>
+          <td><code>MeshSnapshot.m</code></td>
+          <td>격자 상태의 스냅숏</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="1-영역--continuousdomain2d">1. 영역 — <code>ContinuousDomain2D</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="11-무엇을-하는가">1.1 무엇을 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>바깥 상자 하나를 정하고, 그 안에 영역을 겹쳐 쌓습니다.
+겹치는 지점의 물성은 <strong>우선순위 하나</strong>로 결정됩니다.</p>
+<h3 id="12-어떻게-쓰는가">1.2 어떻게 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>dom = ContinuousDomain2D(<span style="color:#e6db74">&#39;Bounds&#39;</span>, [x0 x1 y0 y1], <span style="color:#e6db74">&#39;CoordSystem&#39;</span>, Cartesian2D());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>idBg  = dom.setBackground(<span style="color:#e6db74">&#39;Name&#39;</span>, &#34;SiO2&#34;);                  <span style="color:#75715e">% 배경.  안 겹치는 곳</span>
+</span></span><span style="display:flex;"><span>idSub = dom.addRegion(<span style="color:#e6db74">&#39;Name&#39;</span>, &#34;Si_sub&#34;, <span style="color:#e6db74">&#39;Type&#39;</span>, &#34;rectangle&#34;, <span style="color:#75715e">...</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#e6db74">&#39;Params&#39;</span>, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.5</span>]);
+</span></span><span style="display:flex;"><span>idFin = dom.addRegion(<span style="color:#e6db74">&#39;Name&#39;</span>, &#34;Si_fin&#34;, <span style="color:#e6db74">&#39;Type&#39;</span>, &#34;rectangle&#34;, <span style="color:#75715e">...</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#e6db74">&#39;Params&#39;</span>, [<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1.1</span>]);</span></span></code></pre></div>
+<p><code>addRegion</code> 이 돌려주는 ID 를 물성 설정에 씁니다.</p>
+<h3 id="13-우선순위">1.3 우선순위<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\text{차원 오름차순} \;\to\; \text{같은 차원이면 ID 내림차순}$$<table>
+  <thead>
+      <tr>
+          <th>규칙</th>
+          <th>뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>차원이 낮을수록 이긴다</td>
+          <td>점(0차) &gt; 선(1차) &gt; 면(2차)</td>
+      </tr>
+      <tr>
+          <td>같은 차원이면 나중 등록이 이긴다</td>
+          <td>ID 가 클수록 이긴다</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>왜 이 순서인가.</strong>  점이나 선은 「이 자리만 특별하다」를 뜻합니다.
+그것이 면에 묻히면 지정한 뜻이 사라집니다.
+같은 차원끼리는 나중에 얹은 것이 앞의 것을 덮는 것이 자연스럽습니다.</p>
+<p>계면·모서리처럼 여러 영역에 동시에 드는 지점이 이 규칙 하나로 결정됩니다.</p>
+<h3 id="14-도형-일곱">1.4 도형 일곱<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>타입</th>
+          <th>클래스</th>
+          <th><code>Params</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&quot;point&quot;</code></td>
+          <td><code>PointShape</code></td>
+          <td><code>[x y]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;line&quot;</code></td>
+          <td><code>LineShape</code></td>
+          <td><code>[x1 y1 x2 y2]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;circle&quot;</code></td>
+          <td><code>CircleShape</code></td>
+          <td><code>[cx cy r]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;ellipse&quot;</code></td>
+          <td><code>EllipseShape</code></td>
+          <td><code>[cx cy a b]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;rectangle&quot;</code></td>
+          <td><code>RectangleShape</code></td>
+          <td><code>[x0 x1 y0 y1]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;polygon&quot;</code></td>
+          <td><code>PolygonShape</code></td>
+          <td><code>[x1 y1; x2 y2; ...]</code></td>
+      </tr>
+      <tr>
+          <td><code>&quot;implicit&quot;</code></td>
+          <td><code>ImplicitShape</code></td>
+          <td>함수 핸들</td>
+      </tr>
+  </tbody>
+</table>
+<p>일곱 개 모두 <code>RegionShapeBase</code> 라는 뼈대 클래스를 물려받습니다.
+새 모양을 더하고 싶으면 그 뼈대를 물려받아 세 가지를 채우면 됩니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>채울 것</th>
+          <th>무엇을 답하는가</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>computeMask</code></td>
+          <td>이 점이 도형 안에 있는가</td>
+      </tr>
+      <tr>
+          <td><code>dim</code></td>
+          <td>이 도형은 몇 차원인가 (점 0, 선 1, 면 2)</td>
+      </tr>
+      <tr>
+          <td><code>project</code></td>
+          <td>이 점을 도형 위로 옮기면 어디인가</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>왜 클래스로 두었는가.</strong>  같은 자리에 서로 다른 도형이 일곱 개나
+번갈아 들어가기 때문입니다.  기억할 것이 없어도, 이렇게 갈아 끼울
+자리라면 클래스로 두는 것이 맞습니다.</p>
+</blockquote>
+<h3 id="15-좌표계">1.5 좌표계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>클래스</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Cartesian2D</code></td>
+          <td>직교.  체적 배율 1</td>
+      </tr>
+      <tr>
+          <td><code>Cylindrical2D</code></td>
+          <td>원통(축대칭).  체적 배율 $2\pi r$</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>CoordinateSystem</code> 이 뼈대이고, 위의 둘이 그 뼈대를 채운 것입니다.</p>
+<h3 id="16-주의할-것">1.6 주의할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong><code>DimMap</code> 은 미리 적어 둔 값입니다.</strong>  영역을 등록할 때 그 영역이 몇
+차원인지를 한 번 물어보고 적어 둡니다.  그러지 않으면 점을 판정할 때마다
+영역 수만큼 <code>dim()</code> 을 되풀이해 물어봐야 합니다.  영역을 등록한 뒤로는
+차원이 바뀌지 않으므로, 미리 적어 두어도 결과가 달라지지 않습니다.</p>
+<p><strong><code>MaskFunc</code> 과 <code>ProjectFunc</code> 도 미리 적어 둔 것입니다.</strong>  <code>Shape</code> 필드와
+겹쳐 보이지만 일부러 그렇게 두었습니다.  자주 도는 곳에서는 「이 도형이
+어떤 종류인지 찾아 그에 맞는 함수를 고르는」 과정이 부담이 되므로,
+그 함수를 미리 골라 적어 둡니다.  그러면서도 <code>Shape</code> 을 남겨 두어야
+도형을 갈아 끼울 수 있습니다.</p>
+<hr>
+<h2 id="2-영역-판정--resolveregions">2. 영역 판정 — <code>resolveRegions</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="21-무엇을-하는가">2.1 무엇을 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>점 목록을 받아 점마다 <strong>어느 영역의 물성과 경계조건을 쓸지</strong> 정합니다.
+1.3 의 우선순위를 실제로 적용하는 자리입니다.</p>
+<h3 id="22-어떻게-쓰는가">2.2 어떻게 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>maps = resolveRegions(x_vec, y_vec, equations, domain);</span></span></code></pre></div>
+<p>직접 부를 일은 드뭅니다.  <code>PhysicsManager2D.evaluate</code> 가 안에서 씁니다.</p>
+<h3 id="23-왜-클래스가-아니라-함수인가">2.3 왜 클래스가 아니라 함수인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상태가 없고, 갈아 끼울 구현도 없고, 소유하는 것도 없습니다.
+기억해 둘 것이 없으니 클래스로 감쌀 이유가 없습니다.</p>
+<hr>
+<h2 id="3-물성--physicsmanager2d">3. 물성 — <code>PhysicsManager2D</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-무엇을-하는가">3.1 무엇을 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>영역마다 물성을 문자열로 받아 두었다가, 점 목록을 받으면 그 점에서의
+계수와 도함수를 냅니다.</p>
+$$p,\quad \frac{\partial p}{\partial u},\quad q,\quad \frac{\partial q}{\partial u},\quad
+\alpha,\ \beta,\ \gamma \ \text{와 그 도함수},\quad c$$<h3 id="32-어떻게-쓰는가">3.2 어떻게 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>pm = PhysicsManager2D(<span style="color:#e6db74">&#39;Domain&#39;</span>, dom);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 영역 물성</span>
+</span></span><span style="display:flex;"><span>pm.setEquation(idSi,  <span style="color:#e6db74">&#39;P&#39;</span>, &#34;<span style="color:#ae81ff">148</span><span style="color:#f92672">*</span>u^(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.3</span>)&#34;, <span style="color:#e6db74">&#39;Q&#39;</span>, &#34;<span style="color:#ae81ff">100</span>&#34;, <span style="color:#e6db74">&#39;C&#39;</span>, &#34;<span style="color:#ae81ff">163</span>&#34;);
+</span></span><span style="display:flex;"><span>pm.setEquation(idOx,  <span style="color:#e6db74">&#39;P&#39;</span>, &#34;<span style="color:#ae81ff">1.4</span>&#34;,          <span style="color:#e6db74">&#39;Q&#39;</span>, &#34;<span style="color:#ae81ff">0</span>&#34;,   <span style="color:#e6db74">&#39;C&#39;</span>, &#34;<span style="color:#ae81ff">1.6e6</span>&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 경계조건 — 이름으로 지정한다</span>
+</span></span><span style="display:flex;"><span>pm.setEquation(&#34;Bottom&#34;, <span style="color:#e6db74">&#39;U&#39;</span>, <span style="color:#ae81ff">300.0</span>);                              <span style="color:#75715e">% Dirichlet</span>
+</span></span><span style="display:flex;"><span>pm.setEquation(&#34;Top&#34;, <span style="color:#e6db74">&#39;Alpha&#39;</span>, &#34;<span style="color:#ae81ff">0.0</span>&#34;, <span style="color:#e6db74">&#39;Beta&#39;</span>, &#34;<span style="color:#ae81ff">1.0</span>&#34;, <span style="color:#e6db74">&#39;Gamma&#39;</span>, &#34;<span style="color:#ae81ff">0.0</span>&#34;);  <span style="color:#75715e">% Neumann</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pm.compile();          <span style="color:#75715e">% ** 반드시 불러야 한다 **</span></span></span></code></pre></div>
+<p><strong><code>'C'</code> 는 시간 항 계수입니다.</strong>  시각을 밟아 풀 때만 쓰입니다.</p>
+$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) + q$$<p><strong>안 적으면 코드가 채우지 않습니다.</strong>  그 영역에 <code>'C'</code> 가 없는 채로
+<code>solveTransient</code> 을 부르면 그 자리에서 멈추고 알립니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>시간 항 계수 c 를 안 적은 영역이 있다.  노드 1024 개.
+  invdt &gt; 0 으로 풀려면 그 영역에 C 를 적어야 한다.</code></pre></div>
+<p>옛 판은 안 적으면 1 을 채웠습니다.  정상 문제는 $1/\delta t = 0$ 이라
+앞 항이 사라지므로 $c$ 가 얼마든 답이 같아 안 드러났습니다.  그런데
+나중에 시각을 밟아 보면 안 적었던 것이 조용히 1 로 들어갑니다.
+물리적으로 아무 근거가 없는 값입니다.</p>
+$$\text{시간 항 계수는 물질의 성질이라 사용자가 정해야 합니다}$$<p>그 영역이 시간에 따라 안 변해야 하면 <code>'C'</code> 를 <code>&quot;0&quot;</code> 으로 적습니다.
+뜻을 갖고 적은 것이므로 막지 않습니다.</p>
+<h3 id="33-무엇이-들어가는가">3.3 무엇이 들어가는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>이름</th>
+          <th>뜻</th>
+          <th>예</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>P</code></td>
+          <td>확산 계수 $p(u,x,y)$</td>
+          <td><code>&quot;148*u^(-1.3)&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>Q</code></td>
+          <td>소스 $q(u,x,y)$</td>
+          <td><code>&quot;100&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>C</code></td>
+          <td>시간 항 계수 $c$</td>
+          <td><code>&quot;163&quot;</code>.  안 주면 1</td>
+      </tr>
+      <tr>
+          <td><code>U</code></td>
+          <td>Dirichlet 값</td>
+          <td><code>300.0</code> (숫자)</td>
+      </tr>
+      <tr>
+          <td><code>Alpha</code> <code>Beta</code> <code>Gamma</code></td>
+          <td>Robin 계수</td>
+          <td>아래 참조</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>변수 이름은 <code>u</code>, <code>x</code>, <code>y</code> 로 씁니다.</strong>  수식을 함수로 바꿀 때 이 세 이름을
+찾아 자리를 잡아 주기 때문입니다.  다른 이름을 쓰면 그 자리를 못 찾아
+오류가 납니다.</p>
+<h3 id="34-robin-경계">3.4 Robin 경계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\alpha\,u + \beta\,\frac{\partial u}{\partial n} = \gamma$$<table>
+  <thead>
+      <tr>
+          <th>설정</th>
+          <th>무엇이 되는가</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\alpha=0,\ \beta=1,\ \gamma=0$</td>
+          <td>단열 (Neumann)</td>
+      </tr>
+      <tr>
+          <td>$\alpha=1,\ \beta=0$</td>
+          <td><strong>Dirichlet 로 취급된다</strong></td>
+      </tr>
+      <tr>
+          <td>둘 다 0 아님</td>
+          <td>진짜 Robin (대류 등)</td>
+      </tr>
+  </tbody>
+</table>
+<p>$\lvert\beta\rvert < 10^{-15}$ 이면 코드가 그 노드를 Dirichlet 으로 표시합니다.
+<code>U</code> 로 직접 준 것과 같은 취급입니다.</p>
+<h3 id="35-열린-경계--openboundary">3.5 열린 경계 — <code>OpenBoundary</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>계수 셋을 손으로 안 주고 <strong>물성에서 만들어 쓰는 길</strong>이 있습니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>pm.setEquation(&#34;Right&#34;, <span style="color:#e6db74">&#39;OpenBoundary&#39;</span>, true);</span></span></code></pre></div>
+<h4 id="무엇을-하나">무엇을 하나<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><strong>1.  소스가 0 이 되는 자리를 찾습니다.</strong></p>
+$$q(u_b) = 0$$<p>뉴턴으로 풉니다.  이것이 「멀리 가면 도달하는 값」입니다.</p>
+<p><strong>2.  그 자리에서 계수를 만듭니다.</strong></p>
+$$\alpha = \sqrt{\frac{-p}{\partial q/\partial u}}, \qquad
+\beta = 1, \qquad \gamma = \alpha\,u_b$$<h4 id="무슨-뜻인가">무슨 뜻인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>넣어서 정리하면 이렇게 됩니다.</p>
+$$p\,\frac{\partial u}{\partial n} = -\alpha\,(u - u_b)$$<table>
+  <thead>
+      <tr>
+          <th>어느 쪽</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>왼쪽</td>
+          <td>흘러나가는 양</td>
+      </tr>
+      <tr>
+          <td>오른쪽</td>
+          <td>균형에서 벗어난 정도</td>
+      </tr>
+  </tbody>
+</table>
+<p>$\alpha$ 는 <strong>디바이 길이의 역수</strong>입니다.</p>
+$$\ell_{\text D} = \sqrt{\frac{p}{\lvert\partial q/\partial u\rvert}}
+\qquad\Longrightarrow\qquad \alpha = \frac{1}{\ell_{\text D}}$$<p>「확산이 소스 변화를 따라잡는 거리」의 역수이므로, <strong>이만큼 벗어나면
+이만큼 흘러나간다</strong>는 관계가 됩니다.</p>
+$$\text{\textbf{무한히 먼 경계를 유한한 상자로 흉내 내는 것입니다}}$$<p>상자 끝에서 파가 되돌아오지 않습니다.  그래서 「열린」입니다.</p>
+<h4 id="원통-좌표에서는-곡률이-더해집니다">원통 좌표에서는 곡률이 더해집니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+$$\alpha \leftarrow \alpha + \frac{1}{2r}$$<p>축에서 멀어질수록 면적이 커져 더 많이 흘러나가기 때문입니다.</p>
+<h4 id="손으로-고른-수가-없습니다">손으로 고른 수가 없습니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>$\alpha$ 를 사용자가 정하지 않습니다.  <strong>물성에서 나옵니다.</strong></p>
+<h4 id="언제-쓰나">언제 쓰나<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>전극에서 멀리 떨어진 자리의 값을 미리 알 때 씁니다.  반도체에서
+공핍층 밖의 전위나, 열 문제에서 먼 곳의 온도가 그런 예입니다.</p>
+<h3 id="36-무엇이-나오는가--evaluate">3.6 무엇이 나오는가 — <code>evaluate</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[P, dP, Q, dQ, Alpha, Beta, Gamma, dAlpha, dBeta, dGamma, <span style="color:#75715e">...</span>
+</span></span><span style="display:flex;"><span> U_val, is_Dir, is_Neu, ID_Map, C_cap] = pm.evaluate(x, y, u);</span></span></code></pre></div>
+<p><strong>반환값이 15개입니다.</strong>  대개는 조립이 대신 부르므로 직접 쓸 일이 드뭅니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>자리</th>
+          <th>이름</th>
+          <th>뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>12</td>
+          <td><code>is_Dir</code></td>
+          <td>Dirichlet 노드 마스크</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td><code>C_cap</code></td>
+          <td>노드별 $c(x,y)$</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="37-캐시">3.7 캐시<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>같은 좌표로 여러 번 부르는 일이 잦습니다.  좌표 집합을 키로 캐시를 둡니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>pm.EvalCache = {};      <span style="color:#75715e">% 격자가 바뀌면 반드시 비운다</span></span></span></code></pre></div>
+<p><code>solveSteady</code> 과 <code>solveTransient</code> 가 격자를 바꾼 뒤 이것을 비웁니다.</p>
+<h3 id="38-주의할-것">3.8 주의할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong><code>compile()</code> 을 안 부르면 안 돕니다.</strong>  문자열을 함수 핸들로 바꾸는 것이
+그 안에서 일어납니다.</p>
+<p><strong>상수는 컴파일하지 않습니다.</strong>  <code>str2double</code> 이 숫자를 뽑으면 그 값을
+돌려주는 핸들을 만들고 미분은 0으로 둡니다.  <code>matlabFunction</code> 호출이
+사라져 준비 시간이 크게 줍니다.</p>
+<hr>
+<h2 id="4-수식-컴파일--compileequation">4. 수식 컴파일 — <code>compileEquation</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="41-무엇을-하는가">4.1 무엇을 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>Equation</code> 구조체 하나를 받아 함수 핸들 묶음을 만듭니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>funcs = compileEquation(eq, sym_u, sym_x, sym_y);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% funcs.p  .dp  .q  .dq  .c  .a  .da  .b  .db  .g  .dg</span></span></span></code></pre></div>
+<p><code>PhysicsManager2D.compile</code> 이 영역마다 한 번씩 부릅니다.</p>
+<h3 id="42-왜-이렇게-하는가">4.2 왜 이렇게 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>이유</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>심볼릭으로 미분한다</td>
+          <td>$\partial p/\partial u$ 를 손으로 안 적어도 된다</td>
+      </tr>
+      <tr>
+          <td><code>matlabFunction</code> 으로 바꾼다</td>
+          <td>심볼릭 평가는 느리다.  수치 핸들이 수백 배 빠르다</td>
+      </tr>
+      <tr>
+          <td>상수는 건너뛴다</td>
+          <td><code>matlabFunction</code> 호출 자체가 비싸다</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="5-격자--meshmanager2d">5. 격자 — <code>MeshManager2D</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-무엇을-하는가">5.1 무엇을 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>영역 경계를 존중하는 삼각형 격자를 만들고, 유한체적법이 쓰는 계량을
+미리 계산해 캐시합니다.</p>
+<h3 id="52-어떻게-쓰는가">5.2 어떻게 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>mm = MeshManager2D(<span style="color:#e6db74">&#39;Domain&#39;</span>, dom);
+</span></span><span style="display:flex;"><span>mm.generateMesh(<span style="color:#e6db74">&#39;Nx&#39;</span>, <span style="color:#ae81ff">64</span>, <span style="color:#e6db74">&#39;Ny&#39;</span>, <span style="color:#ae81ff">64</span>, <span style="color:#e6db74">&#39;InterfaceLevel&#39;</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>mm.updateMetrics(pm);          <span style="color:#75715e">% ** 물성이 필요하다 **</span></span></span></code></pre></div>
+<table>
+  <thead>
+      <tr>
+          <th>인자</th>
+          <th>뜻</th>
+          <th>기본</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Nx</code> <code>Ny</code></td>
+          <td>각 방향 분할 수</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td><code>InterfaceLevel</code></td>
+          <td>계면 근처를 몇 단계 더 나눌지</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td><code>Hmax</code> <code>Hmin</code></td>
+          <td>최대·최소 변 길이.  주면 <code>Nx</code> 대신 씀</td>
+          <td>자동</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="53-물리-좌표에서-나눕니다">5.3 물리 좌표에서 나눕니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>이것이 중요합니다.</strong></p>
+<p>격자를 나눌 때 쓰는 좌표와 계량을 잴 때 쓰는 좌표가 <strong>같아야 합니다.</strong></p>
+<p>들로네 삼각분할은 이 조건을 지켜 줍니다.</p>
+$$\theta_1 + \theta_2 \le \pi \;\Longrightarrow\; \cot\theta_1 + \cot\theta_2 \ge 0$$<p>여기서 $\theta_1$ 과 $\theta_2$ 는 간선을 마주 보는 두 각입니다.</p>
+<blockquote>
+<p><strong>각도를 $\alpha$, $\beta$ 로 쓰지 않습니다.</strong>  이 프로젝트에서 그 둘은
+Robin 경계조건의 계수입니다.  각도는 $\theta$ 무리로 씁니다.</p>
+</blockquote>
+<p>그런데 이 조건은 <strong>나눈 좌표계에서 잰 각도</strong>에 대한 것입니다.
+$[0,1]^2$ 같은 상자에서 나눈 뒤 실제 크기로 늘리면, $\ell_x$ 와 $\ell_y$ 가 다를 때
+각도가 바뀝니다.  나눌 때는 조건을 지켰는데 늘리고 나면 깨지는 것입니다.
+그러면 간선 가중치 $D_{ij}$ 가 음수로 나옵니다.</p>
+$$\text{그래서 실제 크기 그대로 나눕니다}$$<p><code>IsotropicScale</code> 속성이 $[N_x-1,\ N_y-1]$ 을 담습니다.  거기서 $N_x$ 를
+되살릴 수 있습니다 — h-정제가 그것을 씁니다.</p>
+<h3 id="54-계량-캐시--metriccache">5.4 계량 캐시 — <code>MetricCache</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>updateMetrics(pm)</code> 이 만듭니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>필드</th>
+          <th>뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>N</code></td>
+          <td>노드 수</td>
+      </tr>
+      <tr>
+          <td><code>V_node</code></td>
+          <td>노드별 쌍대 체적 $\tilde V_i$</td>
+      </tr>
+      <tr>
+          <td><code>I</code> <code>J</code></td>
+          <td>간선 목록 (노드 번호 쌍)</td>
+      </tr>
+      <tr>
+          <td><code>D_ij</code></td>
+          <td>간선별 코탄젠트 가중치</td>
+      </tr>
+      <tr>
+          <td><code>L_bnd</code></td>
+          <td>경계 노드의 경계 길이</td>
+      </tr>
+      <tr>
+          <td><code>FB</code></td>
+          <td>자유 경계 (<code>freeBoundary</code> 결과)</td>
+      </tr>
+  </tbody>
+</table>
+$$D_{ij} = \frac{\cot\theta_1 + \cot\theta_2}{2}$$<p>여기서 $\theta_1$ 과 $\theta_2$ 는 간선 $ij$ 를 마주 보는 두 각입니다.
+간선 양쪽에 삼각형이 하나씩 있고, 그 삼각형에서 이 간선과 맞닿지 않는
+꼭짓점의 각이 각각 $\theta_1$, $\theta_2$ 입니다.</p>
+<p>간선이 볼록껍질 위에 있으면 삼각형이 하나뿐이라 $D_{ij} = \cot\theta_1/2$ 입니다.</p>
+<blockquote>
+<p><strong>볼록껍질 간선은 둔각에서 음수가 될 수 있습니다.</strong>  들로네가 그것을
+못 막습니다.  그 경우 상한 A 와 B 를 못 쓰고 AbsSplit(C) 로 가야 합니다.
+<code>60_유도_상한.md</code> 참조.</p>
+</blockquote>
+<h3 id="55-격자가-바뀌면-계량을-자동으로-지웁니다">5.5 격자가 바뀌면 계량을 자동으로 지웁니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>mm.Nodes = new_nodes;      <span style="color:#75715e">% setter 가 MetricCache 를 자동으로 비운다</span></span></span></code></pre></div>
+<p><code>Nodes</code> 와 <code>Elements</code> 에는 값을 넣을 때 함께 도는 코드가 붙어 있습니다.
+새 값을 넣으면 <code>MetricCache</code> 가 비워지므로, 그 뒤에 <code>updateMetrics</code> 를
+다시 불러야 합니다.</p>
+<p><strong>격자를 바꾸고도 계량을 다시 안 재면 옛 값으로 계산하게 됩니다.</strong>
+그 일이 생기지 않도록 막아 둔 것입니다.</p>
+<h3 id="56-주의할-것">5.6 주의할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong><code>updateMetrics</code> 는 물성이 필요합니다.</strong>  계면 위치를 알아야 어느 간선이
+계면을 가로지르는지 판정할 수 있기 때문입니다.</p>
+<p><strong>노드를 옮긴 뒤에는 <code>convertToTriangles()</code> 를 불러야 합니다.</strong>
+노드가 움직이면 삼각형이 서로 겹치거나 뒤집힐 수 있어, 삼각형을
+다시 이어 주어야 합니다.</p>
+<hr>
+<h2 id="6-스냅숏--meshsnapshot">6. 스냅숏 — <code>MeshSnapshot</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>격자의 노드와 삼각형을 한 덩어리로 담아 두는 그릇입니다.
+한 번 만들면 안에 든 값을 바꿀 수 없습니다 (<code>SetAccess = immutable</code>).</p>
+<p>잔차가 가장 낮았던 순간의 격자를 기억해 두었다가 나중에 되돌릴 때
+씁니다.  <code>GoldenStateManager</code> 가 그 일을 합니다.</p>
+<hr>
+<h2 id="7-흔한-실수">7. 흔한 실수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>증상</th>
+          <th>원인</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>물성이 다 0 이다</td>
+          <td><code>pm.compile()</code> 을 안 불렀다</td>
+      </tr>
+      <tr>
+          <td>계량이 없다는 오류</td>
+          <td><code>mm.updateMetrics(pm)</code> 을 안 불렀다</td>
+      </tr>
+      <tr>
+          <td>격자를 바꿨는데 결과가 그대로</td>
+          <td><code>EvalCache</code> 를 안 비웠다</td>
+      </tr>
+      <tr>
+          <td>계면에서 물성이 뒤집혔다</td>
+          <td>등록 순서.  나중 등록이 이긴다</td>
+      </tr>
+      <tr>
+          <td>$D_{ij} < 0$ 이 많다</td>
+          <td>볼록껍질 간선인지 확인.  거기는 삼각형이 하나뿐이라 둔각에서 음수가 된다</td>
+      </tr>
+      <tr>
+          <td>변수 이름 오류</td>
+          <td>수식에 <code>u</code>, <code>x</code>, <code>y</code> 말고 다른 이름을 썼다</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/pin/index.html"><a class="padding default-animation" href="/research/pin/index.html">PIN</a><ul id="R-subsections-f2b93e276ba13714c2eca4d90fe22880" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/fvm2/index.html"><a class="padding default-animation" href="/research/fvm2/index.html">FVM2</a><ul id="R-subsections-d52b5f64b45909ad16f6e8ed8034eca1" class="collapsible-menu">
+            <li class="" data-nav-id="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html"><a class="padding" href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html">전체 그림</a></li>
+            <li class="active " data-nav-id="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html"><a class="padding" href="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">격자와 물성</a></li>
+            <li class="" data-nav-id="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html"><a class="padding" href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html">조립</a></li>
+            <li class="" data-nav-id="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html"><a class="padding" href="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">뉴턴 풀이</a></li>
+            <li class="" data-nav-id="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html"><a class="padding" href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html">격자 적응</a></li>
+            <li class="" data-nav-id="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html"><a class="padding" href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">시간 전진</a></li>
+            <li class="" data-nav-id="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html"><a class="padding" href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">유도 상한</a></li>
+            <li class="" data-nav-id="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html"><a class="padding" href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">유도 장치</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785808636"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785808636" defer></script>
+    <script src="/js/theme.js?1785808636" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="50. 시간 전진정상 문제가 아예 안 풀릴 때가 있습니다. 소스가 스스로를 키우는 문제에서 그렇습니다. 발열이 온도를 올리고, 온도가 오르니 발열이 더 커지고, 그렇게 끝없이 올라가면 멈추는 자리가 없습니다.
+$$\text{그런 문제는 시간을 따라가며 풀어야 합니다}$$$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) &#43; q$$시간을 쪼개면 매 시각마다 정상 문제와 비슷한 모양이 됩니다.
+$$\frac{c_i\tilde V_i}{\delta t}\,(u^{n&#43;1} - u^n) &#43; \text{res}_i = 0$$$\delta t \to \infty$ 로 두면 앞 항이 사라져 정상 문제가 됩니다. 같은 코드로 둘 다 풉니다. 코드에서는 그 역수를 넘기고, 0 을 넘기면 정상 문제가 됩니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="시간 전진 :: 수리전자물리학">
+    <meta name="twitter:description" content="50. 시간 전진정상 문제가 아예 안 풀릴 때가 있습니다. 소스가 스스로를 키우는 문제에서 그렇습니다. 발열이 온도를 올리고, 온도가 오르니 발열이 더 커지고, 그렇게 끝없이 올라가면 멈추는 자리가 없습니다.
+$$\text{그런 문제는 시간을 따라가며 풀어야 합니다}$$$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) &#43; q$$시간을 쪼개면 매 시각마다 정상 문제와 비슷한 모양이 됩니다.
+$$\frac{c_i\tilde V_i}{\delta t}\,(u^{n&#43;1} - u^n) &#43; \text{res}_i = 0$$$\delta t \to \infty$ 로 두면 앞 항이 사라져 정상 문제가 됩니다. 같은 코드로 둘 다 풉니다. 코드에서는 그 역수를 넘기고, 0 을 넘기면 정상 문제가 됩니다.">
+    <meta property="og:url" content="http://localhost:1313/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="시간 전진 :: 수리전자물리학">
+    <meta property="og:description" content="50. 시간 전진정상 문제가 아예 안 풀릴 때가 있습니다. 소스가 스스로를 키우는 문제에서 그렇습니다. 발열이 온도를 올리고, 온도가 오르니 발열이 더 커지고, 그렇게 끝없이 올라가면 멈추는 자리가 없습니다.
+$$\text{그런 문제는 시간을 따라가며 풀어야 합니다}$$$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) &#43; q$$시간을 쪼개면 매 시각마다 정상 문제와 비슷한 모양이 됩니다.
+$$\frac{c_i\tilde V_i}{\delta t}\,(u^{n&#43;1} - u^n) &#43; \text{res}_i = 0$$$\delta t \to \infty$ 로 두면 앞 항이 사라져 정상 문제가 됩니다. 같은 코드로 둘 다 풉니다. 코드에서는 그 역수를 넘기고, 0 을 넘기면 정상 문제가 됩니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="시간 전진 :: 수리전자물리학">
+    <meta itemprop="description" content="50. 시간 전진정상 문제가 아예 안 풀릴 때가 있습니다. 소스가 스스로를 키우는 문제에서 그렇습니다. 발열이 온도를 올리고, 온도가 오르니 발열이 더 커지고, 그렇게 끝없이 올라가면 멈추는 자리가 없습니다.
+$$\text{그런 문제는 시간을 따라가며 풀어야 합니다}$$$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) &#43; q$$시간을 쪼개면 매 시각마다 정상 문제와 비슷한 모양이 됩니다.
+$$\frac{c_i\tilde V_i}{\delta t}\,(u^{n&#43;1} - u^n) &#43; \text{res}_i = 0$$$\delta t \to \infty$ 로 두면 앞 항이 사라져 정상 문제가 됩니다. 같은 코드로 둘 다 풉니다. 코드에서는 그 역수를 넘기고, 0 을 넘기면 정상 문제가 됩니다.">
+    <meta itemprop="wordCount" content="1491">
+    <title>시간 전진 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785808636" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785808636" defer></script>
+    <script src="/js/search-lunr.js?1785808636" defer></script>
+    <script src="/js/search.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1785808636";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785808636" rel="stylesheet">
+    <link href="/css/theme.css?1785808636" rel="stylesheet">
+    <link href="/css/format-html.css?1785808636" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/fvm2\/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#이-문서가-다루는-파일">이 문서가 다루는 파일</a></li>
+    <li><a href="#1-부르는-법">1. 부르는 법</a></li>
+    <li><a href="#2-시간-간격을-마음대로-못-정한다">2. 시간 간격을 마음대로 못 정한다</a>
+      <ul>
+        <li><a href="#21-왜-그런가">2.1 왜 그런가</a></li>
+        <li><a href="#22-얼마나-작아야-하는가">2.2 얼마나 작아야 하는가</a></li>
+        <li><a href="#23-상한-b-를-쓸-때의-고윳값-정밀도">2.3 상한 B 를 쓸 때의 고윳값 정밀도</a></li>
+        <li><a href="#24-이것은-충분조건이다">2.4 이것은 충분조건이다</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-밟다가-실패하면">3. 밟다가 실패하면</a>
+      <ul>
+        <li><a href="#31-재시도-규칙">3.1 재시도 규칙</a></li>
+        <li><a href="#32-왜-끝나는가">3.2 왜 끝나는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-도중에-격자를-늘릴-수-있다">4. 도중에 격자를 늘릴 수 있다</a>
+      <ul>
+        <li><a href="#41-순서가-중요하다">4.1 순서가 중요하다</a></li>
+        <li><a href="#41a-격자는-푸는-도중에도-움직인다">4.1a 격자는 푸는 도중에도 움직인다</a></li>
+        <li><a href="#와--은-성격이-다르다"> 와  은 성격이 다르다</a></li>
+        <li><a href="#비용">비용</a></li>
+        <li><a href="#42-해를-반드시-옮겨-담는다">4.2 해를 반드시 옮겨 담는다</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-나오는-것--transient_info">5. 나오는 것 — <code>transient_info</code></a>
+      <ul>
+        <li><a href="#두-시간-간격을-견주어-보십시오">두 시간 간격을 견주어 보십시오</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-시간을-얼마나-나눠야-정확한가">6. 시간을 얼마나 나눠야 정확한가</a></li>
+    <li><a href="#7-끝까지-갔는지-확인하는-법">7. 끝까지 갔는지 확인하는 법</a></li>
+    <li><a href="#8-주의할-것">8. 주의할 것</a></li>
+    <li><a href="#9-흔한-실수">9. 흔한 실수</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/fvm2/index.html"><span itemprop="name">FVM2</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">시간 전진</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html" title="격자 적응 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html" title="유도 상한 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="시간-전진">시간 전진</h1>
+
+<hr>
+<h1 id="50-시간-전진">50. 시간 전진<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>정상 문제가 아예 안 풀릴 때가 있습니다.  소스가 스스로를 키우는 문제에서
+그렇습니다.  발열이 온도를 올리고, 온도가 오르니 발열이 더 커지고,
+그렇게 끝없이 올라가면 멈추는 자리가 없습니다.</p>
+$$\text{그런 문제는 시간을 따라가며 풀어야 합니다}$$$$c(x,y)\,\frac{\partial u}{\partial t} = \nabla\cdot(p\nabla u) + q$$<p>시간을 쪼개면 매 시각마다 정상 문제와 비슷한 모양이 됩니다.</p>
+$$\frac{c_i\tilde V_i}{\delta t}\,(u^{n+1} - u^n) + \text{res}_i = 0$$<p>$\delta t \to \infty$ 로 두면 앞 항이 사라져 정상 문제가 됩니다.
+<strong>같은 코드로 둘 다 풉니다.</strong>  코드에서는 그 역수를 넘기고,
+0 을 넘기면 정상 문제가 됩니다.</p>
+<h2 id="이-문서가-다루는-파일">이 문서가 다루는 파일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>파일</th>
+          <th>하는 일</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>@ResidueSolverNR2D/solveTransient.m</code></td>
+          <td>시간을 한 걸음씩 밟는다.  솔버의 메서드다</td>
+      </tr>
+      <tr>
+          <td><code>AssembledSystem.dtBound</code></td>
+          <td>밟아도 되는 시간 간격의 상한을 낸다</td>
+      </tr>
+      <tr>
+          <td><code>interpToMesh.m</code></td>
+          <td>격자가 바뀔 때 해를 옮겨 담는다</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="1-부르는-법">1. 부르는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[U, transient_info] = sv.solveTransient(<span style="color:#e6db74">&#39;TEnd&#39;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;DtPhys&#39;</span>, <span style="color:#ae81ff">0.1</span>);</span></span></code></pre></div>
+<table>
+  <thead>
+      <tr>
+          <th>이름</th>
+          <th>뜻</th>
+          <th>기본</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>TEnd</code></td>
+          <td>어느 시각까지 갈지</td>
+          <td>반드시 줘야 한다</td>
+      </tr>
+      <tr>
+          <td><code>DtPhys</code></td>
+          <td>한 걸음의 크기</td>
+          <td>반드시 줘야 한다</td>
+      </tr>
+      <tr>
+          <td><code>MaxSteps</code></td>
+          <td>최대 걸음 수</td>
+          <td>1000</td>
+      </tr>
+      <tr>
+          <td><code>U_init</code></td>
+          <td>시작할 해</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>격자를 어떻게 할지는 솔버의 속성이라 안 넘깁니다.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv.UseHAdapt = true;             <span style="color:#75715e">% 도중에 격자를 늘릴지.  기본 켬</span>
+</span></span><span style="display:flex;"><span>sv.HAdaptOpt.MaxHRefine = <span style="color:#ae81ff">3</span>;     <span style="color:#75715e">% 몇 번까지</span></span></span></code></pre></div>
+<p><code>solveSteady</code> 와 같은 자리를 봅니다.</p>
+<p><strong>격자가 바뀔 때 해를 어떻게 할지는 고를 값이 아닙니다.</strong>  늘 옮겨
+담습니다.  까닭은 4.2 절에 적었습니다.</p>
+<p>물성에 <code>C</code> 를 안 주면 $c = 1$ 로 봅니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>pm.setEquation(idSi, <span style="color:#e6db74">&#39;P&#39;</span>, &#34;<span style="color:#ae81ff">148</span><span style="color:#f92672">*</span>u^(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.3</span>)&#34;, <span style="color:#e6db74">&#39;Q&#39;</span>, &#34;<span style="color:#ae81ff">100</span>&#34;, <span style="color:#e6db74">&#39;C&#39;</span>, &#34;<span style="color:#ae81ff">163</span>&#34;);</span></span></code></pre></div>
+<hr>
+<h2 id="2-시간-간격을-마음대로-못-정한다">2. 시간 간격을 마음대로 못 정한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="21-왜-그런가">2.1 왜 그런가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>시간 항은 대각에만 더해집니다.</p>
+$$\hat J_{\delta t} = \hat J + \frac{1}{\delta t}M, \qquad M = \mathrm{diag}(c_i\tilde V_i)$$<p>$M$ 이 대각이므로 <strong>비대각은 하나도 안 바뀝니다.</strong>  그래서 반대칭부가
+그대로 남습니다.</p>
+$$\text{sym}(\hat J_{\delta t}) = B + \frac{1}{\delta t}M, \qquad \text{skew}(\hat J_{\delta t}) = A$$<p>$\rho_{\mathrm{int}}$ 의 정의를 보면 분자는 그대로이고 분모만 커집니다.</p>
+$$\rho_{\mathrm{int}}(\delta t) = \sup_{\mathbf w}
+\frac{\lvert\mathbf w^{*}A\mathbf w\rvert}{\mathbf w^{*}(B + \frac{1}{\delta t}M)\mathbf w}$$$$\Longrightarrow\ \delta t \text{ 를 줄이면 } \rho_{\mathrm{int}} \text{ 가 줄어든다}$$<p><strong>시간 간격을 줄이면 분모의 두 번째 항이 커지기 때문입니다.</strong>
+거꾸로 시간 간격이 너무 크면 $\rho_{\mathrm{int}} \ge 1$ 이 되어 전처리가 안 듣습니다.</p>
+<blockquote>
+<p><strong>더하는 부호가 규약에 걸립니다.</strong></p>
+<p>이 코드는 $\text{res} = -\nabla\cdot(p\nabla u) - q$ 로 잡으므로
+시간 항이 $+\frac{1}{\delta t}M$ 으로 더해지고, $\mathrm{sym}$ 이 더 강하게 양정치가 됩니다.</p>
+<p>게재 논문 규약을 쓰면 $-\frac{1}{\delta t}M$ 이 되어 더 강하게 음정치가 됩니다.
+결론은 같으나 <strong>부호를 섞으면 안 됩니다.</strong>  <code>20_조립.md</code> 3절 참조.</p>
+</blockquote>
+<h3 id="22-얼마나-작아야-하는가">2.2 얼마나 작아야 하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\rho_{\mathrm{int}} < 1$ 을 보장하는 시간 간격의 상한이 있습니다.</p>
+$$\frac{1}{\delta t_{\max}} = \max_i \frac{\Phi_{ii}/2 - \gamma_i}{\hat c_i\,c_i\,\tilde V_i}$$$$\delta t < \delta t_{\max}$$<p>부등식이 먼저 주는 것은 $1/\delta t$ 의 하한입니다.  코드는 그것을
+<code>invdt_min</code> 이라 부르고, 그 역수를 <code>dt_max</code> 라 부릅니다.</p>
+<p><strong>밟아 보기 전에 알 수 있습니다.</strong>  지금 놓인 해에서 조립만 하면 나옵니다.
+알면서 실패할 값으로 밟을 이유가 없으므로, 처음부터 이렇게 시작합니다.</p>
+$$\delta t = \min\bigl(\delta t_{\text{사용자}},\ \delta t_{\max}\bigr)$$<p>유도는 <code>70_유도_장치.md</code> 5절에 있습니다.</p>
+<h3 id="23-상한-b-를-쓸-때의-고윳값-정밀도">2.3 상한 B 를 쓸 때의 고윳값 정밀도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상한 B 는 이 일반 고윳값 문제를 풉니다.</p>
+$$\Phi\,\mathbf x = \lambda\,\Bigl(S + \tfrac{1}{\delta t}M\Bigr)\,\mathbf x$$<p><strong>얼마나 정확히 풀어야 하는지도 유도됩니다.</strong>  손으로 고른 수가 아닙니다.</p>
+<h4 id="1단계--판정은-하나뿐입니다">1단계 — 판정은 하나뿐입니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+$$\rho_{\mathrm{int}} = \sqrt{\frac{\lambda_{\max}}{2}} < 1
+\quad\Longleftrightarrow\quad \lambda_{\max} < 2$$<p>「2 보다 작은가」만 보면 됩니다.</p>
+<h4 id="2단계--시간-간격은-둘-중-작은-쪽입니다">2단계 — 시간 간격은 둘 중 작은 쪽입니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+$$\delta t = \min\left(\texttt{DtPhys},\ \frac{1}{\delta t_{\max}}\right)$$<p>$\delta t_{\max}$ 를 아무리 정확히 재도 <strong><code>min</code> 이 어차피 하나를 고릅니다.</strong></p>
+<h4 id="3단계--그러니-부동소수-정밀도면-충분합니다">3단계 — 그러니 부동소수 정밀도면 충분합니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>두 수를 컴퓨터가 가를 수 있는 한계까지만 정확하면 됩니다.</p>
+$$\varepsilon \approx 2.2\times10^{-16}$$<h4 id="4단계--제곱근이-붙습니다">4단계 — 제곱근이 붙습니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>$\rho = \sqrt{\lambda/2}$ 이므로 고윳값이 <strong>제곱으로</strong> 들어갑니다.</p>
+$$\frac{\delta\rho}{\rho} = \frac{1}{2}\cdot\frac{\delta\lambda}{\lambda}$$<p>$\rho$ 를 $\varepsilon$ 만큼 정확히 알려면 $\lambda$ 는 $\sqrt{\varepsilon}$ 만 정확하면 됩니다.</p>
+$$\sqrt{\varepsilon} = 1.49\times10^{-8}$$<h4 id="5단계--절대-오차로-바꿉니다">5단계 — 절대 오차로 바꿉니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><code>eigs</code> 는 절대 오차를 받습니다.  판정 경계가 2 이므로 크기를 곱합니다.</p>
+$$\boxed{\text{tol} = 2\sqrt{\varepsilon} = 2.98\times10^{-8}}$$<blockquote>
+<p><strong>옛 판은 $10^{-8}$ 을 손으로 적었습니다.</strong>  거의 같은 값이라 결과가
+안 달라졌지만, 왜 그 값인지가 어디에도 없었습니다.</p>
+</blockquote>
+<h4 id="몇-번까지-돌지는-안-정합니다">몇 번까지 돌지는 안 정합니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p><code>eigs</code> 에 <code>maxit</code> 을 <strong>주지 않습니다.</strong>  MATLAB 이 부분공간과 문제 크기를
+견주어 스스로 판단합니다.</p>
+<blockquote>
+<p>옛 판은 300 과 3000 을 자리마다 다르게 박아 두었습니다.
+<strong>우리가 재는 것은 $\rho$ 이지 몇 번 도는가가 아닙니다.</strong></p>
+</blockquote>
+<h3 id="24-이것은-충분조건이다">2.4 이것은 충분조건이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\delta t < \delta t_{\max}$ 이면 반드시 풀립니다.  그러나 <strong>그보다 큰 시간 간격으로도
+풀릴 수 있습니다.</strong>  $\delta t_{\max}$ 는 넉넉하게 잡은 값이라 보수적입니다.</p>
+<p><code>DtPhys</code> 를 크게 주면 코드가 알아서 줄입니다.  줄인 것을 로그에 알립니다.</p>
+<hr>
+<h2 id="3-밟다가-실패하면">3. 밟다가 실패하면<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-재시도-규칙">3.1 재시도 규칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>한 걸음을 밟았는데 안 풀리면, 돌려받은 해에서 기준을 다시 잽니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>푼다  →  안 풀렸다
+      →  돌려받은 자리에서 상한을 다시 잰다
+      →  그 값보다 딱 한 칸 작은 값으로 다시</code></pre></div>
+<p><strong>「딱 한 칸」이 무슨 뜻인가.</strong>  부동소수에서 그 수보다 작은 가장 가까운 수입니다.</p>
+$$\delta t_{\text{다음}} = \text{nextbelow}\bigl(\delta t_{\max}^{\text{새로}}\bigr)$$<p>곱하거나 나누는 여유 상수가 없습니다.  <strong>왜 그래도 되는지</strong>는 이렇습니다.</p>
+<p>$\rho_{\mathrm{int}}$ 는 시간 간격을 줄이면 계속 줄어듭니다.  그러니 상한 밑으로
+내려가기만 하면 되고, 얼마나 내려갈지는 상관이 없습니다.
+가장 적게 줄이는 것이 시간 간격을 가장 크게 남깁니다.</p>
+<h3 id="32-왜-끝나는가">3.2 왜 끝나는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>되풀이할 때마다 시간 간격이 작아지고, $\rho_{\mathrm{int}}$ 는 그에 따라 줄어듭니다.
+줄어들기만 하는 값이 1 밑으로 내려가면 다시 올라올 수 없습니다.</p>
+$$\text{그래서 되풀이 횟수에 상한을 두지 않았습니다}$$<p>다만 돌려받은 자리에서 잰 기준이 이미 지금 값보다 작으면, 그것은 시간 간격
+문제가 아니라는 뜻입니다.  그 경우 재시도를 멈추고 알립니다.</p>
+<hr>
+<h2 id="4-도중에-격자를-늘릴-수-있다">4. 도중에 격자를 늘릴 수 있다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><code>sv.UseHAdapt</code> 가 참이면 매 시각마다 격자가 충분한지 봅니다.  몇 번까지
+늘릴지는 <code>sv.HAdaptOpt.MaxHRefine</code> 이 정합니다.</p>
+<h3 id="41-순서가-중요하다">4.1 순서가 중요하다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>격자를 늘린다  →  해를 옮겨 담는다  →  상한을 다시 잰다  →  푼다</code></pre></div>
+<p><strong>$\delta t_{\max}$ 를 격자보다 먼저 재면 안 됩니다.</strong>  격자가 바뀌면 $\tilde V_i$ 도
+$\Phi_{ii}$ 도 달라지므로 기준 자체가 달라집니다.</p>
+<h3 id="41a-격자는-푸는-도중에도-움직인다">4.1a 격자는 푸는 도중에도 움직인다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>UseRAdapt</code> 가 참이면 <code>solver.solve</code> 안에서 노드가 옮겨집니다.  그러면
+위에서 잰 상한이 <strong>없어진 격자의 값</strong>이 됩니다.</p>
+$$\text{격자} \to \text{옮김} \to \text{상한} \to \underbrace{\text{풀면서 격자가 또 바뀜}}_{\text{여기서 4.1 절이 깨진다}}$$<p>두 가지가 함께 어긋납니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>무엇</th>
+          <th>어떻게 막았나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>상한이 낡는다</td>
+          <td>풀고 난 뒤 노드가 움직였으면 그 격자에서 상한을 다시 잽니다.  판정은 3절의 재시도 규칙을 그대로 씁니다</td>
+      </tr>
+      <tr>
+          <td>$u^n$ 이 안 따라간다</td>
+          <td><code>ResidueSolverNR2D.syncUOld</code> 가 격자를 옮길 때마다 <strong>원본에서</strong> 다시 옮깁니다</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>다시 밟을 때는 격자도 밟기 전으로 되돌립니다.</strong>  다시 밟는다는 것은
+같은 걸음을 $\delta t$ 만 줄여 다시 푸는 것이기 때문입니다.  격자가
+옮겨진 채로 다시 밟으면 무엇이 달라져서 풀렸는지 가릴 수 없습니다.</p>
+<h3 id="와--은-성격이-다르다">$u$ 와 $u^n$ 은 성격이 다르다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>무엇인가</th>
+          <th>격자가 바뀌면</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$u$</td>
+          <td>푸는 중인 값.  <strong>도구</strong></td>
+          <td>그냥 두어도 뉴턴이 따라잡는다</td>
+      </tr>
+      <tr>
+          <td>$u^n$</td>
+          <td>직전 시각의 물리 상태.  <strong>방정식 그 자체</strong></td>
+          <td>반드시 옮겨야 한다</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>legacy/L_07_mesh_condition.md</code> 2.1 절이 $u$ 를 옮겨 봐야 격자 조건이
+안 좋아진다고 재 두었는데, 그것은 $u$ 에 대한 답입니다.  $u^n$ 은 다른
+물음이고, 그 답은 반대입니다.</p>
+<h3 id="비용">비용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>legacy/L_07_mesh_condition.md</code> 4 절의 실측입니다.  조립 1회 대비입니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>비율</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>격자 이완 자체</td>
+          <td>613 ~ 775%</td>
+      </tr>
+      <tr>
+          <td>C1 보간</td>
+          <td>79 ~ 102%</td>
+      </tr>
+  </tbody>
+</table>
+<p>격자를 옮기는 순간 이미 조립의 7배를 씁니다.  거기 얹는 몫이 그 13%
+이고, <strong>격자가 실제로 움직였을 때만</strong> 듭니다.</p>
+<h3 id="42-해를-반드시-옮겨-담는다">4.2 해를 반드시 옮겨 담는다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\text{고를 값이 아닙니다.  늘 옮겨 담습니다}$$<p>정상 문제에서는 해를 버리고 0 에서 다시 시작합니다.  해가 하나뿐이라
+버려도 같은 자리로 가고, 실측으로 그쪽이 빨랐습니다.</p>
+<p><strong>시간 문제에서는 다릅니다.</strong>  $u^n$ 은 「직전 시각의 상태」라는 물리적인 뜻을
+가집니다.  그것을 버리면 없던 자리에서 다시 데워지는 다른 문제를 푸는 것이
+됩니다.</p>
+<p>옮겨 담을 때 질량이 얼마나 보존됐는지도 함께 알려 줍니다.</p>
+<hr>
+<h2 id="5-나오는-것--transient_info">5. 나오는 것 — <code>transient_info</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>이름</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>transient_info.nstep</code></td>
+          <td>몇 걸음 밟았는가</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.reason</code></td>
+          <td>왜 끝났는가</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.t_history</code></td>
+          <td>걸음마다의 시각</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.dt_history</code></td>
+          <td>걸음마다 실제로 쓴 시간 간격</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.dtmax_history</code></td>
+          <td>걸음마다의 $\delta t_{\max}$.  기준이 허용한 시간 간격</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.invdt_history</code></td>
+          <td>그 역수.  $1/\delta t$ 의 하한</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.res_history</code></td>
+          <td>걸음마다의 잔차</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.du_history</code></td>
+          <td>걸음마다 해가 얼마나 바뀌었는가</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.retry_history</code></td>
+          <td>걸음마다 몇 번 다시 밟았는가</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.nu_before_history</code></td>
+          <td>그 시각을 풀기 전에 잰 $\nu_{\max}$</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.nref_history</code></td>
+          <td>걸음마다 격자를 몇 번 늘렸는가</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.N_history</code></td>
+          <td>걸음마다의 노드 수</td>
+      </tr>
+      <tr>
+          <td><code>transient_info.massrel_history</code></td>
+          <td>해를 옮겨 담을 때 질량이 얼마나 유지됐는가</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="두-시간-간격을-견주어-보십시오">두 시간 간격을 견주어 보십시오<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>견줌</th>
+          <th>뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>dt_history</code> = <code>DtPhys</code></td>
+          <td>사용자 값이 기준 안에 있었다</td>
+      </tr>
+      <tr>
+          <td><code>dt_history</code> &lt; <code>DtPhys</code></td>
+          <td>기준이 더 작아서 줄였다</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>retry_history</code> 에 0 이 아닌 값이 많으면 시간 간격을 애초에 작게 잡는 편이
+빠릅니다.  헛도는 계산이 그만큼 줄어듭니다.</p>
+<hr>
+<h2 id="6-시간을-얼마나-나눠야-정확한가">6. 시간을 얼마나 나눠야 정확한가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>이 방법은 시간에 대해 <strong>1차</strong>입니다.  후방 오일러이기 때문입니다.</p>
+$$\text{오차} \sim O(\delta t)$$<p>시간 간격을 반으로 줄이면 오차도 대략 반이 됩니다.</p>
+<p><strong>차수를 재는 법에 주의할 점이 있습니다.</strong>  가장 작은 시간 간격으로 푼 것을
+정답으로 삼으면 안 됩니다.  그것도 오차를 갖고 있어서, 뺄셈에 그 오차가
+남습니다.  대신 세 개를 견줍니다.</p>
+$$\frac{\lVert u_{2h} - u_h\rVert}{\lVert u_h - u_{h/2}\rVert} = 2^p$$<p>정답을 몰라도 되고, 편향도 없습니다.</p>
+<hr>
+<h2 id="7-끝까지-갔는지-확인하는-법">7. 끝까지 갔는지 확인하는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>시간 전진의 종착은 정상해입니다.  $\text{res}(u^*) = 0$ 이면 $u^*$ 가
+이 시간 문제의 정상해이기도 하기 때문입니다.</p>
+$$\lVert u^{n+1} - u^n \rVert \text{ 이 줄어들면 다가가고 있는 것입니다}$$<p><code>transient_info.du_history</code> 를 보면 됩니다.  줄지 않고 오르내리면 시간 간격이
+너무 크거나 격자가 모자란 것입니다.</p>
+<hr>
+<h2 id="8-주의할-것">8. 주의할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>시간 간격을 작게 하면 늘 좋은 것이 아닙니다.</strong>  $\rho_{\mathrm{int}}$ 는
+줄어들지만 걸음 수가 그만큼 늘어납니다.  상한 안에서 가장 큰 시간 간격을
+쓰는 것이 낫습니다.</p>
+<p><strong>소스가 상수여도 $\delta t_{\max}$ 가 0 이 아닐 수 있습니다.</strong></p>
+$$\delta t_{\max} = \max_i \frac{\Phi_{ii}/2 - \gamma_i}{\hat c_i c_i \tilde V_i}$$<p>$\partial q/\partial u = 0$ 이면 $\gamma_i = 0$ 이지만, $\Phi_{ii}$ 가 남습니다.
+$\Phi_{ii}$ 는 격자가 만든 비대칭에서 오는 것이라 소스와 무관합니다.</p>
+<p><strong>질량이 얼마나 유지됐는지 보십시오.</strong>  <code>massrel_history</code> 가 1 에서 멀어지면
+해를 옮겨 담는 과정에서 잃은 것이 있다는 뜻입니다.</p>
+<hr>
+<h2 id="9-흔한-실수">9. 흔한 실수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>증상</th>
+          <th>원인</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>시간 간격이 자꾸 줄어든다</td>
+          <td>기준이 조인다.  <code>dtmax_history</code> 를 보십시오</td>
+      </tr>
+      <tr>
+          <td>재시도가 많다</td>
+          <td><code>DtPhys</code> 를 애초에 작게 주는 편이 빠릅니다</td>
+      </tr>
+      <tr>
+          <td>격자를 늘렸더니 이상해졌다</td>
+          <td><code>massrel_history</code> 를 보십시오.  옮겨 담을 때 열이 얼마나 어긋났는지가 들어 있습니다</td>
+      </tr>
+      <tr>
+          <td><code>InvDt</code> 가 0 이라는 오류</td>
+          <td><code>solve</code> 를 직접 부르며 <code>U_old</code> 를 안 줬습니다</td>
+      </tr>
+      <tr>
+          <td>정상해로 안 간다</td>
+          <td><code>du_history</code> 가 안 줄면 격자나 시간 간격을 보십시오</td>
+      </tr>
+      <tr>
+          <td>$c$ 를 안 적었다는 오류</td>
+          <td><code>setEquation</code> 에서 <code>'C'</code> 로 줘야 합니다.  코드가 1 로 안 채웁니다</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/pin/index.html"><a class="padding default-animation" href="/research/pin/index.html">PIN</a><ul id="R-subsections-f2b93e276ba13714c2eca4d90fe22880" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/fvm2/index.html"><a class="padding default-animation" href="/research/fvm2/index.html">FVM2</a><ul id="R-subsections-d52b5f64b45909ad16f6e8ed8034eca1" class="collapsible-menu">
+            <li class="" data-nav-id="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html"><a class="padding" href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html">전체 그림</a></li>
+            <li class="" data-nav-id="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html"><a class="padding" href="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">격자와 물성</a></li>
+            <li class="" data-nav-id="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html"><a class="padding" href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html">조립</a></li>
+            <li class="" data-nav-id="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html"><a class="padding" href="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">뉴턴 풀이</a></li>
+            <li class="" data-nav-id="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html"><a class="padding" href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html">격자 적응</a></li>
+            <li class="active " data-nav-id="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html"><a class="padding" href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">시간 전진</a></li>
+            <li class="" data-nav-id="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html"><a class="padding" href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">유도 상한</a></li>
+            <li class="" data-nav-id="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html"><a class="padding" href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">유도 장치</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785808636"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785808636" defer></script>
+    <script src="/js/theme.js?1785808636" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

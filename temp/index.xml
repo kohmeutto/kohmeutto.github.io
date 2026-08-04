@@ -197,6 +197,13 @@
       <description>1. 시작: 두 사람이 같은 문제를 풀었다&#xD;PDE 와 BC 가 주어진 문제를 두 사람이 풀었다고 하자.&#xA;A 의 답: $V_1(\vec{x})$ B 의 답: $V_2(\vec{x})$ 자연스러운 질문이 따라온다. 두 답이 같은가, 다른가? 또는 다를 수 있다면 얼마나 다를 수 있는가?&#xA;이 질문이 “유일성 정리 (uniqueness theorem)” 의 의미이다. 문제 풀이의 신뢰성을 위해 답이 어떤 정도로 결정되는지 알아야 한다. 답이 완전히 하나이면 좋고, 그렇지 않더라도 어느 정도의 자유도가 있는지 명확히 알아야 한다.</description>
     </item>
     <item>
+      <title>Research_PA</title>
+      <link>http://localhost:1313/temp/research_pa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_pa/index.html</guid>
+      <description>Omegadl</description>
+    </item>
+    <item>
       <title>(b) Gauge Freedom</title>
       <link>http://localhost:1313/temp/b_gauge_freedom/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

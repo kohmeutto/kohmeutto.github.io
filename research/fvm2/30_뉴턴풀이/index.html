@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="30. 뉴턴 풀이조립이 잔차와 자코비안을 만들어 주면, 이제 잔차가 0 이 되는 $u$ 를 찾습니다. 비선형이라 한 번에 못 풉니다. 조금씩 고쳐 가며 되풀이합니다.
+$$\hat J\,\delta u = -\text{res} \qquad\text{를 풀고}\qquad u \leftarrow u &#43; \sigma\,\delta u$$여기서 정해야 할 것이 세 가지입니다.
+정할 것 누가 정하나 $\delta u$ 를 어떻게 푸는가 DirectSolver 또는 GMRESSolver 얼마나 정확히 풀 것인가 adaptiveTolerances 얼마나 갈 것인가 ($\sigma$) AdaptiveDamper 와 trustRegionStep 이 문서가 다루는 파일파일 하는 일 ResidueSolverNR2D.m 전체를 맡는다. 두 겹으로 되풀이한다 AdaptiveDamper.m 얼마나 갈지 정한다 DamperBase.m ClipEachDamper.m KeepRatioDamper.m 다른 방식으로 걸음을 줄인다 trustRegionStep.m 행렬의 좋은 성질이 깨지지 않는 최대 걸음을 구한다 adaptiveTolerances.m 감쇠 인자와 허용오차를 한꺼번에 낸다 LinearSolverBase.m DirectSolver.m GMRESSolver.m 선형 방정식을 푼다 GoldenStateManager.m 잔차가 가장 낮았던 순간을 기억한다 ConvergenceMonitor.m 끝났는지, 멈췄는지, 발산했는지 가른다 SolverLogger.m 되풀이할 때마다 한 줄씩 찍는다 SolutionAnalyzer.m 와 PreconditionAnalyzer.m 다 푼 뒤 고윳값 분포와 오차를 보고한다 dualSeed.m 시작할 해를 만들어 준다 1. 부르는 법아무것도 안 정해도 됩니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="뉴턴 풀이 :: 수리전자물리학">
+    <meta name="twitter:description" content="30. 뉴턴 풀이조립이 잔차와 자코비안을 만들어 주면, 이제 잔차가 0 이 되는 $u$ 를 찾습니다. 비선형이라 한 번에 못 풉니다. 조금씩 고쳐 가며 되풀이합니다.
+$$\hat J\,\delta u = -\text{res} \qquad\text{를 풀고}\qquad u \leftarrow u &#43; \sigma\,\delta u$$여기서 정해야 할 것이 세 가지입니다.
+정할 것 누가 정하나 $\delta u$ 를 어떻게 푸는가 DirectSolver 또는 GMRESSolver 얼마나 정확히 풀 것인가 adaptiveTolerances 얼마나 갈 것인가 ($\sigma$) AdaptiveDamper 와 trustRegionStep 이 문서가 다루는 파일파일 하는 일 ResidueSolverNR2D.m 전체를 맡는다. 두 겹으로 되풀이한다 AdaptiveDamper.m 얼마나 갈지 정한다 DamperBase.m ClipEachDamper.m KeepRatioDamper.m 다른 방식으로 걸음을 줄인다 trustRegionStep.m 행렬의 좋은 성질이 깨지지 않는 최대 걸음을 구한다 adaptiveTolerances.m 감쇠 인자와 허용오차를 한꺼번에 낸다 LinearSolverBase.m DirectSolver.m GMRESSolver.m 선형 방정식을 푼다 GoldenStateManager.m 잔차가 가장 낮았던 순간을 기억한다 ConvergenceMonitor.m 끝났는지, 멈췄는지, 발산했는지 가른다 SolverLogger.m 되풀이할 때마다 한 줄씩 찍는다 SolutionAnalyzer.m 와 PreconditionAnalyzer.m 다 푼 뒤 고윳값 분포와 오차를 보고한다 dualSeed.m 시작할 해를 만들어 준다 1. 부르는 법아무것도 안 정해도 됩니다.">
+    <meta property="og:url" content="http://localhost:1313/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="뉴턴 풀이 :: 수리전자물리학">
+    <meta property="og:description" content="30. 뉴턴 풀이조립이 잔차와 자코비안을 만들어 주면, 이제 잔차가 0 이 되는 $u$ 를 찾습니다. 비선형이라 한 번에 못 풉니다. 조금씩 고쳐 가며 되풀이합니다.
+$$\hat J\,\delta u = -\text{res} \qquad\text{를 풀고}\qquad u \leftarrow u &#43; \sigma\,\delta u$$여기서 정해야 할 것이 세 가지입니다.
+정할 것 누가 정하나 $\delta u$ 를 어떻게 푸는가 DirectSolver 또는 GMRESSolver 얼마나 정확히 풀 것인가 adaptiveTolerances 얼마나 갈 것인가 ($\sigma$) AdaptiveDamper 와 trustRegionStep 이 문서가 다루는 파일파일 하는 일 ResidueSolverNR2D.m 전체를 맡는다. 두 겹으로 되풀이한다 AdaptiveDamper.m 얼마나 갈지 정한다 DamperBase.m ClipEachDamper.m KeepRatioDamper.m 다른 방식으로 걸음을 줄인다 trustRegionStep.m 행렬의 좋은 성질이 깨지지 않는 최대 걸음을 구한다 adaptiveTolerances.m 감쇠 인자와 허용오차를 한꺼번에 낸다 LinearSolverBase.m DirectSolver.m GMRESSolver.m 선형 방정식을 푼다 GoldenStateManager.m 잔차가 가장 낮았던 순간을 기억한다 ConvergenceMonitor.m 끝났는지, 멈췄는지, 발산했는지 가른다 SolverLogger.m 되풀이할 때마다 한 줄씩 찍는다 SolutionAnalyzer.m 와 PreconditionAnalyzer.m 다 푼 뒤 고윳값 분포와 오차를 보고한다 dualSeed.m 시작할 해를 만들어 준다 1. 부르는 법아무것도 안 정해도 됩니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="뉴턴 풀이 :: 수리전자물리학">
+    <meta itemprop="description" content="30. 뉴턴 풀이조립이 잔차와 자코비안을 만들어 주면, 이제 잔차가 0 이 되는 $u$ 를 찾습니다. 비선형이라 한 번에 못 풉니다. 조금씩 고쳐 가며 되풀이합니다.
+$$\hat J\,\delta u = -\text{res} \qquad\text{를 풀고}\qquad u \leftarrow u &#43; \sigma\,\delta u$$여기서 정해야 할 것이 세 가지입니다.
+정할 것 누가 정하나 $\delta u$ 를 어떻게 푸는가 DirectSolver 또는 GMRESSolver 얼마나 정확히 풀 것인가 adaptiveTolerances 얼마나 갈 것인가 ($\sigma$) AdaptiveDamper 와 trustRegionStep 이 문서가 다루는 파일파일 하는 일 ResidueSolverNR2D.m 전체를 맡는다. 두 겹으로 되풀이한다 AdaptiveDamper.m 얼마나 갈지 정한다 DamperBase.m ClipEachDamper.m KeepRatioDamper.m 다른 방식으로 걸음을 줄인다 trustRegionStep.m 행렬의 좋은 성질이 깨지지 않는 최대 걸음을 구한다 adaptiveTolerances.m 감쇠 인자와 허용오차를 한꺼번에 낸다 LinearSolverBase.m DirectSolver.m GMRESSolver.m 선형 방정식을 푼다 GoldenStateManager.m 잔차가 가장 낮았던 순간을 기억한다 ConvergenceMonitor.m 끝났는지, 멈췄는지, 발산했는지 가른다 SolverLogger.m 되풀이할 때마다 한 줄씩 찍는다 SolutionAnalyzer.m 와 PreconditionAnalyzer.m 다 푼 뒤 고윳값 분포와 오차를 보고한다 dualSeed.m 시작할 해를 만들어 준다 1. 부르는 법아무것도 안 정해도 됩니다.">
+    <meta itemprop="wordCount" content="1976">
+    <title>뉴턴 풀이 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785808636" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785808636" defer></script>
+    <script src="/js/search-lunr.js?1785808636" defer></script>
+    <script src="/js/search.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1785808636";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785808636" rel="stylesheet">
+    <link href="/css/theme.css?1785808636" rel="stylesheet">
+    <link href="/css/format-html.css?1785808636" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/fvm2\/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#이-문서가-다루는-파일">이 문서가 다루는 파일</a></li>
+    <li><a href="#1-부르는-법">1. 부르는 법</a>
+      <ul>
+        <li><a href="#11-자주-쓰는-설정">1.1 자주 쓰는 설정</a></li>
+        <li><a href="#12-newtonstepcontrol-하나가-두-가지를-정한다">1.2 <code>NewtonStepControl</code> 하나가 두 가지를 정한다</a></li>
+        <li><a href="#13-시작할-해를-만들어-주는-도구">1.3 시작할 해를 만들어 주는 도구</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-두-겹으로-되풀이한다">2. 두 겹으로 되풀이한다</a></li>
+    <li><a href="#3-얼마나-갈-것인가--감쇠">3. 얼마나 갈 것인가 — 감쇠</a>
+      <ul>
+        <li><a href="#31-방식-세-가지">3.1 방식 세 가지</a></li>
+        <li><a href="#32-adaptive-에는-사람이-정해-준-숫자가-없다">3.2 <code>Adaptive</code> 에는 사람이 정해 준 숫자가 없다</a></li>
+        <li><a href="#33-왜-클래스로-두었는가">3.3 왜 클래스로 두었는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-구조가-깨지지-않는-최대-걸음--trustregionstep">4. 구조가 깨지지 않는 최대 걸음 — <code>trustRegionStep</code></a>
+      <ul>
+        <li><a href="#41-무엇이-문제인가">4.1 무엇이 문제인가</a></li>
+        <li><a href="#42-언제-안전한가">4.2 언제 안전한가</a></li>
+        <li><a href="#43-쓰는-법">4.3 쓰는 법</a></li>
+        <li><a href="#44-왜-함수인가">4.4 왜 함수인가</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-얼마나-정확히-풀-것인가--adaptivetolerances">5. 얼마나 정확히 풀 것인가 — <code>adaptiveTolerances</code></a>
+      <ul>
+        <li><a href="#51-왜-정확도를-조절하나">5.1 왜 정확도를 조절하나</a></li>
+        <li><a href="#52-쓰는-법">5.2 쓰는 법</a></li>
+        <li><a href="#53-세-값이-모두-같은-데서-나온다">5.3 세 값이 모두 같은 데서 나온다</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-선형-방정식을-푸는-두-가지-길">6. 선형 방정식을 푸는 두 가지 길</a>
+      <ul>
+        <li><a href="#61-직접법--directsolver">6.1 직접법 — <code>DirectSolver</code></a></li>
+        <li><a href="#62-반복법--gmressolver">6.2 반복법 — <code>GMRESSolver</code></a></li>
+        <li><a href="#63-어느-행렬을-푸는가--newtontype">6.3 어느 행렬을 푸는가 — <code>NewtonType</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#7-가장-좋았던-순간을-기억한다--goldenstatemanager">7. 가장 좋았던 순간을 기억한다 — <code>GoldenStateManager</code></a></li>
+    <li><a href="#8-언제-멈추는가--convergencemonitor">8. 언제 멈추는가 — <code>ConvergenceMonitor</code></a>
+      <ul>
+        <li><a href="#81-안쪽-되풀이">8.1 안쪽 되풀이</a></li>
+        <li><a href="#82-바깥-되풀이">8.2 바깥 되풀이</a></li>
+        <li><a href="#83-판정을-고칠-때-조심할-것">8.3 판정을 고칠 때 조심할 것</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-로그-읽는-법--solverlogger">9. 로그 읽는 법 — <code>SolverLogger</code></a></li>
+    <li><a href="#10-다-푼-뒤-보고--solutionanalyzer-와-preconditionanalyzer">10. 다 푼 뒤 보고 — <code>SolutionAnalyzer</code> 와 <code>PreconditionAnalyzer</code></a>
+      <ul>
+        <li><a href="#101--를-몇-자리로-볼-것인가--rhodigits">10.1 를 몇 자리로 볼 것인가 — <code>RhoDigits</code></a></li>
+        <li><a href="#102-몇-번까지-돌지는-안-정합니다">10.2 몇 번까지 돌지는 안 정합니다</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-주의할-것">11. 주의할 것</a></li>
+    <li><a href="#12-흔한-실수">12. 흔한 실수</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/fvm2/index.html"><span itemprop="name">FVM2</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">뉴턴 풀이</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html" title="조립 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html" title="격자 적응 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="뉴턴-풀이">뉴턴 풀이</h1>
+
+<hr>
+<h1 id="30-뉴턴-풀이">30. 뉴턴 풀이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>조립이 잔차와 자코비안을 만들어 주면, 이제 잔차가 0 이 되는 $u$ 를 찾습니다.
+비선형이라 한 번에 못 풉니다.  조금씩 고쳐 가며 되풀이합니다.</p>
+$$\hat J\,\delta u = -\text{res} \qquad\text{를 풀고}\qquad u \leftarrow u + \sigma\,\delta u$$<p>여기서 정해야 할 것이 세 가지입니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>정할 것</th>
+          <th>누가 정하나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\delta u$ 를 어떻게 푸는가</td>
+          <td><code>DirectSolver</code> 또는 <code>GMRESSolver</code></td>
+      </tr>
+      <tr>
+          <td>얼마나 정확히 풀 것인가</td>
+          <td><code>adaptiveTolerances</code></td>
+      </tr>
+      <tr>
+          <td>얼마나 갈 것인가 ($\sigma$)</td>
+          <td><code>AdaptiveDamper</code> 와 <code>trustRegionStep</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="이-문서가-다루는-파일">이 문서가 다루는 파일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>파일</th>
+          <th>하는 일</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ResidueSolverNR2D.m</code></td>
+          <td>전체를 맡는다.  두 겹으로 되풀이한다</td>
+      </tr>
+      <tr>
+          <td><code>AdaptiveDamper.m</code></td>
+          <td>얼마나 갈지 정한다</td>
+      </tr>
+      <tr>
+          <td><code>DamperBase.m</code> <code>ClipEachDamper.m</code> <code>KeepRatioDamper.m</code></td>
+          <td>다른 방식으로 걸음을 줄인다</td>
+      </tr>
+      <tr>
+          <td><code>trustRegionStep.m</code></td>
+          <td>행렬의 좋은 성질이 깨지지 않는 최대 걸음을 구한다</td>
+      </tr>
+      <tr>
+          <td><code>adaptiveTolerances.m</code></td>
+          <td>감쇠 인자와 허용오차를 한꺼번에 낸다</td>
+      </tr>
+      <tr>
+          <td><code>LinearSolverBase.m</code> <code>DirectSolver.m</code> <code>GMRESSolver.m</code></td>
+          <td>선형 방정식을 푼다</td>
+      </tr>
+      <tr>
+          <td><code>GoldenStateManager.m</code></td>
+          <td>잔차가 가장 낮았던 순간을 기억한다</td>
+      </tr>
+      <tr>
+          <td><code>ConvergenceMonitor.m</code></td>
+          <td>끝났는지, 멈췄는지, 발산했는지 가른다</td>
+      </tr>
+      <tr>
+          <td><code>SolverLogger.m</code></td>
+          <td>되풀이할 때마다 한 줄씩 찍는다</td>
+      </tr>
+      <tr>
+          <td><code>SolutionAnalyzer.m</code> 와 <code>PreconditionAnalyzer.m</code></td>
+          <td>다 푼 뒤 고윳값 분포와 오차를 보고한다</td>
+      </tr>
+      <tr>
+          <td><code>dualSeed.m</code></td>
+          <td>시작할 해를 만들어 준다</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="1-부르는-법">1. 부르는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>아무것도 안 정해도 됩니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv = ResidueSolverNR2D(<span style="color:#e6db74">&#39;MeshM&#39;</span>, mm, <span style="color:#e6db74">&#39;PhysM&#39;</span>, pm);
+</span></span><span style="display:flex;"><span>[U, r_norm, steady_info] = sv.solveSteady();</span></span></code></pre></div>
+<p>$N_x$ 를 정해 놓고 재려면 h-정제를 끕니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv.UseHAdapt = false;
+</span></span><span style="display:flex;"><span>[U, r_norm] = sv.solveSteady(<span style="color:#e6db74">&#39;U_init&#39;</span>, zeros(size(mm.Nodes,<span style="color:#ae81ff">1</span>), <span style="color:#ae81ff">1</span>));</span></span></code></pre></div>
+<p>시간을 밟으려면 다른 메서드를 씁니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[U, transient_info] = sv.solveTransient(<span style="color:#e6db74">&#39;TEnd&#39;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;DtPhys&#39;</span>, <span style="color:#ae81ff">0.1</span>);</span></span></code></pre></div>
+<p><strong>밖에 내놓는 것이 이 둘입니다.</strong>  <code>solve</code> 는 그 둘이 안에서 부르는
+것입니다.  다만 감추지 않았습니다.  <code>CHECK_C</code> 가 시간 항을 직접
+시험하려면 <code>InvDt</code> 와 <code>U_old</code> 를 넣어야 하는데, <code>solveSteady</code> 로는 못
+하고 <code>solveTransient</code> 을 쓰면 <code>dtBound</code> 가 $\delta t$ 를 바꿔 재려던
+것이 달라지기 때문입니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv.solve(<span style="color:#e6db74">&#39;U_init&#39;</span>, U0, <span style="color:#e6db74">&#39;InvDt&#39;</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>dt, <span style="color:#e6db74">&#39;U_old&#39;</span>, U_prev);   <span style="color:#75715e">% 검사에서만</span></span></span></code></pre></div>
+<h3 id="11-자주-쓰는-설정">1.1 자주 쓰는 설정<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>이름</th>
+          <th>뜻</th>
+          <th>기본</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>NewtonStepControl</code></td>
+          <td>걸음을 어떻게 정할지.  아래 1.2 참조</td>
+          <td><code>'Adaptive'</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.AdaptiveOpt.LimitBySign</code></td>
+          <td>비대각의 부호가 뒤집히지 않는 만큼으로 제한할지</td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.AdaptiveOpt.LimitByDirection</code></td>
+          <td>방향이 틀린 채 멀리 가지 않게 제한할지</td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.KeepRatioOpt.MaxNewtonStep</code></td>
+          <td>걸음의 최대 크기</td>
+          <td><code>0.5</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.ClipEachOpt.MaxNewtonStep</code></td>
+          <td>〃</td>
+          <td><code>0.5</code></td>
+      </tr>
+      <tr>
+          <td><code>LinearSolver</code></td>
+          <td><code>'Direct'</code> 또는 <code>'GMRES'</code></td>
+          <td><code>'Direct'</code></td>
+      </tr>
+      <tr>
+          <td><code>NewtonType</code></td>
+          <td><code>'Inexact'</code> (대칭부만) 또는 <code>'Exact'</code> (전부)</td>
+          <td><code>'Inexact'</code></td>
+      </tr>
+      <tr>
+          <td><code>MaxMacro</code> <code>MaxMicro</code></td>
+          <td>바깥 되풀이, 안쪽 되풀이 최대 횟수</td>
+          <td>50, 100</td>
+      </tr>
+      <tr>
+          <td><code>ResTol</code></td>
+          <td>잔차가 이보다 작으면 끝</td>
+          <td>$10^{-10}$</td>
+      </tr>
+      <tr>
+          <td><code>UpdateTol</code></td>
+          <td>걸음이 이보다 작으면 끝</td>
+          <td>$10^{-8}$</td>
+      </tr>
+      <tr>
+          <td><code>MinResToStop</code></td>
+          <td>걸음으로 끝내려면 잔차도 이보다 작아야</td>
+          <td>$10^{-5}$</td>
+      </tr>
+      <tr>
+          <td><code>UseRAdapt</code></td>
+          <td><strong>노드를 옮길지</strong> (r-적응)</td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td><code>MeshFreezeRatio</code></td>
+          <td>$\rho$ 를 안 잴 때 격자를 얼리는 기준</td>
+          <td>$10^{-3}$</td>
+      </tr>
+      <tr>
+          <td><code>Verbose</code></td>
+          <td>로그를 찍을지</td>
+          <td><code>true</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>LinearSolver</code> 가 <code>'GMRES'</code> 일 때만 뜻이 있는 것들입니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>이름</th>
+          <th>뜻</th>
+          <th>기본</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>sv.GMRESOpt.UsePrecond</code></td>
+          <td>전처리를 쓸지.  끄면 아주 느리다</td>
+          <td><code>true</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.GMRESOpt.Preconditioner</code></td>
+          <td><code>'LU'</code> 또는 <code>'ILU'</code></td>
+          <td><code>'LU'</code></td>
+      </tr>
+      <tr>
+          <td><code>sv.GMRESOpt.ILU_DropTol</code></td>
+          <td><code>'ILU'</code> 일 때만</td>
+          <td>$10^{-3}$</td>
+      </tr>
+      <tr>
+          <td><code>sv.GMRESOpt.Restart</code></td>
+          <td>몇 번마다 다시 시작할지</td>
+          <td>50</td>
+      </tr>
+      <tr>
+          <td><code>sv.GMRESOpt.MaxIt</code></td>
+          <td>최대 반복 횟수</td>
+          <td>200</td>
+      </tr>
+      <tr>
+          <td><code>sv.GMRESOpt.Tol</code></td>
+          <td>언제 멈출지.  <strong><code>'Adaptive'</code> 면 안 쓰인다</strong></td>
+          <td>$10^{-6}$</td>
+      </tr>
+  </tbody>
+</table>
+<p>논문 실험에서 쓴 조합은 <code>'Adaptive'</code>, <code>AdaptiveOpt.LimitBySign = true</code>,
+<code>AdaptiveOpt.LimitByDirection = false</code> 입니다.  $\rho$ 가 작아 방향 제한이
+거의 안 걸리기 때문입니다.</p>
+<h3 id="12-newtonstepcontrol-하나가-두-가지를-정한다">1.2 <code>NewtonStepControl</code> 하나가 두 가지를 정한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>값</th>
+          <th>$\sigma$ (걸음)</th>
+          <th><code>LinTol</code> (선형해)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>'Adaptive'</code></td>
+          <td>유도</td>
+          <td><strong>유도</strong>.  <code>sv.GMRESOpt.Tol</code> 은 안 쓰인다</td>
+      </tr>
+      <tr>
+          <td><code>'KeepRatio'</code></td>
+          <td><code>MaxNewtonStep</code></td>
+          <td><code>sv.GMRESOpt.Tol</code></td>
+      </tr>
+      <tr>
+          <td><code>'ClipEach'</code></td>
+          <td><code>MaxNewtonStep</code></td>
+          <td><code>sv.GMRESOpt.Tol</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>둘이 함께 움직이는 까닭은 이렇습니다.  $\rho$ 는 <strong>전처리가 얼마나
+부정확한가</strong>를 재는 값입니다.  방향이 부정확하면 두 가지가 따라옵니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>왜</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>덜 간다</td>
+          <td>부정확한 방향으로 멀리 가면 넘어간다</td>
+      </tr>
+      <tr>
+          <td>덜 정확히 푼다</td>
+          <td>부정확한 방향을 정확히 풀 이유가 없다</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>안 쓰이는 값은 아예 없습니다.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv.NewtonStepControl = <span style="color:#e6db74">&#39;Adaptive&#39;</span>;
+</span></span><span style="display:flex;"><span>sv.AdaptiveOpt.MaxNewtonStep = <span style="color:#ae81ff">0.5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 오류: 그런 속성이 없습니다.</span></span></span></code></pre></div>
+<p>고른 것의 <code>Opt</code> 만 생기기 때문입니다.  <code>'Adaptive'</code> 는 걸음을 유도된
+값으로 정하므로 손으로 고를 한계가 없습니다.</p>
+<h3 id="13-시작할-해를-만들어-주는-도구">1.3 시작할 해를 만들어 주는 도구<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>dualSeed</code> 는 두 단계로 시작할 해를 만듭니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>단계</th>
+          <th>무엇을 하나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>소스를 0 으로 두고 확산만 푼다.  영역 모양이 정하는 큰 틀이 나온다</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>그 위에서 노드마다 $q(u) = 0$ 을 푼다.  그 자리의 균형 상태가 나온다</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>U0 = dualSeed(<span style="color:#e6db74">&#39;MeshM&#39;</span>, mm, <span style="color:#e6db74">&#39;PhysM&#39;</span>, pm);</span></span></code></pre></div>
+<p>물성을 잠깐 바꿨다가 되돌리므로, 도중에 오류가 나면 되돌아가지 않습니다.</p>
+<hr>
+<h2 id="2-두-겹으로-되풀이한다">2. 두 겹으로 되풀이한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>바깥 되풀이 (매크로)  ── 격자를 옮긴다
+    │
+    └─ 안쪽 되풀이 (마이크로)  ── 격자를 고정하고 잔차를 줄인다</code></pre></div>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>무엇</th>
+          <th>언제 끝나나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>안쪽</td>
+          <td>뉴턴 반복</td>
+          <td>잔차가 작아지거나 더 안 줄어들 때</td>
+      </tr>
+      <tr>
+          <td>바깥</td>
+          <td>격자 적응</td>
+          <td>안쪽이 끝났고 격자가 더 안 움직일 때</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>왜 두 겹인가.</strong>  격자를 옮기면 방정식 자체가 달라집니다.  그러면 그때까지
+줄여 놓은 잔차가 뜻을 잃습니다.  그래서 격자를 고정한 채 먼저 풀고,
+다 푼 뒤에 격자를 옮기고, 다시 풉니다.</p>
+<p>격자를 안 옮기려면 <code>UseRAdapt = false</code> 로 두면 됩니다.  그러면 바깥이
+한 번만 돕니다.</p>
+<hr>
+<h2 id="3-얼마나-갈-것인가--감쇠">3. 얼마나 갈 것인가 — 감쇠<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>뉴턴이 준 걸음 $\delta u$ 를 그대로 가면 넘어갈 때가 있습니다.
+그래서 $\sigma$ 를 곱해 줄입니다.</p>
+$$u \leftarrow u + \sigma\,\delta u$$<h3 id="31-방식-세-가지">3.1 방식 세 가지<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>방식</th>
+          <th>무엇을 하나</th>
+          <th>방향이 바뀌나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Adaptive</code></td>
+          <td>유도된 값 두 개 중 작은 것을 쓴다</td>
+          <td>안 바뀐다</td>
+      </tr>
+      <tr>
+          <td><code>KeepRatio</code></td>
+          <td>걸음 전체에 같은 수를 곱한다</td>
+          <td>안 바뀐다</td>
+      </tr>
+      <tr>
+          <td><code>ClipEach</code></td>
+          <td>성분마다 따로 자른다</td>
+          <td><strong>바뀐다</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><code>ClipEach</code> 과 <code>KeepRatio</code> 의 차이를 예로 보면 이렇습니다.</p>
+$$\delta u = (10,\ 0.1), \qquad \text{한계} = 1$$<table>
+  <thead>
+      <tr>
+          <th>방식</th>
+          <th>결과</th>
+          <th>비율</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ClipEach</code></td>
+          <td>$(1,\ 0.1)$</td>
+          <td>$10:0.1$ 이 $1:0.1$ 로 <strong>달라진다</strong></td>
+      </tr>
+      <tr>
+          <td><code>KeepRatio</code></td>
+          <td>$(1,\ 0.01)$</td>
+          <td>$10:0.1 = 1:0.01$ 로 <strong>그대로</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>큰 성분만 누르고 작은 성분은 그대로 통과시키려면 <code>ClipEach</code> 을 씁니다.
+방향을 지키려면 <code>KeepRatio</code> 입니다.</p>
+<h3 id="32-adaptive-에는-사람이-정해-준-숫자가-없다">3.2 <code>Adaptive</code> 에는 사람이 정해 준 숫자가 없다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\sigma = \min\bigl(\sigma_{\text{부호}},\ \tfrac{1}{1+\rho^2}\bigr)$$<p>두 값이 서로 다른 것을 막습니다.  대체 관계가 아닙니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>값</th>
+          <th>무엇을 막나</th>
+          <th>어디서 왔나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\sigma_{\text{부호}}$</td>
+          <td>비대각의 부호가 뒤집히는 것</td>
+          <td><code>trustRegionStep</code></td>
+      </tr>
+      <tr>
+          <td>$1/(1+\rho^2)$</td>
+          <td>반복이 안 줄어드는 것</td>
+          <td>오차 축소율을 최소로 만드는 값</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>둘 다 식에서 나온 값입니다.</strong>  그래서 이 방식에는 사람이 손으로 정해 주는
+한계값이 없습니다.  <code>MaxNewtonStep</code> 을 안 씁니다.</p>
+<p>다른 두 방식은 <code>MaxNewtonStep</code> 을 받아야 합니다.  그 값을 얼마로 둘지는 문제마다
+다르고, 정할 근거도 마땅치 않습니다.</p>
+<p>$1/(1+\rho^2)$ 이 어디서 나오는지는 <code>70_유도_장치.md</code> 1절에 있습니다.</p>
+<h3 id="33-왜-클래스로-두었는가">3.3 왜 클래스로 두었는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>같은 자리에 세 가지가 번갈아 들어갑니다.  <code>DamperBase</code> 가 뼈대이고
+셋이 그 뼈대를 채웁니다.  기억할 것이 없어도, 이렇게 갈아 끼울 자리라면
+클래스로 두는 것이 맞습니다.</p>
+<hr>
+<h2 id="4-구조가-깨지지-않는-최대-걸음--trustregionstep">4. 구조가 깨지지 않는 최대 걸음 — <code>trustRegionStep</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="41-무엇이-문제인가">4.1 무엇이 문제인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>자코비안의 비대각 성분이 음수여야 좋은 성질이 유지됩니다.
+그런데 $p$ 가 $u$ 에 의존하면 걸음이 클 때 그 부호가 뒤집힐 수 있습니다.</p>
+$$\hat J_{ij} = -P_{\text{eff}}\,D_{ij}\,(1 + \nu_j), \qquad
+\nu_j = \left.\frac{\partial \ln p}{\partial u}\right\rvert_j \delta u$$<p>$1 + \nu_j$ 가 음수가 되면 부호가 뒤집힙니다.</p>
+<h3 id="42-언제-안전한가">4.2 언제 안전한가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\max\bigl(\lvert \nu_i\rvert,\ \lvert \nu_j\rvert\bigr) \le 1$$<p><strong>이 1 은 사람이 고른 값이 아닙니다.</strong>  부등식을 풀면 그대로 나옵니다.</p>
+$$\nu_j + 1 + e^{\zeta_{ij}} > 0 \quad\text{이면 부호가 안 뒤집힌다}$$<p>$e^{\zeta_{ij}}$ 는 두 노드의 $p$ 비율이라 늘 양수입니다.  그러니 $\nu_j$ 가 $-1$ 보다
+크기만 하면 이 부등식이 저절로 성립합니다.  양쪽 노드를 다 보려면
+$\lvert \nu\rvert \le 1$ 이면 충분합니다.</p>
+<p>자세한 전개는 <code>70_유도_장치.md</code> 3절에 있습니다.</p>
+<h3 id="43-쓰는-법">4.3 쓰는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[sig, dg] = trustRegionStep(sys, U, du, meshM, physM);</span></span></code></pre></div>
+<table>
+  <thead>
+      <tr>
+          <th>나오는 것</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>sig</code></td>
+          <td>안전한 최대 걸음.  1 이면 걸림이 없다는 뜻</td>
+      </tr>
+      <tr>
+          <td><code>dg.NuMax</code></td>
+          <td>지금 격자에서 $\lvert \nu\rvert$ 가 가장 큰 값</td>
+      </tr>
+      <tr>
+          <td><code>dg.ArgMaxEdge</code></td>
+          <td>그 값을 낸 간선</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>dg.NuMax</code> 는 격자가 충분한지 판정하는 데도 쓰입니다.  <code>40_격자적응.md</code> 참조.</p>
+<h3 id="44-왜-함수인가">4.4 왜 함수인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>기억할 것이 없고, 갈아 끼울 다른 구현도 없습니다.
+그리고 이 계산의 본체는 격자와 물성으로 $\nu_j$ 를 만드는 것입니다.
+조립 결과는 간선 목록을 얻는 데만 씁니다.</p>
+<p><strong>걸음을 정하는 일은 뉴턴 한 걸음의 일이지 조립의 일이 아닙니다.</strong>
+그래서 <code>AssembledSystem</code> 의 셈법으로 두지 않았습니다.</p>
+<hr>
+<h2 id="5-얼마나-정확히-풀-것인가--adaptivetolerances">5. 얼마나 정확히 풀 것인가 — <code>adaptiveTolerances</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-왜-정확도를-조절하나">5.1 왜 정확도를 조절하나<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>선형 방정식을 아주 정확히 풀어도, 뉴턴이 준 방향 자체가 근사입니다.
+<strong>방향보다 더 정확히 푸는 것은 낭비입니다.</strong></p>
+<p>$\rho_{\mathrm{int}}$ 를 알면 그 낭비 지점을 계산할 수 있습니다.</p>
+<h3 id="52-쓰는-법">5.2 쓰는 법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>t = adaptiveTolerances(rho, ResTol);</span></span></code></pre></div>
+<table>
+  <thead>
+      <tr>
+          <th>나오는 것</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>t.Sigma</code></td>
+          <td>$1/(1+\rho^2)$.  잔차 축소율을 최소로 만드는 걸음</td>
+      </tr>
+      <tr>
+          <td><code>t.VarsigmaMin</code></td>
+          <td>그때의 잔차 축소율</td>
+      </tr>
+      <tr>
+          <td><code>t.RhoTol</code></td>
+          <td>$\rho$ 를 얼마나 정확히 재면 되는지</td>
+      </tr>
+      <tr>
+          <td><code>t.LinTol</code></td>
+          <td>선형 방정식을 얼마나 정확히 풀면 되는지</td>
+      </tr>
+      <tr>
+          <td><code>t.SkipRho</code></td>
+          <td>참이면 $\rho$ 를 잴 필요가 없다는 뜻</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="53-세-값이-모두-같은-데서-나온다">5.3 세 값이 모두 같은 데서 나온다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\text{반복 횟수가 } 1 \text{ 만큼만 늘어나는 지점}$$<p><code>RhoTol</code> 과 <code>LinTol</code> 둘 다 이 조건에서 유도됩니다.  $\rho$ 를 조금 잘못
+알거나 선형해를 조금 덜 정확히 풀어도, 그 때문에 늘어나는 반복이
+한 번을 넘지 않게 하는 값입니다.</p>
+<p>유도는 <code>70_유도_장치.md</code> 1절에 있습니다.</p>
+<hr>
+<h2 id="6-선형-방정식을-푸는-두-가지-길">6. 선형 방정식을 푸는 두 가지 길<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="61-직접법--directsolver">6.1 직접법 — <code>DirectSolver</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\text{Dirichlet 행은 값이 0 아닌 자리가 하나뿐이다}$$<p>이 성질을 씁니다.  미지수를 안쪽과 경계로 갈라 쓰면 이런 모양이 됩니다.</p>
+$$\begin{bmatrix} S_{ii} & S_{ib} \\ 0 & S_{bb} \end{bmatrix}
+\begin{bmatrix} \delta u_i \\ \delta u_b \end{bmatrix} =
+\begin{bmatrix} \mathbf b_i \\ \mathbf b_b \end{bmatrix}$$<p>첨자 $i$ 는 안쪽 노드, $b$ 는 Dirichlet 노드를 뜻합니다.</p>
+<p><strong>$S_{bb}$ 가 대각입니다.</strong>  Dirichlet 행에 값이 하나뿐이고 그것이 대각이기
+때문입니다.  그래서 아래를 나눗셈 한 번으로 풀고, 그 값을 위에 넣어
+안쪽만 풉니다.</p>
+<p><strong>왜 빠른가.</strong>  소거 과정에서 Dirichlet 자유도가 빠지므로 중간에 생기는
+값이 절반으로 줄어듭니다.  실측으로 두 배 넘게 빨랐습니다.</p>
+<p>몇 번 이 길로 갔는지는 이렇게 볼 수 있습니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>s = sv.LinearSolverImpl.solveStats();     <span style="color:#75715e">% s.Block, s.Full</span></span></span></code></pre></div>
+<p><code>s.Full</code> 이 0 이 아니면 안쪽 블록이 대칭이 아니었거나 분해가 실패한 것입니다.</p>
+<h3 id="62-반복법--gmressolver">6.2 반복법 — <code>GMRESSolver</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>큰 문제에서 씁니다.  전처리기로 $\tilde J_{\text{pure}}$ 를 쓰면
+고윳값이 1 근처의 원 안에 모입니다.</p>
+$$\lvert \lambda - 1 \rvert \le \rho_{\mathrm{int}}$$<p>$\rho_{\mathrm{int}}$ 가 작으면 몇 번 만에 끝납니다.  이것이 이 연구의 요점입니다.</p>
+<h3 id="63-어느-행렬을-푸는가--newtontype">6.3 어느 행렬을 푸는가 — <code>NewtonType</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>설정</th>
+          <th>푸는 행렬</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>'Inexact'</code></td>
+          <td>$\tilde J_{\text{pure}}$.  대칭부만</td>
+      </tr>
+      <tr>
+          <td><code>'Exact'</code></td>
+          <td>$\hat C\hat G\hat J$.  전부</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>'Inexact'</code> 는 반대칭부를 버리고 푸는 것입니다.  $\rho_{\mathrm{int}} < 1$ 이면
+그래도 수렴하고, 대칭이라 훨씬 빨리 풀립니다.</p>
+<hr>
+<h2 id="7-가장-좋았던-순간을-기억한다--goldenstatemanager">7. 가장 좋았던 순간을 기억한다 — <code>GoldenStateManager</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>뉴턴이 늘 좋아지기만 하는 것은 아닙니다.  잔차가 도로 커질 수 있습니다.
+그래서 <strong>가장 낮았던 순간의 해와 격자를 따로 적어 둡니다.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sv.GoldenImpl.res       <span style="color:#75715e">% 그때의 잔차</span>
+</span></span><span style="display:flex;"><span>sv.GoldenImpl.U         <span style="color:#75715e">% 그때의 해</span>
+</span></span><span style="display:flex;"><span>sv.GoldenImpl.Nodes     <span style="color:#75715e">% 그때의 격자</span></span></span></code></pre></div>
+<p>다 풀고 나서 돌려주는 것은 마지막 해가 아니라 <strong>이 해</strong>입니다.</p>
+<p>격자를 옮겼는데 나빠지면 이 기록으로 되돌립니다.</p>
+<hr>
+<h2 id="8-언제-멈추는가--convergencemonitor">8. 언제 멈추는가 — <code>ConvergenceMonitor</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="81-안쪽-되풀이">8.1 안쪽 되풀이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>세 가지를 봅니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>판정</th>
+          <th>조건</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>다 풀렸다</td>
+          <td>잔차 $<$ <code>ResTol</code>,  또는 걸음이 아주 작으면서 잔차도 충분히 작다</td>
+      </tr>
+      <tr>
+          <td>더 안 줄어든다</td>
+          <td>잔차가 직전보다 나아진 것이 부동소수 한 칸도 안 된다</td>
+      </tr>
+      <tr>
+          <td>멈춘다</td>
+          <td>위 둘 중 하나</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="82-바깥-되풀이">8.2 바깥 되풀이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>멈추는 경우</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>안쪽이 수렴했고 격자가 더 안 움직인다</td>
+      </tr>
+      <tr>
+          <td>안쪽이 수렴했고 해의 모양이 더 안 바뀐다</td>
+      </tr>
+      <tr>
+          <td>최대 횟수에 닿았다</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="83-판정을-고칠-때-조심할-것">8.3 판정을 고칠 때 조심할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>세 판정이 서로 맞물려 있습니다.  하나만 보고 고치면 다른 데서 어긋납니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>고칠 곳</th>
+          <th>함께 봐야 할 것</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>「다 풀렸다」의 기준을 느슨하게</td>
+          <td>「더 안 줄어든다」가 먼저 걸려 일찍 멈출 수 있다</td>
+      </tr>
+      <tr>
+          <td>「더 안 줄어든다」의 기준을 엄하게</td>
+          <td>잔차가 오르내리는 구간에서 계속 돌 수 있다</td>
+      </tr>
+      <tr>
+          <td>바깥 판정을 고침</td>
+          <td>격자를 옮길 기회가 사라지거나 끝없이 옮길 수 있다</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>고치고 나면 <code>CHECK_C_operate</code> 를 돌려 보십시오.</strong>  네 묶음이 각각 다른
+방식으로 이 판정을 지나가므로, 어긋난 자리가 있으면 거기서 드러납니다.</p>
+<hr>
+<h2 id="9-로그-읽는-법--solverlogger">9. 로그 읽는 법 — <code>SolverLogger</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><code>Verbose = true</code> 면 되풀이마다 한 줄씩 찍습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>칸</th>
+          <th>무엇</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>m/n</code></td>
+          <td>바깥 횟수 / 안쪽 횟수</td>
+      </tr>
+      <tr>
+          <td><code>res</code></td>
+          <td>잔차</td>
+      </tr>
+      <tr>
+          <td><code>du</code></td>
+          <td>걸음 크기</td>
+      </tr>
+      <tr>
+          <td><code>rho</code></td>
+          <td>$\rho_{\mathrm{int}}$</td>
+      </tr>
+      <tr>
+          <td><code>sig</code></td>
+          <td>실제로 쓴 감쇠 인자</td>
+      </tr>
+      <tr>
+          <td><code>NuMax</code></td>
+          <td>$\lvert \nu\rvert$ 의 최대값</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>sig</code> 과 <code>NuMax</code> 는 <code>Adaptive</code> 이면서 <code>AdaptiveOpt.LimitBySign</code> 이 참일 때만 찍힙니다.</p>
+<p><strong>웬만하면 켜 두십시오.</strong>  무엇이 잘못됐는지 알아낼 거의 유일한 창구입니다.
+되풀이가 아주 많은 훑기에서 화면이 넘칠 때만 끄면 됩니다.</p>
+<hr>
+<h2 id="10-다-푼-뒤-보고--solutionanalyzer-와-preconditionanalyzer">10. 다 푼 뒤 보고 — <code>SolutionAnalyzer</code> 와 <code>PreconditionAnalyzer</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>재는 쪽은 조립을 안 합니다.  부르는 쪽이 한 번 조립해 넘깁니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>eng = Purifier2D();
+</span></span><span style="display:flex;"><span>sys = eng.assemble2D(<span style="color:#e6db74">&#39;MeshM&#39;</span>, mm, <span style="color:#e6db74">&#39;PhysM&#39;</span>, pm, <span style="color:#e6db74">&#39;U_current&#39;</span>, U);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sa = SolutionAnalyzer(<span style="color:#e6db74">&#39;Sys&#39;</span>, sys, <span style="color:#e6db74">&#39;Nodes&#39;</span>, mm.Nodes, <span style="color:#e6db74">&#39;U&#39;</span>, U);
+</span></span><span style="display:flex;"><span>sa.reportConservation();     <span style="color:#75715e">% 들어온 것과 나간 것이 맞는가</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pa = PreconditionAnalyzer(<span style="color:#e6db74">&#39;Sys&#39;</span>, sys);
+</span></span><span style="display:flex;"><span>pa.reportSpectrum();         <span style="color:#75715e">% 조건수, 비대칭, rho</span>
+</span></span><span style="display:flex;"><span>pa.reportFinalState();       <span style="color:#75715e">% 그중 넷을 한 줄로</span></span></span></code></pre></div>
+<p><strong>이름 규칙이 둘입니다.</strong>  <code>measure</code> 는 재서 돌려주고 <code>report</code> 는
+재서 찍습니다.</p>
+<h3 id="101--를-몇-자리로-볼-것인가--rhodigits">10.1 $\rho$ 를 몇 자리로 볼 것인가 — <code>RhoDigits</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>화면에 <code>%.4e</code> 로 찍으므로 유효숫자 다섯 자리입니다.</p>
+$$\texttt{1.6290e-01}$$<p>그래서 기본이 5 입니다.  <strong>자릿수를 낮추면 빨라집니다.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>pa.reportSpectrum(<span style="color:#e6db74">&#39;RhoDigits&#39;</span>, <span style="color:#ae81ff">3</span>);    <span style="color:#75715e">% 큰 문제에서 빠르게</span>
+</span></span><span style="display:flex;"><span>pa.reportSpectrum(<span style="color:#e6db74">&#39;RhoDigits&#39;</span>, <span style="color:#ae81ff">8</span>);    <span style="color:#75715e">% 정밀 비교</span></span></span></code></pre></div>
+<p><strong>이것은 보고에만 쓰입니다.</strong>  푸는 데 쓰는 $\rho$ 는 따로 재고,
+거기서는 허용오차가 <code>RhoTol</code> 에서 유도됩니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>어디</th>
+          <th>허용오차</th>
+          <th>옵션인가</th>
+          <th>유도가 어디 있나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>계산 (감쇠)</td>
+          <td><code>RhoTol</code> 유도</td>
+          <td>아니오</td>
+          <td>아래 5절</td>
+      </tr>
+      <tr>
+          <td>계산 (시간 상한)</td>
+          <td>$2\sqrt{\varepsilon}$ 유도</td>
+          <td>아니오</td>
+          <td><code>50_시간전진.md</code> 2.3</td>
+      </tr>
+      <tr>
+          <td><strong>보고</strong></td>
+          <td>$10^{-\texttt{RhoDigits}}$</td>
+          <td><strong>예</strong></td>
+          <td>찍는 자릿수에서</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="102-몇-번까지-돌지는-안-정합니다">10.2 몇 번까지 돌지는 안 정합니다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>eigs</code> 에 <code>maxit</code> 을 <strong>주지 않습니다.</strong></p>
+<p>MATLAB 이 부분공간과 문제 크기를 견주어 스스로 판단합니다.
+부분공간이 $N$ 에 닿으면 그 자리에서 정확한 방법으로 넘어갑니다.</p>
+<blockquote>
+<p><strong>옛 판은 300 을 박아 두었습니다.</strong>  근거가 없었고, 값도 자리마다
+300 과 3000 으로 달랐습니다.</p>
+<p>우리가 재는 것은 $\rho$ 이지 <strong>몇 번 도는가가 아닙니다.</strong></p>
+</blockquote>
+<p>정해를 알고 있으면 오차도 잽니다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sa.reportExactError(exact_fn);</span></span></code></pre></div>
+<hr>
+<h2 id="11-주의할-것">11. 주의할 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>격자를 옮기면 잔차가 뜻을 잃습니다.</strong>  방정식이 달라졌기 때문입니다.
+그래서 바깥 되풀이마다 잔차를 다시 잽니다.</p>
+<p><strong><code>AdaptiveOpt.LimitBySign</code> 을 켜면 느려질 수 있습니다.</strong>  걸음마다 $\nu$ 를 재야 합니다.
+비선형이 약한 문제에서는 걸릴 일이 없으니 꺼도 됩니다.</p>
+<p><strong><code>'Inexact'</code> 로 풀다 안 되면 <code>'Exact'</code> 로 바꿔 보십시오.</strong>  $\rho_{\mathrm{int}}$ 가
+1 에 가까우면 대칭부만으로는 부족합니다.</p>
+<hr>
+<h2 id="12-흔한-실수">12. 흔한 실수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>증상</th>
+          <th>원인</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>처음부터 발산한다</td>
+          <td>시작할 해가 나쁘다.  <code>dualSeed</code> 를 써 보십시오</td>
+      </tr>
+      <tr>
+          <td>잔차가 오르내린다</td>
+          <td>걸음이 너무 크다.  <code>Adaptive</code> 로 바꾸고 <code>AdaptiveOpt.LimitBySign</code> 을 켜십시오</td>
+      </tr>
+      <tr>
+          <td>일찍 멈춘다</td>
+          <td>「더 안 줄어든다」에 걸렸다.  로그의 <code>res</code> 를 보십시오</td>
+      </tr>
+      <tr>
+          <td>로그에 <code>sig</code> 이 안 나온다</td>
+          <td><code>Adaptive</code> + <code>AdaptiveOpt.LimitBySign</code> 조합이 아니다</td>
+      </tr>
+      <tr>
+          <td>격자만 계속 옮긴다</td>
+          <td>안쪽이 수렴을 못 하고 있다</td>
+      </tr>
+      <tr>
+          <td><code>s.Full</code> 이 0 이 아니다</td>
+          <td>안쪽 블록이 대칭이 아니었다</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/pin/index.html"><a class="padding default-animation" href="/research/pin/index.html">PIN</a><ul id="R-subsections-f2b93e276ba13714c2eca4d90fe22880" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/fvm2/index.html"><a class="padding default-animation" href="/research/fvm2/index.html">FVM2</a><ul id="R-subsections-d52b5f64b45909ad16f6e8ed8034eca1" class="collapsible-menu">
+            <li class="" data-nav-id="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html"><a class="padding" href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html">전체 그림</a></li>
+            <li class="" data-nav-id="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html"><a class="padding" href="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">격자와 물성</a></li>
+            <li class="" data-nav-id="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html"><a class="padding" href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html">조립</a></li>
+            <li class="active " data-nav-id="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html"><a class="padding" href="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">뉴턴 풀이</a></li>
+            <li class="" data-nav-id="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html"><a class="padding" href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html">격자 적응</a></li>
+            <li class="" data-nav-id="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html"><a class="padding" href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">시간 전진</a></li>
+            <li class="" data-nav-id="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html"><a class="padding" href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">유도 상한</a></li>
+            <li class="" data-nav-id="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html"><a class="padding" href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">유도 장치</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785808636"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785808636" defer></script>
+    <script src="/js/theme.js?1785808636" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="60. 유도 — $\rho_{\mathrm{int}}$ 와 상한이 문서가 이 연구의 핵심입니다. 왜 반대칭부를 버려도 되는지, 그리고 버려도 되는지를 어떻게 미리 알 수 있는지를 다룹니다.
+무엇을 알아내려는가절 답하려는 질문 1 반대칭부를 버리면 얼마나 틀린 방향으로 가는가 2 그 틀린 정도를 하나의 수로 어떻게 재는가 3 그 수를 고윳값 문제로 어떻게 바꾸는가 4 고윳값을 안 풀고 그 수의 상한을 어떻게 얻는가 5 그 상한이 실제로 쓸 만한가 4절이 이 연구의 기여입니다. 고윳값을 푸는 것은 비쌉니다. 격자 하나에 몇 초씩 걸리니 뉴턴 걸음마다 재는 것은 무리입니다. 상한을 쓰면 행렬을 한 번 훑는 것으로 끝납니다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="유도 상한 :: 수리전자물리학">
+    <meta name="twitter:description" content="60. 유도 — $\rho_{\mathrm{int}}$ 와 상한이 문서가 이 연구의 핵심입니다. 왜 반대칭부를 버려도 되는지, 그리고 버려도 되는지를 어떻게 미리 알 수 있는지를 다룹니다.
+무엇을 알아내려는가절 답하려는 질문 1 반대칭부를 버리면 얼마나 틀린 방향으로 가는가 2 그 틀린 정도를 하나의 수로 어떻게 재는가 3 그 수를 고윳값 문제로 어떻게 바꾸는가 4 고윳값을 안 풀고 그 수의 상한을 어떻게 얻는가 5 그 상한이 실제로 쓸 만한가 4절이 이 연구의 기여입니다. 고윳값을 푸는 것은 비쌉니다. 격자 하나에 몇 초씩 걸리니 뉴턴 걸음마다 재는 것은 무리입니다. 상한을 쓰면 행렬을 한 번 훑는 것으로 끝납니다.">
+    <meta property="og:url" content="http://localhost:1313/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="유도 상한 :: 수리전자물리학">
+    <meta property="og:description" content="60. 유도 — $\rho_{\mathrm{int}}$ 와 상한이 문서가 이 연구의 핵심입니다. 왜 반대칭부를 버려도 되는지, 그리고 버려도 되는지를 어떻게 미리 알 수 있는지를 다룹니다.
+무엇을 알아내려는가절 답하려는 질문 1 반대칭부를 버리면 얼마나 틀린 방향으로 가는가 2 그 틀린 정도를 하나의 수로 어떻게 재는가 3 그 수를 고윳값 문제로 어떻게 바꾸는가 4 고윳값을 안 풀고 그 수의 상한을 어떻게 얻는가 5 그 상한이 실제로 쓸 만한가 4절이 이 연구의 기여입니다. 고윳값을 푸는 것은 비쌉니다. 격자 하나에 몇 초씩 걸리니 뉴턴 걸음마다 재는 것은 무리입니다. 상한을 쓰면 행렬을 한 번 훑는 것으로 끝납니다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Research">
+    <meta itemprop="name" content="유도 상한 :: 수리전자물리학">
+    <meta itemprop="description" content="60. 유도 — $\rho_{\mathrm{int}}$ 와 상한이 문서가 이 연구의 핵심입니다. 왜 반대칭부를 버려도 되는지, 그리고 버려도 되는지를 어떻게 미리 알 수 있는지를 다룹니다.
+무엇을 알아내려는가절 답하려는 질문 1 반대칭부를 버리면 얼마나 틀린 방향으로 가는가 2 그 틀린 정도를 하나의 수로 어떻게 재는가 3 그 수를 고윳값 문제로 어떻게 바꾸는가 4 고윳값을 안 풀고 그 수의 상한을 어떻게 얻는가 5 그 상한이 실제로 쓸 만한가 4절이 이 연구의 기여입니다. 고윳값을 푸는 것은 비쌉니다. 격자 하나에 몇 초씩 걸리니 뉴턴 걸음마다 재는 것은 무리입니다. 상한을 쓰면 행렬을 한 번 훑는 것으로 끝납니다.">
+    <meta itemprop="wordCount" content="2225">
+    <title>유도 상한 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785808636" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785808636" defer></script>
+    <script src="/js/search-lunr.js?1785808636" defer></script>
+    <script src="/js/search.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1785808636";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785808636" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785808636" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785808636" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785808636" rel="stylesheet">
+    <link href="/css/theme.css?1785808636" rel="stylesheet">
+    <link href="/css/format-html.css?1785808636" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/research\/fvm2\/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#무엇을-알아내려는가">무엇을 알아내려는가</a></li>
+    <li><a href="#1-반대칭부를-버리면-무슨-일이-생기는가">1. 반대칭부를 버리면 무슨 일이 생기는가</a>
+      <ul>
+        <li><a href="#11-무엇을-버리는가">1.1 무엇을 버리는가</a></li>
+        <li><a href="#12-왼쪽만-바꾼다">1.2 왼쪽만 바꾼다</a></li>
+        <li><a href="#13-얼마나-틀린-방향으로-가는가">1.3 얼마나 틀린 방향으로 가는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-틀린-정도를-하나의-수로-재기">2. 틀린 정도를 하나의 수로 재기</a>
+      <ul>
+        <li><a href="#21-정의">2.1 정의</a></li>
+        <li><a href="#22-분자는-순허수-분모는-양의-실수">2.2 분자는 순허수, 분모는 양의 실수</a></li>
+        <li><a href="#23-실수벡터-둘로-바꿔-보기">2.3 실수벡터 둘로 바꿔 보기</a></li>
+        <li><a href="#24-두-벡터-사이의-크기로-읽기">2.4 두 벡터 사이의 크기로 읽기</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-고윳값-문제로-바꾸기">3. 고윳값 문제로 바꾸기</a>
+      <ul>
+        <li><a href="#31-자를-보통-자로-바꾼다">3.1 자를 보통 자로 바꾼다</a></li>
+        <li><a href="#32-이것이-고윳값의-최댓값이다">3.2 이것이 고윳값의 최댓값이다</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-고윳값을-안-풀고-상한-얻기">4. 고윳값을 안 풀고 상한 얻기</a>
+      <ul>
+        <li><a href="#41-갈림길이-어디인가">4.1 갈림길이 어디인가</a></li>
+        <li><a href="#42-분자를-간선의-말로-바꾼다">4.2 분자를 간선의 말로 바꾼다</a></li>
+        <li><a href="#43-간선의-차를-끌어낸다--여기가-요령이다">4.3 간선의 차를 끌어낸다 — 여기가 요령이다</a></li>
+        <li><a href="#44-분모도-간선의-말로-바꾼다">4.4 분모도 간선의 말로 바꾼다</a></li>
+        <li><a href="#45--와--의-비를-본다">4.5  와  의 비를 본다</a></li>
+        <li><a href="#46-상한-a--노드별로-묶기">4.6 상한 A — 노드별로 묶기</a></li>
+        <li><a href="#47-상한-b--노드-항을-통째로-보기">4.7 상한 B — 노드 항을 통째로 보기</a></li>
+        <li><a href="#48-상한-c--아무-전제도-안-두기">4.8 상한 C — 아무 전제도 안 두기</a></li>
+        <li><a href="#49-어느-것을-언제-쓰는가">4.9 어느 것을 언제 쓰는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-상한이-실제로-쓸-만한가">5. 상한이 실제로 쓸 만한가</a>
+      <ul>
+        <li><a href="#51-얼마나-느슨한가">5.1 얼마나 느슨한가</a></li>
+        <li><a href="#52-왜-1-로-가는가">5.2 왜 1 로 가는가</a></li>
+        <li><a href="#53-무엇에-쓰는가">5.3 무엇에 쓰는가</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-시간-항이-있어도-그대로-성립한다">6. 시간 항이 있어도 그대로 성립한다</a></li>
+    <li><a href="#7-코드-어디에-있는가">7. 코드 어디에 있는가</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/index.html"><span itemprop="name">Research</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/research/fvm2/index.html"><span itemprop="name">FVM2</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">유도 상한</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html" title="시간 전진 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html" title="유도 장치 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable research" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="유도-상한">유도 상한</h1>
+
+<hr>
+<h1 id="60-유도---와-상한">60. 유도 — $\rho_{\mathrm{int}}$ 와 상한<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>이 문서가 이 연구의 핵심입니다.  <strong>왜 반대칭부를 버려도 되는지</strong>,
+그리고 <strong>버려도 되는지를 어떻게 미리 알 수 있는지</strong>를 다룹니다.</p>
+<h2 id="무엇을-알아내려는가">무엇을 알아내려는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>절</th>
+          <th>답하려는 질문</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>반대칭부를 버리면 얼마나 틀린 방향으로 가는가</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>그 틀린 정도를 하나의 수로 어떻게 재는가</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>그 수를 고윳값 문제로 어떻게 바꾸는가</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>고윳값을 안 풀고 그 수의 상한을 어떻게 얻는가</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>그 상한이 실제로 쓸 만한가</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>4절이 이 연구의 기여입니다.</strong>  고윳값을 푸는 것은 비쌉니다.
+격자 하나에 몇 초씩 걸리니 뉴턴 걸음마다 재는 것은 무리입니다.
+상한을 쓰면 행렬을 한 번 훑는 것으로 끝납니다.</p>
+<hr>
+<h2 id="1-반대칭부를-버리면-무슨-일이-생기는가">1. 반대칭부를 버리면 무슨 일이 생기는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="11-무엇을-버리는가">1.1 무엇을 버리는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>어떤 정사각행렬이든 두 조각으로 쪼갤 수 있습니다.</p>
+$$\tilde J = \underbrace{\frac{\tilde J + \tilde J^{\mathsf T}}{2}}_{S\ (\text{대칭})}
+\;+\; \underbrace{\frac{\tilde J - \tilde J^{\mathsf T}}{2}}_{A\ (\text{반대칭})}$$<p>더해 보면 $\tilde J$ 가 돌아옵니다.</p>
+$$\frac{\tilde J + \tilde J^{\mathsf T}}{2} + \frac{\tilde J - \tilde J^{\mathsf T}}{2}
+= \frac{2\tilde J}{2} = \tilde J$$<p>각 조각의 성질은 전치를 취해 보면 나옵니다.</p>
+$$S^{\mathsf T} = \left(\frac{\tilde J + \tilde J^{\mathsf T}}{2}\right)^{\mathsf T}
+= \frac{\tilde J^{\mathsf T} + \tilde J}{2} = S$$$$A^{\mathsf T} = \left(\frac{\tilde J - \tilde J^{\mathsf T}}{2}\right)^{\mathsf T}
+= \frac{\tilde J^{\mathsf T} - \tilde J}{2} = -A$$<p><strong>반대칭 행렬은 대각이 0 입니다.</strong>  $A_{ii} = -A_{ii}$ 이므로 $A_{ii} = 0$ 입니다.</p>
+<h3 id="12-왼쪽만-바꾼다">1.2 왼쪽만 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 방법은 푸는 행렬에서 $A$ 를 뺍니다.  <strong>오른쪽 잔차는 그대로 둡니다.</strong></p>
+$$S\,\delta\mathbf u = -\tilde{\mathbf F}$$$$\text{잔차를 안 건드리므로 수렴한 자리가 안 바뀝니다}$$<p>이 점이 중요합니다.  잔차까지 바꾸면 다른 방정식을 푸는 것이 되지만,
+푸는 행렬만 바꾸면 <strong>가는 길이 달라질 뿐 도착지는 같습니다.</strong></p>
+<h3 id="13-얼마나-틀린-방향으로-가는가">1.3 얼마나 틀린 방향으로 가는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>정확한 방향과 실제로 쓰는 방향을 나란히 놓습니다.</p>
+$$\delta\mathbf u_{\text{정확}} = \tilde J^{-1}(-\tilde{\mathbf F}),
+\qquad \delta\mathbf u_{\text{실제}} = S^{-1}(-\tilde{\mathbf F})$$<p>첫 식을 뒤집으면 $-\tilde{\mathbf F} = \tilde J\,\delta\mathbf u_{\text{정확}}$ 이고,
+이것을 둘째에 넣습니다.</p>
+$$\delta\mathbf u_{\text{실제}} = S^{-1}\tilde J\,\delta\mathbf u_{\text{정확}}$$<p>$\tilde J = S + A$ 를 넣습니다.</p>
+$$\delta\mathbf u_{\text{실제}} = S^{-1}(S + A)\,\delta\mathbf u_{\text{정확}}
+= (I + S^{-1}A)\,\delta\mathbf u_{\text{정확}}$$<p>양변에서 $\delta\mathbf u_{\text{정확}}$ 를 뺍니다.</p>
+$$\boxed{\ \delta\mathbf u_{\text{실제}} - \delta\mathbf u_{\text{정확}}
+= S^{-1}A\,\delta\mathbf u_{\text{정확}}\ }$$$$\text{오차가 } S^{-1}A \text{ 를 곱한 것입니다}$$<p>이 행렬이 작으면 방향이 거의 안 틀립니다.  <strong>그 크기를 재는 것이 다음 절입니다.</strong></p>
+<hr>
+<h2 id="2-틀린-정도를-하나의-수로-재기">2. 틀린 정도를 하나의 수로 재기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="21-정의">2.1 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\rho_{\mathrm{int}} = \sup_{\mathbf w \ne 0}
+\frac{\bigl\lvert\mathbf w^{*}A\,\mathbf w\bigr\rvert}{\mathbf w^{*}S\,\mathbf w}$$<p>$\mathbf w$ 는 복소벡터이고 $\mathbf w^{*}$ 는 켤레전치입니다.</p>
+<p><strong>왜 복소인가.</strong>  $A$ 가 반대칭이라 실수벡터를 양쪽에 곱하면 무조건 0 이 됩니다.
+그러면 아무것도 재지 못합니다.</p>
+$$\mathbf u^{\mathsf T}A\mathbf u = (\mathbf u^{\mathsf T}A\mathbf u)^{\mathsf T}
+= \mathbf u^{\mathsf T}A^{\mathsf T}\mathbf u = -\mathbf u^{\mathsf T}A\mathbf u
+\;\Longrightarrow\; \mathbf u^{\mathsf T}A\mathbf u = 0$$<p>복소로 넓혀야 $A$ 의 크기가 드러납니다.</p>
+<h3 id="22-분자는-순허수-분모는-양의-실수">2.2 분자는 순허수, 분모는 양의 실수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>분자에 켤레를 취해 봅니다.</p>
+$$\bigl(\mathbf w^{*}A\mathbf w\bigr)^{*} = \mathbf w^{*}A^{\mathsf T}\mathbf w
+= \mathbf w^{*}(-A)\mathbf w = -\,\mathbf w^{*}A\mathbf w$$$$\text{자기 켤레의 부호가 반대인 수는 순허수뿐입니다}$$$$z^{*} = -z \;\Longrightarrow\; \operatorname{Re}(z) = 0$$<p>분모는 반대입니다.</p>
+$$\bigl(\mathbf w^{*}S\mathbf w\bigr)^{*} = \mathbf w^{*}S^{\mathsf T}\mathbf w
+= \mathbf w^{*}S\mathbf w$$<p>자기 켤레와 같으므로 실수이고, $S$ 가 양정치이므로 양수입니다.</p>
+$$\therefore\ \rho_{\mathrm{int}} \text{ 는 항상 실수이고 } 0 \text{ 이상입니다}$$<h3 id="23-실수벡터-둘로-바꿔-보기">2.3 실수벡터 둘로 바꿔 보기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\mathbf w = \mathbf u + i\mathbf v$ 로 놓고 분자를 펼칩니다.</p>
+$$\mathbf w^{*}A\mathbf w = (\mathbf u - i\mathbf v)^{\mathsf T}A(\mathbf u + i\mathbf v)$$<p>$$= \mathbf u^{\mathsf T}A\mathbf u + i,\mathbf u^{\mathsf T}A\mathbf v</p>
+<ul>
+<li>i,\mathbf v^{\mathsf T}A\mathbf u + \mathbf v^{\mathsf T}A\mathbf v$$</li>
+</ul>
+<p>2.1 에서 본 대로 $\mathbf u^{\mathsf T}A\mathbf u = 0$ 이고 $\mathbf v^{\mathsf T}A\mathbf v = 0$ 입니다.
+그리고 남은 둘은 이렇게 묶입니다.</p>
+$$\mathbf v^{\mathsf T}A\mathbf u = (\mathbf v^{\mathsf T}A\mathbf u)^{\mathsf T}
+= \mathbf u^{\mathsf T}A^{\mathsf T}\mathbf v = -\mathbf u^{\mathsf T}A\mathbf v$$$$\therefore\ \mathbf w^{*}A\mathbf w = 2i\,\mathbf u^{\mathsf T}A\mathbf v$$<p>분모도 같은 방식으로 펼치면 $S$ 가 대칭이라 허수부가 사라집니다.</p>
+$$\mathbf w^{*}S\mathbf w = \mathbf u^{\mathsf T}S\mathbf u + \mathbf v^{\mathsf T}S\mathbf v$$<h3 id="24-두-벡터-사이의-크기로-읽기">2.4 두 벡터 사이의 크기로 읽기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\rho_{\mathrm{int}} = \sup_{\mathbf u,\mathbf v}
+\frac{2\lvert\mathbf u^{\mathsf T}A\mathbf v\rvert}
+{\mathbf u^{\mathsf T}S\mathbf u + \mathbf v^{\mathsf T}S\mathbf v}$$<p>$S$ 로 잰 길이를 이렇게 씁니다.</p>
+$$\lVert\mathbf u\rVert_S = \sqrt{\mathbf u^{\mathsf T}S\mathbf u}$$<p>산술기하 부등식 $a^2 + b^2 \ge 2ab$ 를 분모에 씁니다.</p>
+$$\mathbf u^{\mathsf T}S\mathbf u + \mathbf v^{\mathsf T}S\mathbf v
+\ \ge\ 2\lVert\mathbf u\rVert_S\lVert\mathbf v\rVert_S$$$$\therefore\ \frac{2\lvert\mathbf u^{\mathsf T}A\mathbf v\rvert}
+{\mathbf u^{\mathsf T}S\mathbf u + \mathbf v^{\mathsf T}S\mathbf v}
+\ \le\ \frac{\lvert\mathbf u^{\mathsf T}A\mathbf v\rvert}{\lVert\mathbf u\rVert_S\lVert\mathbf v\rVert_S}$$<p><strong>등호는 두 길이가 같을 때 성립합니다.</strong>  $\mathbf u$ 와 $\mathbf v$ 를 각각
+마음대로 늘이고 줄일 수 있으니, 가장 큰 값을 찾을 때는 등호에 닿습니다.</p>
+$$\boxed{\ \rho_{\mathrm{int}} = \sup_{\mathbf u,\mathbf v \ne 0}
+\frac{\lvert\mathbf u^{\mathsf T}A\mathbf v\rvert}{\lVert\mathbf u\rVert_S\lVert\mathbf v\rVert_S}\ }$$$$\text{\textbf{$S$ 로 잰 자로 본 $A$ 의 크기}입니다}$$<hr>
+<h2 id="3-고윳값-문제로-바꾸기">3. 고윳값 문제로 바꾸기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-자를-보통-자로-바꾼다">3.1 자를 보통 자로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$S$ 로 재는 것이 번거로우니, 좌표를 바꿔 보통 길이로 만듭니다.</p>
+<p>$S$ 가 대칭 양정치이므로 위삼각행렬 $R$ 로 쪼갤 수 있습니다.</p>
+$$S = R^{\mathsf T} R \qquad (\text{촐레스키 분해})$$<p>이제 $\mathbf w = R^{-1}\mathbf y$ 로 바꿉니다.  분모를 보면</p>
+$$\mathbf w^{*}S\mathbf w
+= (R^{-1}\mathbf y)^{*}\,R^{\mathsf T} R\,(R^{-1}\mathbf y)
+= \mathbf y^{*}R^{-\mathsf T}R^{\mathsf T}R R^{-1}\mathbf y
+= \mathbf y^{*}\mathbf y$$$$S \text{ 가 사라지고 보통 길이가 됩니다}$$<p>분자에서는 새 행렬이 나옵니다.</p>
+$$\mathbf w^{*}A\mathbf w = \mathbf y^{*}\bigl(R^{-\mathsf T}A R^{-1}\bigr)\mathbf y$$$$\boxed{\ B = R^{-\mathsf T}A\,R^{-1}\ }$$$$\rho_{\mathrm{int}} = \sup_{\mathbf y \ne 0}
+\frac{\lvert\mathbf y^{*}B\mathbf y\rvert}{\mathbf y^{*}\mathbf y}$$<p>$B$ 도 반대칭입니다.</p>
+$$B^{\mathsf T} = (R^{-\mathsf T}AR^{-1})^{\mathsf T}
+= R^{-\mathsf T}A^{\mathsf T}R^{-1} = -B$$<h3 id="32-이것이-고윳값의-최댓값이다">3.2 이것이 고윳값의 최댓값이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>실반대칭 행렬의 고윳값은 <strong>전부 순허수</strong>입니다.
+$B\mathbf x = \lambda\mathbf x$ 에 $\mathbf x^{*}$ 를 곱해 보면 알 수 있습니다.</p>
+$$\mathbf x^{*}B\mathbf x = \lambda\,\mathbf x^{*}\mathbf x$$<p>좌변은 2.2 에서 본 대로 순허수이고, $\mathbf x^{*}\mathbf x$ 는 양의 실수입니다.
+그러니 $\lambda$ 가 순허수여야 합니다.</p>
+<p>그리고 실반대칭 행렬은 정규 행렬이라 유니터리로 대각화됩니다.
+정규 행렬에서는 위 최댓값이 고윳값 절댓값의 최댓값과 같습니다.</p>
+$$\boxed{\ \rho_{\mathrm{int}} = \max_k \lvert\lambda_k(B)\rvert\ }$$<p><strong>이것이 정확한 값입니다.</strong>  다만 고윳값을 풀어야 하니 비쌉니다.</p>
+<hr>
+<h2 id="4-고윳값을-안-풀고-상한-얻기">4. 고윳값을 안 풀고 상한 얻기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>여기가 이 연구의 기여입니다.</strong></p>
+<h3 id="41-갈림길이-어디인가">4.1 갈림길이 어디인가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+$$\rho_{\mathrm{int}} = \sup_{\mathbf w}
+\frac{\lvert\mathbf w^{*}A\mathbf w\rvert}{\mathbf w^{*}S\mathbf w}$$<p>이 비를 고윳값으로 풀지 않으려면, <strong>분자를 위에서 눌러 분모와 같은 꼴로
+만들어야 합니다.</strong>  그러면 비가 상수로 잡힙니다.</p>
+<h3 id="42-분자를-간선의-말로-바꾼다">4.2 분자를 간선의 말로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$A$ 는 대각이 0 이므로 간선마다 두 성분씩 짝지어 셀 수 있습니다.</p>
+$$\mathbf w^{*}A\mathbf w = \sum_{i \ne j}A_{ij}\bar w_i w_j
+= \sum_{(i,j)}\bigl(A_{ij}\bar w_i w_j + A_{ji}\bar w_j w_i\bigr)$$<p>$A_{ji} = -A_{ij}$ 를 넣습니다.</p>
+$$= \sum_{(i,j)}A_{ij}\bigl(\bar w_i w_j - \bar w_j w_i\bigr)$$<p>괄호 안은 어떤 복소수에서 그 켤레를 뺀 것이라 순허수입니다.</p>
+$$\boxed{\ \mathbf w^{*}A\mathbf w = 2i\sum_{(i,j)}A_{ij}\,
+\operatorname{Im}(\bar w_i w_j)\ }$$<p>절댓값을 취하고 삼각부등식을 씁니다.</p>
+$$\lvert\mathbf w^{*}A\mathbf w\rvert \ \le\
+2\sum_{(i,j)}\lvert A_{ij}\rvert\,\bigl\lvert\operatorname{Im}(\bar w_i w_j)\bigr\rvert
+\qquad\text{— 부등식 (i)}$$<h3 id="43-간선의-차를-끌어낸다--여기가-요령이다">4.3 간선의 차를 끌어낸다 — 여기가 요령이다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>분모에는 간선의 차 $\delta_{ij} = w_j - w_i$ 가 들어 있습니다 (4.4 참조).
+그러니 <strong>분자에서도 그 차를 끌어내야 견줄 수 있습니다.</strong></p>
+<p>$\lvert w_i\rvert^2$ 는 실수이므로 허수부에 더해도 값이 안 바뀝니다.</p>
+$$\operatorname{Im}(\bar w_i w_j)
+= \operatorname{Im}\bigl(\bar w_i w_j - \lvert w_i\rvert^2\bigr)
+= \operatorname{Im}\bigl(\bar w_i (w_j - w_i)\bigr)
+= \operatorname{Im}\bigl(\bar w_i \delta_{ij}\bigr)$$<p>같은 방식으로 $j$ 쪽에서도 끌어낼 수 있습니다.</p>
+$$\operatorname{Im}(\bar w_i w_j)
+= \operatorname{Im}\bigl(\lvert w_j\rvert^2 - \bar\delta_{ij}w_j\bigr)
+= -\operatorname{Im}\bigl(\bar\delta_{ij}w_j\bigr)$$<p>두 표현에 코시-슈바르츠를 쓰면 양쪽 다 성립합니다.</p>
+$$\bigl\lvert\operatorname{Im}(\bar w_i w_j)\bigr\rvert \le \lvert w_i\rvert\lvert\delta_{ij}\rvert
+\qquad\text{그리고}\qquad
+\bigl\lvert\operatorname{Im}(\bar w_i w_j)\bigr\rvert \le \lvert w_j\rvert\lvert\delta_{ij}\rvert$$<p>둘 다 성립하니 평균도 성립합니다.</p>
+$$\boxed{\ \bigl\lvert\operatorname{Im}(\bar w_i w_j)\bigr\rvert
+\ \le\ \tfrac{1}{2}\bigl(\lvert w_i\rvert + \lvert w_j\rvert\bigr)\lvert\delta_{ij}\rvert\ }
+\qquad\text{— 부등식 (ii)}$$<p><strong>왜 작은 쪽을 안 쓰고 평균을 쓰는가.</strong>  작은 쪽이 더 조입니다.
+그런데 그러려면 $i$ 와 $j$ 중 어느 쪽이 작은지 정해야 하고, 그러면 노드별로
+다시 묶을 수 없습니다.  평균은 두 노드에 대칭이라 묶을 수 있습니다.</p>
+$$\text{조임을 조금 내주고 묶을 수 있는 꼴을 얻는 맞바꿈입니다}$$<p>넣으면 이렇게 됩니다.</p>
+$$\lvert\mathbf w^{*}A\mathbf w\rvert \ \le\
+\sum_{(i,j)}\lvert A_{ij}\rvert\bigl(\lvert w_i\rvert + \lvert w_j\rvert\bigr)\lvert\delta_{ij}\rvert$$<h3 id="44-분모도-간선의-말로-바꾼다">4.4 분모도 간선의 말로 바꾼다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$S$ 를 이렇게 씁니다.</p>
+$$\gamma_i = \sum_j S_{ij} \quad(\text{행 합}), \qquad
+\chi_{ij} = -S_{ij} \quad(\text{비대각의 부호를 뒤집은 것})$$<p>그러면 분모가 <strong>등식</strong>으로 갈립니다.</p>
+<p>$$\boxed{\ \mathbf w^{*}S\mathbf w
+= \sum_i \gamma_i\lvert w_i\rvert^2</p>
+<ul>
+<li>\sum_{(i,j)}\chi_{ij}\lvert\delta_{ij}\rvert^2\ }$$</li>
+</ul>
+<p>부등식이 아니라 등식입니다.  아무것도 안 버렸습니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>항</th>
+          <th>무엇을 뜻하나</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\gamma_i\lvert w_i\rvert^2$</td>
+          <td>노드에 붙은 항.  반응 항에서 온다</td>
+      </tr>
+      <tr>
+          <td>$\chi_{ij}\lvert\delta_{ij}\rvert^2$</td>
+          <td>간선에 붙은 항.  확산에서 온다</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>이제 분자와 분모가 같은 재료로 쓰였습니다.</strong>  둘 다 $\lvert w_i\rvert$ 와
+$\lvert\delta_{ij}\rvert$ 로만 되어 있습니다.</p>
+<blockquote>
+<p><strong>$\chi_{ij} > 0$ 은 부호 규약에 걸립니다.</strong></p>
+<p>이 코드는 잔차를 $\text{res} = -\nabla\cdot(p\nabla u) - q$ 로 잡습니다.
+그러면 $S_{ij}$ 가 음수이므로 $\chi_{ij} = -S_{ij}$ 가 양수가 됩니다.</p>
+<p>게재 논문 규약을 쓰면 $S_{ij}$ 가 양수라 $\chi_{ij}$ 가 음수가 되고,
+아래 상한 A 와 S 의 전제가 반대로 걸립니다.
+<strong>규약을 섞어 읽으면 안 됩니다.</strong>  <code>20_조립.md</code> 3절 참조.</p>
+</blockquote>
+<h3 id="45--와--의-비를-본다">4.5 $A_{ij}$ 와 $S_{ij}$ 의 비를 본다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>간선마다 이 비를 정의합니다.</p>
+$$\varepsilon_{ij} = \frac{A_{ij}}{S_{ij}}$$<p><strong>이 값이 유계임을 보이는 것이 중요합니다.</strong>  안 그러면 상한이 무의미해집니다.</p>
+<p>간선 하나에서 자코비안의 두 성분을 봅니다.</p>
+$$J_+ = \lvert\hat J_{ij}\rvert, \qquad J_- = \lvert\hat J_{ji}\rvert$$$$A_{ij} = \frac{J_+ - J_-}{2}\cdot(\text{부호}), \qquad S_{ij} = -\frac{J_+ + J_-}{2}$$$$\Longrightarrow\ \varepsilon_{ij} = \frac{J_+ - J_-}{J_+ + J_-}$$<p>두 성분의 비를 로그로 쓰면 $J_+/J_- = e^{r}$ 이고, 넣으면</p>
+$$\varepsilon_{ij} = \frac{e^{r} - 1}{e^{r} + 1} = \tanh\frac{r}{2}$$$$\boxed{\ \lvert\varepsilon_{ij}\rvert < 1 \quad\text{항상}\ }$$<p>$\tanh$ 가 $(-1, 1)$ 안에 있으므로 <strong>$r$ 이 아무리 커도 1 을 못 넘습니다.</strong></p>
+<p>이 사실이 뒤의 모든 상한을 떠받칩니다.</p>
+<blockquote>
+<p><strong>여기서 놀라운 것이 있습니다.</strong>  $r$ 안에는 격자 기하도 들어 있고 물성도
+들어 있습니다.  그런데 $\varepsilon$ 을 낼 때 $J_+$ 와 $J_-$ 의 비만 쓰므로,
+<strong>두 성분에 공통으로 들어간 것은 전부 약분됩니다.</strong>  쌍대 체적이든
+무엇이든 상관없습니다.</p>
+</blockquote>
+<h3 id="46-상한-a--노드별로-묶기">4.6 상한 A — 노드별로 묶기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>4.3 의 결과에 $\varepsilon$ 을 넣습니다.</p>
+$$\lvert\mathbf w^{*}A\mathbf w\rvert \le
+\sum_{(i,j)}\lvert\varepsilon_{ij}\rvert\chi_{ij}
+\bigl(\lvert w_i\rvert + \lvert w_j\rvert\bigr)\lvert\delta_{ij}\rvert$$<p>각 항에 $ab \le \frac{1}{2}(ta^2 + b^2/t)$ 를 씁니다.  적당한 $t$ 를 고르면
+노드 항과 간선 항으로 갈립니다.  간선 항이 분모의 $\chi$ 항에 그대로
+흡수되도록 $t$ 를 고르면, 남는 것은 노드별 값입니다.</p>
+$$\Phi_{ii} = \sum_j \varepsilon_{ij}^2\,\chi_{ij}$$$$\boxed{\ \rho_{\mathrm{int}} \le \max_i \sqrt{\frac{\Phi_{ii}}{2\gamma_i}}\ }
+\qquad\text{— 상한 A (Nodal)}$$<p><strong>고윳값을 안 풉니다.</strong>  노드마다 나눗셈 하나와 제곱근 하나면 됩니다.</p>
+<p><strong>전제.</strong>  모든 $i$ 에서 $\gamma_i > 0$ 이어야 합니다.  분모가 0 이하면
+이 부등식이 성립할 수 없습니다.</p>
+<blockquote>
+<p><strong>$\gamma_i$ 가 음수인 것이 이상한 일이 아닙니다.</strong>  $\gamma_i$ 는 $S$ 의 행 합이고,
+그 안에 대각의 반응 항이 들어 있습니다.</p>
+$$\gamma_i \sim -\frac{\partial q}{\partial u}\tilde V_i$$<p>소스가 스스로를 키우는 문제에서는 $\partial q/\partial u > 0$ 이므로
+$\gamma_i$ 가 음수가 됩니다.  발열이 온도를 올리고 온도가 발열을 키우는
+자기발열이 그런 경우입니다.  그때는 상한 A 를 쓸 수 없고 S 로 갑니다.</p>
+</blockquote>
+<h3 id="47-상한-b--노드-항을-통째로-보기">4.7 상한 B — 노드 항을 통째로 보기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상한 A 는 노드마다 따로 최댓값을 취합니다.  그런데 최악의 노드 하나가
+전체를 끌어올립니다.</p>
+<p>노드별로 자르지 말고 <strong>행렬 전체로 한 번에 보면</strong> 더 조입니다.</p>
+$$\boxed{\ \rho_{\mathrm{int}} \le \sqrt{\frac{\lambda_{\max}(\Phi,\ S)}{2}}\ }
+\qquad\text{— 상한 B (Pencil)}$$<p>$\lambda_{\max}(\Phi, S)$ 는 $\Phi\mathbf x = \lambda S\mathbf x$ 의 가장 큰 고윳값입니다.</p>
+<blockquote>
+<p><strong>고윳값을 $\lambda$ 로 씁니다.</strong>  감쇠 인자는 $\sigma$ 이므로 $\lambda$ 가 비어 있습니다.
+$\Phi$ 가 대각이라 계산이 그리 무겁지 않습니다.</p>
+</blockquote>
+$$\text{상한 A 는 상한 B 를 한 번 더 느슨하게 한 것입니다}$$$$\therefore\ \rho_{\mathrm{int}} \le \text{상한 B} \le \text{상한 A}$$<p><strong>전제.</strong>  모든 간선에서 $\chi_{ij} > 0$ 이어야 $\Phi_{ii}$ 가 음수를 안 갖습니다.</p>
+<h3 id="48-상한-c--아무-전제도-안-두기">4.8 상한 C — 아무 전제도 안 두기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$\chi$ 나 $\gamma$ 의 부호를 못 믿을 때가 있습니다.  볼록껍질 위의 간선은
+삼각형이 하나뿐이라 둔각에서 $D_{ij}$ 가 음수가 될 수 있습니다.</p>
+<p>그럴 때는 $\lvert A_{ij}\rvert$ 만으로 만든 행렬을 씁니다.</p>
+<p>$$G(\xi) = \frac{\xi}{2}\operatorname{diag}\Bigl(\sum_j\lvert A_{ij}\rvert\Bigr)</p>
+<ul>
+<li>\frac{1}{\xi}\mathbf E^{\mathsf T}\operatorname{diag}(\lvert A_{ij}\rvert)\mathbf E$$</li>
+</ul>
+<p>$\mathbf E$ 는 간선-노드 기울기 연산자입니다.  간선마다 한 행을 갖고,
+그 행에 $-1$ 과 $+1$ 이 하나씩 들어 있습니다.</p>
+$$\boxed{\ \rho_{\mathrm{int}} \le \min_{\xi > 0}\lambda_{\max}\bigl(G(\xi),\ S\bigr)\ }
+\qquad\text{— 상한 C (AbsSplit)}$$<p><strong>어떤 부호 가정도 없습니다.</strong>  절댓값만 쓰기 때문입니다.
+대신 $\xi$ 를 훑어야 해서 가장 비쌉니다.</p>
+<h3 id="49-어느-것을-언제-쓰는가">4.9 어느 것을 언제 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>상태</th>
+          <th>쓸 상한</th>
+          <th>비용</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\chi > 0$, $\gamma > 0$</td>
+          <td><strong>A (Nodal)</strong></td>
+          <td>고윳값 없음</td>
+      </tr>
+      <tr>
+          <td>$\chi > 0$, $\gamma$ 에 음수</td>
+          <td><strong>B (Pencil)</strong></td>
+          <td>고윳값 하나</td>
+      </tr>
+      <tr>
+          <td>$\chi \le 0$ 이 있음</td>
+          <td><strong>C (AbsSplit)</strong></td>
+          <td>$\xi$ 훑기</td>
+      </tr>
+  </tbody>
+</table>
+<p>그리고 하나 더 있습니다.  <strong>A 로 잰 값으로 이미 충분하면 S 를 안 재도 됩니다.</strong>
+$\delta t$ 를 정하는 데 쓸 때, A 가 준 값이 이미 물리적으로 필요한 시간 간격보다
+넉넉하면 더 조여 봐야 결과가 안 바뀝니다.</p>
+<hr>
+<h2 id="5-상한이-실제로-쓸-만한가">5. 상한이 실제로 쓸 만한가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-얼마나-느슨한가">5.1 얼마나 느슨한가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상한을 정확한 값으로 나눈 것을 <strong>조임비</strong>라 합시다.  1 이면 딱 맞은 것입니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>노드 수</th>
+          <th>조임비 (상한 B)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2,896</td>
+          <td>1.568</td>
+      </tr>
+      <tr>
+          <td>8,505</td>
+          <td>1.076</td>
+      </tr>
+      <tr>
+          <td>25,337</td>
+          <td>1.070</td>
+      </tr>
+  </tbody>
+</table>
+$$\text{격자를 촘촘히 할수록 1 에 다가갑니다}$$<p>이 표는 <strong>논문에 실을 값</strong>입니다.  <code>CHECK_D</code> 가 안 냅니다.</p>
+<p><code>CHECK</code> 는 코드가 유도대로 도는지 보는 것인데, 조임비가 1 로 가는
+것은 5.2 절이 보이듯 <strong>수학의 성질</strong>이라 코드가 어길 수 있는 것이
+아닙니다.  코드가 어길 수 있는 것은 「상한이 정확값보다 작아지는 것」
+하나이고, <code>CHECK_A</code> 의 A.4 와 <code>CHECK_D</code> 의 D.2 가 그것을 봅니다.</p>
+<blockquote>
+<p><strong>이 표는 걸음 규칙이 바뀌면 조금씩 달라집니다.</strong>  뉴턴이 지나가는
+길이 달라지면 수렴한 해도 소수점 아래에서 달라지기 때문입니다.
+위 값은 <code>70_유도_장치.md</code> 1.7a 절을 넣은 뒤에 잰 것입니다.
+<strong>1 로 다가가는 것</strong>이 유도가 요구하는 성질이고, 그것은 안 바뀝니다.</p>
+</blockquote>
+<h3 id="52-왜-1-로-가는가">5.2 왜 1 로 가는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>부등식 (i) 은 삼각부등식입니다.  삼각부등식은 <strong>모든 항의 부호가 같을 때</strong>
+등호가 됩니다.</p>
+<p>격자가 촘촘해지면 최적의 $\mathbf w$ 에서 간선마다의 위상차 $\theta_{ij}$ 가 이런 꼴에
+가까워집니다.</p>
+$$\theta_{ij} \sim -c\,\varepsilon_{ij}\lvert\varepsilon_{ij}\rvert$$<p>그러면 각 항이 이렇게 됩니다.</p>
+$$A_{ij}\,\theta_{ij} = c\,\chi_{ij}\lvert\varepsilon_{ij}\rvert^3$$<p>$\chi_{ij} > 0$ 이므로 <strong>모든 항이 같은 부호</strong>가 됩니다.  삼각부등식이 등호에
+닿는 조건이 저절로 만족되는 것입니다.</p>
+<h3 id="53-무엇에-쓰는가">5.3 무엇에 쓰는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th>어디</th>
+          <th>어떻게</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>감쇠 인자</td>
+          <td>$\sigma = 1/(1+\rho^2)$ 로 걸음을 정한다</td>
+      </tr>
+      <tr>
+          <td>선형해 정확도</td>
+          <td>방향보다 더 정확히 풀지 않는다</td>
+      </tr>
+      <tr>
+          <td>시간 간격</td>
+          <td>$\rho_{\mathrm{int}}(\delta t) < 1$ 을 보장하는 $\delta t$ 를 낸다</td>
+      </tr>
+  </tbody>
+</table>
+<p>셋 다 <code>70_유도_장치.md</code> 에 있습니다.</p>
+<hr>
+<h2 id="6-시간-항이-있어도-그대로-성립한다">6. 시간 항이 있어도 그대로 성립한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>시간 항은 대각에만 더해집니다.</p>
+$$\tilde J_{\delta t} = \tilde J + \frac{1}{\delta t}M, \qquad M = \operatorname{diag}(c_i\tilde V_i) \succ 0$$<p>$M$ 이 대칭이므로 대칭부와 반대칭부로 가르면 이렇게 됩니다.</p>
+$$\operatorname{sym}(\tilde J_{\delta t}) = S + \frac{1}{\delta t}M,
+\qquad \operatorname{skew}(\tilde J_{\delta t}) = A$$$$\text{분자는 그대로이고 분모만 커집니다}$$<p>이 문서의 모든 유도에서 $S$ 를 $S + \frac{1}{\delta t}M$ 으로 바꿔 읽으면 됩니다.
+그리고 여기서 곧바로 따르는 것이 있습니다.</p>
+$$\delta t \downarrow \;\Longrightarrow\; \rho_{\mathrm{int}} \downarrow$$<p><strong>시간 간격을 줄이면 반드시 $\rho_{\mathrm{int}}$ 가 줄어듭니다.</strong>
+이것이 시간 간격의 하한을 정하는 근거가 됩니다.</p>
+<hr>
+<h2 id="7-코드-어디에-있는가">7. 코드 어디에 있는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+  <thead>
+      <tr>
+          <th>무엇</th>
+          <th>어디</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>정확한 $\rho_{\mathrm{int}}$</td>
+          <td><code>AssembledSystem.rhoIntAdaptive</code></td>
+      </tr>
+      <tr>
+          <td>상한 셋과 고르는 규칙</td>
+          <td><code>AssembledSystem.dtBound</code></td>
+      </tr>
+      <tr>
+          <td>$A$, $S$ 를 만드는 곳</td>
+          <td><code>Purifier2D.assemble2D</code></td>
+      </tr>
+      <tr>
+          <td>유도가 참인지 재는 검사</td>
+          <td><code>CHECK_A_derive.m</code> A.2 ~ A.4</td>
+      </tr>
+      <tr>
+          <td>전제가 성립하는지 재는 검사</td>
+          <td><code>CHECK_B_premise.m</code> B.2 ~ B.4</td>
+      </tr>
+      <tr>
+          <td>상한이 성립하는지 보는 검사</td>
+          <td><code>CHECK_A_derive.m</code> A.4 와 <code>CHECK_D_measure.m</code> D.2</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/research/pin/index.html"><a class="padding default-animation" href="/research/pin/index.html">PIN</a><ul id="R-subsections-f2b93e276ba13714c2eca4d90fe22880" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/research/fvm2/index.html"><a class="padding default-animation" href="/research/fvm2/index.html">FVM2</a><ul id="R-subsections-d52b5f64b45909ad16f6e8ed8034eca1" class="collapsible-menu">
+            <li class="" data-nav-id="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html"><a class="padding" href="/research/fvm2/00_%EC%A0%84%EC%B2%B4%EA%B7%B8%EB%A6%BC/index.html">전체 그림</a></li>
+            <li class="" data-nav-id="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html"><a class="padding" href="/research/fvm2/10_%EA%B2%A9%EC%9E%90%EC%99%80%EB%AC%BC%EC%84%B1/index.html">격자와 물성</a></li>
+            <li class="" data-nav-id="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html"><a class="padding" href="/research/fvm2/20_%EC%A1%B0%EB%A6%BD/index.html">조립</a></li>
+            <li class="" data-nav-id="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html"><a class="padding" href="/research/fvm2/30_%EB%89%B4%ED%84%B4%ED%92%80%EC%9D%B4/index.html">뉴턴 풀이</a></li>
+            <li class="" data-nav-id="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html"><a class="padding" href="/research/fvm2/40_%EA%B2%A9%EC%9E%90%EC%A0%81%EC%9D%91/index.html">격자 적응</a></li>
+            <li class="" data-nav-id="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html"><a class="padding" href="/research/fvm2/50_%EC%8B%9C%EA%B0%84%EC%A0%84%EC%A7%84/index.html">시간 전진</a></li>
+            <li class="active " data-nav-id="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html"><a class="padding" href="/research/fvm2/60_%EC%9C%A0%EB%8F%84_%EC%83%81%ED%95%9C/index.html">유도 상한</a></li>
+            <li class="" data-nav-id="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html"><a class="padding" href="/research/fvm2/70_%EC%9C%A0%EB%8F%84_%EC%9E%A5%EC%B9%98/index.html">유도 장치</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785808636"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785808636" defer></script>
+    <script src="/js/theme.js?1785808636" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
