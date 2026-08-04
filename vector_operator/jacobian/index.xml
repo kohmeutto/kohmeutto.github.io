@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jacobian :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/jacobian/index.html</link>
+    <description>(b) Nonlinear Operator (b) Variational Operator</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/jacobian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Nonlinear Operator</title>
+      <link>http://localhost:1313/vector_operator/jacobian/b_nonlinear-operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/jacobian/b_nonlinear-operator/index.html</guid>
+      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성&#xD;선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.</description>
+    </item>
+    <item>
+      <title>(b) Variational Operator</title>
+      <link>http://localhost:1313/vector_operator/jacobian/b_variational_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/jacobian/b_variational_operator/index.html</guid>
+      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;변분연산자 $\delta$는 상태 공간 위에서 정의되는 **선형 방향 미분 연산자(Linear Directional Derivative Operator)**이다. 동일한 수학적 본질을 다루는 두 표현 체계의 기호 및 공간 정의는 다음과 같다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 작용 공간 무한차원 함수공간 $\mathcal{V}$ 힐베르트/상태 공간 $\mathcal{H}$ 독립 좌표 $x \in \Omega \subset \mathbb{R}^d \quad (\delta x = 0)$ 고정 기저 ${ 상태 변수 상태/장 함수 $u(x) \in \mathcal{V}$ 상태 켓(State Ket) $ 미소 섭동 임의의 시련함수 $\eta(x) = \delta u(x)$ 가상 변위 켓(Virtual Displacement Ket) $ 선형 연산자 작용 선형 변분 연산자 $\delta$ 선형 변분 연산자 $\hat{\delta}$ 비선형 사상/연산자 비선형 범함수/사상 $F(u)$ 비선형 상태 연산자 $\hat{\mathbf{F}}$ 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 2. 변분연산자 $\delta$ 자체의 고유 성질 (Properties of $\delta$ as a Linear Operator)&#xD;변분연산자 $\delta$는 그 자체로 **선형 공간 상에서 정의되는 선형 연산자(Linear Operator)**이다. 이 장에서는 $\delta$가 작용하는 대상의 선형성에 기반한 순수 대수적 성질만을 다룬다.</description>
+    </item>
+  </channel>
+</rss>

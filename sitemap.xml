@@ -1108,6 +1108,9 @@
     <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/vector_operator/b_variational_operator/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/lie_group3/10-b_commutator_lie_bracket/index.html</loc>
   </url>
   <url>
@@ -1133,9 +1136,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vector_operator/b_mixed/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html</loc>

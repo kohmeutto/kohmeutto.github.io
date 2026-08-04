@@ -141,6 +141,13 @@
       <description>1. 멜린 변환&#xD;$$&#xD;\langle s^M|f\rangle&#xD;=\int_0^{\infty}\frac{dx}{x}x^{s}f\left(t\right)&#xD;$$ 2. linearity&#xD;적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^M|af+bg\rangle&#xD;=a\langle s^M|f\rangle+b\langle s^M|g\rangle&#xD;$$ 3. Core LScI duality (핵심 쌍대성)&#xD;LSI의 (시간 이동 $\leftrightarrow$ 주파수 곱셈)과 (주파수 이동 $\leftrightarrow$ 시간 곱셈)은 LScI에서 다음과 같이 완벽한 대칭을 이룬다.</description>
     </item>
     <item>
+      <title>(b) Variational Operator I</title>
+      <link>http://localhost:1313/temp/b_variational_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_variational_operator/index.html</guid>
+      <description>1. 정의: 게토 미분 (Gâteaux Derivative)&#xD;변분연산자 $\delta$는 “함수 공간(Function Space) 위에서 작동하는 무한차원 미분연산자&#34;이다. 변분연산자 $\delta$는 매개변수 $\epsilon$에 대한 방향 미분(Directional Derivative)으로 정의된다.&#xA;$$&#xD;u(x) \to u(x) + \epsilon \eta(x) \quad (\eta(x) \text{는 임의의 미소 변형 함수})&#xD;$$$$&#xD;\delta u(x) \equiv \left. \frac{\partial}{\partial \epsilon} (u(x) + \epsilon \eta(x)) \right\vert{}_{\epsilon = 0} = \eta(x)&#xD;$$ 미분 연산자 $d$: 숫자 $3$은 미분 대상(변수)이 아니므로 $\frac{d}{dx}(3) = 0$ 변분 연산자 $\delta$: 독립변수 $x$는 변분의 대상(함수)이 아니므로 $\delta x = 0$ 2. 선형성 (Linearity)&#xD;변분연산자 $\delta$는 선형 연산자(Linear Operator)이다. 임의의 상수 $c_1, c_2$와 함수 $u_1, u_2$에 대해 다음이 성립한다.</description>
+    </item>
+    <item>
       <title>Series</title>
       <link>http://localhost:1313/temp/series/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
