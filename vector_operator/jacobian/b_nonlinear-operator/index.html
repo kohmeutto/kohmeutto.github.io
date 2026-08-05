@@ -5,46 +5,54 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.155.0">
     <meta name="generator" content="Relearn 9.0.3">
-    <meta name="description" content="1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.
-구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.">
+    <meta name="description" content="1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화 한다.
+1) 함수형 표현
+상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.
+선형 미분 연산자: $$\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}$$ 비선형 미분 연산자: $$\mathcal{N}[u] = u(x) \frac{d}{dx}$$비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(b) Nonlinear Operator :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.
-구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.">
+    <meta name="twitter:title" content="(a) Nonlinear Operator :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화 한다.
+1) 함수형 표현
+상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.
+선형 미분 연산자: $$\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}$$ 비선형 미분 연산자: $$\mathcal{N}[u] = u(x) \frac{d}{dx}$$비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.">
     <meta property="og:url" content="http://localhost:1313/vector_operator/jacobian/b_nonlinear-operator/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(b) Nonlinear Operator :: 수리전자물리학">
-    <meta property="og:description" content="1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.
-구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.">
+    <meta property="og:title" content="(a) Nonlinear Operator :: 수리전자물리학">
+    <meta property="og:description" content="1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화 한다.
+1) 함수형 표현
+상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.
+선형 미분 연산자: $$\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}$$ 비선형 미분 연산자: $$\mathcal{N}[u] = u(x) \frac{d}{dx}$$비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Vector & Operator">
-    <meta itemprop="name" content="(b) Nonlinear Operator :: 수리전자물리학">
-    <meta itemprop="description" content="1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.
-구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.">
-    <meta itemprop="wordCount" content="613">
-    <title>(b) Nonlinear Operator :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1785856721" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1785856721" defer></script>
-    <script src="/js/search-lunr.js?1785856721" defer></script>
-    <script src="/js/search.js?1785856721" defer></script>
+    <meta itemprop="name" content="(a) Nonlinear Operator :: 수리전자물리학">
+    <meta itemprop="description" content="1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화 한다.
+1) 함수형 표현
+상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.
+선형 미분 연산자: $$\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}$$ 비선형 미분 연산자: $$\mathcal{N}[u] = u(x) \frac{d}{dx}$$비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.">
+    <meta itemprop="wordCount" content="184">
+    <title>(a) Nonlinear Operator :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1785893067" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1785893067" defer></script>
+    <script src="/js/search-lunr.js?1785893067" defer></script>
+    <script src="/js/search.js?1785893067" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1785856721";
+      window.relearn.index_js_url="/searchindex.en.js?1785893067";
     </script>
-    <script src="/js/lunr/lunr.min.js?1785856721" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1785856721" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1785856721" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1785856721" defer></script>
+    <script src="/js/lunr/lunr.min.js?1785893067" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1785893067" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1785893067" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1785893067" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1785856721" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785856721" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785856721" rel="stylesheet">
-    <link href="/css/theme.css?1785856721" rel="stylesheet">
-    <link href="/css/format-html.css?1785856721" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1785893067" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1785893067" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1785893067" rel="stylesheet">
+    <link href="/css/theme.css?1785893067" rel="stylesheet">
+    <link href="/css/format-html.css?1785893067" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -110,22 +118,18 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#1-두-가지-수학적-표현-체계-dual-mathematical-frameworks">1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)</a></li>
-    <li><a href="#2-비선형-연산자의-2대-핵심-특성">2. 비선형 연산자의 2대 핵심 특성</a>
+    <li>
       <ul>
-        <li><a href="#특성-1-변분연산자-와의-교환성-파괴-breakdown-of-commutativity">특성 1. 변분연산자 와의 교환성 파괴 (Breakdown of Commutativity)</a></li>
-        <li><a href="#특성-2-라이프니츠-법칙에-의한-자코비안-잉여항의-출현-appearance-of-jacobian-extra-terms">특성 2. 라이프니츠 법칙에 의한 자코비안 잉여항의 출현 (Appearance of Jacobian Extra Terms)</a></li>
+        <li><a href="#1-비선형-연산자의-대수적-본질-상태-종속성-state-dependence">1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)</a></li>
       </ul>
     </li>
-    <li><a href="#3-비선형-연산자의-국소-선형화와-자코비안-연산자-jacobian-operator">3. 비선형 연산자의 국소 선형화와 자코비안 연산자 (Jacobian Operator)</a></li>
-    <li><a href="#4-선형-vs-비선형-연산자의-변분-작용-비교-요약">4. 선형 vs 비선형 연산자의 변분 작용 비교 요약</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/jacobian/index.html"><span itemprop="name">Jacobian</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Nonlinear Operator</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/jacobian/index.html"><span itemprop="name">Jacobian</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Nonlinear Operator</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
@@ -153,96 +157,41 @@
   <header class="headline">
   </header>
 
-<h1 id="b-nonlinear-operator">(b) Nonlinear Operator</h1>
+<h1 id="a-nonlinear-operator">(a) Nonlinear Operator</h1>
 
-<h2 id="1-두-가지-수학적-표현-체계-dual-mathematical-frameworks">1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">구분</th>
-          <th style="text-align: left">(1) 고전적 함수형 표현 (Functional Form)</th>
-          <th style="text-align: left">(2) 디랙 브라켓 표현 (Dirac Bra-Ket Form)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>비선형 대상</strong></td>
-          <td style="text-align: left">상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$</td>
-          <td style="text-align: left">상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>선형 연산자 작용</strong></td>
-          <td style="text-align: left">변분연산자 작용 $\delta F(u)$</td>
-          <td style="text-align: left">브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}}</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>교환성 파괴</strong></td>
-          <td style="text-align: left">$\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$</td>
-          <td style="text-align: left">$\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q})</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>국소 선형화 결과</strong></td>
-          <td style="text-align: left">게토 도함수 $F'[u] \delta u$</td>
-          <td style="text-align: left">자코비안 연산자 작용 $\hat{J}(\mathbf{q})</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>잉여항 출현</strong></td>
-          <td style="text-align: left">연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$</td>
-          <td style="text-align: left">연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q})</td>
-      </tr>
-  </tbody>
-</table>
 <hr>
-<h2 id="2-비선형-연산자의-2대-핵심-특성">2. 비선형 연산자의 2대 핵심 특성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 <strong>2가지 치명적 수학적 특성</strong>은 다음과 같다.</p>
+<h3 id="1-비선형-연산자의-대수적-본질-상태-종속성-state-dependence">1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 <strong>작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화</strong> 한다.</p>
+<p><strong>1) 함수형 표현</strong></p>
+<p>상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.</p>
+<ul>
+<li><strong>선형 미분 연산자:</strong></li>
+</ul>
+$$
+\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}
+\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}
+$$<ul>
+<li><strong>비선형 미분 연산자:</strong></li>
+</ul>
+$$
+\mathcal{N}[u] = u(x) \frac{d}{dx}
+$$<p>비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.</p>
+<p><strong>2) 브라켓 표현</strong></p>
+<p>상태 켓 $|\mathbf{q}\rangle$에 작용하는 연산자에 대해:</p>
+<ul>
+<li><strong>선형 연산자:</strong></li>
+</ul>
+$$
+\hat{\mathcal{L}} \left[ c_1 |\mathbf{q}_1\rangle + c_2 |\mathbf{q}_2\rangle \right] = c_1 \hat{\mathcal{L}}|\mathbf{q}_1\rangle + c_2 \hat{\mathcal{L}}|\mathbf{q}_2\rangle
+$$<ul>
+<li><strong>비선형 연산자:</strong></li>
+</ul>
+$$
+\hat{\mathcal{N}}\left[c_1 |\mathbf{q}_1\rangle + c_2 |\mathbf{q}_2\rangle\right] \neq c_1\hat{\mathcal{N}}\left[\mathbf{q}_1\right] + c_2\hat{\mathcal{N}}\left[\mathbf{q}_2\right]
+$$<p>따라서 비선형 연산자 작용 전체는 상태의 선형 결합에 대해 중첩 원리(Superposition Principle)가 성립하지 않는다.상태 공간 내에서 입력 벡터의 크기와 방향에 따라 변형률이 달라지는 비선형 사상 $\mathbf{F}[\mathbf{q}]$를 정의해야 한다.</p>
+<p><strong>국소 해석의 필요성:</strong> 비선형 연산자를 다루기 위해서는 상태 공간의 특정 점 주변에서 연산자를 <strong>국소적으로 선형화(Local Linearization)</strong> 하는 해석 체계가 필요하며, 이를 위해 변분 연산자 $\delta$의 정의가 후속챕터에서 다루어진다.</p>
 <hr>
-<h3 id="특성-1-변분연산자-와의-교환성-파괴-breakdown-of-commutativity">특성 1. 변분연산자 $\delta$와의 교환성 파괴 (Breakdown of Commutativity)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>연산자 내부 계수나 구조가 상태 변수 $\mathbf{q}$에 종속(State-dependent)되어 있으면, 변분 매개변수 $\epsilon$ 관점에서 해당 연산자는 더 이상 상수가 아니다. 따라서 변분연산자 $\delta$와 연산자의 순서를 교환할 수 없다.</p>
-<h4 id="1-함수형-표현">(1) 함수형 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
-<p>상태 $u(x)$에 의존하는 미분 연산자 $\mathcal{L}(u) = u(x) \frac{d}{dx}$를 생각하자.</p>
-$$
-\delta \Big( \mathcal{L}(u) u \Big) = \delta \left( u \frac{du}{dx} \right) \neq \mathcal{L}(u) (\delta u) = u \frac{d(\delta u)}{dx}
-$$<p>좌변은 연산자 자체의 변분항이 함께 발생하므로, 단순 연산자 교환 법칙 $\delta \mathcal{L} = \mathcal{L} \delta$는 완전히 성립하지 않는다.</p>
-<h4 id="2-브라켓-표현">(2) 브라켓 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
-<p>상태 켓 $|\mathbf{q}\rangle$에 종속적인 연산자 $\hat{\mathcal{L}}(\mathbf{q})$에 대해:</p>
-$$
-\hat{\delta} \Big( \hat{\mathcal{L}}(\mathbf{q}) |\mathbf{q}\rangle \Big) \equiv \left. \frac{d}{d\epsilon} \Big( \hat{\mathcal{L}}(\mathbf{q} + \epsilon \delta \mathbf{q}) |\mathbf{q} + \epsilon \delta \mathbf{q}\rangle \Big) \right\vert_{\epsilon = 0} \neq \hat{\mathcal{L}}(\mathbf{q}) |\delta \mathbf{q}\rangle
-$$<hr>
-<h3 id="특성-2-라이프니츠-법칙에-의한-자코비안-잉여항의-출현-appearance-of-jacobian-extra-terms">특성 2. 라이프니츠 법칙에 의한 자코비안 잉여항의 출현 (Appearance of Jacobian Extra Terms)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>교환성이 파괴되는 수학적 원인은 연산자 자체에 적용되는 <strong>곱의 미분법(Leibniz Rule)</strong> 때문이다. 섭동 시 **연산자 자체의 변화량(자코비안)**과 <strong>상태의 변화량</strong>이 모두 피미분체로 작동하여 잉여항(Extra Term)이 출현한다.</p>
-<h4 id="1-함수형-표현-1">(1) 함수형 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
-<p>비선형 연산자 작용 $\mathcal{L}(u) u$에 대해 변분 연산을 전개하면:</p>
-$$
-\begin{aligned}
-\delta \Big( \mathcal{L}(u) u \Big) &= \left. \frac{\partial}{\partial \epsilon} \Big( \mathcal{L}(u + \epsilon \delta u) [u + \epsilon \delta u] \Big) \right\vert_{\epsilon = 0} \\[8pt]
-&= \underbrace{\left( \left. \frac{\partial \mathcal{L}(u + \epsilon \delta u)}{\partial \epsilon} \right\vert_{\epsilon = 0} \right) u}_{\text{연산자 자체 변분 (자코비안 잉여항)}} + \underbrace{\mathcal{L}(u) \left. \frac{\partial (u + \epsilon \delta u)}{\partial \epsilon} \right\vert_{\epsilon = 0}}_{\text{상태 변분항}} \\[8pt]
-&= \left( \frac{\partial \mathcal{L}}{\partial u} \delta u \right) u + \mathcal{L}(u) \delta u
-\end{aligned}
-$$<h4 id="2-브라켓-표현-1">(2) 브라켓 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
-<p>비선형 연산자 $\hat{\mathcal{L}}(\mathbf{q})$의 국소 자코비안 연산자를 $\hat{J}_{\mathcal{L}}(\mathbf{q}) \equiv \frac{\delta \hat{\mathcal{L}}}{\delta \mathbf{q}}$라 정의할 때:</p>
-$$
-\begin{aligned}
-\hat{\delta} \Big( \hat{\mathcal{L}}(\mathbf{q}) |\mathbf{q}\rangle \Big) &= \left. \frac{d}{d\epsilon} \Big[ \hat{\mathcal{L}}(\mathbf{q} + \epsilon \delta \mathbf{q}) \cdot |\mathbf{q} + \epsilon \delta \mathbf{q}\rangle \Big] \right\vert_{\epsilon = 0} \\[8pt]
-&= \left( \left. \frac{d\hat{\mathcal{L}}(\mathbf{q} + \epsilon \delta \mathbf{q})}{d\epsilon} \right\vert_{\epsilon = 0} \right) |\mathbf{q}\rangle + \hat{\mathcal{L}}(\mathbf{q}) \left( \left. \frac{d}{d\epsilon} |\mathbf{q} + \epsilon \delta \mathbf{q}\rangle \right\vert_{\epsilon = 0} \right) \\[8pt]
-&= \underbrace{\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) |\delta \mathbf{q}\rangle \Big) |\mathbf{q}\rangle}_{\text{연산자 섭동에 의한 자코비안 잉여항}} + \underbrace{\hat{\mathcal{L}}(\mathbf{q}) |\delta \mathbf{q}\rangle}_{\text{상태 섭동항}}
-\end{aligned}
-$$<hr>
-<h2 id="3-비선형-연산자의-국소-선형화와-자코비안-연산자-jacobian-operator">3. 비선형 연산자의 국소 선형화와 자코비안 연산자 (Jacobian Operator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>비선형 연산자 $\hat{\mathbf{F}}(\mathbf{q}) \equiv \hat{\mathcal{L}}(\mathbf{q})|\mathbf{q}\rangle$ 전체에 대해 변분 연산을 취한 최종 결과는, 잉여항과 상태 섭동항이 합쳐져 <strong>하나의 국소 자코비안 연산자 $\hat{J}(\mathbf{q})$가 가상 변위 $|\delta \mathbf{q}\rangle$에 선형 작용하는 형태</strong>로 귀결된다.</p>
-$$
-|\delta \mathbf{F}\rangle = \hat{\delta} \hat{\mathbf{F}}(\mathbf{q}) = \hat{J}(\mathbf{q}) |\delta \mathbf{q}\rangle
-$$<p>이때 전체 자코비안 연산자 $\hat{J}(\mathbf{q})$의 구성을 분해하면 다음과 같다.</p>
-$$
-\hat{J}(\mathbf{q}) = \underbrace{\frac{\partial \hat{\mathcal{L}}}{\partial \mathbf{q}} |\mathbf{q}\rangle}_{\text{연산자 종속 잉여항}} + \underbrace{\hat{\mathcal{L}}(\mathbf{q})}_{\text{기존 연산자}}
-$$<hr>
-<h2 id="4-선형-vs-비선형-연산자의-변분-작용-비교-요약">4. 선형 vs 비선형 연산자의 변분 작용 비교 요약<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-$$
-\begin{array}{rcccl}
-\text{선형 연산자 } \hat{\mathcal{L}} & \quad \implies \quad & \hat{\delta}(\hat{\mathcal{L}} |\mathbf{q}\rangle) = \hat{\mathcal{L}} |\delta \mathbf{q}\rangle & \quad & (\text{교환성 성립, 잉여항 } 0) \\[12pt]
-\text{비선형 연산자 } \hat{\mathcal{L}}(\mathbf{q}) & \quad \implies \quad & \hat{\delta}(\hat{\mathcal{L}}(\mathbf{q}) |\mathbf{q}\rangle) = \hat{J}_{\mathcal{L}}(\mathbf{q})|\delta \mathbf{q}\rangle |\mathbf{q}\rangle + \hat{\mathcal{L}}(\mathbf{q}) |\delta \mathbf{q}\rangle & \quad & (\text{교환성 파괴, 자코비안 잉여항 발생})
-\end{array}
-$$
+
   <footer class="footline">
   </footer>
 </article>
@@ -301,8 +250,9 @@ $$
             <li class="alwaysopen " data-nav-id="/vector_operator/combining_spaces/index.html"><a class="padding default-animation" href="/vector_operator/combining_spaces/index.html">Combining spaces</a><ul id="R-subsections-92d4f8c24e32980ccbc6e3dc19ac927a" class="collapsible-menu"></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/vector_operator/jacobian/index.html"><a class="padding default-animation" href="/vector_operator/jacobian/index.html">Jacobian</a><ul id="R-subsections-e124e019e9a7d227f127cd4a0a556733" class="collapsible-menu">
-            <li class="active " data-nav-id="/vector_operator/jacobian/b_nonlinear-operator/index.html"><a class="padding" href="/vector_operator/jacobian/b_nonlinear-operator/index.html">(b) Nonlinear Operator</a></li>
-            <li class="" data-nav-id="/vector_operator/jacobian/b_variational_operator/index.html"><a class="padding" href="/vector_operator/jacobian/b_variational_operator/index.html">(b) Variational Operator</a></li></ul></li>
+            <li class="active " data-nav-id="/vector_operator/jacobian/b_nonlinear-operator/index.html"><a class="padding" href="/vector_operator/jacobian/b_nonlinear-operator/index.html">(a) Nonlinear Operator</a></li>
+            <li class="" data-nav-id="/vector_operator/jacobian/b_variational_operator/index.html"><a class="padding" href="/vector_operator/jacobian/b_variational_operator/index.html">(b) Variational Operator</a></li>
+            <li class="" data-nav-id="/vector_operator/jacobian/b_linearization/index.html"><a class="padding" href="/vector_operator/jacobian/b_linearization/index.html">(b) Linearization</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
@@ -348,9 +298,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785856721"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785856721" defer></script>
-    <script src="/js/theme.js?1785856721" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1785893067"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1785893067" defer></script>
+    <script src="/js/theme.js?1785893067" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Combining spaces Resolvent operator Function of operators Jacobian</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Combining spaces Resolvent operator Jacobian Function of operators</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -92,18 +92,18 @@
       <description>(b) [D] Discrete (b) [D] Resolvent (b) [D] Decomposition (b) [C] Continuous</description>
     </item>
     <item>
+      <title>Jacobian</title>
+      <link>http://localhost:1313/vector_operator/jacobian/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/jacobian/index.html</guid>
+      <description>(a) Nonlinear Operator (b) Variational Operator (b) Linearization</description>
+    </item>
+    <item>
       <title>Function of operators</title>
       <link>http://localhost:1313/vector_operator/function_of_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/function_of_operators/index.html</guid>
       <description>(b) Dual space (b) Function of operators</description>
-    </item>
-    <item>
-      <title>Jacobian</title>
-      <link>http://localhost:1313/vector_operator/jacobian/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vector_operator/jacobian/index.html</guid>
-      <description>(b) Variational Operator I (b) Variational Operator (c) Jacobian Operator</description>
     </item>
   </channel>
 </rss>

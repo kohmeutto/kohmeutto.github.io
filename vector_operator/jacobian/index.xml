@@ -3,23 +3,30 @@
   <channel>
     <title>Jacobian :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/jacobian/index.html</link>
-    <description>(b) Nonlinear Operator (b) Variational Operator</description>
+    <description>(a) Nonlinear Operator (b) Variational Operator (b) Linearization</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/jacobian/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>(b) Nonlinear Operator</title>
+      <title>(a) Nonlinear Operator</title>
       <link>http://localhost:1313/vector_operator/jacobian/b_nonlinear-operator/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/jacobian/b_nonlinear-operator/index.html</guid>
-      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;비선형 연산자(Nonlinear Operator)는 작용하는 상태 변수 자체에 종속되는 연산자이다. 이에 선형 변분연산자 $\delta$가 작용할 때, 고전적 함수형 표현과 디랙 브라켓 표현의 대응 관계는 다음과 같다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 대상 상태 종속 사상 $F(u)$ 또는 $\mathcal{L}(u)u$ 상태 종속 연산자 $\hat{\mathbf{F}}(\mathbf{q})$ 또는 $\hat{\mathcal{L}}(\mathbf{q})$ 선형 연산자 작용 변분연산자 작용 $\delta F(u)$ 브라켓 변분 작용 $\hat{\delta}(\hat{\mathbf{F}} 교환성 파괴 $\delta \big( \mathcal{L}(u) u \big) \neq \mathcal{L}(u) (\delta u)$ $\hat{\delta} \big( \hat{\mathcal{L}}(\mathbf{q}) 국소 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 잉여항 출현 연산자 자체 변분항 $\big( \delta \mathcal{L}(u) \big) u$ 연산자 자체 변분항 $\Big( \hat{J}_{\mathcal{L}}(\mathbf{q}) 2. 비선형 연산자의 2대 핵심 특성&#xD;선형 연산자와 달리, 상태 변수 $\mathbf{q}$에 의존하는 비선형 연산자에 변분연산자 $\delta$를 적용할 때 발생하는 2가지 치명적 수학적 특성은 다음과 같다.</description>
+      <description>1. 비선형 연산자의 대수적 본질: 상태 종속성 (State-dependence)&#xD;선형 연산자 $\hat{\mathcal{A}}$는 작용하는 상태 $|\mathbf{q}\rangle$와 무관하게 고정된 구조(Constant Structure)를 유지하지만, 비선형 연산자 $\hat{\mathcal{N}}[\mathbf{q}]$는 작용하는 상태에 따라 연산자 자신의 성분과 매핑 규칙이 변화 한다.&#xA;1) 함수형 표현&#xA;상태 함수 $u(x)$에 작용하는 미분 연산자를 생각하자.&#xA;선형 미분 연산자: $$&#xD;\mathcal{L} = \frac{d}{dx} \text{또는} \mathcal{L} = a(x) \frac{d}{dx}&#xD;\quad \text{($a(x)$는 공간 좌표 $x$만의 함수)}&#xD;$$ 비선형 미분 연산자: $$&#xD;\mathcal{N}[u] = u(x) \frac{d}{dx}&#xD;$$비선형 미분 연산자 $\mathcal{N}[u]$는 계수 자체가 상태 $u(x)$에 의해 결정되므로, 연산 대상인 함수 $u(x)$가 바뀌면 연산자 $\mathcal{N}$ 자체의 구조가 바뀐다.</description>
     </item>
     <item>
       <title>(b) Variational Operator</title>
       <link>http://localhost:1313/vector_operator/jacobian/b_variational_operator/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/jacobian/b_variational_operator/index.html</guid>
-      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;변분연산자 $\delta$는 상태 공간 위에서 정의되는 **선형 방향 미분 연산자(Linear Directional Derivative Operator)**이다. 동일한 수학적 본질을 다루는 두 표현 체계의 기호 및 공간 정의는 다음과 같다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 작용 공간 무한차원 함수공간 $\mathcal{V}$ 힐베르트/상태 공간 $\mathcal{H}$ 독립 좌표 $x \in \Omega \subset \mathbb{R}^d \quad (\delta x = 0)$ 고정 기저 ${ 상태 변수 상태/장 함수 $u(x) \in \mathcal{V}$ 상태 켓(State Ket) $ 미소 섭동 임의의 시련함수 $\eta(x) = \delta u(x)$ 가상 변위 켓(Virtual Displacement Ket) $ 선형 연산자 작용 선형 변분 연산자 $\delta$ 선형 변분 연산자 $\hat{\delta}$ 비선형 사상/연산자 비선형 범함수/사상 $F(u)$ 비선형 상태 연산자 $\hat{\mathbf{F}}$ 선형화 결과 게토 도함수 $F&#39;[u] \delta u$ 자코비안 연산자 작용 $\hat{J}(\mathbf{q}) 2. 변분연산자 $\delta$ 자체의 고유 성질 (Properties of $\delta$ as a Linear Operator)&#xD;변분연산자 $\delta$는 그 자체로 **선형 공간 상에서 정의되는 선형 연산자(Linear Operator)**이다. 이 장에서는 $\delta$가 작용하는 대상의 선형성에 기반한 순수 대수적 성질만을 다룬다.</description>
+      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;변분연산자 $\delta$는 상태 공간 위에서 정의되는 **선형 방향 미분 연산자(Linear Directional Derivative Operator)**이다. 동일한 수학적 본질을 다루는 두 표현 체계의 기호 및 공간 정의는 다음과 같다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 작용 공간 무한차원 함수공간 $\mathcal{V}$ 힐베르트/상태 공간 $\mathcal{H}$ 독립 좌표 $x \in \Omega \subset \mathbb{R}^d \quad (\delta x = 0)$ 고정 기저 ${ 상태 변수 상태/장 함수 $u(x) \in \mathcal{V}$ 상태 켓(State Ket) $ 미소 섭동 임의의 시련함수 $\eta(x) = \delta u(x)$ 가상 변위 켓(Virtual Displacement Ket) $ 변분 연산자 선형 변분 연산자 $\delta$ 선형 변분 연산자 $\hat{\delta}$ 상태 독립 선형 연산자 $\mathcal{L}$ (공간/시간 미분 연산자 등) $\hat{\mathcal{L}}$ (상태 $\mathbf{q}$에 독립인 에르미트 연산자 등) 연산자 교환 성질 $\delta \Big[ \mathcal{L}[u] \Big] = \mathcal{L}[\delta u]$ $\hat{\delta} \Big( \hat{\mathcal{L}} 2. 변분연산자 $\delta$의 정의 및 선형성 (Definition &amp; Linearity)&#xD;변분연산자 $\delta$는 그 자체로 **선형 공간 상에서 정의되는 선형 연산자(Linear Operator)**이다. 매개변수 $\epsilon$에 대한 방향 미분으로 정의되며, 중첩의 원리(가법성 및 동차성)를 완벽히 만족한다.</description>
+    </item>
+    <item>
+      <title>(b) Linearization</title>
+      <link>http://localhost:1313/vector_operator/jacobian/b_linearization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/jacobian/b_linearization/index.html</guid>
+      <description>1. 두 가지 수학적 표현 체계 (Dual Mathematical Frameworks)&#xD;비선형 연산자에 선형 변분 연산자 $\delta$를 작용하는 과정은 비선형 사상을 국소적으로 1차 선형화(Local Linearization)하는 게토 미분(Gâteaux Derivative)을 수행하는 것에 해당한다.&#xA;비선형 연산자는 상태 변수에 종속되므로, 변분 작용 시 연산자 자체의 변분이 수반되어 선형 연산자에서 성립하던 교환성($\delta \mathcal{L} = \mathcal{L} \delta$)이 완전히 파괴된다.&#xA;구분 (1) 고전적 함수형 표현 (Functional Form) (2) 디랙 브라켓 표현 (Dirac Bra-Ket Form) 비선형 사상 $F[u] \equiv \mathcal{N}[u] u$ $ 변분 연산 작용 $\delta F[u] = \delta \Big[ \mathcal{N}[u] u \Big]$ $ 교환성 파괴 $\delta \Big[ \mathcal{N}[u] u \Big] \neq \mathcal{N}[u] \delta u$ $\hat{\delta} \Big( \hat{\mathcal{N}}[\mathbf{q}] 선형화 결과 $\delta F[u] = J[u] \delta u$ (게토 도함수) $ 자코비안 구조 $J[u] = \mathcal{N}[u] + \left( \dfrac{\partial \mathcal{N}[u]}{\partial u} [\cdot] \right) u$ $\hat{J}[\mathbf{q}] = \hat{\mathcal{N}}[\mathbf{q}] + \left( \dfrac{\delta \hat{\mathcal{N}}[\mathbf{q}]}{\delta \mathbf{q}} [\cdot] \right) 2. 변분 연산자와 비선형 연산자의 비가환성 (Non-commutativity)&#xD;선형 연산자 $\mathcal{L}$의 경우 $\delta \Big[ \mathcal{L}[u] \Big] = \mathcal{L}[\delta u]$가 성립하지만, 비선형 연산자 $\mathcal{N}[u]$는 작용 대상인 상태 $u$에 직접 종속되므로 **라이프니츠 곱의 미분법칙(Leibniz Rule)**에 의해 연산자 자체의 변분항이 발생한다.</description>
     </item>
   </channel>
 </rss>
