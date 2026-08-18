@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dirac notation :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/dirac_notation/index.html</link>
+    <description>(b) Basis (b) Ket (b) Bra (b) Operator (b) Matrix &amp; Kernel (b) Short cut</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/dirac_notation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Basis</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_basis/index.html</guid>
+      <description>1. 기저&#xD;추상적인 벡터 $|v\rangle$ 는 그 자체로 완전한 개념이지만, 특정 벡터를 구체적으로 지칭하고 다른 벡터와 비교하려면 기준이 필요하다. 우리가 지도에서 특정 위치를 위도와 경도로 나타내듯, 벡터 공간에서도 기저(Basis) 라는 좌표계를 세울 수 있다.&#xA;기저: 공간을 구성하는 최소한 의 ‘벽돌’과 같은 벡터들의 집합이다. 2. 이산(유한, 무한)기저, 연속(무한)기저&#xD;이산 유한 기저: 셀 수 있고, 갯수가 유한, 이러한 기저로 이루어진 벡터는 유한 열벡터 라고 한다. 이산 무한 기저: 셀 수 있고, 갯수가 무한, 이러한 기저로 이루어진 벡터는 무한 열벡터 라고 한다. 연속 무한 기저: 셀 수 없음, 이러한 기저로 이루어진 벡터는 함수 벡터 라고 한다. (1) 이산기저</description>
+    </item>
+    <item>
+      <title>(b) Ket</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_ket/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_ket/index.html</guid>
+      <description>1. 이산기저 (Discrete Basis)&#xD;원점에서 x=1, y=2 로 향하는 벡터를 표현할 때,&#xA;(1) 유클리드 공간&#xA;$$&#xD;\vec{a}=1\hat{u}_1+2\hat{u}_2,\quad&#xD;\hat{u}_1=[1 \ 0]^T,\quad \hat{u}_2=[0 \ 1]^T&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;|a\rangle=1|u_1\rangle+2|u_1\rangle,\quad&#xD;|u_1\rangle=[1 \ 0]^T,\quad |u_1\rangle=[0 \ 1]^T&#xD;$$ 2. 연속 기저 (Continuous Basis)&#xD;함수 f(x)의 함수를 표현할 때,</description>
+    </item>
+    <item>
+      <title>(b) Bra</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_bra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_bra/index.html</guid>
+      <description>1. Bra&#xD;(1) 유클리드 공간&#xA;“$\vec{a}\cdot$” 은 연산자이다. 피 연산자를 요구한다. 이것은 행벡터로 표현된다. 따라서, 행벡터를 의미에 따라, 연산자로 간주할 수 있다.&#xA;$$&#xD;\vec{a}\cdot:=\vec{a}^T:=[a]^T&#xD;$$$$&#xD;\vec{a}\cdot\vec{b}=\vec{a}^T\vec{b}&#xD;=[a]^T[b]&#xD;$$(2) 힐버트 공간&#xA;$$&#xD;\langle a| \text{ 는 } \vec{a}\cdot \text{에 대응한다.}&#xD;$$$$&#xD;\langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}&#xD;$$유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,</description>
+    </item>
+    <item>
+      <title>(b) Operator</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_operator/index.html</guid>
+      <description>1. Bra vs. 연산자&#xD;(1) Ket 벡터 $|f\rangle$: 본질&#xA;추상적인 Ket 벡터 $∣f\rangle$ 는 그 자체로 하나의 완벽한 ‘설계도’ 또는 ‘DNA’ 와 같다. 이 설계도 안에는 함수에 대한 모든 정보(특정 지점에서의 값, 변화율, 에너지, 운동량 등)가 잠재적 으로 전부 담겨 있다.&#xA;(2) Bra 벡터 $\langle v|$: 추출 연산자 (Extraction Operator)&#xA;역할 : $|f\rangle$가 가진 수많은 정보 중에서, 특정 정보 하나($v\rangle$ 성분)만을 추출(extract) 하여 하나의 숫자로 보여주는 연산자이다. 비유 : 전체 DNA($|f\rangle$)에서 눈 색깔 유전자($\langle v|$)정보만 쏙 뽑아내어 갈색이라는 값(스칼라)을 읽어내는 유전자 분석기 와 같다. 결과 : $\langle v∣f\rangle$ → 스칼라 (숫자) (3) $\hat{A}$: 변환 연산자 (Transformation Operator)</description>
+    </item>
+    <item>
+      <title>(b) Matrix &amp; Kernel</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_matrix_kernel/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_matrix_kernel/index.html</guid>
+      <description>1. 이산기저와 행렬&#xD;(1) 듀얼기저(dual basis) 벡터&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u^j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u^i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u^i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u^j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u^i|\hat{A}|u_j\rangle\langle u^j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u^j|&#xD;$$(2) 행렬을 이용한 연산&#xA;연산자 Â가 벡터 |ψ⟩에 작용하여 새로운 벡터 |φ⟩를 만드는 과정($|\phi\rangle = \hat{A}|\psi\rangle$)은, 행렬을 이용하여 다음과 같이 표현된다.&#xA;$$&#xD;\phi_i=\sum_j A_{ij}\psi_j&#xD;$$proof)&#xA;$$&#xD;|\phi\rangle = \hat{A}|\psi\rangle&#xD;$$의 양변에 $\langle u^i|$를 내적하면,</description>
+    </item>
+    <item>
+      <title>(b) Short cut</title>
+      <link>http://localhost:1313/vector_operator/dirac_notation/b_short_cut/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/dirac_notation/b_short_cut/index.html</guid>
+      <description>1. 규칙과 관습&#xD;(1) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;OK: $\hat{A}|\psi\rangle=|A\psi\rangle$ OK: $\hat{U}|\psi\rangle=|U\psi\rangle$ (2) 함수 형태의 별명</description>
+    </item>
+  </channel>
+</rss>

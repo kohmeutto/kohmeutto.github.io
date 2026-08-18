@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§12 (컴팩트 연결 — 전사), §13 (비컴팩트 연결 — 지수의 곱) 에서 연결 리 군에 한정한 지수 사상의 행동을 봤다. 이 절은 비연결 리 군 — $O(N)$, $GL(N, \mathbb{R})$, Lorentz 군 (full) 등 — 의 경우.
+비연결의 근본 문제 — 지수 사상은 항등원에서 출발하는 연속 곡선 을 만든다. 따라서 항등원 성분 $G_0$ 안에만 머묾. 다른 성분에는 절대 도달 못 함.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="비연결의 경우 — 이산 변환 추가 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§12 (컴팩트 연결 — 전사), §13 (비컴팩트 연결 — 지수의 곱) 에서 연결 리 군에 한정한 지수 사상의 행동을 봤다. 이 절은 비연결 리 군 — $O(N)$, $GL(N, \mathbb{R})$, Lorentz 군 (full) 등 — 의 경우.
+비연결의 근본 문제 — 지수 사상은 항등원에서 출발하는 연속 곡선 을 만든다. 따라서 항등원 성분 $G_0$ 안에만 머묾. 다른 성분에는 절대 도달 못 함.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/14-b_disconnected_discrete/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="비연결의 경우 — 이산 변환 추가 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§12 (컴팩트 연결 — 전사), §13 (비컴팩트 연결 — 지수의 곱) 에서 연결 리 군에 한정한 지수 사상의 행동을 봤다. 이 절은 비연결 리 군 — $O(N)$, $GL(N, \mathbb{R})$, Lorentz 군 (full) 등 — 의 경우.
+비연결의 근본 문제 — 지수 사상은 항등원에서 출발하는 연속 곡선 을 만든다. 따라서 항등원 성분 $G_0$ 안에만 머묾. 다른 성분에는 절대 도달 못 함.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="비연결의 경우 — 이산 변환 추가 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§12 (컴팩트 연결 — 전사), §13 (비컴팩트 연결 — 지수의 곱) 에서 연결 리 군에 한정한 지수 사상의 행동을 봤다. 이 절은 비연결 리 군 — $O(N)$, $GL(N, \mathbb{R})$, Lorentz 군 (full) 등 — 의 경우.
+비연결의 근본 문제 — 지수 사상은 항등원에서 출발하는 연속 곡선 을 만든다. 따라서 항등원 성분 $G_0$ 안에만 머묾. 다른 성분에는 절대 도달 못 함.">
+    <meta itemprop="wordCount" content="2088">
+    <title>비연결의 경우 — 이산 변환 추가 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/14-b_disconnected_discrete\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/14-b_disconnected_discrete/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-지수-사상은-항등원-성분에만-머문다">2. 지수 사상은 항등원 성분에만 머문다</a></li>
+        <li><a href="#3-비연결-리-군의-구조--컴포넌트-군">3. 비연결 리 군의 구조 — 컴포넌트 군</a></li>
+        <li><a href="#4-비연결-리-군의-일반-원소-표현">4. 비연결 리 군의 일반 원소 표현</a></li>
+        <li><a href="#5-핵심-예---과-반사">5. 핵심 예 —  과 반사</a></li>
+        <li><a href="#6-다른-예-">6. 다른 예 — </a></li>
+        <li><a href="#7-lorentz-군--4-성분의-비연결">7. Lorentz 군 — 4 성분의 비연결</a></li>
+        <li><a href="#8-응집계-물리의-이산-대칭">8. 응집계 물리의 이산 대칭</a></li>
+        <li><a href="#9-altland-zirnbauer-10중-분류">9. Altland-Zirnbauer 10중 분류</a></li>
+        <li><a href="#10-비연결-처리의-일반-패턴--종합">10. 비연결 처리의 일반 패턴 — 종합</a></li>
+        <li><a href="#11-이-절을-닫으며--4부-정리">11. 이 절을 닫으며 + 4부 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">비연결의 경우 — 이산 변환 추가</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/13-b_noncompact_exp_product/index.html" title="비컴팩트의 경우 — 지수의 곱 필요 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/index.html" title="Exterir algebra (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="비연결의-경우--이산-변환-추가">비연결의 경우 — 이산 변환 추가</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§12 (컴팩트 연결 — 전사), §13 (비컴팩트 연결 — 지수의 곱) 에서 <em>연결 리 군에 한정한</em> 지수 사상의 행동을 봤다. 이 절은 <em>비연결 리 군</em> — $O(N)$, $GL(N, \mathbb{R})$, Lorentz 군 (full) 등 — 의 경우.</p>
+<p>비연결의 <em>근본 문제</em> — 지수 사상은 <em>항등원에서 출발하는 연속 곡선</em> 을 만든다. 따라서 <em>항등원 성분 $G_0$ 안에만 머묾</em>. <em>다른 성분에는 절대 도달 못 함</em>.</p>
+<p>해결책 — <em>각 연결 성분의 대표를 따로 지정</em> + 지수와 곱. 이것이 비연결 리 군의 일반 표현</p>
+$$g = g_i \cdot \exp(X), \quad g_i \in G_i \text{ (코셋 대표)}, X \in \mathfrak{g}$$<p>핵심 통찰 — <em>비연결 리 군 = 연결 부분 (지수로 다루기) + 이산 부분 (코셋으로 다루기)</em>. 두 측면을 <em>분리해</em> 다룬다.</p>
+<p>이 절은 (i) 왜 지수가 항등원 성분에만 머무는가, (ii) 비연결 리 군의 <em>컴포넌트 군</em> 구조, (iii) 일반 표현 식 $g = g_i \exp(X)$, (iv) $O(N)$ 의 구체 예 + 반사, (v) 응집계 물리의 이산 대칭 (시간 역전, 입자-구멍, 카이럴), (vi) Altland-Zirnbauer 분류 — 의 순서.</p>
+<p>이로써 4부 (지수 사상의 한계) 가 완성. 다음 5부 (구체적 리 군 깊이) 로 넘어간다.</p>
+<h3 id="2-지수-사상은-항등원-성분에만-머문다">2. 지수 사상은 항등원 성분에만 머문다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>기본 사실</em>. 임의 $X \in \mathfrak{g}$ 에 대해 $\exp(tX)$ 가 <em>$t = 0$ 에서 항등원 $e$</em> 에서 시작하는 <em>연속 (매끄러운) 곡선</em>.</p>
+<p><strong>2)</strong> <em>결과</em>. 이 곡선이 <em>항등원 성분 $G_0$ 안에 머묾</em> — 연속 곡선이 <em>다른 성분으로 점프 못 함</em> (연결 성분의 정의).</p>
+<p>따라서 <em>임의 $t \in \mathbb{R}$ 에 대해</em> $\exp(tX) \in G_0$.</p>
+<p>특히 $\exp(X) = \exp(1 \cdot X) \in G_0$. 즉</p>
+$$\exp(\mathfrak{g}) \subseteq G_0$$<p><strong>3)</strong> <em>극단 — 컴팩트 연결의 경우</em>. $G$ 가 연결이면 $G_0 = G$, 위 포함이 자동 만족 — §12 가 그 경우 <em>등호</em> 까지 보장.</p>
+<p><strong>4)</strong> <em>비연결의 경우</em>. $G \supsetneq G_0$ 이면 $\exp(\mathfrak{g}) \subseteq G_0 \subsetneq G$. <em>지수 이미지가 진부분집합</em> — <em>다른 성분이 도달 못 됨</em>.</p>
+<p><strong>5)</strong> <em>근본 한계</em>. 이 한계는 <em>연결성에 관한 토폴로지적 제약</em> — 단순한 <em>계산상 문제가 아님</em>. 어떤 분석 도구로도 <em>연속만으로 다른 성분에 도달 불가</em>. <em>이산 변환 (한 번에 다른 성분으로 점프)</em> 이 필수.</p>
+<h3 id="3-비연결-리-군의-구조--컴포넌트-군">3. 비연결 리 군의 구조 — 컴포넌트 군<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비연결 리 군의 <em>조각조각 구조</em> 를 명시한다.</p>
+<p><strong>1)</strong> <em>연결 성분 분해</em>. 비연결 리 군 $G$ 가 유한 (또는 무한) 개의 연결 성분으로 분해</p>
+$$G = G_0 \sqcup G_1 \sqcup G_2 \sqcup \cdots$$<p>여기 $G_0$ 가 <em>항등원 성분</em>, 다른 $G_i$ 가 <em>항등원이 아닌 성분</em>.</p>
+<p><strong>2)</strong> <em>코셋 구조</em>. 각 $G_i$ 가 <em>$G_0$ 의 코셋</em> — 어떤 대표 $g_i \in G_i$ 에 대해 $G_i = g_i \cdot G_0$. (왼쪽 코셋; 오른쪽도 마찬가지.)</p>
+<p>증명 (스케치) — $g_i \in G_i$ 잡고 $G_0 \to G_i$ 매핑 $h \mapsto g_i h$ 가 동형사상 (왼쪽 곱셈이 <em>연속이고 가역</em>).</p>
+<p>따라서</p>
+$$G = \bigsqcup_i g_i G_0, \quad g_0 = e \in G_0$$<p><strong>3)</strong> <em>컴포넌트 군 $G / G_0$</em>. 코셋 집합 $\{G_i\}$ 자체가 <em>이산군 (discrete group)</em> — 군 연산은 <em>대표의 곱셈에서 코셋으로 환원</em></p>
+$$(g_i G_0) \cdot (g_j G_0) = g_i g_j G_0$$<p>(잘 정의됨 — $G_0$ 가 정상 부분군, §2 §6 (3)).</p>
+<p><em>컴포넌트 군</em> $G / G_0$ 가 <em>유한군 (보통)</em>. 본 시리즈 예 —</p>
+<ul>
+<li>$O(N) / SO(N) = \mathbb{Z}_2$ — 두 성분 ($\det = \pm 1$)</li>
+<li>$GL(N, \mathbb{R}) / GL^+(N, \mathbb{R}) = \mathbb{Z}_2$ — 두 성분 ($\det >, < 0$)</li>
+<li>$SO(1, 3) / SO^+(1, 3) = \mathbb{Z}_2 \times \mathbb{Z}_2$ — 4 성분 (P, T, PT)</li>
+</ul>
+<p><strong>4)</strong> <em>동일 구조 반복</em>. 각 $G_i = g_i G_0$ 가 <em>항등원 성분의 평행이동</em>. <em>내부 구조</em> (위상·매끄러움·치수) 가 <em>$G_0$ 와 동일</em>. 즉 비연결 리 군이 <em>$G_0$ 의 유한 (이산) 복사본 모음</em>.</p>
+<h3 id="4-비연결-리-군의-일반-원소-표현">4. 비연결 리 군의 일반 원소 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>주 표현식</em>. 임의 $g \in G$ 에 대해</p>
+<ul>
+<li><em>연결 성분 결정</em> — $g \in G_i$ for some $i$</li>
+<li><em>항등원 성분 부분</em> — $g = g_i h$ where $g_i$ 가 $G_i$ 의 대표, $h \in G_0$.</li>
+<li><em>$h$ 를 지수로</em> — $G_0$ 가 연결이라 §12 (컴팩트) 또는 §13 (비컴팩트) 의 방법으로 $h = \exp(X)$ 또는 $h = \exp(X_1) \exp(X_2) \cdots$.</li>
+</ul>
+<p>종합 —</p>
+$$\boxed{g = g_i \cdot \exp(X_1) \exp(X_2) \cdots \exp(X_k)}$$<p>(컴팩트 연결의 경우 $k = 1$, 비컴팩트의 경우 $k \ge 1$.)</p>
+<p><strong>2)</strong> <em>해석 — 두 부분의 분리</em>.</p>
+<ul>
+<li><em>이산 부분</em> — $g_i$ (어떤 성분인지 선택)</li>
+<li><em>연속 부분</em> — $\exp(X)$ 의 곱 (그 성분 안에서의 위치)</li>
+</ul>
+<p><strong>3)</strong> <em>유일성 (코셋 대표 선택의 모듈로)</em>. $g_i$ 의 선택이 <em>코셋의 어떤 대표 원소를 쓰는가</em> 의 자유. 한 번 고정하면, $X$ (또는 $X_i$) 가 <em>$g_i$ 분리 후 결정</em>.</p>
+<p><strong>4)</strong> <em>예시</em>. $G = O(3)$ 의 일반 원소.</p>
+<ul>
+<li><em>$\det = +1$ 성분 ($SO(3)$)</em> — $g_0 = I$, 모든 $R \in SO(3)$ 가 $R = I \cdot \exp(A)$ ($A \in \mathfrak{so}(3)$ 반대칭).</li>
+<li><em>$\det = -1$ 성분 ($O^-(3)$)</em> — $g_1 = -I$ (또는 $\text{diag}(-1, 1, 1) = P$ 반사). 모든 $M \in O^-(3)$ 가 $M = g_1 \cdot \exp(A)$ ($A \in \mathfrak{so}(3)$).</li>
+</ul>
+<p>즉 <em>$O(3) = SO(3) \sqcup g_1 \cdot SO(3)$</em>, 두 코셋.</p>
+<h3 id="5-핵심-예---과-반사">5. 핵심 예 — $O(N)$ 과 반사<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$O(N) = SO(N) \sqcup (-) SO(N)$</em>. 두 성분.</p>
+<p><em>항등원 성분</em> — $SO(N)$ ($\det = +1$). 회전들.</p>
+<p><em>다른 성분</em> — $O^-(N) := \{M \in O(N) : \det M = -1\}$. <em>회전 + 반사</em>.</p>
+<p><strong>2)</strong> <em>코셋 대표 선택</em>. $O^-(N)$ 의 한 대표로 <em>반사 (reflection)</em></p>
+$$P = \begin{pmatrix} -1 & 0 & \cdots & 0 \\ 0 & 1 & & \\ \vdots & & \ddots & \\ 0 & & & 1 \end{pmatrix} = \text{diag}(-1, 1, \ldots, 1)$$<p>(첫 좌표 반전.) $\det P = -1$, $P^T P = I$ — $P \in O(N)$. ✓</p>
+<p><strong>3)</strong> <em>일반 $M \in O^-(N)$ 의 표현</em>. $M = P \cdot R$ where $R = P^{-1} M = P M \in SO(N)$. ($\det(PM) = \det P \det M = (-1)(-1) = 1$ ✓.)</p>
+<p>종합 — <em>모든 $M \in O(N)$</em> 가</p>
+$$M = \begin{cases} \exp(A) & \det M = +1 \text{ (회전)} \\ P \cdot \exp(A) & \det M = -1 \text{ (반사 + 회전)} \end{cases}$$<p>with $A \in \mathfrak{so}(N)$.</p>
+<p><strong>4)</strong> <em>물리적 의미 — 공간 반전 (parity)</em>. 응집계·소립자 물리에서 <em>공간 반전 $P$</em> 가 <em>비연결 이산 변환의 표본</em>. $P^2 = I$ (반사를 두 번 = 원래대로), $\det P = -1$.</p>
+<p><em>Parity 보존 시스템</em> — Hamiltonian 이 $P$ 와 <em>교환</em> — $[H, P] = 0$. 이는 연속 대칭 (지수로 다룸) 으로 안 잡힘 — <em>이산 대칭으로 별도 분석</em> 필요.</p>
+<p><strong>5)</strong> <em>다른 반사 선택</em>. $P$ 대신 다른 반사도 가능 — 예 $\text{diag}(1, -1, 1, \ldots, 1)$, $\text{diag}(1, \ldots, 1, -1)$ 등. 모두 같은 코셋 $O^-(N)$ 의 대표. 보통 <em>물리적으로 의미 있는</em> 반사 (모든 좌표 반전 $P = -I$ for 홀수 $N$, 또는 첫 좌표 반전 등) 선택.</p>
+<h3 id="6-다른-예-">6. 다른 예 — $GL(N, \mathbb{R})$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$GL(N, \mathbb{R}) = GL^+ \sqcup GL^-$</em>. 두 성분 ($\det > 0$, $\det < 0$).</p>
+<p><strong>2)</strong> <em>코셋 대표</em>. $GL^-$ 의 대표로 위 $P = \text{diag}(-1, 1, \ldots, 1)$ 잡으면</p>
+$$GL(N, \mathbb{R}) = GL^+(N, \mathbb{R}) \sqcup P \cdot GL^+(N, \mathbb{R})$$<p><strong>3)</strong> <em>일반 원소</em>. 모든 $A \in GL(N, \mathbb{R})$ 가</p>
+$$A = \begin{cases} g & \det A > 0 \text{ (orientation-preserving)} \\ P g & \det A < 0 \text{ (orientation-reversing)} \end{cases}$$<p>with $g \in GL^+(N, \mathbb{R})$. 그리고 $g$ 는 §13 의 방법 (지수의 곱) 으로 표현.</p>
+<p><strong>4)</strong> <em>물리적 의미</em>. $GL$ 의 비연결성이 <em>방향 (orientation)</em> 에 대응. $\det > 0$ 변환은 방향 보존, $\det < 0$ 은 방향 역전. 물리에서 <em>3차원 공간의 카이럴리티 (chirality)</em>, <em>DNA 나선의 방향</em> 등.</p>
+<h3 id="7-lorentz-군--4-성분의-비연결">7. Lorentz 군 — 4 성분의 비연결<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가장 풍부한 예 — <em>완전 Lorentz 군 $O(1, 3)$</em>.</p>
+<p><strong>1)</strong> <em>4 성분 분해</em>. $O(1, 3) = SO^+(1, 3) \sqcup P \cdot SO^+ \sqcup T \cdot SO^+ \sqcup PT \cdot SO^+$.</p>
+<ul>
+<li>$SO^+(1, 3)$ — proper orthochronous (항등원 성분, $\det = +1, \Lambda^0{}_0 \ge 1$)</li>
+<li><em>$P$</em> — 공간 반전 (parity), $P = \text{diag}(1, -1, -1, -1)$</li>
+<li><em>$T$</em> — 시간 역전, $T = \text{diag}(-1, 1, 1, 1)$</li>
+<li><em>$PT$</em> — 둘의 곱, $PT = \text{diag}(-1, -1, -1, -1) = -I_4$</li>
+</ul>
+<p><strong>2)</strong> <em>컴포넌트 군</em>. $O(1, 3) / SO^+(1, 3) = \{e, P, T, PT\} \cong \mathbb{Z}_2 \times \mathbb{Z}_2$ — <em>클라인 4 군</em>.</p>
+<p><strong>3)</strong> <em>일반 원소</em>. 모든 $\Lambda \in O(1, 3)$ 가</p>
+$$\Lambda = D \cdot R \cdot B$$<p>with $D \in \{I, P, T, PT\}$ (이산 변환), $R$ 공간 회전, $B$ boost (§13 §7).</p>
+<p><strong>4)</strong> <em>물리적 의미</em>. <em>입자물리 CPT 정리</em> — 모든 양자장론이 <em>CPT 변환</em> (charge conjugation $C$ + parity $P$ + time reversal $T$) 하에서 불변. $C$ 는 <em>내부 대칭</em> (입자-반입자 교환), $P$ 와 $T$ 가 <em>Lorentz 군의 비연결 부분</em>.</p>
+<h3 id="8-응집계-물리의-이산-대칭">8. 응집계 물리의 이산 대칭<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>응집계 시스템 분석에서 <em>세 가지 이산 대칭</em> 이 핵심.</p>
+<p><strong>1)</strong> <em>시간 역전 (Time-reversal, $T$)</em>. 시간 흐름의 역전. 양자역학에서 <em>반선형 (antilinear)</em> 작용소. 두 종류 — $T^2 = +I$ (보존, 스핀리스) vs $T^2 = -I$ (페르미온, 스핀 1/2).</p>
+<p>군 차원에서 <em>$T$ 가 비연결 부분</em> — 연속 변환으로 시간 역전 못 함.</p>
+<p><strong>2)</strong> <em>입자-구멍 (Particle-hole, $C$)</em>. BdG 형식에서 입자 ↔ 정공 (hole). 초전도체의 자연 대칭. $C^2 = +I$ 또는 $C^2 = -I$.</p>
+<p><strong>3)</strong> <em>카이럴 (Chiral, $S$ = sublattice)</em>. 격자의 두 부분 격자 사이의 교환. $S = T \cdot C$ 로 결합 가능 — 독립적 이산 대칭.</p>
+<p><strong>4)</strong> <em>이산 대칭의 군 구조</em>. 세 가지 각각 <em>2-그룹 (or 4-그룹)</em> 의 원소 — 비연결 부분. 각각의 <em>제곱 부호 ($\pm I$)</em> 조합으로 다양한 분류 가능.</p>
+<h3 id="9-altland-zirnbauer-10중-분류">9. Altland-Zirnbauer 10중 분류<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>응집계의 <em>위상 분류 (topological classification)</em> 가 위 세 이산 대칭의 조합으로 <em>10 가지</em> 의 <em>대칭 클래스</em> 로 결정.</p>
+<p><strong>1)</strong> <em>10 가지 클래스의 표</em> (Altland-Zirnbauer 1997).</p>
+<table>
+  <thead>
+      <tr>
+          <th>클래스</th>
+          <th>$T$</th>
+          <th>$C$</th>
+          <th>$S$</th>
+          <th>군 구조</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>A (unitary)</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>$U(N)$</td>
+      </tr>
+      <tr>
+          <td>AIII (chiral unitary)</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>$U(N) \times U(N)/U(N)$</td>
+      </tr>
+      <tr>
+          <td>AI (orthogonal)</td>
+          <td>$+1$</td>
+          <td>0</td>
+          <td>0</td>
+          <td>$O(N)$</td>
+      </tr>
+      <tr>
+          <td>BDI</td>
+          <td>$+1$</td>
+          <td>$+1$</td>
+          <td>1</td>
+          <td>$O(N)/O(p)\times O(N-p)$</td>
+      </tr>
+      <tr>
+          <td>D</td>
+          <td>0</td>
+          <td>$+1$</td>
+          <td>0</td>
+          <td>$O(2N)/U(N)$</td>
+      </tr>
+      <tr>
+          <td>DIII</td>
+          <td>$-1$</td>
+          <td>$+1$</td>
+          <td>1</td>
+          <td>$U(2N)/Sp(N)$</td>
+      </tr>
+      <tr>
+          <td>AII (symplectic)</td>
+          <td>$-1$</td>
+          <td>0</td>
+          <td>0</td>
+          <td>$Sp(N)$</td>
+      </tr>
+      <tr>
+          <td>CII</td>
+          <td>$-1$</td>
+          <td>$-1$</td>
+          <td>1</td>
+          <td>$Sp(N)/Sp(p) \times Sp(N-p)$</td>
+      </tr>
+      <tr>
+          <td>C</td>
+          <td>0</td>
+          <td>$-1$</td>
+          <td>0</td>
+          <td>$Sp(2N)/U(N)$</td>
+      </tr>
+      <tr>
+          <td>CI</td>
+          <td>$+1$</td>
+          <td>$-1$</td>
+          <td>1</td>
+          <td>$U(N)/O(N)$</td>
+      </tr>
+  </tbody>
+</table>
+<p>(값 — $0$ 은 대칭 없음, $\pm 1$ 은 $T^2$ 또는 $C^2$ 의 부호.)</p>
+<p><strong>2)</strong> <em>주요 군의 등장</em>. $U(N)$, $O(N)$, $Sp(N)$ — 본 시리즈가 다룬 <em>세 종류 컴팩트 리 군</em> — 이 <em>물리적 대칭 분류에서 직접 등장</em>.</p>
+<p><strong>3)</strong> <em>연결 + 이산의 위계</em>. 각 클래스가 <em>연결 부분 (군 자체)</em> + <em>이산 대칭의 부호</em> 로 결정. 본 시리즈의 <em>연속 vs 이산</em> 분리가 직접 활용.</p>
+<p><strong>4)</strong> <em>위상 절연체와 초전도체</em>. 10 가지 클래스 각각이 <em>차원 별로 다른 위상 분류</em> ($\mathbb{Z}$, $\mathbb{Z}_2$, 또는 자명) 를 가짐. <em>위상 절연체, 위상 초전도체</em> 의 분류 표가 이것 — 응집계 물리의 <em>21세기 핵심 결과</em> 중 하나.</p>
+<p><strong>5)</strong> <em>NEGF·SBD 와의 연결</em>. SBD 와 같은 디바이스 분석에서 <em>내부 전자 상태의 대칭 분류</em> 가 <em>Altland-Zirnbauer 클래스</em> 로 결정. 본 시리즈의 <em>리 군 분류 도구</em> 가 <em>실제 디바이스 분석에 직접 적용</em>.</p>
+<h3 id="10-비연결-처리의-일반-패턴--종합">10. 비연결 처리의 일반 패턴 — 종합<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비연결 리 군을 다루는 <em>일반 패턴</em> 을 정리한다.</p>
+<p><strong>1)</strong> <em>분해 단계</em>.</p>
+<ul>
+<li>비연결 리 군 $G$ → <em>연결 성분 $G_0$ + 컴포넌트 군 $G/G_0$</em> 분리.</li>
+<li>$G_0$ → <em>연속 분석</em> (지수, 리 대수, §8–§13).</li>
+<li>$G/G_0$ → <em>이산 분석</em> (유한군 표현론, 코셋 대표 선택).</li>
+</ul>
+<p><strong>2)</strong> <em>조합 단계</em>.</p>
+<ul>
+<li>임의 $g \in G$ 가 $g = g_i \cdot \exp(X_1) \exp(X_2) \cdots$ 형태.</li>
+<li><em>이산 부분 ($g_i$) + 연속 부분 (지수의 곱)</em> 분리.</li>
+</ul>
+<p><strong>3)</strong> <em>물리적 의미</em>.</p>
+<ul>
+<li>연속 대칭 = <em>생성자 (리 대수 원소) 가 만드는 변환</em>. 미분 가능.</li>
+<li>이산 대칭 = <em>유한 정수 (parity, time reversal 부호) 로 분류되는 변환</em>. 미분 불가.</li>
+<li>두 종류가 <em>완전 다른 수학적 성격</em>, 별도 분석 필요.</li>
+</ul>
+<p><strong>4)</strong> <em>예시 표</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>비연결 리 군</th>
+          <th>$G_0$</th>
+          <th>$G/G_0$</th>
+          <th>이산 변환</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$O(N)$</td>
+          <td>$SO(N)$</td>
+          <td>$\mathbb{Z}_2$</td>
+          <td>반사 (parity)</td>
+      </tr>
+      <tr>
+          <td>$GL(N, \mathbb{R})$</td>
+          <td>$GL^+(N, \mathbb{R})$</td>
+          <td>$\mathbb{Z}_2$</td>
+          <td>방향 역전</td>
+      </tr>
+      <tr>
+          <td>$O(1, 3)$</td>
+          <td>$SO^+(1, 3)$</td>
+          <td>$\mathbb{Z}_2 \times \mathbb{Z}_2$</td>
+          <td>P, T, PT</td>
+      </tr>
+      <tr>
+          <td>Pin(N)</td>
+          <td>$Spin(N)$</td>
+          <td>$\mathbb{Z}_2$</td>
+          <td>반사 (spinor 차원)</td>
+      </tr>
+      <tr>
+          <td>시간 역전 포함 응집계</td>
+          <td>동형 부분</td>
+          <td>$\mathbb{Z}_2$</td>
+          <td>T</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="11-이-절을-닫으며--4부-정리">11. 이 절을 닫으며 + 4부 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) <em>지수 사상은 항등원 성분에만 머물러</em> — 연속 곡선이 다른 성분 점프 불가. 토폴로지적 한계.</p>
+<p>(2) <em>비연결 리 군의 구조</em> — $G = G_0 \sqcup g_1 G_0 \sqcup \cdots$. 항등원 성분 + 코셋. 컴포넌트 군 $G/G_0$ 이산.</p>
+<p>(3) <em>일반 원소 표현</em> — $g = g_i \cdot \exp(X)$ 또는 $g_i \cdot \exp(X_1) \exp(X_2)$ (비컴팩트의 경우). <em>이산 부분 + 연속 부분 분리</em>.</p>
+<p>(4) <em>$O(N)$ 의 예</em> — $O(N) = SO(N) \sqcup P \cdot SO(N)$. 반사 $P$ 가 코셋 대표.</p>
+<p>(5) <em>Lorentz 군 $O(1, 3)$</em> — 4 성분, $\mathbb{Z}_2 \times \mathbb{Z}_2$ (P, T, PT).</p>
+<p>(6) <em>응집계 이산 대칭</em> — Time-reversal $T$, particle-hole $C$, chiral $S$. 비연결 부분으로 자연 등장.</p>
+<p>(7) <em>Altland-Zirnbauer 10중 분류</em> — 위 세 이산 대칭의 조합. $U, O, Sp$ 의 직접 등장. 위상 절연체·초전도체 분류의 기반.</p>
+<p>(8) <em>비연결 처리 일반 패턴</em> — 연결 + 이산 분리 분석, 그 후 조합.</p>
+<hr>
+<p><em>4부 (지수 사상의 한계) 정리</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>절</th>
+          <th>다루는 경우</th>
+          <th>결과</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>§12</td>
+          <td>컴팩트 연결</td>
+          <td><em>지수 전사</em>. 모든 $g = \exp(X)$. Hopf-Rinow + 스펙트럼 분해.</td>
+      </tr>
+      <tr>
+          <td>§13</td>
+          <td>비컴팩트 연결</td>
+          <td><em>지수 비전사</em>. $g = \exp(X_1) \exp(X_2)$. 극분해 + 카르탕 분해.</td>
+      </tr>
+      <tr>
+          <td>§14</td>
+          <td>비연결</td>
+          <td><em>항등원 성분만 도달</em>. $g = g_i \cdot \exp(X)$. 컴포넌트 군 분석.</td>
+      </tr>
+  </tbody>
+</table>
+<p>세 종류의 한계가 <em>위계적으로 정리</em> — 컴팩트 연결이 가장 단순, 비컴팩트는 <em>지수의 곱</em> 필요, 비연결은 <em>이산 대칭</em> 추가 필요. 각 경우의 도구가 명확.</p>
+<p>다음 <em>5부 (구체적 리 군 깊이 보기)</em> — §15 ($SO(2) \cong U(1)$ 의 자세한 분석), §16 ($SU(2)$ 와 파울리), §17 ($SO(3)$ 와 이중 덮개), §18 (표현론 입문) — 으로 진입. 4부에서 <em>일반 도구</em> 를 갖췄으니, 이제 <em>물리적으로 가장 중요한 구체 리 군들</em> 을 깊게 본다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="active " data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

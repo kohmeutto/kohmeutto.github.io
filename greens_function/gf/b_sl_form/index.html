@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. SL 선형 연산자 형식의 위치자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.
+$$ L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) &#43; q(x) = D(p(x)D) &#43; q(x) $$조건:
+$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Sturm-Liouville form :: 수리전자물리학">
+    <meta name="twitter:description" content="1. SL 선형 연산자 형식의 위치자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.
+$$ L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) &#43; q(x) = D(p(x)D) &#43; q(x) $$조건:
+$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/gf/b_sl_form/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Sturm-Liouville form :: 수리전자물리학">
+    <meta property="og:description" content="1. SL 선형 연산자 형식의 위치자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.
+$$ L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) &#43; q(x) = D(p(x)D) &#43; q(x) $$조건:
+$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Sturm-Liouville form :: 수리전자물리학">
+    <meta itemprop="description" content="1. SL 선형 연산자 형식의 위치자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.
+$$ L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) &#43; q(x) = D(p(x)D) &#43; q(x) $$조건:
+$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.">
+    <meta itemprop="wordCount" content="2157">
+    <title>(b) Sturm-Liouville form :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/gf\/b_sl_form\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/gf/b_sl_form/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-sl-선형-연산자-형식의-위치">1. SL 선형 연산자 형식의 위치</a></li>
+        <li><a href="#2-sl-형식으로의-변환과-가중함수">2. SL 형식으로의 변환과 가중함수</a></li>
+        <li><a href="#3-가중함수와-고유함수의-직교성">3. 가중함수와 고유함수의 직교성</a></li>
+        <li><a href="#4-자기수반-조건-쌍선형-경계-형식의-소실">4. 자기수반 조건: 쌍선형 경계 형식의 소실</a></li>
+        <li><a href="#5-자기수반을-보장하는-경계-조건">5. 자기수반을 보장하는 경계 조건</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/gf/index.html"><span itemprop="name">GF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Sturm-Liouville form</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/b_existence_and_properties/index.html" title="(b) Existence and properties (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/gf/b_sl_greens_function/index.html" title="(b) Sturm-Liouville Green's function (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-sturm-liouville-form">(b) Sturm-Liouville form</h1>
+
+<hr>
+<h3 id="1-sl-선형-연산자-형식의-위치">1. SL 선형 연산자 형식의 위치<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>자기수반 1차원 미분 연산자의 표준 형식은 <strong>Sturm-Liouville 형식</strong> 이다.</p>
+$$
+L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) + q(x) = D(p(x)D) + q(x)
+$$<p>조건:</p>
+<ul>
+<li>$p(x) > 0$ (구간 내부에서)</li>
+<li>$p(x)$ 가 미분 가능</li>
+<li>$q(x)$ 가 실수 함수</li>
+</ul>
+<p>학습자가 자연스럽게 던지는 질문: <strong>&ldquo;왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?&rdquo;</strong> 이 질문에 대한 답은 다음 도식에 압축된다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>              [PDE 분류]
+       /        |          \
+   타원형    쌍곡선형    포물선형
+       \        |          /
+        시간 진화 분리
+              |
+        [공간 고유값 문제]  ← SL form
+              |
+         [ODE 형태들]    ← SL = 자기수반 divergence form 표현
+   (일반/표준/SL/Liouville normal/Schrödinger/Riccati)</code></pre></div>
+<p>SL 은 두 차원의 <strong>통합 form</strong>:</p>
+<ul>
+<li><strong>수직 통합</strong>: 모든 PDE 분류 (타원형, 쌍곡선형, 포물선형) → 변수 분리 → 공간 부분이 SL</li>
+<li><strong>수평 통합</strong>: 다양한 ODE 표현 (일반, 표준, Liouville normal, Schrödinger 등) → 모두 SL 로 변환 가능</li>
+</ul>
+<p>이 두 통합을 풀어보면 SL 이 왜 보편적 무대인지가 드러난다.</p>
+<p><strong>1) 수직 통합 — PDE 분류로부터의 환원</strong></p>
+<p>물리/공학의 2계 선형 PDE 는 계수 행렬의 signature 에 따라 세 부류로 분류된다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>분류</th>
+          <th>대표 식</th>
+          <th>물리</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>타원형</strong></td>
+          <td>$\nabla^2 u = f$ (Poisson, Laplace)</td>
+          <td>정상상태, 평형</td>
+      </tr>
+      <tr>
+          <td><strong>쌍곡선형</strong></td>
+          <td>$\partial_t^2 u - c^2\nabla^2 u = 0$ (wave)</td>
+          <td>파동 전파</td>
+      </tr>
+      <tr>
+          <td><strong>포물선형</strong></td>
+          <td>$\partial_t u - D\nabla^2 u = 0$ (heat)</td>
+          <td>확산, 시간 진화</td>
+      </tr>
+  </tbody>
+</table>
+<p>이 세 분류 모두에 <strong>변수 분리 (separation of variables)</strong> 를 적용하면 <strong>공간 부분이 SL 형태로 환원</strong> 된다.</p>
+<ul>
+<li><strong>타원형 자체</strong>: $-\nabla^2 u = \lambda u$ → 직접 SL (시간 분리 불필요)</li>
+<li><strong>쌍곡선형 시간 분리</strong>: $u(x,t) = X(x)T(t)$ 대입 후 $X$ 부분 → SL</li>
+<li><strong>포물선형 시간 분리</strong>: 같은 방법으로 $X$ 부분 → SL</li>
+</ul>
+<p>→ <strong>PDE 분류와 무관하게, 공간 고유값 문제는 SL</strong> 이라는 결론.</p>
+<p><strong>2) 수평 통합 — 다양한 ODE 표현들의 환원</strong></p>
+<p>같은 1D 2계 ODE 도 여러 form 으로 표현 가능. 각 form 이 강조하는 측면이 다르다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>형태</th>
+          <th>식</th>
+          <th>강조</th>
+          <th>제약</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>일반</td>
+          <td>$p_0 u'' + p_1 u' + p_2 u = f$</td>
+          <td>가장 유연</td>
+          <td>구조 안 보임</td>
+      </tr>
+      <tr>
+          <td>표준 (standard)</td>
+          <td>$u'' + Pu' + Qu = R$</td>
+          <td>깔끔한 1차 계수</td>
+          <td>자기수반 아님</td>
+      </tr>
+      <tr>
+          <td><strong>SL (자기수반)</strong></td>
+          <td>$(pu')' + qu = f$</td>
+          <td><strong>자기수반 + divergence form + 변분 원리</strong></td>
+          <td>가중함수 필요</td>
+      </tr>
+      <tr>
+          <td>Liouville normal</td>
+          <td>$u'' + (\lambda - V)u = 0$</td>
+          <td>Schrödinger 와 동일</td>
+          <td>가변 mass 못 표현</td>
+      </tr>
+      <tr>
+          <td>Schrödinger (물리)</td>
+          <td>$-\frac{\hbar^2}{2m}u'' + Vu = Eu$</td>
+          <td>양자역학 직관</td>
+          <td>균질 매질 가정</td>
+      </tr>
+      <tr>
+          <td>Riccati</td>
+          <td>$w' + w^2 + Q = 0$, $w = u'/u$</td>
+          <td>1차 비선형</td>
+          <td>비선형</td>
+      </tr>
+  </tbody>
+</table>
+<p>이들은 모두 서로 변환 가능 — Liouville 변환, 가중함수 곱하기 (§2). SL form 은 그 중 <strong>자기수반 구조 + divergence form</strong> 을 가장 잘 드러내는 표현.</p>
+<p><strong>3) 왜 SL 형식이 자연스러운가</strong></p>
+<p>수직/수평 통합의 중심에 SL 이 있는 이유는 네 가지.</p>
+<p><strong>(a) 자기수반 구조 내장</strong></p>
+<p>$L_p^\dagger = L_p$ 가 형식적으로 성립, 경계항 $\mathcal{B}_{L_p} = pW$ (§4) 만 처리하면 됨. 이로부터 b_normal_operators.md §2 의 모든 결과 적용:</p>
+<ul>
+<li>실수 고유값</li>
+<li>biorthogonal 완비 기저</li>
+<li>영공간-열공간 직교</li>
+</ul>
+<p><strong>(b) Divergence form 의 물리적 의미</strong></p>
+<p>$(pu')$ 자체가 <strong>플럭스 (flux)</strong> 로 해석:</p>
+<ul>
+<li>양자수송: 확률 전류 $\propto W(\psi^*, \psi)$</li>
+<li>전자수송: 전류</li>
+<li>열수송: 열 플럭스</li>
+<li>정전기학: 전기 변위장 $\mathbf{D} = \epsilon\mathbf{E}$</li>
+</ul>
+<p>모두 같은 divergence-form 구조. 보존 법칙이 form 안에 내장.</p>
+<p><strong>(c) 변분 원리 (variational principle)</strong></p>
+<p>SL 방정식은 변분원리</p>
+$$
+\delta \int_{x_1}^{x_2}\left[p(u')^2 + qu^2 - \lambda w u^2\right]dx = 0
+$$<p>의 Euler-Lagrange 방정식. 에너지 functional 의 자연 form. 양자역학의 작용 원리와 직결.</p>
+<p><strong>(d) 다차원 일반화</strong></p>
+<p>1D 의 $D(pD) + q$ 가 다차원 $\nabla\cdot(p(\mathbf{r})\nabla) + q(\mathbf{r})$ 로 자연 일반화. 이는 <strong>타원형 PDE operator</strong> 의 일반 form.</p>
+<p>특히 <strong>가변 유효질량 Schrödinger 방정식</strong></p>
+$$
+-\nabla\cdot\left[\frac{\hbar^2}{2m^*(\mathbf{r})}\nabla\psi\right] + V(\mathbf{r})\psi = E\psi
+$$<p>가 정확히 이 form. 4H-SiC Schottky 다이오드의 계면, 가변 유효질량, 위치 의존 potential — NEGF/SBD 의 자연 무대.</p>
+<p><strong>4) Poisson 등 — SL 의 특수 케이스로서</strong></p>
+<p>$L_p$ 의 $p, q$ 선택에 따라 친숙한 식들이 특수 케이스로 등장:</p>
+<table>
+  <thead>
+      <tr>
+          <th>$p(x)$</th>
+          <th>$q(x)$</th>
+          <th>식</th>
+          <th>물리적 해석</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$1$</td>
+          <td>$0$</td>
+          <td>$D^2$</td>
+          <td>1D Laplacian (균질 Poisson)</td>
+      </tr>
+      <tr>
+          <td>$\epsilon(x)$</td>
+          <td>$0$</td>
+          <td>$D(\epsilon D)$</td>
+          <td>불균질 매질 Poisson</td>
+      </tr>
+      <tr>
+          <td>$\hbar^2/(2m^*(x))$</td>
+          <td>$V(x)$</td>
+          <td>$D(pD) + V$</td>
+          <td><strong>가변 유효질량 Schrödinger</strong></td>
+      </tr>
+      <tr>
+          <td>$1$</td>
+          <td>$k^2$</td>
+          <td>$D^2 + k^2$</td>
+          <td>Helmholtz</td>
+      </tr>
+      <tr>
+          <td>$1$</td>
+          <td>$-\kappa^2$</td>
+          <td>$D^2 - \kappa^2$</td>
+          <td>Modified Helmholtz (Yukawa)</td>
+      </tr>
+  </tbody>
+</table>
+<p>&ldquo;SL 은 Poisson 의 일반화&rdquo; 라는 직관이 부분적으로 옳다 — <strong>divergence form $D(pD)$ 가 골격이고, $+q$ 가 potential 항으로 일반화</strong>.</p>
+<hr>
+<h3 id="2-sl-형식으로의-변환과-가중함수">2. SL 형식으로의 변환과 가중함수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§1-(2) 의 수평 통합을 실제로 수행한다. 임의의 2계 미분 연산자</p>
+$$
+L = p_0(x)\frac{d^2}{dx^2} + p_1(x)\frac{d}{dx} + p_2(x)
+$$<p>를 SL 형식 $L_p = D(pD) + q$ 로 변환하는 절차.</p>
+<p><strong>1) $p_0'(x) = p_1(x)$ 인 경우 — 즉시 SL</strong></p>
+$$
+L = p_0 D^2 + p_0' D + p_2 = D(p_0 D) + p_2
+$$<p>즉시 SL 형식 ($p = p_0$, $q = p_2$, 가중함수 불필요).</p>
+<p><strong>2) $p_0'(x) \neq p_1(x)$ 인 경우 — 가중함수 곱하기</strong></p>
+<p>양의 함수 $w(x) > 0$ 를 곱해 SL 형식으로 만든다:</p>
+$$
+w(x)\,L = w p_0 D^2 + w p_1 D + w p_2 \to D(p D) + q
+$$<p>조건: $p = w p_0$ 이고 $(w p_0)' = w p_1$. 두 번째 조건에서</p>
+$$
+\frac{w'(x)}{w(x)} = \frac{p_1(x) - p_0'(x)}{p_0(x)}
+$$<p>이를 풀면</p>
+$$
+\boxed{w(x) = \frac{1}{p_0(x)}\exp\left(\int dx\,\frac{p_1(x)}{p_0(x)}\right)}
+$$<p>이 양의 함수 $w(x)$ 가 <strong>가중함수 (weight function)</strong>.</p>
+<p><strong>3) 가중함수의 두 얼굴: 적분 인자 = SL 가중</strong></p>
+<p>방금 도출한 $w(x)$ 는 <strong>두 역할을 동시에 수행하는 같은 함수</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>관점</th>
+          <th>역할</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>형식 변환</td>
+          <td>적분 인자 (integrating factor)</td>
+          <td>$L$ 을 SL 형식 $L_p = wL$ 로 만드는 도구</td>
+      </tr>
+      <tr>
+          <td>스펙트럼</td>
+          <td>가중함수 (weight function)</td>
+          <td>§3 의 고유함수 가중 직교성의 가중</td>
+      </tr>
+  </tbody>
+</table>
+<p>표준 교재들은 두 관점을 별개로 다루며 &ldquo;적분 인자 $r(x)$&rdquo; 와 &ldquo;가중함수 $w(x)$&rdquo; 를 분리해 표기하는 경우가 흔하다. 그러나 같은 함수이다. <strong>본 책에서는 처음부터 $w(x)$ 로 표기하고 가중함수라는 이름으로 통일</strong>.</p>
+<p>이 통일은 단순한 표기 단축이 아니라 하나의 통찰을 명시적으로 만든다 — <strong>ODE 형식 변환의 적분 인자가 SL 고유값 문제의 가중과 같다는 것은 우연이 아니다</strong>. 둘 다 같은 자기수반 구조의 발현. §3 에서 이를 명시적으로 본다.</p>
+<hr>
+<h3 id="3-가중함수와-고유함수의-직교성">3. 가중함수와 고유함수의 직교성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§2 의 가중함수 $w(x)$ 가 고유값 문제에서 어떻게 등장하는지 본다.</p>
+<p><strong>1) SL 고유값 문제의 표준 형태</strong></p>
+<p>원본 ODE 의 고유값 방정식 $L u_n + \lambda_n u_n = 0$ (즉 $p_0 u_n'' + p_1 u_n' + p_2 u_n + \lambda_n u_n = 0$) 의 양변에 §2 의 가중함수 $w(x)$ 를 곱한다.</p>
+$$
+w(x)\,L u_n + \lambda_n\,w(x)\,u_n = 0
+$$<p>§2 에 의해 $wL = L_p$, 따라서 SL 고유값 문제의 <strong>표준 형태</strong>:</p>
+$$
+L_p u_n + \lambda_n\,w(x)\,u_n = 0 \quad \text{또는 동등하게} \quad L_p u_n = -\lambda_n\,w(x)\,u_n
+$$<p>물리에서 흔히 쓰는 standard form 으로 복원하려면 $L \equiv -L_p/w$ 정의:</p>
+$$
+\boxed{L\,u_n = \lambda_n\,u_n, \quad L = -\frac{1}{w(x)}\bigl[D(p(x)D) + q(x)\bigr]}
+$$<p>가중함수 $w(x) > 0$ 가 §2 의 변환에서 자연스럽게 등장한 후, §3 에서는 고유값 문제의 가중 역할을 수행 — <strong>같은 함수, 두 얼굴</strong>.</p>
+<p><strong>2) 가중 직교성</strong></p>
+<p>자기수반 SL 연산자의 서로 다른 고유값에 대응하는 고유함수들은 다음 직교성을 만족한다.</p>
+$$
+\int_{x_1}^{x_2} w(x)\,\psi_m^*(x)\,\psi_n(x)\,dx = \delta_{mn}
+$$<p>proof) $L_p$ 의 자기수반성 (§4) 으로부터 $\langle\psi_m|L_p\psi_n\rangle = \langle L_p\psi_m|\psi_n\rangle$. $L_p\psi_k = -\lambda_k w \psi_k$ 대입:</p>
+$$
+-\lambda_n\int w\psi_m^*\psi_n\,dx = -\lambda_m^*\int w\psi_m^*\psi_n\,dx
+$$$$
+(\lambda_m^* - \lambda_n)\int w\psi_m^*\psi_n\,dx = 0
+$$<p>$m = n$ 에서 $\lambda_m^* = \lambda_m$ (실수 고유값). $m \neq n$, $\lambda_m \neq \lambda_n$ 에서 가중 적분 = 0. 정규화하면 위 식.</p>
+<p><strong>3) 듀얼 기저 표기</strong></p>
+<p>가중 직교성은 듀얼 기저 표기로 옮기면 자동으로 표준 biorthogonality 가 된다. 표준 L² 위치 좌표에서:</p>
+$$
+\langle\psi^i|x\rangle = w(x)\,\psi_i^*(x)
+$$<p>확인:</p>
+$$
+\langle\psi^i|\psi_j\rangle = \int dx\,\langle\psi^i|x\rangle\langle x|\psi_j\rangle = \int dx\,w(x)\,\psi_i^*(x)\,\psi_j(x) = \delta^i_j
+$$<p>가중함수는 듀얼 기저의 위치 표현 안에 자연스럽게 살아 있다. 이로부터 b_normal_operators.md §2 의 모든 결과 — 스펙트럼 분해 $L = \sum_i \lambda_i|\psi_i\rangle\langle\psi^i|$, 완비성 $\hat{I} = \sum_i|\psi_i\rangle\langle\psi^i|$, 영공간-열공간 직교 등 — 가 그대로 적용된다.</p>
+<p><strong>4) 그린함수의 스펙트럼 표현</strong></p>
+<p>$L^{-1} = \sum_i \lambda_i^{-1}|\psi_i\rangle\langle\psi^i|$ 의 표준 L² 위치 좌표 표현:</p>
+$$
+G(x,x') = \langle x|L^{-1}|x'\rangle = \sum_i \frac{\psi_i(x)\,w(x')\,\psi_i^*(x')}{\lambda_i}
+$$<p>가중 $w(x')$ 는 듀얼 기저 $\langle\psi^i|x'\rangle = w(x')\psi_i^*(x')$ 에서 자연 발생. 이 형태가 doc 6 의 Wronskian 공식과 일치한다 — 같은 객체의 두 표현.</p>
+<hr>
+<h3 id="4-자기수반-조건-쌍선형-경계-형식의-소실">4. 자기수반 조건: 쌍선형 경계 형식의 소실<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§3 의 가중 직교성과 모든 후속 결과는 $L_p$ 의 자기수반성에 의존한다. 언제 $L_p$ 가 자기수반인지 b_adjoint.md §3 의 일반 framework 으로 답한다.</p>
+<p><strong>1) b_adjoint.md §3 의 일반 결과</strong></p>
+<p>무한 차원 함수 공간에서 임의의 미분 연산자에 대해</p>
+$$
+\langle\phi|\hat{A}\psi\rangle = \langle\hat{A}^\dagger\phi|\psi\rangle + \mathcal{R}_{\hat{A}}[\phi, \psi]
+$$<p>경계항 $\mathcal{R}_{\hat{A}}$ 는 <strong>쌍선형 경계 형식 (sesquilinear boundary form)</strong> $\mathcal{B}_{\hat{A}}$ 의 경계 적분.</p>
+$$
+\mathcal{R}_{\hat{A}}[\phi, \psi] = \int_{\partial\Omega} d^2s\,\mathcal{B}_{\hat{A}}[\phi, \psi]
+$$<p>$\mathcal{B}_{\hat{A}}$ 는 $\phi$ 에 대해 conjugate linear, $\psi$ 에 대해 linear.</p>
+<p>$L_p$ 에 대해 형식적 자기수반성 $L_p^\dagger = L_p$ (다음 계산에서 자동으로 확인됨) 가 성립하므로, 자기수반 여부는 전적으로 $\mathcal{R}_{L_p}$ 의 소실 여부에 달려있다.</p>
+<p><strong>2) $L_p$ 의 쌍선형 경계 형식</strong></p>
+<p>$L_p = D(pD) + q$ ($p, q$ 실수) 에 대한 $\mathcal{B}_{L_p}$ 를 직접 계산한다.</p>
+$$
+\langle\phi|L_p\psi\rangle - \langle L_p\phi|\psi\rangle = \int_{x_1}^{x_2} dx\,\bigl[\phi^*\,L_p\psi - (L_p\phi)^*\,\psi\bigr]
+$$<p>피적분함수를 풀어 쓰면 ($q$ 항 소거, $p$ 실수):</p>
+$$
+\phi^*\,L_p\psi - (L_p\phi)^*\,\psi = \phi^*(p\psi')' - (p\phi^{*\prime})'\,\psi
+$$<p>핵심 관찰: 이 식은 <strong>전미분</strong>.</p>
+$$
+\phi^*(p\psi')' - (p\phi^{*\prime})'\,\psi = \frac{d}{dx}\bigl[p(x)\bigl(\phi^*\psi' - \phi^{*\prime}\psi\bigr)\bigr]
+$$<p>따라서 1차원 영역 $[x_1, x_2]$ 에서 $L_p$ 의 쌍선형 경계 형식은:</p>
+$$
+\boxed{\mathcal{B}_{L_p}[\phi, \psi] = p(x)\bigl[\phi^*\psi' - \phi^{*\prime}\psi\bigr] = p(x)\,W(\phi^*, \psi)}
+$$<p>여기서 $W(\phi^*, \psi) := \phi^*\psi' - \phi^{*\prime}\psi$ 는 두 함수의 <strong>Wronskian</strong>. 1차원에서 $\partial\Omega = \{x_1, x_2\}$ 이므로 경계항은 두 끝점에서의 평가:</p>
+$$
+\mathcal{R}_{L_p}[\phi, \psi] = \bigl[\mathcal{B}_{L_p}\bigr]_{x_1}^{x_2} = \bigl[p(x)\,W(\phi^*, \psi)(x)\bigr]_{x_1}^{x_2}
+$$<p><strong>쌍선형 구조 확인</strong>: $\mathcal{B}_{L_p}$ 에서 $\phi$ 는 conjugate 로만 등장 ($\phi^*, \phi^{*\prime}$), $\psi$ 는 직접 등장 ($\psi, \psi'$) — b_adjoint.md §3 의 sesquilinear 구조와 정확히 일치.</p>
+<p>proof of 전미분 등식)</p>
+<p>$\dfrac{d}{dx}[p(\phi^*\psi' - \phi^{*\prime}\psi)]$ 를 직접 미분:</p>
+$$
+= (p\phi^*)'\psi' + p\phi^*\psi'' - (p\phi^{*\prime})'\psi - p\phi^{*\prime}\psi'
+$$<p>$(p\phi^*)' = p'\phi^* + p\phi^{*\prime}$:</p>
+$$
+= p'\phi^*\psi' + p\phi^{*\prime}\psi' + p\phi^*\psi'' - (p\phi^{*\prime})'\psi - p\phi^{*\prime}\psi'
+$$<p>$\pm p\phi^{*\prime}\psi'$ 항 소거:</p>
+$$
+= p'\phi^*\psi' + p\phi^*\psi'' - (p\phi^{*\prime})'\psi = \phi^*(p\psi')' - (p\phi^{*\prime})'\psi
+$$<p>(마지막에서 $p'\psi' + p\psi'' = (p\psi')'$ 사용.) 검증 완료.</p>
+<p><strong>3) 자기수반 조건</strong></p>
+<p>$L_p$ 가 자기수반 ($\langle\phi|L_p\psi\rangle = \langle L_p\phi|\psi\rangle$) 이려면 정의역의 모든 $\phi, \psi$ 에 대해</p>
+$$
+\bigl[p(x)\,W(\phi^*, \psi)(x)\bigr]_{x_1}^{x_2} = 0
+$$<p>이 성립해야 한다. 즉 <strong>쌍선형 경계 형식이 양 끝점의 차로 사라져야 한다</strong>. 이 조건을 만족시키는 경계 조건의 분류가 §5 의 주제이다.</p>
+<hr>
+<h3 id="5-자기수반을-보장하는-경계-조건">5. 자기수반을 보장하는 경계 조건<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§4 의 조건 $[p\,W(\phi^*, \psi)]_{x_1}^{x_2} = 0$ 을 만족시키는 표준 경계 조건들.</p>
+<p><strong>1) Separable (분리형, Robin) 경계 조건</strong></p>
+<p>각 끝점에서 함수와 도함수의 선형 결합이 0:</p>
+$$
+a_1\,u(x_1) + a_2\,u'(x_1) = 0, \quad (a_1, a_2) \neq (0, 0)
+$$$$
+b_1\,u(x_2) + b_2\,u'(x_2) = 0, \quad (b_1, b_2) \neq (0, 0)
+$$<p>여기서 $a_1, a_2, b_1, b_2$ 는 실수.</p>
+<p>$x_1$ 에서 이 조건이 어떻게 경계 형식을 소실시키는지 확인 ($a_1 \neq 0$ 가정):</p>
+$$
+\phi(x_1) = -\frac{a_2}{a_1}\phi'(x_1), \quad \psi(x_1) = -\frac{a_2}{a_1}\psi'(x_1)
+$$<p>Wronskian:</p>
+$$
+W(\phi^*, \psi)(x_1) = \phi^*(x_1)\psi'(x_1) - \phi^{*\prime}(x_1)\psi(x_1)
+$$$$
+= -\frac{a_2}{a_1}\phi^{*\prime}(x_1)\psi'(x_1) + \frac{a_2}{a_1}\phi^{*\prime}(x_1)\psi'(x_1) = 0
+$$<p>$\mathcal{B}_{L_p}[\phi, \psi](x_1) = p(x_1)\,W(\phi^*, \psi)(x_1) = 0$. 같은 논리로 $x_2$ 에서도 0. 경계항 사라짐. ✓</p>
+<p><strong>2) Dirichlet, Neumann은 Separable의 특수 경우</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>BC</th>
+          <th>$a_1, a_2$</th>
+          <th>$b_1, b_2$</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Dirichlet ($u=0$)</td>
+          <td>$a_1=1, a_2=0$</td>
+          <td>$b_1=1, b_2=0$</td>
+          <td>양 끝 고정</td>
+      </tr>
+      <tr>
+          <td>Neumann ($u'=0$)</td>
+          <td>$a_1=0, a_2=1$</td>
+          <td>$b_1=0, b_2=1$</td>
+          <td>양 끝 자유 (도함수=0)</td>
+      </tr>
+      <tr>
+          <td>Robin (혼합)</td>
+          <td>일반</td>
+          <td>일반</td>
+          <td>양 끝에서 혼합</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>3) Periodic (주기) 경계 조건</strong></p>
+$$
+u(x_1) = u(x_2), \quad u'(x_1) = u'(x_2), \quad p(x_1) = p(x_2)
+$$<p>이 경우 $\phi, \psi$ 모두 양 끝에서 같은 값과 같은 도함수를 가지므로</p>
+$$
+W(\phi^*, \psi)(x_1) = W(\phi^*, \psi)(x_2)
+$$<p>$p$ 도 양 끝에서 같으므로</p>
+$$
+[pW]_{x_1}^{x_2} = p(x_2)W(x_2) - p(x_1)W(x_1) = 0
+$$<p><strong>4) 충분 조건이지 필요 조건은 아니다</strong></p>
+<p>위의 BC들은 자기수반성을 보장하는 <strong>충분 조건</strong>. 표준 SL 형태가 깨지는 특수 케이스 (예: 끝점에서 $p \to 0$, 정의역이 무한 영역) 에도 자기수반성이 성립할 수 있다. 이때는 BC 대신 <strong>특이점에서 함수의 유한성/감소</strong> 조건이 같은 역할을 한다. 자세한 내용은 doc 7 (Singular Sturm-Liouville) 참조.</p>
+<hr>
+<p><strong>example1) Hermite ODE</strong></p>
+$$
+y'' - 2xy' + 2ny = 0
+$$<p>sol)</p>
+<p>$p_0 = 1, p_1 = -2x, p_2 = 0$. 우변에 고유값 형식 $-2ny$.</p>
+<p>$p_0' = 0 \neq p_1 = -2x$ 이므로 가중함수 필요.</p>
+$$
+w(x) = \exp\left(\int -2x\, dx\right) = e^{-x^2}
+$$<p>곱하면</p>
+$$
+e^{-x^2}(D^2 - 2xD)u_n = -2n\, e^{-x^2}\, u_n
+$$$$
+\implies D\bigl[e^{-x^2}\, D\bigr] u_n = -2n\, e^{-x^2}\, u_n
+$$<p>읽어내면</p>
+$$
+p(x) = e^{-x^2}, \quad q(x) = 0, \quad w(x) = e^{-x^2}, \quad \lambda_n = 2n
+$$<p><strong>가중함수 = $p(x)$</strong> 인 점이 흥미롭다 (이 ODE 의 특수성). 일반적으로 둘은 다름.</p>
+<p>(특이 SL: 정의역이 $(-\infty, \infty)$ 이며 무한대에서 $p \to 0$. doc 7 참조.)</p>
+<hr>
+<p><strong>example2) Laguerre ODE</strong></p>
+$$
+xy'' + (1-x)y' + a y = 0
+$$<p>sol)</p>
+<p>$p_0 = x, p_1 = 1-x$. $p_0' = 1 \neq p_1 = 1-x$. 가중함수:</p>
+$$
+w(x) = \frac{1}{x}\exp\left(\int \frac{1-x}{x}\, dx\right) = \frac{1}{x}\exp(\ln x - x) = e^{-x}
+$$<p>곱하면</p>
+$$
+e^{-x}\bigl[x D^2 + (1-x)D\bigr] u_n = -a\, e^{-x}\, u_n
+$$$$
+\implies D\bigl[xe^{-x}\, D\bigr] u_n = -a\, e^{-x}\, u_n
+$$<p>읽어내면</p>
+$$
+p(x) = xe^{-x}, \quad q(x) = 0, \quad w(x) = e^{-x}, \quad \lambda_n = a
+$$<p>(특이 SL: 정의역이 $[0, \infty)$, $x=0$ 에서 $p \to 0$, $x \to \infty$ 에서 $p \to 0$.)</p>
+<hr>
+<p><strong>example3) Legendre ODE</strong></p>
+$$
+(1-x^2)y'' - 2xy' + l(l+1)y = 0
+$$<p>sol)</p>
+<p>$p_0 = 1-x^2, p_1 = -2x$. $p_0' = -2x = p_1$ ✓. 즉시 SL 형식 — <strong>가중함수 불필요</strong> ($w = 1$):</p>
+$$
+D\bigl[(1-x^2)\, D\bigr] u_n = -l(l+1)\, u_n
+$$<p>읽어내면</p>
+$$
+p(x) = 1-x^2, \quad q(x) = 0, \quad w(x) = 1, \quad \lambda_n = l(l+1)
+$$<p>(특이 SL: 정의역이 $[-1, 1]$ 이며 양 끝점 $x = \pm 1$ 에서 $p \to 0$.)</p>
+<hr>
+<p><strong>example4) Chebyshev ODE</strong></p>
+$$
+(1-x^2)y'' - xy' + n^2 y = 0
+$$<p>sol)</p>
+<p>$p_0 = 1-x^2, p_1 = -x$. $p_0' = -2x \neq p_1 = -x$. 가중함수:</p>
+$$
+w(x) = \frac{1}{1-x^2}\exp\left(\int \frac{-x}{1-x^2}\, dx\right) = \frac{1}{1-x^2}\sqrt{1-x^2} = \frac{1}{\sqrt{1-x^2}}
+$$<p>곱하면</p>
+$$
+\frac{1}{\sqrt{1-x^2}}\bigl[(1-x^2)D^2 - xD\bigr] u_n = -\frac{n^2}{\sqrt{1-x^2}}\, u_n
+$$$$
+\implies D\bigl[\sqrt{1-x^2}\, D\bigr] u_n = -\frac{n^2}{\sqrt{1-x^2}}\, u_n
+$$<p>읽어내면</p>
+$$
+p(x) = \sqrt{1-x^2}, \quad q(x) = 0, \quad w(x) = \frac{1}{\sqrt{1-x^2}}, \quad \lambda_n = n^2
+$$<p>(특이 SL: 정의역이 $[-1, 1]$ 이며 양 끝점에서 $p \to 0$, $w \to \infty$.)</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/gf/b_green_function/index.html"><a class="padding" href="/greens_function/gf/b_green_function/index.html">(b) Green&#39;s function</a></li>
+            <li class="" data-nav-id="/greens_function/gf/b_spectral_representation/index.html"><a class="padding" href="/greens_function/gf/b_spectral_representation/index.html">(b) Spectral representation</a></li>
+            <li class="" data-nav-id="/greens_function/gf/i_unified_picture/index.html"><a class="padding" href="/greens_function/gf/i_unified_picture/index.html">(i) Unified picture</a></li>
+            <li class="" data-nav-id="/greens_function/gf/b_existence_and_properties/index.html"><a class="padding" href="/greens_function/gf/b_existence_and_properties/index.html">(b) Existence and properties</a></li>
+            <li class="active " data-nav-id="/greens_function/gf/b_sl_form/index.html"><a class="padding" href="/greens_function/gf/b_sl_form/index.html">(b) Sturm-Liouville form</a></li>
+            <li class="" data-nav-id="/greens_function/gf/b_sl_greens_function/index.html"><a class="padding" href="/greens_function/gf/b_sl_greens_function/index.html">(b) Sturm-Liouville Green&#39;s function</a></li>
+            <li class="" data-nav-id="/greens_function/gf/b_singular_sl/index.html"><a class="padding" href="/greens_function/gf/b_singular_sl/index.html">(b) Singular Sturm-Liouville</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

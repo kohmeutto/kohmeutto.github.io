@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 프레임 (Frame of Reference): 관측의 ‘기준계’‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.
+(1) 정지 프레임 (Rest Frame / Laboratory Frame)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(a) Frame &amp; Viewpoint :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 프레임 (Frame of Reference): 관측의 ‘기준계’‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.
+(1) 정지 프레임 (Rest Frame / Laboratory Frame)">
+    <meta property="og:url" content="http://localhost:1313/temp/electromotive_force/a_frame_viewpoint/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(a) Frame &amp; Viewpoint :: 수리전자물리학">
+    <meta property="og:description" content="1. 프레임 (Frame of Reference): 관측의 ‘기준계’‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.
+(1) 정지 프레임 (Rest Frame / Laboratory Frame)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Temps">
+    <meta itemprop="name" content="(a) Frame &amp; Viewpoint :: 수리전자물리학">
+    <meta itemprop="description" content="1. 프레임 (Frame of Reference): 관측의 ‘기준계’‘프레임(Frame of Reference)‘은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 “어디서, 어떤 상태로” 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. 프레임은 현상을 관측하는 ‘물리적 기준’ 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.
+(1) 정지 프레임 (Rest Frame / Laboratory Frame)">
+    <meta itemprop="wordCount" content="382">
+    <title>(a) Frame &amp; Viewpoint :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/temp\/electromotive_force\/a_frame_viewpoint\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/temp/electromotive_force/a_frame_viewpoint/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-프레임-frame-of-reference-관측의-기준계">1. 프레임 (Frame of Reference): 관측의 &lsquo;기준계&rsquo;</a></li>
+        <li><a href="#2-관점-viewpoint--perspective-현상을-해석하는-방식">2. 관점 (Viewpoint / Perspective): 현상을 &lsquo;해석하는 방식&rsquo;</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/electromotive_force/index.html"><span itemprop="name">Electromotive force</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Frame &amp; Viewpoint</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/electromotive_force/index.html" title="Electromotive force (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html" title="(a) Lagrangian and Eulerian specification (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable temp" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="a-frame--viewpoint">(a) Frame &amp; Viewpoint</h1>
+
+<hr>
+<h3 id="1-프레임-frame-of-reference-관측의-기준계">1. 프레임 (Frame of Reference): 관측의 &lsquo;기준계&rsquo;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>&lsquo;프레임(Frame of Reference)&lsquo;은 물리적 현상을 관측하고 측정하는 데 쓰는 기준계를 말한다. 우리가 어떤 현상을 &ldquo;어디서, 어떤 상태로&rdquo; 보고 있는지를 결정하는 물리적 환경이다. 프레임은 특정 좌표계와 그 좌표계의 운동 상태(정지 또는 가속)를 포함한다. <strong>프레임은 현상을 관측하는 &lsquo;물리적 기준&rsquo;</strong> 이며, 어떤 현상이 어떤 프레임에서 어떻게 보이는지에 대한 논의의 기반이 된다.</p>
+<p><strong>(1) 정지 프레임 (Rest Frame / Laboratory Frame)</strong></p>
+<ul>
+<li><strong>의미</strong>: 관측자(실험자)가 정지해 있다고 가정하는 기준계. 주로 실험실에서 실험할 때, 주변 환경이나 장비가 정지해 있는 상태로 가정하고 물리량을 측정할 때 사용한다.</li>
+<li><strong>특징</strong>: 가속 운동을 하지 않는 <strong>관성계(Inertial Frame)</strong> 일 수도 있고, 때로는 비관성계(Non-inertial Frame)일 수도 있지만, 핵심은 관측자 자신이 움직이지 않는다는 점이다.</li>
+<li><strong>예시</strong>: 땅 위에 서서 지나가는 자동차의 속도를 측정하는 경우, &lsquo;땅&rsquo;이 정지 프레임이 된다.</li>
+</ul>
+<p><strong>(2) 운동 프레임 (Moving Frame)</strong></p>
+<ul>
+<li><strong>의미</strong>: 관측자가 어떤 물체나 시스템과 함께 움직이고 있다고 가정하는 기준계. 즉, 관측자 자신이 특정 속도로 움직이거나 회전하는 등의 운동을 하고 있는 상황에서 현상을 바라보는 것이다.</li>
+<li><strong>특징</strong>: 관측자에게 움직이는 물체는 정지해 보이거나 다르게 보일 수 있다. 상대론에서는 특히 중요한 개념이 된다.</li>
+<li><strong>예시</strong>: 자동차 안에 앉아서 창밖으로 지나가는 풍경을 바라보는 경우, &lsquo;자동차&rsquo;가 운동 프레임이 된다.</li>
+</ul>
+<hr>
+<h3 id="2-관점-viewpoint--perspective-현상을-해석하는-방식">2. 관점 (Viewpoint / Perspective): 현상을 &lsquo;해석하는 방식&rsquo;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>관점(Viewpoint)</strong> 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 <strong>기술법(Description/Formulation)</strong> 과는 구분된다. <strong>관점</strong>은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.</p>
+<p><strong>(1) 라그랑지안 관점 (Lagrangian Viewpoint)</strong></p>
+<ul>
+<li><strong>의미</strong>: 시스템을 구성하는 개별적인 &lsquo;물체(입자)&lsquo;의 운동과 그 물체가 겪는 변화에 초점을 맞추는 관점이다. 각 물체가 시간에 따라 어떤 궤적을 그리며, 그 물체의 물리량(속도, 온도, 에너지 등)이 어떻게 변하는지를 그 &lsquo;물체와 함께 움직이면서&rsquo; 이해하려는 사고방식이다.</li>
+<li><strong>특징</strong>: &lsquo;물체 중심&rsquo;: 물리량의 변화를 해당 물체의 &lsquo;이력(history)&lsquo;과 연결하여 해석한다.</li>
+<li><strong>에너지 기반</strong>: 물리학, 특히 역학에서 뉴턴 역학의 &lsquo;힘&rsquo; 대신 &lsquo;에너지(스칼라량)&lsquo;를 사용하여 시스템의 운동을 기술하려는 철학적 접근(최소 작용 원리 등)과도 연결된다.</li>
+<li><strong>예시</strong>: 강물에 떠내려가는 하나의 나뭇잎을 정해놓고, 그 나뭇잎이 흘러가면서 겪는 모든 변화(위치, 속도, 회전 등)를 추적하고 분석하는 방식이다.</li>
+</ul>
+<p><strong>(2) 오일리안 관점 (Eulerian Viewpoint)</strong></p>
+<ul>
+<li><strong>의미</strong>: 시스템이 존재하는 &lsquo;공간의 특정 고정된 지점&rsquo;에 초점을 맞추는 관점이다. 해당 지점을 통과하는 물체들의 물리량이 시간에 따라 어떻게 변하는지를 관찰하고 해석하려는 사고방식이다.</li>
+<li><strong>특징</strong>: &lsquo;공간 중심&rsquo;: 물리량의 변화를 &lsquo;그 공간 지점&rsquo; 자체의 특성 변화로 해석한다.</li>
+<li><strong>장(Field) 개념</strong>: 전자기장, 유체 속도장, 온도장 등 공간에 분포하는 &lsquo;장&rsquo;의 변화를 기술하는 데 특히 유용하다.</li>
+<li><strong>예시</strong>: 강가의 특정 교각 아래에 서서, 그 지점을 통과하는 강물의 속도, 온도, 탁도 등이 시간에 따라 어떻게 변하는지를 관찰하고 분석하는 방식이다.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="parent " data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/a_basis/index.html"><a class="padding" href="/temp/a_basis/index.html">(a) Basis</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_decomposition/index.html"><a class="padding" href="/temp/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_derivation/index.html"><a class="padding" href="/temp/b_adjoint_derivation/index.html">(b) Adjoint &amp; Residue transformation</a></li>
+            <li class="" data-nav-id="/temp/b_generalization/index.html"><a class="padding" href="/temp/b_generalization/index.html">(b) Generalization</a></li>
+            <li class="" data-nav-id="/temp/i_lsi/index.html"><a class="padding" href="/temp/i_lsi/index.html">(i) LSI</a></li>
+            <li class="" data-nav-id="/temp/i_lsi2/index.html"><a class="padding" href="/temp/i_lsi2/index.html">(i) LSI</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/laurents_series/index.html"><a class="padding default-animation" href="/temp/laurents_series/index.html">Lourent&#39;s series</a><ul id="R-subsections-b622dc49c5dbb13575c50ea27a9dcb03" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/preface/index.html"><a class="padding" href="/temp/preface/index.html">Preface</a></li>
+            <li class="" data-nav-id="/temp/b_convolution_i/index.html"><a class="padding" href="/temp/b_convolution_i/index.html">(b) Convolution I</a></li>
+            <li class="" data-nav-id="/temp/b_shift_ii/index.html"><a class="padding" href="/temp/b_shift_ii/index.html">(b) Copy-shift II</a></li>
+            <li class="" data-nav-id="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
+            <li class="" data-nav-id="/temp/b_operator_i/index.html"><a class="padding" href="/temp/b_operator_i/index.html">(b) Operator I</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/algebra_structure/index.html"><a class="padding default-animation" href="/temp/algebra_structure/index.html">Algebra structure for LSI</a><ul id="R-subsections-a739685797281f87672919f683d814d9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/derivation1-copy/index.html"><a class="padding" href="/temp/derivation1-copy/index.html">Derivation3</a></li>
+            <li class="parent alwaysopen " data-nav-id="/temp/electromotive_force/index.html"><a class="padding default-animation" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu">
+            <li class="active " data-nav-id="/temp/electromotive_force/a_frame_viewpoint/index.html"><a class="padding" href="/temp/electromotive_force/a_frame_viewpoint/index.html">(a) Frame &amp; Viewpoint</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html"><a class="padding" href="/temp/electromotive_force/a_lagrangian_eulerian_specification/index.html">(a) Lagrangian and Eulerian specification</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/a_material_derivative/index.html"><a class="padding" href="/temp/electromotive_force/a_material_derivative/index.html">(a) Material derivative</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/i_electromotive_force_i/index.html"><a class="padding" href="/temp/electromotive_force/i_electromotive_force_i/index.html">(i) Electromotive force I</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/a_electromotive_force_ii/index.html"><a class="padding" href="/temp/electromotive_force/a_electromotive_force_ii/index.html">(a) Electromotive force II</a></li>
+            <li class="" data-nav-id="/temp/electromotive_force/r_emf_voltage/index.html"><a class="padding" href="/temp/electromotive_force/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/temp/fourier_series/index.html"><a class="padding default-animation" href="/temp/fourier_series/index.html">Fourier series</a><ul id="R-subsections-23cf8ddda8c632c96aa5ff6c0653ec25" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/a_2nd_tensor/index.html"><a class="padding" href="/temp/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/temp/a_mellin_transform_ii/index.html"><a class="padding" href="/temp/a_mellin_transform_ii/index.html">(a) Mellin transform II</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator/index.html"><a class="padding" href="/temp/b_variational_operator/index.html">(b) Variational Operator I</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator_ii/index.html"><a class="padding" href="/temp/b_variational_operator_ii/index.html">(b) Variational Operator II</a></li>
+            <li class="" data-nav-id="/temp/series/index.html"><a class="padding" href="/temp/series/index.html">Series</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/transformation/index.html"><a class="padding default-animation" href="/temp/transformation/index.html">Transformation</a><ul id="R-subsections-7c83dcb82857ce3ae0d42995afa71ed6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
+            <li class="" data-nav-id="/temp/b_continuous/index.html"><a class="padding" href="/temp/b_continuous/index.html">(b) Continuous</a></li>
+            <li class="" data-nav-id="/temp/b_i-unitary/index.html"><a class="padding" href="/temp/b_i-unitary/index.html">(b) I-unitary</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/temp/b_matrix_kernel/index.html"><a class="padding" href="/temp/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
+            <li class="" data-nav-id="/temp/b_uniqueness/index.html"><a class="padding" href="/temp/b_uniqueness/index.html">(b) Uniqueness</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/research_pa/index.html"><a class="padding default-animation" href="/temp/research_pa/index.html">Research_PA</a><ul id="R-subsections-43c0690e9c0a21f00234bb0ace84331c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_gauge_freedom/index.html"><a class="padding" href="/temp/b_gauge_freedom/index.html">(b) Gauge Freedom</a></li>
+            <li class="" data-nav-id="/temp/b_generator_ii/index.html"><a class="padding" href="/temp/b_generator_ii/index.html">(b) Generator II</a></li>
+            <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii-copy/index.html"><a class="padding" href="/temp/b_laplace_transform_ii-copy/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii/index.html"><a class="padding" href="/temp/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_syntax/index.html"><a class="padding" href="/temp/b_syntax/index.html">(b) Syntax</a></li>
+            <li class="" data-nav-id="/temp/b_dilation/index.html"><a class="padding" href="/temp/b_dilation/index.html">(b) Dilation</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_i/index.html"><a class="padding" href="/temp/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-id="/temp/gc_operation/index.html"><a class="padding" href="/temp/gc_operation/index.html">[GC] Operation</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding default-animation" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li>
+            <li class="" data-nav-id="/temp/theory1/index.html"><a class="padding" href="/temp/theory1/index.html">(b) Theory</a></li>
+            <li class="" data-nav-id="/temp/p_circuit_examples_for_fs/index.html"><a class="padding" href="/temp/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li>
+            <li class="" data-nav-id="/temp/theory2/index.html"><a class="padding" href="/temp/theory2/index.html">(b) Theory2</a></li>
+            <li class="" data-nav-id="/temp/theory3-copy/index.html"><a class="padding" href="/temp/theory3-copy/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory3/index.html"><a class="padding" href="/temp/theory3/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory4/index.html"><a class="padding" href="/temp/theory4/index.html">(b) Theory4</a></li>
+            <li class="" data-nav-id="/temp/chapter2/index.html"><a class="padding" href="/temp/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-id="/temp/b_linearization/index.html"><a class="padding" href="/temp/b_linearization/index.html">(b) Linearization</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/research_na/index.html"><a class="padding default-animation" href="/temp/research_na/index.html">Research_NA</a><ul id="R-subsections-234820bc0d55ee914269e52b4bd69ed8" class="collapsible-menu"></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§0-2 에서 가환성은 군 공리가 아니다 는 점을 짚었고, §1·§2 에서 리 군의 정의와 위상 성질을 다뤘다. 이 절은 대수적 성질 — 가환과 비가환의 차이 — 를 본격적으로 다룬다.
+왜 이 구분이 중요한가.
+(1) 비가환성이 자연계에 흔하다. 3차원 회전 ($SO(3)$), 양자역학의 연산자, 게이지 이론 ($SU(N)$) 모두 비가환. 가환은 예외 (저차원 또는 특수 구조).">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="가환과 비가환 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§0-2 에서 가환성은 군 공리가 아니다 는 점을 짚었고, §1·§2 에서 리 군의 정의와 위상 성질을 다뤘다. 이 절은 대수적 성질 — 가환과 비가환의 차이 — 를 본격적으로 다룬다.
+왜 이 구분이 중요한가.
+(1) 비가환성이 자연계에 흔하다. 3차원 회전 ($SO(3)$), 양자역학의 연산자, 게이지 이론 ($SU(N)$) 모두 비가환. 가환은 예외 (저차원 또는 특수 구조).">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/3-b_abelian_nonabelian/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="가환과 비가환 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§0-2 에서 가환성은 군 공리가 아니다 는 점을 짚었고, §1·§2 에서 리 군의 정의와 위상 성질을 다뤘다. 이 절은 대수적 성질 — 가환과 비가환의 차이 — 를 본격적으로 다룬다.
+왜 이 구분이 중요한가.
+(1) 비가환성이 자연계에 흔하다. 3차원 회전 ($SO(3)$), 양자역학의 연산자, 게이지 이론 ($SU(N)$) 모두 비가환. 가환은 예외 (저차원 또는 특수 구조).">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="가환과 비가환 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§0-2 에서 가환성은 군 공리가 아니다 는 점을 짚었고, §1·§2 에서 리 군의 정의와 위상 성질을 다뤘다. 이 절은 대수적 성질 — 가환과 비가환의 차이 — 를 본격적으로 다룬다.
+왜 이 구분이 중요한가.
+(1) 비가환성이 자연계에 흔하다. 3차원 회전 ($SO(3)$), 양자역학의 연산자, 게이지 이론 ($SU(N)$) 모두 비가환. 가환은 예외 (저차원 또는 특수 구조).">
+    <meta itemprop="wordCount" content="2225">
+    <title>가환과 비가환 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/3-b_abelian_nonabelian\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/3-b_abelian_nonabelian/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-가환과-비가환의-정의">2. 가환과 비가환의 정의</a></li>
+        <li><a href="#3-곱셈-순서가-결과를-바꾼다--구체-예">3. 곱셈 순서가 결과를 바꾼다 — 구체 예 </a></li>
+        <li><a href="#4-가환-리-군의-구조">4. 가환 리 군의 구조</a></li>
+        <li><a href="#5-비가환의-첫-예-">5. 비가환의 첫 예 — </a></li>
+        <li><a href="#6-비가환성의-정량화--교환자">6. 비가환성의 정량화 — 교환자</a></li>
+        <li><a href="#7-동치-조건--가환--리-대수-가환">7. 동치 조건 — 가환 ⇔ 리 대수 가환</a></li>
+        <li><a href="#8-비가환-리-군의-분류-예고">8. 비가환 리 군의 분류 (예고)</a></li>
+        <li><a href="#9-가환-vs-비가환의-구조적-차이">9. 가환 vs 비가환의 구조적 차이</a></li>
+        <li><a href="#10-이-절을-닫으며--1부-정리">10. 이 절을 닫으며 + 1부 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">가환과 비가환</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/2-b_compact_connected/index.html" title="컴팩트성과 연결성 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html" title="연속 대칭의 합성 — 준동형의 물리적 동기 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="가환과-비가환">가환과 비가환</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§0-2 에서 <em>가환성은 군 공리가 아니다</em> 는 점을 짚었고, §1·§2 에서 리 군의 정의와 위상 성질을 다뤘다. 이 절은 <em>대수적 성질</em> — 가환과 비가환의 차이 — 를 본격적으로 다룬다.</p>
+<p><em>왜 이 구분이 중요한가</em>.</p>
+<p>(1) <em>비가환성이 자연계에 흔하다</em>. 3차원 회전 ($SO(3)$), 양자역학의 연산자, 게이지 이론 ($SU(N)$) 모두 비가환. 가환은 <em>예외 (저차원 또는 특수 구조)</em>.</p>
+<p>(2) <em>가환과 비가환의 구조적 차이가 결정적</em>. 표현이 1차원만인가 ($\Leftrightarrow$ 가환), 지수 법칙이 단순한가 ($\exp(X+Y) = \exp X \exp Y$ vs BCH 보정), 푸리에 분석이 단순한가 등.</p>
+<p>(3) <em>비가환성의 정량적 측정 — 교환자</em>. 군 차원의 <em>군 교환자</em> $[g, h] = g h g^{-1} h^{-1}$ 과 리 대수 차원의 <em>리 괄호</em> $[X, Y] = XY - YX$ 가 <em>얼마나 가환에서 벗어나 있는가</em> 를 잰다. 이것이 §10–§11 의 <em>리 괄호</em> 와 <em>야코비 항등식</em> 의 무한소 모습.</p>
+<p>(4) <em>응집계 물리 등장</em>. $U(1)$ 게이지 (가환, 전자기) vs $SU(2), SU(3)$ 게이지 (비가환, 약·강작용). 가환 게이지 이론은 <em>선형 맥스웰 방정식</em>, 비가환 게이지 이론은 <em>Yang–Mills 방정식 (비선형)</em>.</p>
+<p>이 절은 (i) 가환·비가환 정의, (ii) 곱셈 순서의 의미 — 구체 예, (iii) 가환 리 군의 구조, (iv) 비가환의 첫 예 ($SU(2)$), (v) 교환자로 정량화, (vi) 구조적 결과의 차이로 정리.</p>
+<h3 id="2-가환과-비가환의-정의">2. 가환과 비가환의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>가환군(abelian / commutative group)</em> — §0-2 §3 (3) 재확인. 모든 $g, h \in G$ 에 대해</p>
+$$g \cdot h = h \cdot g$$<p>가 성립하는 군. <em>비가환군(non-abelian)</em> — 위 조건이 <em>어떤 쌍 $g, h$ 에서라도 깨지는</em> 군.</p>
+<p><strong>2)</strong> <em>주의 — 비가환은 &ldquo;모든 쌍이 비교환&rdquo; 이 아니다</em>. 정의는 <em>어떤 쌍에서라도 깨지면 비가환</em>. 비가환 군 안에도 <em>서로 교환하는 쌍</em> 은 많이 존재한다.</p>
+<p>특히 항등원 $e$ 는 모든 원소와 교환 ($e g = g e = g$). 또 $g$ 와 $g^{-1}$ 도 교환. 즉 <em>완전 비교환</em> 같은 강한 조건이 아니다.</p>
+<p><strong>3)</strong> <em>센터(center)</em>. 군 $G$ 의 <em>센터</em> 는 <em>모든 원소와 교환하는 원소들의 집합</em></p>
+$$Z(G) = \{ z \in G : zg = gz \text{ for all } g \in G \}$$<p>$Z(G)$ 는 $G$ 의 <em>가환</em> 부분군 (자명하게). $G$ 가 가환 ⟺ $Z(G) = G$.</p>
+<p><strong>4)</strong> <em>예 — 행렬군의 센터</em>.</p>
+<ul>
+<li>$Z(GL(N, \mathbb{F})) = \{ cI : c \in \mathbb{F}^* \}$ — 스칼라 행렬</li>
+<li>$Z(SU(N)) = \{ \zeta I : \zeta^N = 1 \} \cong \mathbb{Z}_N$ — 1의 $N$ 제곱근</li>
+<li>$Z(U(N)) = \{ e^{i\theta} I : \theta \in \mathbb{R} \} \cong U(1)$</li>
+<li>$Z(SO(2N+1)) = \{ I \}$ (홀수 차원에서는 자명), $Z(SO(2N)) = \{ \pm I \}$</li>
+</ul>
+<h3 id="3-곱셈-순서가-결과를-바꾼다--구체-예">3. 곱셈 순서가 결과를 바꾼다 — 구체 예 $SO(3)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비가환의 가장 직관적 예 — 3차원 회전.</p>
+<p><strong>1)</strong> <em>$SO(3)$ 의 기본 회전</em>. $x, y, z$ 축 회전 행렬.</p>
+$$R_x(\theta) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos \theta & -\sin \theta \\ 0 & \sin \theta & \cos \theta \end{pmatrix}, \quad R_y(\theta) = \begin{pmatrix} \cos \theta & 0 & \sin \theta \\ 0 & 1 & 0 \\ -\sin \theta & 0 & \cos \theta \end{pmatrix}$$<p><strong>2)</strong> <em>$90°$ 회전의 곱셈 비교</em>. $\theta = \pi / 2$ 에서.</p>
+$$R_x(\pi/2) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}, \quad R_y(\pi/2) = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix}$$<p><em>$y$ 축 회전 후 $x$ 축 회전</em>:</p>
+$$R_x(\pi/2) \, R_y(\pi/2) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$$<p><em>$x$ 축 회전 후 $y$ 축 회전</em>:</p>
+$$R_y(\pi/2) \, R_x(\pi/2) = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & -1 \\ -1 & 0 & 0 \end{pmatrix}$$<p>두 결과가 <em>명백히 다르다</em>. $SO(3)$ 은 비가환.</p>
+<p><strong>3)</strong> <em>물리적 의미</em>. 책을 한 손에 들고 <em>$x$ 축 90° 후 $y$ 축 90°</em> 와 <em>$y$ 축 90° 후 $x$ 축 90°</em> 를 직접 해보면 책의 <em>최종 방향이 다르다</em>. 일상의 3차원 회전이 <em>순서에 민감</em> 함을 손으로 확인.</p>
+<p><strong>4)</strong> <em>2차원에서는 가환</em>. $SO(2)$ 는 <em>1차원 리 군 (회전축 하나뿐)</em> 이라 회전 순서가 의미 없음 — 가환. <em>비가환은 회전축이 여러 개일 때 등장</em>.</p>
+<h3 id="4-가환-리-군의-구조">4. 가환 리 군의 구조<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가환 리 군의 <em>내부 구조</em> 가 매우 제한적이다 — 분류가 단순.</p>
+<p><strong>1)</strong> <em>가환 연결 리 군의 구조 정리</em>.</p>
+<blockquote>
+<p><em>정리</em>. 모든 가환 연결 리 군 $G$ 는 다음 형태와 동형이다.</p>
+$$G \cong \mathbb{R}^k \times T^l \qquad (k, l \ge 0, \ k + l = \dim G)$$</blockquote>
+<p>증명 스케치 — 가환 단순연결 리 군이 $(\mathbb{R}^n, +)$ 와 동형 (지수 사상이 동형). 일반 가환 연결은 그 <em>몫 (quotient)</em> 으로 얻어지고, 몫이 가환 단순연결 부분군 $\mathbb{R}^l$ 과 토러스 $T^l$ 의 조합으로 떨어진다.</p>
+<p><strong>2)</strong> <em>컴팩트 가환 연결</em>. 위 정리에서 $k = 0$ — 토러스 $T^N = U(1)^N$ 만 가능.</p>
+<p><strong>3)</strong> <em>비컴팩트 가환 연결</em>. $l = 0$ 이면 $\mathbb{R}^k$. $l > 0$ 이면 $\mathbb{R}^k \times T^l$.</p>
+<p><strong>4)</strong> <em>예시 정리</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>가환 리 군</th>
+          <th>구조</th>
+          <th>차원</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$\mathbb{R}^n$</td>
+          <td>$\mathbb{R}^n \times T^0$</td>
+          <td>$n$</td>
+      </tr>
+      <tr>
+          <td>$U(1) = SO(2)$</td>
+          <td>$\mathbb{R}^0 \times T^1$</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>$T^N$</td>
+          <td>$\mathbb{R}^0 \times T^N$</td>
+          <td>$N$</td>
+      </tr>
+      <tr>
+          <td>$\mathbb{R} \times U(1)$</td>
+          <td>$\mathbb{R}^1 \times T^1$</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>$(\mathbb{R}^+, \cdot)$</td>
+          <td>$\mathbb{R}^1 \times T^0$</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>5)</strong> <em>분류의 단순함</em>. 가환 연결 리 군은 <em>두 정수 $(k, l)$ 만으로 분류</em>. 비가환 리 군의 분류 (Cartan, 다음 절에서 짧게) 가 훨씬 복잡한 것과 대조.</p>
+<h3 id="5-비가환의-첫-예-">5. 비가환의 첫 예 — $SU(2)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비가환 리 군의 가장 단순한 예 — 행렬 곱셈으로 직접 확인 가능.</p>
+<p><strong>1)</strong> <em>$SU(2)$ 의 정의</em>. $2 \times 2$ 복소 유니타리 + 행렬식 $1$. 3차원, 컴팩트, 연결, 단순연결.</p>
+<p><strong>2)</strong> <em>생성 — 파울리 행렬</em>. $\mathfrak{su}(2)$ (리 대수) 의 자연 기저가 <em>파울리 행렬</em></p>
+$$\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$<p>(엄밀히는 $\mathfrak{su}(2) = \{i \cdot (\text{실 선형 결합}) \}$ — <em>반에르미트</em> 라 $i$ 가 곱해진다. §16 본격.)</p>
+<p><strong>3)</strong> <em>가환성 깨지는 명시 예</em>. 직접 곱셈</p>
+$$\sigma_x \sigma_y = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix} = i \sigma_z$$$$\sigma_y \sigma_x = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} -i & 0 \\ 0 & i \end{pmatrix} = -i \sigma_z$$<p>따라서 $\sigma_x \sigma_y \neq \sigma_y \sigma_x$ — <em>비교환</em>.</p>
+<p><strong>4)</strong> <em>교환자</em>.</p>
+$$[\sigma_x, \sigma_y] = \sigma_x \sigma_y - \sigma_y \sigma_x = 2 i \sigma_z$$<p>마찬가지로 (순환적으로)</p>
+$$[\sigma_y, \sigma_z] = 2 i \sigma_x, \quad [\sigma_z, \sigma_x] = 2 i \sigma_y$$<p>이것이 $\mathfrak{su}(2)$ 의 <em>리 괄호 구조</em> (§11 본격). $SU(2)$ 의 비가환성이 이 <em>교환자 관계</em> 에 모두 담겨 있다.</p>
+<p><strong>5)</strong> <em>물리적 의미</em>. 스핀 1/2 입자의 <em>스핀 측정의 비가환성</em> — $S_x$ 측정 후 $S_y$ 측정과 $S_y$ 측정 후 $S_x$ 측정이 <em>다른 결과</em>. 양자역학의 <em>불확정성 원리</em> 의 군 이론적 기원.</p>
+<h3 id="6-비가환성의-정량화--교환자">6. 비가환성의 정량화 — 교환자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비가환의 <em>정도</em> 를 <em>교환자</em> 로 측정한다.</p>
+<p><strong>1)</strong> <em>군 교환자(group commutator)</em>. 군 $G$ 의 두 원소 $g, h$ 에 대해</p>
+$$[g, h] := g \, h \, g^{-1} \, h^{-1}$$<p>(주의 — 리 대수 교환자 $[X, Y] = XY - YX$ 와 같은 기호. 맥락으로 구분.)</p>
+<p><strong>2)</strong> <em>해석</em>.</p>
+<ul>
+<li>$g, h$ 가환 ⟺ $g h = h g$ ⟺ $g h g^{-1} h^{-1} = e$ ⟺ $[g, h] = e$.</li>
+<li>비가환이면 $[g, h] \neq e$. 이 <em>얼마나 $e$ 에서 멀리 떨어졌는가</em> 가 비가환의 정도.</li>
+</ul>
+<p><strong>3)</strong> <em>교환자 부분군(commutator subgroup)</em> $[G, G]$. 모든 $[g, h]$ 가 생성하는 부분군. $G$ 가 가환 ⟺ $[G, G] = \{e\}$.</p>
+<p><strong>4)</strong> <em>리 대수 차원의 교환자 — 리 괄호</em>. 행렬군에서 무한소 변환 $g \approx I + tX$, $h \approx I + sY$ ($X, Y$ 리 대수 원소) 에 대해 군 교환자를 계산하면</p>
+$$[g, h] = (I + tX)(I + sY)(I - tX + \cdots)(I - sY + \cdots) = I + ts(XY - YX) + (\text{고차항})$$<p>여기 $XY - YX = [X, Y]$ 가 <em>리 괄호</em>. 즉</p>
+$$[I + tX, I + sY] = I + ts [X, Y] + O(s^2, t^2)$$<p>— <em>군 교환자의 1차 (= $ts$ 차) 항이 리 대수 교환자</em>. (§10 본격.)</p>
+<p><strong>5)</strong> <em>의의</em>. 군 차원의 비가환성 (군 교환자 $\neq e$) 이 <em>무한소 차원에서 리 대수 교환자 $\neq 0$</em> 으로 환원된다. <em>비가환성의 무한소 측정 = 리 괄호</em>.</p>
+<p>군의 비가환을 분석하는 가장 강력한 방법은 <em>리 대수 교환자 관계</em> 를 보는 것 — 이것이 리 군 시리즈가 <em>리 대수</em> 로 옮겨 가는 핵심 동기 (§8 이후).</p>
+<h3 id="7-동치-조건--가환--리-대수-가환">7. 동치 조건 — 가환 ⇔ 리 대수 가환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가환성이 <em>리 군과 리 대수에서 같은 의미</em> 를 가진다.</p>
+<p><strong>1)</strong> <em>정리</em>. 연결 리 군 $G$ 와 그 리 대수 $\mathfrak{g}$ 에 대해 다음이 동치.</p>
+<blockquote>
+<p>(i) $G$ 가 가환 — $gh = hg$ for all $g, h \in G$.</p>
+<p>(ii) $\mathfrak{g}$ 가 가환 — $[X, Y] = 0$ for all $X, Y \in \mathfrak{g}$.</p>
+<p>(iii) 모든 1-매개변수 부분군 (§5 정의) 이 서로 교환.</p>
+</blockquote>
+<p><strong>2)</strong> <em>함의</em>.</p>
+<ul>
+<li>(i) ⇒ (ii) — 군 교환자의 1차 항이 리 괄호 (§6 (4)), 가환이면 1차 항도 $0$.</li>
+<li>(ii) ⇒ (i) — BCH 공식 (§0-1 §9) 에서 모든 보정항이 $0$, $\exp(X) \exp(Y) = \exp(X + Y) = \exp(Y + X) = \exp(Y) \exp(X)$. 연결성 가정에서 모든 원소가 $\exp$ 의 이미지로 표현 가능 (또는 $\exp$ 의 곱 — 컴팩트의 경우 단일 $\exp$).</li>
+<li>본격 증명은 §10, §13.</li>
+</ul>
+<p><strong>3)</strong> <em>결과</em>. 가환 리 군의 분석은 <em>완전히 가환 리 대수의 분석</em> 으로 환원. 가환 리 대수는 <em>벡터 공간 + 자명한 리 괄호 ($[X, Y] = 0$)</em> — 사실상 <em>벡터 공간만 다루면 됨</em>. 분류가 단순한 이유.</p>
+<h3 id="8-비가환-리-군의-분류-예고">8. 비가환 리 군의 분류 (예고)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비가환 리 군의 분류는 <em>Killing–Cartan 분류</em> 로 알려진 깊은 결과. 본 시리즈에서 깊이 다루지는 않으나, 큰 그림을 짚는다.</p>
+<p><strong>1)</strong> <em>단순(simple) 리 대수</em>. <em>비가환이면서 정상 이상(non-trivial ideal) 이 없는</em> 리 대수. 분해할 수 없는 <em>원자</em> 단위.</p>
+<p><strong>2)</strong> <em>반단순(semisimple) 리 대수</em>. <em>단순 리 대수의 직합</em>. 가환 부분 없음 (정확히는 <em>abelian ideal 없음</em>).</p>
+<p><strong>3)</strong> <em>Killing–Cartan 분류</em> (1894).</p>
+<p>복소 단순 리 대수는 <em>4개 무한 족 + 5개 예외</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>무한 족</th>
+          <th>리 대수</th>
+          <th>대응 컴팩트 단순 리 군</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$A_n, n \ge 1$</td>
+          <td>$\mathfrak{sl}(n+1, \mathbb{C})$</td>
+          <td>$SU(n+1)$</td>
+      </tr>
+      <tr>
+          <td>$B_n, n \ge 2$</td>
+          <td>$\mathfrak{so}(2n+1, \mathbb{C})$</td>
+          <td>$Spin(2n+1)$</td>
+      </tr>
+      <tr>
+          <td>$C_n, n \ge 3$</td>
+          <td>$\mathfrak{sp}(2n, \mathbb{C})$</td>
+          <td>$Sp(n)$</td>
+      </tr>
+      <tr>
+          <td>$D_n, n \ge 4$</td>
+          <td>$\mathfrak{so}(2n, \mathbb{C})$</td>
+          <td>$Spin(2n)$</td>
+      </tr>
+      <tr>
+          <td><em>예외 5개</em></td>
+          <td>$G_2, F_4, E_6, E_7, E_8$</td>
+          <td>—</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>4)</strong> <em>의의</em>. <em>모든 비가환 단순 리 군이 이 9 가지로 정해진다</em>. 일반 비가환 리 군은 <em>반단순 부분 + 가환 부분의 결합</em> (Levi 분해) 으로 환원 가능.</p>
+<p><strong>5)</strong> <em>응집계 물리 등장</em>.</p>
+<ul>
+<li>$A$ 형 — $SU(N)$ 게이지 이론, $N$ 입자 회전 대칭</li>
+<li>$B, D$ 형 — $SO(N)$ 회전, $Spin(N)$ 스피너 (Altland–Zirnbauer 대칭 분류)</li>
+<li>$C$ 형 — $Sp(N)$ 사원수 유니타리 (시간 역전 제곱 $-1$ 인 분류)</li>
+<li>예외형 — 어떤 격자 모형 등에 등장하지만 흔하지 않음</li>
+</ul>
+<p>본 시리즈는 <em>주로 $A, B, D$ 형</em> 에 집중 ($SU(N), SO(N), Spin(N)$).</p>
+<h3 id="9-가환-vs-비가환의-구조적-차이">9. 가환 vs 비가환의 구조적 차이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가환·비가환에 따라 <em>수학적 도구가 크게 달라진다</em>. 정리해둔다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>가환</th>
+          <th>비가환</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><em>분류</em></td>
+          <td>$\mathbb{R}^k \times T^l$ (두 정수)</td>
+          <td>Killing–Cartan (4 무한족 + 5 예외)</td>
+      </tr>
+      <tr>
+          <td><em>리 괄호</em></td>
+          <td>$[X, Y] = 0$</td>
+          <td>$[X, Y] \neq 0$ (어떤 쌍)</td>
+      </tr>
+      <tr>
+          <td><em>지수 법칙</em></td>
+          <td>$\exp(X+Y) = \exp X \cdot \exp Y$</td>
+          <td>BCH 공식 (교환자 보정)</td>
+      </tr>
+      <tr>
+          <td><em>기약 표현</em></td>
+          <td><em>모두 1차원</em> (Schur&rsquo;s lemma)</td>
+          <td>임의 차원 가능</td>
+      </tr>
+      <tr>
+          <td><em>푸리에 분석</em></td>
+          <td>Pontryagin 쌍대 (자연스러운 푸리에)</td>
+          <td>비가환 푸리에 (Peter–Weyl)</td>
+      </tr>
+      <tr>
+          <td><em>게이지 이론</em></td>
+          <td>선형 (맥스웰)</td>
+          <td>비선형 (Yang–Mills)</td>
+      </tr>
+      <tr>
+          <td><em>예</em></td>
+          <td>$U(1), T^N, \mathbb{R}^n$</td>
+          <td>$SU(N), SO(N), Sp(N)$</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>1)</strong> <em>지수 법칙 (가환의 경우)</em>. $X, Y$ 가 교환 ($[X, Y] = 0$) 이면 BCH 보정이 모두 사라져</p>
+$$\exp(X) \exp(Y) = \exp(X + Y) = \exp(Y) \exp(X)$$<p>— 통상 지수 함수와 같은 단순 법칙.</p>
+<p><strong>2)</strong> <em>지수 법칙 (비가환)</em>. BCH 공식 (§0-1 §9)</p>
+$$\exp(X) \exp(Y) = \exp\Bigl( X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}\bigl([X,[X,Y]] - [Y, [X,Y]]\bigr) + \cdots \Bigr)$$<p>교환자가 <em>보정 항으로 추가</em>. <em>비가환성이 정확히 교환자로 측정</em> 됨.</p>
+<p><strong>3)</strong> <em>기약 표현 차원 (Schur&rsquo;s lemma의 결과)</em>. 가환 리 군 $G$ 의 기약 표현이 $V$ 위에 작용하면, $V$ 위 모든 작용소가 <em>서로 교환</em> (가환이라). Schur&rsquo;s lemma — 이런 작용은 <em>스칼라 배</em> 로 작용. 따라서 $V$ 의 모든 1차원 부분이 <em>불변 부분 공간</em>. 기약이려면 $V$ 자체가 1차원.</p>
+<p>비가환은 <em>고차원 기약 표현이 자연스러움</em> — $SU(2)$ 의 <em>스핀 표현</em> (1차원, 2차원, 3차원, &hellip;, 임의 자연수 차원 모두 존재) 이 대표.</p>
+<h3 id="10-이-절을-닫으며--1부-정리">10. 이 절을 닫으며 + 1부 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) 가환 ⟺ 모든 쌍이 교환 ($gh = hg$). 비가환 — 어떤 쌍에서 깨짐.</p>
+<p>(2) $SO(3)$ 가 비가환의 직관 예 — 회전 순서에 따라 결과 다름. 직접 행렬 곱셈으로 확인.</p>
+<p>(3) 가환 연결 리 군 = $\mathbb{R}^k \times T^l$. 단순 분류. 컴팩트 가환 = $T^N$.</p>
+<p>(4) $SU(2)$ 가 비가환의 첫 예 — 파울리 행렬 $\sigma_x, \sigma_y$ 비교환, 교환자 $[\sigma_x, \sigma_y] = 2i\sigma_z$.</p>
+<p>(5) 비가환의 정량화 — <em>군 교환자</em> $[g, h] = ghg^{-1}h^{-1}$ 의 1차 항이 <em>리 대수 교환자</em> $[X, Y] = XY - YX$. 비가환성의 무한소 측정.</p>
+<p>(6) 가환 ⇔ 리 대수 가환 (연결 리 군에서). 가환의 분석이 <em>벡터 공간만 다루면 되는 수준</em> 으로 환원.</p>
+<p>(7) 비가환 분류 — Killing–Cartan (4 무한족 + 5 예외). 응집계 물리는 $A, B, D$ 형 중심.</p>
+<p>(8) 가환·비가환의 구조적 차이 — 분류, 지수 법칙 (단순 vs BCH), 표현 차원 (1차원 vs 임의), 게이지 이론 (선형 vs Yang–Mills) 등.</p>
+<hr>
+<p><em>1부 (리 군의 정의와 첫 예시) 정리</em>. §1 에서 <em>리 군 = 매끄러운 다양체 + 매끄러운 군 연산</em> 의 정의. §2 에서 위상 성질 (컴팩트성, 연결성, 단순연결성) 의 분류와 결과. §3 에서 대수적 성질 (가환 vs 비가환) 과 그 결과.</p>
+<p>다음 2부 (§4–§7) 에서 <em>1-매개변수 부분군과 준동형</em> 으로 진입한다. <em>연속 대칭의 합성 법칙</em> 에서 <em>준동형 조건</em> 이 자연스럽게 유도되고 (§4), <em>1-매개변수 부분군의 정의</em> (§5), <em>생성자와 테일러 전개</em> (§6), <em>지수 사상의 등장</em> (§7) 까지 이어지는 <em>시리즈의 핵심 흐름</em> — <em>미분 → 테일러 → 지수</em> 가 본격적으로 펼쳐진다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="active " data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

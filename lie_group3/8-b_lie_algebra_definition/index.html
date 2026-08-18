@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§6, §7 에서 생성자 $X \in T_e G$ 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 $T_e G = \mathfrak{g}$ (리 대수) 라 예고만 했다. 이 절에서 이 등식을 본격 증명 한다.
+세 단계로 진행 —
+(i) 추상 정의 — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. 벡터 공간 구조 가 §0-4 의 일반 결과로 자동. (ii) 행렬군에서의 구체 도출 — 정의식의 미분 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산. (iii) 벡터 공간 구조의 명시적 확인 — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X &#43; Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인. 3부 (§8–§11) 의 전체 그림 —">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="항등원에서의 접공간 = 리 대수 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§6, §7 에서 생성자 $X \in T_e G$ 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 $T_e G = \mathfrak{g}$ (리 대수) 라 예고만 했다. 이 절에서 이 등식을 본격 증명 한다.
+세 단계로 진행 —
+(i) 추상 정의 — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. 벡터 공간 구조 가 §0-4 의 일반 결과로 자동. (ii) 행렬군에서의 구체 도출 — 정의식의 미분 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산. (iii) 벡터 공간 구조의 명시적 확인 — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X &#43; Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인. 3부 (§8–§11) 의 전체 그림 —">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/8-b_lie_algebra_definition/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="항등원에서의 접공간 = 리 대수 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§6, §7 에서 생성자 $X \in T_e G$ 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 $T_e G = \mathfrak{g}$ (리 대수) 라 예고만 했다. 이 절에서 이 등식을 본격 증명 한다.
+세 단계로 진행 —
+(i) 추상 정의 — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. 벡터 공간 구조 가 §0-4 의 일반 결과로 자동. (ii) 행렬군에서의 구체 도출 — 정의식의 미분 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산. (iii) 벡터 공간 구조의 명시적 확인 — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X &#43; Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인. 3부 (§8–§11) 의 전체 그림 —">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="항등원에서의 접공간 = 리 대수 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§6, §7 에서 생성자 $X \in T_e G$ 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 $T_e G = \mathfrak{g}$ (리 대수) 라 예고만 했다. 이 절에서 이 등식을 본격 증명 한다.
+세 단계로 진행 —
+(i) 추상 정의 — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. 벡터 공간 구조 가 §0-4 의 일반 결과로 자동. (ii) 행렬군에서의 구체 도출 — 정의식의 미분 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산. (iii) 벡터 공간 구조의 명시적 확인 — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X &#43; Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인. 3부 (§8–§11) 의 전체 그림 —">
+    <meta itemprop="wordCount" content="2360">
+    <title>항등원에서의 접공간 = 리 대수 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/8-b_lie_algebra_definition\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/8-b_lie_algebra_definition/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-리-대수의-첫-정의--항등원에서의-접공간">2. 리 대수의 첫 정의 — 항등원에서의 접공간</a></li>
+        <li><a href="#3-행렬군의-리-대수--일반-표현">3. 행렬군의 리 대수 — 일반 표현</a></li>
+        <li><a href="#4-정의식의-미분--리-대수-도출의-일반-패턴">4. 정의식의 미분 — 리 대수 도출의 일반 패턴</a></li>
+        <li><a href="#5-핵심-예---의-리-대수">5. 핵심 예 —  의 리 대수 </a></li>
+        <li><a href="#6-핵심-예---의-리-대수">6. 핵심 예 —  의 리 대수 </a></li>
+        <li><a href="#7-핵심-예---의-리-대수">7. 핵심 예 —  의 리 대수 </a></li>
+        <li><a href="#8-추가-예---">8. 추가 예 — , , </a></li>
+        <li><a href="#9-벡터-공간-구조의-명시적-확인">9. 벡터 공간 구조의 명시적 확인</a></li>
+        <li><a href="#10-차원-일치-">10. 차원 일치 — </a></li>
+        <li><a href="#11-이-절을-닫으며">11. 이 절을 닫으며</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">항등원에서의 접공간 = 리 대수</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/7-b_exponential_map/index.html" title="생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/9-b_one_to_one_correspondence/index.html" title="리 대수 ↔ 1-매개변수 부분군 1:1 대응 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="항등원에서의-접공간--리-대수">항등원에서의 접공간 = 리 대수</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§6, §7 에서 <em>생성자 $X \in T_e G$</em> 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 <em>$T_e G = \mathfrak{g}$ (리 대수)</em> 라 예고만 했다. 이 절에서 이 등식을 <em>본격 증명</em> 한다.</p>
+<p>세 단계로 진행 —</p>
+<ul>
+<li>(i) <em>추상 정의</em> — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. <em>벡터 공간 구조</em> 가 §0-4 의 일반 결과로 자동.</li>
+<li>(ii) <em>행렬군에서의 구체 도출</em> — <em>정의식의 미분</em> 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산.</li>
+<li>(iii) <em>벡터 공간 구조의 명시적 확인</em> — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X + Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인.</li>
+</ul>
+<p>3부 (§8–§11) 의 전체 그림 —</p>
+<ul>
+<li>§8 (이 절) — 리 대수의 벡터 공간 구조와 행렬 표현</li>
+<li>§9 — 리 대수 ↔ 1-매개변수 부분군 1:1 대응 본격 증명</li>
+<li>§10 — <em>리 괄호 (교환자)</em> 추가, 비가환성의 무한소 측정</li>
+<li>§11 — <em>리 대수 공리</em> (이중선형성, 반대칭성, <em>야코비 항등식</em>)</li>
+</ul>
+<p>이 절은 <em>벡터 공간 부분</em> 만 다루고, <em>리 괄호 구조</em> 가 §10 에서 추가되어 비로소 완전한 <em>리 대수</em> 가 완성됨.</p>
+<h3 id="2-리-대수의-첫-정의--항등원에서의-접공간">2. 리 대수의 첫 정의 — 항등원에서의 접공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>정의 (리 대수의 첫 모습)</em>. 리 군 $G$ 의 <em>리 대수(Lie algebra)</em> 는 항등원에서의 접공간</p>
+$$\mathfrak{g} := T_e G$$<p><strong>2)</strong> <em>벡터 공간 구조</em>. $T_e G$ 가 <em>벡터 공간</em> 임은 §0-4 §6 의 일반 결과 — 모든 매끄러운 다양체의 한 점에서의 접공간이 벡터 공간. 차원</p>
+$$\dim \mathfrak{g} = \dim T_e G = \dim G$$<p><strong>3)</strong> <em>표기 약속</em> (§0-1 §10).</p>
+<ul>
+<li>리 군 — 대문자 로마자 $G$</li>
+<li>리 대수 — 대응되는 <em>프락투어(고딕)</em> 체 $\mathfrak{g}$</li>
+<li>예 — $G = SO(N)$ ↔ $\mathfrak{g} = \mathfrak{so}(N)$, $G = U(N)$ ↔ $\mathfrak{u}(N)$, $G = SU(N)$ ↔ $\mathfrak{su}(N)$ 등</li>
+</ul>
+<p><strong>4)</strong> <em>불완전한 정의</em>. 이 절의 정의 $\mathfrak{g} = T_e G$ 는 <em>벡터 공간 구조만</em> 담는다. <em>완전한 리 대수 구조</em> (벡터 공간 + 리 괄호 + 야코비 항등식) 는 §10, §11 에서 완성. 본 절에서는 <em>벡터 공간 부분 + 리 괄호 도입 직전</em> 까지.</p>
+<p><strong>5)</strong> <em>왜 항등원인가 — §6 §2 재확인</em>. 군 구조 덕에 한 점의 접공간이 <em>모든 점의 접공간을 결정</em>. 그 한 점으로 가장 자연스러운 것이 항등원. 모든 분석이 <em>항등원 근방의 1차 정보</em> 로 압축됨이 리 군 이론의 큰 그림.</p>
+<h3 id="3-행렬군의-리-대수--일반-표현">3. 행렬군의 리 대수 — 일반 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>행렬군에서의 접공간</em>. 행렬군 $G \subseteq GL(N, \mathbb{F})$ 에 대해 항등원이 $I \in M_N(\mathbb{F})$. 접공간은</p>
+$$T_I G \subseteq T_I M_N(\mathbb{F}) = M_N(\mathbb{F})$$<p>— $G$ 가 $M_N(\mathbb{F})$ 의 부분 다양체이므로 <em>접공간이 $M_N(\mathbb{F})$ 의 부분공간</em>.</p>
+<p><strong>2)</strong> <em>해석 — 무한소 변환</em>. $X \in \mathfrak{g} = T_I G$ 라 함은</p>
+$$I + tX \in G \quad \text{(1차 정확도로, 작은 $t$)}$$<p>또는 더 정확히 — <em>$X$ 를 속도 벡터로 가지는 $G$ 안의 매끄러운 곡선이 존재</em> (§0-4 §3 의 정의).</p>
+<p><strong>3)</strong> <em>지수 사상과의 연결 (§7)</em>. $X \in \mathfrak{g}$ 라 함은 1-매개변수 부분군</p>
+$$\gamma_X(t) = \exp(tX) \in G \quad \text{(모든 $t \in \mathbb{R}$ 에서)}$$<p>가 존재. 즉</p>
+$$\mathfrak{g} = \{ X \in M_N(\mathbb{F}) : \exp(tX) \in G \text{ for all } t \in \mathbb{R} \}$$<blockquote>
+<p><em>주의</em> — 이 등식이 <em>닫힌 부분 리 군</em> 에 대해 성립 (§1 §9). 임베디드 부분 리 군의 표준 경우. 본 시리즈 모든 행렬군이 이 경우.</p>
+</blockquote>
+<h3 id="4-정의식의-미분--리-대수-도출의-일반-패턴">4. 정의식의 미분 — 리 대수 도출의 일반 패턴<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬군 $G$ 가 <em>정의식</em> ($f(M) = c$ 같은 조건) 으로 정의될 때, 리 대수 $\mathfrak{g}$ 가 그 정의식의 <em>미분</em> 으로 결정.</p>
+<p><strong>1)</strong> <em>일반 패턴</em>. 행렬군 $G$ 가 정의식 $f(M) = c$ ($f$ 매끄러움, $c$ 상수) 로 정의될 때, $X \in \mathfrak{g}$ 인지 확인하려면</p>
+$$M = I + tX \quad \text{대입} \to \quad f(I + tX) = c + t \cdot (\text{1차 항}) + O(t^2)$$<p>1차 항이 <em>모든 $t$ 에서 $0$</em> 이려면 — <em>1차 항이 항상 $0$</em>. 이 조건이 <em>$X$ 의 선형 조건</em> 으로 떨어진다.</p>
+<p><strong>2)</strong> <em>왜 이 방법인가</em>. $G$ 의 정의식이 $M$ 에 대해 <em>매끄러움</em> 이므로, $I + tX$ 가 $G$ 에 머무는지의 <em>국소적 조건</em> 이 <em>1차 미분</em> 으로 결정. 더 높은 차수 ($t^2$ 이상) 는 1차 조건이 성립한 후 자동 처리 (지수 사상 $\exp(tX)$ 가 <em>모든 차수에서</em> $G$ 안에 머묾).</p>
+<p><strong>3)</strong> <em>동치 표현</em>.</p>
+$$X \in \mathfrak{g} \iff \left. \frac{d}{dt} \right|_{t=0} f(\exp(tX)) = 0 \quad (\text{정의식 미분})$$<p>$\exp(tX) = I + tX + O(t^2)$ 이라 위 미분이 정의식의 1차 항 도출과 같다.</p>
+<p><strong>4)</strong> <em>명시</em>. 다음 §5–§8 에서 주요 행렬군 ($SO, U, SU, Sp$ 등) 에 이 패턴을 적용한다.</p>
+<h3 id="5-핵심-예---의-리-대수">5. 핵심 예 — $SO(N)$ 의 리 대수 $\mathfrak{so}(N)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$O(N)$ 의 정의식</em>. $M^T M = I_N$. (§0-1 §4.)</p>
+<p><strong>2)</strong> <em>$I + tX$ 대입</em>.</p>
+$$(I + tX)^T (I + tX) = (I + tX^T)(I + tX) = I + tX + tX^T + t^2 X^T X$$$$= I + t (X^T + X) + t^2 X^T X$$<p><strong>3)</strong> <em>1차 항 조건</em>. $(I + tX)^T (I + tX) = I$ 가 <em>작은 $t$ 에서 1차 정확도로</em> 성립하려면 1차 항이 $0$ —</p>
+$$X^T + X = 0 \quad \Leftrightarrow \quad X^T = -X$$<p>즉 <em>반대칭(skew-symmetric)</em> 행렬.</p>
+<p><strong>4)</strong> <em>결과</em>. $O(N)$ 의 리 대수는</p>
+$$\mathfrak{o}(N) = \{ X \in M_N(\mathbb{R}) : X^T = -X \}$$<p><strong>5)</strong> <em>$SO(N)$ 도 같다</em>. $SO(N)$ 은 $O(N)$ 의 <em>항등원 성분</em> (§2 §6 (4)). 리 대수는 항등원 <em>근방</em> 의 무한소 구조라 <em>연결 성분에 무관</em> — <em>$SO(N)$ 과 $O(N)$ 이 같은 리 대수</em></p>
+$$\mathfrak{so}(N) = \mathfrak{o}(N) = \{ X \in M_N(\mathbb{R}) : X^T = -X \}$$<blockquote>
+<p><em>주의 — 같은 리 대수, 다른 리 군</em>. $O(N)$ 과 $SO(N)$ 이 <em>다른 리 군이지만 같은 리 대수</em>. 비연결 ($O(N)$) vs 연결 ($SO(N)$) 의 차이가 <em>리 대수에 안 보임</em> — 리 대수는 <em>항등원 성분 정보만</em> 담는다. 이것이 §17 (이중 덮개) 와 §14 (비연결 처리) 의 핵심 동기.</p>
+</blockquote>
+<p><strong>6)</strong> <em>$\mathfrak{so}(N)$ 의 차원</em>. 반대칭 행렬 $X$ 의 자유도 — 대각 성분 $X_{ii} = -X_{ii}$ 이라 모두 $0$, 비대각 $X_{ij} = -X_{ji}$ 이라 상삼각만 자유 — $N(N-1)/2$.</p>
+$$\dim \mathfrak{so}(N) = \frac{N(N-1)}{2}$$<p>§0-1 §11 의 $\dim SO(N) = N(N-1)/2$ 와 일치.</p>
+<p><strong>7)</strong> <em>예 — $\mathfrak{so}(2)$</em>. $\mathfrak{so}(2) = \{ \alpha J : \alpha \in \mathbb{R} \}$ where $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$. 차원 $1$. (§6 §10.)</p>
+<p><strong>8)</strong> <em>예 — $\mathfrak{so}(3)$</em>. $\mathfrak{so}(3) = \{ \text{반대칭 } 3 \times 3 \text{ 실 행렬} \}$. 차원 $3$. 표준 기저</p>
+$$L_1 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}, \quad L_2 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0 \end{pmatrix}, \quad L_3 = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$$<p>— $i$ 번째 좌표축 회전의 생성자. §17 본격.</p>
+<h3 id="6-핵심-예---의-리-대수">6. 핵심 예 — $U(N)$ 의 리 대수 $\mathfrak{u}(N)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$U(N)$ 의 정의식</em>. $M^\dagger M = I$. (§0-1 §5.)</p>
+<p><strong>2)</strong> <em>$I + tX$ 대입</em>. ($X$ 는 복소 행렬 가능, $t$ 는 실수.)</p>
+$$(I + tX)^\dagger (I + tX) = (I + tX^\dagger)(I + tX) = I + t (X^\dagger + X) + t^2 X^\dagger X$$<p><strong>3)</strong> <em>1차 조건</em>.</p>
+$$X^\dagger + X = 0 \quad \Leftrightarrow \quad X^\dagger = -X$$<p>즉 <em>반에르미트(anti-Hermitian, skew-Hermitian)</em> 행렬.</p>
+<p><strong>4)</strong> <em>결과</em>.</p>
+$$\mathfrak{u}(N) = \{ X \in M_N(\mathbb{C}) : X^\dagger = -X \}$$<p><strong>5)</strong> <em>$\mathfrak{u}(N)$ 의 차원</em>. 반에르미트 행렬 $X$ 의 <em>실</em> 자유도.</p>
+<ul>
+<li>대각 성분 — $X_{ii} = -\overline{X_{ii}} \Rightarrow X_{ii}$ 는 <em>순허수</em>. $N$ 개 실 자유도.</li>
+<li>비대각 성분 — $X_{ij} = -\overline{X_{ji}}$ 이라 $i < j$ 만 자유. $N(N-1)/2$ 쌍, 각 쌍이 <em>자유 복소수 (2 실 자유도)</em> — 총 $N(N-1)$ 실 자유도.</li>
+</ul>
+$$\dim \mathfrak{u}(N) = N + N(N-1) = N^2$$<p>(§0-1 §11 의 $\dim U(N) = N^2$ 와 일치.)</p>
+<p><strong>6)</strong> <em>주의 — 실 차원과 복소 차원</em>. $\mathfrak{u}(N)$ 은 <em>복소 행렬</em> 들의 모임이지만 <em>실 벡터 공간</em> — <em>복소 스칼라 배에 닫혀 있지 않다</em>. $X$ 가 반에르미트면 $iX$ 는 에르미트 ($X^\dagger = -X \Rightarrow (iX)^\dagger = -iX^\dagger = iX$). 즉 <em>실 스칼라 배만</em> 닫혀 있다.</p>
+<p>따라서 $\mathfrak{u}(N)$ 은 <em>실 차원 $N^2$</em> 의 <em>실 벡터 공간</em>. (복소 벡터 공간으로는 만들 수 없는 구조.)</p>
+<p><strong>7)</strong> <em>예 — $\mathfrak{u}(1)$</em>. $1 \times 1$ 반에르미트 행렬 = 순허수 $\{i\alpha : \alpha \in \mathbb{R}\}$. 차원 1. <em>$U(1)$ 게이지의 생성자</em>.</p>
+<h3 id="7-핵심-예---의-리-대수">7. 핵심 예 — $SU(N)$ 의 리 대수 $\mathfrak{su}(N)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$SU(N)$ 의 정의식</em>. $M^\dagger M = I$ <em>그리고</em> $\det M = 1$. (§0-1 §5.)</p>
+<p><strong>2)</strong> <em>유니타리 조건의 미분</em> — $X^\dagger = -X$ (§6 (3)).</p>
+<p><strong>3)</strong> <em>행렬식 조건의 미분</em>. $\det(I + tX)$ 의 $t$ 전개. Jacobi 공식 (§7 §3 (3)) 의 1차 형태</p>
+$$\det(I + tX) = 1 + t \, \text{tr}(X) + O(t^2)$$<p>(증명 — $\det \exp(Y) = \exp(\text{tr}(Y))$ 에서 $Y = tX$ 대입, $\exp(t \text{tr} X) = 1 + t \text{tr} X + O(t^2)$. 또는 $\det(I + tX) = $ 모든 $1 \times 1$ 소행렬식의 합 + 더 큰 항.)</p>
+<p>$\det M = 1$ 이 1차로 성립하려면 1차 항 $= 0$ —</p>
+$$\text{tr}(X) = 0$$<p><strong>4)</strong> <em>결과</em>.</p>
+$$\mathfrak{su}(N) = \{ X \in M_N(\mathbb{C}) : X^\dagger = -X, \ \text{tr}(X) = 0 \}$$<p>— <em>반에르미트 + 트레이스 0</em>.</p>
+<p><strong>5)</strong> <em>$\mathfrak{su}(N)$ 의 차원</em>. $\mathfrak{u}(N)$ ($N^2$ 차원) 에 <em>실 자유도 1 제거</em> ($\text{tr}(X) = 0$ 조건).</p>
+<p><em>왜 1만 제거되나</em>. 반에르미트의 $\text{tr}(X)$ 는 <em>대각 합</em> — 대각이 모두 순허수라 $\text{tr}(X)$ 가 순허수. $\text{tr}(X) = 0$ 이 <em>실 자유도 1 (허수부)</em> 제거.</p>
+$$\dim \mathfrak{su}(N) = N^2 - 1$$<p><strong>6)</strong> <em>예 — $\mathfrak{su}(2)$</em>. $2 \times 2$ 반에르미트 + 트레이스 0. 일반 원소</p>
+$$X = i \begin{pmatrix} a & b - ic \\ b + ic & -a \end{pmatrix} = i(a \sigma_z + b \sigma_x + c \sigma_y), \quad a, b, c \in \mathbb{R}$$<p>자유도 3. 기저는 $\{i \sigma_x, i \sigma_y, i \sigma_z\}$ — <em>$i$ 곱한 파울리 행렬</em>.</p>
+<p>(파울리 행렬 자체는 <em>에르미트</em> 라 $\mathfrak{su}(2)$ 에 직접 들어가지 않음. <em>$i$ 곱하면 반에르미트</em> — $\mathfrak{su}(2)$ 원소.)</p>
+<p><strong>7)</strong> <em>예 — $\mathfrak{su}(3)$</em>. 차원 $3^2 - 1 = 8$. 표준 기저는 <em>Gell-Mann 행렬</em> $\lambda_1, \cdots, \lambda_8$ — QCD의 색 생성자.</p>
+<h3 id="8-추가-예---">8. 추가 예 — $GL$, $SL$, $Sp$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>$GL(N, \mathbb{F})$</em> — $\det \neq 0$ 만 요구.</p>
+<p>$I + tX$ 의 $\det = 1 + t \text{tr}(X) + O(t^2)$ 이 <em>$0$ 이 아님</em> 만 요구 — 작은 $t$ 에서 자동으로 $0$ 아님. 즉 <em>어떤 $X$ 든 OK</em>.</p>
+$$\mathfrak{gl}(N, \mathbb{F}) = M_N(\mathbb{F})$$<p>— <em>모든 행렬</em>. 차원 $N^2$ (실) 또는 $2N^2$ (실 자유도, 복소).</p>
+<p><strong>2)</strong> <em>$SL(N, \mathbb{F})$</em> — $\det = 1$.</p>
+<p>위에서 본 것 — $\text{tr}(X) = 0$.</p>
+$$\mathfrak{sl}(N, \mathbb{F}) = \{ X \in M_N(\mathbb{F}) : \text{tr}(X) = 0 \}$$<p>차원 $N^2 - 1$ (실) 또는 $2(N^2 - 1)$ (복소).</p>
+<p><strong>3)</strong> <em>$Sp(2N, \mathbb{F})$</em> — $M^T \Omega M = \Omega$ ($\Omega$ 표준 심플렉틱 형식).</p>
+$$(I + tX)^T \Omega (I + tX) = \Omega + t (X^T \Omega + \Omega X) + O(t^2) = \Omega$$<p>1차 조건 —</p>
+$$X^T \Omega + \Omega X = 0$$$$\mathfrak{sp}(2N, \mathbb{F}) = \{ X \in M_{2N}(\mathbb{F}) : X^T \Omega + \Omega X = 0 \}$$<p>차원 $N(2N+1)$ (실) 또는 $2N(2N+1)$ (복소).</p>
+<p><strong>4)</strong> <em>요약 표</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>리 군</th>
+          <th>리 대수</th>
+          <th>정의식 (미분 형태)</th>
+          <th>$\dim_{\mathbb{R}}$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$GL(N, \mathbb{R})$</td>
+          <td>$\mathfrak{gl}(N, \mathbb{R}) = M_N(\mathbb{R})$</td>
+          <td>제약 없음</td>
+          <td>$N^2$</td>
+      </tr>
+      <tr>
+          <td>$GL(N, \mathbb{C})$</td>
+          <td>$\mathfrak{gl}(N, \mathbb{C}) = M_N(\mathbb{C})$</td>
+          <td>제약 없음</td>
+          <td>$2N^2$</td>
+      </tr>
+      <tr>
+          <td>$SL(N, \mathbb{R})$</td>
+          <td>$\mathfrak{sl}(N, \mathbb{R})$</td>
+          <td>$\text{tr}(X) = 0$</td>
+          <td>$N^2 - 1$</td>
+      </tr>
+      <tr>
+          <td>$SL(N, \mathbb{C})$</td>
+          <td>$\mathfrak{sl}(N, \mathbb{C})$</td>
+          <td>$\text{tr}(X) = 0$</td>
+          <td>$2(N^2 - 1)$</td>
+      </tr>
+      <tr>
+          <td>$O(N), SO(N)$</td>
+          <td>$\mathfrak{so}(N)$</td>
+          <td>$X^T = -X$</td>
+          <td>$N(N-1)/2$</td>
+      </tr>
+      <tr>
+          <td>$U(N)$</td>
+          <td>$\mathfrak{u}(N)$</td>
+          <td>$X^\dagger = -X$</td>
+          <td>$N^2$</td>
+      </tr>
+      <tr>
+          <td>$SU(N)$</td>
+          <td>$\mathfrak{su}(N)$</td>
+          <td>$X^\dagger = -X, \text{tr}(X) = 0$</td>
+          <td>$N^2 - 1$</td>
+      </tr>
+      <tr>
+          <td>$Sp(2N, \mathbb{F})$</td>
+          <td>$\mathfrak{sp}(2N, \mathbb{F})$</td>
+          <td>$X^T \Omega + \Omega X = 0$</td>
+          <td>$N(2N+1)$ (실)</td>
+      </tr>
+  </tbody>
+</table>
+<p>§0-1 §10 (2) 의 표와 일관.</p>
+<h3 id="9-벡터-공간-구조의-명시적-확인">9. 벡터 공간 구조의 명시적 확인<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬군의 리 대수가 <em>벡터 공간</em> (덧셈, 실 스칼라 배에 닫힘) 임을 정의식에서 직접 확인.</p>
+<p><strong>1)</strong> <em>왜 별도 확인이 필요한가</em>. $\mathfrak{g} = T_e G$ 가 <em>벡터 공간</em> 임은 §0-4 의 일반 다양체 결과로 자동. 그러나 <em>행렬 표현</em> 에서 정의식이 <em>선형 조건</em> 임을 직접 확인하는 것이 좋은 검증.</p>
+<p><strong>2)</strong> <em>$\mathfrak{so}(N)$ 확인</em>. $X, Y \in \mathfrak{so}(N)$ 즉 $X^T = -X, Y^T = -Y$.</p>
+<ul>
+<li><em>덧셈</em> — $(X + Y)^T = X^T + Y^T = -X - Y = -(X+Y)$. 따라서 $X + Y \in \mathfrak{so}(N)$. ✓</li>
+<li><em>스칼라 배</em> — $(cX)^T = c X^T = -cX$. $cX \in \mathfrak{so}(N)$. ✓</li>
+<li><em>영원소</em> — $0^T = 0 = -0$. $0 \in \mathfrak{so}(N)$. ✓</li>
+</ul>
+<p>→ $\mathfrak{so}(N)$ 이 <em>$M_N(\mathbb{R})$ 의 실 벡터 부분공간</em>.</p>
+<p><strong>3)</strong> <em>$\mathfrak{u}(N)$ 확인</em>. $X^\dagger + X = 0$ 이 <em>실 선형</em> 조건 (켤레 전치가 <em>반선형</em> 이라 실 스칼라 배에서만 보존). 따라서 $\mathfrak{u}(N)$ 이 <em>실 벡터 공간</em>.</p>
+<p><em>주의</em> — 복소 스칼라 배 안 됨. $iX$ 의 켤레 전치 $(iX)^\dagger = -i X^\dagger = iX$ 라 <em>에르미트</em> 가 됨. $iX \notin \mathfrak{u}(N)$.</p>
+<p><strong>4)</strong> <em>$\mathfrak{su}(N)$ 확인</em>. $\mathfrak{u}(N)$ 조건 + $\text{tr}(X) = 0$. $\text{tr}$ 가 선형이라 덧셈·실 스칼라 배에서 보존. ✓ 실 벡터 공간.</p>
+<p><strong>5)</strong> <em>$\mathfrak{sp}(2N, \mathbb{F})$ 확인</em>. $X^T \Omega + \Omega X$ 가 $X$ 에 대해 선형. $X + Y$, $cX$ 에서 조건 보존. ✓</p>
+<p><strong>6)</strong> <em>일반 패턴</em>. <em>정의식의 미분이 1차 (선형) 조건</em> 이므로 <em>자동으로 벡터 공간 구조</em>. 이것이 <em>접공간이 벡터 공간임</em> 의 행렬군 차원의 구체적 발현.</p>
+<h3 id="10-차원-일치-">10. 차원 일치 — $\dim \mathfrak{g} = \dim G$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>일반 다양체에서의 사실</em> (§0-4 §6 (4)). $\dim T_p M = \dim M$ — 접공간의 차원이 다양체 차원과 같다.</p>
+<p><strong>2)</strong> <em>리 군에서 적용</em>. $\dim \mathfrak{g} = \dim T_e G = \dim G$.</p>
+<p>§5–§8 에서 모든 예가 이 결과를 <em>직접</em> 확인한 셈 — $\mathfrak{so}(N)$, $\mathfrak{u}(N)$, $\mathfrak{su}(N)$, $\mathfrak{sp}(2N)$ 의 차원이 §0-1 §11, §2 §3 의 $\dim$ 표와 정확히 일치.</p>
+<p><strong>3)</strong> <em>의의</em>. 리 군의 <em>모든 차원 정보가 리 대수에 들어 있다</em>. 리 군의 분류 (Killing-Cartan, §3 §8) 가 <em>리 대수 분류로 환원</em> 되는 이유.</p>
+<p><strong>4)</strong> <em>비연결과의 관계</em>. 비연결 리 군에서도 <em>각 성분의 차원이 같음</em> (§0-3 §9). 리 대수는 <em>항등원 성분</em> 의 차원을 표현. $O(N)$ 과 $SO(N)$ 이 다른 군이지만 <em>같은 리 대수, 같은 차원</em>.</p>
+<h3 id="11-이-절을-닫으며">11. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) <em>리 대수의 첫 정의</em> — $\mathfrak{g} := T_e G$. 벡터 공간 구조 자동 (§0-4).</p>
+<p>(2) <em>행렬군의 리 대수 도출</em> — <em>정의식의 미분</em> 패턴. $I + tX$ 대입 후 1차 항이 $0$.</p>
+<p>(3) <em>주요 행렬군의 리 대수</em> —</p>
+<ul>
+<li>$\mathfrak{so}(N)$ : $X^T = -X$ (반대칭)</li>
+<li>$\mathfrak{u}(N)$ : $X^\dagger = -X$ (반에르미트)</li>
+<li>$\mathfrak{su}(N)$ : 반에르미트 + 트레이스 0</li>
+<li>$\mathfrak{sl}(N, \mathbb{F})$ : 트레이스 0</li>
+<li>$\mathfrak{gl}(N, \mathbb{F})$ : 모든 행렬</li>
+<li>$\mathfrak{sp}(2N, \mathbb{F})$ : $X^T \Omega + \Omega X = 0$</li>
+</ul>
+<p>(4) <em>벡터 공간 구조 직접 확인</em> — 정의식의 <em>선형성</em> 이 덧셈·실 스칼라 배 닫힘을 보장.</p>
+<p>(5) <em>차원 일치</em> — $\dim \mathfrak{g} = \dim G$ 일반 결과. 리 군의 차원 정보가 리 대수에 완전 보존.</p>
+<p>(6) <em>비연결과의 무관성</em> — 비연결 리 군 ($O(N)$) 과 그 항등원 성분 ($SO(N)$) 이 <em>같은 리 대수</em>. 리 대수는 <em>국소 (항등원 근방) 정보</em>.</p>
+<p>(7) <em>불완전한 정의</em> — 이 절은 <em>벡터 공간 부분</em> 만. <em>리 괄호 구조</em> 가 §10 에서 추가, <em>야코비 항등식</em> 까지 §11 에서. 그제서야 <em>완전한 리 대수</em> 구조 완성.</p>
+<p>다음 §9 에서 <em>리 대수 ↔ 1-매개변수 부분군 1:1 대응</em> 을 본격 증명한다 — 지금까지 예고만 했던 결과. <em>지수 사상이 두 방향을 정확히 잇는</em> 다리임을 명시.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="active " data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

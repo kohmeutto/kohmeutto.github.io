@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="3.1 이산 공간 국소 비대칭 지표 $S_{kj}$본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CHAPTER 3 :: 수리전자물리학">
+    <meta name="twitter:description" content="3.1 이산 공간 국소 비대칭 지표 $S_{kj}$본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.">
+    <meta property="og:url" content="http://localhost:1313/temp/research_na/chapter3/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="CHAPTER 3 :: 수리전자물리학">
+    <meta property="og:description" content="3.1 이산 공간 국소 비대칭 지표 $S_{kj}$본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Temps">
+    <meta itemprop="name" content="CHAPTER 3 :: 수리전자물리학">
+    <meta itemprop="description" content="3.1 이산 공간 국소 비대칭 지표 $S_{kj}$본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.">
+    <meta itemprop="wordCount" content="1729">
+    <title>CHAPTER 3 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/temp\/research_na\/chapter3\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/temp/research_na/chapter3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#31-이산-공간-국소-비대칭-지표">3.1 이산 공간 국소 비대칭 지표 </a></li>
+        <li><a href="#32-이산-위상-틀어짐과-대수적-텐션-스펙트럼-지표">3.2 이산 위상 틀어짐과 대수적 텐션 스펙트럼 지표</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/research_na/index.html"><span itemprop="name">Research_NA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">CHAPTER 3</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/research_na/chapter2/index.html" title="CHAPTER 2 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/research_na/chapter4/index.html" title="CHAPTER 4 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable temp" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="chapter-3">CHAPTER 3</h1>
+
+<hr>
+<h3 id="31-이산-공간-국소-비대칭-지표">3.1 이산 공간 국소 비대칭 지표 $S_{kj}$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 절에서는 2장에서 확립된 연속계의 연산자 대수가 유한 위상의 이산 공간(discrete space)으로 투영될 때 발생하는 대수적 매핑(algebraic mapping) 과정을 수학적으로 규명한다. 연속 공간에서 소멸하지 않고 잔류하는 1계 물성 결합 연산자의 국소 텐션이 이산 공간의 전역적 비대칭 지표로 환원되는 과정을 전개하고, 이를 바탕으로 시스템의 기하학적 대칭성을 제어하기 위한 수리적 근거를 확립한다.</p>
+<p><strong>1) 이산 공간 국소 비대칭 지표 $S_k$의 대수적 사상 정의</strong></p>
+<p>2장에서 도출된 1계 물성 결합 연산자의 연속계 잔류 레지듀 사상 $\mathcal{R}(pD) = 2pD + (Dp)$를 유한 차원 이산 격자망(discrete mesh) 위로 투영한다. 연속 공간의 추상 미분 연산자 $D$를 이산 위상 공간의 차분 행렬(difference matrix) $\hat{D}$로 치환하여 조립된 이산 레지듀 연산자 $\mathcal{R}(p\hat{D})$를 물리적 상태 벡터 $u$에 작용시키고, 이를 특정 격자 노드 $k$로 사영(projection)한다.</p>
+<p>연속계의 사상 구조에 따라, 노드 $k$에서의 이산 기댓값 $e_k^T \mathcal{R}(p\hat{D}) u$는 기준 좌표계의 동질적 작용 항($2pD$)과 물성의 공간 구배 항($Dp$)의 직합으로 분리된다.</p>
+$$
+e_k^T \mathcal{R}(p\hat{D}) u = \underbrace{\sum_{j \in \mathcal{N}(k)} (2p_k) \hat{D}_{kj} u_j}_{\text{동질적 작용 (} 2pD \text{)}} + \underbrace{\sum_{j \in \mathcal{N}(k)} (p_j - p_k) \hat{D}_{kj} u_j}_{\text{물성 구배 작용 (} Dp \text{)}}$$<p>여기서 $\mathcal{N}(k)$는 노드 $k$와 연결된 인접 노드들의 집합을 의미한다. 두 항을 단일 시그마 기호 안으로 병합하면 결합 계수는 $(2p_k + p_j - p_k) = (p_k + p_j)$로 자연스럽게 도출된다.이때, 반도체 운반자 밀도 모델($p \propto \exp(\pm u)$)과 같이 물리량이 공간상에서 지수함수적으로 급격히 변동하는 특이계(singular system)의 상대적 구배를 규명하기 위해, 물성 구배 항 $(p_j - p_k)$에 자연 로그를 이용한 지수 항등식 $p_j = p_k \exp(\ln p_j - \ln p_k)$를 대입한다.</p>
+$$
+p_j - p_k = p_k \left( e^{\ln p_j - \ln p_k} - 1 \right)
+$$<p>지수 함수의 테일러 급수 전개($e^x = 1 + x + \frac{x^2}{2!} + \dots$)를 적용하여 국소 변동량에 대한 무한 급수로 확장한다.</p>
+$$
+p_k \left( 1 + (\ln p_j - \ln p_k) + \frac{1}{2}(\ln p_j - \ln p_k)^2 + \dots - 1 \right) = p_k (\ln p_j - \ln p_k) + \mathcal{O}(|\Delta \ln p|^2)
+$$<p>고차 절단 오차(Truncation error)를 제외한 1차 선형 주성분을 도출된 초기 사영 방정식의 결합 계수에 대입한다.</p>
+$$
+2p_k + (p_j - p_k) \approx 2p_k + p_k (\ln p_j - \ln p_k)
+$$<p>이 식을 다시 중심 노드의 물성인 $2p_k$로 묶어내면 기하학적 상수 $1/2$이 괄호 내부로 자발적으로 인입된다.</p>
+$$
+2p_k \left[ 1 + \frac{1}{2}(\ln p_j - \ln p_k) \right]
+$$<p>최종적으로 이 결합 계수를 사영 방정식에 치환하여 대수적 전개를 완성한다.</p>
+$$
+e_k^T \mathcal{R}(p\hat{D}) u = \sum_j 2p_k \left[ 1 + \frac{1}{2} (\ln p_j - \ln p_k) \right] \hat{D}_{kj} u_j
+$$<p>이 전개 결과는 이산 공간 내에서 연산자의 반교환자(anti-commutator)가 작용할 때, 시스템이 기준 좌표계의 동질적 작용($2p_k \hat{D}_{kj}$)과 함께 반드시 로그 변환된 공간 구배($\ln p_j - \ln p_k$)의 절반인 $1/2$을 왜곡 텐션으로 동반한다는 사실을 증명한다. 기하학적 상수 $1/2$은 자의적 수치 보정값이 아닌, 연속계 사상 $2p\nabla + \nabla p$의 계수비(2:1)가 이산 대수 공간으로 매핑되며 고정되는 불변의 물리적 비율이다.이 합산식의 각 항을 노드 $k$에서 인접 노드 $j$를 향하는 단방향 텐션 $\mathcal{T}_{kj}$로 선언한다.</p>
+$$
+\mathcal{T}_{kj} = 2p_k \left[ 1 + \frac{1}{2} (\ln p_j - \ln p_k) \right] \hat{D}_{kj} u_j
+$$<p>두 노드 간의 순수 비대칭 교차 텐션(Symmetric edge tension) $S_{kj}$는 양방향 텐션 절대값의 산술 평균으로 정의되며, 노드 $k$의 전역 비대칭 지표 $S_k$는 국소 상한 노름($L_\infty$-norm)을 통해 산출된다.</p>
+$$
+S_{kj} = \frac{1}{2} \left( |\mathcal{T}_{kj}| + |\mathcal{T}_{jk}| \right)
+$$<p><strong>2) 대수적 텐션 기반의 위상 공간 조화 사상(Harmonic Mapping)</strong></p>
+<p>위에서 추출된 국소 대수 텐션 지표 $S_{kj}$를 기반으로, 연속 공간의 인과율을 수용하기 위해 이산 격자 좌표계를 능동적으로 재배치하는 r-적응형(r-adaptive) 위상 매핑(Topological mapping) 과정을 전개한다. 이산 공간 내의 임의의 연결 간선(edge)에 작용하는 순수 교차 텐션 $S_{kj}$는 물성의 공간적 구배에 의해 발현되는 대수적 마찰의 절대량이다. 시스템 전체의 기하학적 붕괴(topological collapse)를 방지하고 차원에 무관한 스케일 불변성(scale invariance)을 확보하기 위해, 이산 공간 $\Omega_h$ 상의 전역 상한 노름($\|S\|_\infty$)을 적용하여 텐션 장(tension field)을 무차원화된 정규 텐션 $\bar{S}_{kj}$로 환원한다.</p>
+$$
+\bar{S}_{kj} = \frac{S_{kj}}{\max_{\Omega_h}(S_{kj})} \quad \in [0, 1]
+$$<p>이 정규화된 텐션을 기반으로, 노드 간의 위상적 인력(topological attraction)을 제어하는 이완 가중치 행렬(relaxation weight matrix) $\hat{W}$의 비대각 성분 $W_{kj}$를 다음과 같이 선언한다.</p>
+$$
+W_{kj} = 1.0 + \bar{S}_{kj} \quad (\text{단, } j \in \mathcal{N}(k))
+$$<p>이 선형적 결합 구조는 해석학적으로 강력한 트러스트 영역(Trust-Region) 구속을 내포한다. 대수적 마찰이 소멸하는 평탄 공간($\bar{S}_{kj} \to 0$)에서는 가중치가 $1.0$으로 하한을 형성하여 행렬의 강타원성(strict ellipticity)을 보장한다. 반면 텐션이 극대화되는 특이점(singularity) 근방에서는 가중치가 최대 $2.0$으로 상한이 제한된다. 이 $1.0 \le W_{kj} \le 2.0$ 의 수학적 구속은, 단일 매핑 단계에서 가장 밀집된 영역과 느슨한 영역 간의 국소 공간 압착비(local compression ratio)를 기하학적으로 제한하여, 고차원 공간 이산화 시 필연적으로 발생하는 격자 꼬임(mesh tangling)과 위상 역전(topological inversion)을 수학적으로 차단한다.</p>
+<p>도출된 가중치 행렬 $\hat{W}$를 바탕으로, 임의의 $d$차원 노드 좌표 벡터 $\mathbf{X} \in \mathbb{R}^{N \times d}$를 새로운 물리적 평형 상태로 이송하기 위한 조화 사상(Harmonic Mapping) 시스템을 구축한다. 이산 공간의 각 내부 노드 $i$가 주변 노드들과 이루는 위상적 텐션 평형은 대수적 합이 영(0)이 되는 최소 에너지 조건으로 규정된다.</p>
+$$
+\sum_{j \in \mathcal{N}(i)} W_{ij} (\mathbf{X}_j - \mathbf{X}_i) = \mathbf{0}
+$$<p>위 국소 방정식을 격자망 전체에 대한 전역 선형 대수 시스템으로 확장하기 위해, 위상적 그래프 라플라시안(Topological Graph Laplacian) 연산자 $\hat{L}_{sys}$를 다음과 같이 조립한다.</p>
+$$\hat{L}_{sys} = \hat{K} - \hat{W}$$<p>여기서 대각 행렬 $\hat{K}$는 각 노드에 연결된 가중치의 총합($K_{ii} = \sum_j W_{ij}$)을 의미한다. 연산자 $\hat{L}_{sys}$는 공간의 차원($d=1$ 또는 $d=2$)이나 기하학적 형상에 전혀 종속되지 않으며, 오직 이산 격자의 노드-간선 위상(node-edge topology)에 의해서만 결정되는 보편적인 대칭 양의 준정부호(Symmetric Positive Semi-Definite) 행렬이다.</p>
+<p>상기 유도된 라플라시안 시스템 $\hat{L}_{sys} \mathbf{X} = \mathbf{0}$ 은 순수 발산 연산자와 동형이므로 영공간(null space)이 존재한다. 시스템의 유일해를 보장하고 대상 물리계의 기하학적 형태 보존을 위해, 도메인 외부 경계 $\partial \Omega$ 및 내부 이질 매질 계면(interface) $\Gamma$에 속하는 고정 노드 집합 $\mathcal{B}$에 대하여 디리클레 앵커링(Dirichlet anchoring)을 강제한다.해당 고정 노드들에 대해서는 $\hat{L}{sys}$의 해당 행을 항등식으로 치환하고, 참조 좌표계 $\mathbf{X}{ref}$를 강제 구속하여 다음과 같은 전역 경계치 문제(Boundary Value Problem)로 환원한다.</p>
+$$
+\tilde{L}_{sys} \mathbf{X}_{new} = \mathbf{B}_{ref}
+$$<p>여기서 기준점 $\mathbf{X}_{ref}$는 직전 비선형 해석 루프에서 수렴이 확인된 무결성 격자(golden mesh)의 좌표계를 상속함으로써, 동역학적 이력 현상(hysteresis)과 비물리적 진동을 제거한다. 선형 시스템의 역산 $\mathbf{X}_{new} = \tilde{L}_{sys}^{-1} \mathbf{B}_{ref}$ 을 수행하면, 이산 격자의 노드들은 대수적 마찰 $\bar{S}_{kj}$가 높은 공간적 특이점을 향해 유체역학적으로(hydrodynamically) 밀집되며 새로운 조화 평형 상태(harmonic equilibrium)에 도달한다.</p>
+<p>결과적으로 이 능동적 격자 재배치(r-refinement)는 연속계의 1계 레지듀 텐션을 공간적으로 해소하기 위해 이산 공간이 필연적으로 도달해야만 하는 대수적 조화 사상의 투영체로 증명된다. 본 프레임워크는 이 새롭게 확립된 무결점 위상 공간 $\mathbf{X}_{new}$ 위에서 차후 시스템의 비정규성을 전역적으로 교정할 복합 메트릭 $\hat{M}$ 조립 단계로 해석을 이어간다.</p>
+<p>이러한 차원 독립적인 조화 사상이 완료된 후, 새롭게 확립된 좌표계 $\mathbf{X}_{new}$ 위에서 각 노드 $k$가 지배하는 물리적 제어 체적(control volume) $V_k^*$가 산출된다. 이 갱신된 제어 체적들을 대각 성분으로 취하여, 이산 시스템의 전역적 비대칭성을 1차적으로 보정하고 차후 연속계 연산자 대수와 결합할 해석학적 측도 행렬인 듀얼 체적 메트릭(dual volume metric) $\hat{G}$가 최종적으로 선언된다.</p>
+$$
+\hat{G} = \text{diag}(V_0^*, V_1^*, \dots, V_{N-1}^*)
+$$<p>결과적으로 기하학적 메트릭 $\hat{G}$는 자의적인 격자 분할의 산물이 아니라, 연속계의 1계 레지듀 텐션을 해소하기 위해 이산 공간이 필연적으로 도달해야만 하는 대수적 조화 평형(algebraic harmonic equilibrium)의 투영체로 증명된다.</p>
+<hr>
+<h3 id="32-이산-위상-틀어짐과-대수적-텐션-스펙트럼-지표">3.2 이산 위상 틀어짐과 대수적 텐션 스펙트럼 지표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>기하학적 메트릭 $\hat{G}$를 바탕으로, 비선형 자코비안의 동적 비대칭성을 추적하는 스펙트럼 지표 $\hat{C}$를 추출한다. 나아가 2.4절의 벌크-경계 소산 정리(Bulk-Boundary Dissipation Theorem)를 이산 공간으로 투영하여, 이산 유효 연산자(discrete effective operator) $\tilde{L}$을 대칭 및 반대칭 성분으로 분해하고 경계 앵커링을 강제하는 대수적 정규화(algebraic purification) 과정을 수립한다.</p>
+<p><strong>1) 시스템 연산자 보정과 유효 연산자 $\tilde{L}$의 대수적 고립</strong></p>
+<p>이산 격자 상에서 시스템의 비정규성을 교정하기 위해, 기하학적 메트릭 $\hat{G}$와 대각 행렬 $\hat{C}$를 원시 잔차 벡터 $R(u)$에 투영하여 보정된 잔차 시스템 $\tilde{R}(u) = \hat{C}\hat{G}R(u) = 0$을 정의한다. 상태 벡터가 $u$에서 $u+\delta u$로 변할 때 1차 변분(first-order variation)을 전개하여 섭동 $\delta u$를 지배하는 선형 연산자를 추출한다.</p>
+$$
+\tilde{R}(u+\delta u)\approx\tilde{R}(u)+\left(\frac{\partial\hat{C}}{\partial u}\hat{G}R(u)+\hat{C}\frac{\partial\hat{G}}{\partial u}R(u)\right)\delta u+\hat{C}\hat{G}\hat{J}\delta u
+$$<p>여기서 $\hat{J} = \partial R/\partial u$는 프레셰 도함수(Fréchet derivative)로 정의되는 원시 자코비안이다. 뉴턴 반복법을 통해 시스템이 참해에 근접할수록 순수 물리 잔차는 영 벡터에 수렴한다($R(u)\to 0$). 따라서 괄호 안의 프레임워크 변분항(Framework Variation)은 소멸하며, 섭동 $\delta u$의 궤적을 지배하는 유효 자코비안(Effective Jacobian)은 마지막 항 $\tilde{J}=\hat{C}\hat{G}\hat{J}$로 환원된다. 이 변분적 결과는 대수적 보정 지표 $\hat{C}$가 원시 시스템이 아닌 섭동 공간의 자코비안에 직접 적용되어 전처리(Preconditioning)되어야 하는 해석학적 근거를 제공한다.</p>
+<p>고립된 진단 연산자 $\tilde{J}$가 수치적으로 안정된 섭동을 전파하기 위해서는, 2.2절 4)에서 증명된 비선형 자코비안 연산자의 대수적 소멸성 확장을 이산 섭동 공간 위에서 수리적으로 만족시켜야 한다. 그러나 원시 자코비안 행렬 $\hat{J}$는 이산 절단 오차에 의해 도메인 내부 집합 $\mathcal{I}$에서 비영(non-zero) 잔류 레지듀를 발생시킨다. 따라서 보정된 연산자 $\tilde{J}$이 연속계의 대수적 인과율을 회복하기 위한 필요충분조건은, 레지듀 사상 자체를 도메인 내부에서 강제로 영행렬화하여 수반 일관성(adjoint consistency)을 달성하는 것이다.</p>
+$$
+\mathcal{R}(\tilde{J})_{ij}=\tilde{J}_{ij}-\tilde{J}_{ji}=0\quad(\text{for all } i, j\in\mathcal{I})
+$$<p>위 조건에 $\tilde{J} = \hat{C}\hat{G}\hat{J}$를 대입하여 행렬 성분으로 전개하면 $c_i (\hat{G}\hat{J})_{ij} = c_j (\hat{G}\hat{J})_{ji}$ 가 연역된다. 원시 자코비안의 부호 동형성(sign isomorphism)에 기반하여 양변에 로그 사상(log-mapping)을 적용하면, 국소 대수적 비대칭 변위 $b_{ij}$가 추출된다.</p>
+$$
+\ln(c_i) - \ln(c_j) = \ln\left(\frac{(\hat{G}\hat{J})_{ji}}{(\hat{G}\hat{J})_{ij}}\right) \equiv b_{ij}
+$$<p>대수 변환된 변수 $x_i = \ln(c_i)$를 도입하면, 계수 행렬이 공간 차원에 독립적인 위상 연결망 행렬(topological connectivity matrix) $\hat{S}$로 구성된 선형 시스템 $\hat{S}x = b$로 환원된다. 전역 스케일을 확정하기 위해 시스템의 디리클레 경계(Dirichlet boundary) 노드 집합 $\mathcal{B}$에 대하여 $c_k = 1.0 \implies x_k = 0$ 이라는 1차 앵커링(anchoring) 구속 조건을 강제하고 최소자승법을 적용한다. 산출된 해를 역변환($c_i = e^{x_i}$)함으로써 전역 스펙트럼 지표 $\hat{C} = \text{diag}(c)$가 확립되며, 최종적인 총원 유효 연산자 $\tilde{J}$이 완성된다.</p>
+<p><strong>2) 벌크-경계 소산 정리의 이산화</strong></p>
+<p>조립된 유효 자코비안 $\tilde{J}$는 2.4절에 명시된 일반 연산자 공리 $L = H + A$의 대수적 구조를 섭동 공간에서 그대로 상속한다. 즉, 이산 공간 내에서 시스템의 보존적 상호작용을 담당하는 이산 허미션 성분(discrete Hermitian part) $\hat{H}$와 비물리적 수치 소산(numerical dissipation)을 유발하는 이산 반-허미션 성분(discrete anti-Hermitian part) $\hat{A}_{raw}$의 직합으로 유일하게 분해된다.</p>
+$$
+\tilde{J} = \hat{H} + \hat{A}_{raw}
+$$<p>각 성분은 연산자 대수의 기하학적 정의에 따라 다음과 같이 산출된다.</p>
+$$
+\hat{H} = \frac{1}{2} \left( \tilde{J} + \tilde{J}^T \right), \quad \hat{A}_{raw} = \frac{1}{2} \left( \tilde{J} - \tilde{J}^T \right)
+$$<p>이산 격자의 절단 오차는 반대칭 행렬 $\hat{A}_{raw}$에 누적되어 시스템 내부에 가상의 대수적 텐션을 유발한다. 연속계의 벌크-경계 소산 정리에 따르면 물리적 평형계의 내부 벌크 도메인에서는 이러한 비가역적 텐션이 잔류할 수 없으며, 모든 소산은 경계를 통해 배출되어야 한다.4) 반대칭 텐션의 위상적 앵커링 및 정규화 자코비안 조립이산 시스템이 연속계의 벌크-경계 소산 정리를 엄밀하게 준수하도록 강제하기 위해, 물리적 상태가 고정된 디리클레 경계 공간 $\mathcal{B}$ 상에서 반대칭 텐션 성분을 대수적으로 차단하는 2차 앵커링을 수행한다. 경계 노드에서 $0$, 내부 노드에서 $1$을 가지는 대각 투영 행렬 $\hat{M}_s$를 정의한다.</p>
+$$
+(\hat{M}_s)_{ii} = 
+\begin{cases} 
+0, & \text{if } i \in \mathcal{B} \\
+1, & \text{otherwise}
+\end{cases}
+$$<p>이 마스킹 행렬을 반대칭 행렬에 전후 사영(two-sided projection)하여, 내부 도메인 $\mathcal{I}$에만 국한된 순수 반대칭 텐션 $\hat{A}_{int}$를 고립시킨다.</p>
+$$
+\hat{A}_{int} = \hat{M}_s \hat{A}_{raw} \hat{M}_s
+$$<p>이 연산은 외부 경계와 맞닿은 영역에서의 수치적 요동을 강제로 영(0)으로 구속(anchoring)함으로써, 도메인 내부의 잔류 마찰이 경계의 물리적 유량 조건을 오염시키는 것을 수학적으로 차단한다.최종적으로 유효 자코비안에서 이 내부 반대칭 텐션을 차감함으로써, 이산 공간의 수치적 소산이 완전히 정화(purification)된 궁극적인 정규화 자코비안(purified Jacobian) $\hat{J}_{pure}$를 획득한다.</p>
+$$
+\hat{J}_{pure} = \tilde{J} - \hat{A}_{int}
+$$<p>뉴턴-랩슨 반복 해법은 원시 비대칭 자코비안 $\hat{J}$ 대신, 이 정규화된 자코비안 $\hat{J}_{pure}$를 시스템 행렬로 채택하여 섭동 $\delta u$를 산출한다. 본 프레임워크는 변분적 고립, 행렬 분해, 경계 앵커링이라는 적극적인 대수 조작을 통해 스펙트럼 스큐니스(spectral skewness)를 근원적으로 제거하고, 거친 격자망 위에서도 연속계의 대수적 인과율을 엄밀하게 복원한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="parent " data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/a_basis/index.html"><a class="padding" href="/temp/a_basis/index.html">(a) Basis</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_decomposition/index.html"><a class="padding" href="/temp/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_derivation/index.html"><a class="padding" href="/temp/b_adjoint_derivation/index.html">(b) Adjoint &amp; Residue transformation</a></li>
+            <li class="" data-nav-id="/temp/b_generalization/index.html"><a class="padding" href="/temp/b_generalization/index.html">(b) Generalization</a></li>
+            <li class="" data-nav-id="/temp/i_lsi/index.html"><a class="padding" href="/temp/i_lsi/index.html">(i) LSI</a></li>
+            <li class="" data-nav-id="/temp/i_lsi2/index.html"><a class="padding" href="/temp/i_lsi2/index.html">(i) LSI</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/laurents_series/index.html"><a class="padding default-animation" href="/temp/laurents_series/index.html">Lourent&#39;s series</a><ul id="R-subsections-b622dc49c5dbb13575c50ea27a9dcb03" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/preface/index.html"><a class="padding" href="/temp/preface/index.html">Preface</a></li>
+            <li class="" data-nav-id="/temp/b_convolution_i/index.html"><a class="padding" href="/temp/b_convolution_i/index.html">(b) Convolution I</a></li>
+            <li class="" data-nav-id="/temp/b_shift_ii/index.html"><a class="padding" href="/temp/b_shift_ii/index.html">(b) Copy-shift II</a></li>
+            <li class="" data-nav-id="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
+            <li class="" data-nav-id="/temp/b_operator_i/index.html"><a class="padding" href="/temp/b_operator_i/index.html">(b) Operator I</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/algebra_structure/index.html"><a class="padding default-animation" href="/temp/algebra_structure/index.html">Algebra structure for LSI</a><ul id="R-subsections-a739685797281f87672919f683d814d9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/derivation1-copy/index.html"><a class="padding" href="/temp/derivation1-copy/index.html">Derivation3</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/electromotive_force/index.html"><a class="padding default-animation" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/temp/fourier_series/index.html"><a class="padding default-animation" href="/temp/fourier_series/index.html">Fourier series</a><ul id="R-subsections-23cf8ddda8c632c96aa5ff6c0653ec25" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/a_2nd_tensor/index.html"><a class="padding" href="/temp/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/temp/a_mellin_transform_ii/index.html"><a class="padding" href="/temp/a_mellin_transform_ii/index.html">(a) Mellin transform II</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator/index.html"><a class="padding" href="/temp/b_variational_operator/index.html">(b) Variational Operator I</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator_ii/index.html"><a class="padding" href="/temp/b_variational_operator_ii/index.html">(b) Variational Operator II</a></li>
+            <li class="" data-nav-id="/temp/series/index.html"><a class="padding" href="/temp/series/index.html">Series</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/transformation/index.html"><a class="padding default-animation" href="/temp/transformation/index.html">Transformation</a><ul id="R-subsections-7c83dcb82857ce3ae0d42995afa71ed6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
+            <li class="" data-nav-id="/temp/b_continuous/index.html"><a class="padding" href="/temp/b_continuous/index.html">(b) Continuous</a></li>
+            <li class="" data-nav-id="/temp/b_i-unitary/index.html"><a class="padding" href="/temp/b_i-unitary/index.html">(b) I-unitary</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/temp/b_matrix_kernel/index.html"><a class="padding" href="/temp/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
+            <li class="" data-nav-id="/temp/b_uniqueness/index.html"><a class="padding" href="/temp/b_uniqueness/index.html">(b) Uniqueness</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/research_pa/index.html"><a class="padding default-animation" href="/temp/research_pa/index.html">Research_PA</a><ul id="R-subsections-43c0690e9c0a21f00234bb0ace84331c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_gauge_freedom/index.html"><a class="padding" href="/temp/b_gauge_freedom/index.html">(b) Gauge Freedom</a></li>
+            <li class="" data-nav-id="/temp/b_generator_ii/index.html"><a class="padding" href="/temp/b_generator_ii/index.html">(b) Generator II</a></li>
+            <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii-copy/index.html"><a class="padding" href="/temp/b_laplace_transform_ii-copy/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii/index.html"><a class="padding" href="/temp/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_syntax/index.html"><a class="padding" href="/temp/b_syntax/index.html">(b) Syntax</a></li>
+            <li class="" data-nav-id="/temp/b_dilation/index.html"><a class="padding" href="/temp/b_dilation/index.html">(b) Dilation</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_i/index.html"><a class="padding" href="/temp/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-id="/temp/gc_operation/index.html"><a class="padding" href="/temp/gc_operation/index.html">[GC] Operation</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding default-animation" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li>
+            <li class="" data-nav-id="/temp/theory1/index.html"><a class="padding" href="/temp/theory1/index.html">(b) Theory</a></li>
+            <li class="" data-nav-id="/temp/p_circuit_examples_for_fs/index.html"><a class="padding" href="/temp/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li>
+            <li class="" data-nav-id="/temp/theory2/index.html"><a class="padding" href="/temp/theory2/index.html">(b) Theory2</a></li>
+            <li class="" data-nav-id="/temp/theory3-copy/index.html"><a class="padding" href="/temp/theory3-copy/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory3/index.html"><a class="padding" href="/temp/theory3/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory4/index.html"><a class="padding" href="/temp/theory4/index.html">(b) Theory4</a></li>
+            <li class="" data-nav-id="/temp/chapter2/index.html"><a class="padding" href="/temp/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-id="/temp/b_linearization/index.html"><a class="padding" href="/temp/b_linearization/index.html">(b) Linearization</a></li>
+            <li class="parent alwaysopen " data-nav-id="/temp/research_na/index.html"><a class="padding default-animation" href="/temp/research_na/index.html">Research_NA</a><ul id="R-subsections-234820bc0d55ee914269e52b4bd69ed8" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/research_na/theory1/index.html"><a class="padding" href="/temp/research_na/theory1/index.html">(b) Theory1</a></li>
+            <li class="" data-nav-id="/temp/research_na/theory2/index.html"><a class="padding" href="/temp/research_na/theory2/index.html">(b) Theory 2</a></li>
+            <li class="" data-nav-id="/temp/research_na/outline/index.html"><a class="padding" href="/temp/research_na/outline/index.html">OUTLINE</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter1/index.html"><a class="padding" href="/temp/research_na/chapter1/index.html">CHAPTER 1</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter2/index.html"><a class="padding" href="/temp/research_na/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="active " data-nav-id="/temp/research_na/chapter3/index.html"><a class="padding" href="/temp/research_na/chapter3/index.html">CHAPTER 3</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter4/index.html"><a class="padding" href="/temp/research_na/chapter4/index.html">CHAPTER 4</a></li>
+            <li class="" data-nav-id="/temp/research_na/appendix_a/index.html"><a class="padding" href="/temp/research_na/appendix_a/index.html">Appendix</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

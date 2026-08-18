@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>수리전자물리학</title>
+    <link>http://localhost:1313/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector &amp; Operator</title>
+      <link>http://localhost:1313/vector_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/index.html</guid>
+      <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Combining spaces Resolvent operator Variation Function of operators</description>
+    </item>
+    <item>
+      <title>Complex Analysis</title>
+      <link>http://localhost:1313/complex_analysis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/complex_analysis/index.html</guid>
+      <description>(b) Multivalued function</description>
+    </item>
+    <item>
+      <title>Lie theory</title>
+      <link>http://localhost:1313/lie_theory/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_theory/index.html</guid>
+      <description>Calculus Lie group &amp; algebra Operators (b) Noether&#39;s theorem</description>
+    </item>
+    <item>
+      <title>Lie group2</title>
+      <link>http://localhost:1313/lie_group2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_group2/index.html</guid>
+      <description>함수, 벡터, 연산자 대수 구조: 군/환/체 다양체와 매개변수 리 군과 예제 행렬 미분 1매개변수 부분군과 준동형 사상</description>
+    </item>
+    <item>
+      <title>Lie group3</title>
+      <link>http://localhost:1313/lie_group3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lie_group3/index.html</guid>
+      <description>약자와 표기 약속 군의 기초 복습 매끄러운 다양체 접공간 스펙트럼 분해와 바이듀얼 표기 리 군이란 컴팩트성과 연결성 가환과 비가환 연속 대칭의 합성 — 준동형의 물리적 동기 1-매개변수 부분군의 정의 테일러 전개와 생성자 — 항등원의 특수성 생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 항등원에서의 접공간 = 리 대수 리 대수 ↔ 1-매개변수 부분군 1:1 대응 교환자와 리 괄호 — 비가환성의 무한소 표현 리 대수의 공리 컴팩트 연결의 경우 — 전사성 증명과 직관 비컴팩트의 경우 — 지수의 곱 필요 비연결의 경우 — 이산 변환 추가</description>
+    </item>
+    <item>
+      <title>Exterir algebra</title>
+      <link>http://localhost:1313/exterior_algebra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/exterior_algebra/index.html</guid>
+      <description>동기: 왜 반대칭이 중요한가 다중선형성과 반대칭 쐐기곱의 정의 외대수의 기저와 차원 행렬식의 진정한 의미 미분형식: 1-form 고차 미분형식: k-form 외미분 d 외미분과 벡터 미적분 미분형식의 적분 Stokes 정리 de Rham 코호몰로지 Hodge 별표 응용: Maxwell, 심플렉틱, Berry, Noether</description>
+    </item>
+    <item>
+      <title>Linear system</title>
+      <link>http://localhost:1313/linear_system/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/index.html</guid>
+      <description>LSI LScI LAI</description>
+    </item>
+    <item>
+      <title>ODE &amp; PDE</title>
+      <link>http://localhost:1313/ode_pde/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ode_pde/index.html</guid>
+      <description>Homogeneous Inhomogeneous (p) Circuit examples for ODEs Special ODEs Strum-Lioville Seperation of variables Green function Transformation Uniqueness theorem</description>
+    </item>
+    <item>
+      <title>Green&#39;s function</title>
+      <link>http://localhost:1313/greens_function/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/greens_function/index.html</guid>
+      <description>GF NEGF</description>
+    </item>
+    <item>
+      <title>Geometric algebra</title>
+      <link>http://localhost:1313/geometric_algebra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/geometric_algebra/index.html</guid>
+      <description>Einstein notation (b) Space &amp; Vector &amp; Tensor (i) Total derivative &amp; Gradient Calculus Orthogonal coordinates</description>
+    </item>
+    <item>
+      <title>Tensor analysis</title>
+      <link>http://localhost:1313/tensor_analysis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tensor_analysis/index.html</guid>
+      <description>Operation Calculus Basis transformation (a) Mapping Metric tensor Coordinate transformation [GC] Calculus</description>
+    </item>
+    <item>
+      <title>Numerial analysis</title>
+      <link>http://localhost:1313/numerial_analysis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/numerial_analysis/index.html</guid>
+      <description>(b) Universal operators (b) 1D FVM</description>
+    </item>
+    <item>
+      <title>Electromagnetics</title>
+      <link>http://localhost:1313/electromagnetics/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/electromagnetics/index.html</guid>
+      <description>Electromotive force</description>
+    </item>
+    <item>
+      <title>Quantum transprt</title>
+      <link>http://localhost:1313/quantum_transform/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/quantum_transform/index.html</guid>
+      <description>(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering</description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/research/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/index.html</guid>
+      <description>PIN</description>
+    </item>
+    <item>
+      <title>Semiconductors</title>
+      <link>http://localhost:1313/semiconductor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semiconductor/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Temps</title>
+      <link>http://localhost:1313/temp/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

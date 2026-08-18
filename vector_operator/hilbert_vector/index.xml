@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hilbert vector :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/hilbert_vector/index.html</link>
+    <description>(b) Ket (b) Bra (b) Group &amp; Ring &amp; Field (b) Hilbert space (b) Riesz representation theorem</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/hilbert_vector/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Ket</title>
+      <link>http://localhost:1313/vector_operator/hilbert_vector/b_ket/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/hilbert_vector/b_ket/index.html</guid>
+      <description>1. 벡터의 본질&#xD;우리가 수학과 물리학에서 다루는 많은 대상은 ‘벡터(vector)’ 라는 개념으로 통합될 수 있다. 벡터라고 하면 보통 화살표를 떠올리지만, 그 본질은 ‘덧셈’과 ‘스칼라 곱’이라는 두 가지 규칙이 성립하는 대상들의 집합을 의미한다. 이러한 대상들이 모여 있는 놀이터를 벡터 공간(Vector Space) 이라고 부른다.&#xA;덧셈: 두 벡터를 더해 새로운 벡터를 만들 수 있다. (화살표 A + 화살표 B = 새로운 화살표 C) 스칼라 곱: 벡터에 숫자를 곱해 길이를 늘리거나 줄일 수 있다. (2 x 화살표 A = 방향은 같고 길이가 두 배인 화살표) 이 규칙만 만족한다면 화살표뿐만 아니라, 다항식, 음파, 심지어 주식 포트폴리오 같은 것들도 모두 벡터로 취급할 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Bra</title>
+      <link>http://localhost:1313/vector_operator/hilbert_vector/b_bra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/hilbert_vector/b_bra/index.html</guid>
+      <description>1. 선형 범함수, 벡터에서 숫자를 추출하는 기계&#xD;이전 챕터에서 세상의 다양한 대상을 $|v\rangle$라는 Ket 벡터로 표현하는 법을 배웠다. 하지만 추상적인 벡터만으로는 부족하다. 우리는 벡터로부터 위치, 운동량, 에너지, 확률 같은 구체적인 숫자(스칼라) 를 얻어내고 싶어 한다.&#xA;이처럼 벡터 공간의 벡터를 입력으로 받아, 스칼라를 출력하는 특별한 종류의 ‘함수’를 범함수(Functional) 라고 부른다. 이 두 가지 규칙을 합쳐 선형성(Linearity) 이라고 한다. 범함수가 벡터의 덧셈과 스칼라 곱 연산을 그대로 보존해준다는 의미를 가진다.</description>
+    </item>
+    <item>
+      <title>(b) Group &amp; Ring &amp; Field</title>
+      <link>http://localhost:1313/vector_operator/hilbert_vector/b_group_ring_field/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/hilbert_vector/b_group_ring_field/index.html</guid>
+      <description>구조 (Structure) 대상 집합 제1연산 ($+$) 제2연산 ($\times$) 추가된 핵심 공리 예시 (Examples) 반군 (Semigroup) $S$ 임의 ($*$) 없음 결합법칙 (Associativity) 자연수 집합 $(\mathbb{N}, +)$ 모노이드 (Monoid) $M$ 임의 ($*$) 없음 항등원 ($e$) 존재 $0$을 포함한 자연수 $(\mathbb{N}_0, +)$ 군 (Group) $G$ 임의 ($*$) 없음 역원 ($x^{-1}$) 존재 회전군, 대칭군 가환군 (Abelian) $V$ 가환 ($+$) 없음 교환법칙 (Commutativity) 벡터의 합, 정수 덧셈 환 (Ring) $R$ 가환 ($+$) 임의 ($\times$) 분배법칙 ($+$, $\times$ 연결) 행렬(Matrix), 정수 집합 체 (Field) $F$ 가환 ($+$) 가환 ($\times$) 제2연산 가환 및 역원($\div$) 실수($\mathbb{R}$), 복소수($\mathbb{C}$) 1. 이항연산자&#xD;이 문서에서 사용하는 기호 $+$, $-$, $\times$, $\div$ 는 통상적인 사칙연산을 넘어, 대수적 구조의 확장을 설명하기 위해 다음과 같이 정의된 임의의 연산자(Arbitrary Operator) 를 의미한다.</description>
+    </item>
+    <item>
+      <title>(b) Hilbert space</title>
+      <link>http://localhost:1313/vector_operator/hilbert_vector/b_hilbert_space/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/hilbert_vector/b_hilbert_space/index.html</guid>
+      <description>Ket($| \psi \rangle$)과 Bra($\langle \phi |$)는 일반적으로 힐버트 공간(Hilbert Space)의 원소라고 하나, 이 문서에서는 특정 공간에 관계없는 벡터의 표기법으로 사용한다.&#xA;1. 위상 벡터 공간(Topological Vector Spaces) 구조&#xD;벡터 공간 ⊃ 노름 공간 ⊃ {내적 공간, 바나흐 공간} ⊃ 힐버트 공간 ⊃ 실체 공간 ( 유클리드 공간, L2 공간 …)&#xA;1) 벡터 공간 (Vector Space)&#xA;덧셈과 스칼라 곱 연산이 정의되는 가장 기초적인 공간. 2) 노름 공간 (Normed Space)</description>
+    </item>
+    <item>
+      <title>(b) Riesz representation theorem</title>
+      <link>http://localhost:1313/vector_operator/hilbert_vector/b_riesz/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/hilbert_vector/b_riesz/index.html</guid>
+      <description>1. 디렉 표기법과의 연결 고리&#xD;Bra의 작용: 쌍대공간 $V^\ast$의 원소 $\langle f|$ 가 원래 공간 V의 원소 $|v\rangle$ 에 작용하는 것, $\langle f|v\rangle$ 내적: 원래 공간 V의 두 원소 $|f\rangle$와 $|v\rangle$ 사이의 기하학적 관계, $\langle f,v\rangle$. 두 표기법이 너무나 비슷하게 생겼다는 것은 우연이 아니다. 힐베르트 공간에서는 이 둘을 하나로 묶어주는 운명적인 연결고리가 있으며, 그 연결고리의 이름이 바로 리즈 표현 정리(Riesz Representation Theorem) 이다.</description>
+    </item>
+  </channel>
+</rss>

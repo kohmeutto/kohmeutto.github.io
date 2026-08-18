@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 시간 영역 통합 framework 의 필요성지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^&lt;, G^&gt;$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.
+첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Keldysh contour formalism :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 시간 영역 통합 framework 의 필요성지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^&lt;, G^&gt;$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.
+첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/negf/b_keldysh_contour/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Keldysh contour formalism :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 시간 영역 통합 framework 의 필요성지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^&lt;, G^&gt;$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.
+첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Keldysh contour formalism :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 시간 영역 통합 framework 의 필요성지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^&lt;, G^&gt;$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.
+첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.">
+    <meta itemprop="wordCount" content="1921">
+    <title>(b) Keldysh contour formalism :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/negf\/b_keldysh_contour\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/negf/b_keldysh_contour/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-시간-영역-통합-framework-의-필요성">1. 동기: 시간 영역 통합 framework 의 필요성</a></li>
+        <li><a href="#2-time-evolution-과-keldysh-contour">2. Time evolution 과 Keldysh contour</a></li>
+        <li><a href="#3-contour-ordered-greens-function">3. Contour-ordered Green&rsquo;s function</a></li>
+        <li><a href="#4-4-gfs-사이의-관계">4. 4 GFs 사이의 관계</a></li>
+        <li><a href="#5-contour-dyson-방정식">5. Contour Dyson 방정식</a></li>
+        <li><a href="#6-contour-formalism-의-확장성">6. Contour formalism 의 확장성</a></li>
+        <li><a href="#7-정리-두-가지-동등한-perspective">7. 정리: 두 가지 동등한 perspective</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/negf/index.html"><span itemprop="name">NEGF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Keldysh contour formalism</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_dyson_self_energy/index.html" title="(b) Dyson equation and self-energy (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_langreth_rules/index.html" title="(b) Langreth rules (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-keldysh-contour-formalism">(b) Keldysh contour formalism</h1>
+
+<hr>
+<h3 id="1-동기-시간-영역-통합-framework-의-필요성">1. 동기: 시간 영역 통합 framework 의 필요성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지의 NEGF 접근은 에너지 영역에서 정상상태를 가정했다. 4 개의 그린함수 $G^R, G^A, G^<, G^>$ 를 별개의 객체로 도입하고, 각각의 Dyson 또는 Keldysh 방정식을 따로 다뤘다. 이 접근은 정상상태 비평형에서 잘 작동하지만, 두 가지 한계를 갖는다.</p>
+<p>첫째, 시간 의존 시스템 — 시간에 따라 변하는 외부 장이 있거나, 초기 transient 응답을 관심하는 경우 — 에서는 에너지 영역으로의 단순한 Fourier 변환이 불가능하다. 시간 영역에서 직접 다뤄야 한다.</p>
+<p>둘째, 4 그린함수가 서로 독립적인 객체가 아니라 단일 수학 구조의 서로 다른 측면이라는 사실이 명시적으로 드러나지 않는다. 이들의 통합적 처리가 가능한 framework 이 있다면 더 자연스럽고, 상호작용이 있는 다체 시스템으로의 확장도 명확해진다.</p>
+<p><strong>Keldysh contour formalism</strong> 이 이 통합 framework 을 제공한다. 핵심 아이디어는 시간을 forward 와 backward 두 방향으로 한 번씩 진행시키는 contour 위에 모든 객체를 정의하는 것이다. 이렇게 하면</p>
+<ul>
+<li>단일 객체 $G^c(\tau, \tau')$ 가 4 그린함수 모두를 component 로 포함</li>
+<li>Contour 위의 Dyson 방정식이 모든 real-time 방정식을 단일로 표현</li>
+<li>시간 의존 / 상호작용 시스템으로 자연스럽게 확장</li>
+</ul>
+<p>이 절에서는 contour 의 도입, contour-ordered 그린함수의 정의, 그리고 4 그린함수가 어떻게 contour 위 단일 객체의 component 로 등장하는지를 정리한다.</p>
+<hr>
+<h3 id="2-time-evolution-과-keldysh-contour">2. Time evolution 과 Keldysh contour<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 비평형에서의 시간 진화 문제</strong></p>
+<p>양자역학에서 시간 진화 연산자</p>
+$$
+U(t, t_0) = T\exp\Bigl[-\frac{i}{\hbar}\int_{t_0}^t dt'\,H(t')\Bigr]
+$$<p>가 시각 $t_0$ 에서 $t$ 로의 진화를 표현한다 ($T$ 는 시간 순서 정렬).</p>
+<p>시각 $t$ 에서 임의 단일 입자 관측량의 평균값은 Heisenberg picture 에서</p>
+$$
+\langle\hat O(t)\rangle = \text{Tr}\bigl[\hat\rho_0\,\hat O_H(t)\bigr] = \text{Tr}\bigl[\hat\rho_0\,U^\dagger(t, t_0)\,\hat O\,U(t, t_0)\bigr]
+$$<p>여기서 $\hat\rho_0$ 는 초기 시각 $t_0$ 의 밀도 행렬, $\hat O_H(t) = U^\dagger(t, t_0)\hat O\,U(t, t_0)$ 는 Heisenberg 연산자.</p>
+<p>이 표현에서 $U(t, t_0)$ 와 $U^\dagger(t, t_0) = U(t_0, t)$ 가 모두 등장하는 것에 주목하자. 오른쪽의 $U(t, t_0)$ 는 시간을 $t_0$ 에서 $t$ 로 forward 진행시키고, 왼쪽의 $U^\dagger(t, t_0)$ 는 다시 $t$ 에서 $t_0$ 로 backward 진행시킨다.</p>
+<p><strong>2) Forward와 backward 시간 경로</strong></p>
+<p>평형 시스템에서는 이 forward + backward 구조를 자연스럽게 압축할 수 있다. 평형 밀도 행렬 $\hat\rho_{eq} = e^{-\beta H}/Z$ 가 시간 진화 연산자와 같은 형태 ($-\beta H$ 가 허수 시간 $-i\beta\hbar$ 의 진화에 해당) 이므로, 전체를 단일 (Matsubara) 시간 적분으로 통합 가능하다.</p>
+<p>비평형에서는 이 단순화가 불가능하다. 초기 밀도 행렬이 일반적이고, 외부 driving 이 시간 의존이므로 forward 와 backward 경로가 별개로 등장해야 한다. 이 두 시간 경로를 합쳐서 다음과 같이 시각화한다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>        forward branch C_+
+t_0  ───────────────────────►  t
+                              ║
+                              ║ (turning point)
+t_0  ◄───────────────────────  t
+        backward branch C_-</code></pre></div>
+<p>위쪽 forward branch 와 아래쪽 backward branch 가 시각 $t$ 에서 만난다. 시간 변수 자체가 단순한 실수가 아니라 이 contour 위의 변수로 일반화된다.</p>
+<p><strong>3) Contour 위의 시간 변수</strong></p>
+<p>Contour 위의 변수 $\tau$ 는 두 가지 정보를 담는다.</p>
+<ul>
+<li><strong>시간 값</strong> $t(\tau)$: 실수 시각</li>
+<li><strong>Branch 라벨</strong>: $\tau$ 가 forward branch $C_+$ 또는 backward branch $C_-$ 중 어느 쪽에 있는가</li>
+</ul>
+<p>두 점 $\tau, \tau'$ 의 contour 위에서의 순서 ($\tau >_c \tau'$ 또는 $\tau <_c \tau'$) 는 다음 규칙으로 결정된다.</p>
+<ul>
+<li>둘 다 $C_+$ 위: 시간이 클수록 contour 위에서 나중. $t > t'$ ⇔ $\tau >_c \tau'$</li>
+<li>둘 다 $C_-$ 위: 시간이 작을수록 contour 위에서 나중. $t < t'$ ⇔ $\tau >_c \tau'$</li>
+<li>$\tau \in C_-, \tau' \in C_+$: $C_-$ 가 항상 $C_+$ 보다 contour 위에서 나중. 시간과 무관하게 $\tau >_c \tau'$</li>
+<li>$\tau \in C_+, \tau' \in C_-$: 반대로 $\tau <_c \tau'$</li>
+</ul>
+<p>이 ordering 을 <strong>contour ordering</strong> 이라 한다.</p>
+<hr>
+<h3 id="3-contour-ordered-greens-function">3. Contour-ordered Green&rsquo;s function<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 정의</strong></p>
+<p>Contour 위에서 정의되는 단일 객체로 다음을 도입한다.</p>
+$$
+\boxed{G^c(\tau, \tau'; x, x') := -i\langle T_c\bigl[\hat\psi(\tau, x)\,\hat\psi^\dagger(\tau', x')\bigr]\rangle}
+$$<p>여기서 $T_c$ 는 <strong>contour ordering 연산자</strong> 로, contour 위에서 나중인 변수를 왼쪽으로 정렬한다.</p>
+$$
+T_c[\hat A(\tau)\,\hat B(\tau')] = \begin{cases} \hat A(\tau)\,\hat B(\tau') & \tau >_c \tau' \\ \pm\,\hat B(\tau')\,\hat A(\tau) & \tau <_c \tau' \end{cases}
+$$<p>부호: 페르미온 $-$, 보존 $+$.</p>
+<p><strong>2) 4 가지 component</strong></p>
+<p>$\tau, \tau'$ 의 branch 조합에 따라 $G^c$ 가 4 가지 case 로 나뉜다.</p>
+<p><strong>Case 1: 둘 다 forward branch ($\tau, \tau' \in C_+$)</strong></p>
+<p>이 경우 $\tau$ 와 $\tau'$ 의 contour ordering 이 일반 시간 ordering 과 같다. 따라서</p>
+$$
+G^c(\tau, \tau') = G^T(t, t') := -i\,\langle T[\hat\psi(t, x)\,\hat\psi^\dagger(t', x')]\rangle
+$$<p>여기서 $T$ 는 일반 시간 ordering 연산자. 이 객체를 <strong>time-ordered 그린함수</strong> 라 한다.</p>
+<p><strong>Case 2: 둘 다 backward branch ($\tau, \tau' \in C_-$)</strong></p>
+<p>이 경우 contour ordering 이 시간 ordering 과 반대이다. 따라서</p>
+$$
+G^c(\tau, \tau') = G^{\tilde T}(t, t') := -i\,\langle\bar T[\hat\psi(t, x)\,\hat\psi^\dagger(t', x')]\rangle
+$$<p>여기서 $\bar T$ 는 anti-time ordering 연산자 (시간이 작은 변수를 왼쪽으로 정렬). 이 객체를 <strong>anti-time-ordered 그린함수</strong> 라 한다.</p>
+<p><strong>Case 3: $\tau \in C_+, \tau' \in C_-$</strong></p>
+<p>이 경우 $\tau <_c \tau'$ 이므로 contour ordering 으로 페르미온이 swap with sign:</p>
+$$
+G^c(\tau, \tau') = -i\cdot(-\langle\hat\psi^\dagger(t', x')\,\hat\psi(t, x)\rangle) = i\,\langle\hat\psi^\dagger(t', x')\,\hat\psi(t, x)\rangle = G^<(t, t')
+$$<p>(이전 절에서 정의한 lesser 그린함수.)</p>
+<p><strong>Case 4: $\tau \in C_-, \tau' \in C_+$</strong></p>
+<p>이 경우 $\tau >_c \tau'$ 이므로 contour ordering 이 그대로 유지:</p>
+$$
+G^c(\tau, \tau') = -i\,\langle\hat\psi(t, x)\,\hat\psi^\dagger(t', x')\rangle = G^>(t, t')
+$$<p>(greater 그린함수.)</p>
+<p><strong>3) 4 component 의 정리</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Branch 조합</th>
+          <th>$G^c$</th>
+          <th>이름</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$(C_+, C_+)$</td>
+          <td>$G^T(t, t')$</td>
+          <td>Time-ordered</td>
+      </tr>
+      <tr>
+          <td>$(C_-, C_-)$</td>
+          <td>$G^{\tilde T}(t, t')$</td>
+          <td>Anti-time-ordered</td>
+      </tr>
+      <tr>
+          <td>$(C_+, C_-)$</td>
+          <td>$G^<(t, t')$</td>
+          <td>Lesser</td>
+      </tr>
+      <tr>
+          <td>$(C_-, C_+)$</td>
+          <td>$G^>(t, t')$</td>
+          <td>Greater</td>
+      </tr>
+  </tbody>
+</table>
+<p>4 개의 그린함수가 모두 single $G^c$ 안에 component 로 포함된다.</p>
+<hr>
+<h3 id="4-4-gfs-사이의-관계">4. 4 GFs 사이의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Contour formalism 에서 도입된 $G^T, G^{\tilde T}$ 는 새로운 객체이지만, $G^<, G^>$ 와 단순한 관계로 연결된다.</p>
+<p><strong>1) Time-ordered 와 anti-time-ordered 의 분해</strong></p>
+<p>$G^T(t, t') = -i\langle T[\hat\psi(t)\hat\psi^\dagger(t')]\rangle$ 을 시간 순서에 따라 풀어쓴다.</p>
+<p>$t > t'$ 일 때: $T$ 가 ordering 유지. $G^T = -i\langle\hat\psi(t)\hat\psi^\dagger(t')\rangle = G^>(t, t')$.</p>
+<p>$t < t'$ 일 때: $T$ 가 swap with sign. $G^T = -i\cdot(-\langle\hat\psi^\dagger(t')\hat\psi(t)\rangle) = i\langle\hat\psi^\dagger\hat\psi\rangle = G^<(t, t')$.</p>
+<p>종합하면</p>
+$$
+G^T(t, t') = \theta(t - t')\,G^>(t, t') + \theta(t' - t)\,G^<(t, t')
+$$<p>비슷한 도출로 anti-time-ordered:</p>
+$$
+G^{\tilde T}(t, t') = \theta(t - t')\,G^<(t, t') + \theta(t' - t)\,G^>(t, t')
+$$<p><strong>2) Retarded 와 advanced 그린함수와의 관계</strong></p>
+<p>$G^R(t, t') = \theta(t - t')[G^>(t, t') - G^<(t, t')]$ (이전 절의 정의).</p>
+<p>$G^T - G^<$ 를 계산하면</p>
+$$
+G^T - G^< = \theta(t-t')G^> + \theta(t'-t)G^< - G^< = \theta(t-t')G^> - \theta(t-t')G^< = \theta(t-t')[G^> - G^<] = G^R
+$$<p>비슷하게</p>
+$$
+G^A(t, t') = G^<(t, t') - G^{\tilde T}(t, t')
+$$<p><strong>3) 4 component 의 독립성</strong></p>
+<p>위 관계들을 정리하면 다음과 같은 관계 표가 얻어진다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>관계</th>
+          <th>표현</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$G^T + G^{\tilde T}$</td>
+          <td>$G^> + G^<$</td>
+      </tr>
+      <tr>
+          <td>$G^T - G^{\tilde T}$</td>
+          <td>$(G^> - G^<)\,\text{sgn}(t-t')$</td>
+      </tr>
+      <tr>
+          <td>$G^R$</td>
+          <td>$G^T - G^< = G^> - G^{\tilde T}$</td>
+      </tr>
+      <tr>
+          <td>$G^A$</td>
+          <td>$G^< - G^{\tilde T} = G^T - G^>$</td>
+      </tr>
+      <tr>
+          <td>$G^R - G^A$</td>
+          <td>$G^> - G^<$ (Keldysh 항등식)</td>
+      </tr>
+  </tbody>
+</table>
+<p>4 component 중 독립은 3 개 — 보통 $G^R, G^A, G^<$ 를 1 차 객체로 다루고 $G^>, G^T, G^{\tilde T}$ 를 도출한다.</p>
+<p><strong>4) Keldysh 항등식의 재확인</strong></p>
+<p>이전 절에서 도입한 Keldysh 항등식</p>
+$$
+G^R(t, t') - G^A(t, t') = G^>(t, t') - G^<(t, t')
+$$<p>이 contour formalism 의 자연스러운 귀결로 얻어진다. $G^R = G^> - G^{\tilde T}$ 와 $G^A = G^< - G^{\tilde T}$ 에서 $G^R - G^A = G^> - G^<$.</p>
+<hr>
+<h3 id="5-contour-dyson-방정식">5. Contour Dyson 방정식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) Contour 위에서의 self-energy</strong></p>
+<p>시스템이 환경과 결합되어 있을 때, contour 위에서의 self-energy $\Sigma^c(\tau, \tau')$ 가 정의된다. $G^c$ 와 마찬가지로 4 component 를 갖는다.</p>
+$$
+\Sigma^T(t, t'), \quad \Sigma^{\tilde T}(t, t'), \quad \Sigma^<(t, t'), \quad \Sigma^>(t, t')
+$$<p>각 component 는 환경의 contour-ordered 그린함수로부터 도출된다 — 이전 절의 $\Sigma^R = V\,g_e^R\,V^\dagger$ 와 비슷한 표현이 contour 위에서 일반화된다.</p>
+<p><strong>2) Contour Dyson 방정식의 형태</strong></p>
+<p>Contour 위에서의 Dyson 방정식은 다음 단일 표현이다.</p>
+$$
+\boxed{G^c(\tau, \tau') = G_0^c(\tau, \tau') + \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau')}
+$$<p>여기서 $\int_C$ 는 contour 위에서의 적분 — forward branch 적분 + backward branch 적분.</p>
+<p>이 단일 방정식이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현이다. 각 real-time 방정식은 contour Dyson 방정식의 component 를 추출하면 얻어진다.</p>
+<p><strong>3) Real-time 방정식의 도출</strong></p>
+<p>Contour Dyson 방정식에서 $\tau, \tau'$ 의 branch 를 지정하면 real-time 방정식이 도출된다. 그러나 contour 적분 $\int_C d\tau_1$ 이 forward 와 backward 양쪽 branch 를 지나므로, 단순히 branch 를 지정하는 것 이상의 분석이 필요하다 — 이것이 <strong>Langreth 룰</strong> 이다.</p>
+<p>예를 들어 contour Dyson 방정식의 $(C_+, C_+)$ component 를 추출하면</p>
+$$
+G^T = G_0^T + (\text{내부 적분} \quad \tau_1\,\text{이} \quad C_+ \quad \text{또는} \quad C_- \quad \text{을 지나는 모든 경우의 합})
+$$<p>내부 변수 $\tau_1$ 이 $C_+$ 일 때와 $C_-$ 일 때를 모두 합쳐야 하며, 이 합의 결과가 retarded Dyson 방정식 $G^R = G_0^R + G_0^R \Sigma^R G^R$ 의 자연스러운 표현이 된다. 자세한 룰은 다음 절에서 다룬다.</p>
+<p><strong>4) 정상상태에서의 환원</strong></p>
+<p>시스템이 정상상태에 있고 시간 의존성이 없으면, $G^c(\tau, \tau')$ 가 시간 차이 $t - t'$ 에만 의존한다. Fourier 변환 후 에너지 영역에서</p>
+<ul>
+<li>$(C_+, C_+)$: $G^T(E)$</li>
+<li>$(C_-, C_-)$: $G^{\tilde T}(E)$</li>
+<li>$(C_+, C_-)$: $G^<(E)$</li>
+<li>$(C_-, C_+)$: $G^>(E)$</li>
+</ul>
+<p>이전 절에서 다룬 방정식들 — 에너지 영역 Dyson 방정식과 Keldysh 방정식 — 이 회복된다.</p>
+<hr>
+<h3 id="6-contour-formalism-의-확장성">6. Contour formalism 의 확장성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Keldysh formalism 의 강점은 정상상태가 아닌 상황에서도 일관된 framework 으로 작동한다는 점이다.</p>
+<p><strong>1) 시간 의존 외부 장</strong></p>
+<p>$H(t) = H_0 + V_{\text{ext}}(t)$ — 외부 장 $V_{\text{ext}}(t)$ 가 시간 의존인 시스템. 예: gate voltage switching, AC bias, 펄스 레이저 자극.</p>
+<p>이 경우 $G^c(\tau, \tau')$ 가 두 시간 $t, t'$ 의 일반 함수 (시간 차이만의 함수 아님). 그러나 contour Dyson 방정식의 구조는 그대로 유지된다. 시간 영역에서 직접 풀이가 필요하며, 에너지 영역의 단순 Fourier 변환은 가능하지 않다.</p>
+<p><strong>2) Transient 응답</strong></p>
+<p>특정 시각 $t_0$ 에서 외부 장이 켜졌을 때, $t > t_0$ 의 transient 응답. 정상상태로의 수렴 과정이 $G^c$ 의 시간 의존성에 담긴다.</p>
+<p>특히 시간 의존 분포 함수의 진화가 $G^<$ 를 통해 추적된다. 정상상태로 가는 동안 분포가 어떻게 변화하는지의 자세한 정보가 얻어진다.</p>
+<p><strong>3) 상호작용 시스템 (다체 NEGF)</strong></p>
+<p>Keldysh formalism 의 가장 강력한 응용은 상호작용이 있는 다체 시스템이다. 상호작용 self-energy $\Sigma^c$ 가 perturbative 다이어그램으로 계산되며, 평형 양자장 이론의 Feynman 다이어그램 룰이 contour 위로 일반화된다.</p>
+<p>이러한 확장된 응용은 후속 챕터에서 자세히 다룬다.</p>
+<hr>
+<h3 id="7-정리-두-가지-동등한-perspective">7. 정리: 두 가지 동등한 perspective<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>NEGF 는 두 가지 동등한 접근으로 정리된다.</p>
+<p><strong>(1) Energy-domain perspective</strong> (이전 절들에서 다룬 것)</p>
+<ul>
+<li>정상상태 가정에서 Fourier 변환 사용</li>
+<li>$G^R(E), G^A(E), G^<(E), G^>(E)$ 가 1 차 객체</li>
+<li>Dyson 방정식과 Keldysh 방정식이 분리된 형태</li>
+<li>수치 계산에 직접적</li>
+<li>비상호작용 정상상태 문제에 효율적</li>
+</ul>
+<p><strong>(2) Contour-time perspective</strong> (이 절에서 도입)</p>
+<ul>
+<li>Forward + backward time contour</li>
+<li>단일 $G^c(\tau, \tau')$ 로 4 그린함수 통합</li>
+<li>Contour Dyson 방정식이 단일 표현</li>
+<li>시간 의존 / 상호작용 시스템으로 자연 확장</li>
+<li>다체 NEGF 의 표준 framework</li>
+</ul>
+<p>두 perspective 는 같은 물리를 기술하지만, 사용 맥락에 따라 한쪽이 편하다.</p>
+<ul>
+<li><strong>정상상태 + 비상호작용</strong>: energy domain (이전 절들)</li>
+<li><strong>시간 의존 또는 상호작용</strong>: contour time</li>
+<li><strong>두 perspective 의 연결</strong>: 다음 절의 Langreth 룰</li>
+</ul>
+<hr>
+<p><strong>example1) 평형 시스템에서 contour 그린함수 components 확인</strong></p>
+<p>평형 시스템에서 4 그린함수 의 components 가 contour formalism 의 결과와 일치하는지 확인.</p>
+<p>sol)</p>
+<p>평형 분해로부터</p>
+$$
+G^<(t, t') = i\sum_n f(E_n)\,\psi_n(x)\psi_n^*(x')\,e^{-iE_n(t-t')/\hbar}
+$$$$
+G^>(t, t') = -i\sum_n (1-f(E_n))\,\psi_n(x)\psi_n^*(x')\,e^{-iE_n(t-t')/\hbar}
+$$<p>$G^T$ 를 §4 의 표현에서 도출:</p>
+$$
+G^T(t, t') = \theta(t-t')\,G^>(t,t') + \theta(t'-t)\,G^<(t,t')
+$$<p>$t > t'$ 에서</p>
+$$
+G^T(t, t') = -i\sum_n (1-f(E_n))\,\psi_n(x)\psi_n^*(x')\,e^{-iE_n(t-t')/\hbar}
+$$<p>$t < t'$ 에서</p>
+$$
+G^T(t, t') = i\sum_n f(E_n)\,\psi_n(x)\psi_n^*(x')\,e^{-iE_n(t-t')/\hbar}
+$$<p>이는 평형 양자장 이론의 표준 time-ordered 그린함수 표현과 일치. ✓</p>
+<p><strong>Sanity check</strong>: $G^T - G^<$:</p>
+$$
+G^T(t > t', t) - G^<(t > t', t) = -i\sum_n (1-f(E_n))(\ldots) - i\sum_n f(E_n)(\ldots) = -i\sum_n(\ldots)
+$$<p>이는 $G^>(t > t', t) - G^<(t > t', t) = -i\sum_n(\ldots)$ ($G^R$ 의 $t > t'$ 영역) 과 일치. $G^R = \theta(t-t')[G^> - G^<]$ 검증.</p>
+<hr>
+<p><strong>example2) 시간 의존 외부 장의 영향</strong></p>
+<p>평형 시스템 ($t < t_0$ 에서) 에 $t = t_0$ 에서 외부 장 $V_{\text{ext}}(t > t_0)$ 가 켜진 경우. Transient 응답을 분석.</p>
+<p>sol)</p>
+<p>$t < t_0$ 의 평형에서 $G^<(E) = i f(E) A(E)$ 의 표준 평형 분해.</p>
+<p>$t \geq t_0$ 에서 시스템은 비평형. $G^c(t, t')$ 가 시간 차이가 아닌 두 시간의 일반 함수.</p>
+<p>Contour Dyson 방정식</p>
+$$
+G^c(\tau, \tau') = G_0^c(\tau, \tau') + \int_C d\tau_1 d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau')
+$$<p>에서 $\Sigma^c$ 가 환경 결합과 시간 의존 장 $V_{\text{ext}}(t)$ 의 기여를 합친 형태.</p>
+<p>특히 lesser 그린함수의 시간 진화:</p>
+$$
+G^<(t, t')\,\,\text{at} \,\,t, t' > t_0: \,\,\text{외부 장과 환경의 상호작용으로 진화}
+$$<p>정상상태로의 수렴 시간 ($t \to \infty$): 환경 결합 강도 $\Gamma$ 의 역수 $\tau_{\text{relax}} = \hbar/\Gamma$ 정도.</p>
+<p>이러한 시간 의존 문제는 Energy-domain 접근으로는 다룰 수 없으며, contour formalism 의 시간 영역 처리가 필수적이다. 자세한 계산은 후속 챕터에서 다룬다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/negf/b_negf_overview/index.html"><a class="padding" href="/greens_function/negf/b_negf_overview/index.html">(b) NEGF overview</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_retarded_advanced/index.html"><a class="padding" href="/greens_function/negf/b_retarded_advanced/index.html">(b) Retarded &amp; advanced GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_spectral_function/index.html"><a class="padding" href="/greens_function/negf/b_spectral_function/index.html">(b) Spectral function</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_lesser_greater/index.html"><a class="padding" href="/greens_function/negf/b_lesser_greater/index.html">(b) Lesser and greater GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_dyson_self_energy/index.html"><a class="padding" href="/greens_function/negf/b_dyson_self_energy/index.html">(b) Dyson equation and self-energy</a></li>
+            <li class="active " data-nav-id="/greens_function/negf/b_keldysh_contour/index.html"><a class="padding" href="/greens_function/negf/b_keldysh_contour/index.html">(b) Keldysh contour formalism</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_langreth_rules/index.html"><a class="padding" href="/greens_function/negf/b_langreth_rules/index.html">(b) Langreth rules</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

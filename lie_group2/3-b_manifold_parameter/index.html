@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기리 군은 매끄러운 다양체에 군 연산을 얹은 구조다. 리 군으로 가기 전에 다양체가 무엇인지부터 정리한다. 이 장에서는 다양체라는 이름의 유래, 매개변수와 차원의 관계, 그리고 흔한 오해(매개변수가 여러 개면 다양체도 여러 개 아닌가?) 를 짚는다.
+2. “다양체&#34;라는 이름의 유래1) 다양체(多樣體)는 독일어 Mannigfaltigkeit의 번역어다. 이 용어는 리만(Bernhard Riemann)이 1854년 강연에서 수학적 개념으로 처음 도입했다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="다양체와 매개변수 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기리 군은 매끄러운 다양체에 군 연산을 얹은 구조다. 리 군으로 가기 전에 다양체가 무엇인지부터 정리한다. 이 장에서는 다양체라는 이름의 유래, 매개변수와 차원의 관계, 그리고 흔한 오해(매개변수가 여러 개면 다양체도 여러 개 아닌가?) 를 짚는다.
+2. “다양체&#34;라는 이름의 유래1) 다양체(多樣體)는 독일어 Mannigfaltigkeit의 번역어다. 이 용어는 리만(Bernhard Riemann)이 1854년 강연에서 수학적 개념으로 처음 도입했다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group2/3-b_manifold_parameter/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="다양체와 매개변수 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기리 군은 매끄러운 다양체에 군 연산을 얹은 구조다. 리 군으로 가기 전에 다양체가 무엇인지부터 정리한다. 이 장에서는 다양체라는 이름의 유래, 매개변수와 차원의 관계, 그리고 흔한 오해(매개변수가 여러 개면 다양체도 여러 개 아닌가?) 를 짚는다.
+2. “다양체&#34;라는 이름의 유래1) 다양체(多樣體)는 독일어 Mannigfaltigkeit의 번역어다. 이 용어는 리만(Bernhard Riemann)이 1854년 강연에서 수학적 개념으로 처음 도입했다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group2">
+    <meta itemprop="name" content="다양체와 매개변수 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기리 군은 매끄러운 다양체에 군 연산을 얹은 구조다. 리 군으로 가기 전에 다양체가 무엇인지부터 정리한다. 이 장에서는 다양체라는 이름의 유래, 매개변수와 차원의 관계, 그리고 흔한 오해(매개변수가 여러 개면 다양체도 여러 개 아닌가?) 를 짚는다.
+2. “다양체&#34;라는 이름의 유래1) 다양체(多樣體)는 독일어 Mannigfaltigkeit의 번역어다. 이 용어는 리만(Bernhard Riemann)이 1854년 강연에서 수학적 개념으로 처음 도입했다.">
+    <meta itemprop="wordCount" content="568">
+    <title>다양체와 매개변수 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group2\/3-b_manifold_parameter\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group2/3-b_manifold_parameter/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기">1. 동기</a></li>
+        <li><a href="#2-다양체라는-이름의-유래">2. &ldquo;다양체&quot;라는 이름의 유래</a></li>
+        <li><a href="#3-직관적-정의">3. 직관적 정의</a></li>
+        <li><a href="#4-매개변수가-점을-라벨링한다">4. 매개변수가 점을 라벨링한다</a></li>
+        <li><a href="#5-매개변수-개수--다양체의-차원">5. 매개변수 개수 = 다양체의 차원</a></li>
+        <li><a href="#6-변수-여러-개--다양체-여러-개">6. 변수 여러 개 ≠ 다양체 여러 개</a></li>
+        <li><a href="#7-내재적-차원-vs-외재적-차원">7. 내재적 차원 vs 외재적 차원</a></li>
+        <li><a href="#8-정리">8. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group2/index.html"><span itemprop="name">Lie group2</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">다양체와 매개변수</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group2/2-b_algebraic_structures/index.html" title="대수 구조: 군/환/체 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group2/4-b_lie_group_examples/index.html" title="리 군과 예제 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="다양체와-매개변수">다양체와 매개변수</h1>
+
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>리 군은 매끄러운 <em>다양체</em>에 군 연산을 얹은 구조다. 리 군으로 가기 전에 다양체가 무엇인지부터 정리한다. 이 장에서는 다양체라는 이름의 유래, 매개변수와 차원의 관계, 그리고 흔한 오해(매개변수가 여러 개면 다양체도 여러 개 아닌가?) 를 짚는다.</p>
+<h3 id="2-다양체라는-이름의-유래">2. &ldquo;다양체&quot;라는 이름의 유래<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체(多樣體)는 독일어 <em>Mannigfaltigkeit</em>의 번역어다. 이 용어는 리만(Bernhard Riemann)이 1854년 강연에서 수학적 개념으로 처음 도입했다.</p>
+<p><strong>2)</strong> Mannigfaltigkeit는 <em>mannig</em>(많은) + <em>faltigkeit</em>(접힘, 겹)의 합성어로, 직역하면 &ldquo;여러 겹&quot;이다. 영어 <em>manifold</em>도 &ldquo;many-fold&quot;의 어원을 그대로 가진다.</p>
+<p><strong>3)</strong> 이 이름이 가리키는 핵심 아이디어:</p>
+<ul>
+<li>한 점을 콕 집어 표시하려면 *여러 개의 수치(좌표)*가 필요한 공간</li>
+<li>같은 공간 안에서 <em>여러 가지 매개변수화</em>가 가능한 공간</li>
+</ul>
+<p><strong>4)</strong> 한국어 <em>다양체</em> 역시 &ldquo;다양(多樣, 여러 모양)&rdquo; + &ldquo;체(體, 몸체)&ldquo;로, &ldquo;여러 좌표로 표시되는 구조화된 공간&rdquo; 정도의 의미다. 점 하나를 라벨링하는 방법이 <em>다양</em>하다는 점이 이름의 핵심이다.</p>
+<p><strong>5)</strong> 정리: 다양체는 <em>여러 매개변수로 점이 라벨링되는 공간</em>이다. 이름 자체가 &ldquo;여러 좌표&quot;라는 개념을 담고 있다.</p>
+<h3 id="3-직관적-정의">3. 직관적 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체는 <em>작게 보면 평평한 유클리드 공간처럼 보이는 공간</em>이다.</p>
+<p><strong>2)</strong> 크게 보면 휘었거나 닫혀 있을 수 있지만, 한 점 주변을 충분히 작게 잘라 보면 그 부분은 $\mathbb{R}^n$의 일부처럼 보인다.</p>
+<p><strong>3)</strong> example1) 종이 한 장. 평평하니까 그 자체가 $\mathbb{R}^2$의 일부. 2차원 다양체.</p>
+<p><strong>4)</strong> example2) 지구 표면. 전체로 보면 둥글지만 작은 동네 한 구간만 보면 거의 평평하다. 2차원 다양체.</p>
+<p><strong>5)</strong> example3) 우리가 사는 공간. 3차원 다양체.</p>
+<p><strong>6)</strong> example4) 원, 도넛 표면, 공 표면 등도 다양체다.</p>
+<h3 id="4-매개변수가-점을-라벨링한다">4. 매개변수가 점을 라벨링한다<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체 $M$ 의 점을 콕 집어 표시하려면 <em>매개변수(parameter)</em> 또는 *좌표(coordinate)*가 필요하다.</p>
+<p><strong>2)</strong> 같은 다양체에 여러 가지 매개변수화가 가능하다.</p>
+<p><strong>3)</strong> example1) 지구 표면 위의 한 점은 (위도, 경도) 두 매개변수로 표시한다.</p>
+<p><strong>4)</strong> example2) 평면 위의 한 점은 직교 좌표 $(x, y)$로도, 극좌표 $(r, \theta)$로도 표시할 수 있다. 같은 평면, 다른 좌표계.</p>
+<p><strong>5)</strong> <em>핵심: 매개변수는 점에 붙이는 라벨이지, 다양체 자체와 같은 것은 아니다.</em></p>
+<h3 id="5-매개변수-개수--다양체의-차원">5. 매개변수 개수 = 다양체의 차원<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체 위의 한 점을 표시하는 데 필요한 매개변수의 <em>최소</em> 개수를 그 다양체의 *차원(dimension)*이라 한다.</p>
+<p><strong>2)</strong> example1) 종이 한 장: 한 점에 $(x, y)$ 두 매개변수 필요 → 2차원</p>
+<p><strong>3)</strong> example2) 지구 표면: (위도, 경도) 두 매개변수 → 2차원</p>
+<p><strong>4)</strong> example3) 우리가 사는 공간: $(x, y, z)$ 세 매개변수 → 3차원</p>
+<p><strong>5)</strong> example4) 원 한 바퀴: 각도 $\theta$ 하나면 충분 → 1차원</p>
+<h3 id="6-변수-여러-개--다양체-여러-개">6. 변수 여러 개 ≠ 다양체 여러 개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 흔한 오해: &ldquo;매개변수가 여러 개면 다양체도 여러 개 아닌가?&rdquo;</p>
+<p><strong>2)</strong> 사실: 매개변수가 여러 개여도 다양체는 <em>하나</em>다. 매개변수는 <em>그 하나의 공간</em> 위에서 점을 라벨링하는 방식일 뿐이다.</p>
+<p><strong>3)</strong> example) 지구 표면은 위도와 경도 두 매개변수로 라벨링되지만, 지구 자체는 <em>하나</em>다. 위도용 지구와 경도용 지구가 따로 있는 것이 아니다.</p>
+<p><strong>4)</strong> 마찬가지로 종이 한 장은 $(x, y)$ 두 좌표가 필요하지만 종이 자체는 하나다.</p>
+<p><strong>5)</strong> <em>매개변수 개수 = 다양체의 차원</em>이지, <em>매개변수 개수 = 다양체의 개수</em>가 아니다.</p>
+<h3 id="7-내재적-차원-vs-외재적-차원">7. 내재적 차원 vs 외재적 차원<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체에 관련된 차원은 두 가지로 구분된다.</p>
+<p><strong>2)</strong> <em>내재적 차원(intrinsic dimension)</em>: 매개변수의 개수, 즉 다양체 자체의 &ldquo;본질적&rdquo; 차원이다.</p>
+<p><strong>3)</strong> <em>외재적 차원(extrinsic dimension)</em>: 다양체를 시각화하기 위해 <em>끼워 넣는 주변 공간</em>의 차원이다.</p>
+<p><strong>4)</strong> 두 차원은 다를 수 있다.</p>
+<p><strong>5)</strong> example1) 지구 표면 (2-구면)</p>
+<ul>
+<li>내재적 차원: 2 (위도, 경도)</li>
+<li>외재적 차원: 3 (우리가 사는 3차원 공간에 끼워 넣음)</li>
+</ul>
+<p><strong>6)</strong> example2) $SO(2)$ (2차원 회전 행렬의 집합)</p>
+<ul>
+<li>내재적 차원: 1 (회전각 $\theta$ 하나)</li>
+<li>외재적 차원: 4 ($2 \times 2$ 행렬은 4개의 성분으로 표시됨)</li>
+</ul>
+<p><strong>7)</strong> <em>외재적 차원은 시각화의 편의일 뿐, 다양체의 본질적 정보는 내재적 차원이 결정한다.</em></p>
+<h3 id="8-정리">8. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 다양체 = 여러 매개변수로 점이 라벨링되는 공간. 이름 자체(&ldquo;다양&rdquo;, &ldquo;many-fold&rdquo;)가 &ldquo;여러 좌표&quot;를 가리킨다.</p>
+<p><strong>2)</strong> 같은 다양체에 여러 가지 매개변수화가 가능하지만, 다양체는 <em>하나</em>다.</p>
+<p><strong>3)</strong> 매개변수의 최소 개수 = 다양체의 차원 (내재적 차원).</p>
+<p><strong>4)</strong> 외재적 차원(시각화 공간)은 내재적 차원과 다를 수 있다. 내재적 차원이 다양체의 본질을 결정한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group2/1-b_function_vector_operator/index.html"><a class="padding" href="/lie_group2/1-b_function_vector_operator/index.html">함수, 벡터, 연산자</a></li>
+            <li class="" data-nav-id="/lie_group2/2-b_algebraic_structures/index.html"><a class="padding" href="/lie_group2/2-b_algebraic_structures/index.html">대수 구조: 군/환/체</a></li>
+            <li class="active " data-nav-id="/lie_group2/3-b_manifold_parameter/index.html"><a class="padding" href="/lie_group2/3-b_manifold_parameter/index.html">다양체와 매개변수</a></li>
+            <li class="" data-nav-id="/lie_group2/4-b_lie_group_examples/index.html"><a class="padding" href="/lie_group2/4-b_lie_group_examples/index.html">리 군과 예제</a></li>
+            <li class="" data-nav-id="/lie_group2/5-b_matrix_derivative/index.html"><a class="padding" href="/lie_group2/5-b_matrix_derivative/index.html">행렬 미분</a></li>
+            <li class="" data-nav-id="/lie_group2/9-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group2/9-b_one_parameter_subgroup/index.html">1매개변수 부분군과 준동형 사상</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

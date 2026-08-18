@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 폐형식과 완전형식의 차이§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).
+폐형식은 외미분이 0 인 형식: $d\omega = 0$.
+완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.
+$d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 폐형식.
+그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="de Rham 코호몰로지 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 폐형식과 완전형식의 차이§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).
+폐형식은 외미분이 0 인 형식: $d\omega = 0$.
+완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.
+$d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 폐형식.
+그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/12-b_de_rham_cohomology/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="de Rham 코호몰로지 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 폐형식과 완전형식의 차이§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).
+폐형식은 외미분이 0 인 형식: $d\omega = 0$.
+완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.
+$d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 폐형식.
+그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="de Rham 코호몰로지 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 폐형식과 완전형식의 차이§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).
+폐형식은 외미분이 0 인 형식: $d\omega = 0$.
+완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.
+$d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 폐형식.
+그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.">
+    <meta itemprop="wordCount" content="2041">
+    <title>de Rham 코호몰로지 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/12-b_de_rham_cohomology\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/12-b_de_rham_cohomology/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-폐형식과-완전형식의-차이">1. 동기: 폐형식과 완전형식의 차이</a></li>
+        <li><a href="#2-코사슬-복합체">2. 코사슬 복합체</a></li>
+        <li><a href="#3-가장-단순한-경우">3. 가장 단순한 경우: </a></li>
+        <li><a href="#4-첫-번째-비자명한-예-원">4. 첫 번째 비자명한 예: 원 </a></li>
+        <li><a href="#5-두-번째-예-원점이-빠진-평면">5. 두 번째 예: 원점이 빠진 평면 </a></li>
+        <li><a href="#6-더-복잡한-예-토러스">6. 더 복잡한 예: 토러스 </a></li>
+        <li><a href="#7-betti-수와-위상-불변량">7. Betti 수와 위상 불변량</a></li>
+        <li><a href="#8-호모토피-불변성">8. 호모토피 불변성</a></li>
+        <li><a href="#9-de-rham-정리">9. de Rham 정리</a></li>
+        <li><a href="#10-물리적-응용-1-aharonov-bohm-효과">10. 물리적 응용 1: Aharonov-Bohm 효과</a></li>
+        <li><a href="#11-물리적-응용-2-자기-모노폴">11. 물리적 응용 2: 자기 모노폴</a></li>
+        <li><a href="#12-negf--응집계-물리와의-연결">12. NEGF · 응집계 물리와의 연결</a></li>
+        <li><a href="#13-정리">13. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">de Rham 코호몰로지</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/11-b_stokes_theorem/index.html" title="Stokes 정리 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/13-b_hodge_star/index.html" title="Hodge 별표 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="de-rham-코호몰로지">de Rham 코호몰로지</h1>
+
+<h3 id="1-동기-폐형식과-완전형식의-차이">1. 동기: 폐형식과 완전형식의 차이<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§8 에서 외미분의 두 핵심 개념을 도입했다 — <em>폐형식 (closed form)</em> 과 <em>완전형식 (exact form)</em>.</p>
+<p>폐형식은 외미분이 0 인 형식: $d\omega = 0$.</p>
+<p>완전형식은 다른 형식의 외미분으로 표현되는 형식: $\omega = d\eta$ 인 $\eta$ 가 존재.</p>
+<p>$d^2 = 0$ 으로 <em>완전 → 폐</em> 는 항상 성립. 즉 모든 완전형식은 폐형식.</p>
+<p>그런데 <em>역</em> — <em>모든 폐형식이 완전형식인가?</em> — 은 <em>공간의 위상에 따라 다르다</em>. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.</p>
+<p><strong>놀라운 깨달음</strong></p>
+<p>폐형식이지만 완전형식이 아닌 형식들이 <em>얼마나 많이 존재하는가</em> 가 <em>공간의 위상학적 정보</em> 를 <em>정확히 측정</em> 한다는 것.</p>
+<blockquote>
+<p><em>폐형식 / 완전형식의 비율</em> = <em>공간의 위상학적 정보</em></p>
+</blockquote>
+<p>이 <em>비율 (quotient)</em> 을 정확히 정의한 것이 <strong>de Rham 코호몰로지 (de Rham cohomology)</strong>.</p>
+<p>이 장에서 그 정의, 의미, 그리고 <em>왜 미적분의 도구가 위상수학과 연결되는지</em> 를 본다. 결과적으로 <em>외미분 $d$ 가 단순한 미분 연산자가 아니라 공간의 모양 (shape) 을 측정하는 도구</em> 임이 드러난다.</p>
+<h3 id="2-코사슬-복합체">2. 코사슬 복합체<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 우리가 다루는 <em>기본 구조</em> 를 정확히 짚는다.</p>
+<p>§9 §6 에서 본 <em>de Rham 사슬</em> 을 다시 보자.</p>
+$$\Omega^0(M) \xrightarrow{d} \Omega^1(M) \xrightarrow{d} \Omega^2(M) \xrightarrow{d} \cdots \xrightarrow{d} \Omega^n(M)$$<p>이게 <em>코사슬 복합체 (cochain complex)</em> 라 부르는 구조. 핵심 성질이 <em>연속된 두 화살표의 합성이 0</em>:</p>
+$$d \circ d = 0$$<p>이걸 <em>$d^2 = 0$</em> 으로 짧게 쓴다.</p>
+<p>코사슬 복합체에서 두 부분공간을 정의한다.</p>
+<p><strong>$k$-cocycle (폐 $k$-형식)</strong></p>
+<p>$Z^k(M) := \{\, \omega \in \Omega^k(M) : d\omega = 0 \,\}$</p>
+<p><em>외미분이 0 인 $k$-form 들의 공간</em>. 즉 <em>폐형식의 공간</em>.</p>
+<p><strong>$k$-coboundary (완전 $k$-형식)</strong></p>
+<p>$B^k(M) := \{\, \omega \in \Omega^k(M) : \omega = d\eta \text{ for some } \eta \in \Omega^{k-1}(M) \,\}$</p>
+<p><em>다른 $(k-1)$-form 의 외미분으로 표현되는 $k$-form 들의 공간</em>. 즉 <em>완전형식의 공간</em>.</p>
+<p>$d^2 = 0$ 으로 $B^k(M) \subseteq Z^k(M)$ 가 <em>항상</em> 성립. 모든 완전형식은 폐형식.</p>
+<p><strong>코호몰로지 군</strong></p>
+<p>폐형식의 공간을 완전형식의 공간으로 <em>나눈</em> 몫 공간:</p>
+<blockquote>
+$$\boxed{\;\; H^k(M) := Z^k(M) \,/\, B^k(M) \;\;}$$</blockquote>
+<p>이 <em>몫 벡터 공간</em> 을 <strong>$M$ 의 $k$-차 de Rham 코호몰로지 군 (k-th de Rham cohomology group)</strong> 이라 부른다 (군이지만 사실은 벡터 공간).</p>
+<p>직관적 의미:</p>
+<blockquote>
+<p>$H^k(M)$ = <em>완전이 아닌 폐 $k$-form 들의 동치류 (equivalence class)</em></p>
+</blockquote>
+<p>두 폐형식 $\omega_1, \omega_2$ 가 <em>동치</em> 라는 건 <em>그 차이가 완전형식</em>: $\omega_1 - \omega_2 = d\eta$. 이런 동치류의 집합이 $H^k(M)$.</p>
+<h3 id="3-가장-단순한-경우">3. 가장 단순한 경우: $\mathbb{R}^n$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>먼저 가장 <em>단순한 다양체</em> 인 $\mathbb{R}^n$ 의 코호몰로지를 본다. 결과가 <em>놀라울 정도로 간단</em>.</p>
+<p><strong>Poincaré 보조정리 (Poincaré lemma)</strong></p>
+<blockquote>
+<p><strong>정리</strong>: $\mathbb{R}^n$ 위에서, $k \ge 1$ 일 때 <em>모든 폐 $k$-form 은 완전형식</em>.</p>
+</blockquote>
+<p>따라서</p>
+$$H^k(\mathbb{R}^n) = 0 \quad \text{for } k \ge 1$$<p>$k = 0$ 일 때는 약간 다르다. 0-form (함수) $f$ 가 폐 ($df = 0$) 라는 건 <em>$f$ 가 상수</em> 라는 뜻 (모든 편미분이 0 이므로). 완전형식이라는 건 <em>어떤 $(-1)$-form 의 외미분</em> 이지만 $(-1)$-form 은 정의되지 않으므로 <em>완전형식이 없음</em>. 따라서</p>
+$$H^0(\mathbb{R}^n) = \{\text{상수 함수의 공간}\} \cong \mathbb{R}$$<p>(<em>$\mathbb{R}^n$ 이 연결되어 있으므로</em> 상수 함수가 1차원.)</p>
+<p><strong>증명 아이디어</strong></p>
+<p>$\omega$ 가 $\mathbb{R}^n$ 의 폐 $k$-form 일 때, <em>원점에서 각 점으로 가는 직선 경로</em> 를 따라 <em>적분</em> 함으로써 $\eta$ 를 만들 수 있다. <em>볼록한 영역의 핵심 성질</em> 이 이 구성을 가능하게 함.</p>
+<p>자세한 증명은 <em>Cartan 의 magic 공식</em> 을 사용한 호모토피 인자 (homotopy operator) 로 한다.</p>
+<p><strong>결론</strong></p>
+$$H^k(\mathbb{R}^n) = \begin{cases} \mathbb{R} & k = 0 \\ 0 & k \ge 1 \end{cases}$$<p><em>$\mathbb{R}^n$ 은 코호몰로지적으로 자명</em> — 위상학적으로 <em>수축 가능 (contractible)</em> 한 공간의 특징.</p>
+<h3 id="4-첫-번째-비자명한-예-원">4. 첫 번째 비자명한 예: 원 $S^1$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 <em>수축 가능하지 않은</em> 가장 단순한 다양체 — <em>원 $S^1$</em> — 을 본다.</p>
+<p><strong>예: $S^1$ 위의 각도 1-form</strong></p>
+<p>§11 §13 에서 본 예를 다시. 원 위의 <em>각도 1-form</em> $d\theta$ 는 <em>폐형식이지만 완전형식이 아니다</em>.</p>
+<p>폐형식인 이유: 좌표 표현으로 $d\theta = (-y\, dx + x\, dy)/(x^2 + y^2)$ (원점 근방 제외), 직접 계산으로 $d(d\theta) = 0$.</p>
+<p>완전형식이 아닌 이유: §11 §13 의 <em>둘레 적분</em></p>
+$$\oint_{S^1} d\theta = 2\pi \neq 0$$<p>이 <em>글로벌 함수 $\theta$ 가 없음</em> 을 보여줌. (만약 $d\theta = df$ 이면 Stokes 정리로 적분이 0 이어야 함.)</p>
+<p><strong>$H^1(S^1) = \mathbb{R}$</strong></p>
+<p>이 예에서 <em>비자명한 폐형식의 모든 가능성</em> 은 <em>$d\theta$ 의 스칼라 배</em>. 다른 형식들은 <em>$d\theta$ 와 완전형식만큼 차이</em> 가 있을 뿐.</p>
+<p>따라서</p>
+$$H^1(S^1) = \mathbb{R} \cdot [d\theta] \cong \mathbb{R}$$<p>(<em>1차원 벡터 공간</em>.)</p>
+<p><strong>전체 $S^1$ 의 코호몰로지</strong></p>
+<ul>
+<li>$H^0(S^1) = \mathbb{R}$ (연결된 공간)</li>
+<li>$H^1(S^1) = \mathbb{R}$ ($d\theta$ 의 동치류)</li>
+<li>$H^k(S^1) = 0$ for $k \ge 2$ ($S^1$ 이 1차원이므로)</li>
+</ul>
+<p><strong>해석</strong></p>
+<p>$H^1(S^1) = \mathbb{R}$ 이 <em>0 이 아닌</em> 것이 <em>원에 1차원 구멍 (hole) 이 하나 있음</em> 을 <em>대수적으로 측정</em>. 원을 한 바퀴 돌면 <em>시작점으로 돌아오지만 그 사이의 경로가 단순하지 않음</em> — 이 위상학적 사실이 <em>코호몰로지에 명시적으로 인코딩</em>.</p>
+<h3 id="5-두-번째-예-원점이-빠진-평면">5. 두 번째 예: 원점이 빠진 평면 $\mathbb{R}^2 \setminus \{0\}$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>비슷한 비자명성을 가진 다른 예가 <em>원점이 빠진 평면</em>. 이 공간이 <em>원과 같은 코호몰로지</em> 를 가짐을 본다.</p>
+<p><strong>1-form $\omega$ 의 예</strong></p>
+<p>$\omega = (-y\, dx + x\, dy)/(x^2 + y^2)$. 이건 $\mathbb{R}^2 \setminus \{0\}$ 에서 잘 정의된 1-form.</p>
+<p>폐형식인지 확인: 계산해 보면 $d\omega = 0$.</p>
+<p>완전형식인지? 만약 $\omega = df$ 라면 원점을 둘러싸는 폐곡선 위의 적분이 0 이어야 함. 그런데 단위원 위의 적분은 (§10 §6 의 결과)</p>
+$$\oint_{S^1} \omega = 2\pi \neq 0$$<p>따라서 <em>완전형식이 아님</em>.</p>
+<p><strong>$H^1(\mathbb{R}^2 \setminus \{0\}) = \mathbb{R}$</strong></p>
+<p>위의 예가 사실 <em>원 $S^1$ 의 예와 같은 코호몰로지 정보</em>. 원점이 빠진 평면이 <em>원 $S^1$ 과 위상학적으로 동등 (호모토피 동치)</em> 이기 때문.</p>
+<p><strong>구체적 응용: 보존이 아닌 비회전 벡터장</strong></p>
+<p>이 1-form 에 대응하는 벡터장:</p>
+$$\vec{F} = \left( -\frac{y}{x^2 + y^2},\, \frac{x}{x^2 + y^2} \right)$$<p>이게 <em>비회전 ($\nabla \times \vec{F} = 0$) 이지만 보존이 아닌</em> 대표적 벡터장. §9 §8 에서 언급한 예의 정확한 표현.</p>
+<p><em>공간의 위상 (원점이 빠짐)</em> 이 <em>벡터장의 보존성을 깨뜨림</em>. 코호몰로지가 이걸 <em>정량적으로 측정</em>.</p>
+<h3 id="6-더-복잡한-예-토러스">6. 더 복잡한 예: 토러스 $T^2$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>토러스 (torus, 도넛 모양 표면)</em> 의 코호몰로지는 더 풍부하다.</p>
+<p><strong>토러스의 표현</strong></p>
+<p>토러스 $T^2 = S^1 \times S^1$ 은 <em>두 원의 곱</em>. 두 매개변수 $\theta, \phi \in [0, 2\pi]$ 로 표현, 각각 <em>주기적</em>.</p>
+<p><strong>기본 폐 1-form 들</strong></p>
+<p>토러스 위의 <em>두 가지 자연스러운 폐 1-form</em>: $d\theta$ 와 $d\phi$.</p>
+<p>각각이 <em>완전형식이 아닌</em> 이유는 §11 §13 의 원의 예와 같다. 두 <em>서로 다른 둘레 (사이클)</em> 를 따라 둘레 적분이 $2\pi$.</p>
+<p><strong>$H^1(T^2) = \mathbb{R}^2$</strong></p>
+<p>따라서 토러스의 1차 코호몰로지는 <em>2 차원</em>:</p>
+$$H^1(T^2) = \mathbb{R} \cdot [d\theta] \oplus \mathbb{R} \cdot [d\phi] \cong \mathbb{R}^2$$<p>토러스의 <em>두 독립적인 사이클</em> 에 대응.</p>
+<p><strong>$H^2(T^2)$</strong></p>
+<p>2-form 도 비슷하게: $d\theta \wedge d\phi$ 가 폐형식이지만 완전형식이 아님.</p>
+$$H^2(T^2) = \mathbb{R}$$<p>토러스의 <em>전체 부피 형식</em> 에 대응.</p>
+<p><strong>전체 토러스 코호몰로지</strong></p>
+$$H^0(T^2) = \mathbb{R}, \quad H^1(T^2) = \mathbb{R}^2, \quad H^2(T^2) = \mathbb{R}$$<p><em>Euler 표수 (Euler characteristic)</em> $\chi(T^2) = 1 - 2 + 1 = 0$ — 토러스의 <em>0 인 Euler 표수</em> 의 직접 확인.</p>
+<h3 id="7-betti-수와-위상-불변량">7. Betti 수와 위상 불변량<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위에서 본 $\dim H^k(M)$ 을 <em>Betti 수 (Betti number) $b_k$</em> 라 부른다.</p>
+$$b_k(M) := \dim H^k(M)$$<p>Betti 수는 <em>위상학적 불변량</em> (topological invariant) — 두 공간이 <em>위상학적으로 같으면 (호모토피 동치)</em> 같은 Betti 수.</p>
+<p><strong>해석</strong></p>
+<ul>
+<li>$b_0(M)$ = <em>공간의 연결 성분 (connected component) 의 수</em>.</li>
+<li>$b_1(M)$ = <em>1차원 구멍 (loops not contractible) 의 독립 개수</em>.</li>
+<li>$b_2(M)$ = <em>2차원 구멍 (속이 빈 표면) 의 수</em>.</li>
+<li>$b_k(M)$ = <em>$k$-차원 구멍의 독립 개수</em>.</li>
+</ul>
+<p>따라서 <em>코호몰로지가 공간의 모양 (구멍의 구조) 을 측정</em>.</p>
+<p><strong>예시</strong></p>
+<ul>
+<li><em>$\mathbb{R}^n$</em> (수축 가능): $b_0 = 1$, 나머지 모두 0. <em>구멍 없음</em>.</li>
+<li><em>원 $S^1$</em>: $b_0 = 1, b_1 = 1$. <em>1차원 구멍 하나</em>.</li>
+<li><em>구면 $S^2$</em>: $b_0 = 1, b_1 = 0, b_2 = 1$. <em>2차원 구멍 하나</em> (속이 빈 공).</li>
+<li><em>토러스 $T^2$</em>: $b_0 = 1, b_1 = 2, b_2 = 1$. <em>1차원 구멍 둘 (두 사이클), 2차원 구멍 하나</em>.</li>
+<li><em>$n$-구면 $S^n$</em>: $b_0 = b_n = 1$, 나머지 모두 0.</li>
+</ul>
+<p><strong>Euler 표수</strong></p>
+<p>Euler 표수가</p>
+$$\chi(M) = \sum_{k=0}^{n} (-1)^k\, b_k(M)$$<p>으로 정의되며 <em>위상학적 불변량</em>. 토폴로지의 <em>가장 중요한 정수 불변량</em> 중 하나.</p>
+<h3 id="8-호모토피-불변성">8. 호모토피 불변성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>de Rham 코호몰로지의 <em>놀라운 성질</em> 이 <em>호모토피 불변성</em>.</p>
+<p><strong>정의 (호모토피 동치)</strong></p>
+<p>두 공간 $M, N$ 이 <em>호모토피 동치 (homotopy equivalent)</em> 라는 건, <em>연속적으로 서로 변형 가능</em> — 즉 양방향 매끄러운 함수 $f: M \to N$, $g: N \to M$ 이 있어서 $f \circ g$ 와 $g \circ f$ 가 각각 항등 함수와 <em>연속적으로 연결됨</em>.</p>
+<p><strong>정리</strong>: $M$ 과 $N$ 이 호모토피 동치이면 $H^k(M) \cong H^k(N)$ 모든 $k$ 에 대해.</p>
+<p><strong>의미</strong></p>
+<p><em>연속 변형으로 같아지는 공간들은 코호몰로지도 같다</em>. 따라서 <em>코호몰로지가 진정한 위상학적 정보를 측정</em> 한다.</p>
+<p>예: <em>원점이 빠진 평면 $\mathbb{R}^2 \setminus \{0\}$</em> 가 <em>원 $S^1$</em> 과 호모토피 동치 — 평면을 <em>원점에서 멀어지는 방향으로</em> 연속 변형해 원으로 만들 수 있음. 따라서 <em>같은 코호몰로지</em>.</p>
+<p>비슷하게 <em>수축 가능 (contractible)</em> 한 공간 — 즉 <em>한 점으로 연속 변형 가능</em> 한 공간 — 은 <em>점과 같은 코호몰로지</em>: $H^0 = \mathbb{R}$, 나머지 모두 0.</p>
+<h3 id="9-de-rham-정리">9. de Rham 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>de Rham 코호몰로지의 <em>진정한 깊이</em> 는 다른 위상학적 도구와의 <em>완벽한 일치</em> 에 있다.</p>
+<blockquote>
+<p><strong>de Rham 정리 (de Rham theorem)</strong>: 매끄러운 다양체 $M$ 에 대해, <em>de Rham 코호몰로지</em> 는 <em>특이 코호몰로지 (singular cohomology)</em> 와 정확히 일치.</p>
+$$H^k_{\text{dR}}(M) \cong H^k_{\text{sing}}(M; \mathbb{R})$$</blockquote>
+<p>특이 코호몰로지는 <em>순수 위상학적 (미분 구조 무관) 도구</em>. 그런데 <em>미분형식으로 정의된 de Rham 코호몰로지가 이것과 일치</em> — 이건 미적분과 위상수학의 <em>깊은 통일</em>.</p>
+<p><strong>증명의 핵심</strong>: <em>Stokes 정리</em> — <em>매끄러운 다양체의 적분이 호모토피 사슬과 자연스럽게 짝지어짐</em> — 가 두 코호몰로지 간의 <em>자연스러운 동형사상</em> 을 만든다.</p>
+<p><strong>의미</strong>: <em>미분 (해석학적) 도구가 위상 (대수적) 정보를 인코딩</em>. 외대수 언어가 <em>위상수학의 자연스러운 도구</em> 임이 정확히 확립.</p>
+<h3 id="10-물리적-응용-1-aharonov-bohm-효과">10. 물리적 응용 1: Aharonov-Bohm 효과<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>de Rham 코호몰로지가 <em>물리에서 직접 등장</em> 하는 가장 유명한 예가 <em>Aharonov-Bohm 효과</em>.</p>
+<p><strong>설정</strong></p>
+<p>전자가 <em>자기 솔레노이드 (solenoid)</em> 의 <em>바깥</em> 영역을 지나는 실험. 솔레노이드 안에는 자기장이 있지만 <em>바깥에는 자기장이 0</em>.</p>
+<p>고전적 직관: 전자가 자기장과 <em>상호작용하지 않음</em> — 솔레노이드의 영향을 받지 말아야 함.</p>
+<p><strong>실제 결과</strong></p>
+<p>양자역학에서 <em>전자의 위상 (phase)</em> 이 <em>영향을 받음</em>.</p>
+<p>이유: <em>벡터 포텐셜 $\vec{A}$</em> 가 솔레노이드 바깥에서도 <em>0 이 아님</em>. 폐형식 ($\nabla \times \vec{A} = 0$ 즉 $d \vec{A}^\flat = 0$) 이지만 <em>완전형식이 아님</em> (솔레노이드 주변의 호 적분이 0 이 아님).</p>
+<p>이게 정확히 <em>비자명한 $H^1$ 의 사례</em> — 솔레노이드 주변 공간이 <em>원점이 빠진 평면 같은 위상</em> 을 가짐.</p>
+<p><strong>미분형식 해석</strong></p>
+<p>전자의 위상이 <em>Wilson loop (1-form 의 호 적분)</em></p>
+$$\phi = \oint_C \vec{A} \cdot d\vec{r} = \oint_C \vec{A}^\flat$$<p>로 변화. Stokes 정리로</p>
+$$\oint_C \vec{A}^\flat = \int_S d\vec{A}^\flat = \int_S \star \vec{B}^\flat = \text{자기 플럭스}$$<p>(단, $S$ 가 <em>경로 안쪽의 면이며 솔레노이드를 포함</em>. 솔레노이드의 자기 플럭스가 들어감.)</p>
+<blockquote>
+<p><em>솔레노이드 안의 자기장이 솔레노이드 바깥의 전자 위상에 영향</em> — <em>코호몰로지를 통해 매개</em>.</p>
+</blockquote>
+<p>이 <em>위상학적 효과</em> 가 <em>비자명한 $H^1(M)$</em> 에서 정확히 나옴.</p>
+<h3 id="11-물리적-응용-2-자기-모노폴">11. 물리적 응용 2: 자기 모노폴<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>자기 모노폴 (Dirac monopole)</em> 의 존재성 가설도 <em>코호몰로지의 자연스러운 응용</em>.</p>
+<p><strong>설정</strong></p>
+<p>자기 모노폴 (자기장의 점원) 이 <em>원점에</em> 있다고 하자. 자기장:</p>
+$$\vec{B} = \frac{q_m}{4\pi r^2}\, \hat{r}$$<p>(<em>$q_m$ = 자기 전하</em>.)</p>
+<p><strong>문제</strong></p>
+<p>$\nabla \cdot \vec{B} \neq 0$ (원점에서). 일반적으로 <em>Maxwell 의 한 방정식</em> $\nabla \cdot \vec{B} = 0$ 와 모순.</p>
+<p>미분형식 해석: $B$ 의 2-form $\eta_B = \star \vec{B}^\flat$ 가 <em>원점을 뺀 영역에서</em> 폐형식 ($d\eta_B = 0$, 원점 외에서 $\nabla \cdot \vec{B} = 0$).</p>
+<p>하지만 <em>글로벌 벡터 포텐셜 $\vec{A}$ 가 존재하지 않음</em> — 즉 $\eta_B$ 가 <em>완전형식이 아님</em>. 이게 <em>$H^2(\mathbb{R}^3 \setminus \{0\}) = \mathbb{R}$</em> 의 표현.</p>
+<p><strong>Dirac 의 해결</strong></p>
+<p>Dirac 이 <em>두 좌표 패치</em> 로 $\vec{A}$ 를 <em>각 패치에서 따로 정의</em> 하고, 두 패치의 경계에서 <em>게이지 변환</em> 으로 연결하는 방법 제안. 이때 양자역학의 <em>위상의 일관성</em> 이 <em>Dirac 양자화 조건</em></p>
+$$e \cdot q_m = 2\pi n \quad (n \in \mathbb{Z})$$<p>을 요구. <em>전기 전하의 양자화와 자기 전하의 양자화가 연결됨</em> — 코호몰로지의 정수 구조에서 자연스럽게.</p>
+<p>이게 <em>de Rham 코호몰로지가 양자화 조건을 인코딩</em> 하는 예.</p>
+<h3 id="12-negf--응집계-물리와의-연결">12. NEGF · 응집계 물리와의 연결<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>코호몰로지가 <em>응집계 물리, 위상 절연체</em> 등에서도 핵심 역할.</p>
+<p><strong>Chern 수와 Berry 곡률</strong></p>
+<p><em>위상 절연체</em> 와 <em>양자 홀 효과</em> 에서 <em>Chern 수</em> 가 등장. 이게 <em>Brillouin 영역 (BZ) 위의 2-form (Berry 곡률) 의 적분</em></p>
+$$C = \frac{1}{2\pi} \int_{BZ} F$$<p>여기서 $F = dA$ 가 <em>Berry 곡률 2-form</em> (벡터 포텐셜 1-form $A$ 의 외미분).</p>
+<p><em>$F$ 가 폐형식 ($dF = 0$, $d^2 = 0$ 으로) 이지만 글로벌하게 완전형식이 아닐 수 있음</em>. Chern 수가 그 <em>비자명성을 측정</em> 하는 <em>정수 위상 불변량</em>.</p>
+<p>NEGF 와 직접 연결: <em>위상 절연체의 응답 함수</em> 가 Berry 곡률을 포함, 이게 <em>de Rham 코호몰로지의 직접 응용</em>.</p>
+<h3 id="13-정리">13. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>de Rham 코호몰로지</em>: $H^k(M) := Z^k(M) / B^k(M)$ — <em>폐형식 / 완전형식</em> 의 몫.</p>
+<p><strong>2)</strong> <em>Poincaré 보조정리</em>: $\mathbb{R}^n$ (또는 수축 가능한 공간) 위에서 모든 폐형식이 완전형식. $H^k(\mathbb{R}^n) = 0$ ($k \ge 1$).</p>
+<p><strong>3)</strong> <em>$S^1$ 의 코호몰로지</em>: $H^1(S^1) = \mathbb{R}$ — <em>1차원 구멍의 존재</em>를 측정.</p>
+<p><strong>4)</strong> <em>Betti 수</em> $b_k = \dim H^k(M)$ — 공간의 <em>위상학적 구멍의 독립 개수</em>.</p>
+<p><strong>5)</strong> <em>Euler 표수</em> $\chi(M) = \sum_k (-1)^k b_k(M)$ — <em>위상학적 불변량</em>.</p>
+<p><strong>6)</strong> <em>호모토피 불변성</em>: 호모토피 동치인 공간들은 같은 코호몰로지.</p>
+<p><strong>7)</strong> <em>de Rham 정리</em>: de Rham 코호몰로지 = 특이 코호몰로지 — <em>해석학과 위상수학의 통일</em>.</p>
+<p><strong>8)</strong> <em>Aharonov-Bohm 효과</em>: 솔레노이드 바깥의 전자가 <em>코호몰로지를 통해</em> 자기장의 영향을 받음.</p>
+<p><strong>9)</strong> <em>Dirac 모노폴</em>: 자기 모노폴의 존재성과 <em>전기·자기 전하의 양자화</em> 가 코호몰로지에서 자연스럽게 등장.</p>
+<p><strong>10)</strong> <em>위상 절연체와 Chern 수</em>: <em>NEGF·응집계 물리</em> 의 위상학적 양들이 <em>Berry 곡률의 적분</em> — 직접 코호몰로지 응용.</p>
+<p><strong>11)</strong> 외대수가 단순한 미분 도구가 아니라 <em>공간의 모양 (위상) 을 측정하는 강력한 언어</em>.</p>
+<p>다음 §13 에서 <em>Hodge 별표 $\star$</em> — 메트릭이 있을 때 <em>$k$-form 과 $(n-k)$-form 의 자연스러운 대응</em> — 을 본다. 이 장에서 살짝 등장한 $\star$ 의 정확한 정의와 응용을 다룬다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

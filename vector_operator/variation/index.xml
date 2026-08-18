@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Variation :: 수리전자물리학</title>
+    <link>http://localhost:1313/vector_operator/variation/index.html</link>
+    <description>(b) Convention (b) Differential operators (b) Variational Operator (b) Local linearization</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/vector_operator/variation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Convention</title>
+      <link>http://localhost:1313/vector_operator/variation/b_convention/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/variation/b_convention/index.html</guid>
+      <description>1. 표기 규약&#xD;1) 헷: 유계 선형 연산자&#xA;기호 위에 헷($\hat{\cdot}$)이 붙은 표기는 $V \to V^*$의 유계 선형 연산자를 뜻한다. 켓과 나란히 붙여 쓰면 해당 연산자의 작용을 나타낸다. 헷이 붙지 않은 기호는 비선형 사상을 의미한다.&#xA;$$&#xD;\hat{A}|u\rangle \in V^*, \qquad \hat{A}\big(c_1|u_1\rangle + c_2|u_2\rangle\big) = c_1\hat{A}|u_1\rangle + c_2\hat{A}|u_2\rangle&#xD;$$$$&#xD;N(u) \in V^* \quad (\text{허용})&#xD;$$$$&#xD;N|u\rangle \quad (\text{금지})&#xD;$$ 의미: 헷은 선형성을 표시하고, 켓과의 병치(juxtaposition)는 작용을 표시한다. 금지 이유: 병치 표현 자체가 이미 선형 작용의 의미를 담고 있으므로, 비선형 사상을 병치로 쓰면 선형성 여부를 판별할 수 없다. 2) 소괄호: 상태 의존성</description>
+    </item>
+    <item>
+      <title>(b) Differential operators</title>
+      <link>http://localhost:1313/vector_operator/variation/b_differential_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/variation/b_differential_operator/index.html</guid>
+      <description>1. 개요 및 목적&#xD;본 문서는 표기 규약 위에서 도함수 $D$가 대상의 종류에 따라 무엇이 되는지를 규정한다.&#xA;미분의 대수적 본질은 다루는 공간의 크기와 무관하게 하나이다. 동작점에서 국소 선형 사상을 하나 계산하고 그 사상에 방향 인자를 전달한다. 1차원 실수 함수에서든 무한차원 연산자 사상에서든 이 구조는 바뀌지 않으며, 바뀌는 것은 그 국소 선형 사상이 속하는 공간뿐이다.&#xA;$$&#xD;D X\big[\,a : \vert{}\eta\rangle\,\big]&#xD;$$$$&#xD;D X\big[\,a : \,\cdot\,\big] \;\in\; \mathcal{L}\big(\,U,\; W\,\big), \qquad U = \text{방향이 속하는 공간}, \quad W = X \text{의 값이 속하는 공간}&#xD;$$ $X$: 미분의 대상이며 사상이지 값이 아니다. 콜론 왼쪽: 국소 선형 사상을 계산할 동작점을 지정한다. 콜론 오른쪽: 방향 인자가 들어가며 비워 두면 사상 자체를 가리킨다. $U$는 규약의 전제에서 정해지고 $W$는 규약의 정리 1에서 정해진다. 그러므로 도함수의 정체를 파악하려면 $X$가 어디에서 어디로 가는 사상인지만 보면 된다.</description>
+    </item>
+    <item>
+      <title>(b) Variational Operator</title>
+      <link>http://localhost:1313/vector_operator/variation/b_variational_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/variation/b_variational_operator/index.html</guid>
+      <description>1. 변분 연산자의 기본 성질&#xD;1) 선형성&#xA;상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.&#xA;$$&#xD;\delta\big\{c_1 X_1 + c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;+\; c_2\,\delta X_2&#xD;$$$$&#xD;\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle&#xD;$$ 성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다. 적용 대상: $X$의 종류에 무관하게 성립한다. proof&#xD;정의 1에서 $X$ 자리에 $c_1X_1 + c_2X_2$를 대입한다.&#xD;$$&#xD;\delta\big\{c_1 X_1 + c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u+\epsilon\eta) + c_2 X_2(u+\epsilon\eta)\Big]\right\vert_{\epsilon=0}&#xD;$$&#xD;실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.&#xD;$$&#xD;= \; c_1\left.\frac{d}{d\epsilon} X_1(u+\epsilon\eta)\right\vert_{\epsilon=0} \;+\; c_2\left.\frac{d}{d\epsilon} X_2(u+\epsilon\eta)\right\vert_{\epsilon=0}&#xD;$$&#xD;각 항에 정의 1을 적용한다.&#xD;$$&#xD;= \; c_1\,\delta X_1 \;+\; c_2\,\delta X_2&#xD;$$&#xD;2) 상수의 변분</description>
+    </item>
+    <item>
+      <title>(b) Local linearization</title>
+      <link>http://localhost:1313/vector_operator/variation/b_local_linearization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/variation/b_local_linearization/index.html</guid>
+      <description>1. 개요 및 목적&#xD;본 문서는 비선형 사상 $F : V \to V^{*}$를 동작점에서 하나의 선형 연산자로 근사하는 전개를 다룬다. 그 선형 연산자를 자코비안로 정의하고 $\hat{J}_{a}$로 쓴다.&#xA;$$&#xD;\hat{J}_{a}\,\vert{}\eta\rangle \;\equiv\; DF\big[\,a : \vert{}\eta\rangle\,\big] \;\in\; V^{*}&#xD;$$$\hat{J}_{a}$는 $\mathcal{L}(V,V^{*})$의 원소이므로 규약에 따라 헷을 씌운다. 아래첨자 $a$는 규약 §3-5에 따라 상태 자리에 값을 대입한 것이다.&#xA;2. 비선형 사상의 구조 분류&#xD;1) 일반 비선형 사상</description>
+    </item>
+  </channel>
+</rss>

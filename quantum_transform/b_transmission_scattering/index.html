@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: $T(E)$ 를 어떻게 계산하는가Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.
+이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 &#43; 반사파 &#43; 투과파의 진폭을 매칭해서 투과 확률을 얻는다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Transmission and scattering :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: $T(E)$ 를 어떻게 계산하는가Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.
+이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 &#43; 반사파 &#43; 투과파의 진폭을 매칭해서 투과 확률을 얻는다.">
+    <meta property="og:url" content="http://localhost:1313/quantum_transform/b_transmission_scattering/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Transmission and scattering :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: $T(E)$ 를 어떻게 계산하는가Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.
+이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 &#43; 반사파 &#43; 투과파의 진폭을 매칭해서 투과 확률을 얻는다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Quantum transprt">
+    <meta itemprop="name" content="(b) Transmission and scattering :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: $T(E)$ 를 어떻게 계산하는가Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.
+이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 &#43; 반사파 &#43; 투과파의 진폭을 매칭해서 투과 확률을 얻는다.">
+    <meta itemprop="wordCount" content="1979">
+    <title>(b) Transmission and scattering :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/quantum_transform\/b_transmission_scattering\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/quantum_transform/b_transmission_scattering/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기--를-어떻게-계산하는가">1. 동기:  를 어떻게 계산하는가</a></li>
+        <li><a href="#2-산란-진폭과-투과-확률">2. 산란 진폭과 투과 확률</a></li>
+        <li><a href="#3-transfer-matrix-방법">3. Transfer matrix 방법</a></li>
+        <li><a href="#4-단일-직사각-barrier">4. 단일 직사각 barrier</a></li>
+        <li><a href="#5-이중-barrier-resonant-tunneling">5. 이중 barrier: Resonant tunneling</a></li>
+        <li><a href="#6-negf-표현과의-일치">6. NEGF 표현과의 일치</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/quantum_transform/index.html"><span itemprop="name">Quantum transprt</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Transmission and scattering</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/quantum_transform/b_buttiker_formula/index.html" title="(b) Büttiker formula (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/research/index.html" title="Research (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable quantum_transform" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-transmission-and-scattering">(b) Transmission and scattering</h1>
+
+<hr>
+<h3 id="1-동기--를-어떻게-계산하는가">1. 동기: $T(E)$ 를 어떻게 계산하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.</p>
+<p>이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 + 반사파 + 투과파의 진폭을 매칭해서 투과 확률을 얻는다.</p>
+<p>다룰 내용:</p>
+<ul>
+<li>산란 진폭과 투과 확률</li>
+<li>Transfer matrix 방법 (여러 영역을 효율적으로 합성)</li>
+<li>대표적 예: 단일 barrier, 직사각 우물, 이중 barrier (공명 투과)</li>
+<li>NEGF 표현 $T = \text{Tr}[\Gamma_L G^R \Gamma_R G^A]$ 와의 일치 증명</li>
+</ul>
+<p>처음 산란을 배우는 사람도 따라갈 수 있도록 단계적으로 진행한다.</p>
+<hr>
+<h3 id="2-산란-진폭과-투과-확률">2. 산란 진폭과 투과 확률<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 1D 산란 문제의 설정</strong></p>
+<p>다음 구조의 1D 시스템을 다룬다.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>       [좌측 lead]        [산란 영역]       [우측 lead]
+        x &lt; 0              0 &lt; x &lt; L         x &gt; L
+        V(x) = 0           V(x) = ?          V(x) = 0</code></pre></div>
+<p>좌측과 우측 lead 에서는 자유 입자 ($V = 0$). 산란 영역의 퍼텐셜 $V(x)$ 는 임의 형태.</p>
+<p><strong>2) 각 영역의 파동 함수</strong></p>
+<p>에너지 $E$ 의 입자가 좌측에서 입사하는 경우를 고려한다 (오른쪽으로 진행). $k = \sqrt{2mE}/\hbar$ 라 하면:</p>
+<p><strong>좌측 lead</strong> ($x < 0$): 자유 입자, 입사파와 반사파의 중첩.</p>
+$$
+\psi_L(x) = e^{ikx} + r\,e^{-ikx}
+$$<p>여기서 $e^{ikx}$ 가 입사파 (단위 진폭으로 정규화), $r\,e^{-ikx}$ 가 반사파. $r$ 은 <strong>반사 진폭 (reflection amplitude)</strong> — 복소수.</p>
+<p><strong>우측 lead</strong> ($x > L$): 자유 입자, 투과파만 (오른쪽으로 진행하는 입자만).</p>
+$$
+\psi_R(x) = t\,e^{ikx}
+$$<p>$t$ 는 <strong>투과 진폭 (transmission amplitude)</strong> — 복소수.</p>
+<p><strong>산란 영역</strong> ($0 < x < L$): 퍼텐셜 $V(x)$ 에 의해 결정되는 일반적 파동 함수. 자세한 형태는 $V(x)$ 의 종류에 따라 다름.</p>
+<p><strong>3) 투과 확률과 반사 확률</strong></p>
+<p>$T(E) = |t|^2$, $R(E) = |r|^2$.</p>
+<p>확률 보존 — 입자가 어딘가로 (반사 또는 투과) 가야 하므로</p>
+$$
+T(E) + R(E) = 1
+$$<p>(증명은 시간 무관 Schrödinger 방정식의 확률 흐름 $j = \hbar\,\text{Im}[\psi^*\partial_x\psi]/m$ 가 모든 곳에서 일정하다는 사실에서 따라옴.)</p>
+<p><strong>4) 일반 절차</strong></p>
+<p>$T(E)$ 를 계산하려면:</p>
+<p>(a) 산란 영역 안에서 Schrödinger 방정식의 해 $\psi_S(x)$ 를 구한다.
+(b) 경계 ($x = 0$ 과 $x = L$) 에서 파동 함수와 그 미분의 연속성을 부과한다.
+(c) 매칭 조건을 풀어 $r, t$ 를 결정한다.
+(d) $T(E) = |t|^2$ 계산.</p>
+<p>단계 (c) 가 작은 시스템에서는 직접 가능하지만, 복잡한 시스템에서는 다음에 다룰 transfer matrix 방법이 효율적이다.</p>
+<hr>
+<h3 id="3-transfer-matrix-방법">3. Transfer matrix 방법<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 동기</strong></p>
+<p>산란 영역이 여러 부분으로 구성된 경우 (예: 두 개의 barrier 사이에 우물), 각 영역의 매칭을 따로 다루는 것은 번거롭다. Transfer matrix 방법은 각 영역의 효과를 $2 \times 2$ 행렬로 표현하고, 영역들의 합성을 행렬 곱으로 처리한다.</p>
+<p><strong>2) 상태 벡터의 정의</strong></p>
+<p>위치 $x$ 에서 파동 함수와 그 미분을 묶어 2 성분 벡터로 정의:</p>
+$$
+\Psi(x) = \begin{pmatrix} \psi(x) \\ \psi'(x) \end{pmatrix}
+$$<p>이 벡터가 시스템의 양자역학적 상태를 한 점에서 완전히 결정한다 (2차 미분방정식이므로 두 개의 초기 조건이 해를 결정).</p>
+<p><strong>3) Transfer matrix 의 정의</strong></p>
+<p>영역 $[x_1, x_2]$ 의 transfer matrix $M$ 은 $\Psi(x_1)$ 을 $\Psi(x_2)$ 로 보내는 행렬이다.</p>
+$$
+\Psi(x_2) = M\,\Psi(x_1)
+$$<p>$M$ 은 $2 \times 2$ 행렬이며, 그 영역의 퍼텐셜에 의해 결정된다.</p>
+<p><strong>4) 합성 규칙</strong></p>
+<p>여러 영역을 차례로 통과하는 경우 transfer matrix 가 곱셈으로 합성된다.</p>
+$$
+\Psi(x_3) = M_{23}\,\Psi(x_2) = M_{23}\,M_{12}\,\Psi(x_1)
+$$<p>$M_{\text{total}} = M_{23}\,M_{12}$. 순서 주의 — 오른쪽 행렬이 먼저 작용.</p>
+<p><strong>5) 단순한 예: 일정 퍼텐셜 영역</strong></p>
+<p>영역 $[x_1, x_2]$ 에서 퍼텐셜이 일정값 $V$ 이고 $E > V$ 인 경우. 파동 수 $k = \sqrt{2m(E - V)}/\hbar$. 일반 해</p>
+$$
+\psi(x) = A\,e^{ik(x - x_1)} + B\,e^{-ik(x - x_1)}
+$$<p>$\psi(x_1) = A + B$, $\psi'(x_1) = ik(A - B)$. 마찬가지로 $x = x_2$ 에서. 두 점 사이의 transfer matrix:</p>
+$$
+M = \begin{pmatrix} \cos(k\,d) & \sin(k\,d)/k \\ -k\sin(k\,d) & \cos(k\,d) \end{pmatrix}, \quad d = x_2 - x_1
+$$<p>$E < V$ (터널링 영역) 인 경우 $\kappa = \sqrt{2m(V - E)}/\hbar$ 로 두면 sinusoid 가 hyperbolic 함수로 교체:</p>
+$$
+M = \begin{pmatrix} \cosh(\kappa d) & \sinh(\kappa d)/\kappa \\ \kappa\sinh(\kappa d) & \cosh(\kappa d) \end{pmatrix}
+$$<p>이 두 단순 transfer matrix 가 복잡한 시스템의 빌딩 블록.</p>
+<p><strong>6) 투과 진폭의 도출</strong></p>
+<p>전체 시스템의 transfer matrix $M_{\text{total}}$ 이 주어지면, 좌측 lead 의 입사/반사 진폭과 우측 lead 의 투과 진폭을 매칭해 $t, r$ 을 얻는다.</p>
+<p>좌측 lead 의 $\Psi(0) = \begin{pmatrix} 1 + r \\ ik(1 - r) \end{pmatrix}$ (입사파 단위 진폭).</p>
+<p>우측 lead 의 $\Psi(L) = \begin{pmatrix} t \\ ikt \end{pmatrix}$ (투과파만).</p>
+<p>매칭 $\Psi(L) = M_{\text{total}}\,\Psi(0)$ 에서 두 식이 나오고, 미지수 $r, t$ 를 결정한다.</p>
+<p>자세한 도출은 다음 example 에서.</p>
+<hr>
+<h3 id="4-단일-직사각-barrier">4. 단일 직사각 barrier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 시스템 설정</strong></p>
+$$
+V(x) = \begin{cases} V_0 & 0 < x < L \\ 0 & \text{otherwise} \end{cases}
+$$<p>높이 $V_0$, 폭 $L$ 의 단순 barrier.</p>
+<p><strong>2) Transfer matrix</strong></p>
+<p>Barrier 안에서 ($E < V_0$, 터널링): $\kappa = \sqrt{2m(V_0 - E)}/\hbar$.</p>
+$$
+M_{\text{barrier}} = \begin{pmatrix} \cosh(\kappa L) & \sinh(\kappa L)/\kappa \\ \kappa\sinh(\kappa L) & \cosh(\kappa L) \end{pmatrix}
+$$<p><strong>3) 투과 진폭</strong></p>
+<p>매칭 절차 수행 결과:</p>
+$$
+t(E) = \frac{2ik\kappa}{2ik\kappa\cosh(\kappa L) + (k^2 - \kappa^2)\sinh(\kappa L)}
+$$<p>(여기서 $k = \sqrt{2mE}/\hbar$ 는 lead 의 파동 수.)</p>
+<p>투과 확률 $T = |t|^2$. 계산하면</p>
+$$
+T(E) = \frac{1}{1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)}}, \quad E < V_0
+$$<p><strong>4) 두꺼운 barrier 한계</strong></p>
+<p>$\kappa L \gg 1$ 인 한계 (barrier 가 두껍거나 에너지가 낮음). $\sinh(\kappa L) \approx e^{\kappa L}/2$ 이므로</p>
+$$
+T(E) \approx \frac{16 E (V_0 - E)}{V_0^2}\,e^{-2\kappa L}
+$$<p>지수 인자 $e^{-2\kappa L}$ 이 터널링 확률의 기본 의존성. $\kappa L$ 이 작아질수록 (barrier 가 얇거나 에너지가 barrier 에 가까워질수록) 투과가 커진다.</p>
+<p>이 단순 결과가 양자수송의 가장 기본적 현상 — <strong>터널링</strong> — 을 정량적으로 보여준다.</p>
+<p><strong>5) Barrier 위 에너지</strong></p>
+<p>$E > V_0$ 인 경우. 내부 파동 수 $k' = \sqrt{2m(E - V_0)}/\hbar$.</p>
+$$
+T(E) = \frac{1}{1 + \frac{V_0^2 \sin^2(k' L)}{4E(E - V_0)}}, \quad E > V_0
+$$<p>특정 에너지에서 $\sin(k' L) = 0$, 즉</p>
+$$
+k' L = n\pi, \quad n = 1, 2, 3, \ldots
+$$<p>이 조건에서 $T(E) = 1$ — <strong>완전 투과 (resonant transmission)</strong>. Barrier 가 있음에도 입자가 완전히 통과.</p>
+<p>물리적 해석: 입자의 파장 $\lambda' = 2\pi/k'$ 이 barrier 폭의 정수 배 ($L = n\lambda'/2$) 인 조건에서 barrier 양 끝의 반사파들이 정확히 상쇄 간섭. 결과적으로 반사가 0 이 되고 모든 입자가 투과한다.</p>
+<hr>
+<h3 id="5-이중-barrier-resonant-tunneling">5. 이중 barrier: Resonant tunneling<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 시스템 설정</strong></p>
+<p>두 개의 barrier 사이에 우물이 있는 구조.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0"><code>[ |V_0|       |V_0| ]
+[ |----| 우물 |----| ]
+[ 0    a    b    L ]</code></pre></div>
+<p>각 barrier 의 폭 $a$, 사이 우물의 폭 $b - a$, 전체 길이 $L$.</p>
+<p><strong>2) Resonant tunneling 의 직관</strong></p>
+<p>두꺼운 barrier 가 두 개 있으면 직관적으로 투과 확률이 매우 작을 것 같다 ($T \sim e^{-4\kappa a}$, 두 barrier 모두 통과). 그러나 특정 에너지에서는 <strong>단일 barrier 보다도 큰 투과</strong> — 심지어 완전 투과 $T = 1$ — 가 일어난다. 이를 <strong>resonant tunneling</strong> 이라 한다.</p>
+<p>물리적 이유: 두 barrier 사이의 우물에 양자 우물 상태 (quasi-bound state) 가 형성됨. 입사 에너지가 그 quasi-bound 에너지와 일치하면, 우물 안에서 파동이 공명적으로 증폭되어 두 barrier 를 효과적으로 무력화한다.</p>
+<p><strong>3) 정량적 결과</strong></p>
+<p>전체 시스템의 transfer matrix $M_{\text{total}} = M_{\text{barrier 2}}\,M_{\text{well}}\,M_{\text{barrier 1}}$. 자세한 계산은 단순하지 않지만, 결과는 다음 형태이다.</p>
+$$
+T(E) = \frac{1}{1 + F(E)\,\sin^2(\phi(E))}
+$$<p>여기서 $F(E)$ 는 두 barrier 의 두께/높이로 결정되는 계수, $\phi(E)$ 는 우물 안에서 입자가 한 번 왕복할 때 축적되는 위상.</p>
+<p>$\sin(\phi(E)) = 0$ 즉 $\phi(E) = n\pi$ 의 조건에서 $T(E) = 1$ — 완전 투과. 이 조건이 우물 안 quasi-bound 에너지에 대응한다.</p>
+<p><strong>4) Lorentzian 모양</strong></p>
+<p>공명 근처에서 $T(E)$ 가 다음 Lorentzian 모양:</p>
+$$
+T(E) \approx \frac{(\Gamma/2)^2}{(E - E_n)^2 + (\Gamma/2)^2}
+$$<ul>
+<li>$E_n$: $n$ 번째 quasi-bound 에너지 (공명 중심)</li>
+<li>$\Gamma$: 공명 폭 — 두 barrier 의 두께/높이로 결정 ($\Gamma$ 가 작을수록 sharp 한 공명)</li>
+</ul>
+<p>$E = E_n$ 에서 $T = 1$ (완전 투과), 공명에서 멀어지면 $T$ 가 빠르게 감소.</p>
+<p><strong>5) NEGF 의 Lorentzian 과의 일치</strong></p>
+<p>이 Lorentzian 모양은 NEGF 챕터에서 본 단일 사이트 시스템의 결과</p>
+$$
+T(E) = \frac{\Gamma_L \Gamma_R}{(E - \epsilon_0)^2 + ((\Gamma_L + \Gamma_R)/2)^2}
+$$<p>와 정확히 같은 구조이다. Resonant tunneling 의 양자 우물 quasi-bound state 가 NEGF 의 단일 사이트 시스템의 에너지 레벨 $\epsilon_0$ 와 대응, 우물의 lifetime 이 lead 와의 결합 강도 $\Gamma_{L,R}$ 과 대응.</p>
+<p>이 일치가 우연이 아니라, 두 framework 이 같은 양자역학적 현상의 다른 표현임을 보여준다.</p>
+<p><strong>6) 응용</strong></p>
+<p>Resonant tunneling 은 양자수송의 가장 흥미로운 현상 중 하나이며, 응용도 다양하다.</p>
+<ul>
+<li><strong>Resonant tunneling diode (RTD)</strong>: 이중 barrier 헤테로구조에서 공명 투과를 이용한 디바이스. 음의 미분 저항 (negative differential resistance) 특성을 가져 고주파 oscillator 등에 응용.</li>
+<li><strong>양자점 수송</strong>: 두 lead 사이의 양자점이 본질적으로 이중 barrier 구조이며, 공명 투과가 양자점 transport 의 핵심.</li>
+</ul>
+<hr>
+<h3 id="6-negf-표현과의-일치">6. NEGF 표현과의 일치<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절의 핵심 결과인 양자역학적 산란 진폭으로부터의 $T(E)$ 계산과, NEGF 챕터의 $T = \text{Tr}[\Gamma_L G^R \Gamma_R G^A]$ 가 같은 양을 표현한다는 사실을 검증한다.</p>
+<p><strong>1) 단일 사이트 NEGF</strong></p>
+<p>NEGF 챕터의 가장 단순한 예: 산란 영역이 한 사이트, $H_s = \epsilon_0$. Wide-band 근사 $\Sigma_{L,R}^R = -i\Gamma_{L,R}/2$.</p>
+<p>Retarded Green&rsquo;s function:</p>
+$$
+G^R(E) = \frac{1}{E - \epsilon_0 + i(\Gamma_L + \Gamma_R)/2}
+$$<p>투과:</p>
+$$
+T(E) = \Gamma_L \Gamma_R\,|G^R(E)|^2 = \frac{\Gamma_L \Gamma_R}{(E - \epsilon_0)^2 + ((\Gamma_L + \Gamma_R)/2)^2}
+$$<p>Lorentzian.</p>
+<p><strong>2) 1D 산란 해석과의 대응</strong></p>
+<p>위 단일 사이트 NEGF 시스템을 1D 산란 그림으로 재해석. 산란 영역이 한 점 ($x = 0$) 의 quasi-bound state, 에너지 $\epsilon_0$. 두 lead 와 결합 강도 $\Gamma_{L,R}$.</p>
+<p>1D 산란 진폭으로부터 $T(E)$ 도출 (Breit-Wigner 형태): 공명 산란 이론에서</p>
+$$
+T(E) = \frac{\Gamma_L \Gamma_R}{(E - \epsilon_0)^2 + ((\Gamma_L + \Gamma_R)/2)^2}
+$$<p>NEGF 결과와 정확히 일치. ✓</p>
+<p><strong>3) 일반 도출의 스케치</strong></p>
+<p>다채널 1D 시스템에서도 같은 일치가 성립한다. 자세한 일반 도출은 다음 절차를 따른다.</p>
+<p>(a) 1D Schrödinger 방정식의 산란 해를 $\psi = \psi_0 + \psi_{\text{scattered}}$ 로 분해.
+(b) Lippmann-Schwinger 방정식 $\psi = \psi_0 + G_0\,V\,\psi$ 의 해는 retarded Green&rsquo;s function 으로 표현 가능.
+(c) 투과 진폭 $t$ 가 $G$ 의 행렬 요소에 비례.
+(d) $|t|^2$ 가 $\text{Tr}[\Gamma_L G^R \Gamma_R G^A]$ 형태로 정리.</p>
+<p>자세한 도출은 양자 산란 이론의 표준 결과이며, NEGF 와 산란 이론이 같은 framework 임을 보여준다.</p>
+<p><strong>4) 두 관점의 통합</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>산란 이론</th>
+          <th>NEGF</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>입사 + 반사 + 투과 진폭</td>
+          <td>$G^R, G^A$ 의 행렬 요소</td>
+      </tr>
+      <tr>
+          <td>산란 영역 안의 quasi-bound state</td>
+          <td>$H_s$ 의 고유 상태</td>
+      </tr>
+      <tr>
+          <td>Quasi-bound state 의 수명</td>
+          <td>$\Gamma_{L,R}$</td>
+      </tr>
+      <tr>
+          <td>$T(E) = \vert t(E)\vert^2$</td>
+          <td>$T(E) = \text{Tr}[\Gamma_L G^R \Gamma_R G^A]$</td>
+      </tr>
+  </tbody>
+</table>
+<p>두 표현이 같은 물리를 다른 각도에서 본다. 산란 이론은 입사/투과의 입자 흐름 그림에 직관적이고, NEGF 는 시스템 안의 그린함수와 결합 강도로 일반적 framework 을 제공한다.</p>
+<hr>
+<p><strong>example1) 직사각 barrier 의 transfer matrix 계산</strong></p>
+<p>단일 직사각 barrier 의 $T(E)$ 를 transfer matrix 방법으로 명시적으로 계산.</p>
+<p>sol)</p>
+<p>$V(x) = V_0$ for $0 < x < L$, 0 elsewhere. $E < V_0$ 가정 (터널링).</p>
+<p>내부 파동 수: $\kappa = \sqrt{2m(V_0 - E)}/\hbar$. 외부 파동 수: $k = \sqrt{2mE}/\hbar$.</p>
+<p>Barrier 내부 transfer matrix:</p>
+$$
+M_{\text{barrier}} = \begin{pmatrix} \cosh(\kappa L) & \sinh(\kappa L)/\kappa \\ \kappa\sinh(\kappa L) & \cosh(\kappa L) \end{pmatrix}
+$$<p>좌측 lead 의 $\Psi(0)$:</p>
+$$
+\Psi(0) = \begin{pmatrix} 1 + r \\ ik(1 - r) \end{pmatrix}
+$$<p>우측 lead 의 $\Psi(L)$:</p>
+$$
+\Psi(L) = \begin{pmatrix} t\,e^{ikL} \\ ik\,t\,e^{ikL} \end{pmatrix}
+$$<p>(여기서 $e^{ikL}$ 은 우측 lead 에서의 위상 진행. 실제 매칭은 $x = L^-$ 와 $x = L^+$ 의 매칭으로, 더 자세히 보면 우측 lead 의 transfer matrix 도 고려해야 함. 표준적 처리는 lead 의 perfect transparency 를 가정하고 위 형태로 진행.)</p>
+<p>매칭 $\Psi(L) = M_{\text{barrier}}\,\Psi(0)$ 에서 두 방정식이 나오고, 두 미지수 $r, t$ 를 풀 수 있다.</p>
+<p>상세 대수 계산 (생략) 후:</p>
+$$
+t(E) = \frac{2ik\kappa\,e^{-ikL}}{2ik\kappa\cosh(\kappa L) + (k^2 - \kappa^2)\sinh(\kappa L)}
+$$<p>투과 확률</p>
+$$
+T(E) = |t(E)|^2 = \frac{4k^2\kappa^2}{4k^2\kappa^2\cosh^2(\kappa L) + (k^2 - \kappa^2)^2\sinh^2(\kappa L)}
+$$<p>이를 정리하면 §4-(3) 의 결과</p>
+$$
+T(E) = \frac{1}{1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)}}
+$$<p>와 일치. ✓</p>
+<hr>
+<p><strong>example2) 1D 직사각 우물의 공명 산란</strong></p>
+<p>우물 (즉 $V_0 < 0$, attractive potential) 에서의 산란. Quasi-bound state 가 자연스럽게 등장.</p>
+<p>sol)</p>
+<p>$V(x) = -V_0$ for $0 < x < L$ (우물), $V_0 > 0$. 외부 lead 는 $V = 0$.</p>
+<p>내부 파동 수: $k' = \sqrt{2m(E + V_0)}/\hbar$ (입사 에너지가 양수이므로 우물 안에서 더 큰 운동에너지). 외부: $k = \sqrt{2mE}/\hbar$.</p>
+<p>투과 확률 (계산 결과):</p>
+$$
+T(E) = \frac{1}{1 + \frac{V_0^2\sin^2(k'L)}{4E(E + V_0)}}
+$$<p>특별한 에너지에서 $\sin(k' L) = 0$, 즉</p>
+$$
+k'L = n\pi, \quad n = 1, 2, 3, \ldots
+$$<p>이 조건에서 $T = 1$ — 우물이 있음에도 입자가 완전 투과.</p>
+<p>물리적 의미: $k' L = n\pi$ 의 조건은 우물 안에서 양자 우물 상태의 quantization 조건과 같다. 입사 에너지가 우물의 quasi-bound 에너지와 일치할 때 우물 안에서 파동이 공명적으로 증폭되어 산란이 사라진다.</p>
+<p>이 결과가 §5 의 이중 barrier 공명 투과의 단순화된 버전. 우물 양쪽이 무한 lead 가 아니라 두꺼운 barrier 라면 공명이 더 sharp 해지며 RTD 의 특성에 도달.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu">
+            <li class="" data-nav-id="/quantum_transform/b_quantum_transport_intro/index.html"><a class="padding" href="/quantum_transform/b_quantum_transport_intro/index.html">(b) Introduction to quantum transport</a></li>
+            <li class="" data-nav-id="/quantum_transform/b_landauer_formula/index.html"><a class="padding" href="/quantum_transform/b_landauer_formula/index.html">(b) Landauer formula</a></li>
+            <li class="" data-nav-id="/quantum_transform/b_buttiker_formula/index.html"><a class="padding" href="/quantum_transform/b_buttiker_formula/index.html">(b) Büttiker formula</a></li>
+            <li class="active " data-nav-id="/quantum_transform/b_transmission_scattering/index.html"><a class="padding" href="/quantum_transform/b_transmission_scattering/index.html">(b) Transmission and scattering</a></li></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

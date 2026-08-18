@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="2.1 기초 지표의 공리적 정의와 레지듀 변환본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.
+1) 힐베르트 공간 내 범함수 사상 정의
+미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CHAPTER 2 :: 수리전자물리학">
+    <meta name="twitter:description" content="2.1 기초 지표의 공리적 정의와 레지듀 변환본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.
+1) 힐베르트 공간 내 범함수 사상 정의
+미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.">
+    <meta property="og:url" content="http://localhost:1313/temp/research_na/chapter2/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="CHAPTER 2 :: 수리전자물리학">
+    <meta property="og:description" content="2.1 기초 지표의 공리적 정의와 레지듀 변환본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.
+1) 힐베르트 공간 내 범함수 사상 정의
+미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Temps">
+    <meta itemprop="name" content="CHAPTER 2 :: 수리전자물리학">
+    <meta itemprop="description" content="2.1 기초 지표의 공리적 정의와 레지듀 변환본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.
+1) 힐베르트 공간 내 범함수 사상 정의
+미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.">
+    <meta itemprop="wordCount" content="2510">
+    <title>CHAPTER 2 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/temp\/research_na\/chapter2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/temp/research_na/chapter2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#21-기초-지표의-공리적-정의와-레지듀-변환">2.1 기초 지표의 공리적 정의와 레지듀 변환</a></li>
+        <li><a href="#22-대수적-소멸과-국소-잔류">2.2 대수적 소멸과 국소 잔류</a></li>
+        <li><a href="#23-연산자-보존-법칙-operator-conservation-law">2.3 연산자 보존 법칙 (Operator Conservation Law)</a></li>
+        <li><a href="#24-벌크-경계-소산-정리-bulk-boundary-dissipation-theorem">2.4 벌크-경계 소산 정리 (Bulk-Boundary Dissipation Theorem)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/index.html"><span itemprop="name">Temps</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/temp/research_na/index.html"><span itemprop="name">Research_NA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">CHAPTER 2</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/research_na/chapter1/index.html" title="CHAPTER 1 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/temp/research_na/chapter3/index.html" title="CHAPTER 3 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable temp" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="chapter-2">CHAPTER 2</h1>
+
+<hr>
+<h3 id="21-기초-지표의-공리적-정의와-레지듀-변환">2.1 기초 지표의 공리적 정의와 레지듀 변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 절에서는 임의의 선형 연산자 $L$에 대한 경계 비대칭성 추출 및 레지듀 변환의 수학적 정의를 수립한다. 유계 도메인(bounded domain) $\Omega \subset \mathbb{R}^d$와 그 경계 $\partial \Omega$에서 정의된 함수 공간을 고려하여 연속계 공리를 전개한다.</p>
+<p><strong>1) 힐베르트 공간 내 범함수 사상 정의</strong></p>
+<p>미분 연산자의 대수적 특성을 규명하기 위해 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$를 도입한다. 이 공간에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$에 대하여 연속 공간 내적을 다음과 같이 정의한다.</p>
+$$\langle \phi, \psi \rangle_\Omega = \int_\Omega \phi^* \psi d\Omega$$<p>위 식에서 $\phi^*$는 $\phi$의 복소 공액(complex conjugate)을 의미한다. 이 내적 공간에서 선형 연산자 $L$의 형식적 수반 연산자(formal adjoint operator) $L^\dagger$는 부분 적분(integration by parts) 혹은 가우스 발산 정리(divergence theorem)의 연속적인 적용을 통해 도출된다.</p>
+<p>무한 도메인이나 주기적 경계 조건이 부여된 특수한 상황이 아닌 일반적인 유계 도메인에서는 미분 연산자가 내적의 우변에서 좌변으로 이동할 때 경계 $\partial \Omega$에서 평가되는 적분 항이 발생한다. 이러한 수학적 성질을 기반으로 전체 작용과 쌍대 공간(dual space)에서의 사상 사이의 대수적 불일치를 정량화할 수 있다.</p>
+<p><strong>2) 레지듀 변환 공리와 해석적 관점의 전환</strong></p>
+<p>연속계 내에서 미분 연산자가 가지는 대수적 비대칭성을 분석하기 위해 임의의 선형 연산자 공간에서 정의된 사상(mapping)으로서 레지듀 변환 연산자(residue transform operator) $\mathcal{R}$을 도입한다. 선형 연산자 $L$에 작용하여 그 대수적 불일치를 추출하는 $\mathcal{R}L$의 작용(action)을 다음의 약형식(weak form) 내적 관계를 통해 공리화한다.</p>
+$$\langle \phi, \mathcal{R}L \psi \rangle_{\partial \Omega} \equiv \langle \phi, L \psi \rangle_\Omega - \langle L^\dagger \phi, \psi \rangle_\Omega$$<p>본 논문에서 정의한 이 레지듀 변환 공리의 우변은 함수해석학의 고전적인 그린 항등식(Green&rsquo;s identity) 내지 라그랑주 항등식(Lagrange&rsquo;s identity)에 수학적 기반을 둔다. 기존의 이론적 체계가 이를 수반 연산자의 도메인과 경계 조건을 규정하는 정적(static) 항등식으로 취급한 반면, 본 연구는 공간 이산화 및 비선형성에 의해 이 항등식이 내부 도메인에서 파괴되며 발생하는 잔류항(residual leakage)을 동역학적 오차 추적을 위한 진단 사상(diagnostic mapping)으로 재해석한다.</p>
+<p>이 정의는 임의의 미분 연산자가 유계 공간 내에서 유발하는 대수적 비대칭성을 추출하는 수학적 척도를 제공한다. 만약 연산자가 도메인 내부에서 형식적 자기 수반성(formal self-adjointness)을 만족한다면 부분 적분의 원리에 따라 두 내적의 차이는 외부 경계 $\partial \Omega$ 상의 표면 적분으로 환원된다. 즉 경계 조건이 대수적으로 소멸하지 않아 우변에 연산 결과가 잔류하더라도 이는 시스템의 외부 경계에 존재할 뿐 도메인 내부(interior bulk)에서는 소멸($0$)한다.</p>
+<p>반면 비균일 공간 메트릭이나 상태 종속적 비선형성에 의해 연산자의 수반성이 파괴되는 계에서는 내적의 차이가 경계로 환원되지 않고 시스템의 내부 도메인 $\Omega$에 영이 아닌 적분항을 남기게 된다. 본 프레임워크는 이처럼 경계로 배출되지 못하고 도메인 내부에 잔류하는 대수적 결과를 시스템의 비정규성(non-normality)과 스펙트럼 왜곡을 측정하는 독립적인 진단 연산자로 규정한다.</p>
+<p><strong>3) 병렬 결합의 선형성 증명</strong></p>
+<p>규정된 레지듀 변환 $\mathcal{R}$은 선형 연산자의 기본적인 대수적 성질을 보존하는 규칙을 갖는다. 임의의 복소 스칼라 $\alpha, \beta$와 선형 연산자 $A, B$에 대한 선형성(linearity)은 내적의 성질로부터 유도된다. 레지듀 변환의 정의를 병렬 결합된 연산자에 적용하여 전개한다.</p>
+$$\langle \phi, \mathcal{R}(\alpha A + \beta B) \psi \rangle_{\partial \Omega} = \langle \phi, (\alpha A + \beta B) \psi \rangle_\Omega - \langle (\alpha A + \beta B)^\dagger \phi, \psi \rangle_\Omega$$<p>수반 연산자의 분배 법칙인 $(\alpha A + \beta B)^\dagger = \alpha^* A^\dagger + \beta^* B^\dagger$을 적용하고 내적 연산의 선형성을 이용하여 식을 분리한 뒤 각 연산자 $A$와 $B$에 대하여 정리한다.</p>
+$$\langle \phi, \mathcal{R}(\alpha A + \beta B) \psi \rangle_{\partial \Omega} = \alpha \left( \langle \phi, A \psi \rangle_\Omega - \langle A^\dagger \phi, \psi \rangle_\Omega \right) + \beta \left( \langle \phi, B \psi \rangle_\Omega - \langle B^\dagger \phi, \psi \rangle_\Omega \right)$$<p>괄호 안의 항들은 각각 $A$와 $B$에 대한 레지듀 변환의 정의와 일치하므로 레지듀 사상은 다중 연산자의 병렬 결합에 대해 일관된 가산성을 지님을 확인한다.</p>
+$$\mathcal{R}(\alpha A + \beta B) = \alpha \mathcal{R}A + \beta \mathcal{R}B$$<p><strong>4) 직렬 결합의 조립 법칙 증명</strong></p>
+<p>두 선형 연산자의 직렬 결합(composition) $AB$에 대한 레지듀 변환의 조립 법칙을 증명한다. 이 과정은 다중 미분 조작이 누적된 오차 사상으로 조립되는 관계를 규명한다. 결합된 연산자의 내적 $\langle \phi, AB \psi \rangle_\Omega$에서 연산자를 순차적으로 좌변으로 이동시킨다.</p>
+<p>먼저 연산자 $A$에 대해 레지듀 변환 공리를 적용한다. 이때 상태 함수 $\psi$ 대신 $B\psi$를 독립적인 함수로 취급하여 전개한다.</p>
+$$
+\langle \phi, A(B \psi) \rangle_\Omega = \langle A^\dagger \phi, B \psi \rangle_\Omega + \langle \phi, (\mathcal{R}A) B \psi \rangle_{\partial \Omega}
+$$<p>이어서 우변에 생성된 내적 항 $\langle A^\dagger \phi, B \psi \rangle_\Omega$의 연산자 $B$에 대하여 동일한 공리를 적용한다.</p>
+$$
+\langle A^\dagger \phi, B \psi \rangle_\Omega = \langle B^\dagger A^\dagger \phi, \psi \rangle_\Omega + \langle A^\dagger \phi, \mathcal{R}B \psi \rangle_{\partial \Omega}
+$$$$
+\langle A^\dagger \phi, \mathcal{R}B \psi \rangle_{\partial \Omega} = \langle \phi, A(\mathcal{R}B) \psi \rangle_{\partial \Omega} - \langle \phi, (\mathcal{R}A)(\mathcal{R}B) \psi \rangle_{\partial \Omega}
+$$<p>선형 대수학의 수반 연산자 직렬 결합 법칙인 $(AB)^\dagger = B^\dagger A^\dagger$를 적용하여 도출된 항들을 모두 종합하면, 두 연산자의 곱에 대한 전체 레지듀 변환은 2차 레지듀 교차항(second-order residue interaction)을 포함하는 미분의 곱 법칙(Leibniz Rule)과 유사한 구조로 확립된다.</p>
+$$
+\langle \phi, \mathcal{R}(AB) \psi \rangle_{\partial \Omega} = \langle \phi, (\mathcal{R}A) B \psi \rangle_{\partial \Omega} + \langle \phi, A(\mathcal{R}B) \psi \rangle_{\partial \Omega} - \langle \phi, (\mathcal{R}A)(\mathcal{R}B) \psi \rangle_{\partial \Omega}
+$$$$
+\mathcal{R} (AB) = (\mathcal{R}A)B + A(\mathcal{R}B) - (\mathcal{R}A)(\mathcal{R}B)
+$$<p>도출된 조립 법칙은 연산자의 비정규성이 다중 결합 과정에서 누적되고 투영되는 형태를 명확히 보여준다. 이 대수적 규칙은 2.2절 공간 불균일성 지표 유도 및 물성 구배가 포함된 다차원 미분 연산자 결합 특성을 분석하는 기반으로 기능한다.</p>
+<hr>
+<h3 id="22-대수적-소멸과-국소-잔류">2.2 대수적 소멸과 국소 잔류<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 2계 타원형 연산자 $\mathcal{R}(\nabla \cdot p \nabla)$의 대수적 소멸: 수치적 정화의 목적 함수</strong></p>
+<p>공간의 차원 및 기하학적 좌표계에 독립적인 보편적 연산자 대수(operator algebra)를 전개하기 위해, 임의의 힐베르트 공간 상에 일반화된 1계 미분 연산자(derivation) $D$를 도입한다. 시스템의 2계 보존 연산자 $L$을 순수 미분 연산자 $D$와 물성 결합 연산자 $pD$의 직렬 결합($L = DpD$)으로 추상화하여 그 대수적 특성을 분석한다.</p>
+<p>도메인 경계 $\partial \Omega$ 근방에서 소멸하는 콤팩트 지지(compact support) 검사 함수 공간 $C_c^\infty(\Omega)$에서의 부분 적분 원리에 의해, 연산자 $D$는 형식적 반대칭성(formal skew-adjointness, $D^\dagger = -D$)을 만족하며, 연산자 대수 내에서 곱의 미분 법칙인 라이프니츠 규칙 $D(p \cdot) = (Dp)\cdot + pD$ 가 성립한다. 이를 바탕으로 두 기초 연산자 $A=D$와 $B=pD$의 레지듀 사상을 확립한다.</p>
+$$
+\mathcal{R}(D) = D - D^\dagger = 2D
+$$$$
+\mathcal{R}(pD) = pD - D^\dagger p = pD + Dp = 2pD + (Dp)
+$$<p>도출된 1계 사상을 직렬 조립 법칙 $\mathcal{R}(AB) = (\mathcal{R}A)B + A(\mathcal{R}B) - (\mathcal{R}A)(\mathcal{R}B)$에 대입하고, 작용 순서를 보존하며 분배 법칙으로 전개한다.</p>
+$$
+\mathcal{R}(DpD) = \underbrace{(2D)(pD)}_{\text{Term 1}} + \underbrace{D(2pD + (Dp))}_{\text{Term 2}} - \underbrace{(2D)(2pD + (Dp))}_{\text{Term 3}}
+$$<p>위 연산자 방정식을 전개하여 합산식을 구성하면 다음과 같다.</p>
+$$
+\mathcal{R}(DpD) = [2DpD] + [2DpD + D((Dp) \cdot)] - [4DpD + 2D((Dp) \cdot)]
+$$<p>동일한 작용 위상을 갖는 연산자들을 병합하는 과정에서 대수적 상쇄(algebraic cancellation)가 발생한다. 동질 결합 항인 $DpD$의 계수가 소거되고, 오직 교차 구배 항만이 감쇄되어 단일 연산자로 축약된다. 이를 임의의 상태 함수 $\psi$에 작용시키면 다음과 같은 연산자 사상이 도출된다.</p>
+$$
+\mathcal{R}(DpD) \psi = -D((Dp)\psi)
+$$<p>이 결과가 연속계의 도메인 내부에서 대수적으로 소멸함을 증명하기 위해, 도출된 사상을 전체 도메인 $\Omega$에 대하여 적분한다. 연산자 $D$가 순수 미분(pure derivation) 형태를 띠고 있으므로, 일반화된 스토크스 정리(generalized Stokes&rsquo; theorem)에 의해 내부 체적 적분은 다음과 같이 경계 $\partial \Omega$에서의 표면 평가로 완벽히 환원된다.</p>
+$$
+\int_\Omega \mathcal{R}(DpD) \psi d\Omega = -\oint_{\partial \Omega} (Dp)\psi \cdot \vec{n} dS
+$$<p>위 식의 우변은 도메인 내부 $\Omega$에 대한 적분 항이 완전히 소멸함을 보여준다. 이는 연속계에서 2계 보존 연산자가 시스템 내부에 어떠한 대수적 마찰(algebraic friction)도 유발하지 않음을 수리적으로 확정한다. 본 유도 과정은 기하학적 복잡성에 구애받지 않고, 2계 보존 연산자가 유발하는 레지듀가 내부 미소 영역의 정밀한 대수적 상쇄를 거쳐 순수 전미분 형태로 축약됨을 규명한다. 이로 인해 도메인 내부(bulk)의 대수적 텐션은 소멸하며, 모든 잔류량은 시스템 경계로 배출된다. 특히 추상 연산자 $D$는 유한체적법(FVM)의 위상적 경계면 미분(topological edge derivative)과 대수적으로 동형(isomorphic)이므로 이산계로의 직접 확장이 보장된다. 실제 이산 격자 공간에서는 절단 오차(truncation error)로 인해 이 연속적 상쇄 대수가 파괴되어, 순수 전미분으로 환원되지 못하고 내부 레지듀가 잔류하게 된다. 따라서 본 프레임워크는 공간 이산화로 인해 파괴된 상쇄력을 수치적으로 복원하여 잔류항을 영(0)으로 수렴시키는 조건, 즉 $\mathcal{R}L_{int} \to 0$을 시스템의 대칭성 회복을 위한 최종 최적화 목표(objective function)로 확립한다.</p>
+<p><strong>2) 1계 물성 결합 연산자 $\mathcal{R}(p\nabla)$: 국소 불균일성 지표의 필연성</strong></p>
+<p>반면, 앞선 유도 과정에서 조립 법칙의 기초 성분으로 확립된 1계 물성 결합 연산자의 레지듀 사상 $\mathcal{R}(pD) = 2pD + (Dp)$의 국소적 거동을 분석한다. 이 사상을 임의의 상태 함수 $\psi$에 작용시켜 전개하면 다음과 같다.</p>
+$$
+\mathcal{R}(p\nabla) \psi = (p\nabla + \nabla p) \psi = p\nabla \psi + \nabla(p\psi) = 2p\nabla \psi + (\nabla p)\psi
+$$<p>도출된 1계 레지듀 사상을 내적 공간의 약형식으로 표현하여 적분 정리를 수행하면 다음과 같은 적분 등식을 얻는다.</p>
+$$
+\int_\Omega \mathcal{R}(pD) \psi d\Omega = \oint_{\partial \Omega} p \psi \vec{n} dS + \int_\Omega (2pD + Dp) \psi d\Omega
+$$<p>이 결과는 앞선 2계 연산자의 레지듀가 순수 전미분 형태로 묶여 내부 적분항이 완벽히 소멸한 것과 명확히 대비된다. 우변의 두 번째 항 $\int_\Omega (2pD + Dp) \psi d\Omega$는 경계로 환원되지 않고 도메인 내부에 고립된 적분 항으로 잔류한다. 이는 시스템이 평형에 도달하더라도, 물성의 공간 구배($Dp$)와 역학적 유량($pD\psi$)이 존재하는 한 대수적 마찰로 인한 텐션이 내부 공간에 지속적으로 내재됨을 의미한다.결과적으로 이 연속계의 잔류 구배 사상은 차후 3장에서 공간 완비성 관계(completeness relation)와 결합하여 전역 대수적 텐션 지표 $S_k$로 일대일 투영되며, 이산 격자의 동역학적 메트릭 조립(Metric Assembly)을 구동하는 독립적이고 능동적인 수학적 지표(Indicator)로 기능한다.</p>
+<p><strong>3) 비선형 자코비안 연산자의 대수적 소멸성 확장</strong></p>
+<p>앞서 확립된 2계 선형 연산자의 내부 소멸 원리는 상태 변수 $u$에 종속적인 비선형 잔차 방정식 $R(u)=0$의 1차 프레셰 도함수(Fréchet derivative)인 자코비안 연산자 $J = \partial R / \partial u$로 자연스럽게 확장된다. 추상 미분 연산자 $D$를 기반으로 임의의 섭동(perturbation) $v \in C_c^\infty(\Omega)$에 대한 자코비안의 국소 선형 사상(local linear mapping)을 전개하면, 시스템은 2계 확산항, 1계 결합 섭동항, 그리고 0계 반응항으로 구성된다.</p>
+$$
+Jv = D(p(u) Dv) + D \left( \frac{\partial p}{\partial u} v Du \right) + \frac{\partial q}{\partial u} v
+$$<p>이 선형 사상에서 2계 주항인 $D(pD\cdot)$와 0계 스칼라 증폭항인 $\frac{\partial q}{\partial u}\cdot$는 자기 사상의 내적 공간에서 자명하게 형식적 자기 수반성(formal self-adjointness)을 만족한다. 반면, 상태 변수의 섭동과 물성 구배 사이의 상호작용을 나타내는 1계 결합항 $D \left( \frac{\partial p}{\partial u} (Du) \cdot \right)$은 본질적인 방향성을 내포하고 있으나, 대상 물리계가 국소 열역학적 평형(local thermodynamic equilibrium)을 유지하는 강타원형 보존계라는 물리적 구속 조건을 적용할 때 대수적 교차 대칭성(cross-symmetry)을 획득한다.</p>
+<p>이를 콤팩트 지지 공간 $C_c^\infty(\Omega)$의 약형식 내적 $\langle \phi, J \psi \rangle_\Omega$에 투입하여 부분 적분을 수행하면, 추상 연산자 $D$의 반대칭성($D^\dagger = -D$)에 의해 적분 기호 내부에서 $\phi$와 $\psi$ 사이의 완벽한 대수적 대칭 교환이 성립한다. 결과적으로 자코비안 연산자 $J$는 계의 비선형성에도 불구하고 1차 변분 공간(first variational space)에서 엄밀한 형식적 수반성($J = J^\dagger$)을 보존한다.</p>
+$$
+\mathcal{R}J_{int} = J - J^\dagger = 0 \quad \text{in } \Omega
+$$<p>이 연속계의 확장은 본 프레임워크에 중요한 수치해석적 당위성을 제공한다. 비선형 자코비안이 내부 레지듀를 유발하지 않고 대수적으로 소멸한다는 증명은, 차후 이산 격자 공간에서 비선형 해법(예: Newton-Raphson 역학)을 구동할 때 관측되는 전이 행렬의 비정규성(non-normality)이 물리적 실체가 아닌 순수한 &lsquo;공간 이산화에 의한 대수적 파괴&rsquo;임을 수리적으로 확정 짓는다. 따라서 비선형 시스템에 대한 $\mathcal{R}J_{int} \to 0$ 조건은 단일 선형 연산자를 넘어, 연속계의 비선형 동역학적 대칭성을 수치적으로 정화(Purification)하기 위한 확고한 기준 척도(reference metric)로 기능한다.</p>
+<hr>
+<h3 id="23-연산자-보존-법칙-operator-conservation-law">2.3 연산자 보존 법칙 (Operator Conservation Law)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 절에서는 2.1절에서 공리화한 레지듀 변환 $\mathcal{R}$을 확장하여 임의의 선형 연산자가 내적 공간 내에서 만족해야 하는 대수적 항등 관계를 유도한다. 이 법칙은 연산자의 비정규성(non-normality)과 상태 함수의 노름(norm) 변화량 및 경계 레지듀 사이의 상관관계를 규정하는 수리적 토대가 된다.</p>
+<p><strong>1) 비정규성의 대수적 분해와 연산자 보존 법칙</strong></p>
+<p>선형 연산자 $L$의 대수적 비대칭성을 정량화하기 위해 연산자 $L$과 그 형식적 수반 연산자 $L^\dagger$ 사이의 교환자(commutator) $[L^\dagger, L] = L^\dagger L - L L^\dagger$를 도입한다. 복소 힐베르트 공간에 속하는 임의의 상태 함수 $\psi$에 대하여 이 교환자의 기댓값은 두 개의 독립적인 내적 항의 차로 정의된다.</p>
+$$
+\langle \psi, [L^\dagger, L] \psi \rangle_\Omega = \langle \psi, L^\dagger L \psi \rangle_\Omega - \langle \psi, L L^\dagger \psi \rangle_\Omega
+$$<p>위 식의 우변을 구성하는 각 내적 항에 대하여 2.1절의 레지듀 변환 공리를 동시 적용한다. 첫 번째 항의 연산자 $L^\dagger$와 두 번째 항의 연산자 $L$을 각각 내적의 좌변으로 이동시키면 수반 연산자의 대수적 성질 $(L^\dagger)^\dagger = L$에 의해 각 항은 상태 함수의 노름 제곱($\|\cdot\|^2$)과 잔류하는 경계 레지듀 항의 합으로 전개된다.</p>
+$$
+\langle \psi, L^\dagger (L\psi) \rangle_\Omega = \|L\psi\|^2 + \langle \psi, \mathcal{R}L^\dagger L \psi \rangle_{\partial \Omega}
+$$$$
+\langle \psi, L (L^\dagger \psi) \rangle_\Omega = \|L^\dagger \psi\|^2 + \langle \psi, \mathcal{R}L L^\dagger \psi \rangle_{\partial \Omega}
+$$<p>도출된 두 분해식을 초기 교환자 기댓값 정의식에 대입하여 항을 재배열하면 시스템의 대수적 불일치를 정량화하는 항등 관계를 얻게 된다.</p>
+$$
+\langle \psi, [L^\dagger, L] \psi \rangle_\Omega = \left( \|L\psi\|^2 - \|L^\dagger \psi\|^2 \right) + \langle \psi, (\mathcal{R}L^\dagger L - \mathcal{R}L L^\dagger) \psi \rangle_{\partial \Omega}
+$$<p>이 전개 과정은 시스템의 교환 기댓값이 노름의 변화량 격차와 경계 보정 항들의 선형 결합으로 분리됨을 보여준다. 본 논문에서는 우변의 레지듀 연산자 결합 $\mathcal{R}L^\dagger L - \mathcal{R}L L^\dagger$이 시스템의 비정규성을 보존하는 항임을 정의하고 이를 연산자 보존 법칙(Operator Conservation Law)으로 규정한다.</p>
+<p><strong>2) 레지듀 론스키안 행렬의 조립과 스펙트럼 왜곡</strong></p>
+<p>연산자 보존 법칙의 우변에서 도출된 레지듀 결합 항은 쌍대 공간(dual space)으로의 사상 집합 $(\mathcal{R}L^\dagger, \mathcal{R}L)$과 원시 공간(primal space)에서의 작용 집합 $(L^\dagger, L)$의 직렬 결합 구조를 갖는다. 이를 $2 \times 2$ 연산자 행렬인 레지듀 론스키안(Residue Wronskian) 행렬 $W_\mathcal{R}$로 조립한다.</p>
+$$
+W_\mathcal{R}(L^\dagger,L) = \begin{pmatrix} \mathcal{R}L^\dagger & \mathcal{R}L \\\ L^\dagger & L \end{pmatrix}
+$$<p>이 행렬 구조는 연산자 내포한 수반성 파괴 양상을 기하학적 틀 내에서 평가할 수 있게 한다. 비가환(non-commutative) 연산자 환의 특성을 고려하여 작용 순서가 보존되는 형식적 행렬식(formal determinant)을 산출하면 다음과 같다.</p>
+$$
+\text{det}(W_\mathcal{R}(L^\dagger,L)) = \mathcal{R}L^\dagger L - \mathcal{R}L L^\dagger
+$$<p>이 행렬식은 쌍대 공간으로의 수반 투영 축($L^\dagger$)과 원시 공간에서의 전방 작용 축($L$)이 내적 공간 상에서 기하학적으로 일치하는 정도를 판별하는 지표가 된다. 만약 $\text{det}(W_\mathcal{R}) = 0$이 성립한다면 두 축은 선형 종속 관계에 놓여 원시 사상과 쌍대 사상 사이에 대수적 어긋남이 없음을 의미한다.</p>
+<p>자연계의 이류(advection)나 비가역적 수송을 포함하는 비정규(non-normal) 연산자 계에서는 두 축이 선형 독립성을 획득하며 $\text{det}(W_\mathcal{R}) \neq 0$인 상태가 발현된다. 본 논문에서는 행렬식의 비영(non-zero) 특성을 연산자 고유의 스펙트럼 왜곡(Spectral Skewness)으로 정의한다. 이 지표는 시스템 에너지가 흐르는 비보존적 방향성을 지시하는 위상적 척도이며, 차후 3.2절에서 다룰 전역 대수적 텐션 지표 $\hat{C}$를 도출하기 위한 스펙트럼 소멸 조건($\text{det}(W_\mathcal{R}) = 0$)의 수리적 기점이 된다.</p>
+<hr>
+<h3 id="24-벌크-경계-소산-정리-bulk-boundary-dissipation-theorem">2.4 벌크-경계 소산 정리 (Bulk-Boundary Dissipation Theorem)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 절에서는 앞서 도출된 연산자 보존 법칙을 기반으로 임의의 미분 연산자를 대칭 및 반대칭 성분으로 분해하여 동역학적 불일치의 근원을 규명한다. 이 과정은 시스템 내부(bulk)에서 발생하는 역학적 상호작용과 경계(boundary)로 배출되는 레지듀 사이의 대수적 평형을 증명하는 벌크-경계 소산 정리를 수립한다.</p>
+<p>힐베르트 공간에 정의된 임의의 선형 연산자 $L$은 대수적 성질에 따라 허미션(Hermitian) 파트 $H$와 반-허미션(anti-Hermitian) 파트 $A$의 선형 결합으로 유일하게 분해된다. 원시 연산자와 쌍대 연산자는 이 두 성분을 이용하여 각각 $L = H + A$ 및 $L^\dagger = H - A$로 재구성된다. 이 분해 관계를 2.2절에서 정의한 교환자 $[L^\dagger, L]$에 대입한다. 교환자의 쌍선형성(bilinearity)에 의해 항을 전개하면 동일 성분 간의 교환자인 $[H, H]$와 $[A, A]$는 소멸하며 반대칭성(antisymmetry)에 의해 교차 항들이 병합되어 단일한 교환자로 축약된다.</p>
+$$
+[L^\dagger, L] = [H - A, H + A] = 2[H, A]
+$$<p>이 결과는 원시 작용과 쌍대 투영 사이에서 발생하는 함수 공간 상의 어긋남이 보존적 성분 $H$와 소산적 성분 $A$의 상호작용 교환자 $[H, A]$에 의해서 결정됨을 보여준다. 도출된 교환자 축약식을 2.2절의 연산자 보존 법칙 항등식에 대입한다. 상태 함수 $\psi$에 대한 교환자 기댓값 방정식의 좌변을 치환하면 $2\langle \psi, [H, A] \psi \rangle_\Omega$가 도출되며, 양변을 상수로 나누어 정리하면 벌크-경계 소산 정리(Bulk-Boundary Dissipation Theorem)가 확립된다.</p>
+$$
+\langle \psi, [H, A] \psi \rangle_\Omega = \frac{1}{2} \left( \|L\psi\|^2 - \|L^\dagger \psi\|^2 \right) + \langle \psi, \text{det}(W_\mathcal{R}(H,A)) \psi \rangle_{\partial \Omega}
+$$<p>이 항등식의 좌변은 도메인 내부(bulk)에서 대칭 성분과 반대칭 성분의 비가환적 상호작용으로 발생하는 내부 역학적 소산(internal dissipation)을 의미한다. 우변의 첫 번째 항은 원시 작용과 쌍대 투영 사이의 순 에너지 격차(net energy gap)를 나타낸다. 시스템 내부의 상호작용은 공간 전체의 노름 불균형과 경계 잔류량의 합으로 보존된다. 두 번째 항은 경계로 배출되는 레지듀 론스키안 $W_\mathcal{R}(H,A)$의 작용량을 나타내며 아래와 같이 전개된다.</p>
+$$
+W_\mathcal{R}(H, A) = \begin{pmatrix} 0 & 2A \\\ H & A \end{pmatrix}
+\implies \text{det}(W_\mathcal{R}(H, A)) = -2AH
+$$<p>벌크-경계 소산 정리는 연산자의 비정규성이 유발하는 시스템 내부의 비보존적 텐션이 반-허미션 성분 $A$에 의해 지배됨을 나타낸다. 공간 이산화 및 격자의 비균일성은 이 반-허미션 성분 위에 인위적인 수치적 소산(artificial dissipation)을 중첩시키게 된다. 본 정리는 상호작용의 원천을 내부 벌크 작용 $[H, A]$과 경계 배출 작용 $\text{det}(W_\mathcal{R})$로 분리함으로써 후속하는 3장 이산화 단계에서 전체 전이 행렬을 대칭 골격 행렬 $H$와 수치적 마찰을 나타내는 반대칭 행렬 $A_{bulk}$로 분리(splitting)할 수 있는 해석적 근거를 제공한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="parent " data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/a_basis/index.html"><a class="padding" href="/temp/a_basis/index.html">(a) Basis</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_decomposition/index.html"><a class="padding" href="/temp/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
+            <li class="" data-nav-id="/temp/b_adjoint_derivation/index.html"><a class="padding" href="/temp/b_adjoint_derivation/index.html">(b) Adjoint &amp; Residue transformation</a></li>
+            <li class="" data-nav-id="/temp/b_generalization/index.html"><a class="padding" href="/temp/b_generalization/index.html">(b) Generalization</a></li>
+            <li class="" data-nav-id="/temp/i_lsi/index.html"><a class="padding" href="/temp/i_lsi/index.html">(i) LSI</a></li>
+            <li class="" data-nav-id="/temp/i_lsi2/index.html"><a class="padding" href="/temp/i_lsi2/index.html">(i) LSI</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/laurents_series/index.html"><a class="padding default-animation" href="/temp/laurents_series/index.html">Lourent&#39;s series</a><ul id="R-subsections-b622dc49c5dbb13575c50ea27a9dcb03" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/preface/index.html"><a class="padding" href="/temp/preface/index.html">Preface</a></li>
+            <li class="" data-nav-id="/temp/b_convolution_i/index.html"><a class="padding" href="/temp/b_convolution_i/index.html">(b) Convolution I</a></li>
+            <li class="" data-nav-id="/temp/b_shift_ii/index.html"><a class="padding" href="/temp/b_shift_ii/index.html">(b) Copy-shift II</a></li>
+            <li class="" data-nav-id="/temp/b_determinant/index.html"><a class="padding" href="/temp/b_determinant/index.html">(b) Determinant</a></li>
+            <li class="" data-nav-id="/temp/b_operator_i/index.html"><a class="padding" href="/temp/b_operator_i/index.html">(b) Operator I</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/algebra_structure/index.html"><a class="padding default-animation" href="/temp/algebra_structure/index.html">Algebra structure for LSI</a><ul id="R-subsections-a739685797281f87672919f683d814d9" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/derivation1-copy/index.html"><a class="padding" href="/temp/derivation1-copy/index.html">Derivation3</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/electromotive_force/index.html"><a class="padding default-animation" href="/temp/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-550b8c3828785bf09e0a24fd97e5ebb2" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/temp/fourier_series/index.html"><a class="padding default-animation" href="/temp/fourier_series/index.html">Fourier series</a><ul id="R-subsections-23cf8ddda8c632c96aa5ff6c0653ec25" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/a_2nd_tensor/index.html"><a class="padding" href="/temp/a_2nd_tensor/index.html">(a) 2nd tensor</a></li>
+            <li class="" data-nav-id="/temp/a_basis_components/index.html"><a class="padding" href="/temp/a_basis_components/index.html">(a) Basis &amp; Components</a></li>
+            <li class="" data-nav-id="/temp/a_mellin_transform_ii/index.html"><a class="padding" href="/temp/a_mellin_transform_ii/index.html">(a) Mellin transform II</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator/index.html"><a class="padding" href="/temp/b_variational_operator/index.html">(b) Variational Operator I</a></li>
+            <li class="" data-nav-id="/temp/b_variational_operator_ii/index.html"><a class="padding" href="/temp/b_variational_operator_ii/index.html">(b) Variational Operator II</a></li>
+            <li class="" data-nav-id="/temp/series/index.html"><a class="padding" href="/temp/series/index.html">Series</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/transformation/index.html"><a class="padding default-animation" href="/temp/transformation/index.html">Transformation</a><ul id="R-subsections-7c83dcb82857ce3ae0d42995afa71ed6" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_components_transformation/index.html"><a class="padding" href="/temp/b_components_transformation/index.html">(b) Components transformation</a></li>
+            <li class="" data-nav-id="/temp/b_continuous/index.html"><a class="padding" href="/temp/b_continuous/index.html">(b) Continuous</a></li>
+            <li class="" data-nav-id="/temp/b_i-unitary/index.html"><a class="padding" href="/temp/b_i-unitary/index.html">(b) I-unitary</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_i/index.html"><a class="padding" href="/temp/b_laplace_transform_i/index.html">(b) Laplace transform I</a></li>
+            <li class="" data-nav-id="/temp/b_matrix_kernel/index.html"><a class="padding" href="/temp/b_matrix_kernel/index.html">(b) Matrix &amp; Kernel</a></li>
+            <li class="" data-nav-id="/temp/b_uniqueness/index.html"><a class="padding" href="/temp/b_uniqueness/index.html">(b) Uniqueness</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/research_pa/index.html"><a class="padding default-animation" href="/temp/research_pa/index.html">Research_PA</a><ul id="R-subsections-43c0690e9c0a21f00234bb0ace84331c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_gauge_freedom/index.html"><a class="padding" href="/temp/b_gauge_freedom/index.html">(b) Gauge Freedom</a></li>
+            <li class="" data-nav-id="/temp/b_generator_ii/index.html"><a class="padding" href="/temp/b_generator_ii/index.html">(b) Generator II</a></li>
+            <li class="" data-nav-id="/temp/b_gradient_for_scalar/index.html"><a class="padding" href="/temp/b_gradient_for_scalar/index.html">(b) Gradient for scalar</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii-copy/index.html"><a class="padding" href="/temp/b_laplace_transform_ii-copy/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_laplace_transform_ii/index.html"><a class="padding" href="/temp/b_laplace_transform_ii/index.html">(b) Laplace transform II</a></li>
+            <li class="" data-nav-id="/temp/b_syntax/index.html"><a class="padding" href="/temp/b_syntax/index.html">(b) Syntax</a></li>
+            <li class="" data-nav-id="/temp/b_dilation/index.html"><a class="padding" href="/temp/b_dilation/index.html">(b) Dilation</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_i/index.html"><a class="padding" href="/temp/b_fourier_transform_i/index.html">(b) Fourier transform I</a></li>
+            <li class="" data-nav-id="/temp/gc_operation/index.html"><a class="padding" href="/temp/gc_operation/index.html">[GC] Operation</a></li>
+            <li class="alwaysopen " data-nav-id="/temp/tensor_calculus/index.html"><a class="padding default-animation" href="/temp/tensor_calculus/index.html">Vector calculus</a><ul id="R-subsections-040dd0072be900fe0ec3be0ce8d6ab4f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii/index.html"><a class="padding" href="/temp/b_fourier_transform_ii/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_fourier_transform_ii-copy/index.html"><a class="padding" href="/temp/b_fourier_transform_ii-copy/index.html">(b) Fourier transform II</a></li>
+            <li class="" data-nav-id="/temp/b_inner_product/index.html"><a class="padding" href="/temp/b_inner_product/index.html">(b) Inner product</a></li>
+            <li class="" data-nav-id="/temp/b_projection/index.html"><a class="padding" href="/temp/b_projection/index.html">(b) Projection</a></li>
+            <li class="" data-nav-id="/temp/theory1/index.html"><a class="padding" href="/temp/theory1/index.html">(b) Theory</a></li>
+            <li class="" data-nav-id="/temp/p_circuit_examples_for_fs/index.html"><a class="padding" href="/temp/p_circuit_examples_for_fs/index.html">(p) Circuit examples for FS</a></li>
+            <li class="" data-nav-id="/temp/theory2/index.html"><a class="padding" href="/temp/theory2/index.html">(b) Theory2</a></li>
+            <li class="" data-nav-id="/temp/theory3-copy/index.html"><a class="padding" href="/temp/theory3-copy/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory3/index.html"><a class="padding" href="/temp/theory3/index.html">(b) Theory3</a></li>
+            <li class="" data-nav-id="/temp/theory4/index.html"><a class="padding" href="/temp/theory4/index.html">(b) Theory4</a></li>
+            <li class="" data-nav-id="/temp/chapter2/index.html"><a class="padding" href="/temp/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-id="/temp/b_linearization/index.html"><a class="padding" href="/temp/b_linearization/index.html">(b) Linearization</a></li>
+            <li class="parent alwaysopen " data-nav-id="/temp/research_na/index.html"><a class="padding default-animation" href="/temp/research_na/index.html">Research_NA</a><ul id="R-subsections-234820bc0d55ee914269e52b4bd69ed8" class="collapsible-menu">
+            <li class="" data-nav-id="/temp/research_na/theory1/index.html"><a class="padding" href="/temp/research_na/theory1/index.html">(b) Theory1</a></li>
+            <li class="" data-nav-id="/temp/research_na/theory2/index.html"><a class="padding" href="/temp/research_na/theory2/index.html">(b) Theory 2</a></li>
+            <li class="" data-nav-id="/temp/research_na/outline/index.html"><a class="padding" href="/temp/research_na/outline/index.html">OUTLINE</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter1/index.html"><a class="padding" href="/temp/research_na/chapter1/index.html">CHAPTER 1</a></li>
+            <li class="active " data-nav-id="/temp/research_na/chapter2/index.html"><a class="padding" href="/temp/research_na/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter3/index.html"><a class="padding" href="/temp/research_na/chapter3/index.html">CHAPTER 3</a></li>
+            <li class="" data-nav-id="/temp/research_na/chapter4/index.html"><a class="padding" href="/temp/research_na/chapter4/index.html">CHAPTER 4</a></li>
+            <li class="" data-nav-id="/temp/research_na/appendix_a/index.html"><a class="padding" href="/temp/research_na/appendix_a/index.html">Appendix</a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

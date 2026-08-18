@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 왜 미분형식을 적분하는가§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.
+이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="미분형식의 적분 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 왜 미분형식을 적분하는가§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.
+이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/10-b_integration_of_forms/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="미분형식의 적분 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 왜 미분형식을 적분하는가§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.
+이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="미분형식의 적분 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 왜 미분형식을 적분하는가§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.
+이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
+    <meta itemprop="wordCount" content="2101">
+    <title>미분형식의 적분 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/10-b_integration_of_forms\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/10-b_integration_of_forms/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-왜-미분형식을-적분하는가">1. 동기: 왜 미분형식을 적분하는가</a></li>
+        <li><a href="#2-적분의-기본-문제--form-을--차원-영역에-어떻게-작용시키나">2. 적분의 기본 문제: -form 을 -차원 영역에 어떻게 작용시키나?</a></li>
+        <li><a href="#3-매개변수화-영역의-정의">3. 매개변수화: 영역의 정의</a></li>
+        <li><a href="#4-pullback-미분형식을-매개변수-공간으로-끌어오기">4. Pullback: 미분형식을 매개변수 공간으로 끌어오기</a></li>
+        <li><a href="#5--form-의--차원-영역-위-적분-정의">5. -form 의 -차원 영역 위 적분: 정의</a></li>
+        <li><a href="#6-예제-1-form-의-곡선-적분">6. 예제: 1-form 의 곡선 적분</a></li>
+        <li><a href="#7-예제-2-form-의-면-적분">7. 예제: 2-form 의 면 적분</a></li>
+        <li><a href="#8-일반--form-의-적분-변수-변환-공식의-자동-등장">8. 일반 -form 의 적분: 변수 변환 공식의 자동 등장</a></li>
+        <li><a href="#9-방향-orientation-의-중요성">9. 방향 (orientation) 의 중요성</a></li>
+        <li><a href="#10-익숙한-적분-공식들과의-통일">10. 익숙한 적분 공식들과의 통일</a></li>
+        <li><a href="#11-적분의-결합--합성-성질">11. 적분의 결합 / 합성 성질</a></li>
+        <li><a href="#12-정리">12. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">미분형식의 적분</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html" title="외미분과 벡터 미적분 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/11-b_stokes_theorem/index.html" title="Stokes 정리 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="미분형식의-적분">미분형식의 적분</h1>
+
+<h3 id="1-동기-왜-미분형식을-적분하는가">1. 동기: 왜 미분형식을 적분하는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§7 의 §10 에서 미분형식이 <em>적분의 자연스러운 객체</em> 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 <em>자연스럽게</em> 어울린다.</p>
+<p>이 장에서 그 의미를 <em>정확히</em> 본다. <em>미분형식의 적분이 정확히 무엇인지</em>, <em>왜 그것이 다중 변수 미적분의 익숙한 적분들</em> (곡선 적분, 면 적분, 부피 적분) <em>과 일치하는지</em>, 그리고 <em>왜 이 새 언어가 더 강력한지</em> 를 설명한다.</p>
+<p>핵심 메시지는 두 가지다.</p>
+<p>첫째, <em>$k$-form 은 $k$-차원 영역 위에서 적분된다</em>. 차수와 적분 영역의 차원이 일치하는 게 우연이 아니다.</p>
+<p>둘째, <em>미분형식의 적분은 자동으로 변수 변환 공식 (야코비안)을 포함</em> 한다. 따로 외워야 할 공식이 아니라 <em>외대수의 자연스러운 결과</em>.</p>
+<p>이 두 가지가 §11 의 <em>Stokes 정리</em> — 다중 변수 미적분의 모든 적분 공식 (Newton-Leibniz, Green, Stokes 3D, Gauss) 을 <em>한 줄로 통합</em> 하는 정리 — 의 출발점이 된다.</p>
+<h3 id="2-적분의-기본-문제--form-을--차원-영역에-어떻게-작용시키나">2. 적분의 기본 문제: $k$-form 을 $k$-차원 영역에 어떻게 작용시키나?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분형식 $\omega$ 가 <em>공간 안의 한 점에서</em> $k$ 개의 벡터를 받아 숫자를 내놓는다는 건 §7 에서 봤다. 그런데 <em>적분</em> 은 한 점이 아니라 <em>영역 전체에 걸친 합</em> 을 다룬다.</p>
+<p><strong>핵심 아이디어</strong></p>
+<p>영역을 <em>작은 조각들</em> 로 나누고, 각 조각을 <em>작은 평행체</em> 로 근사한 다음, <em>그 평행체에 미분형식이 작용한 값을 모두 합한다</em>. 이게 적분의 기본 발상.</p>
+<p>$k$-차원 영역의 <em>작은 조각</em> 은 <em>$k$ 개의 작은 접벡터로 만든 작은 평행체</em>. 이 평행체에 $k$-form 을 작용시키면 <em>그 조각에 대한 미분형식의 값</em> 이 나오고, 모든 조각을 <em>합 (또는 적분)</em> 하면 영역 전체의 적분.</p>
+<blockquote>
+<p><strong>핵심 원리</strong>: $k$-form 은 <em>$k$-차원 영역의 작은 평행체 조각</em> 에 자연스럽게 작용. 합치면 <em>영역 전체의 적분</em>.</p>
+</blockquote>
+<p>차수와 영역 차원이 일치해야 하는 이유가 명확하다. <em>$k$-form 은 $k$ 개의 벡터를 받음</em> → <em>$k$ 차원 평행체 조각에 작용</em> → <em>$k$ 차원 영역에서 적분</em>.</p>
+<h3 id="3-매개변수화-영역의-정의">3. 매개변수화: 영역의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>영역을 정확히 다루려면 <em>매개변수화 (parametrization)</em> 가 필요하다.</p>
+<p><strong>$k$-차원 영역의 매개변수화</strong></p>
+<p>$k$-차원 영역 $S$ 를 <em>매개변수 공간</em> $U \subset \mathbb{R}^k$ 에서 우리 공간 $\mathbb{R}^n$ 으로 가는 매끄러운 함수</p>
+$$\Phi: U \to S \subset \mathbb{R}^n$$<p>으로 표현한다. 매개변수 $\vec{u} = (u^1, u^2, \ldots, u^k) \in U$ 가 영역의 한 점 $\Phi(\vec{u})$ 를 결정.</p>
+<p><strong>예제 (1차원, 곡선)</strong></p>
+<p>곡선 $C$ 의 매개변수화: $\Phi: [a, b] \to \mathbb{R}^n$, 즉 $t \mapsto \Phi(t)$. 매개변수 $t$ 의 한 값이 곡선 위의 한 점을 결정.</p>
+<p>예: 원 $x^2 + y^2 = 1$ 의 매개변수화는 $\Phi(t) = (\cos t, \sin t)$, $t \in [0, 2\pi]$.</p>
+<p><strong>예제 (2차원, 면)</strong></p>
+<p>면 $S$ 의 매개변수화: $\Phi: U \to \mathbb{R}^3$, 즉 $(u, v) \mapsto \Phi(u, v)$. 두 매개변수의 한 쌍이 면 위의 한 점을 결정.</p>
+<p>예: 구면 $x^2 + y^2 + z^2 = 1$ 의 매개변수화는 $\Phi(\theta, \phi) = (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta)$.</p>
+<p><strong>매개변수 공간에서의 적분으로 옮기기</strong></p>
+<p>매개변수화가 주어지면, 원래 공간에서의 적분을 <em>매개변수 공간 $U$</em> 에서의 적분으로 옮길 수 있다. 매개변수 공간은 보통 $\mathbb{R}^k$ 의 단순한 영역 (구간, 사각형 등) 이라 다루기 쉽다.</p>
+<p>이 옮기기를 <em>정확히 어떻게</em> 하는지가 다음 절의 <em>pullback</em> 의 핵심.</p>
+<h3 id="4-pullback-미분형식을-매개변수-공간으로-끌어오기">4. Pullback: 미분형식을 매개변수 공간으로 끌어오기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>매개변수화 $\Phi: U \to \mathbb{R}^n$ 이 주어지면, <em>목표 공간 $\mathbb{R}^n$ 위의 미분형식</em> 을 <em>매개변수 공간 $U$ 위의 미분형식</em> 으로 <em>끌어올</em> (pull back) 수 있다. 이게 미분형식 이론의 핵심 도구 중 하나.</p>
+<p><strong>정의 (Pullback)</strong></p>
+<p>$\Phi: U \to M$ 매끄러운 함수, $\omega$ 가 $M$ 위의 $k$-form 일 때, $\omega$ 의 <em>$\Phi$ 에 의한 끌어옴 (pullback)</em> 은 $U$ 위의 $k$-form $\Phi^* \omega$ 로, 다음 식으로 정의:</p>
+$$(\Phi^* \omega)_p (v_1, \ldots, v_k) := \omega_{\Phi(p)}(d\Phi_p(v_1), \ldots, d\Phi_p(v_k))$$<p>복잡해 보이지만 직관은 단순하다. <em>$\omega$ 를 평가하려면 그 자리에 벡터를 넣어야 하는데</em>, 우리는 <em>$U$ 의 벡터</em> 만 갖고 있고 <em>$M$ 의 벡터가 필요</em>. <em>매개변수화의 미분 $d\Phi$</em> 가 그 변환을 해 준다.</p>
+<p><strong>$d\Phi$ 는 뭐인가</strong></p>
+<p>$d\Phi_p: T_p U \to T_{\Phi(p)} M$ 은 <em>$\Phi$ 의 미분</em> — 즉 <em>$\Phi$ 의 야코비 행렬</em> 의 작용. 매개변수 공간의 작은 접벡터를 <em>목표 공간의 작은 접벡터</em> 로 보내는 선형 사상.</p>
+<p><strong>좌표 표현</strong></p>
+<p>좌표로 풀면 더 명확하다. 목표 공간 좌표가 $x^1, \ldots, x^n$, 매개변수 공간 좌표가 $u^1, \ldots, u^k$ 일 때, 매개변수화가</p>
+$$x^i = \Phi^i(u^1, \ldots, u^k)$$<p>로 주어진다. Pullback 의 작용:</p>
+$$\Phi^*(dx^i) = \sum_{j=1}^{k} \frac{\partial \Phi^i}{\partial u^j}\, du^j$$<p>즉 좌표 미분 $dx^i$ 의 끌어옴은 <em>체인 룰의 1-form 버전</em>. 익숙한 미적분 그대로.</p>
+<p>함수 (0-form) 의 끌어옴:</p>
+$$\Phi^* f = f \circ \Phi$$<p>(<em>합성</em>. 자연스러운 정의.)</p>
+<p><strong>Pullback 의 핵심 성질</strong></p>
+<p>(1) <em>덧셈 보존</em>: $\Phi^*(\omega + \eta) = \Phi^* \omega + \Phi^* \eta$.</p>
+<p>(2) <em>쐐기곱 보존</em>: $\Phi^*(\omega \wedge \eta) = (\Phi^* \omega) \wedge (\Phi^* \eta)$.</p>
+<p>(3) <em>외미분과 가환</em>: $\Phi^* (d\omega) = d(\Phi^* \omega)$.</p>
+<p>세 번째 성질이 특히 중요. <em>끌어옴이 외미분 연산과 가환</em> 한다는 사실이 §11 의 Stokes 정리의 좌표 독립성을 보장한다.</p>
+<h3 id="5--form-의--차원-영역-위-적분-정의">5. $k$-form 의 $k$-차원 영역 위 적분: 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 본격적으로 적분을 정의한다.</p>
+<p><strong>정의 (미분형식의 적분)</strong></p>
+<p>$k$-차원 영역 $S$ 가 매개변수화 $\Phi: U \to S$ 로 주어지고 $\omega$ 가 $k$-form 일 때, $\omega$ 의 $S$ 위 적분을</p>
+$$\int_S \omega := \int_U \Phi^* \omega$$<p>로 정의한다. 우변은 <em>매개변수 공간 위의 적분</em> — 결과적으로 <em>익숙한 다중 변수 적분</em>.</p>
+<p><strong>이 정의가 잘 정의됨</strong></p>
+<p>$\Phi^* \omega$ 가 <em>$U$ 위의 $k$-form</em>. $U \subset \mathbb{R}^k$ 가 <em>$k$-차원 영역</em> 이므로 이 $k$-form 이 $U$ 의 <em>최고차 형식</em>. 따라서 <em>유일한 함수 계수 × $du^1 \wedge \cdots \wedge du^k$</em> 형태:</p>
+$$\Phi^* \omega = g(u^1, \ldots, u^k)\, du^1 \wedge du^2 \wedge \cdots \wedge du^k$$<p>여기서 함수 $g$ 가 정해진다. 그러면 적분은</p>
+$$\int_U \Phi^* \omega = \int_U g(u^1, \ldots, u^k)\, du^1 du^2 \cdots du^k$$<p>— 정확히 <em>익숙한 다중 변수 적분</em>.</p>
+<p><strong>왜 매개변수화 선택에 무관한가</strong></p>
+<p>자연스러운 질문: <em>다른 매개변수화</em> 를 잡으면 적분 값이 달라지지 않을까?</p>
+<p>답: <em>방향이 일관되면</em> 값이 같다. 두 매개변수화 사이의 변환의 <em>야코비안</em> 이 양수면 같은 값, 음수면 부호 반전.</p>
+<p>이 점이 <em>방향이 붙은 적분</em> 의 핵심. 미분형식의 적분은 <em>자동으로 방향성을 추적</em> 한다 — §3 에서 본 쐐기곱의 반대칭성이 <em>자연스럽게 방향 정보를 인코딩</em> 하기 때문.</p>
+<h3 id="6-예제-1-form-의-곡선-적분">6. 예제: 1-form 의 곡선 적분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가장 단순한 경우를 구체적으로 본다.</p>
+<p><strong>설정</strong>: $\mathbb{R}^3$ 의 곡선 $C$ 가 $\Phi: [a, b] \to \mathbb{R}^3$, $t \mapsto (x(t), y(t), z(t))$ 로 매개변수화됨. 1-form $\omega = P\, dx + Q\, dy + R\, dz$ 의 $C$ 위 적분.</p>
+<p><strong>Pullback 계산</strong></p>
+<p>$\Phi^* (dx) = \frac{dx}{dt}\, dt = x'(t)\, dt$. 비슷하게 $\Phi^*(dy) = y'(t)\, dt$, $\Phi^*(dz) = z'(t)\, dt$.</p>
+<p>함수 계수도 끌어와야 함: $\Phi^* P = P(\Phi(t)) = P(x(t), y(t), z(t))$. (보통 $P(t)$ 로 줄여 씀.)</p>
+<p>합치면:</p>
+$$\Phi^* \omega = P(\Phi(t))\, x'(t)\, dt + Q(\Phi(t))\, y'(t)\, dt + R(\Phi(t))\, z'(t)\, dt$$$$= \big[P\, x'(t) + Q\, y'(t) + R\, z'(t)\big]\, dt$$<p><strong>적분</strong></p>
+$$\int_C \omega = \int_a^b \big[P\, x'(t) + Q\, y'(t) + R\, z'(t)\big]\, dt$$<p>이게 정확히 <em>익숙한 곡선 적분 (line integral)</em>. 벡터 미적분의 표기로</p>
+$$\int_C \omega = \int_C \vec{F} \cdot d\vec{r}$$<p>여기서 $\vec{F} = (P, Q, R)$ 이 1-form 의 음악적 변환에 대응하는 벡터장 (§9), $d\vec{r} = (dx, dy, dz)$ 가 곡선의 접선 무한소.</p>
+<blockquote>
+<p><em>1-form 의 곡선 적분 = 벡터장의 곡선 적분</em>. 미분형식 언어로 자연스럽게 일반화.</p>
+</blockquote>
+<p><strong>구체적 예</strong></p>
+<p>$\omega = -y\, dx + x\, dy$ 의 단위원 $\Phi(t) = (\cos t, \sin t)$, $t \in [0, 2\pi]$ 위 적분:</p>
+<p>$\Phi^* \omega = -\sin t \cdot (-\sin t)\, dt + \cos t \cdot \cos t\, dt = (\sin^2 t + \cos^2 t)\, dt = dt$</p>
+$$\int_C \omega = \int_0^{2\pi} dt = 2\pi$$<p>(이 결과는 <em>원의 둘레의 두 배</em> 가 아니라 <em>원의 내부 넓이의 두 배</em>. Green 정리 (§11) 와의 연결을 미리 보여주는 예.)</p>
+<h3 id="7-예제-2-form-의-면-적분">7. 예제: 2-form 의 면 적분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다음으로 <em>2-form 의 면 위 적분</em>.</p>
+<p><strong>설정</strong>: $\mathbb{R}^3$ 의 면 $S$ 가 $\Phi: U \to \mathbb{R}^3$, $(u, v) \mapsto \Phi(u, v) = (x(u, v), y(u, v), z(u, v))$ 로 매개변수화. 2-form $\omega = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$ 의 적분.</p>
+<p><strong>Pullback 의 계산</strong></p>
+<p>$\Phi^*(dx) = \frac{\partial x}{\partial u}\, du + \frac{\partial x}{\partial v}\, dv = x_u\, du + x_v\, dv$ (편미분 약식 표기). 비슷하게 $\Phi^*(dy), \Phi^*(dz)$.</p>
+<p>$\Phi^*(dx \wedge dy)$ 를 계산하면 (pullback 이 쐐기곱과 가환하므로)</p>
+$$\Phi^*(dx \wedge dy) = (x_u\, du + x_v\, dv) \wedge (y_u\, du + y_v\, dv)$$<p>분배하면:</p>
+$$= x_u y_u\, du \wedge du + x_u y_v\, du \wedge dv + x_v y_u\, dv \wedge du + x_v y_v\, dv \wedge dv$$<p>$du \wedge du = dv \wedge dv = 0$, $dv \wedge du = -du \wedge dv$ 로 정리하면</p>
+$$\Phi^*(dx \wedge dy) = (x_u y_v - x_v y_u)\, du \wedge dv$$<p><strong>$2 \times 2$ 야코비안의 등장</strong></p>
+<p>여기서 <em>놀라운 사실</em>. 위 결과의 계수가 정확히 <em>야코비 행렬의 부분 행렬식</em>:</p>
+$$x_u y_v - x_v y_u = \det \begin{pmatrix} x_u & x_v \\ y_u & y_v \end{pmatrix} = \frac{\partial(x, y)}{\partial(u, v)}$$<p>즉:</p>
+$$\Phi^*(dx \wedge dy) = \frac{\partial(x, y)}{\partial(u, v)}\, du \wedge dv$$<p>이게 <em>쐐기곱이 자동으로 야코비안을 만들어내는</em> 마법. <em>외워야 할 변수변환 공식이 외대수 안에 내장</em> 되어 있다.</p>
+<p><strong>전체 적분</strong></p>
+<p>비슷하게 $\Phi^*(dy \wedge dz), \Phi^*(dz \wedge dx)$ 도 각각 <em>야코비안 형태</em>. 합치면</p>
+$$\Phi^* \omega = \left[ P \cdot \frac{\partial(y, z)}{\partial(u, v)} + Q \cdot \frac{\partial(z, x)}{\partial(u, v)} + R \cdot \frac{\partial(x, y)}{\partial(u, v)} \right] du \wedge dv$$<p>적분:</p>
+$$\int_S \omega = \int_U \left[ P\, \frac{\partial(y, z)}{\partial(u, v)} + Q\, \frac{\partial(z, x)}{\partial(u, v)} + R\, \frac{\partial(x, y)}{\partial(u, v)} \right] du\, dv$$<p>대괄호 안의 식이 정확히 <em>$\vec{F} \cdot (\Phi_u \times \Phi_v)$</em> — 익숙한 <em>면 적분 공식</em>.</p>
+<blockquote>
+<p><em>2-form 의 면 적분 = 벡터장의 플럭스 (flux)</em>. $\int_S \omega = \int_S \vec{F} \cdot d\vec{A}$.</p>
+</blockquote>
+<p><strong>물리적 의미</strong></p>
+<p>이게 <em>전기장의 가우스 법칙</em> 등에서 자연스럽게 등장하는 적분의 정확한 외대수적 표현. 미분형식 언어가 <em>물리의 자연스러운 도구</em> 임이 다시 확인됨.</p>
+<h3 id="8-일반--form-의-적분-변수-변환-공식의-자동-등장">8. 일반 $k$-form 의 적분: 변수 변환 공식의 자동 등장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위의 1-form 과 2-form 예제에서 본 패턴이 <em>일반 $k$-form</em> 에서도 작동한다.</p>
+<p><strong>일반 결과</strong></p>
+<p>$\Phi: U \subset \mathbb{R}^k \to M \subset \mathbb{R}^n$ 매개변수화, $\omega = f\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}$ 단항 $k$-form 의 pullback:</p>
+$$\Phi^*(f\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}) = f(\Phi(u)) \cdot \det\left( \frac{\partial x^{i_a}}{\partial u^b} \right)_{a, b = 1, \ldots, k}\, du^1 \wedge \cdots \wedge du^k$$<p>여기서 <em>행렬식이 자동으로 등장</em>. 이게 §5 의 <em>행렬식 = 쐐기곱의 자연스러운 결과</em> 의 적분 버전.</p>
+<p><strong>다중 변수 적분의 변수 변환 공식</strong></p>
+<p>이 결과를 보면 <em>익숙한 변수 변환 공식</em></p>
+$$\int f(\vec{y})\, dV_y = \int f(\Phi(\vec{u}))\, |\det J_\Phi|\, dV_u$$<p>이 <em>외대수 안에 내장</em> 되어 있음이 분명. 미분형식의 적분에서는 <em>행렬식이 절댓값 없이</em> 등장하므로 <em>방향이 붙은 적분</em> — 익숙한 적분의 자연스러운 일반화.</p>
+<h3 id="9-방향-orientation-의-중요성">9. 방향 (orientation) 의 중요성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분형식의 적분은 <em>자동으로 방향에 민감</em> 하다는 점이 <em>기존의 다중 변수 적분과의 본질적 차이</em>.</p>
+<p><strong>1차원 예제로 보기</strong></p>
+<p>곡선 $C$ 를 <em>반대 방향</em> 으로 매개변수화하면 — 예를 들어 $t \in [a, b]$ 가 아니라 $\Phi(s) = \Phi(a + b - s)$, $s \in [a, b]$ 로 — 적분 결과는?</p>
+<p>미분형식 표기로: $ds = -dt$ 이므로 $\Phi^*\omega$ 의 부호가 반전. 따라서</p>
+$$\int_{-C} \omega = -\int_C \omega$$<p>(여기서 $-C$ 는 $C$ 의 반대 방향.)</p>
+<p>이게 <em>방향이 붙은 적분</em> 의 정확한 의미. 익숙한 적분에서는 <em>적분 한계의 순서</em> ($\int_a^b$ vs $\int_b^a$) 로 표현되던 부호가, 외대수에서는 <em>매개변수화의 방향</em> 으로 자연스럽게 인코딩.</p>
+<p><strong>고차원에서</strong></p>
+<p>면 적분에서도 같은 일이 일어난다. 면을 <em>어느 쪽이 &ldquo;위&rdquo;</em> 인지 정해야 하고, 그 방향이 <em>쐐기곱의 순서</em> 와 일관되어야 한다.</p>
+<p>방향을 뒤집으면 ($dx \wedge dy \to dy \wedge dx = -dx \wedge dy$) 적분 결과의 부호가 반전.</p>
+<blockquote>
+<p>미분형식의 적분은 <em>항상 방향이 붙은 적분</em>. 방향을 무시하면 익숙한 절댓값 부피.</p>
+</blockquote>
+<h3 id="10-익숙한-적분-공식들과의-통일">10. 익숙한 적분 공식들과의 통일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>위에서 본 대응을 정리해 본다.</p>
+<p><strong>$k = 1$ (1-form, 곡선 적분)</strong></p>
+<p>미분형식: $\int_C \omega_F$, 여기서 $\omega_F = \vec{F}^\flat$.</p>
+<p>벡터 미적분: $\int_C \vec{F} \cdot d\vec{r}$.</p>
+<p><strong>$k = 2$ (2-form, 면 적분, 3D)</strong></p>
+<p>미분형식: $\int_S \omega_F$, 여기서 $\omega_F = \star \vec{F}^\flat$.</p>
+<p>벡터 미적분: $\int_S \vec{F} \cdot d\vec{A}$ (플럭스).</p>
+<p><strong>$k = n$ ($n$-form, 부피 적분, $n$ 차원)</strong></p>
+<p>미분형식: $\int_M f\, dx^1 \wedge \cdots \wedge dx^n$.</p>
+<p>다중 변수 미적분: $\int_M f\, dV$.</p>
+<p>이 세 가지 <em>익숙한 적분</em> 들이 <em>모두 미분형식의 적분의 특수 사례</em>. 통일된 언어가 <em>모든 차원, 모든 종류의 적분</em> 을 <em>한 식</em> 으로 표현.</p>
+<h3 id="11-적분의-결합--합성-성질">11. 적분의 결합 / 합성 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분형식의 적분이 갖는 두 중요한 성질을 정리한다.</p>
+<p><strong>1) 선형성</strong></p>
+<p>$\int_S (\alpha \omega + \beta \eta) = \alpha \int_S \omega + \beta \int_S \eta$ — 익숙한 선형성.</p>
+<p><strong>2) 영역의 분할</strong></p>
+<p>영역 $S$ 를 두 영역 $S_1$ 과 $S_2$ 로 분할하면 (적절히 방향 일치):</p>
+$$\int_{S_1 \cup S_2} \omega = \int_{S_1} \omega + \int_{S_2} \omega$$<p>이건 <em>적분의 가법성</em> — 영역을 자유롭게 쪼개고 합칠 수 있다.</p>
+<p>이 가법성이 <em>Stokes 정리</em> (§11) 의 증명에서 핵심 역할을 한다. 영역을 <em>작은 조각으로 쪼개고</em>, <em>각 조각에 대해 결과를 검증한 다음 합치는</em> 전략.</p>
+<h3 id="12-정리">12. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>$k$-form 은 $k$-차원 영역 위에서 적분된다</em>. 차수와 영역 차원의 일치가 <em>자연스러운 짝지음</em>.</p>
+<p><strong>2)</strong> <em>매개변수화</em> $\Phi: U \subset \mathbb{R}^k \to S$ 가 영역을 <em>익숙한 매개변수 공간 위의 적분으로</em> 옮긴다.</p>
+<p><strong>3)</strong> <em>Pullback</em> $\Phi^* \omega$ 는 <em>목표 공간의 미분형식을 매개변수 공간으로 끌어오는</em> 도구. 좌표 표현:</p>
+$$\Phi^*(dx^i) = \sum_j \frac{\partial x^i}{\partial u^j}\, du^j$$<p><strong>4)</strong> <em>Pullback 의 성질</em>: 덧셈 보존, 쐐기곱 보존, 외미분과 가환 ($\Phi^* d = d \Phi^*$).</p>
+<p><strong>5)</strong> <em>적분의 정의</em>: $\int_S \omega := \int_U \Phi^* \omega$. 우변은 익숙한 다중 변수 적분.</p>
+<p><strong>6)</strong> <em>1-form 의 곡선 적분</em> = 벡터장의 곡선 적분 (line integral).</p>
+<p><strong>7)</strong> <em>2-form 의 면 적분</em> = 벡터장의 플럭스. <em>야코비안이 쐐기곱에서 자동 등장</em>.</p>
+<p><strong>8)</strong> <em>변수 변환 공식</em>: 일반 $k$-form 의 pullback 에 <em>행렬식이 자동으로</em> 들어감 — 외대수의 본질.</p>
+<p><strong>9)</strong> <em>방향 (orientation)</em> 이 자동으로 추적됨. 미분형식의 적분은 <em>항상 방향이 붙은 적분</em>.</p>
+<p><strong>10)</strong> <em>모든 익숙한 적분</em> (곡선 적분, 면 적분, 부피 적분) 이 <em>미분형식 적분의 특수 사례</em> — 통일된 언어.</p>
+<p>다음 §11 에서 <em>Stokes 정리</em> — <em>모든 적분 공식 (Newton-Leibniz, Green, Stokes 3D, Gauss) 을 한 식으로 통일</em> 하는 위대한 정리 — 를 본다. 이 장에서 닦은 기반 (적분의 정의, pullback, 방향) 이 모두 거기서 활용된다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

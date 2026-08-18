@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기§9에서 1매개변수 부분군과 행렬 $X$ 의 일대일 대응을 봤다. 이 장에서는 매개변수가 여러 개 인 일반적인 리 군으로 일반화한다.
+$n$ 차원 리 군에서는 단위원 근처를 $n$ 개의 매개변수로 라벨링할 수 있고, 각 매개변수 방향마다 생성자(generator) 라 부를 행렬이 하나씩 나온다. 이들이 모여 더 풍부한 구조를 이루는데, 핵심은 비교환성 이다 (다음 장에서 본격 다룬다).
+2. $n$ 차원 리 군의 다변수 매개변수화1) 리 군 $G$ 가 $n$ 차원 다양체일 때, 단위원 근처의 점들은 $n$ 개의 매개변수 $(\tau^1, \tau^2, \ldots, \tau^n) \in \mathbb{R}^n$ 으로 라벨링된다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="다변수 리 군과 생성자 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기§9에서 1매개변수 부분군과 행렬 $X$ 의 일대일 대응을 봤다. 이 장에서는 매개변수가 여러 개 인 일반적인 리 군으로 일반화한다.
+$n$ 차원 리 군에서는 단위원 근처를 $n$ 개의 매개변수로 라벨링할 수 있고, 각 매개변수 방향마다 생성자(generator) 라 부를 행렬이 하나씩 나온다. 이들이 모여 더 풍부한 구조를 이루는데, 핵심은 비교환성 이다 (다음 장에서 본격 다룬다).
+2. $n$ 차원 리 군의 다변수 매개변수화1) 리 군 $G$ 가 $n$ 차원 다양체일 때, 단위원 근처의 점들은 $n$ 개의 매개변수 $(\tau^1, \tau^2, \ldots, \tau^n) \in \mathbb{R}^n$ 으로 라벨링된다.">
+    <meta property="og:url" content="http://localhost:1313/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="다변수 리 군과 생성자 :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기§9에서 1매개변수 부분군과 행렬 $X$ 의 일대일 대응을 봤다. 이 장에서는 매개변수가 여러 개 인 일반적인 리 군으로 일반화한다.
+$n$ 차원 리 군에서는 단위원 근처를 $n$ 개의 매개변수로 라벨링할 수 있고, 각 매개변수 방향마다 생성자(generator) 라 부를 행렬이 하나씩 나온다. 이들이 모여 더 풍부한 구조를 이루는데, 핵심은 비교환성 이다 (다음 장에서 본격 다룬다).
+2. $n$ 차원 리 군의 다변수 매개변수화1) 리 군 $G$ 가 $n$ 차원 다양체일 때, 단위원 근처의 점들은 $n$ 개의 매개변수 $(\tau^1, \tau^2, \ldots, \tau^n) \in \mathbb{R}^n$ 으로 라벨링된다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie theory">
+    <meta itemprop="name" content="다변수 리 군과 생성자 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기§9에서 1매개변수 부분군과 행렬 $X$ 의 일대일 대응을 봤다. 이 장에서는 매개변수가 여러 개 인 일반적인 리 군으로 일반화한다.
+$n$ 차원 리 군에서는 단위원 근처를 $n$ 개의 매개변수로 라벨링할 수 있고, 각 매개변수 방향마다 생성자(generator) 라 부를 행렬이 하나씩 나온다. 이들이 모여 더 풍부한 구조를 이루는데, 핵심은 비교환성 이다 (다음 장에서 본격 다룬다).
+2. $n$ 차원 리 군의 다변수 매개변수화1) 리 군 $G$ 가 $n$ 차원 다양체일 때, 단위원 근처의 점들은 $n$ 개의 매개변수 $(\tau^1, \tau^2, \ldots, \tau^n) \in \mathbb{R}^n$ 으로 라벨링된다.">
+    <meta itemprop="wordCount" content="700">
+    <title>다변수 리 군과 생성자 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_theory\/b_lie_group_algebra\/10-b_multiparameter_lie_group\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기">1. 동기</a></li>
+        <li><a href="#2--차원-리-군의-다변수-매개변수화">2.  차원 리 군의 다변수 매개변수화</a></li>
+        <li><a href="#3-다중-생성자">3. 다중 생성자</a></li>
+        <li><a href="#4-다중-1매개변수-부분군">4. 다중 1매개변수 부분군</a></li>
+        <li><a href="#5-example">5. example: </a></li>
+        <li><a href="#6-결정적-차이-비교환성-미리보기">6. 결정적 차이: 비교환성 미리보기</a></li>
+        <li><a href="#7-정리">7. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/index.html"><span itemprop="name">Lie theory</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_theory/b_lie_group_algebra/index.html"><span itemprop="name">Lie group &amp; algebra</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">다변수 리 군과 생성자</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html" title="비교환성과 리 괄호 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_theory/b_operators/index.html" title="Operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_theory" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="다변수-리-군과-생성자">다변수 리 군과 생성자</h1>
+
+<h3 id="1-동기">1. 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§9에서 1매개변수 부분군과 행렬 $X$ 의 일대일 대응을 봤다. 이 장에서는 매개변수가 <em>여러 개</em> 인 일반적인 리 군으로 일반화한다.</p>
+<p>$n$ 차원 리 군에서는 단위원 근처를 $n$ 개의 매개변수로 라벨링할 수 있고, 각 매개변수 방향마다 <em>생성자(generator)</em> 라 부를 행렬이 하나씩 나온다. 이들이 모여 더 풍부한 구조를 이루는데, 핵심은 <em>비교환성</em> 이다 (다음 장에서 본격 다룬다).</p>
+<h3 id="2--차원-리-군의-다변수-매개변수화">2. $n$ 차원 리 군의 다변수 매개변수화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 리 군 $G$ 가 <em>$n$ 차원 다양체</em>일 때, 단위원 근처의 점들은 $n$ 개의 매개변수 $(\tau^1, \tau^2, \ldots, \tau^n) \in \mathbb{R}^n$ 으로 라벨링된다.</p>
+<p><strong>2)</strong> 즉 어떤 매끄러운 사상 $g: \mathbb{R}^n \to G$ 가 있어</p>
+<ul>
+<li>$g(0, 0, \ldots, 0) = e$ (단위원)</li>
+<li>$0$ 근처의 $(\tau^1, \ldots, \tau^n)$ 마다 $g(\tau^1, \ldots, \tau^n) \in G$</li>
+</ul>
+<p><strong>3)</strong> 매개변수 개수 $n$ 이 리 군의 <em>차원</em> 이다 (§3의 다양체 차원).</p>
+<p><strong>4)</strong> example) $SO(3)$ (3차원 회전군): $n = 3$. 매개변수는 회전축의 세 성분, 또는 오일러 각 $(\phi, \theta, \psi)$ 등.</p>
+<h3 id="3-다중-생성자">3. 다중 생성자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 단위원에서 각 매개변수 $\tau^a$ 방향으로 편미분하면 <em>$n$ 개의 행렬</em>이 나온다.</p>
+$$X_a = \left.\frac{\partial g}{\partial \tau^a}\right|_{\tau=0}, \qquad a = 1, \ldots, n$$<p><strong>2)</strong> 이 $X_a$ 들은 각각 <em>생성자(generator)</em> 다. §9에서 1매개변수 경우의 단 하나의 생성자 X 를 정의했는데, 이제 같은 개념이 <em>n 개</em>로 확장된 것이다. 각 $X_a$ 는 단위원에서 $\tau^a$ 방향의 1매개변수 부분군 $\exp(\tau X_a)$ 를 생성한다.</p>
+<p><strong>3)</strong> $X_a$ 들이 일차독립이라서 단위원에서의 <em>$n$ 개의 독립적 방향</em>을 이룬다.</p>
+<p><strong>4)</strong> §5에서 본 1매개변수 경우 ($n=1$) 의 자연스러운 일반화. 하나의 $X$ 대신 $X_1, \ldots, X_n$ 의 모임이다.</p>
+<p><strong>5)</strong> 직관: 각 $X_a$ 는 단위원에서 &ldquo;$\tau^a$ 방향으로 살짝 움직이면 어디로 가는지&rdquo; 를 가리킨다.</p>
+<svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:360px">
+  <defs>
+    <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#0066cc"/>
+    </marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#cc0066"/>
+    </marker>
+    <marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0,0 L 10,5 L 0,10 z" fill="#009955"/>
+    </marker>
+  </defs>
+  <ellipse cx="180" cy="140" rx="150" ry="105" fill="#fafafa" stroke="#aaa" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="60" y="35" font-size="13" fill="#666">리 군 G (n차원 다양체)</text>
+  <circle cx="180" cy="140" r="6" fill="black"/>
+  <text x="190" y="135" font-size="13">I</text>
+  <line x1="180" y1="140" x2="290" y2="140" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <text x="285" y="160" font-size="13" fill="#0066cc">X_1</text>
+  <line x1="180" y1="140" x2="245" y2="60" stroke="#cc0066" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <text x="255" y="55" font-size="13" fill="#cc0066">X_2</text>
+  <line x1="180" y1="140" x2="245" y2="220" stroke="#009955" stroke-width="2.5" marker-end="url(#arrC)"/>
+  <text x="255" y="230" font-size="13" fill="#009955">X_3</text>
+  <path d="M 180,140 Q 240,150 290,150" fill="none" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <path d="M 180,140 Q 215,90 240,55" fill="none" stroke="#cc0066" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <path d="M 180,140 Q 215,190 240,225" fill="none" stroke="#009955" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <text x="50" y="265" font-size="11">n개의 생성자가 각각 1매개변수 부분군 exp(τ X_a) 를 정의 (점선 곡선)</text>
+</svg>
+<h3 id="4-다중-1매개변수-부분군">4. 다중 1매개변수 부분군<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 각 생성자 $X_a$ 마다 §9의 일대일 대응에 의해 <em>1매개변수 부분군</em>이 정해진다.</p>
+$$\phi_a(\tau) = \exp(\tau X_a)$$<p>$n$ 개의 생성자 → $n$ 개의 1매개변수 부분군.</p>
+<p><strong>2)</strong> 각 부분군은 단위원에서 $X_a$ 방향으로 출발한 매끄러운 곡선이다.</p>
+<p><strong>3)</strong> <em>이 $n$ 개의 부분군이 리 군 $G$ 의 구조를 충분히 결정</em>한다 (단위원 근처에서). 다음 장에서 그 이유를 명확히 한다.</p>
+<h3 id="5-example">5. example: $SO(3)$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $SO(3)$ = 3차원 회전군. $n = 3$.</p>
+<p><strong>2)</strong> 표준 매개변수화는 좌표축 회전이다.</p>
+$$R_x(\tau) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\tau & -\sin\tau \\ 0 & \sin\tau & \cos\tau \end{pmatrix}$$$$R_y(\tau) = \begin{pmatrix} \cos\tau & 0 & \sin\tau \\ 0 & 1 & 0 \\ -\sin\tau & 0 & \cos\tau \end{pmatrix}$$$$R_z(\tau) = \begin{pmatrix} \cos\tau & -\sin\tau & 0 \\ \sin\tau & \cos\tau & 0 \\ 0 & 0 & 1 \end{pmatrix}$$<p><strong>3)</strong> 각 경우 단위원 ($\tau=0$) 에서의 미분 = 생성자.</p>
+$$L_x = \left.\frac{dR_x}{d\tau}\right|_{\tau=0} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \end{pmatrix}$$$$L_y = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0 \end{pmatrix}, \qquad L_z = \begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$$<p><strong>4)</strong> 세 생성자 $L_x, L_y, L_z$ 가 일차독립. $SO(3)$ 의 3개 독립 방향에 정확히 대응한다.</p>
+<p><strong>5)</strong> 각 생성자가 1매개변수 부분군을 정의: $\exp(\tau L_a) = R_a(\tau)$. (확인은 §6에서의 $SO(2)$ 계산과 같은 방식으로 가능.)</p>
+<p><strong>6)</strong> 세 생성자는 모두 <em>반대칭</em>: $L_a^T = -L_a$. 이는 $SO(3)$ 가 회전군 (직교 행렬의 군) 이라는 데서 자연스럽게 나오는 성질이다.</p>
+<h3 id="6-결정적-차이-비교환성-미리보기">6. 결정적 차이: 비교환성 미리보기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 1매개변수 경우 ($n=1$): 같은 $X$ 에서 나온 두 곡선은 항상 <em>교환</em>한다.</p>
+$$\exp(\tau X) \exp(\sigma X) = \exp((\tau + \sigma) X) = \exp(\sigma X) \exp(\tau X)$$<p><strong>2)</strong> 다변수 경우 ($n \geq 2$): <em>다른</em> 생성자에서 나온 두 곡선은 일반적으로 <em>교환하지 않는다</em>.</p>
+$$\exp(\tau X_a) \exp(\sigma X_b) \neq \exp(\sigma X_b) \exp(\tau X_a) \quad (\text{일반적으로})$$<p><strong>3)</strong> example) $SO(3)$ 에서 $x$ 축 회전 후 $y$ 축 회전 ≠ $y$ 축 회전 후 $x$ 축 회전. 책 한 권을 들고 두 가지 순서로 $90°$ 회전을 해 보면 결과가 다른 자세에 도달한다.</p>
+<p><strong>4)</strong> 이 비교환성을 <em>정량적으로</em> 잡아내는 양이 다음 장의 <em>리 괄호</em> $[X, Y] = XY - YX$ 다.</p>
+<h3 id="7-정리">7. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> $n$ 차원 리 군은 $n$ 개의 매개변수로 단위원 근처를 라벨링한다.</p>
+<p><strong>2)</strong> 각 매개변수 방향 편미분 → $n$ 개의 생성자 $X_a$.</p>
+<p><strong>3)</strong> 각 생성자마다 §9의 일대일 대응에 의해 1매개변수 부분군 $\exp(\tau X_a)$ 가 정해진다.</p>
+<p><strong>4)</strong> $SO(3)$ 의 경우 생성자 $L_x, L_y, L_z$ 가 표준 예. 모두 반대칭 행렬이다.</p>
+<p><strong>5)</strong> <em>핵심 새 현상: 비교환성</em>. 다른 생성자에서 나온 부분군들은 일반적으로 곱셈 순서가 결과를 바꾼다. 이를 정량적으로 잡는 것이 다음 장의 <em>리 괄호</em> 다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_calculus/index.html"><a class="padding default-animation" href="/lie_theory/b_calculus/index.html">Calculus</a><ul id="R-subsections-f73819610fdafc445c5f21f18ba37e95" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/lie_theory/b_lie_group_algebra/index.html"><a class="padding default-animation" href="/lie_theory/b_lie_group_algebra/index.html">Lie group &amp; algebra</a><ul id="R-subsections-a34f317130e80a0a68efa3c35ebb9278" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_lie_group/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_lie_group/index.html">(b) Lie group</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_manifold/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_manifold/index.html">(b) Manifold</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_lie_algebra/index.html">(b) Lie algebra</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_generator/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_generator/index.html">(b) Generator</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/b_exponentiation/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/b_exponentiation/index.html">(b) Exponentiation</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/10-b_functional_calculus_exp/index.html">(b) Functional calculus</a></li>
+            <li class="" data-nav-id="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/14-b_lie_bracket/index.html">비교환성과 리 괄호</a></li>
+            <li class="active " data-nav-id="/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html"><a class="padding" href="/lie_theory/b_lie_group_algebra/10-b_multiparameter_lie_group/index.html">다변수 리 군과 생성자</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/lie_theory/b_operators/index.html"><a class="padding default-animation" href="/lie_theory/b_operators/index.html">Operators</a><ul id="R-subsections-a4a547684e87b772ab7dceffd5fea0e1" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/a_noether_theorem/index.html"><a class="padding" href="/lie_theory/a_noether_theorem/index.html">(b) Noether&#39;s theorem</a></li></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 팽창 연산자 (Dilation Operator)1) 정의
+정규 연산자($[\hat{D}, \hat{D}^\dagger] = 0$) 중에서, 임의의 상태 벡터에 작용했을 때 그 벡터의 노름을 감소시키지 않는 연산자를 팽창 (Dilation) 연산자라고 한다.
+$$\|\hat{D}\psi\| \ge \|\psi\|$$이는 연산자 노름의 하한이 최소 1 이상임을 의미한다.
+2) 물리적 의미
+수축 연산자가 에너지 소산을 나타낸다면, 팽창 연산자는 외부로부터 시스템 내부로 에너지가 유입되거나 신호가 증폭(Gain)되는 능동적인 열린 계를 기술한다. 가역 조건이 보장될 때 두 연산자는 서로 역연산자($\hat{D} = \hat{T}^{-1}$) 관계를 형성한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Dilation :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 팽창 연산자 (Dilation Operator)1) 정의
+정규 연산자($[\hat{D}, \hat{D}^\dagger] = 0$) 중에서, 임의의 상태 벡터에 작용했을 때 그 벡터의 노름을 감소시키지 않는 연산자를 팽창 (Dilation) 연산자라고 한다.
+$$\|\hat{D}\psi\| \ge \|\psi\|$$이는 연산자 노름의 하한이 최소 1 이상임을 의미한다.
+2) 물리적 의미
+수축 연산자가 에너지 소산을 나타낸다면, 팽창 연산자는 외부로부터 시스템 내부로 에너지가 유입되거나 신호가 증폭(Gain)되는 능동적인 열린 계를 기술한다. 가역 조건이 보장될 때 두 연산자는 서로 역연산자($\hat{D} = \hat{T}^{-1}$) 관계를 형성한다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/normal_operators/b_dilation/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Dilation :: 수리전자물리학">
+    <meta property="og:description" content="1. 팽창 연산자 (Dilation Operator)1) 정의
+정규 연산자($[\hat{D}, \hat{D}^\dagger] = 0$) 중에서, 임의의 상태 벡터에 작용했을 때 그 벡터의 노름을 감소시키지 않는 연산자를 팽창 (Dilation) 연산자라고 한다.
+$$\|\hat{D}\psi\| \ge \|\psi\|$$이는 연산자 노름의 하한이 최소 1 이상임을 의미한다.
+2) 물리적 의미
+수축 연산자가 에너지 소산을 나타낸다면, 팽창 연산자는 외부로부터 시스템 내부로 에너지가 유입되거나 신호가 증폭(Gain)되는 능동적인 열린 계를 기술한다. 가역 조건이 보장될 때 두 연산자는 서로 역연산자($\hat{D} = \hat{T}^{-1}$) 관계를 형성한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Dilation :: 수리전자물리학">
+    <meta itemprop="description" content="1. 팽창 연산자 (Dilation Operator)1) 정의
+정규 연산자($[\hat{D}, \hat{D}^\dagger] = 0$) 중에서, 임의의 상태 벡터에 작용했을 때 그 벡터의 노름을 감소시키지 않는 연산자를 팽창 (Dilation) 연산자라고 한다.
+$$\|\hat{D}\psi\| \ge \|\psi\|$$이는 연산자 노름의 하한이 최소 1 이상임을 의미한다.
+2) 물리적 의미
+수축 연산자가 에너지 소산을 나타낸다면, 팽창 연산자는 외부로부터 시스템 내부로 에너지가 유입되거나 신호가 증폭(Gain)되는 능동적인 열린 계를 기술한다. 가역 조건이 보장될 때 두 연산자는 서로 역연산자($\hat{D} = \hat{T}^{-1}$) 관계를 형성한다.">
+    <meta itemprop="wordCount" content="632">
+    <title>(b) Dilation :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/normal_operators\/b_dilation\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/vector_operator/normal_operators/b_dilation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-팽창-연산자-dilation-operator">1. 팽창 연산자 (Dilation Operator)</a></li>
+    <li><a href="#2-고유값의-위치">2. 고유값의 위치</a></li>
+    <li><a href="#3-리-대수-생성자-와-허미션-성분-분해">3. 리 대수 생성자 와 허미션 성분 분해</a></li>
+    <li><a href="#4-스펙트럼의-기하학적-대응">4. 스펙트럼의 기하학적 대응</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/normal_operators/index.html"><span itemprop="name">Normal operators</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Dilation</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/b_contraction/index.html" title="(b) Contraction (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/non-normal_operators/index.html" title="Non-normal operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-dilation">(b) Dilation</h1>
+
+<hr>
+<h2 id="1-팽창-연산자-dilation-operator">1. 팽창 연산자 (Dilation Operator)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1) 정의</strong></p>
+<p>정규 연산자($[\hat{D}, \hat{D}^\dagger] = 0$) 중에서, 임의의 상태 벡터에 작용했을 때 그 벡터의 노름을 감소시키지 않는 연산자를 <strong>팽창 (Dilation) 연산자</strong>라고 한다.</p>
+$$
+\|\hat{D}\psi\| \ge \|\psi\|
+$$<p>이는 연산자 노름의 하한이 최소 1 이상임을 의미한다.</p>
+<p><strong>2) 물리적 의미</strong></p>
+<p>수축 연산자가 에너지 소산을 나타낸다면, 팽창 연산자는 외부로부터 시스템 내부로 에너지가 유입되거나 신호가 증폭(Gain)되는 능동적인 열린 계를 기술한다. 가역 조건이 보장될 때 두 연산자는 서로 역연산자($\hat{D} = \hat{T}^{-1}$) 관계를 형성한다.</p>
+<hr>
+<h2 id="2-고유값의-위치">2. 고유값의 위치<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>$\hat{D}$의 모든 고유값 $\lambda$의 절댓값은 1 이상이며, 복소 평면 상에서 닫힌 단위 원판의 외부 또는 그 경계에 구속된다.</p>
+$$
+|\lambda| \ge 1
+$$<p>proof)</p>
+<p>연산자 $\hat{D}$의 고유값 $\lambda$와 영벡터가 아닌 고유벡터 $|\lambda\rangle$에 대하여 다음의 고유방정식이 성립한다.</p>
+$$
+\hat{D}|\lambda\rangle = \lambda|\lambda\rangle
+$$<p>위 식의 양변에 표준 노름을 취하면, 스칼라 값인 고유값은 절댓값 기호와 함께 분리된다.</p>
+$$
+\|\hat{D}\lambda\| = \|\lambda\lambda\| = |\lambda| \|\lambda\|
+$$<p>팽창 연산자의 정의 부등식인 $\|\hat{D}\psi\| \ge \|\psi\|$의 변수 $\psi$ 자리에 고유벡터 $|\lambda\rangle$를 대입한다.</p>
+$$
+\|\hat{D}\lambda\| \ge \|\lambda\|
+$$<p>좌변에 앞서 유도한 노름 분해식을 대입하여 정리한다.</p>
+$$
+|\lambda| \|\lambda\| \ge \|\lambda\|
+$$<p>고유벡터의 정의에 따라 $\|\lambda\| \neq 0$이므로, 양변을 고유벡터의 노름으로 나누면 다음 부등식이 도출된다.</p>
+$$
+|\lambda| \ge 1
+$$<hr>
+<h2 id="3-리-대수-생성자-와-허미션-성분-분해">3. 리 대수 생성자 $\hat{Z}$와 허미션 성분 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>정규 $\hat{I}$-팽창 연산자 $\hat{D}$는 복소 우반평면에 고유값을 가지는 정규 연산자 $\hat{Z}$의 지수 사상으로 표현되며, 이는 두 개의 가환하는 허미션 연산자의 대수적 결합으로 고유하게 분해된다.</p>
+$$
+\hat{D} = e^{\hat{Z}} \quad \text{where} \quad \hat{Z} = \hat{H}_R + i\hat{H}_I \quad ([\hat{H}_R, \hat{H}_I] = 0)
+$$<p>proof)</p>
+<p>정규 연산자 $\hat{D}$는 스펙트럼 정리에 의해 다음과 같이 정규직교 고유기저와 고유값으로 대각 분해된다.</p>
+$$
+\hat{D} = \sum_n \lambda_n |\lambda_n\rangle \langle \lambda_n|
+$$<p>단위 원판 외부 구속 조건($|\lambda_n| \ge 1$)을 만족하는 고유값 $\lambda_n$을 복소 지수 형태인 $\lambda_n = e^{Z_n}$으로 사상한다. 복소수 고유값 $Z_n$을 실수부와 허수부로 분리하여 $Z_n = X_n + iY_n$ ($X_n, Y_n \in \mathbb{R}$)로 두면 다음 관계가 성립한다.</p>
+$$
+|\lambda_n| = |e^{Z_n}| = |e^{X_n + iY_n}| = e^{X_n} |e^{iY_n}| = e^{X_n}
+$$<p>부등식 $|\lambda_n| \ge 1$에 이를 대입하면 $e^{X_n} \ge 1$이 되며, 지수 함수의 단조 증가성에 의해 실수부의 영역이 다음과 같이 확정된다.</p>
+$$
+X_n \ge 0 \implies \text{Re}(Z_n) \ge 0
+$$<p>생성자 고유값 $Z_n$은 복소 우반평면(Right half-plane)에 존재해야 한다. 지수 함수의 매클로린 급수 정의를 정규직교 고유기저 전개식에 대입한다.</p>
+$$
+\hat{D} = \sum_n e^{Z_n} |\lambda_n\rangle \langle \lambda_n| = \sum_n \left( \sum_{k=0}^{\infty} \frac{Z_n^k}{k!} \right) |\lambda_n\rangle \langle \lambda_n|
+$$<p>새로운 정규 연산자 $\hat{Z}$를 다음과 같이 정의한다.</p>
+$$
+\hat{Z} := \sum_n Z_n |\lambda_n\rangle \langle \lambda_n|
+$$<p>기저의 정규직교성에 의해 $k$차 멱연산은 고유값의 거듭제곱으로 전개되므로, 합산 순서의 전환을 통해 다음 사상이 성립한다.</p>
+$$
+e^{\hat{Z}} = \sum_{k=0}^{\infty} \frac{\hat{Z}^k}{k!} = \sum_n e^{Z_n} |\lambda_n\rangle \langle \lambda_n| = \hat{D}
+$$<p>이제 생성자 연산자 $\hat{Z}$를 허미션 성분과 반-허미션 성분으로 분해하는 카테시안 분해를 적용한다.</p>
+$$
+\hat{Z} = \frac{\hat{Z} + \hat{Z}^\dagger}{2} + \frac{\hat{Z} - \hat{Z}^\dagger}{2} = \frac{\hat{Z} + \hat{Z}^\dagger}{2} + i \left( \frac{\hat{Z} - \hat{Z}^\dagger}{2i} \right) \equiv \hat{H}_R + i\hat{H}_I
+$$<p>여기서 정의된 두 연산자 $\hat{H}_R$과 $\hat{H}_I$의 허미션 수반을 각각 계산한다.</p>
+$$
+\hat{H}_R^\dagger = \left( \frac{\hat{Z} + \hat{Z}^\dagger}{2} \right)^\dagger = \frac{\hat{Z}^\dagger + \hat{Z}}{2} = \hat{H}_R
+$$$$
+\hat{H}_I^\dagger = \left( \frac{\hat{Z} - \hat{Z}^\dagger}{2i} \right)^\dagger = \frac{\hat{Z}^\dagger - \hat{Z}}{-2i} = \frac{\hat{Z} - \hat{Z}^\dagger}{2i} = \hat{H}_I
+$$<p>$\hat{H}_R$과 $\hat{H}_I$는 모두 허미션 연산자이다. 이들의 스펙트럼 분해 형식은 원래 고유값의 실수부와 허수부를 고유값으로 가짐이 유도된다.</p>
+$$
+\hat{H}_R = \sum_n X_n |\lambda_n\rangle \langle \lambda_n|, \quad \hat{H}_I = \sum_n Y_n |\lambda_n\rangle \langle \lambda_n|
+$$<p>동일한 고유기저를 공유하므로 두 허미션 연산자는 가환한다.</p>
+$$
+[\hat{H}_R, \hat{H}_I] = 0
+$$<p>스펙트럼 구속 조건에 의해 $X_n \ge 0$이므로, 허미션 연산자 $\hat{H}_R$은 양의 반정부호(Positive semi-definite) 연산자이다.</p>
+$$
+\hat{H}_R \ge 0
+$$<p>결론적으로 생성자 $\hat{Z}$는 시스템의 증폭을 제어하는 양의 허미션 연산자 $\hat{H}_R$과 위상 회전을 제어하는 허미션 연산자 $\hat{H}_I$의 결합으로 분리된다.</p>
+<hr>
+<h2 id="4-스펙트럼의-기하학적-대응">4. 스펙트럼의 기하학적 대응<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>생성자 $\hat{Z}$를 구성하는 두 허미션 연산자의 고유값 성분과 팽창 연산자 $\hat{D}$의 고유값 사이의 기하학적 매칭 관계는 다음과 같다.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">생성자 고유값 실수부 ($X_n$)</th>
+          <th style="text-align: left">생성자 고유값 허수부 ($Y_n$)</th>
+          <th style="text-align: left">팽창 연산자 고유값 ($\lambda_n$)</th>
+          <th style="text-align: left">시스템 상태</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">$X_n = 0$</td>
+          <td style="text-align: left">$Y_n \in \mathbb{R}$</td>
+          <td style="text-align: left">$</td>
+          <td style="text-align: left">\lambda_n</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$X_n > 0$</td>
+          <td style="text-align: left">$Y_n = 0$</td>
+          <td style="text-align: left">$\lambda_n > 1$</td>
+          <td style="text-align: left">순수 증폭 (무회전 증폭 상태)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$X_n > 0$</td>
+          <td style="text-align: left">$Y_n \in \mathbb{R}$</td>
+          <td style="text-align: left">$</td>
+          <td style="text-align: left">\lambda_n</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/normal_operators/b_normal/index.html"><a class="padding" href="/vector_operator/normal_operators/b_normal/index.html">(b) Normal</a></li>
+            <li class="" data-nav-id="/vector_operator/normal_operators/b_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
+            <li class="" data-nav-id="/vector_operator/normal_operators/b_anti_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
+            <li class="" data-nav-id="/vector_operator/normal_operators/b_unitary/index.html"><a class="padding" href="/vector_operator/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
+            <li class="" data-nav-id="/vector_operator/normal_operators/b_contraction/index.html"><a class="padding" href="/vector_operator/normal_operators/b_contraction/index.html">(b) Contraction</a></li>
+            <li class="active " data-nav-id="/vector_operator/normal_operators/b_dilation/index.html"><a class="padding" href="/vector_operator/normal_operators/b_dilation/index.html">(b) Dilation</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/combining_spaces/index.html"><a class="padding default-animation" href="/vector_operator/combining_spaces/index.html">Combining spaces</a><ul id="R-subsections-92d4f8c24e32980ccbc6e3dc19ac927a" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/variation/index.html"><a class="padding default-animation" href="/vector_operator/variation/index.html">Variation</a><ul id="R-subsections-eb3a19f299ca0013853296f641c5255b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

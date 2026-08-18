@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
+이 절에서 이 정리를 본격 다룬다.
+정리 (지수 사상의 전사성). 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="컴팩트 연결의 경우 — 전사성 증명과 직관 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
+이 절에서 이 정리를 본격 다룬다.
+정리 (지수 사상의 전사성). 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/12-b_compact_connected_surjective/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="컴팩트 연결의 경우 — 전사성 증명과 직관 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
+이 절에서 이 정리를 본격 다룬다.
+정리 (지수 사상의 전사성). 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="컴팩트 연결의 경우 — 전사성 증명과 직관 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
+이 절에서 이 정리를 본격 다룬다.
+정리 (지수 사상의 전사성). 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.">
+    <meta itemprop="wordCount" content="1956">
+    <title>컴팩트 연결의 경우 — 전사성 증명과 직관 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/12-b_compact_connected_surjective\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/12-b_compact_connected_surjective/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-정리의-정확한-진술">2. 정리의 정확한 진술</a></li>
+        <li><a href="#3-증명-전략--hopf-rinow-와-리만-기하">3. 증명 전략 — Hopf-Rinow 와 리만 기하</a></li>
+        <li><a href="#4-행렬군에서의-직접-증명--스펙트럼-분해">4. 행렬군에서의 직접 증명 — 스펙트럼 분해</a></li>
+        <li><a href="#5-컴팩트-가환의-경우--토러스">5. 컴팩트 가환의 경우 — 토러스 </a></li>
+        <li><a href="#6-단사성은-깨질-수-있음--비가환의-경우">6. 단사성은 깨질 수 있음 — 비가환의 경우</a></li>
+        <li><a href="#7-컴팩트성의-필요성--비컴팩트-반례-미리">7. 컴팩트성의 필요성 — 비컴팩트 반례 미리</a></li>
+        <li><a href="#8-구체-적용---의-모든-원소">8. 구체 적용 —  의 모든 원소</a></li>
+        <li><a href="#9-구체-적용---의-모든-회전">9. 구체 적용 —  의 모든 회전</a></li>
+        <li><a href="#10-haar-측도와-지수의-야코비안-참고">10. Haar 측도와 지수의 야코비안 (참고)</a></li>
+        <li><a href="#11-이-절을-닫으며">11. 이 절을 닫으며</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">컴팩트 연결의 경우 — 전사성 증명과 직관</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/11-b_lie_algebra_axioms/index.html" title="리 대수의 공리 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/13-b_noncompact_exp_product/index.html" title="비컴팩트의 경우 — 지수의 곱 필요 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="컴팩트-연결의-경우--전사성-증명과-직관">컴팩트 연결의 경우 — 전사성 증명과 직관</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§7 §6 와 §7 §10 에서 <em>지수 사상이 항등원 근방에서만 미분 동형사상</em>, <em>전역적으로는 단사·전사 둘 다 깨질 수 있음</em> 이라 예고했다. §2 §5 (1) 에서 <em>컴팩트 연결 리 군에서는 지수가 전사</em> 라는 정리를 간략히 언급했다.</p>
+<p>이 절에서 이 정리를 <em>본격 다룬다</em>.</p>
+<blockquote>
+<p><em>정리 (지수 사상의 전사성)</em>. 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.</p>
+</blockquote>
+<p>즉 <em>컴팩트 연결의 모든 원소가 단일 지수</em> 로 표현. <em>전체 군이 리 대수의 지수 이미지</em>. 매우 강한 결과.</p>
+<p>이 절은 (i) 정리의 정확한 진술, (ii) 증명 전략 (Hopf-Rinow), (iii) 행렬군에서 <em>스펙트럼 분해를 통한 직접 증명</em>, (iv) 컴팩트 가환 ($T^N$) 의 경우, (v) 단사성은 깨질 수 있음 (주기성), (vi) 구체 예 — $U(N), SU(N), SO(N)$ — 의 순서.</p>
+<p>증명의 핵심 도구는 <em>리만 기하학</em> — 컴팩트 연결 리 군에 <em>불변 리만 메트릭</em> 을 잡으면, <em>1-매개변수 부분군이 측지선</em> 이 되고 <em>측지선 완비성</em> 으로 임의 점에 도달. 입문 수준에서는 <em>핵심 아이디어와 행렬군 직접 증명</em> 에 집중.</p>
+<h3 id="2-정리의-정확한-진술">2. 정리의 정확한 진술<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>정리 (지수 사상의 전사성)</em>.</p>
+<blockquote>
+<p>컴팩트 연결 리 군 $G$ 에 대해
+</p>
+$$\exp : \mathfrak{g} \to G \quad \text{이 전사 (surjective)}$$<p>
+즉 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재 ($\exp(X) = g$).</p>
+</blockquote>
+<p><strong>2)</strong> <em>주의 — 단사성은 보장 안 됨</em>. 정리는 <em>전사만</em> 주장. 같은 $g$ 에 대해 <em>여러 $X$</em> 가 가능. 예 — $U(1)$ 에서 $g = 1$ 에 대해 $X = 2\pi i n$ ($n \in \mathbb{Z}$) 가 모두 $\exp(X) = 1$.</p>
+<p><strong>3)</strong> <em>조건의 필수성</em>. 두 조건 <em>컴팩트 + 연결</em> 모두 필수.</p>
+<ul>
+<li><em>비컴팩트</em> — 전사 깨짐 (§13). 예 $SL(2, \mathbb{R})$.</li>
+<li><em>비연결</em> — 항등원 성분에만 도달, 다른 성분은 도달 못 함 (§14). 예 $O(N)$ 의 $\det = -1$ 부분.</li>
+</ul>
+<p><strong>4)</strong> <em>연결성의 의미</em>. 컴팩트 연결 리 군은 <em>전체가 항등원 성분</em>. 지수 이미지 $\exp(\mathfrak{g})$ 가 <em>항등원을 포함하는 연결 부분집합</em> — 만약 전사면 <em>전체</em> 가 도달됨.</p>
+<h3 id="3-증명-전략--hopf-rinow-와-리만-기하">3. 증명 전략 — Hopf-Rinow 와 리만 기하<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>증명의 <em>핵심 아이디어</em> 를 짚는다. 완전한 증명은 미분기하학 교재에 (예 — Helgason 의 <em>Differential Geometry, Lie Groups, and Symmetric Spaces</em>).</p>
+<p><strong>1)</strong> <em>컴팩트 연결 리 군에 불변 리만 메트릭 도입</em>. 컴팩트 리 군 $G$ 위에는 <em>왼쪽·오른쪽 모두 불변인 리만 메트릭</em> $\langle \cdot, \cdot \rangle$ 이 존재.</p>
+<p><em>구성 방법</em> (Weyl unitary trick) — 임의의 양의 정부호 내적을 $\mathfrak{g}$ 에 놓고, <em>Haar 측도로 군 평균</em> 해서 $\text{Ad}$-불변 내적을 얻음. 이를 <em>왼쪽 옮김</em> 으로 모든 점에 확장 — 왼쪽·오른쪽 모두 불변.</p>
+<p><em>핵심 — 컴팩트성 필요</em>. Haar 측도가 <em>유한</em> 이어야 평균이 잘 정의. 비컴팩트는 안 됨.</p>
+<p><strong>2)</strong> <em>측지선 = 1-매개변수 부분군</em>. 위 메트릭에서 <em>측지선 (geodesic)</em> 이 정확히 <em>1-매개변수 부분군 $\exp(tX)$</em> 와 일치 (또는 그 왼쪽 옮김).</p>
+<p>직관 — <em>지수 사상이 &ldquo;최단 경로&rdquo; 를 만든다</em>. $\exp(tX)$ 가 $X$ 방향으로의 <em>상수 속도 측지선</em>.</p>
+<p><strong>3)</strong> <em>Hopf-Rinow 정리</em>.</p>
+<blockquote>
+<p><em>Hopf-Rinow 정리</em>. 컴팩트 연결 리만 다양체는 <em>측지적으로 완비 (geodesically complete)</em> — 모든 측지선이 <em>모든 $t \in \mathbb{R}$ 에서 정의됨</em>. 또한 <em>임의 두 점이 측지선으로 연결</em>.</p>
+</blockquote>
+<p>(컴팩트성으로부터 자동으로 측지적 완비성 따라옴.)</p>
+<p><strong>4)</strong> <em>정리 적용</em>. 임의 $g \in G$ 와 항등원 $e$ 가 <em>측지선으로 연결</em>. 그 측지선은 <em>1-매개변수 부분군</em> — 즉</p>
+$$\gamma(t) = \exp(tX), \quad \gamma(0) = e, \quad \gamma(1) = g$$<p>인 $X \in \mathfrak{g}$ 존재. 따라서 $g = \exp(X)$. <em>전사</em>. ∎</p>
+<p><strong>5)</strong> <em>증명 흐름 요약</em>.</p>
+<ul>
+<li>컴팩트 → Haar 측도 유한 → $\text{Ad}$-불변 내적 → 양변 불변 리만 메트릭</li>
+<li>1-매개변수 부분군 = 측지선</li>
+<li>컴팩트 → 측지적 완비 (Hopf-Rinow) → 모든 두 점 측지선 연결</li>
+<li>항등원과 $g$ 잇는 측지선 = $\exp(tX)$ → $g = \exp(X)$</li>
+</ul>
+<h3 id="4-행렬군에서의-직접-증명--스펙트럼-분해">4. 행렬군에서의 직접 증명 — 스펙트럼 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>행렬 컴팩트 연결 리 군의 경우, <em>스펙트럼 분해</em> 를 직접 사용한 명시적 증명이 가능. 직관에 도움.</p>
+<p><strong>1)</strong> <em>$U(N)$ 의 경우</em>. 임의 $U \in U(N)$ 의 <em>스펙트럼 분해</em></p>
+$$U = \sum_i e^{i\theta_i} |u_i\rangle \langle u_i|$$<p>(유니타리 → 정규 연산자, 고유값 모듈러스 1, 정규 직교 고유벡터.)</p>
+<p>각 고유값 $\lambda_i = e^{i\theta_i}$ 에 대해 <em>로그</em> 잡으면 — $\log \lambda_i = i\theta_i$ (선택, $\theta_i \in (-\pi, \pi]$).</p>
+<p><em>반에르미트 행렬</em> $X$ 구성</p>
+$$X = \sum_i i\theta_i \, |u_i\rangle \langle u_i| \in \mathfrak{u}(N)$$<p>— 고유값 $i\theta_i$ 가 순허수이므로 반에르미트. 확인 — $X^\dagger = \sum_i \overline{i\theta_i} |u_i\rangle \langle u_i| = \sum_i (-i\theta_i) |u_i\rangle \langle u_i| = -X$. ✓</p>
+<p><strong>2)</strong> <em>$\exp(X) = U$ 확인</em>. §7 §8 의 스펙트럼 분해 공식</p>
+$$\exp(X) = \sum_i e^{i\theta_i} |u_i\rangle \langle u_i| = U$$<p>✓.</p>
+<p><em>결론</em> — 모든 $U \in U(N)$ 가 어떤 $X \in \mathfrak{u}(N)$ 에 대해 $U = \exp(X)$. 전사. ∎</p>
+<p><strong>3)</strong> <em>$SU(N)$ 의 경우</em>. $U \in SU(N)$ 는 $\det U = 1$ 추가. 위 구성에서</p>
+$$\det U = \prod_i e^{i\theta_i} = e^{i \sum \theta_i} = 1 \implies \sum_i \theta_i \in 2\pi \mathbb{Z}$$<p>$X$ 의 $\text{tr}$ — $\text{tr}(X) = \sum_i i\theta_i = i \sum_i \theta_i$.</p>
+<p>$\sum \theta_i$ 가 일반적으로 $2\pi n$ ($n \in \mathbb{Z}$) — 안 $0$ 일 수 있다.</p>
+<p><em>해결</em> — 고유값의 <em>로그 선택</em> 을 조정해 $\sum \theta_i = 0$ 으로 만든다. $\theta_i \to \theta_i - 2\pi n / N$ 같은 <em>이동</em>. 새 $\theta_i'$ 도 $e^{i\theta_i'} = e^{i\theta_i}$ (변화는 $2\pi$ 배수) 이라 $\exp$ 결과 그대로. 그리고 $\sum \theta_i' = 0$ 이 되도록 조정.</p>
+<p>→ $X = \sum i \theta_i' |u_i\rangle \langle u_i| \in \mathfrak{su}(N)$ (반에르미트 + tr 0) 존재. $\exp(X) = U$. ∎</p>
+<p><strong>4)</strong> <em>$SO(N)$ 의 경우</em> (조금 더 미묘). $R \in SO(N)$ 의 <em>실 표준형</em> 은 $2\times 2$ 회전 블록과 (홀수 차원 시) $1$ 블록으로 분해</p>
+$$R = O \begin{pmatrix} R(\theta_1) & & & \\ & R(\theta_2) & & \\ & & \ddots & \\ & & & 1 \end{pmatrix} O^T$$<p>($O \in O(N)$ 직교 행렬, $R(\theta_k)$ 는 $2 \times 2$ 회전.) 각 $R(\theta_k) = \exp(\theta_k J_k)$ (§6 §10) 인데 $J_k$ 가 반대칭 ($\in \mathfrak{so}(N)$). 직접 종합으로</p>
+$$R = O \exp(A) O^T = \exp(O A O^T)$$<p>where $A$ 가 블록 대각 반대칭 행렬. $OAO^T$ 도 반대칭 → $\in \mathfrak{so}(N)$. $\exp(OAO^T) = R$. ∎</p>
+<h3 id="5-컴팩트-가환의-경우--토러스">5. 컴팩트 가환의 경우 — 토러스 $T^N$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가환 컴팩트 연결 리 군은 <em>토러스 $T^N$</em> (§3 §4). 지수 사상이 어떻게 동작하는지 본다.</p>
+<p><strong>1)</strong> <em>$T^N = (U(1))^N$ 의 리 대수</em> — $\mathfrak{u}(1)^N \cong i \mathbb{R}^N$.</p>
+<p><strong>2)</strong> <em>지수 사상</em>. $X = (i\alpha_1, \cdots, i\alpha_N) \in i\mathbb{R}^N$ 에 대해</p>
+$$\exp(X) = (e^{i\alpha_1}, \cdots, e^{i\alpha_N}) \in T^N$$<p><strong>3)</strong> <em>전사 확인</em>. 임의 $(e^{i\theta_1}, \cdots, e^{i\theta_N}) \in T^N$ 에 대해 $X = (i\theta_1, \cdots, i\theta_N)$ 잡으면 $\exp(X) = (e^{i\theta_1}, \cdots, e^{i\theta_N})$. ✓ 전사.</p>
+<p><strong>4)</strong> <em>단사 깨짐 — 격자 주기성</em>. $\exp(X_1) = \exp(X_2)$ ⟺ $X_2 - X_1 \in 2\pi i \mathbb{Z}^N$ — <em>$2\pi$ 배수 격자만큼 다름</em>.</p>
+<p>따라서 <em>$\exp$ 의 단사가 깨지는 곳</em> 이 <em>격자 $2\pi i \mathbb{Z}^N \subset \mathfrak{g}$</em>. 이 격자가 <em>기본군 $\pi_1(T^N) = \mathbb{Z}^N$</em> 과 1:1 대응. <em>위상적 정보</em> 가 격자에 인코딩.</p>
+<p><strong>5)</strong> <em>일반 컴팩트 가환에서의 패턴</em>. 컴팩트 가환 연결 리 군이 $T^N$ 이라 $\exp$ 가 전사 + 격자만큼 단사 깨짐. <em>기본군이 격자로 나타남</em>. 핵심 시각 — <em>컴팩트 가환 리 군 = 리 대수 / 격자</em>.</p>
+<h3 id="6-단사성은-깨질-수-있음--비가환의-경우">6. 단사성은 깨질 수 있음 — 비가환의 경우<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가환에서는 <em>격자 주기성</em> 으로 단사 깨짐. 비가환에서는 어떻게 되는가.</p>
+<p><strong>1)</strong> <em>$U(1)$ — 가장 단순</em>. $\exp(i\theta) = e^{i\theta}$, $2\pi$ 주기.</p>
+<p><strong>2)</strong> <em>$SU(2)$</em> — 단순연결, 컴팩트, 비가환. $\mathfrak{su}(2)$ 의 일반 원소 $X = i(a\sigma_x + b\sigma_y + c\sigma_z)$ 에 대해 §9 §9 (3) 의 공식</p>
+$$\exp(X) = \cos(r) I + i \frac{\sin(r)}{r} (a\sigma_x + b\sigma_y + c\sigma_z), \quad r = \sqrt{a^2 + b^2 + c^2}$$<p>$r = \pi$ 에서 $\exp(X) = -I$ — <em>방향 무관</em>. 즉 <em>반지름 $\pi$ 인 $\mathfrak{su}(2)$ 의 구면 전체가 $-I$ 한 점으로</em> 매핑.</p>
+<p>→ <em>전사하지만 심하게 비단사</em>. 정상.</p>
+<p><strong>3)</strong> <em>일반 컴팩트 연결 — 단사 깨짐의 위치</em>. 단사가 깨지는 곳이 <em>지수 사상의 임계점 (critical points)</em>. 이들이 <em>위상적 정보 (기본군, 켤레류 등) 를 인코딩</em>. 자세한 분석은 <em>최대 토러스 (maximal torus)</em> 와 <em>Weyl 군</em> 의 이론 — 본 시리즈에서 다루지 않음.</p>
+<p><strong>4)</strong> <em>결과 — 컴팩트 연결의 지수 사상의 모습</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>성질</th>
+          <th>컴팩트 연결</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>전사?</td>
+          <td>✓ (모든 $g \in G$ 가 $\exp(X)$)</td>
+      </tr>
+      <tr>
+          <td>단사?</td>
+          <td>✗ (가환은 격자, 비가환은 특이점)</td>
+      </tr>
+      <tr>
+          <td>결과</td>
+          <td><em>덮개 사상</em> — $\mathfrak{g}$ 가 $G$ 의 <em>덮개</em> (위상적 의미는 아니지만 비슷한 그림)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="7-컴팩트성의-필요성--비컴팩트-반례-미리">7. 컴팩트성의 필요성 — 비컴팩트 반례 미리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§13 의 예고로, <em>컴팩트성이 필수</em> 임을 한 예로 본다.</p>
+<p><strong>1)</strong> <em>$SL(2, \mathbb{R})$ — 비컴팩트 연결</em>. $\det = 1$ 인 $2 \times 2$ 실 행렬.</p>
+<p><strong>2)</strong> <em>반례 — $\exp$ 의 이미지에 없는 원소</em>.</p>
+$$M = \begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix} \in SL(2, \mathbb{R})$$<p>(확인 — $\det M = (-1)(-1) - 1 \cdot 0 = 1$, OK.)</p>
+<p><strong>3)</strong> <em>$M = \exp(X)$ 가 가능한가</em>. $X \in \mathfrak{sl}(2, \mathbb{R})$ — 트레이스 0 $2 \times 2$ 실 행렬.</p>
+<p>만약 $M = \exp(X)$ 면, $\det M = \exp(\text{tr}(X)) = \exp(0) = 1$ ✓ (필요 조건 만족).</p>
+<p>그러나 $\text{tr}(M) = -2$ 가 <em>문제</em>. $\exp(X)$ 의 트레이스 분석으로 (§13 §3 본격) — $\text{tr}(\exp X) = -2$ 가 가능한 $X \in \mathfrak{sl}(2, \mathbb{R})$ 가 있지만, <em>그 $X$ 에 대해 $\exp(X) = -I$</em> 만 가능 ($X$ 의 고유값이 $\pm i\pi$ — 회전 행렬 형태). $M \neq -I$ 이라 도달 못 함.</p>
+<p>→ $M \notin \exp(\mathfrak{sl}(2, \mathbb{R}))$. 비전사.</p>
+<p><strong>4)</strong> <em>해결</em> (§13). <em>지수의 곱</em> 으로 도달 가능 — $M = \exp(X_1) \exp(X_2)$. <em>단일 $\exp$</em> 만으로는 비컴팩트에서 부족.</p>
+<h3 id="8-구체-적용---의-모든-원소">8. 구체 적용 — $SU(N)$ 의 모든 원소<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>컴팩트 연결의 핵심 예 — $SU(N)$ — 에서 정리의 직접 활용.</p>
+<p><strong>1)</strong> <em>주장</em>. 모든 $U \in SU(N)$ 가 어떤 <em>반에르미트 트레이스 0 행렬</em> $H \in \mathfrak{su}(N)$ 에 대해 $U = \exp(H)$.</p>
+<p><strong>2)</strong> <em>물리적 의미</em>. <em>모든 $SU(N)$ 변환이 지수 형태 $\exp(i T)$</em> ($T = -iH$ 가 <em>에르미트 트레이스 0</em>). 양자역학에서 <em>모든 유니타리 변환이 에르미트 생성자의 지수</em>. <em>해밀토니안이 모든 가능 시간 진화를 만든다</em> 의 군 이론적 기반.</p>
+<p><strong>3)</strong> <em>$SU(2)$ 구체</em>. §9 §9 (3) 의 공식 — 모든 $U \in SU(2)$ 가</p>
+$$U = \cos(r/2) I + i \sin(r/2) (\hat n \cdot \vec \sigma)$$<p>($\hat n$ 단위 벡터, $r \in [0, 2\pi]$.) <em>축 $\hat n$ + 각도 $r$</em> 으로 매개변수화 — <em>모든 회전이 축-각 표현</em>.</p>
+<p>이때 $X = i (r/2)(\hat n \cdot \vec \sigma) \in \mathfrak{su}(2)$. 전사성 확인.</p>
+<p><strong>4)</strong> <em>$SU(3)$ — QCD</em>. QCD 의 게이지 변환이 $SU(3)$ 의 원소. 모두 $\exp(i \sum_a \alpha_a \lambda_a)$ 형태 ($\lambda_a$ Gell-Mann 행렬). 8 개의 <em>실 매개변수</em> $\alpha_a$ 로 <em>모든 색 변환</em> 표현.</p>
+<h3 id="9-구체-적용---의-모든-회전">9. 구체 적용 — $SO(N)$ 의 모든 회전<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>주장</em>. 모든 회전 $R \in SO(N)$ 가 어떤 <em>반대칭 행렬</em> $A \in \mathfrak{so}(N)$ 에 대해 $R = \exp(A)$.</p>
+<p><strong>2)</strong> <em>$SO(3)$ — Rodrigues 공식</em>. 축 $\hat n \in S^2$, 각도 $\theta \in [0, \pi]$ 회전이</p>
+$$R = \exp(\theta A_{\hat n}), \quad A_{\hat n} = \hat n \cdot \vec L$$<p>($L_1, L_2, L_3$ 가 §8 §5 (8) 의 $\mathfrak{so}(3)$ 기저.) <em>모든 회전이 축-각도 표현</em>.</p>
+<p><strong>3)</strong> <em>명시적 형태</em> — Rodrigues 공식</p>
+$$R = \cos\theta \, I + \sin\theta \, A_{\hat n} + (1 - \cos\theta) \hat n \hat n^T$$<p>(§17 본격.)</p>
+<p><strong>4)</strong> <em>$SO(N)$ 일반</em> (§4 (4) 의 구성). 임의 $R$ 가 <em>블록 대각화</em> 후 각 $2 \times 2$ 회전 블록을 $\exp(\theta_k J_k)$ 로 표현, 종합해 $R = \exp(A)$.</p>
+<h3 id="10-haar-측도와-지수의-야코비안-참고">10. Haar 측도와 지수의 야코비안 (참고)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>전사성을 <em>측도 이론적</em> 으로 활용하는 응용을 간단히 짚는다.</p>
+<p><strong>1)</strong> <em>컴팩트 연결의 지수 매개변수화</em>. $\exp$ 가 전사이므로, <em>$G$ 위 적분이 $\mathfrak{g}$ 위 적분으로 환원</em> 가능.</p>
+$$\int_G f(g) \, d\mu(g) = \int_{\mathfrak{g}} f(\exp X) \, |J(X)| \, dX$$<p>여기 $J(X)$ 가 <em>지수 사상의 야코비안</em>. 본 시리즈에서 명시하지는 않지만, <em>컴팩트 군 위 적분의 표준 도구</em>.</p>
+<p><strong>2)</strong> <em>야코비안 공식</em>. $J(X) = \det\left( \frac{1 - e^{-\text{ad}_X}}{\text{ad}_X} \right)$. (Helgason 의 책 참조.)</p>
+<p><strong>3)</strong> <em>응용</em>. 표현론의 <em>문자 (characters)</em>, Plancherel 측도, 양자장론의 게이지 평균 등이 이 형태를 활용.</p>
+<h3 id="11-이-절을-닫으며">11. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) <em>주 정리</em> — 컴팩트 연결 리 군에서 $\exp : \mathfrak{g} \to G$ 가 <em>전사</em>. 모든 $g = \exp(X)$ 형태.</p>
+<p>(2) <em>증명 전략</em> — Hopf-Rinow + 불변 리만 메트릭. 1-매개변수 부분군 = 측지선, 컴팩트 → 완비 → 모든 두 점 측지선 연결.</p>
+<p>(3) <em>행렬군 직접 증명</em> — 스펙트럼 분해. $U(N)$ 에서 고유값 $e^{i\theta_i}$ → $X = \sum i\theta_i |u_i\rangle\langle u_i|$ 로 직접 구성. $SU(N), SO(N)$ 도 유사.</p>
+<p>(4) <em>컴팩트 가환 $T^N$</em> — 격자 $2\pi i \mathbb{Z}^N$ 만큼 단사 깨짐. 컴팩트 가환 = 리 대수 / 격자.</p>
+<p>(5) <em>단사성 깨짐</em> — 가환은 격자, 비가환은 특이점 (예 $SU(2)$ 에서 $r = \pi$ 구면 전체가 $-I$).</p>
+<p>(6) <em>컴팩트성의 필수성</em> — $SL(2, \mathbb{R})$ 반례 미리 (§13 본격).</p>
+<p>(7) <em>물리 응용</em> — $SU(N)$ 모든 유니타리가 에르미트 생성자의 지수, $SO(N)$ 모든 회전이 축-각 표현 (Rodrigues).</p>
+<p>다음 §13 에서 <em>비컴팩트의 경우</em> — $SL(2, \mathbb{R})$ 같은 군에서 <em>지수가 전사 안 되는</em> 구체적 분석과 <em>지수의 곱이 필요</em> 한 이유를 본격 다룬다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="active " data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

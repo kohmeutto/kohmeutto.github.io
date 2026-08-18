@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 닫힌 시스템 그린함수의 문제이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수
+$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면
+$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Retarded &amp; advanced GF :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 닫힌 시스템 그린함수의 문제이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수
+$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면
+$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Retarded &amp; advanced GF :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 닫힌 시스템 그린함수의 문제이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수
+$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면
+$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Retarded &amp; advanced GF :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 닫힌 시스템 그린함수의 문제이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수
+$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면
+$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.">
+    <meta itemprop="wordCount" content="2145">
+    <title>(b) Retarded &amp; advanced GF :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/negf\/b_retarded_advanced\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/negf/b_retarded_advanced/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-닫힌-시스템-그린함수의-문제">1. 동기: 닫힌 시스템 그린함수의 문제</a></li>
+        <li><a href="#2-resolvent-복소-에너지로의-일반화">2. Resolvent: 복소 에너지로의 일반화</a></li>
+        <li><a href="#3-실수-에너지로-돌아오기-두-가지-한계">3. 실수 에너지로 돌아오기: 두 가지 한계</a></li>
+        <li><a href="#4-시간-영역의-그림-인과율의-등장">4. 시간 영역의 그림: 인과율의 등장</a></li>
+        <li><a href="#5-환경-결합-유한-수명과-비-hermitian-normal">5. 환경 결합: 유한 수명과 비-Hermitian normal</a></li>
+        <li><a href="#6-정리">6. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/negf/index.html"><span itemprop="name">NEGF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Retarded &amp; advanced GF</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_negf_overview/index.html" title="(b) NEGF overview (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_spectral_function/index.html" title="(b) Spectral function (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-retarded--advanced-gf">(b) Retarded &amp; advanced GF</h1>
+
+<hr>
+<h3 id="1-동기-닫힌-시스템-그린함수의-문제">1. 동기: 닫힌 시스템 그린함수의 문제<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수</p>
+$$
+G(E) = (E\hat{I} - H)^{-1}
+$$<p>를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면</p>
+$$
+G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n}
+$$<p>이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.</p>
+<p>이 발산이 무엇을 의미하는가? 그리고 어떻게 다뤄야 하는가? 이 두 질문이 NEGF 의 출발점이다.</p>
+<p><strong>1) 발산의 두 가지 해석</strong></p>
+<p>물리적으로 분모의 발산은 <strong>공명 (resonance)</strong> 의 표현이다. 외부 자극의 에너지 $E$ 가 시스템의 고유 에너지 $E_n$ 과 일치하면, 해당 고유 모드가 무한히 큰 응답을 보인다. 마치 진자에 고유 진동수와 같은 진동수의 외력을 가했을 때 진폭이 무한히 커지는 것과 같다.</p>
+<p>수학적으로는 $G(E)$ 가 $E = E_n$ 에서 정의되지 않는다는 사실이다. 따라서 그 점에서의 계산이 불가능하다.</p>
+<p><strong>2) 시간 영역에서 본 닫힌 시스템의 비현실성</strong></p>
+<p>문제를 더 명확히 보기 위해 시간 영역으로 옮겨보자. 시각 $t = 0$ 에서 시스템에 자극을 주고, 그 후의 시간 진화를 본다. 닫힌 시스템에서 자극의 응답은 $e^{-iE_nt/\hbar}$ 의 진동으로 영원히 지속된다. 에너지 손실이 없으므로 진폭이 감소하지 않는다.</p>
+<p>이는 어떤 의미에서 비현실적이다. 실제 시스템은 약간의 마찰, 다른 모드와의 결합, 외부 환경으로의 에너지 손실 등으로 인해 시간이 지나면 응답이 감쇠한다.</p>
+<p><strong>3) 자연스러운 해결: 작은 허수 부분 더하기</strong></p>
+<p>발산을 우회하고 감쇠를 표현하는 자연스러운 방법은 $E$ 에 작은 양의 허수 부분을 더하는 것이다.</p>
+$$
+E \to E + i\eta, \quad \eta > 0 \text{ (작은 양수)}
+$$<p>그러면 분모는 $E - E_n + i\eta$ 가 되어 더 이상 발산하지 않는다. $\eta \neq 0$ 인 한 분모는 항상 0 이 아니다.</p>
+<p>이 처방이 시간 영역에서 무엇을 의미하는지 보자. 고유 에너지가 $E_n - i\eta$ 로 이동한 효과를 가지므로</p>
+$$
+e^{-i(E_n - i\eta)t/\hbar} = e^{-iE_nt/\hbar}\,e^{-\eta t/\hbar}
+$$<p>진폭이 $e^{-\eta t/\hbar}$ 의 비율로 감쇠한다. 진폭이 $1/e$ 로 줄어드는 시간 — 즉 <strong>수명 (lifetime)</strong> — 은</p>
+$$
+\tau = \hbar/\eta
+$$<p>$\eta$ 가 작을수록 수명이 길고, $\eta = 0$ 의 극한이 영원한 수명 (즉 닫힌 시스템) 에 해당한다.</p>
+<p>요약하면 $E + i\eta$ 의 처방은 두 가지 의미를 함께 가진다.</p>
+<ul>
+<li><strong>수학적</strong>: 분모 발산을 우회하는 정규화</li>
+<li><strong>물리적</strong>: 시스템 상태에 유한 수명 부여 (환경으로의 약한 결합)</li>
+</ul>
+<p><strong>4) 두 가지 자연스러운 질문</strong></p>
+<p>이 처방을 도입하면 곧바로 다음 질문이 생긴다.</p>
+<p>질문 1. $E + i\eta$ 대신 $E - i\eta$ 를 사용하면 어떻게 다른가? 즉 위에서 접근 (상반평면) 과 아래에서 접근 (하반평면) 이 같은 결과를 주는가?</p>
+<p>질문 2. $\eta \to 0^+$ 의 극한을 취하면 원래의 $G(E)$ 로 단순 복귀하는가, 아니면 무엇인가 미묘한 일이 일어나는가?</p>
+<p>두 질문에 체계적으로 답하기 위해, $E$ 를 복소수 변수 $z$ 로 일반화해서 다룬다. 이것이 다음 절에서 다루는 <strong>resolvent</strong> 의 개념이다.</p>
+<hr>
+<h3 id="2-resolvent-복소-에너지로의-일반화">2. Resolvent: 복소 에너지로의 일반화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§1 의 동기에서 출발해, $E$ 를 복소수 $z \in \mathbb{C}$ 로 일반화한 다음 객체를 정의한다.</p>
+$$
+R(z) = (z\hat{I} - H)^{-1}
+$$<p>이를 $H$ 의 <strong>resolvent</strong> 라 부른다. 의미는 단순하다 — 그린함수 $G(E)$ 를 복소 평면 전체로 확장한 것이다.</p>
+<p><strong>1) 정의 영역</strong></p>
+<p>$R(z)$ 가 잘 정의되려면 $z\hat{I} - H$ 가 가역이어야 한다. 이는 $z$ 가 $H$ 의 고유값들 $\{E_n\}$ 과 일치하지 않을 때 보장된다. 이 조건을 만족하는 $z$ 들의 집합</p>
+$$
+\rho(H) = \mathbb{C} \setminus \{E_1, E_2, \ldots\}
+$$<p>을 $H$ 의 <strong>resolvent 집합</strong> 이라 한다. 그 보집합 $\sigma(H) = \{E_1, E_2, \ldots\}$ 가 <strong>스펙트럼 집합</strong> 이다. 자기수반 $H$ 의 경우 모든 고유값이 실수이므로 $\sigma(H)\subset\mathbb{R}$ 이며, 실수 직선이 아닌 모든 복소수가 $\rho(H)$ 에 속한다.</p>
+<p>복소 평면에서 보면, 실수 직선 위의 점-집합 $\sigma(H)$ 가 $R(z)$ 의 특이성의 무대이고, 그 외의 모든 점에서 $R(z)$ 가 잘 정의된다.</p>
+<p><strong>2) 스펙트럼 분해 표현</strong></p>
+<p>스펙트럼 분해를 사용하면</p>
+$$
+R(z) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{z - E_n}
+$$<p>각 항이 $z = E_n$ 에서 단순 극 (simple pole) 을 갖는다. $z$ 가 모든 $E_n$ 에서 떨어져 있는 한 유한한 값이다.</p>
+<p><strong>3) Holomorphy: $R(z)$ 의 결정적 성질</strong></p>
+<p>$R(z)$ 는 $\rho(H)$ 위에서 <strong>holomorphic (복소 미분 가능)</strong> 이다. 즉 $\rho(H)$ 의 임의의 점 $z_0$ 근방에서 $R(z)$ 를 멱급수로 전개할 수 있다.</p>
+<p>이 성질의 의미는 다음과 같다. Holomorphic 함수는 복소 해석학의 모든 강력한 도구 — contour 적분, residue 정리, 분기점 분석, Cauchy 적분 공식 등 — 가 적용되는 객체이다. NEGF 의 거의 모든 결과가 $R(z)$ 의 이 분석성에서 유래한다.</p>
+<p>특히 우리가 곧 다룰 $G^R, G^A$ 의 시간 영역 표현이 contour 적분으로 평가되며, 이로부터 인과율 (causality) 이 자동으로 도출된다.</p>
+<hr>
+<h3 id="3-실수-에너지로-돌아오기-두-가지-한계">3. 실수 에너지로 돌아오기: 두 가지 한계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$R(z)$ 는 복소 평면의 객체이지만, 결국 우리는 실수 에너지에서의 그린함수를 원한다. $z$ 를 실수 에너지 $E$ 에 어떻게 접근시킬 것인가?</p>
+<p>자기수반 $H$ 의 스펙트럼은 실수 직선이므로, $z$ 를 $E$ 에 실수 직선 위에서 직접 접근시키면 $E = E_n$ 에서 발산한다. 따라서 다른 경로로 접근해야 한다 — 복소 평면에서 $E$ 에 다가가야 한다.</p>
+<p>가장 자연스러운 두 가지 경로가 있다. 위에서 (상반평면에서) 접근하거나, 아래에서 (하반평면에서) 접근하는 것이다.</p>
+$$
+G^R(E) := \lim_{\eta \to 0^+} R(E + i\eta), \quad G^A(E) := \lim_{\eta \to 0^+} R(E - i\eta)
+$$<p>이 두 한계를 각각 <strong>retarded 그린함수</strong> 와 <strong>advanced 그린함수</strong> 라 부른다. 이름의 유래는 §4 에서 시간 영역으로 옮겼을 때 명확해진다.</p>
+<p><strong>1) 두 그린함수의 관계</strong></p>
+<p>두 그린함수는 켤레 전치 (Hermitian conjugate) 로 연결된다.</p>
+$$
+G^A(E) = \left[G^R(E)\right]^\dagger
+$$<p>증명은 단순하다. $R(z)^\dagger = (z^*\hat{I} - H)^{-1} = R(z^*)$ (자기수반 $H$ 이용). $z = E + i\eta$ 면 $z^* = E - i\eta$, 따라서 $G^R(E)^\dagger = G^A(E)$.</p>
+<p>이 관계로부터 둘 중 하나만 계산하면 다른 하나가 자동으로 결정된다.</p>
+<p><strong>2) 두 한계가 다르다는 사실</strong></p>
+<p>§1 의 질문 1 에 답하자. 두 한계 $G^R(E)$ 와 $G^A(E)$ 가 같지 않다. 그 차이가 시스템의 스펙트럼 정보를 담는다.</p>
+<p>스펙트럼 분해에서 직접 보자.</p>
+$$
+G^R(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n + i0^+}
+$$$$
+G^A(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n - i0^+}
+$$<p>두 항의 차이는 $1/(x + i0^+) - 1/(x - i0^+)$ 형식이다. 이 차이는 $\eta \to 0^+$ 의 극한에서 $-2\pi i\,\delta(x)$ 로 수렴한다 (Plemelj-Sokhotski 공식, 분포론 의미). 즉</p>
+$$
+\frac{1}{x + i0^+} - \frac{1}{x - i0^+} = -2\pi i\,\delta(x)
+$$<p>이 공식의 직관적 이해는 다음과 같다. $1/x$ 가 $x = 0$ 에서 발산할 때, 위에서 ($x + i0^+$) 와 아래에서 ($x - i0^+$) 의 차이가 정확히 델타 함수에 해당한다 — 발산의 &ldquo;본질&rdquo; 이 델타 함수로 분리된다.</p>
+<p>이 공식을 적용하면</p>
+$$
+G^R(E) - G^A(E) = -2\pi i\sum_n \delta(E - E_n)\,|\psi_n\rangle\langle\psi_n|
+$$<p>두 그린함수의 차이가 시스템의 고유 에너지를 표시하는 델타 함수의 합이다.</p>
+<p><strong>3) 스펙트럼 함수의 등장</strong></p>
+<p>위 결과에서 자연스럽게 다음 객체가 정의된다.</p>
+$$
+A(E) := i\left[G^R(E) - G^A(E)\right] = 2\pi\sum_n \delta(E - E_n)\,|\psi_n\rangle\langle\psi_n|
+$$<p>이를 <strong>스펙트럼 함수 (spectral function)</strong> 라 한다. 시스템의 스펙트럼 정보 — 어떤 고유값이 있고, 각 고유 상태가 무엇인지 — 가 모두 $A(E)$ 에 담겨 있다.</p>
+<p>동등하게 $A(E) = -2\,\text{Im}\,G^R(E)$ 로 표현할 수도 있다. $G^A = (G^R)^\dagger$ 를 이용하면 $G^R - G^A = G^R - (G^R)^\dagger = 2i\,\text{Im}\,G^R$, 따라서 $A(E) = i \cdot 2i\,\text{Im}\,G^R = -2\,\text{Im}\,G^R$.</p>
+<p>$A(E)$ 의 trace 가 시스템의 상태 밀도 (density of states) 와 비례한다.</p>
+$$
+\rho(E) = \frac{1}{2\pi}\,\text{Tr}\,A(E) = \sum_n \delta(E - E_n)
+$$<p>각 고유값에서 상태 밀도가 델타 함수로 표시된다.</p>
+<hr>
+<h3 id="4-시간-영역의-그림-인과율의-등장">4. 시간 영역의 그림: 인과율의 등장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>$G^R$ 과 $G^A$ 이름의 유래는 시간 영역에서 두 객체가 어떻게 다른지에 있다. 이 절에서 그것을 명확히 한다.</p>
+<p><strong>1) Fourier 변환</strong></p>
+<p>에너지와 시간 사이의 Fourier 변환 규약을 다음과 같이 정한다.</p>
+$$
+\tilde{f}(E) = \int_{-\infty}^{\infty} dt\,f(t)\,e^{iEt/\hbar}, \quad f(t) = \frac{1}{2\pi\hbar}\int_{-\infty}^{\infty} dE\,\tilde{f}(E)\,e^{-iEt/\hbar}
+$$<p>$G^R(E)$ 를 시간 영역으로 옮기면</p>
+$$
+G^R(t) = \frac{1}{2\pi\hbar}\int_{-\infty}^{\infty} dE\,(E - H + i0^+)^{-1}\,e^{-iEt/\hbar}
+$$<p>이 적분을 복소 평면의 contour 적분으로 평가한다.</p>
+<p><strong>2) Contour 분석</strong></p>
+<p>피적분함수 $(E - H + i0^+)^{-1}$ 의 극 (특이점) 들은 $E = E_n - i0^+$ 에 위치한다 — 실수 직선 바로 아래.</p>
+<p>지수 함수 $e^{-iEt/\hbar}$ 의 거동에 따라 contour 를 닫는 방향이 결정된다. $E = E' + iE''$ 로 쓰면</p>
+$$
+e^{-iEt/\hbar} = e^{-iE't/\hbar}\,e^{E''t/\hbar}
+$$<p>이고, 이것이 무한대에서 0 으로 가야 contour 를 그 영역에서 닫을 수 있다.</p>
+<ul>
+<li>$t > 0$ 의 경우: $E'' < 0$ (하반평면) 에서 $e^{E''t/\hbar} \to 0$. 따라서 contour 를 하반평면에서 닫는다. $G^R$ 의 모든 극이 하반평면에 있으므로 contour 가 모든 극을 포함한다.</li>
+<li>$t < 0$ 의 경우: $E'' > 0$ (상반평면) 에서 $e^{E''t/\hbar} \to 0$. Contour 를 상반평면에서 닫는다. $G^R$ 의 극은 하반평면에 있으므로 contour 가 어떤 극도 포함하지 않는다. 적분은 0.</li>
+</ul>
+<p><strong>3) 시간 영역 표현</strong></p>
+<p>$t > 0$ 의 경우 residue 정리로 평가. Contour 가 시계 방향으로 닫히므로 합에 $-2\pi i$ 가 곱해진다.</p>
+$$
+G^R(t > 0) = \frac{1}{2\pi\hbar}\cdot(-2\pi i)\cdot e^{-iHt/\hbar} = -\frac{i}{\hbar}\,e^{-iHt/\hbar}
+$$<p>$t < 0$ 의 경우 적분이 0. Heaviside 계단 함수 $\theta(t)$ 로 통합하면</p>
+$$
+\boxed{G^R(t) = -\frac{i}{\hbar}\,\theta(t)\,e^{-iHt/\hbar}}
+$$<p>이 결과의 의미는 결정적이다. $G^R(t) = 0$ for $t < 0$. 즉 시각 $t = 0$ 에서의 자극이 그 이전 시간에는 응답을 일으키지 않는다. 이것이 <strong>인과율 (causality)</strong> 의 직접적 표현이며, &ldquo;retarded&rdquo; 라는 이름의 유래이다.</p>
+<p>마찬가지 계산으로 advanced 그린함수의 시간 영역 표현은</p>
+$$
+\boxed{G^A(t) = +\frac{i}{\hbar}\,\theta(-t)\,e^{-iHt/\hbar}}
+$$<p>$G^A(t) = 0$ for $t > 0$. 시각 $t = 0$ 이후에는 응답이 없다. 시간 역행 (anti-causal) 적이다. 직접 측정되는 물리량은 아니지만, $G^R$ 의 수학적 짝으로 등장한다.</p>
+<p><strong>4) 정리: $\pm i0^+$ 처방의 의미</strong></p>
+<p>$+i0^+$ 와 $-i0^+$ 의 부호가 단순한 수학적 선택처럼 보이지만, 시간 영역에서 시스템의 인과적 / 반인과적 응답을 분리한다. 같은 $H$ 에서 출발해도 두 가지 시간 영역 그림이 가능하며, 우리는 보통 물리적으로 의미 있는 인과적 응답 ($G^R$) 을 선호한다.</p>
+<p>이 인과율은 §1 의 동기에서 자연스럽게 도출된 결과다. 작은 $+i\eta$ 가 진폭의 감쇠를 일으키고, 이 감쇠가 시간 역행 방향에서는 진폭의 증폭이 되므로 $t < 0$ 에서 응답이 없도록 강제한다.</p>
+<hr>
+<h3 id="5-환경-결합-유한-수명과-비-hermitian-normal">5. 환경 결합: 유한 수명과 비-Hermitian normal<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지는 닫힌 시스템에서 $\eta \to 0^+$ 극한을 다뤘다. 그러나 §1 의 동기에서 본 것처럼, $\eta$ 가 작지만 유한할 때가 더 일반적인 상황이다. 시스템이 환경과 결합되어 있으면 $\eta$ 가 유한한 값으로 남으며, 이는 시스템 상태의 유한 수명을 표현한다.</p>
+<p><strong>1) 단순 케이스: 모든 상태에 동일한 수명</strong></p>
+<p>가장 단순한 모형은 모든 상태가 동일한 수명을 갖는 경우이다.</p>
+$$
+H_{\text{eff}} = H - i\eta\hat{I}, \quad \eta > 0
+$$<p>이는 self-energy $\Sigma = -i\eta\hat{I}$ 의 단순화에 해당한다 (더 일반적인 self-energy 는 후속 문서에서).</p>
+<p>$H$ 가 자기수반이라도 $H_{\text{eff}}$ 는 자기수반이 아니다. 그러나 $H_{\text{eff}}$ 와 $H_{\text{eff}}^\dagger = H + i\eta$ 가 모두 $H$ 의 함수이므로 가환하다.</p>
+$$
+[H_{\text{eff}}, H_{\text{eff}}^\dagger] = [H - i\eta, H + i\eta] = 0
+$$<p>따라서 $H_{\text{eff}}$ 는 <strong>비-Hermitian normal</strong> 연산자이다 (b_normal_operators.md §1 의 strict 정의).</p>
+<p><strong>2) 복소 고유값</strong></p>
+<p>$H$ 의 고유 상태 $\{\psi_n, E_n\}$ 에 대해</p>
+$$
+H_{\text{eff}}|\psi_n\rangle = (E_n - i\eta)|\psi_n\rangle
+$$<p>$H_{\text{eff}}$ 의 고유값이 복소수 $\lambda_n = E_n - i\eta$ 이며, 고유벡터는 $H$ 의 것과 동일하다.</p>
+<p>시간 진화에서</p>
+$$
+e^{-iH_{\text{eff}}t/\hbar}|\psi_n\rangle = e^{-iE_nt/\hbar}\,e^{-\eta t/\hbar}|\psi_n\rangle
+$$<p>진폭이 $e^{-\eta t/\hbar}$ 의 비율로 감쇠. 수명 $\tau = \hbar/\eta$.</p>
+<p><strong>3) Retarded 그린함수의 표현</strong></p>
+<p>이 시스템의 $G^R(E)$ 는</p>
+$$
+G^R(E) = (E - H + i\eta)^{-1} = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n + i\eta}
+$$<p>닫힌 시스템의 표현 ($i0^+$ 가 유한한 $i\eta$ 로) 과 형식적으로 동일하다.</p>
+<p><strong>4) 스펙트럼 함수의 Lorentzian broadening</strong></p>
+<p>$G^A(E) = [G^R(E)]^\dagger = \sum_n |\psi_n\rangle\langle\psi_n|/(E - E_n - i\eta)$. 스펙트럼 함수는</p>
+$$
+A(E) = i[G^R(E) - G^A(E)] = \sum_n |\psi_n\rangle\langle\psi_n|\cdot\frac{2\eta}{(E - E_n)^2 + \eta^2}
+$$<p>각 고유 상태가 더 이상 델타 함수가 아니라 <strong>폭 $2\eta$ 의 Lorentzian</strong> 으로 변형된다.</p>
+<ul>
+<li>중심: $E = E_n$ (원래 고유값)</li>
+<li>폭: 반치폭 (FWHM) $= 2\eta$</li>
+<li>면적: $\int dE\,2\eta/[(E-E_n)^2 + \eta^2] = 2\pi$ (델타 함수 합 규칙 보존)</li>
+</ul>
+<p>닫힌 시스템 극한 $\eta \to 0^+$ 에서 Lorentzian 이 무한히 좁아지며 델타 함수로 복귀한다.</p>
+<p><strong>5) 시간-에너지 불확정성 원리의 정량적 표현</strong></p>
+<p>수명 $\tau = \hbar/\eta$ 와 에너지 폭 $\Delta E = 2\eta$ 의 곱이</p>
+$$
+\Delta E \cdot \tau = 2\hbar
+$$<p>상수가 된다. 유한 수명을 가진 상태는 정확한 에너지를 가지지 않는다는 시간-에너지 불확정성 원리의 정량적 표현이다. 수명이 짧을수록 (큰 $\eta$) 에너지 폭이 크고 (broad Lorentzian), 수명이 길수록 (작은 $\eta$) 에너지 폭이 좁다 (sharp peak).</p>
+<hr>
+<h3 id="6-정리">6. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 도입한 네 가지 객체와 그 관계를 정리한다.</p>
+<p><strong>객체</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>기호</th>
+          <th>정의</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$R(z)$</td>
+          <td>$(z\hat{I} - H)^{-1}$</td>
+          <td>복소 평면 전체의 resolvent</td>
+      </tr>
+      <tr>
+          <td>$G^R(E)$</td>
+          <td>$R(E + i0^+)$</td>
+          <td>실수 에너지의 인과적 응답 함수</td>
+      </tr>
+      <tr>
+          <td>$G^A(E)$</td>
+          <td>$R(E - i0^+) = [G^R]^\dagger$</td>
+          <td>시간 역행 짝</td>
+      </tr>
+      <tr>
+          <td>$A(E)$</td>
+          <td>$i[G^R - G^A] = -2\,\text{Im}\,G^R$</td>
+          <td>스펙트럼 함수</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>닫힌 시스템 (자기수반 $H$, 이산 스펙트럼)</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>명시적 표현</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$G^R(E)$</td>
+          <td>$\sum_n</td>
+      </tr>
+      <tr>
+          <td>$G^A(E)$</td>
+          <td>$\sum_n</td>
+      </tr>
+      <tr>
+          <td>$A(E)$</td>
+          <td>$2\pi\sum_n \delta(E - E_n),</td>
+      </tr>
+      <tr>
+          <td>DOS</td>
+          <td>$\rho(E) = \sum_n \delta(E - E_n)$</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>환경 결합 ($H_{\text{eff}} = H - i\eta$)</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>명시적 표현</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$G^R(E)$</td>
+          <td>$\sum_n</td>
+      </tr>
+      <tr>
+          <td>$A(E)$</td>
+          <td>$\sum_n</td>
+      </tr>
+  </tbody>
+</table>
+<p>델타 함수가 폭 $2\eta$ 의 Lorentzian 으로 broadening.</p>
+<p><strong>시간 영역</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>명시적 표현</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$G^R(t)$</td>
+          <td>$-i/\hbar\,\theta(t)\,e^{-iHt/\hbar}$</td>
+      </tr>
+      <tr>
+          <td>$G^A(t)$</td>
+          <td>$+i/\hbar\,\theta(-t)\,e^{-iHt/\hbar}$</td>
+      </tr>
+  </tbody>
+</table>
+<p>인과율: $G^R(t) = 0$ for $t < 0$.</p>
+<hr>
+<p><strong>example1) 1D 양자 우물의 스펙트럼 함수</strong></p>
+<p>1D 무한 우물 $H = -\hbar^2/(2m)\,d^2/dx^2$, $x \in [0, L]$, Dirichlet BC.</p>
+<p>sol)</p>
+<p>고유 상태 $\psi_n(x) = \sqrt{2/L}\sin(n\pi x/L)$, 고유값 $E_n = (n\pi\hbar)^2/(2mL^2)$.</p>
+<p>스펙트럼 분해로 retarded 그린함수</p>
+$$
+G^R(E, x, x') = \frac{2}{L}\sum_{n=1}^{\infty}\frac{\sin(n\pi x/L)\sin(n\pi x'/L)}{E - E_n + i0^+}
+$$<p>각 항이 $E = E_n$ 에서 단순 극.</p>
+<p>스펙트럼 함수</p>
+$$
+A(E, x, x') = \frac{4\pi}{L}\sum_n \delta(E - E_n)\,\sin(n\pi x/L)\sin(n\pi x'/L)
+$$<p>상태 밀도</p>
+$$
+\rho(E) = \frac{1}{2\pi}\,\int_0^L dx\,A(E, x, x) = \sum_n \delta(E - E_n)
+$$<p>이산 에너지 레벨에서 델타 함수의 합.</p>
+<hr>
+<p><strong>example2) 유한 수명을 가진 양자 우물</strong></p>
+<p>위 1D 양자 우물이 환경과 결합되어 모든 상태가 동일한 수명 $\tau = \hbar/\eta$ 를 가진다고 하자. $H_{\text{eff}} = H - i\eta\hat{I}$.</p>
+<p>sol)</p>
+$$
+G^R(E, x, x') = \frac{2}{L}\sum_n \frac{\sin(n\pi x/L)\sin(n\pi x'/L)}{E - E_n + i\eta}
+$$<p>스펙트럼 함수</p>
+$$
+A(E, x, x') = \frac{2}{L}\sum_n \sin(n\pi x/L)\sin(n\pi x'/L)\cdot\frac{2\eta}{(E - E_n)^2 + \eta^2}
+$$<p>상태 밀도</p>
+$$
+\rho(E) = \frac{1}{2\pi}\int_0^L dx\,A(E, x, x) = \frac{1}{2\pi}\sum_n \frac{2\eta}{(E - E_n)^2 + \eta^2}
+$$<p>각 에너지 레벨이 폭 $2\eta$ 의 Lorentzian 으로 broadening 된다. 닫힌 시스템 극한 ($\eta \to 0^+$) 에서 example 1 의 델타 함수 합으로 복귀.</p>
+<p>이 broadening 이 NEGF 의 가장 직관적 결과다 — 환경 결합이 상태의 에너지를 &ldquo;흐리게&rdquo; 만들며, 그 정도가 $\eta$ 또는 일반적으로 self-energy 의 허수부에 의해 결정된다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/negf/b_negf_overview/index.html"><a class="padding" href="/greens_function/negf/b_negf_overview/index.html">(b) NEGF overview</a></li>
+            <li class="active " data-nav-id="/greens_function/negf/b_retarded_advanced/index.html"><a class="padding" href="/greens_function/negf/b_retarded_advanced/index.html">(b) Retarded &amp; advanced GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_spectral_function/index.html"><a class="padding" href="/greens_function/negf/b_spectral_function/index.html">(b) Spectral function</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_lesser_greater/index.html"><a class="padding" href="/greens_function/negf/b_lesser_greater/index.html">(b) Lesser and greater GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_dyson_self_energy/index.html"><a class="padding" href="/greens_function/negf/b_dyson_self_energy/index.html">(b) Dyson equation and self-energy</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_keldysh_contour/index.html"><a class="padding" href="/greens_function/negf/b_keldysh_contour/index.html">(b) Keldysh contour formalism</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_langreth_rules/index.html"><a class="padding" href="/greens_function/negf/b_langreth_rules/index.html">(b) Langreth rules</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

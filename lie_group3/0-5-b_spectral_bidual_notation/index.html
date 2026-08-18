@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
+왜 이런 표기를 쓰나.
+(1) 비에르미트 연산자가 자주 등장한다. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 좌고유벡터와 우고유벡터가 다를 수 있다 — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="스펙트럼 분해와 바이듀얼 표기 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
+왜 이런 표기를 쓰나.
+(1) 비에르미트 연산자가 자주 등장한다. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 좌고유벡터와 우고유벡터가 다를 수 있다 — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/0-5-b_spectral_bidual_notation/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="스펙트럼 분해와 바이듀얼 표기 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
+왜 이런 표기를 쓰나.
+(1) 비에르미트 연산자가 자주 등장한다. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 좌고유벡터와 우고유벡터가 다를 수 있다 — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="스펙트럼 분해와 바이듀얼 표기 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
+왜 이런 표기를 쓰나.
+(1) 비에르미트 연산자가 자주 등장한다. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 좌고유벡터와 우고유벡터가 다를 수 있다 — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.">
+    <meta itemprop="wordCount" content="2065">
+    <title>스펙트럼 분해와 바이듀얼 표기 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/0-5-b_spectral_bidual_notation\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/0-5-b_spectral_bidual_notation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-벡터-공간과-쌍대-공간">2. 벡터 공간과 쌍대 공간</a></li>
+        <li><a href="#3-기저와-쌍대-기저">3. 기저와 쌍대 기저</a></li>
+        <li><a href="#4-브라켓-표기--켓과-브라">4. 브라켓 표기 — 켓과 브라</a></li>
+        <li><a href="#5-단일-비기저-벡터의-표기--첨자-없음">5. 단일 (비기저) 벡터의 표기 — 첨자 없음</a></li>
+        <li><a href="#6-정규-연산자에서의-단순화">6. 정규 연산자에서의 단순화</a></li>
+        <li><a href="#7-연속-기저">7. 연속 기저</a></li>
+        <li><a href="#8-스펙트럼-분해">8. 스펙트럼 분해</a></li>
+        <li><a href="#9-함수-계산과-지수-사상">9. 함수 계산과 지수 사상</a></li>
+        <li><a href="#10-표기-요약표">10. 표기 요약표</a></li>
+        <li><a href="#11-이-절을-닫으며">11. 이 절을 닫으며</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">스펙트럼 분해와 바이듀얼 표기</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/0-4-b_tangent_space/index.html" title="접공간 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/1-b_lie_group_definition/index.html" title="리 군이란 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="스펙트럼-분해와-바이듀얼-표기">스펙트럼 분해와 바이듀얼 표기</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 시리즈 전체에서 연산자를 <em>스펙트럼 분해(spectral decomposition)</em> 형태로 표현하고, 기저와 쌍대 기저를 <em>바이듀얼(bidual) 표기</em> 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.</p>
+<p><em>왜 이런 표기를 쓰나</em>.</p>
+<p>(1) <em>비에르미트 연산자가 자주 등장한다</em>. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 <em>좌고유벡터와 우고유벡터가 다를 수 있다</em> — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.</p>
+<p>(2) <em>비직교 기저가 자연스럽게 등장한다</em>. 일반 좌표계 (§0-4 의 $\partial_i, dx^i$), 비에르미트 연산자의 고유 기저 등. 이때 <em>쌍대 기저</em> 가 일반 기저와 다르고, 명시적으로 추적해야 한다.</p>
+<p>(3) <em>스펙트럼 형태가 모든 함수 계산을 통일</em> 한다. 한 번 $H = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i|$ 으로 분해해 두면 $f(H) = \sum_i f(\lambda_i) |\lambda_i\rangle \langle \lambda^i|$ 로 어떤 함수든 적용 가능. 특히 <em>지수 사상</em> $\exp(tH) = \sum_i e^{t\lambda_i} |\lambda_i\rangle \langle \lambda^i|$ 이 리 군 시리즈의 핵심.</p>
+<p>이 절은 (i) 벡터 공간과 쌍대, (ii) 기저와 쌍대 기저, (iii) 브라켓 표기 약속, (iv) 정규 연산자에서의 단순화, (v) 연속 기저, (vi) 스펙트럼 분해, (vii) 함수 계산과 지수 사상 — 의 순서로 약속한다.</p>
+<h3 id="2-벡터-공간과-쌍대-공간">2. 벡터 공간과 쌍대 공간<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>벡터 공간</em> $V$ — 덧셈과 스칼라 배가 정의된 공간 (체 $\mathbb{F} = \mathbb{R}$ 또는 $\mathbb{C}$ 위).</p>
+<p><strong>2)</strong> <em>쌍대 공간(dual space)</em> $V^*$ — <em>$V$ 위 선형 범함수</em> 들의 공간</p>
+$$V^* = \{ \omega : V \to \mathbb{F} \mid \omega \text{ 선형} \}$$<p>자체로 벡터 공간이고, <em>유한 차원</em> 에서는 $\dim V^* = \dim V$.</p>
+<p><strong>3)</strong> <em>§0-4 와의 연결</em>. 다양체의 한 점에서 <em>접공간</em> $T_p M$ 이 벡터 공간이고 <em>코탄젠트 공간</em> $T_p^* M = (T_p M)^*$ 이 그 쌍대였다. 본 절의 약속은 <em>벡터 공간 일반</em> 에 적용되고, 다양체의 접·코탄젠트는 그 <em>한 점에서의 구현</em>.</p>
+<p><strong>4)</strong> <em>이중 쌍대 (double dual)</em> $V^{**}$ — 유한 차원에서는 $V^{**} \cong V$ (자연 동형). 따라서 <em>한 번 쌍대를 취한 후 다시 취하면 원래로 돌아온다</em>. 이것이 &ldquo;<em>바이듀얼(bidual) 표기</em>&rdquo; 의 어원 — 켓과 브라가 서로 쌍대 관계로 <em>왔다 갔다</em> 할 수 있는 구조.</p>
+<h3 id="3-기저와-쌍대-기저">3. 기저와 쌍대 기저<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>기저(basis)</em>. 유한 차원 벡터 공간 $V$ ($\dim V = n$) 의 <em>기저</em> 는 <em>선형 독립이고 공간을 생성</em> 하는 $n$ 개 벡터 $\{v_1, v_2, \cdots, v_n\}$.</p>
+<p><strong>2)</strong> <em>임의 벡터의 좌표 전개</em>. 임의 $v \in V$ 는</p>
+$$v = \sum_{i=1}^n v^i \, v_i \quad (\text{또는 아인슈타인 합 규약으로 } v^i v_i)$$<p>성분 $v^i \in \mathbb{F}$ 가 <em>좌표 (성분)</em>. <em>기저는 아래 첨자, 성분은 위 첨자</em> — 텐서 분석의 표준 규약.</p>
+<p><strong>3)</strong> <em>쌍대 기저(dual basis)</em>. 기저 $\{v_1, \cdots, v_n\}$ 에 대해, <em>쌍대 기저</em> 는 $V^*$ 의 기저 $\{v^1, \cdots, v^n\}$ 로, <em>쌍대 관계</em></p>
+$$v^i(v_j) = \delta^i_j$$<p>로 정의된다. 여기 $\delta^i_j$ 는 <em>크로네커 델타</em> ($i = j$ 이면 $1$, 아니면 $0$).</p>
+<p><strong>4)</strong> <em>주의 — 쌍대 기저는 기저에 의존</em>. 같은 공간에 다른 기저를 잡으면 그 쌍대 기저도 다르다. <em>쌍대 기저는 기저 자체와 일반적으로 다른 객체</em>.</p>
+<p><strong>5)</strong> <em>첨자 위치 규약</em>.</p>
+<ul>
+<li><em>아래 첨자</em> — 기저 (벡터)</li>
+<li><em>위 첨자</em> — 쌍대 기저 (선형 범함수) 또는 벡터의 성분</li>
+<li>아인슈타인 합 규약 — 같은 첨자가 <em>한 번은 위, 한 번은 아래</em> 로 나타나면 자동 합산. $v^i v_i = \sum_i v^i v_i$.</li>
+</ul>
+<h3 id="4-브라켓-표기--켓과-브라">4. 브라켓 표기 — 켓과 브라<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>디랙의 브라켓 표기(Dirac bracket notation)</em> 를 본 시리즈 전반에서 사용한다.</p>
+<ul>
+<li><em>켓(ket)</em> $|v\rangle$ — 벡터 공간 $V$ 의 원소</li>
+<li><em>브라(bra)</em> $\langle \omega |$ — 쌍대 공간 $V^*$ 의 원소</li>
+<li><em>내적/짝짓기(pairing)</em> $\langle \omega | v \rangle$ — 브라가 켓에 작용한 결과 ($\in \mathbb{F}$)</li>
+</ul>
+<p><strong>2)</strong> <em>기저와 쌍대 기저의 브라켓 표기</em>. 기저 벡터를 $|v_i\rangle$, 쌍대 기저를 $\langle v^i|$ 로 적는다. 쌍대 관계는</p>
+$$\langle v^i | v_j \rangle = \delta^i_j$$<p><strong>3)</strong> <em>임의 켓·브라의 전개</em>.
+</p>
+$$|v\rangle = \sum_i v^i |v_i\rangle, \qquad \langle \omega | = \sum_i \omega_i \langle v^i |$$<p>켓 성분은 위 첨자 ($v^i$), 브라 성분은 아래 첨자 ($\omega_i$). 짝짓기는</p>
+$$\langle \omega | v \rangle = \sum_{i, j} \omega_i v^j \langle v^i | v_j \rangle = \sum_{i, j} \omega_i v^j \delta^i_j = \sum_i \omega_i v^i$$<p>— 위·아래 첨자의 자연스러운 축약.</p>
+<p><strong>4)</strong> <em>§0-4 와의 일치</em>. 다양체의 접·코탄젠트 구조에서</p>
+$$|v_i\rangle \leftrightarrow \frac{\partial}{\partial x^i}, \qquad \langle v^i| \leftrightarrow dx^i, \qquad \langle v^i | v_j \rangle \leftrightarrow dx^i(\partial_j) = \delta^i_j$$<p><em>완전히 같은 구조</em>. 다양체의 코탄젠트는 본 절 약속의 <em>기하학적 구현</em>.</p>
+<p><strong>5)</strong> <em>항등 사상의 분해(resolution of identity)</em>. 기저-쌍대 기저로 항등 연산자가 분해된다.</p>
+$$I = \sum_i |v_i\rangle \langle v^i|$$<p>(증명 — 임의 $|v\rangle = \sum_j v^j |v_j\rangle$ 에 양변 작용. 좌변은 $|v\rangle$. 우변은 $\sum_i |v_i\rangle \langle v^i| \cdot \sum_j v^j |v_j\rangle = \sum_{i,j} v^j |v_i\rangle \delta^i_j = \sum_i v^i |v_i\rangle = |v\rangle$.)</p>
+<p>이 <em>항등 분해</em> 가 시리즈 전체의 핵심 도구. 어떤 연산자도 그 사이에 $I$ 를 끼워 넣어 스펙트럼 형태로 전개할 수 있다.</p>
+<h3 id="5-단일-비기저-벡터의-표기--첨자-없음">5. 단일 (비기저) 벡터의 표기 — 첨자 없음<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>기저 원소가 아닌 단일 벡터</em> 는 첨자 없이 그냥 $|v\rangle$, $\langle v|$ 로 적는다. <em>첨자가 있으면 (어떤) 기저의 한 원소</em> 라는 약속.</p>
+<p><strong>2)</strong> <em>쌍대 표기</em>. 단일 켓 $|v\rangle$ 의 쌍대 브라는 <em>복소켤레 전치</em> 로 정의되는 표준 디랙 약속을 따른다 — 내적이 정의된 (힐베르트) 공간에서</p>
+$$\langle v | := |v\rangle^\dagger$$<p>내적은 $\langle u | v \rangle$. 이 경우 <em>기저 첨자 없이 단순 표기</em>.</p>
+<p><strong>3)</strong> <em>주의 — 기저인지 단일 벡터인지가 첨자 유무로 구분</em>. $|v\rangle$ 는 단일 벡터, $|v_i\rangle$ 는 기저의 $i$ 번째 원소. 같은 문자라도 첨자 유무로 의미가 다르다.</p>
+<h3 id="6-정규-연산자에서의-단순화">6. 정규 연산자에서의 단순화<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>정규 연산자(normal operator)</em> — 자신과 에르미트 켤레가 <em>교환하는</em> 연산자.</p>
+$$H \text{ 정규} \iff H H^\dagger = H^\dagger H$$<p><strong>2)</strong> <em>정규 연산자의 분류</em>.</p>
+<ul>
+<li><em>에르미트 (Hermitian)</em> — $H = H^\dagger$. 고유값 실수.</li>
+<li><em>반에르미트 (anti-Hermitian / skew-Hermitian)</em> — $X^\dagger = -X$. 고유값 <em>순허수</em> (실부 $0$).</li>
+<li><em>유니타리 (unitary)</em> — $U^\dagger U = U U^\dagger = I$. 고유값 <em>모듈러스 $1$</em> (단위원 위).</li>
+</ul>
+<p>세 종류 모두 정규. 일반 정규 연산자는 <em>복소 고유값</em> 을 가질 수 있다.</p>
+<p><strong>3)</strong> <em>정규 연산자의 핵심 성질 (스펙트럼 정리)</em>. 정규 연산자의 고유벡터들이 <em>서로 직교</em> 하고 (적절히 정규화하면) <em>정규 직교 기저</em> 를 이룬다. 즉</p>
+$$\langle \lambda_i | \lambda_j \rangle = \delta_{ij}$$<p>— 통상적인 내적 하에서.</p>
+<p><strong>4)</strong> <em>바이듀얼 표기의 단순화</em>. 정규 연산자의 고유 기저 $\{|\lambda_i\rangle\}$ 에 대해, <em>쌍대 기저가 기저 자체와 (내적적으로) 일치</em> 한다 —</p>
+$$\langle \lambda^i | = \langle \lambda_i |$$<p>즉 <em>위 첨자와 아래 첨자가 (이 경우에) 같은 객체</em> 를 가리킨다. 표기상 헷갈리지 않게 <em>이 단순화를 사용할 때마다 명시</em>.</p>
+<blockquote>
+<p><em>약속</em>. 본 시리즈는 <em>기본적으로 바이듀얼 표기를 유지</em> 한다 (위 첨자 ↔ 아래 첨자 구분). 정규 연산자에서 단순화 ($\langle \lambda^i | = \langle \lambda_i |$) 를 사용할 때는 <em>그 시점에서 명시</em>. 비정규 연산자가 등장하는 NEGF, 비에르미트 양자역학 등에서는 단순화 <em>사용 안 함</em>.</p>
+</blockquote>
+<p><strong>5)</strong> <em>비정규 연산자의 스펙트럼</em>. 비정규지만 <em>대각화 가능</em> 한 연산자는 <em>좌고유벡터와 우고유벡터가 다른</em> 두 기저로 분해된다.</p>
+$$H |R_i\rangle = \lambda_i |R_i\rangle, \qquad \langle L_i | H = \lambda_i \langle L_i |$$<p>두 기저가 <em>바이오쏘고날 (biorthogonal)</em></p>
+$$\langle L_i | R_j \rangle = \delta_{ij}$$<p>이 경우 쌍대 기저가 <em>왼쪽 고유벡터</em>. 본 시리즈의 일반 표기 $\langle v^i |$ 가 이 <em>왼쪽 고유벡터</em> 와 자연 대응 — 정규 연산자의 경우 좌·우가 일치해서 단순화될 뿐.</p>
+<h3 id="7-연속-기저">7. 연속 기저<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연속 스펙트럼을 가지는 연산자 (위치 연산자, 운동량 연산자 등) 에는 <em>연속 기저</em> 가 필요하다.</p>
+<p><strong>1)</strong> <em>연속 기저 표기</em>. 연속 매개변수 $u$ 로 라벨링된 기저 $\{|u\rangle : u \in \mathbb{R}\}$ 와 쌍대 $\{\langle u^d | : u \in \mathbb{R}\}$. <em>$d$ 첨자(marker)</em> 가 쌍대임을 표시.</p>
+<p><strong>2)</strong> <em>직교성 (델타 함수)</em>. 이산 델타 $\delta^i_j$ 가 <em>디랙 델타 함수</em> 로 일반화.</p>
+$$\langle u^d | u' \rangle = \delta(u - u')$$<p><strong>3)</strong> <em>항등 분해 (적분)</em>. 이산 합이 적분으로 일반화.</p>
+$$I = \int du \, |u\rangle \langle u^d|$$<p><strong>4)</strong> <em>변수 표기 — 일반 매개변수 $u$</em>. 본 시리즈에서 일반 연속 매개변수는 $u$, $u'$ 등으로 표기한다. <em>위치 변수 $x$ 와 구분</em> — $x$ 는 위치 기저에 한정한 표기.</p>
+<p><strong>5)</strong> <em>위치 기저는 자체 쌍대</em>. 위치 기저 $|x\rangle$ 는 표준적으로 <em>자체 쌍대 관계</em> —</p>
+$$\langle x^d | = \langle x |$$<p>이 경우 $d$ 첨자 생략. 직교성은 $\langle x | x' \rangle = \delta(x - x')$ 그대로.</p>
+<p>위치 기저가 자체 쌍대인 이유 — 표준 $L^2$ 내적과 위치 연산자가 <em>에르미트</em> 이고, 그 (이상화된) 고유 기저 $|x\rangle$ 가 정규 연산자의 고유 기저에 해당해서. 정규 연산자 단순화 (§6 (4)) 의 연속판.</p>
+<h3 id="8-스펙트럼-분해">8. 스펙트럼 분해<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연산자의 <em>스펙트럼 분해(spectral decomposition)</em> 가 본 시리즈의 핵심 도구.</p>
+<p><strong>1)</strong> <em>이산 스펙트럼</em>. 대각화 가능한 연산자 $H$ (정규 또는 비정규) 에 대해</p>
+$$H = \sum_i \lambda_i \, |\lambda_i\rangle \langle \lambda^i|$$<p>여기 $\{\lambda_i\}$ 는 고유값, $\{|\lambda_i\rangle\}$ 는 우고유벡터, $\{\langle \lambda^i|\}$ 는 좌고유벡터 (= 쌍대 기저).</p>
+<p><em>확인</em> — 임의 $|v\rangle = \sum_j v^j |\lambda_j\rangle$ 에 $H$ 작용</p>
+$$H |v\rangle = \sum_{i, j} \lambda_i v^j |\lambda_i\rangle \langle \lambda^i | \lambda_j \rangle = \sum_{i, j} \lambda_i v^j \delta^i_j |\lambda_i\rangle = \sum_i \lambda_i v^i |\lambda_i\rangle$$<p>각 고유 성분이 그 고유값으로 곱해진다.</p>
+<p><strong>2)</strong> <em>연속 스펙트럼</em>. 연속 고유값 $\lambda$ 에 대해</p>
+$$H = \int d\lambda \, \lambda \, |\lambda\rangle \langle \lambda^d|$$<p>(혼합 스펙트럼 — 이산 + 연속 — 도 가능하나 본 시리즈에서 자주 등장하지는 않음.)</p>
+<p><strong>3)</strong> <em>항등 분해 (분광 측도)</em> — 스펙트럼 분해의 특수경우. $H = I$ 로 잡으면</p>
+$$I = \sum_i |v_i\rangle \langle v^i| \quad \text{또는} \quad I = \int du \, |u\rangle \langle u^d|$$<p>§4 (5) 와 §7 (3) 에서 본 식. 어떤 기저에서든 성립.</p>
+<p><strong>4)</strong> <em>정규 연산자의 특수경우</em>. 정규 연산자에서는 $\langle \lambda^i | = \langle \lambda_i |$ 단순화가 가능 (§6 (4)). 이때 스펙트럼 분해는</p>
+$$H = \sum_i \lambda_i \, |\lambda_i\rangle \langle \lambda_i| \quad (\text{정규일 때만})$$<p>이것이 표준 양자역학 교과서의 형태. 본 시리즈는 <em>비정규 가능성</em> 을 항상 의식해 <em>기본 표기는 $\langle \lambda^i|$</em> 유지.</p>
+<h3 id="9-함수-계산과-지수-사상">9. 함수 계산과 지수 사상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>스펙트럼 분해의 가장 강력한 응용 — <em>함수의 작용</em> 을 <em>고유값에만 적용</em> 으로 환원.</p>
+<p><strong>1)</strong> <em>함수 계산(functional calculus)</em>. 연산자 $H$ 가 스펙트럼 분해 $H = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i|$ 를 가지면, 적절한 함수 $f$ 에 대해</p>
+$$f(H) = \sum_i f(\lambda_i) \, |\lambda_i\rangle \langle \lambda^i|$$<p><em>고유값에 함수를 적용하고 나머지 (고유벡터 구조) 는 그대로 유지</em>.</p>
+<p>(증명 — 다항식 $f(z) = z^n$ 에 대해 $H^n$ 을 직접 계산하면 $H^n = \sum_i \lambda_i^n |\lambda_i\rangle \langle \lambda^i|$ (귀납). 일반 함수는 다항식 또는 거듭제곱 급수의 극한.)</p>
+<p><strong>2)</strong> <em>지수 사상</em>. $f(z) = e^{tz}$ ($t \in \mathbb{R}$ 또는 $\mathbb{C}$) 의 경우</p>
+$$\exp(tH) = \sum_i e^{t \lambda_i} \, |\lambda_i\rangle \langle \lambda^i|$$<p>— 이것이 리 군 시리즈에서 <em>가장 자주 사용할</em> 형태.</p>
+<p><strong>3)</strong> <em>해석 — 모든 고유 모드에 독립 진화</em>. 각 고유벡터 방향이 <em>$e^{t\lambda_i}$ 배율</em> 로 변한다.</p>
+<ul>
+<li>$\lambda_i$ 실수 — <em>지수적 증가/감소</em></li>
+<li>$\lambda_i$ 순허수 ($\lambda_i = i\omega_i$) — <em>조화 진동</em> $e^{it\omega_i}$ (반에르미트 행렬, 즉 리 대수 원소)</li>
+<li>$\lambda_i$ 복소 — 증가/감소 + 진동 (NEGF 의 자기에너지 등)</li>
+</ul>
+<p><strong>4)</strong> <em>리 군과의 연결</em>. 리 군의 원소를 <em>지수 사상</em> 으로 $g = \exp(tX)$ 로 표현하면 ($X$ 는 리 대수 원소), $X$ 의 스펙트럼 분해</p>
+$$X = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i|$$<p>가 그대로 군 원소의 스펙트럼 형태</p>
+$$g = \exp(tX) = \sum_i e^{t \lambda_i} |\lambda_i\rangle \langle \lambda^i|$$<p>를 준다. <em>리 대수 원소의 스펙트럼 = 리 군 원소의 스펙트럼</em>. 다른 점은 <em>고유값에 지수가 씌워진 것뿐</em>.</p>
+<p><strong>5)</strong> <em>구체적 예 — $SU(2)$</em> (§16 본격). $\mathfrak{su}(2)$ 원소 $X = i (a \sigma_x + b \sigma_y + c \sigma_z)$ 의 스펙트럼 분해를 사용해 $\exp(X) \in SU(2)$ 를 명시 형태로 계산. 본 시리즈의 핵심 계산 도구.</p>
+<h3 id="10-표기-요약표">10. 표기 요약표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>본 시리즈 전체에서 사용할 표기를 한 표에 정리한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>표기</th>
+          <th>비고</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>이산 기저 (켓)</td>
+          <td>$\vert v_i \rangle$</td>
+          <td>아래 첨자</td>
+      </tr>
+      <tr>
+          <td>이산 쌍대 기저 (브라)</td>
+          <td>$\langle v^i \vert$</td>
+          <td>위 첨자</td>
+      </tr>
+      <tr>
+          <td>이산 쌍대 관계</td>
+          <td>$\langle v^i \vert v_j \rangle = \delta^i_j$</td>
+          <td>크로네커 델타</td>
+      </tr>
+      <tr>
+          <td>단일 (비기저) 켓</td>
+          <td>$\vert v \rangle$</td>
+          <td>첨자 없음</td>
+      </tr>
+      <tr>
+          <td>단일 브라</td>
+          <td>$\langle v \vert$</td>
+          <td>첨자 없음</td>
+      </tr>
+      <tr>
+          <td>연속 기저 (켓)</td>
+          <td>$\vert u \rangle$</td>
+          <td>$u \in \mathbb{R}$</td>
+      </tr>
+      <tr>
+          <td>연속 쌍대 기저 (브라)</td>
+          <td>$\langle u^d \vert$</td>
+          <td>$d$ marker</td>
+      </tr>
+      <tr>
+          <td>연속 쌍대 관계</td>
+          <td>$\langle u^d \vert u' \rangle = \delta(u - u')$</td>
+          <td>디랙 델타</td>
+      </tr>
+      <tr>
+          <td>위치 기저 (자체 쌍대)</td>
+          <td>$\vert x \rangle, \langle x \vert$</td>
+          <td>$d$ 생략</td>
+      </tr>
+      <tr>
+          <td>항등 분해 (이산)</td>
+          <td>$I = \sum_i \vert v_i \rangle \langle v^i \vert$</td>
+          <td>분광 분해 특수</td>
+      </tr>
+      <tr>
+          <td>항등 분해 (연속)</td>
+          <td>$I = \int du \, \vert u \rangle \langle u^d \vert$</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>연산자 스펙트럼 분해</td>
+          <td>$H = \sum_i \lambda_i \vert \lambda_i \rangle \langle \lambda^i \vert$</td>
+          <td>좌·우 고유벡터</td>
+      </tr>
+      <tr>
+          <td>정규 연산자 단순화</td>
+          <td>$\langle \lambda^i \vert = \langle \lambda_i \vert$</td>
+          <td>명시 사용 시</td>
+      </tr>
+      <tr>
+          <td>함수 계산</td>
+          <td>$f(H) = \sum_i f(\lambda_i) \vert \lambda_i \rangle \langle \lambda^i \vert$</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>지수 사상</td>
+          <td>$\exp(tH) = \sum_i e^{t\lambda_i} \vert \lambda_i \rangle \langle \lambda^i \vert$</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="11-이-절을-닫으며">11. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 약속한 것.</p>
+<p>(1) <em>벡터 공간과 쌍대</em> — 다양체 접·코탄젠트 (§0-4) 의 일반화. <em>바이듀얼</em> 표기는 켓 ↔ 브라의 쌍대 관계를 명시.</p>
+<p>(2) <em>이산 기저 $|v_i\rangle$ 와 쌍대 $\langle v^i|$</em> — 위·아래 첨자로 구분. 쌍대 관계 $\langle v^i | v_j \rangle = \delta^i_j$.</p>
+<p>(3) <em>연속 기저 $|u\rangle$ 와 쌍대 $\langle u^d|$</em> — $d$ marker 로 쌍대 표시. 위치 기저는 자체 쌍대.</p>
+<p>(4) <em>정규 연산자</em> 에서는 좌·우 고유기저가 일치해 $\langle \lambda^i| = \langle \lambda_i|$ 단순화 가능. <em>비정규</em> 일 때는 좌·우 분리 유지.</p>
+<p>(5) <em>스펙트럼 분해</em> $H = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i|$ 이 시리즈 전체의 표준 형태. 함수 계산은 $f(H) = \sum_i f(\lambda_i) |\lambda_i\rangle \langle \lambda^i|$, 지수 사상은 $\exp(tH) = \sum_i e^{t\lambda_i} |\lambda_i\rangle \langle \lambda^i|$.</p>
+<p>(6) 리 군의 원소가 <em>리 대수 원소의 지수</em> 라는 시각 (§7 이후) 이, 스펙트럼 분해를 통해 <em>고유값에 지수를 씌운 형태</em> 로 명시화된다.</p>
+<p>이로써 §0 부 사전 준비 (약자 §0-1, 군 §0-2, 다양체 §0-3, 접공간 §0-4, 표기 §0-5) 가 끝났다. 다음 §1 (리 군의 정의) 부터 <em>리 군 = 매끄러운 다양체 + 매끄러운 군 연산</em> 의 본격 정의로 진입한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="" data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="active " data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

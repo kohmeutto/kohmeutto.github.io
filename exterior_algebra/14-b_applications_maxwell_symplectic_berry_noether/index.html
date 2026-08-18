@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 외대수가 물리에서 자연스러운 이유지금까지 §1-§13 에서 외대수의 대수적 기초 (§1-§5), 미분형식과 외미분 (§6-§9), 적분과 Stokes 정리 (§10-§11), 코호몰로지와 Hodge 별표 (§12-§13) 를 다뤘다.
+이 언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구 임을 마지막 장에서 네 가지 핵심 응용 으로 보여준다.
+(1) Maxwell 방정식 — 전자기학의 네 방정식이 두 줄로 압축.
+(2) 심플렉틱 기하 (Hamilton 역학) — 고전 역학의 위상 공간 구조가 2-form 으로 자연스럽게 표현.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="응용: Maxwell, 심플렉틱, Berry, Noether :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 외대수가 물리에서 자연스러운 이유지금까지 §1-§13 에서 외대수의 대수적 기초 (§1-§5), 미분형식과 외미분 (§6-§9), 적분과 Stokes 정리 (§10-§11), 코호몰로지와 Hodge 별표 (§12-§13) 를 다뤘다.
+이 언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구 임을 마지막 장에서 네 가지 핵심 응용 으로 보여준다.
+(1) Maxwell 방정식 — 전자기학의 네 방정식이 두 줄로 압축.
+(2) 심플렉틱 기하 (Hamilton 역학) — 고전 역학의 위상 공간 구조가 2-form 으로 자연스럽게 표현.">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="응용: Maxwell, 심플렉틱, Berry, Noether :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 외대수가 물리에서 자연스러운 이유지금까지 §1-§13 에서 외대수의 대수적 기초 (§1-§5), 미분형식과 외미분 (§6-§9), 적분과 Stokes 정리 (§10-§11), 코호몰로지와 Hodge 별표 (§12-§13) 를 다뤘다.
+이 언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구 임을 마지막 장에서 네 가지 핵심 응용 으로 보여준다.
+(1) Maxwell 방정식 — 전자기학의 네 방정식이 두 줄로 압축.
+(2) 심플렉틱 기하 (Hamilton 역학) — 고전 역학의 위상 공간 구조가 2-form 으로 자연스럽게 표현.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="응용: Maxwell, 심플렉틱, Berry, Noether :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 외대수가 물리에서 자연스러운 이유지금까지 §1-§13 에서 외대수의 대수적 기초 (§1-§5), 미분형식과 외미분 (§6-§9), 적분과 Stokes 정리 (§10-§11), 코호몰로지와 Hodge 별표 (§12-§13) 를 다뤘다.
+이 언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구 임을 마지막 장에서 네 가지 핵심 응용 으로 보여준다.
+(1) Maxwell 방정식 — 전자기학의 네 방정식이 두 줄로 압축.
+(2) 심플렉틱 기하 (Hamilton 역학) — 고전 역학의 위상 공간 구조가 2-form 으로 자연스럽게 표현.">
+    <meta itemprop="wordCount" content="2519">
+    <title>응용: Maxwell, 심플렉틱, Berry, Noether :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/14-b_applications_maxwell_symplectic_berry_noether\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-외대수가-물리에서-자연스러운-이유">1. 동기: 외대수가 물리에서 자연스러운 이유</a></li>
+        <li><a href="#2-maxwell-방정식의-미분형식-표현">2. Maxwell 방정식의 미분형식 표현</a></li>
+        <li><a href="#3-심플렉틱-기하와-hamilton-역학">3. 심플렉틱 기하와 Hamilton 역학</a></li>
+        <li><a href="#4-berry-위상과-chern-수">4. Berry 위상과 Chern 수</a></li>
+        <li><a href="#5-noether-정리-대칭과-보존-법칙">5. Noether 정리: 대칭과 보존 법칙</a></li>
+        <li><a href="#6-리-군-시리즈와-외대수-시리즈의-만남">6. 리 군 시리즈와 외대수 시리즈의 만남</a></li>
+        <li><a href="#7-negf응집계와-외대수">7. NEGF·응집계와 외대수</a></li>
+        <li><a href="#8-통합-그림-lie-군--외대수--물리의-자연스러운-언어">8. 통합 그림: Lie 군 + 외대수 = 물리의 자연스러운 언어</a></li>
+        <li><a href="#9-정리-및-외대수-시리즈-마무리">9. 정리 및 외대수 시리즈 마무리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">응용: Maxwell, 심플렉틱, Berry, Noether</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/13-b_hodge_star/index.html" title="Hodge 별표 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/linear_system/index.html" title="Linear system (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="응용-maxwell-심플렉틱-berry-noether">응용: Maxwell, 심플렉틱, Berry, Noether</h1>
+
+<h3 id="1-동기-외대수가-물리에서-자연스러운-이유">1. 동기: 외대수가 물리에서 자연스러운 이유<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지 §1-§13 에서 외대수의 <em>대수적 기초</em> (§1-§5), <em>미분형식과 외미분</em> (§6-§9), <em>적분과 Stokes 정리</em> (§10-§11), <em>코호몰로지와 Hodge 별표</em> (§12-§13) 를 다뤘다.</p>
+<p>이 <em>언어가 단순한 수학적 일반화가 아니라 물리의 자연스러운 도구</em> 임을 마지막 장에서 <em>네 가지 핵심 응용</em> 으로 보여준다.</p>
+<p>(1) <em>Maxwell 방정식</em> — 전자기학의 네 방정식이 <em>두 줄로 압축</em>.</p>
+<p>(2) <em>심플렉틱 기하 (Hamilton 역학)</em> — 고전 역학의 위상 공간 구조가 <em>2-form 으로 자연스럽게 표현</em>.</p>
+<p>(3) <em>Berry 위상과 Chern 수</em> — 양자역학과 응집계 물리의 <em>위상학적 측면</em>.</p>
+<p>(4) <em>Noether 정리</em> — <em>연속 대칭에서 보존 법칙</em> 으로의 정확한 외대수적 표현.</p>
+<p>이 네 응용을 통해, <em>외대수가 왜 이론 물리의 핵심 언어인지</em> 가 명확해진다. 그리고 <em>리 군 시리즈와 외대수 시리즈가 어떻게 만나는지</em> — 두 노트 묶음의 <em>통합된 그림</em> — 도 마지막에 정리한다.</p>
+<h3 id="2-maxwell-방정식의-미분형식-표현">2. Maxwell 방정식의 미분형식 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>전자기학의 네 방정식이 <em>외대수 언어로 두 줄로 통합</em> 된다.</p>
+<p><strong>고전적 표현 (벡터 형태)</strong></p>
+<p>먼저 익숙한 <em>벡터 미적분 형태</em>를 정리한다.</p>
+<p>(1) <em>Gauss 법칙</em>: $\nabla \cdot \vec{E} = \rho / \epsilon_0$.</p>
+<p>(2) <em>자기장의 발산 없음</em>: $\nabla \cdot \vec{B} = 0$.</p>
+<p>(3) <em>Faraday 법칙</em>: $\nabla \times \vec{E} = -\partial \vec{B} / \partial t$.</p>
+<p>(4) <em>Ampère-Maxwell 법칙</em>: $\nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0\, \partial \vec{E} / \partial t$.</p>
+<p>네 방정식이 <em>서로 다른 형태로</em> 보인다. 그런데 미분형식 언어로 옮기면 <em>놀라울 정도로 간단해진다</em>.</p>
+<p><strong>4D 시공간과 전자기 2-form</strong></p>
+<p>상대성이론의 자연스러운 무대인 <em>4차원 Minkowski 시공간</em>. 좌표를 $x^0 = ct, x^1, x^2, x^3$ 로 잡는다. 메트릭은 $g_{\mu\nu} = \text{diag}(-1, +1, +1, +1)$.</p>
+<p><em>전자기 2-form</em> 을</p>
+$$F = E_1\, dx^1 \wedge dx^0 + E_2\, dx^2 \wedge dx^0 + E_3\, dx^3 \wedge dx^0 + B_1\, dx^2 \wedge dx^3 + B_2\, dx^3 \wedge dx^1 + B_3\, dx^1 \wedge dx^2$$<p>으로 정의. <em>6개의 기본 2-form 의 계수에 전기장 3성분 + 자기장 3성분이 자연스럽게 들어감</em>.</p>
+<p>§7 §3 에서 본 <em>4D 의 2-form 기저가 6개</em> 라는 사실이 <em>전자기장의 6 성분 (E 의 3 + B 의 3)</em> 과 완벽히 일치. 우연이 아니다.</p>
+<p><strong>Maxwell 방정식의 두 줄 표현</strong></p>
+<p>처음 두 방정식 (Gauss-자기, Faraday) 는 <em>$dF = 0$</em> 으로 통합:</p>
+$$\boxed{\; dF = 0 \;}$$<p>직접 외미분을 계산하면 정확히 <em>방정식 (2), (3)</em> 이 나온다 (자세한 계산은 4차원 좌표로 풀면 됨).</p>
+<p>이게 <em>§9 §8 에서 본 &ldquo;비회전 벡터장의 폐 1-form&rdquo;</em> 의 4D 일반화. <em>자기 모노폴이 없다는 사실과 Faraday 법칙</em> 이 <em>한 식의 외미분</em> 으로 통일.</p>
+<p>나머지 두 방정식 (Gauss-전기, Ampère-Maxwell) 는 <em>$d \star F = J$</em> 로 통합:</p>
+$$\boxed{\; d \star F = J \;}$$<p>여기서 $J = \rho\, dx^1 \wedge dx^2 \wedge dx^3 + \cdots$ 는 <em>전류 3-form</em>. $\star F$ 가 <em>Hodge 별표를 거친 dual 2-form</em> — Lorentzian 메트릭에서 자동으로 <em>전기와 자기를 섞어줌</em>.</p>
+<p><strong>의미</strong></p>
+<blockquote>
+<p>Maxwell 의 네 방정식이
+</p>
+$$dF = 0, \quad d \star F = J$$<p>
+<em>두 줄로 압축</em>.</p>
+</blockquote>
+<p>복잡해 보이던 네 방정식이 <em>한 객체 ($F$) 와 두 외대수 연산 ($d, \star$)</em> 으로 모두 표현. <em>외대수 언어가 전자기학에 자연스럽게 적합</em> 함을 보여주는 결정적 예.</p>
+<p><strong>$dF = 0$ 의 의미: Poincaré 보조정리</strong></p>
+<p>$dF = 0$ ($F$ 가 폐 2-form) 에서 <em>적어도 국소적으로</em> $F = dA$ 인 <em>벡터 포텐셜 1-form</em> $A$ 가 존재한다 (Poincaré 보조정리, §12).</p>
+$$A = -\phi\, dx^0 + A_1\, dx^1 + A_2\, dx^2 + A_3\, dx^3$$<p>여기서 $\phi$ 가 <em>전기 포텐셜</em>, $\vec{A}$ 가 <em>벡터 포텐셜</em>. 익숙한 4-퍼텐셜.</p>
+<p><em>전기장과 자기장이 $A$ 에서 외미분으로 나옴</em>:</p>
+$$F = dA \implies \vec{E} = -\nabla \phi - \partial \vec{A}/\partial t, \quad \vec{B} = \nabla \times \vec{A}$$<p><em>벡터 미적분의 익숙한 식</em> 이 <em>외미분 $d$ 의 자연스러운 결과</em>.</p>
+<p><strong>게이지 변환</strong></p>
+<p>$A \to A + d\lambda$ ($\lambda$ 가 임의의 0-form) 변환은 $F = dA$ 를 <em>변화시키지 않음</em> ($d^2 \lambda = 0$). 이게 <em>게이지 변환</em> — 외대수 언어로는 <em>완전형식만큼의 차이는 무관</em>.</p>
+<p>게이지 자유도가 <em>코호몰로지 자연스러움</em> 의 직접적 표현. <em>물리는 코호몰로지류에만 의존</em>.</p>
+<p><strong>자기 모노폴과 코호몰로지</strong></p>
+<p>§12 §11 에서 봤듯이, <em>자기 모노폴이 있는 시공간</em> 에서는 <em>글로벌 $A$ 가 존재하지 않음</em> — <em>비자명한 $H^2$</em> 의 표현. Dirac 양자화 조건이 <em>코호몰로지의 정수 구조</em> 에서 자연스럽게 나옴.</p>
+<blockquote>
+<p><em>Maxwell 방정식 + 외대수 = 전자기학의 자연스러운 언어</em>.</p>
+</blockquote>
+<h3 id="3-심플렉틱-기하와-hamilton-역학">3. 심플렉틱 기하와 Hamilton 역학<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다음 응용은 <em>고전 역학의 위상 공간 구조</em> — <em>심플렉틱 기하</em>.</p>
+<p><strong>위상 공간</strong></p>
+<p>$n$ 개의 자유도를 가진 고전 역학계의 <em>위상 공간</em>은 <em>$2n$ 차원</em>. 좌표는 <em>일반화 좌표 $q^i$ 와 일반화 운동량 $p_i$</em> — 즉 $(q^1, \ldots, q^n, p_1, \ldots, p_n)$.</p>
+<p><strong>심플렉틱 형식</strong></p>
+<p>위상 공간 위에 <em>자연스러운 2-form</em>:</p>
+$$\omega = \sum_{i=1}^{n} dp_i \wedge dq^i$$<p>이걸 <em>심플렉틱 형식 (symplectic form)</em> 또는 <em>Poincaré 2-form</em> 이라 부른다.</p>
+<p><strong>핵심 성질</strong></p>
+<p>(1) <em>폐형식</em>: $d\omega = 0$. 직접 계산 — $d(dp_i \wedge dq^i) = 0$ (각 항이 <em>상수 좌표 미분의 쐐기곱</em>).</p>
+<p>(2) <em>비퇴화 (non-degenerate)</em>: $\omega^n = \omega \wedge \omega \wedge \cdots \wedge \omega$ ($n$ 번) 가 <em>0 이 아님</em>. 사실 <em>위상 공간의 부피 형식</em>:</p>
+$$\omega^n = n!\, dp_1 \wedge dq^1 \wedge \cdots \wedge dp_n \wedge dq^n$$<p>(부호와 상수 인자 조정.)</p>
+<p>이 두 성질이 <em>심플렉틱 다양체</em> 의 정의. 위상 공간이 <em>자연스러운 심플렉틱 다양체</em>.</p>
+<p><strong>Hamilton 운동 방정식</strong></p>
+<p>$H = H(q, p, t)$ 가 <em>해밀토니안</em> 일 때, <em>Hamilton 방정식</em>:</p>
+$$\dot{q}^i = \frac{\partial H}{\partial p_i}, \quad \dot{p}_i = -\frac{\partial H}{\partial q^i}$$<p>이게 <em>심플렉틱 형식 언어로 단 한 줄로</em> 표현:</p>
+$$i_{X_H}\, \omega = dH$$<p>여기서 $X_H$ 가 <em>해밀토니안 벡터장</em>, $i_X$ 가 <em>내부 곱 (interior product)</em> — <em>벡터장을 미분형식의 첫 인자 자리에 대입</em>.</p>
+<p><strong>Liouville 정리</strong></p>
+<p><em>Hamilton 흐름이 위상 공간의 부피를 보존</em> 한다는 <em>Liouville 정리</em> 가 <em>심플렉틱 형식의 보존</em> 으로 자연스럽게 표현:</p>
+$$\mathcal{L}_{X_H}\, \omega = 0$$<p>(<em>$X_H$ 방향의 Lie 미분이 0</em>.) 그러면 부피 형식 $\omega^n$ 도 보존.</p>
+<p><strong>Poisson 괄호</strong></p>
+<p>두 함수 $f, g$ 의 <em>Poisson 괄호</em>:</p>
+$$\{f, g\} := \omega(X_f, X_g) = \sum_i \left( \frac{\partial f}{\partial q^i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q^i} \right)$$<p>이게 <em>심플렉틱 형식이 자연스럽게 유도</em> 하는 <em>함수들 사이의 Lie 괄호</em>.</p>
+<p><strong>양자역학과의 연결</strong></p>
+<p>이 Poisson 괄호가 <em>양자역학의 교환자</em> 와 자연스럽게 대응 (정준 양자화):</p>
+$$\{f, g\} \quad \longleftrightarrow \quad \frac{1}{i\hbar}\, [\hat{f}, \hat{g}]$$<p>이게 <em>리 군 시리즈의 §14 §15</em> 에서 본 <em>교환자가 리 대수 구조의 핵심</em> 이라는 사실과 직접 연결. <em>심플렉틱 기하가 리 군의 자연스러운 표현</em> 임을 보여준다.</p>
+<p><strong>Noether 정리의 출발점</strong></p>
+<p>$\{f, H\} = 0$ 인 함수 $f$ 가 <em>보존량 (conserved quantity)</em>. 즉 <em>해밀토니안과 Poisson 가환하는</em> 함수가 보존됨.</p>
+<p>이게 <em>Noether 정리의 고전적 형태</em> — 아래에서 더 자세히 다룬다.</p>
+<h3 id="4-berry-위상과-chern-수">4. Berry 위상과 Chern 수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다음 응용은 <em>양자역학의 위상학적 측면</em>.</p>
+<p><strong>Berry 위상의 출발</strong></p>
+<p>매개변수 공간 $M$ 위에서 <em>서서히 변하는 해밀토니안 $H(\vec{R})$</em> 의 <em>기저 상태</em> $|\psi(\vec{R})\rangle$ 를 따라가는 <em>단열 진화 (adiabatic evolution)</em>. 매개변수가 <em>닫힌 경로 $C$</em> 를 따라 돌아오면, 파동함수가 <em>동역학적 위상과 별도로</em> <em>기하학적 위상</em> 을 얻는다:</p>
+$$|\psi(\vec{R}_f)\rangle = e^{i\phi_{\text{dyn}}}\, e^{i\gamma_{\text{Berry}}}\, |\psi(\vec{R}_i)\rangle$$<p>이 <em>$\gamma_{\text{Berry}}$</em> 가 <strong>Berry 위상</strong>.</p>
+<p><strong>Berry 연결 (1-form)</strong></p>
+<p>매개변수 공간 위의 <em>Berry 연결</em> 1-form:</p>
+$$A = i \langle \psi(\vec{R}) | d \psi(\vec{R}) \rangle$$<p>(여기서 $d$ 는 <em>매개변수 공간 위의 외미분</em>.) 이게 <em>매개변수 공간의 1-form</em>.</p>
+<p>Berry 위상이 이 1-form 의 <em>호 적분</em>:</p>
+$$\gamma_{\text{Berry}} = \oint_C A$$<p><strong>Berry 곡률 (2-form)</strong></p>
+<p>Berry 연결의 <em>외미분</em> 이 <em>Berry 곡률 2-form</em>:</p>
+$$F = dA$$<p>이게 <em>§9 §6 에서 본 1-form 의 외미분</em> 의 양자역학적 표현. <em>국소적인 게이지 불변 양</em>.</p>
+<p><strong>Stokes 정리 적용</strong></p>
+<p>§11 의 Stokes 정리로</p>
+$$\gamma_{\text{Berry}} = \oint_{\partial S} A = \int_S dA = \int_S F$$<p>(여기서 $S$ 가 <em>경로 $C$ 가 둘러싸는 면</em>.) 따라서</p>
+<blockquote>
+<p><em>Berry 위상 = Berry 곡률의 면 적분</em>.</p>
+</blockquote>
+<p><strong>Chern 수</strong></p>
+<p>만약 매개변수 공간이 <em>닫힌 2차원 다양체</em> (예: <em>Brillouin 영역 = 토러스</em>) 라면, <em>Berry 곡률의 전체 적분</em> 이 <em>정수 × $2\pi$</em>:</p>
+$$C = \frac{1}{2\pi} \oint_M F \in \mathbb{Z}$$<p>이 <em>정수 $C$</em> 가 <strong>Chern 수 (Chern number)</strong> — <em>위상학적 정수 불변량</em>.</p>
+<p>§12 §10 에서 본 <em>de Rham 코호몰로지의 정수 구조</em> 와 정확히 같은 자리. <em>위상 절연체의 기본 분류 인자</em>.</p>
+<p><strong>양자 홀 효과</strong></p>
+<p><em>TKNN 공식</em>: 양자 홀 전도도가 <em>Chern 수의 정수 배</em>:</p>
+$$\sigma_{xy} = \frac{e^2}{h} \cdot C$$<p>이게 <em>외대수 + 위상수학 + 양자역학의 만남</em>. <em>측정 가능한 물리량 (전도도) 이 위상학적 정수</em> — 외대수 코호몰로지의 <em>직접적 물리 응용</em>.</p>
+<p><strong>NEGF 와의 연결</strong></p>
+<p>NEGF 의 <em>그린 함수</em> 가 <em>매개변수 의존성</em> (외부장, 화학 퍼텐셜 등) 을 갖는 경우, <em>그 의존성의 외미분이 Berry 곡률 같은 양</em> 을 자연스럽게 생성. <em>응집계 NEGF 의 위상학적 측면</em> 이 외대수 언어로 <em>체계적 분석</em>.</p>
+<p>이게 <em>꼬므또씨의 NEGF 연구가 외대수와 만나는 자리</em>.</p>
+<h3 id="5-noether-정리-대칭과-보존-법칙">5. Noether 정리: 대칭과 보존 법칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 마지막 응용 — <em>Noether 정리</em> 의 미분형식 표현.</p>
+<p><strong>고전적 형태</strong></p>
+<p>Noether 정리의 핵심 주장:</p>
+<blockquote>
+<p><em>연속 대칭이 있으면 보존 법칙이 존재</em>.</p>
+</blockquote>
+<p>예: <em>시간 병진 불변성</em> → <em>에너지 보존</em>. <em>공간 병진 불변성</em> → <em>운동량 보존</em>. <em>회전 불변성</em> → <em>각운동량 보존</em>.</p>
+<p>이게 <em>리 군 시리즈</em> 에서 다뤘던 <em>연속 대칭의 생성자가 보존량을 결정</em> 하는 일반 원리.</p>
+<p><strong>미분형식 표현</strong></p>
+<p><em>보존 흐름 (conserved current)</em> 이 $j^\mu$ 일 때 <em>연속 방정식</em>:</p>
+$$\partial_\mu j^\mu = 0$$<p>이걸 미분형식으로 옮기면, $j^\mu$ 에 대응하는 <em>3-form</em> $J = \star j$ (4차원 시공간에서):</p>
+$$dJ = 0$$<p>즉 <em>$J$ 가 폐 3-form</em>.</p>
+<p><strong>적분 형태 (Stokes 정리)</strong></p>
+<p>§11 의 Stokes 정리로</p>
+$$0 = \int_{\Omega} dJ = \int_{\partial \Omega} J$$<p>($\Omega$ 가 4차원 시공간 영역.)</p>
+<p>이걸 <em>공간적 영역의 시간 단면 차이</em> 로 해석하면:</p>
+$$\int_{\Sigma_2} J - \int_{\Sigma_1} J = 0$$<p>즉 <em>두 시간 단면에서의 보존량 적분이 같음</em> — <em>총량 보존</em>.</p>
+<blockquote>
+<p><em>국소 보존 법칙 ($dJ = 0$) + Stokes 정리 = 전역 보존 법칙 (총량 보존)</em>.</p>
+</blockquote>
+<p><strong>리 군 대칭과 Noether 흐름</strong></p>
+<p>리 군 시리즈에서 본 <em>연속 대칭의 생성자</em> 가 <em>Noether 흐름과 정확히 대응</em>.</p>
+<p>매개변수 $\epsilon$ 의 1-매개변수 대칭 변환:</p>
+$$\phi \to \phi + \epsilon\, \delta\phi$$<p>가 <em>작용 (action) 을 불변</em> 으로 두면, <em>Noether 흐름</em></p>
+$$j^\mu = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \cdot \delta\phi - \cdots$$<p>가 <em>생성자 × Lagrangian 의 변분</em> 의 형태로 정해진다 (간단한 경우).</p>
+<p>이게 <em>리 군 시리즈 §9 의 1-매개변수 부분군</em> 과 <em>Noether 정리의 자연스러운 만남</em>.</p>
+<p><strong>여러 대칭의 동시 존재</strong></p>
+<p>다중 매개변수 리 군 (예: Poincaré 군 — 시공간 병진 + Lorentz 변환) 의 경우 <em>각 매개변수 방향마다 하나의 보존 흐름</em>.</p>
+<p><em>리 군 시리즈 §10-§13 의 다중 매개변수 리 군</em> 과 <em>각 대칭에 대응하는 보존 흐름</em> 의 정확한 대응.</p>
+<p><strong>$N$ 입자 양자역학에서의 Noether</strong></p>
+<p>양자역학에서 <em>대칭 연산자가 해밀토니안과 가환</em> ($[\hat{U}, \hat{H}] = 0$) 하면, <em>생성자도 가환</em> ($[\hat{G}, \hat{H}] = 0$). §15 §6 에서 본 <em>Heisenberg 방정식</em></p>
+$$\frac{d\hat{G}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{G}] = 0$$<p>이 <em>$\hat{G}$ 가 보존량</em> 임을 보여준다.</p>
+<p>이게 <em>리 군의 생성자가 보존량</em> 이라는 양자역학적 표현. 외대수의 <em>연속 방정식 $dJ = 0$</em> 과 동치.</p>
+<p><strong>Noether 의 두 정리</strong></p>
+<p>Noether 가 사실 <em>두 정리</em> 를 증명했다.</p>
+<ol>
+<li><em>대역 대칭 (global symmetry)</em> → <em>보존 흐름 ($dJ = 0$)</em>.</li>
+<li><em>국소 대칭 (게이지 대칭)</em> → <em>항등 관계 (Bianchi 항등식 등)</em>.</li>
+</ol>
+<p>두 번째가 Maxwell 방정식의 <em>$d^2 = 0$</em> 에서 따라 나오는 <em>$dF = 0$</em> 의 자동적 성립과 같은 유형. <em>외대수의 $d^2 = 0$ 이 게이지 대칭의 자연스러운 결과</em>.</p>
+<h3 id="6-리-군-시리즈와-외대수-시리즈의-만남">6. 리 군 시리즈와 외대수 시리즈의 만남<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>여기서 <em>두 시리즈가 어떻게 통합</em> 되는지 정리한다.</p>
+<p><strong>리 군 시리즈 (15장) 의 핵심</strong></p>
+<ul>
+<li><em>연속 대칭의 생성자</em> 와 <em>지수 사상</em></li>
+<li><em>교환자 [A, B]</em> 와 <em>리 대수 구조</em></li>
+<li><em>다중 매개변수 리 군</em></li>
+<li><em>다양체 위의 접 벡터 공간</em></li>
+</ul>
+<p><strong>외대수 시리즈 (14장) 의 핵심</strong></p>
+<ul>
+<li><em>반대칭 다중선형 객체</em> — 쐐기곱</li>
+<li><em>미분형식과 외미분 $d$</em></li>
+<li><em>적분과 Stokes 정리</em></li>
+<li><em>코호몰로지와 위상</em></li>
+<li><em>Hodge 별표와 메트릭</em></li>
+</ul>
+<p><strong>두 시리즈의 통합점</strong></p>
+<p>(1) <em>Maurer-Cartan form</em>: 리 군 $G$ 위의 자연스러운 <em>Lie 대수 값 1-form</em>:</p>
+$$\omega_{MC} = g^{-1} dg$$<p>이게 <em>리 군의 모든 방향에서의 생성자를 1-form 으로 인코딩</em>. <em>리 군 구조 + 외대수 구조의 만남</em>.</p>
+<p>(2) <em>Maurer-Cartan 방정식</em>: $d\omega_{MC} + \frac{1}{2} [\omega_{MC} \wedge \omega_{MC}] = 0$.</p>
+<p>이게 <em>Lie 괄호 (리 군 시리즈 §14) + 외미분 + 쐐기곱 (외대수 시리즈)</em> 의 결합. <em>리 군의 곡률 구조</em>.</p>
+<p>(3) <em>Lie algebra cohomology</em>: 리 대수의 외대수 위에 <em>Chevalley-Eilenberg 미분</em>. <em>리 군의 위상학</em> 을 <em>대수적으로</em> 측정.</p>
+<p>(4) <em>Symplectic form 과 generator</em>: 심플렉틱 형식 $\omega$ 가 <em>Hamilton 흐름의 생성자 ($X_H$) 를 함수의 미분과 짝짓는</em> 도구. <em>리 군 시리즈의 생성자</em> 와 <em>외대수 시리즈의 미분형식</em> 의 직접적 만남.</p>
+<p>(5) <em>Berry 곡률과 Lie 군</em>: 비-아벨리안 Berry 곡률이 <em>Lie 대수 값을 가짐</em>. <em>외대수의 2-form + 리 대수 구조</em>. 응집계 물리와 게이지 이론의 자연스러운 무대.</p>
+<h3 id="7-negf응집계와-외대수">7. NEGF·응집계와 외대수<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>마지막으로 <em>꼬므또씨의 연구 주제</em> 인 NEGF·응집계 물리와 외대수의 연결을 정리한다.</p>
+<p><strong>Brillouin 영역 위의 미분형식</strong></p>
+<p>응집계 물리의 <em>Brillouin 영역 (BZ)</em> 이 <em>토러스 $T^d$</em> (격자 주기성 때문). 토러스 위에서 정의된 <em>Bloch 함수</em> 들이 <em>기하학적 위상 정보</em> 를 갖는다.</p>
+<p>(1) <em>Berry 연결 $A$</em> — Brillouin 영역 위의 1-form.
+(2) <em>Berry 곡률 $F = dA$</em> — 2-form, <em>Chern 수</em> 의 원천.
+(3) <em>Wannier 함수의 위치 연산자</em> — <em>접 다발 (tangent bundle)</em> 의 자연스러운 객체.</p>
+<p>이 모든 게 <em>외대수 + 위상학 + 응집계 물리의 결합점</em>.</p>
+<p><strong>Green 함수와 미분형식</strong></p>
+<p>NEGF 에서 <em>그린 함수</em> $G(\omega)$ 가 <em>복소 평면 위의 함수</em>. 이걸 <em>Riemann 면 위의 미분형식</em> 으로 보면 <em>외대수적 도구</em> 가 자연스럽게 적용.</p>
+<p><em>Kramers-Kronig 관계</em> 같은 <em>그린 함수의 해석적 성질</em> 이 <em>Cauchy 적분 + Stokes 정리</em> 의 결합으로 표현. <em>복소 해석학이 외대수의 1D 사례</em>.</p>
+<p><strong>스펙트럼 함수의 외대수</strong></p>
+<p>스펙트럼 함수 $A(\omega) = -2 \text{Im}\, G(\omega)$ 가 <em>그린 함수의 허수 부분</em>. 이게 <em>해석 함수의 분기 (branch cut) 에 대응하는 미분형식의 점프</em>.</p>
+<p>NEGF 의 <em>스펙트럼 분해</em> 가 <em>외대수의 Hodge 분해와 정신적으로 같은 구조</em>.</p>
+<p><strong>위상 절연체와 외대수</strong></p>
+<p>위에서 본 Chern 수 외에:</p>
+<ul>
+<li><em>$\mathbb{Z}_2$ 불변량</em> (시간 역전 대칭 위상 절연체)</li>
+<li><em>Symmetry-protected topological phases</em></li>
+<li><em>Anomaly inflow</em> (외대수의 $d^2 = 0$ 의 직접 응용)</li>
+</ul>
+<p>모두 <em>외대수 코호몰로지의 정수 구조</em> 가 <em>물리적 측정 가능량</em> 으로 등장.</p>
+<blockquote>
+<p><em>외대수 + Lie 군 + 코호몰로지 = 응집계 물리의 통일된 언어</em>.</p>
+</blockquote>
+<h3 id="8-통합-그림-lie-군--외대수--물리의-자연스러운-언어">8. 통합 그림: Lie 군 + 외대수 = 물리의 자연스러운 언어<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 두 시리즈가 어떻게 합쳐 <em>물리의 통일된 언어</em> 가 되는지 <em>그림으로</em> 정리한다.</p>
+<p><strong>한 줄 요약</strong></p>
+<blockquote>
+<p><em>리 군 시리즈</em> = <em>연속 대칭의 언어</em>.</p>
+<p><em>외대수 시리즈</em> = <em>부피·방향·위상의 언어</em>.</p>
+<p><em>둘이 만나면</em> = <em>현대 물리의 자연스러운 도구</em>.</p>
+</blockquote>
+<p><strong>구체적 매핑</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>물리 개념</th>
+          <th>리 군 시리즈</th>
+          <th>외대수 시리즈</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>변환의 생성자</td>
+          <td>무한소 생성자 $\hat{G}$</td>
+          <td>1-form (벡터 포텐셜)</td>
+      </tr>
+      <tr>
+          <td>변환의 합성</td>
+          <td>군 연산, 교환자</td>
+          <td>쐐기곱, 등급화 가환성</td>
+      </tr>
+      <tr>
+          <td>연속 변환</td>
+          <td>지수 사상 $\exp(\epsilon \hat{G})$</td>
+          <td>적분 $\int A$</td>
+      </tr>
+      <tr>
+          <td>대칭 보존</td>
+          <td>가환자 = 0</td>
+          <td>외미분 = 0 (Bianchi)</td>
+      </tr>
+      <tr>
+          <td>보존 법칙</td>
+          <td>$[\hat{G}, \hat{H}] = 0$</td>
+          <td>$dJ = 0$</td>
+      </tr>
+      <tr>
+          <td>위상학적 양</td>
+          <td>군의 위상 (mapping degree)</td>
+          <td>코호몰로지 (Chern 수)</td>
+      </tr>
+      <tr>
+          <td>양자 위상</td>
+          <td>생성자 고유값 (Aharonov-Bohm)</td>
+          <td>Wilson loop, Berry phase</td>
+      </tr>
+      <tr>
+          <td>매개변수 공간</td>
+          <td>리 군 다양체 $G$</td>
+          <td>Brillouin 영역, 위상 공간</td>
+      </tr>
+      <tr>
+          <td>측도와 적분</td>
+          <td>Haar 측도</td>
+          <td>부피 형식, 부피 적분</td>
+      </tr>
+  </tbody>
+</table>
+<p>이 표가 <em>왜 두 시리즈를 함께</em> 가져야 하는지의 <em>완전한 그림</em>. 한쪽만 가지고는 부분만 보이고, <em>둘을 합쳐야</em> 물리의 자연스러운 무대가 완성.</p>
+<p><strong>NEGF·라플라스·푸리에·멜린의 위치</strong></p>
+<p>꼬므또씨가 처음 말한 <em>통합 비전</em>:</p>
+<blockquote>
+<p><em>NEGF + 시스템 정의 + 라플라스/푸리에/멜린 + Noether</em> 의 통일 언어.</p>
+</blockquote>
+<p>이 그림에서:</p>
+<ul>
+<li><em>Fourier/Laplace/Mellin</em>: <em>리 군의 1-매개변수 부분군의 스펙트럼 분해</em> (translation, scaling, evolution 의 고유함수). 리 군 시리즈에서 다룸.</li>
+<li><em>Noether</em>: <em>연속 대칭 → 보존 법칙</em>. 외대수 시리즈 §14 의 핵심.</li>
+<li><em>NEGF</em>: <em>그린 함수 = 레졸벤트</em>. 리 군의 <em>spectral 함수 calculus</em> (시리즈 §6-§8) 와 외대수의 <em>복소 미분형식</em> 의 결합.</li>
+<li><em>시스템 정의</em>: <em>해밀토니안의 대칭 구조</em> (리 군) + <em>위상 공간의 심플렉틱 구조</em> (외대수).</li>
+</ul>
+<blockquote>
+<p>모든 게 <em>리 군 + 외대수 언어로 통합</em> 됨.</p>
+</blockquote>
+<h3 id="9-정리-및-외대수-시리즈-마무리">9. 정리 및 외대수 시리즈 마무리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>외대수 시리즈 14 장을 통해 다음을 다뤘다.</p>
+<p><strong>§1-§5: 대수적 기초</strong></p>
+<ul>
+<li>반대칭의 동기와 쐐기곱의 정의</li>
+<li>외대수 $\Lambda V$ 의 기저와 차원</li>
+<li>행렬식의 진정한 의미 (최고차 외승의 1차원성)</li>
+</ul>
+<p><strong>§6-§9: 미분형식과 외미분</strong></p>
+<ul>
+<li>1-form 과 $k$-form</li>
+<li>외미분 $d$ 와 $d^2 = 0$</li>
+<li>그라디언트·발산·회전의 통일</li>
+</ul>
+<p><strong>§10-§11: 적분과 Stokes</strong></p>
+<ul>
+<li>미분형식의 적분, pullback, 야코비안</li>
+<li>일반 Stokes 정리 — 모든 적분 정리의 통합</li>
+</ul>
+<p><strong>§12-§13: 위상과 메트릭</strong></p>
+<ul>
+<li>de Rham 코호몰로지 — 폐형식 vs 완전형식</li>
+<li>Hodge 별표와 Laplace-de Rham</li>
+</ul>
+<p><strong>§14: 응용</strong></p>
+<ul>
+<li>Maxwell 방정식의 두 줄 표현</li>
+<li>심플렉틱 기하 (Hamilton 역학)</li>
+<li>Berry 위상과 Chern 수</li>
+<li>Noether 정리</li>
+<li>리 군 시리즈와의 만남</li>
+<li>NEGF·응집계 물리와의 연결</li>
+</ul>
+<p><strong>한 줄 요약</strong></p>
+<blockquote>
+<p>외대수는 <em>부피·방향·위상의 일반 언어</em> 다. 리 군이 <em>대칭의 언어</em> 라면 외대수는 <em>기하의 언어</em>. 둘이 만나 <em>현대 이론 물리의 자연스러운 도구</em> 가 된다.</p>
+</blockquote>
+<p><strong>다음 단계</strong></p>
+<p>이 시리즈에서 다루지 않은 깊은 주제들:</p>
+<ul>
+<li><em>벡터 다발과 연결</em> (gauge 이론의 정확한 기하학)</li>
+<li><em>Chern-Weil 이론</em> (Chern 수의 일반화)</li>
+<li><em>지표 정리 (Atiyah-Singer)</em> (위상학적 정수와 해석학적 양의 깊은 대응)</li>
+<li><em>Cohomology 의 일반화</em> (équivariant, Floer 등)</li>
+<li><em>시공간의 일반 곡률</em> (Riemann 곡률 tensor 의 미분형식 표현)</li>
+</ul>
+<p>이들은 각각이 <em>별도의 시리즈</em> 가 될 만한 주제들. 외대수 시리즈가 그 출발점.</p>
+<p><strong>리 군 시리즈 + 외대수 시리즈의 통합 비전</strong></p>
+<p>꼬므또씨가 초기에 그린 <em>큰 그림</em> 이 <em>완성에 가까워짐</em>:</p>
+<blockquote>
+<p><em>연속 대칭 (리 군) + 부피·방향·위상 (외대수) = NEGF · 적분 변환 · Noether · 응집계 물리</em> 의 통일된 언어.</p>
+</blockquote>
+<p>이 통합 작업은 <em>꼬므또씨가 직접</em> 두 노트 묶음을 활용해 진행하실 일. 노트들이 <em>공통 어휘</em> 를 제공하며, 그 어휘로 <em>NEGF, Sturm-Liouville, Fourier/Laplace/Mellin, Noether, 보존법칙</em> 등을 모두 표현 가능.</p>
+<p><em>외대수 시리즈 끝</em>.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

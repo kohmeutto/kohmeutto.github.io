@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 1-form 에서 더 높은 차수로§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.
+그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.
+전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="고차 미분형식: k-form :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 1-form 에서 더 높은 차수로§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.
+그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.
+전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).">
+    <meta property="og:url" content="http://localhost:1313/exterior_algebra/7-b_differential_forms_kform/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="고차 미분형식: k-form :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 1-form 에서 더 높은 차수로§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.
+그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.
+전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Exterir algebra">
+    <meta itemprop="name" content="고차 미분형식: k-form :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 1-form 에서 더 높은 차수로§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.
+그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.
+전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).">
+    <meta itemprop="wordCount" content="1803">
+    <title>고차 미분형식: k-form :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/exterior_algebra\/7-b_differential_forms_kform\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/exterior_algebra/7-b_differential_forms_kform/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-1-form-에서-더-높은-차수로">1. 동기: 1-form 에서 더 높은 차수로</a></li>
+        <li><a href="#2--form-의-정의">2. -form 의 정의</a></li>
+        <li><a href="#3-좌표-기저--form">3. 좌표 기저 -form</a></li>
+        <li><a href="#4-일반--form-의-표현">4. 일반 -form 의 표현</a></li>
+        <li><a href="#5-2-form-의-예제">5. 2-form 의 예제</a></li>
+        <li><a href="#6-3-form-의-예제">6. 3-form 의 예제</a></li>
+        <li><a href="#7-미분형식의-쐐기곱">7. 미분형식의 쐐기곱</a></li>
+        <li><a href="#8-등급화-가환성-재확인">8. 등급화 가환성 (재확인)</a></li>
+        <li><a href="#9--form-부피-형식">9. -form: 부피 형식</a></li>
+        <li><a href="#10-물리적-예-미분형식의-자연스러운-등장">10. 물리적 예: 미분형식의 자연스러운 등장</a></li>
+        <li><a href="#11-형식-합의-가능성">11. 형식 합의 가능성</a></li>
+        <li><a href="#12-정리">12. 정리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/exterior_algebra/index.html"><span itemprop="name">Exterir algebra</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">고차 미분형식: k-form</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/6-b_differential_forms_1form/index.html" title="미분형식: 1-form (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/exterior_algebra/8-b_exterior_derivative/index.html" title="외미분 d (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable exterior_algebra" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="고차-미분형식-k-form">고차 미분형식: k-form</h1>
+
+<h3 id="1-동기-1-form-에서-더-높은-차수로">1. 동기: 1-form 에서 더 높은 차수로<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§6 에서 1-form 을 정의했다. <em>각 점마다 코벡터를 주는 객체</em> — 그리고 그게 결국 <em>각 점에서 1차 미분형식</em> 이었다.</p>
+<p>그런데 자연에는 <em>2차원 면 위의 양</em>, <em>3차원 부피 안의 양</em> 같은 게 흔히 등장한다.</p>
+<ul>
+<li><em>전기장의 플럭스</em>: 면을 통과하는 전기장의 양. 면은 <em>2차원</em> 객체.</li>
+<li><em>전류 밀도</em>: 단위 면적당 흐르는 전하. 역시 2차원적.</li>
+<li><em>질량 밀도</em>: 단위 부피당 질량. <em>3차원</em> 객체.</li>
+<li><em>상대성이론의 전자기 텐서</em>: 시공간 (4차원) 의 <em>2차원 면 요소</em> 와 연동.</li>
+</ul>
+<p>이런 양들을 <em>방향이 붙은 면이나 부피에 자연스럽게 작용</em> 하는 객체로 일반화한 것이 <strong>$k$-form</strong> (고차 미분형식).</p>
+<p>§3-§5 의 <em>쐐기곱과 외대수</em> 와 §6 의 <em>1-form</em> 을 합치면 자연스럽게 $k$-form 이 나온다. 이 장에서 그 정의와 성질, 그리고 <em>왜 자연스러운 객체인지</em> 를 본다.</p>
+<h3 id="2--form-의-정의">2. $k$-form 의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>정의</strong> (k-form): 다양체 $M$ 위의 <strong>$k$-form</strong> 은 <em>각 점마다 $\Lambda^k T_p^* M$ 의 한 원소를 부여</em> 하는 객체다.</p>
+<p>여기서 $T_p^* M$ 은 §6 에서 본 <em>점 $p$ 에서의 쌍대 공간</em> (코벡터 공간). $\Lambda^k T_p^* M$ 은 §3-§4 에서 본 <em>그 쌍대 공간의 $k$-차 외승</em> — 즉 $k$ 개의 코벡터들을 쐐기곱한 객체들의 공간.</p>
+<p>좀 더 직관적으로 풀어 쓰면: <em>$k$-form 은 1-form 들의 쐐기곱과 그 일차 결합</em>. 점마다 그 값이 <em>코벡터들의 쐐기곱이라는 새 종류의 객체</em>.</p>
+<p><strong>작용 방식</strong></p>
+<p>1-form 이 <em>한 벡터를 먹어서 숫자를 내놓았다</em> 면, $k$-form 은 <em>$k$ 개의 벡터를 먹어서 숫자를 내놓는다</em>. 더 정확히는:</p>
+<blockquote>
+<p>$\omega$ 가 $k$-form 일 때, $k$ 개의 접벡터 $v_1, \ldots, v_k \in T_p M$ 에 대해</p>
+$$\omega_p(v_1, v_2, \ldots, v_k) \in \mathbb{R}$$<p>가 정의되고, 이 결과는 <em>각 인자에 대해 선형이며 반대칭</em>.</p>
+</blockquote>
+<p>다중선형성과 반대칭성은 외대수의 본질이라 <em>자동으로</em> 따라 나온다 (§3 의 쐐기곱 성질 그대로).</p>
+<p>기하학적으로 $\omega_p(v_1, \ldots, v_k)$ 는 <em>$k$ 개의 벡터로 만든 방향이 붙은 $k$-차원 평행체에 $k$-form 이 작용한 값</em> — 평행체의 &ldquo;잘 조절된 부피&quot;라 보면 된다.</p>
+<h3 id="3-좌표-기저--form">3. 좌표 기저 $k$-form<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>1-form 의 기저가 $dx^1, dx^2, \ldots, dx^n$ 이었다 (§6). $k$-form 의 기저는 이들의 <em>쐐기곱</em> 으로 얻어진다.</p>
+<p>§4 에서 본 $\Lambda^k V^*$ 의 기저 구조를 그대로 가져오면:</p>
+<blockquote>
+<p>$k$-form 공간의 표준 좌표 기저:</p>
+$$\{\, dx^{i_1} \wedge dx^{i_2} \wedge \cdots \wedge dx^{i_k} \;:\; 1 \le i_1 < i_2 < \cdots < i_k \le n \,\}$$</blockquote>
+<p><em>인덱스가 엄격히 오름차순</em>. §4 와 정확히 같은 약속.</p>
+<p>차원도 §4 와 같다:</p>
+$$\dim \Omega^k(M)_p = \binom{n}{k}$$<p>(여기서 $\Omega^k(M)$ 은 $M$ 위의 모든 $k$-form 의 공간, 첨자 $p$ 는 <em>한 점에서의 차원</em>. 함수로서의 자유도까지 포함하면 무한 차원이지만, <em>한 점의 코벡터 공간만 보면</em> 유한.)</p>
+<p><strong>작은 $n$ 에서 명시적</strong></p>
+<p>3차원 ($n = 3$, 좌표 $x, y, z$):</p>
+<ul>
+<li>1-form 기저 (3개): $dx, dy, dz$</li>
+<li>2-form 기저 (3개): $dx \wedge dy,\ dx \wedge dz,\ dy \wedge dz$</li>
+<li>3-form 기저 (1개): $dx \wedge dy \wedge dz$</li>
+</ul>
+<p>4차원 ($n = 4$, 좌표 $x^0, x^1, x^2, x^3$ — 보통 상대성이론에서는 $x^0 = ct$):</p>
+<ul>
+<li>1-form 기저 (4개): $dx^0, dx^1, dx^2, dx^3$</li>
+<li>2-form 기저 (6개): $dx^0 \wedge dx^1, dx^0 \wedge dx^2, \ldots, dx^2 \wedge dx^3$</li>
+<li>3-form 기저 (4개): $dx^0 \wedge dx^1 \wedge dx^2$ 등</li>
+<li>4-form 기저 (1개): $dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3$</li>
+</ul>
+<p>(4D 2-form 의 <em>여섯 개</em> 기저가 <em>맥스웰 방정식의 전자기 텐서</em> 와 정확히 같은 구조 — 6개 성분: $E_x, E_y, E_z, B_x, B_y, B_z$. §14 에서 자세히.)</p>
+<h3 id="4-일반--form-의-표현">4. 일반 $k$-form 의 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>다양체 위의 <em>임의의 $k$-form</em> 은 좌표 기저의 <em>함수 계수</em> 일차 결합으로 표현된다.</p>
+$$\omega = \sum_{i_1 < i_2 < \cdots < i_k} f_{i_1 i_2 \cdots i_k}(x)\, dx^{i_1} \wedge dx^{i_2} \wedge \cdots \wedge dx^{i_k}$$<p>여기서 $f_{i_1 \cdots i_k}(x)$ 들은 <em>매끄러운 함수</em>. 점에 따라 값이 변하므로 <em>점마다 다른 $k$-벡터</em>.</p>
+<p>합의 인덱스 범위 $i_1 < i_2 < \cdots < i_k$ 는 <em>기저가 중복 없이</em> 표현되도록 제한.</p>
+<p><strong>1-form 의 일반화</strong></p>
+<p>$k = 1$ 일 때 위 표현은</p>
+$$\omega = \sum_{i_1} f_{i_1}(x)\, dx^{i_1}$$<p>— §6 의 1-form 표현. 즉 $k$-form 이 1-form 의 직접적 일반화임이 보인다.</p>
+<h3 id="5-2-form-의-예제">5. 2-form 의 예제<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>가장 친숙한 (1-form 외의) $k$-form 이 2-form 이다. 구체적 예를 본다.</p>
+<p><strong>예 1</strong>: 2차원 평면 ($\mathbb{R}^2$, 좌표 $x, y$) 위의 2-form</p>
+$$\omega = f(x, y)\, dx \wedge dy$$<p>2D 에서 $\dim \Omega^2 = \binom{2}{2} = 1$ 이므로 <em>2D 의 모든 2-form 은 이 형태</em>. 함수 $f$ 가 점에 따른 <em>작용 강도</em> 를 결정.</p>
+<p><strong>예 2</strong>: 3차원 공간 ($\mathbb{R}^3$, 좌표 $x, y, z$) 위의 일반 2-form</p>
+$$\omega = P(x, y, z)\, dy \wedge dz + Q(x, y, z)\, dz \wedge dx + R(x, y, z)\, dx \wedge dy$$<p>(여기서 표준 기저를 약간 재배열한 것 — $dx \wedge dz = -dz \wedge dx$ 라서 $dz \wedge dx$ 로 표기. <em>오른손 좌표계의 순환 순서</em> 에 맞춤.)</p>
+<p>이 표현이 <em>익숙해 보이는 이유</em>: 3D 벡터장 $\vec{F} = (P, Q, R)$ 과 정확히 같은 정보. 사실:</p>
+<blockquote>
+<p>3D 에서 <em>2-form</em> ↔ <em>벡터장</em> 의 자연스러운 대응이 있다 (Hodge 별표를 통해, §13 에서 정확히).</p>
+</blockquote>
+<p>이게 §1 §6 에서 본 &ldquo;<em>3D 에서만 외적이 벡터 같은 행동</em>&rdquo; 의 미분형식 버전.</p>
+<p><strong>2-form 의 작용</strong></p>
+<p>$\omega = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$ 가 두 벡터 $\vec{u}, \vec{v}$ 에 작용하면</p>
+$$\omega(\vec{u}, \vec{v}) = P(u_2 v_3 - u_3 v_2) + Q(u_3 v_1 - u_1 v_3) + R(u_1 v_2 - u_2 v_1) = \vec{F} \cdot (\vec{u} \times \vec{v})$$<p>오른쪽이 <em>플럭스의 기본 공식</em>: 벡터장 $\vec{F}$ 가 평행사변형 $\vec{u} \times \vec{v}$ 를 통과하는 양.</p>
+<blockquote>
+<p>3D 의 2-form 은 <em>벡터장의 플럭스를 측정하는 객체</em>.</p>
+</blockquote>
+<p>이게 <em>왜 전기장의 플럭스</em> 등이 자연스럽게 2-form 으로 표현되는지의 이유.</p>
+<h3 id="6-3-form-의-예제">6. 3-form 의 예제<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>예</strong>: 3차원 공간 위의 일반 3-form</p>
+$$\omega = f(x, y, z)\, dx \wedge dy \wedge dz$$<p>3D 에서 $\dim \Omega^3 = 1$ 이므로 모든 3-form 은 이 형태. 함수 $f$ 가 <em>위치에 따른 밀도</em>.</p>
+<p><strong>3-form 의 작용</strong></p>
+<p>이 3-form 이 세 벡터 $\vec{u}, \vec{v}, \vec{w}$ 에 작용하면</p>
+$$\omega(\vec{u}, \vec{v}, \vec{w}) = f(x, y, z) \cdot \det(\vec{u}, \vec{v}, \vec{w})$$<p>§5 에서 본 <em>행렬식과 쐐기곱의 관계</em> 에 의해, 결과가 <em>$f$ × 평행육면체의 방향 부피</em>.</p>
+<p>이게 <em>부피 적분의 자연스러운 객체</em>. 영역 $\Omega$ 위에서 <em>$f$ 의 부피 적분</em></p>
+$$\iiint_\Omega f\, dV$$<p>는 사실 <em>3-form $\omega = f\, dx \wedge dy \wedge dz$ 의 적분</em>. 여기서 $dV$ 가 우리 외대수의 $dx \wedge dy \wedge dz$ 임을 인식하면, 미적분의 익숙한 공식이 외대수 언어로 <em>자연스럽게 정리</em> 된다.</p>
+<h3 id="7-미분형식의-쐐기곱">7. 미분형식의 쐐기곱<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분형식들끼리 쐐기곱이 정의된다 — $k$-form 과 $l$-form 을 쐐기곱하면 $(k+l)$-form.</p>
+<blockquote>
+$$\wedge: \Omega^k(M) \times \Omega^l(M) \to \Omega^{k+l}(M)$$</blockquote>
+<p><strong>기본 규칙</strong>: 점마다의 쐐기곱을 <em>함수 계수와 함께</em> 한다. 즉 두 미분형식</p>
+$$\omega = f\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}, \quad \eta = g\, dx^{j_1} \wedge \cdots \wedge dx^{j_l}$$<p>의 쐐기곱은</p>
+$$\omega \wedge \eta = (f \cdot g)\, dx^{i_1} \wedge \cdots \wedge dx^{i_k} \wedge dx^{j_1} \wedge \cdots \wedge dx^{j_l}$$<p>(함수 계수는 그냥 곱셈, 1-form 들이 차례대로 쐐기곱.)</p>
+<p>일반 미분형식은 이런 단항 형식의 합이므로 <em>각 단항 쌍에 대해 위 규칙을 적용</em> 하고 <em>분배</em> 한다.</p>
+<p><strong>예제</strong>: 3D 에서 $\omega = x\, dx$ 와 $\eta = y\, dy + z\, dz$ 의 쐐기곱.</p>
+$$\omega \wedge \eta = (x\, dx) \wedge (y\, dy + z\, dz) = xy\, (dx \wedge dy) + xz\, (dx \wedge dz)$$<p>결과는 2-form. <em>함수 계수는 곱해지고, 1-form 들은 쐐기곱 규칙으로 결합</em>.</p>
+<h3 id="8-등급화-가환성-재확인">8. 등급화 가환성 (재확인)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>§4 에서 본 <em>등급화 가환성</em> 이 미분형식에도 그대로 적용된다.</p>
+<blockquote>
+<p>$\omega$ 가 $k$-form, $\eta$ 가 $l$-form 이면</p>
+$$\omega \wedge \eta = (-1)^{kl}\, \eta \wedge \omega$$</blockquote>
+<p>차수의 곱에 따라 부호가 결정.</p>
+<p><strong>주의할 점</strong>: <em>함수 계수</em> (즉 0-form) 는 $k = 0$ 인 미분형식. $(-1)^{0 \cdot l} = 1$ 이므로 함수는 항상 <em>어느 미분형식과도 자유롭게 곱셈 순서를 바꿀 수 있다</em>:</p>
+$$f \wedge \omega = \omega \wedge f = f \omega$$<p>(함수와 미분형식의 쐐기곱은 그냥 <em>함수 배</em>.)</p>
+<p>반면 두 <em>홀수 차수</em> 형식의 곱은 <em>반대칭</em>: 1-form 끼리는 $-$, 1-form 과 3-form 도 $-$, 3-form 끼리도 $-$.</p>
+<p>두 <em>짝수 차수</em> 형식은 <em>교환적</em>: 2-form 끼리, 4-form 끼리 등.</p>
+<h3 id="9--form-부피-형식">9. $n$-form: 부피 형식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>특별한 차수의 미분형식 — <em>$n$ 차원 다양체 위의 $n$-form</em> — 에는 따로 이름이 붙는다.</p>
+<blockquote>
+<p>$n$ 차원 다양체 위의 $n$-form 을 <strong>최고차 형식 (top form)</strong> 또는 <em>부피 형식의 후보</em> 라 부른다.</p>
+</blockquote>
+<p>§4 에서 본 <em>최고차 외승 $\Lambda^n V^*$ 가 1차원</em> 이라는 사실의 미분형식 버전. 즉 <em>$n$ 차원 다양체 위의 모든 $n$-form 은</em></p>
+$$\omega = f(x)\, dx^1 \wedge dx^2 \wedge \cdots \wedge dx^n$$<p>의 형태로 <em>유일하게</em> 표현됨. 함수 $f$ 가 점마다의 <em>부피 밀도</em>.</p>
+<p><strong>부피 형식과 적분의 자연스러운 연결</strong></p>
+<p>$n$-form 의 적분이 <em>$n$-차원 다양체 위의 적분</em>. 익숙한 다중적분</p>
+$$\int_M f\, dV$$<p>가 사실은 <em>$n$-form $\omega = f\, dx^1 \wedge \cdots \wedge dx^n$ 의 적분</em>. 자세한 정의는 §10.</p>
+<p><strong>Lebesgue 측도와의 관계</strong></p>
+<p>표준 좌표에서 $dx^1 \wedge \cdots \wedge dx^n$ 이 <em>Lebesgue 측도의 무한소</em> 와 일치. 차이는 <em>외대수의 부호 (방향) 정보</em> 를 갖는다는 점.</p>
+<p>미분형식의 적분은 자동으로 <em>방향이 붙은 적분</em> — 이게 §11 의 Stokes 정리의 자연스러운 부호 처리를 가능하게 한다.</p>
+<h3 id="10-물리적-예-미분형식의-자연스러운-등장">10. 물리적 예: 미분형식의 자연스러운 등장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분형식이 <em>자연스러운 언어</em> 가 되는 물리 예를 정리해 본다.</p>
+<p><strong>플럭스 (flux)</strong>: 자기장 / 전기장이 면을 통과하는 양은 <em>2-form</em> 의 면 적분.</p>
+$$\Phi_B = \int_S \vec{B} \cdot d\vec{A} = \int_S \omega_B \qquad \text{(2-form 적분)}$$<p>여기서 $\omega_B = B_x\, dy \wedge dz + B_y\, dz \wedge dx + B_z\, dx \wedge dy$.</p>
+<p><strong>일과 순환 (circulation)</strong>: 힘이 경로를 따라 한 일은 <em>1-form</em> 의 곡선 적분.</p>
+$$W = \int_C \vec{F} \cdot d\vec{r} = \int_C \omega_F \qquad \text{(1-form 적분)}$$<p>여기서 $\omega_F = F_x\, dx + F_y\, dy + F_z\, dz$.</p>
+<p><strong>부피 적분</strong>: 질량 / 전하 등의 부피 적분은 <em>3-form</em> (3D) 또는 <em>4-form</em> (4D) 의 적분.</p>
+$$M = \int_\Omega \rho\, dV = \int_\Omega \omega_\rho$$<p>여기서 $\omega_\rho = \rho\, dx \wedge dy \wedge dz$.</p>
+<p><strong>전자기 텐서 (4D)</strong>: 상대성이론의 전자기 텐서 $F_{\mu\nu}$ 가 <em>4차원 시공간 위의 2-form</em>.</p>
+$$F = \frac{1}{2} F_{\mu\nu}\, dx^\mu \wedge dx^\nu$$<p>이게 <em>Maxwell 방정식을 두 줄로 압축</em> 하는 자연스러운 표현. §14 에서 자세히.</p>
+<p><strong>핵심</strong>: 위 모든 양들이 <em>미분형식의 적분</em> 형태로 정리되며, 그 <em>차수가 적분 영역의 차원과 일치</em>. 1차원 적분 → 1-form, 2차원 적분 → 2-form, $n$ 차원 적분 → $n$-form. 이게 <em>왜 미분형식이 적분의 자연스러운 언어인지</em> 의 답.</p>
+<h3 id="11-형식-합의-가능성">11. 형식 합의 가능성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>여러 차수의 미분형식을 <em>합쳐서</em> 하나의 객체로 다룰 수도 있다. <em>형식 합</em> (formal sum):</p>
+$$\Omega = \alpha_0 + \alpha_1 + \alpha_2 + \cdots + \alpha_n$$<p>(각 $\alpha_k$ 가 $k$-form.) 이건 §4 의 <em>전체 외대수 $\Lambda V$</em> 의 미분형식 버전.</p>
+<p>전체 외대수 미분형식의 공간:</p>
+$$\Omega^*(M) = \bigoplus_{k=0}^{n} \Omega^k(M)$$<p>이 공간에서 <em>쐐기곱이 자유롭게 작동</em> 한다 (다른 차수 끼리도). 결과는 <em>합 안에서 자동으로 적절한 차수에 들어간다</em>.</p>
+<p>이런 통합된 시각이 <em>Stokes 정리, de Rham cohomology, Hodge 이론</em> 의 자연스러운 무대.</p>
+<h3 id="12-정리">12. 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 장에서 다룬 내용을 정리한다.</p>
+<p><strong>1)</strong> <em>$k$-form</em> 은 <em>각 점마다 $\Lambda^k T_p^* M$ 의 원소</em> 를 주는 객체. 1-form 의 자연스러운 일반화.</p>
+<p><strong>2)</strong> $k$-form 은 <em>$k$ 개의 벡터를 먹어서 숫자를 내놓는</em> 다중선형 반대칭 함수. 점마다 작용.</p>
+<p><strong>3)</strong> <em>좌표 기저</em>: $dx^{i_1} \wedge \cdots \wedge dx^{i_k}$ ($i_1 < \cdots < i_k$). 한 점에서의 차원이 $\binom{n}{k}$.</p>
+<p><strong>4)</strong> <em>일반 표현</em>: $\omega = \sum_{i_1 < \cdots < i_k} f_{i_1 \cdots i_k}(x)\, dx^{i_1} \wedge \cdots \wedge dx^{i_k}$. 함수 계수가 점마다 다름.</p>
+<p><strong>5)</strong> <em>2-form</em>: 3D 에서 <em>벡터장의 플럭스</em> 와 자연스러운 대응. $\omega(\vec{u}, \vec{v}) = \vec{F} \cdot (\vec{u} \times \vec{v})$.</p>
+<p><strong>6)</strong> <em>3-form (3D)</em>: 부피 적분의 자연스러운 객체. $\omega = f\, dx \wedge dy \wedge dz$.</p>
+<p><strong>7)</strong> <em>미분형식의 쐐기곱</em>: $\wedge: \Omega^k \times \Omega^l \to \Omega^{k+l}$. 함수 계수는 곱셈, 1-form 들은 외대수 규칙.</p>
+<p><strong>8)</strong> <em>등급화 가환성</em>: $\omega \wedge \eta = (-1)^{kl}\, \eta \wedge \omega$. 함수는 항상 교환적.</p>
+<p><strong>9)</strong> <em>$n$-form (top form)</em>: $n$ 차원 다양체에서 1차원 공간. <em>부피 적분의 자연스러운 객체</em> — 자동으로 방향 정보 포함.</p>
+<p><strong>10)</strong> <em>물리적 자연스러움</em>: 1-form ↔ 곡선 적분, 2-form ↔ 면 플럭스, $n$-form ↔ 부피 적분. <em>적분 영역의 차원과 미분형식의 차수가 일치</em>.</p>
+<p>다음 §8 에서 <em>외미분 $d$</em> — 미분형식들 사이의 <em>통합된 미분 연산자</em> — 를 정의한다. $d$ 가 <em>그라디언트, 발산, 회전</em> 등을 <em>하나의 연산자로 통합</em> 한다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu">
+            <li class="" data-nav-id="/exterior_algebra/1-b_antisymmetry_motivation/index.html"><a class="padding" href="/exterior_algebra/1-b_antisymmetry_motivation/index.html">동기: 왜 반대칭이 중요한가</a></li>
+            <li class="" data-nav-id="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html"><a class="padding" href="/exterior_algebra/2-b_multilinearity_antisymmetry/index.html">다중선형성과 반대칭</a></li>
+            <li class="" data-nav-id="/exterior_algebra/3-b_wedge_product_definition/index.html"><a class="padding" href="/exterior_algebra/3-b_wedge_product_definition/index.html">쐐기곱의 정의</a></li>
+            <li class="" data-nav-id="/exterior_algebra/4-b_exterior_algebra_dimension/index.html"><a class="padding" href="/exterior_algebra/4-b_exterior_algebra_dimension/index.html">외대수의 기저와 차원</a></li>
+            <li class="" data-nav-id="/exterior_algebra/5-b_determinant_meaning/index.html"><a class="padding" href="/exterior_algebra/5-b_determinant_meaning/index.html">행렬식의 진정한 의미</a></li>
+            <li class="" data-nav-id="/exterior_algebra/6-b_differential_forms_1form/index.html"><a class="padding" href="/exterior_algebra/6-b_differential_forms_1form/index.html">미분형식: 1-form</a></li>
+            <li class="active " data-nav-id="/exterior_algebra/7-b_differential_forms_kform/index.html"><a class="padding" href="/exterior_algebra/7-b_differential_forms_kform/index.html">고차 미분형식: k-form</a></li>
+            <li class="" data-nav-id="/exterior_algebra/8-b_exterior_derivative/index.html"><a class="padding" href="/exterior_algebra/8-b_exterior_derivative/index.html">외미분 d</a></li>
+            <li class="" data-nav-id="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html"><a class="padding" href="/exterior_algebra/9-b_exterior_derivative_vector_calculus/index.html">외미분과 벡터 미적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/10-b_integration_of_forms/index.html"><a class="padding" href="/exterior_algebra/10-b_integration_of_forms/index.html">미분형식의 적분</a></li>
+            <li class="" data-nav-id="/exterior_algebra/11-b_stokes_theorem/index.html"><a class="padding" href="/exterior_algebra/11-b_stokes_theorem/index.html">Stokes 정리</a></li>
+            <li class="" data-nav-id="/exterior_algebra/12-b_de_rham_cohomology/index.html"><a class="padding" href="/exterior_algebra/12-b_de_rham_cohomology/index.html">de Rham 코호몰로지</a></li>
+            <li class="" data-nav-id="/exterior_algebra/13-b_hodge_star/index.html"><a class="padding" href="/exterior_algebra/13-b_hodge_star/index.html">Hodge 별표</a></li>
+            <li class="" data-nav-id="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html"><a class="padding" href="/exterior_algebra/14-b_applications_maxwell_symplectic_berry_noether/index.html">응용: Maxwell, 심플렉틱, Berry, Noether</a></li></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="example1) Lossless wave equation
+아래 미분방정식의 해는 단일 주기를 가지며, 실수이다.
+$$ \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right) $$sol$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다. $$ \nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right) $$ $$ \left(\nabla^2&#43;\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0 $$ $k=\omega/v$ 이면, $$ \left(\nabla^2&#43;k^2\right)\underline u\left(\vec{r}\right)=0 $$ 따라서, $$ u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack $$ 만약, 1차원의 &#43;x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면, $$ \underline u\left(x\right)=Ae^{&#43;ik x} $$ $$ u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right] $$example2) Lossy wave equation">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Phasor transform for PDE :: 수리전자물리학">
+    <meta name="twitter:description" content="example1) Lossless wave equation
+아래 미분방정식의 해는 단일 주기를 가지며, 실수이다.
+$$ \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right) $$sol$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다. $$ \nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right) $$ $$ \left(\nabla^2&#43;\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0 $$ $k=\omega/v$ 이면, $$ \left(\nabla^2&#43;k^2\right)\underline u\left(\vec{r}\right)=0 $$ 따라서, $$ u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack $$ 만약, 1차원의 &#43;x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면, $$ \underline u\left(x\right)=Ae^{&#43;ik x} $$ $$ u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right] $$example2) Lossy wave equation">
+    <meta property="og:url" content="http://localhost:1313/ode_pde/transformation/b_phasor_transform_for_pde/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Phasor transform for PDE :: 수리전자물리학">
+    <meta property="og:description" content="example1) Lossless wave equation
+아래 미분방정식의 해는 단일 주기를 가지며, 실수이다.
+$$ \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right) $$sol$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다. $$ \nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right) $$ $$ \left(\nabla^2&#43;\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0 $$ $k=\omega/v$ 이면, $$ \left(\nabla^2&#43;k^2\right)\underline u\left(\vec{r}\right)=0 $$ 따라서, $$ u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack $$ 만약, 1차원의 &#43;x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면, $$ \underline u\left(x\right)=Ae^{&#43;ik x} $$ $$ u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right] $$example2) Lossy wave equation">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ODE & PDE">
+    <meta itemprop="name" content="(b) Phasor transform for PDE :: 수리전자물리학">
+    <meta itemprop="description" content="example1) Lossless wave equation
+아래 미분방정식의 해는 단일 주기를 가지며, 실수이다.
+$$ \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right) $$sol$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다. $$ \nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right) $$ $$ \left(\nabla^2&#43;\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0 $$ $k=\omega/v$ 이면, $$ \left(\nabla^2&#43;k^2\right)\underline u\left(\vec{r}\right)=0 $$ 따라서, $$ u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack $$ 만약, 1차원의 &#43;x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면, $$ \underline u\left(x\right)=Ae^{&#43;ik x} $$ $$ u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right] $$example2) Lossy wave equation">
+    <meta itemprop="wordCount" content="164">
+    <title>(b) Phasor transform for PDE :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/ode_pde\/transformation\/b_phasor_transform_for_pde\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/ode_pde/transformation/b_phasor_transform_for_pde/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/index.html"><span itemprop="name">ODE &amp; PDE</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/ode_pde/transformation/index.html"><span itemprop="name">Transformation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Phasor transform for PDE</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/transformation/b_phasor_transform/index.html" title="(b) Phasor transform (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/ode_pde/transformation/a_laplace_transform/index.html" title="(a) Laplace transform (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable ode_pde" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-phasor-transform-for-pde">(b) Phasor transform for PDE</h1>
+
+<hr>
+<p><strong>example1) Lossless wave equation</strong></p>
+<p>아래 미분방정식의 해는 <strong>단일 주기를 가지며, 실수</strong>이다.</p>
+$$
+\nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)
+$$
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.
+    
+$$
+\nabla^2\underline u\left(\vec{r}\right)=-\frac{\omega^2}{v^2}\underline u\left(\vec{r}\right)
+$$
+    
+$$
+\left(\nabla^2+\frac{\omega^2}{v^2}\right)\underline u\left(\vec{r}\right)=0
+$$
+    
+$k=\omega/v$ 이면,
+    
+$$
+\left(\nabla^2+k^2\right)\underline u\left(\vec{r}\right)=0
+$$
+    
+따라서,
+    
+$$
+u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack
+$$
+    
+만약, 1차원의 +x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면,
+
+$$
+\underline u\left(x\right)=Ae^{+ik x}
+$$
+    
+$$
+u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right]
+$$
+  </div>
+</details>
+<hr>
+<p><strong>example2) Lossy wave equation</strong></p>
+<p>아래 미분방정식의 해는 <strong>단일 주기를 가지며, 실수</strong>이다.</p>
+$$
+\nabla^2u\left(\vec{r},t\right)=\mu\epsilon\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)+\mu\sigma\frac{\partial}{\partial t}u\left(\vec{r},t\right)
+$$
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    sol
+  </summary>
+  <div class="box-content">
+$e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.
+    
+$$
+\nabla^2\underline u\left(\vec{r}\right)=-\omega^2\mu\epsilon\underline u\left(\vec{r}\right)-i\omega\mu\sigma\underline u\left(\vec{r}\right)
+$$
+    
+$$
+\left(\nabla^2+\omega^2\mu\epsilon+i\omega\mu\sigma\right)\underline u\left(\vec{r}\right)=0
+$$
+    
+$\displaystyle \underline \epsilon = \epsilon\left(1+i\frac{\sigma}{\omega\epsilon}\right)$ 를 복소 유전율이라고 한다.
+    
+$$
+\left(\nabla^2+\omega^2\mu\underline{\epsilon}\right)\underline u\left(\vec{r}\right)=0
+$$
+
+$\underline{\gamma}^2=-\omega^2\mu\underline{\epsilon}$, $\underline{\gamma}=-\alpha+i\beta$  라고 하면,
+   
+$$
+\left(\nabla^2-\underline{\gamma}^2\right)\underline u\left(\vec{r}\right)=0
+$$
+    
+$$
+\alpha=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}+1\right)^{1/2}
+$$
+    
+$$
+\beta=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}-1\right)^{1/2}
+$$
+    
+만약, 도전율이 매우 크다면(양도체),
+    
+$$
+\alpha=\beta=\sqrt{\pi f\mu \sigma}
+$$
+    
+따라서,
+    
+$$
+u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack
+$$
+
+만약, 1차원의 +x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면,
+
+$$
+\underline u\left(x\right)=Ae^{-\alpha x}e^{+i\beta x}
+$$
+
+$$
+u\left(x,t\right)=\operatorname{Re}\left[e^{-\alpha x}\int d\omega\left\lbrack c\left(\omega\right)e^{i\left(\beta x-\omega t\right)}\right\rbrack\right]
+$$
+  </div>
+</details>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/ode_pde/homogeneous/index.html"><a class="padding default-animation" href="/ode_pde/homogeneous/index.html">Homogeneous</a><ul id="R-subsections-9cf59d00783ac0253b0183f2bd2f94f7" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/inhomogeneous/index.html"><a class="padding default-animation" href="/ode_pde/inhomogeneous/index.html">Inhomogeneous</a><ul id="R-subsections-a58d165d753d3969b937897fa286929c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/p_circuit_examples_for_odes/index.html"><a class="padding" href="/ode_pde/p_circuit_examples_for_odes/index.html">(p) Circuit examples for ODEs</a></li>
+            <li class="" data-nav-id="/ode_pde/special_odes/index.html"><a class="padding" href="/ode_pde/special_odes/index.html">Special ODEs</a></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/sturm_liouville/index.html"><a class="padding default-animation" href="/ode_pde/sturm_liouville/index.html">Strum-Lioville</a><ul id="R-subsections-25cace592e7d28c495e0f6cb791dedd4" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/seperation_of_varibles/index.html"><a class="padding default-animation" href="/ode_pde/seperation_of_varibles/index.html">Seperation of variables</a><ul id="R-subsections-c2886adf774e7c77743179e8bf11b8b3" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/green_function/index.html"><a class="padding default-animation" href="/ode_pde/green_function/index.html">Green function</a><ul id="R-subsections-d28624b797e893776f3654043b1dccd0" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/ode_pde/transformation/index.html"><a class="padding default-animation" href="/ode_pde/transformation/index.html">Transformation</a><ul id="R-subsections-dd8832bb068aada972610b334add7642" class="collapsible-menu">
+            <li class="" data-nav-id="/ode_pde/transformation/b_phasor_transform/index.html"><a class="padding" href="/ode_pde/transformation/b_phasor_transform/index.html">(b) Phasor transform</a></li>
+            <li class="active " data-nav-id="/ode_pde/transformation/b_phasor_transform_for_pde/index.html"><a class="padding" href="/ode_pde/transformation/b_phasor_transform_for_pde/index.html">(b) Phasor transform for PDE</a></li>
+            <li class="" data-nav-id="/ode_pde/transformation/a_laplace_transform/index.html"><a class="padding" href="/ode_pde/transformation/a_laplace_transform/index.html">(a) Laplace transform</a></li>
+            <li class="" data-nav-id="/ode_pde/transformation/a_fourier_transform/index.html"><a class="padding" href="/ode_pde/transformation/a_fourier_transform/index.html">(a) Fourier transform</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ode_pde/uniqueness_theorem/index.html"><a class="padding default-animation" href="/ode_pde/uniqueness_theorem/index.html">Uniqueness theorem</a><ul id="R-subsections-18379903dda62aac390ccefba7f7b640" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

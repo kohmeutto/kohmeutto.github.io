@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 동기: 스펙트럼 정보의 순수한 추출이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수
+$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?
+답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^&#43;$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Spectral function :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 동기: 스펙트럼 정보의 순수한 추출이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수
+$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?
+답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^&#43;$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.">
+    <meta property="og:url" content="http://localhost:1313/greens_function/negf/b_spectral_function/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Spectral function :: 수리전자물리학">
+    <meta property="og:description" content="1. 동기: 스펙트럼 정보의 순수한 추출이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수
+$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?
+답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^&#43;$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Green&#39;s function">
+    <meta itemprop="name" content="(b) Spectral function :: 수리전자물리학">
+    <meta itemprop="description" content="1. 동기: 스펙트럼 정보의 순수한 추출이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수
+$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?
+답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^&#43;$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.">
+    <meta itemprop="wordCount" content="1890">
+    <title>(b) Spectral function :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/greens_function\/negf\/b_spectral_function\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/greens_function/negf/b_spectral_function/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-동기-스펙트럼-정보의-순수한-추출">1. 동기: 스펙트럼 정보의 순수한 추출</a></li>
+        <li><a href="#2-정의와-기본-성질">2. 정의와 기본 성질</a></li>
+        <li><a href="#3-닫힌-시스템에서의-표현">3. 닫힌 시스템에서의 표현</a></li>
+        <li><a href="#4-상태-밀도와의-관계">4. 상태 밀도와의 관계</a></li>
+        <li><a href="#5-환경-결합-lifetime-broadening">5. 환경 결합: Lifetime broadening</a></li>
+        <li><a href="#6-비평형으로의-확장-점유와의-분리">6. 비평형으로의 확장: 점유와의 분리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/index.html"><span itemprop="name">Green&#39;s function</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/greens_function/negf/index.html"><span itemprop="name">NEGF</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Spectral function</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_retarded_advanced/index.html" title="(b) Retarded & advanced GF (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/greens_function/negf/b_lesser_greater/index.html" title="(b) Lesser and greater GF (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable green&#39;s_function" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-spectral-function">(b) Spectral function</h1>
+
+<hr>
+<h3 id="1-동기-스펙트럼-정보의-순수한-추출">1. 동기: 스펙트럼 정보의 순수한 추출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수</p>
+$$
+A(E) = i[G^R(E) - G^A(E)]
+$$<p>를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?</p>
+<p>답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^+$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.</p>
+<p>두 그린함수의 차이를 $i$ 배 한 객체 $A(E)$ 는 이 분리를 깔끔하게 한다. $A(E)$ 는 다음 성질을 갖는다.</p>
+<ul>
+<li><strong>실수</strong> 행렬이다 (각 행렬 요소가 복소수일 수 있지만, $A$ 자체는 Hermitian)</li>
+<li><strong>양의 정부호 (positive semidefinite)</strong> 이다</li>
+<li>시스템의 <strong>순수한 스펙트럼 정보</strong> 를 담는다 — 어떤 상태가 어떤 에너지에 어느 정도의 폭으로 존재하는가</li>
+</ul>
+<p>이러한 성질로 $A(E)$ 는 &ldquo;확률 밀도와 같은&rdquo; 해석을 허용하며, 상태 밀도 (DOS) 와의 직접적 연결이 자연스럽다. 또한 NEGF 의 두 가지 정보 분리 — 스펙트럼과 점유 — 에서 $A(E)$ 가 스펙트럼 쪽을 전담하고, 점유는 별도의 그린함수 $G^<$ 가 담는다.</p>
+<p>이 절에서는 $A(E)$ 의 정의와 핵심 성질, 그것이 상태 밀도와 어떻게 연결되는지, 그리고 환경 결합이 있을 때 어떻게 변형되는지를 정리한다.</p>
+<hr>
+<h3 id="2-정의와-기본-성질">2. 정의와 기본 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 두 가지 동등한 정의</strong></p>
+<p>스펙트럼 함수의 정의는 두 가지 동등한 형태로 표현된다.</p>
+$$
+A(E) = i\bigl[G^R(E) - G^A(E)\bigr] = -2\,\text{Im}\,G^R(E)
+$$<p>두 번째 형태는 $G^A = [G^R]^\dagger$ 로부터 따라온다. $G^R - G^A = G^R - [G^R]^\dagger = 2i\,\text{Im}\,G^R$ 이므로 $A = i \cdot 2i\,\text{Im}\,G^R = -2\,\text{Im}\,G^R$.</p>
+<p>이 두 표현이 동등하지만 사용 맥락에 따라 한쪽이 편하다. 형식적 분석에서는 $i[G^R - G^A]$ 가 자연스럽고, 수치 계산에서는 $-2\,\text{Im}\,G^R$ 가 직접적이다.</p>
+<p><strong>2) Hermitian 성질</strong></p>
+<p>$A(E)$ 는 Hermitian 행렬이다.</p>
+$$
+A(E)^\dagger = -i[G^R - G^A]^\dagger = -i[G^A - G^R] = i[G^R - G^A] = A(E)
+$$<p>이로부터 행렬 요소가 다음을 만족한다.</p>
+$$
+A(E, x, x')^* = A(E, x', x)
+$$<p>대각 성분 $A(E, x, x)$ 는 실수이다.</p>
+<p><strong>3) 양의 정부호성</strong></p>
+<p>$A(E)$ 의 핵심 성질은 양의 정부호 (positive semidefinite) 이다. 즉 모든 벡터 $|\phi\rangle$ 에 대해</p>
+$$
+\langle\phi|A(E)|\phi\rangle \geq 0
+$$<p>이 성질의 의미는 크다. $A(E)$ 가 &ldquo;확률 밀도와 같은&rdquo; 양 — 음수가 될 수 없는 분포 함수 — 으로 해석될 수 있게 한다. 특히 대각 성분 $A(E, x, x)$ 는 항상 비음수이며, 위치 $x$ 에서 에너지 $E$ 의 상태가 존재하는 밀도로 해석된다.</p>
+<p>양의 정부호성을 증명하기 위해 다음 유용한 표현을 도출한다.</p>
+$$
+\boxed{A(E) = G^R(E)\,\Gamma(E)\,G^A(E)}
+$$<p>여기서</p>
+$$
+\Gamma(E) = i[\Sigma^R(E) - \Sigma^A(E)] = -2\,\text{Im}\,\Sigma^R(E)
+$$<p>는 self-energy 의 허수부로부터 정의되는 행렬이며, <strong>결합 강도 (coupling strength)</strong> 또는 <strong>broadening 행렬</strong> 이라 한다.</p>
+<p>proof) $G^R = (E - H - \Sigma^R)^{-1}$, $G^A = (E - H - \Sigma^A)^{-1}$ 로부터</p>
+$$
+G^R - G^A = G^R\,[(G^A)^{-1} - (G^R)^{-1}]\,G^A = G^R\,[\Sigma^R - \Sigma^A]\,G^A
+$$<p>$\Sigma^R - \Sigma^A = -i\Gamma$ 대입하면</p>
+$$
+A(E) = i[G^R - G^A] = i\cdot G^R\cdot(-i\Gamma)\cdot G^A = G^R\,\Gamma\,G^A
+$$<p>이 표현에서 $G^A = [G^R]^\dagger$ 이므로 $A(E) = G^R\,\Gamma\,[G^R]^\dagger$ 이다. $\Gamma(E)$ 가 양의 정부호이면 (환경으로의 손실이 항상 비음수이므로 물리적으로 $\Gamma \geq 0$), $A(E)$ 가 자동으로 양의 정부호이다 — 양의 정부호 행렬을 양쪽에서 conjugate 한 형태이기 때문이다.</p>
+<p>이 결과는 NEGF 의 일관성을 보증하는 중요한 정리이다. Self-energy 가 물리적이라면 (환경으로 손실이 흘러가는 방향, $\Gamma > 0$) 스펙트럼 함수가 자동으로 양수가 보장된다.</p>
+<p><strong>4) 합 규칙 (sum rule)</strong></p>
+<p>$A(E)$ 의 에너지 적분은 다음을 만족한다.</p>
+$$
+\int_{-\infty}^{\infty} \frac{dE}{2\pi}\,A(E) = \hat{I}
+$$<p>모든 에너지에 걸쳐 적분하면 항등 연산자 ($\hat{I}$) 가 회복된다. 의미는 시스템의 모든 상태가 에너지 분포로 회수된다는 것이다 — 합 규칙은 &ldquo;전체 상태 수 보존&rdquo; 의 표현이다.</p>
+<p>증명은 닫힌 시스템에서 가장 직접적이다. $A(E) = 2\pi\sum_n \delta(E - E_n)\,|\psi_n\rangle\langle\psi_n|$ 의 에너지 적분이 $\sum_n |\psi_n\rangle\langle\psi_n| = \hat{I}$ (완비성). 환경 결합이 있는 경우 각 델타 함수가 Lorentzian 으로 broadening 되지만, Lorentzian 의 면적이 $2\pi$ 로 보존되므로 합 규칙이 유지된다.</p>
+<hr>
+<h3 id="3-닫힌-시스템에서의-표현">3. 닫힌 시스템에서의 표현<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>자기수반 $H$ 의 이산 스펙트럼에서 $A(E)$ 의 명시적 표현을 본다.</p>
+<p><strong>1) 스펙트럼 분해</strong></p>
+<p>이전 절에서 도출한 표현</p>
+$$
+A(E) = 2\pi\sum_n \delta(E - E_n)\,|\psi_n\rangle\langle\psi_n|
+$$<p>각 고유값 $E_n$ 에서 델타 함수가 위치하며, 그 가중치는 사영 연산자 $|\psi_n\rangle\langle\psi_n|$ 이다.</p>
+<p><strong>2) 위치 표현</strong></p>
+<p>행렬 요소로 풀어쓰면</p>
+$$
+A(E, x, x') = 2\pi\sum_n \delta(E - E_n)\,\psi_n(x)\,\psi_n^*(x')
+$$<p>대각 성분</p>
+$$
+A(E, x, x) = 2\pi\sum_n \delta(E - E_n)\,|\psi_n(x)|^2
+$$<p>은 위치 $x$ 에서 에너지 $E$ 의 상태가 존재할 확률 밀도의 $2\pi$ 배이다.</p>
+<p><strong>3) 합 규칙 확인</strong></p>
+$$
+\int_{-\infty}^{\infty} \frac{dE}{2\pi}\,A(E) = \sum_n |\psi_n\rangle\langle\psi_n| = \hat{I}
+$$<p>완비성에서 자동으로 따라온다.</p>
+<hr>
+<h3 id="4-상태-밀도와의-관계">4. 상태 밀도와의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>스펙트럼 함수의 trace 와 대각 성분이 시스템의 다양한 상태 밀도와 직접 연결된다.</p>
+<p><strong>1) Total density of states (DOS)</strong></p>
+<p>시스템 전체의 상태 밀도는 스펙트럼 함수의 trace 의 $1/(2\pi)$ 배이다.</p>
+$$
+\rho(E) = \frac{1}{2\pi}\,\text{Tr}\,A(E)
+$$<p>이산 스펙트럼:</p>
+$$
+\rho(E) = \sum_n \delta(E - E_n)
+$$<p>각 고유 에너지에 단위 무게의 델타 함수. 전체 적분 $\int dE\,\rho(E)$ 가 시스템의 차원과 일치 — 합 규칙의 귀결.</p>
+<p>환경 결합 ($H_{\text{eff}} = H - i\eta\hat{I}$):</p>
+$$
+\rho(E) = \frac{1}{\pi}\sum_n \frac{\eta}{(E - E_n)^2 + \eta^2}
+$$<p>각 레벨이 Lorentzian 으로 broadening. 면적은 보존 ($\int dE\,\eta/[\pi((E-E_n)^2+\eta^2)] = 1$).</p>
+<p><strong>2) Local density of states (LDOS)</strong></p>
+<p>위치 $x$ 에서의 상태 밀도는 $A(E)$ 의 대각 성분이다.</p>
+$$
+\rho(E, x) = \frac{1}{2\pi}\,A(E, x, x)
+$$<p>이산 스펙트럼:</p>
+$$
+\rho(E, x) = \sum_n |\psi_n(x)|^2\,\delta(E - E_n)
+$$<p>위치 $x$ 에서 에너지 $E_n$ 의 상태가 발견될 확률 밀도 $|\psi_n(x)|^2$ 의 가중치를 가진다.</p>
+<p>LDOS 는 실험에서 자주 측정되는 양이다. 주사 터널링 현미경 (STM) 의 미분 컨덕턴스가 LDOS 에 비례한다는 사실은 응집물질 실험의 기본이다. 표면의 LDOS 를 위치별로 측정하면 시스템의 전자 구조를 공간적으로 시각화할 수 있다.</p>
+<p><strong>3) 사영 상태 밀도 (projected DOS)</strong></p>
+<p>특정 부분 공간 $\mathcal{S}$ 에 대한 사영 상태 밀도는</p>
+$$
+\rho_{\mathcal{S}}(E) = \frac{1}{2\pi}\,\text{Tr}\bigl[\hat{P}_{\mathcal{S}}\,A(E)\bigr]
+$$<p>여기서 $\hat{P}_{\mathcal{S}}$ 는 $\mathcal{S}$ 로의 사영 연산자이다. 응용에서 자주 등장하는 두 가지 경우:</p>
+<ul>
+<li><strong>원자 궤도 사영</strong>: 특정 원자 ($s, p, d$ 등) 의 PDOS. 화학 결합 분석.</li>
+<li><strong>공간 영역 사영</strong>: 시스템의 특정 영역 (예: 좌측 lead 와 결합된 부분) 의 PDOS. 양자수송 분석.</li>
+</ul>
+<p><strong>4) 부분 적분</strong></p>
+<p>특정 에너지 구간 $[E_1, E_2]$ 의 상태 수는</p>
+$$
+N(E_1, E_2) = \int_{E_1}^{E_2} dE\,\rho(E) = \frac{1}{2\pi}\int_{E_1}^{E_2} dE\,\text{Tr}\,A(E)
+$$<p>특히 Fermi 에너지 이하의 상태 수가 시스템의 전자 수와 일치한다 — 평형에서 자명한 결과지만, NEGF framework 의 일관성 검증으로 자주 사용된다.</p>
+<hr>
+<h3 id="5-환경-결합-lifetime-broadening">5. 환경 결합: Lifetime broadening<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>환경 결합이 있는 시스템에서 $A(E)$ 가 어떻게 변형되는지를 본다. 이미 이전 절에서 단순 케이스 ($H_{\text{eff}} = H - i\eta\hat{I}$) 의 결과를 보았으나, 여기서는 더 일반적인 상황과 그 물리적 의미를 다룬다.</p>
+<p><strong>1) 일반 self-energy 가 있는 케이스</strong></p>
+<p>일반 self-energy $\Sigma(E)$ 에 대해 효과 Hamiltonian 은</p>
+$$
+H_{\text{eff}}(E) = H + \Sigma(E)
+$$<p>이며, retarded 그린함수는</p>
+$$
+G^R(E) = [E\hat{I} - H - \Sigma^R(E)]^{-1}
+$$<p>$\Sigma^R = \Delta(E) - i\Gamma(E)/2$ 로 분해하면 $\Delta$ 가 에너지 shift, $\Gamma$ 가 broadening 행렬이다.</p>
+<p><strong>2) 대각화 케이스: 단순한 broadening</strong></p>
+<p>$\Sigma(E)$ 가 $H$ 와 가환하면 (단순화된 케이스), 두 연산자가 동시에 대각화 가능하므로 $H$ 의 고유 상태 $|\psi_n\rangle$ 가 그대로 보존되고 각 고유값만 복소 평면에서 이동한다.</p>
+$$
+H_{\text{eff}}|\psi_n\rangle = (E_n + \Delta_n - i\gamma_n/2)|\psi_n\rangle
+$$<p>여기서 $\Delta_n = \langle\psi_n|\Delta|\psi_n\rangle, \gamma_n = \langle\psi_n|\Gamma|\psi_n\rangle$.</p>
+<p>각 상태별로 다른 에너지 shift $\Delta_n$ 과 다른 폭 $\gamma_n$ 을 가진다. 스펙트럼 함수는</p>
+$$
+A(E) = \sum_n |\psi_n\rangle\langle\psi_n|\cdot\frac{\gamma_n}{(E - E_n - \Delta_n)^2 + (\gamma_n/2)^2}
+$$<p>각 상태가 중심 $E_n + \Delta_n$, 반치폭 $\gamma_n$ 의 Lorentzian.</p>
+<p><strong>3) Lifetime broadening 의 물리적 해석</strong></p>
+<p>각 상태의 폭 $\gamma_n$ 은 그 상태의 수명 $\tau_n = \hbar/\gamma_n$ 의 역수에 비례한다 (시간-에너지 불확정성). 수명이 길면 좁은 Lorentzian (잘 정의된 에너지), 수명이 짧으면 넓은 Lorentzian (에너지 폭이 큼).</p>
+<p>세 가지 영역으로 분류할 수 있다.</p>
+<ul>
+<li><strong>Weak coupling</strong> ($\gamma_n \ll \Delta E_n$, $\Delta E_n$ 은 인접 레벨 간격): 각 레벨이 분리된 sharp peak. 분광학적으로 &ldquo;이산 레벨&rdquo; 로 관측.</li>
+<li><strong>Intermediate coupling</strong> ($\gamma_n \sim \Delta E_n$): peaks 가 부분적으로 겹침. 분리 가능하지만 broadening 효과 뚜렷.</li>
+<li><strong>Strong coupling</strong> ($\gamma_n \gg \Delta E_n$): peaks 가 완전히 겹쳐 연속 분포처럼 보임. &ldquo;Band-like&rdquo; 거동.</li>
+</ul>
+<p>응집물질에서 일반적인 broadening 메커니즘:</p>
+<ul>
+<li>결정 결함 또는 disorder</li>
+<li>Phonon 결합 (열에 따라 변함)</li>
+<li>다른 전자와의 결합 (Coulomb 상호작용)</li>
+<li>Lead 와의 결합 (양자수송 시스템)</li>
+</ul>
+<p>각 메커니즘이 self-energy 에 기여하며, $A(E)$ 의 폭에 직접 반영된다.</p>
+<p><strong>4) 합 규칙의 유지</strong></p>
+<p>Lorentzian 의 면적이 $2\pi$ 로 보존되므로, 각 상태가 broadening 되어도 합 규칙</p>
+$$
+\int dE\,A(E) = 2\pi\,\hat{I}
+$$<p>는 유지된다. 즉 broadening 은 상태를 &ldquo;퍼뜨릴&rdquo; 뿐, 상태 수를 변화시키지 않는다.</p>
+<hr>
+<h3 id="6-비평형으로의-확장-점유와의-분리">6. 비평형으로의 확장: 점유와의 분리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>지금까지 다룬 $A(E)$ 는 시스템의 스펙트럼 구조 (어떤 상태가 어디에 있는가) 를 담는다. 그러나 비평형 관측량을 계산하려면 추가 정보 — 그 상태들이 얼마나 채워져 있는가 — 가 필요하다.</p>
+<p><strong>1) 평형에서는 $A(E)$ 와 분포 함수가 전부</strong></p>
+<p>평형 시스템에서 임의의 단일 입자 관측량의 평균은</p>
+$$
+\langle\hat{O}\rangle = \int \frac{dE}{2\pi}\,f(E)\,\text{Tr}[\hat{O}\,A(E)]
+$$<p>여기서 $f(E)$ 는 Fermi-Dirac 분포이며 외부 변수 $\mu, T$ 로 주어진다. $A(E)$ 가 스펙트럼 정보, $f(E)$ 가 점유 정보를 각자 담는다.</p>
+<p>특히 위치별 입자 밀도</p>
+$$
+n(x) = \int \frac{dE}{2\pi}\,f(E)\,A(E, x, x)
+$$<p>는 LDOS $A(E, x, x)/(2\pi)$ 에 Fermi-Dirac 가중치를 곱해 모든 에너지에 대해 적분한 것이다. 평형에서는 분포 $f(E)$ 가 모든 에너지에서 동일한 형태이므로, $A(E)$ 만 알면 모든 관측량이 계산된다.</p>
+<p><strong>2) 비평형에서는 분포가 자동이 아니다</strong></p>
+<p>비평형에서는 시스템 내부의 분포 함수가 일률적으로 정의되지 않는다. 시스템이 두 reservoir 와 결합되어 있고 두 reservoir 가 서로 다른 분포 $f_L, f_R$ 을 가질 때, 시스템 내부의 분포는 두 reservoir 의 영향과 시스템의 동역학에 의해 결정된다. 위치와 에너지에 따라 다른 값을 가질 수 있다.</p>
+<p>이 정보를 담는 객체가 <strong>lesser 그린함수</strong> $G^<(E)$ 이다. 평형에서는</p>
+$$
+G^<(E) = i\,f(E)\,A(E)
+$$<p>로 분해된다. 우변은 점유 분포 ($f$) 와 스펙트럼 구조 ($A$) 의 곱이다.</p>
+<p>비평형에서는 이 분해가 성립하지 않는다. $G^<(E)$ 가 그 자체로 독립 객체로서 추적되며, 평형의 단순한 곱 형태로 분리할 수 없는 정보를 담는다.</p>
+<p><strong>3) 일반 표현: $A(E)$ 가 정보의 자연스러운 한 부분</strong></p>
+<p>비평형 관측량의 일반 표현은</p>
+$$
+n(x) = -i \int \frac{dE}{2\pi}\,G^<(E, x, x)
+$$<p>평형 표현 ($\int f \cdot A/(2\pi)$) 과 비교하면, $G^<$ 가 $f \cdot A$ 의 자리를 대체한다. 평형에서는 둘로 분리 가능, 비평형에서는 분리 불가.</p>
+<p><strong>4) NEGF 의 4 그린함수 분담</strong></p>
+<p>종합하면, NEGF 는 시스템의 정보를 다음과 같이 4 개 객체로 분담한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>객체</th>
+          <th>담는 정보</th>
+          <th>평형/비평형</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$G^R, G^A$</td>
+          <td>시스템의 응답 (스펙트럼)</td>
+          <td>동일</td>
+      </tr>
+      <tr>
+          <td>$A(E) = i[G^R - G^A]$</td>
+          <td>순수 스펙트럼 정보</td>
+          <td>동일</td>
+      </tr>
+      <tr>
+          <td>$G^<$</td>
+          <td>점유 정보</td>
+          <td>평형: $i f A$, 비평형: 독립</td>
+      </tr>
+      <tr>
+          <td>$G^>$</td>
+          <td>비점유 정보</td>
+          <td>평형: $-i(1-f)A$, 비평형: 독립</td>
+      </tr>
+  </tbody>
+</table>
+<p>스펙트럼 정보 ($G^R, G^A, A$) 와 점유 정보 ($G^<, G^>$) 의 분리가 NEGF 의 본질이다. 평형에서는 두 정보가 Fermi-Dirac 으로 자동 연결되어 단일 $A(E)$ 와 $f(E)$ 로 충분하지만, 비평형에서는 서로 독립적으로 추적되어야 한다.</p>
+<hr>
+<p><strong>example1) 1D 양자 우물의 LDOS</strong></p>
+<p>1D 무한 우물 $H = -\hbar^2/(2m)\,d^2/dx^2$, $x \in [0, L]$, Dirichlet BC.</p>
+<p>sol)</p>
+<p>고유 상태 $\psi_n(x) = \sqrt{2/L}\,\sin(n\pi x/L)$, 고유값 $E_n = (n\pi\hbar)^2/(2mL^2)$.</p>
+<p>LDOS:</p>
+$$
+\rho(E, x) = \frac{1}{2\pi}\,A(E, x, x) = \frac{2}{L}\sum_n \sin^2(n\pi x/L)\,\delta(E - E_n)
+$$<p>각 에너지 $E_n$ 에서 LDOS 는 $|\psi_n(x)|^2 = (2/L)\sin^2(n\pi x/L)$ 의 패턴을 가진다.</p>
+<p>특정 위치들:</p>
+<ul>
+<li>$x = L/2$ (중앙): $\sin^2(n\pi/2)$ 가 짝수 $n$ 에서 0, 홀수 $n$ 에서 1. 짝수 상태가 중앙에서 노드.</li>
+<li>$x = L/4$: $\sin^2(n\pi/4)$ 가 $n = 1, 2, 3, 4, \ldots$ 에 대해 $1/2, 1, 1/2, 0, \ldots$ 의 주기적 패턴. 특정 상태가 이 위치에서 노드.</li>
+<li>$x \to 0$ 또는 $x \to L$ (끝): $\sin^2 \to 0$ for all $n$. 경계에서 모든 상태가 0 — Dirichlet BC 의 직접 표현.</li>
+</ul>
+<p>LDOS 가 STM 으로 위치별 측정되면 이 패턴이 직접 관측 가능하다.</p>
+<hr>
+<p><strong>example2) 환경 결합된 양자 우물의 DOS</strong></p>
+<p>위 양자 우물에 환경 결합 $\eta$ 를 도입 ($H_{\text{eff}} = H - i\eta\hat{I}$).</p>
+<p>sol)</p>
+<p>Total DOS:</p>
+$$
+\rho(E) = \frac{1}{\pi}\sum_n \frac{\eta}{(E - E_n)^2 + \eta^2}
+$$<p>각 레벨 $E_n$ 을 중심으로 폭 $2\eta$ 의 Lorentzian. 면적은 각 $E_n$ 당 1 로 보존.</p>
+<p>레벨 간격: $E_{n+1} - E_n = (2n+1)\pi^2\hbar^2/(2mL^2)$.</p>
+<p>세 영역의 거동:</p>
+<ul>
+<li>$\eta \ll E_2 - E_1$ (작은 broadening): peaks 가 잘 분리되어 보임. 분광학에서 sharp lines.</li>
+<li>$\eta \sim E_2 - E_1$ (중간): peaks 가 부분적으로 겹침. 1, 2, 3 번째 등 처음 몇 개 레벨이 분리되지만 높은 $n$ 에서 합쳐짐.</li>
+<li>$\eta \gg E_2 - E_1$ (큰 broadening): 모든 peaks 가 겹쳐 연속에 가까운 분포. Band-like.</li>
+</ul>
+<p>응집물질의 실제 시스템에서 broadening 의 크기에 따라 같은 시스템이 &ldquo;이산 레벨&rdquo; 로 보일 수도, &ldquo;연속 band&rdquo; 로 보일 수도 있다는 사실이 NEGF framework 의 자연스러운 결과다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/greens_function/gf/index.html"><a class="padding default-animation" href="/greens_function/gf/index.html">GF</a><ul id="R-subsections-e64ccf7aa3ed5e93de04a3476a13f1ff" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/greens_function/negf/index.html"><a class="padding default-animation" href="/greens_function/negf/index.html">NEGF</a><ul id="R-subsections-525ed1e6125fef09bc395256500982db" class="collapsible-menu">
+            <li class="" data-nav-id="/greens_function/negf/b_negf_overview/index.html"><a class="padding" href="/greens_function/negf/b_negf_overview/index.html">(b) NEGF overview</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_retarded_advanced/index.html"><a class="padding" href="/greens_function/negf/b_retarded_advanced/index.html">(b) Retarded &amp; advanced GF</a></li>
+            <li class="active " data-nav-id="/greens_function/negf/b_spectral_function/index.html"><a class="padding" href="/greens_function/negf/b_spectral_function/index.html">(b) Spectral function</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_lesser_greater/index.html"><a class="padding" href="/greens_function/negf/b_lesser_greater/index.html">(b) Lesser and greater GF</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_dyson_self_energy/index.html"><a class="padding" href="/greens_function/negf/b_dyson_self_energy/index.html">(b) Dyson equation and self-energy</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_keldysh_contour/index.html"><a class="padding" href="/greens_function/negf/b_keldysh_contour/index.html">(b) Keldysh contour formalism</a></li>
+            <li class="" data-nav-id="/greens_function/negf/b_langreth_rules/index.html"><a class="padding" href="/greens_function/negf/b_langreth_rules/index.html">(b) Langreth rules</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

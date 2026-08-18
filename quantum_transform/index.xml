@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quantum transprt :: 수리전자물리학</title>
+    <link>http://localhost:1313/quantum_transform/index.html</link>
+    <description>(b) Introduction to quantum transport (b) Landauer formula (b) Büttiker formula (b) Transmission and scattering</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/quantum_transform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Introduction to quantum transport</title>
+      <link>http://localhost:1313/quantum_transform/b_quantum_transport_intro/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/quantum_transform/b_quantum_transport_intro/index.html</guid>
+      <description>1. 동기: 옴의 법칙이 깨지는 영역&#xD;전기 전도에 대한 가장 친숙한 법칙은 옴의 법칙이다.&#xA;$$ V = IR $$저항 $R$ 은 전류를 흐르게 하기 위해 필요한 전압의 크기를 결정한다. 일정한 단면적 $A$ 와 길이 $L$ 의 균질 도체에서&#xA;$$ R = \rho\,\frac{L}{A} $$여기서 $\rho$ 는 물질에 고유한 비저항이다. 길이가 길어지면 저항이 비례해서 증가하고, 단면적이 커지면 저항이 비례해서 감소한다. 이 단순한 법칙이 일상 규모의 전자 회로에서 잘 작동한다.</description>
+    </item>
+    <item>
+      <title>(b) Landauer formula</title>
+      <link>http://localhost:1313/quantum_transform/b_landauer_formula/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/quantum_transform/b_landauer_formula/index.html</guid>
+      <description>1. 동기: 양자 영역에서 전류를 어떻게 계산하는가&#xD;이전 절에서 양자수송의 그림을 직관적으로 소개했다. 두 lead 가 산란 영역에 연결된 구조, 두 lead 의 분포 차이가 전류를 일으키는 driving force, 그리고 산란 영역의 양자역학적 산란 특성이 투과 확률 $T(E)$ 로 표현된다는 그림. 마지막에 Landauer 공식&#xA;$$ I = \frac{e}{h}\int dE\,T(E)\,[f_L(E) - f_R(E)] $$을 미리 소개했다.&#xA;이 절에서는 이 공식이 어떻게 도출되는지를 자세히 본다. 가장 단순한 경우 — 1D 단일 채널 — 에서 시작해서 점진적으로 다채널, 일반적 경우로 확장한다.</description>
+    </item>
+    <item>
+      <title>(b) Büttiker formula</title>
+      <link>http://localhost:1313/quantum_transform/b_buttiker_formula/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/quantum_transform/b_buttiker_formula/index.html</guid>
+      <description>1. 동기: 왜 두 lead 이상이 필요한가&#xD;이전 절의 Landauer 공식은 두 lead — 좌측과 우측 — 사이의 전류를 다뤘다. 그러나 실제 실험에서는 lead 가 두 개 이상인 경우가 자주 등장한다.&#xA;가장 흔한 경우는 4-probe 측정 이다. 도체의 저항을 정밀히 측정하기 위해서는 일반적으로 두 lead 로 전류를 흘리고, 다른 두 lead 로 전압을 측정한다. 전류를 흘리는 lead 와 전압을 측정하는 lead 를 분리하는 이유는 접촉 저항 (이전 절의 한계 저항) 을 제거하기 위해서이다. 4 개의 lead 가 있는 시스템을 다루려면 Landauer 공식의 확장이 필요하다.</description>
+    </item>
+    <item>
+      <title>(b) Transmission and scattering</title>
+      <link>http://localhost:1313/quantum_transform/b_transmission_scattering/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/quantum_transform/b_transmission_scattering/index.html</guid>
+      <description>1. 동기: $T(E)$ 를 어떻게 계산하는가&#xD;Landauer 와 Büttiker 공식에서 핵심적인 양은 투과 함수 $T(E)$ 이다. 그러나 두 공식 모두 $T(E)$ 가 산란 영역의 양자역학적 산란 특성에서 결정된다고만 했지, 어떻게 계산하는지는 자세히 다루지 않았다.&#xA;이 절에서 그 계산 방법을 정리한다. 핵심 도구는 1D 양자역학적 산란 이론이다. 시간 무관 Schrödinger 방정식을 풀고, 입사파 + 반사파 + 투과파의 진폭을 매칭해서 투과 확률을 얻는다.</description>
+    </item>
+  </channel>
+</rss>

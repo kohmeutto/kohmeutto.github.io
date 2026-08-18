@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 변분 연산자의 기본 성질1) 선형성
+상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.
+$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$$$\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle$$ 성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다. 적용 대상: $X$의 종류에 무관하게 성립한다. proof정의 1에서 $X$ 자리에 $c_1X_1 &#43; c_2X_2$를 대입한다.$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u&#43;\epsilon\eta) &#43; c_2 X_2(u&#43;\epsilon\eta)\Big]\right\vert_{\epsilon=0}$$실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.$$= \; c_1\left.\frac{d}{d\epsilon} X_1(u&#43;\epsilon\eta)\right\vert_{\epsilon=0} \;&#43;\; c_2\left.\frac{d}{d\epsilon} X_2(u&#43;\epsilon\eta)\right\vert_{\epsilon=0}$$각 항에 정의 1을 적용한다.$$= \; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$2) 상수의 변분">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="(b) Variational Operator :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 변분 연산자의 기본 성질1) 선형성
+상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.
+$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$$$\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle$$ 성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다. 적용 대상: $X$의 종류에 무관하게 성립한다. proof정의 1에서 $X$ 자리에 $c_1X_1 &#43; c_2X_2$를 대입한다.$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u&#43;\epsilon\eta) &#43; c_2 X_2(u&#43;\epsilon\eta)\Big]\right\vert_{\epsilon=0}$$실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.$$= \; c_1\left.\frac{d}{d\epsilon} X_1(u&#43;\epsilon\eta)\right\vert_{\epsilon=0} \;&#43;\; c_2\left.\frac{d}{d\epsilon} X_2(u&#43;\epsilon\eta)\right\vert_{\epsilon=0}$$각 항에 정의 1을 적용한다.$$= \; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$2) 상수의 변분">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/variation/b_variational_operator/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="(b) Variational Operator :: 수리전자물리학">
+    <meta property="og:description" content="1. 변분 연산자의 기본 성질1) 선형성
+상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.
+$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$$$\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle$$ 성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다. 적용 대상: $X$의 종류에 무관하게 성립한다. proof정의 1에서 $X$ 자리에 $c_1X_1 &#43; c_2X_2$를 대입한다.$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u&#43;\epsilon\eta) &#43; c_2 X_2(u&#43;\epsilon\eta)\Big]\right\vert_{\epsilon=0}$$실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.$$= \; c_1\left.\frac{d}{d\epsilon} X_1(u&#43;\epsilon\eta)\right\vert_{\epsilon=0} \;&#43;\; c_2\left.\frac{d}{d\epsilon} X_2(u&#43;\epsilon\eta)\right\vert_{\epsilon=0}$$각 항에 정의 1을 적용한다.$$= \; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$2) 상수의 변분">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="(b) Variational Operator :: 수리전자물리학">
+    <meta itemprop="description" content="1. 변분 연산자의 기본 성질1) 선형성
+상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.
+$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$$$\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle$$ 성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다. 적용 대상: $X$의 종류에 무관하게 성립한다. proof정의 1에서 $X$ 자리에 $c_1X_1 &#43; c_2X_2$를 대입한다.$$\delta\big\{c_1 X_1 &#43; c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u&#43;\epsilon\eta) &#43; c_2 X_2(u&#43;\epsilon\eta)\Big]\right\vert_{\epsilon=0}$$실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.$$= \; c_1\left.\frac{d}{d\epsilon} X_1(u&#43;\epsilon\eta)\right\vert_{\epsilon=0} \;&#43;\; c_2\left.\frac{d}{d\epsilon} X_2(u&#43;\epsilon\eta)\right\vert_{\epsilon=0}$$각 항에 정의 1을 적용한다.$$= \; c_1\,\delta X_1 \;&#43;\; c_2\,\delta X_2$$2) 상수의 변분">
+    <meta itemprop="wordCount" content="1261">
+    <title>(b) Variational Operator :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787040752" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787040752" defer></script>
+    <script src="/js/search-lunr.js?1787040752" defer></script>
+    <script src="/js/search.js?1787040752" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787040752";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787040752" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787040752" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787040752" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787040752" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787040752" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787040752" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787040752" rel="stylesheet">
+    <link href="/css/theme.css?1787040752" rel="stylesheet">
+    <link href="/css/format-html.css?1787040752" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/variation\/b_variational_operator\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/vector_operator/variation/b_variational_operator/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-변분-연산자의-기본-성질">1. 변분 연산자의 기본 성질</a></li>
+        <li><a href="#2-곱의-법칙">2. 곱의 법칙</a></li>
+        <li><a href="#3-연쇄-법칙">3. 연쇄 법칙</a></li>
+        <li><a href="#4-교환-관계">4. 교환 관계</a></li>
+        <li><a href="#5-적용">5. 적용</a></li>
+        <li><a href="#7-요약표">7. 요약표</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/variation/index.html"><span itemprop="name">Variation</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Variational Operator</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/variation/b_differential_operator/index.html" title="(b) Differential operators (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/variation/b_local_linearization/index.html" title="(b) Local linearization (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="b-variational-operator">(b) Variational Operator</h1>
+
+<hr>
+<h3 id="1-변분-연산자의-기본-성질">1. 변분 연산자의 기본 성질<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 선형성</strong></p>
+<p>상수 $c_1, c_2$와 상태 의존 대상 $X_1(u), X_2(u)$에 대하여 $\delta$는 선형 중첩을 만족한다.</p>
+$$
+\delta\big\{c_1 X_1 + c_2 X_2\big\} \;=\; c_1\,\delta X_1 \;+\; c_2\,\delta X_2
+$$$$
+\delta\big\{\hat{A}\vert{}u\rangle - \vert{}b\rangle\big\} \;=\; \delta\big\{\hat{A}\vert{}u\rangle\big\} \;-\; \delta\vert{}b\rangle
+$$<ul>
+<li>성립 근거: 실수 일변수 미분의 선형성이 그대로 상속되기 때문이다.</li>
+<li>적용 대상: $X$의 종류에 무관하게 성립한다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+정의 1에서 $X$ 자리에 $c_1X_1 + c_2X_2$를 대입한다.
+
+$$
+\delta\big\{c_1 X_1 + c_2 X_2\big\} \;=\; \left.\frac{d}{d\epsilon}\Big[c_1 X_1(u+\epsilon\eta) + c_2 X_2(u+\epsilon\eta)\Big]\right\vert_{\epsilon=0}
+$$
+
+실수 일변수 미분 $d/d\epsilon$의 선형성에 따라 각 항을 분리한다.
+
+$$
+= \; c_1\left.\frac{d}{d\epsilon} X_1(u+\epsilon\eta)\right\vert_{\epsilon=0} \;+\; c_2\left.\frac{d}{d\epsilon} X_2(u+\epsilon\eta)\right\vert_{\epsilon=0}
+$$
+
+각 항에 정의 1을 적용한다.
+
+$$
+= \; c_1\,\delta X_1 \;+\; c_2\,\delta X_2
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>2) 상수의 변분</strong></p>
+<p>$X_0$가 상태 $u$에 의존하지 않으면 그 변분은 $0$이 된다.</p>
+$$
+\delta X_0 \;=\; 0
+$$$$
+\delta\hat{A}_{a} \;=\; 0 \qquad (\text{상태 자리에 값을 대입한 경우})
+$$<ul>
+<li>성립 근거: 상수에 대한 미분값이 $0$이기 때문이다.</li>
+<li>적용 대상: 아래첨자를 적용한 연산자와 고정된 켓에 적용된다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+정의 1에서 $X_0$는 $\epsilon$을 포함하지 않으므로 $X(u+\epsilon\eta) = X_0$가 성립한다.
+
+$$
+\delta X_0 \;=\; \left.\frac{d}{d\epsilon} X_0\right\vert_{\epsilon=0}
+$$
+
+상수를 미분하면 $0$이 된다.
+
+$$
+= \; 0
+$$
+  </div>
+</details>
+<hr>
+<h3 id="2-곱의-법칙">2. 곱의 법칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 연산자와 켓의 곱</strong></p>
+<p>$\hat{G}(\epsilon) \in \mathcal{L}(V, V^{*})$와 $\vert{}g(\epsilon)\rangle \in V$가 $\epsilon$에 대하여 미분가능할 때, 곱의 미분은 인자의 순서를 유지한 채 두 항으로 분리된다.</p>
+$$
+\frac{d}{d\epsilon}\Big[\hat{G}(\epsilon)\,\vert{}g(\epsilon)\rangle\Big] \;=\; \hat{G}'(\epsilon)\,\vert{}g(\epsilon)\rangle \;+\; \hat{G}(\epsilon)\,\vert{}g'(\epsilon)\rangle
+$$$$
+\delta\big\{\hat{A}\,\vert{}u\rangle\big\} \;=\; \big(\delta\hat{A}\big)\,\vert{}u\rangle \;+\; \hat{A}\,\vert{}\delta u\rangle
+$$<ul>
+<li>첫째 항: 연산자를 미분하고 켓은 그대로 둔다.</li>
+<li>둘째 항: 켓을 미분하고 연산자는 그대로 둔다.</li>
+<li>인자 순서: 연산자는 왼쪽에, 켓은 오른쪽에 배치된다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+차분몫을 정의하고 분자에 $\hat{G}(\epsilon)\vert{}g(\epsilon+h)\rangle$를 더한 뒤 동일한 항을 뺀다.
+
+$$
+\frac{\hat{G}(\epsilon+h)\vert{}g(\epsilon+h)\rangle - \hat{G}(\epsilon)\vert{}g(\epsilon)\rangle}{h}
+$$
+
+$$
+= \frac{\hat{G}(\epsilon+h)\vert{}g(\epsilon+h)\rangle - \hat{G}(\epsilon)\vert{}g(\epsilon+h)\rangle}{h} \;+\; \frac{\hat{G}(\epsilon)\vert{}g(\epsilon+h)\rangle - \hat{G}(\epsilon)\vert{}g(\epsilon)\rangle}{h}
+$$
+
+첫째 항에서 공통인자 $\vert{}g(\epsilon+h)\rangle$를 묶는다.
+
+$$
+\frac{\hat{G}(\epsilon+h)\vert{}g(\epsilon+h)\rangle - \hat{G}(\epsilon)\vert{}g(\epsilon+h)\rangle}{h} \;=\; \left[\frac{\hat{G}(\epsilon+h) - \hat{G}(\epsilon)}{h}\right]\vert{}g(\epsilon+h)\rangle
+$$
+
+둘째 항에서 선형 연산자 $\hat{G}(\epsilon)$를 밖으로 뺀다.
+
+$$
+\frac{\hat{G}(\epsilon)\vert{}g(\epsilon+h)\rangle - \hat{G}(\epsilon)\vert{}g(\epsilon)\rangle}{h} \;=\; \hat{G}(\epsilon)\left[\frac{\vert{}g(\epsilon+h)\rangle - \vert{}g(\epsilon)\rangle}{h}\right]
+$$
+
+$h \to 0$의 극한을 적용한다. 첫째 항의 차분몫은 $\hat{G}'(\epsilon)$가 되고 $\vert{}g(\epsilon+h)\rangle$는 연속성에 의해 $\vert{}g(\epsilon)\rangle$가 된다. 둘째 항의 차분몫은 $\vert{}g'(\epsilon)\rangle$가 되고 $\hat{G}(\epsilon)$의 유계성에 의해 극한이 적용된다.
+
+$$
+\frac{d}{d\epsilon}\Big[\hat{G}(\epsilon)\,\vert{}g(\epsilon)\rangle\Big] \;=\; \hat{G}'(\epsilon)\,\vert{}g(\epsilon)\rangle \;+\; \hat{G}(\epsilon)\,\vert{}g'(\epsilon)\rangle
+$$
+
+$\hat{G}(\epsilon) = \hat{A}(u+\epsilon\eta)$, $\vert{}g(\epsilon)\rangle = \vert{}u\rangle + \epsilon\vert{}\eta\rangle$를 대입하고 $\epsilon = 0$을 적용한다.
+
+$$
+\delta\big\{\hat{A}\,\vert{}u\rangle\big\} \;=\; \big(\delta\hat{A}\big)\,\vert{}u\rangle \;+\; \hat{A}\,\vert{}\delta u\rangle
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>2) 브라와 켓의 곱</strong></p>
+<p>상태에 의존하는 두 켓 $\vert{}p(u)\rangle$, $\vert{}q(u)\rangle$에 대하여 두 슬롯이 각각 미분된다.</p>
+$$
+\delta\big\{\langle p \vert{} q\rangle\big\} \;=\; \langle \delta p \vert{} q\rangle \;+\; \langle p \vert{} \delta q\rangle
+$$$$
+\delta\big\{\langle \psi \vert{} \psi\rangle\big\} \;=\; 2\,\mathrm{Re}\,\langle\psi\vert{}\delta\psi\rangle
+$$<ul>
+<li>첫째 항: 브라 슬롯을 미분하고 켓 슬롯은 그대로 둔다.</li>
+<li>둘째 항: 켓 슬롯을 미분하고 브라 슬롯은 그대로 둔다.</li>
+<li>$\epsilon$의 실수 제한: 브라 슬롯이 반선형이므로 스칼라 인자에 켤레가 적용되기 때문이다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+차분몫을 정의하고 분자에 $\langle p(\epsilon)\vert{}q(\epsilon+h)\rangle$를 더한 뒤 동일한 항을 뺀다.
+
+$$
+\frac{\langle p(\epsilon+h)\vert{}q(\epsilon+h)\rangle - \langle p(\epsilon)\vert{}q(\epsilon)\rangle}{h}
+$$
+
+$$
+= \frac{\langle p(\epsilon+h)\vert{}q(\epsilon+h)\rangle - \langle p(\epsilon)\vert{}q(\epsilon+h)\rangle}{h} \;+\; \frac{\langle p(\epsilon)\vert{}q(\epsilon+h)\rangle - \langle p(\epsilon)\vert{}q(\epsilon)\rangle}{h}
+$$
+
+첫째 항에서 브라 슬롯의 덧셈성을 적용한다.
+
+$$
+\langle p(\epsilon+h)\vert{}q(\epsilon+h)\rangle - \langle p(\epsilon)\vert{}q(\epsilon+h)\rangle \;=\; \big\langle\, p(\epsilon+h) - p(\epsilon) \,\big\vert{}\, q(\epsilon+h)\,\big\rangle
+$$
+
+$1/h$를 브라 내부로 대입한다. $h$가 실수이므로 반선형 슬롯에 대입할 때 켤레의 영향을 받지 않는다.
+
+$$
+\frac{1}{h}\big\langle\, p(\epsilon+h) - p(\epsilon) \,\big\vert{}\, q(\epsilon+h)\,\big\rangle \;=\; \left\langle\, \frac{p(\epsilon+h) - p(\epsilon)}{h} \,\middle\vert{}\, q(\epsilon+h)\,\right\rangle
+$$
+
+둘째 항에서 선형 슬롯인 켓 내부로 $1/h$를 대입한다.
+
+$$
+\frac{\langle p(\epsilon)\vert{}q(\epsilon+h)\rangle - \langle p(\epsilon)\vert{}q(\epsilon)\rangle}{h} \;=\; \left\langle\, p(\epsilon) \,\middle\vert{}\, \frac{q(\epsilon+h) - q(\epsilon)}{h}\,\right\rangle
+$$
+
+$h \to 0$의 극한을 적용하고 $\epsilon = 0$을 대입한다.
+
+$$
+\delta\big\{\langle p \vert{} q\rangle\big\} \;=\; \langle \delta p \vert{} q\rangle \;+\; \langle p \vert{} \delta q\rangle
+$$
+  </div>
+</details>
+<hr>
+<h3 id="3-연쇄-법칙">3. 연쇄 법칙<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>사상 $Z$와 $Y$의 합성에 대하여, 바깥 사상의 도함수를 $Z(u)$에서 계산하고 방향 인자로 안쪽 사상의 변분을 대입한다.</p>
+$$
+\delta\big\{Y(Z(u))\big\} \;=\; DY\big[\,Z(u) : \vert{}\delta Z\rangle\,\big], \qquad \vert{}\delta Z\rangle \equiv \delta\big\{Z(u)\big\}
+$$$$
+\delta\big\{D(u)\big\} \;=\; D'(u)\,\eta \qquad (\text{스칼라 함수 } D \text{를 상태에 합성한 경우})
+$$<ul>
+<li>동작점: $u$가 아니라 $Z(u)$가 된다.</li>
+<li>방향 인자: 안쪽 사상의 변분이 바깥 사상의 방향 인자가 된다.</li>
+<li>필요 조건: $Y$에 대하여 정의 2의 미분가능성이 필요하다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+정의 1에서 $X(u) = Y(Z(u))$로 둔다.
+
+$$
+\delta\big\{Y(Z(u))\big\} \;=\; \left.\frac{d}{d\epsilon}\, Y\Big(Z(u+\epsilon\eta)\Big)\right\vert_{\epsilon=0}
+$$
+
+안쪽 사상의 값을 $\vert{}w(\epsilon)\rangle \equiv Z(u + \epsilon\eta)$로 정의한다.
+
+$$
+\delta\big\{Y(Z(u))\big\} \;=\; \left.\frac{d}{d\epsilon}\, Y\big(w(\epsilon)\big)\right\vert_{\epsilon=0}
+$$
+
+$Y$가 동작점 $\vert{}w(0)\rangle$에서 정의 2의 조건을 만족하므로 연쇄 법칙을 적용한다.
+
+$$
+= \; DY\Big[\,w(0) : \vert{}w'(0)\rangle\,\Big]
+$$
+
+동작점과 방향 인자를 각각 계산한다. 동작점은 $\epsilon = 0$에서의 값이 된다.
+
+$$
+\vert{}w(0)\rangle \;=\; Z(u + 0\cdot\eta) \;=\; Z(u)
+$$
+
+방향 인자는 정의 1에 $X = Z$를 대입한 형태가 된다.
+
+$$
+\vert{}w'(0)\rangle \;=\; \left.\frac{d}{d\epsilon} Z(u+\epsilon\eta)\right\vert_{\epsilon=0} \;=\; \delta\big\{Z(u)\big\} \;=\; \vert{}\delta Z\rangle
+$$
+
+두 결과를 대입한다.
+
+$$
+\delta\big\{Y(Z(u))\big\} \;=\; DY\big[\,Z(u) : \vert{}\delta Z\rangle\,\big]
+$$
+  </div>
+</details>
+<hr>
+<h3 id="4-교환-관계">4. 교환 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>상태에 의존하는 선형 연산자 $\hat{L}(u)$에 대하여, $\delta$를 연산자 전체에 적용했을 때와 내부 켓에만 적용했을 때의 차이를 <strong>교환 잔여항</strong>으로 정의한다.</p>
+$$
+\big[\delta,\, \hat{L}\big]\,\vert{}u\rangle \;\equiv\; \delta\big\{\hat{L}\,\vert{}u\rangle\big\} \;-\; \hat{L}\,\big(\delta\vert{}u\rangle\big)
+$$$$
+\big[\hat{A},\hat{B}\big] \;=\; \hat{A}\hat{B} - \hat{B}\hat{A} \qquad (\text{양자역학의 교환자})
+$$<p>대괄호 표기는 우변의 차이를 나타내는 축약 표현이다. $\delta\vert{}u\rangle = \vert{}\eta\rangle$이므로 $\delta$는 $V$ 위의 선형 연산자가 아니며, 합성 순서의 차이를 나타내는 연산자가 아니다. 따라서 대괄호를 단독 연산자로 쓰지 않고 $\vert{}u\rangle$에 작용하는 형태로만 쓴다.</p>
+<p><strong>1) 교환 잔여항의 값</strong></p>
+<p>$\delta$가 연산자를 통과할 때 발생하는 잔여항은 해당 연산자의 변분이다.</p>
+$$
+\big[\delta,\, \hat{L}\big]\,\vert{}u\rangle \;=\; \big(\delta\hat{L}\big)\,\vert{}u\rangle
+$$$$
+\big[\delta,\, \hat{A}(u)\big]\,\vert{}u\rangle \;=\; \big(\delta\hat{A}\big)\vert{}u\rangle \;\ne\; 0
+$$<ul>
+<li>적용 도구: §3-1의 곱의 법칙을 적용한다.</li>
+<li>잔여항의 구조: 연산자의 변분이 동작점 켓에 작용한 형태이다.</li>
+<li>방향 켓의 위치: 방향 켓은 $\delta\hat{L}$ 내부에 포함된다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+§3-1의 곱의 법칙에 $\hat{A} = \hat{L}$을 대입한다.
+
+$$
+\delta\big\{\hat{L}\,\vert{}u\rangle\big\} \;=\; \big(\delta\hat{L}\big)\,\vert{}u\rangle \;+\; \hat{L}\,\vert{}\delta u\rangle
+$$
+
+$\vert{}\delta u\rangle = \delta\vert{}u\rangle$를 대입한다.
+
+$$
+\delta\big\{\hat{L}\,\vert{}u\rangle\big\} \;=\; \big(\delta\hat{L}\big)\,\vert{}u\rangle \;+\; \hat{L}\,\big(\delta\vert{}u\rangle\big)
+$$
+
+양변에서 $\hat{L}\big(\delta\vert{}u\rangle\big)$를 뺀다.
+
+$$
+\delta\big\{\hat{L}\,\vert{}u\rangle\big\} \;-\; \hat{L}\,\big(\delta\vert{}u\rangle\big) \;=\; \big(\delta\hat{L}\big)\,\vert{}u\rangle
+$$
+
+교환 잔여항의 정의를 적용한다.
+
+$$
+\big[\delta,\, \hat{L}\big]\,\vert{}u\rangle \;=\; \big(\delta\hat{L}\big)\,\vert{}u\rangle
+$$
+
+<hr>
+  </div>
+</details>
+<p><strong>2) 가환의 조건</strong></p>
+<p>연산자가 선형이고 상태에 의존하지 않으면 잔여항이 $0$이 된다.</p>
+$$
+\big[\delta,\, \hat{L}_0\big]\,\vert{}u\rangle \;=\; 0
+$$$$
+\delta\big\{\hat{L}_0\,\vert{}u\rangle\big\} \;=\; \hat{L}_0\,\vert{}\delta u\rangle
+$$<ul>
+<li>적용 도구: §5-1의 결과와 §2-2의 상수 변분 성질을 적용한다.</li>
+<li>필요 조건: 연산자의 선형성과 상태 독립성이 동시에 성립해야 한다.</li>
+<li>불필요한 가정: 혼합 편미분의 교환 정리는 증명에 쓰이지 않는다.</li>
+</ul>
+
+<details class="box cstyle notices transparent expand">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    proof
+  </summary>
+  <div class="box-content">
+$\hat{L}_0$가 $u$에 의존하지 않으므로 §2-2에 의해 변분은 $0$이다.
+
+$$
+\delta\hat{L}_0 \;=\; 0
+$$
+
+이를 §5-1의 결과에 대입한다.
+
+$$
+\big[\delta,\, \hat{L}_0\big]\,\vert{}u\rangle \;=\; \big(\delta\hat{L}_0\big)\,\vert{}u\rangle \;=\; 0\cdot\vert{}u\rangle \;=\; 0
+$$
+
+교환 잔여항의 정의를 전개한다.
+
+$$
+\delta\big\{\hat{L}_0\,\vert{}u\rangle\big\} \;-\; \hat{L}_0\,\big(\delta\vert{}u\rangle\big) \;=\; 0
+$$
+
+$$
+\delta\big\{\hat{L}_0\,\vert{}u\rangle\big\} \;=\; \hat{L}_0\,\vert{}\delta u\rangle
+$$
+  </div>
+</details>
+<hr>
+<h3 id="5-적용">5. 적용<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 공간 미분 연산자</strong></p>
+<p>$\partial_x$는 선형이고 상태에 의존하지 않으므로 §5-2가 적용된다.</p>
+$$
+\delta\big\{\partial_x u\big\} \;=\; \partial_x\big(\delta u\big)
+$$<ul>
+<li>잔여항: $0$이다.</li>
+<li>성립 근거: 연산자가 선형이고 상태에 의존하지 않기 때문이다.</li>
+</ul>
+<p><strong>2) 고정된 브라와의 내적</strong></p>
+<p>$\vert{}v\rangle$가 $u$에 의존하지 않으면 내적은 선형이고 상태에 의존하지 않는다.</p>
+$$
+\delta\big\{\langle v \vert{} u\rangle\big\} \;=\; \langle v \vert{} \delta u\rangle
+$$<ul>
+<li>잔여항: $0$이다.</li>
+<li>성립 근거: 켓 슬롯에 대하여 선형이고 $\epsilon$을 포함하지 않기 때문이다.</li>
+</ul>
+<p><strong>3) 상태에 의존하는 연산자</strong></p>
+<p>$\hat{A}(u)$는 선형이지만 상태에 의존하므로 잔여항이 발생한다.</p>
+$$
+\delta\big\{\hat{A}(u)\,\vert{}u\rangle\big\} \;=\; \hat{A}(u)\,\vert{}\delta u\rangle \;+\; \big(\delta\hat{A}\big)\vert{}u\rangle
+$$<ul>
+<li>잔여항: $\big(\delta\hat{A}\big)\vert{}u\rangle$가 된다.</li>
+<li>성립 근거: 연산자가 선형이지만 상태에 의존하기 때문이다.</li>
+</ul>
+<p><strong>4) 브라와 켓이 모두 상태에 의존하는 경우</strong></p>
+<p>두 슬롯이 모두 상태에 의존하므로 §3-2의 곱의 법칙을 적용한다.</p>
+$$
+\delta\big\{\langle p \vert{} q\rangle\big\} \;=\; \langle \delta p \vert{} q\rangle \;+\; \langle p \vert{} \delta q\rangle
+$$<ul>
+<li>잔여항: 발생하지 않는다.</li>
+<li>성립 근거: 두 슬롯 각각에 §3-2를 적용하기 때문이다.</li>
+</ul>
+<p>example)</p>
+<p>상태 의존 계수를 갖는 2계 연산자 $\hat{A}(u) = -\partial_x\big(D(u)\,\partial_x\,\cdot\,\big)$를 다룬다. 이 연산자는 $\partial_x$와 $D(u)$의 합성이므로 §6-1과 §6-3을 순서대로 적용한다. $\partial_x$는 통과하고 $D(u)$에서 잔여항이 발생한다.</p>
+$$
+\delta\hat{A} \;=\; -\partial_x\Big(\big(\delta D\big)\,\partial_x\,\cdot\,\Big), \qquad \delta D \;=\; D'(u)\,\eta
+$$<hr>
+<h3 id="7-요약표">7. 요약표<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 연산별 $\delta$의 적용 결과</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">만나는 연산</th>
+          <th style="text-align: left">조건</th>
+          <th style="text-align: left">결과</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">합 $c_1X_1 + c_2X_2$</td>
+          <td style="text-align: left">없음</td>
+          <td style="text-align: left">$c_1\delta X_1 + c_2\delta X_2$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">상수 $X_0$</td>
+          <td style="text-align: left">$u$에 무관</td>
+          <td style="text-align: left">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">연산자와 켓의 곱 $\hat{A}\vert{}u\rangle$</td>
+          <td style="text-align: left">없음</td>
+          <td style="text-align: left">$\big(\delta\hat{A}\big)\vert{}u\rangle + \hat{A}\vert{}\delta u\rangle$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">브라와 켓의 곱 $\langle p\vert{}q\rangle$</td>
+          <td style="text-align: left">$\epsilon \in \mathbb{R}$</td>
+          <td style="text-align: left">$\langle \delta p\vert{}q\rangle + \langle p\vert{}\delta q\rangle$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">연산자 사이의 곱 $\hat{A}\hat{B}$</td>
+          <td style="text-align: left">합성이 정의됨</td>
+          <td style="text-align: left">$\big(\delta\hat{A}\big)\hat{B} + \hat{A}\big(\delta\hat{B}\big)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">합성 $Y(Z(u))$</td>
+          <td style="text-align: left">$Y$에 정의 2 성립</td>
+          <td style="text-align: left">$DY\big[\,Z(u) : \vert{}\delta Z\rangle\,\big]$</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>2) 교환 잔여항</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">대상</th>
+          <th style="text-align: left">선형 여부</th>
+          <th style="text-align: left">상태 의존 여부</th>
+          <th style="text-align: left">$\big[\delta,\,\hat{L}\big]\vert{}u\rangle$</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">$\partial_x$, $\nabla$</td>
+          <td style="text-align: left">선형</td>
+          <td style="text-align: left">무관</td>
+          <td style="text-align: left">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">고정된 브라 $\langle v\vert{}$</td>
+          <td style="text-align: left">선형</td>
+          <td style="text-align: left">무관</td>
+          <td style="text-align: left">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">아래첨자를 적용한 $\hat{A}_{a}$</td>
+          <td style="text-align: left">선형</td>
+          <td style="text-align: left">무관</td>
+          <td style="text-align: left">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">상태 의존 연산자 $\hat{A}(u)$</td>
+          <td style="text-align: left">선형</td>
+          <td style="text-align: left">의존</td>
+          <td style="text-align: left">$\big(\delta\hat{A}\big)\vert{}u\rangle$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">비선형 사상 $N$</td>
+          <td style="text-align: left">비선형</td>
+          <td style="text-align: left">—</td>
+          <td style="text-align: left">정의되지 않는다</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/determinant/index.html"><a class="padding default-animation" href="/vector_operator/determinant/index.html">Determinant</a><ul id="R-subsections-e8859cbfde7c997d3b6bb77d5cc04252" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/norm/index.html"><a class="padding default-animation" href="/vector_operator/norm/index.html">Norm</a><ul id="R-subsections-c1acfbc31ec71c116364edd2178a5891" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/adjoint/index.html"><a class="padding default-animation" href="/vector_operator/adjoint/index.html">Adjoint</a><ul id="R-subsections-892a057280ce4259b83917ff435c1f56" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/non-normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/non-normal_operators/index.html">Non-normal operators</a><ul id="R-subsections-fcca8d481e0acf8fb26eb5de1ef56521" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/combining_spaces/index.html"><a class="padding default-animation" href="/vector_operator/combining_spaces/index.html">Combining spaces</a><ul id="R-subsections-92d4f8c24e32980ccbc6e3dc19ac927a" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-id="/vector_operator/variation/index.html"><a class="padding default-animation" href="/vector_operator/variation/index.html">Variation</a><ul id="R-subsections-eb3a19f299ca0013853296f641c5255b" class="collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/variation/b_convention/index.html"><a class="padding" href="/vector_operator/variation/b_convention/index.html">(b) Convention</a></li>
+            <li class="" data-nav-id="/vector_operator/variation/b_differential_operator/index.html"><a class="padding" href="/vector_operator/variation/b_differential_operator/index.html">(b) Differential operators</a></li>
+            <li class="active " data-nav-id="/vector_operator/variation/b_variational_operator/index.html"><a class="padding" href="/vector_operator/variation/b_variational_operator/index.html">(b) Variational Operator</a></li>
+            <li class="" data-nav-id="/vector_operator/variation/b_local_linearization/index.html"><a class="padding" href="/vector_operator/variation/b_local_linearization/index.html">(b) Local linearization</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787040752"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787040752" defer></script>
+    <script src="/js/theme.js?1787040752" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

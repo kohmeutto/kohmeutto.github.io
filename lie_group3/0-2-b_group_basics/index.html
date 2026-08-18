@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 9.0.3">
+    <meta name="description" content="1. 이 절의 동기리 군은 매끄러운 다양체 &#43; 매끄러운 군 연산 의 두 구조가 양립하는 대상이다 (정확한 정의는 §1). 본격적 정의로 들어가기 전 군 부분과 다양체 부분을 따로 점검한다. 이 절은 군 부분, 다음 §0-3 은 다양체 부분.
+군은 대칭의 수학적 정의 다. 어떤 대상을 자기 자신으로 옮기는 변환들의 모임이 합성 에 대해 자연스럽게 만족하는 성질들이 있는데, 그것들을 모아 추상화한 것이 군 공리다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="군의 기초 복습 :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 이 절의 동기리 군은 매끄러운 다양체 &#43; 매끄러운 군 연산 의 두 구조가 양립하는 대상이다 (정확한 정의는 §1). 본격적 정의로 들어가기 전 군 부분과 다양체 부분을 따로 점검한다. 이 절은 군 부분, 다음 §0-3 은 다양체 부분.
+군은 대칭의 수학적 정의 다. 어떤 대상을 자기 자신으로 옮기는 변환들의 모임이 합성 에 대해 자연스럽게 만족하는 성질들이 있는데, 그것들을 모아 추상화한 것이 군 공리다.">
+    <meta property="og:url" content="http://localhost:1313/lie_group3/0-2-b_group_basics/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="군의 기초 복습 :: 수리전자물리학">
+    <meta property="og:description" content="1. 이 절의 동기리 군은 매끄러운 다양체 &#43; 매끄러운 군 연산 의 두 구조가 양립하는 대상이다 (정확한 정의는 §1). 본격적 정의로 들어가기 전 군 부분과 다양체 부분을 따로 점검한다. 이 절은 군 부분, 다음 §0-3 은 다양체 부분.
+군은 대칭의 수학적 정의 다. 어떤 대상을 자기 자신으로 옮기는 변환들의 모임이 합성 에 대해 자연스럽게 만족하는 성질들이 있는데, 그것들을 모아 추상화한 것이 군 공리다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Lie group3">
+    <meta itemprop="name" content="군의 기초 복습 :: 수리전자물리학">
+    <meta itemprop="description" content="1. 이 절의 동기리 군은 매끄러운 다양체 &#43; 매끄러운 군 연산 의 두 구조가 양립하는 대상이다 (정확한 정의는 §1). 본격적 정의로 들어가기 전 군 부분과 다양체 부분을 따로 점검한다. 이 절은 군 부분, 다음 §0-3 은 다양체 부분.
+군은 대칭의 수학적 정의 다. 어떤 대상을 자기 자신으로 옮기는 변환들의 모임이 합성 에 대해 자연스럽게 만족하는 성질들이 있는데, 그것들을 모아 추상화한 것이 군 공리다.">
+    <meta itemprop="wordCount" content="2146">
+    <title>군의 기초 복습 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787039205" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787039205" defer></script>
+    <script src="/js/search-lunr.js?1787039205" defer></script>
+    <script src="/js/search.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1787039205";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787039205" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787039205" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787039205" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787039205" rel="stylesheet">
+    <link href="/css/theme.css?1787039205" rel="stylesheet">
+    <link href="/css/format-html.css?1787039205" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/lie_group3\/0-2-b_group_basics\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/lie_group3/0-2-b_group_basics/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-이-절의-동기">1. 이 절의 동기</a></li>
+        <li><a href="#2-이항-연산이란">2. 이항 연산이란</a></li>
+        <li><a href="#3-군의-4공리">3. 군의 4공리</a></li>
+        <li><a href="#4-표기-약속--곱셈-표기와-덧셈-표기">4. 표기 약속 — 곱셈 표기와 덧셈 표기</a></li>
+        <li><a href="#5-항등원과-역원의-유일성-간단-증명">5. 항등원과 역원의 유일성 (간단 증명)</a></li>
+        <li><a href="#6-친숙한-예시">6. 친숙한 예시</a></li>
+        <li><a href="#7-군이-아닌-예--어디가-깨지는가">7. 군이 <em>아닌</em> 예 — 어디가 깨지는가</a></li>
+        <li><a href="#8-같은-집합-다른-구조--이-시리즈의-핵심-시각">8. 같은 집합, 다른 구조 — 이 시리즈의 핵심 시각</a></li>
+        <li><a href="#9-부분군">9. 부분군</a></li>
+        <li><a href="#10-군-준동형사상-예고">10. 군 준동형사상 (예고)</a></li>
+        <li><a href="#11-이-절을-닫으며">11. 이 절을 닫으며</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/lie_group3/index.html"><span itemprop="name">Lie group3</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">군의 기초 복습</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/0-1-b_abbreviations/index.html" title="약자와 표기 약속 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/lie_group3/0-3-b_smooth_manifold/index.html" title="매끄러운 다양체 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable lie_group3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="군의-기초-복습">군의 기초 복습</h1>
+
+<h3 id="1-이-절의-동기">1. 이 절의 동기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>리 군은 <em>매끄러운 다양체 + 매끄러운 군 연산</em> 의 두 구조가 양립하는 대상이다 (정확한 정의는 §1). 본격적 정의로 들어가기 전 <em>군</em> 부분과 <em>다양체</em> 부분을 따로 점검한다. 이 절은 군 부분, 다음 §0-3 은 다양체 부분.</p>
+<p>군은 <em>대칭의 수학적 정의</em> 다. 어떤 대상을 자기 자신으로 옮기는 변환들의 모임이 <em>합성</em> 에 대해 자연스럽게 만족하는 성질들이 있는데, 그것들을 모아 추상화한 것이 군 공리다.</p>
+<p>이 절은 군의 4공리를 <em>왜 그 형태인지</em> 부터 짚고, 친숙한 예와 <em>군이 아닌</em> 예를 대조하며, 마지막으로 <em>같은 집합이 어떤 이항 연산을 얹느냐에 따라 다른 구조</em> 가 된다는 점을 강조한다. 이 시각은 §8 이후 리 군과 리 대수의 관계를 이해할 때 결정적이다.</p>
+<h3 id="2-이항-연산이란">2. 이항 연산이란<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>군을 정의하기 전에 <em>이항 연산(binary operation)</em> 의 의미부터 짚는다.</p>
+<p><strong>1)</strong> 집합 $X$ 위의 <em>이항 연산</em> 이란 <em>두 원소를 받아 한 원소를 돌려주는 규칙</em> 이다. 정확히는 사상</p>
+$$\cdot : X \times X \to X, \qquad (a, b) \mapsto a \cdot b$$<p><strong>2)</strong> 정의에서 <em>목적지가 $X$</em> 인 것에 주목. 두 원소를 합성한 결과가 <em>같은 집합 $X$ 안</em> 에 있어야 한다. 이 성질을 <em>닫힘성(closure)</em> 이라 한다.</p>
+<p><strong>3)</strong> <em>예시</em>.</p>
+<ul>
+<li>정수 덧셈 $+ : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}, \ (m, n) \mapsto m + n$ — 닫혀있다.</li>
+<li>자연수 ($\mathbb{N} = \{1, 2, 3, \cdots\}$) 의 뺄셈은 <em>닫혀있지 않다</em>. 예 — $2 - 5 = -3 \notin \mathbb{N}$.</li>
+<li>행렬 곱셈 $M_N(\mathbb{F}) \times M_N(\mathbb{F}) \to M_N(\mathbb{F})$ — $N \times N$ 행렬 두 개의 곱은 다시 $N \times N$. 닫혀있다.</li>
+</ul>
+<p><strong>4)</strong> 닫혀있지 않으면 <em>군 연산이 될 자격조차 없다</em>. &ldquo;자연수 + 뺄셈&rdquo; 은 군 후보에서 탈락.</p>
+<h3 id="3-군의-4공리">3. 군의 4공리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이제 군을 정의한다.</p>
+<p><strong>1)</strong> <em>군(group)</em> 이란 집합 $G$ 와 이항 연산 $\cdot : G \times G \to G$ 의 쌍 $(G, \cdot)$ 으로, 다음 <em>네 공리</em> 를 만족하는 것이다.</p>
+<blockquote>
+<p><em>공리 1 (닫힘성, closure)</em>. 모든 $g, h \in G$ 에 대해 $g \cdot h \in G$.</p>
+<p><em>공리 2 (결합법칙, associativity)</em>. 모든 $g, h, k \in G$ 에 대해 $(g \cdot h) \cdot k = g \cdot (h \cdot k)$.</p>
+<p><em>공리 3 (항등원 존재, identity)</em>. 어떤 $e \in G$ 가 존재하여 모든 $g \in G$ 에 대해 $e \cdot g = g \cdot e = g$.</p>
+<p><em>공리 4 (역원 존재, inverse)</em>. 각 $g \in G$ 에 대해 어떤 $g^{-1} \in G$ 가 존재하여 $g \cdot g^{-1} = g^{-1} \cdot g = e$.</p>
+</blockquote>
+<p><strong>2)</strong> <em>각 공리의 의미</em>.</p>
+<p>공리 1 (닫힘성) — 합성해도 <em>같은 집합</em> 안에 머무른다. 군을 <em>그 안에서 자유롭게 연산할 수 있는 시스템</em> 으로 만든다.</p>
+<p>공리 2 (결합법칙) — 셋 이상을 합성할 때 <em>괄호를 어디 치든 결과가 같다</em>. 따라서 $g_1 \cdot g_2 \cdots g_n$ 같은 표기가 <em>모호하지 않다</em>. 합성 순서는 자유롭지만, <em>원소들 사이 순서는 바뀌면 안 된다</em> (그것은 가환성 — 별개 성질).</p>
+<p>공리 3 (항등원) — <em>&ldquo;아무 것도 안 하는&rdquo;</em> 원소. 회전이면 0도 회전, 덧셈이면 0, 곱셈이면 1. 항등원은 <em>유일</em> 함을 증명할 수 있다 (아래 §5).</p>
+<p>공리 4 (역원) — 모든 원소가 <em>되돌릴 수 있다</em>. 회전이면 반대로 회전, 덧셈이면 부호 반전, 곱셈이면 역수. 각 원소의 역원도 <em>유일</em> 하다.</p>
+<p><strong>3)</strong> <em>가환성은 공리가 아니다</em>.</p>
+<p>$g \cdot h = h \cdot g$ 가 모든 $g, h$ 에 대해 성립하면 <em>가환군(abelian group)</em> 또는 <em>아벨군</em> 이라 부른다. 일반 군에서는 <em>비가환</em> 일 수 있다.</p>
+<p>가환성이 <em>공리 5</em> 로 들어가지 않는 이유 — <em>비가환 군이 자연계에 더 흔하다</em>. 3차원 회전, 행렬 곱셈, 양자역학 연산자 등 거의 모두 비가환. 가환성을 강제로 넣으면 군 이론이 다룰 수 있는 대상이 좁아진다.</p>
+<h3 id="4-표기-약속--곱셈-표기와-덧셈-표기">4. 표기 약속 — 곱셈 표기와 덧셈 표기<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>일반 (비가환 가능) 군</em> 은 <em>곱셈 표기</em> 를 쓴다.</p>
+<ul>
+<li>연산 : $g \cdot h$ 또는 $gh$</li>
+<li>항등원 : $e$ 또는 $1$</li>
+<li>역원 : $g^{-1}$</li>
+<li>거듭제곱 : $g^n = \underbrace{g \cdot g \cdots g}_{n\text{ 번}}$, $g^0 = e$, $g^{-n} = (g^{-1})^n$</li>
+</ul>
+<p><strong>2)</strong> <em>가환군</em> 은 종종 <em>덧셈 표기</em> 를 쓴다.</p>
+<ul>
+<li>연산 : $g + h$</li>
+<li>항등원 : $0$ (항등원으로서의 0)</li>
+<li>역원 : $-g$</li>
+<li>배수 : $ng = \underbrace{g + g + \cdots + g}_{n\text{ 번}}$, $0 \cdot g = 0$ (좌변의 0은 정수, 우변의 0은 항등원), $(-n)g = n(-g)$</li>
+</ul>
+<p><strong>3)</strong> <em>주의</em> — 표기는 <em>관습</em> 이지 군의 본질이 아니다. 가환군에 곱셈 표기를 써도 되고, (이론상) 비가환군에 덧셈 표기를 써도 된다. 그러나 <em>덧셈 표기는 거의 항상 가환을 함의</em> 하므로 비가환에 덧셈 표기를 쓰면 혼란이 생긴다.</p>
+<p><strong>4)</strong> <em>리 군은 곱셈 표기 기본</em>. 비가환이 흔해서. <em>리 대수</em> (§11 에서 정의) 는 <em>덧셈 표기 + 추가 연산 (리 괄호 $[\cdot, \cdot]$)</em> 이다.</p>
+<h3 id="5-항등원과-역원의-유일성-간단-증명">5. 항등원과 역원의 유일성 (간단 증명)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>공리만 가지고 단순한 결과 두 개를 증명해 둔다. 군 공리들이 <em>어떻게 맞물려 돌아가는지</em> 보여주는 좋은 예시.</p>
+<p><strong>1)</strong> <em>항등원의 유일성</em>. $e, e'$ 가 둘 다 항등원이라 하면</p>
+$$e' = e' \cdot e \quad (\text{$e$ 가 항등원이므로}) \quad = \quad e \quad (\text{$e'$ 가 항등원이므로})$$<p>따라서 $e = e'$.</p>
+<p><strong>2)</strong> <em>역원의 유일성</em>. $g$ 의 역원으로 $h_1, h_2$ 가 둘 다 있다고 하면</p>
+$$h_1 = h_1 \cdot e = h_1 \cdot (g \cdot h_2) = (h_1 \cdot g) \cdot h_2 = e \cdot h_2 = h_2$$<p>따라서 $h_1 = h_2$.</p>
+<blockquote>
+<p>두 번째 증명에서 <em>결합법칙</em> 이 결정적으로 사용된다. 결합법칙 없는 시스템에서는 역원이 유일하지 않을 수 있다. 4공리는 하나라도 빠지면 흔한 결과들이 무너진다.</p>
+</blockquote>
+<h3 id="6-친숙한-예시">6. 친숙한 예시<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>군과 가환성을 함께 확인한다.</p>
+<p><strong>1)</strong> <em>덧셈군 (모두 가환)</em>.</p>
+<ul>
+<li>$(\mathbb{Z}, +)$ — 정수 덧셈</li>
+<li>$(\mathbb{Q}, +)$ — 유리수 덧셈</li>
+<li>$(\mathbb{R}, +)$ — 실수 덧셈</li>
+<li>$(\mathbb{C}, +)$ — 복소수 덧셈</li>
+</ul>
+<p>이들 모두 항등원 $0$, 역원 $-g$, 결합법칙 성립, 가환.</p>
+<p><strong>2)</strong> <em>곱셈군 (가환)</em>.</p>
+<ul>
+<li>$(\mathbb{Q} \setminus \{0\}, \cdot)$ — 0 이 아닌 유리수</li>
+<li>$(\mathbb{R} \setminus \{0\}, \cdot)$ — 0 이 아닌 실수</li>
+<li>$(\mathbb{R}^+, \cdot)$ — 양의 실수</li>
+<li>$(\mathbb{C} \setminus \{0\}, \cdot)$ — 0 이 아닌 복소수</li>
+<li>$(U(1), \cdot)$ — 단위원 위 복소수 $\{ e^{i\theta} : \theta \in \mathbb{R} \}$</li>
+</ul>
+<p>항등원 $1$, 역원 $1/g$, 가환.</p>
+<p><strong>3)</strong> <em>곱셈군 (비가환)</em>.</p>
+<ul>
+<li>
+<p>$(GL(N, \mathbb{R}), \cdot)$ — $N \times N$ 가역 실 행렬 ($N \ge 2$ 일 때 비가환)</p>
+</li>
+<li>
+<p>$(SO(3), \cdot)$ — 3차원 회전 (비가환).</p>
+<p>예 — $x$ 축으로 90° 회전 후 $y$ 축으로 90° 회전, 과 $y$ 축으로 90° 회전 후 $x$ 축으로 90° 회전은 결과 행렬이 <em>다르다</em>. 직접 행렬 곱셈으로 확인 가능.</p>
+</li>
+</ul>
+<p><strong>4)</strong> <em>유한군</em>.</p>
+<ul>
+<li>$\mathbb{Z}_N = \mathbb{Z}/N\mathbb{Z}$ — $N$ 원소 순환군. 덧셈 표기로 $\{0, 1, \cdots, N-1\}$, 덧셈은 $N$ 을 법으로. 가환.</li>
+<li><em>대칭군</em> $S_N$ — $N$ 개 원소의 <em>순열</em> 전체. $N \ge 3$ 에서 비가환.</li>
+</ul>
+<h3 id="7-군이-아닌-예--어디가-깨지는가">7. 군이 <em>아닌</em> 예 — 어디가 깨지는가<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>군이 아닌 예를 <em>어느 공리가 깨지는지</em> 와 함께 보면 공리의 의미가 선명해진다.</p>
+<p><strong>1)</strong> $(\mathbb{N}, +)$ — 자연수 덧셈 ($\mathbb{N} = \{1, 2, 3, \cdots\}$).</p>
+<ul>
+<li>닫힘 : OK</li>
+<li>결합 : OK</li>
+<li>항등원 : <em>깨짐</em>. $0 \notin \mathbb{N}$. (관습에 따라 $\mathbb{N}_0 = \{0, 1, 2, \cdots\}$ 으로 잡으면 항등원은 있다.)</li>
+<li>역원 : <em>깨짐</em>. $1$ 의 덧셈 역원 $-1$ 이 $\mathbb{N}$ 에 없다.</li>
+</ul>
+<p>→ 군 아님. 이런 구조 ($\mathbb{N}_0$ 처럼 항등원만 있고 역원이 없는 것) 를 <em>모노이드(monoid)</em> 라 부른다.</p>
+<p><strong>2)</strong> $(\mathbb{Z}, \cdot)$ — 정수 곱셈.</p>
+<ul>
+<li>닫힘, 결합, 항등원 ($1$) : OK</li>
+<li>역원 : <em>깨짐</em>. $2$ 의 곱셈 역원 $1/2$ 가 $\mathbb{Z}$ 에 없다. $\pm 1$ 외에는 가역이 없다.</li>
+</ul>
+<p>→ 군 아님. (역원 부족.)</p>
+<p><strong>3)</strong> $(\mathbb{R}, \cdot)$ — 실수 전체에 곱셈.</p>
+<ul>
+<li>닫힘, 결합, 항등원 ($1$) : OK</li>
+<li>역원 : <em>깨짐</em>. $0$ 의 곱셈 역원이 없다.</li>
+</ul>
+<p>→ 군 아님. $0$ 을 빼면 군이 된다 — $(\mathbb{R} \setminus \{0\}, \cdot)$.</p>
+<p><strong>4)</strong> $(\mathbb{R}^3, \times)$ — 3차원 벡터의 외적.</p>
+<ul>
+<li>닫힘 : OK</li>
+<li>결합 : <em>깨짐</em>. $(a \times b) \times c \neq a \times (b \times c)$ 가 일반적.</li>
+<li>항등원 : <em>깨짐</em>. $e \times a = a$ 를 모든 $a$ 에 대해 만족하는 $e$ 가 존재하지 않는다 ($e \times a$ 는 $e$ 에 수직이라 모든 $a$ 가 될 수 없다).</li>
+</ul>
+<p>→ 군 아님. 외적은 <em>리 대수</em> 구조의 한 예 — 다음 절에서 짚고, 본격적으로는 §11.</p>
+<p><strong>5)</strong> <em>교훈</em>. 군의 4공리는 &ldquo;있으면 좋다&rdquo; 가 아니라 <em>하나라도 빠지면 군이 아니다</em>. 그리고 <em>어떤 공리가 깨지느냐</em> 가 그 구조의 성격을 결정한다 (모노이드, 환, 리 대수, ⋯).</p>
+<h3 id="8-같은-집합-다른-구조--이-시리즈의-핵심-시각">8. 같은 집합, 다른 구조 — 이 시리즈의 핵심 시각<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>군은 <em>(집합, 연산) 쌍</em> 으로 결정된다. <em>같은 집합에 다른 연산</em> 을 얹으면 <em>다른 군 (또는 군 아닌 다른 구조)</em> 가 된다. 이 시각은 리 군·리 대수의 관계를 볼 때 결정적이다.</p>
+<p><strong>1)</strong> <em>실수 $\mathbb{R}$</em> 의 두 가지 구조.</p>
+<ul>
+<li>$(\mathbb{R}, +)$ — 덧셈군. 가환. 항등원 $0$. 모든 원소 가역.</li>
+<li>$(\mathbb{R}, \cdot)$ — 곱셈 <em>군 아님</em>. $0$ 이 가역 아님.</li>
+<li>$(\mathbb{R}^+, \cdot)$ — 양의 실수에 곱셈. 군. 가환.</li>
+</ul>
+<p>두 군 $(\mathbb{R}, +)$ 와 $(\mathbb{R}^+, \cdot)$ 는 <em>서로 동형</em> — 즉 &ldquo;추상적으로 같은 군&rdquo;. 동형 사상은 $\exp : \mathbb{R} \to \mathbb{R}^+, \ x \mapsto e^x$ (역으로 $\log : \mathbb{R}^+ \to \mathbb{R}$).</p>
+<blockquote>
+<p>이 동형이 <em>지수 사상의 가장 기본적 모습</em> — 시리즈 전체의 핵심 주제 (§7 이후). $\exp(x + y) = \exp(x) \exp(y)$ 라는 익숙한 항등식이, 사실은 <em>덧셈군에서 곱셈군으로 가는 준동형 조건</em> 이라는 시각.</p>
+</blockquote>
+<p><strong>2)</strong> <em>행렬 집합 $M_N(\mathbb{R})$</em> 의 여러 구조.</p>
+<p>같은 집합 $M_N(\mathbb{R})$ ($N \times N$ 실 행렬 전체) 에 <em>세 가지 자연 연산</em> 을 얹어보면 다음과 같다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>연산</th>
+          <th>군인가</th>
+          <th>가환성</th>
+          <th>비고</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$+$ (덧셈)</td>
+          <td><em>군</em></td>
+          <td>가환</td>
+          <td>항등원 $0$, 역원 $-M$</td>
+      </tr>
+      <tr>
+          <td>$\cdot$ (곱셈)</td>
+          <td><em>군 아님</em></td>
+          <td>—</td>
+          <td>비가역 행렬 존재</td>
+      </tr>
+      <tr>
+          <td>$[\cdot, \cdot]$ (교환자)</td>
+          <td><em>군 아님</em></td>
+          <td>—</td>
+          <td>항등원도 결합법칙도 없음</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>해설</em>.</p>
+<p>(1) $(M_N(\mathbb{R}), +)$ — 덧셈 항등원은 <em>영행렬</em> $0$, 역원은 $-M$. 가환. 군이다.</p>
+<p>(2) $(M_N(\mathbb{R}), \cdot)$ — 곱셈 항등원은 단위행렬 $I_N$, 그러나 <em>영행렬 $0$ 의 역원이 없다</em> (다른 비가역 행렬도 마찬가지). 군이 <em>아니다</em>. <em>가역 행렬만 골라낸</em> 부분집합 $GL(N, \mathbb{R})$ 위에서는 곱셈이 군 연산이 된다 — 그래서 $GL$ 의 정의가 <em>&quot;$\det \neq 0$인 행렬&quot;</em> 이다 (§0-1 §3 참조).</p>
+<p>(3) $[X, Y] = XY - YX$ — <em>교환자(commutator)</em>.</p>
+<ul>
+<li><em>항등원 없음</em>. $e$ 가 항등원이려면 $[X, e] = X$ 가 모든 $X$ 에 성립해야 한다. $e = 0$ 으로 잡으면 $[X, 0] = 0 \neq X$. $e = I$ 로 잡으면 $[X, I] = XI - IX = 0 \neq X$. 다른 어떤 $e$ 도 안 된다.</li>
+<li><em>결합법칙 없음</em>. 구체 반례 — $X = E_{12}$ (1행 2열만 1), $Y = E_{21}$, $Z = E_{11}$ 로 $2 \times 2$ 행렬을 잡으면</li>
+</ul>
+$$[X, Y] = E_{12} E_{21} - E_{21} E_{12} = E_{11} - E_{22}, \quad [[X, Y], Z] = [E_{11} - E_{22}, E_{11}] = 0$$$$[Y, Z] = E_{21} E_{11} - E_{11} E_{21} = E_{21} - 0 = E_{21}, \quad [X, [Y, Z]] = [E_{12}, E_{21}] = E_{11} - E_{22}$$<p>$[[X, Y], Z] = 0 \neq E_{11} - E_{22} = [X, [Y, Z]]$. 결합 안 됨.</p>
+<p>군이 <em>아니다</em>. 결합법칙 대신 <em>야코비 항등식</em> 이 성립한다 — $[[X, Y], Z] + [[Y, Z], X] + [[Z, X], Y] = 0$. 야코비는 §11 에서 본격적으로.</p>
+<blockquote>
+<p>교환자는 <em>군 연산이 아니다</em>. 그러나 <em>리 대수(Lie algebra)</em> 라 부르는 다른 구조 — <em>벡터공간 + 이중선형 반대칭 연산 + 야코비 항등식</em> — 의 핵심 연산이다. 리 대수는 군이 아니라 <em>대수</em> 이고, 이 시리즈 §11 에서 본격적으로 정의된다.</p>
+</blockquote>
+<p><strong>3)</strong> <em>세 구조의 공존</em>.</p>
+<p>$M_N(\mathbb{R})$ 위에는</p>
+<p>(1) 덧셈군 구조,</p>
+<p>(2) (가역 부분에서만) 곱셈군 구조,</p>
+<p>(3) 리 대수 구조 (덧셈 + 교환자),</p>
+<p>가 <em>동시에</em> 살아있다. 덧셈과 곱셈만 보면 <em>환(ring)</em> 구조. 덧셈과 교환자만 보면 <em>리 대수</em> 구조.</p>
+<p>리 군 시리즈의 큰 그림은 <em>곱셈군 $GL(N, \mathbb{R})$ (또는 그 부분군) ↔ 리 대수 (덧셈 + 교환자)</em> 의 대응이다. 다른 두 구조를 <em>지수 사상</em> 이 잇는다. 위의 (1) 에서 본 $\mathbb{R}$ 의 $\exp : (\mathbb{R}, +) \to (\mathbb{R}^+, \cdot)$ 의 행렬 버전.</p>
+<h3 id="9-부분군">9. 부분군<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> <em>부분군(subgroup)</em> 의 정의. 군 $(G, \cdot)$ 의 부분집합 $H \subseteq G$ 가 <em>$G$ 의 연산 $\cdot$ 을 그대로 받아 그 자신이 군</em> 이 되면, $H$ 를 <em>$G$ 의 부분군</em> 이라 한다. 표기 $H \le G$.</p>
+<p><strong>2)</strong> <em>부분군 판정 조건</em>. $H \subseteq G$ 가 부분군이려면 (그리고 그러면 충분히)</p>
+<ul>
+<li>항등원 포함 : $e \in H$</li>
+<li>곱셈 닫힘 : $h_1, h_2 \in H \Rightarrow h_1 \cdot h_2 \in H$</li>
+<li>역원 닫힘 : $h \in H \Rightarrow h^{-1} \in H$</li>
+</ul>
+<p>결합법칙은 $G$ 에서 이미 성립하므로 $H$ 에서도 자동으로 성립 — 별도 확인 불필요.</p>
+<p><strong>3)</strong> <em>예시</em>.</p>
+<ul>
+<li>$\mathbb{Z} \le \mathbb{Q} \le \mathbb{R} \le \mathbb{C}$ — 덧셈군의 연속된 부분군</li>
+<li>$SO(N) \le O(N) \le GL(N, \mathbb{R}) \le GL(N, \mathbb{C})$ — 행렬 곱셈군의 연속된 부분군</li>
+<li>$SU(N) \le U(N) \le GL(N, \mathbb{C})$ — 동일</li>
+</ul>
+<p><strong>4)</strong> 리 군의 <em>부분 리 군(Lie subgroup)</em> 은 부분군이면서 <em>매끄러운 부분 다양체</em> 이기까지 한 것. 정확한 정의는 §1 이후.</p>
+<h3 id="10-군-준동형사상-예고">10. 군 준동형사상 (예고)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1)</strong> 두 군 $(G, \cdot_G)$ 와 $(H, \cdot_H)$ 사이 <em>준동형사상(homomorphism)</em> 이란 <em>연산을 보존</em> 하는 사상</p>
+$$\varphi : G \to H, \qquad \varphi(g_1 \cdot_G g_2) = \varphi(g_1) \cdot_H \varphi(g_2)$$<p>즉 <em>$G$ 에서 먼저 합성하고 $\varphi$ 로 보내든, $\varphi$ 로 보낸 후 $H$ 에서 합성하든 결과가 같다</em>.</p>
+<p><strong>2)</strong> <em>동형사상(isomorphism)</em> 은 <em>일대일 대응이면서 양방향이 준동형</em> 인 사상. 두 군이 동형이면 <em>추상적으로 같은 군</em> 이라고 본다 — 예 §8(1) 의 $\exp : (\mathbb{R}, +) \to (\mathbb{R}^+, \cdot)$.</p>
+<p><strong>3)</strong> <em>연속 준동형</em> — 위상이 있는 군 사이에서는 연속성을 추가로 요구. 리 군 사이에서는 <em>매끄러운 준동형</em> 을 요구한다.</p>
+<p><strong>4)</strong> <em>예고</em>. <em>1-매개변수 부분군(one-parameter subgroup)</em> 이란 $(\mathbb{R}, +)$ 에서 리 군 $G$ 로 가는 연속 준동형으로 정의된다 (§5). 그 정의의 <em>준동형 조건</em> 이 §4 에서 <em>연속 대칭의 합성 법칙</em> 으로부터 자연스럽게 유도된다 — 이 시리즈의 중요한 동기 부여 지점.</p>
+<h3 id="11-이-절을-닫으며">11. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>이 절에서 점검한 것.</p>
+<p>(1) 군은 <em>(집합, 이항 연산) 쌍</em> 으로 정의되며 4공리 (닫힘, 결합, 항등원, 역원) 를 만족한다.</p>
+<p>(2) 가환성은 공리가 아니다 — 비가환 군이 자연계에서 더 흔하다.</p>
+<p>(3) 같은 집합에 다른 연산을 얹으면 다른 구조가 된다 — $M_N(\mathbb{R})$ 위 덧셈군, 곱셈 (가역 부분만) 군, 교환자 (군 아닌 리 대수 구조) 의 세 가지가 공존.</p>
+<p>(4) 리 군의 곱셈군 구조와 리 대수의 덧셈+교환자 구조의 대응이 이 시리즈의 큰 그림. 이를 <em>지수 사상</em> 이 잇는다.</p>
+<p>다음 §0-3 에서는 <em>매끄러운 다양체</em> 를 점검한다. 그러고 나면 §1 에서 <em>리 군 = 매끄러운 다양체 + 매끄러운 군 연산</em> 의 본격적 정의로 들어갈 준비가 끝난다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">수리전자물리학</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
+            <li class="" data-nav-id="/lie_group3/0-1-b_abbreviations/index.html"><a class="padding" href="/lie_group3/0-1-b_abbreviations/index.html">약자와 표기 약속</a></li>
+            <li class="active " data-nav-id="/lie_group3/0-2-b_group_basics/index.html"><a class="padding" href="/lie_group3/0-2-b_group_basics/index.html">군의 기초 복습</a></li>
+            <li class="" data-nav-id="/lie_group3/0-3-b_smooth_manifold/index.html"><a class="padding" href="/lie_group3/0-3-b_smooth_manifold/index.html">매끄러운 다양체</a></li>
+            <li class="" data-nav-id="/lie_group3/0-4-b_tangent_space/index.html"><a class="padding" href="/lie_group3/0-4-b_tangent_space/index.html">접공간</a></li>
+            <li class="" data-nav-id="/lie_group3/0-5-b_spectral_bidual_notation/index.html"><a class="padding" href="/lie_group3/0-5-b_spectral_bidual_notation/index.html">스펙트럼 분해와 바이듀얼 표기</a></li>
+            <li class="" data-nav-id="/lie_group3/1-b_lie_group_definition/index.html"><a class="padding" href="/lie_group3/1-b_lie_group_definition/index.html">리 군이란</a></li>
+            <li class="" data-nav-id="/lie_group3/2-b_compact_connected/index.html"><a class="padding" href="/lie_group3/2-b_compact_connected/index.html">컴팩트성과 연결성</a></li>
+            <li class="" data-nav-id="/lie_group3/3-b_abelian_nonabelian/index.html"><a class="padding" href="/lie_group3/3-b_abelian_nonabelian/index.html">가환과 비가환</a></li>
+            <li class="" data-nav-id="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html"><a class="padding" href="/lie_group3/4-b_continuous_symmetry_homomorphism/index.html">연속 대칭의 합성 — 준동형의 물리적 동기</a></li>
+            <li class="" data-nav-id="/lie_group3/5-b_one_parameter_subgroup/index.html"><a class="padding" href="/lie_group3/5-b_one_parameter_subgroup/index.html">1-매개변수 부분군의 정의</a></li>
+            <li class="" data-nav-id="/lie_group3/6-b_generator_taylor/index.html"><a class="padding" href="/lie_group3/6-b_generator_taylor/index.html">테일러 전개와 생성자 — 항등원의 특수성</a></li>
+            <li class="" data-nav-id="/lie_group3/7-b_exponential_map/index.html"><a class="padding" href="/lie_group3/7-b_exponential_map/index.html">생성자 → 지수 사상 — 왜 지수 함수가 등장하는지</a></li>
+            <li class="" data-nav-id="/lie_group3/8-b_lie_algebra_definition/index.html"><a class="padding" href="/lie_group3/8-b_lie_algebra_definition/index.html">항등원에서의 접공간 = 리 대수</a></li>
+            <li class="" data-nav-id="/lie_group3/9-b_one_to_one_correspondence/index.html"><a class="padding" href="/lie_group3/9-b_one_to_one_correspondence/index.html">리 대수 ↔ 1-매개변수 부분군 1:1 대응</a></li>
+            <li class="" data-nav-id="/lie_group3/10-b_commutator_lie_bracket/index.html"><a class="padding" href="/lie_group3/10-b_commutator_lie_bracket/index.html">교환자와 리 괄호 — 비가환성의 무한소 표현</a></li>
+            <li class="" data-nav-id="/lie_group3/11-b_lie_algebra_axioms/index.html"><a class="padding" href="/lie_group3/11-b_lie_algebra_axioms/index.html">리 대수의 공리</a></li>
+            <li class="" data-nav-id="/lie_group3/12-b_compact_connected_surjective/index.html"><a class="padding" href="/lie_group3/12-b_compact_connected_surjective/index.html">컴팩트 연결의 경우 — 전사성 증명과 직관</a></li>
+            <li class="" data-nav-id="/lie_group3/13-b_noncompact_exp_product/index.html"><a class="padding" href="/lie_group3/13-b_noncompact_exp_product/index.html">비컴팩트의 경우 — 지수의 곱 필요</a></li>
+            <li class="" data-nav-id="/lie_group3/14-b_disconnected_discrete/index.html"><a class="padding" href="/lie_group3/14-b_disconnected_discrete/index.html">비연결의 경우 — 이산 변환 추가</a></li></ul></li>
+            <li class="" data-nav-id="/exterior_algebra/index.html"><a class="padding default-animation" href="/exterior_algebra/index.html">Exterir algebra</a><ul id="R-subsections-e739147f77eb9dca31cff3c6d36b5693" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/greens_function/index.html"><a class="padding default-animation" href="/greens_function/index.html">Green&#39;s function</a><ul id="R-subsections-86c859eba200647bcdd272111ca06bcb" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
+            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787039205"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787039205" defer></script>
+    <script src="/js/theme.js?1787039205" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

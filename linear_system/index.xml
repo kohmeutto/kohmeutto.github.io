@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear system :: 수리전자물리학</title>
+    <link>http://localhost:1313/linear_system/index.html</link>
+    <description>LSI LScI LAI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/linear_system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LSI</title>
+      <link>http://localhost:1313/linear_system/lsi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsi/index.html</guid>
+      <description>(i) LSI (b) Convolution (b) Causality (b) Laplace transform I (b) Laplace transform II (b) Laplace transform III (b) Fourier transform I (a) Algebra structure (b) Fourier transform II (b) Fourier series (b) LSI &amp; Circuit analysis</description>
+    </item>
+    <item>
+      <title>LScI</title>
+      <link>http://localhost:1313/linear_system/lsci/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lsci/index.html</guid>
+      <description>(i) LScI (b) Mellin transform I (b) Mellin transform II (b) Mellin transform III (a) Algebra structure (b) Laurent&#39;s series I (b) Lourent&#39;s series II</description>
+    </item>
+    <item>
+      <title>LAI</title>
+      <link>http://localhost:1313/linear_system/lai/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/linear_system/lai/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

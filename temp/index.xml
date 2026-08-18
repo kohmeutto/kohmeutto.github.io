@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Temps :: 수리전자물리학</title>
+    <link>http://localhost:1313/temp/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/temp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(a) Basis</title>
+      <link>http://localhost:1313/temp/a_basis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_basis/index.html</guid>
+      <description>동일 매개변수 공간에서의 변환을 다룬다. 매개변수 공간은 데카르트 좌표계로 표현한다. 변환은 다른 단위 직교 기저로의 변환이다. 0. 정리&#xD;(1) 기저 변환&#xA;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j&#xD;$$(2) 기저 역변환&#xA;$$&#xD;\hat{u}_i=B_{ji}\hat{u}_j&#39;&#xD;$$(3) 유니타리 연산자&#xA;$$&#xD;\bar{\bar{I}}&#xD;=\bar{\bar{B}}\cdot\bar{\bar{B}}^T,\quad&#xD;\bar{\bar{B}}^T=\bar{\bar{B}}^{-1}&#xD;$$(4) 항등 연산&#xA;$$&#xD;\delta_{ij}=B_{ik}B_{jk}&#xD;$$ 1. 기저 벡터의 변환: 텐서 표기법 사용&#xD;$$&#xD;\hat{u}_i&#39;=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 기저 변환 텐서의 성분이다.}&#xD;$$$B_{ij}$ 는 다음과 같이 정의될 수 있다.</description>
+    </item>
+    <item>
+      <title>(b) Adjoint &amp; Decomposition</title>
+      <link>http://localhost:1313/temp/b_adjoint_decomposition/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_adjoint_decomposition/index.html</guid>
+      <description>1. 연산자의 Adjoint&#xD;수반 연산자는 그 자체로 범함수는 아니지만, 범함수(Bra)가 연산자를 만났을 때 어떻게 변하는지를 설명하는 ‘연산자의 그림자’와 같다. 우리는 연산자를 켓(Ket)에 작용시킬 수도 있지만, 수반 연산자를 통해 범함수(Bra)에 작용시킬 수도 있다. 이것이 바로 수반 연산자의 진정한 권능이다.&#xA;$$\langle v | \hat{A} w \rangle = \langle \hat{A}^\dagger v | w \rangle$$ 기하학적 의미: $\hat{A}$가 공간을 특정 방향으로 뒤튼다면, $\hat{A}^\dagger$는 그 뒤틀림을 ‘거울에 비춘 듯한’ 방식으로 되돌리거나 대응시키는 작용을 한다. Dirac Notation: 브라-켓 표기법에서 수반 작용은 매우 직관적이다. $(\hat{A}|w\rangle)^\dagger = \langle w|\hat{A}^\dagger$. 2. 주요 성질 (Algebra of Adjoints)&#xD;수반 작용은 대합(Involution) 의 성질을 가지며, 이는 거울을 두 번 비추면 원래 모습으로 돌아오는 것과 같다.</description>
+    </item>
+    <item>
+      <title>(b) Adjoint &amp; Residue transformation</title>
+      <link>http://localhost:1313/temp/b_adjoint_derivation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_adjoint_derivation/index.html</guid>
+      <description>수반 연산자를 구하는 과정은 시스템이 정의된 공간의 성격(내적의 정의) 에 따라 달라진다. 하지만 그 모든 과정은 단 하나의 목표 즉 연산자를 브라(Bra) 쪽으로 넘겼을 때 결과값(스칼라)의 불변성을 유지하는 것에 집중한다.&#xA;1. 유한 차원: 행렬 성분의 자리 바꾸기&#xD;$$&#xD;(A^\dagger)_{ij} = (A_{ji})^{\ast}&#xD;$$proof)&#xA;행렬 $A$의 수반 행렬 $A^\dagger$가 왜 ‘켤레 전치’가 되는지는 성분 단위의 비교를 통해 자명해진다.</description>
+    </item>
+    <item>
+      <title>(b) Generalization</title>
+      <link>http://localhost:1313/temp/b_generalization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_generalization/index.html</guid>
+      <description>1. 고유벡터의 결핍과 대수적 퇴화&#xD;임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.&#xA;고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.</description>
+    </item>
+    <item>
+      <title>(i) LSI</title>
+      <link>http://localhost:1313/temp/i_lsi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/i_lsi/index.html</guid>
+      <description>LSI 연산자 정리&#xA;(1) $\hat{H}|x&#39;\rangle=|h(x-x&#39;)\rangle$&#xA;(2) $\hat{H}=|h\rangle\ast=\int dx&#39; |h(x-x&#39;)\rangle\langle x&#39;|$&#xA;(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$&#xA;1. LSI&#xD;LSI operator(system) 이 가지는 특성은 아래와 같다.&#xA;(1) Linearity(선형성)=Superpostion&#xA;Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.&#xA;$$ \text{Superposition}=\text{Addictivity}+\text{Scaling} $$$$ \hat{H}(a|\psi_1\rangle+b|\psi_2\rangle) =a\hat{H}|\psi_1\rangle+b\hat{H}|\psi_2\rangle $$(2) Shift invarient&#xA;이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 똑같은 모양으로 나온다. $$ |\varphi(t)\rangle=\hat{H}|\psi(t)\rangle \implies \hat{S}_\tau|\varphi(t)\rangle =\hat{S}_\tau\hat{H}|\psi(t)\rangle =\hat{H}\hat{S}_\tau|\psi(t)\rangle $$ ‘똑같은 모양으로 나온다.‘의 의미는 단지 출력이 평행 이동할 뿐이다. $$ h(u,u&#39;)=h(u-u&#39;) $$proof)</description>
+    </item>
+    <item>
+      <title>(i) LSI</title>
+      <link>http://localhost:1313/temp/i_lsi2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/i_lsi2/index.html</guid>
+      <description>LSI 연산자 정리&#xA;(1) $\hat{H}|x&#39;\rangle=|h(x-x&#39;)\rangle$&#xA;(2) $\hat{H}=|h\rangle\ast=\int dx&#39; |h(x-x&#39;)\rangle\langle x&#39;|$&#xA;(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$&#xA;1. LSI&#xD;LSI operator(system) 이 가지는 특성은 아래와 같다.&#xA;(1) Linearity(선형성)=Superpostion&#xA;Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.&#xA;$$ \text{Superposition}=\text{Addictivity}+\text{Scaling} $$$$ \hat{H}(a|\psi_1\rangle+b|\psi_2\rangle) =a\hat{H}|\psi_1\rangle+b\hat{H}|\psi_2\rangle $$(2) Shift invarient&#xA;이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 똑같은 모양으로 나온다. ‘똑같은 모양으로 나온다.‘의 의미는 단지 출력이 나오는 시간만 입력이 들어간 시간에 맞춰 평행 이동할 뿐이다. $$ |\varphi(t-\tau)\rangle=\hat{H}|\psi(t-\tau)\rangle $$proof)</description>
+    </item>
+    <item>
+      <title>Lourent&#39;s series</title>
+      <link>http://localhost:1313/temp/laurents_series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/laurents_series/index.html</guid>
+      <description>(b) Cauchy&#39;s Integral Formula (b) Residue</description>
+    </item>
+    <item>
+      <title>Preface</title>
+      <link>http://localhost:1313/temp/preface/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/preface/index.html</guid>
+      <description>Integral Transformation $$ T\{f(t)\}\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack $$ Convolution $$ y\left(t\right)=\int_0^{t}d\tau\left\lbrack h\left(\tau\right)x\left(t-\tau\right)\right\rbrack $$ Laplace transformation $$ \langle s|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-st}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F\left(s\right)\right\rbrack $$ Fourier transformation, 비대칭형 $$ \langle\omega|f\rangle =\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}f\left(t\right)\right\rbrack $$$$ \langle t|F\rangle =\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack e^{i\omega t}F\left(\omega\right)\right\rbrack $$ Fourier transformation, 대칭형 $$ \langle k|f\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{-ikx}f\left(k\right)\right\rbrack $$$$ \langle x|F\rangle =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk\left\lbrack e^{+ikx}F\left(k\right)\right\rbrack $$ Green’s function $$ y\left(t\right)=\int_{r^{\prime}}^{}dr^{\prime}\left\lbrack G\left(r,r^{\prime}\right)f\left(r^{\prime}\right)\right\rbrack $$</description>
+    </item>
+    <item>
+      <title>(b) Convolution I</title>
+      <link>http://localhost:1313/temp/b_convolution_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_convolution_i/index.html</guid>
+      <description>LSI 연산자 정리&#xA;(1) $\hat{H}|x&#39;\rangle=|h(x-x&#39;)\rangle$&#xA;(2) $\hat{H}=|h\rangle\ast=\int dx&#39; |h(x-x&#39;)\rangle\langle x&#39;|$&#xA;(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$&#xA;1. 대표적인 LSI operators&#xD;LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. 예외 없이 모든 LSI 연산자들은 합성곱(Convolution)으로 표현 될 수 있다는 공통점을 가진다.&#xA;미분 (Differentiation) $$ |\psi&#39;\rangle=\hat{D}|\psi\rangle $$$$ \psi&#39;(x)=\langle x|\psi&#39;\rangle=\langle x|\hat{D}|\psi\rangle=\frac{d}{dx}\psi(x) $$ 적분 (Integration) $$ |g\rangle=\hat{D}^{-1}|f\rangle $$$$ g(x)=\langle x|g\rangle=\langle x|\hat{D}^{-1}|f\rangle=\int dx f(x) $$ 이동 (Shift / Delay) $$ |\psi(t-\tau)\rangle=\hat{S}_{\tau}|\psi(t)\rangle $$ 스케일링 (Scaling) $$ |a\psi\rangle=a|\psi\rangle $$ 2. 모든 LSI 연산자는 합성곱 귀결된다.&#xD;어떤 신호 $|\psi\rangle$든, 그 신호는 모든 순간의 임펄스(impulse) 기저 $|\tau\rangle$들의 연속적인 합(적분)으로 표현할 수 있다. 이는 디랙 델타 함수의 기본 성질이다.</description>
+    </item>
+    <item>
+      <title>(b) Copy-shift II</title>
+      <link>http://localhost:1313/temp/b_shift_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_shift_ii/index.html</guid>
+      <description>1. 이동연산자의 생성자(Generator)&#xD;함수의 기울기를 구할 있듯 연산자의 기울기를 생성자(Generator)라고 한다.&#xA;$$&#xD;\hat{G}=-\frac{d}{d u}&#xD;$$proof)&#xA;이동연산자의 생성자는 덧셈의 항등원($\tau=0$) 지점에서의 접선의 기울기를 계산하는 것이다.&#xA;$$&#xD;\hat{G}&#xD;=\hat{D}_{\tau\to0}\hat{S}_\tau&#xD;=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\right|_{\tau=0}&#xD;$$$u$로 사영하여 표현한다.&#xA;$$&#xD;\hat{G}\psi(u)&#xD;=\left.\frac{\partial}{\partial\tau}\hat{S}_\tau\psi(u)\right|_{\tau=0}&#xD;=\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}&#xD;$$여기에서, $X=u-\tau$ 라고 하면,&#xA;$$&#xD;\left.\frac{\partial}{\partial\tau}\psi(u-\tau)\right|_{\tau=0}&#xD;=\left.\frac{\partial\psi}{\partial X}\frac{\partial X}{\partial\tau}\right|_{\tau=0}&#xD;=-\frac{d}{du}\psi(u)&#xD;$$따라서,&#xA;$$&#xD;\hat{G}=-\frac{d}{d u}&#xD;$$ 2. 생성자 &amp; 이동연산자의 고유값과 고유벡터&#xD;(1) 생성자와 이동연산자의 교환자</description>
+    </item>
+    <item>
+      <title>(b) Determinant</title>
+      <link>http://localhost:1313/temp/b_determinant/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_determinant/index.html</guid>
+      <description>1. 행렬식의 의미&#xD;X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X’=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X’으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다. 행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값 으로 볼 수 있다. det(A)&gt;0이면 도형의 방향(orientation)이 보존되고 det(A)&lt;0이면 도형의 방향이 보존 되지 않는다. $$ P&#39;=AP $$$$ \text{면적}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{면적}\left(P\right) $$$$ \text{부피}\left(P&#39;\right)=\left|\det\left(A\right)\right|\cdot\text{부피}\left(P\right) $$ 2. 2D 변환&#xD;3. 2D 변환 &amp; det(A)=0&#xD;det(A)=0, 넓이 보정값은 0 det(A)=0, 차원 축소를 의미한다. 2D-&gt;1D or dot 4. 3D 변환&#xD;5. 3D 변환 &amp; det(A)=0&#xD;det(A)=0, 부피 보정값은 0 det(A)=0, 차원 축소를 의미한다. 3D-&gt;2D or 1D or dot 6. 중요 특성&#xD;$$ \left|AB\right|=\left|A\right|\left|B\right| $$ 7. det(A)=0, 선형 독립 &amp; 선형 종속&#xD;det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을</description>
+    </item>
+    <item>
+      <title>(b) Operator I</title>
+      <link>http://localhost:1313/temp/b_operator_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_operator_i/index.html</guid>
+      <description>1. 항등 연산자&#xD;(1) 이산기저 (Discrete Basis)&#xA;$$&#xD;\hat{I} = \sum_i |u_i\rangle \langle u^i|&#xD;= \sum_{i,j} (G^{-1})^{ij}|u_i\rangle \langle u_j|&#xD;,\quad&#xD;\hat{I} = \sum_i |u_i\rangle \langle u_i|&#xD;$$proof)&#xA;$$&#xD;|\psi\rangle = \sum_i u_i|u_i\rangle&#xD;$$여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 듀얼 기저 벡터와 내적을 하면,&#xA;$$&#xD;u_i=\langle u^i|\psi\rangle&#xD;$$$$&#xD;|\psi\rangle = \sum_i \langle u^i|\psi\rangle|u_i\rangle&#xD;= \sum_i |u_i\rangle \langle u^i|\psi\rangle&#xD;$$따라서,</description>
+    </item>
+    <item>
+      <title>Algebra structure for LSI</title>
+      <link>http://localhost:1313/temp/algebra_structure/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/algebra_structure/index.html</guid>
+      <description>(a) Operator &amp; Generator (a) Operators in quantum mechanics</description>
+    </item>
+    <item>
+      <title>Derivation3</title>
+      <link>http://localhost:1313/temp/derivation1-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/derivation1-copy/index.html</guid>
+      <description>작성자: 김기범, 윤영준 / 일자: 2026.03.29&#xA;0. 적용 분야&#xD;금속-n형 반도체 접합면 에서 일어나는 현상에 한정한다. 본 수송 모델은 단일 전도대($m=1$)만을 고려하므로 가전자대로의 SRH 재결합 현상은 수식에서 배제된다. 따라서 본 모델은 재결합이 물리적으로 소멸하는 순방향 중간 전압(Intermediate Forward Bias) 구간의 열이온 방출(Thermionic Emission) 및 계면 양자 산란 해석에 적용된다. 여기서 도출되는 수명 $\tau$는 재결합 수명이 아닌, 전자가 장벽을 투과할 때 계면 결함에 의해 겪는 계면 투과 완화 시간(Interface Transmission Relaxation Time)을 의미한다.</description>
+    </item>
+    <item>
+      <title>Electromotive force</title>
+      <link>http://localhost:1313/temp/electromotive_force/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/electromotive_force/index.html</guid>
+      <description>(a) Frame &amp; Viewpoint (a) Lagrangian and Eulerian specification (a) Material derivative (i) Electromotive force I (a) Electromotive force II (r) EMF &amp; Voltage</description>
+    </item>
+    <item>
+      <title>Fourier series</title>
+      <link>http://localhost:1313/temp/fourier_series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/fourier_series/index.html</guid>
+      <description>(p) Circuit examples</description>
+    </item>
+    <item>
+      <title>(a) 2nd tensor</title>
+      <link>http://localhost:1313/temp/a_2nd_tensor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_2nd_tensor/index.html</guid>
+      <description>1. 2차 tensor의 성분 변환: 텐서 표기법 사용&#xD;여기에서의 설명은 직교좌표계의 기저로 한정한다. 직교가 아닌 일반 좌표계에서는 적용할 수 없다.&#xA;$$&#xD;A_{ij}&#39;=C_{ijkl}A_{kl},\quad \text{$C_{ijkl}$ 는 성분 변환 텐서의 성분이다.}&#xD;$$$$&#xD;C_{ijkl}=B_{ik}B_{jl}&#xD;$$proof)&#xA;동일 공간에서, 텐서는 좌표계가 달라져도 불변임을 기억하라.&#xA;$$&#xD;\bar{\bar{A}}&#xD;=A_{ij}&#39;\hat{u}_i&#39;\hat{u}_j&#39;&#xD;=A_{ij}\hat{u}_i\hat{u}_j&#xD;$$기저 벡터의 변환을 적용해 보자.&#xA;$$&#xD;A_{ij}\hat{u}_i\hat{u}_j&#xD;=A_{ij}(B_{ki}\hat{u}_k&#39;)(B_{lj}\hat{u}_l&#39;)&#xD;=A_{ij}B_{ki}B_{lj}\hat{u}_k&#39;\hat{u}_l&#39;&#xD;$$$k$↔$i$, $l$↔$j$ 로 조정하면,&#xA;$$&#xD;A_{kl}B_{ik}B_{jl}\hat{u}_i&#39;\hat{u}_j&#39;&#xD;=A_{ij}&#39;\hat{u}_i&#39;\hat{u}_j&#39;&#xD;$$따라서,</description>
+    </item>
+    <item>
+      <title>(a) Basis &amp; Components</title>
+      <link>http://localhost:1313/temp/a_basis_components/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_basis_components/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;1. 기저의 표현&#xD;아래와 같이 u 좌표계의 orthnormal 한 기저 벡터를 아래와 같이 놓는다.&#xA;$$&#xD;|u_{i}\rangle=\begin{bmatrix}&#xD;u_{i}\left\lbrack1\right\rbrack \\&#xD;u_{i}\left\lbrack2\right\rbrack \\&#xD;u_{i}\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$$$&#xD;|u_1\rangle=\begin{bmatrix}&#xD;u_1\left\lbrack1\right\rbrack \\&#xD;u_1\left\lbrack2\right\rbrack \\&#xD;u_1\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_2\rangle=\begin{bmatrix}&#xD;u_2\left\lbrack1\right\rbrack \\&#xD;u_2\left\lbrack2\right\rbrack \\&#xD;u_2\left\lbrack3\right\rbrack&#xD;\end{bmatrix}, \quad&#xD;|u_3\rangle=\begin{bmatrix}&#xD;u_3\left\lbrack1\right\rbrack \\&#xD;u_3\left\lbrack2\right\rbrack \\&#xD;u_3\left\lbrack3\right\rbrack&#xD;\end{bmatrix}&#xD;$$기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.</description>
+    </item>
+    <item>
+      <title>(a) Mellin transform II</title>
+      <link>http://localhost:1313/temp/a_mellin_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/a_mellin_transform_ii/index.html</guid>
+      <description>1. 멜린 변환&#xD;$$&#xD;\langle s^M|f\rangle&#xD;=\int_0^{\infty}\frac{dx}{x}x^{s}f\left(t\right)&#xD;$$ 2. linearity&#xD;적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^M|af+bg\rangle&#xD;=a\langle s^M|f\rangle+b\langle s^M|g\rangle&#xD;$$ 3. Core LScI duality (핵심 쌍대성)&#xD;LSI의 (시간 이동 $\leftrightarrow$ 주파수 곱셈)과 (주파수 이동 $\leftrightarrow$ 시간 곱셈)은 LScI에서 다음과 같이 완벽한 대칭을 이룬다.</description>
+    </item>
+    <item>
+      <title>(b) Variational Operator I</title>
+      <link>http://localhost:1313/temp/b_variational_operator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_variational_operator/index.html</guid>
+      <description>1. 정의: 게토 미분 (Gâteaux Derivative)&#xD;변분연산자 $\delta$는 “함수 공간(Function Space) 위에서 작동하는 무한차원 미분연산자&#34;이다. 변분연산자 $\delta$는 매개변수 $\epsilon$에 대한 방향 미분(Directional Derivative)으로 정의된다.&#xA;$$&#xD;u(x) \to u(x) + \epsilon \eta(x) \quad (\eta(x) \text{는 임의의 미소 변형 함수})&#xD;$$$$&#xD;\delta u(x) \equiv \left. \frac{\partial}{\partial \epsilon} (u(x) + \epsilon \eta(x)) \right\vert{}_{\epsilon = 0} = \eta(x)&#xD;$$ 미분 연산자 $d$: 숫자 $3$은 미분 대상(변수)이 아니므로 $\frac{d}{dx}(3) = 0$ 변분 연산자 $\delta$: 독립변수 $x$는 변분의 대상(함수)이 아니므로 $\delta x = 0$ 2. 선형성 (Linearity)&#xD;변분연산자 $\delta$는 선형 연산자(Linear Operator)이다. 임의의 상수 $c_1, c_2$와 함수 $u_1, u_2$에 대해 다음이 성립한다.</description>
+    </item>
+    <item>
+      <title>(b) Variational Operator II</title>
+      <link>http://localhost:1313/temp/b_variational_operator_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_variational_operator_ii/index.html</guid>
+      <description>1. 세미콜론 “;” 과 콤마 “,” 구분&#xD;변분 기호 내부에서의 표기 규칙변분 기호 $\delta F$ (또는 $\delta \hat{F}$) 내에서는 고정된 동작점 $u$와 입력되는 변분 방향 $\delta u$의 지위가 완전히 다르므로 반드시 세미콜론 “;” 을 사용한다.&#xA;(1) 1계 변분:&#xA;$$&#xD;\delta F(\vert{}u\rangle \,;\, \vert{}\delta u\rangle)&#xD;$$ 좌측 $\vert{}u\rangle$: 미분이 수행되는 기준 동작점 (Evaluation Point) 우측 $\vert{}\delta u\rangle$: 입력되는 변분 방향 (Perturbation Direction) (2) 2계 변분:</description>
+    </item>
+    <item>
+      <title>Series</title>
+      <link>http://localhost:1313/temp/series/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/series/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transformation</title>
+      <link>http://localhost:1313/temp/transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/transformation/index.html</guid>
+      <description>(a) Components (a) 2nd tensor (a) Rotation &amp; Transport (a) Derivative</description>
+    </item>
+    <item>
+      <title>(b) Components transformation</title>
+      <link>http://localhost:1313/temp/b_components_transformation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_components_transformation/index.html</guid>
+      <description>중요사항: 동일 [실 공간] 에 대한 것으로 기저를 다르게 표현하였을 때, 텐서의 성분 변환 을 다룬다.&#xA;0. 정리&#xD;기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저&#xA;$$ B_{D}^{C} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix},\quad B_{C}^{S} =\begin{bmatrix} \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -\sin\theta &amp; 0 \end{bmatrix} $$ 1. 데카르트 좌표계 ↔︎ 원통 좌표계&#xD;데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현 $$ u_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +u_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} +u_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} =\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} $$ 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현 $$ v_1\begin{bmatrix} \cos\phi \\ \sin\phi \\ 0 \end{bmatrix} +v_2\begin{bmatrix} -\sin\phi \\ \cos\phi \\ 0 \end{bmatrix} +v_3\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix} =\begin{bmatrix} \cos\phi &amp; -\sin\phi &amp; 0 \\ \sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Continuous</title>
+      <link>http://localhost:1313/temp/b_continuous/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_continuous/index.html</guid>
+      <description>1. 연속 스펙트럼과 복소 평면의 분지절단 (Branch Cut)&#xD;이산 공간(Discrete space)에서 연산자의 스펙트럼은 복소 평면 상에 고립된 점 형태의 특이점(Isolated singularity)으로 존재하며, 레졸번트는 이 극점들을 중심으로 로랑 급수(Laurent series) 전개를 이룬다. 이산 챕터에서 보았듯, 고립된 극점 $\lambda_m$ 을 감싸는 코시 닫힌 경로 적분 $\oint_{\Gamma_m}$ 을 통해 사영 연산자 $\hat{P}_m$(1차극)과 멱영 연산자 $\hat{N}_m$(2차 이상 극)을 산출하였다.&#xA;반면, 시스템의 차원이 무한대로 확장되거나 경계 조건이 개방(Open boundary)될 경우, 이산적인 고윳값 $\lambda_m$ 은 밀집되어 연속적인 스펙트럼을 형성한다. 이때 레졸번트 연산자 $R(z, \hat{A}) = (z\hat{I} - \hat{A})^{-1}$ 는 더 이상 고립된 극점을 갖지 않으며, 복소 평면 상의 특정 곡선을 따라 특이점이 조밀하게 배열된 분지절단(Branch cut)을 형성한다. 레졸번트는 이 절단선을 경계로 해석적 연속성(Analytic continuation)을 상실하며, 복소수 $z$ 가 절단선의 각기 다른 방향에서 접근할 때 대수적으로 서로 다른 극한값을 가지게 된다.</description>
+    </item>
+    <item>
+      <title>(b) I-unitary</title>
+      <link>http://localhost:1313/temp/b_i-unitary/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_i-unitary/index.html</guid>
+      <description>1. Unitary 연산자&#xD;1) 정의&#xA;연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 유니타리 (Unitary) 연산자 라 한다.&#xA;$$&#xD;\hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I}&#xD;$$즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건이 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.&#xA;2) 물리적 의미&#xA;유니타리 연산자는 상태 벡터의 길이(norm), 즉 확률을 보존 하는 모든 물리적 변환을 나타낸다. 양자 시스템의 시간 변화(time evolution) 나 기저 변환(change of basis) 등은 반드시 유니타리 연산자로 기술되어야 한다.</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform I</title>
+      <link>http://localhost:1313/temp/b_laplace_transform_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_laplace_transform_i/index.html</guid>
+      <description>1. Eigenvector &amp; eigenvalue of LSI systems&#xD;연산자 $|h\rangle\ast$ 의 고유값과 고유벡터&#xA;$$ \text{eigenvalue}: H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st} $$$$ \text{eigenvector}: |s\rangle, \langle t|s\rangle=e^{st} $$proof)&#xA;$$ |h\rangle\ast|s\rangle=H(s)|s\rangle $$위의 식을 토대로,&#xA;$$ \langle t|(|h\rangle\ast)|s\rangle =\int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) $$$$ \langle t|H(s)|s\rangle =H(s)\langle t|s\rangle =H(s) s(t) $$$\langle t|s\rangle=s(t)=e^{st}$ 라고 하면,&#xA;$$ \int^{\infty}_{-\infty}d\tau h(\tau) s(t-\tau) =\int^{\infty}_{-\infty}d\tau h(\tau) e^{s(t-\tau)} =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)e^{st} $$따라서,</description>
+    </item>
+    <item>
+      <title>(b) Matrix &amp; Kernel</title>
+      <link>http://localhost:1313/temp/b_matrix_kernel/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_matrix_kernel/index.html</guid>
+      <description>‘행렬’이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다. ‘커널’이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다. 1. 이산기저와 행렬&#xD;(1) 단위기저(orthonormal basis) 벡터&#xA;연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.&#xA;$$&#xD;\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad&#xD;\text{where }&#xD;A_{ij}=\langle u_i| \hat{A} |u_j\rangle&#xD;$$proof)&#xA;$$&#xD;\hat{A}&#xD;=\hat{I}\hat{A}\hat{I}&#xD;=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)&#xD;=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|&#xD;$$$$&#xD;=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|&#xD;$$(2) 듀얼기저(dual basis) 벡터</description>
+    </item>
+    <item>
+      <title>(b) Uniqueness</title>
+      <link>http://localhost:1313/temp/b_uniqueness/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_uniqueness/index.html</guid>
+      <description>1. 시작: 두 사람이 같은 문제를 풀었다&#xD;PDE 와 BC 가 주어진 문제를 두 사람이 풀었다고 하자.&#xA;A 의 답: $V_1(\vec{x})$ B 의 답: $V_2(\vec{x})$ 자연스러운 질문이 따라온다. 두 답이 같은가, 다른가? 또는 다를 수 있다면 얼마나 다를 수 있는가?&#xA;이 질문이 “유일성 정리 (uniqueness theorem)” 의 의미이다. 문제 풀이의 신뢰성을 위해 답이 어떤 정도로 결정되는지 알아야 한다. 답이 완전히 하나이면 좋고, 그렇지 않더라도 어느 정도의 자유도가 있는지 명확히 알아야 한다.</description>
+    </item>
+    <item>
+      <title>Research_PA</title>
+      <link>http://localhost:1313/temp/research_pa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_pa/index.html</guid>
+      <description>Omegadl</description>
+    </item>
+    <item>
+      <title>(b) Gauge Freedom</title>
+      <link>http://localhost:1313/temp/b_gauge_freedom/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_gauge_freedom/index.html</guid>
+      <description>1. Neumann 의 모호성이 무엇을 의미하는가&#xD;앞 문서 (b_uniqueness.md) 에서 Neumann BC 의 유일성이 “상수 차이까지” 만 보장된다는 사실을 보았다. 두 해 $V_1$ 과 $V_2$ 가 있을 때 $V_1 = V_2 + c$ (어떤 상수 $c$) 가 가능하다는 것. 이게 단순한 수학적 부산물인지, 아니면 더 깊은 의미를 갖는지가 본 문서의 출발점이다.&#xA;결론부터 짚으면, 이 모호성은 우연이 아니다. 전자기학의 깊은 대칭 — 게이지 자유도 (gauge freedom) — 가 수학에 반영된 모습이다. 본 문서에서 이 연결의 의미를 정리하고, 수치해석에서 실용적으로 어떻게 처리하는지까지 다룬다.</description>
+    </item>
+    <item>
+      <title>(b) Generator II</title>
+      <link>http://localhost:1313/temp/b_generator_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_generator_ii/index.html</guid>
+      <description>1. 가환군의 생성자들은 항상 교환 가능&#xD;$\hat{S}$가 가환군(Abelian Group)이라고 가정하에,&#xA;$$&#xD;[\hat{G}_1, \hat{G}_2] = 0&#xD;$$proof)&#xA;$\hat{S}$가 가환군(Abelian Group)이라고 가정해 보자. 그러면 임의의 두 원소 $\hat{S}_1, \hat{S}_2$에 대해 순서를 바꿔도 결과가 같아야 한다.&#xA;$$&#xD;\hat{S}_1 \hat{S}_2 = \hat{S}_2 \hat{S}_1&#xD;$$이 $\hat{S}$들을 아주 작은 움직임(무한소, Infinitesimal)이라고 생각하고 생성자 $\hat{G}$로 표현해 보자. ($\epsilon$은 아주 작은 실수)&#xA;$$&#xD;\hat{S}_1 \approx \hat{I} + \epsilon \hat{G}_1,\quad&#xD;\hat{S}_2 \approx I + \epsilon \hat{G}_2&#xD;$$이제 그룹의 가환 조건식에 대입해 본다.</description>
+    </item>
+    <item>
+      <title>(b) Gradient for scalar</title>
+      <link>http://localhost:1313/temp/b_gradient_for_scalar/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_gradient_for_scalar/index.html</guid>
+      <description>1. Gradient의 의미&#xD;등위선 또는 등위면에서 법선(수직) 뱡향의 기울기 이다.&#xA;2. Gradient for scalar&#xD;매개변수 공간 -&gt; 실공간 직교좌표계&#xA;$$&#xD;\nabla_u&#xD;:=\hat{u}^j\frac{\partial}{\partial u^j} \implies&#xD;\nabla&#xD;:=\vec{h}^j\frac{\partial}{\partial u^j}&#xD;$$ 데카르트좌표계: $h_1=1, h_2=1, h_3=1$ 원통좌표계: $h_1=1, h_2=\rho, h_3=1$ 구좌표계: $h_1=1, h_2=r, h_3=r\sin\theta$ (2) 실공간 직교좌표계</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform II</title>
+      <link>http://localhost:1313/temp/b_laplace_transform_ii-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_laplace_transform_ii-copy/index.html</guid>
+      <description>1. 라플라스 변환&#xD;(1) 단방향 라플라스 변환&#xA;$$&#xD;\langle s^L|f\cdot u\rangle&#xD;=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack&#xD;$$(2) 양방향 라플라스 변환, causal system&#xA;$$&#xD;\langle s^L|f\rangle&#xD;=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack&#xD;$$ 2. 중요 Properties&#xD;(1) linearity&#xA;적분연산자 자체가 선형연산자이다.&#xA;$$&#xD;\langle s^L|af\cdot u+bg\cdot u\rangle&#xD;=a\langle s^L|f\cdot u\rangle+b\langle s^L|g\cdot u\rangle&#xD;$$$$&#xD;\langle s^L|af+bg\rangle&#xD;=a\langle s^L|f\rangle+b\langle s^L|g\rangle&#xD;$$(2) time shifting</description>
+    </item>
+    <item>
+      <title>(b) Laplace transform II</title>
+      <link>http://localhost:1313/temp/b_laplace_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_laplace_transform_ii/index.html</guid>
+      <description>1. 라플라스 변환&#xD;(1) 단방향 라플라스 변환&#xA;$$&#xD;\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)&#xD;=\langle s^L|f\cdot u\rangle&#xD;=\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack&#xD;$$(2) 양방향 라플라스 변환, causal system&#xA;$$&#xD;\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)&#xD;=\langle s^L|f\rangle&#xD;=\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack&#xD;$$Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 라플라스 변환의 극점과 ROC의 관계 를 살펴보자.&#xA;2. 중요변환&#xD;1-1) 디렉 델타 함수</description>
+    </item>
+    <item>
+      <title>(b) Syntax</title>
+      <link>http://localhost:1313/temp/b_syntax/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_syntax/index.html</guid>
+      <description>1. 규칙과 관습&#xD;(1) 기호의 병치는 ‘결과’에 대한 별명으로 허용된다.&#xA;스칼라나 모자가 없는 연산자 기호를 Ket 이름에 붙여 쓰는 것은, 연산이 끝난 후의 결과 벡터에 대한 별명으로 관용적으로 허용된다.&#xA;OK: $a|\psi\rangle=|a\psi\rangle$ OK: $U|\psi\rangle=|U\psi\rangle$ (2) 함수 인자에 대한 연산은 이름표 내부에서 허용된다.&#xA;일반저그로&#xA;OK: $|\psi(t+a)\rangle=\hat{T}(-a)|\psi\rangle$ |f(t+a)⟩와 같은 표현이 허용되는 이유는, + 연산이 벡터 |f⟩에 작용하는 것이 아니라, 이름표로 사용된 함수 f의 입력 인자(argument) t 에 작용하기 때문이다. 이것은 이동 연산자 T̂(-a)가 |f⟩에 작용한 결과 벡터에 대한 별명이다.</description>
+    </item>
+    <item>
+      <title>(b) Dilation</title>
+      <link>http://localhost:1313/temp/b_dilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_dilation/index.html</guid>
+      <description>1. Dilation 연산자&#xD;1) 정의&#xA;정규 연산자 $\hat{D}$ 가 임의의 벡터 $|\psi\rangle$ 에 대해 다음을 만족할 때, 이를 dilation (확장) 연산자 라 한다.&#xA;$$ \|\hat{D}|\psi\rangle\| \geq \|\psi\| $$즉 어떤 벡터에 작용해도 그 노름이 감소하지 않는다. 동등하게 작용소 노름의 역 부등식으로 표현하면 $\|\hat{D}^{-1}\| \leq 1$ (역원이 존재할 때).&#xA;부등호가 strict 일 때 — 모든 비영벡터에 대해 $\|\hat{D}|\psi\rangle\| &gt; \|\psi\|$ — 이를 strict dilation 이라 한다.</description>
+    </item>
+    <item>
+      <title>(b) Fourier transform I</title>
+      <link>http://localhost:1313/temp/b_fourier_transform_i/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_fourier_transform_i/index.html</guid>
+      <description>1. 푸리에 변환의 본질&#xD;푸리에 변환은 라플라스 변환의 특수한 경우이다. 즉, s-domain의 실수부가 0으로 고정하고, 허수축에서만의 변환 을 의미한다.&#xA;우선 라플라스 변환 연산자를 살펴보자.&#xA;$$ \langle s^L|f\rangle=\int dt \left[ e^{-st} f(t) \right] $$실수부가 0으로 고정되면,&#xA;$$ \langle s^L|f\rangle|_{\operatorname{Re}[s]=0} =2\pi i\langle s^d|f\rangle|_{\operatorname{Re}[s]=0} =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right] $$(1) 비대칭 푸리에 변환 &amp; 변환 연산자&#xA;수학, 공학, 특히 신호 처리에서 비대칭성 기반 정의가 더 많이 사용된다. 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문</description>
+    </item>
+    <item>
+      <title>[GC] Operation</title>
+      <link>http://localhost:1313/temp/gc_operation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/gc_operation/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vector calculus</title>
+      <link>http://localhost:1313/temp/tensor_calculus/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/tensor_calculus/index.html</guid>
+      <description>(b) Space &amp; Vector &amp; Tensor Notation &amp; Operation (i) Total derivative &amp; Gradient Orthogonal coordinates General coordinates Transformation for GC</description>
+    </item>
+    <item>
+      <title>(b) Fourier transform II</title>
+      <link>http://localhost:1313/temp/b_fourier_transform_ii/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_fourier_transform_ii/index.html</guid>
+      <description>1. 중요변환&#xD;1) Dirac delta function - time to frequency domain&#xA;$$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle \omega| \delta \rangle $$&#xD;비대칭성, 중요&#xD;비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다. $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle\omega|f\rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right] $$ 따라서, $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성&#xD;$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain</description>
+    </item>
+    <item>
+      <title>(b) Fourier transform II</title>
+      <link>http://localhost:1313/temp/b_fourier_transform_ii-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_fourier_transform_ii-copy/index.html</guid>
+      <description>비정규 직교 기저 푸리에 변환 $$ \langle \omega|:=\langle \omega^A| $$ 정규 직교 기저 푸리에 변환 $$ \langle \omega|:=\langle \omega^S| $$ 1. 중요변환&#xD;1) Dirac delta function - time to frequency domain&#xA;$$ \langle \omega^A| \delta \rangle=1 $$$$ \langle \omega^S| \delta \rangle=\frac{1}{\sqrt{2\pi}} $$&#xD;비대칭성, 중요&#xD;비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다. $$ \mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right) =\langle\omega|f\rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right] $$ 따라서, $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}\delta\left(t\right)\right] =1 $$ 대칭성&#xD;$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ $$ \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle =\int^{\infty}_{-\infty}dt \left[\frac{1}{\sqrt{2\pi}}e^{-i\omega t}\delta\left(t\right)\right] =\frac{1}{\sqrt{2\pi}} $$ 2) Dirac delta function - frequency to time domain</description>
+    </item>
+    <item>
+      <title>(b) Inner product</title>
+      <link>http://localhost:1313/temp/b_inner_product/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_inner_product/index.html</guid>
+      <description>1. 벡터의 내적&#xD;벡터 $\vec{a}$, 벡터 $\vec{b}$의 내적은 다음과 같다.&#xA;첫번째는 일반 벡터 표기, 두번쨰는 Dirac notation, 세번쨰는 행렬 연산의 표기이다.&#xA;$$&#xD;\vec{a}\cdot\vec{b}=\langle a| b \rangle = [a]^T[b]&#xD;$$ 2. 복소내적공간에서 벡터의 내적&#xD;벡터의 크기는 내적을 사용하여 구할 수 있다. 벡터의 크기는 실수 값 이므로, 복소 벡터의 크기를 정의하기 위해서는, 켤레복소수(asterisk)를 취한다. 아래는 sufiix notation 이다.</description>
+    </item>
+    <item>
+      <title>(b) Projection</title>
+      <link>http://localhost:1313/temp/b_projection/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_projection/index.html</guid>
+      <description>공사중</description>
+    </item>
+    <item>
+      <title>(b) Theory</title>
+      <link>http://localhost:1313/temp/theory1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/theory1/index.html</guid>
+      <description>작성자: 김기범&#xA;수식적 증명 완료: 26/02/23/03:25(7번까지 작성) 1. 연산자 Adjoint의 물리 &amp; 공학적 의미&#xD;측정 대상을 바꿀 것(연산자)인가. 측정 관점을 바꿀 것인가(수반 연산자), 수반 연산자는 대상의 변화($\hat{A}$)를 관찰자의 변화($\hat{A}^\dagger$)로 번역해주는 ‘대칭의 거울’이다. 우리는 이 거울을 통해 대상을 직접 건드리지 않고도(Ket), 우리의 시선(Bra)을 정교하게 교정함으로써 우주의 진리에 도달한다.&#xA;1) ‘범함수(Functional)‘라는 측정 기계&#xA;브라 $\langle v|$는 수학적으로 “켓을 넣으면 숫자를 뱉는 기계” 이다.예를 들어, “이 시스템의 에너지는 얼마인가?“라고 묻는 기계가 $\langle v|$라고 가정해 보자.</description>
+    </item>
+    <item>
+      <title>(p) Circuit examples for FS</title>
+      <link>http://localhost:1313/temp/p_circuit_examples_for_fs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/p_circuit_examples_for_fs/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>(b) Theory2</title>
+      <link>http://localhost:1313/temp/theory2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/theory2/index.html</guid>
+      <description>작성자: 김기범&#xA;수식적 증명 완료: 26/02/23/03:25(7번까지 작성) 1. 수치 해석에 적용: FDM의 이해&#xD;1) 이차 차분 수식&#xA;이것은 FDM 수식이 D2 행렬로 어떻게 변하는지 원리를 보여준다.&#xA;$$&#xD;f&#39;&#39;(x_i) \approx \frac{1}{\Delta x^2} f(x_{i-1}) - \frac{2}{\Delta x^2} f(x_i) + \frac{1}{\Delta x^2} f(x_{i+1})&#xD;$$이 수식은 i번째 격자점에서 일어나는 물리 법칙입니다. 이를 행렬의 i번째 행(Row) 에 기록하는 것이다.&#xA;(1) Column $i-1$ (왼쪽 이웃): $1/\Delta x^2$ 만큼의 영향력을 준다.&#xA;(2) Column $i$ (자기 자신): $-2/\Delta x^2$ 만큼의 중심축을 잡는다.&#xA;(3) Column $i+1$ (오른쪽 이웃): $1/\Delta x^2$ 만큼의 영향력을 준다.</description>
+    </item>
+    <item>
+      <title>(b) Theory3</title>
+      <link>http://localhost:1313/temp/theory3-copy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/theory3-copy/index.html</guid>
+      <description>1. 변분 연산자 $\delta$의 정의와 위계&#xD;변분 연산자 $\delta$는 힐베르트 공간의 벡터를 다루는 일반 연산자보다 상위 층위에 존재하는 슈퍼 연산자(Super-operator) 이다. 이는 연산자 대수(Operator Algebra) 위에서 정의되는 미분 사상(Derivation) 으로 규정된다.&#xA;변분 연산자는 다음의 세 가지 공리를 완벽하게 만족한다.&#xA;1) 선형성 (Linearity)&#xA;$$&#xD;\delta(c_1 \hat{A} + c_2 \hat{B}) = c_1 \delta \hat{A} + c_2 \delta \hat{B}&#xD;$$2) 라이프니츠 법칙 (Leibniz Rule)</description>
+    </item>
+    <item>
+      <title>(b) Theory3</title>
+      <link>http://localhost:1313/temp/theory3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/theory3/index.html</guid>
+      <description>1. 변분 연산자 $\delta$의 정의와 위계&#xD;변분 연산자 $\delta$는 힐베르트 공간의 벡터를 다루는 일반 연산자보다 상위 층위에 존재하는 슈퍼 연산자(Super-operator) 이다. 이는 연산자 대수(Operator Algebra) 위에서 정의되는 미분 사상(Derivation) 으로 규정된다.&#xA;변분 연산자는 다음의 세 가지 공리를 완벽하게 만족한다.&#xA;1) 선형성 (Linearity)&#xA;$$&#xD;\delta(c_1 \hat{A} + c_2 \hat{B}) = c_1 \delta \hat{A} + c_2 \delta \hat{B}&#xD;$$2) 라이프니츠 법칙 (Leibniz Rule)</description>
+    </item>
+    <item>
+      <title>(b) Theory4</title>
+      <link>http://localhost:1313/temp/theory4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/theory4/index.html</guid>
+      <description>1. 연산자 Adjoint의 물리 &amp; 공학적 의미&#xD;측정 대상을 바꿀 것(연산자)인가. 측정 관점을 바꿀 것인가(수반 연산자), 수반 연산자는 대상의 변화($\hat{A}$)를 관찰자의 변화($\hat{A}^\dagger$)로 번역해주는 대칭의 거울이다. 우리는 이 거울을 통해 대상을 직접 건드리지 않고도(Ket), 우리의 시선(Bra)을 정교하게 교정함으로써 우주의 진리에 도달한다.&#xA;1) 범함수(Functional)라는 측정 기계&#xA;브라 $\langle v|$는 수학적으로 “켓을 넣으면 숫자를 뱉는 기계” 이다.예를 들어, “이 시스템의 에너지는 얼마인가?“라고 묻는 기계가 $\langle v|$라고 가정해 보자.</description>
+    </item>
+    <item>
+      <title>CHAPTER 2</title>
+      <link>http://localhost:1313/temp/chapter2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/chapter2/index.html</guid>
+      <description>2.1 기초 지표의 공리적 정의와 레지듀 변환&#xD;본 절에서는 선형 연산자 $L$에 대한 레지듀 변환(residue transform) $\mathcal{R}L$을 정의하고, 이를 통해 연산자의 비정규성(non-normality)을 정량화하는 대수적 체계를 수립한다. 증명의 엄밀성을 위해 기하학적 도메인의 위상적 제약을 배제한 추상 힐베르트 공간(abstract Hilbert space)에서 공리를 먼저 선언하며, 이후 이를 물리적 연속계로 환원하여 해석학적 실체를 규명한다.&#xA;1) 레지듀 변환의 대수적 공리&#xA;복소 힐베르트 공간 $\mathcal{H}$에 속하는 임의의 상태 함수 $\phi, \psi \in \mathcal{H}$와 선형 연산자 $L$에 대하여, 레지듀 변환 연산자 $\mathcal{R}$을 다음의 항등식을 만족하는 사상으로 정의한다.</description>
+    </item>
+    <item>
+      <title>(b) Linearization</title>
+      <link>http://localhost:1313/temp/b_linearization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/b_linearization/index.html</guid>
+      <description>1. 게토 변분(Gâteaux Variation)의 정의와 논리적 한계&#xD;바나흐 공간(Banach Space) $\mathcal{V}, \mathcal{W}$ 사이의 연산자 $F: \mathcal{V} \to \mathcal{W}$에 대해, 상태 $u \in \mathcal{V}$에서 방향 $\delta u \in \mathcal{V}$로의 게토 변분 $\delta F(u; \delta u)$는 실수 매개변수 $\epsilon \in \mathbb{R}$에 대한 미분으로 정의된다.&#xA;$$&#xD;\delta F(u; \delta u) \equiv \left. \frac{d}{d\epsilon} F[u + \epsilon \delta u] \right|_{\epsilon = 0} = \lim_{\epsilon \to 0} \frac{F[u + \epsilon \delta u] - F[u]}{\epsilon}&#xD;$$ 2. 게토 미분가능성 및 국소 자코비안 연산자 $J_u$&#xD;상태 $u \in \mathcal{V}$에서 모든 방향 $\delta u \in \mathcal{V}$에 대해 게토 변분 $\delta F(u; \delta u)$가 존재하고, 사상 $\delta u \mapsto \delta F(u; \delta u)$가 유계 선형 연산자(Bounded Linear Operator)를 이룰 때, 연산자 $F$는 $u$에서 게토 미분가능(Gâteaux Differentiable) 하다고 정의한다.</description>
+    </item>
+    <item>
+      <title>Research_NA</title>
+      <link>http://localhost:1313/temp/research_na/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/temp/research_na/index.html</guid>
+      <description>(b) Theory1 (b) Theory 2 OUTLINE CHAPTER 1 CHAPTER 2 CHAPTER 3 CHAPTER 4 Appendix</description>
+    </item>
+  </channel>
+</rss>
