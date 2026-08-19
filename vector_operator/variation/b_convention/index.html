@@ -27,28 +27,28 @@ $$\hat{A}|u\rangle \in V^*, \qquad \hat{A}\big(c_1|u_1\rangle &#43; c_2|u_2\ran
     <meta itemprop="description" content="1. 표기 규약1) 헷: 유계 선형 연산자
 기호 위에 헷($\hat{\cdot}$)이 붙은 표기는 $V \to V^*$의 유계 선형 연산자를 뜻한다. 켓과 나란히 붙여 쓰면 해당 연산자의 작용을 나타낸다. 헷이 붙지 않은 기호는 비선형 사상을 의미한다.
 $$\hat{A}|u\rangle \in V^*, \qquad \hat{A}\big(c_1|u_1\rangle &#43; c_2|u_2\rangle\big) = c_1\hat{A}|u_1\rangle &#43; c_2\hat{A}|u_2\rangle$$$$N(u) \in V^* \quad (\text{허용})$$$$N|u\rangle \quad (\text{금지})$$ 의미: 헷은 선형성을 표시하고, 켓과의 병치(juxtaposition)는 작용을 표시한다. 금지 이유: 병치 표현 자체가 이미 선형 작용의 의미를 담고 있으므로, 비선형 사상을 병치로 쓰면 선형성 여부를 판별할 수 없다. 2) 소괄호: 상태 의존성">
-    <meta itemprop="wordCount" content="1291">
+    <meta itemprop="wordCount" content="1278">
     <title>(b) Convention :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787040752" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787040752" defer></script>
-    <script src="/js/search-lunr.js?1787040752" defer></script>
-    <script src="/js/search.js?1787040752" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1787116359" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787116359" defer></script>
+    <script src="/js/search-lunr.js?1787116359" defer></script>
+    <script src="/js/search.js?1787116359" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787040752";
+      window.relearn.index_js_url="/searchindex.en.js?1787116359";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787040752" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787040752" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787040752" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787040752" defer></script>
+    <script src="/js/lunr/lunr.min.js?1787116359" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787116359" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787116359" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1787116359" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787040752" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787040752" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787040752" rel="stylesheet">
-    <link href="/css/theme.css?1787040752" rel="stylesheet">
-    <link href="/css/format-html.css?1787040752" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1787116359" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787116359" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787116359" rel="stylesheet">
+    <link href="/css/theme.css?1787116359" rel="stylesheet">
+    <link href="/css/format-html.css?1787116359" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -135,7 +135,7 @@ $$\hat{A}|u\rangle \in V^*, \qquad \hat{A}\big(c_1|u_1\rangle &#43; c_2|u_2\ran
 <span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/variation/index.html" title="Variation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/variation/b_differential_operator/index.html" title="(b) Differential operators (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/variation/b_variational_operator/index.html" title="(b) Variational Operator (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -403,7 +403,6 @@ $$<p>$|\delta\psi\rangle = |\eta\rangle$을 대입하고 $2$로 나누면 결과
   <thead>
       <tr>
           <th style="text-align: left">금지 표기</th>
-          <th style="text-align: left">위반 항목</th>
           <th style="text-align: left">올바른 표기</th>
           <th style="text-align: left">사유</th>
       </tr>
@@ -411,55 +410,46 @@ $$<p>$|\delta\psi\rangle = |\eta\rangle$을 대입하고 $2$로 나누면 결과
   <tbody>
       <tr>
           <td style="text-align: left">$\hat{A}\big(\vert u\rangle\big)$</td>
-          <td style="text-align: left">§3-2</td>
           <td style="text-align: left">$\hat{A}(u)$</td>
           <td style="text-align: left">소괄호 내부에 켓 표기 사용 금지</td>
       </tr>
       <tr>
           <td style="text-align: left">$N\vert u\rangle$ ($N$ 비선형)</td>
-          <td style="text-align: left">§3-1</td>
           <td style="text-align: left">$N(u)$</td>
           <td style="text-align: left">비선형 사상에 병치 작용 표기 사용 금지</td>
       </tr>
       <tr>
           <td style="text-align: left">$\delta\hat{A}\vert u\rangle$</td>
-          <td style="text-align: left">§3-3</td>
           <td style="text-align: left">$(\delta\hat{A})\vert u\rangle$ 또는 $\delta\{\hat{A}\vert u\rangle\}$</td>
           <td style="text-align: left">변분 작용 범위의 모호성</td>
       </tr>
       <tr>
           <td style="text-align: left">$DX\big\vert_a[\vert\eta\rangle]$</td>
-          <td style="text-align: left">§3-4</td>
           <td style="text-align: left">$DX[a : \vert\eta\rangle]$</td>
           <td style="text-align: left">세로줄($\vert$) 사용으로 인한 디랙 표기와의 구문 충돌</td>
       </tr>
       <tr>
           <td style="text-align: left">$D\{\hat{A}_a\}[\vert\eta\rangle]$</td>
-          <td style="text-align: left">§3-5</td>
           <td style="text-align: left">$DX[a : \vert\eta\rangle]$</td>
           <td style="text-align: left">고정된 상숫값 대상에 대한 미분 수행 모순</td>
       </tr>
       <tr>
           <td style="text-align: left">$\hat{A}_u$</td>
-          <td style="text-align: left">§3-5</td>
           <td style="text-align: left">$\hat{A}$ 또는 $\hat{A}_a$</td>
           <td style="text-align: left">변분 대상 $u$를 아래첨자로 고정 표현 금지</td>
       </tr>
       <tr>
           <td style="text-align: left">$\hat{D}$, $\hat{\delta}$</td>
-          <td style="text-align: left">§3-1</td>
           <td style="text-align: left">$D$, $\delta$</td>
           <td style="text-align: left">미분/변분 연산자에 헷 표기 부과 금지</td>
       </tr>
       <tr>
           <td style="text-align: left">$\hat{A}(u; \delta u)$</td>
-          <td style="text-align: left">정의 1</td>
           <td style="text-align: left">$\delta\hat{A}$ 또는 $D\hat{A}[\vert\eta\rangle]$</td>
           <td style="text-align: left">세미콜론 사용 및 방향 인자의 중복 전달 금지</td>
       </tr>
       <tr>
           <td style="text-align: left">$[\cdot] \in \mathcal{L}(\mathcal{H})$</td>
-          <td style="text-align: left">정리 1</td>
           <td style="text-align: left">소속은 대상에 따라 정해짐</td>
           <td style="text-align: left">괄호 종류에 따른 출력 공간 소속 고정 오류</td>
       </tr>
@@ -525,8 +515,8 @@ $$<p>$|\delta\psi\rangle = |\eta\rangle$을 대입하고 $2$로 나누면 결과
             <li class="alwaysopen " data-nav-id="/vector_operator/resolvent_operator/index.html"><a class="padding default-animation" href="/vector_operator/resolvent_operator/index.html">Resolvent operator</a><ul id="R-subsections-e122862bc4ecbedd1c8d4e88f4d6f44e" class="collapsible-menu"></ul></li>
             <li class="parent alwaysopen " data-nav-id="/vector_operator/variation/index.html"><a class="padding default-animation" href="/vector_operator/variation/index.html">Variation</a><ul id="R-subsections-eb3a19f299ca0013853296f641c5255b" class="collapsible-menu">
             <li class="active " data-nav-id="/vector_operator/variation/b_convention/index.html"><a class="padding" href="/vector_operator/variation/b_convention/index.html">(b) Convention</a></li>
-            <li class="" data-nav-id="/vector_operator/variation/b_differential_operator/index.html"><a class="padding" href="/vector_operator/variation/b_differential_operator/index.html">(b) Differential operators</a></li>
             <li class="" data-nav-id="/vector_operator/variation/b_variational_operator/index.html"><a class="padding" href="/vector_operator/variation/b_variational_operator/index.html">(b) Variational Operator</a></li>
+            <li class="" data-nav-id="/vector_operator/variation/b_differential_operator/index.html"><a class="padding" href="/vector_operator/variation/b_differential_operator/index.html">(b) Differential operators</a></li>
             <li class="" data-nav-id="/vector_operator/variation/b_local_linearization/index.html"><a class="padding" href="/vector_operator/variation/b_local_linearization/index.html">(b) Local linearization</a></li></ul></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
@@ -573,9 +563,9 @@ $$<p>$|\delta\psi\rangle = |\eta\rangle$을 대입하고 $2$로 나누면 결과
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787040752"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787040752" defer></script>
-    <script src="/js/theme.js?1787040752" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787116359"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787116359" defer></script>
+    <script src="/js/theme.js?1787116359" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

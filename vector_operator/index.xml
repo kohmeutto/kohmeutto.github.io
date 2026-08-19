@@ -68,7 +68,7 @@
       <link>http://localhost:1313/vector_operator/normal_operators/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/normal_operators/index.html</guid>
-      <description>(b) Normal (b) Hermitian (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation</description>
+      <description>(b) Normal (b) Hermitian (b) Positive definite (b) anti-Hermitian (b) Unitary (b) Contraction (b) Dilation</description>
     </item>
     <item>
       <title>Non-normal operators</title>
@@ -96,7 +96,7 @@
       <link>http://localhost:1313/vector_operator/variation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/variation/index.html</guid>
-      <description>(b) Convention (b) Differential operators (b) Variational Operator (b) Local linearization</description>
+      <description>(b) Convention (b) Variational Operator (b) Differential operators (b) Local linearization</description>
     </item>
     <item>
       <title>Function of operators</title>
