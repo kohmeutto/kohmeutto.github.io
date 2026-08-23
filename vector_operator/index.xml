@@ -3,7 +3,7 @@
   <channel>
     <title>Vector &amp; Operator :: 수리전자물리학</title>
     <link>http://localhost:1313/vector_operator/index.html</link>
-    <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Combining spaces Resolvent operator Variation Function of operators</description>
+    <description>Euclidean vector Hilbert vector Dirac notation Determinant Norm Eigenvalue problem Commutator Adjoint Normal operators Non-normal operators Combining spaces Resolvent operator Variation Decomposition Function of operators</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/vector_operator/index.xml" rel="self" type="application/rss+xml" />
@@ -97,6 +97,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/variation/index.html</guid>
       <description>(b) Convention (b) Variational Operator (b) Differential operators (b) Local linearization</description>
+    </item>
+    <item>
+      <title>Decomposition</title>
+      <link>http://localhost:1313/vector_operator/decomposition/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/vector_operator/decomposition/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Function of operators</title>

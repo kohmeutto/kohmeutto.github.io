@@ -991,6 +991,9 @@
     <loc>http://localhost:1313/vector_operator/normal_operators/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/basic_physics/system/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/vector_operator/index.html</loc>
   </url>
   <url>
@@ -1084,6 +1087,9 @@
     <loc>http://localhost:1313/lie_theory/a_noether_theorem/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/basic_physics/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/temp/research_na/chapter4/index.html</loc>
   </url>
   <url>
@@ -1106,6 +1112,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/variation/b_variational_operator/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vector_operator/decomposition/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/vector_operator/function_of_operators/index.html</loc>
