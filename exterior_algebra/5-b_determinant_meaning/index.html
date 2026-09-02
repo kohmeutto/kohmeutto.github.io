@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
 $$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
@@ -23,28 +23,28 @@ $$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, 
     <meta itemprop="name" content="행렬식의 진정한 의미 :: 수리전자물리학">
     <meta itemprop="description" content="1. 동기: 익숙한 행렬식, 새로운 관점행렬식 (determinant) 은 선형대수에서 가장 자주 마주치는 도구 중 하나다. $2 \times 2$ 행렬에서는 $ad - bc$, $3 \times 3$ 행렬에서는 코팩터 전개, 일반 $n \times n$ 행렬에서는 라이프니츠 공식
 $$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, \sigma(2)} \cdots a_{n, \sigma(n)}$$으로 계산하는 방법을 배웠다. 이 공식들은 맞지만 직관적이지 않다. 왜 부호가 붙고 왜 순열이 등장하는지가 갑자기 튀어나온 것처럼 느껴진다.">
-    <meta itemprop="wordCount" content="2155">
+    <meta itemprop="wordCount" content="2148">
     <title>행렬식의 진정한 의미 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -167,11 +167,8 @@ $$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma)\, a_{1, \sigma(1)}\, a_{2, 
 <p>§1-§4 에서 우리가 쌓아 올린 외대수의 언어로 보면, 행렬식이 <em>훨씬 더 자연스러운 모습으로 등장</em> 한다. 행렬식은 <em>최고차 외승 $\Lambda^n V$ 가 1차원이라는 사실의 자연스러운 귀결</em> 일 뿐이다.</p>
 <p>이 장의 핵심 명제는 단 하나다.</p>
 <blockquote>
-<p>$n$-차원 벡터 공간에서 $n$ 개의 벡터의 쐐기곱은
-</p>
 $$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, v_2, \ldots, v_n)\, \cdot\, (e_1 \wedge e_2 \wedge \cdots \wedge e_n)$$<p>
-으로 표현되며, 그 스칼라 계수가 <em>바로 행렬식</em> 이다.</p>
-</blockquote>
+으로 표현되며, 그 스칼라 계수가 <em>바로 행렬식</em> 이다.</p></blockquote>
 <p>이 한 줄에서 행렬식의 모든 성질이 <em>자연스럽게 따라 나온다</em>. 부호 규칙, 곱셈성, 코팩터 전개, 가역성 판정 — 모두 외대수의 성질에서 <em>유도된다</em>. 이 장에서 그 과정을 차근차근 본다.</p>
 <h3 id="2-최고차-외승--의-1차원성">2. 최고차 외승 $\Lambda^n V$ 의 1차원성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>먼저 가장 중요한 <em>구조적 사실</em> 부터 짚는다.</p>
@@ -195,8 +192,7 @@ $$\boxed{\;\; v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, v_2, \ldots, v
 <blockquote>
 <p><strong>정의</strong> (외대수적 행렬식):</p>
 <p>$V$ 가 $n$-차원 벡터 공간이고 $\omega_0 = e_1 \wedge \cdots \wedge e_n$ 이 표준 부피 원소일 때, $n$ 개의 벡터 $v_1, \ldots, v_n \in V$ 의 <em>행렬식</em> 은</p>
-$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, \ldots, v_n)\, \omega_0$$<p>의 관계로 정의되는 <em>유일한 스칼라</em> 다.</p>
-</blockquote>
+$$v_1 \wedge v_2 \wedge \cdots \wedge v_n = \det(v_1, \ldots, v_n)\, \omega_0$$<p>의 관계로 정의되는 <em>유일한 스칼라</em> 다.</p></blockquote>
 <p>이 정의는 <em>행렬식이 무엇인지</em> 를 <em>공식이 아니라 의미로</em> 말해 준다. 행렬식은 <em>벡터들이 만드는 $n$-차원 평행체의 (방향이 붙은) 부피가 표준 단위 부피의 몇 배인가</em> 를 측정하는 스칼라.</p>
 <p><strong>행렬 행렬식과의 관계</strong></p>
 <p>$n \times n$ 행렬 $A$ 의 행렬식 $\det(A)$ 는 보통 행렬 자체의 함수로 정의된다. 외대수적 정의와 어떻게 연결되는가?</p>
@@ -251,8 +247,7 @@ $$\det(AB) = \det(A) \cdot \det(B) \quad \blacksquare$$<p>이 증명이 <em>놀�
 <p>외대수적 정의는 행렬식의 <em>기하학적 의미</em> 도 매우 명확하게 드러낸다.</p>
 <p>선형 사상 $A: V \to V$ 가 주어졌을 때, $A$ 는 표준 단위 정육면체 ($e_1, \ldots, e_n$ 으로 만들어진) 를 다른 평행체 ($A e_1, \ldots, A e_n$ 으로 만들어진) 로 보낸다. 이 새 평행체의 <em>방향이 붙은 부피</em> 가 $\det(A)$ 배가 된다.</p>
 <blockquote>
-<p><strong>기하학적 해석</strong>: $\det(A)$ 는 <em>선형 사상 $A$ 가 부피를 어떻게 변형시키는지</em> 를 측정하는 <em>스케일링 인자</em>. 정확히는 <em>방향이 붙은 부피</em> — 그래서 음수도 가능.</p>
-</blockquote>
+<p><strong>기하학적 해석</strong>: $\det(A)$ 는 <em>선형 사상 $A$ 가 부피를 어떻게 변형시키는지</em> 를 측정하는 <em>스케일링 인자</em>. 정확히는 <em>방향이 붙은 부피</em> — 그래서 음수도 가능.</p></blockquote>
 <p><strong>부호의 의미</strong></p>
 <p>$\det(A) > 0$: 사상 $A$ 가 <em>방향을 보존</em> (오른손 좌표계는 오른손 좌표계로 감).</p>
 <p>$\det(A) < 0$: 사상 $A$ 가 <em>방향을 뒤집음</em> (오른손 좌표계가 왼손 좌표계로 됨). 거울 반사가 대표적인 예.</p>
@@ -296,8 +291,7 @@ $$\int_V f(\vec{y})\, dV_y = \int_U f(\Phi(\vec{x}))\, |\det J_\Phi(\vec{x})|\, 
 <p><strong>9)</strong> <em>변수변환의 야코비안</em> 도 외대수적 정의로 직관적으로 이해됨 — 다음 미적분 응용의 토대.</p>
 <p>이 장의 결과를 한 줄로 압축하면:</p>
 <blockquote>
-<p><em>행렬식은 $\Lambda^n V$ 가 1차원이라는 사실의 자연스러운 귀결이며, 그 모든 성질이 쐐기곱의 두 정의 규칙에서 따라 나온다.</em></p>
-</blockquote>
+<p><em>행렬식은 $\Lambda^n V$ 가 1차원이라는 사실의 자연스러운 귀결이며, 그 모든 성질이 쐐기곱의 두 정의 규칙에서 따라 나온다.</em></p></blockquote>
 <p>다음 §6 부터는 외대수의 <em>미적분으로의 확장</em> — <strong>미분형식 (differential forms)</strong> — 으로 들어간다. $V$ 위의 <em>상수</em> 쐐기곱에서, <em>함수처럼 점마다 달라지는</em> 쐐기곱으로 일반화한다.</p>
 
   <footer class="footline">
@@ -345,8 +339,8 @@ $$\int_V f(\vec{y})\, dV_y = \int_U f(\Phi(\vec{x}))\, |\det J_\Phi(\vec{x})|\, 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -374,6 +368,7 @@ $$\int_V f(\vec{y})\, dV_y = \int_U f(\Phi(\vec{x}))\, |\det J_\Phi(\vec{x})|\, 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -404,9 +399,9 @@ $$\int_V f(\vec{y})\, dV_y = \int_U f(\Phi(\vec{x}))\, |\det J_\Phi(\vec{x})|\, 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

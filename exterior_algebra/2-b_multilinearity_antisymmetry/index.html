@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 복습: 선형 함수쐐기곱과 외대수의 정확한 정의로 가기 전에, 먼저 선형성 의 개념을 분명히 해야 한다. §1 에서 “행렬식이 각 인자에 대해 선형” 이라는 표현이 자주 등장했는데, 이게 정확히 무슨 뜻인지부터 짚는다.
 함수 $f: V \to \mathbb{R}$ 이 선형 (linear) 이라는 건 두 가지 성질을 동시에 만족한다는 뜻이다.
@@ -29,26 +29,26 @@
 첫째, 가법성 (additivity): 두 벡터를 더한 뒤에 함수를 적용한 결과가, 각 벡터에 함수를 적용한 결과를 더한 것과 같다.">
     <meta itemprop="wordCount" content="1803">
     <title>다중선형성과 반대칭 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -224,8 +224,7 @@ $$f(v, v) = 0$$<p>증명 끝.</p>
 <h3 id="6-반대칭의-핵심-성질-2-선형종속이면-0">6. 반대칭의 핵심 성질 2: 선형종속이면 0<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>성질 1 을 일반화하면 훨씬 강력한 결과가 나온다. <em>같은 벡터가 두 번</em> 들어 있어야만 0 이 되는 게 아니라, <em>어느 한 벡터가 다른 벡터들의 일차 결합</em> 이기만 해도 0 이 된다.</p>
 <blockquote>
-<p><strong>정리</strong>: 다중선형 반대칭 함수 $f(v_1, \ldots, v_k)$ 의 인자들이 <em>선형종속</em> 이면 (즉 어떤 $v_i$ 가 다른 $v_j$ 들의 일차 결합이면) $f(v_1, \ldots, v_k) = 0$.</p>
-</blockquote>
+<p><strong>정리</strong>: 다중선형 반대칭 함수 $f(v_1, \ldots, v_k)$ 의 인자들이 <em>선형종속</em> 이면 (즉 어떤 $v_i$ 가 다른 $v_j$ 들의 일차 결합이면) $f(v_1, \ldots, v_k) = 0$.</p></blockquote>
 <p><strong>증명의 흐름</strong></p>
 <p>선형종속이라는 건 어떤 $v_i$ 가 다른 $v_j$ 들의 일차 결합으로 표현될 수 있다는 뜻이다. 즉 적당한 스칼라 계수 $c_j$ 들에 대해</p>
 $$v_i = \sum_{j \neq i} c_j v_j$$<p>가 성립한다. 이 식을 $f$ 의 $i$ 번째 자리에 대입하고, <em>$i$ 번째 인자에 대한 다중선형성</em> 으로 전개한다.</p>
@@ -233,8 +232,7 @@ $$f(v_1, \ldots, v_i, \ldots, v_k) = f\big(v_1, \ldots, \sum_{j \neq i} c_j v_j,
 <p>같은 벡터가 두 자리에 등장하는 다중선형 반대칭 함수는 성질 1 에 의해 0 이다. 따라서 합의 각 항이 0 이고, 전체 합도 0. 증명 끝.</p>
 <p><strong>의미</strong>: 이 결과를 뒤집으면 다음과 같다.</p>
 <blockquote>
-<p>다중선형 반대칭 함수가 <em>0 이 아닌 값</em> 을 내려면, 그 인자들이 <em>선형독립</em> 이어야 한다.</p>
-</blockquote>
+<p>다중선형 반대칭 함수가 <em>0 이 아닌 값</em> 을 내려면, 그 인자들이 <em>선형독립</em> 이어야 한다.</p></blockquote>
 <p>특히 행렬식이 0 이 아니다 ⟺ 열벡터들이 선형독립 ⟺ 행렬이 가역. 이게 행렬식이 <em>선형독립 판정 도구</em> 가 되는 이유, 그리고 <em>가역성을 판정하는 도구</em> 가 되는 이유다. 익숙한 결과지만, 그 <em>근본적인 이유</em> 가 <em>반대칭성</em> 에 있음이 이제 명확해진다.</p>
 <p><strong>기하학적 직관</strong></p>
 <p>선형종속인 벡터들은 <em>낮은 차원의 부분공간</em> 안에 들어 있다. 예를 들어 3차원에서 세 벡터가 선형종속이면 그들은 같은 평면 안에 있고, 따라서 <em>3차원 부피</em> 는 0. 다중선형 반대칭 함수가 측정하는 게 <em>고차원 부피</em> 이므로, 차원이 부족하면 자동으로 0 이 된다.</p>
@@ -282,8 +280,7 @@ $$f(v_1, \ldots, v_i, \ldots, v_k) = f\big(v_1, \ldots, \sum_{j \neq i} c_j v_j,
 <li><em>다중선형</em> (각 인자에 대해 선형)</li>
 <li><em>반대칭</em> (어느 두 인자 순서를 바꾸면 부호 반대)</li>
 <li><em>항등행렬에서 1</em>: $D(e_1, e_2, \ldots, e_n) = 1$</li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p>세 번째 조건은 <em>정규화 (normalization)</em> — 표준 단위 부피를 1 로 설정한 것이다. 이게 없으면 행렬식이 정해지지 않고 임의의 상수배가 가능하다.</p>
 <p>이 세 조건만 있으면 행렬식의 모든 다른 성질이 <em>유도된다</em>. 예를 들면:</p>
 <ul>
@@ -350,8 +347,8 @@ $$f(v_1, \ldots, v_i, \ldots, v_k) = f\big(v_1, \ldots, \sum_{j \neq i} c_j v_j,
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -379,6 +376,7 @@ $$f(v_1, \ldots, v_i, \ldots, v_k) = f\big(v_1, \ldots, \sum_{j \neq i} c_j v_j,
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -409,9 +407,9 @@ $$f(v_1, \ldots, v_i, \ldots, v_k) = f\big(v_1, \ldots, \sum_{j \neq i} c_j v_j,
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

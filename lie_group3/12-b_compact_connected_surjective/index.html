@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
 이 절에서 이 정리를 본격 다룬다.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. 이 절의 동기§7 §6 와 §7 §10 에서 지수 사상이 항등원 근방에서만 미분 동형사상, 전역적으로는 단사·전사 둘 다 깨질 수 있음 이라 예고했다. §2 §5 (1) 에서 컴팩트 연결 리 군에서는 지수가 전사 라는 정리를 간략히 언급했다.
 이 절에서 이 정리를 본격 다룬다.
 정리 (지수 사상의 전사성). 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.">
-    <meta itemprop="wordCount" content="1956">
+    <meta itemprop="wordCount" content="1949">
     <title>컴팩트 연결의 경우 — 전사성 증명과 직관 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -169,19 +169,15 @@
 <p>§7 §6 와 §7 §10 에서 <em>지수 사상이 항등원 근방에서만 미분 동형사상</em>, <em>전역적으로는 단사·전사 둘 다 깨질 수 있음</em> 이라 예고했다. §2 §5 (1) 에서 <em>컴팩트 연결 리 군에서는 지수가 전사</em> 라는 정리를 간략히 언급했다.</p>
 <p>이 절에서 이 정리를 <em>본격 다룬다</em>.</p>
 <blockquote>
-<p><em>정리 (지수 사상의 전사성)</em>. 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.</p>
-</blockquote>
+<p><em>정리 (지수 사상의 전사성)</em>. 컴팩트 연결 리 군 $G$ 에 대해, 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재하여 $g = \exp(X)$.</p></blockquote>
 <p>즉 <em>컴팩트 연결의 모든 원소가 단일 지수</em> 로 표현. <em>전체 군이 리 대수의 지수 이미지</em>. 매우 강한 결과.</p>
 <p>이 절은 (i) 정리의 정확한 진술, (ii) 증명 전략 (Hopf-Rinow), (iii) 행렬군에서 <em>스펙트럼 분해를 통한 직접 증명</em>, (iv) 컴팩트 가환 ($T^N$) 의 경우, (v) 단사성은 깨질 수 있음 (주기성), (vi) 구체 예 — $U(N), SU(N), SO(N)$ — 의 순서.</p>
 <p>증명의 핵심 도구는 <em>리만 기하학</em> — 컴팩트 연결 리 군에 <em>불변 리만 메트릭</em> 을 잡으면, <em>1-매개변수 부분군이 측지선</em> 이 되고 <em>측지선 완비성</em> 으로 임의 점에 도달. 입문 수준에서는 <em>핵심 아이디어와 행렬군 직접 증명</em> 에 집중.</p>
 <h3 id="2-정리의-정확한-진술">2. 정리의 정확한 진술<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1)</strong> <em>정리 (지수 사상의 전사성)</em>.</p>
 <blockquote>
-<p>컴팩트 연결 리 군 $G$ 에 대해
-</p>
 $$\exp : \mathfrak{g} \to G \quad \text{이 전사 (surjective)}$$<p>
-즉 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재 ($\exp(X) = g$).</p>
-</blockquote>
+즉 모든 $g \in G$ 에 대해 어떤 $X \in \mathfrak{g}$ 가 존재 ($\exp(X) = g$).</p></blockquote>
 <p><strong>2)</strong> <em>주의 — 단사성은 보장 안 됨</em>. 정리는 <em>전사만</em> 주장. 같은 $g$ 에 대해 <em>여러 $X$</em> 가 가능. 예 — $U(1)$ 에서 $g = 1$ 에 대해 $X = 2\pi i n$ ($n \in \mathbb{Z}$) 가 모두 $\exp(X) = 1$.</p>
 <p><strong>3)</strong> <em>조건의 필수성</em>. 두 조건 <em>컴팩트 + 연결</em> 모두 필수.</p>
 <ul>
@@ -198,8 +194,7 @@ $$\exp : \mathfrak{g} \to G \quad \text{이 전사 (surjective)}$$<p>
 <p>직관 — <em>지수 사상이 &ldquo;최단 경로&rdquo; 를 만든다</em>. $\exp(tX)$ 가 $X$ 방향으로의 <em>상수 속도 측지선</em>.</p>
 <p><strong>3)</strong> <em>Hopf-Rinow 정리</em>.</p>
 <blockquote>
-<p><em>Hopf-Rinow 정리</em>. 컴팩트 연결 리만 다양체는 <em>측지적으로 완비 (geodesically complete)</em> — 모든 측지선이 <em>모든 $t \in \mathbb{R}$ 에서 정의됨</em>. 또한 <em>임의 두 점이 측지선으로 연결</em>.</p>
-</blockquote>
+<p><em>Hopf-Rinow 정리</em>. 컴팩트 연결 리만 다양체는 <em>측지적으로 완비 (geodesically complete)</em> — 모든 측지선이 <em>모든 $t \in \mathbb{R}$ 에서 정의됨</em>. 또한 <em>임의 두 점이 측지선으로 연결</em>.</p></blockquote>
 <p>(컴팩트성으로부터 자동으로 측지적 완비성 따라옴.)</p>
 <p><strong>4)</strong> <em>정리 적용</em>. 임의 $g \in G$ 와 항등원 $e$ 가 <em>측지선으로 연결</em>. 그 측지선은 <em>1-매개변수 부분군</em> — 즉</p>
 $$\gamma(t) = \exp(tX), \quad \gamma(0) = e, \quad \gamma(1) = g$$<p>인 $X \in \mathfrak{g}$ 존재. 따라서 $g = \exp(X)$. <em>전사</em>. ∎</p>
@@ -353,8 +348,8 @@ $$\int_G f(g) \, d\mu(g) = \int_{\mathfrak{g}} f(\exp X) \, |J(X)| \, dX$$<p>여
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -387,6 +382,7 @@ $$\int_G f(g) \, d\mu(g) = \int_{\mathfrak{g}} f(\exp X) \, |J(X)| \, dX$$<p>여
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -417,9 +413,9 @@ $$\int_G f(g) \, d\mu(g) = \int_{\mathfrak{g}} f(\exp X) \, |J(X)| \, dX$$<p>여
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

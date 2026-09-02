@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 1-form 에서 더 높은 차수로§6 에서 1-form 을 정의했다. 각 점마다 코벡터를 주는 객체 — 그리고 그게 결국 각 점에서 1차 미분형식 이었다.
 그런데 자연에는 2차원 면 위의 양, 3차원 부피 안의 양 같은 게 흔히 등장한다.
@@ -29,26 +29,26 @@
 전기장의 플럭스: 면을 통과하는 전기장의 양. 면은 2차원 객체. 전류 밀도: 단위 면적당 흐르는 전하. 역시 2차원적. 질량 밀도: 단위 부피당 질량. 3차원 객체. 상대성이론의 전자기 텐서: 시공간 (4차원) 의 2차원 면 요소 와 연동. 이런 양들을 방향이 붙은 면이나 부피에 자연스럽게 작용 하는 객체로 일반화한 것이 $k$-form (고차 미분형식).">
     <meta itemprop="wordCount" content="1803">
     <title>고차 미분형식: k-form :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -185,8 +185,7 @@
 <p>1-form 이 <em>한 벡터를 먹어서 숫자를 내놓았다</em> 면, $k$-form 은 <em>$k$ 개의 벡터를 먹어서 숫자를 내놓는다</em>. 더 정확히는:</p>
 <blockquote>
 <p>$\omega$ 가 $k$-form 일 때, $k$ 개의 접벡터 $v_1, \ldots, v_k \in T_p M$ 에 대해</p>
-$$\omega_p(v_1, v_2, \ldots, v_k) \in \mathbb{R}$$<p>가 정의되고, 이 결과는 <em>각 인자에 대해 선형이며 반대칭</em>.</p>
-</blockquote>
+$$\omega_p(v_1, v_2, \ldots, v_k) \in \mathbb{R}$$<p>가 정의되고, 이 결과는 <em>각 인자에 대해 선형이며 반대칭</em>.</p></blockquote>
 <p>다중선형성과 반대칭성은 외대수의 본질이라 <em>자동으로</em> 따라 나온다 (§3 의 쐐기곱 성질 그대로).</p>
 <p>기하학적으로 $\omega_p(v_1, \ldots, v_k)$ 는 <em>$k$ 개의 벡터로 만든 방향이 붙은 $k$-차원 평행체에 $k$-form 이 작용한 값</em> — 평행체의 &ldquo;잘 조절된 부피&quot;라 보면 된다.</p>
 <h3 id="3-좌표-기저--form">3. 좌표 기저 $k$-form<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -228,15 +227,13 @@ $$\omega = f(x, y)\, dx \wedge dy$$<p>2D 에서 $\dim \Omega^2 = \binom{2}{2} = 
 $$\omega = P(x, y, z)\, dy \wedge dz + Q(x, y, z)\, dz \wedge dx + R(x, y, z)\, dx \wedge dy$$<p>(여기서 표준 기저를 약간 재배열한 것 — $dx \wedge dz = -dz \wedge dx$ 라서 $dz \wedge dx$ 로 표기. <em>오른손 좌표계의 순환 순서</em> 에 맞춤.)</p>
 <p>이 표현이 <em>익숙해 보이는 이유</em>: 3D 벡터장 $\vec{F} = (P, Q, R)$ 과 정확히 같은 정보. 사실:</p>
 <blockquote>
-<p>3D 에서 <em>2-form</em> ↔ <em>벡터장</em> 의 자연스러운 대응이 있다 (Hodge 별표를 통해, §13 에서 정확히).</p>
-</blockquote>
+<p>3D 에서 <em>2-form</em> ↔ <em>벡터장</em> 의 자연스러운 대응이 있다 (Hodge 별표를 통해, §13 에서 정확히).</p></blockquote>
 <p>이게 §1 §6 에서 본 &ldquo;<em>3D 에서만 외적이 벡터 같은 행동</em>&rdquo; 의 미분형식 버전.</p>
 <p><strong>2-form 의 작용</strong></p>
 <p>$\omega = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$ 가 두 벡터 $\vec{u}, \vec{v}$ 에 작용하면</p>
 $$\omega(\vec{u}, \vec{v}) = P(u_2 v_3 - u_3 v_2) + Q(u_3 v_1 - u_1 v_3) + R(u_1 v_2 - u_2 v_1) = \vec{F} \cdot (\vec{u} \times \vec{v})$$<p>오른쪽이 <em>플럭스의 기본 공식</em>: 벡터장 $\vec{F}$ 가 평행사변형 $\vec{u} \times \vec{v}$ 를 통과하는 양.</p>
 <blockquote>
-<p>3D 의 2-form 은 <em>벡터장의 플럭스를 측정하는 객체</em>.</p>
-</blockquote>
+<p>3D 의 2-form 은 <em>벡터장의 플럭스를 측정하는 객체</em>.</p></blockquote>
 <p>이게 <em>왜 전기장의 플럭스</em> 등이 자연스럽게 2-form 으로 표현되는지의 이유.</p>
 <h3 id="6-3-form-의-예제">6. 3-form 의 예제<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>예</strong>: 3차원 공간 위의 일반 3-form</p>
@@ -269,8 +266,7 @@ $$f \wedge \omega = \omega \wedge f = f \omega$$<p>(함수와 미분형식의 �
 <h3 id="9--form-부피-형식">9. $n$-form: 부피 형식<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>특별한 차수의 미분형식 — <em>$n$ 차원 다양체 위의 $n$-form</em> — 에는 따로 이름이 붙는다.</p>
 <blockquote>
-<p>$n$ 차원 다양체 위의 $n$-form 을 <strong>최고차 형식 (top form)</strong> 또는 <em>부피 형식의 후보</em> 라 부른다.</p>
-</blockquote>
+<p>$n$ 차원 다양체 위의 $n$-form 을 <strong>최고차 형식 (top form)</strong> 또는 <em>부피 형식의 후보</em> 라 부른다.</p></blockquote>
 <p>§4 에서 본 <em>최고차 외승 $\Lambda^n V^*$ 가 1차원</em> 이라는 사실의 미분형식 버전. 즉 <em>$n$ 차원 다양체 위의 모든 $n$-form 은</em></p>
 $$\omega = f(x)\, dx^1 \wedge dx^2 \wedge \cdots \wedge dx^n$$<p>의 형태로 <em>유일하게</em> 표현됨. 함수 $f$ 가 점마다의 <em>부피 밀도</em>.</p>
 <p><strong>부피 형식과 적분의 자연스러운 연결</strong></p>
@@ -355,8 +351,8 @@ $$\Omega^*(M) = \bigoplus_{k=0}^{n} \Omega^k(M)$$<p>이 공간에서 <em>쐐기�
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -384,6 +380,7 @@ $$\Omega^*(M) = \bigoplus_{k=0}^{n} \Omega^k(M)$$<p>이 공간에서 <em>쐐기�
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -414,9 +411,9 @@ $$\Omega^*(M) = \bigoplus_{k=0}^{n} \Omega^k(M)$$<p>이 공간에서 <em>쐐기�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

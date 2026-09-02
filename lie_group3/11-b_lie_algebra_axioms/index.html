@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§8–§10 에서 리 대수의 구조를 단계적으로 쌓아왔다.
 §8 — 벡터 공간 구조 $\mathfrak{g} = T_e G$ §9 — 1-매개변수 부분군과의 1:1 대응 (지수 사상이 다리) §10 — 리 괄호 $[\cdot, \cdot]$ 도입, 군 교환자의 무한소 측정 이 절에서 리 대수 구조의 완전한 정리 를 한다 — 추상 리 대수 의 공리 (세 가지) 와 그 의미. 특히 야코비 항등식 을 본격적으로 도출하고 이해한다.">
@@ -23,28 +23,28 @@
     <meta itemprop="name" content="리 대수의 공리 :: 수리전자물리학">
     <meta itemprop="description" content="1. 이 절의 동기§8–§10 에서 리 대수의 구조를 단계적으로 쌓아왔다.
 §8 — 벡터 공간 구조 $\mathfrak{g} = T_e G$ §9 — 1-매개변수 부분군과의 1:1 대응 (지수 사상이 다리) §10 — 리 괄호 $[\cdot, \cdot]$ 도입, 군 교환자의 무한소 측정 이 절에서 리 대수 구조의 완전한 정리 를 한다 — 추상 리 대수 의 공리 (세 가지) 와 그 의미. 특히 야코비 항등식 을 본격적으로 도출하고 이해한다.">
-    <meta itemprop="wordCount" content="2213">
+    <meta itemprop="wordCount" content="2211">
     <title>리 대수의 공리 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -187,17 +187,14 @@ $\quad\quad [X, a Y_1 + b Y_2] = a [X, Y_1] + b [X, Y_2]$</p>
 <p>$\quad$ (A2) <em>반대칭성</em> — 모든 $X, Y \in \mathfrak{g}$
 $\quad\quad [X, Y] = -[Y, X]$</p>
 <p>$\quad$ (A3) <em>야코비 항등식 (Jacobi identity)</em> — 모든 $X, Y, Z \in \mathfrak{g}$
-$\quad\quad [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0$</p>
-</blockquote>
+$\quad\quad [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0$</p></blockquote>
 <p><strong>2)</strong> <em>명명 규칙</em>. 리 대수 $\mathfrak{g}$ 가 <em>리 군 $G$ 의 리 대수</em> 가 아닐 수도 있다 — 위 정의는 <em>순수 대수적</em> 이라 리 군 없이도 성립. 그래서 <em>추상 리 대수</em> 라 부른다.</p>
 <p><strong>3)</strong> <em>주의 — &ldquo;대수&rdquo; 라는 이름</em>. 일반적으로 <em>대수(algebra)</em> 란 <em>벡터 공간 + 곱셈 (이중선형 연산)</em> 을 의미. 리 대수는 그 <em>특수 경우</em> 로 <em>곱셈이 반대칭 + 야코비 항등식</em> 을 만족하는 것. 통상적 결합 대수 (행렬 곱셈 등) 와 구분.</p>
 <p><strong>4)</strong> <em>결합 법칙은 공리에 없다</em>. 리 괄호는 <em>결합 법칙을 만족 안 함</em> — $[X, [Y, Z]] \neq [[X, Y], Z]$ 일반적. <em>야코비 항등식이 결합 법칙의 자리를 대체</em>. 이 점이 §0-2 §7 (4) (외적이 군이 아닌 이유 — 결합 안 됨) 의 <em>대수 차원 답</em>.</p>
 <p><strong>5)</strong> <em>§0-2 §8 의 재확인</em>. $M_N(\mathbb{R})$ 위 교환자가 <em>군 연산이 아닌</em> 이유 — <em>항등원 없음 + 결합 안 됨</em>. 그러나 <em>리 대수 연산으로는 정확히 적합</em> — 반대칭 + 야코비 만족. 같은 객체가 <em>어떤 대수 구조에서 보는가</em> 에 따라 다른 자격.</p>
 <h3 id="3-a1-이중선형성--명시적-확인">3. (A1) 이중선형성 — 명시적 확인<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1)</strong> <em>행렬 교환자에서 직접</em>. $[X, Y] = XY - YX$.</p>
-$$[aX_1 + bX_2, Y] = (aX_1 + bX_2) Y - Y (aX_1 + bX_2)$$<p>
-</p>
-$$= a X_1 Y + b X_2 Y - a Y X_1 - b Y X_2 = a(X_1 Y - Y X_1) + b(X_2 Y - Y X_2) = a [X_1, Y] + b [X_2, Y]$$<p>— <em>행렬 곱셈의 분배 법칙</em> 으로부터 자동. ✓</p>
+$$[aX_1 + bX_2, Y] = (aX_1 + bX_2) Y - Y (aX_1 + bX_2)$$$$= a X_1 Y + b X_2 Y - a Y X_1 - b Y X_2 = a(X_1 Y - Y X_1) + b(X_2 Y - Y X_2) = a [X_1, Y] + b [X_2, Y]$$<p>— <em>행렬 곱셈의 분배 법칙</em> 으로부터 자동. ✓</p>
 <p>두 번째 인자도 대칭적으로 ✓.</p>
 <p><strong>2)</strong> <em>의미</em>. 리 괄호가 <em>각 인자에 대해 선형</em>. 따라서 <em>기저 $\{T_a\}$ 사이의 교환자만 결정하면 임의 원소 사이 교환자가 자동</em> 으로 결정.</p>
 <p><strong>3)</strong> <em>구조 상수의 출처</em>. 기저 $\{T_a\}$ 에 대해</p>
@@ -214,9 +211,7 @@ $$f^c{}_{ab} = -f^c{}_{ba}$$<p>— <em>구조 상수가 아래 두 첨자에서 
 <h3 id="5-a3-야코비-항등식--도출">5. (A3) 야코비 항등식 — 도출<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>(A3) 야코비 항등식이 <em>왜 성립하는지</em> 를 행렬 교환자에서 직접 전개로 보인다.</p>
 <p><strong>1)</strong> <em>전개 — $[X, [Y, Z]]$</em>.</p>
-$$[X, [Y, Z]] = [X, YZ - ZY] = X(YZ - ZY) - (YZ - ZY)X$$<p>
-</p>
-$$= XYZ - XZY - YZX + ZYX$$<p><strong>2)</strong> <em>순환 — $[Y, [Z, X]]$</em>.</p>
+$$[X, [Y, Z]] = [X, YZ - ZY] = X(YZ - ZY) - (YZ - ZY)X$$$$= XYZ - XZY - YZX + ZYX$$<p><strong>2)</strong> <em>순환 — $[Y, [Z, X]]$</em>.</p>
 $$[Y, [Z, X]] = Y(ZX - XZ) - (ZX - XZ)Y = YZX - YXZ - ZXY + XZY$$<p><strong>3)</strong> <em>순환 — $[Z, [X, Y]]$</em>.</p>
 $$[Z, [X, Y]] = Z(XY - YX) - (XY - YX)Z = ZXY - ZYX - XYZ + YXZ$$<p><strong>4)</strong> <em>세 항 합산</em>.</p>
 $$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]]$$$$= (XYZ - XZY - YZX + ZYX) + (YZX - YXZ - ZXY + XZY) + (ZXY - ZYX - XYZ + YXZ)$$<p>각 단어를 정리 —</p>
@@ -277,8 +272,7 @@ $$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]]$$$$= (XYZ - XZY - YZX + ZYX) + (YZX - 
 </table>
 <p>전부 <em>상쇄</em>. 합 $= 0$. ✓</p>
 <blockquote>
-<p><em>결과</em>. 행렬 교환자가 <em>야코비 항등식을 자동으로 만족</em> — 행렬 곱셈의 결합 법칙으로부터.</p>
-</blockquote>
+<p><em>결과</em>. 행렬 교환자가 <em>야코비 항등식을 자동으로 만족</em> — 행렬 곱셈의 결합 법칙으로부터.</p></blockquote>
 <p><strong>5)</strong> <em>순환 구조</em>. 세 항이 $(X, Y, Z) \to (Y, Z, X) \to (Z, X, Y)$ 의 <em>순환 순열</em>. 야코비 항등식의 본질은 <em>세 원소의 순환에서 균형 잡힌 관계</em>.</p>
 <h3 id="6-야코비-항등식의-의미">6. 야코비 항등식의 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>도출은 했지만 <em>왜 이런 형태가 의미 있는가</em>.</p>
@@ -292,8 +286,7 @@ $$\text{ad}_{[X, Y]} = [\text{ad}_X, \text{ad}_Y] = \text{ad}_X \text{ad}_Y - \t
 <p>우변 — $\text{ad}_X (\text{ad}_Y(Z)) - \text{ad}_Y (\text{ad}_X(Z)) = [X, [Y, Z]] - [Y, [X, Z]]$</p>
 <p>두 식이 같음 ⟺ $[[X, Y], Z] = [X, [Y, Z]] - [Y, [X, Z]]$ ⟺ 야코비 항등식 (재배열).</p>
 <blockquote>
-<p><em>결과</em>. <em>야코비 항등식 ⟺ $\text{ad}$ 가 리 대수 준동형</em>. 즉 <em>교환자 구조가 자기 자신과 일관</em>.</p>
-</blockquote>
+<p><em>결과</em>. <em>야코비 항등식 ⟺ $\text{ad}$ 가 리 대수 준동형</em>. 즉 <em>교환자 구조가 자기 자신과 일관</em>.</p></blockquote>
 <p><strong>3)</strong> <em>물리적 의미 — 양자역학 연산자</em>. 야코비 항등식이 양자역학에서 <em>연산자 사이의 자연 관계</em>. 예 — 각운동량 $J_x, J_y, J_z$ 의 교환자 관계가 <em>상호 일관성</em> 을 야코비 항등식으로 표현.</p>
 <p><strong>4)</strong> <em>기하학적 의미 — 미분 형식과 외미분</em>. 야코비 항등식은 <em>벡터장의 리 괄호</em> 에서도 성립 — <em>외미분의 $d^2 = 0$ 과 동치</em>. 미분 기하학의 깊은 정체성.</p>
 <h3 id="7-추상-리-대수--리-군과-무관한-존재">7. 추상 리 대수 — 리 군과 무관한 존재<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -301,8 +294,7 @@ $$\text{ad}_{[X, Y]} = [\text{ad}_X, \text{ad}_Y] = \text{ad}_X \text{ad}_Y - \t
 <p><strong>1)</strong> <em>모든 리 군의 리 대수는 추상 리 대수의 한 예</em>. §8–§10 에서 본 모든 $\mathfrak{so}, \mathfrak{u}, \mathfrak{su}, \mathfrak{gl}, \mathfrak{sl}, \mathfrak{sp}$ 가 추상 리 대수의 정의를 만족. 행렬 교환자가 이중선형, 반대칭, 야코비.</p>
 <p><strong>2)</strong> <em>역방향 — 추상 리 대수에서 리 군 복원 (리의 세 번째 정리)</em>.</p>
 <blockquote>
-<p><em>리의 세 번째 정리 (Lie&rsquo;s third theorem)</em>. 모든 <em>유한 차원 실 리 대수</em> 가 <em>어떤 리 군의 리 대수</em> — 즉 그 리 대수를 가지는 리 군이 존재.</p>
-</blockquote>
+<p><em>리의 세 번째 정리 (Lie&rsquo;s third theorem)</em>. 모든 <em>유한 차원 실 리 대수</em> 가 <em>어떤 리 군의 리 대수</em> — 즉 그 리 대수를 가지는 리 군이 존재.</p></blockquote>
 <p>(연결 단순연결 리 군이 유일.)</p>
 <p>따라서 <em>추상 리 대수와 단순연결 리 군이 1:1 대응</em> (사실상 같은 정보).</p>
 <p><strong>3)</strong> <em>벡터장의 리 대수</em> — 추상 리 대수의 자연 예. 매끄러운 다양체 $M$ 위 <em>벡터장 (vector fields)</em> 의 모임이 <em>리 괄호</em> (벡터장 합성의 무한소) 로 <em>리 대수</em> 를 이룬다. 무한 차원 리 대수.</p>
@@ -518,8 +510,8 @@ $$\text{ad}_{[X, Y]} = [\text{ad}_X, \text{ad}_Y] = \text{ad}_X \text{ad}_Y - \t
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -552,6 +544,7 @@ $$\text{ad}_{[X, Y]} = [\text{ad}_X, \text{ad}_Y] = \text{ad}_X \text{ad}_Y - \t
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -582,9 +575,9 @@ $$\text{ad}_{[X, Y]} = [\text{ad}_X, \text{ad}_Y] = \text{ad}_X \text{ad}_Y - \t
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

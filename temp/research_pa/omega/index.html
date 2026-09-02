@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
 0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="V-ω 파라미터 공간에서 RF 소자 비선형성의 새로운 지표 Ω유도, 물리적 당위성, 그리고 RF 설계 응용
 0. 사전 지식: PA 비선형성 입문본 문서를 본격적으로 시작하기 전에, RF 파워 앰프(PA) 비선형성의 기본 개념을 정리한다. 이미 익숙한 독자는 이 절을 건너뛰어도 무방하다.
 0.1 비선형 시스템이란선형 시스템은 입력의 합이 출력의 합과 같다. 즉:">
-    <meta itemprop="wordCount" content="5328">
+    <meta itemprop="wordCount" content="5305">
     <title>Omegadl :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -438,11 +438,7 @@ $$S_{21}(V, \omega) = G(V, \omega) \cdot e^{j\phi(V, \omega)}$$<ul>
 <li>(V₀, ω₀) → (V₀, ω₀ + dω): ω만 변화</li>
 </ul>
 <p>각 방향에서 G와 φ는 다음과 같이 변한다:</p>
-<p>V 방향:
-</p>
-$$dG = \frac{\partial G}{\partial V} dV, \quad d\phi = \frac{\partial \phi}{\partial V} dV$$<p>ω 방향:
-</p>
-$$dG = \frac{\partial G}{\partial \omega} d\omega, \quad d\phi = \frac{\partial \phi}{\partial \omega} d\omega$$<p>이 네 개의 편미분이 비선형성의 미세 구조를 담는다.</p>
+$$dG = \frac{\partial G}{\partial V} dV, \quad d\phi = \frac{\partial \phi}{\partial V} dV$$$$dG = \frac{\partial G}{\partial \omega} d\omega, \quad d\phi = \frac{\partial \phi}{\partial \omega} d\omega$$<p>이 네 개의 편미분이 비선형성의 미세 구조를 담는다.</p>
 <h3 id="32-두-방향이-독립적인-경우">3.2 두 방향이 독립적인 경우<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>V-ω 평면에서 V 방향 변화와 ω 방향 변화가 G-φ 평면에서 <strong>독립적</strong>으로 나타난다면:</p>
 <p>V 방향 변화는 G만 바꾸고 φ는 안 바꾼다 (또는 그 반대)
@@ -456,11 +452,7 @@ $$dG = \frac{\partial G}{\partial \omega} d\omega, \quad d\phi = \frac{\partial 
 <h3 id="41-미분-형식-관점">4.1 미분 형식 관점<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>V-ω 평면에서 작은 평행사변형 영역을 생각한다.</p>
 $$\text{영역 요소: } dV \wedge d\omega$$<p>이 영역이 G-φ 평면으로 어떻게 사상되는가?</p>
-<p>연쇄 법칙에 의해:
-</p>
-$$dG = \frac{\partial G}{\partial V} dV + \frac{\partial G}{\partial \omega} d\omega$$<p>
-</p>
-$$d\phi = \frac{\partial \phi}{\partial V} dV + \frac{\partial \phi}{\partial \omega} d\omega$$<p>G-φ 평면의 영역 요소 dG ∧ dφ를 V-ω 좌표로 표현:</p>
+$$dG = \frac{\partial G}{\partial V} dV + \frac{\partial G}{\partial \omega} d\omega$$$$d\phi = \frac{\partial \phi}{\partial V} dV + \frac{\partial \phi}{\partial \omega} d\omega$$<p>G-φ 평면의 영역 요소 dG ∧ dφ를 V-ω 좌표로 표현:</p>
 $$dG \wedge d\phi = \left(\frac{\partial G}{\partial V} dV + \frac{\partial G}{\partial \omega} d\omega\right) \wedge \left(\frac{\partial \phi}{\partial V} dV + \frac{\partial \phi}{\partial \omega} d\omega\right)$$<p>외적의 반대칭성 (dV ∧ dV = 0, dV ∧ dω = -dω ∧ dV)을 적용하면:</p>
 $$dG \wedge d\phi = \left[\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}\right] dV \wedge d\omega$$<p>이 계수가 V-ω 평면의 단위 면적이 G-φ 평면에서 차지하는 면적의 부호 있는 비율이다.</p>
 <h3 id="42-ω의-정의">4.2 Ω의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -481,40 +473,26 @@ $$\Omega = \underbrace{\frac{\partial G}{\partial V}}_{\text{(A)}} \underbrace{\
 <p><strong>(C) ∂G/∂ω</strong>: 주파수 변화에 따른 이득 변화. 이득 평탄도(gain flatness)의 음수.</p>
 <p><strong>(D) ∂φ/∂V</strong>: 바이어스 변화에 따른 위상 변화. 이는 정확히 <strong>AM-PM 계수</strong>다.</p>
 <h3 id="52-ω의-물리적-통합">5.2 Ω의 물리적 통합<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>다시 쓰면:
-</p>
 $$\Omega = (\text{이득 V-감도}) \times (-\text{군지연}) - (\text{이득 ω-감도}) \times (\text{AM-PM})$$<p>이는 두 가지 물리적 결합을 동시에 측정한다.</p>
 <p><strong>첫째 항:</strong> 이득의 V-감도가 군지연과 결합되는 정도
 <strong>둘째 항:</strong> 이득의 ω-감도가 AM-PM과 결합되는 정도</p>
 <p>두 항의 차이가 Ω다. 즉 Ω는 V 방향 비선형성과 ω 방향 비선형성이 어떻게 다른 방식으로 G와 φ에 영향을 주는가의 <strong>차이</strong>를 측정한다.</p>
 <h3 id="53-ω--0-조건의-물리적-의미">5.3 Ω = 0 조건의 물리적 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>$\Omega = 0$일 조건:
-</p>
-$$\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} = \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}$$<p>다시 정리하면:
-</p>
-$$\frac{\partial G/\partial V}{\partial G/\partial \omega} = \frac{\partial \phi/\partial V}{\partial \phi/\partial \omega}$$<p>(분모가 0이 아닐 때)</p>
+$$\frac{\partial G}{\partial V}\frac{\partial \phi}{\partial \omega} = \frac{\partial G}{\partial \omega}\frac{\partial \phi}{\partial V}$$$$\frac{\partial G/\partial V}{\partial G/\partial \omega} = \frac{\partial \phi/\partial V}{\partial \phi/\partial \omega}$$<p>(분모가 0이 아닐 때)</p>
 <p>이는 <strong>이득의 V/ω 변화비가 위상의 V/ω 변화비와 같다</strong>는 조건이다. 즉 이득이 변하는 방향과 위상이 변하는 방향이 V-ω 평면에서 <strong>평행</strong>하다.</p>
 <p>이런 경우 G와 φ는 V-ω 평면에서 같은 등고선 구조를 갖는다. 이것이 함수 종속의 기하학적 의미다.</p>
 <h3 id="54-패시브-소자의-검증">5.4 패시브 소자의 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>패시브 소자는 V에 의존하지 않는다.</p>
-$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial \phi}{\partial V} = 0$$<p>따라서:
-</p>
-$$\Omega = 0 \cdot \frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega} \cdot 0 = 0$$<p>모든 패시브 소자는 Ω = 0을 만족한다. 이는 패시브 소자의 비선형성이 없음과 일치하므로 Ω가 비선형성 지표로서 적절함을 보여준다.</p>
+$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial \phi}{\partial V} = 0$$$$\Omega = 0 \cdot \frac{\partial \phi}{\partial \omega} - \frac{\partial G}{\partial \omega} \cdot 0 = 0$$<p>모든 패시브 소자는 Ω = 0을 만족한다. 이는 패시브 소자의 비선형성이 없음과 일치하므로 Ω가 비선형성 지표로서 적절함을 보여준다.</p>
 <h3 id="55-단순-선형-증폭기의-검증">5.5 단순 선형 증폭기의 검증<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>이상적 선형 증폭기는 일정한 이득 G₀와 일정한 위상 지연 -ωτ를 갖는다.</p>
-$$G(V, \omega) = G_0, \quad \phi(V, \omega) = -\omega \tau$$<p>편미분:
-</p>
-$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial G}{\partial \omega} = 0, \quad \frac{\partial \phi}{\partial V} = 0, \quad \frac{\partial \phi}{\partial \omega} = -\tau$$<p>따라서:
-</p>
-$$\Omega = 0$$<p>이상적 선형 증폭기에서 Ω = 0. 이 또한 적절한 결과다.</p>
+$$G(V, \omega) = G_0, \quad \phi(V, \omega) = -\omega \tau$$$$\frac{\partial G}{\partial V} = 0, \quad \frac{\partial G}{\partial \omega} = 0, \quad \frac{\partial \phi}{\partial V} = 0, \quad \frac{\partial \phi}{\partial \omega} = -\tau$$$$\Omega = 0$$<p>이상적 선형 증폭기에서 Ω = 0. 이 또한 적절한 결과다.</p>
 <hr>
 <h2 id="6-기존-지표와의-정량적-관계">6. 기존 지표와의 정량적 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="61-am-pm과의-관계">6.1 AM-PM과의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>AM-PM 계수는 정확히 ∂φ/∂V와 같다. 단일 ω₀에서 측정된 AM-PM은:</p>
 $$\text{AM-PM}(V, \omega_0) = \left.\frac{\partial \phi}{\partial V}\right|_{\omega = \omega_0}$$<p>이는 Ω의 (D) 항이다. Ω는 AM-PM에 추가로 (A), (B), (C)의 정보를 포함한다.</p>
 <h3 id="62-군지연과의-관계">6.2 군지연과의 관계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>군지연은:
-</p>
 $$\tau_g = -\frac{\partial \phi}{\partial \omega}$$<p>Ω의 (B) 항은 -τ_g이다.</p>
 <h3 id="63-ω의-통합성">6.3 Ω의 통합성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>따라서 Ω는 다음 네 가지 정보를 통합한다:</p>
@@ -713,8 +691,6 @@ $$\Omega_{Berry}(R) = i\langle \partial_{R_1} u | \partial_{R_2} u\rangle - i\la
 <h3 id="91-기존-측정-인프라-호환성">9.1 기존 측정 인프라 호환성<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Ω 계산에 필요한 입력은 S₂₁(V, ω) 데이터다. 이는 기존 Vector Network Analyzer (VNA)와 DC bias supply 조합으로 측정 가능하다. 추가 장비 불필요.</p>
 <h3 id="92-측정-절차">9.2 측정 절차<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>다음 그리드를 측정한다:
-</p>
 $$\{(V_i, \omega_j)\}_{i=1...N_V, \, j=1...N_\omega}$$<p>각 점에서 S₂₁을 기록한다. 권장 그리드:</p>
 <ul>
 <li>V 방향: ΔV ≈ 0.1V (V_GS 범위 -4V ~ -1V)</li>
@@ -929,7 +905,7 @@ phase_deg = phase(S21_large)</code></pre></div>
 </ul>
 <h4 id="1225-matlab에서-상관관계-분석">12.2.5 MATLAB에서 상관관계 분석<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
 <p>3개 시뮬레이션 결과를 모두 MATLAB으로 가져와서 분석한다.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% main_correlation_analysis.m</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% main_correlation_analysis.m</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">% ADS 결과를 가져와서 Omega vs IMD3/AM-PM 상관관계 분석</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>clear; clc; close all;
@@ -1054,7 +1030,7 @@ phase_deg = phase(S21_large)</code></pre></div>
 <li>변수: freq, S21 (mag, phase)</li>
 </ul>
 <p><strong>MATLAB 분석:</strong></p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% qucs_macom_analysis.m</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% qucs_macom_analysis.m</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">% MACOM 3개 s2p로 1차 검증</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">% RF Toolbox 사용 (있으면)</span>
@@ -1338,8 +1314,8 @@ ADS 시나리오와 동일한 코드로 상관관계 분석.</p>
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -1353,6 +1329,7 @@ ADS 시나리오와 동일한 코드로 상관관계 분석.</p>
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="parent " data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu">
             <li class="" data-nav-id="/temp/a_basis/index.html"><a class="padding" href="/temp/a_basis/index.html">(a) Basis</a></li>
@@ -1437,9 +1414,9 @@ ADS 시나리오와 동일한 코드로 상관관계 분석.</p>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

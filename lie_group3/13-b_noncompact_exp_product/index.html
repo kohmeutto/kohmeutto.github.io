@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§12 에서 컴팩트 연결 리 군의 모든 원소가 단일 $\exp(X)$ 형태 임을 보았다. 비컴팩트 에서는 이것이 깨진다 — §12 §7 에서 $SL(2, \mathbb{R})$ 의 반례를 짧게 언급했다.
 이 절에서 비컴팩트의 상황을 본격 분석 한다.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. 이 절의 동기§12 에서 컴팩트 연결 리 군의 모든 원소가 단일 $\exp(X)$ 형태 임을 보았다. 비컴팩트 에서는 이것이 깨진다 — §12 §7 에서 $SL(2, \mathbb{R})$ 의 반례를 짧게 언급했다.
 이 절에서 비컴팩트의 상황을 본격 분석 한다.
 왜 깨지는가 — 비컴팩트성이 불변 리만 메트릭 (Hopf-Rinow) 의 전제 를 깨뜨림 $SL(2, \mathbb{R})$ 의 명시적 반례 — $\text{tr}$ 분석으로 어떤 원소가 도달 안 되는지 어떻게 도달하나 — 두 지수의 곱 $g = \exp(X_1) \exp(X_2)$ 면 충분 극분해 (polar decomposition) — 비컴팩트 행렬군의 표준 매개변수화 이 절은 (i) 왜 비컴팩트에서 깨지는가, (ii) $SL(2, \mathbb{R})$ 트레이스 분석, (iii) 명시적 반례의 구체 검증, (iv) 지수의 곱이 항상 충분 (연결성), (v) 극분해, (vi) 응집계·NEGF 와의 연결 — 의 순서.">
-    <meta itemprop="wordCount" content="2082">
+    <meta itemprop="wordCount" content="2062">
     <title>비컴팩트의 경우 — 지수의 곱 필요 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -186,8 +186,7 @@
 <p><strong>4)</strong> <em>결과 — 단일 지수가 모든 원소를 도달 못 함</em>. 항등원에서 <em>측지선으로 도달 못 하는 원소</em> 가 존재 가능. 그 원소가 <em>$\exp(\mathfrak{g})$ 이미지에 없음</em>.</p>
 <p><strong>5)</strong> <em>그러나 비컴팩트도 연결이면 도달 가능 — 지수의 곱으로</em>. 연결 리 군의 <em>임의 원소는 항등원 근방의 원소들을 곱해서 도달 가능</em> — 일반적 사실. <em>항등원 근방은 $\exp$ 의 이미지 안</em> (§7 §6 의 미분 동형사상). 따라서 <em>유한 개 지수의 곱</em> 이 모든 원소를 표현.</p>
 <blockquote>
-<p><em>결론</em>. 비컴팩트 연결 리 군에서 — <em>단일 지수는 비전사</em>, <em>지수의 곱은 전사</em>.</p>
-</blockquote>
+<p><em>결론</em>. 비컴팩트 연결 리 군에서 — <em>단일 지수는 비전사</em>, <em>지수의 곱은 전사</em>.</p></blockquote>
 <h3 id="3---트레이스-분석">3. $SL(2, \mathbb{R})$ — 트레이스 분석<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>비컴팩트의 표준 반례 $SL(2, \mathbb{R})$ 를 본격 분석.</p>
 <p><strong>1)</strong> <em>$SL(2, \mathbb{R})$ 와 $\mathfrak{sl}(2, \mathbb{R})$ 재확인</em>. $\det = 1$ 인 $2 \times 2$ 실 행렬, 3차원 비컴팩트 연결 리 군. 리 대수는 트레이스 0 $2 \times 2$ 실 행렬, 3차원.</p>
@@ -261,8 +260,6 @@ $$\text{tr}(\exp X) = 2 \cosh\sqrt{d} \ge 2$$<p><strong>4)</strong> <em>세 경�
 <p><strong>3)</strong> <em>물리적 의미</em>. $M$ 이 <em>$\pi$ 회전 ($\exp(\pi J) = -I$)</em> + <em>전단 변환 (shear, $\exp(-N) = I - N$)</em> 의 합성. 두 변환이 <em>각각</em> 1-매개변수 부분군 (각각 $SO(2)$ 와 <em>상삼각 unipotent</em> 부분군) 이지만, <em>그 합성이 단일 1-매개변수 부분군이 아님</em> — 따라서 단일 $\exp$ 로 표현 안 됨.</p>
 <p><strong>4)</strong> <em>일반 정리</em>.</p>
 <blockquote>
-<p><em>정리</em>. 비컴팩트 연결 리 군 $G$ 에서, 모든 $g \in G$ 가 <em>유한 개 지수의 곱</em> 으로 표현 가능 —
-</p>
 $$g = \exp(X_1) \exp(X_2) \cdots \exp(X_k), \quad X_i \in \mathfrak{g}$$</blockquote>
 <p>증명 (스케치) — 항등원 근방의 모든 원소가 $\exp$ 의 이미지 (지수 사상의 국소 미분 동형사상, §7 §6). 연결 리 군은 <em>항등원 근방 원소들의 곱으로 전체 도달</em> — 토폴로지 사실. 따라서 임의 $g$ 가 항등원 근방 원소들 $g_i = \exp(X_i)$ 의 곱.</p>
 <p><strong>5)</strong> <em>결과 — $SL(2, \mathbb{R})$ 의 경우</em>. 모든 $M \in SL(2, \mathbb{R})$ 가 두 개 (또는 그 이상) 지수의 곱으로 표현. <em>단일</em> 지수만으로는 부족 — <em>적어도 두 개</em> 필요한 원소들이 존재.</p>
@@ -407,8 +404,8 @@ $$\Lambda = R \cdot B$$<p>where $R$ 가 공간 회전, $B$ 가 boost. 두 매개
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -441,6 +438,7 @@ $$\Lambda = R \cdot B$$<p>where $R$ 가 공간 회전, $B$ 가 boost. 두 매개
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -471,9 +469,9 @@ $$\Lambda = R \cdot B$$<p>where $R$ 가 공간 회전, $B$ 가 boost. 두 매개
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 익숙한 미분들의 통일§8 에서 외미분 $d$ 가 모든 차수의 미분형식 사이를 잇는 통합된 연산자 임을 봤다. 그리고 3D 에서의 구체적 계산 을 통해
 0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
@@ -25,26 +25,26 @@
 0-form 의 외미분 = 그라디언트의 정보 (1-form 으로 인코딩) 1-form 의 외미분 ≈ 회전의 정보 (2-form 으로 인코딩) 2-form 의 외미분 ≈ 발산의 정보 (3-form 으로 인코딩) 이라는 대응 관계 도 살짝 언급했다.">
     <meta itemprop="wordCount" content="1969">
     <title>외미분과 벡터 미적분 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -171,8 +171,7 @@
 <p>이 장에서는 <em>그 대응을 정확히</em> 본다. <em>왜</em> 외미분이 <em>우리가 익숙한 벡터 미적분 연산자들</em> 과 정확히 같은 일을 하는지, <em>어떤 변환</em> 을 통해 둘이 동일시되는지를 정리한다.</p>
 <p>핵심 메시지는:</p>
 <blockquote>
-<p>3차원 공간에서 그라디언트·회전·발산은 <em>외미분 $d$ 의 세 가지 다른 모습</em>일 뿐. 이들이 <em>동일한 연산자의 다른 표현</em>임이 외대수 언어로 명확해진다.</p>
-</blockquote>
+<p>3차원 공간에서 그라디언트·회전·발산은 <em>외미분 $d$ 의 세 가지 다른 모습</em>일 뿐. 이들이 <em>동일한 연산자의 다른 표현</em>임이 외대수 언어로 명확해진다.</p></blockquote>
 <p>이게 분명해지면, <em>4차원 이상</em> 으로 가도 <em>회전이라는 익숙한 개념이 왜 사라지는지</em> 와 <em>그래도 외미분이 모든 차원에서 작동하는 이유</em> 가 자연스럽게 보인다.</p>
 <h3 id="2-벡터와-1-form-사이의-다리-음악적-동형사상">2. 벡터와 1-form 사이의 다리: 음악적 동형사상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>먼저 <em>익숙한 벡터장 시각</em> 과 <em>미분형식 시각</em> 사이의 다리를 놓아야 한다. 그게 <em>음악적 동형사상 (musical isomorphism)</em>.</p>
@@ -200,8 +199,7 @@ $$\alpha^\sharp = (\alpha_1, \alpha_2, \ldots, \alpha_n)$$<p><strong>음악 기�
 $$df = \frac{\partial f}{\partial x}\, dx + \frac{\partial f}{\partial y}\, dy + \frac{\partial f}{\partial z}\, dz$$<p>이 1-form 의 <em>샵</em> 을 취하면 (성분이 그대로):</p>
 $$(df)^\sharp = \left(\frac{\partial f}{\partial x},\, \frac{\partial f}{\partial y},\, \frac{\partial f}{\partial z}\right) = \nabla f$$<p>따라서:</p>
 <blockquote>
-<p><strong>대응</strong>: $(df)^\sharp = \nabla f$, 또는 동치로 $\nabla f$ 의 1-form 표현이 $df$.</p>
-</blockquote>
+<p><strong>대응</strong>: $(df)^\sharp = \nabla f$, 또는 동치로 $\nabla f$ 의 1-form 표현이 $df$.</p></blockquote>
 <p>음악적 동형사상을 통해 <em>그라디언트의 1-form 버전이 정확히 함수의 외미분</em>.</p>
 <p><strong>기하학적 의미의 재확인</strong></p>
 <p>§6 에서 본 것처럼, $df(v) = \nabla f \cdot v$ 가 <em>$v$ 방향의 방향 미분</em>. 그라디언트가 <em>함수가 가장 빠르게 증가하는 방향과 그 변화율을 담은 벡터</em>. 두 시각이 같은 정보 — 그러나 <em>언어가 다름</em>.</p>
@@ -223,8 +221,7 @@ $$\star d\omega_F = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\par
 $$(\star d\omega_F)^\sharp = \nabla \times \vec{F}$$<p>따라서:</p>
 <blockquote>
 <p><strong>대응</strong>: $(\star d \vec{F}^\flat)^\sharp = \nabla \times \vec{F}$</p>
-<p>즉 <em>플랫 → 외미분 → Hodge → 샵</em> 의 합성이 회전과 같음.</p>
-</blockquote>
+<p>즉 <em>플랫 → 외미분 → Hodge → 샵</em> 의 합성이 회전과 같음.</p></blockquote>
 <p><strong>왜 이렇게 복잡한가?</strong></p>
 <p>벡터 미적분의 <em>회전 연산자</em> 는 <em>벡터장을 벡터장으로</em> 보낸다. 외미분 $d$ 는 <em>1-form 을 2-form 으로</em> 보낸다. 두 연산자가 <em>같은 정보를 다룬다</em> 는 걸 확인하려면 양쪽을 <em>공통 언어 (벡터 또는 미분형식)</em> 로 바꿔야 함.</p>
 <p>위 <em>플랫-d-Hodge-샵</em> 의 체인이 그 <em>벡터 ↔ 미분형식 변환의 명시적 경로</em>.</p>
@@ -243,8 +240,7 @@ $$\star(dx \wedge dy \wedge dz) = 1$$<p>즉 부피 형식을 <em>스칼라 1</em
 $$\star d\eta_F = \nabla \cdot \vec{F}$$<p>발산이 <em>0-form</em> (즉 함수) 으로 자연스럽게 나옴.</p>
 <blockquote>
 <p><strong>대응</strong>: $\star d (\star \vec{F}^\flat) = \nabla \cdot \vec{F}$</p>
-<p>즉 <em>플랫 → Hodge → 외미분 → Hodge</em> 의 합성이 발산.</p>
-</blockquote>
+<p>즉 <em>플랫 → Hodge → 외미분 → Hodge</em> 의 합성이 발산.</p></blockquote>
 <h3 id="6-3d-의-통일된-de-rham-사슬">6. 3D 의 통일된 de Rham 사슬<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>위의 세 대응을 한 다이어그램으로 정리하면 <em>3D 의 통일된 구조</em> 가 보인다.</p>
 $$\Omega^0(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^1(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^2(\mathbb{R}^3) \;\xrightarrow{d}\; \Omega^3(\mathbb{R}^3)$$<p>각 단계가 정확히 <em>벡터 미적분의 한 연산자</em> 와 대응:</p>
@@ -409,8 +405,8 @@ $$\Omega^0 \xrightarrow{d = \text{grad}} \Omega^1 \xrightarrow{d \approx \text{c
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -438,6 +434,7 @@ $$\Omega^0 \xrightarrow{d = \text{grad}} \Omega^1 \xrightarrow{d \approx \text{c
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -468,9 +465,9 @@ $$\Omega^0 \xrightarrow{d = \text{grad}} \Omega^1 \xrightarrow{d \approx \text{c
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

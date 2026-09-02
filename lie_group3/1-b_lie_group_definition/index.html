@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§0 부에서 군 (§0-2) 과 매끄러운 다양체 (§0-3) 를 따로 점검했다. 리 군(Lie group) 은 이 두 구조가 한 집합 위에 양립하는 대상이다.
 왜 둘이 양립하는 대상을 따로 보나.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. 이 절의 동기§0 부에서 군 (§0-2) 과 매끄러운 다양체 (§0-3) 를 따로 점검했다. 리 군(Lie group) 은 이 두 구조가 한 집합 위에 양립하는 대상이다.
 왜 둘이 양립하는 대상을 따로 보나.
 (1) 대칭이 연속적으로 변하는 자연 현상이 많다. 회전, 위상 변환 ($e^{i\theta}$ 게이지), 시공간 변환 등. 어떤 각도의 회전이든 연속적으로 가능 이라는 사실이 “회전군이 매끄러운 다양체이기도 하다” 는 것의 물리적 의미.">
-    <meta itemprop="wordCount" content="1929">
+    <meta itemprop="wordCount" content="1912">
     <title>리 군이란 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -176,11 +176,7 @@
 <blockquote>
 <p><em>(i) 매끄러운 다양체 구조</em> — $G$ 가 <em>매끄러운 다양체</em> (§0-3). 즉 $G$ 가 좌표 차트들로 덮이고, 차트 사이 전이 사상이 $C^\infty$.</p>
 <p><em>(ii) 군 구조</em> — $G$ 위에 군 연산 $\cdot : G \times G \to G$ 이 정의되어 <em>군 4공리</em> (닫힘, 결합, 항등원, 역원, §0-2 §3) 를 만족.</p>
-<p><em>(iii) 양립 조건</em> — 군 연산과 역원 사상이 <em>매끄러운 사상</em> 이다. 구체적으로 다음 두 사상이 $C^\infty$.
-</p>
-$$\mu : G \times G \to G, \quad (g, h) \mapsto g \cdot h$$<p>
-</p>
-$$\iota : G \to G, \quad g \mapsto g^{-1}$$</blockquote>
+$$\mu : G \times G \to G, \quad (g, h) \mapsto g \cdot h$$$$\iota : G \to G, \quad g \mapsto g^{-1}$$</blockquote>
 <p><strong>2)</strong> <em>이름의 유래</em>. <em>소푸스 리(Sophus Lie, 1842–1899)</em> 가 19세기 후반 <em>연속 변환군</em> 의 일반 이론을 개발한 데서 이름이 왔다. 본래 &ldquo;연속 변환군 (continuous transformation group)&rdquo; 이라 부르던 것을 후대 수학자들이 <em>Lie group</em> 으로 정착시켰다.</p>
 <p><strong>3)</strong> <em>세 구조의 위계</em>. 매끄러운 다양체 $\supset$ 위상 다양체 $\supset$ 위상 공간. 군 연산의 연속성만 요구하면 <em>위상군(topological group)</em>, 매끄러움까지 요구하면 <em>리 군</em>. 본 시리즈는 리 군 (매끄러운 경우) 에 집중.</p>
 <h3 id="3-양립-의-의미--두-사상의-매끄러움">3. &ldquo;양립&rdquo; 의 의미 — 두 사상의 매끄러움<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -299,8 +295,7 @@ $$A^{-1} = \frac{1}{\det A} \cdot \text{adj}(A)$$
 <p>이들 모두 리 군. 차원과 위상 성질은 §0-1 §11 의 표 참조.</p>
 <p><strong>5)</strong> <em>일반 정리 — 닫힌 부분군 정리 (Cartan&rsquo;s theorem)</em>. <em>리 군의 닫힌 부분군은 자동으로 리 군</em> (자동으로 매끄러운 부분 다양체). 이 정리 덕에 <em>조건식을 명시하면 그것이 닫힌 조건이라는 것만 확인하면</em> 부분 리 군 구성이 끝난다. (증명은 미분 위상수학 교재.)</p>
 <blockquote>
-<p>행렬군이 리 군의 <em>압도적 다수</em> 를 차지한다. 모든 <em>컴팩트 리 군</em> 이 어떤 <em>유한 차원 표현</em> 을 통해 <em>행렬군의 부분군</em> 으로 표현 가능 (Peter–Weyl 정리). 연결 가정 불필요 — $O(N)$ 같은 비연결 컴팩트 리 군도 포함. 이 시리즈도 대부분 행렬군 위주.</p>
-</blockquote>
+<p>행렬군이 리 군의 <em>압도적 다수</em> 를 차지한다. 모든 <em>컴팩트 리 군</em> 이 어떤 <em>유한 차원 표현</em> 을 통해 <em>행렬군의 부분군</em> 으로 표현 가능 (Peter–Weyl 정리). 연결 가정 불필요 — $O(N)$ 같은 비연결 컴팩트 리 군도 포함. 이 시리즈도 대부분 행렬군 위주.</p></blockquote>
 <h3 id="9-정의의-미묘한-점--자주-헷갈리는-것들">9. 정의의 미묘한 점 — 자주 헷갈리는 것들<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1)</strong> <em>매개변수가 매끄럽다 ≠ 군 연산이 매끄럽다</em>.</p>
 <p>매개변수만 매끄러우면 다양체 구조에 그치고 <em>군 연산이 매끄러운지는 별개</em>. 정의는 <em>두 사상 ($\mu, \iota$) 의 매끄러움</em> 을 요구.</p>
@@ -367,8 +362,8 @@ $$A^{-1} = \frac{1}{\det A} \cdot \text{adj}(A)$$
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -401,6 +396,7 @@ $$A^{-1} = \frac{1}{\det A} \cdot \text{adj}(A)$$
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -431,9 +427,9 @@ $$A^{-1} = \frac{1}{\det A} \cdot \text{adj}(A)$$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

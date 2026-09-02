@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 폐형식과 완전형식의 차이§8 에서 외미분의 두 핵심 개념을 도입했다 — 폐형식 (closed form) 과 완전형식 (exact form).
 폐형식은 외미분이 0 인 형식: $d\omega = 0$.
@@ -37,26 +37,26 @@ $d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 �
 그런데 역 — 모든 폐형식이 완전형식인가? — 은 공간의 위상에 따라 다르다. 이게 §8 §10, §9 §8, §11 §13 에서 반복적으로 등장한 핵심 사실.">
     <meta itemprop="wordCount" content="2041">
     <title>de Rham 코호몰로지 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -184,8 +184,7 @@ $d^2 = 0$ 으로 완전 → 폐 는 항상 성립. 즉 모든 완전형식은 �
 <p><strong>놀라운 깨달음</strong></p>
 <p>폐형식이지만 완전형식이 아닌 형식들이 <em>얼마나 많이 존재하는가</em> 가 <em>공간의 위상학적 정보</em> 를 <em>정확히 측정</em> 한다는 것.</p>
 <blockquote>
-<p><em>폐형식 / 완전형식의 비율</em> = <em>공간의 위상학적 정보</em></p>
-</blockquote>
+<p><em>폐형식 / 완전형식의 비율</em> = <em>공간의 위상학적 정보</em></p></blockquote>
 <p>이 <em>비율 (quotient)</em> 을 정확히 정의한 것이 <strong>de Rham 코호몰로지 (de Rham cohomology)</strong>.</p>
 <p>이 장에서 그 정의, 의미, 그리고 <em>왜 미적분의 도구가 위상수학과 연결되는지</em> 를 본다. 결과적으로 <em>외미분 $d$ 가 단순한 미분 연산자가 아니라 공간의 모양 (shape) 을 측정하는 도구</em> 임이 드러난다.</p>
 <h3 id="2-코사슬-복합체">2. 코사슬 복합체<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -208,15 +207,13 @@ $$\boxed{\;\; H^k(M) := Z^k(M) \,/\, B^k(M) \;\;}$$</blockquote>
 <p>이 <em>몫 벡터 공간</em> 을 <strong>$M$ 의 $k$-차 de Rham 코호몰로지 군 (k-th de Rham cohomology group)</strong> 이라 부른다 (군이지만 사실은 벡터 공간).</p>
 <p>직관적 의미:</p>
 <blockquote>
-<p>$H^k(M)$ = <em>완전이 아닌 폐 $k$-form 들의 동치류 (equivalence class)</em></p>
-</blockquote>
+<p>$H^k(M)$ = <em>완전이 아닌 폐 $k$-form 들의 동치류 (equivalence class)</em></p></blockquote>
 <p>두 폐형식 $\omega_1, \omega_2$ 가 <em>동치</em> 라는 건 <em>그 차이가 완전형식</em>: $\omega_1 - \omega_2 = d\eta$. 이런 동치류의 집합이 $H^k(M)$.</p>
 <h3 id="3-가장-단순한-경우">3. 가장 단순한 경우: $\mathbb{R}^n$<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>먼저 가장 <em>단순한 다양체</em> 인 $\mathbb{R}^n$ 의 코호몰로지를 본다. 결과가 <em>놀라울 정도로 간단</em>.</p>
 <p><strong>Poincaré 보조정리 (Poincaré lemma)</strong></p>
 <blockquote>
-<p><strong>정리</strong>: $\mathbb{R}^n$ 위에서, $k \ge 1$ 일 때 <em>모든 폐 $k$-form 은 완전형식</em>.</p>
-</blockquote>
+<p><strong>정리</strong>: $\mathbb{R}^n$ 위에서, $k \ge 1$ 일 때 <em>모든 폐 $k$-form 은 완전형식</em>.</p></blockquote>
 <p>따라서</p>
 $$H^k(\mathbb{R}^n) = 0 \quad \text{for } k \ge 1$$<p>$k = 0$ 일 때는 약간 다르다. 0-form (함수) $f$ 가 폐 ($df = 0$) 라는 건 <em>$f$ 가 상수</em> 라는 뜻 (모든 편미분이 0 이므로). 완전형식이라는 건 <em>어떤 $(-1)$-form 의 외미분</em> 이지만 $(-1)$-form 은 정의되지 않으므로 <em>완전형식이 없음</em>. 따라서</p>
 $$H^0(\mathbb{R}^n) = \{\text{상수 함수의 공간}\} \cong \mathbb{R}$$<p>(<em>$\mathbb{R}^n$ 이 연결되어 있으므로</em> 상수 함수가 1차원.)</p>
@@ -325,8 +322,7 @@ $$H^k_{\text{dR}}(M) \cong H^k_{\text{sing}}(M; \mathbb{R})$$</blockquote>
 $$\phi = \oint_C \vec{A} \cdot d\vec{r} = \oint_C \vec{A}^\flat$$<p>로 변화. Stokes 정리로</p>
 $$\oint_C \vec{A}^\flat = \int_S d\vec{A}^\flat = \int_S \star \vec{B}^\flat = \text{자기 플럭스}$$<p>(단, $S$ 가 <em>경로 안쪽의 면이며 솔레노이드를 포함</em>. 솔레노이드의 자기 플럭스가 들어감.)</p>
 <blockquote>
-<p><em>솔레노이드 안의 자기장이 솔레노이드 바깥의 전자 위상에 영향</em> — <em>코호몰로지를 통해 매개</em>.</p>
-</blockquote>
+<p><em>솔레노이드 안의 자기장이 솔레노이드 바깥의 전자 위상에 영향</em> — <em>코호몰로지를 통해 매개</em>.</p></blockquote>
 <p>이 <em>위상학적 효과</em> 가 <em>비자명한 $H^1(M)$</em> 에서 정확히 나옴.</p>
 <h3 id="11-물리적-응용-2-자기-모노폴">11. 물리적 응용 2: 자기 모노폴<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><em>자기 모노폴 (Dirac monopole)</em> 의 존재성 가설도 <em>코호몰로지의 자연스러운 응용</em>.</p>
@@ -408,8 +404,8 @@ $$C = \frac{1}{2\pi} \int_{BZ} F$$<p>여기서 $F = dA$ 가 <em>Berry 곡률 2-f
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -437,6 +433,7 @@ $$C = \frac{1}{2\pi} \int_{BZ} F$$<p>여기서 $F = dA$ 가 <em>Berry 곡률 2-f
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -467,9 +464,9 @@ $$C = \frac{1}{2\pi} \int_{BZ} F$$<p>여기서 $F = dA$ 가 <em>Berry 곡률 2-f
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

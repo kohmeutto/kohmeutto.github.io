@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
 왜 이런 표기를 쓰나.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. 이 절의 동기이 시리즈 전체에서 연산자를 스펙트럼 분해(spectral decomposition) 형태로 표현하고, 기저와 쌍대 기저를 바이듀얼(bidual) 표기 로 명시한다. 이 절은 그 표기 약속을 한 자리에서 정리한다.
 왜 이런 표기를 쓰나.
 (1) 비에르미트 연산자가 자주 등장한다. 반에르미트 행렬 (리 대수의 원소), 비유니타리 연산자 (NEGF 의 자기에너지 $\Sigma$), 비정규 연산자 (G^R, G^A) 등. 이들은 좌고유벡터와 우고유벡터가 다를 수 있다 — 한 종류만 쓰는 표준 디랙 표기는 부정확해진다.">
-    <meta itemprop="wordCount" content="2065">
+    <meta itemprop="wordCount" content="2061">
     <title>스펙트럼 분해와 바이듀얼 표기 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -199,9 +199,7 @@ $$v^i(v_j) = \delta^i_j$$<p>로 정의된다. 여기 $\delta^i_j$ 는 <em>크로
 <li><em>내적/짝짓기(pairing)</em> $\langle \omega | v \rangle$ — 브라가 켓에 작용한 결과 ($\in \mathbb{F}$)</li>
 </ul>
 <p><strong>2)</strong> <em>기저와 쌍대 기저의 브라켓 표기</em>. 기저 벡터를 $|v_i\rangle$, 쌍대 기저를 $\langle v^i|$ 로 적는다. 쌍대 관계는</p>
-$$\langle v^i | v_j \rangle = \delta^i_j$$<p><strong>3)</strong> <em>임의 켓·브라의 전개</em>.
-</p>
-$$|v\rangle = \sum_i v^i |v_i\rangle, \qquad \langle \omega | = \sum_i \omega_i \langle v^i |$$<p>켓 성분은 위 첨자 ($v^i$), 브라 성분은 아래 첨자 ($\omega_i$). 짝짓기는</p>
+$$\langle v^i | v_j \rangle = \delta^i_j$$$$|v\rangle = \sum_i v^i |v_i\rangle, \qquad \langle \omega | = \sum_i \omega_i \langle v^i |$$<p>켓 성분은 위 첨자 ($v^i$), 브라 성분은 아래 첨자 ($\omega_i$). 짝짓기는</p>
 $$\langle \omega | v \rangle = \sum_{i, j} \omega_i v^j \langle v^i | v_j \rangle = \sum_{i, j} \omega_i v^j \delta^i_j = \sum_i \omega_i v^i$$<p>— 위·아래 첨자의 자연스러운 축약.</p>
 <p><strong>4)</strong> <em>§0-4 와의 일치</em>. 다양체의 접·코탄젠트 구조에서</p>
 $$|v_i\rangle \leftrightarrow \frac{\partial}{\partial x^i}, \qquad \langle v^i| \leftrightarrow dx^i, \qquad \langle v^i | v_j \rangle \leftrightarrow dx^i(\partial_j) = \delta^i_j$$<p><em>완전히 같은 구조</em>. 다양체의 코탄젠트는 본 절 약속의 <em>기하학적 구현</em>.</p>
@@ -227,8 +225,7 @@ $$\langle \lambda_i | \lambda_j \rangle = \delta_{ij}$$<p>— 통상적인 내�
 <p><strong>4)</strong> <em>바이듀얼 표기의 단순화</em>. 정규 연산자의 고유 기저 $\{|\lambda_i\rangle\}$ 에 대해, <em>쌍대 기저가 기저 자체와 (내적적으로) 일치</em> 한다 —</p>
 $$\langle \lambda^i | = \langle \lambda_i |$$<p>즉 <em>위 첨자와 아래 첨자가 (이 경우에) 같은 객체</em> 를 가리킨다. 표기상 헷갈리지 않게 <em>이 단순화를 사용할 때마다 명시</em>.</p>
 <blockquote>
-<p><em>약속</em>. 본 시리즈는 <em>기본적으로 바이듀얼 표기를 유지</em> 한다 (위 첨자 ↔ 아래 첨자 구분). 정규 연산자에서 단순화 ($\langle \lambda^i | = \langle \lambda_i |$) 를 사용할 때는 <em>그 시점에서 명시</em>. 비정규 연산자가 등장하는 NEGF, 비에르미트 양자역학 등에서는 단순화 <em>사용 안 함</em>.</p>
-</blockquote>
+<p><em>약속</em>. 본 시리즈는 <em>기본적으로 바이듀얼 표기를 유지</em> 한다 (위 첨자 ↔ 아래 첨자 구분). 정규 연산자에서 단순화 ($\langle \lambda^i | = \langle \lambda_i |$) 를 사용할 때는 <em>그 시점에서 명시</em>. 비정규 연산자가 등장하는 NEGF, 비에르미트 양자역학 등에서는 단순화 <em>사용 안 함</em>.</p></blockquote>
 <p><strong>5)</strong> <em>비정규 연산자의 스펙트럼</em>. 비정규지만 <em>대각화 가능</em> 한 연산자는 <em>좌고유벡터와 우고유벡터가 다른</em> 두 기저로 분해된다.</p>
 $$H |R_i\rangle = \lambda_i |R_i\rangle, \qquad \langle L_i | H = \lambda_i \langle L_i |$$<p>두 기저가 <em>바이오쏘고날 (biorthogonal)</em></p>
 $$\langle L_i | R_j \rangle = \delta_{ij}$$<p>이 경우 쌍대 기저가 <em>왼쪽 고유벡터</em>. 본 시리즈의 일반 표기 $\langle v^i |$ 가 이 <em>왼쪽 고유벡터</em> 와 자연 대응 — 정규 연산자의 경우 좌·우가 일치해서 단순화될 뿐.</p>
@@ -413,8 +410,8 @@ $$g = \exp(tX) = \sum_i e^{t \lambda_i} |\lambda_i\rangle \langle \lambda^i|$$<p
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -447,6 +444,7 @@ $$g = \exp(tX) = \sum_i e^{t \lambda_i} |\lambda_i\rangle \langle \lambda^i|$$<p
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -477,9 +475,9 @@ $$g = \exp(tX) = \sum_i e^{t \lambda_i} |\lambda_i\rangle \langle \lambda^i|$$<p
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

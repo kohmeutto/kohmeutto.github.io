@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 미분의 통합된 언어미적분에서 우리는 여러 가지 미분 연산자 를 배웠다.
 그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
@@ -25,26 +25,26 @@
 그라디언트 $\nabla f$: 스칼라 함수 → 벡터장 발산 $\nabla \cdot \vec{F}$: 벡터장 → 스칼라 함수 회전 $\nabla \times \vec{F}$: 벡터장 → 벡터장 (3D 만) 이 세 연산자들이 서로 다른 종류 의 객체들 사이를 오가면서, 어떤 통합된 원리 가 있는 것처럼 보이긴 한다. 예를 들어 발산의 회전은 0, 회전의 그라디언트는 0 같은 항등식이 있다.">
     <meta itemprop="wordCount" content="2243">
     <title>외미분 d :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -200,8 +200,7 @@ $$d(\omega \wedge \eta) = d\omega \wedge \eta + (-1)^k\, \omega \wedge d\eta$$</
 <li>
 <p><em>$d^2 = 0$</em>: $d(d\omega) = 0$ 모든 $\omega$ 에 대해.</p>
 </li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p>이 네 조건이 $d$ 를 <em>유일하게 결정</em> 한다.</p>
 <p><strong>왜 이 네 조건이 정당한가</strong></p>
 <ul>
@@ -255,14 +254,12 @@ $$d(P\, dx) = -\frac{\partial P}{\partial y}\, dx \wedge dy - \frac{\partial P}{
 $$d\omega = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx \wedge dy + \left(\frac{\partial R}{\partial x} - \frac{\partial P}{\partial z}\right) dx \wedge dz + \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) dy \wedge dz$$<p>이 <em>세 계수</em> 가 정확히 3D 회전 $\nabla \times \vec{F}$ 의 <em>세 성분</em>! 자세히 보면</p>
 $$\nabla \times \vec{F} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},\; \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},\; \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)$$<p>부호 정렬 후 정확히 위 외미분 결과와 일치. 따라서:</p>
 <blockquote>
-<p><em>3D 에서 1-form 의 외미분 = 회전 (curl)</em>. 미분형식 언어로 정확한 대응.</p>
-</blockquote>
+<p><em>3D 에서 1-form 의 외미분 = 회전 (curl)</em>. 미분형식 언어로 정확한 대응.</p></blockquote>
 <p><strong>예제 3</strong>: 2-form $\omega = P\, dy \wedge dz + Q\, dz \wedge dx + R\, dx \wedge dy$ 의 외미분.</p>
 <p>각 단항 외미분 후 합치면 (계산 생략)</p>
 $$d\omega = \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dx \wedge dy \wedge dz$$<p>세 <em>편미분의 합</em> — 정확히 <em>발산 (divergence) $\nabla \cdot \vec{F}$</em> 의 식. 따라서:</p>
 <blockquote>
-<p><em>3D 에서 2-form 의 외미분 = 발산 (divergence) × 부피 형식</em>.</p>
-</blockquote>
+<p><em>3D 에서 2-form 의 외미분 = 발산 (divergence) × 부피 형식</em>.</p></blockquote>
 <h3 id="7--의-정확한-의미와-증명">7. $d^2 = 0$ 의 정확한 의미와 증명<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>외미분의 <em>가장 중요한 성질</em> 이 $d^2 = 0$. 이중 외미분은 항상 0.</p>
 <blockquote>
@@ -318,8 +315,7 @@ $$\omega = d\eta \;\Rightarrow\; d\omega = d(d\eta) = 0$$<p><strong>역은?</str
 </ul>
 <p>이 차이를 측정하는 것이 <em>de Rham cohomology</em> (§12).</p>
 <blockquote>
-<p>폐형식 / 완전형식의 비율 = $H^k(M)$ (de Rham 코호몰로지 군)</p>
-</blockquote>
+<p>폐형식 / 완전형식의 비율 = $H^k(M)$ (de Rham 코호몰로지 군)</p></blockquote>
 <p>이게 <em>외미분이 위상 정보를 인코딩</em> 한다는 놀라운 사실. 자세한 내용은 §12.</p>
 <p><strong>§6 §10 의 예제 다시 보기</strong></p>
 <p>§6 §10 에서 &ldquo;어떤 함수의 미분도 아닌 1-form&rdquo; 의 예로 $\omega = y\, dx - x\, dy$ 를 봤다. 이 1-form 의 외미분을 계산해 보면</p>
@@ -387,8 +383,8 @@ $$d\omega = \sum_I df_I \wedge dx^I$$<p>— 각 단항의 <em>함수 계수만 �
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -416,6 +412,7 @@ $$d\omega = \sum_I df_I \wedge dx^I$$<p>— 각 단항의 <em>함수 계수만 �
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -446,9 +443,9 @@ $$d\omega = \sum_I df_I \wedge dx^I$$<p>— 각 단항의 <em>함수 계수만 �
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§4 에서 연속 대칭의 합성 법칙 이 준동형 조건 으로 자연스럽게 추상화됨을 보았다. 이 절에서는 그 결과를 정식 정의 로 옮긴다 — 1-매개변수 부분군(one-parameter subgroup).
 이전 시리즈에서는 1-매개변수 부분군이 갑자기 등장하는 정의 처럼 보였다. 새 시리즈에서는 §4 의 물리적 동기를 거쳐 이 절에 도달했으니, 정의가 자연스럽게 받아들여질 것이다.
@@ -27,28 +27,28 @@
     <meta itemprop="description" content="1. 이 절의 동기§4 에서 연속 대칭의 합성 법칙 이 준동형 조건 으로 자연스럽게 추상화됨을 보았다. 이 절에서는 그 결과를 정식 정의 로 옮긴다 — 1-매개변수 부분군(one-parameter subgroup).
 이전 시리즈에서는 1-매개변수 부분군이 갑자기 등장하는 정의 처럼 보였다. 새 시리즈에서는 §4 의 물리적 동기를 거쳐 이 절에 도달했으니, 정의가 자연스럽게 받아들여질 것이다.
 이 절의 목표는 세 조건 (매끄러움, 항등 시작점, 합성 법칙) 각각의 의미를 정확히 짚고, 예시 와 비예 로 정의의 경계를 명확히 하는 것. 본격적 분석 (생성자, 지수 사상, 리 대수 1:1 대응) 은 §6, §7, §9 에서.">
-    <meta itemprop="wordCount" content="1672">
+    <meta itemprop="wordCount" content="1659">
     <title>1-매개변수 부분군의 정의 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -174,8 +174,6 @@ $$\gamma : \mathbb{R} \to G$$<p>이다.</p>
 <blockquote>
 <p><em>(i) 매끄러움</em> — $\gamma$ 가 매끄러운 사상 ($C^\infty$).</p>
 <p><em>(ii) 항등 시작점</em> — $\gamma(0) = e$ (군의 항등원).</p>
-<p><em>(iii) 합성 법칙 (준동형 조건)</em> — 모든 $s, t \in \mathbb{R}$ 에 대해
-</p>
 $$\gamma(s + t) = \gamma(s) \cdot \gamma(t)$$</blockquote>
 <p><strong>2)</strong> <em>간결한 표현</em>. 1-매개변수 부분군 = <em>덧셈군 $(\mathbb{R}, +)$ 에서 리 군 $G$ 로 가는 매끄러운 군 준동형 사상</em>. (§0-2 §10 의 준동형 정의의 특수경우.)</p>
 <h3 id="3-세-조건의-위계--사실은-두-조건만-필요">3. 세 조건의 위계 — 사실은 두 조건만 필요<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -185,8 +183,7 @@ $$\gamma(s + 0) = \gamma(s) \, \gamma(0) \quad \Rightarrow \quad \gamma(s) = \ga
 <p><strong>2)</strong> <em>역원도 자동</em>. $\gamma(-t) = \gamma(t)^{-1}$ 가 합성 법칙에서 따라옴 (§4 §8).</p>
 <p><strong>3)</strong> <em>정의의 최소 형태</em>. 사실 정의는 두 조건만으로 충분 —</p>
 <blockquote>
-<p><em>최소 정의</em>. <em>매끄러운 준동형 $\gamma : (\mathbb{R}, +) \to G$</em>.</p>
-</blockquote>
+<p><em>최소 정의</em>. <em>매끄러운 준동형 $\gamma : (\mathbb{R}, +) \to G$</em>.</p></blockquote>
 <p><strong>4)</strong> <em>그래도 세 조건을 명시하는 이유</em>. 정의를 보는 사람의 <em>명료성</em> — 세 조건이 모두 직관적이고, 합성 법칙으로부터 (ii) 가 따라옴은 <em>결과</em> 로 따로 강조하는 것이 학습에 도움.</p>
 <h3 id="4-매끄러움-조건-i-의-의미">4. 매끄러움 조건 (i) 의 의미<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1)</strong> <em>매끄러움의 정확한 의미</em>. $\gamma : \mathbb{R} \to G$ 가 매끄러운 사상이라 함은 — $G$ 의 어떤 차트 $(U, \varphi)$ 에서 $\varphi \circ \gamma : \mathbb{R} \to \mathbb{R}^n$ 이 $C^\infty$ 함수 (§0-3 §6 (1)). 전이 사상이 매끄러우니 어떤 한 차트에서 성립하면 모든 차트에서 성립.</p>
@@ -201,8 +198,7 @@ $$\gamma(s + 0) = \gamma(s) \, \gamma(0) \quad \Rightarrow \quad \gamma(s) = \ga
 <p>$\gamma(s) \gamma(t) = \gamma(s + t) = \gamma(t + s) = \gamma(t) \gamma(s)$</p>
 <p>— <em>매개변수 합성이 가환 ($s + t = t + s$)</em> 이므로 자동.</p>
 <blockquote>
-<p><em>주의</em>. <em>G가 비가환이라도</em> 한 1-매개변수 부분군의 <em>내부</em> 는 가환. 비가환은 <em>두 다른 1-매개변수 부분군 사이</em> 에서 나타난다 (예 — $SU(2)$ 의 $x$ 축 회전과 $y$ 축 회전, §3 §5 의 파울리 행렬 교환자).</p>
-</blockquote>
+<p><em>주의</em>. <em>G가 비가환이라도</em> 한 1-매개변수 부분군의 <em>내부</em> 는 가환. 비가환은 <em>두 다른 1-매개변수 부분군 사이</em> 에서 나타난다 (예 — $SU(2)$ 의 $x$ 축 회전과 $y$ 축 회전, §3 §5 의 파울리 행렬 교환자).</p></blockquote>
 <p><strong>4)</strong> <em>결과 4 — 거듭제곱 규칙</em>. 정수 $n$ 에 대해</p>
 $$\gamma(nt) = \gamma(t)^n$$<p>(합성 법칙 반복 적용.) 따라서 1-매개변수 부분군은 <em>덧셈군 $(\mathbb{R}, +)$ 의 모든 정수 배수에서 정의된 거듭제곱</em> 의 <em>연속 확장</em>.</p>
 <p><strong>5)</strong> <em>결과 5 — 정수 부분군 $\gamma(\mathbb{Z})$ 가 부분군</em>. 정수만 보면 $\{ \gamma(n) : n \in \mathbb{Z} \} = \{ e, \gamma(1), \gamma(1)^2, \cdots, \gamma(-1) = \gamma(1)^{-1}, \cdots \}$ 가 <em>$G$ 의 순환 부분군</em>.</p>
@@ -224,8 +220,7 @@ $$\gamma_X(t) = \exp(tX) = I + tX + \frac{(tX)^2}{2!} + \cdots$$<p>가 1-매개�
 <li>$\gamma_X(s + t) = \exp((s+t)X) = \exp(sX) \exp(tX) = \gamma_X(s) \gamma_X(t)$ ✓ ($X$ 와 자기 자신이 교환하므로 BCH 보정항이 모두 $0$)</li>
 </ul>
 <blockquote>
-<p>핵심 결과 예고 — <em>모든 행렬 리 군의 1-매개변수 부분군이 어떤 $X$ 에 대해 $\gamma_X(t) = \exp(tX)$ 형태</em> (§7, §9 본격 증명). $X$ 는 <em>생성자</em>.</p>
-</blockquote>
+<p>핵심 결과 예고 — <em>모든 행렬 리 군의 1-매개변수 부분군이 어떤 $X$ 에 대해 $\gamma_X(t) = \exp(tX)$ 형태</em> (§7, §9 본격 증명). $X$ 는 <em>생성자</em>.</p></blockquote>
 <h3 id="7-비예--1-매개변수-부분군이-아닌-것">7. 비예 — 1-매개변수 부분군이 <em>아닌</em> 것<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>세 조건 중 하나라도 빠지면 1-매개변수 부분군이 아니다. 어디가 깨지는지 명확히 본다.</p>
 <p><strong>1)</strong> <em>비예 1 — 항등 시작점 위배</em>.</p>
@@ -316,8 +311,8 @@ $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -350,6 +345,7 @@ $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -380,9 +376,9 @@ $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

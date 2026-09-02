@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기앞서 단일 매개변수 행렬 $\hat{A}(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial \hat{A}/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
     <meta name="author" content="">
@@ -19,28 +19,28 @@
     <meta property="article:section" content="Lie theory">
     <meta itemprop="name" content="(b) MV spectrum :: 수리전자물리학">
     <meta itemprop="description" content="1. 동기앞서 단일 매개변수 행렬 $\hat{A}(\tau)$의 미분이 고유값 변화, 켓 고유벡터 변화, 브라 고유벡터 변화의 세 항으로 분해됨을 다루었다. 본 장에서는 다변수 매개변수 공간 $\tau = (\tau^1, \ldots, \tau^n)$으로 확장하여, 각 편미분 작용소 $\partial \hat{A}/\partial \tau^a$가 스펙트럼 표상 위에서 분해되는 구조를 서술한다. 단일 매개변수 유도 과정의 기계적 중복을 배제하고, 다변수 체계에서 도출되는 연산자 간의 비교환성 구조를 정립한다.">
-    <meta itemprop="wordCount" content="727">
+    <meta itemprop="wordCount" content="723">
     <title>(b) MV spectrum :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -164,8 +164,6 @@ $$
 $$<hr>
 <h3 id="3-스펙트럼의-편미분">3. 스펙트럼의 편미분<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>매개변수 공간의 각 성분 $\tau^a$에 대한 편미분 연산은 다른 매개변수 성분을 고정하므로, 앞서 도출된 단일 매개변수 미분 규칙이 선형성에 의해 동일하게 적용된다. 편미분 분해의 결과식은 다음과 같다.</p>
-<p><strong>1) 다변수 이산 스팩트럼</strong>
-</p>
 $$
 \frac{\partial \hat{A}}{\partial \tau^a} = \sum_i \left[ \frac{\partial \lambda_i}{\partial \tau^a}\, |v_i\rangle \langle v^i| + \lambda_i \frac{\partial |v_i\rangle}{\partial \tau^a} \langle v^i| + \lambda_i |v_i\rangle \frac{\partial \langle v^i|}{\partial \tau^a} \right]
 $$<p>비대각 성분에 대한 투영을 통해 도출되는 헬만-파인만 정리와 고유벡터의 1차 보정식 또한 단일 매개변수 공식의 편미분 확장 형태를 띤다. 다변수 고유값 편미분은 다음과 같다.</p>
@@ -260,8 +258,8 @@ $$<p>다변수 연속 스펙트럼 환경에서 각 매개변수 축으로의 �
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-id="/lie_theory/b_calculus/index.html"><a class="padding default-animation" href="/lie_theory/b_calculus/index.html">Calculus</a><ul id="R-subsections-f73819610fdafc445c5f21f18ba37e95" class="collapsible-menu">
             <li class="" data-nav-id="/lie_theory/b_calculus/b_sv_matrix/index.html"><a class="padding" href="/lie_theory/b_calculus/b_sv_matrix/index.html">(b) SV matrix</a></li>
@@ -284,6 +282,7 @@ $$<p>다변수 연속 스펙트럼 환경에서 각 매개변수 축으로의 �
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -314,9 +313,9 @@ $$<p>다변수 연속 스펙트럼 환경에서 각 매개변수 축으로의 �
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

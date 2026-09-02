@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§6 에서 1-매개변수 부분군이 항등원의 1차 정보 (생성자 $X$) 로부터 맥클로린 급수 $\sum (tX)^n / n!$ 로 복원 됨을 보았다. 이 급수가 정확히 지수 사상 $\exp(tX)$. 본 절에서는 지수 사상을 그 자체로 본격 분석 한다.
 다룰 것들 —
@@ -29,26 +29,26 @@
 행렬 지수의 정식 정의 와 수렴성 기본 성질 — $\exp(0) = I$, $\exp(-X) = \exp(X)^{-1}$, 미분 가환 vs 비가환에서의 지수 법칙 — $\exp(X&#43;Y)$ 의 운명 일반 리 군에서의 지수 사상 — 행렬군 너머 기하학적 의미 — 항등원 근방의 미분 동형사상 왜 지수가 자연스럽게 등장하는가의 깊은 의미 — 미분방정식 유일성 지수 사상의 한계 예고 (§12–§14 본격) 이 절로 2부 (1-매개변수 부분군과 준동형) 가 마무리되고, 3부 (리 대수) 로 넘어간다.">
     <meta itemprop="wordCount" content="2342">
     <title>생성자 → 지수 사상 — 왜 지수 함수가 등장하는지 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -189,8 +189,7 @@ $$\left\| \sum_{n=0}^\infty \frac{X^n}{n!} \right\| \le \sum_{n=0}^\infty \frac{
 <p><strong>2)</strong> <em>$\exp(-X) = \exp(X)^{-1}$</em>. $X$ 와 $-X$ 가 가환 ($[X, -X] = 0$) 이라 다음 §4 의 가환 지수 법칙 적용 —</p>
 $$\exp(X) \exp(-X) = \exp(X + (-X)) = \exp(0) = I$$<p>대칭적으로 $\exp(-X) \exp(X) = I$. 따라서 $\exp(X)$ 가 <em>항상 가역</em>, 역이 $\exp(-X)$.</p>
 <blockquote>
-<p><em>결과</em> — $\exp : M_N(\mathbb{F}) \to GL(N, \mathbb{F})$. 임의의 행렬을 <em>가역 행렬</em> 로 보낸다. $\det \exp(X) \neq 0$ 자동.</p>
-</blockquote>
+<p><em>결과</em> — $\exp : M_N(\mathbb{F}) \to GL(N, \mathbb{F})$. 임의의 행렬을 <em>가역 행렬</em> 로 보낸다. $\det \exp(X) \neq 0$ 자동.</p></blockquote>
 <p><strong>3)</strong> <em>$\det \exp(X) = \exp(\text{tr}(X))$</em>. 행렬 지수의 핵심 항등식 (Jacobi의 공식). 직접 증명 — 대각화 가능 $X$ 에 대해 고유값 $\lambda_i$ 로 $\det \exp(X) = \prod \exp(\lambda_i) = \exp(\sum \lambda_i) = \exp(\text{tr}(X))$. 일반은 연속성 + 대각화 가능 행렬의 조밀성.</p>
 <p>이 항등식이 <em>$\mathfrak{sl}(N)$ 의 정의</em> ($\text{tr} = 0$) 과 <em>$SL(N)$ 의 정의</em> ($\det = 1$) 의 관계를 정확히 매개. §8 본격.</p>
 <p><strong>4)</strong> <em>$\exp(tX)$ 의 미분</em>. §6 §5 의 결과 재확인 —</p>
@@ -237,15 +236,13 @@ $$(d \exp)_0 : T_0 \mathfrak{g} = \mathfrak{g} \to T_e G = \mathfrak{g}$$<p>가 
 <p>(첫 등호는 벡터 공간 $\mathfrak{g}$ 의 한 점에서의 접공간이 자기 자신, 두 번째 등호는 §0-4 §10.)</p>
 <p><strong>3)</strong> <em>역함수 정리 — 항등원 근방의 미분 동형사상</em>. $(d\exp)_0 = \text{id}$ 가 <em>가역 선형 사상</em> 이라, 역함수 정리에 의해</p>
 <blockquote>
-<p>$\exp$ 가 $\mathfrak{g}$ 의 $0$ 근방에서 $G$ 의 $e$ 근방으로의 <em>미분 동형사상 (diffeomorphism)</em>.</p>
-</blockquote>
+<p>$\exp$ 가 $\mathfrak{g}$ 의 $0$ 근방에서 $G$ 의 $e$ 근방으로의 <em>미분 동형사상 (diffeomorphism)</em>.</p></blockquote>
 <p>즉 <em>항등원 근방</em> 에서는 $\exp$ 가 <em>완벽한 일대일 대응</em> (역사상 $\log$ 존재, 매끄러움 양방향).</p>
 <p><strong>4)</strong> <em>항등원 근방에서 $\log$ 사상</em>. $\log : (\text{$e$ 근방}) \to (\text{$0$ 근방})$ 이 $\exp$ 의 역. 행렬군에서는 $\log(I + Y) = Y - Y^2/2 + Y^3/3 - \cdots$ (작은 $Y$ 에 수렴).</p>
 <p><strong>5)</strong> <em>전역적 미분 동형사상이 아님</em>. <em>항등원 근방에서만 보장</em>. 전역적으로는 (a) 단사 안 됨 (예 — $\exp(2\pi i n) = 1$, 주기), (b) 전사 안 됨 (비컴팩트 등에서, §13). 이 한계가 §12–§14 의 주제.</p>
 <p><strong>6)</strong> <em>시각적 그림</em>. $\mathfrak{g}$ (평평한 벡터 공간) 에서 $G$ (휘어 있을 수 있는 다양체) 로의 <em>항등원 근방 평탄화</em>.</p>
 <blockquote>
-<p>비유 — 지구 표면 위 한 점에서 <em>접평면</em> 으로 사영하면 가까운 곳은 일대일이지만 멀어지면 깨진다 ($\exp$ 의 역할). 리 대수는 <em>항등원의 접평면</em>, 리 군은 <em>전체 표면</em>.</p>
-</blockquote>
+<p>비유 — 지구 표면 위 한 점에서 <em>접평면</em> 으로 사영하면 가까운 곳은 일대일이지만 멀어지면 깨진다 ($\exp$ 의 역할). 리 대수는 <em>항등원의 접평면</em>, 리 군은 <em>전체 표면</em>.</p></blockquote>
 <h3 id="7-왜-지수-함수가-등장하는가--깊은-의미-미분방정식-유일성">7. 왜 지수 함수가 등장하는가 — 깊은 의미 (미분방정식 유일성)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>§6 의 도출 ($\sum (tX)^n/n!$ 이 자연 등장) 은 <em>왜 지수</em> 인지에 대한 답이지만, 그 <em>깊은 의미</em> 가 <em>미분방정식 유일성</em> 에 있다.</p>
 <p><strong>1)</strong> <em>통상 지수 함수의 유일성</em>. 통상 지수 함수 $y(t) = e^{at}$ 는</p>
@@ -409,8 +406,8 @@ $$\exp(i \theta \sigma_z) = \cos\theta \, I + i \sin\theta \, \sigma_z = \begin{
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -443,6 +440,7 @@ $$\exp(i \theta \sigma_z) = \cos\theta \, I + i \sin\theta \, \sigma_z = \begin{
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -473,9 +471,9 @@ $$\exp(i \theta \sigma_z) = \cos\theta \, I + i \sin\theta \, \sigma_z = \begin{
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

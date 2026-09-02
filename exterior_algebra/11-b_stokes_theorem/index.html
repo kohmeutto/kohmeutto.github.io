@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 다중 변수 미적분의 네 정리다중 변수 미적분에서 우리는 네 가지 적분 정리 를 배운다.
 (1) 미적분의 기본 정리 (Newton-Leibniz): 1차원에서
@@ -37,26 +37,26 @@ $$\int_a^b f&#39;(x)\, dx = f(b) - f(a)$$미분과 적분이 역연산 임을 �
 $$\oint_{\partial D} (P\, dx &#43; Q\, dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx\, dy$$(3) Stokes 정리 (고전 3D): 3차원 공간의 면 $S$ 와 그 경계 곡선 $\partial S$ 에 대해">
     <meta itemprop="wordCount" content="2087">
     <title>Stokes 정리 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -213,8 +213,7 @@ $$\int_M d\omega = \int_{\partial M} \omega$$</blockquote>
 <blockquote>
 <p><strong>정리</strong> (일반 Stokes 정리):</p>
 <p>$M$ 이 <em>방향이 잡힌, 경계가 있는 $k$-차원 매끄러운 다양체</em>, $\omega$ 가 <em>컴팩트한 받침을 가진 매끄러운 $(k-1)$-form</em> 일 때</p>
-$$\boxed{\;\; \int_M d\omega = \int_{\partial M} \omega \;\;}$$<p>여기서 $\partial M$ 의 방향은 $M$ 의 방향에서 <em>유도된 방향</em>.</p>
-</blockquote>
+$$\boxed{\;\; \int_M d\omega = \int_{\partial M} \omega \;\;}$$<p>여기서 $\partial M$ 의 방향은 $M$ 의 방향에서 <em>유도된 방향</em>.</p></blockquote>
 <p>이 식의 양변을 정확히 이해해 보자.</p>
 <p><em>좌변</em> $\int_M d\omega$:</p>
 <ul>
@@ -240,8 +239,7 @@ $$\int_M d\omega = \int_{[a,b]} f'(x)\, dx$$$$\int_{\partial M} \omega = \int_{\
 <p>두 식을 같다고 두면</p>
 $$\int_a^b f'(x)\, dx = f(b) - f(a)$$<p>— <em>미적분의 기본 정리</em>.</p>
 <blockquote>
-<p>Newton-Leibniz 정리는 Stokes 정리의 <em>1차원 사례</em>.</p>
-</blockquote>
+<p>Newton-Leibniz 정리는 Stokes 정리의 <em>1차원 사례</em>.</p></blockquote>
 <h3 id="5-특수-사례-2-green-정리">5. 특수 사례 2: Green 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>$k = 2$, 즉 $M = D$ 가 2차원 평면 영역일 때 <em>Green 정리</em> 가 나온다.</p>
 <p><strong>구조</strong></p>
@@ -256,8 +254,7 @@ $$\int_M d\omega = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial 
 $$\int_{\partial M} \omega = \oint_{\partial D} (P\, dx + Q\, dy)$$<p>같다고 두면</p>
 $$\oint_{\partial D} (P\, dx + Q\, dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx\, dy$$<p>— <em>Green 정리</em>.</p>
 <blockquote>
-<p>Green 정리는 Stokes 정리의 <em>2차원 평면 사례</em>.</p>
-</blockquote>
+<p>Green 정리는 Stokes 정리의 <em>2차원 평면 사례</em>.</p></blockquote>
 <h3 id="6-특수-사례-3-고전-stokes-정리-3d">6. 특수 사례 3: 고전 Stokes 정리 (3D)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>$k = 2$, 즉 $M = S$ 가 3차원 공간의 <em>2차원 면</em> 일 때 <em>고전 Stokes 정리</em> 가 나온다.</p>
 <p><strong>구조</strong></p>
@@ -272,8 +269,7 @@ $$\int_M d\omega = \int_S d\omega = \int_S \star (\nabla \times \vec{F})^\flat \
 $$= \int_S (\nabla \times \vec{F}) \cdot d\vec{A}$$$$\int_{\partial M} \omega = \oint_{\partial S} \vec{F} \cdot d\vec{r}$$<p>같다고 두면</p>
 $$\oint_{\partial S} \vec{F} \cdot d\vec{r} = \int_S (\nabla \times \vec{F}) \cdot d\vec{A}$$<p>— <em>고전 Stokes 정리</em>.</p>
 <blockquote>
-<p>고전 Stokes 정리 = 일반 Stokes 정리의 <em>3D 면 사례</em> + 음악적 동형사상 변환.</p>
-</blockquote>
+<p>고전 Stokes 정리 = 일반 Stokes 정리의 <em>3D 면 사례</em> + 음악적 동형사상 변환.</p></blockquote>
 <h3 id="7-특수-사례-4-발산-정리-gauss-ostrogradsky">7. 특수 사례 4: 발산 정리 (Gauss-Ostrogradsky)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>$k = 3$, 즉 $M = V$ 가 3차원 공간의 3차원 영역일 때 <em>발산 정리</em> 가 나온다.</p>
 <p><strong>구조</strong></p>
@@ -287,8 +283,7 @@ $$\oint_{\partial S} \vec{F} \cdot d\vec{r} = \int_S (\nabla \times \vec{F}) \cd
 $$\int_M d\omega = \iiint_V \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dV = \iiint_V (\nabla \cdot \vec{F})\, dV$$$$\int_{\partial M} \omega = \oiint_{\partial V} \vec{F} \cdot d\vec{A}$$<p>같다고 두면</p>
 $$\iiint_V (\nabla \cdot \vec{F})\, dV = \oiint_{\partial V} \vec{F} \cdot d\vec{A}$$<p>— <em>발산 정리 (Gauss-Ostrogradsky)</em>.</p>
 <blockquote>
-<p>발산 정리 = 일반 Stokes 정리의 <em>3D 부피 사례</em>.</p>
-</blockquote>
+<p>발산 정리 = 일반 Stokes 정리의 <em>3D 부피 사례</em>.</p></blockquote>
 <h3 id="8-통일-정리">8. 통일 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>위의 네 특수 사례를 한 표로 정리하면:</p>
 <table>
@@ -339,8 +334,7 @@ $$\iiint_V (\nabla \cdot \vec{F})\, dV = \oiint_{\partial V} \vec{F} \cdot d\vec
 </table>
 <p><em>한 식이 네 정리를 통합</em> — 이게 외대수 언어의 우아함의 정점.</p>
 <blockquote>
-$$\int_M d\omega = \int_{\partial M} \omega$$<p>이 한 줄이 <em>모든 적분 정리</em> 를 표현.</p>
-</blockquote>
+$$\int_M d\omega = \int_{\partial M} \omega$$<p>이 한 줄이 <em>모든 적분 정리</em> 를 표현.</p></blockquote>
 <h3 id="9-증명의-개략">9. 증명의 개략<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>일반 Stokes 정리의 <em>완전한 증명</em> 은 다양체 이론의 기술적 도구들을 필요로 한다. 여기선 <em>왜 이 정리가 성립하는지의 직관</em> 을 짚는다.</p>
 <p><strong>단계 1: 단순한 영역에서의 증명</strong></p>
@@ -382,8 +376,7 @@ $$\frac{d}{dt} \iiint_V \rho\, dV = -\oiint_{\partial V} \vec{J} \cdot d\vec{A}$
 $$\partial_\mu j^\mu = 0$$<p>이걸 미분형식으로 옮기면 <em>$(d-1)$-form 의 외미분 = 0</em>. 즉</p>
 $$d \star j = 0$$<p>여기서 $\star j$ 가 <em>4 차원에서의 3-form</em>. Stokes 정리로 <em>적분 형태의 보존 법칙</em> 이 자동으로 따라 나옴.</p>
 <blockquote>
-<p><em>Noether 정리</em> 의 보존 법칙들이 <em>모두 Stokes 정리의 응용</em> 으로 표현 가능.</p>
-</blockquote>
+<p><em>Noether 정리</em> 의 보존 법칙들이 <em>모두 Stokes 정리의 응용</em> 으로 표현 가능.</p></blockquote>
 <p>이게 <em>외대수 언어의 물리적 의미</em> — Noether 정리, Maxwell 방정식, 보존 법칙이 모두 <em>Stokes 정리의 자연스러운 결과</em>.</p>
 <h3 id="13-응용-3-적분과-위상">13. 응용 3: 적분과 위상<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Stokes 정리의 가장 깊은 응용 중 하나가 <em>위상학적 양의 적분 표현</em>.</p>
@@ -453,8 +446,8 @@ $$\int_M d\omega = \int_{\partial M} \omega$$<p><em>$k$-차원 다양체 위의 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -482,6 +475,7 @@ $$\int_M d\omega = \int_{\partial M} \omega$$<p><em>$k$-차원 다양체 위의 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -512,9 +506,9 @@ $$\int_M d\omega = \int_{\partial M} \omega$$<p><em>$k$-차원 다양체 위의 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

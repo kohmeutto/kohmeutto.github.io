@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§6, §7 에서 생성자 $X \in T_e G$ 가 1-매개변수 부분군과 1:1 대응함을 보았다. §0-4 §10 와 §6 §9 에서 $T_e G = \mathfrak{g}$ (리 대수) 라 예고만 했다. 이 절에서 이 등식을 본격 증명 한다.
 세 단계로 진행 —
@@ -29,26 +29,26 @@
 (i) 추상 정의 — 리 대수의 첫 모습 — $\mathfrak{g} := T_e G$. 벡터 공간 구조 가 §0-4 의 일반 결과로 자동. (ii) 행렬군에서의 구체 도출 — 정의식의 미분 기법으로 각 행렬군 ($SO, U, SU, Sp$ 등) 의 리 대수가 어떤 행렬 조건 ($X^T = -X$, $X^\dagger = -X$ 등) 으로 결정되는지 직접 계산. (iii) 벡터 공간 구조의 명시적 확인 — 행렬 표현에서 $X, Y \in \mathfrak{g}$ 이면 $X &#43; Y, cX \in \mathfrak{g}$ 임을 정의식의 선형성에서 확인. 3부 (§8–§11) 의 전체 그림 —">
     <meta itemprop="wordCount" content="2360">
     <title>항등원에서의 접공간 = 리 대수 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -200,8 +200,7 @@ $$I + tX \in G \quad \text{(1차 정확도로, 작은 $t$)}$$<p>또는 더 정�
 <p><strong>3)</strong> <em>지수 사상과의 연결 (§7)</em>. $X \in \mathfrak{g}$ 라 함은 1-매개변수 부분군</p>
 $$\gamma_X(t) = \exp(tX) \in G \quad \text{(모든 $t \in \mathbb{R}$ 에서)}$$<p>가 존재. 즉</p>
 $$\mathfrak{g} = \{ X \in M_N(\mathbb{F}) : \exp(tX) \in G \text{ for all } t \in \mathbb{R} \}$$<blockquote>
-<p><em>주의</em> — 이 등식이 <em>닫힌 부분 리 군</em> 에 대해 성립 (§1 §9). 임베디드 부분 리 군의 표준 경우. 본 시리즈 모든 행렬군이 이 경우.</p>
-</blockquote>
+<p><em>주의</em> — 이 등식이 <em>닫힌 부분 리 군</em> 에 대해 성립 (§1 §9). 임베디드 부분 리 군의 표준 경우. 본 시리즈 모든 행렬군이 이 경우.</p></blockquote>
 <h3 id="4-정의식의-미분--리-대수-도출의-일반-패턴">4. 정의식의 미분 — 리 대수 도출의 일반 패턴<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>행렬군 $G$ 가 <em>정의식</em> ($f(M) = c$ 같은 조건) 으로 정의될 때, 리 대수 $\mathfrak{g}$ 가 그 정의식의 <em>미분</em> 으로 결정.</p>
 <p><strong>1)</strong> <em>일반 패턴</em>. 행렬군 $G$ 가 정의식 $f(M) = c$ ($f$ 매끄러움, $c$ 상수) 로 정의될 때, $X \in \mathfrak{g}$ 인지 확인하려면</p>
@@ -218,8 +217,7 @@ $$X^T + X = 0 \quad \Leftrightarrow \quad X^T = -X$$<p>즉 <em>반대칭(skew-sy
 <p><strong>4)</strong> <em>결과</em>. $O(N)$ 의 리 대수는</p>
 $$\mathfrak{o}(N) = \{ X \in M_N(\mathbb{R}) : X^T = -X \}$$<p><strong>5)</strong> <em>$SO(N)$ 도 같다</em>. $SO(N)$ 은 $O(N)$ 의 <em>항등원 성분</em> (§2 §6 (4)). 리 대수는 항등원 <em>근방</em> 의 무한소 구조라 <em>연결 성분에 무관</em> — <em>$SO(N)$ 과 $O(N)$ 이 같은 리 대수</em></p>
 $$\mathfrak{so}(N) = \mathfrak{o}(N) = \{ X \in M_N(\mathbb{R}) : X^T = -X \}$$<blockquote>
-<p><em>주의 — 같은 리 대수, 다른 리 군</em>. $O(N)$ 과 $SO(N)$ 이 <em>다른 리 군이지만 같은 리 대수</em>. 비연결 ($O(N)$) vs 연결 ($SO(N)$) 의 차이가 <em>리 대수에 안 보임</em> — 리 대수는 <em>항등원 성분 정보만</em> 담는다. 이것이 §17 (이중 덮개) 와 §14 (비연결 처리) 의 핵심 동기.</p>
-</blockquote>
+<p><em>주의 — 같은 리 대수, 다른 리 군</em>. $O(N)$ 과 $SO(N)$ 이 <em>다른 리 군이지만 같은 리 대수</em>. 비연결 ($O(N)$) vs 연결 ($SO(N)$) 의 차이가 <em>리 대수에 안 보임</em> — 리 대수는 <em>항등원 성분 정보만</em> 담는다. 이것이 §17 (이중 덮개) 와 §14 (비연결 처리) 의 핵심 동기.</p></blockquote>
 <p><strong>6)</strong> <em>$\mathfrak{so}(N)$ 의 차원</em>. 반대칭 행렬 $X$ 의 자유도 — 대각 성분 $X_{ii} = -X_{ii}$ 이라 모두 $0$, 비대각 $X_{ij} = -X_{ji}$ 이라 상삼각만 자유 — $N(N-1)/2$.</p>
 $$\dim \mathfrak{so}(N) = \frac{N(N-1)}{2}$$<p>§0-1 §11 의 $\dim SO(N) = N(N-1)/2$ 와 일치.</p>
 <p><strong>7)</strong> <em>예 — $\mathfrak{so}(2)$</em>. $\mathfrak{so}(2) = \{ \alpha J : \alpha \in \mathbb{R} \}$ where $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$. 차원 $1$. (§6 §10.)</p>
@@ -411,8 +409,8 @@ $$X^T \Omega + \Omega X = 0$$$$\mathfrak{sp}(2N, \mathbb{F}) = \{ X \in M_{2N}(\
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -445,6 +443,7 @@ $$X^T \Omega + \Omega X = 0$$$$\mathfrak{sp}(2N, \mathbb{F}) = \{ X \in M_{2N}(\
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -475,9 +474,9 @@ $$X^T \Omega + \Omega X = 0$$$$\mathfrak{sp}(2N, \mathbb{F}) = \{ X \in M_{2N}(\
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

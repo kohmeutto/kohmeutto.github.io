@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§6, §7, §8 에서 예고만 했던 1:1 대응
 $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} \overset{1:1}{\longleftrightarrow} \mathfrak{g} = T_e G$$을 본격 증명 한다. 시리즈의 가장 중요한 구조적 결과 — 리 군의 모든 1-매개변수 부분군 정보가 리 대수의 한 원소로 정확히 인코딩.
@@ -31,28 +31,28 @@ $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} 
 $$\{ \text{매끄러운 1-매개변수 부분군 } \gamma : \mathbb{R} \to G \} \overset{1:1}{\longleftrightarrow} \mathfrak{g} = T_e G$$을 본격 증명 한다. 시리즈의 가장 중요한 구조적 결과 — 리 군의 모든 1-매개변수 부분군 정보가 리 대수의 한 원소로 정확히 인코딩.
 증명의 핵심 구조 —
 정방향 $\Phi : \mathfrak{g} \to \{\text{1-매개변수 부분군}\}$, $X \mapsto \gamma_X(t) := \exp(tX)$ 역방향 $\Psi : \{\text{1-매개변수 부분군}\} \to \mathfrak{g}$, $\gamma \mapsto \gamma&#39;(0)$ 두 사상이 서로의 역 임을 보이면 1:1 대응 완성. 이를 ODE 의 존재·유일성 (Picard–Lindelöf 정리) 이 보장.">
-    <meta itemprop="wordCount" content="1970">
+    <meta itemprop="wordCount" content="1969">
     <title>리 대수 ↔ 1-매개변수 부분군 1:1 대응 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -186,9 +186,7 @@ $$\Phi(X) := \gamma_X, \qquad \gamma_X(t) := \exp(tX) \in G$$<p>— <em>$X$ 의 
 <p><strong>2)</strong> <em>역방향 사상 $\Psi$</em>. 1-매개변수 부분군 $\gamma : \mathbb{R} \to G$ 에 대해</p>
 $$\Psi(\gamma) := \gamma'(0) = \left. \frac{d \gamma}{dt} \right|_{t=0} \in T_e G = \mathfrak{g}$$<p>— <em>항등원에서의 1차 미분</em> = <em>생성자</em>.</p>
 <p><strong>3)</strong> <em>증명 목표</em>. 다음 두 등식.</p>
-$$\Psi \circ \Phi = \text{id}_{\mathfrak{g}} \quad \text{(원소 → 곡선 → 원소)}$$<p>
-</p>
-$$\Phi \circ \Psi = \text{id}_{\{\text{1-매개변수}\}} \quad \text{(곡선 → 원소 → 곡선)}$$<p>전자는 <em>지수의 미분이 원래 원소</em> — 직접 계산. 후자는 <em>생성자로부터 원래 곡선이 복원</em> — <em>ODE 유일성</em>.</p>
+$$\Psi \circ \Phi = \text{id}_{\mathfrak{g}} \quad \text{(원소 → 곡선 → 원소)}$$$$\Phi \circ \Psi = \text{id}_{\{\text{1-매개변수}\}} \quad \text{(곡선 → 원소 → 곡선)}$$<p>전자는 <em>지수의 미분이 원래 원소</em> — 직접 계산. 후자는 <em>생성자로부터 원래 곡선이 복원</em> — <em>ODE 유일성</em>.</p>
 <h3 id="3--가-잘-정의됨--이미지가-1-매개변수-부분군">3. $\Phi$ 가 잘 정의됨 — 이미지가 1-매개변수 부분군<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>$\Phi(X) = \gamma_X$ 가 <em>진짜 1-매개변수 부분군</em> 임을 §5 §2 의 세 조건으로 확인.</p>
 <p><strong>1)</strong> <em>조건 (i) 매끄러움</em>. $\gamma_X(t) = \exp(tX) = \sum_{n=0}^\infty (tX)^n / n!$ 가 <em>멱급수</em>. 절대 수렴 (§7 §2) 이고 항별 미분 가능 → 매끄러움. ✓</p>
@@ -223,8 +221,7 @@ $$\gamma'(t) = X \cdot \gamma(t)$$<p>초기 조건 $\gamma(0) = e = I$.</p>
 $$\boxed{y'(t) = X \cdot y(t), \qquad y(0) = I}$$<p><strong>3)</strong> <em>$\exp(tX)$ 도 같은 ODE 의 해</em>. §7 §3 (4) 에서 $\frac{d}{dt} \exp(tX) = X \exp(tX)$, 초기 조건 $\exp(0) = I$. → $\exp(tX)$ 도 같은 ODE 의 해.</p>
 <p><strong>4)</strong> <em>ODE 유일성 (Picard–Lindelöf 정리)</em>.</p>
 <blockquote>
-<p><em>정리</em> (Picard–Lindelöf). 매끄러운 ODE $y'(t) = F(y(t), t)$ + 초기 조건 $y(0) = y_0$ 의 <em>해가 유일</em> (해당 함수 공간에서).</p>
-</blockquote>
+<p><em>정리</em> (Picard–Lindelöf). 매끄러운 ODE $y'(t) = F(y(t), t)$ + 초기 조건 $y(0) = y_0$ 의 <em>해가 유일</em> (해당 함수 공간에서).</p></blockquote>
 <p>위 ODE $y'(t) = X y(t)$ 에서 $F(y, t) = X y$ 가 $y$ 에 대해 <em>선형</em> (특히 매끄러움). 따라서 <em>해가 유일</em>.</p>
 <p>→ $\gamma(t) = \exp(tX)$ for all $t$.</p>
 <p><strong>5)</strong> <em>결과</em>.</p>
@@ -234,8 +231,7 @@ $$\Phi(\Psi(\gamma)) = \Phi(\gamma'(0)) = \gamma_{\gamma'(0)}(t) = \exp(t \gamma
 <p><strong>1)</strong> <em>주 정리</em>.</p>
 <blockquote>
 <p><em>정리</em>. 리 군 $G$ 의 <em>매끄러운 1-매개변수 부분군 전체</em> 와 <em>리 대수 $\mathfrak{g}$ 의 원소 전체</em> 사이에 <em>자연스러운 1:1 대응</em> 이 존재 —</p>
-$$\Phi : \mathfrak{g} \to \{\text{매끄러운 1-매개변수 부분군}\}, \quad X \mapsto \gamma_X(t) = \exp(tX)$$$$\Psi : \{\text{매끄러운 1-매개변수 부분군}\} \to \mathfrak{g}, \quad \gamma \mapsto \gamma'(0)$$<p>$\Psi \circ \Phi = \text{id}$, $\Phi \circ \Psi = \text{id}$.</p>
-</blockquote>
+$$\Phi : \mathfrak{g} \to \{\text{매끄러운 1-매개변수 부분군}\}, \quad X \mapsto \gamma_X(t) = \exp(tX)$$$$\Psi : \{\text{매끄러운 1-매개변수 부분군}\} \to \mathfrak{g}, \quad \gamma \mapsto \gamma'(0)$$<p>$\Psi \circ \Phi = \text{id}$, $\Phi \circ \Psi = \text{id}$.</p></blockquote>
 <p><strong>2)</strong> <em>시리즈에서의 의의</em>. <em>리 군의 모든 1-매개변수 부분군 정보가 리 대수의 한 원소로 정확히 인코딩</em>. 무한 차원 객체 (매끄러운 곡선) 가 유한 차원 객체 (벡터) 로 <em>정확히 환원</em>. 이것이 <em>리 군 → 리 대수 환원</em> 의 첫 단계.</p>
 <p><strong>3)</strong> <em>지수 사상의 위상</em>. 위 1:1 대응에서 <em>지수 사상이 두 방향을 잇는 다리</em>. 한 방향은 명시적 ($\exp$), 다른 방향은 미분 (1차).</p>
 <p><strong>4)</strong> <em>전역 vs 국소</em>. <em>이 1:1 대응이 곡선 전체와 원소 전체 사이</em> 임. 그러나 <em>지수 사상 $\exp : \mathfrak{g} \to G$ 자체</em> (곡선이 아닌 <em>한 점</em> $\exp(X) = \gamma_X(1)$) 는 <em>전역적 1:1 이 아닐 수 있다</em> — §7 §6 의 단사·전사 문제. 두 가지를 헷갈리지 않도록.</p>
@@ -338,8 +334,8 @@ $$\exp(X) = \cos(\|v\|) I + i \frac{\sin(\|v\|)}{\|v\|} (a\sigma_x + b\sigma_y +
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -372,6 +368,7 @@ $$\exp(X) = \cos(\|v\|) I + i \frac{\sin(\|v\|)}{\|v\|} (a\sigma_x + b\sigma_y +
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -402,9 +399,9 @@ $$\exp(X) = \cos(\|v\|) I + i \frac{\sin(\|v\|)}{\|v\|} (a\sigma_x + b\sigma_y +
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

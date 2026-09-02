@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기리 군은 매끄러운 다양체에 군 연산이 얹힌 구조다. 매끄러움 때문에 미분이 가능한데, 미분도 일종의 “연산&#34;이니 리 군은 두 연산을 갖는 환(ring)이 아닌가 하는 의문이 자연스럽게 떠오른다. 이 의문은 대수 구조에서 “연산&#34;이 무엇을 뜻하는지를 정확히 정리하면 해소된다. 이 장에서는 군·환·체를 정의하고, “이항 연산&#34;이 왜 결정적 제약인지 짚는다.
 2. 이항 연산1) 집합 $S$ 위의 이항 연산(binary operation) 은 다음 형태의 사상이다.">
@@ -23,28 +23,28 @@
     <meta itemprop="name" content="대수 구조: 군/환/체 :: 수리전자물리학">
     <meta itemprop="description" content="1. 동기리 군은 매끄러운 다양체에 군 연산이 얹힌 구조다. 매끄러움 때문에 미분이 가능한데, 미분도 일종의 “연산&#34;이니 리 군은 두 연산을 갖는 환(ring)이 아닌가 하는 의문이 자연스럽게 떠오른다. 이 의문은 대수 구조에서 “연산&#34;이 무엇을 뜻하는지를 정확히 정리하면 해소된다. 이 장에서는 군·환·체를 정의하고, “이항 연산&#34;이 왜 결정적 제약인지 짚는다.
 2. 이항 연산1) 집합 $S$ 위의 이항 연산(binary operation) 은 다음 형태의 사상이다.">
-    <meta itemprop="wordCount" content="709">
+    <meta itemprop="wordCount" content="665">
     <title>대수 구조: 군/환/체 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -172,13 +172,7 @@ $$\ast: S \times S \to S, \quad (a, b) \mapsto a \ast b$$<p>두 원소를 입력
 <p><strong>5)</strong> 군·환·체에서 &ldquo;연산&quot;은 <strong>항상 이 의미의 이항 연산</strong>을 가리킨다. 미분·적분처럼 함수를 입력으로 받거나 결과가 다른 집합으로 가는 작용은 이 정의에 들어가지 않는다.</p>
 <h3 id="3-군-group">3. 군 (Group)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>1)</strong> 집합 $G$ 위의 이항 연산 $\cdot$이 다음 세 공리를 만족할 때 $(G, \cdot)$를 <em>군(group)</em> 이라 한다.</p>
-<p><strong>2)</strong> 결합법칙: 모든 $a, b, c \in G$에 대해
-</p>
-$$(a \cdot b) \cdot c = a \cdot (b \cdot c)$$<p><strong>3)</strong> 항등원의 존재: 어떤 $e \in G$가 존재하여 모든 $a \in G$에 대해
-</p>
-$$e \cdot a = a \cdot e = a$$<p><strong>4)</strong> 역원의 존재: 모든 $a \in G$에 대해 어떤 $a^{-1} \in G$가 존재하여
-</p>
-$$a \cdot a^{-1} = a^{-1} \cdot a = e$$<p><strong>5)</strong> 추가로 모든 $a, b \in G$에서 $a \cdot b = b \cdot a$가 성립하면 <em>가환군(abelian group)</em> 이라 한다.</p>
+$$(a \cdot b) \cdot c = a \cdot (b \cdot c)$$$$e \cdot a = a \cdot e = a$$$$a \cdot a^{-1} = a^{-1} \cdot a = e$$<p><strong>5)</strong> 추가로 모든 $a, b \in G$에서 $a \cdot b = b \cdot a$가 성립하면 <em>가환군(abelian group)</em> 이라 한다.</p>
 <p><strong>6)</strong> example1) $(\mathbb{Z}, +)$. 정수와 덧셈. 항등원은 $0$, 역원은 $-a$.</p>
 <p><strong>7)</strong> example2) $(\text{GL}_n(\mathbb{R}), \cdot)$. 가역 $n \times n$ 실행렬과 행렬 곱셈. 항등원은 단위행렬 $I$, 역원은 역행렬 $A^{-1}$.</p>
 <p><strong>8)</strong> example3) $(SO(2), \cdot)$. 2차원 회전 행렬과 행렬 곱셈. 항등원은 $0$ 회전, 역원은 반대 각도 회전.</p>
@@ -187,8 +181,6 @@ $$a \cdot a^{-1} = a^{-1} \cdot a = e$$<p><strong>5)</strong> 추가로 모든 $
 <p><strong>1)</strong> 집합 $R$ 위에 두 이항 연산 $+$ 와 $\cdot$ 이 정의되어 있고 다음을 만족하면 $(R, +, \cdot)$을 <em>환(ring)</em> 이라 한다.</p>
 <p><strong>2)</strong> $(R, +)$이 가환군이다. 즉 덧셈에 대해 결합·가환·항등원($0$)·역원이 성립한다.</p>
 <p><strong>3)</strong> $(R, \cdot)$이 결합법칙을 만족한다. 관례에 따라 곱셈 항등원 $1$의 존재도 요구한다.</p>
-<p><strong>4)</strong> 분배법칙: 모든 $a, b, c \in R$에 대해
-</p>
 $$a \cdot (b + c) = a \cdot b + a \cdot c, \qquad (b + c) \cdot a = b \cdot a + c \cdot a$$<p>(곱셈이 가환이 아닐 수 있으므로 좌·우 분배를 모두 요구한다.)</p>
 <p><strong>5)</strong> <em>핵심: 환은 같은 집합 위에 두 이항 연산이 분배법칙으로 묶여 있는 구조다.</em></p>
 <p><strong>6)</strong> example1) $(\mathbb{Z}, +, \cdot)$. 정수의 덧셈과 곱셈.</p>
@@ -268,8 +260,8 @@ $$a \cdot (b + c) = a \cdot b + a \cdot c, \qquad (b + c) \cdot a = b \cdot a + 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu">
             <li class="" data-nav-id="/lie_group2/1-b_function_vector_operator/index.html"><a class="padding" href="/lie_group2/1-b_function_vector_operator/index.html">함수, 벡터, 연산자</a></li>
@@ -289,6 +281,7 @@ $$a \cdot (b + c) = a \cdot b + a \cdot c, \qquad (b + c) \cdot a = b \cdot a + 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -319,9 +312,9 @@ $$a \cdot (b + c) = a \cdot b + a \cdot c, \qquad (b + c) \cdot a = b \cdot a + 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

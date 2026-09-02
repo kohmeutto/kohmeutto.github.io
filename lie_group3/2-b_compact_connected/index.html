@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§0-3 §9 에서 위상 성질 (컴팩트성, 연결성, 단순연결성) 의 다양체 차원 직관 을 짚었다. §1 에서 리 군을 정의했다. 이 절은 리 군 맥락에서 이 세 위상 성질이 왜 결정적인가 를 본다.
 세 성질이 리 군 분류의 핵심 축 인 이유.
@@ -29,26 +29,26 @@
 (1) 컴팩트성 이 지수 사상의 전사성 을 보장 (§12). 모든 군 원소가 단일 $\exp(X)$ 로 도달 가능. 모든 표현이 유한 차원이고 완전 가약 (Peter–Weyl). 불변 측도 (Haar measure) 가 유한 — 평균을 안전하게 잡을 수 있다.">
     <meta itemprop="wordCount" content="1990">
     <title>컴팩트성과 연결성 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -309,21 +309,18 @@
 <p>본 시리즈에서 컴팩트성이 어떻게 사용되는지 예고한다. 본격적 증명은 후속 장.</p>
 <p><strong>1)</strong> <em>지수 사상의 전사성</em> (§12 본격).</p>
 <blockquote>
-<p><em>정리</em>. 컴팩트 연결 리 군 $G$ 에 대해, <em>모든 원소 $g \in G$ 가 어떤 $X \in \mathfrak{g}$ 에 대해 $g = \exp(X)$ 로 표현 가능</em>.</p>
-</blockquote>
+<p><em>정리</em>. 컴팩트 연결 리 군 $G$ 에 대해, <em>모든 원소 $g \in G$ 가 어떤 $X \in \mathfrak{g}$ 에 대해 $g = \exp(X)$ 로 표현 가능</em>.</p></blockquote>
 <p>즉 <em>지수 사상이 전사 (surjective)</em>. 따라서 컴팩트 연결의 모든 정보가 <em>리 대수 $\mathfrak{g}$ 의 정보로 환원</em>. 매우 강한 성질.</p>
 <p>비컴팩트에서는 <em>전사 안 됨</em>. 예 — $SL(2, \mathbb{R})$ 에서 $\exp$ 가 <em>전사 아님</em> (§13 의 구체적 반례 — $\begin{pmatrix} -1 & 1 \\ 0 & -1 \end{pmatrix}$ 같은 원소).</p>
 <p><strong>2)</strong> <em>Peter–Weyl 정리</em>.</p>
 <blockquote>
-<p><em>정리</em>. 컴팩트 리 군 $G$ 의 모든 <em>기약 표현(irreducible representation)</em> 이 <em>유한 차원</em>. 또한 $L^2(G)$ (제곱 가적분 함수 공간) 가 <em>기약 표현들의 직합</em> 으로 분해된다.</p>
-</blockquote>
+<p><em>정리</em>. 컴팩트 리 군 $G$ 의 모든 <em>기약 표현(irreducible representation)</em> 이 <em>유한 차원</em>. 또한 $L^2(G)$ (제곱 가적분 함수 공간) 가 <em>기약 표현들의 직합</em> 으로 분해된다.</p></blockquote>
 <p>푸리에 급수 ($U(1)$ 위 $L^2$) 의 일반화. <em>컴팩트 군의 표현론이 깔끔</em> — 무한 차원 표현이나 비완전 가약 같은 병리적 현상이 없다.</p>
 <p>비컴팩트 ($SL(2, \mathbb{R})$, $\mathbb{R}$ 등) 에서는 <em>무한 차원 기약 표현</em> 이 자연스럽게 등장 — 푸리에 변환의 연속 스펙트럼이 그 예.</p>
 <p><strong>3)</strong> <em>Haar 측도(Haar measure)의 유한성</em>.</p>
 <blockquote>
 <p><em>정리</em>. 모든 리 군 $G$ 에 <em>왼쪽 불변 측도 (Haar measure)</em> $\mu$ 가 (스칼라 배 차이를 제외하고) <em>유일하게</em> 존재. $\mu(g \cdot A) = \mu(A)$.</p>
-<p>추가로 $G$ 가 <em>컴팩트</em> 이면 $\mu(G) < \infty$ 이고 $\mu(G) = 1$ 로 정규화 가능.</p>
-</blockquote>
+<p>추가로 $G$ 가 <em>컴팩트</em> 이면 $\mu(G) < \infty$ 이고 $\mu(G) = 1$ 로 정규화 가능.</p></blockquote>
 <p>컴팩트 군 위에서는 <em>함수의 군 평균</em></p>
 $$\bar{f}(g) := \int_G f(h \cdot g) \, d\mu(h)$$<p>가 항상 잘 정의되고 <em>유한</em>. 표현 이론, 양자장론의 게이지 평균 등에서 핵심.</p>
 <p>비컴팩트 ($\mathbb{R}^n$ 의 Lebesgue 측도) 에서는 전체 측도 무한 — 평균이 발산할 수 있어 신중해야.</p>
@@ -334,8 +331,7 @@ $$\bar{f}(g) := \int_G f(h \cdot g) \, d\mu(h)$$<p>가 항상 잘 정의되고 <
 <p><strong>2)</strong> <em>리 군 맥락에서의 직관</em> — <em>항등원에서 출발해 모든 원소에 연속적으로 도달 가능</em>.</p>
 <p><strong>3)</strong> <em>항등원 성분 (identity component)</em> $G_0$. 비연결 리 군 $G$ 에서, <em>항등원 $e$ 를 포함하는 최대 연결 부분집합</em> 을 $G_0$ 로 표기. 다음 성질이 성립.</p>
 <blockquote>
-<p>$G_0$ 는 $G$ 의 <em>닫힌 정규 부분 리 군 (closed normal Lie subgroup)</em>. $G / G_0$ 는 <em>이산군</em> (조각의 개수만큼).</p>
-</blockquote>
+<p>$G_0$ 는 $G$ 의 <em>닫힌 정규 부분 리 군 (closed normal Lie subgroup)</em>. $G / G_0$ 는 <em>이산군</em> (조각의 개수만큼).</p></blockquote>
 <p><strong>4)</strong> <em>예 — $O(N) = SO(N) \cup (-I) \cdot SO(N)$</em>.</p>
 <ul>
 <li>항등원 성분 — $SO(N)$ ($\det = +1$)</li>
@@ -522,8 +518,7 @@ $$\pi : \tilde{G} \to G, \qquad \ker \pi \cong \pi_1(G)$$<p><strong>4)</strong> 
   </tbody>
 </table>
 <blockquote>
-<p><em>읽는 법</em>. 컴팩트 + 연결 + 단순연결 + 가환의 모든 조합이 등장. 응집계 물리에서 핵심은 <em>컴팩트 연결</em> 줄 ($U(1)$, $SU(N)$, $SO(N)$ 등). 비컴팩트는 시공간 대칭 (Lorentz, Galilei) 과 비등방 변환에서 등장.</p>
-</blockquote>
+<p><em>읽는 법</em>. 컴팩트 + 연결 + 단순연결 + 가환의 모든 조합이 등장. 응집계 물리에서 핵심은 <em>컴팩트 연결</em> 줄 ($U(1)$, $SU(N)$, $SO(N)$ 등). 비컴팩트는 시공간 대칭 (Lorentz, Galilei) 과 비등방 변환에서 등장.</p></blockquote>
 <h3 id="9-이-절을-닫으며">9. 이 절을 닫으며<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>이 절에서 점검한 것.</p>
 <p>(1) <em>컴팩트 리 군</em> — 행렬군에서는 행렬 성분 유계 + 정의식 닫힘. $SO, SU, U, Sp, Spin, O, T^N$. 결과 — <em>지수 전사성, 표현 완전 가약, Haar 측도 유한</em>.</p>
@@ -578,8 +573,8 @@ $$\pi : \tilde{G} \to G, \qquad \ker \pi \cong \pi_1(G)$$<p><strong>4)</strong> 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -612,6 +607,7 @@ $$\pi : \tilde{G} \to G, \qquad \ker \pi \cong \pi_1(G)$$<p><strong>4)</strong> 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -642,9 +638,9 @@ $$\pi : \tilde{G} \to G, \qquad \ker \pi \cong \pi_1(G)$$<p><strong>4)</strong> 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

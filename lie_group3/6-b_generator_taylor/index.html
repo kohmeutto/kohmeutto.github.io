@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 이 절의 동기§5 에서 1-매개변수 부분군 $\gamma : \mathbb{R} \to G$ 의 정식 정의를 했다. 이제 생성자(generator) — 1-매개변수 부분군의 항등원에서의 1차 미분 — 을 정의하고, 왜 항등원에서 보는 미분이 부분군 전체를 결정 하는지를 본다.
 왜 항등원이 특별한가 는 이전 시리즈에서 명시적으로 빠진 부분. 새 시리즈에서는 이를 한 절 분량으로 풀어쓴다. 핵심 — 군 구조 덕에 항등원이 기준점 이고, 1-매개변수 부분군의 모든 정보가 항등원 근방의 무한소 정보 로 압축된다.">
@@ -25,26 +25,26 @@
 왜 항등원이 특별한가 는 이전 시리즈에서 명시적으로 빠진 부분. 새 시리즈에서는 이를 한 절 분량으로 풀어쓴다. 핵심 — 군 구조 덕에 항등원이 기준점 이고, 1-매개변수 부분군의 모든 정보가 항등원 근방의 무한소 정보 로 압축된다.">
     <meta itemprop="wordCount" content="1983">
     <title>테일러 전개와 생성자 — 항등원의 특수성 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -180,8 +180,7 @@ $$T_g G = (dL_g)_e \, T_e G$$<p><em>한 점의 접공간만 알면 모든 점의
 <p><strong>4)</strong> <em>분석 단순화</em>. 1-매개변수 부분군 $\gamma$ 를 분석할 때, 모든 $t$ 에서 따로 보는 대신 <em>항등원 근방 $t = 0$</em> 만 잘 분석하면, 합성 법칙으로 다른 $t$ 도 자동 결정 — 다음 §4–§5 에서 본격적으로 펼침.</p>
 <p><strong>5)</strong> <em>물리적 비유</em>. <em>진동의 출발점</em>, <em>시간 진화의 초기 시각</em>, <em>회전 시작 위치</em> — 자연계의 많은 연속 변환이 <em>어떤 기준 상태에서 출발</em>. 그 기준 상태가 군 차원에서는 <em>항등원</em>.</p>
 <blockquote>
-<p><em>핵심</em> — 항등원은 <em>군 구조의 자연스러운 기준점</em>. 1-매개변수 부분군의 분석이 <em>항등원 근방의 1차 정보로 압축</em> 되는 것이 이 절의 핵심 주장.</p>
-</blockquote>
+<p><em>핵심</em> — 항등원은 <em>군 구조의 자연스러운 기준점</em>. 1-매개변수 부분군의 분석이 <em>항등원 근방의 1차 정보로 압축</em> 되는 것이 이 절의 핵심 주장.</p></blockquote>
 <h3 id="3-항등원-근방의-매끄러운-곡선--테일러-전개">3. 항등원 근방의 매끄러운 곡선 — 테일러 전개<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>1-매개변수 부분군 $\gamma : \mathbb{R} \to G$ 를 <em>항등원 근방</em> 에서 본다.</p>
 <p><strong>1)</strong> <em>작은 $t$ 에서의 행동</em>. $\gamma(0) = e$ 이고 매끄러우니, <em>작은 $t$ 에서 $\gamma(t)$ 가 $e$ 근방에 있다</em>. <em>얼마나</em> 가까운지는 $t$ 의 크기에 따라.</p>
@@ -222,8 +221,7 @@ $$\gamma'''(t) = X \, \gamma''(t) = X^3 \, \gamma(t)$$<p><strong>3)</strong> <em
 $$\gamma^{(n)}(t) = X^n \, \gamma(t)$$<p><strong>4)</strong> <em>$t = 0$ 대입</em>. $\gamma(0) = e = I$ (행렬군)</p>
 $$\gamma^{(n)}(0) = X^n \cdot I = X^n$$<p><strong>5)</strong> <em>해석</em>. <em>모든 고차 미분이 $X$ 의 거듭제곱</em> 으로 환원. 즉 <em>1차 미분 $X$ 하나가 모든 차수의 정보를 결정</em>. 이것이 <em>준동형 (합성 법칙) 조건의 결과</em> — 일반 매끄러운 곡선에서는 각 차수가 독립적인데, 합성 법칙이 <em>강한 제약</em> 으로 묶어줌.</p>
 <blockquote>
-<p><em>깊은 통찰</em>. 일반 매끄러운 곡선은 <em>모든 차수의 정보가 독립</em> 인데 (테일러 계수가 모두 다른 정보), 1-매개변수 부분군은 <em>합성 법칙</em> 덕에 <em>1차 정보 하나로 모든 차수 결정</em>. 이것이 1-매개변수 부분군이 <em>유한 차원 정보 ($X$) 로 표현되는 무한히 풍부한 객체</em> 인 이유.</p>
-</blockquote>
+<p><em>깊은 통찰</em>. 일반 매끄러운 곡선은 <em>모든 차수의 정보가 독립</em> 인데 (테일러 계수가 모두 다른 정보), 1-매개변수 부분군은 <em>합성 법칙</em> 덕에 <em>1차 정보 하나로 모든 차수 결정</em>. 이것이 1-매개변수 부분군이 <em>유한 차원 정보 ($X$) 로 표현되는 무한히 풍부한 객체</em> 인 이유.</p></blockquote>
 <h3 id="7-테일러-급수--자연스럽게--가-등장">7. 테일러 급수 — 자연스럽게 $\sum (tX)^n / n!$ 가 등장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>§6 의 결과를 §3 §5 의 테일러 전개에 대입한다.</p>
 <p><strong>1)</strong> <em>테일러 전개</em>. $t = 0$ 근방에서</p>
@@ -326,8 +324,8 @@ $$\exp(t \alpha J) = \sum_{k=0}^\infty \frac{(-1)^k (t \alpha)^{2k}}{(2k)!} I + 
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu">
@@ -360,6 +358,7 @@ $$\exp(t \alpha J) = \sum_{k=0}^\infty \frac{(-1)^k (t \alpha)^{2k}}{(2k)!} I + 
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -390,9 +389,9 @@ $$\exp(t \alpha J) = \sum_{k=0}^\infty \frac{(-1)^k (t \alpha)^{2k}}{(2k)!} I + 
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
