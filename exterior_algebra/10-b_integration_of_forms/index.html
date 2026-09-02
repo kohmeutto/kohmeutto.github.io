@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기: 왜 미분형식을 적분하는가§7 의 §10 에서 미분형식이 적분의 자연스러운 객체 임을 살짝 언급했다. 1-form 은 곡선 적분, 2-form 은 면 적분, $n$-form 은 부피 적분과 자연스럽게 어울린다.
 이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
@@ -25,26 +25,26 @@
 이 장에서 그 의미를 정확히 본다. 미분형식의 적분이 정확히 무엇인지, 왜 그것이 다중 변수 미적분의 익숙한 적분들 (곡선 적분, 면 적분, 부피 적분) 과 일치하는지, 그리고 왜 이 새 언어가 더 강력한지 를 설명한다.">
     <meta itemprop="wordCount" content="2101">
     <title>미분형식의 적분 :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -175,8 +175,7 @@
 <p>영역을 <em>작은 조각들</em> 로 나누고, 각 조각을 <em>작은 평행체</em> 로 근사한 다음, <em>그 평행체에 미분형식이 작용한 값을 모두 합한다</em>. 이게 적분의 기본 발상.</p>
 <p>$k$-차원 영역의 <em>작은 조각</em> 은 <em>$k$ 개의 작은 접벡터로 만든 작은 평행체</em>. 이 평행체에 $k$-form 을 작용시키면 <em>그 조각에 대한 미분형식의 값</em> 이 나오고, 모든 조각을 <em>합 (또는 적분)</em> 하면 영역 전체의 적분.</p>
 <blockquote>
-<p><strong>핵심 원리</strong>: $k$-form 은 <em>$k$-차원 영역의 작은 평행체 조각</em> 에 자연스럽게 작용. 합치면 <em>영역 전체의 적분</em>.</p>
-</blockquote>
+<p><strong>핵심 원리</strong>: $k$-form 은 <em>$k$-차원 영역의 작은 평행체 조각</em> 에 자연스럽게 작용. 합치면 <em>영역 전체의 적분</em>.</p></blockquote>
 <p>차수와 영역 차원이 일치해야 하는 이유가 명확하다. <em>$k$-form 은 $k$ 개의 벡터를 받음</em> → <em>$k$ 차원 평행체 조각에 작용</em> → <em>$k$ 차원 영역에서 적분</em>.</p>
 <h3 id="3-매개변수화-영역의-정의">3. 매개변수화: 영역의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>영역을 정확히 다루려면 <em>매개변수화 (parametrization)</em> 가 필요하다.</p>
@@ -234,8 +233,7 @@ $$\Phi^* \omega = P(\Phi(t))\, x'(t)\, dt + Q(\Phi(t))\, y'(t)\, dt + R(\Phi(t))
 $$\int_C \omega = \int_a^b \big[P\, x'(t) + Q\, y'(t) + R\, z'(t)\big]\, dt$$<p>이게 정확히 <em>익숙한 곡선 적분 (line integral)</em>. 벡터 미적분의 표기로</p>
 $$\int_C \omega = \int_C \vec{F} \cdot d\vec{r}$$<p>여기서 $\vec{F} = (P, Q, R)$ 이 1-form 의 음악적 변환에 대응하는 벡터장 (§9), $d\vec{r} = (dx, dy, dz)$ 가 곡선의 접선 무한소.</p>
 <blockquote>
-<p><em>1-form 의 곡선 적분 = 벡터장의 곡선 적분</em>. 미분형식 언어로 자연스럽게 일반화.</p>
-</blockquote>
+<p><em>1-form 의 곡선 적분 = 벡터장의 곡선 적분</em>. 미분형식 언어로 자연스럽게 일반화.</p></blockquote>
 <p><strong>구체적 예</strong></p>
 <p>$\omega = -y\, dx + x\, dy$ 의 단위원 $\Phi(t) = (\cos t, \sin t)$, $t \in [0, 2\pi]$ 위 적분:</p>
 <p>$\Phi^* \omega = -\sin t \cdot (-\sin t)\, dt + \cos t \cdot \cos t\, dt = (\sin^2 t + \cos^2 t)\, dt = dt$</p>
@@ -257,8 +255,7 @@ $$\Phi^*(dx \wedge dy) = \frac{\partial(x, y)}{\partial(u, v)}\, du \wedge dv$$<
 $$\Phi^* \omega = \left[ P \cdot \frac{\partial(y, z)}{\partial(u, v)} + Q \cdot \frac{\partial(z, x)}{\partial(u, v)} + R \cdot \frac{\partial(x, y)}{\partial(u, v)} \right] du \wedge dv$$<p>적분:</p>
 $$\int_S \omega = \int_U \left[ P\, \frac{\partial(y, z)}{\partial(u, v)} + Q\, \frac{\partial(z, x)}{\partial(u, v)} + R\, \frac{\partial(x, y)}{\partial(u, v)} \right] du\, dv$$<p>대괄호 안의 식이 정확히 <em>$\vec{F} \cdot (\Phi_u \times \Phi_v)$</em> — 익숙한 <em>면 적분 공식</em>.</p>
 <blockquote>
-<p><em>2-form 의 면 적분 = 벡터장의 플럭스 (flux)</em>. $\int_S \omega = \int_S \vec{F} \cdot d\vec{A}$.</p>
-</blockquote>
+<p><em>2-form 의 면 적분 = 벡터장의 플럭스 (flux)</em>. $\int_S \omega = \int_S \vec{F} \cdot d\vec{A}$.</p></blockquote>
 <p><strong>물리적 의미</strong></p>
 <p>이게 <em>전기장의 가우스 법칙</em> 등에서 자연스럽게 등장하는 적분의 정확한 외대수적 표현. 미분형식 언어가 <em>물리의 자연스러운 도구</em> 임이 다시 확인됨.</p>
 <h3 id="8-일반--form-의-적분-변수-변환-공식의-자동-등장">8. 일반 $k$-form 의 적분: 변수 변환 공식의 자동 등장<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -280,8 +277,7 @@ $$\int_{-C} \omega = -\int_C \omega$$<p>(여기서 $-C$ 는 $C$ 의 반대 방�
 <p>면 적분에서도 같은 일이 일어난다. 면을 <em>어느 쪽이 &ldquo;위&rdquo;</em> 인지 정해야 하고, 그 방향이 <em>쐐기곱의 순서</em> 와 일관되어야 한다.</p>
 <p>방향을 뒤집으면 ($dx \wedge dy \to dy \wedge dx = -dx \wedge dy$) 적분 결과의 부호가 반전.</p>
 <blockquote>
-<p>미분형식의 적분은 <em>항상 방향이 붙은 적분</em>. 방향을 무시하면 익숙한 절댓값 부피.</p>
-</blockquote>
+<p>미분형식의 적분은 <em>항상 방향이 붙은 적분</em>. 방향을 무시하면 익숙한 절댓값 부피.</p></blockquote>
 <h3 id="10-익숙한-적분-공식들과의-통일">10. 익숙한 적분 공식들과의 통일<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>위에서 본 대응을 정리해 본다.</p>
 <p><strong>$k = 1$ (1-form, 곡선 적분)</strong></p>
@@ -361,8 +357,8 @@ $$\Phi^*(dx^i) = \sum_j \frac{\partial x^i}{\partial u^j}\, du^j$$<p><strong>4)<
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -390,6 +386,7 @@ $$\Phi^*(dx^i) = \sum_j \frac{\partial x^i}{\partial u^j}\, du^j$$<p><strong>4)<
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -420,9 +417,9 @@ $$\Phi^*(dx^i) = \sum_j \frac{\partial x^i}{\partial u^j}\, du^j$$<p><strong>4)<
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

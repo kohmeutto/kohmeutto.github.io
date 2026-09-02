@@ -5,26 +5,58 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
-    <meta name="description" content="관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.
-1. 관점 (Perspective): 현상을 ‘해석하는 방식’관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.">
+    <meta name="description" content="1. 닫힌계, 고립계, 열린계계의 분류 질량 교환 에너지 교환 대표 예시 및 특징 고립계
+(Isolated System) 불가
+($\Delta m = 0$) 불가
+($Q=0, W=0$) [물체 &#43; 장 &#43; 외력원] 전체, 외부와 완전히 단절된 우주 닫힌계
+(Closed System) 불가
+($\Delta m = 0$) 가능
+($Q \neq 0, W \neq 0$) [물체 &#43; 장] (외력이 일을 가함), 밀폐 용기 내 반응계 열린계
+(Open System) 가능
+($\Delta m \neq 0$) 가능
+($Q \neq 0, W \neq 0$) 공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동 2. Field, Potential, 일과 에너지 정리1) 장(Field)">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="(a) Perspective :: 수리전자물리학">
-    <meta name="twitter:description" content="관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.
-1. 관점 (Perspective): 현상을 ‘해석하는 방식’관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.">
-    <meta property="og:url" content="http://localhost:1313/electromagnetics/electromotive_force/a_perspective/index.html">
+    <meta name="twitter:title" content="System :: 수리전자물리학">
+    <meta name="twitter:description" content="1. 닫힌계, 고립계, 열린계계의 분류 질량 교환 에너지 교환 대표 예시 및 특징 고립계
+(Isolated System) 불가
+($\Delta m = 0$) 불가
+($Q=0, W=0$) [물체 &#43; 장 &#43; 외력원] 전체, 외부와 완전히 단절된 우주 닫힌계
+(Closed System) 불가
+($\Delta m = 0$) 가능
+($Q \neq 0, W \neq 0$) [물체 &#43; 장] (외력이 일을 가함), 밀폐 용기 내 반응계 열린계
+(Open System) 가능
+($\Delta m \neq 0$) 가능
+($Q \neq 0, W \neq 0$) 공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동 2. Field, Potential, 일과 에너지 정리1) 장(Field)">
+    <meta property="og:url" content="http://localhost:1313/basic_physics/b_system/index.html">
     <meta property="og:site_name" content="수리전자물리학">
-    <meta property="og:title" content="(a) Perspective :: 수리전자물리학">
-    <meta property="og:description" content="관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.
-1. 관점 (Perspective): 현상을 ‘해석하는 방식’관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.">
+    <meta property="og:title" content="System :: 수리전자물리학">
+    <meta property="og:description" content="1. 닫힌계, 고립계, 열린계계의 분류 질량 교환 에너지 교환 대표 예시 및 특징 고립계
+(Isolated System) 불가
+($\Delta m = 0$) 불가
+($Q=0, W=0$) [물체 &#43; 장 &#43; 외력원] 전체, 외부와 완전히 단절된 우주 닫힌계
+(Closed System) 불가
+($\Delta m = 0$) 가능
+($Q \neq 0, W \neq 0$) [물체 &#43; 장] (외력이 일을 가함), 밀폐 용기 내 반응계 열린계
+(Open System) 가능
+($\Delta m \neq 0$) 가능
+($Q \neq 0, W \neq 0$) 공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동 2. Field, Potential, 일과 에너지 정리1) 장(Field)">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Electromagnetics">
-    <meta itemprop="name" content="(a) Perspective :: 수리전자물리학">
-    <meta itemprop="description" content="관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.
-1. 관점 (Perspective): 현상을 ‘해석하는 방식’관점(Viewpoint) 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 기술법(Description/Formulation) 과는 구분된다. 관점은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.">
-    <meta itemprop="wordCount" content="234">
-    <title>(a) Perspective :: 수리전자물리학</title>
+    <meta property="article:section" content="Basic physics">
+    <meta itemprop="name" content="System :: 수리전자물리학">
+    <meta itemprop="description" content="1. 닫힌계, 고립계, 열린계계의 분류 질량 교환 에너지 교환 대표 예시 및 특징 고립계
+(Isolated System) 불가
+($\Delta m = 0$) 불가
+($Q=0, W=0$) [물체 &#43; 장 &#43; 외력원] 전체, 외부와 완전히 단절된 우주 닫힌계
+(Closed System) 불가
+($\Delta m = 0$) 가능
+($Q \neq 0, W \neq 0$) [물체 &#43; 장] (외력이 일을 가함), 밀폐 용기 내 반응계 열린계
+(Open System) 가능
+($\Delta m \neq 0$) 가능
+($Q \neq 0, W \neq 0$) 공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동 2. Field, Potential, 일과 에너지 정리1) 장(Field)">
+    <meta itemprop="wordCount" content="634">
+    <title>System :: 수리전자물리학</title>
     <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
     <script src="/js/search-lunr.js?1788369595" defer></script>
@@ -49,9 +81,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/electromagnetics\/electromotive_force\/a_perspective\/index.html';
-      window.relearn.relBasePath='..\/..\/..';
-      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.path='\/basic_physics\/b_system\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
@@ -94,7 +126,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-origin="/electromagnetics/electromotive_force/a_perspective/index.html">
+  <body class="mobile-support html" data-origin="/basic_physics/b_system/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar" class="default-animation">
@@ -112,7 +144,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-관점-perspective-현상을-해석하는-방식">1. 관점 (Perspective): 현상을 &lsquo;해석하는 방식&rsquo;</a></li>
+        <li><a href="#1-닫힌계-고립계-열린계">1. 닫힌계, 고립계, 열린계</a></li>
+        <li><a href="#2-field-potential-일과-에너지-정리">2. Field, Potential, 일과 에너지 정리</a></li>
+        <li><a href="#3-example-1-중력장과-질량-물체-낙하-및-들어올리기">3. Example 1: 중력장과 질량 물체 (낙하 및 들어올리기)</a></li>
+        <li><a href="#4-example2-수소-원자계-양성자-전자-결합과-질량-결손">4. Example2: 수소 원자계 (양성자-전자 결합과 질량 결손)</a></li>
       </ul>
     </li>
   </ul>
@@ -121,14 +156,14 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/index.html"><span itemprop="name">Electromagnetics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/electromagnetics/electromotive_force/index.html"><span itemprop="name">Electromotive force</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(a) Perspective</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/basic_physics/index.html"><span itemprop="name">Basic physics</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">System</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/a_frame/index.html" title="(a) Frame (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/basic_physics/index.html" title="Basic physics (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/electromagnetics/electromotive_force/a_description/index.html" title="(a) Description (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/complex_analysis/index.html" title="Complex Analysis (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -143,32 +178,118 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable electromagnetics" tabindex="-1">
+      <main id="R-body-inner" class="highlightable basic_physics" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="a-perspective">(a) Perspective</h1>
+<h1 id="system">System</h1>
 
 <hr>
-<p>관점과 기술법은 명확하게 구분하여 사용해야 한다. 즉 라그랑지안 관점과 라그랑지안 기술법을 같은 것이 아니다. 구분해야 한다. 오일러리안 관점과 오일러리안 기술법은 같은것이 아니다. 예로 <strong>라그랑지안 관점에서 오일러리안 기술법을 사용할 수 있다.</strong></p>
+<h3 id="1-닫힌계-고립계-열린계">1. 닫힌계, 고립계, 열린계<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">계의 분류</th>
+          <th style="text-align: center">질량 교환</th>
+          <th style="text-align: center">에너지 교환</th>
+          <th style="text-align: left">대표 예시 및 특징</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>고립계</strong><br>(Isolated System)</td>
+          <td style="text-align: center">불가<br>($\Delta m = 0$)</td>
+          <td style="text-align: center">불가<br>($Q=0, W=0$)</td>
+          <td style="text-align: left">[물체 + 장 + 외력원] 전체, 외부와 완전히 단절된 우주</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>닫힌계</strong><br>(Closed System)</td>
+          <td style="text-align: center">불가<br>($\Delta m = 0$)</td>
+          <td style="text-align: center">가능<br>($Q \neq 0, W \neq 0$)</td>
+          <td style="text-align: left">[물체 + 장] (외력이 일을 가함), 밀폐 용기 내 반응계</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>열린계</strong><br>(Open System)</td>
+          <td style="text-align: center">가능<br>($\Delta m \neq 0$)</td>
+          <td style="text-align: center">가능<br>($Q \neq 0, W \neq 0$)</td>
+          <td style="text-align: left">공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
-<h3 id="1-관점-perspective-현상을-해석하는-방식">1. 관점 (Perspective): 현상을 &lsquo;해석하는 방식&rsquo;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><strong>관점(Viewpoint)</strong> 은 시스템의 운동이나 물리량을 개념적으로, 또는 사고방식의 측면에서 어떻게 이해하고 해석할 것인가에 대한 접근 방식을 말한다. 이는 특정 프레임 안에서 물리량을 측정하고 기술하는 방법론인 <strong>기술법(Description/Formulation)</strong> 과는 구분된다. <strong>관점</strong>은 어떤 본질적인 질문이나 원리에 집중할 것인가를 나타낸다.</p>
-<p><strong>(1) 라그랑지안 관점 (Lagrangian Perspective)</strong></p>
+<h3 id="2-field-potential-일과-에너지-정리">2. Field, Potential, 일과 에너지 정리<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 장(Field)</strong></p>
 <ul>
-<li><strong>의미</strong>: 시스템을 구성하는 개별적인 &lsquo;물체(입자)&lsquo;의 운동과 그 물체가 겪는 변화에 초점을 맞추는 관점이다. 각 물체가 시간에 따라 어떤 궤적을 그리며, 그 물체의 물리량(속도, 온도, 에너지 등)이 어떻게 변하는지를 그 &lsquo;물체와 함께 움직이면서&rsquo; 이해하려는 사고방식이다.</li>
-<li><strong>특징</strong>: &lsquo;물체 중심&rsquo;: 물리량의 변화를 해당 물체의 &lsquo;이력(history)&lsquo;과 연결하여 해석한다.</li>
-<li><strong>에너지 기반</strong>: 물리학, 특히 역학에서 뉴턴 역학의 &lsquo;힘&rsquo; 대신 &lsquo;에너지(스칼라량)&lsquo;를 사용하여 시스템의 운동을 기술하려는 철학적 접근(최소 작용 원리 등)과도 연결된다.</li>
-<li><strong>예시</strong>: 강물에 떠내려가는 하나의 나뭇잎을 정해놓고, 그 나뭇잎이 흘러가면서 겪는 모든 변화(위치, 속도, 회전 등)를 추적하고 분석하는 방식이다.</li>
+<li>공간상에 분포하여 입자와 국소적으로 상호작용하며 에너지, 운동량을 직접 저장하고 운반하는 <strong>독립된 물리적 주체(Physical Agent)</strong> 이다.</li>
+<li><strong>국소 작용</strong> 이란 입자는 멀리 떨어진 원격 입자와 직접 상호작용하는 것이 아니라, 자신이 위치한 지점의 장과 국소적으로 에너지를 교환하는 것이다.</li>
 </ul>
-<p><strong>(2) 오일리안 관점 (Eulerian Perspective)</strong></p>
+<p><strong>2) Potential</strong></p>
 <ul>
-<li><strong>의미</strong>: 시스템이 존재하는 &lsquo;공간의 특정 고정된 지점&rsquo;에 초점을 맞추는 관점이다. 해당 지점을 통과하는 물체들의 물리량이 시간에 따라 어떻게 변하는지를 관찰하고 해석하려는 사고방식이다.</li>
-<li><strong>특징</strong>: &lsquo;공간 중심&rsquo;: 물리량의 변화를 &lsquo;그 공간 지점&rsquo; 자체의 특성 변화로 해석한다.</li>
-<li><strong>장(Field) 개념</strong>: 전자기장, 유체 속도장, 온도장 등 공간에 분포하는 &lsquo;장&rsquo;의 변화를 기술하는 데 특히 유용하다.</li>
-<li><strong>예시</strong>: 강가의 특정 교각 아래에 서서, 그 지점을 통과하는 강물의 속도, 온도, 탁도 등이 시간에 따라 어떻게 변하는지를 관찰하고 분석하는 방식이다.</li>
+<li>장을 계에 포함시켰을 때, 장의 에너지를 potential 이라 한다. 입자가 없는 진공이라 하더라도 장이 존재하면 공간 체적당 에너지가 실재한다.</li>
+</ul>
+$$u_e = \frac{1}{2}\epsilon_0 \vert{}\mathbf{E}\vert{}^2, \quad u_g = -\frac{1}{8\pi G} \vert{}\mathbf{g}\vert{}^2$$<ul>
+<li>장을 계 외부의 객체로 취급(일을 하는 대상)할 때와, 장을 계 내부의 객체로 취급(계 에너지의 대상)할 때의 관계는 아래와 같다.</li>
+</ul>
+$$\Delta U \equiv -W_{\text{field}} = -\int_{a}^{b} \mathbf{F}_{\text{field}} \cdot d\mathbf{l}$$$$\mathbf{F}_{\text{field}} = -\nabla U$$<p><strong>3) 일과 에너지 정리</strong></p>
+$$
+\text{계(system)의 에너지 변화량} = \text{계 외부에서 한 일}
+$$<hr>
+<h3 id="3-example-1-중력장과-질량-물체-낙하-및-들어올리기">3. Example 1: 중력장과 질량 물체 (낙하 및 들어올리기)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>질량 $m$인 물체가 중력장 $\mathbf{g} = -g \hat{\mathbf{j}}$ 하에서 높이 $h$만큼 이동할 때, 계의 경계 설정에 따라 물리량이 어떻게 기술되는지 비교한다.</p>
+<p><strong>1) 물체를 높이 $h$에서 가만히 떨어뜨리는 경우 (자연 낙하: $y = h \to 0$)</strong></p>
+<p>(1) 경계 설정 A: 계 = [물체 단독]</p>
+<ul>
+<li>중력장은 계 외부에 존재하므로, 중력은 외력($W_{\text{ext}}$)으로 작용한다.</li>
+<li>중력의 작용 방향($-y$)과 이동 방향($-y$)이 같으므로 외력이 한 일은 양수이다.</li>
+</ul>
+$$
+W_{\text{ext}} = W_{\text{field}} = \int_{h}^{0} (-mg \hat{\mathbf{j}}) \cdot (dy \hat{\mathbf{j}}) = +mgh > 0
+$$<ul>
+<li>일-에너지 정리:</li>
+</ul>
+$$
+\Delta K = W_{\text{ext}} = +mgh \quad \Longrightarrow \quad K_f - 0 = mgh
+$$<p>(2) 경계 설정 B: 계 = [물체 + 지구 중력장]</p>
+<ul>
+<li>중력장은 계 내부에 포함되므로, 외부에서 가해진 일은 없다 ($W_{\text{ext}} = 0$).- 장이 물체에 한 양의 일($W_{\text{field}} = +mgh$)은 장의 잔고를 소모시키므로 퍼텐셜 에너지 감소로 기록된다.</li>
+</ul>
+$$
+\Delta U \equiv -W_{\text{field}} = -(+mgh) = -mgh < 0
+$$<ul>
+<li>에너지 보존:</li>
+</ul>
+$$
+\Delta E_{\text{sys}} = \Delta K + \Delta U = 0 \quad \Longrightarrow \quad \Delta K = -\Delta U = +mgh
+$$<p><strong>2) 외력(손)이 물체를 일정한 속도로 들어 올리는 경우 ($y = 0 \to h$)계 = [물체 + 지구 중력장]</strong></p>
+<ul>
+<li>중력은 이동 방향과 반대이므로 장이 한 일은 음수이다. ($W_{\text{field}} = -mgh < 0$)</li>
+<li>따라서 퍼텐셜 에너지는 증가한다. ($\Delta U = -W_{\text{field}} = +mgh > 0$)</li>
+<li>손이 가한 외력의 일($W_{\text{손}} = +mgh$)은 계의 퍼텐셜 에너지를 충전하는 데 사용된다. ($\Delta K = 0$)</li>
+</ul>
+$$\Delta E_{\text{sys}} = \Delta U = W_{\text{손}} = +mgh$$<hr>
+<h3 id="4-example2-수소-원자계-양성자-전자-결합과-질량-결손">4. Example2: 수소 원자계 (양성자-전자 결합과 질량 결손)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>1) 전자기장(Field)이 수행한 일과 퍼텐셜 에너지</strong></p>
+<ul>
+<li>쿨롱 인력 벡터 (중심 인력 방향):</li>
+</ul>
+$$\mathbf{F}_e = -\frac{1}{4\pi\epsilon_0}\frac{e^2}{r^2}\hat{\mathbf{r}}$$<ul>
+<li>이동 변위 벡터 ($r = \infty \to a_0$, $dr < 0$):</li>
+</ul>
+$$d\mathbf{l} = dr \hat{\mathbf{r}}$$<ul>
+<li>전기장이 한 일 ($W_{\text{field}}$): 인력 방향과 접근 방향이 일치하므로 장은 양의 일을 수행한다.</li>
+</ul>
+$$W_{\text{field}} = \int_{\infty}^{a_0} \left(-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r^2}\hat{\mathbf{r}}\right) \cdot (dr\hat{\mathbf{r}}) = \left[ \frac{1}{4\pi\epsilon_0}\frac{e^2}{r} \right]_{\infty}^{a_0} = +\frac{e^2}{4\pi\epsilon_0 a_0} > 0$$<ul>
+<li>계 = [양성자 + 전자 + 전자기장]의 퍼텐셜 에너지 변화:</li>
+</ul>
+$$\Delta U \equiv -W_{\text{field}} = -\frac{e^2}{4\pi\epsilon_0 a_0} \approx -27.2\text{ eV} < 0$$<p><strong>2) 에너지 방출 및 질량 결손 ($E = mc^2$)</strong></p>
+<ul>
+<li>에너지 수지: 전자의 운동에너지는 $\Delta K = +13.6\text{ eV}$ 증가하며, 결합 과정에서 계 밖으로 광자(빛) 형태로 방출된 에너지는 $13.6\text{ eV}$이다.</li>
+</ul>
+$$\Delta E_{\text{sys}} = \Delta K + \Delta U = +13.6\text{ eV} - 27.2\text{ eV} = -13.6\text{ eV} \quad (\text{에너지 방출})$$<ul>
+<li>공간 장 에너지 밀도 적분과의 일치: 입자들의 상대 배치가 달라짐에 따라 전 공간의 합성 전기장 $\mathbf{E} = \mathbf{E}_p + \mathbf{E}_e$의 에너지 적분값($\frac{1}{2}\int \epsilon_0 \vert{}\mathbf{E}\vert{}^2 dV$)이 정확히 $27.2\text{ eV}$만큼 감소하여 방출 에너지의 원천이 된다.</li>
+<li>질량 결손 실재성: 형성된 수소 원자 계의 총 질량은 구성 입자들의 고유 질량 합보다 정확히 결손된 결합 에너지에 해당하는 양만큼 가볍다.</li>
 </ul>
 
   <footer class="footline">
@@ -216,7 +337,8 @@
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu">
+            <li class="active " data-nav-id="/basic_physics/b_system/index.html"><a class="padding" href="/basic_physics/b_system/index.html">System</a></li></ul></li>
             <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
@@ -228,15 +350,7 @@
             <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/numerial_analysis/index.html"><a class="padding default-animation" href="/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-c5d4684141073244d37eb4baa8125b19" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu">
-            <li class="parent alwaysopen " data-nav-id="/electromagnetics/electromotive_force/index.html"><a class="padding default-animation" href="/electromagnetics/electromotive_force/index.html">Electromotive force</a><ul id="R-subsections-6db7b3d4039c816d49d042cec9fd7c76" class="collapsible-menu">
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/a_frame/index.html"><a class="padding" href="/electromagnetics/electromotive_force/a_frame/index.html">(a) Frame</a></li>
-            <li class="active " data-nav-id="/electromagnetics/electromotive_force/a_perspective/index.html"><a class="padding" href="/electromagnetics/electromotive_force/a_perspective/index.html">(a) Perspective</a></li>
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/a_description/index.html"><a class="padding" href="/electromagnetics/electromotive_force/a_description/index.html">(a) Description</a></li>
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/a_material_derivative/index.html"><a class="padding" href="/electromagnetics/electromotive_force/a_material_derivative/index.html">(a) Material derivative</a></li>
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/i_electromotive_force_i/index.html"><a class="padding" href="/electromagnetics/electromotive_force/i_electromotive_force_i/index.html">(i) Electromotive force I</a></li>
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html"><a class="padding" href="/electromagnetics/electromotive_force/a_electromotive_force_ii/index.html">(a) Electromotive force II</a></li>
-            <li class="" data-nav-id="/electromagnetics/electromotive_force/r_emf_voltage/index.html"><a class="padding" href="/electromagnetics/electromotive_force/r_emf_voltage/index.html">(r) EMF &amp; Voltage</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
