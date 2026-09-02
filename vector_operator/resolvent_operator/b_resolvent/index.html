@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 동기일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
     <meta name="author" content="">
@@ -19,28 +19,28 @@
     <meta property="article:section" content="Vector & Operator">
     <meta itemprop="name" content="(b) [D] Resolvent :: 수리전자물리학">
     <meta itemprop="description" content="1. 동기일반화된 고유벡터를 이용한 챕터는 “만약 우리가 찌그러진 기저 벡터들을 모두 찾아낼 수 있다면, 연산자는 이렇게 분해될 것이다&#34;라는 사후적이고 이상적인 대수학적 구조($\hat{A} = \lambda_m\hat{P}_m &#43; \hat{N}_m$)를 보여준다. 하지만 현실의 시스템이나 무한 차원 공간에서는 고윳값을 찾기 위한 특성 방정식($\det = 0$) 자체가 붕괴하며, 설령 고윳값을 안다 해도 거듭제곱된 고유 방정식 $(\hat{A}-\lambda_m\hat{I})^k|\lambda_{m,k}\rangle = 0$ 을 풀어 조르당 사슬의 역방향으로 잉여 상태를 추적해 나가는 것은 해석학적으로 불가능에 가깝다.">
-    <meta itemprop="wordCount" content="1415">
+    <meta itemprop="wordCount" content="1406">
     <title>(b) [D] Resolvent :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -226,8 +226,7 @@ $$
 $$<p>관측점 $z \to \lambda_m$ 극한에서 발산하지 않는 지배적인 상수항 연산자를 $\hat{Y}_l$로 정의한다. 멱영 연산자 $\hat{N}_l$은 사영 공간 $\hat{P}_l$에 완전히 종속되므로, $\hat{Y}_l$ 역시 국소 공간 $l$ 내부에 한정된다.</p>
 $$
 \hat{Y}_l \equiv (\lambda_m - \lambda_l)\hat{P}_l - \hat{N}_l
-$$<p>정의된 $\hat{Y}_l$을 사용하여 국소 블록 연산자를 표현하면 다음과 같다.</p>
-$$\hat{B}_l = \hat{Y}_l + (z - \lambda_m)\hat{P}_l$$<p>이 국소 공간 $l$ 내에서 $\hat{P}_l$은 항등원으로 작용하며, $\hat{Y}_l$의 역작용소 $\hat{Y}_l^{-1}$ 역시 존재한다($\hat{Y}_l \hat{Y}_l^{-1} = \hat{P}_l$). 이를 이용하여 공통 인수 $\hat{Y}_l$을 괄호 밖으로 묶어낸다.</p>
+$$$$\hat{B}_l = \hat{Y}_l + (z - \lambda_m)\hat{P}_l$$<p>이 국소 공간 $l$ 내에서 $\hat{P}_l$은 항등원으로 작용하며, $\hat{Y}_l$의 역작용소 $\hat{Y}_l^{-1}$ 역시 존재한다($\hat{Y}_l \hat{Y}_l^{-1} = \hat{P}_l$). 이를 이용하여 공통 인수 $\hat{Y}_l$을 괄호 밖으로 묶어낸다.</p>
 $$
 \hat{B}_l = \hat{Y}_l \left[ \hat{P}_l + (z - \lambda_m)\hat{Y}_l^{-1} \right]
 $$<p>이제 단일 공간 $l$에 대한 역작용소 $\hat{B}_l^{-1}$을 구하기 위해 역수를 취한다. 연산자의 곱셈 순서에 유의하여 분배한다.</p>
@@ -359,8 +358,8 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
             <li class="alwaysopen " data-nav-id="/vector_operator/variation/index.html"><a class="padding default-animation" href="/vector_operator/variation/index.html">Variation</a><ul id="R-subsections-eb3a19f299ca0013853296f641c5255b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_operator/decomposition/index.html"><a class="padding" href="/vector_operator/decomposition/index.html">Decomposition</a></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -374,6 +373,7 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -404,9 +404,9 @@ $$<p>도함수가 정의역 붕괴를 유발하는 비유계 연산자 $\hat{A}$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

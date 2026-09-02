@@ -9,10 +9,10 @@
     <atom:link href="http://localhost:1313/basic_physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System</title>
-      <link>http://localhost:1313/basic_physics/system/index.html</link>
+      <link>http://localhost:1313/basic_physics/b_system/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/basic_physics/system/index.html</guid>
-      <description></description>
+      <guid>http://localhost:1313/basic_physics/b_system/index.html</guid>
+      <description>1. 닫힌계, 고립계, 열린계&#xD;계의 분류 질량 교환 에너지 교환 대표 예시 및 특징 고립계&#xA;(Isolated System) 불가&#xA;($\Delta m = 0$) 불가&#xA;($Q=0, W=0$) [물체 + 장 + 외력원] 전체, 외부와 완전히 단절된 우주 닫힌계&#xA;(Closed System) 불가&#xA;($\Delta m = 0$) 가능&#xA;($Q \neq 0, W \neq 0$) [물체 + 장] (외력이 일을 가함), 밀폐 용기 내 반응계 열린계&#xA;(Open System) 가능&#xA;($\Delta m \neq 0$) 가능&#xA;($Q \neq 0, W \neq 0$) 공간 검사 체적(포인팅 벡터 $\oint \mathbf{S} \cdot d\mathbf{a}$ 유출입), 파이프 유동 2. Field, Potential, 일과 에너지 정리&#xD;1) 장(Field)</description>
     </item>
   </channel>
 </rss>

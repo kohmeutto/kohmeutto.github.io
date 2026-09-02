@@ -19,14 +19,14 @@
       <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_poisson_equation/index.html</guid>
-      <description>1. Poisson’s equation&#xD;포아송 방정식은 아래와 같이 표현할 수 있다. 라플라스 방정식은 f=0 일 때를 의미한다.&#xA;$$ \nabla^2\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 2. Weak solution for Poisson’s equation&#xD;포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송 방정식에 대입하면, 다음과 같다.</description>
+      <description>1. Poisson’s equation&#xD;포아송 방정식은 아래와 같이 표현할 수 있다. 라플라스 방정식은 f=0 일 때를 의미한다.&#xA;$$&#xD;\nabla^2\varphi\left(\vec{r}\right)=f\left(\vec{r}\right)&#xD;$$ 2. Weak solution for Poisson’s equation&#xD;포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송 방정식에 대입하면, 다음과 같다.</description>
     </item>
     <item>
       <title>(r) Uniqueness of Helmholtz equation</title>
       <link>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ode_pde/uniqueness_theorem/r_uniqueness_of_helmholtz_equation-copy/index.html</guid>
-      <description>1. Helmholtz equation&#xD;헬름홀쯔 방정식은 아래와 같이 표현할 수 있다.&#xA;$$ \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=f\left(\vec{r}\right) $$ 포아송 방정식은 $k^2=0$ 일 때를 의미한다. 라플라스 방정식은 $k^2=0$ &amp; $f=0$ 일 때를 의미한다. 2. Weak solution for Poisson’s equation&#xD;헬름홀츠 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 헬름홀츠 방정식에 대입하면, 다음과 같다.</description>
+      <description>1. Helmholtz equation&#xD;헬름홀쯔 방정식은 아래와 같이 표현할 수 있다.&#xA;$$&#xD;\left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=f\left(\vec{r}\right)&#xD;$$ 포아송 방정식은 $k^2=0$ 일 때를 의미한다. 라플라스 방정식은 $k^2=0$ &amp; $f=0$ 일 때를 의미한다. 2. Weak solution for Poisson’s equation&#xD;헬름홀츠 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 헬름홀츠 방정식에 대입하면, 다음과 같다.</description>
     </item>
     <item>
       <title>(i) Ideal metal</title>

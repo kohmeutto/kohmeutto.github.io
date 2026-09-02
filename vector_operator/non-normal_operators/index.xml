@@ -19,7 +19,7 @@
       <link>http://localhost:1313/vector_operator/non-normal_operators/b_persudo_adjoint/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/vector_operator/non-normal_operators/b_persudo_adjoint/index.html</guid>
-      <description>1. M-계량 공간에서 내적의 정의&#xD;양의 정부호 허미션 계량 연산자 $\hat{M}$ ($\hat{M} = \hat{M}^\dagger, \hat{M} &gt; 0$)이 부여된 선형 공간에서, 임의의 두 상태 벡터 $|\phi\rangle, |\psi\rangle$에 대한 $\hat{M}$-내적 구조는 다음과 같이 정의된다. $$&#xD;\langle \phi | \psi \rangle_M \equiv \langle \phi | \hat{M} | \psi \rangle&#xD;$$ 2. 유사 수반성 정의&#xD;1) 유한 차원</description>
+      <description>1. M-계량 공간에서 내적의 정의&#xD;$$&#xD;\langle \phi | \psi \rangle_M \equiv \langle \phi | \hat{M} | \psi \rangle&#xD;$$ 2. 유사 수반성 정의&#xD;1) 유한 차원&#xA;$$&#xD;\langle \phi | \hat{A} \psi \rangle_{M} = \langle \hat{A}^\sharp \phi | \psi \rangle_{M}&#xD;$$2) 무한 차원</description>
     </item>
     <item>
       <title>(b) M-normal</title>

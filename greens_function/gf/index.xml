@@ -12,14 +12,14 @@
       <link>http://localhost:1313/greens_function/gf/b_green_function/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/gf/b_green_function/index.html</guid>
-      <description>1. 역연산자의 적분 커널&#xD;연산자 방정식&#xA;$$ \hat{A}|v\rangle = |f\rangle $$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로&#xA;$$ |v\rangle = \hat{A}^{-1}|f\rangle $$이다.&#xA;1) 이산 기저: 역행렬&#xA;유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.&#xA;$$ \psi_i = \sum_j (A^{-1})_{ij}\,\phi_j $$2) 연속 기저: 그린함수</description>
+      <description>1. 역연산자의 적분 커널&#xD;연산자 방정식&#xA;$$&#xD;\hat{A}|v\rangle = |f\rangle&#xD;$$에서, 출력 $|f\rangle$ 로부터 입력 $|v\rangle$ 를 구하는 문제를 생각하자. $\hat{A}$ 의 역연산자가 존재한다면, 형식적으로&#xA;$$&#xD;|v\rangle = \hat{A}^{-1}|f\rangle&#xD;$$이다.&#xA;1) 이산 기저: 역행렬&#xA;유한 차원에서 이 역연산자는 역행렬 $(A^{-1})_{ij}$ 로 표현되며, 성분 단위로 다음과 같이 나타난다.&#xA;$$&#xD;\psi_i = \sum_j (A^{-1})_{ij}\,\phi_j&#xD;$$2) 연속 기저: 그린함수</description>
     </item>
     <item>
       <title>(b) Spectral representation</title>
       <link>http://localhost:1313/greens_function/gf/b_spectral_representation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/gf/b_spectral_representation/index.html</guid>
-      <description>1. 왜 스펙트럼 표현인가&#xD;앞 문서에서는 일반 연속 기저 $|u\rangle$ 에서 그린함수의 정의&#xA;$$ G(u,u&#39;) = \langle u^d|\hat{A}^{-1}|u&#39;\rangle $$를 얻었다. 본 문서에서는 추가로 $\hat{A}$ 의 고유기저 $\{|\lambda_i\rangle\}$ 를 도입한다. 자연스럽게 묻게 되는 질문은: 왜 추가 기저가 필요한가?&#xA;답은 단순하다.&#xA;일반 기저 $|u\rangle$ 에서 $\hat{A}^{-1}$ 의 적분 커널을 직접 구하는 것은 어렵지만, 고유기저 $|\lambda_i\rangle$ 에서는 자명하다.&#xA;b_spectral_theory.md 에서 확인한 대로, 연산자의 스펙트럼 분해는 다음과 같다.</description>
+      <description>1. 왜 스펙트럼 표현인가&#xD;앞 문서에서는 일반 연속 기저 $|u\rangle$ 에서 그린함수의 정의&#xA;$$&#xD;G(u,u&#39;) = \langle u^d|\hat{A}^{-1}|u&#39;\rangle&#xD;$$를 얻었다. 본 문서에서는 추가로 $\hat{A}$ 의 고유기저 $\{|\lambda_i\rangle\}$ 를 도입한다. 자연스럽게 묻게 되는 질문은: 왜 추가 기저가 필요한가?&#xA;답은 단순하다.&#xA;일반 기저 $|u\rangle$ 에서 $\hat{A}^{-1}$ 의 적분 커널을 직접 구하는 것은 어렵지만, 고유기저 $|\lambda_i\rangle$ 에서는 자명하다.&#xA;b_spectral_theory.md 에서 확인한 대로, 연산자의 스펙트럼 분해는 다음과 같다.</description>
     </item>
     <item>
       <title>(i) Unified picture</title>
@@ -33,14 +33,14 @@
       <link>http://localhost:1313/greens_function/gf/b_existence_and_properties/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/gf/b_existence_and_properties/index.html</guid>
-      <description>1. 그린함수의 존재 조건&#xD;그린함수 $G(u,u&#39;) = \langle u^d|\hat{A}^{-1}|u&#39;\rangle$ 가 존재하려면, 무엇보다 $\hat{A}^{-1}$ 자체가 존재해야 한다. 이 조건은 스펙트럼으로 명확히 표현된다.&#xA;1) 이산 스펙트럼&#xA;b_eigenvalue.md §5에서 정립한 대로, 유한 차원에서 $\hat{A}$ 의 역행렬은&#xA;$$ \hat{A}^{-1} \text{ 존재} \iff \det(\hat{A}) \neq 0 \iff \forall i,\ \lambda_i \neq 0 $$이다. 이산 스펙트럼이면 모든 고유값이 0이 아니어야 그린함수가 존재한다.</description>
+      <description>1. 그린함수의 존재 조건&#xD;그린함수 $G(u,u&#39;) = \langle u^d|\hat{A}^{-1}|u&#39;\rangle$ 가 존재하려면, 무엇보다 $\hat{A}^{-1}$ 자체가 존재해야 한다. 이 조건은 스펙트럼으로 명확히 표현된다.&#xA;1) 이산 스펙트럼&#xA;b_eigenvalue.md §5에서 정립한 대로, 유한 차원에서 $\hat{A}$ 의 역행렬은&#xA;$$&#xD;\hat{A}^{-1} \text{ 존재} \iff \det(\hat{A}) \neq 0 \iff \forall i,\ \lambda_i \neq 0&#xD;$$이다. 이산 스펙트럼이면 모든 고유값이 0이 아니어야 그린함수가 존재한다.</description>
     </item>
     <item>
       <title>(b) Sturm-Liouville form</title>
       <link>http://localhost:1313/greens_function/gf/b_sl_form/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/gf/b_sl_form/index.html</guid>
-      <description>1. SL 선형 연산자 형식의 위치&#xD;자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.&#xA;$$ L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) + q(x) = D(p(x)D) + q(x) $$조건:&#xA;$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.</description>
+      <description>1. SL 선형 연산자 형식의 위치&#xD;자기수반 1차원 미분 연산자의 표준 형식은 Sturm-Liouville 형식 이다.&#xA;$$&#xD;L_p = \frac{d}{dx}\left(p(x)\frac{d}{dx}\right) + q(x) = D(p(x)D) + q(x)&#xD;$$조건:&#xA;$p(x) &gt; 0$ (구간 내부에서) $p(x)$ 가 미분 가능 $q(x)$ 가 실수 함수 학습자가 자연스럽게 던지는 질문: “왜 SL 을 배우는가? 다른 미분방정식 형태도 많은데?” 이 질문에 대한 답은 다음 도식에 압축된다.</description>
     </item>
     <item>
       <title>(b) Sturm-Liouville Green&#39;s function</title>

@@ -19,14 +19,14 @@
       <link>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/negf/b_retarded_advanced/index.html</guid>
-      <description>1. 동기: 닫힌 시스템 그린함수의 문제&#xD;이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수&#xA;$$ G(E) = (E\hat{I} - H)^{-1} $$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면&#xA;$$ G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n} $$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.</description>
+      <description>1. 동기: 닫힌 시스템 그린함수의 문제&#xD;이전 챕터에서 우리는 닫힌 자기수반 시스템 ($H$ 가 Hermitian) 의 그린함수&#xA;$$&#xD;G(E) = (E\hat{I} - H)^{-1}&#xD;$$를 다뤘다. 이 표현은 깔끔하지만, 자세히 들여다보면 미묘한 문제가 있다. $H$ 의 스펙트럼 분해 $H = \sum_n E_n |\psi_n\rangle\langle\psi_n|$ 를 사용해 $G(E)$ 를 풀어쓰면&#xA;$$&#xD;G(E) = \sum_n \frac{|\psi_n\rangle\langle\psi_n|}{E - E_n}&#xD;$$이며, 이 표현은 $E$ 가 $H$ 의 어떤 고유값 $E_n$ 과 일치하면 발산한다. 분모가 0 이 되기 때문이다.</description>
     </item>
     <item>
       <title>(b) Spectral function</title>
       <link>http://localhost:1313/greens_function/negf/b_spectral_function/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/negf/b_spectral_function/index.html</guid>
-      <description>1. 동기: 스펙트럼 정보의 순수한 추출&#xD;이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수&#xA;$$ A(E) = i[G^R(E) - G^A(E)] $$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?&#xA;답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^+$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.</description>
+      <description>1. 동기: 스펙트럼 정보의 순수한 추출&#xD;이전 절에서 retarded 와 advanced 그린함수의 차이로 스펙트럼 함수&#xA;$$&#xD;A(E) = i[G^R(E) - G^A(E)]&#xD;$$를 정의했다. 그러나 자연스러운 질문이 있다 — $G^R$ 와 $G^A$ 가 이미 시스템의 모든 정보를 담고 있는데, 왜 그들의 차이를 별도 객체로 다루는가?&#xA;답은 다음과 같다. $G^R(E)$ 와 $G^A(E)$ 는 시스템 정보를 담지만, 동시에 $\pm i0^+$ 같은 분석적 처방의 흔적도 함께 담고 있다. 또한 $G^R$ 는 복소수 행렬이며, 실수부와 허수부가 서로 다른 정보를 담는다 — 실수부는 분산 (dispersion), 허수부는 흡수 (absorption) 에 해당한다.</description>
     </item>
     <item>
       <title>(b) Lesser and greater GF</title>
@@ -54,7 +54,7 @@
       <link>http://localhost:1313/greens_function/negf/b_langreth_rules/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/greens_function/negf/b_langreth_rules/index.html</guid>
-      <description>1. 동기: Contour 에서 real-time 으로의 변환&#xD;이전 절에서 contour Dyson 방정식&#xA;$$ G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) + \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;) $$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.&#xA;핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_+$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.</description>
+      <description>1. 동기: Contour 에서 real-time 으로의 변환&#xD;이전 절에서 contour Dyson 방정식&#xA;$$&#xD;G^c(\tau, \tau&#39;) = G_0^c(\tau, \tau&#39;) + \int_C d\tau_1\,d\tau_2\,G_0^c(\tau, \tau_1)\,\Sigma^c(\tau_1, \tau_2)\,G^c(\tau_2, \tau&#39;)&#xD;$$이 4 가지 real-time Dyson 방정식 (retarded, advanced, lesser, greater) 의 통합 표현임을 보았다. 그러나 위 contour 방정식에서 어떻게 각 real-time 방정식을 추출하는지는 자세히 다루지 않았다.&#xA;핵심 문제는 다음과 같다. Contour 적분 $\int_C d\tau_1$ 은 forward branch $C_+$ 와 backward branch $C_-$ 양쪽을 지난다. 따라서 contour 위 두 점 $\tau, \tau&#39;$ 의 branch 를 지정하더라도, 내부 적분 변수 $\tau_1$ 의 branch 에 따라 $G_0^c, \Sigma^c, G^c$ 의 component 가 달라진다. 이 다양한 case 를 체계적으로 정리해서 각 real-time component 의 방정식으로 환원해야 한다.</description>
     </item>
   </channel>
 </rss>

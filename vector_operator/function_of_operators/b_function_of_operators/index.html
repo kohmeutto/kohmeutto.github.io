@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="본 챕터는 단순히 연산자에 함수를 대입하는 기계적 요령을 넘어, 어떻게 스칼라 함수 $f(x)$를 연산자 함수 $f(\hat{A})$로 확장할 수 있는가에 대한 수학적 정당성을 부여하는 것을 목표로 한다. 여기에는 해석적 접근(Taylor Series), 대수적 접근(Spectral Decomposition), 그리고 가장 일반적인 복소 해석적 접근(Cauchy Integral) 세 가지 방법이 존재하며, 이들이 상호 일관됨을 증명한다.
 X.1 서론: 문제의 제기스칼라 변수 $x \in \mathbb{C}$에 대한 함수 $f(x)$가 주어졌을 때(예: $e^x, \sin x, \sqrt{x}$), 선형 연산자 $\hat{A}$에 대해 $f(\hat{A})$를 정의하고자 한다.">
@@ -23,28 +23,28 @@ X.1 서론: 문제의 제기스칼라 변수 $x \in \mathbb{C}$에 대한 함�
     <meta itemprop="name" content="(b) Function of operators :: 수리전자물리학">
     <meta itemprop="description" content="본 챕터는 단순히 연산자에 함수를 대입하는 기계적 요령을 넘어, 어떻게 스칼라 함수 $f(x)$를 연산자 함수 $f(\hat{A})$로 확장할 수 있는가에 대한 수학적 정당성을 부여하는 것을 목표로 한다. 여기에는 해석적 접근(Taylor Series), 대수적 접근(Spectral Decomposition), 그리고 가장 일반적인 복소 해석적 접근(Cauchy Integral) 세 가지 방법이 존재하며, 이들이 상호 일관됨을 증명한다.
 X.1 서론: 문제의 제기스칼라 변수 $x \in \mathbb{C}$에 대한 함수 $f(x)$가 주어졌을 때(예: $e^x, \sin x, \sqrt{x}$), 선형 연산자 $\hat{A}$에 대해 $f(\hat{A})$를 정의하고자 한다.">
-    <meta itemprop="wordCount" content="885">
+    <meta itemprop="wordCount" content="844">
     <title>(b) Function of operators :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -152,7 +152,7 @@ X.1 서론: 문제의 제기스칼라 변수 $x \in \mathbb{C}$에 대한 함�
 <span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/function_of_operators/b_dual_space_of_operators/index.html" title="(b) Dual space (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/complex_analysis/index.html" title="Complex Analysis (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/basic_physics/index.html" title="Basic physics (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -253,31 +253,21 @@ $$<p><strong>해석:</strong> 이 식에서 스칼라 분모 $(z - z_0)^{-1}$가
 <h2 id="x5-세-가지-정의의-일관성-consistency">X.5 세 가지 정의의 일관성 (Consistency)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>세 가지 정의는 조건이 겹치는 영역에서 동일한 결과를 내놓아야 한다.</p>
 <p><strong>예시:</strong> $f(z) = \frac{1}{\lambda - z}$ 라고 하자.</p>
-<p>스펙트럼 분해 정의에 따르면:
-</p>
 $$
 f(\hat{A}) = \sum_n \frac{1}{\lambda - \lambda_n} |e_n\rangle \langle e_n|
 $$<p>
 이것은 정확히 레졸벤트 $(\lambda\hat{I} - \hat{A})^{-1}$의 스펙트럼 분해와 일치한다.</p>
-<p>또한, 레졸벤트 $(z\hat{I} - \hat{A})^{-1}$를 $z$가 충분히 클 때 로랑 급수(Laurent Series)로 전개하면:
-</p>
 $$
 (z\hat{I} - \hat{A})^{-1} = z^{-1} (\hat{I} - z^{-1}\hat{A})^{-1} = \frac{1}{z} \sum_{k=0}^\infty \left(\frac{\hat{A}}{z}\right)^k = \sum_{k=0}^\infty \frac{\hat{A}^k}{z^{k+1}}
-$$<p>이를 코시 적분 식에 대입하면:
-</p>
-$$
+$$$$
 \frac{1}{2\pi i} \sum_{k=0}^\infty \hat{A}^k \oint_\Gamma \frac{f(z)}{z^{k+1}} dz
-$$<p>코시 적분 공식의 미분형 $f^{(k)}(0) = \frac{k!}{2\pi i} \oint \frac{f(z)}{z^{k+1}} dz$ 에 의해,
-</p>
-$$
+$$$$
 = \sum_{k=0}^\infty \hat{A}^k \frac{f^{(k)}(0)}{k!} = \sum_{k=0}^\infty c_k \hat{A}^k
 $$<p>이는 **접근법 1(테일러 급수)**과 정확히 일치한다.</p>
 <hr>
 <h2 id="x6-주요-응용-베이커-캠벨-하우스도르프-공식-bch-formula">X.6 주요 응용: 베이커-캠벨-하우스도르프 공식 (BCH Formula)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>연산자 함수, 특히 지수 함수 $e^{\hat{A}}$를 다룰 때 가장 주의해야 할 점은 **비가환성(Non-commutativity)**이다.</p>
 <h3 id="정리-x61">정리 X.6.1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>일반적으로 $[\hat{A}, \hat{B}] \neq 0$인 경우,
-</p>
 $$
 e^{\hat{A}} e^{\hat{B}} \neq e^{\hat{A} + \hat{B}}
 $$<h3 id="정리-x62-bch-공식-baker-campbell-hausdorff">정리 X.6.2 (BCH 공식, Baker-Campbell-Hausdorff)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -351,8 +341,8 @@ $$<p><strong>의미:</strong> 이 공식은 리 군(Lie Group)의 곱셈 구조�
             <li class="parent alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu">
             <li class="" data-nav-id="/vector_operator/function_of_operators/b_dual_space_of_operators/index.html"><a class="padding" href="/vector_operator/function_of_operators/b_dual_space_of_operators/index.html">(b) Dual space</a></li>
             <li class="active " data-nav-id="/vector_operator/function_of_operators/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/function_of_operators/b_function_of_operators/index.html">(b) Function of operators</a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -366,6 +356,7 @@ $$<p><strong>의미:</strong> 이 공식은 리 군(Lie Group)의 곱셈 구조�
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -396,9 +387,9 @@ $$<p><strong>의미:</strong> 이 공식은 리 군(Lie Group)의 곱셈 구조�
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

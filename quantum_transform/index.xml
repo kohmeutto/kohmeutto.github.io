@@ -12,14 +12,14 @@
       <link>http://localhost:1313/quantum_transform/b_quantum_transport_intro/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/quantum_transform/b_quantum_transport_intro/index.html</guid>
-      <description>1. 동기: 옴의 법칙이 깨지는 영역&#xD;전기 전도에 대한 가장 친숙한 법칙은 옴의 법칙이다.&#xA;$$ V = IR $$저항 $R$ 은 전류를 흐르게 하기 위해 필요한 전압의 크기를 결정한다. 일정한 단면적 $A$ 와 길이 $L$ 의 균질 도체에서&#xA;$$ R = \rho\,\frac{L}{A} $$여기서 $\rho$ 는 물질에 고유한 비저항이다. 길이가 길어지면 저항이 비례해서 증가하고, 단면적이 커지면 저항이 비례해서 감소한다. 이 단순한 법칙이 일상 규모의 전자 회로에서 잘 작동한다.</description>
+      <description>1. 동기: 옴의 법칙이 깨지는 영역&#xD;전기 전도에 대한 가장 친숙한 법칙은 옴의 법칙이다.&#xA;$$&#xD;V = IR&#xD;$$저항 $R$ 은 전류를 흐르게 하기 위해 필요한 전압의 크기를 결정한다. 일정한 단면적 $A$ 와 길이 $L$ 의 균질 도체에서&#xA;$$&#xD;R = \rho\,\frac{L}{A}&#xD;$$여기서 $\rho$ 는 물질에 고유한 비저항이다. 길이가 길어지면 저항이 비례해서 증가하고, 단면적이 커지면 저항이 비례해서 감소한다. 이 단순한 법칙이 일상 규모의 전자 회로에서 잘 작동한다.</description>
     </item>
     <item>
       <title>(b) Landauer formula</title>
       <link>http://localhost:1313/quantum_transform/b_landauer_formula/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/quantum_transform/b_landauer_formula/index.html</guid>
-      <description>1. 동기: 양자 영역에서 전류를 어떻게 계산하는가&#xD;이전 절에서 양자수송의 그림을 직관적으로 소개했다. 두 lead 가 산란 영역에 연결된 구조, 두 lead 의 분포 차이가 전류를 일으키는 driving force, 그리고 산란 영역의 양자역학적 산란 특성이 투과 확률 $T(E)$ 로 표현된다는 그림. 마지막에 Landauer 공식&#xA;$$ I = \frac{e}{h}\int dE\,T(E)\,[f_L(E) - f_R(E)] $$을 미리 소개했다.&#xA;이 절에서는 이 공식이 어떻게 도출되는지를 자세히 본다. 가장 단순한 경우 — 1D 단일 채널 — 에서 시작해서 점진적으로 다채널, 일반적 경우로 확장한다.</description>
+      <description>1. 동기: 양자 영역에서 전류를 어떻게 계산하는가&#xD;이전 절에서 양자수송의 그림을 직관적으로 소개했다. 두 lead 가 산란 영역에 연결된 구조, 두 lead 의 분포 차이가 전류를 일으키는 driving force, 그리고 산란 영역의 양자역학적 산란 특성이 투과 확률 $T(E)$ 로 표현된다는 그림. 마지막에 Landauer 공식&#xA;$$&#xD;I = \frac{e}{h}\int dE\,T(E)\,[f_L(E) - f_R(E)]&#xD;$$을 미리 소개했다.&#xA;이 절에서는 이 공식이 어떻게 도출되는지를 자세히 본다. 가장 단순한 경우 — 1D 단일 채널 — 에서 시작해서 점진적으로 다채널, 일반적 경우로 확장한다.</description>
     </item>
     <item>
       <title>(b) Büttiker formula</title>

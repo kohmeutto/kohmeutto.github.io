@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Hugo 0.145.0">
     <meta name="generator" content="Relearn 9.0.3">
     <meta name="description" content="1. 고유벡터의 결핍과 대수적 퇴화임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.
 고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.">
@@ -23,28 +23,28 @@
     <meta itemprop="name" content="(b) [D] Discrete :: 수리전자물리학">
     <meta itemprop="description" content="1. 고유벡터의 결핍과 대수적 퇴화임의의 선형 연산자 $\hat{A}$의 고윳값 $\lambda$는 특성 방정식 $\det(\hat{A} - \lambda\hat{I}) = 0$을 통해 산출된다. 이 다항식의 근이 중복해서 나타나는 횟수를 대수적 중복도(Algebraic multiplicity, $\alpha$)라 한다.
 고윳값이 결정되면, 이를 고유 방정식 $(\hat{A} - \lambda\hat{I})|\lambda\rangle = 0$에 대입하여 고유벡터 $|\lambda\rangle$를 찾는다. 이 방정식을 만족하는 선형 독립적인 벡터를 진성 고유벡터(True eigenvector)라 하며, 확보된 진성 고유벡터의 총 개수를 기하적 중복도(Geometric multiplicity, $\gamma$)라 한다.">
-    <meta itemprop="wordCount" content="871">
+    <meta itemprop="wordCount" content="867">
     <title>(b) [D] Discrete :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787485217" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787485217" defer></script>
-    <script src="/js/search-lunr.js?1787485217" defer></script>
-    <script src="/js/search.js?1787485217" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788369595" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788369595" defer></script>
+    <script src="/js/search-lunr.js?1788369595" defer></script>
+    <script src="/js/search.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787485217";
+      window.relearn.index_js_url="/searchindex.en.js?1788369595";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787485217" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1787485217" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788369595" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1788369595" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787485217" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787485217" rel="stylesheet">
-    <link href="/css/theme.css?1787485217" rel="stylesheet">
-    <link href="/css/format-html.css?1787485217" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788369595" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788369595" rel="stylesheet">
+    <link href="/css/theme.css?1788369595" rel="stylesheet">
+    <link href="/css/format-html.css?1788369595" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -168,18 +168,14 @@ $$<p>이러한 상태를 연산자의 대수적 퇴화(Algebraic degeneracy)라 
 <p>하나의 고윳값 $\lambda_m$에 종속된 상태들은 고윳값 기호가 아닌 조르당 사슬(Jordan chain) 내부의 랭크 인덱스 $k$를 통해 $|\lambda_{m,k}\rangle$로 명확히 구분된다. 결함 연산자 계의 지배 방정식은 랭크 인덱스 강하를 동반하여 다음과 같이 기술된다.</p>
 $$
 \hat{A}|\lambda_{m,k}\rangle = \lambda_m|\lambda_{m,k}\rangle + |\lambda_{m,k-1}\rangle \quad (\text{단, } |\lambda_{m,0}\rangle = 0)
-$$<p>
-</p>
-$$
+$$$$
 \hat{A}|\lambda_{m,1}\rangle = \lambda_m|\lambda_{m,1}\rangle \quad (\text{진성 고유벡터})
 $$<p>proof)</p>
 <p><em>(1) 대각화 가능한 경우 예</em></p>
 <p>대각화 가능한 연산자 $\hat{A}$가 서로 다른 고윳값 $\lambda_1, \lambda_2$와 이에 대응하는 진성 고유벡터 $|\lambda_{1,1}\rangle, |\lambda_{2,1}\rangle$을 가지는 경우 다음과 같이 기술된다.</p>
 $$
 \hat{A}|\lambda_{1,1}\rangle = \lambda_1|\lambda_{1,1}\rangle \implies (\hat{A}-\lambda_1 \hat{I})|\lambda_{1,1}\rangle=0
-$$<p>
-</p>
-$$
+$$$$
 \hat{A}|\lambda_{2,1}\rangle = \lambda_2|\lambda_{2,1}\rangle \implies (\hat{A}-\lambda_2 \hat{I})|\lambda_{2,1}\rangle=0
 $$<p><em>(2) 대각화가 불가능한 경우</em></p>
 <p>대수적 중복도가 2이고 기하학적 중복도가 1인 특정 고윳값 $\lambda_1$에 대한 연산자는 다음과 같이 기술된다.</p>
@@ -210,13 +206,9 @@ $$
 $$<p>이에 따라 랭크가 구분된 3개의 기저가 생성되며, 연산자 거동은 다음과 같이 일반화된다.</p>
 $$
 \hat{A}|\lambda_{1,3}\rangle = \lambda_1|\lambda_{1,3}\rangle + |\lambda_{1,2}\rangle
-$$<p>
-</p>
-$$
+$$$$
 \hat{A}|\lambda_{1,2}\rangle = \lambda_1|\lambda_{1,2}\rangle + |\lambda_{1,1}\rangle
-$$<p>
-</p>
-$$
+$$$$
 \hat{A}|\lambda_{1,1}\rangle = \lambda_1|\lambda_{1,1}\rangle
 $$<p><em>(5) 고유벡터의 일반화</em></p>
 <p>임의의 멱영 지수 $k_m$에 대하여 $(\hat{A}-\lambda_m\hat{I})^{k_m}|\lambda_{m,k_m}\rangle=0$을 만족하는 일반화된 고유벡터는 랭크 인덱스 강하를 통해 다음과 같이 규정된다.</p>
@@ -370,8 +362,8 @@ $$
             <li class="alwaysopen " data-nav-id="/vector_operator/variation/index.html"><a class="padding default-animation" href="/vector_operator/variation/index.html">Variation</a><ul id="R-subsections-eb3a19f299ca0013853296f641c5255b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/vector_operator/decomposition/index.html"><a class="padding" href="/vector_operator/decomposition/index.html">Decomposition</a></li>
             <li class="alwaysopen " data-nav-id="/vector_operator/function_of_operators/index.html"><a class="padding default-animation" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li></ul></li>
-            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/basic_physics/index.html"><a class="padding default-animation" href="/basic_physics/index.html">Basic physics</a><ul id="R-subsections-af6a939787162e108a12584c0268b630" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/complex_analysis/index.html"><a class="padding default-animation" href="/complex_analysis/index.html">Complex Analysis</a><ul id="R-subsections-bb9c5c61faab3c492595556304976343" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_theory/index.html"><a class="padding default-animation" href="/lie_theory/index.html">Lie theory</a><ul id="R-subsections-e32984daf68bb6007c5d92fef0f30fd2" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group2/index.html"><a class="padding default-animation" href="/lie_group2/index.html">Lie group2</a><ul id="R-subsections-71d20bc10d79dab2cd43a92cd9b7dd79" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/lie_group3/index.html"><a class="padding default-animation" href="/lie_group3/index.html">Lie group3</a><ul id="R-subsections-18f9ce74ce73b71470aa64b6d70bd205" class="collapsible-menu"></ul></li>
@@ -385,6 +377,7 @@ $$
             <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/quantum_transform/index.html"><a class="padding default-animation" href="/quantum_transform/index.html">Quantum transprt</a><ul id="R-subsections-d7817ec5bed1a13fad2fb233c02dc107" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/research/index.html"><a class="padding default-animation" href="/research/index.html">Research</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/codes/index.html"><a class="padding" href="/codes/index.html">CODESes</a></li>
             <li class="" data-nav-id="/semiconductor/index.html"><a class="padding" href="/semiconductor/index.html">Semiconductors</a></li>
             <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
@@ -415,9 +408,9 @@ $$
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787485217"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787485217" defer></script>
-    <script src="/js/theme.js?1787485217" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788369595"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788369595" defer></script>
+    <script src="/js/theme.js?1788369595" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
